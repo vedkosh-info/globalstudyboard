@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind preflight is disabled — minimal base styles below. */
+
+:root {
+  --color-bg:      #F8FAFC;
+  --color-fg:      #1E293B;
+  --color-muted:   #64748B;
+  --color-brand:   #1B3A6B;
+  --color-gold:    #C9A227;
+  --color-surface: #FFFFFF;
+  --color-border:  #E2E8F0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+:lang(hi) body {
+  font-family: var(--font-devanagari, 'Noto Sans Devanagari', system-ui, sans-serif);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display, Georgia, 'Times New Roman', serif);
+  margin: 0 0 0.5em;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--color-fg);
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--color-brand);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+ul, ol {
+  margin: 0 0 1em;
+  padding-left: 1.5em;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
