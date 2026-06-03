@@ -10,12 +10,12 @@ interface Message {
 }
 
 const EXAMPLE_QUESTIONS = [
-  'How do I prepare for JEE Main in 6 months?',
-  'What are the top NITs for Computer Science?',
-  'How to apply to universities in the USA?',
-  'What are NEET UG eligibility criteria?',
-  'Explain CAT exam pattern and syllabus.',
-  'Scholarships available for study abroad?',
+  'How do I apply to U.S. universities from abroad?',
+  'What is the difference between the SAT and ACT?',
+  'Which European universities offer free tuition?',
+  'How does the UCAS application work?',
+  'What are the best CS programs in Canada?',
+  'How do I prepare for the GRE in three months?',
 ];
 
 export default function GSBAIChat() {
@@ -94,14 +94,14 @@ export default function GSBAIChat() {
   const isEmpty = messages.length === 0;
 
   return (
-    <div className="flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+    <div className="flex flex-col bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm">
       {/* Header */}
-      <div className="bg-brand-600 text-white px-4 py-3 flex items-center justify-between shrink-0">
+      <div className="bg-forest-700 text-cream-50 px-4 py-3 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-gold-300" />
+          <Sparkles className="w-4 h-4 text-terracotta-300" />
           <span className="font-semibold text-sm">GSB AI</span>
-          <span className="text-white/50 text-xs hidden sm:inline">
-            · College Admission Assistant
+          <span className="text-cream-50/60 text-xs hidden sm:inline">
+            · University Admission Assistant
           </span>
         </div>
         {!isEmpty && (
@@ -112,7 +112,7 @@ export default function GSBAIChat() {
               setMessages([]);
               setError(null);
             }}
-            className="text-white/60 hover:text-white text-xs flex items-center gap-1.5 transition-colors"
+            className="text-cream-50/70 hover:text-cream-50 text-xs flex items-center gap-1.5 transition-colors"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             New chat
@@ -124,10 +124,10 @@ export default function GSBAIChat() {
       <div className="flex-1 overflow-y-auto px-4 py-5 space-y-4 min-h-[340px] max-h-[420px]">
         {isEmpty ? (
           <div className="text-center py-10">
-            <Bot className="w-10 h-10 text-brand-200 mx-auto mb-3" />
-            <p className="text-slate-500 text-sm font-medium mb-1">Ask GSB AI anything</p>
-            <p className="text-slate-400 text-xs">
-              Entrance exams · College selection · Study abroad · Scholarships
+            <Bot className="w-10 h-10 text-forest-300 mx-auto mb-3" />
+            <p className="text-stone-700 text-sm font-medium mb-1">Ask GSB AI anything</p>
+            <p className="text-stone-500 text-xs">
+              Entrance exams · University selection · Study abroad · Scholarships
             </p>
           </div>
         ) : (
@@ -139,18 +139,18 @@ export default function GSBAIChat() {
               <div
                 className={`max-w-[82%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                   msg.role === 'user'
-                    ? 'bg-brand-600 text-white rounded-br-sm'
-                    : 'bg-slate-50 border border-slate-200 text-slate-800 rounded-bl-sm'
+                    ? 'bg-forest-700 text-cream-50 rounded-br-sm'
+                    : 'bg-cream-50 border border-stone-200 text-stone-800 rounded-bl-sm'
                 }`}
               >
                 {msg.role === 'assistant' && (
-                  <span className="text-xs font-bold text-gold-600 block mb-1.5 uppercase tracking-wide">
+                  <span className="text-xs font-bold text-terracotta-600 block mb-1.5 uppercase tracking-wide">
                     GSB AI
                   </span>
                 )}
                 <div className="whitespace-pre-wrap">
                   {msg.content || (isLoading ? (
-                    <span className="text-slate-400 flex gap-0.5 items-center">
+                    <span className="text-stone-500 flex gap-0.5 items-center">
                       <span className="animate-pulse">Typing</span>
                       <span className="animate-bounce" style={{ animationDelay: '0ms' }}>.</span>
                       <span className="animate-bounce" style={{ animationDelay: '150ms' }}>.</span>
@@ -175,14 +175,14 @@ export default function GSBAIChat() {
       {/* Example pills — only when empty */}
       {isEmpty && (
         <div className="px-4 pb-3">
-          <p className="text-xs text-slate-400 mb-2 uppercase tracking-widest">Try asking</p>
+          <p className="text-xs text-stone-500 mb-2 uppercase tracking-[0.16em]">Try asking</p>
           <div className="flex flex-wrap gap-1.5">
             {EXAMPLE_QUESTIONS.map((q) => (
               <button
                 key={q}
                 type="button"
                 onClick={() => void sendMessage(q)}
-                className="text-xs bg-brand-50 border border-brand-200 text-brand-600 hover:bg-brand-100 hover:border-brand-400 px-3 py-1.5 rounded-full transition-colors text-left"
+                className="text-xs bg-cream-50 border border-stone-200 text-stone-700 hover:border-forest-300 hover:text-forest-700 px-3 py-1.5 rounded-full transition-colors text-left"
               >
                 {q}
               </button>
@@ -194,13 +194,13 @@ export default function GSBAIChat() {
       {/* Input */}
       <form
         onSubmit={handleSubmit}
-        className="px-4 py-3 border-t border-slate-200 flex gap-2 shrink-0"
+        className="px-4 py-3 border-t border-stone-200 flex gap-2 shrink-0"
       >
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about colleges, exams, study abroad..."
-          className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-400 focus:bg-white transition-colors"
+          placeholder="Ask about universities, exams, study abroad..."
+          className="flex-1 bg-cream-50 border border-stone-200 rounded-xl px-4 py-2.5 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-forest-400 focus:bg-white transition-colors"
           maxLength={1500}
           disabled={isLoading}
           autoComplete="off"
@@ -209,7 +209,7 @@ export default function GSBAIChat() {
           type="submit"
           disabled={isLoading || !input.trim()}
           aria-label="Send message"
-          className="bg-brand-600 hover:bg-brand-500 disabled:bg-slate-200 disabled:cursor-not-allowed text-white disabled:text-slate-400 rounded-xl px-4 py-2.5 transition-colors"
+          className="bg-forest-700 hover:bg-forest-800 disabled:bg-stone-200 disabled:cursor-not-allowed text-cream-50 disabled:text-stone-400 rounded-xl px-4 py-2.5 transition-colors"
         >
           <Send className="w-4 h-4" />
         </button>

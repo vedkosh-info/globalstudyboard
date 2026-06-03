@@ -25,10 +25,40 @@ globs: "**/*.{ts,tsx,js,jsx}"
 - Dev server runs on **port 5000** (`npm run dev`).
 
 ## Content Policy (BINDING)
-- All college/exam information must be accurate and verifiable
+- **The Content Constitution `.claude/rules/content-policy.md` is the authority for ALL content** — read it before writing/editing any content. Audit every unit with `.claude/rules/content-qa-checklist.md` and log it in `.claude/rules/content-audit-log.md`. No content ships without an independent (separate-pass) QA sign-off.
+- All college/exam information must be accurate and verifiable — Tier-1 official sources only
+
+## Content Architecture & CMI (BINDING — constitution §11)
+- **NO duplicate content.** Before adding ANY new content unit (college, exam, scholarship, region, guide), search the existing data (`lib/colleges.ts`, `lib/admission-guides.ts`, `lib/regions.ts`) for the same entity by normalized name + region + type. If it exists, **update it — never create a second record**.
+- **One canonical unit, one stable slug.** Slugs are unique within their type and never silently changed (a slug change needs a redirect plan).
+- **Manage content through the Content Master Index (CMI).** The CMI is the single source of truth that indexes + validates all content and emits a registry used by search, breadcrumbs, related-content blocks, and the sitemap.
+  - When CMI tooling exists, run `npm run cmi:validate` (0 errors) before adding content and before shipping; run `npm run cmi:build` after catalog changes.
+  - Until the tooling lands, perform the same checks manually (unique/stable slugs, no duplicates, referential integrity, required fields, bilingual fallback) and log the pass in the audit log.
+- **Maintain relationships for continuity.** Every unit declares + renders its links (college ↔ region ↔ exams ↔ scholarships ↔ guides). Every referenced relationship must resolve to a real existing unit (no broken links). Relationships should be bidirectional, and every content page ends with a "Related / Next steps" block.
+
+## Navigation, Search & UX (BINDING — constitution §12)
+- **Breadcrumbs on every page**, rendered globally via the root layout (like the footer) so new routes inherit them: `Home > {group} > {sub-group} > {current page}`; current page is not a link; emit `BreadcrumbList` JSON-LD. Labels come from the content registry, not hard-coded.
+- **A search box at the top of every page**, mounted globally in the layout, searching the CMI index with fast client-side matching and handing complex queries to GSB AI. Keyboard-accessible; identical on desktop + mobile.
+- **Modern, content-first, fully responsive UI.** Test BOTH desktop and mobile (and tablet) before shipping any UI change. Accessible by default (semantic HTML, contrast, focus states, alt text, reduced-motion). Keep the consistent design language (Fraunces + Inter, forest/cream/stone, rounded cards) — no one-off styles.
+
+## SEO & Monetization (BINDING — constitution §13)
+- Every page: `generateMetadata()` (title, description, canonical, hreflang en/hi/x-default), `generateStaticParams()` for `[slug]` routes, appropriate structured data, sitemap entry, and internal links (no orphans).
+- **Google Ads/AdSense-ready but off until approved**: keep `public/ads.txt` and reserved ad slots; do not render ads or add trackers until the account is approved and `/privacy` is updated. Ads never degrade content quality, speed, accessibility, or obscure content — content always outranks monetization.
+
+## Multi-Jurisdiction Legal Compliance (BINDING — constitution §14 — EVERY country, EVERY new unit)
+- **Legal compliance is NOT USA-only.** The laws of **each destination** we cover (USA, UK & Ireland, Canada, Europe, Australia & New Zealand, India, and any new region) apply to the content we publish about it, plus the laws protecting our audience there. Enforce this for ALL existing content and EVERY new content unit, in every language, on every page.
+- **Before adding/changing ANY unit** (college, exam, scholarship, region, guide, page, AI answer), the independent QA pass must: (1) identify the jurisdiction(s) it touches — destination country + audience country; (2) check it against those jurisdictions' applicable laws — privacy/data-protection, consumer/advertising, copyright/IP, visa/immigration, education-record, accessibility, defamation — applying the **strictest** standard on overlap; (3) confirm facts-and-guidance-only framing (no legal/immigration/medical/financial advice), Tier-1 sourcing, and the visa/policy verify-nudge; (4) log the jurisdiction(s) reviewed in the audit log. **Block on any fail.**
+- **New destination:** confirm all §14.2 law areas are covered before publishing; if a rule cannot be met for some content, withhold that content and flag it to the user.
+- **Law changes:** correct/remove affected content immediately and log it; keep `/privacy`, `/terms`, `/disclaimer` current. **We are not lawyers** — if a genuine legal question exceeds these rules, STOP and flag it; never guess or work around it.
+
 - No fabricated rankings, cutoffs, fees, or statistics
-- Footer disclaimer required: "Information provided is for guidance only."
+- Zero religious content (beyond a neutral official faith-affiliation fact); no politics / government criticism / geopolitics; no hate or stereotypes
+- **Site-wide disclaimer required on EVERY page — current and future (BINDING):** The exact text below must be visible on all pages. It is rendered globally via the `Footer` in the root layout (`app/layout.tsx`), so every page (including any new route added later) inherits it automatically. NEVER remove `Footer` from the root layout, and NEVER alter this disclaimer wording without explicit user approval:
+  > Disclaimer: Information provided on GlobalStudyBoard is for guidance only. Tuition fees, application deadlines, rankings, and eligibility requirements change every academic year. Always verify all details with the official university or examination website before applying.
+- Every new page must be added under the shared layout so it inherits the footer disclaimer; if a page ever renders outside the root layout, the disclaimer must be added to it explicitly.
+- A standalone `/disclaimer` page must also exist and be linked from the footer.
 - No content facilitating academic dishonesty
+
 
 ## AI & Model
 - Use `Claude Sonnet 4.6 (copilot)` for all agents and subagents

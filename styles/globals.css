@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tailwind preflight is disabled — minimal base styles below. */
+/* Tailwind preflight is disabled — Editorial Ivy base styles below. */
 
 :root {
-  --color-bg:      #F8FAFC;
-  --color-fg:      #1E293B;
-  --color-muted:   #64748B;
-  --color-brand:   #1B3A6B;
-  --color-gold:    #C9A227;
-  --color-surface: #FFFFFF;
-  --color-border:  #E2E8F0;
+  --color-bg:       #FFF8E7;
+  --color-surface:  #FFFFFF;
+  --color-fg:       #0A0A0A;
+  --color-muted:    #57534E;
+  --color-forest:   #14532D;
+  --color-forest-2: #2A6A43;
+  --color-terra:    #C2410C;
+  --color-border:   #E7E5E4;
 }
 
 * {
@@ -29,7 +30,8 @@ body {
   margin: 0;
   background-color: var(--color-bg);
   color: var(--color-fg);
-  font-family: var(--font-sans, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
+  font-family: var(--font-sans, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
+  font-feature-settings: 'ss01', 'cv11';
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
@@ -42,19 +44,23 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display, Georgia, 'Times New Roman', serif);
+  font-family: var(--font-display, Fraunces, Georgia, 'Times New Roman', serif);
+  font-feature-settings: 'ss01';
   margin: 0 0 0.5em;
-  line-height: 1.25;
-  font-weight: 700;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--color-fg);
 }
+
+h1 { font-weight: 700; }
 
 p {
   margin: 0 0 1em;
 }
 
 a {
-  color: var(--color-brand);
+  color: var(--color-forest);
   text-decoration: none;
 }
 
@@ -77,7 +83,44 @@ ul, ol {
   padding-left: 1.5em;
 }
 
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 2em 0;
+}
+
 *:focus-visible {
-  outline: 2px solid var(--color-brand);
+  outline: 2px solid var(--color-terra);
   outline-offset: 2px;
+}
+
+/* Editorial flourish: drop-caps for prose intros (opt-in via .editorial-lede) */
+.editorial-lede::first-letter {
+  font-family: var(--font-display, Fraunces, Georgia, serif);
+  font-size: 3.5em;
+  font-weight: 700;
+  float: left;
+  line-height: 0.9;
+  margin-right: 0.08em;
+  margin-top: 0.05em;
+  color: var(--color-forest);
+}
+
+/* Section dividers — Editorial style */
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.section-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
 }

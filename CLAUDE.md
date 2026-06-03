@@ -6,9 +6,15 @@ A multilingual college admission guide and query platform covering universities 
 **Primary audiences:** Indian students targeting IITs/NITs/IIMs/AIIMS/NLUs, and students seeking study-abroad guidance for USA, UK, Canada, Australia, Germany.
 
 ## Content Policy (BINDING)
-- All information must be accurate and verifiable — cite official sources
+- **Read `.claude/rules/content-policy.md` (Content Constitution) BEFORE writing or editing ANY content.** It is the highest-priority content authority. Also: `.claude/rules/content-qa-checklist.md` (independent QA) and `.claude/rules/content-audit-log.md` (sign-off log).
+- **No content ships without an independent QA pass** (separate from authoring) logged in the audit log.
+- All information must be accurate and verifiable — cite official **Tier-1** sources only (official university site, official exam board, official `.gov`)
 - No fabricated rankings, cutoffs, fees, or admission statistics
-- Footer disclaimer required on every page: "Information provided is for guidance only. Always verify with official college/exam websites before applying."
+- **Zero religious content** (no Islam, Christianity, Sikhism, Hinduism, etc.) beyond a neutral official faith-affiliation fact; **no politics, no government criticism, no geopolitics** — visa/policy stated as neutral fact only with a verify-on-official-source nudge; **no hate/stereotypes** by religion, race, ethnicity, caste, gender, etc.
+- **Site-wide disclaimer required on EVERY page — current AND future.** The exact wording below must be visible on all pages. It is rendered globally via the `Footer` component in the root layout (`app/layout.tsx`), so every existing and future route inherits it automatically. NEVER remove `Footer` from the root layout, and NEVER change this wording without explicit user approval:
+  > Disclaimer: Information provided on GlobalStudyBoard is for guidance only. Tuition fees, application deadlines, rankings, and eligibility requirements change every academic year. Always verify all details with the official university or examination website before applying.
+- Any new page MUST live under the shared root layout so it inherits the footer disclaimer. If a page is ever rendered outside that layout, add the disclaimer to it explicitly.
+- A dedicated `/disclaimer` page must exist and be linked in the footer.
 - No content that facilitates academic dishonesty or plagiarism
 - Respectful of all religions, castes, regions — no discriminatory content
 - Content should be inclusive of all genders and backgrounds
@@ -51,9 +57,22 @@ public/           → Static assets
 - All content fields use `*En` / `*Hi` suffix convention for bilingual fields
 - Always run `npm run lint && npm run typecheck` after any data change
 
+## Content Architecture, CMI & UX (BINDING — constitution §11–§13)
+- **No duplicate content.** Before adding any unit (college/exam/scholarship/region/guide), search existing data by normalized name + region + type; if it exists, UPDATE it — never create a second record. One canonical unit, one stable slug.
+- **CMI (Content Master Index)** is the single source of truth that indexes + validates all content and feeds search, breadcrumbs, related-content blocks, and the sitemap. Run `npm run cmi:validate` (0 errors) before adding/shipping content once tooling exists; until then do the same checks manually and log them.
+- **Relationships for continuity:** every unit links to its related units (college ↔ region ↔ exams ↔ scholarships ↔ guides); links must resolve to real units; every page ends with a "Related / Next steps" block.
+- **Breadcrumbs + search on every page**, mounted globally in the root layout (like the footer) so new routes inherit them. Breadcrumb emits `BreadcrumbList` JSON-LD; search hands complex queries to GSB AI.
+- **Modern, content-first, fully responsive UI** — test desktop AND mobile; accessible by default; consistent Fraunces + Inter / forest-cream-stone design language.
+- **SEO + ads-ready:** canonical + hreflang + structured data + sitemap + internal links on every page; AdSense-ready but no ads until approved and `/privacy` updated; content always outranks monetization.
+
+## Multi-Jurisdiction Legal Compliance (BINDING — constitution §14)
+- **Legal compliance is NOT USA-only.** The laws of **each destination** we cover (USA, UK & Ireland, Canada, Europe, Australia & New Zealand, India, and any new region) apply to the content about it, plus the laws protecting our audience there. Enforce for ALL existing content and EVERY new unit, in every language, on every page.
+- Before adding/changing ANY unit, the independent QA pass must: (1) identify the jurisdiction(s) it touches (destination + audience country); (2) check it against those jurisdictions' applicable laws — privacy, consumer/advertising, copyright/IP, visa/immigration, education-record, accessibility, defamation — applying the **strictest** standard on overlap; (3) confirm facts-and-guidance-only framing (no legal/immigration/medical/financial advice), Tier-1 sourcing, and the visa/policy verify-nudge; (4) log the jurisdiction(s) reviewed in the audit log. **Block on any fail.**
+- New destination: confirm all law areas are covered before publishing; if a rule can't be met for some content, withhold it and flag it. Law changes → correct/remove immediately and log; keep `/privacy`, `/terms`, `/disclaimer` current. **We are not lawyers** — if a legal question exceeds these rules, STOP and flag it.
+
 ## SEO & URL Conventions
 - Use slugs (e.g. `/colleges/iit-bombay`, `/exams/jee-main`) — no numeric IDs
-- Every page must have `generateMetadata()` with title, description, canonical
+- Every page must have `generateMetadata()` with title, description, canonical, hreflang
 - `generateStaticParams()` required for all `[slug]` routes
 - Content disclaimer required in footer on every content page
 

@@ -1,8 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from '@/lib/i18n';
 
-const COOKIE_NAME = 'gsb_lang';
-
 const ROOT_ONLY_PATTERNS = [
   /^\/opengraph-image/,
   /^\/twitter-image/,
@@ -17,30 +15,6 @@ const ROOT_ONLY_PATTERNS = [
   /^\/ads\.txt/,
   /^\/robots\.txt/,
 ];
-
-/** Country → preferred locale. India → Hindi; everything else → English. */
-const GEO_LOCALE_MAP: Record<string, string> = {
-  IN: 'hi',
-};
-
-function detectLocale(request: NextRequest): string {
-  const saved = request.cookies.get(COOKIE_NAME)?.value;
-  if (saved && (SUPPORTED_LOCALES as readonly string[]).includes(saved)) return saved;
-
-  const country = request.headers.get('x-vercel-ip-country');
-  if (country) {
-    const geo = GEO_LOCALE_MAP[country.toUpperCase()];
-    if (geo) return geo;
-  }
-
-  const acceptLang = request.headers.get('accept-language');
-  if (acceptLang) {
-    const lang = acceptLang.split(',')[0].trim().split('-')[0].toLowerCase();
-    if ((SUPPORTED_LOCALES as readonly string[]).includes(lang)) return lang;
-  }
-
-  return DEFAULT_LOCALE;
-}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -133,9 +107,6 @@ export function middleware(request: NextRequest) {
   if (!isLocalhost) {
     response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   }
-
-  // Detect preferred locale for first-time visitors to offer a locale switcher
-  void detectLocale;
 
   return response;
 }

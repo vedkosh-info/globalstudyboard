@@ -1,55 +1,53 @@
 import Link from 'next/link';
 import MobileMenu from '@/components/MobileMenu';
+import RegionSwitcher from '@/components/RegionSwitcher';
 
 const NAV_LINKS = [
-  { label: 'Indian Colleges', href: '/colleges/india', highlight: false },
-  { label: 'Study Abroad', href: '/colleges/abroad', highlight: false },
-  { label: 'Entrance Exams', href: '/exams', highlight: false },
-  { label: 'Admission Guides', href: '/guides', highlight: false },
-  { label: 'GSB AI', href: '/gsb-ai', highlight: true },
+  { label: 'Universities', href: '/regions' },
+  { label: 'Exams', href: '/exams' },
+  { label: 'Scholarships', href: '/scholarships' },
+  { label: 'Guides', href: '/guides' },
 ];
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-brand-600 text-white shadow-md">
+    <header className="sticky top-0 z-40 bg-cream-100 border-b border-stone-200 backdrop-blur supports-[backdrop-filter]:bg-cream-100/85">
       <div className="mx-auto max-w-7xl px-4">
         <div className="relative flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 no-underline shrink-0">
-            <span className="text-gold-400 text-xl md:text-2xl font-bold font-display tracking-tight">
+
+          {/* Wordmark */}
+          <Link href="/" className="flex items-baseline gap-2 no-underline shrink-0">
+            <span className="font-display text-2xl md:text-[26px] font-bold tracking-editorial text-forest-700">
               GlobalStudyBoard
             </span>
           </Link>
 
-          {/* Desktop navigation */}
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={
-                  link.highlight
-                    ? 'text-sm font-semibold bg-gold-500 hover:bg-gold-400 text-brand-900 px-3 py-1.5 rounded-md transition-colors no-underline'
-                    : 'text-sm font-medium text-white/90 hover:text-gold-300 hover:bg-brand-500 px-3 py-2 rounded-md transition-colors no-underline'
-                }
+                className="text-sm font-medium text-stone-700 hover:text-forest-700 px-3 py-2 rounded-md transition-colors no-underline"
               >
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/gsb-ai"
+              className="ml-2 text-sm font-semibold bg-forest-700 hover:bg-forest-800 text-cream-50 px-4 py-1.5 rounded-full transition-colors no-underline"
+            >
+              Ask GSB AI
+            </Link>
+            <div className="ml-2">
+              <RegionSwitcher />
+            </div>
           </nav>
 
-          {/* Language switcher — desktop only */}
-          <div className="hidden md:flex items-center">
-            <Link
-              href="/hi"
-              className="text-xs text-white/50 hover:text-gold-300 px-3 py-2 rounded-md no-underline transition-colors"
-            >
-              हिन्दी
-            </Link>
+          <div className="flex items-center gap-2 md:hidden">
+            <RegionSwitcher />
+            <MobileMenu />
           </div>
-
-          {/* Mobile hamburger */}
-          <MobileMenu />
         </div>
       </div>
     </header>

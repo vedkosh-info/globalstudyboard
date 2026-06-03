@@ -1,262 +1,256 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { GraduationCap, Globe, BookOpen, FileText } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
-import GoogleAd from '@/components/GoogleAd';
+import { REGIONS } from '@/lib/regions';
+import HomeHero from '@/components/HomeHero';
+import HomeDestinationSpotlight from '@/components/HomeDestinationSpotlight';
+import RegionRail from '@/components/RegionRail';
 
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: 'GlobalStudyBoard — College Admission Guide',
+  title: { absolute: 'GlobalStudyBoard — Universities, Exams & Scholarships Worldwide' },
   description:
-    'Explore IITs, NITs, IIMs, and top global universities. Complete entrance exam guides for JEE, NEET, CAT, GRE, GMAT, and more.',
+    'Free university admission guide for every destination. Compare SAT, ACT, GRE, IELTS, A-Levels and IB. Explore top universities in the USA, UK, Europe, Canada, Australia and India.',
+  keywords: [
+    'study abroad guide',
+    'university admission 2025',
+    'SAT ACT score guide',
+    'UCAS common app comparison',
+    'study in USA international students',
+    'study in UK undergraduate',
+    'study in Europe English',
+    'GRE GMAT prep tips',
+    'college scholarships international',
+    'student visa requirements',
+  ],
+  alternates: { canonical: 'https://www.globalstudyboard.com' },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.globalstudyboard.com',
+    title: 'GlobalStudyBoard — Universities, Exams & Scholarships Worldwide',
+    description: 'Free university admission guide for every destination. Compare exams, explore top universities, and get personalised guidance from GSB AI.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GlobalStudyBoard — Universities, Exams & Scholarships Worldwide',
+    description: 'Free university admission guide — USA, UK, Europe, Canada, Australia, India. Compare SAT, ACT, GRE, IELTS, A-Levels.',
+  },
 };
 
-const CATEGORIES = [
+// One featured university per region, in region rail order.
+const FEATURED_UNIVERSITIES = REGIONS.map((r) => {
+  const matches = COLLEGES.filter((c) => c.region === r.slug);
+  // Prefer the highest-ranked university we have for the region
+  const ranked = [...matches].sort((a, b) => (a.ranking?.qs ?? 9999) - (b.ranking?.qs ?? 9999));
+  return ranked[0];
+}).filter(Boolean);
+
+// US/EU exams first, then global English tests, then India
+const FEATURED_EXAM_SLUGS = ['sat', 'gre', 'a-levels', 'testas', 'ielts', 'toefl', 'jee-advanced', 'cat'];
+const FEATURED_EXAMS = FEATURED_EXAM_SLUGS
+  .map((slug) => ENTRANCE_EXAMS.find((e) => e.slug === slug))
+  .filter((e): e is NonNullable<typeof e> => Boolean(e));
+
+const APPLICATION_PLATFORMS = [
   {
-    icon: GraduationCap,
-    title: 'Indian Colleges',
-    desc: 'IITs, NITs, IIMs, AIIMS, NLUs and top universities',
-    href: '/colleges/india',
-    count: '1,000+ colleges',
-    bg: 'bg-brand-50',
-    border: 'border-brand-200',
-    iconColor: 'text-brand-600',
+    name: 'Common App',
+    region: 'United States',
+    summary: 'One application to 1,000+ U.S. colleges. Opens August 1 each year.',
+    url: 'https://www.commonapp.org',
   },
   {
-    icon: Globe,
-    title: 'Study Abroad',
-    desc: 'USA, UK, Canada, Australia, Germany and beyond',
-    href: '/colleges/abroad',
-    count: '500+ universities',
-    bg: 'bg-gold-50',
-    border: 'border-gold-200',
-    iconColor: 'text-gold-600',
+    name: 'UCAS',
+    region: 'United Kingdom',
+    summary: 'Up to five UK courses on one application. October deadline for Oxbridge & medicine.',
+    url: 'https://www.ucas.com',
   },
   {
-    icon: FileText,
-    title: 'Entrance Exams',
-    desc: 'JEE, NEET, CAT, CLAT, GRE, GMAT, SAT, IELTS',
-    href: '/exams',
-    count: '50+ exams covered',
-    bg: 'bg-slate-50',
-    border: 'border-slate-200',
-    iconColor: 'text-slate-600',
+    name: 'Uni-Assist',
+    region: 'Germany',
+    summary: 'Document evaluation for international applicants to most German universities.',
+    url: 'https://www.uni-assist.de',
   },
   {
-    icon: BookOpen,
-    title: 'Admission Guides',
-    desc: 'Step-by-step guides for every exam and college',
-    href: '/guides',
-    count: '200+ guides',
-    bg: 'bg-brand-50',
-    border: 'border-brand-100',
-    iconColor: 'text-brand-500',
+    name: 'OUAC',
+    region: 'Canada (Ontario)',
+    summary: 'Centralised application for Ontario undergraduate programs.',
+    url: 'https://www.ouac.on.ca',
   },
 ];
-
-const QUICK_ACCESS = [
-  { label: 'JEE Main', href: '/exams/jee-main' },
-  { label: 'JEE Advanced', href: '/exams/jee-advanced' },
-  { label: 'NEET UG', href: '/exams/neet-ug' },
-  { label: 'CAT', href: '/exams/cat' },
-  { label: 'CLAT', href: '/exams/clat' },
-  { label: 'IELTS', href: '/exams/ielts' },
-  { label: 'GMAT', href: '/exams/gmat' },
-  { label: 'GRE', href: '/exams/gre' },
-  { label: 'IIT Bombay', href: '/colleges/iit-bombay' },
-  { label: 'IIT Delhi', href: '/colleges/iit-delhi' },
-  { label: 'IIM Ahmedabad', href: '/colleges/iim-ahmedabad' },
-  { label: 'AIIMS Delhi', href: '/colleges/aiims-delhi' },
-  { label: 'Study in USA', href: '/colleges/abroad/usa' },
-  { label: 'Study in UK', href: '/colleges/abroad/uk' },
-  { label: 'Study in Canada', href: '/colleges/abroad/canada' },
-];
-
-const INDIAN_COLLEGES = COLLEGES.filter((c) => c.country === 'india').slice(0, 6);
-const GLOBAL_COLLEGES = COLLEGES.filter((c) => c.country !== 'india').slice(0, 3);
-const FEATURED_EXAMS = ENTRANCE_EXAMS.filter((e) =>
-  ['jee-main', 'jee-advanced', 'neet-ug', 'cat', 'gre', 'ielts'].includes(e.id)
-);
 
 export default function HomePage() {
   return (
-    <div className="space-y-14">
+    <div className="space-y-16 md:space-y-20">
 
-      {/* Hero */}
-      <section className="text-center py-12 px-4 bg-brand-600 rounded-2xl text-white -mx-4 md:mx-0">
-        <h1 className="text-3xl md:text-5xl font-bold font-display text-white mb-4">
-          Your Complete College Admission Guide
-        </h1>
-        <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
-          Explore colleges, understand entrance exams, and find the right path —
-          for Indian universities and institutions worldwide.
+      <HomeHero />
+
+      <HomeDestinationSpotlight />
+
+      <div className="-mx-4 md:mx-0">
+        <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3 px-4 md:px-0">
+          Browse by region
         </p>
-        <div className="flex flex-wrap justify-center gap-3">
+        <RegionRail />
+      </div>
+
+      {/* Featured universities — one per region */}
+      <section>
+        <div className="flex items-end justify-between mb-7">
+          <div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
+              Universities at a glance
+            </h2>
+            <p className="text-stone-600 text-sm">
+              One institution from each region we cover — open any to see programs, application platform, and admission exams.
+            </p>
+          </div>
           <Link
-            href="/colleges/india"
-            className="bg-gold-500 hover:bg-gold-400 text-brand-900 font-semibold px-6 py-3 rounded-lg no-underline transition-colors"
+            href="/regions"
+            className="hidden sm:inline-flex items-center gap-1 text-sm text-forest-700 hover:text-forest-800 font-medium no-underline shrink-0"
           >
-            Explore Indian Colleges
-          </Link>
-          <Link
-            href="/colleges/abroad"
-            className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg no-underline transition-colors border border-white/20"
-          >
-            Study Abroad Guide
+            All regions <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
-      </section>
 
-      {/* Quick Access */}
-      <section>
-        <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
-          Quick Access
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {QUICK_ACCESS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="bg-white border border-slate-200 hover:border-brand-400 hover:bg-brand-50 text-slate-600 hover:text-brand-700 text-sm px-4 py-1.5 rounded-full no-underline transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Browse Categories */}
-      <section>
-        <h2 className="text-2xl font-bold text-brand-700 mb-6">Browse by Category</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {CATEGORIES.map((cat) => (
-            <Link
-              key={cat.href}
-              href={cat.href}
-              className={`${cat.bg} ${cat.border} border rounded-xl p-5 no-underline hover:shadow-md transition-shadow group block`}
-            >
-              <cat.icon className={`${cat.iconColor} w-8 h-8 mb-3`} />
-              <h3 className="font-bold text-slate-800 group-hover:text-brand-600 transition-colors mb-1">
-                {cat.title}
-              </h3>
-              <p className="text-slate-500 text-sm mb-2">{cat.desc}</p>
-              <span className="text-xs font-medium text-brand-500">{cat.count}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Ad slot — after categories */}
-      <GoogleAd slot="REPLACE_WITH_SLOT_ID" className="rounded-xl overflow-hidden" />
-
-      {/* Top Indian Colleges */}
-      <section>
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="text-2xl font-bold text-brand-700">Top Indian Colleges</h2>
-          <Link href="/colleges/india" className="text-sm text-brand-500 hover:text-brand-700">
-            View all →
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {INDIAN_COLLEGES.map((college) => (
-            <Link
-              key={college.id}
-              href={`/colleges/${college.slug}`}
-              className="bg-white border border-slate-200 rounded-xl p-5 no-underline hover:border-brand-300 hover:shadow-sm transition-all group"
-            >
-              <div className="flex items-start justify-between mb-2">
-                <span className="text-xs font-semibold uppercase tracking-wide text-brand-500 bg-brand-50 px-2 py-0.5 rounded">
-                  {college.type.toUpperCase()}
-                </span>
-                {college.ranking?.nirf && (
-                  <span className="text-xs text-slate-400">NIRF #{college.ranking.nirf}</span>
-                )}
-              </div>
-              <h3 className="font-bold text-slate-800 group-hover:text-brand-600 transition-colors text-sm leading-snug mb-1">
-                {college.nameEn}
-              </h3>
-              <p className="text-slate-400 text-xs">
-                {college.city}, {college.state}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-1">
-                {college.admissionExams.map((exam) => (
-                  <span key={exam} className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
-                    {exam}
+          {FEATURED_UNIVERSITIES.map((college) => {
+            const region = REGIONS.find((r) => r.slug === college.region);
+            return (
+              <Link
+                key={college.id}
+                href={`/regions/${college.region}`}
+                className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 hover:shadow-sm transition-all group flex flex-col"
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <span aria-hidden="true" className="text-lg">{region?.flag}</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
+                    {region?.displayName}
                   </span>
-                ))}
-              </div>
-            </Link>
+                </div>
+                <h3 className="font-display text-lg font-bold text-ink group-hover:text-forest-700 transition-colors leading-snug mb-1">
+                  {college.nameEn}
+                </h3>
+                <p className="text-stone-500 text-xs mb-3">
+                  {college.city}{college.state ? `, ${college.state}` : ''} · Est. {college.established}
+                </p>
+                {college.ranking?.qs && (
+                  <p className="text-xs text-stone-500 mt-auto">
+                    QS World Ranking #{college.ranking.qs}
+                  </p>
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Application platforms */}
+      <section>
+        <div className="mb-7">
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
+            Application platforms
+          </h2>
+          <p className="text-stone-600 text-sm max-w-2xl">
+            One application can reach dozens of universities. Each region runs its own platform — here are the four you need to know.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {APPLICATION_PLATFORMS.map((p) => (
+            <a
+              key={p.name}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-terracotta-300 transition-colors flex flex-col"
+            >
+              <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-terracotta-500 mb-2">
+                {p.region}
+              </span>
+              <h3 className="font-display text-xl font-bold text-ink mb-2">{p.name}</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">{p.summary}</p>
+              <span className="mt-auto pt-3 text-xs text-stone-500 inline-flex items-center gap-1">
+                Visit site <ArrowUpRight className="w-3 h-3" />
+              </span>
+            </a>
           ))}
         </div>
       </section>
 
-      {/* Ad slot — after Indian colleges */}
-      <GoogleAd slot="REPLACE_WITH_SLOT_ID_2" className="rounded-xl overflow-hidden" />
-
-      {/* Featured Entrance Exams */}
-      <section>
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="text-2xl font-bold text-brand-700">Entrance Exam Guides</h2>
-          <Link href="/exams" className="text-sm text-brand-500 hover:text-brand-700">
-            View all →
+      {/* Featured exams */}
+      <section id="exams">
+        <div className="flex items-end justify-between mb-7">
+          <div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
+              Major entrance exams
+            </h2>
+            <p className="text-stone-600 text-sm">
+              The tests that gate top universities, by region. Most are accepted across multiple countries.
+            </p>
+          </div>
+          <Link
+            href="/exams"
+            className="hidden sm:inline-flex items-center gap-1 text-sm text-forest-700 hover:text-forest-800 font-medium no-underline shrink-0"
+          >
+            All exams <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {FEATURED_EXAMS.map((exam) => (
             <Link
               key={exam.id}
               href={`/exams/${exam.slug}`}
-              className="bg-white border border-slate-200 rounded-xl p-5 no-underline hover:border-gold-300 hover:shadow-sm transition-all group"
+              className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col"
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="font-bold text-brand-700 text-lg group-hover:text-brand-500 transition-colors">
+                <span className="font-display text-xl font-bold text-ink group-hover:text-forest-700 transition-colors">
                   {exam.shortName}
                 </span>
-                <span className="text-xs text-slate-400 capitalize">{exam.region}</span>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
+                  {exam.region}
+                </span>
               </div>
-              <p className="text-slate-500 text-xs leading-relaxed mb-3 line-clamp-2">
-                {exam.descriptionEn.slice(0, 100)}…
+              <p className="text-stone-600 text-sm leading-relaxed line-clamp-3 mb-3">
+                {exam.descriptionEn}
               </p>
-              <div className="flex items-center gap-2 text-xs text-slate-400">
-                <span>{exam.frequency}</span>
-                <span>·</span>
-                <span className="capitalize">{exam.domain}</span>
+              <div className="mt-auto pt-3 text-xs text-stone-500 capitalize">
+                {exam.domain.replace('-', ' ')} · {exam.frequency.split('(')[0].trim().toLowerCase()}
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Global Universities */}
-      <section>
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="text-2xl font-bold text-brand-700">Top Global Universities</h2>
-          <Link href="/colleges/abroad" className="text-sm text-brand-500 hover:text-brand-700">
-            View all →
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {GLOBAL_COLLEGES.map((college) => (
+      {/* Why GSB — editorial pitch */}
+      <section className="bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-12 py-12 md:py-16">
+        <div className="max-w-3xl">
+          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-cream-100/70 mb-4">
+            Why GlobalStudyBoard
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial leading-tight mb-5">
+            One reference, every region.<br />No country-of-origin bias.
+          </h2>
+          <p className="text-cream-50/85 text-base md:text-lg leading-relaxed mb-6">
+            Most college guides start from where their authors live. We start from where <em>you</em> want to go. Every region — the United States, the United Kingdom, continental Europe, Canada, Australia, the Middle East, Russia, and India — gets the same depth of coverage, the same plain-language tone, and the same insistence on linking to the official source.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
             <Link
-              key={college.id}
-              href={`/colleges/${college.slug}`}
-              className="bg-gradient-to-br from-brand-600 to-brand-800 text-white rounded-xl p-5 no-underline hover:from-brand-500 hover:to-brand-700 transition-all group"
+              href="/gsb-ai"
+              className="inline-flex items-center justify-center bg-cream-50 hover:bg-cream-100 text-forest-900 font-semibold px-6 py-3 rounded-full no-underline transition-colors"
             >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-semibold uppercase tracking-wide text-gold-300">
-                  {college.country.toUpperCase()}
-                </span>
-                {college.ranking?.qs && (
-                  <span className="text-xs text-white/60">QS #{college.ranking.qs}</span>
-                )}
-              </div>
-              <h3 className="font-bold text-white text-sm leading-snug mb-1">{college.nameEn}</h3>
-              <p className="text-white/60 text-xs">{college.city} · Est. {college.established}</p>
+              Ask GSB AI
             </Link>
-          ))}
+            <Link
+              href="/regions"
+              className="inline-flex items-center justify-center bg-transparent hover:bg-cream-50/10 text-cream-50 font-semibold px-6 py-3 rounded-full no-underline transition-colors border border-cream-50/30"
+            >
+              See all regions
+            </Link>
+          </div>
         </div>
       </section>
 
