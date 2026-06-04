@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Search, Sparkles, GraduationCap, FileText, Globe2, BookOpen } from 'lucide-react';
 
 import { CONTENT_INDEX, type ContentType } from '@/lib/cmi';
@@ -24,18 +24,8 @@ function TypeIcon({ type }: { type: ContentType }) {
   return <Globe2 className={cls} aria-hidden="true" />;
 }
 
-/** Detect active locale from the pathname so result links stay in-locale. */
-function useLang(): 'en' | 'hi' {
-  const pathname = usePathname() ?? '/';
-  return pathname === '/hi' || pathname.startsWith('/hi/') ? 'hi' : 'en';
-}
-
-const localized = (url: string, lang: 'en' | 'hi') =>
-  lang === 'en' ? url : `/hi${url}`;
-
 export default function SiteSearch() {
   const router = useRouter();
-  const lang = useLang();
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(-1);
@@ -53,13 +43,11 @@ export default function SiteSearch() {
 
   const askAi = useCallback(() => {
     const q = query.trim();
-    const href = q
-      ? `${localized('/gsb-ai', lang)}?q=${encodeURIComponent(q)}`
-      : localized('/gsb-ai', lang);
+    const href = q ? `/gsb-ai?q=${encodeURIComponent(q)}` : '/gsb-ai';
     setOpen(false);
     setQuery('');
     router.push(href);
-  }, [query, lang, router]);
+  }, [query, router]);
 
   // Close on outside click.
   useEffect(() => {
@@ -84,7 +72,7 @@ export default function SiteSearch() {
         const u = results[active];
         setOpen(false);
         setQuery('');
-        router.push(localized(u.url, lang));
+        router.push(u.url);
       } else {
         askAi();
       }
@@ -129,7 +117,7 @@ export default function SiteSearch() {
               {results.map((u, i) => (
                 <li key={`${u.type}-${u.slug}`}>
                   <Link
-                    href={localized(u.url, lang)}
+                    href={u.url}
                     onClick={() => {
                       setOpen(false);
                       setQuery('');

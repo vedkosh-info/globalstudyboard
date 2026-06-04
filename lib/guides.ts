@@ -25,19 +25,15 @@ export interface GuideSource {
 
 export interface GuideSection {
   headingEn: string;
-  headingHi?: string;
   /** Plain prose; rendered as paragraphs (split on blank lines). */
   bodyEn: string;
-  bodyHi?: string;
   /** Optional bullet list rendered under the prose. */
   bullets?: string[];
 }
 
 export interface GuideFaq {
   questionEn: string;
-  questionHi?: string;
   answerEn: string;
-  answerHi?: string;
 }
 
 export interface Guide {
@@ -47,9 +43,7 @@ export interface Guide {
   /** Owning region (drives breadcrumbs + related links). */
   region: RegionSlug;
   titleEn: string;
-  titleHi?: string;
   descriptionEn: string;
-  descriptionHi?: string;
   /** Estimated read time in minutes. */
   readMinutes: number;
   sections: GuideSection[];
@@ -76,16 +70,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'JEE Main vs JEE Advanced: What Is the Difference?',
-    titleHi: 'जेईई मेन बनाम जेईई एडवांस्ड: क्या अंतर है?',
     descriptionEn:
       'A clear comparison of JEE Main and JEE Advanced — who conducts them, which colleges they lead to, eligibility, attempts, and how the two exams connect.',
-    descriptionHi:
-      'जेईई मेन और जेईई एडवांस्ड की स्पष्ट तुलना — कौन आयोजित करता है, किन कॉलेजों में प्रवेश मिलता है, पात्रता और दोनों परीक्षाओं का संबंध।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Two exams, one engineering pathway',
-        headingHi: 'दो परीक्षाएँ, एक इंजीनियरिंग मार्ग',
         bodyEn:
           'JEE Main and JEE Advanced are two separate stages of the same admission journey to India\'s top engineering institutes. JEE Main comes first and is the qualifying exam; JEE Advanced is the second stage that only the top performers reach.\n\nThe simplest way to remember it: JEE Main opens the door to the NITs, IIITs, and centrally funded institutes, while JEE Advanced is the exam you must clear to enter the IITs.',
       },
@@ -146,11 +136,8 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'JEE Main Eligibility Criteria Explained',
-    titleHi: 'जेईई मेन पात्रता मानदंड',
     descriptionEn:
       'Who can apply for JEE Main — Class 12 subject requirements, number of attempts, age policy, and the percentage norms that apply for NIT/IIIT admission.',
-    descriptionHi:
-      'जेईई मेन के लिए कौन आवेदन कर सकता है — कक्षा 12 विषय आवश्यकताएँ, प्रयासों की संख्या, आयु नीति और एनआईटी/आईआईआईटी प्रवेश के लिए प्रतिशत मानदंड।',
     readMinutes: 5,
     sections: [
       {
@@ -203,11 +190,8 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'How to Apply for JEE Main: Step-by-Step',
-    titleHi: 'जेईई मेन के लिए आवेदन कैसे करें: चरण-दर-चरण',
     descriptionEn:
       'A step-by-step walkthrough of the JEE Main application — registration, filling the form, uploading documents, paying the fee, and downloading the admit card.',
-    descriptionHi:
-      'जेईई मेन आवेदन की चरण-दर-चरण मार्गदर्शिका — पंजीकरण, फॉर्म भरना, दस्तावेज़ अपलोड करना, शुल्क भुगतान और एडमिट कार्ड डाउनलोड करना।',
     readMinutes: 5,
     sections: [
       {
@@ -267,11 +251,8 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'JEE Main Exam Pattern and Syllabus',
-    titleHi: 'जेईई मेन परीक्षा पैटर्न और पाठ्यक्रम',
     descriptionEn:
       'The structure of JEE Main Paper 1 — subjects, question types, marking scheme, duration, and where the syllabus comes from.',
-    descriptionHi:
-      'जेईई मेन पेपर 1 की संरचना — विषय, प्रश्न प्रकार, अंकन योजना, अवधि और पाठ्यक्रम का स्रोत।',
     readMinutes: 5,
     sections: [
       {
@@ -328,11 +309,8 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'JoSAA Counselling Process Explained',
-    titleHi: 'जोसा काउंसलिंग प्रक्रिया की व्याख्या',
     descriptionEn:
       'How seat allocation works after JEE — registration, choice filling, rounds, the float/slide/freeze options, and how IIT and NIT seats are allotted.',
-    descriptionHi:
-      'जेईई के बाद सीट आवंटन कैसे होता है — पंजीकरण, चॉइस फिलिंग, राउंड, फ्लोट/स्लाइड/फ्रीज़ विकल्प और आईआईटी/एनआईटी सीटें कैसे आवंटित होती हैं।',
     readMinutes: 6,
     sections: [
       {
@@ -397,16 +375,12 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'How to Get Into an IIT: The Complete Path',
-    titleHi: 'आईआईटी में प्रवेश कैसे पाएं: पूरा मार्ग',
     descriptionEn:
       'The end-to-end route to an IIT seat — clearing JEE Main, qualifying for JEE Advanced, the Class 12 requirement, and seat allocation through JoSAA.',
-    descriptionHi:
-      'आईआईटी सीट तक पहुँचने का पूरा रास्ता — जेईई मेन पास करना, जेईई एडवांस्ड के लिए क्वालिफाई करना, कक्षा 12 की आवश्यकता और जोसा के माध्यम से सीट आवंटन।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The route in one line',
-        headingHi: 'एक पंक्ति में मार्ग',
         bodyEn:
           'Admission to the IITs runs through a single, fixed pathway: clear JEE Main, finish among the top qualifiers to become eligible for JEE Advanced, clear JEE Advanced, and then secure a seat through the JoSAA counselling process. There is no other entrance route into the IITs for B.Tech programmes.',
       },
@@ -468,16 +442,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'IIT vs NIT: How to Compare Them',
-    titleHi: 'आईआईटी बनाम एनआईटी: तुलना कैसे करें',
     descriptionEn:
       'A neutral comparison of IITs and NITs — the entrance route, how seats are allotted, and the factors that actually matter when you choose between them.',
-    descriptionHi:
-      'आईआईटी और एनआईटी की निष्पक्ष तुलना — प्रवेश मार्ग, सीटें कैसे आवंटित होती हैं और चुनते समय वास्तव में मायने रखने वाले कारक।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Different entrance routes',
-        headingHi: 'अलग प्रवेश मार्ग',
         bodyEn:
           'The clearest difference is the exam. The IITs admit through JEE Advanced (which itself requires qualifying through JEE Main first), while the NITs admit through your JEE Main rank. Both then allot seats through the common JoSAA counselling process.',
         bullets: [
@@ -540,16 +510,12 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'List of All IITs in India',
-    titleHi: 'भारत के सभी आईआईटी की सूची',
     descriptionEn:
       'A complete list of the Indian Institutes of Technology (IITs) and their locations — the institutes you can be allotted through JEE Advanced and JoSAA.',
-    descriptionHi:
-      'भारतीय प्रौद्योगिकी संस्थानों (आईआईटी) और उनके स्थानों की पूरी सूची — वे संस्थान जिनमें जेईई एडवांस्ड और जोसा के माध्यम से प्रवेश मिल सकता है।',
     readMinutes: 4,
     sections: [
       {
         headingEn: 'There are 23 IITs',
-        headingHi: '23 आईआईटी हैं',
         bodyEn:
           'India currently has 23 Indian Institutes of Technology (IITs), spread across the country. All of them admit B.Tech students through the JEE Advanced exam and the common JoSAA counselling process. The participating IITs for a given year are listed officially on the JEE Advanced website — always confirm the current list there, as the system can change.',
       },
@@ -619,16 +585,12 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'IIT Branch Change Rules Explained',
-    titleHi: 'आईआईटी ब्रांच चेंज नियम',
     descriptionEn:
       'How branch change works at the IITs after the first year — the general process, common conditions, and why the exact rules vary by institute.',
-    descriptionHi:
-      'पहले वर्ष के बाद आईआईटी में ब्रांच चेंज कैसे होता है — सामान्य प्रक्रिया, सामान्य शर्तें और नियम संस्थान के अनुसार क्यों भिन्न होते हैं।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What "branch change" means',
-        headingHi: '"ब्रांच चेंज" का क्या मतलब है',
         bodyEn:
           'Many IITs allow a limited number of students to change their branch (department) after the first year, based mainly on their first-year academic performance. It is a way for students who did very well in the first year to move into a different branch, subject to seats and rules.',
       },
@@ -685,16 +647,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'IIT vs IIIT: What Is the Difference?',
-    titleHi: 'आईआईटी बनाम आईआईआईटी: क्या अंतर है?',
     descriptionEn:
       'How IITs and IIITs differ — full names, focus, the entrance exam each uses, and how seats are allotted.',
-    descriptionHi:
-      'आईआईटी और आईआईआईटी कैसे भिन्न हैं — पूर्ण नाम, फोकस, प्रत्येक की प्रवेश परीक्षा और सीटें कैसे आवंटित होती हैं।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'They are different institute systems',
-        headingHi: 'ये अलग संस्थान प्रणालियाँ हैं',
         bodyEn:
           'IIT stands for Indian Institute of Technology, and IIIT stands for Indian Institute of Information Technology. Despite the similar acronyms, they are separate systems of institutes with different focuses and, importantly, different entrance routes.',
       },
@@ -752,16 +710,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'NEET UG Eligibility Criteria Explained',
-    titleHi: 'नीट यूजी पात्रता मानदंड',
     descriptionEn:
       'Who can apply for NEET UG — the Class 12 subject requirement, the minimum marks norm, age policy, and number of attempts.',
-    descriptionHi:
-      'नीट यूजी के लिए कौन आवेदन कर सकता है — कक्षा 12 विषय आवश्यकता, न्यूनतम अंक मानदंड, आयु नीति और प्रयासों की संख्या।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Academic qualification',
-        headingHi: 'शैक्षणिक योग्यता',
         bodyEn:
           'NEET UG is for candidates who have passed (or are appearing in) Class 12 or an equivalent qualifying examination with Physics, Chemistry, and Biology/Biotechnology, along with English. Biology is essential — NEET is a medical entrance test, so the PCB combination is required.',
       },
@@ -812,16 +766,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'NEET Exam Pattern and Syllabus',
-    titleHi: 'नीट परीक्षा पैटर्न और पाठ्यक्रम',
     descriptionEn:
       'The structure of NEET UG — subjects, number of questions, marking scheme, mode, duration, and where the official syllabus comes from.',
-    descriptionHi:
-      'नीट यूजी की संरचना — विषय, प्रश्नों की संख्या, अंकन योजना, मोड, अवधि और आधिकारिक पाठ्यक्रम का स्रोत।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Subjects and mode',
-        headingHi: 'विषय और मोड',
         bodyEn:
           'NEET UG is a pen-and-paper (offline) test covering three subjects — Physics, Chemistry, and Biology (Botany and Zoology) — based on the Class 11 and Class 12 curriculum. Biology carries the largest share of questions, reflecting its weight in a medical entrance test.',
       },
@@ -878,16 +828,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'How to Become a Doctor in India',
-    titleHi: 'भारत में डॉक्टर कैसे बनें',
     descriptionEn:
       'The step-by-step path to becoming a doctor in India — NEET, the MBBS degree, internship, registration, and the route to specialisation.',
-    descriptionHi:
-      'भारत में डॉक्टर बनने का चरण-दर-चरण मार्ग — नीट, एमबीबीएस डिग्री, इंटर्नशिप, पंजीकरण और विशेषज्ञता का मार्ग।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The pathway in brief',
-        headingHi: 'संक्षेप में मार्ग',
         bodyEn:
           'Becoming a doctor in India follows a defined sequence: take Science with Biology in Class 11–12, clear NEET UG, complete the MBBS degree (which includes a compulsory rotating internship), register with the appropriate medical council, and then optionally pursue a postgraduate specialisation.',
       },
@@ -944,16 +890,12 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'NEET Counselling Process (MCC) Explained',
-    titleHi: 'नीट काउंसलिंग प्रक्रिया (एमसीसी) की व्याख्या',
     descriptionEn:
       'How NEET seat allotment works — the All India Quota and state quota, the role of the MCC, registration, choice filling, and rounds.',
-    descriptionHi:
-      'नीट सीट आवंटन कैसे होता है — अखिल भारतीय कोटा और राज्य कोटा, एमसीसी की भूमिका, पंजीकरण, चॉइस फिलिंग और राउंड।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'NEET qualifying is not the same as admission',
-        headingHi: 'नीट क्वालिफाई होना प्रवेश के समान नहीं है',
         bodyEn:
           'Clearing NEET makes you eligible for admission, but seats are awarded through a separate counselling process. There are broadly two channels: the All India Quota (AIQ) and deemed/central universities, handled by the Medical Counselling Committee (MCC), and the State Quota, handled by each state\'s own counselling authority.',
       },
@@ -1011,16 +953,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'AIIMS vs Government Medical College: How to Compare',
-    titleHi: 'एम्स बनाम सरकारी मेडिकल कॉलेज: तुलना कैसे करें',
     descriptionEn:
       'A neutral comparison of AIIMS and other government medical colleges — admission route, how seats are allotted, and the factors that matter when choosing.',
-    descriptionHi:
-      'एम्स और अन्य सरकारी मेडिकल कॉलेजों की निष्पक्ष तुलना — प्रवेश मार्ग, सीटें कैसे आवंटित होती हैं और चुनते समय मायने रखने वाले कारक।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Both admit through NEET',
-        headingHi: 'दोनों नीट के माध्यम से प्रवेश देते हैं',
         bodyEn:
           'A common point of confusion: AIIMS institutes and other government medical colleges now admit MBBS students through NEET UG. AIIMS seats are part of the counselling conducted by the Medical Counselling Committee (MCC). So the entrance exam is the same — the difference lies in the institutes themselves and how their seats are allotted.',
       },
@@ -1081,16 +1019,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'usa',
     titleEn: 'How to Study in the USA from India',
-    titleHi: 'भारत से अमेरिका में पढ़ाई कैसे करें',
     descriptionEn:
       'A step-by-step overview for Indian students applying to U.S. universities — tests, applications, the F-1 student visa process, and where to verify official rules.',
-    descriptionHi:
-      'अमेरिकी विश्वविद्यालयों में आवेदन करने वाले भारतीय छात्रों के लिए चरण-दर-चरण मार्गदर्शिका — परीक्षाएँ, आवेदन, एफ-1 छात्र वीज़ा प्रक्रिया और आधिकारिक नियम कहाँ सत्यापित करें।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The big picture',
-        headingHi: 'समग्र चित्र',
         bodyEn:
           'Studying in the USA from India generally involves four stages: take the required admission and English tests, apply to universities, secure admission and funding, and then complete the student-visa process. Each stage has its own timeline, so it helps to start about a year to eighteen months ahead.',
       },
@@ -1151,16 +1085,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'uk-ireland',
     titleEn: 'How to Study in the UK from India',
-    titleHi: 'भारत से यूके में पढ़ाई कैसे करें',
     descriptionEn:
       'A step-by-step overview for Indian students applying to UK universities — UCAS, English tests, the Student visa, and where to verify official rules.',
-    descriptionHi:
-      'यूके विश्वविद्यालयों में आवेदन करने वाले भारतीय छात्रों के लिए चरण-दर-चरण मार्गदर्शिका — यूकैस, अंग्रेज़ी परीक्षाएँ, छात्र वीज़ा और आधिकारिक नियम कहाँ सत्यापित करें।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The big picture',
-        headingHi: 'समग्र चित्र',
         bodyEn:
           'Applying to the UK from India generally involves choosing courses, applying (through UCAS for undergraduate study or directly for postgraduate study), meeting English-language requirements, receiving an offer, and then completing the Student visa process. UK degrees are often shorter than in some other countries, which many applicants find attractive.',
       },
@@ -1221,16 +1151,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'canada',
     titleEn: 'How to Study in Canada from India',
-    titleHi: 'भारत से कनाडा में पढ़ाई कैसे करें',
     descriptionEn:
       'A step-by-step overview for Indian students applying to Canadian institutions — choosing a designated learning institution, English tests, the study permit, and where to verify official rules.',
-    descriptionHi:
-      'कनाडाई संस्थानों में आवेदन करने वाले भारतीय छात्रों के लिए चरण-दर-चरण मार्गदर्शिका — नामित शिक्षण संस्थान चुनना, अंग्रेज़ी परीक्षाएँ, अध्ययन परमिट और आधिकारिक नियम कहाँ सत्यापित करें।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The big picture',
-        headingHi: 'समग्र चित्र',
         bodyEn:
           'Studying in Canada from India generally involves applying to a Designated Learning Institution (DLI), meeting English-language requirements, receiving a letter of acceptance, and then applying for a study permit. Whether your institution is a designated learning institution matters for the permit, so confirm this officially.',
       },
@@ -1290,16 +1216,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'europe',
     titleEn: 'How to Study in Germany from India',
-    titleHi: 'भारत से जर्मनी में पढ़ाई कैसे करें',
     descriptionEn:
       'A step-by-step overview for Indian students applying to German universities — English- and German-taught programmes, admission, the student visa, and where to verify official rules.',
-    descriptionHi:
-      'जर्मन विश्वविद्यालयों में आवेदन करने वाले भारतीय छात्रों के लिए चरण-दर-चरण मार्गदर्शिका — अंग्रेज़ी- और जर्मन-भाषी कार्यक्रम, प्रवेश, छात्र वीज़ा और आधिकारिक नियम कहाँ सत्यापित करें।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The big picture',
-        headingHi: 'समग्र चित्र',
         bodyEn:
           'Germany is a popular destination partly because many public universities are well regarded and a growing number of programmes are taught in English, especially at the master\'s level. The journey generally involves choosing a programme, meeting its language requirement, applying, and then completing the student-visa process.',
       },
@@ -1360,16 +1282,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'india',
     titleEn: 'MBBS Abroad from India: What to Know',
-    titleHi: 'भारत से विदेश में एमबीबीएस: जानने योग्य बातें',
     descriptionEn:
       'Key facts for Indian students considering an MBBS abroad — the NEET requirement, the National Medical Commission guidelines, and the qualifying exam to practise in India.',
-    descriptionHi:
-      'विदेश में एमबीबीएस पर विचार करने वाले भारतीय छात्रों के लिए मुख्य तथ्य — नीट आवश्यकता, राष्ट्रीय आयुर्विज्ञान आयोग दिशानिर्देश और भारत में अभ्यास के लिए योग्यता परीक्षा।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Start with the India-side rules',
-        headingHi: 'भारत-पक्ष के नियमों से शुरू करें',
         bodyEn:
           'If you plan to study MBBS abroad and later practise in India, the most important facts are the Indian regulatory requirements — not just the foreign university\'s. Indian students pursuing a medical degree abroad need to meet the criteria set by India\'s National Medical Commission (NMC), and these rules have been updated over time. Always confirm the current guidelines on the official NMC source before committing.',
       },
@@ -1428,16 +1346,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'CAT Exam: Eligibility and Pattern Explained',
-    titleHi: 'कैट परीक्षा: पात्रता और पैटर्न की व्याख्या',
     descriptionEn:
       'Understand who can take the CAT, the broad structure of the exam, and how it is used for admission to the IIMs and other management institutes in India.',
-    descriptionHi:
-      'समझें कि कैट कौन दे सकता है, परीक्षा की व्यापक संरचना क्या है, और इसका उपयोग आईआईएम तथा भारत के अन्य प्रबंधन संस्थानों में प्रवेश के लिए कैसे होता है।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What is the CAT?',
-        headingHi: 'कैट क्या है?',
         bodyEn:
           'The Common Admission Test (CAT) is a national-level management entrance test in India, conducted by the Indian Institutes of Management (IIMs) on a rotating basis. CAT scores are used for admission to the IIMs and accepted by many other management institutes across the country.',
       },
@@ -1493,16 +1407,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'How to Prepare for the CAT',
-    titleHi: 'कैट की तैयारी कैसे करें',
     descriptionEn:
       'A practical, neutral overview of how candidates commonly approach CAT preparation across its sections, with a focus on fundamentals and consistent practice.',
-    descriptionHi:
-      'कैट की तैयारी को अनुभाग-वार कैसे किया जाता है, इसका व्यावहारिक और तटस्थ अवलोकन — बुनियादी बातों और नियमित अभ्यास पर ध्यान देते हुए।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Understand the exam first',
-        headingHi: 'पहले परीक्षा को समझें',
         bodyEn:
           'Effective preparation starts with understanding the current CAT pattern and sections from the official notification. Knowing what the test actually measures — verbal ability and reading comprehension, data interpretation and logical reasoning, and quantitative ability — helps you plan your time across topics.',
       },
@@ -1558,16 +1468,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'IIM vs ISB: How to Compare Them',
-    titleHi: 'आईआईएम बनाम आईएसबी: तुलना कैसे करें',
     descriptionEn:
       'A neutral comparison framework for the IIMs and the Indian School of Business — programme structure, admission routes, and how to decide based on your own goals.',
-    descriptionHi:
-      'आईआईएम और इंडियन स्कूल ऑफ बिज़नेस की तटस्थ तुलना के लिए एक ढाँचा — कार्यक्रम संरचना, प्रवेश मार्ग, और अपने लक्ष्यों के आधार पर निर्णय कैसे लें।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Two well-known options, different formats',
-        headingHi: 'दो प्रसिद्ध विकल्प, अलग प्रारूप',
         bodyEn:
           'The Indian Institutes of Management (IIMs) and the Indian School of Business (ISB) are both well-known management education options in India, but they differ in programme format and admission routes. Rather than asking which is "better" in the abstract, it is more useful to compare them against your own goals, profile, and stage of career.',
       },
@@ -1623,16 +1529,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Is an MBA After Engineering Worth It?',
-    titleHi: 'इंजीनियरिंग के बाद एमबीए करना सही है?',
     descriptionEn:
       'A balanced, neutral look at why many engineering graduates consider an MBA, what it can and cannot do, and how to decide based on your own goals.',
-    descriptionHi:
-      'कई इंजीनियरिंग स्नातक एमबीए पर विचार क्यों करते हैं, यह क्या कर सकता है और क्या नहीं, और अपने लक्ष्यों के आधार पर निर्णय कैसे लें — इसका संतुलित और तटस्थ विश्लेषण।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Why the question comes up',
-        headingHi: 'यह प्रश्न क्यों उठता है',
         bodyEn:
           'Many engineering graduates in India consider an MBA as a way to broaden into management, strategy, finance, product, or general business roles. Whether it is "worth it" is not a yes-or-no answer — it depends on your goals, the path you want, and what you expect the degree to do for you.',
       },
@@ -1688,16 +1590,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'CAT vs GMAT: Which Should You Take?',
-    titleHi: 'कैट बनाम जीमैट: कौन-सी परीक्षा दें?',
     descriptionEn:
       'A neutral comparison of the CAT and the GMAT — what each is commonly used for, how they differ, and how to choose based on the programmes you are targeting.',
-    descriptionHi:
-      'कैट और जीमैट की तटस्थ तुलना — प्रत्येक का सामान्य उपयोग, उनके बीच अंतर, और जिन कार्यक्रमों को आप लक्षित कर रहे हैं उनके आधार पर चुनाव कैसे करें।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Different tests, different uses',
-        headingHi: 'अलग परीक्षाएँ, अलग उपयोग',
         bodyEn:
           'The CAT and the GMAT are both used for management admissions, but they are commonly used in different contexts. The CAT is a national-level test used widely by the IIMs and other Indian institutes, while the GMAT is an internationally recognised test accepted by many business schools worldwide and by some programmes in India. The right test depends on where you plan to apply.',
       },
@@ -1754,16 +1652,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'CLAT Eligibility and Exam Pattern Explained',
-    titleHi: 'क्लैट पात्रता और परीक्षा पैटर्न',
     descriptionEn:
       'What the Common Law Admission Test (CLAT) is, who can apply, the subject areas it tests, and how the paper is structured — with a reminder to confirm current details on the official source.',
-    descriptionHi:
-      'कॉमन लॉ एडमिशन टेस्ट (क्लैट) क्या है, कौन आवेदन कर सकता है, यह किन विषयों की परीक्षा लेता है और प्रश्नपत्र कैसे संरचित होता है — आधिकारिक स्रोत पर वर्तमान विवरण की पुष्टि करने की सलाह के साथ।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What CLAT is and who conducts it',
-        headingHi: 'क्लैट क्या है और इसे कौन आयोजित करता है',
         bodyEn:
           'The Common Law Admission Test (CLAT) is a national entrance test for admission to law programmes at most of India\'s National Law Universities (NLUs). It is conducted by the Consortium of National Law Universities and is used for both the five-year integrated undergraduate law degree (taken after Class 12) and the postgraduate LLM.\n\nA strong CLAT score is the main gateway to the NLUs, and many other law schools also accept CLAT scores for their own admissions.',
       },
@@ -1821,16 +1715,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'How to Become a Lawyer in India',
-    titleHi: 'भारत में वकील कैसे बनें',
     descriptionEn:
       'The two main routes to a law degree in India, the role of the Bar Council and the All India Bar Examination, and how a law career typically begins.',
-    descriptionHi:
-      'भारत में विधि की डिग्री के दो मुख्य मार्ग, बार काउंसिल और अखिल भारतीय बार परीक्षा की भूमिका, और विधि करियर आमतौर पर कैसे शुरू होता है।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Two routes to a law degree',
-        headingHi: 'विधि की डिग्री के दो मार्ग',
         bodyEn:
           'There are two common ways to earn a law degree in India. The first is a five-year integrated undergraduate degree (such as BA LLB) taken after Class 12 — the route most NLU aspirants follow through entrance tests like CLAT or AILET. The second is a three-year LLB taken after completing any bachelor\'s degree.\n\nIn both cases, the degree must be from an institution whose law programme is recognised by the Bar Council of India (BCI), the body that regulates legal education and the legal profession.',
         bullets: [
@@ -1886,16 +1776,12 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'National Law Universities in India: An Overview',
-    titleHi: 'भारत में राष्ट्रीय विधि विश्वविद्यालय: एक परिचय',
     descriptionEn:
       'What the National Law Universities are, how students are admitted, and how to find the current official list — without rankings or judgments.',
-    descriptionHi:
-      'राष्ट्रीय विधि विश्वविद्यालय क्या हैं, छात्रों को कैसे प्रवेश मिलता है, और वर्तमान आधिकारिक सूची कैसे प्राप्त करें — बिना रैंकिंग या निर्णय के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What the NLUs are',
-        headingHi: 'एनएलयू क्या हैं',
         bodyEn:
           'The National Law Universities (NLUs) are a group of public law schools set up by different states to offer specialised legal education. The first, the National Law School of India University (NLSIU) in Bengaluru, was established in 1987, and the model has since expanded across the country.\n\nMost NLUs admit undergraduate students through CLAT; National Law University, Delhi admits through its own test, AILET.',
       },
@@ -1954,16 +1840,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'CLAT vs AILET: What Is the Difference?',
-    titleHi: 'क्लैट बनाम एलैट: क्या अंतर है?',
     descriptionEn:
       'A neutral comparison of CLAT and AILET — who conducts each, which universities they lead to, and how to decide which test (or both) to take.',
-    descriptionHi:
-      'क्लैट और एलैट की निष्पक्ष तुलना — कौन आयोजित करता है, किन विश्वविद्यालयों में प्रवेश मिलता है, और कौन-सी परीक्षा (या दोनों) देनी है, यह कैसे तय करें।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Two separate law entrance tests',
-        headingHi: 'दो अलग विधि प्रवेश परीक्षाएँ',
         bodyEn:
           'CLAT and AILET are both national-level law entrance tests, but they are conducted by different bodies and used by different universities. CLAT is conducted by the Consortium of National Law Universities and is accepted by most NLUs. AILET is conducted by National Law University, Delhi for admission to its own programmes.',
       },
@@ -2019,16 +1901,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Career Options After an LLB',
-    titleHi: 'एलएलबी के बाद करियर विकल्प',
     descriptionEn:
       'A balanced look at the paths open after a law degree in India — litigation, corporate law, judiciary, public service, academia, and more — with no income guarantees.',
-    descriptionHi:
-      'भारत में विधि की डिग्री के बाद खुलने वाले मार्गों पर एक संतुलित दृष्टि — मुकदमेबाज़ी, कॉर्पोरेट विधि, न्यायपालिका, लोक सेवा, शिक्षा और अधिक — बिना किसी आय की गारंटी के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'A law degree opens many doors',
-        headingHi: 'विधि की डिग्री कई द्वार खोलती है',
         bodyEn:
           'An LLB qualifies you for far more than courtroom practice. Graduates work in litigation, corporate and commercial law, the judiciary, government and public service, academia, and a growing set of policy and legal-technology roles. The right path depends on your interests and strengths, not on any single "best" option.',
       },
@@ -2086,16 +1964,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Career Options After 12th Science',
-    titleHi: '12वीं विज्ञान के बाद करियर विकल्प',
     descriptionEn:
       'A clear map of the paths open after Class 12 Science in India — engineering, medical and life sciences, pure sciences, technology, and cross-stream options — without salary claims.',
-    descriptionHi:
-      'भारत में 12वीं विज्ञान के बाद खुलने वाले मार्गों का स्पष्ट नक्शा — इंजीनियरिंग, चिकित्सा एवं जीव विज्ञान, शुद्ध विज्ञान, प्रौद्योगिकी और अंतर-धारा विकल्प — बिना वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Science keeps many doors open',
-        headingHi: 'विज्ञान कई द्वार खुले रखता है',
         bodyEn:
           'Class 12 Science is usually taken with Mathematics (PCM), Biology (PCB), or both. Beyond the well-known engineering and medical routes, a science background also leads to pure sciences, technology, research, design, defence, and even commerce or management later. There is no single "best" path — the right choice depends on your interests and strengths.',
       },
@@ -2153,16 +2027,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Career Options After 12th Commerce',
-    titleHi: '12वीं वाणिज्य के बाद करियर विकल्प',
     descriptionEn:
       'The main paths after Class 12 Commerce in India — degrees, professional qualifications like CA/CS/CMA, and cross-stream routes — explained neutrally, with no income guarantees.',
-    descriptionHi:
-      'भारत में 12वीं वाणिज्य के बाद के मुख्य मार्ग — डिग्री, सीए/सीएस/सीएमए जैसी पेशेवर योग्यताएँ और अंतर-धारा विकल्प — निष्पक्ष रूप से समझाए गए, बिना किसी आय की गारंटी के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What commerce leads to',
-        headingHi: 'वाणिज्य किस ओर ले जाता है',
         bodyEn:
           'Class 12 Commerce builds a base for business, finance, accounting, economics, and law. Students can pursue a degree, a professional qualification, or both together — and, like other streams, can also move into law, design, or civil services later. The best route depends on your interests, not on any single ranking.',
       },
@@ -2221,16 +2091,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Career Options After 12th Arts (Humanities)',
-    titleHi: '12वीं कला (मानविकी) के बाद करियर विकल्प',
     descriptionEn:
       'A neutral overview of the wide range of paths after Class 12 Arts/Humanities in India — degrees, law, design, media, and competitive routes — with no stereotypes or income claims.',
-    descriptionHi:
-      'भारत में 12वीं कला/मानविकी के बाद के विविध मार्गों का निष्पक्ष अवलोकन — डिग्री, विधि, डिज़ाइन, मीडिया और प्रतियोगी मार्ग — बिना किसी रूढ़िवादिता या आय के दावे के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Arts is a broad, flexible stream',
-        headingHi: 'कला एक व्यापक, लचीली धारा है',
         bodyEn:
           'Class 12 Arts (Humanities) opens a wide range of fields — from the social sciences and languages to law, design, media, and public service. It is not a "lesser" stream; it suits students interested in people, ideas, society, and communication. As with any stream, the right path depends on individual interest and aptitude.',
       },
@@ -2289,16 +2155,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Courses After 12th PCM (Physics, Chemistry, Maths)',
-    titleHi: '12वीं पीसीएम (भौतिकी, रसायन, गणित) के बाद कोर्स',
     descriptionEn:
       'The main courses open to PCM students after Class 12 — engineering, architecture, pure sciences, computer applications, defence, and more — explained without rankings or salary claims.',
-    descriptionHi:
-      'पीसीएम छात्रों के लिए 12वीं के बाद खुले मुख्य कोर्स — इंजीनियरिंग, वास्तुकला, शुद्ध विज्ञान, कंप्यूटर अनुप्रयोग, रक्षा और अधिक — बिना रैंकिंग या वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'PCM is a versatile combination',
-        headingHi: 'पीसीएम एक बहुमुखी संयोजन है',
         bodyEn:
           'Physics, Chemistry, and Mathematics together open more than just engineering. PCM students can pursue technology, architecture, pure sciences, computer applications, design, defence, and quantitative fields in economics and finance. The right course depends on what you enjoy and where your aptitude lies.',
       },
@@ -2356,16 +2218,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Courses After 12th PCB (Physics, Chemistry, Biology)',
-    titleHi: '12वीं पीसीबी (भौतिकी, रसायन, जीव विज्ञान) के बाद कोर्स',
     descriptionEn:
       'The main courses open to PCB students after Class 12 — medical and allied fields, pharmacy, life sciences, agriculture, and more — beyond MBBS, with no salary or guarantee claims.',
-    descriptionHi:
-      'पीसीबी छात्रों के लिए 12वीं के बाद खुले मुख्य कोर्स — चिकित्सा एवं संबद्ध क्षेत्र, फार्मेसी, जीव विज्ञान, कृषि और अधिक — एमबीबीएस से परे, बिना वेतन या गारंटी के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'PCB goes well beyond MBBS',
-        headingHi: 'पीसीबी एमबीबीएस से कहीं आगे जाता है',
         bodyEn:
           'Physics, Chemistry, and Biology open medical and allied health fields, but also pharmacy, life sciences, biotechnology, agriculture, nursing, and research. MBBS is competitive and is far from the only rewarding path, so it helps to know the full range before deciding.',
       },
@@ -2422,16 +2280,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Computer Science Engineering (CSE): An Overview',
-    titleHi: 'कंप्यूटर साइंस इंजीनियरिंग (सीएसई): एक परिचय',
     descriptionEn:
       'What computer science engineering covers, what students learn, where the degree can lead, and how to get in — explained neutrally, without rankings or salary claims.',
-    descriptionHi:
-      'कंप्यूटर साइंस इंजीनियरिंग में क्या शामिल है, छात्र क्या सीखते हैं, यह डिग्री कहाँ ले जा सकती है और प्रवेश कैसे मिलता है — निष्पक्ष रूप से, बिना रैंकिंग या वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What CSE is about',
-        headingHi: 'सीएसई किस बारे में है',
         bodyEn:
           'Computer Science Engineering is the study of computing — how software and computer systems are designed and built. It is much broader than just writing code, covering programming, data structures and algorithms, operating systems, databases, computer networks, and the theory behind them.',
       },
@@ -2488,16 +2342,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Mechanical Engineering: Career Scope',
-    titleHi: 'मैकेनिकल इंजीनियरिंग: करियर की संभावनाएँ',
     descriptionEn:
       'What mechanical engineering involves, the sectors and roles it leads to, the place of GATE and higher study, and how to decide if it suits you — without salary or placement claims.',
-    descriptionHi:
-      'मैकेनिकल इंजीनियरिंग में क्या शामिल है, यह किन क्षेत्रों और भूमिकाओं की ओर ले जाती है, गेट एवं उच्च शिक्षा की भूमिका, और यह आपके लिए उपयुक्त है या नहीं — बिना वेतन या प्लेसमेंट के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What mechanical engineering is',
-        headingHi: 'मैकेनिकल इंजीनियरिंग क्या है',
         bodyEn:
           'Mechanical engineering deals with the design, manufacture, and maintenance of machines and mechanical systems. Core subjects include thermodynamics, mechanics, materials, manufacturing processes, and machine design — often described as one of the broadest engineering disciplines.',
       },
@@ -2554,16 +2404,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Electrical Engineering: An Overview',
-    titleHi: 'इलेक्ट्रिकल इंजीनियरिंग: एक परिचय',
     descriptionEn:
       'What electrical engineering covers, the sectors and roles it leads to, the place of GATE and higher study, and how to decide if it suits you — without salary or ranking claims.',
-    descriptionHi:
-      'इलेक्ट्रिकल इंजीनियरिंग में क्या शामिल है, यह किन क्षेत्रों और भूमिकाओं की ओर ले जाती है, गेट एवं उच्च शिक्षा की भूमिका, और यह आपके लिए उपयुक्त है या नहीं — बिना वेतन या रैंकिंग के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What electrical engineering is',
-        headingHi: 'इलेक्ट्रिकल इंजीनियरिंग क्या है',
         bodyEn:
           'Electrical engineering focuses on the generation, transmission, and use of electrical energy, as well as electronics, control systems, signals, and electrical machines. Some programmes lean towards power systems, while others overlap with electronics and communication.',
       },
@@ -2620,16 +2466,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'How to Choose an Engineering Branch',
-    titleHi: 'इंजीनियरिंग शाखा कैसे चुनें',
     descriptionEn:
       'There is no single "best" engineering branch — this guide explains the factors that actually matter and how to choose the branch that fits you, with no rankings.',
-    descriptionHi:
-      'कोई एक "सर्वश्रेष्ठ" इंजीनियरिंग शाखा नहीं होती — यह मार्गदर्शिका बताती है कि वास्तव में कौन-से कारक मायने रखते हैं और अपने लिए उपयुक्त शाखा कैसे चुनें, बिना किसी रैंकिंग के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'There is no universally "best" branch',
-        headingHi: 'कोई सार्वभौमिक "सर्वश्रेष्ठ" शाखा नहीं होती',
         bodyEn:
           'It is tempting to ask which engineering branch is "best", but there is no single right answer. The popularity and demand of branches shift over time, and a branch that suits one student may not suit another. The more useful question is which branch fits your interests, strengths, and goals.',
       },
@@ -2687,16 +2529,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'B.Tech vs BSc: Which to Choose?',
-    titleHi: 'बीटेक बनाम बीएससी: कौन-सा चुनें?',
     descriptionEn:
       'A neutral comparison of B.Tech and BSc — what each degree is, what it suits, how admission and duration differ, and how to decide based on your goals.',
-    descriptionHi:
-      'बीटेक और बीएससी की निष्पक्ष तुलना — प्रत्येक डिग्री क्या है, किसके लिए उपयुक्त है, प्रवेश एवं अवधि में क्या अंतर है, और अपने लक्ष्यों के आधार पर कैसे तय करें।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Two different kinds of degree',
-        headingHi: 'दो अलग प्रकार की डिग्री',
         bodyEn:
           'A B.Tech is a professional engineering degree, usually four years, focused on applying science and mathematics to build and design. A BSc is a science degree, usually three years, focused on the fundamentals of a subject and on building a base for research and postgraduate study. Neither is universally better — they serve different goals.',
       },
@@ -2753,16 +2591,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'IELTS vs TOEFL: Which to Take?',
-    titleHi: 'आईईएलटीएस बनाम टॉफेल: कौन-सा दें?',
     descriptionEn:
       'A neutral comparison of IELTS and TOEFL for Indian students — what each tests, who accepts them, and how to decide which English test fits your plans.',
-    descriptionHi:
-      'भारतीय छात्रों के लिए आईईएलटीएस और टॉफेल की निष्पक्ष तुलना — प्रत्येक क्या परखता है, कौन स्वीकार करता है, और कौन-सा अंग्रेज़ी टेस्ट आपकी योजनाओं के लिए उपयुक्त है, यह कैसे तय करें।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Two widely accepted English tests',
-        headingHi: 'दो व्यापक रूप से स्वीकृत अंग्रेज़ी टेस्ट',
         bodyEn:
           'IELTS and TOEFL are two of the most widely accepted tests of English proficiency for study abroad. Both assess listening, reading, writing, and speaking, but they differ in style, scoring, and delivery. The right choice usually comes down to where you plan to apply and which test you are more comfortable with.',
       },
@@ -2819,16 +2653,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'How to Prepare for IELTS',
-    titleHi: 'आईईएलटीएस की तैयारी कैसे करें',
     descriptionEn:
       'A practical, format-first approach to preparing for IELTS — understanding the four sections, building skills, and using official materials, with no score guarantees.',
-    descriptionHi:
-      'आईईएलटीएस की तैयारी के लिए एक व्यावहारिक, प्रारूप-केंद्रित दृष्टिकोण — चार खंडों को समझना, कौशल बनाना और आधिकारिक सामग्री का उपयोग करना, बिना किसी स्कोर की गारंटी के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Understand the format first',
-        headingHi: 'पहले प्रारूप समझें',
         bodyEn:
           'IELTS tests four skills — listening, reading, writing, and speaking — and is offered in Academic and General Training versions. Before preparing, confirm which version your university or visa route needs, and read the official test format so you practise the right task types.',
       },
@@ -2885,16 +2715,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'GRE Guide for Indian Students',
-    titleHi: 'भारतीय छात्रों के लिए जीआरई गाइड',
     descriptionEn:
       'What the GRE is, who needs it, how the test is structured, and how to approach preparation — for Indian students applying to graduate programmes abroad, with no score or fee claims.',
-    descriptionHi:
-      'जीआरई क्या है, किसे इसकी आवश्यकता है, टेस्ट कैसे संरचित है, और तैयारी कैसे करें — विदेश में स्नातकोत्तर कार्यक्रमों के लिए आवेदन करने वाले भारतीय छात्रों के लिए, बिना स्कोर या शुल्क के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What the GRE is and who needs it',
-        headingHi: 'जीआरई क्या है और किसे चाहिए',
         bodyEn:
           'The GRE General Test, administered by ETS, is used in admissions for many graduate programmes — especially master\'s and PhD courses abroad — and is accepted by some business schools too. Not every programme requires it, and test policies have changed in recent years, so check whether your target programmes need a GRE score.',
       },
@@ -2950,16 +2776,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'GMAT Guide for Indian Students',
-    titleHi: 'भारतीय छात्रों के लिए जीमैट गाइड',
     descriptionEn:
       'What the GMAT is, who needs it, how it is structured, and how to prepare — for Indian students applying to business and management programmes, with no score or fee claims.',
-    descriptionHi:
-      'जीमैट क्या है, किसे चाहिए, यह कैसे संरचित है, और तैयारी कैसे करें — व्यवसाय एवं प्रबंधन कार्यक्रमों के लिए आवेदन करने वाले भारतीय छात्रों के लिए, बिना स्कोर या शुल्क के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What the GMAT is and who needs it',
-        headingHi: 'जीमैट क्या है और किसे चाहिए',
         bodyEn:
           'The GMAT, administered by GMAC, is used in admissions for many MBA and management programmes worldwide. Some programmes also accept the GRE, and a few are test-optional, so check what each target school requires before committing to the GMAT.',
       },
@@ -3010,16 +2832,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'The Duolingo English Test, Explained',
-    titleHi: 'डुओलिंगो इंग्लिश टेस्ट, समझाया गया',
     descriptionEn:
       'What the Duolingo English Test is, how it works, and how to check whether your universities accept it — a neutral overview for Indian students, with no fee or score claims.',
-    descriptionHi:
-      'डुओलिंगो इंग्लिश टेस्ट क्या है, यह कैसे काम करता है, और यह जाँचना कि आपके विश्वविद्यालय इसे स्वीकार करते हैं या नहीं — भारतीय छात्रों के लिए एक निष्पक्ष अवलोकन, बिना शुल्क या स्कोर के दावों के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What the Duolingo English Test is',
-        headingHi: 'डुओलिंगो इंग्लिश टेस्ट क्या है',
         bodyEn:
           'The Duolingo English Test (DET) is an online test of English proficiency that can be taken from home on a computer with a webcam. It is adaptive, meaning question difficulty adjusts to your responses, and it is generally shorter than some traditional English tests.',
       },
@@ -3071,16 +2889,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'usa',
     titleEn: 'US F-1 Student Visa: A Factual Guide',
-    titleHi: 'अमेरिकी एफ-1 छात्र वीज़ा: एक तथ्यात्मक मार्गदर्शिका',
     descriptionEn:
       'A neutral, factual overview of the US F-1 student visa — what it is and the official steps — with official US government sources to verify. This is general information, not immigration advice.',
-    descriptionHi:
-      'अमेरिकी एफ-1 छात्र वीज़ा का निष्पक्ष, तथ्यात्मक अवलोकन — यह क्या है और आधिकारिक चरण — सत्यापन हेतु आधिकारिक अमेरिकी सरकारी स्रोतों के साथ। यह सामान्य जानकारी है, आव्रजन सलाह नहीं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What the F-1 visa is',
-        headingHi: 'एफ-1 वीज़ा क्या है',
         bodyEn:
           'The F-1 visa is the standard United States visa category for full-time academic study. The rules, forms, and fees are set by the US government and are updated from time to time. This guide explains the process in general terms only — always confirm the current requirements on the official US government sources before acting.',
       },
@@ -3137,16 +2951,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'uk-ireland',
     titleEn: 'UK Student Visa: A Factual Guide',
-    titleHi: 'यूके छात्र वीज़ा: एक तथ्यात्मक मार्गदर्शिका',
     descriptionEn:
       'A neutral, factual overview of the UK Student visa — what it is and the official steps — with the official GOV.UK source to verify. This is general information, not immigration advice.',
-    descriptionHi:
-      'यूके छात्र वीज़ा का निष्पक्ष, तथ्यात्मक अवलोकन — यह क्या है और आधिकारिक चरण — सत्यापन हेतु आधिकारिक GOV.UK स्रोत के साथ। यह सामान्य जानकारी है, आव्रजन सलाह नहीं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What the UK Student visa is',
-        headingHi: 'यूके छात्र वीज़ा क्या है',
         bodyEn:
           'The Student visa is the main route for international students coming to the UK for higher education. The eligibility, evidence, and fees are set by the UK government and change periodically. This guide describes the process in general terms only — confirm the current rules on the official GOV.UK source.',
       },
@@ -3202,16 +3012,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'canada',
     titleEn: 'Canada Study Permit: A Factual Guide',
-    titleHi: 'कनाडा अध्ययन परमिट: एक तथ्यात्मक मार्गदर्शिका',
     descriptionEn:
       'A neutral, factual overview of the Canada study permit — what it is and the official steps — with the official Government of Canada source to verify. This is general information, not immigration advice.',
-    descriptionHi:
-      'कनाडा अध्ययन परमिट का निष्पक्ष, तथ्यात्मक अवलोकन — यह क्या है और आधिकारिक चरण — सत्यापन हेतु आधिकारिक कनाडा सरकार स्रोत के साथ। यह सामान्य जानकारी है, आव्रजन सलाह नहीं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What the study permit is',
-        headingHi: 'अध्ययन परमिट क्या है',
         bodyEn:
           'Most international students need a study permit to study in Canada. It is issued by Immigration, Refugees and Citizenship Canada (IRCC), and the requirements and fees are set by the Government of Canada and change from time to time. This guide is a general outline only — confirm the current rules on the official Government of Canada source.',
       },
@@ -3267,16 +3073,12 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'How to Write a Statement of Purpose (SOP)',
-    titleHi: 'स्टेटमेंट ऑफ़ पर्पस (एसओपी) कैसे लिखें',
     descriptionEn:
       'A practical guide to writing a strong, original statement of purpose or personal statement — what it covers, how to structure it, and what to avoid, with no guarantees.',
-    descriptionHi:
-      'एक सशक्त, मौलिक स्टेटमेंट ऑफ़ पर्पस या व्यक्तिगत वक्तव्य लिखने की व्यावहारिक मार्गदर्शिका — इसमें क्या शामिल होता है, इसे कैसे संरचित करें, और किससे बचें, बिना किसी गारंटी के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What an SOP is for',
-        headingHi: 'एसओपी किसलिए होता है',
         bodyEn:
           'A statement of purpose (sometimes called a personal statement or admissions essay) is your chance to explain, in your own words, your motivation, background, and goals, and why a particular programme fits them. Different applications use different names and formats — for example, the personal essay on the Common App or the personal statement on UCAS — so always follow the specific prompt and word limit.',
       },
@@ -3334,16 +3136,12 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'Letter of Recommendation: A Student\'s Guide',
-    titleHi: 'अनुशंसा पत्र: छात्रों के लिए मार्गदर्शिका',
     descriptionEn:
       'How letters of recommendation work, who to ask, and how to help your recommender — ethically and effectively — with no shortcuts and no guarantees.',
-    descriptionHi:
-      'अनुशंसा पत्र कैसे काम करते हैं, किससे अनुरोध करें, और अपने अनुशंसाकर्ता की मदद कैसे करें — नैतिक एवं प्रभावी ढंग से — बिना किसी शॉर्टकट या गारंटी के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What a letter of recommendation is',
-        headingHi: 'अनुशंसा पत्र क्या है',
         bodyEn:
           'A letter of recommendation (LOR) is written by someone who knows your academic or professional work — usually a teacher, professor, or supervisor — to give the admissions committee an independent view of your abilities. Many applications collect it directly from the recommender through their official systems, such as the recommender features on the Common App or references on UCAS.',
       },
@@ -3401,16 +3199,12 @@ export const GUIDES: Guide[] = [
     category: 'scholarships',
     region: 'india',
     titleEn: 'Scholarships for Indian Students Going Abroad',
-    titleHi: 'विदेश जाने वाले भारतीय छात्रों के लिए छात्रवृत्तियाँ',
     descriptionEn:
       'How to find legitimate scholarships for studying abroad — the main types, well-known official programmes, and how to verify details and avoid scams. No amounts or deadlines are quoted here.',
-    descriptionHi:
-      'विदेश में पढ़ाई के लिए वैध छात्रवृत्तियाँ कैसे खोजें — मुख्य प्रकार, प्रसिद्ध आधिकारिक कार्यक्रम, और विवरण कैसे सत्यापित करें एवं धोखाधड़ी से कैसे बचें। यहाँ कोई राशि या समय-सीमा नहीं दी गई है।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The main types of scholarships',
-        headingHi: 'छात्रवृत्तियों के मुख्य प्रकार',
         bodyEn:
           'Funding for study abroad generally comes from three sources: the universities themselves (merit or need-based awards and assistantships), government-funded programmes, and external organisations and foundations. Most awards are based on academic merit, financial need, or a specific field of study, so always read the official, published eligibility criteria for each one.',
         bullets: [
@@ -3469,16 +3263,12 @@ export const GUIDES: Guide[] = [
     category: 'scholarships',
     region: 'india',
     titleEn: 'National Scholarship Portal (NSP): A Guide',
-    titleHi: 'राष्ट्रीय छात्रवृत्ति पोर्टल (एनएसपी): एक मार्गदर्शिका',
     descriptionEn:
       'What the National Scholarship Portal is, how it works as a single platform for government scholarships, and how to apply — with all scheme-specific details deferred to the official site.',
-    descriptionHi:
-      'राष्ट्रीय छात्रवृत्ति पोर्टल क्या है, यह सरकारी छात्रवृत्तियों के लिए एकल मंच के रूप में कैसे काम करता है, और आवेदन कैसे करें — सभी योजना-विशिष्ट विवरण आधिकारिक साइट पर छोड़े गए हैं।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What the NSP is',
-        headingHi: 'एनएसपी क्या है',
         bodyEn:
           'The National Scholarship Portal (NSP) is an official Government of India platform that brings together a range of central and state government scholarship schemes in one place, so students can find and apply for the ones they are eligible for online. Schemes are based on official, published criteria such as academic merit or financial need.',
       },
@@ -3534,16 +3324,12 @@ export const GUIDES: Guide[] = [
     category: 'scholarships',
     region: 'india',
     titleEn: 'INSPIRE Scholarship Guide (Science Students)',
-    titleHi: 'इंस्पायर छात्रवृत्ति मार्गदर्शिका (विज्ञान छात्र)',
     descriptionEn:
       'What the INSPIRE scholarship is, who it is broadly aimed at, and where to confirm official eligibility — for students pursuing the sciences, with no amounts or cut-offs quoted.',
-    descriptionHi:
-      'इंस्पायर छात्रवृत्ति क्या है, यह मोटे तौर पर किसके लिए है, और आधिकारिक पात्रता कहाँ सत्यापित करें — विज्ञान के क्षेत्र में पढ़ाई करने वाले छात्रों के लिए, बिना किसी राशि या कट-ऑफ के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What INSPIRE is',
-        headingHi: 'इंस्पायर क्या है',
         bodyEn:
           'INSPIRE (Innovation in Science Pursuit for Inspired Research) is an initiative of the Department of Science and Technology (DST), Government of India, that encourages talented students to take up the study of science. Its scholarship component supports students pursuing science degrees, based on official merit criteria.',
       },
@@ -3594,16 +3380,12 @@ export const GUIDES: Guide[] = [
     category: 'scholarships',
     region: 'india',
     titleEn: 'Fulbright-Nehru Fellowships for Indians',
-    titleHi: 'भारतीयों के लिए फुलब्राइट-नेहरू फेलोशिप',
     descriptionEn:
       'What the Fulbright-Nehru programme is, who administers it for India, and where to confirm official eligibility — a neutral overview with no amounts or deadlines quoted.',
-    descriptionHi:
-      'फुलब्राइट-नेहरू कार्यक्रम क्या है, इसे भारत के लिए कौन संचालित करता है, और आधिकारिक पात्रता कहाँ सत्यापित करें — बिना किसी राशि या समय-सीमा के एक निष्पक्ष अवलोकन।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What the Fulbright-Nehru programme is',
-        headingHi: 'फुलब्राइट-नेहरू कार्यक्रम क्या है',
         bodyEn:
           'The Fulbright-Nehru fellowships support study, research, and academic exchange between India and the United States. For India, they are administered by the United States-India Educational Foundation (USIEF). Awards are merit-based and aimed largely at postgraduate study, research, and academic professionals.',
       },
@@ -3654,16 +3436,12 @@ export const GUIDES: Guide[] = [
     category: 'scholarships',
     region: 'india',
     titleEn: 'DAAD Scholarships for Indian Students',
-    titleHi: 'भारतीय छात्रों के लिए डीएएडी छात्रवृत्तियाँ',
     descriptionEn:
       'What DAAD is, the kinds of scholarships it offers for study and research in Germany, and where to confirm official eligibility — with no amounts or deadlines quoted.',
-    descriptionHi:
-      'डीएएडी क्या है, यह जर्मनी में अध्ययन एवं शोध के लिए किस प्रकार की छात्रवृत्तियाँ प्रदान करता है, और आधिकारिक पात्रता कहाँ सत्यापित करें — बिना किसी राशि या समय-सीमा के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What DAAD is',
-        headingHi: 'डीएएडी क्या है',
         bodyEn:
           'DAAD (the German Academic Exchange Service) is an official organisation that supports international academic exchange, including scholarships for international students — among them students from India — to study and research in Germany. Its awards are academic and merit-based.',
       },
@@ -3716,16 +3494,12 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'IIMs in India: An Overview',
-    titleHi: 'भारत के आईआईएम: एक परिचय',
     descriptionEn:
       'What the Indian Institutes of Management are, how admission works through CAT, and how to find the current official list — without rankings or "best IIM" claims.',
-    descriptionHi:
-      'भारतीय प्रबंधन संस्थान क्या हैं, कैट के माध्यम से प्रवेश कैसे होता है, और वर्तमान आधिकारिक सूची कैसे प्राप्त करें — बिना रैंकिंग या "सर्वश्रेष्ठ आईआईएम" के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What the IIMs are',
-        headingHi: 'आईआईएम क्या हैं',
         bodyEn:
           'The Indian Institutes of Management (IIMs) are a group of public business schools set up by the Government of India, offering postgraduate management programmes such as the two-year flagship MBA/PGP, along with doctoral and executive programmes. The earliest IIMs were established in the 1960s, and the network has expanded across the country since.',
       },
@@ -3784,16 +3558,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'MBA Specializations Explained',
-    titleHi: 'एमबीए विशेषज्ञताएँ समझाई गईं',
     descriptionEn:
       'A neutral overview of common MBA specializations — finance, marketing, operations, HR, and more — to help you understand what each focuses on, with no rankings or salary claims.',
-    descriptionHi:
-      'सामान्य एमबीए विशेषज्ञताओं का निष्पक्ष अवलोकन — वित्त, विपणन, संचालन, मानव संसाधन और अधिक — यह समझने में मदद के लिए कि प्रत्येक किस पर केंद्रित है, बिना रैंकिंग या वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What a specialization means',
-        headingHi: 'विशेषज्ञता का अर्थ क्या है',
         bodyEn:
           'Most MBA programmes begin with a common foundation and then let students focus on a specialization (sometimes called a major or concentration) in their second year. A specialization shapes your electives and often your projects, but the core management training stays broad. There is no universally "best" specialization — it depends on your interests and goals.',
       },
@@ -3853,16 +3623,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'Executive MBA vs Regular MBA',
-    titleHi: 'एग्जीक्यूटिव एमबीए बनाम नियमित एमबीए',
     descriptionEn:
       'A neutral comparison of the Executive MBA and the regular full-time MBA — who each is designed for, how they differ, and how to decide which suits your stage.',
-    descriptionHi:
-      'एग्जीक्यूटिव एमबीए और नियमित पूर्णकालिक एमबीए की निष्पक्ष तुलना — प्रत्येक किसके लिए बनाया गया है, ये कैसे भिन्न हैं, और आपके चरण के लिए कौन-सा उपयुक्त है, यह कैसे तय करें।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Two formats for different stages',
-        headingHi: 'विभिन्न चरणों के लिए दो प्रारूप',
         bodyEn:
           'A regular MBA is usually a full-time programme aimed at students relatively early in their careers, while an Executive MBA (EMBA) is designed for working professionals with more experience, often studied part-time or in modules so they can keep working. Neither is universally better — they target different stages and goals.',
       },
@@ -3919,16 +3685,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'CAT Percentile vs Marks, Explained',
-    titleHi: 'कैट पर्सेंटाइल बनाम अंक, समझाया गया',
     descriptionEn:
       'A clear explanation of how CAT percentiles relate to marks — what a percentile means, why scores are normalized, and how IIMs use cut-offs, with no fabricated numbers.',
-    descriptionHi:
-      'कैट पर्सेंटाइल और अंकों के बीच संबंध की स्पष्ट व्याख्या — पर्सेंटाइल का अर्थ क्या है, स्कोर को सामान्यीकृत क्यों किया जाता है, और आईआईएम कट-ऑफ का उपयोग कैसे करते हैं, बिना किसी मनगढ़ंत संख्या के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Marks and percentile are not the same',
-        headingHi: 'अंक और पर्सेंटाइल एक समान नहीं हैं',
         bodyEn:
           'Your marks are the score you earn on the test, while your percentile shows how you performed relative to everyone else who took it. A percentile of, say, 90 broadly means you scored higher than about 90% of test-takers. Because admissions use percentile, your standing depends not just on your marks but on how others did.',
       },
@@ -3979,16 +3741,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'GD-PI Preparation Guide',
-    titleHi: 'जीडी-पीआई तैयारी मार्गदर्शिका',
     descriptionEn:
       'How to prepare for the group discussion, written ability test, and personal interview stages that follow exams like CAT — what they assess and how to approach them, with no guarantees.',
-    descriptionHi:
-      'कैट जैसी परीक्षाओं के बाद आने वाले समूह चर्चा, लिखित योग्यता परीक्षण और व्यक्तिगत साक्षात्कार चरणों की तैयारी कैसे करें — ये क्या परखते हैं और इन्हें कैसे करें, बिना किसी गारंटी के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What the GD-PI stage is',
-        headingHi: 'जीडी-पीआई चरण क्या है',
         bodyEn:
           'After shortlisting on a test score such as CAT, many business schools assess candidates through some combination of a group discussion (GD), a written ability test (WAT), and a personal interview (PI). These stages look at communication, reasoning, awareness, and fit — qualities a written test alone cannot fully capture.',
       },
@@ -4045,16 +3803,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Career Options After NEET Besides MBBS',
-    titleHi: 'एमबीबीएस के अलावा नीट के बाद करियर विकल्प',
     descriptionEn:
       'NEET opens far more than MBBS — dental, AYUSH, veterinary, nursing, and allied courses. A neutral overview of the options, with no health claims or salary promises.',
-    descriptionHi:
-      'नीट एमबीबीएस से कहीं अधिक खोलता है — दंत, आयुष, पशु चिकित्सा, नर्सिंग और संबद्ध कोर्स। विकल्पों का निष्पक्ष अवलोकन, बिना किसी स्वास्थ्य दावे या वेतन के वादे के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'NEET is a gateway to many courses',
-        headingHi: 'नीट कई कोर्स का प्रवेश-द्वार है',
         bodyEn:
           'A NEET score is used for admission to several health-science courses, not only MBBS. Depending on your rank and choices, it can lead to dental, AYUSH, veterinary, and some nursing programmes. Knowing the full range helps you plan beyond a single option.',
       },
@@ -4112,16 +3866,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'BDS (Dental) Course Guide',
-    titleHi: 'बीडीएस (दंत) कोर्स मार्गदर्शिका',
     descriptionEn:
       'What the BDS dental course is, how admission works through NEET, and what graduates broadly do — a factual overview with no health claims or income promises.',
-    descriptionHi:
-      'बीडीएस दंत कोर्स क्या है, नीट के माध्यम से प्रवेश कैसे होता है, और स्नातक मोटे तौर पर क्या करते हैं — एक तथ्यात्मक अवलोकन, बिना किसी स्वास्थ्य दावे या आय के वादे के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What BDS is',
-        headingHi: 'बीडीएस क्या है',
         bodyEn:
           'BDS (Bachelor of Dental Surgery) is the recognised undergraduate degree in dentistry in India. It combines academic study with clinical training and includes a compulsory internship before a graduate can register to practise. The exact course duration and structure are set officially and overseen by the national dental regulator.',
       },
@@ -4173,16 +3923,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'BAMS (Ayurveda) Course Guide',
-    titleHi: 'बीएएमएस (आयुर्वेद) कोर्स मार्गदर्शिका',
     descriptionEn:
       'What the BAMS course is as a recognised medical degree, how admission works through NEET, and what graduates broadly do — a factual, secular overview with no health claims.',
-    descriptionHi:
-      'बीएएमएस कोर्स एक मान्यता प्राप्त चिकित्सा डिग्री के रूप में क्या है, नीट के माध्यम से प्रवेश कैसे होता है, और स्नातक मोटे तौर पर क्या करते हैं — एक तथ्यात्मक, धर्मनिरपेक्ष अवलोकन, बिना किसी स्वास्थ्य दावे के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What BAMS is',
-        headingHi: 'बीएएमएस क्या है',
         bodyEn:
           'BAMS (Bachelor of Ayurvedic Medicine and Surgery) is a recognised undergraduate medical degree in Ayurveda, one of the officially recognised Indian systems of medicine. It combines academic study with clinical training and includes a compulsory internship. The course is overseen by the national regulator for Indian systems of medicine.',
       },
@@ -4234,16 +3980,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Nursing Courses in India: A Guide',
-    titleHi: 'भारत में नर्सिंग कोर्स: एक मार्गदर्शिका',
     descriptionEn:
       'The main nursing courses in India, how admission generally works, and what the field involves — a factual overview with no health claims or salary promises.',
-    descriptionHi:
-      'भारत में मुख्य नर्सिंग कोर्स, प्रवेश आमतौर पर कैसे होता है, और इस क्षेत्र में क्या शामिल है — एक तथ्यात्मक अवलोकन, बिना किसी स्वास्थ्य दावे या वेतन के वादे के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'The main nursing courses',
-        headingHi: 'मुख्य नर्सिंग कोर्स',
         bodyEn:
           'Nursing education in India is offered at several levels, regulated by the Indian Nursing Council and state councils. The common qualifications are listed below; the exact eligibility and structure are set officially and can change.',
         bullets: [
@@ -4301,16 +4043,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Allied Health Sciences: Careers Overview',
-    titleHi: 'संबद्ध स्वास्थ्य विज्ञान: करियर अवलोकन',
     descriptionEn:
       'What allied and healthcare science courses are, the range of roles they lead to, and how the field is regulated — a factual overview with no health claims or salary promises.',
-    descriptionHi:
-      'संबद्ध एवं स्वास्थ्य विज्ञान कोर्स क्या हैं, ये किन भूमिकाओं की ओर ले जाते हैं, और यह क्षेत्र कैसे विनियमित है — एक तथ्यात्मक अवलोकन, बिना किसी स्वास्थ्य दावे या वेतन के वादे के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What allied health sciences are',
-        headingHi: 'संबद्ध स्वास्थ्य विज्ञान क्या हैं',
         bodyEn:
           'Allied and healthcare sciences cover a broad group of professions that support diagnosis, treatment, and care alongside doctors and nurses. In India, this field is increasingly organised under a national framework for allied and healthcare professions, which defines recognised courses and standards.',
       },
@@ -4368,16 +4106,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Chartered Accountancy (CA): A Guide',
-    titleHi: 'चार्टर्ड अकाउंटेंसी (सीए): एक मार्गदर्शिका',
     descriptionEn:
       'What Chartered Accountancy is, how the ICAI course is structured, and what CAs broadly do — a factual overview with no fabricated fees, pass rates, or salary claims.',
-    descriptionHi:
-      'चार्टर्ड अकाउंटेंसी क्या है, आईसीएआई कोर्स कैसे संरचित है, और सीए मोटे तौर पर क्या करते हैं — एक तथ्यात्मक अवलोकन, बिना किसी मनगढ़ंत शुल्क, उत्तीर्ण दर या वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What Chartered Accountancy is',
-        headingHi: 'चार्टर्ड अकाउंटेंसी क्या है',
         bodyEn:
           'Chartered Accountancy (CA) is a professional qualification in accounting, auditing, taxation, and finance, awarded by the Institute of Chartered Accountants of India (ICAI), a statutory body. It is known for being rigorous and is pursued by many commerce students, though students from other streams can also take it.',
       },
@@ -4433,16 +4167,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Company Secretary (CS): A Guide',
-    titleHi: 'कंपनी सेक्रेटरी (सीएस): एक मार्गदर्शिका',
     descriptionEn:
       'What a Company Secretary does, how the ICSI course is structured, and where it leads — a factual overview with no fabricated fees or salary promises.',
-    descriptionHi:
-      'कंपनी सेक्रेटरी क्या करता है, आईसीएसआई कोर्स कैसे संरचित है, और यह कहाँ ले जाता है — एक तथ्यात्मक अवलोकन, बिना किसी मनगढ़ंत शुल्क या वेतन के वादे के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What a Company Secretary is',
-        headingHi: 'कंपनी सेक्रेटरी क्या है',
         bodyEn:
           'A Company Secretary (CS) is a professional focused on corporate governance, company law, and regulatory compliance. The qualification is awarded by the Institute of Company Secretaries of India (ICSI), a statutory body, and is valued in companies for keeping them compliant with the law.',
       },
@@ -4498,16 +4228,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'B.Com vs BBA: Which to Choose?',
-    titleHi: 'बीकॉम बनाम बीबीए: कौन-सा चुनें?',
     descriptionEn:
       'A neutral comparison of B.Com and BBA — what each focuses on, what they suit, and how to decide based on your goals, with no rankings or salary claims.',
-    descriptionHi:
-      'बीकॉम और बीबीए की निष्पक्ष तुलना — प्रत्येक किस पर केंद्रित है, ये किसके लिए उपयुक्त हैं, और अपने लक्ष्यों के आधार पर कैसे तय करें, बिना रैंकिंग या वेतन के दावों के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Two related but different degrees',
-        headingHi: 'दो संबंधित किंतु भिन्न डिग्री',
         bodyEn:
           'B.Com (Bachelor of Commerce) and BBA (Bachelor of Business Administration) are both popular undergraduate degrees after Class 12. B.Com leans towards commerce, accounting, economics, and finance, while BBA leans towards management and business administration. Neither is universally better — they suit different interests.',
       },
@@ -4562,16 +4288,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'How to Become an Investment Banker in India',
-    titleHi: 'भारत में इन्वेस्टमेंट बैंकर कैसे बनें',
     descriptionEn:
       'A realistic, neutral overview of the routes into investment banking in India — backgrounds, qualifications, and skills — with no guaranteed salaries or placements.',
-    descriptionHi:
-      'भारत में इन्वेस्टमेंट बैंकिंग में प्रवेश के मार्गों का यथार्थवादी, निष्पक्ष अवलोकन — पृष्ठभूमि, योग्यताएँ और कौशल — बिना किसी निश्चित वेतन या प्लेसमेंट के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'There is no single fixed path',
-        headingHi: 'कोई एक निश्चित मार्ग नहीं है',
         bodyEn:
           'Investment banking is a competitive field, and people enter it from several backgrounds — commerce, economics, finance, engineering, and others. There is no single official qualification that makes someone an investment banker; instead, a mix of strong academics, relevant skills, internships, and qualifications tends to matter.',
       },
@@ -4628,16 +4350,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'CFA Guide for Indian Students',
-    titleHi: 'भारतीय छात्रों के लिए सीएफए गाइड',
     descriptionEn:
       'What the CFA programme is, how it is structured, and who it suits — for Indian students interested in investment and finance, with no fee or salary claims.',
-    descriptionHi:
-      'सीएफए कार्यक्रम क्या है, यह कैसे संरचित है, और यह किसके लिए उपयुक्त है — निवेश एवं वित्त में रुचि रखने वाले भारतीय छात्रों के लिए, बिना किसी शुल्क या वेतन के दावों के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What the CFA programme is',
-        headingHi: 'सीएफए कार्यक्रम क्या है',
         bodyEn:
           'The CFA (Chartered Financial Analyst) programme is a globally recognised qualification in investment management and financial analysis, offered by the CFA Institute, a global professional body. It is self-study based and is often pursued by people aiming for roles in investment, research, and portfolio management.',
       },
@@ -4694,16 +4412,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Career Options in Design After 12th',
-    titleHi: '12वीं के बाद डिज़ाइन में करियर विकल्प',
     descriptionEn:
       'The main design fields open after Class 12 — fashion, communication, product, UX, and more — how admission works, and what the work involves, with no salary claims.',
-    descriptionHi:
-      '12वीं के बाद खुलने वाले मुख्य डिज़ाइन क्षेत्र — फैशन, संचार, उत्पाद, यूएक्स और अधिक — प्रवेश कैसे होता है, और कार्य में क्या शामिल है, बिना किसी वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Design is a broad field',
-        headingHi: 'डिज़ाइन एक व्यापक क्षेत्र है',
         bodyEn:
           'Design spans many areas — fashion, graphic and communication design, product and industrial design, user-experience (UX/UI) design, interior design, and animation, among others. Design programmes are usually open to students from any stream after Class 12, since they value aptitude and creativity rather than a specific subject combination.',
         bullets: [
@@ -4761,16 +4475,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'NIFT and NID Entrance: A Guide',
-    titleHi: 'एनआईएफटी और एनआईडी प्रवेश: एक मार्गदर्शिका',
     descriptionEn:
       'How admission to leading design institutes like NIFT and NID broadly works, what their entrance processes assess, and how to prepare — with no guarantees or fabricated details.',
-    descriptionHi:
-      'एनआईएफटी और एनआईडी जैसे प्रमुख डिज़ाइन संस्थानों में प्रवेश मोटे तौर पर कैसे होता है, उनकी प्रवेश प्रक्रियाएँ क्या परखती हैं, और तैयारी कैसे करें — बिना किसी गारंटी या मनगढ़ंत विवरण के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Two leading design institutes',
-        headingHi: 'दो प्रमुख डिज़ाइन संस्थान',
         bodyEn:
           'The National Institute of Fashion Technology (NIFT) and the National Institute of Design (NID) are among India\'s best-known design institutes. NIFT focuses strongly on fashion and related design fields, while NID offers a broad range of design disciplines. Each conducts its own admission process.',
       },
@@ -4827,16 +4537,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Journalism and Mass Communication Courses',
-    titleHi: 'पत्रकारिता एवं जनसंचार कोर्स',
     descriptionEn:
       'What journalism and mass communication courses cover, how admission generally works, and the range of roles they lead to — a neutral overview with no salary claims.',
-    descriptionHi:
-      'पत्रकारिता एवं जनसंचार कोर्स में क्या शामिल है, प्रवेश आमतौर पर कैसे होता है, और ये किन भूमिकाओं की ओर ले जाते हैं — एक निष्पक्ष अवलोकन, बिना किसी वेतन के दावों के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What these courses cover',
-        headingHi: 'ये कोर्स क्या कवर करते हैं',
         bodyEn:
           'Journalism and mass communication courses cover reporting, writing, editing, media production, public relations, advertising, and digital media. Common qualifications include a BA or BA (Hons) in journalism or mass communication (often abbreviated BJMC) at the undergraduate level, and master\'s programmes for further study.',
       },
@@ -4893,16 +4599,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Psychology Courses and Careers',
-    titleHi: 'मनोविज्ञान कोर्स और करियर',
     descriptionEn:
       'What psychology courses cover, the main specialisations and career paths, and what practising in regulated areas requires — a factual overview with no clinical advice or salary claims.',
-    descriptionHi:
-      'मनोविज्ञान कोर्स में क्या शामिल है, मुख्य विशेषज्ञताएँ एवं करियर मार्ग, और विनियमित क्षेत्रों में अभ्यास के लिए क्या आवश्यक है — एक तथ्यात्मक अवलोकन, बिना किसी नैदानिक सलाह या वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What you study in psychology',
-        headingHi: 'मनोविज्ञान में आप क्या पढ़ते हैं',
         bodyEn:
           'Psychology is the study of the mind and behaviour. A typical path is a BA or BSc in Psychology, followed by a master\'s (MA or MSc) and, for some careers, further specialised study. Programmes cover areas such as cognitive, social, developmental, and clinical psychology, along with research methods.',
       },
@@ -4959,16 +4661,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Hotel Management Course Guide',
-    titleHi: 'होटल प्रबंधन कोर्स मार्गदर्शिका',
     descriptionEn:
       'What hotel management courses cover, how admission generally works, and the range of careers in hospitality — a factual overview with no salary claims.',
-    descriptionHi:
-      'होटल प्रबंधन कोर्स में क्या शामिल है, प्रवेश आमतौर पर कैसे होता है, और आतिथ्य में करियर की श्रृंखला — एक तथ्यात्मक अवलोकन, बिना किसी वेतन के दावों के।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What hotel management covers',
-        headingHi: 'होटल प्रबंधन में क्या शामिल है',
         bodyEn:
           'Hotel management (also called hospitality management) prepares students for the hospitality industry. Common qualifications include the B.Sc. in Hospitality and Hotel Administration (B.Sc. HHA) offered through the Institutes of Hotel Management, and the Bachelor of Hotel Management (BHM) or similar degrees and diplomas at other institutes — covering areas such as food production (culinary), food and beverage service, front office, and housekeeping, along with management subjects.',
       },
@@ -5025,16 +4723,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'How to Prepare for the UPSC Civil Services Exam',
-    titleHi: 'यूपीएससी सिविल सेवा परीक्षा की तैयारी कैसे करें',
     descriptionEn:
       'A neutral, factual overview of the UPSC Civil Services Examination — its three stages and how to approach preparation — with all eligibility and cut-offs deferred to the official source.',
-    descriptionHi:
-      'यूपीएससी सिविल सेवा परीक्षा का निष्पक्ष, तथ्यात्मक अवलोकन — इसके तीन चरण और तैयारी कैसे करें — सभी पात्रता एवं कट-ऑफ आधिकारिक स्रोत पर छोड़े गए हैं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What the exam is',
-        headingHi: 'परीक्षा क्या है',
         bodyEn:
           'The Union Public Service Commission (UPSC) conducts the Civil Services Examination (CSE) to recruit officers for services such as the IAS, IPS, and IFS, among others. It is open to graduates and has a broad, multi-subject syllabus and a three-stage selection process.',
       },
@@ -5090,16 +4784,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'SSC CGL Exam Guide',
-    titleHi: 'एसएससी सीजीएल परीक्षा मार्गदर्शिका',
     descriptionEn:
       'A neutral overview of the SSC Combined Graduate Level exam — what it is, its tiered structure, and how to prepare — with eligibility and cut-offs deferred to the official source.',
-    descriptionHi:
-      'एसएससी संयुक्त स्नातक स्तर परीक्षा का निष्पक्ष अवलोकन — यह क्या है, इसकी स्तरीय संरचना, और तैयारी कैसे करें — पात्रता एवं कट-ऑफ आधिकारिक स्रोत पर छोड़े गए हैं।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What SSC CGL is',
-        headingHi: 'एसएससी सीजीएल क्या है',
         bodyEn:
           'The Staff Selection Commission (SSC) conducts the Combined Graduate Level (CGL) examination to recruit for various posts in government departments and organisations. It is open to graduates, and the specific posts and eligibility are set officially each cycle.',
       },
@@ -5155,16 +4845,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'Bank PO Exam Guide',
-    titleHi: 'बैंक पीओ परीक्षा मार्गदर्शिका',
     descriptionEn:
       'A neutral overview of how Bank Probationary Officer recruitment works in India — the common exam stages and how to prepare — with eligibility and cut-offs deferred to official sources.',
-    descriptionHi:
-      'भारत में बैंक प्रोबेशनरी ऑफिसर भर्ती कैसे होती है इसका निष्पक्ष अवलोकन — सामान्य परीक्षा चरण और तैयारी कैसे करें — पात्रता एवं कट-ऑफ आधिकारिक स्रोतों पर छोड़े गए हैं।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What a Bank PO exam is',
-        headingHi: 'बैंक पीओ परीक्षा क्या है',
         bodyEn:
           'Bank Probationary Officer (PO) recruitment selects entry-level officers for banks. For many public-sector banks, recruitment is conducted through the Institute of Banking Personnel Selection (IBPS), while some banks, such as the State Bank of India, conduct their own PO recruitment separately. It is generally open to graduates.',
       },
@@ -5220,16 +4906,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'NDA Entrance Guide',
-    titleHi: 'एनडीए प्रवेश मार्गदर्शिका',
     descriptionEn:
       'A neutral, factual overview of the National Defence Academy entrance — what it is, the broad selection process, and how to approach it — with eligibility deferred to the official source.',
-    descriptionHi:
-      'राष्ट्रीय रक्षा अकादमी प्रवेश का निष्पक्ष, तथ्यात्मक अवलोकन — यह क्या है, व्यापक चयन प्रक्रिया, और इसे कैसे करें — पात्रता आधिकारिक स्रोत पर छोड़ी गई है।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What the NDA entrance is',
-        headingHi: 'एनडीए प्रवेश क्या है',
         bodyEn:
           'The National Defence Academy (NDA) trains cadets for the Army, Navy, and Air Force. Entry is through an examination conducted by the Union Public Service Commission (UPSC), generally held twice a year, and is one of the routes to join the armed forces after Class 12.',
       },
@@ -5285,16 +4967,12 @@ export const GUIDES: Guide[] = [
     category: 'exam-prep',
     region: 'india',
     titleEn: 'Railway Exams: An Overview',
-    titleHi: 'रेलवे परीक्षाएँ: एक अवलोकन',
     descriptionEn:
       'A neutral overview of how recruitment to Indian Railways through the Railway Recruitment Boards broadly works — common exam types and stages — with details deferred to official sources.',
-    descriptionHi:
-      'रेलवे भर्ती बोर्डों के माध्यम से भारतीय रेलवे में भर्ती मोटे तौर पर कैसे होती है इसका निष्पक्ष अवलोकन — सामान्य परीक्षा प्रकार और चरण — विवरण आधिकारिक स्रोतों पर छोड़े गए हैं।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'How railway recruitment works',
-        headingHi: 'रेलवे भर्ती कैसे होती है',
         bodyEn:
           'Recruitment for many posts in Indian Railways is carried out through the Railway Recruitment Boards (RRBs). The RRBs hold different examinations for different categories of posts, with eligibility ranging from Class 10 or ITI level up to graduation depending on the post.',
       },
@@ -5351,16 +5029,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'australia-nz',
     titleEn: 'How to Study in Australia from India',
-    titleHi: 'भारत से ऑस्ट्रेलिया में पढ़ाई कैसे करें',
     descriptionEn:
       'A step-by-step overview for Indian students applying to Australian universities — tests, applications, the student visa, and where to verify official rules. General information, not immigration advice.',
-    descriptionHi:
-      'ऑस्ट्रेलियाई विश्वविद्यालयों में आवेदन करने वाले भारतीय छात्रों के लिए चरण-दर-चरण मार्गदर्शिका — परीक्षाएँ, आवेदन, छात्र वीज़ा और आधिकारिक नियम कहाँ सत्यापित करें। सामान्य जानकारी, आव्रजन सलाह नहीं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The big picture',
-        headingHi: 'समग्र चित्र',
         bodyEn:
           'Studying in Australia from India generally involves choosing a course and university, meeting English-language requirements, securing an offer and the enrolment confirmation, and then completing the student-visa process. Start about a year ahead to allow time for each stage.',
       },
@@ -5412,16 +5086,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'uk-ireland',
     titleEn: 'How to Study in Ireland from India',
-    titleHi: 'भारत से आयरलैंड में पढ़ाई कैसे करें',
     descriptionEn:
       'A step-by-step overview for Indian students applying to Irish universities — applications, English requirements, the study visa and permission, and where to verify official rules. Not immigration advice.',
-    descriptionHi:
-      'आयरिश विश्वविद्यालयों में आवेदन करने वाले भारतीय छात्रों के लिए चरण-दर-चरण मार्गदर्शिका — आवेदन, अंग्रेज़ी आवश्यकताएँ, अध्ययन वीज़ा एवं अनुमति, और आधिकारिक नियम कहाँ सत्यापित करें। आव्रजन सलाह नहीं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The big picture',
-        headingHi: 'समग्र चित्र',
         bodyEn:
           'Studying in Ireland from India generally involves choosing a course, applying (often directly to universities for postgraduate study, or through the central system for some undergraduate routes), meeting English requirements, receiving an offer, and then completing the study-visa and registration process.',
       },
@@ -5473,16 +5143,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'europe',
     titleEn: 'How to Study in France from India',
-    titleHi: 'भारत से फ्रांस में पढ़ाई कैसे करें',
     descriptionEn:
       'A step-by-step overview for Indian students applying to French institutions — applications via Campus France, language and English-taught options, the student visa, and where to verify. Not immigration advice.',
-    descriptionHi:
-      'फ्रांसीसी संस्थानों में आवेदन करने वाले भारतीय छात्रों के लिए चरण-दर-चरण मार्गदर्शिका — कैंपस फ्रांस के माध्यम से आवेदन, भाषा एवं अंग्रेज़ी-माध्यम विकल्प, छात्र वीज़ा, और कहाँ सत्यापित करें। आव्रजन सलाह नहीं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The big picture',
-        headingHi: 'समग्र चित्र',
         bodyEn:
           'Studying in France from India generally involves choosing a programme (many are taught in English, while others are in French), applying through the official Campus France process for India, receiving an offer, and then completing the student-visa process. Campus France is the official agency that guides international students.',
       },
@@ -5534,16 +5200,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'europe',
     titleEn: 'How to Study in the Netherlands from India',
-    titleHi: 'भारत से नीदरलैंड में पढ़ाई कैसे करें',
     descriptionEn:
       'A step-by-step overview for Indian students applying to Dutch universities — applications, English-taught programmes, the residence permit for study, and where to verify. Not immigration advice.',
-    descriptionHi:
-      'डच विश्वविद्यालयों में आवेदन करने वाले भारतीय छात्रों के लिए चरण-दर-चरण मार्गदर्शिका — आवेदन, अंग्रेज़ी-माध्यम कार्यक्रम, अध्ययन हेतु निवास परमिट, और कहाँ सत्यापित करें। आव्रजन सलाह नहीं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The big picture',
-        headingHi: 'समग्र चित्र',
         bodyEn:
           'Studying in the Netherlands from India generally involves choosing a programme (the Netherlands is known for many English-taught programmes), applying to universities, meeting English requirements, receiving an offer, and then completing the residence and entry process, which the university often helps arrange.',
       },
@@ -5595,16 +5257,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'australia-nz',
     titleEn: 'How to Study in New Zealand from India',
-    titleHi: 'भारत से न्यूज़ीलैंड में पढ़ाई कैसे करें',
     descriptionEn:
       'A step-by-step overview for Indian students applying to New Zealand universities — applications, English requirements, the student visa, and where to verify official rules. Not immigration advice.',
-    descriptionHi:
-      'न्यूज़ीलैंड विश्वविद्यालयों में आवेदन करने वाले भारतीय छात्रों के लिए चरण-दर-चरण मार्गदर्शिका — आवेदन, अंग्रेज़ी आवश्यकताएँ, छात्र वीज़ा, और आधिकारिक नियम कहाँ सत्यापित करें। आव्रजन सलाह नहीं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'The big picture',
-        headingHi: 'समग्र चित्र',
         bodyEn:
           'Studying in New Zealand from India generally involves choosing a course and university, meeting English-language requirements, securing an offer of place, and then completing the student-visa process. Starting about a year ahead gives time for each stage.',
       },
@@ -5657,16 +5315,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'india',
     titleEn: 'How to Choose a University Abroad',
-    titleHi: 'विदेश में विश्वविद्यालय कैसे चुनें',
     descriptionEn:
       'A practical framework for choosing a university abroad — the factors that actually matter and how to verify them officially — without rankings hype or salary claims.',
-    descriptionHi:
-      'विदेश में विश्वविद्यालय चुनने के लिए एक व्यावहारिक ढाँचा — वे कारक जो वास्तव में मायने रखते हैं और उन्हें आधिकारिक रूप से कैसे सत्यापित करें — बिना रैंकिंग के प्रचार या वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Start with fit, not just rankings',
-        headingHi: 'केवल रैंकिंग नहीं, उपयुक्तता से शुरू करें',
         bodyEn:
           'Rankings can be one input, but they are not the whole picture — and different ranking bodies measure different things. A more useful starting question is which universities fit your subject, goals, budget, and circumstances. The "best" university is the one that is best for you.',
       },
@@ -5723,16 +5377,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'india',
     titleEn: 'Education Loans for Studying Abroad',
-    titleHi: 'विदेश में पढ़ाई के लिए शिक्षा ऋण',
     descriptionEn:
       'A factual overview of how education loans for studying abroad generally work and what to check — general information only, not financial advice, with no interest rates or amounts quoted.',
-    descriptionHi:
-      'विदेश में पढ़ाई के लिए शिक्षा ऋण आमतौर पर कैसे काम करते हैं और क्या जाँचें इसका तथ्यात्मक अवलोकन — केवल सामान्य जानकारी, वित्तीय सलाह नहीं, बिना किसी ब्याज दर या राशि के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'How education loans generally work',
-        headingHi: 'शिक्षा ऋण आमतौर पर कैसे काम करते हैं',
         bodyEn:
           'Education loans are one way some students fund studying abroad. In India they are offered by banks, non-banking financial companies (NBFCs), and through government-linked channels, with terms that vary by lender and by your specific case. This guide explains the general idea only — it is not financial advice.',
       },
@@ -5789,16 +5439,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'usa',
     titleEn: 'Cost of Studying in the USA for Indian Students',
-    titleHi: 'भारतीय छात्रों के लिए अमेरिका में पढ़ाई की लागत',
     descriptionEn:
       'What goes into the cost of studying in the USA and how to find the official figures for each university — with no invented numbers, since costs vary widely and change every year.',
-    descriptionHi:
-      'अमेरिका में पढ़ाई की लागत में क्या-क्या शामिल है और प्रत्येक विश्वविद्यालय के आधिकारिक आँकड़े कैसे प्राप्त करें — बिना किसी मनगढ़ंत संख्या के, क्योंकि लागत बहुत भिन्न होती है और हर साल बदलती है।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Cost is more than tuition',
-        headingHi: 'लागत केवल ट्यूशन से अधिक है',
         bodyEn:
           'The cost of studying in the USA includes far more than tuition. Universities publish an official "cost of attendance" that brings together the main components, and these vary widely between public and private universities and between cities. Because figures change every year, this guide explains the components rather than quoting numbers.',
         bullets: [
@@ -5855,16 +5501,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'india',
     titleEn: 'Part-Time Jobs for International Students',
-    titleHi: 'अंतरराष्ट्रीय छात्रों के लिए अंशकालिक नौकरियाँ',
     descriptionEn:
       'How part-time work for international students generally works, why the rules differ by country, and where to verify them — neutral official facts only, not immigration advice.',
-    descriptionHi:
-      'अंतरराष्ट्रीय छात्रों के लिए अंशकालिक कार्य आमतौर पर कैसे होता है, नियम देश के अनुसार क्यों भिन्न होते हैं, और उन्हें कहाँ सत्यापित करें — केवल निष्पक्ष आधिकारिक तथ्य, आव्रजन सलाह नहीं।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Work rules depend on the country and visa',
-        headingHi: 'कार्य नियम देश और वीज़ा पर निर्भर करते हैं',
         bodyEn:
           'Many countries allow international students to work part-time during their studies, but the rules — including any limit on hours, where you can work, and what permission you need — are set by each government and attached to your visa. They differ by country and change over time, so treat the rules as something to verify, not assume.',
       },
@@ -5921,16 +5563,12 @@ export const GUIDES: Guide[] = [
     category: 'study-abroad',
     region: 'india',
     titleEn: 'Post-Study Work Options by Country',
-    titleHi: 'देश के अनुसार अध्ययन-पश्चात कार्य विकल्प',
     descriptionEn:
       'An overview of how post-study work routes generally work across popular destinations and why you must check the official rules — neutral official facts only, not immigration advice.',
-    descriptionHi:
-      'लोकप्रिय गंतव्यों में अध्ययन-पश्चात कार्य मार्ग आमतौर पर कैसे काम करते हैं और आपको आधिकारिक नियम क्यों जाँचने चाहिए इसका अवलोकन — केवल निष्पक्ष आधिकारिक तथ्य, आव्रजन सलाह नहीं।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What post-study work routes are',
-        headingHi: 'अध्ययन-पश्चात कार्य मार्ग क्या हैं',
         bodyEn:
           'Several countries offer a way for international graduates to stay and work for a period after completing their studies, often through a named scheme tied to the student visa. These routes, their eligibility, and their duration are set by each government and change frequently, so they must be checked on official sources rather than assumed.',
       },
@@ -5988,16 +5626,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Data Science Courses in India',
-    titleHi: 'भारत में डेटा साइंस कोर्स',
     descriptionEn:
       'What data science is, the kinds of courses available in India, the skills involved, and where it can lead — a factual overview with no rankings or salary claims.',
-    descriptionHi:
-      'डेटा साइंस क्या है, भारत में किस प्रकार के कोर्स उपलब्ध हैं, इसमें कौन-से कौशल शामिल हैं, और यह कहाँ ले जा सकता है — एक तथ्यात्मक अवलोकन, बिना रैंकिंग या वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What data science is',
-        headingHi: 'डेटा साइंस क्या है',
         bodyEn:
           'Data science combines statistics, programming, and domain knowledge to draw useful insights from data, and overlaps with machine learning. It is studied both as a focused degree and as a specialisation within computer science or statistics programmes.',
       },
@@ -6054,16 +5688,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'AI Courses in India',
-    titleHi: 'भारत में एआई कोर्स',
     descriptionEn:
       'What artificial intelligence courses cover, the options available in India, the skills involved, and where the field can lead — a factual overview with no rankings or salary claims.',
-    descriptionHi:
-      'आर्टिफिशियल इंटेलिजेंस कोर्स में क्या शामिल है, भारत में उपलब्ध विकल्प, कौशल, और यह क्षेत्र कहाँ ले जा सकता है — एक तथ्यात्मक अवलोकन, बिना रैंकिंग या वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What AI courses cover',
-        headingHi: 'एआई कोर्स क्या कवर करते हैं',
         bodyEn:
           'Artificial intelligence (AI) courses cover how machines can perform tasks such as learning, reasoning, and perception, with machine learning at the core. They combine mathematics, programming, and the study of models and their applications.',
       },
@@ -6120,16 +5750,12 @@ export const GUIDES: Guide[] = [
     category: 'career',
     region: 'india',
     titleEn: 'Cyber Security Career Guide',
-    titleHi: 'साइबर सुरक्षा करियर मार्गदर्शिका',
     descriptionEn:
       'What a career in cyber security involves, the courses and skills that help, and the kinds of roles in the field — a factual, ethics-first overview with no salary claims.',
-    descriptionHi:
-      'साइबर सुरक्षा में करियर में क्या शामिल है, कौन-से कोर्स और कौशल मदद करते हैं, और इस क्षेत्र में किस प्रकार की भूमिकाएँ हैं — एक तथ्यात्मक, नैतिकता-प्रथम अवलोकन, बिना वेतन के दावों के।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'What cyber security is',
-        headingHi: 'साइबर सुरक्षा क्या है',
         bodyEn:
           'Cyber security is the practice of protecting systems, networks, and data from attacks and unauthorised access. It is a defensive, protective field — the goal is to keep people and organisations safe, and all legitimate work in it is done lawfully and with proper authorisation.',
       },
@@ -6186,16 +5812,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'B.Tech CSE vs Data Science: Which to Choose?',
-    titleHi: 'बीटेक सीएसई बनाम डेटा साइंस: कौन-सा चुनें?',
     descriptionEn:
       'A neutral comparison of B.Tech Computer Science and a data-science focus — what each emphasises, how they overlap, and how to decide based on your interests.',
-    descriptionHi:
-      'बीटेक कंप्यूटर साइंस और डेटा साइंस फोकस की निष्पक्ष तुलना — प्रत्येक किस पर ज़ोर देता है, ये कैसे ओवरलैप करते हैं, और अपनी रुचि के आधार पर कैसे तय करें।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Related fields with different emphasis',
-        headingHi: 'अलग ज़ोर वाले संबंधित क्षेत्र',
         bodyEn:
           'Computer Science Engineering (CSE) is a broad discipline covering programming, systems, algorithms, networks, and more, while a data-science focus concentrates on statistics, data handling, and machine learning. They overlap a great deal — data science builds on computing — and neither is universally better.',
       },
@@ -6252,16 +5874,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'Online Degree vs Regular Degree',
-    titleHi: 'ऑनलाइन डिग्री बनाम नियमित डिग्री',
     descriptionEn:
       'A neutral comparison of online and regular (on-campus) degrees — how they differ, why recognition matters, and how to decide — with recognition treated as an official fact to verify.',
-    descriptionHi:
-      'ऑनलाइन और नियमित (ऑन-कैंपस) डिग्री की निष्पक्ष तुलना — ये कैसे भिन्न हैं, मान्यता क्यों मायने रखती है, और कैसे तय करें — मान्यता को सत्यापित करने योग्य आधिकारिक तथ्य के रूप में।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'Two modes of study',
-        headingHi: 'अध्ययन के दो तरीके',
         bodyEn:
           'A regular degree is studied on campus, while an online degree is delivered remotely. Both can be valid routes to a qualification, and the better choice depends on your circumstances, the subject, and — crucially — whether the programme is properly recognised.',
       },
@@ -6318,16 +5936,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'Private vs Government College in India',
-    titleHi: 'भारत में निजी बनाम सरकारी कॉलेज',
     descriptionEn:
       'A neutral comparison of private and government colleges in India — how they tend to differ, what actually matters, and how to decide — without declaring either type better.',
-    descriptionHi:
-      'भारत में निजी और सरकारी कॉलेजों की निष्पक्ष तुलना — ये आमतौर पर कैसे भिन्न होते हैं, वास्तव में क्या मायने रखता है, और कैसे तय करें — बिना किसी प्रकार को बेहतर बताए।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Two broad categories, wide variation',
-        headingHi: 'दो व्यापक श्रेणियाँ, व्यापक भिन्नता',
         bodyEn:
           'Government (public) colleges are funded and run with government support, while private colleges are run by private trusts or societies. Both categories include strong and weaker institutions, so the type alone does not determine quality — there is wide variation within each.',
       },
@@ -6385,16 +5999,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'Study in India vs Abroad: How to Decide',
-    titleHi: 'भारत बनाम विदेश में पढ़ाई: कैसे तय करें',
     descriptionEn:
       'A neutral framework for deciding between studying in India and studying abroad — the factors that matter and how to weigh them for your situation, with no claims that one is better.',
-    descriptionHi:
-      'भारत में पढ़ाई और विदेश में पढ़ाई के बीच निर्णय लेने का निष्पक्ष ढाँचा — कौन-से कारक मायने रखते हैं और अपनी स्थिति के लिए उन्हें कैसे तौलें, बिना यह दावा किए कि कोई एक बेहतर है।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'There is no single right answer',
-        headingHi: 'कोई एक सही उत्तर नहीं है',
         bodyEn:
           'Both India and other countries offer strong options, and the better choice depends entirely on your goals, subject, finances, and circumstances. Rather than asking which is "better" in general, ask which fits you for this specific decision.',
       },
@@ -6452,16 +6062,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'Is a Drop Year for JEE/NEET Worth It?',
-    titleHi: 'क्या जेईई/नीट के लिए ड्रॉप ईयर सही है?',
     descriptionEn:
       'A balanced look at taking a drop year to reattempt JEE or NEET — what to weigh, and why there are no guarantees — to help you make your own informed decision.',
-    descriptionHi:
-      'जेईई या नीट दोबारा देने के लिए ड्रॉप ईयर लेने पर एक संतुलित दृष्टि — क्या तौलें, और क्यों कोई गारंटी नहीं है — ताकि आप अपना सूचित निर्णय ले सकें।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'A personal decision, not a formula',
-        headingHi: 'एक व्यक्तिगत निर्णय, कोई सूत्र नहीं',
         bodyEn:
           'Taking a year to reattempt JEE or NEET is a common but deeply personal choice. It can give focused time to improve, but it is not a guaranteed path to a better result, and what works for one student may not work for another. The aim of this guide is to help you weigh it honestly, not to push you either way.',
       },
@@ -6519,16 +6125,12 @@ export const GUIDES: Guide[] = [
     category: 'admissions',
     region: 'india',
     titleEn: 'How to Choose an Engineering College',
-    titleHi: 'इंजीनियरिंग कॉलेज कैसे चुनें',
     descriptionEn:
       'A practical framework for choosing an engineering college in India — the factors that matter, how to verify them officially, and why the branch-and-college fit beats rankings alone.',
-    descriptionHi:
-      'भारत में इंजीनियरिंग कॉलेज चुनने के लिए एक व्यावहारिक ढाँचा — कौन-से कारक मायने रखते हैं, उन्हें आधिकारिक रूप से कैसे सत्यापित करें, और शाखा-व-कॉलेज की उपयुक्तता केवल रैंकिंग से बेहतर क्यों है।',
     readMinutes: 6,
     sections: [
       {
         headingEn: 'Look beyond the ranking number',
-        headingHi: 'केवल रैंकिंग संख्या से आगे देखें',
         bodyEn:
           'Rankings can be one input, but choosing an engineering college well means looking at several factors together. The combination of the right branch at the right college usually matters more than a single ranking position.',
       },
@@ -6586,16 +6188,12 @@ export const GUIDES: Guide[] = [
     category: 'comparison',
     region: 'india',
     titleEn: 'Deemed University vs State University',
-    titleHi: 'डीम्ड विश्वविद्यालय बनाम राज्य विश्वविद्यालय',
     descriptionEn:
       'A neutral explainer of what "deemed-to-be-university" and "state university" mean in India, how they differ, and why recognition matters more than the label.',
-    descriptionHi:
-      'भारत में "डीम्ड-टू-बी-यूनिवर्सिटी" और "राज्य विश्वविद्यालय" का क्या अर्थ है, ये कैसे भिन्न हैं, और मान्यता लेबल से अधिक क्यों मायने रखती है, इसका निष्पक्ष विवरण।',
     readMinutes: 5,
     sections: [
       {
         headingEn: 'What the terms mean',
-        headingHi: 'इन शब्दों का अर्थ',
         bodyEn:
           'A state university is established by a state legislature through an Act. A deemed-to-be-university is an institution granted that status by the central government, on the advice of the University Grants Commission (UGC), under the UGC Act. Both can award their own degrees within the rules that apply to them.',
       },

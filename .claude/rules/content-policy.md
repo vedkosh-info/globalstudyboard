@@ -18,6 +18,10 @@ silently. These rules outrank convenience, speed, or design preferences.
 GlobalStudyBoard is an **educational guidance resource** for students choosing
 universities, entrance exams, scholarships, and study destinations worldwide.
 
+The site is **English only** — a single-language resource with NO multilingual or
+locale-specific architecture (no `/hi`, no `[lang]` segment, no hreflang, no i18n),
+now or in future. Content is written in clear English for an international audience.
+
 It is **only** about: universities, courses, entrance/standardized exams,
 admissions processes, scholarships, student costs, application timelines, and
 official student-visa *facts*.
@@ -261,7 +265,7 @@ new content is added, and BEFORE anything ships.**
   breadcrumbs, related-content blocks, and the sitemap.
 - A validation step (`npm run cmi:validate`) MUST pass with **0 errors** before
   content ships. It enforces: unique/stable slugs, no duplicate entities,
-  referential integrity (see §11.3), required fields, and bilingual fallbacks.
+  referential integrity (see §11.3), and required fields.
 - If CMI tooling is not yet implemented, the **same checks are performed manually
   and logged** in the audit log until the tooling exists. (Tooling is the
   preferred approach; a manual checklist pass is the interim fallback.)
@@ -317,8 +321,9 @@ enforce globally via the root layout so new routes inherit them automatically).
 
 ## 13. SEO & Monetization Readiness (BINDING)
 ### 13.1 SEO baseline on every page
-- `generateMetadata()` with title, description, **canonical**, and **hreflang**
-  (`en` + `hi` + `x-default`); `generateStaticParams()` for every `[slug]` route.
+- `generateMetadata()` with title, description, and a **self-referential canonical**
+  (the site is single-language English, so **NO hreflang / language alternates**);
+  `generateStaticParams()` for every `[slug]` route.
 - Appropriate **structured data** (e.g. `CollegeOrUniversity`, `Course`,
   `BreadcrumbList`, `FAQPage` where relevant).
 - Every unit is in `sitemap.ts`, has clean slug URLs, and is reachable by

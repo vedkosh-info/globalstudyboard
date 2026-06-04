@@ -48,7 +48,6 @@ export interface College {
   id: string;
   slug: string;
   nameEn: string;
-  nameHi?: string;
   type: CollegeType;
   region: RegionSlug;
   country: CollegeCountry;
@@ -62,7 +61,6 @@ export interface College {
   englishTaught: boolean;
   websiteUrl?: string;
   descriptionEn: string;
-  descriptionHi?: string;
   courses: string[];
 }
 
@@ -1446,7 +1444,6 @@ export const COLLEGES: College[] = [
     id: 'iit-bombay',
     slug: 'iit-bombay',
     nameEn: 'Indian Institute of Technology Bombay',
-    nameHi: 'भारतीय प्रौद्योगिकी संस्थान बॉम्बे',
     type: 'iit',
     region: 'india',
     country: 'india',
@@ -1461,15 +1458,12 @@ export const COLLEGES: College[] = [
     websiteUrl: 'https://www.iitb.ac.in',
     descriptionEn:
       'IIT Bombay is one of India\'s premier engineering institutions, known for excellence in technology and research. Located in Powai, Mumbai, it offers undergraduate, postgraduate, and doctoral programs across engineering, sciences, design, and management.',
-    descriptionHi:
-      'आईआईटी बॉम्बे भारत के प्रमुख इंजीनियरिंग संस्थानों में से एक है, जो प्रौद्योगिकी और अनुसंधान में उत्कृष्टता के लिए जाना जाता है।',
     courses: ['B.Tech', 'M.Tech', 'M.Sc', 'MBA', 'Ph.D'],
   },
   {
     id: 'iit-delhi',
     slug: 'iit-delhi',
     nameEn: 'Indian Institute of Technology Delhi',
-    nameHi: 'भारतीय प्रौद्योगिकी संस्थान दिल्ली',
     type: 'iit',
     region: 'india',
     country: 'india',
@@ -1490,7 +1484,6 @@ export const COLLEGES: College[] = [
     id: 'iit-madras',
     slug: 'iit-madras',
     nameEn: 'Indian Institute of Technology Madras',
-    nameHi: 'भारतीय प्रौद्योगिकी संस्थान मद्रास',
     type: 'iit',
     region: 'india',
     country: 'india',
@@ -1511,7 +1504,6 @@ export const COLLEGES: College[] = [
     id: 'iit-kanpur',
     slug: 'iit-kanpur',
     nameEn: 'Indian Institute of Technology Kanpur',
-    nameHi: 'भारतीय प्रौद्योगिकी संस्थान कानपुर',
     type: 'iit',
     region: 'india',
     country: 'india',
@@ -1532,7 +1524,6 @@ export const COLLEGES: College[] = [
     id: 'iit-kharagpur',
     slug: 'iit-kharagpur',
     nameEn: 'Indian Institute of Technology Kharagpur',
-    nameHi: 'भारतीय प्रौद्योगिकी संस्थान खड़गपुर',
     type: 'iit',
     region: 'india',
     country: 'india',
@@ -1553,7 +1544,6 @@ export const COLLEGES: College[] = [
     id: 'nit-trichy',
     slug: 'nit-trichy',
     nameEn: 'National Institute of Technology Tiruchirappalli',
-    nameHi: 'राष्ट्रीय प्रौद्योगिकी संस्थान तिरुचिरापल्ली',
     type: 'nit',
     region: 'india',
     country: 'india',
@@ -1574,7 +1564,6 @@ export const COLLEGES: College[] = [
     id: 'iim-ahmedabad',
     slug: 'iim-ahmedabad',
     nameEn: 'Indian Institute of Management Ahmedabad',
-    nameHi: 'भारतीय प्रबंधन संस्थान अहमदाबाद',
     type: 'iim',
     region: 'india',
     country: 'india',
@@ -1595,7 +1584,6 @@ export const COLLEGES: College[] = [
     id: 'iim-bangalore',
     slug: 'iim-bangalore',
     nameEn: 'Indian Institute of Management Bangalore',
-    nameHi: 'भारतीय प्रबंधन संस्थान बेंगलुरु',
     type: 'iim',
     region: 'india',
     country: 'india',
@@ -1616,7 +1604,6 @@ export const COLLEGES: College[] = [
     id: 'aiims-delhi',
     slug: 'aiims-delhi',
     nameEn: 'All India Institute of Medical Sciences Delhi',
-    nameHi: 'अखिल भारतीय आयुर्विज्ञान संस्थान दिल्ली',
     type: 'aiims',
     region: 'india',
     country: 'india',
@@ -1637,7 +1624,6 @@ export const COLLEGES: College[] = [
     id: 'nlu-delhi',
     slug: 'nlu-delhi',
     nameEn: 'National Law University Delhi',
-    nameHi: 'राष्ट्रीय विधि विश्वविद्यालय दिल्ली',
     type: 'nlu',
     region: 'india',
     country: 'india',

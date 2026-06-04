@@ -33,7 +33,6 @@ export interface EntranceExam {
   duration: string;
   totalMarks: string;
   descriptionEn: string;
-  descriptionHi?: string;
   eligibility: string;
   websiteUrl?: string;
   collegesAccepting: string[];
@@ -396,8 +395,6 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'Approx. $12 (₹1000) general / less for reserved categories',
     descriptionEn:
       'JEE Main is the gateway to NITs, IIITs, and Government-Funded Technical Institutes (GFTIs) across India. It also serves as the qualifying exam for JEE Advanced. Candidates can appear up to three consecutive years after Class 12. The paper covers Physics, Chemistry, and Mathematics at the Class 11–12 level.',
-    descriptionHi:
-      'जेईई मेन भारत भर के एनआईटी, आईआईआईटी और सरकारी वित्त पोषित तकनीकी संस्थानों में प्रवेश का प्रवेश द्वार है।',
     collegesAccepting: ['nit-trichy'],
   },
   {
@@ -417,8 +414,6 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'Approx. $30 (₹2500) general',
     descriptionEn:
       'JEE Advanced is the entrance exam for all 23 IITs. Only top JEE Main scorers are eligible. The paper tests deep conceptual understanding in Physics, Chemistry, and Mathematics — significantly harder than JEE Main.',
-    descriptionHi:
-      'जेईई एडवांस्ड सभी 23 आईआईटी के लिए प्रवेश परीक्षा है।',
     collegesAccepting: ['iit-bombay', 'iit-delhi', 'iit-madras', 'iit-kanpur', 'iit-kharagpur'],
   },
   {
@@ -438,8 +433,6 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'Approx. $20 (₹1700) general',
     descriptionEn:
       'NEET UG is the single national entrance test for MBBS, BDS, BAMS, BSMS, BUMS, and BHMS courses in India. There is no cap on attempts. It is the most competitive medical entrance exam in the world by number of applicants.',
-    descriptionHi:
-      'नीट यूजी भारत में एमबीबीएस, बीडीएस और आयुष पाठ्यक्रमों के लिए एकल राष्ट्रीय प्रवेश परीक्षा है।',
     collegesAccepting: ['aiims-delhi'],
   },
   {
@@ -459,8 +452,6 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'Approx. $30 (₹2500) general',
     descriptionEn:
       'CAT is the primary gateway to all 20 IIMs and over 1,200 other business schools in India. It tests Verbal Ability & Reading Comprehension (VARC), Data Interpretation & Logical Reasoning (DILR), and Quantitative Aptitude (QA). Around 250,000 candidates take it each year.',
-    descriptionHi:
-      'कैट सभी 20 आईआईएम और 1,200 से अधिक बिजनेस स्कूलों का प्राथमिक प्रवेश द्वार है।',
     collegesAccepting: ['iim-ahmedabad', 'iim-bangalore'],
   },
   {

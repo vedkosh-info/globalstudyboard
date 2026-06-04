@@ -42,15 +42,6 @@ export default function MobileMenu() {
                 {link.label}
               </Link>
             ))}
-            <div className="mt-3 pt-3 border-t border-stone-200">
-              <Link
-                href="/hi"
-                onClick={() => setOpen(false)}
-                className="text-stone-500 hover:text-forest-700 px-3 py-2 rounded-lg text-xs no-underline block transition-colors"
-              >
-                हिन्दी में पढ़ें
-              </Link>
-            </div>
           </nav>
         </div>
       )}

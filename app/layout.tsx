@@ -6,7 +6,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LocaleSetter from '@/components/LocaleSetter';
 import { RegionProvider } from '@/components/RegionProvider';
 import DestinationPicker from '@/components/DestinationPicker';
 import DestinationBar from '@/components/DestinationBar';
@@ -72,30 +71,59 @@ export const metadata: Metadata = {
     description:
       'Free guide to universities, entrance exams, and scholarships worldwide. Compare SAT, GRE, IELTS, A-Levels and more. Ask GSB AI for personalised guidance.',
     url: 'https://www.globalstudyboard.com',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'GlobalStudyBoard — Universities, Exams & Scholarships Worldwide',
     description: 'Free guide to universities, entrance exams, and scholarships worldwide. Compare SAT, GRE, IELTS, A-Levels and more.',
+    images: ['/opengraph-image'],
   },
-  robots: { index: true, follow: true },
-  alternates: { canonical: 'https://www.globalstudyboard.com' },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://www.globalstudyboard.com',
+    types: { 'application/rss+xml': 'https://www.globalstudyboard.com/feed.xml' },
+  },
 };
 
 const websiteJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'GlobalStudyBoard',
-  url: 'https://www.globalstudyboard.com',
-  description: 'Free guide to universities, entrance exams, and scholarships worldwide.',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: 'https://www.globalstudyboard.com/gsb-ai?q={search_term_string}',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.globalstudyboard.com/#organization',
+      name: 'GlobalStudyBoard',
+      url: 'https://www.globalstudyboard.com',
+      logo: 'https://www.globalstudyboard.com/icon.svg',
+      description: 'Free guide to universities, entrance exams, and scholarships worldwide.',
     },
-    'query-input': 'required name=search_term_string',
-  },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.globalstudyboard.com/#website',
+      name: 'GlobalStudyBoard',
+      url: 'https://www.globalstudyboard.com',
+      description: 'Free guide to universities, entrance exams, and scholarships worldwide.',
+      publisher: { '@id': 'https://www.globalstudyboard.com/#organization' },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://www.globalstudyboard.com/gsb-ai?q={search_term_string}',
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ],
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -107,7 +135,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: websiteJsonLd }} />
-        <LocaleSetter />
         <RegionProvider>
           <Header />
           <DestinationBar />

@@ -6,25 +6,9 @@ import { ChevronRight } from 'lucide-react';
 
 import { breadcrumbsFor } from '@/lib/cmi';
 
-/** Strip a leading `/hi` locale prefix and report the active locale. */
-function splitLocale(pathname: string): { lang: 'en' | 'hi'; bare: string } {
-  if (pathname === '/hi' || pathname.startsWith('/hi/')) {
-    const bare = pathname.slice(3) || '/';
-    return { lang: 'hi', bare };
-  }
-  return { lang: 'en', bare: pathname || '/' };
-}
-
-/** Prefix a bare (English) href with the active locale. */
-function localized(href: string, lang: 'en' | 'hi'): string {
-  if (lang === 'en') return href;
-  return href === '/' ? '/hi' : `/hi${href}`;
-}
-
 export default function Breadcrumbs() {
   const pathname = usePathname() ?? '/';
-  const { lang, bare } = splitLocale(pathname);
-  const crumbs = breadcrumbsFor(bare);
+  const crumbs = breadcrumbsFor(pathname || '/');
 
   if (crumbs.length === 0) return null;
 
@@ -35,9 +19,7 @@ export default function Breadcrumbs() {
       '@type': 'ListItem',
       position: i + 1,
       name: c.label,
-      ...(c.href
-        ? { item: `https://www.globalstudyboard.com${localized(c.href, lang)}` }
-        : {}),
+      ...(c.href ? { item: `https://www.globalstudyboard.com${c.href}` } : {}),
     })),
   });
 
@@ -54,7 +36,7 @@ export default function Breadcrumbs() {
               )}
               {crumb.href && !isLast ? (
                 <Link
-                  href={localized(crumb.href, lang)}
+                  href={crumb.href}
                   className="rounded transition-colors hover:text-forest-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500"
                 >
                   {crumb.label}

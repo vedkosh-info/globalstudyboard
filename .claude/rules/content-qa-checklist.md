@@ -69,7 +69,7 @@ blocks the unit until fixed and re-audited.
 - [ ] No secrets/API keys/personal data committed to the repo.
 
 ## H. Technical / Site Integrity
-- [ ] Bilingual fields use the `*En` / `*Hi` convention; both populated or graceful fallback.
+- [ ] Content is in **English** (single-language site); the English (`*En`) fields are populated. No `/hi` or other-language content.
 - [ ] Page lives under the root layout (inherits the footer disclaimer).
 - [ ] `generateMetadata()` present (title, description, canonical, languages).
 - [ ] `generateStaticParams()` present for any `[slug]` route.
@@ -98,7 +98,7 @@ blocks the unit until fixed and re-audited.
 - [ ] Consistent design language (Fraunces + Inter, forest/cream/stone) — no one-offs.
 
 ## K. SEO & Monetization (Rule §13 — BINDING)
-- [ ] Canonical + hreflang (en/hi/x-default) set; appropriate structured data present.
+- [ ] Self-referential canonical set — **NO hreflang / language alternates** (single-language English); appropriate structured data present.
 - [ ] Unit is in `sitemap.ts` and reachable by internal links (no orphans).
 - [ ] No ads render unless the account is approved; `public/ads.txt` intact; no
       new tracker without updating `/privacy`; ads never obscure/crowd content.

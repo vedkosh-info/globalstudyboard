@@ -1,48 +1,19 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from '@/lib/i18n';
-
-const ROOT_ONLY_PATTERNS = [
-  /^\/opengraph-image/,
-  /^\/twitter-image/,
-  /^\/feed\.xml/,
-  /^\/sitemap/,
-  /^\/.well-known\//,
-  /^\/manifest\.webmanifest/,
-  /^\/images\//,
-  /^\/favicon\.ico/,
-  /^\/icon/,
-  /^\/apple-icon/,
-  /^\/ads\.txt/,
-  /^\/robots\.txt/,
-];
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const segments = pathname.split('/');
-  const firstSegment = segments[1] ?? '';
-  const pathnameHasLocale = (SUPPORTED_LOCALES as readonly string[]).includes(firstSegment);
-  const isRootOnly = ROOT_ONLY_PATTERNS.some((re) => re.test(pathname));
-
-  let resolvedLocale = DEFAULT_LOCALE;
-  let rewrittenPath: string | null = null;
-
-  if (!isRootOnly) {
-    if (firstSegment === DEFAULT_LOCALE) {
-      // /en or /en/* → 308 redirect to bare URL (bare is canonical for English)
-      const url = request.nextUrl.clone();
-      const tail = pathname.slice(3);
-      url.pathname = tail.length === 0 ? '/' : tail;
-      return NextResponse.redirect(url, 308);
-    }
-
-    if (pathnameHasLocale) {
-      resolvedLocale = firstSegment as typeof DEFAULT_LOCALE;
-    } else {
-      // Bare URL → internal rewrite to /en so app/[lang]/... renders it
-      resolvedLocale = DEFAULT_LOCALE;
-      rewrittenPath = pathname === '/' ? '/en' : `/en${pathname}`;
-    }
+  // Single-language (English) site. Retire any legacy locale-prefixed URLs
+  // (/hi/*, /en/*) with a permanent redirect to the bare English URL.
+  if (pathname === '/hi' || pathname === '/en') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/';
+    return NextResponse.redirect(url, 301);
+  }
+  if (pathname.startsWith('/hi/') || pathname.startsWith('/en/')) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname.slice(3) || '/';
+    return NextResponse.redirect(url, 301);
   }
 
   const hostname = request.nextUrl.hostname;
@@ -56,14 +27,8 @@ export function middleware(request: NextRequest) {
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-nonce', nonce);
-  requestHeaders.set('x-locale', resolvedLocale);
 
-  const response =
-    rewrittenPath !== null
-      ? NextResponse.rewrite(new URL(rewrittenPath, request.url), {
-          request: { headers: requestHeaders },
-        })
-      : NextResponse.next({ request: { headers: requestHeaders } });
+  const response = NextResponse.next({ request: { headers: requestHeaders } });
 
   const scriptSrcParts = [
     "'self'",

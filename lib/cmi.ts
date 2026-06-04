@@ -53,7 +53,6 @@ export function buildContentIndex(): ContentUnit[] {
     region: c.region,
     keywords: [
       c.nameEn,
-      c.nameHi ?? '',
       c.city,
       c.state ?? '',
       regionName(c.region),
@@ -96,7 +95,7 @@ export function buildContentIndex(): ContentUnit[] {
     subtitle: g.descriptionEn,
     url: `/guides/${g.slug}`,
     region: g.region,
-    keywords: [g.titleEn, g.titleHi ?? '', g.descriptionEn, regionName(g.region), ...g.keywords]
+    keywords: [g.titleEn, g.descriptionEn, regionName(g.region), ...g.keywords]
       .join(' ')
       .toLowerCase(),
   }));

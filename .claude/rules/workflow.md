@@ -33,7 +33,7 @@ globs: "**/*.{ts,tsx,js,jsx}"
 - **One canonical unit, one stable slug.** Slugs are unique within their type and never silently changed (a slug change needs a redirect plan).
 - **Manage content through the Content Master Index (CMI).** The CMI is the single source of truth that indexes + validates all content and emits a registry used by search, breadcrumbs, related-content blocks, and the sitemap.
   - When CMI tooling exists, run `npm run cmi:validate` (0 errors) before adding content and before shipping; run `npm run cmi:build` after catalog changes.
-  - Until the tooling lands, perform the same checks manually (unique/stable slugs, no duplicates, referential integrity, required fields, bilingual fallback) and log the pass in the audit log.
+  - Until the tooling lands, perform the same checks manually (unique/stable slugs, no duplicates, referential integrity, required fields) and log the pass in the audit log.
 - **Maintain relationships for continuity.** Every unit declares + renders its links (college ↔ region ↔ exams ↔ scholarships ↔ guides). Every referenced relationship must resolve to a real existing unit (no broken links). Relationships should be bidirectional, and every content page ends with a "Related / Next steps" block.
 
 ## Navigation, Search & UX (BINDING — constitution §12)
@@ -42,7 +42,7 @@ globs: "**/*.{ts,tsx,js,jsx}"
 - **Modern, content-first, fully responsive UI.** Test BOTH desktop and mobile (and tablet) before shipping any UI change. Accessible by default (semantic HTML, contrast, focus states, alt text, reduced-motion). Keep the consistent design language (Fraunces + Inter, forest/cream/stone, rounded cards) — no one-off styles.
 
 ## SEO & Monetization (BINDING — constitution §13)
-- Every page: `generateMetadata()` (title, description, canonical, hreflang en/hi/x-default), `generateStaticParams()` for `[slug]` routes, appropriate structured data, sitemap entry, and internal links (no orphans).
+- Every page: `generateMetadata()` (title, description, self-referential canonical — **no hreflang; single-language English site**), `generateStaticParams()` for `[slug]` routes, appropriate structured data, sitemap entry, and internal links (no orphans).
 - **Google Ads/AdSense-ready but off until approved**: keep `public/ads.txt` and reserved ad slots; do not render ads or add trackers until the account is approved and `/privacy` is updated. Ads never degrade content quality, speed, accessibility, or obscure content — content always outranks monetization.
 
 ## Multi-Jurisdiction Legal Compliance (BINDING — constitution §14 — EVERY country, EVERY new unit)

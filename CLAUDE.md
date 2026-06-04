@@ -23,7 +23,7 @@ A multilingual college admission guide and query platform covering universities 
 - **Framework:** Next.js 15 (App Router) with TypeScript (strict)
 - **Styling:** Tailwind CSS (preflight disabled — `styles/globals.css` provides base styles)
 - **Deployment:** Vercel (auto-deploy from `main` branch)
-- **i18n:** `en` (English, primary/global) + `hi` (Hindi); bare URLs serve English via middleware rewrite
+- **Language:** **English only** — single-language site, no i18n/locale routing. All URLs are bare (e.g. `/guides/...`); there are no `/hi` or `/en` prefixes, no `[lang]` segment, and no hreflang. This is permanent — do not add language-specific architecture.
 
 ## Build & Run Commands
 - `npm run dev` — Start dev server on **port 5000**
@@ -33,28 +33,25 @@ A multilingual college admission guide and query platform covering universities 
 
 ## Project Structure
 ```
-app/              → Next.js App Router pages
-app/[lang]/       → Locale-aware pages (en = bare URL via rewrite, hi = /hi/...)
+app/              → Next.js App Router pages (flat — bare English URLs, no [lang] segment)
 components/       → Reusable React components (Header, Footer, etc.)
 lib/              → Data files and utilities
   colleges.ts     → College data (types + data array + helpers)
   admission-guides.ts → Entrance exam data
-  i18n.ts         → Locale constants (single source of truth)
 styles/           → globals.css (base styles, no preflight)
-middleware.ts     → Locale routing + CSP + security headers
+middleware.ts     → CSP + security headers (+ legacy /hi,/en → bare 301 redirects)
 public/           → Static assets
 ```
 
-## Locale & URL Architecture
-- **English (en):** bare URLs (`/`, `/colleges/...`, `/exams/...`) — rendered by `app/[lang]/page.tsx` via middleware rewrite to `/en/`
-- **Hindi (hi):** `/hi/colleges/...`, `/hi/exams/...`
-- `/en/*` → 308 permanent redirect to bare URL
-- Cookie: `gsb_lang` stores user preference
+## URL Architecture (English only — BINDING)
+- **Single language: English.** Every page lives at a bare URL (`/`, `/colleges/...`, `/exams/...`, `/guides/...`) rendered directly from `app/...`. There is NO locale segment, NO `/hi`, NO `/en`, NO hreflang, NO language switcher, and NO locale cookie.
+- Legacy locale URLs are retired: `middleware.ts` 301-redirects any `/hi/*` or `/en/*` to the bare path.
+- **Do NOT reintroduce any language-specific architecture (i18n, `[lang]`, hreflang, locale cookies) — now or in future.** If page-level translation is ever wanted, do it per-page or rely on the browser's built-in translation; never add a locale routing layer.
 
 ## Content Data Pattern
 - College profiles in `lib/colleges.ts` — `College` interface, `COLLEGES` array, helper functions
 - Entrance exam guides in `lib/admission-guides.ts` — `EntranceExam` interface, `ENTRANCE_EXAMS` array
-- All content fields use `*En` / `*Hi` suffix convention for bilingual fields
+- Content is **English only**. Data fields keep an `*En` suffix for now (e.g. `titleEn`, `descriptionEn`) — only the English fields are authored and rendered. Legacy `*Hi` fields in older records are unused (safe to remove); do NOT add new non-English fields.
 - Always run `npm run lint && npm run typecheck` after any data change
 
 ## Content Architecture, CMI & UX (BINDING — constitution §11–§13)
@@ -63,7 +60,7 @@ public/           → Static assets
 - **Relationships for continuity:** every unit links to its related units (college ↔ region ↔ exams ↔ scholarships ↔ guides); links must resolve to real units; every page ends with a "Related / Next steps" block.
 - **Breadcrumbs + search on every page**, mounted globally in the root layout (like the footer) so new routes inherit them. Breadcrumb emits `BreadcrumbList` JSON-LD; search hands complex queries to GSB AI.
 - **Modern, content-first, fully responsive UI** — test desktop AND mobile; accessible by default; consistent Fraunces + Inter / forest-cream-stone design language.
-- **SEO + ads-ready:** canonical + hreflang + structured data + sitemap + internal links on every page; AdSense-ready but no ads until approved and `/privacy` updated; content always outranks monetization.
+- **SEO + ads-ready:** self-referential canonical + structured data + sitemap + internal links on every page (**no hreflang — single language**); AdSense-ready but no ads until approved and `/privacy` updated; content always outranks monetization.
 
 ## Multi-Jurisdiction Legal Compliance (BINDING — constitution §14)
 - **Legal compliance is NOT USA-only.** The laws of **each destination** we cover (USA, UK & Ireland, Canada, Europe, Australia & New Zealand, India, and any new region) apply to the content about it, plus the laws protecting our audience there. Enforce for ALL existing content and EVERY new unit, in every language, on every page.
@@ -72,7 +69,7 @@ public/           → Static assets
 
 ## SEO & URL Conventions
 - Use slugs (e.g. `/colleges/iit-bombay`, `/exams/jee-main`) — no numeric IDs
-- Every page must have `generateMetadata()` with title, description, canonical, hreflang
+- Every page must have `generateMetadata()` with title, description, and a self-referential canonical (no hreflang — single-language English site)
 - `generateStaticParams()` required for all `[slug]` routes
 - Content disclaimer required in footer on every content page
 
@@ -97,10 +94,9 @@ public/           → Static assets
 
 ## Important Files
 - `app/layout.tsx` — Root layout, fonts, metadata, Analytics
-- `app/[lang]/page.tsx` — Home page (college categories, featured exams, top colleges)
-- `middleware.ts` — Locale routing + CSP nonce + security headers
+- `app/page.tsx` — Home page (college categories, featured exams, top colleges)
+- `middleware.ts` — CSP nonce + security headers (+ legacy /hi,/en → bare 301 redirects)
 - `lib/colleges.ts` — College data and types
 - `lib/admission-guides.ts` — Entrance exam data and types
-- `lib/i18n.ts` — Locale constants (SUPPORTED_LOCALES, DEFAULT_LOCALE)
 - `components/Header.tsx` — Site navigation
 - `components/Footer.tsx` — Site footer with disclaimer

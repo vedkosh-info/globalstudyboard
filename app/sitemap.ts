@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...GUIDES.map((g) => ({
       url: `${BASE}/guides/${g.slug}`,
-      lastModified: now,
+      lastModified: g.lastVerified,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
