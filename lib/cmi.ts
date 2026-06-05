@@ -280,6 +280,7 @@ const GROUP_LABELS: Record<string, string> = {
   exams: 'Exams',
   regions: 'Study by Region',
   guides: 'Guides',
+  scholarships: 'Scholarships',
   'gsb-ai': 'Ask GSB AI',
   about: 'About',
   contact: 'Contact',

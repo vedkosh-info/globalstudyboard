@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Sparkles, Check, ChevronRight, Globe2 } from 'lucide-react';
 import {
   REGIONS,
@@ -26,6 +27,7 @@ const ORDERED_REGIONS = [
  */
 export default function DestinationBar() {
   const { region, setRegion, ready } = useRegion();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -51,6 +53,8 @@ export default function DestinationBar() {
   const choose = (slug: RegionSlug) => {
     setRegion(slug);
     setOpen(false);
+    // A deliberate region change takes the student to that region's hub.
+    router.push(`/regions/${slug}`);
   };
 
   return (

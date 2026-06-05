@@ -3,22 +3,9 @@
 import Link from 'next/link';
 import { Sparkles, ArrowUpRight, GraduationCap, Calendar, Wallet, Plane, MapPin } from 'lucide-react';
 
-import {
-  REGIONS,
-  PRIMARY_REGION_SLUGS,
-  REGION_TAGLINES,
-  getRegionBySlug,
-  type RegionSlug,
-} from '@/lib/regions';
+import { REGION_TAGLINES, getRegionBySlug } from '@/lib/regions';
 import { COLLEGES } from '@/lib/colleges';
 import { useRegion } from '@/components/RegionProvider';
-
-const PICKER_REGIONS = [
-  ...PRIMARY_REGION_SLUGS,
-  ...REGIONS.map((r) => r.slug).filter((s) => !PRIMARY_REGION_SLUGS.includes(s)),
-]
-  .map((slug) => REGIONS.find((r) => r.slug === slug))
-  .filter((r): r is NonNullable<typeof r> => Boolean(r));
 
 function Backdrop() {
   return (
@@ -36,7 +23,7 @@ function Backdrop() {
 }
 
 export default function HomeHero() {
-  const { region, setRegion, ready } = useRegion();
+  const { region, ready } = useRegion();
   const r = region ? getRegionBySlug(region) : undefined;
 
   // Until hydration completes, render the neutral hero so SSR/CSR match.
@@ -59,34 +46,22 @@ export default function HomeHero() {
             destination.
           </p>
 
-          <div className="mb-8">
-            <p className="text-xs font-semibold tracking-[0.16em] uppercase text-stone-500 mb-3 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-forest-700" /> Choose your destination
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {PICKER_REGIONS.map((reg) => (
-                <button
-                  key={reg.slug}
-                  type="button"
-                  onClick={() => setRegion(reg.slug as RegionSlug)}
-                  className="inline-flex items-center gap-1.5 bg-white hover:bg-forest-50 hover:border-forest-300 hover:text-forest-700 text-stone-700 text-sm px-3.5 py-1.5 rounded-full transition-colors border border-stone-200"
-                >
-                  <span aria-hidden="true" className="text-base leading-none">
-                    {reg.flag}
-                  </span>
-                  {reg.displayName}
-                </button>
-              ))}
-            </div>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="#destinations"
+              className="inline-flex items-center justify-center gap-2 bg-forest-700 hover:bg-forest-800 text-cream-50 font-semibold px-6 py-3.5 rounded-full no-underline transition-colors"
+            >
+              <MapPin className="w-4 h-4" />
+              Choose your destination
+            </a>
+            <Link
+              href="/gsb-ai"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-stone-800 font-semibold px-6 py-3.5 rounded-full no-underline transition-colors border border-stone-300"
+            >
+              <Sparkles className="w-4 h-4 text-forest-700" />
+              Ask GSB AI a question
+            </Link>
           </div>
-
-          <Link
-            href="/gsb-ai"
-            className="inline-flex items-center justify-center gap-2 bg-forest-700 hover:bg-forest-800 text-cream-50 font-semibold px-6 py-3.5 rounded-full no-underline transition-colors"
-          >
-            <Sparkles className="w-4 h-4" />
-            Ask GSB AI a question
-          </Link>
         </div>
       </section>
     );
@@ -120,7 +95,7 @@ export default function HomeHero() {
         </h1>
         <p className="text-stone-700 text-lg max-w-2xl leading-relaxed mb-8">
           {REGION_TAGLINES[r.slug]} Everything below — universities, exams, costs and visas — is
-          set to {r.displayName}. Change it anytime from the top-right.
+          set to {r.displayName}. Change it anytime from the top.
         </p>
 
         {/* Quick facts for the chosen region */}

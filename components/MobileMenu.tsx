@@ -1,9 +1,10 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home } from 'lucide-react';
 
 const NAV_LINKS = [
+  { label: 'Home', href: '/', home: true },
   { label: 'Universities', href: '/regions' },
   { label: 'Exams', href: '/exams' },
   { label: 'Scholarships', href: '/scholarships' },
@@ -36,9 +37,10 @@ export default function MobileMenu() {
                 className={
                   link.highlight
                     ? 'bg-forest-700 hover:bg-forest-800 text-cream-50 px-3 py-2.5 rounded-lg text-sm font-semibold no-underline transition-colors mt-1'
-                    : 'text-stone-700 hover:text-forest-700 hover:bg-stone-50 px-3 py-2.5 rounded-lg text-sm font-medium no-underline transition-colors'
+                    : 'inline-flex items-center gap-2 text-stone-700 hover:text-forest-700 hover:bg-stone-50 px-3 py-2.5 rounded-lg text-sm font-medium no-underline transition-colors'
                 }
               >
+                {link.home && <Home className="w-4 h-4" aria-hidden="true" />}
                 {link.label}
               </Link>
             ))}

@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import { Home } from 'lucide-react';
 import MobileMenu from '@/components/MobileMenu';
 import RegionSwitcher from '@/components/RegionSwitcher';
 
 const NAV_LINKS = [
+  { label: 'Home', href: '/' },
   { label: 'Universities', href: '/regions' },
   { label: 'Exams', href: '/exams' },
   { label: 'Scholarships', href: '/scholarships' },
@@ -28,8 +30,9 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-stone-700 hover:text-forest-700 px-3 py-2 rounded-md transition-colors no-underline"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-700 hover:text-forest-700 px-3 py-2 rounded-md hover:bg-forest-50 transition-colors no-underline"
               >
+                {link.href === '/' && <Home className="w-4 h-4" aria-hidden="true" />}
                 {link.label}
               </Link>
             ))}

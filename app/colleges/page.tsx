@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { COLLEGES } from '@/lib/colleges';
 import { REGIONS } from '@/lib/regions';
+import CollegesDestinationSpotlight from '@/components/CollegesDestinationSpotlight';
 
 export const metadata: Metadata = {
   title: 'Universities Worldwide — Profiles, Admissions & Courses',
@@ -56,6 +57,8 @@ export default function CollegesIndexPage() {
           profile for location, degree levels, the entrance tests it accepts, and the official site.
         </p>
       </header>
+
+      <CollegesDestinationSpotlight />
 
       {orderedRegions.map((regionSlug) => {
         const region = REGIONS.find((r) => r.slug === regionSlug);

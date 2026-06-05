@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { ChevronDown, MapPin, Check } from 'lucide-react';
 import { REGIONS, PRIMARY_REGION_SLUGS, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
@@ -14,6 +15,7 @@ const ORDERED_REGIONS = [
 
 export default function RegionSwitcher() {
   const { region, setRegion, ready } = useRegion();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -39,6 +41,8 @@ export default function RegionSwitcher() {
   const choose = (slug: RegionSlug) => {
     setRegion(slug);
     setOpen(false);
+    // A deliberate region change takes the student to that region's hub.
+    router.push(`/regions/${slug}`);
   };
 
   return (
@@ -48,7 +52,7 @@ export default function RegionSwitcher() {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex items-center gap-1.5 rounded-full border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:border-forest-300 hover:text-forest-700"
+        className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:border-forest-300 hover:text-forest-700"
       >
         {active ? (
           <>
@@ -61,7 +65,8 @@ export default function RegionSwitcher() {
         ) : (
           <>
             <MapPin className="w-4 h-4 text-forest-700" />
-            <span>Choose destination</span>
+            <span className="hidden sm:inline">Choose destination</span>
+            <span className="sm:hidden">Region</span>
           </>
         )}
         <ChevronDown className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`} />

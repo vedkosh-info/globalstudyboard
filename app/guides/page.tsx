@@ -4,6 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 import { GUIDES, GUIDE_CATEGORY_LABELS, type GuideCategory } from '@/lib/guides';
 import { REGIONS } from '@/lib/regions';
+import GuidesDestinationSpotlight from '@/components/GuidesDestinationSpotlight';
 
 export const metadata: Metadata = {
   title: 'Study Guides — Exams, Admissions, Careers & Study Abroad',
@@ -70,6 +71,8 @@ export default function GuidesIndexPage() {
           time-sensitive fact links to the official site, because rules change each year.
         </p>
       </header>
+
+      <GuidesDestinationSpotlight />
 
       {orderedCategories.map((category) => {
         const guides = byCategory[category];

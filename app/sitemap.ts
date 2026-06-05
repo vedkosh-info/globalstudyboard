@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/colleges`,    lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/exams`,       lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/guides`,      lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/scholarships`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE}/gsb-ai`,      lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/about`,       lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/contact`,     lastModified: now, changeFrequency: 'yearly',  priority: 0.4 },

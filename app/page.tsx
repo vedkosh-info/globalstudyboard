@@ -7,7 +7,7 @@ import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { REGIONS } from '@/lib/regions';
 import HomeHero from '@/components/HomeHero';
 import HomeDestinationSpotlight from '@/components/HomeDestinationSpotlight';
-import RegionRail from '@/components/RegionRail';
+import HomeRegionGrid from '@/components/HomeRegionGrid';
 
 export const revalidate = false;
 
@@ -95,12 +95,7 @@ export default function HomePage() {
 
       <HomeDestinationSpotlight />
 
-      <div className="-mx-4 md:mx-0">
-        <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3 px-4 md:px-0">
-          Browse by region
-        </p>
-        <RegionRail />
-      </div>
+      <HomeRegionGrid />
 
       {/* Featured universities — one per region */}
       <section>
