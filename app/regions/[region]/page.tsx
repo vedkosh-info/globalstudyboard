@@ -3,7 +3,13 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight, Calendar, DollarSign, GraduationCap, Globe2, Briefcase } from 'lucide-react';
 
-import { REGIONS, getRegionBySlug, REGION_SLUGS, type RegionSlug } from '@/lib/regions';
+import {
+  REGIONS_ALPHABETICAL,
+  getRegionBySlug,
+  matchesRegion,
+  REGION_SLUGS,
+  type RegionSlug,
+} from '@/lib/regions';
 import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import RegionRail from '@/components/RegionRail';
@@ -55,10 +61,8 @@ export default async function RegionHubPage({ params }: Props) {
   const r = getRegionBySlug(region);
   if (!r) notFound();
 
-  const universities = COLLEGES.filter((c) => c.region === r.slug);
-  const examsForRegion = ENTRANCE_EXAMS.filter(
-    (e) => e.region === r.slug || (e.region === 'global' && r.keyExamSlugs.includes(e.slug))
-  );
+  const universities = COLLEGES.filter((c) => matchesRegion(r.slug, c.region, c.regions));
+  const examsForRegion = ENTRANCE_EXAMS.filter((e) => matchesRegion(r.slug, e.region, e.regions));
 
   return (
     <div className="-mx-4 md:-mx-0">
@@ -278,7 +282,7 @@ export default async function RegionHubPage({ params }: Props) {
             Compare with other regions
           </p>
           <div className="flex flex-wrap gap-2">
-            {REGIONS.filter((other) => other.slug !== r.slug).map((other) => (
+            {REGIONS_ALPHABETICAL.filter((other) => other.slug !== r.slug).map((other) => (
               <Link
                 key={other.slug}
                 href={`/regions/${other.slug}`}

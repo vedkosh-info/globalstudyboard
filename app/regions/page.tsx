@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
-import { REGIONS } from '@/lib/regions';
+import { REGIONS_ALPHABETICAL } from '@/lib/regions';
 import { COLLEGES } from '@/lib/colleges';
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ export default function RegionsIndexPage() {
           Every region, equal depth.
         </h1>
         <p className="text-stone-700 text-lg leading-relaxed">
-          The university systems of {REGIONS.length} regions, side by side. Pick a destination to see top institutions, the application platform, key entrance exams, and what visa and post-study work options look like.
+          The university systems of {REGIONS_ALPHABETICAL.length} regions, side by side. Pick a destination to see top institutions, the application platform, key entrance exams, and what visa and post-study work options look like.
         </p>
         <p className="mt-4">
           <Link
@@ -60,7 +60,7 @@ export default function RegionsIndexPage() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {REGIONS.map((r) => {
+        {REGIONS_ALPHABETICAL.map((r) => {
           const universityCount = COLLEGES.filter((c) => c.region === r.slug).length;
           return (
             <Link

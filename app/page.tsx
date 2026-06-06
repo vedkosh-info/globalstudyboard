@@ -6,7 +6,6 @@ import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { REGIONS } from '@/lib/regions';
 import HomeHero from '@/components/HomeHero';
-import HomeDestinationSpotlight from '@/components/HomeDestinationSpotlight';
 import HomeRegionGrid from '@/components/HomeRegionGrid';
 
 export const revalidate = false;
@@ -92,8 +91,6 @@ export default function HomePage() {
     <div className="space-y-16 md:space-y-20">
 
       <HomeHero />
-
-      <HomeDestinationSpotlight />
 
       <HomeRegionGrid />
 

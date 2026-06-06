@@ -1,7 +1,7 @@
 # GlobalStudyBoard — Project Context for Claude Code
 
 ## What is GlobalStudyBoard?
-A multilingual college admission guide and query platform covering universities and entrance exams worldwide, with a strong India focus. Provides college profiles, step-by-step admission guides, entrance exam breakdowns, and study-abroad resources for students from school to postgraduate level.
+A comprehensive, English-language college admission guide and query platform covering universities and entrance exams worldwide, with a strong India focus. Provides college profiles, step-by-step admission guides, entrance exam breakdowns, and study-abroad resources for students from school to postgraduate level.
 
 **Primary audiences:** Indian students targeting IITs/NITs/IIMs/AIIMS/NLUs, and students seeking study-abroad guidance for USA, UK, Canada, Australia, Germany.
 
@@ -56,10 +56,12 @@ public/           → Static assets
 
 ## Content Architecture, CMI & UX (BINDING — constitution §11–§13)
 - **No duplicate content.** Before adding any unit (college/exam/scholarship/region/guide), search existing data by normalized name + region + type; if it exists, UPDATE it — never create a second record. One canonical unit, one stable slug.
+- **Region-personalised, one canonical unit (constitution §11.4).** Every unit carries a primary `region` + optional `regions: RegionSlug[]` = all destinations it should display under. Listing pages show the selected region **only** (default `DEFAULT_REGION` = India) with a "Show all regions" escape; common content surfaces inside each relevant region (no separate "worldwide" bucket), never duplicated. Match regions via `resolveDisplayRegions()`/`matchesRegion()` in `lib/regions.ts`. Region pickers use `REGIONS_ALPHABETICAL`. New/edited units must have their region set reviewed (Tier-1-supportable) in the QA pass.
 - **CMI (Content Master Index)** is the single source of truth that indexes + validates all content and feeds search, breadcrumbs, related-content blocks, and the sitemap. Run `npm run cmi:validate` (0 errors) before adding/shipping content once tooling exists; until then do the same checks manually and log them.
 - **Relationships for continuity:** every unit links to its related units (college ↔ region ↔ exams ↔ scholarships ↔ guides); links must resolve to real units; every page ends with a "Related / Next steps" block.
 - **Breadcrumbs + search on every page**, mounted globally in the root layout (like the footer) so new routes inherit them. Breadcrumb emits `BreadcrumbList` JSON-LD; search hands complex queries to GSB AI.
-- **Modern, content-first, fully responsive UI** — test desktop AND mobile; accessible by default; consistent Fraunces + Inter / forest-cream-stone design language.
+- **Premium UI + content readability = supreme priority (constitution §15).** A beautiful, modern, premium UI and highly readable English content rendering are first-class — co-equal with accuracy, above decoration/monetization; content is the hero. Readable measure (~60–75ch), generous line-height, clear Fraunces+Inter hierarchy, ≥16px body, WCAG AA+ contrast, no walls of text; consistent design tokens (no one-offs); fully responsive + accessible. Verify **desktop, tablet AND mobile** every change. (Readability is for the single English language — NOT a multi-language mandate; English-only stands.)
+- **Always review existing pages too + review continuously (constitution §7.5–§7.6, §15.4).** Whenever you make ANY change (content, component, layout, style, data), re-review the existing/affected pages it touches — not just the new unit — and keep reviewing as you go, not only as a final gate. A shared layout/component/token/data change is a change to every page that uses it.
 - **SEO + ads-ready:** self-referential canonical + structured data + sitemap + internal links on every page (**no hreflang — single language**); AdSense-ready but no ads until approved and `/privacy` updated; content always outranks monetization.
 
 ## Multi-Jurisdiction Legal Compliance (BINDING — constitution §14)

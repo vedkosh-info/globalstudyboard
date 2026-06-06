@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
-import { REGIONS } from '@/lib/regions';
-import ExamsDestinationSpotlight from '@/components/ExamsDestinationSpotlight';
+import { resolveDisplayRegions } from '@/lib/regions';
+import ExamsView, { type ExamCard } from '@/components/ExamsView';
 
 export const metadata: Metadata = {
   title: 'All Entrance Exams — SAT, ACT, GRE, IELTS, A-Levels & More',
@@ -38,22 +37,18 @@ export const metadata: Metadata = {
   },
 };
 
-const REGION_LABELS: Record<string, { label: string; flag: string }> = Object.fromEntries(
-  REGIONS.map((r) => [r.slug, { label: r.displayName, flag: r.flag }])
-);
-REGION_LABELS.global = { label: 'Worldwide', flag: '🌐' };
-
 export default function ExamsIndexPage() {
-  // Group exams by region
-  const byRegion = ENTRANCE_EXAMS.reduce<Record<string, typeof ENTRANCE_EXAMS>>((acc, exam) => {
-    if (!acc[exam.region]) acc[exam.region] = [];
-    acc[exam.region].push(exam);
-    return acc;
-  }, {});
-
-  // Order: USA, UK-Ireland, Europe, global, others, India
-  const regionOrder = ['usa', 'uk-ireland', 'europe', 'global', 'australia-nz', 'canada', 'russia', 'middle-east', 'india'];
-  const orderedRegions = regionOrder.filter((r) => byRegion[r]);
+  const items: ExamCard[] = ENTRANCE_EXAMS.map((e) => ({
+    id: e.id,
+    slug: e.slug,
+    shortName: e.shortName,
+    fullName: e.fullName,
+    domain: e.domain,
+    frequency: e.frequency,
+    costUsd: e.costUsd,
+    region: e.region,
+    regions: resolveDisplayRegions(e.region, e.regions),
+  }));
 
   return (
     <div className="space-y-14">
@@ -69,47 +64,7 @@ export default function ExamsIndexPage() {
         </p>
       </header>
 
-      <ExamsDestinationSpotlight />
-
-      {orderedRegions.map((regionSlug) => {
-        const meta = REGION_LABELS[regionSlug];
-        const exams = byRegion[regionSlug];
-        return (
-          <section key={regionSlug}>
-            <div className="section-rule mb-5">
-              <span>
-                <span aria-hidden="true" className="mr-2">{meta?.flag}</span>
-                {meta?.label ?? regionSlug}
-              </span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {exams.map((exam) => (
-                <Link
-                  key={exam.id}
-                  href={`/exams/${exam.slug}`}
-                  className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-display text-xl font-bold text-ink group-hover:text-forest-700 transition-colors">
-                      {exam.shortName}
-                    </span>
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-                      {exam.domain.replace('-', ' ')}
-                    </span>
-                  </div>
-                  <p className="text-stone-600 text-sm leading-relaxed line-clamp-2 mb-3">
-                    {exam.fullName}
-                  </p>
-                  <div className="mt-auto pt-3 text-xs text-stone-500 flex flex-wrap gap-x-3 gap-y-1">
-                    <span>{exam.frequency.split('(')[0].trim()}</span>
-                    {exam.costUsd && <span>· {exam.costUsd}</span>}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        );
-      })}
+      <ExamsView items={items} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Sparkles, ArrowUpRight, GraduationCap, Calendar, Wallet, Plane, MapPin } from 'lucide-react';
+import { Sparkles, ArrowUpRight, GraduationCap, Calendar, Wallet, Plane } from 'lucide-react';
 
 import { REGION_TAGLINES, getRegionBySlug } from '@/lib/regions';
 import { COLLEGES } from '@/lib/colleges';
@@ -23,51 +23,12 @@ function Backdrop() {
 }
 
 export default function HomeHero() {
-  const { region, ready } = useRegion();
-  const r = region ? getRegionBySlug(region) : undefined;
+  const { effectiveRegion } = useRegion();
+  const r = getRegionBySlug(effectiveRegion);
+  if (!r) return null;
 
-  // Until hydration completes, render the neutral hero so SSR/CSR match.
-  if (!ready || !r) {
-    return (
-      <section className="relative overflow-hidden rounded-3xl bg-cream-100 border border-stone-200 px-6 sm:px-12 py-14 md:py-20">
-        <Backdrop />
-        <div className="relative max-w-3xl">
-          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-4">
-            Worldwide · Independent · Up-to-date
-          </p>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-editorial text-ink mb-6">
-            Find the right university,
-            <br />
-            <span className="text-forest-700">wherever you want to study.</span>
-          </h1>
-          <p className="text-stone-700 text-lg max-w-2xl leading-relaxed mb-8">
-            Tell us where you want to study and we&apos;ll tailor the whole site to it —
-            universities, entrance exams, application platforms, costs and visas for your
-            destination.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href="#destinations"
-              className="inline-flex items-center justify-center gap-2 bg-forest-700 hover:bg-forest-800 text-cream-50 font-semibold px-6 py-3.5 rounded-full no-underline transition-colors"
-            >
-              <MapPin className="w-4 h-4" />
-              Choose your destination
-            </a>
-            <Link
-              href="/gsb-ai"
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-stone-800 font-semibold px-6 py-3.5 rounded-full no-underline transition-colors border border-stone-300"
-            >
-              <Sparkles className="w-4 h-4 text-forest-700" />
-              Ask GSB AI a question
-            </Link>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // Personalised hero for the chosen destination.
+  // Personalised hero for the current destination (India by default until the
+  // student picks another from the header or the first-visit picker).
   const topUniversity = [...COLLEGES.filter((c) => c.region === r.slug)].sort(
     (a, b) => (a.ranking?.qs ?? 9999) - (b.ranking?.qs ?? 9999)
   )[0];

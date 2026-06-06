@@ -3,29 +3,16 @@
 import { useRouter } from 'next/navigation';
 import { ArrowUpRight, Check, MapPin } from 'lucide-react';
 
-import {
-  REGIONS,
-  PRIMARY_REGION_SLUGS,
-  REGION_TAGLINES,
-  type RegionSlug,
-} from '@/lib/regions';
+import { REGIONS_ALPHABETICAL, REGION_TAGLINES, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
-
-// Primary targets first, then the rest — India & core markets up top.
-const ORDERED_REGIONS = [
-  ...PRIMARY_REGION_SLUGS,
-  ...REGIONS.map((r) => r.slug).filter((s) => !PRIMARY_REGION_SLUGS.includes(s)),
-]
-  .map((slug) => REGIONS.find((r) => r.slug === slug))
-  .filter((r): r is NonNullable<typeof r> => Boolean(r));
 
 /**
  * The single destination browser on the Home page. Choosing a region tunes the
- * whole site to it and takes the student to that region's hub. Replaces the old
- * duplicated hero pills + "Browse by region" rail with one premium grid.
+ * whole site to it and takes the student to that region's hub. Regions are
+ * listed alphabetically (see REGIONS_ALPHABETICAL).
  */
 export default function HomeRegionGrid() {
-  const { region, setRegion } = useRegion();
+  const { region, effectiveRegion, setRegion } = useRegion();
   const router = useRouter();
 
   const choose = (slug: RegionSlug) => {
@@ -52,8 +39,8 @@ export default function HomeRegionGrid() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {ORDERED_REGIONS.map((r) => {
-          const selected = r.slug === region;
+        {REGIONS_ALPHABETICAL.map((r) => {
+          const selected = r.slug === effectiveRegion;
           return (
             <button
               key={r.slug}

@@ -8,7 +8,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { RegionProvider } from '@/components/RegionProvider';
 import DestinationPicker from '@/components/DestinationPicker';
-import DestinationBar from '@/components/DestinationBar';
 import SiteSearch from '@/components/SiteSearch';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -137,7 +136,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: websiteJsonLd }} />
         <RegionProvider>
           <Header />
-          <DestinationBar />
           <main className="mx-auto w-full max-w-7xl px-4 py-8 md:py-12">
             <div className="mb-6 space-y-3">
               <SiteSearch />

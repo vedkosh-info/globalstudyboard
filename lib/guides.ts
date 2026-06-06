@@ -40,8 +40,14 @@ export interface Guide {
   /** Stable slug, unique within guides. */
   slug: string;
   category: GuideCategory;
-  /** Owning region (drives breadcrumbs + related links). */
+  /** Primary home region (drives breadcrumbs + related links). */
   region: RegionSlug;
+  /**
+   * Extra regions this guide is ALSO relevant to, beyond its primary `region`.
+   * A cross-region explainer can list several (or all) regions so it surfaces
+   * under each — one canonical guide, shown wherever relevant. See `resolveDisplayRegions()`.
+   */
+  regions?: RegionSlug[];
   titleEn: string;
   descriptionEn: string;
   /** Estimated read time in minutes. */

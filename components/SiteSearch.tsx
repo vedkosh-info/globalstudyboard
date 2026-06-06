@@ -3,7 +3,16 @@
 import { useMemo, useRef, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Search, Sparkles, GraduationCap, FileText, Globe2, BookOpen, CornerDownLeft } from 'lucide-react';
+import {
+  Search,
+  Sparkles,
+  GraduationCap,
+  FileText,
+  Globe2,
+  BookOpen,
+  CornerDownLeft,
+  X,
+} from 'lucide-react';
 
 import { CONTENT_INDEX, type ContentType } from '@/lib/cmi';
 
@@ -50,8 +59,8 @@ export default function SiteSearch() {
     router.push(href);
   }, [query, router]);
 
-  // The leading button performs the search: jump to the top match if there is
-  // one, otherwise hand the query to GSB AI. With no query, it just focuses.
+  // Submitting (button or Enter): jump to the top match if there is one, else
+  // hand the query to GSB AI. With no query, just focus the field.
   const submitSearch = useCallback(() => {
     const q = query.trim();
     if (!q) {
@@ -60,14 +69,20 @@ export default function SiteSearch() {
       return;
     }
     if (results.length > 0) {
-      const u = results[0];
       setOpen(false);
       setQuery('');
-      router.push(u.url);
+      router.push(results[0].url);
       return;
     }
     askAi();
   }, [query, results, router, askAi]);
+
+  const clear = useCallback(() => {
+    setQuery('');
+    setActive(-1);
+    inputRef.current?.focus();
+    setOpen(true);
+  }, []);
 
   // Close on outside click.
   useEffect(() => {
@@ -83,16 +98,18 @@ export default function SiteSearch() {
   function onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
+      setOpen(true);
       setActive((a) => Math.min(a + 1, results.length - 1));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActive((a) => Math.max(a - 1, -1));
     } else if (e.key === 'Enter') {
+      // Handle Enter here so the form's implicit submit doesn't double-fire.
+      e.preventDefault();
       if (active >= 0 && results[active]) {
-        const u = results[active];
         setOpen(false);
         setQuery('');
-        router.push(u.url);
+        router.push(results[active].url);
       } else {
         submitSearch();
       }
@@ -105,20 +122,20 @@ export default function SiteSearch() {
 
   return (
     <div ref={containerRef} className="relative w-full" role="search">
-      <div className="relative flex items-center">
-        {/* Clickable search button (left) */}
-        <button
-          type="button"
-          onClick={submitSearch}
-          aria-label="Search"
-          title="Search"
-          className="absolute left-1.5 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-lg text-stone-500 transition-colors hover:bg-forest-50 hover:text-forest-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500"
-        >
-          <Search className="h-4 w-4" aria-hidden="true" />
-        </button>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          submitSearch();
+        }}
+        className="flex items-stretch overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm transition-shadow focus-within:border-forest-400 focus-within:shadow-md focus-within:ring-2 focus-within:ring-forest-500/25"
+      >
+        <span className="pointer-events-none flex items-center pl-4 pr-2 text-stone-400">
+          <Search className="h-5 w-5" aria-hidden="true" />
+        </span>
         <input
           ref={inputRef}
-          type="search"
+          type="text"
+          inputMode="search"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -127,17 +144,39 @@ export default function SiteSearch() {
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={onKeyDown}
-          placeholder="Search universities, exams, regions…"
+          placeholder="Search universities, exams, scholarships, guides…"
           aria-label="Search GlobalStudyBoard"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-expanded={showPanel}
+          aria-controls="site-search-results"
           autoComplete="off"
-          className="w-full rounded-xl border border-stone-300 bg-white py-2.5 pl-12 pr-4 text-sm text-stone-800 shadow-sm placeholder:text-stone-400 focus:border-forest-500 focus:outline-none focus:ring-2 focus:ring-forest-500/30"
+          className="min-w-0 flex-1 appearance-none border-0 bg-transparent py-3 text-sm text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-0 sm:text-base"
         />
-      </div>
+        {query && (
+          <button
+            type="button"
+            onClick={clear}
+            aria-label="Clear search"
+            className="flex items-center px-2 text-stone-400 transition-colors hover:text-stone-700 focus-visible:outline-none focus-visible:text-forest-700"
+          >
+            <X className="h-4 w-4" aria-hidden="true" />
+          </button>
+        )}
+        <button
+          type="submit"
+          aria-label="Search"
+          className="flex items-center gap-2 bg-forest-700 px-4 text-sm font-semibold text-cream-50 transition-colors hover:bg-forest-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cream-50/70 sm:px-5"
+        >
+          <Search className="h-4 w-4 sm:hidden" aria-hidden="true" />
+          <span className="hidden sm:inline">Search</span>
+        </button>
+      </form>
 
       {showPanel && (
         <div
           id="site-search-results"
-          className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-xl border border-stone-200 bg-white shadow-lg"
+          className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xl"
         >
           {results.length > 0 ? (
             <ul className="m-0 max-h-80 list-none overflow-y-auto p-0 py-1">
@@ -155,12 +194,8 @@ export default function SiteSearch() {
                   >
                     <TypeIcon type={u.type} />
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate font-medium text-stone-800">
-                        {u.title}
-                      </span>
-                      <span className="block truncate text-xs text-stone-500">
-                        {u.subtitle}
-                      </span>
+                      <span className="block truncate font-medium text-stone-800">{u.title}</span>
+                      <span className="block truncate text-xs text-stone-500">{u.subtitle}</span>
                     </span>
                     <span className="shrink-0 rounded-full bg-stone-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-stone-500">
                       {TYPE_LABEL[u.type]}

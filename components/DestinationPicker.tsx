@@ -3,21 +3,8 @@
 import { useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { X, Compass, ArrowRight } from 'lucide-react';
-import {
-  REGIONS,
-  PRIMARY_REGION_SLUGS,
-  REGION_TAGLINES,
-  type RegionSlug,
-} from '@/lib/regions';
+import { REGIONS_ALPHABETICAL, REGION_TAGLINES, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
-
-// Primary targets first, then the rest — keeps India & core markets up top.
-const ORDERED_REGIONS = [
-  ...PRIMARY_REGION_SLUGS,
-  ...REGIONS.map((r) => r.slug).filter((s) => !PRIMARY_REGION_SLUGS.includes(s)),
-]
-  .map((slug) => REGIONS.find((r) => r.slug === slug))
-  .filter((r): r is NonNullable<typeof r> => Boolean(r));
 
 /**
  * First-visit destination picker. Appears once per browser session when a
@@ -88,7 +75,7 @@ export default function DestinationPicker() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {ORDERED_REGIONS.map((r) => (
+            {REGIONS_ALPHABETICAL.map((r) => (
               <button
                 key={r.slug}
                 type="button"

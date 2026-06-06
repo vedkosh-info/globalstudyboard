@@ -1,21 +1,21 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { ChevronDown, MapPin, Check } from 'lucide-react';
-import { REGIONS, PRIMARY_REGION_SLUGS, type RegionSlug } from '@/lib/regions';
+import { usePathname, useRouter } from 'next/navigation';
+import { ChevronDown, Check, Globe2 } from 'lucide-react';
+import { REGIONS_ALPHABETICAL, getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
 
-const ORDERED_REGIONS = [
-  ...PRIMARY_REGION_SLUGS,
-  ...REGIONS.map((r) => r.slug).filter((s) => !PRIMARY_REGION_SLUGS.includes(s)),
-]
-  .map((slug) => REGIONS.find((r) => r.slug === slug))
-  .filter((r): r is NonNullable<typeof r> => Boolean(r));
-
+/**
+ * The site-wide study-destination dropdown that lives in the header menu bar on
+ * every page. It always shows the region the site is currently tuned to (India
+ * by default) and lets the student switch in one tap — re-tuning the whole site.
+ * The region list is alphabetical (see REGIONS_ALPHABETICAL).
+ */
 export default function RegionSwitcher() {
-  const { region, setRegion, ready } = useRegion();
+  const { effectiveRegion, region, setRegion } = useRegion();
   const router = useRouter();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -33,16 +33,16 @@ export default function RegionSwitcher() {
     };
   }, [open]);
 
-  const active = region ? REGIONS.find((r) => r.slug === region) : undefined;
-
-  // Reserve space before hydration to avoid layout shift.
-  if (!ready) return <div aria-hidden="true" className="h-8 w-[120px]" />;
+  // Always render a real region (India until the student picks otherwise), so the
+  // control is never blank and reads clearly as a destination selector.
+  const active = getRegionBySlug(effectiveRegion);
 
   const choose = (slug: RegionSlug) => {
     setRegion(slug);
     setOpen(false);
-    // A deliberate region change takes the student to that region's hub.
-    router.push(`/regions/${slug}`);
+    // Re-tune in place. The one exception: when standing on a region hub URL,
+    // move to the new region's hub so the page matches the chosen destination.
+    if (pathname?.startsWith('/regions/')) router.push(`/regions/${slug}`);
   };
 
   return (
@@ -52,37 +52,36 @@ export default function RegionSwitcher() {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:border-forest-300 hover:text-forest-700"
+        aria-label={`Study destination: ${active?.displayName ?? 'choose'} — change`}
+        className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-forest-300 bg-white px-2.5 py-1.5 text-sm font-semibold text-forest-800 shadow-sm transition-colors hover:border-forest-400 hover:bg-forest-50 sm:px-3"
       >
-        {active ? (
-          <>
-            <span aria-hidden="true" className="text-base leading-none">
-              {active.flag}
-            </span>
-            <span className="hidden sm:inline max-w-[140px] truncate">{active.displayName}</span>
-            <span className="sm:hidden">{active.currency.code}</span>
-          </>
-        ) : (
-          <>
-            <MapPin className="w-4 h-4 text-forest-700" />
-            <span className="hidden sm:inline">Choose destination</span>
-            <span className="sm:hidden">Region</span>
-          </>
+        <Globe2 className="hidden h-4 w-4 shrink-0 text-forest-600 sm:block" aria-hidden="true" />
+        {active && (
+          <span aria-hidden="true" className="text-base leading-none">
+            {active.flag}
+          </span>
         )}
-        <ChevronDown className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`} />
+        <span className="hidden max-w-[150px] truncate sm:inline">
+          {active?.displayName ?? 'Choose destination'}
+        </span>
+        <span className="sm:hidden">{active?.currency.code ?? 'Region'}</span>
+        <ChevronDown
+          className={`h-4 w-4 shrink-0 text-stone-400 transition-transform ${open ? 'rotate-180' : ''}`}
+          aria-hidden="true"
+        />
       </button>
 
       {open && (
         <div
           role="listbox"
           aria-label="Choose your study destination"
-          className="absolute right-0 mt-2 w-64 max-h-[70vh] overflow-y-auto rounded-2xl border border-stone-200 bg-white shadow-lg p-1.5 z-50"
+          className="absolute right-0 z-50 mt-2 max-h-[70vh] w-64 overflow-y-auto rounded-2xl border border-stone-200 bg-white p-1.5 shadow-xl"
         >
           <p className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-400">
             I want to study in…
           </p>
-          {ORDERED_REGIONS.map((r) => {
-            const selected = r.slug === region;
+          {REGIONS_ALPHABETICAL.map((r) => {
+            const selected = r.slug === effectiveRegion;
             return (
               <button
                 key={r.slug}
@@ -91,16 +90,18 @@ export default function RegionSwitcher() {
                 aria-selected={selected}
                 onClick={() => choose(r.slug)}
                 className={`flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-left text-sm transition-colors ${
-                  selected
-                    ? 'bg-forest-50 text-forest-800'
-                    : 'text-stone-700 hover:bg-stone-50'
+                  selected ? 'bg-forest-50 text-forest-800' : 'text-stone-700 hover:bg-stone-50'
                 }`}
               >
                 <span aria-hidden="true" className="text-lg leading-none">
                   {r.flag}
                 </span>
                 <span className="flex-1 font-medium">{r.displayName}</span>
-                {selected && <Check className="w-4 h-4 text-forest-700" />}
+                {selected && (
+                  <span className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-forest-600">
+                    {region ? <Check className="h-4 w-4" /> : 'Default'}
+                  </span>
+                )}
               </button>
             );
           })}

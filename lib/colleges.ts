@@ -49,7 +49,14 @@ export interface College {
   slug: string;
   nameEn: string;
   type: CollegeType;
+  /** Primary home region (where the institution physically sits). */
   region: RegionSlug;
+  /**
+   * Extra regions this unit is ALSO relevant to, beyond `region`. Universities
+   * usually sit in one place, so this is rarely needed; when present, the unit
+   * also surfaces under every listed region. See `resolveDisplayRegions()`.
+   */
+  regions?: RegionSlug[];
   country: CollegeCountry;
   city: string;
   state?: string;

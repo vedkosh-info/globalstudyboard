@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { REGIONS, type RegionSlug } from '@/lib/regions';
+import { REGIONS_ALPHABETICAL, type RegionSlug } from '@/lib/regions';
 
 interface Props {
   activeSlug?: RegionSlug;
@@ -16,7 +16,7 @@ export default function RegionRail({ activeSlug, sticky = false }: Props) {
     >
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex items-center gap-2 overflow-x-auto py-3 -mx-1 px-1">
-          {REGIONS.map((r) => {
+          {REGIONS_ALPHABETICAL.map((r) => {
             const active = r.slug === activeSlug;
             return (
               <Link

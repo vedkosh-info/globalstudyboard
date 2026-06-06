@@ -220,9 +220,61 @@ export const getRegionBySlug = (slug: string): Region | undefined =>
 
 export const REGION_SLUGS: RegionSlug[] = REGIONS.map((r) => r.slug);
 
+/** Every region a piece of content can belong to (alias of REGION_SLUGS). */
+export const ALL_REGION_SLUGS: readonly RegionSlug[] = REGION_SLUGS;
+
 /**
- * Destinations we target most heavily — shown first in the destination picker.
- * India (and the wider Asian subcontinent) plus the core study-abroad markets.
+ * The default study destination. When a visitor has not (yet) chosen one, the
+ * whole site is tuned to India — our primary audience — so it always feels
+ * tailored from the first paint. Common / cross-region content is filed here too.
+ */
+export const DEFAULT_REGION: RegionSlug = 'india';
+
+/**
+ * Regions in alphabetical order by display name — the canonical order for every
+ * user-facing region picker (header dropdown, first-visit modal, region grid,
+ * region rail). Sorting lives here so no component re-implements it.
+ */
+export const REGIONS_ALPHABETICAL: Region[] = [...REGIONS].sort((a, b) =>
+  a.displayName.localeCompare(b.displayName),
+);
+
+/**
+ * Resolve the full set of regions a content unit should DISPLAY under.
+ *
+ * Content is unique (one canonical page) but can be relevant to several regions
+ * (e.g. IELTS is required in the UK, Canada, Australia…). A unit declares a
+ * `primary` home region plus an optional `extra` set of additional regions:
+ *   - `extra` present  → that explicit set (always including the primary home).
+ *   - primary `'global'` (legacy exams) → ALL regions.
+ *   - otherwise        → just the primary region.
+ * The result is returned in canonical region order.
+ */
+export function resolveDisplayRegions(
+  primary: RegionSlug | 'global',
+  extra?: readonly RegionSlug[],
+): RegionSlug[] {
+  if (extra && extra.length > 0) {
+    const set = new Set<RegionSlug>(extra);
+    if (primary !== 'global') set.add(primary);
+    return REGION_SLUGS.filter((s) => set.has(s));
+  }
+  if (primary === 'global') return [...REGION_SLUGS];
+  return [primary];
+}
+
+/** True if `selected` is one of the regions the unit displays under. */
+export function matchesRegion(
+  selected: RegionSlug,
+  primary: RegionSlug | 'global',
+  extra?: readonly RegionSlug[],
+): boolean {
+  return resolveDisplayRegions(primary, extra).includes(selected);
+}
+
+/**
+ * Destinations we target most heavily. Retained for any priority-ordered
+ * surface; user-facing pickers use REGIONS_ALPHABETICAL instead.
  */
 export const PRIMARY_REGION_SLUGS: RegionSlug[] = [
   'india',

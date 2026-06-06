@@ -156,8 +156,18 @@ Process for every new or changed content unit (a college, an exam, a page):
 3. **Log the result** in `.claude/rules/content-audit-log.md` (date, content
    unit, auditor, pass/fail, sources verified, notes).
 4. **Block on fail** — any failed item is fixed and re-audited before shipping.
-5. **Existing content** is audited on the same checklist on a rolling basis and
-   whenever it is touched.
+5. **Existing pages are reviewed too — not only the unit being authored.**
+   Whenever ANY change is made (content, component, layout, style, data), the
+   independent QA pass MUST also re-review the **existing/affected pages** the
+   change touches or renders — a change to a shared component, layout, design
+   token, or data shape is a change to *every* page that uses it. Never ship a
+   change having reviewed only the new unit. Existing content is additionally
+   audited on a rolling basis.
+6. **Review continuously, not only at the end.** Review is an ongoing part of
+   making a change — check correctness, rendering, readability and
+   responsiveness (the §15 standards) as you go *and* again before finishing,
+   not as a single final gate. "Keep reviewing whenever we are making changes"
+   is a binding working rule.
 
 Audit is **independent of** the author: never self-certify in the same pass.
 
@@ -284,6 +294,38 @@ relationships** so users can move between related items without dead ends:
 - Each content page should end with a **"Related / Next steps"** block drawn from
   these relationships to preserve continuity and a coherent journey.
 
+### 11.4 Region tagging & multi-region display (BINDING)
+The site is **personalised by study destination**: a student sees **only the
+content relevant to their chosen region**, while every unit stays a single,
+non-duplicated source of truth.
+- **One canonical unit, many regions.** A unit is authored **once** (one slug,
+  one page) and may be relevant to **one, several, or all** regions. NEVER
+  duplicate a unit so it can appear under more than one region.
+- **Declare the region set on every unit.** Each college, exam and guide carries
+  a primary `region` (its home destination) plus an optional
+  `regions: RegionSlug[]` listing every additional region it should display under:
+  - Relevant to a **specific subset** → list exactly those regions (e.g. an exam
+    accepted in the USA and the Middle East → `regions: ['usa', 'middle-east']`).
+  - Relevant **everywhere** → `region: 'global'` (exams) or list all regions; it
+    then surfaces under every destination.
+  - Single-region → leave `regions` unset (it shows under its `region` only).
+  Region matching is centralised in `resolveDisplayRegions()` / `matchesRegion()`
+  in `lib/regions.ts` — never re-implement it per page.
+- **Show only the relevant region by default.** Listing pages (Universities,
+  Exams, Guides) display the selected destination's content only, with a
+  "Show all regions" escape. The default destination is **India**
+  (`DEFAULT_REGION`) until the student picks another. Common / cross-region
+  content appears **inside each region it is relevant to** — there is NO separate
+  "worldwide" bucket in the filtered view.
+- **Tag deliberately.** If a unit is genuinely common but a single home is
+  needed, tag it on purpose; never leave a region claim implicit or accidental.
+- **Review on every change (existing AND new).** Before adding or editing ANY
+  unit, the independent QA pass MUST confirm its region set is correct and
+  Tier-1-supportable — a unit claims a region only where it is genuinely relevant
+  (e.g. an exam that region's universities actually accept). `npm run cmi:validate`
+  must pass (every slug in `regions[]` must be a real region). Log the region(s)
+  reviewed in the audit log.
+
 ---
 
 ## 12. Navigation, Search & UX Standards (BINDING)
@@ -402,4 +444,68 @@ ships, the **independent QA pass** (§7) must confirm:
 - **We are not lawyers**: this constitution encodes a protective compliance
   posture, not legal advice. If a genuine legal question exceeds these rules,
   **STOP and flag it to the user** — never guess or work around it.
+
+---
+
+## 15. Premium UI, Content Rendering & Readability (BINDING — supreme priority)
+A **beautiful, premium, modern UI** and **highly readable content rendering** are
+a **supreme, first-class priority** on GlobalStudyBoard — co-equal with content
+accuracy and *above* convenience, decoration, and monetization. Every page must
+both *be* correct (§2–§14) and *look and read* like a premium product. The
+**content is the hero**: design exists to render it clearly and make it effortless
+to read — never to crowd it, decorate over it, or compete with it.
+
+> **English-only (§1) stands.** These are *readability* standards for GSB's single
+> **English** language — clear typography, layout and legibility. They are **NOT**
+> a multi-language mandate: do **not** add i18n, `[lang]`, hreflang, a language
+> switcher, or non-English content "to improve readability." (Multi-language
+> belongs to other projects, never GSB.)
+
+### 15.1 Content rendering & readability (highest weight)
+- **Readable measure & rhythm.** Body text sits in a comfortable measure
+  (~60–75 characters per line — never full-bleed walls of text), with generous
+  line-height (~1.6–1.75 for body) and clear paragraph spacing. Long content is
+  broken into sections, short paragraphs, lists, tables and cards — never a slab.
+- **Clear typographic hierarchy.** A distinct, consistent scale for H1/H2/H3,
+  body, captions and labels (Fraunces display for headings, Inter for body —
+  §12.3). One clear H1 per page; scannable, meaningful headings.
+- **Legibility first.** Minimum body size ~16px (larger where it aids reading);
+  strong text/background contrast — **WCAG AA minimum, aim AAA for body**. Never
+  trade contrast or size for decoration.
+- **Scannability.** Key facts (fees, deadlines, eligibility, sources) are easy to
+  find — bold labels, structured fields, tables, and the §5 source captions — not
+  buried in prose.
+
+### 15.2 Premium, modern, consistent visual design
+- **Modern & premium feel** — clean spacing, balanced whitespace, clear visual
+  hierarchy, tasteful rounded cards, subtle depth, and a polished, trustworthy
+  look appropriate to an education resource.
+- **One design language, no one-offs.** Reuse the established tokens and
+  components — Fraunces + Inter and the project brand palette / forest-cream-stone
+  + brand-navy-gold tokens in `tailwind.config` and `styles/globals.css` (see
+  §12.3 and CLAUDE.md "Color Palette"). No ad-hoc colors, fonts, or spacing that
+  break consistency.
+- **Subtle, optional motion** — respect `prefers-reduced-motion`; animation never
+  blocks or distracts from reading.
+
+### 15.3 Fully responsive & accessible by default
+- **Desktop, tablet AND mobile** must each look and read beautifully — verify all
+  three viewports before finishing any UI change (§12.3). Mobile is never an
+  afterthought.
+- **Accessible by default** — semantic HTML, visible focus states, keyboard
+  operability, alt text, adequate touch targets, nothing hidden behind hover-only;
+  aligns with the §14.2 accessibility-law obligations.
+- **Fast & stable** — content-first loading, no avoidable layout shift; chrome,
+  ads (once approved) and scripts never degrade speed, readability or
+  accessibility (§13.2).
+
+### 15.4 Reviewed on every change — existing pages + continuously (ties to §7.5–§7.6)
+- These standards are **acceptance criteria for every UI or content change** —
+  apply them to the page you touch **and** re-review the **existing pages** the
+  change affects (a shared layout, component, token or data change → every page
+  that uses it), per §7.5.
+- **Keep reviewing as you go** (§7.6) — check rendering, readability and
+  responsiveness continuously while changing and again before finishing, on
+  desktop and mobile. A change is not done until it both verifies correct and
+  looks/reads premium on all viewports.
 

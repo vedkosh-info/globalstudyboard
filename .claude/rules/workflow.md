@@ -41,6 +41,13 @@ globs: "**/*.{ts,tsx,js,jsx}"
 - **A search box at the top of every page**, mounted globally in the layout, searching the CMI index with fast client-side matching and handing complex queries to GSB AI. Keyboard-accessible; identical on desktop + mobile.
 - **Modern, content-first, fully responsive UI.** Test BOTH desktop and mobile (and tablet) before shipping any UI change. Accessible by default (semantic HTML, contrast, focus states, alt text, reduced-motion). Keep the consistent design language (Fraunces + Inter, forest/cream/stone, rounded cards) — no one-off styles.
 
+## Premium UI, Readability & Always-Review (BINDING — constitution §15, §7.5–§7.6)
+- **Premium UI + readable content = supreme priority.** Every page must look modern/premium AND render English content for effortless reading — readable measure (~60–75ch), generous line-height, clear Fraunces+Inter hierarchy, ≥16px body, WCAG AA+ contrast, no walls of text, consistent tokens (no one-offs). Content is the hero; chrome/ads never crowd or outrank it.
+- **Acceptance criteria for every UI/content change** — verify on desktop, tablet AND mobile before finishing.
+- **Always review existing pages too.** A change to a shared layout, component, design token or data shape is a change to every page that uses it — re-review those existing/affected pages, not just the new unit.
+- **Review continuously, not just at the end.** Keep checking rendering, readability and responsiveness as you go and again before finishing. A change isn't done until it verifies correct AND looks/reads premium on all viewports.
+- **English-only stands** — readability is for the single English language; never add i18n/`[lang]`/hreflang/non-English content to "improve readability."
+
 ## SEO & Monetization (BINDING — constitution §13)
 - Every page: `generateMetadata()` (title, description, self-referential canonical — **no hreflang; single-language English site**), `generateStaticParams()` for `[slug]` routes, appropriate structured data, sitemap entry, and internal links (no orphans).
 - **Google Ads/AdSense-ready but off until approved**: keep `public/ads.txt` and reserved ad slots; do not render ads or add trackers until the account is approved and `/privacy` is updated. Ads never degrade content quality, speed, accessibility, or obscure content — content always outranks monetization.

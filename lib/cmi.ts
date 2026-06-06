@@ -150,6 +150,11 @@ export function validateContent(): CmiReport {
     if (!REGION_SLUGS.has(c.region)) {
       errors.push(`College "${c.nameEn}" has unknown region "${c.region}".`);
     }
+    for (const rs of c.regions ?? []) {
+      if (!REGION_SLUGS.has(rs)) {
+        errors.push(`College "${c.nameEn}" lists unknown region "${rs}" in regions[].`);
+      }
+    }
     if (c.admissionExams.length === 0) {
       warnings.push(`College "${c.nameEn}" lists no admissionExams.`);
     }
@@ -184,6 +189,11 @@ export function validateContent(): CmiReport {
     if (!e.descriptionEn) errors.push(`Exam "${e.shortName}" is missing descriptionEn.`);
     if (e.region !== 'global' && !REGION_SLUGS.has(e.region)) {
       errors.push(`Exam "${e.shortName}" has unknown region "${e.region}".`);
+    }
+    for (const rs of e.regions ?? []) {
+      if (!REGION_SLUGS.has(rs)) {
+        errors.push(`Exam "${e.shortName}" lists unknown region "${rs}" in regions[].`);
+      }
     }
     for (const cid of e.collegesAccepting) {
       if (!COLLEGE_IDS.has(cid)) {
@@ -227,6 +237,11 @@ export function validateContent(): CmiReport {
     if (g.sections.length === 0) errors.push(`Guide "${g.titleEn}" has no sections.`);
     if (!REGION_SLUGS.has(g.region)) {
       errors.push(`Guide "${g.titleEn}" has unknown region "${g.region}".`);
+    }
+    for (const rs of g.regions ?? []) {
+      if (!REGION_SLUGS.has(rs)) {
+        errors.push(`Guide "${g.titleEn}" lists unknown region "${rs}" in regions[].`);
+      }
     }
     if (g.sources.length === 0) {
       warnings.push(`Guide "${g.titleEn}" lists no Tier-1 sources.`);

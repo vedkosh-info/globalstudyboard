@@ -25,7 +25,14 @@ export interface EntranceExam {
   slug: string;
   shortName: string;
   fullName: string;
+  /** Primary home region, or 'global' for a test accepted everywhere. */
   region: ExamRegion;
+  /**
+   * Regions this exam is required/accepted in when it is relevant to a SPECIFIC
+   * subset (e.g. SAT → USA + Middle East). Leave unset for single-region exams;
+   * use `region: 'global'` for tests accepted everywhere. See `resolveDisplayRegions()`.
+   */
+  regions?: RegionSlug[];
   domain: ExamDomain;
   conductingBody: string;
   frequency: string;
@@ -51,6 +58,9 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     shortName: 'SAT',
     fullName: 'Scholastic Assessment Test',
     region: 'usa',
+    // Also used for admission to American universities in the Middle East
+    // (e.g. NYU Abu Dhabi — see collegesAccepting). See Content Policy §11.4.
+    regions: ['usa', 'middle-east'],
     domain: 'undergraduate-admission',
     conductingBody: 'College Board',
     frequency: '7 dates per year (Aug, Oct, Nov, Dec, Mar, May, Jun)',

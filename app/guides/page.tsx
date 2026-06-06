@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 
 import { GUIDES, GUIDE_CATEGORY_LABELS, type GuideCategory } from '@/lib/guides';
-import { REGIONS } from '@/lib/regions';
-import GuidesDestinationSpotlight from '@/components/GuidesDestinationSpotlight';
+import { resolveDisplayRegions } from '@/lib/regions';
+import GuidesView, { type GuideCard } from '@/components/GuidesView';
 
 export const metadata: Metadata = {
   title: 'Study Guides — Exams, Admissions, Careers & Study Abroad',
@@ -46,15 +44,26 @@ const CATEGORY_ORDER: GuideCategory[] = [
   'scholarships',
 ];
 
-const regionMeta = (slug: string) => REGIONS.find((r) => r.slug === slug);
-
 export default function GuidesIndexPage() {
-  const byCategory = GUIDES.reduce<Record<string, typeof GUIDES>>((acc, g) => {
-    (acc[g.category] ??= []).push(g);
-    return acc;
-  }, {});
+  const items: GuideCard[] = GUIDES.map((g) => ({
+    slug: g.slug,
+    titleEn: g.titleEn,
+    descriptionEn: g.descriptionEn,
+    readMinutes: g.readMinutes,
+    category: g.category,
+    region: g.region,
+    regions: resolveDisplayRegions(g.region, g.regions),
+  }));
 
-  const orderedCategories = CATEGORY_ORDER.filter((c) => byCategory[c]);
+  // Order known categories first, then append any category present in the data
+  // but missing from CATEGORY_ORDER — so a new category can never silently drop
+  // its guides from the page.
+  const present = Array.from(new Set(GUIDES.map((g) => g.category)));
+  const orderedKeys = [
+    ...CATEGORY_ORDER.filter((c) => present.includes(c)),
+    ...present.filter((c) => !CATEGORY_ORDER.includes(c)),
+  ];
+  const categories = orderedKeys.map((key) => ({ key, label: GUIDE_CATEGORY_LABELS[key] }));
 
   return (
     <div className="space-y-14">
@@ -72,52 +81,7 @@ export default function GuidesIndexPage() {
         </p>
       </header>
 
-      <GuidesDestinationSpotlight />
-
-      {orderedCategories.map((category) => {
-        const guides = byCategory[category];
-        return (
-          <section key={category}>
-            <div className="section-rule mb-5">
-              <span>{GUIDE_CATEGORY_LABELS[category]}</span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {guides.map((guide) => {
-                const meta = regionMeta(guide.region);
-                return (
-                  <Link
-                    key={guide.slug}
-                    href={`/guides/${guide.slug}`}
-                    className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col"
-                  >
-                    <div className="flex items-center gap-2 mb-2">
-                      {meta && (
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-                          <span aria-hidden="true" className="mr-1">{meta.flag}</span>
-                          {meta.displayName}
-                        </span>
-                      )}
-                      <span className="text-stone-300">·</span>
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-                        {guide.readMinutes} min read
-                      </span>
-                    </div>
-                    <h2 className="font-display text-lg font-bold tracking-editorial text-ink leading-snug mb-2 group-hover:text-forest-700">
-                      {guide.titleEn}
-                    </h2>
-                    <p className="text-stone-600 text-sm leading-relaxed m-0 flex-1">
-                      {guide.descriptionEn}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
-                      Read guide <ArrowUpRight className="w-4 h-4" />
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-        );
-      })}
+      <GuidesView items={items} categories={categories} />
     </div>
   );
 }

@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { COLLEGES } from '@/lib/colleges';
-import { REGIONS } from '@/lib/regions';
-import CollegesDestinationSpotlight from '@/components/CollegesDestinationSpotlight';
+import { resolveDisplayRegions } from '@/lib/regions';
+import CollegesView, { type CollegeCard } from '@/components/CollegesView';
 
 export const metadata: Metadata = {
   title: 'Universities Worldwide — Profiles, Admissions & Courses',
@@ -34,14 +33,18 @@ export const metadata: Metadata = {
   },
 };
 
-const REGION_ORDER = ['usa', 'uk-ireland', 'europe', 'canada', 'australia-nz', 'middle-east', 'russia', 'india'];
-
 export default function CollegesIndexPage() {
-  const byRegion = COLLEGES.reduce<Record<string, typeof COLLEGES>>((acc, c) => {
-    (acc[c.region] ??= []).push(c);
-    return acc;
-  }, {});
-  const orderedRegions = REGION_ORDER.filter((r) => byRegion[r]);
+  const items: CollegeCard[] = COLLEGES.map((c) => ({
+    id: c.id,
+    slug: c.slug,
+    nameEn: c.nameEn,
+    city: c.city,
+    state: c.state,
+    established: c.established,
+    descriptionEn: c.descriptionEn,
+    region: c.region,
+    regions: resolveDisplayRegions(c.region, c.regions),
+  }));
 
   return (
     <div className="space-y-14">
@@ -58,41 +61,7 @@ export default function CollegesIndexPage() {
         </p>
       </header>
 
-      <CollegesDestinationSpotlight />
-
-      {orderedRegions.map((regionSlug) => {
-        const region = REGIONS.find((r) => r.slug === regionSlug);
-        const colleges = byRegion[regionSlug];
-        return (
-          <section key={regionSlug}>
-            <div className="section-rule mb-5">
-              <span>
-                <span aria-hidden="true" className="mr-2">{region?.flag}</span>
-                {region?.displayName ?? regionSlug}
-              </span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {colleges.map((c) => (
-                <Link
-                  key={c.id}
-                  href={`/colleges/${c.slug}`}
-                  className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col"
-                >
-                  <h2 className="font-display text-lg font-bold text-ink group-hover:text-forest-700 transition-colors leading-snug m-0 mb-1">
-                    {c.nameEn}
-                  </h2>
-                  <p className="text-stone-500 text-xs mb-3">
-                    {c.city}{c.state ? `, ${c.state}` : ''} · Est. {c.established}
-                  </p>
-                  <p className="text-stone-600 text-sm leading-relaxed line-clamp-2 mt-auto">
-                    {c.descriptionEn}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        );
-      })}
+      <CollegesView items={items} />
     </div>
   );
 }

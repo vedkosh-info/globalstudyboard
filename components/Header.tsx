@@ -19,7 +19,7 @@ export default function Header() {
 
           {/* Wordmark */}
           <Link href="/" className="flex items-baseline gap-2 no-underline shrink-0">
-            <span className="font-display text-2xl md:text-[26px] font-bold tracking-editorial text-forest-700">
+            <span className="font-display text-xl sm:text-2xl md:text-[26px] font-bold tracking-editorial text-forest-700">
               GlobalStudyBoard
             </span>
           </Link>

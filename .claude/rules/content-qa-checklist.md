@@ -96,6 +96,9 @@ blocks the unit until fixed and re-audited.
 - [ ] **Fully responsive** — verified on desktop AND mobile (and tablet).
 - [ ] Accessible: semantic HTML, contrast, focus states, alt text, reduced-motion.
 - [ ] Consistent design language (Fraunces + Inter, forest/cream/stone) — no one-offs.
+- [ ] **Premium & readable** — content is the hero with clear hierarchy, readable
+      measure (~60–75ch), generous line-height, ≥16px body, no walls of text;
+      looks modern/premium, not merely functional (full checks in §M).
 
 ## K. SEO & Monetization (Rule §13 — BINDING)
 - [ ] Self-referential canonical set — **NO hreflang / language alternates** (single-language English); appropriate structured data present.
@@ -117,6 +120,21 @@ blocks the unit until fixed and re-audited.
 - [ ] New destination: confirmed all §14.2 law areas are accounted for before
       publishing; if a rule cannot be met, the content is withheld and flagged.
 - [ ] **Jurisdiction(s) reviewed are logged** in the audit log alongside sign-off.
+
+## M. Premium UI, Readability & Always-Review (Rule §15, §7.5–§7.6 — BINDING)
+- [ ] **Readable English content** — comfortable measure, line-height and spacing;
+      clear Fraunces + Inter hierarchy; ≥16px body; WCAG AA+ contrast; long content
+      broken into sections/lists/tables/cards (no slabs of text).
+- [ ] **Premium, modern, consistent** — beautiful, polished, content-first design
+      using the established tokens/components; no one-off colors/fonts/spacing.
+- [ ] **All three viewports verified** — desktop, tablet AND mobile each look and
+      read well (not merely "work").
+- [ ] **Existing/affected pages re-reviewed** — any shared layout/component/token/
+      data change was checked on every page it affects, not only the new unit.
+- [ ] **Reviewed continuously** — rendering/readability/responsiveness checked
+      while changing and again before finishing, not only as a final gate.
+- [ ] **English-only upheld** — readability achieved within the single English
+      language; no i18n/`[lang]`/hreflang/non-English content introduced.
 
 ## Sign-off
 - Auditor (separate from author): ____________________

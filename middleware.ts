@@ -25,11 +25,6 @@ export function middleware(request: NextRequest) {
   crypto.getRandomValues(nonceBytes);
   const nonce = btoa(String.fromCharCode(...nonceBytes));
 
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set('x-nonce', nonce);
-
-  const response = NextResponse.next({ request: { headers: requestHeaders } });
-
   const scriptSrcParts = [
     "'self'",
     `'nonce-${nonce}'`,
@@ -60,7 +55,19 @@ export function middleware(request: NextRequest) {
   ];
   if (!isLocalhost) csp.push('upgrade-insecure-requests');
 
-  response.headers.set('Content-Security-Policy', csp.join('; '));
+  const cspValue = csp.join('; ');
+
+  // Forward the CSP on the REQUEST headers so the Next.js renderer can read the
+  // nonce out of it during SSR and stamp it onto every inline framework script
+  // it emits. Without this, 'strict-dynamic' blocks Next.js's own bootstrap /
+  // hydration / chunk scripts (they ship without a nonce) and the page breaks.
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-nonce', nonce);
+  requestHeaders.set('Content-Security-Policy', cspValue);
+
+  const response = NextResponse.next({ request: { headers: requestHeaders } });
+
+  response.headers.set('Content-Security-Policy', cspValue);
   response.headers.set('x-nonce', nonce);
   response.headers.set('X-Frame-Options', 'SAMEORIGIN');
   response.headers.set('X-Content-Type-Options', 'nosniff');

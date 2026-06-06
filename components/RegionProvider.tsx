@@ -9,7 +9,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import { REGION_SLUGS, type RegionSlug } from '@/lib/regions';
+import { REGION_SLUGS, DEFAULT_REGION, type RegionSlug } from '@/lib/regions';
 
 const REGION_KEY = 'gsb_region';
 const PROMPTED_KEY = 'gsb_region_prompted';
@@ -17,6 +17,12 @@ const PROMPTED_KEY = 'gsb_region_prompted';
 interface RegionContextValue {
   /** The student's chosen destination for this session, or null if not yet picked. */
   region: RegionSlug | null;
+  /**
+   * The region the whole site is tuned to right now — the explicit choice if one
+   * exists, otherwise the default (India). Always a real region, so listing
+   * pages and the header can personalise without a null check.
+   */
+  effectiveRegion: RegionSlug;
   /** Persist a destination choice for the session (also records the prompt as resolved). */
   setRegion: (slug: RegionSlug) => void;
   /** Forget the chosen destination. */
@@ -86,7 +92,15 @@ export function RegionProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo<RegionContextValue>(
-    () => ({ region, setRegion, clearRegion, promptedThisSession, markPrompted, ready }),
+    () => ({
+      region,
+      effectiveRegion: region ?? DEFAULT_REGION,
+      setRegion,
+      clearRegion,
+      promptedThisSession,
+      markPrompted,
+      ready,
+    }),
     [region, setRegion, clearRegion, promptedThisSession, markPrompted, ready]
   );
 
