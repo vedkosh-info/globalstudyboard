@@ -21,14 +21,21 @@ export function middleware(request: NextRequest) {
     hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
   const isDev = process.env.NODE_ENV !== 'production';
 
-  const nonceBytes = new Uint8Array(16);
-  crypto.getRandomValues(nonceBytes);
-  const nonce = btoa(String.fromCharCode(...nonceBytes));
-
+  // NOTE — CSP for a statically-generated site (do NOT switch to a nonce here).
+  // Every page on GlobalStudyBoard is statically prerendered for speed/SEO/cost.
+  // A per-request nonce CANNOT coexist with static HTML: the nonce in the CSP
+  // header is regenerated each request, but the prerendered <script> tags are
+  // baked once at build time with no nonce — so a nonce + 'strict-dynamic' policy
+  // blocks 100% of the page's own scripts (external chunks AND inline hydration),
+  // React never hydrates, and every interactive control (region picker, menu,
+  // search) silently dies. We therefore allow same-origin + inline scripts. There
+  // is no user-injected HTML on the site (all dangerouslySetInnerHTML uses are
+  // trusted JSON-LD), and React escapes all rendered output, so 'unsafe-inline'
+  // is an acceptable posture. If a true nonce is ever wanted, every route must
+  // first be moved to dynamic rendering (force-dynamic) — otherwise it WILL break.
   const scriptSrcParts = [
     "'self'",
-    `'nonce-${nonce}'`,
-    "'strict-dynamic'",
+    "'unsafe-inline'",
     'https://www.googletagmanager.com',
     'https://pagead2.googlesyndication.com',
     'https://googleads.g.doubleclick.net',
@@ -57,18 +64,9 @@ export function middleware(request: NextRequest) {
 
   const cspValue = csp.join('; ');
 
-  // Forward the CSP on the REQUEST headers so the Next.js renderer can read the
-  // nonce out of it during SSR and stamp it onto every inline framework script
-  // it emits. Without this, 'strict-dynamic' blocks Next.js's own bootstrap /
-  // hydration / chunk scripts (they ship without a nonce) and the page breaks.
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set('x-nonce', nonce);
-  requestHeaders.set('Content-Security-Policy', cspValue);
-
-  const response = NextResponse.next({ request: { headers: requestHeaders } });
+  const response = NextResponse.next();
 
   response.headers.set('Content-Security-Policy', cspValue);
-  response.headers.set('x-nonce', nonce);
   response.headers.set('X-Frame-Options', 'SAMEORIGIN');
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('X-XSS-Protection', '1; mode=block');
