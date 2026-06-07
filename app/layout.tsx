@@ -10,6 +10,9 @@ import { RegionProvider } from '@/components/RegionProvider';
 import DestinationPicker from '@/components/DestinationPicker';
 import SiteSearch from '@/components/SiteSearch';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
+import RecentPages from '@/components/RecentPages';
+import GoogleSourceFab from '@/components/GoogleSourceFab';
 
 const sans = Inter({
   subsets: ['latin'],
@@ -145,6 +148,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </main>
           <Footer />
           <DestinationPicker />
+          <RecentPages />
+          <ScrollToTopButton />
+          <GoogleSourceFab />
         </RegionProvider>
         <Analytics />
         <SpeedInsights />

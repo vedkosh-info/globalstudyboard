@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Home } from 'lucide-react';
 import MobileMenu from '@/components/MobileMenu';
 import RegionSwitcher from '@/components/RegionSwitcher';
+import TopicsMenu from '@/components/TopicsMenu';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -30,15 +30,15 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-700 hover:text-forest-700 px-3 py-2 rounded-md hover:bg-forest-50 transition-colors no-underline"
+                className="text-sm font-medium text-stone-700 hover:text-forest-700 px-3 py-2 rounded-md hover:bg-forest-50 transition-colors no-underline"
               >
-                {link.href === '/' && <Home className="w-4 h-4" aria-hidden="true" />}
                 {link.label}
               </Link>
             ))}
+            <TopicsMenu />
             <Link
               href="/gsb-ai"
-              className="ml-2 text-sm font-semibold bg-forest-700 hover:bg-forest-800 text-cream-50 px-4 py-1.5 rounded-full transition-colors no-underline"
+              className="ml-2 inline-flex h-9 items-center text-sm font-semibold bg-forest-700 hover:bg-forest-800 text-cream-50 px-4 rounded-full transition-colors no-underline"
             >
               Ask GSB AI
             </Link>

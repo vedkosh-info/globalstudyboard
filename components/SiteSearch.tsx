@@ -129,9 +129,6 @@ export default function SiteSearch() {
         }}
         className="flex items-stretch overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm transition-shadow focus-within:border-forest-400 focus-within:shadow-md focus-within:ring-2 focus-within:ring-forest-500/25"
       >
-        <span className="pointer-events-none flex items-center pl-4 pr-2 text-stone-400">
-          <Search className="h-5 w-5" aria-hidden="true" />
-        </span>
         <input
           ref={inputRef}
           type="text"
@@ -151,7 +148,7 @@ export default function SiteSearch() {
           aria-expanded={showPanel}
           aria-controls="site-search-results"
           autoComplete="off"
-          className="min-w-0 flex-1 appearance-none border-0 bg-transparent py-3 text-sm text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-0 sm:text-base"
+          className="min-w-0 flex-1 appearance-none border-0 bg-transparent py-3 pl-4 text-sm text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-0 sm:text-base"
         />
         {query && (
           <button

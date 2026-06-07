@@ -53,18 +53,12 @@ export default function RegionSwitcher() {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label={`Study destination: ${active?.displayName ?? 'choose'} — change`}
-        className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-forest-300 bg-white px-2.5 py-1.5 text-sm font-semibold text-forest-800 shadow-sm transition-colors hover:border-forest-400 hover:bg-forest-50 sm:px-3"
+        className="flex h-9 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-forest-300 bg-white px-2.5 text-sm font-semibold text-forest-800 shadow-sm transition-colors hover:border-forest-400 hover:bg-forest-50 sm:px-3"
       >
-        <Globe2 className="hidden h-4 w-4 shrink-0 text-forest-600 sm:block" aria-hidden="true" />
-        {active && (
-          <span aria-hidden="true" className="text-base leading-none">
-            {active.flag}
-          </span>
-        )}
+        <Globe2 className="h-4 w-4 shrink-0 text-forest-600" aria-hidden="true" />
         <span className="hidden max-w-[150px] truncate sm:inline">
           {active?.displayName ?? 'Choose destination'}
         </span>
-        <span className="sm:hidden">{active?.currency.code ?? 'Region'}</span>
         <ChevronDown
           className={`h-4 w-4 shrink-0 text-stone-400 transition-transform ${open ? 'rotate-180' : ''}`}
           aria-hidden="true"

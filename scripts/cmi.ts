@@ -16,7 +16,7 @@ console.log('\nContent Master Index (CMI)');
 console.log('──────────────────────────');
 console.log(
   `Indexed: ${report.counts.total} units ` +
-    `(${report.counts.colleges} colleges, ${report.counts.exams} exams, ${report.counts.regions} regions, ${report.counts.guides} guides)`,
+    `(${report.counts.colleges} colleges, ${report.counts.exams} exams, ${report.counts.regions} regions, ${report.counts.guides} guides, ${report.counts.topics} topics)`,
 );
 
 if (report.warnings.length > 0) {

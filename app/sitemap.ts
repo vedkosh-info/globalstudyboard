@@ -3,6 +3,7 @@ import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { COLLEGES } from '@/lib/colleges';
 import { GUIDES } from '@/lib/guides';
+import { TOPICS } from '@/lib/topics';
 
 const BASE = 'https://www.globalstudyboard.com';
 
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/colleges`,    lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/exams`,       lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/guides`,      lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/topics`,      lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/scholarships`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE}/gsb-ai`,      lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/about`,       lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
@@ -44,6 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: g.lastVerified,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
+    })),
+    ...TOPICS.map((t) => ({
+      url: `${BASE}/topics/${t.slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
     })),
   ];
 }

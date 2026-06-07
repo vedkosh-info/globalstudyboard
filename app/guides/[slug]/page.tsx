@@ -7,6 +7,11 @@ import { GUIDES, getGuideBySlug, GUIDE_CATEGORY_LABELS } from '@/lib/guides';
 import { getExamBySlug } from '@/lib/admission-guides';
 import { getCollegeBySlug } from '@/lib/colleges';
 import { REGIONS } from '@/lib/regions';
+import { topicsForGuide } from '@/lib/topics';
+import { howToLd, isHowToGuide } from '@/lib/structured-data';
+import KeyFacts from '@/components/KeyFacts';
+import ContentActions from '@/components/ContentActions';
+import PageQuickLinks from '@/components/PageQuickLinks';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -63,6 +68,7 @@ export default async function GuideDetailPage({ params }: Props) {
   const relatedGuides = guide.relatedGuideSlugs
     .map((s) => getGuideBySlug(s))
     .filter((g): g is NonNullable<typeof g> => Boolean(g));
+  const topics = topicsForGuide(guide);
 
   const articleLd = {
     '@context': 'https://schema.org',
@@ -95,6 +101,18 @@ export default async function GuideDetailPage({ params }: Props) {
         }
       : null;
 
+  const howToLdData = isHowToGuide(guide.slug, guide.sections.length)
+    ? howToLd({
+        name: guide.titleEn,
+        description: guide.descriptionEn,
+        url: `https://www.globalstudyboard.com/guides/${guide.slug}`,
+        steps: guide.sections.map((s) => ({
+          name: s.headingEn,
+          text: paragraphs(s.bodyEn).join(' '),
+        })),
+      })
+    : null;
+
   return (
     <article className="max-w-3xl mx-auto space-y-10">
       <script
@@ -105,6 +123,12 @@ export default async function GuideDetailPage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
+      {howToLdData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLdData) }}
         />
       )}
 
@@ -140,6 +164,9 @@ export default async function GuideDetailPage({ params }: Props) {
           {guide.descriptionEn}
         </p>
       </header>
+
+      {/* Key facts (exam/process guides) */}
+      {guide.keyFacts && guide.keyFacts.length > 0 && <KeyFacts rows={guide.keyFacts} />}
 
       {/* Sections */}
       <div className="space-y-8">
@@ -215,10 +242,14 @@ export default async function GuideDetailPage({ params }: Props) {
         </p>
       </section>
 
+      {/* Like / Share / Print */}
+      <ContentActions title={guide.titleEn} />
+
       {/* Related / Next steps */}
       {(relatedGuides.length > 0 ||
         relatedExams.length > 0 ||
         relatedColleges.length > 0 ||
+        topics.length > 0 ||
         region) && (
         <section>
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-4">
@@ -264,6 +295,20 @@ export default async function GuideDetailPage({ params }: Props) {
             </div>
           )}
 
+          {topics.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {topics.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={`/topics/${t.slug}`}
+                  className="text-sm font-medium bg-forest-50 text-forest-800 border border-forest-200 px-3 py-1.5 rounded-full no-underline hover:bg-forest-100 transition-colors"
+                >
+                  {t.label}
+                </Link>
+              ))}
+            </div>
+          )}
+
           {region && (
             <Link
               href={`/regions/${region.slug}`}
@@ -288,6 +333,9 @@ export default async function GuideDetailPage({ params }: Props) {
           Ask GSB AI →
         </Link>
       </section>
+
+      {/* Quick links — popular topics & guides */}
+      <PageQuickLinks currentPath={`/guides/${guide.slug}`} />
     </article>
   );
 }

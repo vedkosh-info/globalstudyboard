@@ -13,6 +13,7 @@ import { COLLEGES } from './colleges';
 import { ENTRANCE_EXAMS } from './admission-guides';
 import { GUIDES } from './guides';
 import { REGIONS, type RegionSlug } from './regions';
+import { TOPICS, TOPIC_SLUGS, getTopicBySlug, guidesForTopic } from './topics';
 
 export type ContentType = 'college' | 'exam' | 'region' | 'guide';
 
@@ -111,7 +112,7 @@ export const CONTENT_INDEX: ContentUnit[] = buildContentIndex();
 export interface CmiReport {
   errors: string[];
   warnings: string[];
-  counts: { colleges: number; exams: number; regions: number; guides: number; total: number };
+  counts: { colleges: number; exams: number; regions: number; guides: number; topics: number; total: number };
 }
 
 const norm = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -256,6 +257,11 @@ export function validateContent(): CmiReport {
         errors.push(`Guide "${g.titleEn}" references college slug "${cSlug}", which does not exist.`);
       }
     }
+    for (const tag of g.tags ?? []) {
+      if (!TOPIC_SLUGS.has(tag)) {
+        errors.push(`Guide "${g.titleEn}" lists unknown topic tag "${tag}" — add it to lib/topics.ts or fix the slug.`);
+      }
+    }
   }
   for (const [slug, n] of guideSlugs) {
     if (n > 1) errors.push(`Guide slug "${slug}" is used ${n} times — slugs must be unique.`);
@@ -269,6 +275,30 @@ export function validateContent(): CmiReport {
     }
   }
 
+  // — Topics (hub pages): unique slug, curated refs resolve, hub not empty —
+  const topicSlugs = new Map<string, number>();
+  for (const t of TOPICS) {
+    topicSlugs.set(t.slug, (topicSlugs.get(t.slug) ?? 0) + 1);
+    if (!t.title) errors.push(`Topic "${t.slug}" is missing a title.`);
+    if (!t.description) errors.push(`Topic "${t.slug}" is missing a description.`);
+    for (const gs of t.guideSlugs) {
+      if (!guideSlugs.has(gs)) {
+        errors.push(`Topic "${t.slug}" curates guide slug "${gs}", which does not exist.`);
+      }
+    }
+    for (const es of t.examSlugs ?? []) {
+      if (!EXAM_SLUGS.has(es)) {
+        errors.push(`Topic "${t.slug}" lists exam slug "${es}", which does not exist.`);
+      }
+    }
+    if (guidesForTopic(t.slug).length === 0) {
+      warnings.push(`Topic "${t.slug}" has no guides — its hub page would be empty.`);
+    }
+  }
+  for (const [slug, n] of topicSlugs) {
+    if (n > 1) errors.push(`Topic slug "${slug}" is used ${n} times — slugs must be unique.`);
+  }
+
   return {
     errors,
     warnings,
@@ -277,6 +307,7 @@ export function validateContent(): CmiReport {
       exams: ENTRANCE_EXAMS.length,
       regions: REGIONS.length,
       guides: GUIDES.length,
+      topics: TOPICS.length,
       total: CONTENT_INDEX.length,
     },
   };
@@ -295,6 +326,7 @@ const GROUP_LABELS: Record<string, string> = {
   exams: 'Exams',
   regions: 'Study by Region',
   guides: 'Guides',
+  topics: 'Topics',
   scholarships: 'Scholarships',
   'gsb-ai': 'Ask GSB AI',
   about: 'About',
@@ -344,6 +376,14 @@ export function breadcrumbsFor(barePath: string): Crumb[] {
     const guide = GUIDES.find((g) => g.slug === child);
     if (guide) {
       return [home, { label: 'Guides', href: '/guides' }, { label: guide.titleEn }];
+    }
+  }
+
+  // Topic hub → Home > Topics > {Topic}
+  if (group === 'topics' && child) {
+    const topic = getTopicBySlug(child);
+    if (topic) {
+      return [home, { label: 'Topics', href: '/topics' }, { label: topic.label }];
     }
   }
 

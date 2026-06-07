@@ -28,6 +28,17 @@ const FOOTER_SECTIONS = [
     ],
   },
   {
+    heading: 'Popular Topics',
+    links: [
+      { label: 'JEE & IITs', href: '/topics/jee' },
+      { label: 'NEET & Medical', href: '/topics/neet' },
+      { label: 'Government Exams', href: '/topics/government-exams' },
+      { label: 'MBA & CAT', href: '/topics/mba' },
+      { label: 'Study Abroad', href: '/topics/study-abroad' },
+      { label: 'All topics', href: '/topics' },
+    ],
+  },
+  {
     heading: 'Site',
     links: [
       { label: 'Ask GSB AI', href: '/gsb-ai' },
@@ -46,7 +57,7 @@ export default function Footer() {
     <footer className="bg-forest-900 text-cream-50 mt-24">
       <div className="mx-auto max-w-7xl px-4 py-14">
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="no-underline">

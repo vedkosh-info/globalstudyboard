@@ -36,6 +36,13 @@ export interface GuideFaq {
   answerEn: string;
 }
 
+export interface GuideKeyFact {
+  /** Short label, e.g. "Conducting body". */
+  label: string;
+  /** Verified value, e.g. "National Testing Agency (NTA)". */
+  value: string;
+}
+
 export interface Guide {
   /** Stable slug, unique within guides. */
   slug: string;
@@ -65,6 +72,14 @@ export interface Guide {
   /** ISO date (YYYY-MM-DD) the facts were last verified. */
   lastVerified: string;
   keywords: string[];
+  /**
+   * Controlled topic slugs from lib/topics.ts (TOPIC_SLUGS). Joins this guide to
+   * its hub page(s) at /topics/<slug>. Validated by the CMI. Optional — existing
+   * guides may be curated onto a hub via `topic.guideSlugs` instead.
+   */
+  tags?: string[];
+  /** Optional "Key facts" box rows rendered at the top of an exam/process guide. */
+  keyFacts?: GuideKeyFact[];
 }
 
 const VERIFY = '2026-06-03';
@@ -6250,6 +6265,8185 @@ export const GUIDES: Guide[] = [
     ],
     lastVerified: VERIFY,
     keywords: ['deemed vs state university', 'deemed university meaning', 'deemed university vs state university', 'what is a deemed university', 'types of universities india'],
+  },
+
+  // ───────────── Set 1 (India top-100) — CUET & university admission ─────────────
+  {
+    slug: 'cuet-ug-eligibility-and-exam-pattern',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'CUET UG: Eligibility and Exam Pattern Explained',
+    descriptionEn:
+      'What CUET UG is, who can apply, and how the test is structured — its language, domain-subject and general-test sections, the computer-based format, and where to confirm the current-year rules.',
+    readMinutes: 7,
+    keyFacts: [
+      { label: 'Conducting body', value: 'National Testing Agency (NTA)' },
+      { label: 'Level', value: 'Undergraduate (UG) admission' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Who accepts it', value: 'Central universities + many state, deemed & private universities' },
+      { label: 'Eligibility', value: 'Passed/appearing Class 12; no upper age limit for the test' },
+      { label: 'Official site', value: 'cuet.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What CUET UG is',
+        bodyEn:
+          'CUET UG (the Common University Entrance Test for undergraduate admission) is a national, computer-based entrance test conducted by the National Testing Agency (NTA). It was introduced in 2022 so that a single common test could be used for undergraduate admission instead of each university running its own test or cut-off.\n\nCentral universities admit through CUET UG for most undergraduate programmes, and a growing number of state, deemed and private universities accept the score as well. The syllabus is based on the NCERT Class 12 curriculum.',
+      },
+      {
+        headingEn: 'Who can apply (eligibility)',
+        bodyEn:
+          'Any candidate who has passed, or is appearing in, the Class 12 (or equivalent) examination from a recognised board can appear for CUET UG. There is no upper age limit to take the test itself.\n\nThe important point: eligibility for a particular programme — the minimum marks, the required subjects, and any age rules — is set by each university, not by the test. So you can appear for CUET, but admission to a specific course depends on meeting that university\'s criteria. Always check the eligibility for each programme you want on the university\'s own admission page.',
+        bullets: [
+          'Passed or appearing in Class 12 from a recognised board',
+          'No upper age limit for the test itself',
+          'Programme eligibility (marks, required subjects) is set by each university',
+          'Category and reservation rules follow each university\'s policy',
+        ],
+      },
+      {
+        headingEn: 'How the test is structured',
+        bodyEn:
+          'CUET UG is conducted as a Computer-Based Test (CBT). The paper is organised into broad parts: a language section, domain-specific subject sections, and a general test. You choose your languages and domain subjects to match the requirements of the courses and universities you are targeting.\n\nThe number of subjects you may select, the number of questions, the marks and the time allowed are set in the official information bulletin each cycle and have changed in the past, so confirm the current pattern before you plan.',
+        bullets: [
+          'Languages — choose from the listed languages',
+          'Domain subjects — choose subjects aligned to your target courses',
+          'General Test — general knowledge, reasoning and basic numeracy',
+          'Computer-based; your subject choices map to your target programmes',
+        ],
+      },
+      {
+        headingEn: 'Marking and choosing subjects wisely',
+        bodyEn:
+          'Because each university maps specific CUET subjects to each programme, the subjects you pick matter as much as your score. Before registering, list the courses you want, note the exact CUET subjects each one needs, and choose accordingly.\n\nThe marking scheme — including how marks are awarded and whether negative marking applies — is published in the official bulletin each year, so read the current rules rather than relying on a previous cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the current rules',
+        bodyEn:
+          'CUET UG is governed by the NTA information bulletin, released afresh each cycle with the exact eligibility, subject list, pattern, marking and important dates. The University Grants Commission (UGC) also publishes guidance on the test. Treat the figures here as a structural overview and confirm every specific on the official sources before you register, because these rules change from year to year.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is CUET UG compulsory for all university admissions in India?',
+        answerEn:
+          'No. CUET UG is required by central universities and accepted by many state, deemed and private universities, but not by every institution, and several professional courses (such as those using JEE, NEET or CLAT) admit through other routes. Check each university\'s admission page.',
+      },
+      {
+        questionEn: 'Does CUET UG have an age limit?',
+        answerEn:
+          'There is no upper age limit to appear for the test itself. However, individual universities may set their own age criteria for specific programmes, so confirm this for each course you apply to.',
+      },
+      {
+        questionEn: 'Is the CUET UG syllabus the same as my board syllabus?',
+        answerEn:
+          'The CUET UG domain-subject syllabus is based on the NCERT Class 12 curriculum. If your board\'s syllabus differs, prepare from the NCERT-based topics specified in the official syllabus on the NTA site.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cuet-ug-syllabus-and-subjects', 'how-to-prepare-for-cuet', 'universities-accepting-cuet-ug', 'how-to-get-admission-in-delhi-university', 'career-options-after-12th-arts'],
+    sources: [
+      { label: 'NTA — CUET (UG) official site', url: 'https://cuet.nta.nic.in' },
+      { label: 'University Grants Commission (UGC) — official site', url: 'https://www.ugc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['cuet ug eligibility', 'cuet exam pattern', 'cuet ug', 'what is cuet', 'cuet age limit', 'cuet computer based test'],
+    tags: ['cuet'],
+  },
+  {
+    slug: 'cuet-ug-syllabus-and-subjects',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'CUET UG Syllabus and Domain Subjects Explained',
+    descriptionEn:
+      'How the CUET UG syllabus works — the language, domain-subject and general-test areas, how subjects map to the courses you want, and why the NCERT Class 12 curriculum is your base.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How the CUET UG syllabus is organised',
+        bodyEn:
+          'The CUET UG syllabus follows the three-part structure of the test: languages, domain subjects, and a general test. The domain-subject syllabus is based on the NCERT Class 12 curriculum, so your school textbooks are the natural starting point.\n\nThe exact list of languages and domain subjects offered, and the topics within each, are published in the official syllabus on the NTA site each cycle.',
+      },
+      {
+        headingEn: 'Domain subjects — match them to your course',
+        bodyEn:
+          'Domain subjects are the academic subjects — the sciences, mathematics, accountancy, business studies, economics, history, political science and many more — that map to specific university courses. A B.Sc. programme may require science subjects; a B.Com. may require accountancy or business studies; a BA programme may accept a range of humanities subjects.\n\nBecause each university decides which CUET subjects each programme needs, the right move is to list your target courses first and then pick the domain subjects they require.',
+        bullets: [
+          'Sciences, mathematics, commerce and humanities subjects are offered',
+          'Each programme maps to specific required CUET subjects',
+          'Choose subjects that keep your target courses open',
+          'Confirm the exact subject list on the official syllabus',
+        ],
+      },
+      {
+        headingEn: 'The language section',
+        bodyEn:
+          'CUET UG includes a language component. Languages are grouped, and you select the language or languages relevant to your courses. Some programmes specify a language requirement, so check whether a target course expects a particular language. The official syllabus lists the languages available for the cycle.',
+      },
+      {
+        headingEn: 'The General Test',
+        bodyEn:
+          'The General Test typically covers general knowledge and current affairs, general mental ability, logical and analytical reasoning, and basic numeracy at school level. Some courses — often general or interdisciplinary BA programmes — admit on the General Test, while others rely on domain subjects. Check whether the courses you want use the General Test before you plan your preparation.',
+      },
+      {
+        headingEn: 'Preparing from the right material',
+        bodyEn:
+          'Because the domain syllabus is NCERT-based, work through the relevant NCERT Class 12 books and the official CUET syllabus rather than unverified third-party lists. The official syllabus is the only authoritative source for exactly which topics are in scope this cycle.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many subjects can I choose in CUET UG?',
+        answerEn:
+          'The number of subjects a candidate may select is set in the official information bulletin each cycle and has changed in the past. Pick subjects based on what your target courses require, and confirm the current limit on the NTA site.',
+      },
+      {
+        questionEn: 'Is the CUET syllabus based on NCERT?',
+        answerEn:
+          'Yes. The domain-subject syllabus is based on the NCERT Class 12 curriculum. Use NCERT textbooks alongside the official CUET syllabus published by the NTA.',
+      },
+      {
+        questionEn: 'Which subjects should I pick for a BA, B.Sc. or B.Com.?',
+        answerEn:
+          'Choose the domain subjects your target programmes require — for example, science subjects for many B.Sc. courses, accountancy or business studies or economics for many B.Com. courses, and relevant humanities subjects for BA courses. Each university lists the required subjects per programme on its admission page.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cuet-ug-eligibility-and-exam-pattern', 'how-to-prepare-for-cuet', 'universities-accepting-cuet-ug', 'career-options-after-12th-science', 'career-options-after-12th-commerce'],
+    sources: [
+      { label: 'NTA — CUET (UG) syllabus (official)', url: 'https://cuet.nta.nic.in' },
+      { label: 'NCERT — official site', url: 'https://ncert.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['cuet syllabus', 'cuet domain subjects', 'cuet ug subjects', 'cuet ncert syllabus', 'cuet general test', 'cuet subject selection'],
+    tags: ['cuet'],
+  },
+  {
+    slug: 'how-to-prepare-for-cuet',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'How to Prepare for CUET UG',
+    descriptionEn:
+      'A practical, no-hype approach to preparing for CUET UG — starting from the official syllabus and NCERT, choosing the right subjects, practising in computer-based mode, and managing board exams alongside.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Start from the official syllabus',
+        bodyEn:
+          'Begin by reading the official CUET syllabus and the programme requirements of the universities you want. Knowing exactly which subjects and topics you need prevents wasted effort. Because the domain syllabus is based on the NCERT Class 12 curriculum, your NCERT textbooks are the core resource.',
+      },
+      {
+        headingEn: 'Choose your subjects strategically',
+        bodyEn:
+          'List the courses and universities you want, note the CUET subjects each one requires, and select your languages and domain subjects to keep those options open. Picking subjects you are strong in, and that your target courses accept, is more useful than simply taking the maximum number allowed.',
+      },
+      {
+        headingEn: 'Build from NCERT, then practise',
+        bodyEn:
+          'Work through the relevant NCERT chapters until the fundamentals are solid, then move to topic-wise practice and full-length mock tests. Because CUET is a computer-based test, practise on screen with timed mocks so the format and pacing feel familiar on exam day.',
+      },
+      {
+        headingEn: 'Prepare for the General Test if your courses need it',
+        bodyEn:
+          'If any target course admits on the General Test, build a steady habit for general knowledge and current affairs, brush up school-level reasoning and basic numeracy, and practise these sections too. If none of your courses use the General Test, focus your time on the domain subjects instead.',
+        bullets: [
+          'Read the official syllabus and each programme\'s required subjects',
+          'Master NCERT first, then do timed on-screen mock tests',
+          'Practise the General Test only if your courses use it',
+          'Plan one timetable that covers boards and CUET together',
+        ],
+      },
+      {
+        headingEn: 'Balance CUET with your board exams',
+        bodyEn:
+          'CUET and your Class 12 boards draw on overlapping content, so plan a timetable that serves both. Avoid leaving CUET-specific practice — especially computer-based mocks and the General Test — to the last week. Look after sleep, breaks and well-being; steady, sustainable preparation works better than last-minute cramming, and no guide or coaching can guarantee a seat.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I prepare for CUET UG without coaching?',
+        answerEn:
+          'Yes. The domain syllabus is NCERT-based, and the official syllabus, NCERT textbooks and official practice material cover what you need. Many students prepare on their own; coaching is optional, not required. Be cautious of anyone promising guaranteed admission.',
+      },
+      {
+        questionEn: 'How early should I start preparing for CUET?',
+        answerEn:
+          'There is no single right answer, but because CUET overlaps with the Class 12 syllabus, studying your NCERT books well through the year builds most of the base. Add CUET-specific practice and mock tests once you have chosen your subjects.',
+      },
+      {
+        questionEn: 'Are CUET and board exam preparation the same?',
+        answerEn:
+          'They overlap heavily because both are based on the Class 12 curriculum, but CUET is a separate computer-based test with its own pattern and, for some courses, a General Test. Prepare the shared content once, then add CUET-specific format practice.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cuet-ug-eligibility-and-exam-pattern', 'cuet-ug-syllabus-and-subjects', 'universities-accepting-cuet-ug', 'how-to-get-admission-in-delhi-university'],
+    sources: [
+      { label: 'NTA — CUET (UG) official site', url: 'https://cuet.nta.nic.in' },
+      { label: 'NCERT — official textbooks', url: 'https://ncert.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['how to prepare for cuet', 'cuet preparation', 'cuet preparation without coaching', 'cuet ncert preparation', 'cuet mock tests', 'cuet study plan'],
+    tags: ['cuet', 'exam-preparation'],
+  },
+  {
+    slug: 'universities-accepting-cuet-ug',
+    category: 'admissions',
+    region: 'india',
+    titleEn: 'Universities Accepting CUET UG: How It Works',
+    descriptionEn:
+      'Which kinds of universities admit through CUET UG, how a single test maps to many universities, and how to use one score to apply to multiple institutions — with the official lists to check.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'One test, many universities',
+        bodyEn:
+          'CUET UG was introduced so that a single computer-based test could be used for undergraduate admission across many institutions, instead of each one running its own test or cut-off. Central universities admit through CUET UG for most undergraduate programmes, and a growing number of state, deemed and private universities accept the score as well. This lets you apply to multiple universities with one test attempt.',
+      },
+      {
+        headingEn: 'Which universities accept it',
+        bodyEn:
+          'The participating institutions fall into a few groups: central universities, which use CUET UG for most UG programmes, and many state, deemed and private universities that have opted in. The full, current list of participating universities is published officially each cycle — and it changes as more institutions join — so check the official list rather than relying on a fixed number.',
+        bullets: [
+          'Central universities (for most UG programmes)',
+          'Many state universities that have opted in',
+          'Several deemed and private universities',
+          'The participating list grows each cycle — check the official list',
+        ],
+      },
+      {
+        headingEn: 'How to apply across universities',
+        bodyEn:
+          'After taking CUET UG, you apply to each university (or through its admission portal), and your CUET score is used in their admission process. Some universities run a common allocation system; others have their own portals. Each institution decides how it weighs CUET subjects, what cut-offs or preferences apply, and any additional requirements.\n\nSo a strong CUET score opens doors, but the final admission follows each university\'s own process and timeline.',
+      },
+      {
+        headingEn: 'Choose subjects that keep universities open',
+        bodyEn:
+          'Because each university maps specific CUET subjects to each programme, the subjects you select determine which universities and courses you can apply to. Before registering, gather the subject requirements of the universities you want and choose your CUET subjects accordingly.',
+      },
+      {
+        headingEn: 'Where to find the official lists',
+        bodyEn:
+          'The NTA CUET site and the UGC publish the official information on participating universities and the process. Individual university admission pages give the exact programme-by-programme requirements. Always confirm that a university accepts CUET for your specific course before you plan around it.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does one CUET UG score work for multiple universities?',
+        answerEn:
+          'Yes. A single CUET UG attempt produces a score you can use to apply to multiple participating universities, subject to each university\'s own process and requirements.',
+      },
+      {
+        questionEn: 'Do all universities in India accept CUET UG?',
+        answerEn:
+          'No. Central universities admit through CUET UG and many state, deemed and private universities accept it, but not every institution does, and some courses use other entrance routes. Check each university\'s admission page.',
+      },
+      {
+        questionEn: 'Where can I find the list of universities accepting CUET?',
+        answerEn:
+          'The official participating-university information is published on the NTA CUET site and by the UGC each cycle. Because the list grows over time, rely on the current official list rather than older summaries.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cuet-ug-eligibility-and-exam-pattern', 'cuet-ug-syllabus-and-subjects', 'how-to-get-admission-in-delhi-university', 'how-to-prepare-for-cuet'],
+    sources: [
+      { label: 'NTA — CUET (UG) official site', url: 'https://cuet.nta.nic.in' },
+      { label: 'University Grants Commission (UGC) — official site', url: 'https://www.ugc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['universities accepting cuet', 'cuet participating universities', 'colleges accepting cuet', 'cuet central universities', 'cuet ug universities', 'apply with cuet score'],
+    tags: ['cuet'],
+  },
+  {
+    slug: 'how-to-get-admission-in-delhi-university',
+    category: 'admissions',
+    region: 'india',
+    titleEn: 'How to Get Admission in Delhi University (DU)',
+    descriptionEn:
+      'A step-by-step overview of undergraduate admission to the University of Delhi — taking CUET UG, registering on the CSAS portal, choosing programme-college preferences, and where to confirm the current process.',
+    readMinutes: 7,
+    keyFacts: [
+      { label: 'Admission test', value: 'CUET UG (NTA)' },
+      { label: 'Application portal', value: 'DU CSAS — Common Seat Allocation System' },
+      { label: 'Allocation based on', value: 'CUET UG score + programme-college preferences' },
+      { label: 'Official sites', value: 'du.ac.in · ugadmission.uod.ac.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'Understand the route: CUET UG + CSAS',
+        bodyEn:
+          'For most undergraduate programmes, the University of Delhi (DU) admits through CUET UG. After the test, you register on the DU Common Seat Allocation System (CSAS), the university\'s central admission portal, where your CUET scores are used along with your programme and college preferences to allocate seats.\n\nThe exact steps and dates are published on the official DU admission site each cycle, so use this as an overview and confirm the current process there.',
+      },
+      {
+        headingEn: 'Step 1 — Appear for CUET UG in the right subjects',
+        bodyEn:
+          'DU maps each programme to specific CUET subjects, so the subjects you take in CUET decide which DU courses you are eligible for. Before the test, check the subject requirements for the DU programmes you want and pick your CUET subjects accordingly.',
+      },
+      {
+        headingEn: 'Step 2 — Register on CSAS and set preferences',
+        bodyEn:
+          'Once results are out, register on the DU CSAS portal, enter your details, and fill in your preferences — combinations of programme and college, in order of priority. Your preference order matters, so research colleges and courses and rank them honestly by what you actually want.',
+      },
+      {
+        headingEn: 'Step 3 — Seat allocation, acceptance and rounds',
+        bodyEn:
+          'Seats are allocated based on your CUET score, your preferences and the available seats, across multiple rounds. If you are allocated a seat, you accept it within the window, and there are usually upgrade and subsequent rounds. The specific rules for accepting, upgrading and withdrawing are set in the current CSAS bulletin, so follow it closely.',
+      },
+      {
+        headingEn: 'Beyond the general route',
+        bodyEn:
+          'Some categories and programmes — for example certain quota seats, sports and extra-curricular admissions, and a few specific courses — may have additional steps or criteria. Always confirm the requirements for your specific situation on the official DU admission pages, and treat this guide as an overview of how the process works rather than the final word for any given year.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need to clear CUET to get into Delhi University?',
+        answerEn:
+          'For most undergraduate programmes, yes — DU admits through CUET UG, and you then apply via the DU CSAS portal using your CUET score. Check the DU admission site for any programme that follows a different route.',
+      },
+      {
+        questionEn: 'What is CSAS in DU admission?',
+        answerEn:
+          'CSAS (Common Seat Allocation System) is the DU central online admission portal where, after CUET, you register and submit your programme-and-college preferences for seat allocation across multiple rounds.',
+      },
+      {
+        questionEn: 'Does my preference order on CSAS matter?',
+        answerEn:
+          'Yes. Seats are allocated using your CUET score together with your preference order, so rank programme-college combinations carefully by what you genuinely want. Confirm the current rules in the official CSAS bulletin.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['universities-accepting-cuet-ug', 'cuet-ug-eligibility-and-exam-pattern', 'cuet-ug-syllabus-and-subjects', 'career-options-after-12th-arts', 'career-options-after-12th-commerce'],
+    sources: [
+      { label: 'University of Delhi — official site', url: 'https://www.du.ac.in' },
+      { label: 'University of Delhi — UG CSAS admission portal', url: 'https://ugadmission.uod.ac.in' },
+      { label: 'NTA — CUET (UG) official site', url: 'https://cuet.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['delhi university admission', 'du admission process', 'how to get into du', 'du csas', 'du cuet admission', 'du ug admission'],
+    tags: ['cuet', 'courses-after-12th'],
+  },
+
+  // ───────── Set 2 (India top-100) — State engineering entrance exams I ─────────
+  {
+    slug: 'mht-cet-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'MHT CET Exam Guide (Maharashtra)',
+    descriptionEn:
+      'What MHT CET is and how it works — the State CET Cell, the PCM route to engineering in Maharashtra, the computer-based format, the Class 11–12 syllabus base, and CAP counselling.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'State Common Entrance Test Cell, Government of Maharashtra' },
+      { label: 'Used for', value: 'Engineering, pharmacy & other professional UG courses in Maharashtra' },
+      { label: 'Engineering group', value: 'PCM (Physics, Chemistry, Mathematics)' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Admission', value: 'Maharashtra CAP (Centralised Admission Process)' },
+      { label: 'Official site', value: 'cetcell.mahacet.org' },
+    ],
+    sections: [
+      {
+        headingEn: 'What MHT CET is',
+        bodyEn:
+          'MHT CET (the Maharashtra Common Entrance Test) is conducted by the State Common Entrance Test Cell, Government of Maharashtra, for admission to professional undergraduate courses in the state — including engineering (B.E./B.Tech) and pharmacy. For engineering, candidates take the PCM group (Physics, Chemistry, Mathematics).\n\nIt is one of the main routes into engineering colleges in Maharashtra, used alongside JEE Main.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 with the required subjects can apply for the relevant MHT CET group — Physics and Mathematics are needed for the engineering (PCM) group, along with Chemistry, Biology or a vocational subject as applicable. Maharashtra domicile and category rules for state seats are set by the CET Cell, so confirm the exact eligibility for your group on the official site each year.',
+        bullets: [
+          'Passed or appearing in Class 12 with the required subjects',
+          'PCM group for engineering; biology-based groups for pharmacy and allied',
+          'Domicile and category rules for state admission set by the CET Cell',
+          'Confirm current eligibility on the official site',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'MHT CET is a computer-based test. The syllabus is based on the Maharashtra State Board Class 11 and Class 12 curriculum for the relevant subjects, with greater weight on Class 12. The number of questions, marks, time and marking scheme are published in the official information brochure each year, so confirm the current pattern before you plan.',
+      },
+      {
+        headingEn: 'Admission through CAP',
+        bodyEn:
+          'An MHT CET score is used for admission through the state Centralised Admission Process (CAP), where seats in participating colleges are allotted based on your score, preferences and category, across rounds. The CAP rules and schedule are released by the CET Cell each cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official MHT CET information brochure on the State CET Cell website is the authoritative source for eligibility, pattern, syllabus, marking, CAP and dates. Treat this guide as an overview and verify every specific on the official site before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is MHT CET only for Maharashtra students?',
+        answerEn:
+          'MHT CET is primarily for admission to Maharashtra colleges, and domicile and category rules for state seats are set by the CET Cell. Eligibility and the share of state versus other seats are defined in the official brochure — check it for your situation.',
+      },
+      {
+        questionEn: 'Do I need MHT CET or JEE Main for engineering in Maharashtra?',
+        answerEn:
+          'Both can be used for engineering admission in Maharashtra through the CAP process, and the CET Cell defines how each score is considered. Many candidates take both to keep options open. Confirm the current policy on the official site.',
+      },
+      {
+        questionEn: 'What is the MHT CET syllabus based on?',
+        answerEn:
+          'It is based on the Maharashtra State Board Class 11 and Class 12 curriculum for the relevant subjects. Use the official syllabus in the information brochure as your reference.',
+      },
+    ],
+    relatedExamSlugs: ['mht-cet', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['kcet-exam-guide', 'wbjee-exam-guide', 'how-to-choose-engineering-college', 'jee-main-vs-jee-advanced-difference'],
+    sources: [
+      { label: 'State Common Entrance Test Cell, Maharashtra — official site', url: 'https://cetcell.mahacet.org' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['mht cet', 'mht cet exam', 'mht cet pcm', 'maharashtra cet engineering', 'mht cet eligibility', 'mht cet syllabus'],
+    tags: ['engineering-entrance-exams'],
+  },
+  {
+    slug: 'kcet-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'KCET Exam Guide (Karnataka)',
+    descriptionEn:
+      'How KCET works — the Karnataka Examinations Authority (KEA), the OMR-based format, the PCM route to engineering in Karnataka, the PUC syllabus base, and KEA counselling.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Karnataka Examinations Authority (KEA)' },
+      { label: 'Used for', value: 'Engineering & other professional UG courses in Karnataka' },
+      { label: 'Engineering group', value: 'PCM (Physics, Chemistry, Mathematics)' },
+      { label: 'Mode', value: 'Offline — pen-and-paper (OMR)' },
+      { label: 'Based on', value: 'Karnataka PUC Class 11 & 12 syllabus' },
+      { label: 'Official site', value: 'cetonline.karnataka.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What KCET is',
+        bodyEn:
+          'KCET (the Karnataka Common Entrance Test) is conducted by the Karnataka Examinations Authority (KEA) for admission to first-year undergraduate professional courses in Karnataka — including engineering, and courses such as agriculture and pharmacy. For engineering, candidates take the Physics, Chemistry and Mathematics papers.\n\nAdmission is to government, aided and private (government-quota) seats in the state.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 (PUC II) with the required subjects can apply. Karnataka domicile and reservation rules for state seats are set by KEA, so confirm the exact eligibility for your course on the official site each year.',
+        bullets: [
+          'Passed or appearing in Class 12 (PUC II) with required subjects',
+          'PCM papers for engineering admission',
+          'Karnataka domicile and eligibility rules set by KEA',
+          'Confirm current eligibility on the official site',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'KCET is a pen-and-paper, OMR-based test. The syllabus is based on the Karnataka PUC (Class 11 and Class 12) curriculum for the relevant subjects. The number of questions, marks, duration and marking scheme are published by KEA each year — confirm the current pattern before you prepare.',
+      },
+      {
+        headingEn: 'Admission and counselling',
+        bodyEn:
+          'A KCET rank is used in the KEA online counselling, where seats are allotted based on rank, preferences, category and seat availability. For some courses, KEA also factors in qualifying-examination marks as defined in its rules. The counselling rules and schedule are released by KEA each cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official KEA website is the authoritative source for eligibility, pattern, syllabus, counselling and dates. Use this guide as an overview and verify every specific on the official site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is KCET online or offline?',
+        answerEn:
+          'KCET is conducted in offline, pen-and-paper (OMR) mode. Confirm the current format in the official KEA brochure, as exam authorities can revise it.',
+      },
+      {
+        questionEn: 'What courses can I get through KCET?',
+        answerEn:
+          'KCET is used for admission to engineering and several other professional courses in Karnataka, such as agriculture and pharmacy. Architecture admission typically also requires NATA — check the KEA rules for each course.',
+      },
+      {
+        questionEn: 'Does KCET consider my board marks?',
+        answerEn:
+          'For some courses, KEA factors in qualifying-examination marks alongside the KCET score, as defined in the official rules. Check the current weightage for your course on the KEA site.',
+      },
+    ],
+    relatedExamSlugs: ['kcet', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['mht-cet-exam-guide', 'wbjee-exam-guide', 'ap-eapcet-exam-guide', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'Karnataka Examinations Authority (KEA) — official site', url: 'https://cetonline.karnataka.gov.in/kea' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['kcet', 'kcet exam', 'karnataka cet', 'kcet engineering', 'kea kcet', 'kcet syllabus'],
+    tags: ['engineering-entrance-exams'],
+  },
+  {
+    slug: 'wbjee-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'WBJEE Exam Guide (West Bengal)',
+    descriptionEn:
+      'How WBJEE works — the West Bengal Joint Entrance Examinations Board (WBJEEB), the two-paper OMR format, the route to engineering, pharmacy and architecture in West Bengal, and counselling.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'West Bengal Joint Entrance Examinations Board (WBJEEB)' },
+      { label: 'Used for', value: 'Engineering, pharmacy & architecture UG courses in West Bengal' },
+      { label: 'Mode', value: 'Offline — pen-and-paper (OMR)' },
+      { label: 'Papers', value: 'Paper I — Mathematics; Paper II — Physics & Chemistry' },
+      { label: 'Official site', value: 'wbjeeb.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What WBJEE is',
+        bodyEn:
+          'WBJEE is the state-level entrance examination conducted by the West Bengal Joint Entrance Examinations Board (WBJEEB) for admission to undergraduate courses in engineering and technology, pharmacy and architecture at universities, government colleges and self-financing institutes in West Bengal.\n\nIt is the main state route into engineering in West Bengal, used alongside JEE Main.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 with the required subjects (Physics and Mathematics, with Chemistry, Biology or a third subject as applicable) can apply. Domicile and residency rules for state-quota seats are set by WBJEEB, so confirm the current eligibility on the official site.',
+        bullets: [
+          'Passed or appearing in Class 12 with Physics, Mathematics and a third subject',
+          'Engineering, pharmacy and architecture courses covered',
+          'Domicile and residency rules for state seats set by WBJEEB',
+          'Confirm current eligibility on the official site',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'WBJEE is an OMR-based (offline) test conducted in two papers: Paper I is Mathematics, and Paper II covers Physics and Chemistry. All questions are multiple-choice. The exact number of questions, marks and marking scheme are set by WBJEEB each year, so confirm the current pattern before you plan.',
+      },
+      {
+        headingEn: 'Admission and counselling',
+        bodyEn:
+          'A WBJEE rank is used in the board e-counselling, where seats are allotted by rank, preference, category and availability across rounds. The counselling process and schedule are published by WBJEEB each cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official WBJEEB website is the authoritative source for eligibility, pattern, syllabus, counselling and dates. Use this guide as an overview and verify the specifics on the official site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many papers does WBJEE have?',
+        answerEn:
+          'WBJEE has two papers — Paper I (Mathematics) and Paper II (Physics and Chemistry), both multiple-choice and OMR-based. Confirm the current structure on the official WBJEEB site.',
+      },
+      {
+        questionEn: 'Can I use WBJEE for architecture?',
+        answerEn:
+          'WBJEE is used for admission to engineering, technology, pharmacy and architecture courses in West Bengal. Architecture admission may have additional requirements — check the WBJEEB rules.',
+      },
+      {
+        questionEn: 'Is WBJEE different from JEE Main?',
+        answerEn:
+          'Yes. WBJEE is a separate state exam conducted by WBJEEB for West Bengal admissions, while JEE Main is a national exam. Both can lead to engineering seats in the state; confirm how each is used in the official rules.',
+      },
+    ],
+    relatedExamSlugs: ['wbjee', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['mht-cet-exam-guide', 'kcet-exam-guide', 'ts-eamcet-exam-guide', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'West Bengal Joint Entrance Examinations Board (WBJEEB) — official site', url: 'https://wbjeeb.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['wbjee', 'wbjee exam', 'west bengal jee', 'wbjeeb', 'wbjee engineering', 'wbjee syllabus'],
+    tags: ['engineering-entrance-exams'],
+  },
+  {
+    slug: 'ap-eapcet-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'AP EAPCET (EAMCET) Exam Guide',
+    descriptionEn:
+      'How AP EAPCET works — conducted by JNTU Kakinada for APSCHE, the engineering, agriculture and pharmacy streams, the computer-based format, the Intermediate syllabus base, and counselling.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'JNTU Kakinada, on behalf of APSCHE' },
+      { label: 'Used for', value: 'Engineering, agriculture & pharmacy UG courses in Andhra Pradesh' },
+      { label: 'Engineering stream', value: 'PCM (Physics, Chemistry, Mathematics)' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Official site', value: 'cets.apsche.ap.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What AP EAPCET is',
+        bodyEn:
+          'AP EAPCET (the Andhra Pradesh Engineering, Agriculture and Pharmacy Common Entrance Test, earlier called AP EAMCET) is conducted by JNTU Kakinada on behalf of the Andhra Pradesh State Council of Higher Education (APSCHE). It is the route to undergraduate engineering, agriculture and pharmacy courses at colleges in Andhra Pradesh.\n\nEngineering aspirants take the Mathematics, Physics and Chemistry stream.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 (Intermediate) with the required subjects can apply for the relevant stream — the engineering stream needs Mathematics, Physics and Chemistry, while the agriculture and pharmacy stream is biology-based. State domicile and reservation rules apply; confirm eligibility on the official site.',
+        bullets: [
+          'Passed or appearing in Class 12 (Intermediate) with the required subjects',
+          'Engineering stream = PCM; agriculture & pharmacy stream = biology-based',
+          'State domicile and reservation rules apply',
+          'Confirm current eligibility on the official site',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'AP EAPCET is a computer-based test based on the Andhra Pradesh Intermediate (Class 11 and Class 12) syllabus for the relevant subjects. The number of questions, marks, duration and marking scheme are published in the official information bulletin each year — confirm the current pattern before you plan.',
+      },
+      {
+        headingEn: 'Admission and counselling',
+        bodyEn:
+          'An AP EAPCET rank is used in the APSCHE online counselling, where seats are allotted by rank, preference, category and availability. The counselling process and schedule are released each cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official AP EAPCET website (under APSCHE) is the authoritative source for eligibility, pattern, syllabus, counselling and dates. Use this guide as an overview and verify every specific on the official site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is AP EAPCET the same as AP EAMCET?',
+        answerEn:
+          'Yes. AP EAMCET was renamed AP EAPCET (Engineering, Agriculture and Pharmacy Common Entrance Test). It is the same state entrance test for these streams in Andhra Pradesh.',
+      },
+      {
+        questionEn: 'Does AP EAPCET include medical admission?',
+        answerEn:
+          'No. Medical (MBBS/BDS) admission in India is through NEET. AP EAPCET covers the engineering, agriculture and pharmacy streams. Confirm the current streams on the official site.',
+      },
+      {
+        questionEn: 'What is AP EAPCET based on?',
+        answerEn:
+          'It is based on the Andhra Pradesh Intermediate (Class 11 and Class 12) syllabus for the relevant subjects. Use the official syllabus as your reference.',
+      },
+    ],
+    relatedExamSlugs: ['ap-eapcet', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ts-eamcet-exam-guide', 'kcet-exam-guide', 'mht-cet-exam-guide', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'AP EAPCET — APSCHE official site', url: 'https://cets.apsche.ap.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ap eapcet', 'ap eamcet', 'andhra pradesh eamcet', 'ap eapcet engineering', 'apsche eapcet', 'ap eamcet syllabus'],
+    tags: ['engineering-entrance-exams'],
+  },
+  {
+    slug: 'ts-eamcet-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'TS EAMCET (TG EAPCET) Exam Guide',
+    descriptionEn:
+      'How TS EAMCET — now TG EAPCET — works: conducted by JNTU Hyderabad for TGCHE, the engineering, agriculture and pharmacy streams, the computer-based format, and counselling.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'JNTU Hyderabad, on behalf of TGCHE' },
+      { label: 'Used for', value: 'Engineering, agriculture & pharmacy UG courses in Telangana' },
+      { label: 'Engineering stream', value: 'PCM (Physics, Chemistry, Mathematics)' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Note', value: 'Renamed from TS EAMCET to TG EAPCET in 2024' },
+      { label: 'Official site', value: 'eapcet.tgche.ac.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What TS EAMCET / TG EAPCET is',
+        bodyEn:
+          'TS EAMCET — renamed TG EAPCET in 2024 — is the Telangana Engineering, Agriculture and Pharmacy Common Entrance Test, conducted by JNTU Hyderabad on behalf of the Telangana Council of Higher Education (TGCHE). It is the route to undergraduate engineering, agriculture and pharmacy courses at colleges in Telangana.\n\nEngineering aspirants take the Mathematics, Physics and Chemistry stream.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 (Intermediate) with the required subjects can apply for the relevant stream — engineering needs Mathematics, Physics and Chemistry, while the agriculture and pharmacy stream is biology-based. State domicile and reservation rules apply; confirm eligibility on the official site.',
+        bullets: [
+          'Passed or appearing in Class 12 (Intermediate) with the required subjects',
+          'Engineering stream = PCM; agriculture & pharmacy stream = biology-based',
+          'Telangana domicile and reservation rules apply',
+          'Confirm current eligibility on the official site',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'The test is computer-based and based on the Telangana Intermediate (Class 11 and Class 12) syllabus for the relevant subjects. The number of questions, marks, duration and marking scheme are published in the official bulletin each year — confirm the current pattern before you plan.',
+      },
+      {
+        headingEn: 'Admission and counselling',
+        bodyEn:
+          'A TG EAPCET rank is used in the online counselling conducted under TGCHE, where seats are allotted by rank, preference, category and availability. The counselling process and schedule are released each cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official TG EAPCET website (under TGCHE) is the authoritative source for eligibility, pattern, syllabus, counselling and dates. Use this guide as an overview and verify the specifics on the official site, including the current name and portal.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is TS EAMCET now called TG EAPCET?',
+        answerEn:
+          'Yes. The exam was renamed from TS EAMCET to TG EAPCET in 2024. It is the same Telangana entrance test for engineering, agriculture and pharmacy. Use the current official portal for the latest information.',
+      },
+      {
+        questionEn: 'Does TS EAMCET cover medical seats?',
+        answerEn:
+          'No. Medical (MBBS/BDS) admission is through NEET. TG EAPCET covers the engineering, agriculture and pharmacy streams. Confirm the current streams on the official site.',
+      },
+      {
+        questionEn: 'Who conducts TG EAPCET?',
+        answerEn:
+          'It is conducted by JNTU Hyderabad on behalf of the Telangana Council of Higher Education (TGCHE). Verify details on the official TGCHE / TG EAPCET site.',
+      },
+    ],
+    relatedExamSlugs: ['ts-eamcet', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ap-eapcet-exam-guide', 'kcet-exam-guide', 'wbjee-exam-guide', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'TG EAPCET — TGCHE official site', url: 'https://eapcet.tgche.ac.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ts eamcet', 'tg eapcet', 'telangana eamcet', 'ts eamcet engineering', 'tg eapcet syllabus', 'tsche eapcet'],
+    tags: ['engineering-entrance-exams'],
+  },
+
+  // ───── Set 3 (India top-100) — State & private engineering entrance exams II ─────
+  {
+    slug: 'keam-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'KEAM Exam Guide (Kerala)',
+    descriptionEn:
+      'How KEAM works — the Commissioner for Entrance Examinations (CEE) Kerala, the computer-based engineering and pharmacy entrance, CAP counselling, and where architecture and medical admission fit.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Commissioner for Entrance Examinations (CEE), Kerala' },
+      { label: 'Engineering/pharmacy entrance', value: 'Computer-based test (CBT)' },
+      { label: 'Used for', value: 'Engineering & pharmacy UG admission in Kerala' },
+      { label: 'Admission', value: 'Centralised Allotment Process (CAP)' },
+      { label: 'Official site', value: 'cee.kerala.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What KEAM is',
+        bodyEn:
+          'KEAM (Kerala Engineering Architecture Medical) is the state admission process for professional undergraduate courses in Kerala, run by the Office of the Commissioner for Entrance Examinations (CEE), Government of Kerala. The engineering and pharmacy entrance is conducted as a computer-based test (CBT).\n\nArchitecture admission uses NATA along with qualifying marks, and medical (MBBS/BDS) admission is through NEET — so the KEAM entrance test itself is the route for engineering and pharmacy.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 with the required subjects — Physics, Chemistry and Mathematics for engineering — can apply. Kerala domicile and category rules for state seats are set by the CEE, so confirm the exact eligibility for your stream on the official site each year.',
+        bullets: [
+          'Passed or appearing in Class 12 with the required subjects (PCM for engineering)',
+          'Engineering and pharmacy via the KEAM CBT; architecture via NATA; medical via NEET',
+          'Kerala domicile and category rules set by the CEE',
+          'Confirm current eligibility on the official site',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'The KEAM engineering and pharmacy entrance is a computer-based test based on the higher secondary (Class 11 and Class 12) syllabus for the relevant subjects. The number of questions, marks, duration and the score-normalisation method are set by the CEE each year, so confirm the current pattern before you plan.',
+      },
+      {
+        headingEn: 'Admission through CAP',
+        bodyEn:
+          'A KEAM rank is used in the Centralised Allotment Process (CAP) conducted by the CEE, where seats in participating colleges are allotted by rank, options, category and availability across rounds. The CAP rules and schedule are released each cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official CEE Kerala website is the authoritative source for eligibility, pattern, syllabus, CAP and dates. Use this guide as an overview and verify every specific on the official site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is KEAM only for engineering?',
+        answerEn:
+          'The KEAM computer-based entrance is the route for engineering and pharmacy admission in Kerala. Architecture admission uses NATA with qualifying marks, and medical admission is through NEET — so KEAM covers the professional-course admission process broadly, with the CBT specifically for engineering and pharmacy. Confirm the current scope on the official site.',
+      },
+      {
+        questionEn: 'Is KEAM computer-based now?',
+        answerEn:
+          'Yes, the engineering and pharmacy entrance is conducted as a computer-based test (CBT). Confirm the current format on the official CEE site, as exam authorities can revise it.',
+      },
+      {
+        questionEn: 'Who conducts KEAM?',
+        answerEn:
+          'KEAM is conducted by the Office of the Commissioner for Entrance Examinations (CEE), Government of Kerala. The CEE also runs the Centralised Allotment Process for admission.',
+      },
+    ],
+    relatedExamSlugs: ['keam', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['gujcet-exam-guide', 'kcet-exam-guide', 'comedk-uget-exam-guide', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'Commissioner for Entrance Examinations (CEE), Kerala — official site', url: 'https://cee.kerala.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['keam', 'keam exam', 'kerala engineering entrance', 'cee kerala', 'keam eligibility', 'keam syllabus'],
+    tags: ['engineering-entrance-exams'],
+  },
+  {
+    slug: 'gujcet-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'GUJCET Exam Guide (Gujarat)',
+    descriptionEn:
+      'How GUJCET works — conducted by the Gujarat board (GSEB), the OMR-based engineering and pharmacy entrance, ACPC counselling, and the Class 12 syllabus base.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Gujarat Secondary & Higher Secondary Education Board (GSEB)' },
+      { label: 'Used for', value: 'Engineering & pharmacy UG admission in Gujarat' },
+      { label: 'Mode', value: 'Offline — pen-and-paper (OMR)' },
+      { label: 'Counselling', value: 'Admission Committee for Professional Courses (ACPC)' },
+      { label: 'Official site', value: 'gujcet.gseb.org' },
+    ],
+    sections: [
+      {
+        headingEn: 'What GUJCET is',
+        bodyEn:
+          'GUJCET (the Gujarat Common Entrance Test) is conducted by the Gujarat Secondary and Higher Secondary Education Board (GSEB) for admission to engineering and pharmacy undergraduate courses in Gujarat. Admission and counselling are handled by the Admission Committee for Professional Courses (ACPC).',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 (science stream) with the required subjects can apply — Physics and Chemistry with Mathematics for engineering, or Biology for the relevant pharmacy routes. Confirm the exact eligibility on the official site each year.',
+        bullets: [
+          'Passed or appearing in Class 12 (science) with the required subjects',
+          'Physics, Chemistry and Mathematics for engineering',
+          'Counselling through the ACPC',
+          'Confirm current eligibility on the official site',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'GUJCET is an offline, OMR-based (pen-and-paper) test of multiple-choice questions across Physics, Chemistry and Mathematics (Biology for the relevant stream), based on the Gujarat Class 12 syllabus. The number of questions, marks, duration and marking scheme are published by GSEB each year — confirm the current pattern before you plan.',
+      },
+      {
+        headingEn: 'Admission through ACPC',
+        bodyEn:
+          'For admission, the ACPC considers a combination that can include your GUJCET score, board marks and, where applicable, JEE Main, as defined in the official rules each year. Seats are allotted through online counselling. Check the current admission formula on the official ACPC site.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official GSEB / GUJCET website and the ACPC site are the authoritative sources for eligibility, pattern, syllabus, counselling and dates. Use this guide as an overview and verify every specific officially.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who conducts GUJCET?',
+        answerEn:
+          'GUJCET is conducted by the Gujarat Secondary and Higher Secondary Education Board (GSEB). Admission and counselling are handled by the Admission Committee for Professional Courses (ACPC).',
+      },
+      {
+        questionEn: 'Is GUJCET online or offline?',
+        answerEn:
+          'GUJCET is an offline, OMR-based (pen-and-paper) test. Confirm the current format on the official site, as exam authorities can revise it.',
+      },
+      {
+        questionEn: 'Do I need GUJCET or JEE Main for engineering in Gujarat?',
+        answerEn:
+          'Gujarat admission through the ACPC can consider GUJCET, board marks and JEE Main in a defined formula. Check the current admission rules on the official ACPC site to see how each is weighed.',
+      },
+    ],
+    relatedExamSlugs: ['gujcet', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['keam-exam-guide', 'mht-cet-exam-guide', 'wbjee-exam-guide', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'Gujarat Secondary & Higher Secondary Education Board (GSEB) — official site', url: 'https://www.gseb.org' },
+      { label: 'Admission Committee for Professional Courses (ACPC), Gujarat — official site', url: 'https://gujacpc.admissions.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['gujcet', 'gujcet exam', 'gujarat cet', 'gseb gujcet', 'gujcet engineering', 'acpc gujarat'],
+    tags: ['engineering-entrance-exams'],
+  },
+  {
+    slug: 'bitsat-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'BITSAT Exam Guide (BITS Pilani)',
+    descriptionEn:
+      'How BITSAT works — conducted by BITS Pilani for admission to its Pilani, Goa and Hyderabad campuses, the computer-based online format, and the one authentic official site.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'BITS Pilani (Birla Institute of Technology and Science)' },
+      { label: 'Used for', value: 'Admission to BITS Pilani, Goa & Hyderabad campuses' },
+      { label: 'Mode', value: 'Computer-based online test' },
+      { label: 'Programmes', value: 'Integrated first-degree (B.E., B.Pharm, M.Sc.)' },
+      { label: 'Official site', value: 'admissions.bits-pilani.ac.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What BITSAT is',
+        bodyEn:
+          'BITSAT (the BITS Admission Test) is conducted by BITS Pilani (the Birla Institute of Technology and Science) for admission to its integrated first-degree programmes — including engineering (B.E.), pharmacy (B.Pharm) and Master of Science streams — at the Pilani, K. K. Birla Goa and Hyderabad campuses. It is a private-institute entrance, separate from the national and state government exams.\n\nApply through the official BITS Pilani admission portal at admissions.bits-pilani.ac.in, and be cautious of look-alike or unofficial sites.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 with the required subjects (Physics, Chemistry and Mathematics, with adequate English) can apply, subject to the minimum marks BITS sets. Confirm the exact eligibility and minimum-marks norms on the official admission site each year.',
+        bullets: [
+          'Passed or appearing in Class 12 with Physics, Chemistry and Mathematics',
+          'Minimum-marks norm set by BITS each year',
+          'For admission to the BITS Pilani, Goa and Hyderabad campuses',
+          'Apply only through the official BITS admission portal, admissions.bits-pilani.ac.in',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'BITSAT is a computer-based online test based on the Class 11 and Class 12 (NCERT-aligned) syllabus, typically covering Physics, Chemistry, Mathematics, English proficiency and logical reasoning. The number of questions, marks, duration and marking scheme are set by BITS each year — confirm the current pattern on the official site.',
+      },
+      {
+        headingEn: 'Admission to BITS campuses',
+        bodyEn:
+          'Admission is based on your BITSAT score and your preferences across the BITS campuses and programmes, through the institute\'s own admission process. Because seats and cut-offs are decided by BITS each year, rely on the official admission site for the current process.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official BITS Pilani admission portal (admissions.bits-pilani.ac.in) is the authoritative source for eligibility, pattern, syllabus, the admission process and dates. Use this guide as an overview and verify every specific there.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which colleges can I get through BITSAT?',
+        answerEn:
+          'BITSAT is for admission to the BITS campuses at Pilani, K. K. Birla Goa and Hyderabad. It is the institute\'s own entrance test and is not used for unrelated colleges.',
+      },
+      {
+        questionEn: 'Is BITSAT online or offline?',
+        answerEn:
+          'BITSAT is a computer-based online test. Confirm the current format on the official BITS admission site.',
+      },
+      {
+        questionEn: 'What is the official BITSAT website?',
+        answerEn:
+          'The official BITS Pilani admission portal is admissions.bits-pilani.ac.in. Be cautious of any other site claiming to handle BITSAT admission.',
+      },
+    ],
+    relatedExamSlugs: ['bitsat', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['viteee-exam-guide', 'comedk-uget-exam-guide', 'how-to-choose-engineering-college', 'jee-main-vs-jee-advanced-difference'],
+    sources: [
+      { label: 'BITS Pilani — official admission portal', url: 'https://admissions.bits-pilani.ac.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['bitsat', 'bitsat exam', 'bits pilani admission', 'bitsat eligibility', 'bitsat pattern', 'bits goa hyderabad'],
+    tags: ['engineering-entrance-exams'],
+  },
+  {
+    slug: 'viteee-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'VITEEE Exam Guide (VIT)',
+    descriptionEn:
+      'How VITEEE works — conducted by VIT (Vellore Institute of Technology) for B.Tech admission to its campuses, the computer-based online format, and where to confirm the process.',
+    readMinutes: 5,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Vellore Institute of Technology (VIT)' },
+      { label: 'Used for', value: 'B.Tech admission to VIT campuses' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Official site', value: 'viteee.vit.ac.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What VITEEE is',
+        bodyEn:
+          'VITEEE (the VIT Engineering Entrance Examination) is conducted by Vellore Institute of Technology (VIT), a deemed-to-be university, for admission to its undergraduate B.Tech programmes across the VIT campuses (VIT Vellore, VIT Chennai, VIT-AP and VIT Bhopal). It is the institute\'s own entrance test, separate from the national and state government exams.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 with the required subjects (Physics and Chemistry with Mathematics or Biology) and the minimum marks VIT sets can apply. Confirm the exact eligibility and minimum-marks norm on the official site each year.',
+        bullets: [
+          'Passed or appearing in Class 12 with the required subjects',
+          'Physics and Chemistry with Mathematics (or Biology for some programmes)',
+          'Minimum-marks norm set by VIT each year',
+          'For admission to VIT campuses; apply on the official site',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'VITEEE is a computer-based test based on the Class 11 and Class 12 syllabus, typically covering Mathematics or Biology, Physics, Chemistry, aptitude and English. The number of questions, marks, duration and marking scheme are set by VIT each year — confirm the current pattern on the official site.',
+      },
+      {
+        headingEn: 'Admission to VIT',
+        bodyEn:
+          'Admission is based on your VITEEE rank and your campus and programme preferences, through the VIT counselling. Seats and cut-offs are decided by VIT each year, so rely on the official site for the current process.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official VITEEE website (viteee.vit.ac.in) is the authoritative source for eligibility, pattern, syllabus, counselling and dates. Use this guide as an overview and verify every specific there.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which colleges can I get through VITEEE?',
+        answerEn:
+          'VITEEE is for admission to the VIT campuses. It is the institute\'s own entrance test, used for VIT B.Tech programmes.',
+      },
+      {
+        questionEn: 'Is VITEEE computer-based?',
+        answerEn:
+          'Yes, VITEEE is conducted as a computer-based test (CBT). Confirm the current format on the official site.',
+      },
+      {
+        questionEn: 'Can I take VITEEE with Biology instead of Mathematics?',
+        answerEn:
+          'VITEEE allows Mathematics or Biology depending on the programme, but B.Tech programmes generally require Mathematics. Check the subject requirement for your target programme on the official site.',
+      },
+    ],
+    relatedExamSlugs: ['viteee', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['bitsat-exam-guide', 'comedk-uget-exam-guide', 'how-to-choose-engineering-college', 'mht-cet-exam-guide'],
+    sources: [
+      { label: 'VIT — VITEEE official site', url: 'https://viteee.vit.ac.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['viteee', 'viteee exam', 'vit engineering entrance', 'vit admission', 'viteee eligibility', 'viteee pattern'],
+    tags: ['engineering-entrance-exams'],
+  },
+  {
+    slug: 'comedk-uget-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'COMEDK UGET Exam Guide (Karnataka)',
+    descriptionEn:
+      'How COMEDK UGET works — the consortium of private colleges in Karnataka, the computer-based engineering entrance to member institutions, and how medical and dental admission now go through NEET.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'COMEDK (Consortium of Medical, Engineering & Dental Colleges of Karnataka)' },
+      { label: 'UGET used for', value: 'UG engineering admission to COMEDK member institutions' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Subjects', value: 'Physics, Chemistry & Mathematics' },
+      { label: 'Official site', value: 'comedk.org' },
+    ],
+    sections: [
+      {
+        headingEn: 'What COMEDK UGET is',
+        bodyEn:
+          'COMEDK UGET (the Under Graduate Entrance Test) is conducted by COMEDK — the Consortium of Medical, Engineering and Dental Colleges of Karnataka, set up by the Karnataka Professional Colleges Foundation — for admission to undergraduate engineering courses at its member private institutions in Karnataka.\n\nAlthough the consortium\'s name includes medical and dental, the UGET is now for engineering admission; medical (MBBS/BDS) admission is through NEET.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Candidates who have passed, or are appearing in, Class 12 with Physics, Chemistry and Mathematics, and the minimum marks COMEDK sets, can apply. Confirm the exact eligibility on the official site each year.',
+        bullets: [
+          'Passed or appearing in Class 12 with Physics, Chemistry and Mathematics',
+          'For UG engineering admission to COMEDK member institutions',
+          'Medical and dental admission is through NEET, not the UGET',
+          'Confirm current eligibility on the official site',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and syllabus',
+        bodyEn:
+          'COMEDK UGET is a computer-based test of multiple-choice questions in Physics, Chemistry and Mathematics, based on the Class 11 and Class 12 syllabus. The number of questions, marks, duration and marking scheme are published by COMEDK each year — confirm the current pattern on the official site.',
+      },
+      {
+        headingEn: 'Admission and counselling',
+        bodyEn:
+          'A COMEDK rank is used in the consortium\'s centralised, single-window online counselling, where seats at member institutions are allotted by rank, preference and availability. The counselling process and schedule are released each cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official COMEDK website (comedk.org) is the authoritative source for eligibility, pattern, syllabus, counselling and dates. Use this guide as an overview and verify every specific there.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is COMEDK for medical admission?',
+        answerEn:
+          'No. Although COMEDK stands for the Consortium of Medical, Engineering and Dental Colleges of Karnataka, the UGET is now for engineering admission to member institutions. Medical and dental (MBBS/BDS) admission is through NEET.',
+      },
+      {
+        questionEn: 'What colleges accept COMEDK UGET?',
+        answerEn:
+          'COMEDK UGET is used for admission to the consortium\'s member private engineering institutions in Karnataka. The list of member institutions is published on the official COMEDK site.',
+      },
+      {
+        questionEn: 'Is COMEDK different from KCET?',
+        answerEn:
+          'Yes. KCET (by the KEA) is the state government test for government and government-quota seats, while COMEDK UGET is the consortium\'s own test for seats at its member private institutions. Many candidates take both; check each official site for details.',
+      },
+    ],
+    relatedExamSlugs: ['comedk-uget', 'jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['kcet-exam-guide', 'bitsat-exam-guide', 'viteee-exam-guide', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'COMEDK — official site', url: 'https://www.comedk.org' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['comedk uget', 'comedk exam', 'comedk karnataka', 'comedk engineering', 'comedk uget eligibility', 'comedk vs kcet'],
+    tags: ['engineering-entrance-exams'],
+  },
+
+  // ───────────── Set 4 (India top-100) — GATE & after-engineering paths ─────────────
+  {
+    slug: 'how-to-prepare-for-gate',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'How to Prepare for GATE',
+    descriptionEn:
+      'A practical approach to preparing for GATE — understanding the paper and your subject, building fundamentals, using previous papers and CBT mocks, and what a GATE score unlocks.',
+    readMinutes: 7,
+    keyFacts: [
+      { label: 'Conducting body', value: 'IISc & the IITs (organizing institute rotates yearly)' },
+      { label: 'On behalf of', value: 'National Coordination Board – GATE, Ministry of Education' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Score validity', value: 'Three years' },
+      { label: 'Used for', value: 'M.Tech/MS & PhD admission; PSU recruitment' },
+      { label: 'Official site', value: 'the current year\'s GATE portal (e.g. gate2026.iitg.ac.in)' },
+    ],
+    sections: [
+      {
+        headingEn: 'Understand what GATE is and what it unlocks',
+        bodyEn:
+          'GATE (the Graduate Aptitude Test in Engineering) is a computer-based test conducted by IISc and the IITs — the organizing institute rotates each year — on behalf of the National Coordination Board under the Ministry of Education. A valid GATE score is used for M.Tech/MS and some PhD admissions (at IITs, NITs, IIITs, IISc and other institutes) and by many public-sector undertakings (PSUs) for recruitment.\n\nThe score is valid for three years, so a good score keeps several doors open.',
+      },
+      {
+        headingEn: 'Know your paper and syllabus',
+        bodyEn:
+          'GATE has many subject papers, and you choose the paper that matches your discipline (with a limited option to take a second paper, as allowed in the official rules). Download the official syllabus for your paper and for the General Aptitude section that every paper includes, and map out the topics before you start.',
+      },
+      {
+        headingEn: 'Build fundamentals, then practise with previous papers',
+        bodyEn:
+          'GATE rewards conceptual depth. Strengthen the core topics first, then work through previous years\' question papers to learn the style and depth of the questions. Track which topics recur and where you lose time, and revise those.',
+      },
+      {
+        headingEn: 'Practise in CBT mode with the virtual calculator',
+        bodyEn:
+          'Because GATE is a computer-based test with an on-screen virtual calculator, take timed full-length mocks on screen and practise with the virtual calculator so the interface and pacing feel familiar on exam day. Negative marking applies for some question types — confirm the current marking scheme in the official bulletin.',
+        bullets: [
+          'Download the official syllabus for your paper + General Aptitude',
+          'Master fundamentals, then drill previous-year papers',
+          'Take timed on-screen mocks with the virtual calculator',
+          'Confirm the current marking scheme (including negative marking) officially',
+        ],
+      },
+      {
+        headingEn: 'Plan realistically — no shortcuts',
+        bodyEn:
+          'Build a steady, sustainable timetable rather than cramming, and revise regularly. Coaching is optional; the official syllabus, standard textbooks and previous papers cover what you need. No coaching or guide can guarantee a rank — consistent preparation is what helps.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I prepare for GATE without coaching?',
+        answerEn:
+          'Yes. Many candidates prepare on their own using the official syllabus, standard textbooks and previous years\' papers. Coaching is optional, not required. Be cautious of anyone promising a guaranteed rank or seat.',
+      },
+      {
+        questionEn: 'How long is a GATE score valid?',
+        answerEn:
+          'A GATE score is valid for three years from the date the result is announced. Confirm the current validity on the official GATE site.',
+      },
+      {
+        questionEn: 'Who conducts GATE?',
+        answerEn:
+          'GATE is conducted jointly by IISc and the IITs, with one of them acting as the organizing institute each year, on behalf of the National Coordination Board under the Ministry of Education.',
+      },
+    ],
+    relatedExamSlugs: ['gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['career-options-after-gate', 'gate-vs-cat-for-engineers', 'higher-studies-options-after-btech', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'GATE 2026 — IIT Guwahati (organizing institute)', url: 'https://gate2026.iitg.ac.in' },    ],
+    lastVerified: '2026-06-06',
+    keywords: ['how to prepare for gate', 'gate preparation', 'gate without coaching', 'gate exam strategy', 'gate previous papers', 'gate cbt mock'],
+    tags: ['gate', 'exam-preparation'],
+  },
+  {
+    slug: 'career-options-after-gate',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Career Options After GATE',
+    descriptionEn:
+      'What a GATE score opens up — M.Tech/MS at IITs, NITs and IISc via COAP and CCMT, PSU recruitment, and direct PhD and research routes — and how each path works.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What a GATE score unlocks',
+        bodyEn:
+          'A valid GATE score is much more than an exam result. It is the gateway to postgraduate engineering admission, public-sector jobs and research, and it stays valid for three years. The main routes are M.Tech/MS admission, PSU recruitment, and direct PhD or research positions.',
+      },
+      {
+        headingEn: 'M.Tech / MS admission (COAP and CCMT)',
+        bodyEn:
+          'For master\'s admission, IITs and IISc allot seats through COAP (the Common Offer Acceptance Portal), while NITs, IIITs and many other institutes admit through CCMT (Centralized Counselling for M.Tech). You apply with your GATE score and rank; each portal has its own process and schedule, published officially each year.',
+        bullets: [
+          'IITs & IISc → COAP (Common Offer Acceptance Portal)',
+          'NITs, IIITs & GFTIs → CCMT (Centralized Counselling for M.Tech)',
+          'Some institutes admit through their own GATE-based process',
+          'Apply with your GATE score; confirm each portal\'s process officially',
+        ],
+      },
+      {
+        headingEn: 'PSU recruitment through GATE',
+        bodyEn:
+          'Many public-sector undertakings (such as IOCL, ONGC, NTPC and BHEL) use the GATE score to shortlist candidates for recruitment. There is no common portal — each PSU releases its own notification and you apply directly on that PSU\'s official site using your GATE details. Watch the PSU websites after the results. PSU-specific score-validity periods and eligibility can differ from academic admissions, so check each PSU\'s notification.',
+      },
+      {
+        headingEn: 'PhD, research and fellowships',
+        bodyEn:
+          'A GATE score also supports direct PhD admission and research or teaching-assistantship positions at several institutes, and is used for some fellowships. If research is your goal, check the GATE-based PhD routes at your target institutes.',
+      },
+      {
+        headingEn: 'Where to confirm the process',
+        bodyEn:
+          'The official GATE website, the COAP and CCMT portals, and each PSU\'s or institute\'s own site are the authoritative sources. Treat this as an overview and verify the current process, eligibility and dates officially. No outcome is guaranteed by a score alone.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What can I do with a GATE score besides M.Tech?',
+        answerEn:
+          'Besides M.Tech/MS admission, a GATE score is used by many PSUs for recruitment and supports direct PhD and research positions at several institutes. It is valid for three years.',
+      },
+      {
+        questionEn: 'What are COAP and CCMT?',
+        answerEn:
+          'COAP (Common Offer Acceptance Portal) handles M.Tech offers from IITs and IISc, while CCMT (Centralized Counselling for M.Tech) handles admission to NITs, IIITs and other participating institutes. Both use your GATE score and rank.',
+      },
+      {
+        questionEn: 'Is there one portal for PSU jobs through GATE?',
+        answerEn:
+          'No. Each PSU releases its own recruitment notification and you apply directly on that PSU\'s official site using your GATE details. There is no common PSU portal.',
+      },
+    ],
+    relatedExamSlugs: ['gate'],
+    relatedCollegeSlugs: ['iit-bombay', 'iit-madras', 'nit-trichy'],
+    relatedGuideSlugs: ['how-to-prepare-for-gate', 'mtech-vs-ms-vs-mba-after-btech', 'higher-studies-options-after-btech', 'mba-after-engineering-worth-it'],
+    sources: [
+      { label: 'GATE 2026 — IIT Guwahati (organizing institute)', url: 'https://gate2026.iitg.ac.in' },    ],
+    lastVerified: '2026-06-06',
+    keywords: ['career options after gate', 'what after gate', 'coap ccmt', 'psu recruitment through gate', 'mtech admission gate', 'gate phd'],
+    tags: ['gate', 'engineering'],
+  },
+  {
+    slug: 'mtech-vs-ms-vs-mba-after-btech',
+    category: 'comparison',
+    region: 'india',
+    titleEn: 'M.Tech vs MS vs MBA After B.Tech',
+    descriptionEn:
+      'A neutral comparison of three popular paths after B.Tech — M.Tech (via GATE), MS (research-focused), and MBA (via CAT/management) — to help you decide by your goals.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Three different goals, three different paths',
+        bodyEn:
+          'After B.Tech, three of the most common higher-study routes are M.Tech, MS and MBA. They suit different goals: M.Tech deepens technical specialisation, MS leans towards research, and MBA moves you towards management. None is universally "better" — the right choice depends on what you want to do next.',
+      },
+      {
+        headingEn: 'M.Tech — technical depth (via GATE)',
+        bodyEn:
+          'An M.Tech (or M.E.) is a master\'s in engineering, usually entered through GATE, with admission to IITs and IISc via COAP and to NITs and IIITs via CCMT. It suits those who want to specialise technically, move into R&D or core-engineering roles, or pursue a PhD later.',
+      },
+      {
+        headingEn: 'MS — research orientation',
+        bodyEn:
+          'An MS is typically more research-oriented. In India, IISc and the IITs offer MS by research; it is also a common route at universities abroad. It suits those who enjoy research and want a thesis-heavy programme. Studying abroad is a separate decision with its own tests and process.',
+      },
+      {
+        headingEn: 'MBA — management (via CAT and others)',
+        bodyEn:
+          'An MBA shifts your direction towards management, strategy and business roles. In India the main route is CAT, with other tests such as XAT and GMAT, leading to the IIMs and other business schools. It suits those who want to move from a technical role towards management.',
+        bullets: [
+          'M.Tech → technical specialisation, R&D, core roles (GATE)',
+          'MS → research-focused, thesis-heavy (IISc/IITs or abroad)',
+          'MBA → management and business roles (CAT and others)',
+          'Choose by your goals, not by which sounds most prestigious',
+        ],
+      },
+      {
+        headingEn: 'How to decide',
+        bodyEn:
+          'Ask what you want to be doing in a few years. If it is deeper engineering or research, M.Tech or MS fits; if it is management, an MBA fits. Consider your interests, the entrance test involved, and the time and cost — and remember that no path guarantees a particular salary or job.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which is better after B.Tech — M.Tech, MS or MBA?',
+        answerEn:
+          'None is universally better; they serve different goals. M.Tech and MS deepen technical or research expertise, while an MBA moves you towards management. Choose based on the career you actually want.',
+      },
+      {
+        questionEn: 'Do I need GATE for M.Tech and CAT for MBA?',
+        answerEn:
+          'Generally yes — M.Tech admission in India is usually through GATE, while MBA admission is usually through CAT (or tests such as XAT and GMAT). Confirm the current requirements for your target institutes.',
+      },
+      {
+        questionEn: 'Can I do an MBA after B.Tech without work experience?',
+        answerEn:
+          'Many MBA programmes admit fresh graduates, while some value work experience. Requirements vary by programme, so check each institute\'s criteria. There are no guaranteed outcomes.',
+      },
+    ],
+    relatedExamSlugs: ['gate', 'cat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['gate-vs-cat-for-engineers', 'career-options-after-gate', 'mba-after-engineering-worth-it', 'higher-studies-options-after-btech'],
+    sources: [
+      { label: 'GATE 2026 — IIT Guwahati (organizing institute)', url: 'https://gate2026.iitg.ac.in' },
+      { label: 'IIM CAT — official site', url: 'https://iimcat.ac.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['mtech vs ms vs mba', 'after btech options', 'mtech or mba', 'ms vs mtech', 'higher studies after engineering', 'mba after btech'],
+    tags: ['gate', 'engineering'],
+  },
+  {
+    slug: 'higher-studies-options-after-btech',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Higher Studies Options After B.Tech',
+    descriptionEn:
+      'A map of what you can study after B.Tech — M.Tech and MS via GATE, MBA via CAT, PhD and research, plus government-exam and professional routes — to find the path that fits you.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Why plan your next step early',
+        bodyEn:
+          'A B.Tech opens several higher-study routes, and knowing them early helps you pick the right entrance test and timeline. The main options are postgraduate study (M.Tech, MS, MBA), research (PhD), and competitive or professional routes.',
+      },
+      {
+        headingEn: 'Postgraduate study',
+        bodyEn:
+          'M.Tech/MS in engineering is usually entered through GATE; an MBA in management is usually entered through CAT and similar tests. An MS abroad is another route, with its own tests and applications — a separate decision to research on its own. Each suits a different goal, from technical depth to management.',
+        bullets: [
+          'M.Tech / MS — engineering master\'s via GATE',
+          'MBA — management via CAT (and tests like XAT/GMAT)',
+          'MS abroad — a separate route with its own tests',
+          'PhD / research — direct routes, often via GATE or an institute test',
+        ],
+      },
+      {
+        headingEn: 'Research and academia',
+        bodyEn:
+          'If you enjoy research, a PhD (often via GATE or an institute\'s own test) leads towards R&D and academic careers. Many institutes also offer integrated or direct-PhD routes for strong candidates.',
+      },
+      {
+        headingEn: 'Government exams and professional routes',
+        bodyEn:
+          'Some graduates move towards government careers (for example, civil services or other competitive exams) or add professional qualifications. These are valid paths too; the right one depends on your interests, not on prestige.',
+      },
+      {
+        headingEn: 'How to choose',
+        bodyEn:
+          'List what you want to do next, then work backwards to the route and its entrance test. Factor in time, cost and your genuine interest. No route guarantees a particular job or salary — choose the one that matches your goals.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the main higher-study options after B.Tech?',
+        answerEn:
+          'The common routes are M.Tech/MS (via GATE), MBA (via CAT and similar tests), MS abroad (a separate process), and PhD/research. Government and professional routes are also options.',
+      },
+      {
+        questionEn: 'Do I have to do higher studies after B.Tech?',
+        answerEn:
+          'No. Many graduates take up jobs directly. Higher studies are one path among several — choose based on your goals, not pressure.',
+      },
+      {
+        questionEn: 'Which entrance exam do I need?',
+        answerEn:
+          'It depends on the route — GATE for M.Tech/MS and many PhDs, CAT (and others) for MBA. Confirm the requirement for your target programme on its official site.',
+      },
+    ],
+    relatedExamSlugs: ['gate', 'cat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['mtech-vs-ms-vs-mba-after-btech', 'career-options-after-gate', 'how-to-prepare-for-gate', 'mba-after-engineering-worth-it'],
+    sources: [
+      { label: 'GATE 2026 — IIT Guwahati (organizing institute)', url: 'https://gate2026.iitg.ac.in' },
+      { label: 'IIM CAT — official site', url: 'https://iimcat.ac.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['higher studies after btech', 'options after btech', 'after engineering degree', 'mtech mba phd', 'what to do after btech', 'postgraduate after btech'],
+    tags: ['gate', 'engineering'],
+  },
+  {
+    slug: 'gate-vs-cat-for-engineers',
+    category: 'comparison',
+    region: 'india',
+    titleEn: 'GATE vs CAT for Engineers',
+    descriptionEn:
+      'A neutral comparison of GATE and CAT for engineering graduates — what each leads to (M.Tech/PSU/research vs MBA/management), what they test, and how to choose.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Two exams, two directions',
+        bodyEn:
+          'For engineering graduates, GATE and CAT are two of the most common next-step exams, but they point in different directions. GATE leads towards technical postgraduate study, PSU jobs and research; CAT leads towards management through an MBA. Neither is "better" — they serve different goals.',
+      },
+      {
+        headingEn: 'What GATE leads to',
+        bodyEn:
+          'A GATE score is used for M.Tech/MS and some PhD admissions (IITs and IISc via COAP, NITs and IIITs via CCMT) and by many PSUs for recruitment. It suits those who want to stay technical, work in core or R&D roles, or do research.',
+      },
+      {
+        headingEn: 'What CAT leads to',
+        bodyEn:
+          'A CAT score is used for MBA admission to the IIMs and other business schools. It suits those who want to move towards management, strategy and business roles. CAT tests aptitude — verbal ability, data interpretation and logical reasoning, and quantitative ability — rather than engineering subjects.',
+        bullets: [
+          'GATE → M.Tech/MS, PSU jobs, research (technical depth)',
+          'CAT → MBA, management and business roles',
+          'GATE tests your engineering subject + aptitude; CAT tests general aptitude',
+          'Some engineers prepare for both, then decide',
+        ],
+      },
+      {
+        headingEn: 'How to choose (or do both)',
+        bodyEn:
+          'Decide by where you want to be: technical and research-oriented (GATE) or management-oriented (CAT). Some students prepare for both and choose based on results and reflection. Consider your interests, the kind of work you enjoy, and the time each preparation needs — not prestige or peer pressure.',
+      },
+      {
+        headingEn: 'Where to confirm details',
+        bodyEn:
+          'The official GATE website and the official CAT website are the authoritative sources for eligibility, pattern and dates. Use this guide to decide direction, and confirm the specifics officially. No exam guarantees a particular outcome.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is GATE or CAT better for an engineer?',
+        answerEn:
+          'Neither is universally better — they lead to different careers. GATE suits technical postgraduate study, PSU jobs and research; CAT suits management via an MBA. Choose by your goals.',
+      },
+      {
+        questionEn: 'Can I prepare for both GATE and CAT?',
+        answerEn:
+          'Some students do, but the two test very different things (engineering subjects and aptitude for GATE; general aptitude for CAT), so preparing well for both is demanding. Many focus on the one that matches their goal.',
+      },
+      {
+        questionEn: 'Do MBA programmes accept GATE, or M.Tech programmes accept CAT?',
+        answerEn:
+          'Generally no — MBA admission uses CAT (and similar tests) and M.Tech admission uses GATE. Confirm the requirements for your target programmes on their official sites.',
+      },
+    ],
+    relatedExamSlugs: ['gate', 'cat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['mtech-vs-ms-vs-mba-after-btech', 'how-to-prepare-for-gate', 'how-to-prepare-for-cat', 'mba-after-engineering-worth-it'],
+    sources: [
+      { label: 'GATE 2026 — IIT Guwahati (organizing institute)', url: 'https://gate2026.iitg.ac.in' },
+      { label: 'IIM CAT — official site', url: 'https://iimcat.ac.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['gate vs cat', 'gate or cat for engineers', 'gate vs cat which is better', 'mtech vs mba exam', 'cat for engineers', 'gate for engineers'],
+    tags: ['gate', 'engineering', 'mba'],
+  },
+
+  // ───────────── Set 5 (India top-100) — Engineering branches (new) I ─────────────
+  {
+    slug: 'electronics-communication-engineering-overview',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Electronics & Communication Engineering (ECE): An Overview',
+    descriptionEn:
+      'What ECE covers, what you study, and the kinds of careers it leads to — from electronics and embedded systems to communication and signal processing — described neutrally, without salary claims.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What ECE is',
+        bodyEn:
+          'Electronics and Communication Engineering (ECE) deals with electronic devices and circuits, communication systems, signal processing, and the hardware-software boundary that runs modern electronics. It sits between core electronics and information and communication technology, which is part of why it is one of the more flexible engineering branches.',
+      },
+      {
+        headingEn: 'What you study',
+        bodyEn:
+          'An ECE programme typically covers electronic devices and circuits, digital and analog systems, signals and systems, communication systems, microprocessors and embedded systems, control systems, and electromagnetics, alongside programming and mathematics. The exact curriculum varies by institute.',
+        bullets: [
+          'Electronic devices, analog and digital circuits',
+          'Signals, systems and communication',
+          'Microprocessors, embedded systems and VLSI basics',
+          'Programming, control systems and mathematics',
+        ],
+      },
+      {
+        headingEn: 'Where ECE can lead',
+        bodyEn:
+          'ECE graduates work across areas such as electronics and embedded systems, telecommunications and networking, semiconductor and VLSI design, signal and image processing, and increasingly software and IT roles. Many also move into core hardware, R&D, higher studies (M.Tech/MS via GATE) or management. The mix of opportunities varies by region, employer and the skills you build.',
+      },
+      {
+        headingEn: 'Is ECE right for you?',
+        bodyEn:
+          'ECE suits students who enjoy both hardware and software and want flexibility across electronics and IT. As with any branch, opportunities depend on your skills and effort rather than the branch label alone — no branch guarantees a particular job or salary.',
+      },
+      {
+        headingEn: 'How admission works',
+        bodyEn:
+          'Admission to ECE is through the same engineering entrance routes as other branches — JEE Main (NITs/IIITs/GFTIs), JEE Advanced (IITs), and state or private entrance exams — followed by counselling. Choose by genuine interest, not by perceived prestige.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is ECE a good branch?',
+        answerEn:
+          'ECE is a flexible branch spanning electronics, communication and software, but no branch is universally "good" or "bad" — it depends on your interests and the skills you build. Choose based on what you enjoy, not on rankings.',
+      },
+      {
+        questionEn: 'What is the difference between ECE and CSE?',
+        answerEn:
+          'CSE focuses on computing, software and algorithms, while ECE focuses on electronics and communication systems (with growing software content). Both can lead to software roles; ECE adds the hardware and communication dimension.',
+      },
+      {
+        questionEn: 'Can ECE graduates work in software/IT?',
+        answerEn:
+          'Yes, many ECE graduates work in software and IT roles, alongside core electronics, embedded, telecom and VLSI roles. The path depends on the skills you develop.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['computer-science-engineering-overview', 'electrical-engineering-overview', 'best-engineering-branches', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ece', 'electronics and communication engineering', 'ece branch', 'ece career', 'ece vs cse', 'ece scope'],
+    tags: ['engineering'],
+  },
+  {
+    slug: 'civil-engineering-career-scope',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Civil Engineering: Career Scope',
+    descriptionEn:
+      'What civil engineering involves, what you study, and the career areas it opens — construction, structures, transportation, water and environment — described neutrally without salary claims.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What civil engineering is',
+        bodyEn:
+          'Civil engineering is one of the oldest engineering disciplines, concerned with designing, building and maintaining the built environment: buildings, bridges, roads, water systems and other infrastructure. It blends structural understanding, materials, and project execution.',
+      },
+      {
+        headingEn: 'What you study',
+        bodyEn:
+          'A civil programme typically covers structural engineering, geotechnical engineering, transportation engineering, environmental and water-resources engineering, surveying, construction materials and management, alongside mathematics and mechanics. The curriculum varies by institute.',
+        bullets: [
+          'Structural and geotechnical engineering',
+          'Transportation and water-resources engineering',
+          'Environmental engineering and surveying',
+          'Construction materials, management and CAD tools',
+        ],
+      },
+      {
+        headingEn: 'Where civil engineering can lead',
+        bodyEn:
+          'Civil engineers work in construction and infrastructure, structural design and consultancy, transportation and urban planning, water and environmental projects, and the public sector (through engineering-services and PSU routes). Many also pursue higher studies (M.Tech/MS via GATE), site or project management, or government roles. Opportunities vary by region, the economy and your skills.',
+      },
+      {
+        headingEn: 'Is civil engineering right for you?',
+        bodyEn:
+          'Civil suits those who enjoy designing and building real-world infrastructure and working across both office and site. Demand varies with infrastructure activity and region; as with any branch, outcomes depend on your skills, not the branch label, and no branch guarantees a particular job or salary.',
+      },
+      {
+        headingEn: 'How admission works',
+        bodyEn:
+          'Admission to civil engineering is through the standard engineering entrance routes — JEE Main, JEE Advanced, and state or private exams — followed by counselling. Choose by interest rather than perceived prestige.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does civil engineering have good scope?',
+        answerEn:
+          'Civil engineering has broad scope across construction, structures, transportation, water and the public sector, but demand varies with infrastructure activity and region. No branch has universally guaranteed scope — outcomes depend on your skills and effort.',
+      },
+      {
+        questionEn: 'What do civil engineers do?',
+        answerEn:
+          'Civil engineers design, build and maintain infrastructure — buildings, bridges, roads, water systems and more — working across design, consultancy, construction and project management.',
+      },
+      {
+        questionEn: 'Can civil engineers get government jobs?',
+        answerEn:
+          'Yes. Civil engineers can pursue public-sector roles through engineering-services and PSU recruitment routes (several of which use GATE). Check each recruiter\'s official notification for current criteria.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['mechanical-engineering-career-scope', 'best-engineering-branches', 'how-to-choose-engineering-college', 'career-options-after-gate'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['civil engineering', 'civil engineering scope', 'civil engineering career', 'civil engineering jobs', 'what do civil engineers do', 'civil engineering branch'],
+    tags: ['engineering'],
+  },
+  {
+    slug: 'chemical-engineering-overview',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Chemical Engineering: An Overview',
+    descriptionEn:
+      'What chemical engineering is, what you study, and the industries it leads to — from process and petrochemicals to pharmaceuticals, energy and materials — described neutrally without salary claims.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What chemical engineering is',
+        bodyEn:
+          'Chemical engineering applies chemistry, physics, mathematics and biology to design and operate processes that convert raw materials into useful products at scale — fuels, chemicals, materials, food, pharmaceuticals and more. It centres on process design, reactions and transport phenomena.',
+      },
+      {
+        headingEn: 'What you study',
+        bodyEn:
+          'A chemical programme typically covers chemical process principles, thermodynamics, fluid mechanics, heat and mass transfer, reaction engineering, process control, and plant design, alongside chemistry and mathematics. The curriculum varies by institute.',
+        bullets: [
+          'Process principles and thermodynamics',
+          'Fluid mechanics, heat and mass transfer',
+          'Reaction engineering and process control',
+          'Plant design, safety and chemistry',
+        ],
+      },
+      {
+        headingEn: 'Where chemical engineering can lead',
+        bodyEn:
+          'Chemical engineers work across process industries — petrochemicals and refining, chemicals and fertilisers, pharmaceuticals, food and FMCG, energy, materials, and environmental and process consultancy. Many also enter PSUs (several recruit via GATE), R&D, higher studies, or move into data and management roles. The mix varies by region, industry cycle and skills.',
+      },
+      {
+        headingEn: 'Is chemical engineering right for you?',
+        bodyEn:
+          'Chemical suits those who enjoy chemistry and physics and want to work on processes and systems at scale. As with any branch, opportunities depend on your skills, and no branch guarantees a particular job or salary.',
+      },
+      {
+        headingEn: 'How admission works',
+        bodyEn:
+          'Admission is through the standard engineering entrance routes — JEE Main, JEE Advanced, and state or private exams — followed by counselling. Choose by genuine interest.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What does a chemical engineer do?',
+        answerEn:
+          'Chemical engineers design and run processes that turn raw materials into products — across refining, chemicals, pharmaceuticals, food, energy and materials — focusing on process design, efficiency and safety.',
+      },
+      {
+        questionEn: 'Is chemical engineering only about chemistry?',
+        answerEn:
+          'No. It combines chemistry with physics, mathematics and engineering — especially thermodynamics, transport phenomena and process design. It is about engineering processes, not chemistry alone.',
+      },
+      {
+        questionEn: 'What industries hire chemical engineers?',
+        answerEn:
+          'Process industries such as petrochemicals, chemicals, pharmaceuticals, food and FMCG, energy and materials, plus PSUs, R&D and consultancy. Demand varies by industry cycle and region.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['mechanical-engineering-career-scope', 'best-engineering-branches', 'how-to-choose-engineering-college', 'btech-vs-bsc-which-to-choose'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['chemical engineering', 'chemical engineering overview', 'chemical engineering scope', 'chemical engineering career', 'what is chemical engineering', 'chemical engineering jobs'],
+    tags: ['engineering'],
+  },
+  {
+    slug: 'information-technology-vs-computer-science',
+    category: 'comparison',
+    region: 'india',
+    titleEn: 'Information Technology vs Computer Science Engineering',
+    descriptionEn:
+      'A neutral comparison of IT and CSE — how the curricula overlap and differ, the kinds of roles each emphasises, and how to choose between them without prestige bias.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Two close, overlapping branches',
+        bodyEn:
+          'Information Technology (IT) and Computer Science Engineering (CSE) are closely related branches with a large overlap. Both teach programming, data structures, databases and software, and graduates of both work widely in software and IT. The differences are of emphasis, not a hard divide.',
+      },
+      {
+        headingEn: 'Where the emphasis differs',
+        bodyEn:
+          'CSE tends to go deeper into the fundamentals of computing — algorithms, theory, operating systems, computer architecture and core software. IT tends to emphasise the application and management of computing systems — networks, databases, information systems and IT services. Curricula vary by institute, and the overlap is large.',
+        bullets: [
+          'CSE → deeper computing fundamentals, algorithms, systems',
+          'IT → applying and managing computing systems, networks, services',
+          'Both → programming, data structures, databases, software',
+          'Curricula overlap heavily; emphasis differs by institute',
+        ],
+      },
+      {
+        headingEn: 'Career outcomes',
+        bodyEn:
+          'Both IT and CSE graduates work across software development, data, cloud, cybersecurity and IT roles, and both can pursue higher studies (M.Tech/MS via GATE) or management. In practice, the role you reach depends more on the skills you build than on the IT-versus-CSE label.',
+      },
+      {
+        headingEn: 'How to choose',
+        bodyEn:
+          'If you want the deepest computing fundamentals, CSE leans that way; if you are drawn to applying and managing systems, IT leans that way. But because the overlap is so large, do not over-weight the choice — your projects, skills and effort matter more. Neither is universally "better".',
+      },
+      {
+        headingEn: 'The honest bottom line',
+        bodyEn:
+          'For most students, either branch can lead to similar software and IT careers. Choose based on the curriculum of the specific colleges you are considering and your own interest, not on prestige or assumptions about salary.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is CSE better than IT?',
+        answerEn:
+          'Neither is universally better. CSE goes deeper into computing fundamentals; IT emphasises applying and managing systems. Both lead to software and IT careers, and outcomes depend more on your skills than the branch label.',
+      },
+      {
+        questionEn: 'Do IT and CSE have different career options?',
+        answerEn:
+          'They overlap heavily — both lead to software, data, cloud, cybersecurity and IT roles. The role you reach depends mainly on the skills and projects you build, not on whether your degree says IT or CSE.',
+      },
+      {
+        questionEn: 'Should I choose IT or CSE?',
+        answerEn:
+          'Compare the actual curricula at the colleges you are considering and pick by your interest. Because the overlap is large, the specific college and your own effort matter more than the IT-versus-CSE distinction.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['computer-science-engineering-overview', 'btech-cse-vs-data-science', 'best-engineering-branches', 'how-to-choose-engineering-college'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['it vs cse', 'information technology vs computer science', 'cse vs it', 'difference between it and cse', 'it or cse', 'it cse comparison'],
+    tags: ['engineering'],
+  },
+  {
+    slug: 'aerospace-engineering-career-scope',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Aerospace Engineering: Career Scope',
+    descriptionEn:
+      'What aerospace engineering involves, what you study, and where it can lead — aircraft, spacecraft, propulsion and defence — described neutrally, without salary claims or guarantees.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What aerospace engineering is',
+        bodyEn:
+          'Aerospace engineering deals with the design, development and testing of aircraft, spacecraft and related systems. It is often divided into aeronautical (within the atmosphere) and astronautical (space) engineering, and draws heavily on aerodynamics, propulsion, structures and control.',
+      },
+      {
+        headingEn: 'What you study',
+        bodyEn:
+          'An aerospace programme typically covers aerodynamics, flight mechanics, propulsion, aerospace structures and materials, control systems, and design, alongside strong mathematics and physics. The curriculum varies by institute.',
+        bullets: [
+          'Aerodynamics and flight mechanics',
+          'Propulsion and aerospace structures',
+          'Control systems and avionics basics',
+          'Design, materials, mathematics and physics',
+        ],
+      },
+      {
+        headingEn: 'Where aerospace engineering can lead',
+        bodyEn:
+          'Aerospace engineers work in aircraft and spacecraft design and testing, propulsion and systems, defence and research organisations, and the growing private space and drone sectors. In India this includes organisations such as ISRO, DRDO and HAL, alongside private aerospace firms; many also pursue higher studies or research. It is a specialised field, and opportunities vary with the sector and your skills.',
+      },
+      {
+        headingEn: 'Is aerospace engineering right for you?',
+        bodyEn:
+          'Aerospace suits those with a strong interest in flight, space and physics who are comfortable with a specialised, research-leaning field. As with any branch, outcomes depend on your skills rather than the branch label, and no branch guarantees a particular job or salary.',
+      },
+      {
+        headingEn: 'How admission works',
+        bodyEn:
+          'Admission is through the standard engineering entrance routes — JEE Main, JEE Advanced (several IITs offer aerospace), and some state or private exams — followed by counselling. A few institutes specialise in aerospace and aeronautical programmes. Choose by genuine interest.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What does an aerospace engineer do?',
+        answerEn:
+          'Aerospace engineers design, develop and test aircraft, spacecraft and their systems — working on aerodynamics, propulsion, structures and control across civil, defence and space sectors.',
+      },
+      {
+        questionEn: 'Is aerospace engineering a good career in India?',
+        answerEn:
+          'It is a specialised field with opportunities in organisations such as ISRO, DRDO and HAL, plus private aerospace and the growing space sector. Opportunities vary by sector and your skills; no field offers guaranteed outcomes.',
+      },
+      {
+        questionEn: 'What is the difference between aeronautical and aerospace engineering?',
+        answerEn:
+          'Aeronautical engineering focuses on flight within the atmosphere (aircraft), while aerospace covers both atmospheric and space flight (aircraft and spacecraft). The curricula overlap substantially.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'jee-advanced'],
+    relatedCollegeSlugs: ['iit-bombay', 'iit-madras', 'iit-kharagpur'],
+    relatedGuideSlugs: ['mechanical-engineering-career-scope', 'best-engineering-branches', 'how-to-choose-engineering-college', 'btech-vs-bsc-which-to-choose'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['aerospace engineering', 'aerospace engineering scope', 'aerospace engineering career', 'aeronautical engineering', 'aerospace engineer india', 'isro drdo aerospace'],
+    tags: ['engineering'],
+  },
+
+  // ───────────── Set 6 (India top-100) — Engineering branches (new) II ─────────────
+  {
+    slug: 'biotechnology-courses-and-career',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Biotechnology: Courses and Career',
+    descriptionEn:
+      'What biotechnology is, the courses you can take (B.Tech, B.Sc, M.Sc), and the sectors it leads to — pharma, healthcare, agriculture and research — described neutrally without salary claims.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What biotechnology is',
+        bodyEn:
+          'Biotechnology applies biology together with chemistry, engineering and data to develop products and processes — in healthcare and pharmaceuticals, agriculture, food, and the environment. It is an interdisciplinary field that sits between the life sciences and engineering.',
+      },
+      {
+        headingEn: 'Courses and routes',
+        bodyEn:
+          'You can enter biotechnology through more than one route. B.Tech Biotechnology is the engineering route (entered through engineering entrance exams), while B.Sc followed by M.Sc Biotechnology is the science route; integrated and specialised programmes also exist. Eligibility usually needs Class 12 science (Physics, Chemistry, with Biology or Mathematics), and the exact requirement depends on the programme.',
+        bullets: [
+          'B.Tech Biotechnology — engineering route via entrance exams',
+          'B.Sc + M.Sc Biotechnology — science route',
+          'Integrated and specialised programmes also available',
+          'Eligibility depends on the programme — confirm officially',
+        ],
+      },
+      {
+        headingEn: 'Where biotechnology can lead',
+        bodyEn:
+          'Biotechnology graduates work across pharmaceuticals and biopharma, healthcare and diagnostics, agriculture and agri-biotech, food, environmental work, bioinformatics and research and development. Many also pursue higher studies (M.Tech/MS/PhD) and research. It is a research-leaning field, and opportunities vary by sector, region and the skills you build.',
+      },
+      {
+        headingEn: 'Is biotechnology right for you?',
+        bodyEn:
+          'Biotechnology suits those who enjoy biology and applied science and are open to a research-oriented path. As with any field, outcomes depend on your skills rather than the course label, and no course guarantees a particular job or salary.',
+      },
+      {
+        headingEn: 'How admission works',
+        bodyEn:
+          'The B.Tech route is through engineering entrance exams (JEE Main, state CETs); the B.Sc route is through university or CUET-based admission; research and PG routes use exams such as GATE (Biotechnology). Confirm the current eligibility and process on the official sites.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Should I do B.Tech or B.Sc in biotechnology?',
+        answerEn:
+          'B.Tech Biotechnology is the engineering route and B.Sc Biotechnology is the science route (usually followed by M.Sc). Both can lead to industry and research; choose based on whether you prefer an engineering or a science orientation, and the specific programme.',
+      },
+      {
+        questionEn: 'Is biotechnology a good career?',
+        answerEn:
+          'Biotechnology offers roles across pharma, healthcare, agriculture and research, but it is research-leaning and opportunities vary by sector and region. No field has universally guaranteed scope — outcomes depend on your skills and the path you build.',
+      },
+      {
+        questionEn: 'What jobs can biotechnology graduates do?',
+        answerEn:
+          'Roles span pharmaceuticals and biopharma, diagnostics, agri-biotech, food, bioinformatics and R&D, along with higher studies and research. The specific role depends on your specialisation and skills.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'cuet-ug', 'gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['chemical-engineering-overview', 'best-engineering-branches', 'how-to-choose-engineering-college', 'courses-after-12th-pcb'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['biotechnology', 'biotechnology courses', 'biotechnology career', 'btech biotechnology', 'bsc biotechnology', 'biotech jobs'],
+    tags: ['engineering'],
+  },
+  {
+    slug: 'ai-and-machine-learning-engineering-branch',
+    category: 'career',
+    region: 'india',
+    titleEn: 'The AI & Machine Learning Engineering Branch',
+    descriptionEn:
+      'What the B.Tech AI & Machine Learning branch covers, how it differs from core CSE and from AI/data-science courses, and where it can lead — described neutrally, without hype or salary claims.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What the AI & ML branch is',
+        bodyEn:
+          'The AI & Machine Learning branch is a newer undergraduate engineering specialisation — often named "CSE (AI & ML)" or "Artificial Intelligence & Data Science" — offered by many engineering colleges. It builds on computer-science fundamentals and adds focused coursework in machine learning, AI, data and statistics.',
+      },
+      {
+        headingEn: 'What you study',
+        bodyEn:
+          'The branch usually covers the CSE core — programming, data structures, algorithms, operating systems and databases — alongside AI/ML-focused subjects such as machine learning, deep learning, data science and statistics. There is a large overlap with core CSE, and the curriculum varies by institute.',
+        bullets: [
+          'CSE core: programming, data structures, algorithms, OS, DBMS',
+          'AI/ML focus: machine learning, deep learning, data science, statistics',
+          'Large overlap with core CSE; emphasis on AI/ML',
+          'Curriculum varies by institute',
+        ],
+      },
+      {
+        headingEn: 'How it differs from CSE and from AI/data-science courses',
+        bodyEn:
+          'This is a degree branch, not a short course. Compared with core CSE, it front-loads AI and machine-learning subjects; compared with standalone AI or data-science courses and certifications, it is a full B.Tech programme. The differences from CSE are mainly of emphasis — strong computing fundamentals matter either way.',
+      },
+      {
+        headingEn: 'Where it can lead — and an honest note',
+        bodyEn:
+          'Graduates work across software, machine-learning and AI, data and general technology roles — broadly the same space as CSE — and many pursue higher studies or research. An honest point: a strong CSE foundation plus practical skills matters more than the exact branch name, and you can also reach AI/ML roles from a core CSE degree with self-study. Treat AI/ML as a focus, not a guaranteed outcome.',
+      },
+      {
+        headingEn: 'Is it right for you, and how admission works',
+        bodyEn:
+          'The branch suits students keen on AI and machine learning who also want computing fundamentals. Admission is through the standard engineering entrance routes (JEE Main, state CETs). Compare the actual curriculum of the colleges you are considering, and choose by interest rather than branch-name hype.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between the AI/ML branch and CSE?',
+        answerEn:
+          'The AI/ML branch is essentially CSE with a focus on artificial intelligence and machine learning — it front-loads AI/ML subjects while keeping the CSE core. Core CSE is broader; the difference is mainly of emphasis.',
+      },
+      {
+        questionEn: 'Is the AI/ML branch worth it?',
+        answerEn:
+          'It can be a good fit if you are keen on AI and machine learning, but it is not inherently superior to core CSE, and no branch guarantees a job or salary. Compare curricula and choose by interest; strong fundamentals and skills matter most.',
+      },
+      {
+        questionEn: 'Can I work in AI/ML from a regular CSE degree?',
+        answerEn:
+          'Yes. Many people reach AI and machine-learning roles from a core CSE degree (or other branches) with focused self-study and projects. The AI/ML branch is one route, not the only one.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['computer-science-engineering-overview', 'btech-cse-vs-data-science', 'data-science-courses-in-india', 'ai-courses-in-india'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ai ml branch', 'cse ai ml', 'artificial intelligence engineering branch', 'btech ai ml', 'ai ml vs cse', 'ai data science branch'],
+    tags: ['engineering'],
+  },
+  {
+    slug: 'ece-vs-cse-which-to-choose',
+    category: 'comparison',
+    region: 'india',
+    titleEn: 'ECE vs CSE: Which to Choose?',
+    descriptionEn:
+      'A neutral comparison of ECE and CSE — what each covers, how their careers overlap, and how to decide between electronics-and-communication and computer science.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Two popular branches, different cores',
+        bodyEn:
+          'Computer Science Engineering (CSE) centres on computing, software and algorithms, while Electronics and Communication Engineering (ECE) centres on electronics and communication systems, with growing software content. Both can lead to software roles; ECE additionally spans hardware, telecom and VLSI.',
+      },
+      {
+        headingEn: 'What each covers',
+        bodyEn:
+          'CSE goes deep into programming, data structures, algorithms, operating systems, databases and computer architecture. ECE covers electronic devices and circuits, signals and communication systems, microprocessors and embedded systems, and signal processing, alongside programming. The overlap in fundamentals is real, but the cores differ.',
+        bullets: [
+          'CSE → computing, software, algorithms, systems',
+          'ECE → electronics, communication, embedded, signal processing',
+          'Both include programming and strong mathematics',
+          'ECE adds the hardware and communication dimension',
+        ],
+      },
+      {
+        headingEn: 'Career overlap and difference',
+        bodyEn:
+          'Both CSE and ECE graduates work widely in software and IT. CSE leans towards broader software and computing roles, while ECE additionally opens core electronics, embedded systems, VLSI and telecom roles. In practice, the role you reach depends more on the skills you build than on the branch label.',
+      },
+      {
+        headingEn: 'How to choose',
+        bodyEn:
+          'If you want to focus purely on computing and software, CSE leans that way; if you want flexibility across electronics, communication and software, ECE leans that way. Neither is universally "better" — choose by genuine interest and the specific college, and remember no branch guarantees a particular job or salary.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is CSE better than ECE?',
+        answerEn:
+          'Neither is universally better. CSE focuses on computing and software; ECE focuses on electronics and communication (with growing software content). Both lead to software careers, and outcomes depend more on your skills than the branch label.',
+      },
+      {
+        questionEn: 'Can ECE students get software jobs?',
+        answerEn:
+          'Yes. Many ECE graduates work in software and IT, alongside core electronics, embedded, VLSI and telecom roles. The path depends on the skills and projects you build.',
+      },
+      {
+        questionEn: 'Should I choose ECE or CSE?',
+        answerEn:
+          'Choose CSE if you want to focus on computing and software, and ECE if you want hardware-plus-software flexibility across electronics and communication. Compare the curricula at your target colleges and pick by interest, not prestige.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['electronics-communication-engineering-overview', 'computer-science-engineering-overview', 'best-engineering-branches', 'information-technology-vs-computer-science'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ece vs cse', 'cse vs ece', 'ece or cse', 'which is better ece or cse', 'difference between ece and cse', 'ece cse comparison'],
+    tags: ['engineering'],
+  },
+  {
+    slug: 'electronics-vs-electrical-engineering',
+    category: 'comparison',
+    region: 'india',
+    titleEn: 'Electronics vs Electrical Engineering',
+    descriptionEn:
+      'A neutral comparison of electronics (ECE) and electrical (EE) engineering — how they differ (electronics/communication vs power/energy), their career areas, and how to choose.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Related, but with different emphasis',
+        bodyEn:
+          'Electrical Engineering (EE) and Electronics and Communication Engineering (ECE) share circuit and electrical fundamentals but emphasise different areas. EE leans towards power, energy and electrical systems; ECE leans towards electronics, communication and signal processing.',
+      },
+      {
+        headingEn: 'What each covers',
+        bodyEn:
+          'EE typically covers power systems, electrical machines, control systems, high-voltage and energy engineering, alongside circuits and electronics basics. ECE covers electronic devices and circuits, communication systems, microprocessors and embedded systems, VLSI and signal processing. Curricula vary by institute, and there is overlap in the early years.',
+        bullets: [
+          'EE → power, energy, electrical machines, control',
+          'ECE → electronics, communication, embedded, VLSI, signals',
+          'Shared foundation in circuits and electrical basics',
+          'Emphasis differs; curricula vary by institute',
+        ],
+      },
+      {
+        headingEn: 'Career areas',
+        bodyEn:
+          'EE graduates work in the power and energy sector, electrical utilities, machines and drives, control and automation, and the public sector (several PSUs recruit electrical engineers). ECE graduates work in electronics, telecom, semiconductor and VLSI, embedded systems and software. Both can pursue higher studies and PSU routes; opportunities vary by sector and skills.',
+      },
+      {
+        headingEn: 'How to choose',
+        bodyEn:
+          'If power, energy and electrical systems interest you, EE leans that way; if electronics, communication and embedded systems interest you, ECE leans that way. Neither is universally "better" — choose by interest and the specific college, and remember outcomes depend on your skills, with no guaranteed job or salary.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between electrical and electronics engineering?',
+        answerEn:
+          'Electrical engineering (EE) emphasises power, energy and electrical systems, while electronics and communication engineering (ECE) emphasises electronics, communication and signal processing. They share circuit fundamentals but differ in focus.',
+      },
+      {
+        questionEn: 'Which is better — EE or ECE?',
+        answerEn:
+          'Neither is universally better; they suit different interests (power/energy for EE, electronics/communication for ECE). Choose by what you enjoy and the college, not by prestige.',
+      },
+      {
+        questionEn: 'Can an electrical engineer work in electronics, or vice versa?',
+        answerEn:
+          'There is overlap, and with the right skills people do move across, but each branch goes deeper into its own core. Pick the branch whose core area you are more drawn to.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['electrical-engineering-overview', 'electronics-communication-engineering-overview', 'best-engineering-branches', 'ece-vs-cse-which-to-choose'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['electronics vs electrical engineering', 'electrical vs electronics', 'ee vs ece', 'difference electrical electronics engineering', 'eee vs ece', 'electrical or electronics'],
+    tags: ['engineering'],
+  },
+  {
+    slug: 'automobile-engineering-career-scope',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Automobile Engineering: Career Scope',
+    descriptionEn:
+      'What automobile (automotive) engineering covers, what you study, and where it can lead — design, manufacturing, EVs and R&D — described neutrally, without salary claims.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What automobile engineering is',
+        bodyEn:
+          'Automobile (or automotive) engineering is a specialisation — closely related to mechanical engineering — focused on the design, development, manufacturing and testing of vehicles and their systems. It increasingly includes electric vehicles (EVs) and new mobility technologies.',
+      },
+      {
+        headingEn: 'What you study',
+        bodyEn:
+          'The curriculum combines mechanical fundamentals — thermodynamics, mechanics, machine design and manufacturing — with vehicle-specific subjects such as automotive systems, engines and powertrains, vehicle dynamics, and increasingly electric-vehicle and electronics content. It is closely related to mechanical engineering, and curricula vary by institute.',
+        bullets: [
+          'Mechanical fundamentals: thermodynamics, mechanics, design, manufacturing',
+          'Vehicle systems, engines/powertrains, vehicle dynamics',
+          'Growing electric-vehicle and electronics content',
+          'Closely related to mechanical engineering',
+        ],
+      },
+      {
+        headingEn: 'Where automobile engineering can lead',
+        bodyEn:
+          'Automobile engineers work in vehicle design and manufacturing, R&D, the electric-vehicle and new-mobility sector, testing and quality, and the auto-component (ancillary) industry. Many also pursue higher studies. Demand varies with the automotive sector and region, and many roles are also open to mechanical engineers.',
+      },
+      {
+        headingEn: 'Is it right for you, and how it relates to mechanical',
+        bodyEn:
+          'Automobile engineering suits those keen on vehicles and mechanical systems. Because it overlaps heavily with mechanical engineering, many automotive roles are open to mechanical graduates too — so consider whether a dedicated automobile programme or a mechanical degree fits you better. Outcomes depend on your skills, with no guaranteed job or salary.',
+      },
+      {
+        headingEn: 'How admission works',
+        bodyEn:
+          'Admission is through the standard engineering entrance routes — JEE Main and state CETs — as an automobile or mechanical branch; some institutes offer dedicated automobile programmes. Choose by genuine interest and the specific college.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between automobile and mechanical engineering?',
+        answerEn:
+          'Automobile engineering is a specialisation focused on vehicles, while mechanical engineering is broader. They overlap heavily, and many automotive roles are open to mechanical engineers as well.',
+      },
+      {
+        questionEn: 'What is the scope of automobile engineering?',
+        answerEn:
+          'Scope spans vehicle design and manufacturing, R&D, the electric-vehicle sector, testing, and the auto-component industry. Demand varies with the automotive sector and region; no field offers guaranteed outcomes.',
+      },
+      {
+        questionEn: 'Is automobile engineering good for electric vehicles?',
+        answerEn:
+          'Automobile programmes increasingly include electric-vehicle content, and the EV sector is one area automotive engineers can work in. As always, the specific roles you reach depend on the skills you build.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['mechanical-engineering-career-scope', 'best-engineering-branches', 'how-to-choose-engineering-college', 'btech-vs-bsc-which-to-choose'],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['automobile engineering', 'automotive engineering', 'automobile engineering scope', 'automobile engineering career', 'automobile vs mechanical', 'automobile engineering jobs'],
+    tags: ['engineering'],
+  },
+
+  // ───────────── Set 7 (India top-100) — Government exams I (banking & SSC) ─────────────
+  {
+    slug: 'ssc-chsl-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'SSC CHSL Exam Guide',
+    descriptionEn:
+      'What SSC CHSL is and how it works — the Staff Selection Commission, the Class-12-level posts it recruits for, the computer-based stages, and where to confirm the current rules.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Staff Selection Commission (SSC)' },
+      { label: 'Level', value: 'Combined Higher Secondary (10+2 / Class 12)' },
+      { label: 'Recruits for', value: 'Clerical and data-entry posts in central government' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Official site', value: 'ssc.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What SSC CHSL is',
+        bodyEn:
+          'SSC CHSL (the Combined Higher Secondary Level examination) is conducted by the Staff Selection Commission (SSC), a body under the Government of India, to recruit candidates for Class-12-level posts — such as Lower Division Clerk and Data Entry Operator roles — across central government ministries, departments and offices.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'SSC CHSL is for candidates who have passed Class 12 (or an equivalent). Age limits, post-specific requirements (for example typing or data-entry skills for some posts) and reservation rules are set by the SSC in the official notification each cycle, so confirm the exact eligibility there.',
+        bullets: [
+          'Passed Class 12 (10+2) or equivalent',
+          'Some posts require typing / data-entry skills',
+          'Age limits and category rules set in the official notification',
+          'Confirm current eligibility on ssc.gov.in',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern and selection',
+        bodyEn:
+          'SSC CHSL is conducted in computer-based stages (tiers), which may include a descriptive or skill/typing component for relevant posts. The number of tiers, marks, timing and the marking scheme are set in the official notification each year and have changed in the past, so confirm the current pattern before you plan.',
+      },
+      {
+        headingEn: 'Posts and what follows',
+        bodyEn:
+          'Successful candidates are recruited to clerical and data-entry posts in central government offices, with final allocation based on merit and preferences as defined by the SSC. The exact posts and their requirements vary by cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official SSC website is the authoritative source for eligibility, the post list, pattern, marking, vacancies and dates. Treat this guide as an overview and verify every specific on the official site, because the rules are set fresh each cycle.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What posts does SSC CHSL recruit for?',
+        answerEn:
+          'SSC CHSL recruits for Class-12-level posts such as Lower Division Clerk and Data Entry Operator roles in central government offices. The exact post list is set in the official notification each cycle.',
+      },
+      {
+        questionEn: 'What is the eligibility for SSC CHSL?',
+        answerEn:
+          'The basic qualification is a pass in Class 12 (or equivalent). Some posts have additional skill requirements, and age and category rules are set in the official SSC notification — confirm them there.',
+      },
+      {
+        questionEn: 'Is SSC CHSL computer-based?',
+        answerEn:
+          'Yes, SSC CHSL is conducted in computer-based stages, which may include a skill or typing component for relevant posts. Confirm the current pattern in the official notification.',
+      },
+    ],
+    relatedExamSlugs: ['ssc-chsl', 'ssc-cgl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ssc-mts-exam-guide', 'ssc-cgl-exam-guide', 'bank-po-exam-guide', 'how-to-prepare-for-upsc'],
+    sources: [
+      { label: 'Staff Selection Commission (SSC) — official site', url: 'https://ssc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ssc chsl', 'ssc chsl exam', 'ssc chsl eligibility', 'combined higher secondary level', 'ssc chsl posts', 'ssc chsl pattern'],
+    tags: ['government-exams'],
+  },
+  {
+    slug: 'ssc-mts-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'SSC MTS Exam Guide',
+    descriptionEn:
+      'What SSC MTS is and how it works — the Staff Selection Commission, the Class-10-level Multi-Tasking Staff and Havaldar posts, the computer-based exam, and where to confirm the rules.',
+    readMinutes: 5,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Staff Selection Commission (SSC)' },
+      { label: 'Level', value: 'Matriculation (Class 10)' },
+      { label: 'Recruits for', value: 'Multi-Tasking (Non-Technical) Staff & Havaldar (Group C)' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Official site', value: 'ssc.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What SSC MTS is',
+        bodyEn:
+          'SSC MTS is conducted by the Staff Selection Commission (SSC) to recruit Multi-Tasking (Non-Technical) Staff, and Havaldar posts in the Central Board of Indirect Taxes and Customs (CBIC) and the Central Bureau of Narcotics (CBN). These are General Central Service Group-C, non-gazetted, non-ministerial roles across central government ministries and departments.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'SSC MTS is for candidates who have passed Class 10 (Matriculation) or an equivalent. Age limits differ for MTS and Havaldar posts, and the Havaldar posts may include a physical efficiency or standard test. The exact eligibility and age rules are set in the official notification each cycle.',
+        bullets: [
+          'Passed Class 10 (Matriculation) or equivalent',
+          'MTS (non-technical) and Havaldar (CBIC/CBN) posts',
+          'Havaldar posts may include a physical test',
+          'Age and category rules set in the official notification',
+        ],
+      },
+      {
+        headingEn: 'Exam pattern',
+        bodyEn:
+          'SSC MTS is a computer-based test. The session structure, number of questions, marks and marking scheme are set in the official notification each year, so confirm the current pattern before you prepare.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official SSC website is the authoritative source for eligibility, posts, pattern, marking, vacancies and dates. Use this guide as an overview and verify every specific officially, as the rules change each cycle.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the eligibility for SSC MTS?',
+        answerEn:
+          'The basic qualification is a pass in Class 10 (Matriculation) or equivalent. Age limits and any post-specific requirements (such as a physical test for Havaldar posts) are set in the official SSC notification.',
+      },
+      {
+        questionEn: 'What is the difference between MTS and Havaldar posts?',
+        answerEn:
+          'MTS posts are Multi-Tasking (Non-Technical) Staff roles, while Havaldar posts are in CBIC and CBN and may involve a physical efficiency or standard test. Both are recruited through the SSC MTS examination.',
+      },
+      {
+        questionEn: 'Is SSC MTS computer-based?',
+        answerEn:
+          'Yes, SSC MTS is conducted as a computer-based test. Confirm the current pattern and session structure in the official notification.',
+      },
+    ],
+    relatedExamSlugs: ['ssc-mts', 'ssc-cgl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ssc-chsl-exam-guide', 'ssc-cgl-exam-guide', 'railway-exams-overview', 'bank-po-exam-guide'],
+    sources: [
+      { label: 'Staff Selection Commission (SSC) — official site', url: 'https://ssc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ssc mts', 'ssc mts exam', 'ssc mts eligibility', 'multi tasking staff', 'ssc havaldar', 'ssc mts pattern'],
+    tags: ['government-exams'],
+  },
+  {
+    slug: 'ibps-clerk-vs-po-difference',
+    category: 'comparison',
+    region: 'india',
+    titleEn: 'IBPS Clerk vs PO: What Is the Difference?',
+    descriptionEn:
+      'A neutral comparison of the IBPS Clerk and IBPS PO exams — the conducting body, the clerical vs officer cadre, eligibility, exam stages, and how to decide which to aim for.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Two exams, one conducting body',
+        bodyEn:
+          'IBPS Clerk and IBPS PO are both conducted by the Institute of Banking Personnel Selection (IBPS) for recruitment to participating public sector banks. The key difference is the cadre: the Clerk exam recruits for the clerical cadre, while the PO exam recruits Probationary Officers in the officer cadre.',
+      },
+      {
+        headingEn: 'Eligibility',
+        bodyEn:
+          'Both exams generally require a bachelor\'s degree in any discipline. The age ranges and other specifics differ between Clerk and PO and are set by IBPS in the official notification each cycle, so confirm the exact eligibility there rather than relying on a fixed figure.',
+        bullets: [
+          'Both: a bachelor\'s degree (any discipline)',
+          'Clerk → clerical cadre; PO → officer (Probationary Officer) cadre',
+          'Age ranges differ and are set in the official notification',
+          'Both recruit for participating public sector banks',
+        ],
+      },
+      {
+        headingEn: 'Exam stages',
+        bodyEn:
+          'The IBPS Clerk selection is typically a two-stage process — a preliminary exam followed by a main exam. The IBPS PO selection typically adds a third stage — an interview — after the preliminary and main exams. The exact stages, pattern and marking are set by IBPS each cycle.',
+      },
+      {
+        headingEn: 'Role and career track',
+        bodyEn:
+          'A clerk handles branch and customer-service operations in the clerical cadre, while a Probationary Officer enters the officer cadre with a broader managerial track over time. Both are respected banking careers; they differ in cadre and responsibilities, not in being "better" or "worse".',
+      },
+      {
+        headingEn: 'How to choose',
+        bodyEn:
+          'Choose by your goals: the PO route is an officer-cadre entry with an additional interview stage and broader responsibilities, while the Clerk route is a clerical-cadre entry. Many candidates prepare for both, since the syllabus overlaps. Confirm the current eligibility, pattern and process on the official IBPS site, and remember no exam guarantees selection.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the main difference between IBPS Clerk and PO?',
+        answerEn:
+          'IBPS Clerk recruits for the clerical cadre, while IBPS PO recruits Probationary Officers in the officer cadre. The PO selection typically includes an interview stage that the Clerk selection does not.',
+      },
+      {
+        questionEn: 'Can a graduate apply for both IBPS Clerk and PO?',
+        answerEn:
+          'Yes — both generally require a bachelor\'s degree, and many candidates prepare for both because the syllabus overlaps. Age ranges and other specifics differ; confirm them in the official IBPS notification.',
+      },
+      {
+        questionEn: 'Which is easier, IBPS Clerk or PO?',
+        answerEn:
+          '"Easier" is subjective and depends on you. The PO exam has an additional interview stage and officer-level responsibilities, while the Clerk exam has fewer stages. Choose by your goals rather than by perceived difficulty.',
+      },
+    ],
+    relatedExamSlugs: ['ibps-po', 'ibps-clerk'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['sbi-po-exam-guide', 'bank-po-exam-guide', 'rbi-grade-b-exam-guide', 'how-to-become-investment-banker-india'],
+    sources: [
+      { label: 'Institute of Banking Personnel Selection (IBPS) — official site', url: 'https://www.ibps.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ibps clerk vs po', 'ibps po vs clerk', 'difference ibps clerk po', 'bank clerk vs officer', 'ibps po', 'ibps clerk'],
+    tags: ['government-exams'],
+  },
+  {
+    slug: 'sbi-po-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'SBI PO Exam Guide',
+    descriptionEn:
+      'What the SBI PO exam is and how it works — conducted by State Bank of India for Probationary Officers, the three-phase selection, eligibility, and where to confirm the rules.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'State Bank of India (SBI)' },
+      { label: 'Recruits for', value: 'Probationary Officers (officer cadre)' },
+      { label: 'Selection', value: 'Preliminary + Main + interview/group exercise' },
+      { label: 'Eligibility', value: "Bachelor's degree (any discipline)" },
+      { label: 'Official site', value: 'sbi.bank.in (Careers)' },
+    ],
+    sections: [
+      {
+        headingEn: 'What the SBI PO exam is',
+        bodyEn:
+          'SBI PO is the recruitment examination conducted by the State Bank of India (SBI) to select Probationary Officers. SBI conducts its own PO exam, separate from the IBPS PO process, for officer-cadre recruitment to the bank.',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'SBI PO generally requires a bachelor\'s degree in any discipline. The age range and other specifics are set by SBI in the official notification each cycle, so confirm the exact eligibility on the official careers page rather than relying on a fixed figure.',
+        bullets: [
+          'A bachelor\'s degree in any discipline',
+          'Age range and specifics set in the official notification',
+          'SBI conducts its own PO exam (separate from IBPS)',
+          'Confirm eligibility on the official SBI careers page',
+        ],
+      },
+      {
+        headingEn: 'Selection process',
+        bodyEn:
+          'The SBI PO selection is typically a three-phase process: a preliminary examination (objective, online), a main examination (objective and descriptive, online), and a final phase that includes a group exercise and interview. The preliminary phase is usually qualifying. The exact structure, marks and marking are set by SBI each cycle.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official SBI careers page is the authoritative source for eligibility, the selection process, pattern, vacancies and dates. Use this guide as an overview and verify every specific officially, as the rules are set fresh each cycle. No exam guarantees selection.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is SBI PO different from IBPS PO?',
+        answerEn:
+          'Yes. SBI conducts its own PO exam for recruitment to the State Bank of India, while IBPS PO is conducted by IBPS for participating public sector banks. They are separate processes.',
+      },
+      {
+        questionEn: 'What is the eligibility for SBI PO?',
+        answerEn:
+          'SBI PO generally requires a bachelor\'s degree in any discipline. The age range and other specifics are set in the official SBI notification — confirm them on the official careers page.',
+      },
+      {
+        questionEn: 'What are the stages of the SBI PO exam?',
+        answerEn:
+          'The selection is typically a preliminary exam, a main exam, and a final phase with a group exercise and interview. Confirm the current structure in the official notification.',
+      },
+    ],
+    relatedExamSlugs: ['sbi-po', 'ibps-po'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ibps-clerk-vs-po-difference', 'bank-po-exam-guide', 'rbi-grade-b-exam-guide', 'how-to-become-investment-banker-india'],
+    sources: [
+      { label: 'State Bank of India — Careers (official)', url: 'https://sbi.bank.in/web/careers' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['sbi po', 'sbi po exam', 'sbi probationary officer', 'sbi po eligibility', 'sbi po selection', 'sbi po vs ibps po'],
+    tags: ['government-exams'],
+  },
+  {
+    slug: 'rbi-grade-b-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'RBI Grade B Exam Guide',
+    descriptionEn:
+      'What the RBI Grade B exam is and how it works — conducted by the Reserve Bank of India for Grade B Officers, the multi-phase selection, eligibility streams, and where to confirm the rules.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Reserve Bank of India (RBI)' },
+      { label: 'Recruits for', value: 'Officers in Grade B (General / DEPR / DSIM)' },
+      { label: 'Selection', value: 'Phase I + Phase II + interview' },
+      { label: 'Eligibility', value: "Bachelor's/master's degree (varies by stream)" },
+      { label: 'Official site', value: 'opportunities.rbi.org.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What RBI Grade B is',
+        bodyEn:
+          'RBI Grade B is the officer-level recruitment examination conducted by the Reserve Bank of India (RBI), India\'s central bank. It recruits Officers in Grade B across streams — General, DEPR (Department of Economic and Policy Research) and DSIM (Department of Statistics and Information Management).',
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'The General stream generally requires a bachelor\'s degree, while the DEPR and DSIM streams require relevant postgraduate qualifications (in economics and statistics respectively). The exact qualifications, minimum marks and age range are set by RBI in the official notification each cycle, so confirm them there.',
+        bullets: [
+          'General stream → a bachelor\'s degree (with a minimum-marks norm)',
+          'DEPR / DSIM streams → relevant postgraduate qualifications',
+          'Age range and specifics set in the official notification',
+          'Confirm eligibility on opportunities.rbi.org.in',
+        ],
+      },
+      {
+        headingEn: 'Selection process',
+        bodyEn:
+          'The RBI Grade B selection is a multi-phase process: Phase I (a preliminary objective exam), Phase II (a main exam that includes descriptive papers), and an interview. The exact papers, marks and marking are set by RBI each cycle and differ by stream.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The official RBI opportunities/recruitment portal is the authoritative source for eligibility, the selection process, pattern, vacancies and dates. Use this guide as an overview and verify every specific officially. No exam guarantees selection.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is RBI Grade B?',
+        answerEn:
+          'RBI Grade B is the officer-level recruitment exam of the Reserve Bank of India, recruiting Officers in Grade B across the General, DEPR and DSIM streams.',
+      },
+      {
+        questionEn: 'What is the eligibility for RBI Grade B?',
+        answerEn:
+          'The General stream generally requires a bachelor\'s degree (with a minimum-marks norm), while the DEPR and DSIM streams require relevant postgraduate qualifications. Confirm the exact requirements in the official RBI notification.',
+      },
+      {
+        questionEn: 'What are the phases of RBI Grade B?',
+        answerEn:
+          'The selection has Phase I (preliminary objective), Phase II (main, including descriptive papers) and an interview. The exact structure differs by stream — confirm it in the official notification.',
+      },
+    ],
+    relatedExamSlugs: ['rbi-grade-b', 'ibps-po'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['sbi-po-exam-guide', 'ibps-clerk-vs-po-difference', 'bank-po-exam-guide', 'how-to-become-investment-banker-india'],
+    sources: [
+      { label: 'Reserve Bank of India — opportunities/recruitment portal', url: 'https://opportunities.rbi.org.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['rbi grade b', 'rbi grade b exam', 'rbi grade b officer', 'rbi grade b eligibility', 'rbi grade b phases', 'reserve bank of india recruitment'],
+    tags: ['government-exams'],
+  },
+
+// ──────────────────────── Set 8 — Government exams II — defence & state ──────
+  {
+    slug: 'cds-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'CDS Exam Guide',
+    descriptionEn:
+      'A neutral, factual overview of the Combined Defence Services (CDS) Examination — what it is, the broad selection stages, and the academies it leads to — with all specifics deferred to the official UPSC source.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Union Public Service Commission (UPSC)' },
+      { label: 'Mode', value: 'Offline (written examination)' },
+      { label: 'Frequency', value: 'Twice a year (CDS I and CDS II)' },
+      { label: 'Leads to', value: 'IMA, INA, AFA, OTA' },
+      { label: 'Official site', value: 'upsc.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What the CDS Examination is',
+        bodyEn:
+          'The Combined Defence Services (CDS) Examination is conducted by the Union Public Service Commission (UPSC) twice a year. It is a route to join the Indian Army, Navy, and Air Force as commissioned officers through the Indian Military Academy (IMA), Indian Naval Academy (INA), Air Force Academy (AFA), and Officers\' Training Academy (OTA).\n\nThe examination is a written test, followed by an interview conducted by the Services Selection Board (SSB) for candidates who qualify the written stage.',
+        bullets: [
+          'Indian Military Academy (IMA) — Army permanent commission',
+          'Indian Naval Academy (INA) — Navy permanent commission',
+          'Air Force Academy (AFA) — Air Force permanent commission',
+          'Officers\' Training Academy (OTA) — Army short-service commission',
+        ],
+      },
+      {
+        headingEn: 'Selection stages',
+        bodyEn:
+          'The broad selection process involves two main stages: a written examination administered by UPSC, and a Services Selection Board (SSB) interview for those who qualify. Medical standards are also assessed. The exact structure, subjects, and marks allocation are set in the official UPSC notification each cycle.',
+        bullets: [
+          'Written examination (conducted by UPSC)',
+          'Services Selection Board (SSB) interview',
+          'Medical examination',
+        ],
+      },
+      {
+        headingEn: 'Broad eligibility',
+        bodyEn:
+          'Eligibility varies by academy. The IMA entry generally requires any graduation; the INA entry requires a degree in engineering (B.E./B.Tech) with Physics and Mathematics at the 10+2 level; the AFA entry generally requires graduation with Physics and Mathematics at the 10+2 level, or an engineering degree. The OTA entry is open to graduates and final-year students. Age limits and subject requirements differ by entry and are set officially each cycle.\n\nAlways check the current-year UPSC CDS notification for exact eligibility — rules can change.',
+      },
+      {
+        headingEn: 'How to approach preparation',
+        bodyEn:
+          'The written examination typically covers English, General Knowledge, and Elementary Mathematics (the mathematics paper applies to IMA/INA/AFA entries). Building a strong reading habit, practising current affairs, and working through mathematics fundamentals all support solid preparation.\n\nPhysical fitness matters for the SSB stage and beyond; developing it alongside academic preparation is advisable. No preparation can guarantee selection — the process is competitive and multi-stage.',
+      },
+      {
+        headingEn: 'Use official information',
+        bodyEn:
+          'Vacancy counts, age limits, cut-offs, and attempt rules are set by UPSC each cycle and are subject to change. This guide does not quote any of those figures. Confirm all current details in the official UPSC CDS notification on upsc.gov.in before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who conducts the CDS Examination?',
+        answerEn:
+          'The Combined Defence Services Examination is conducted by the Union Public Service Commission (UPSC), generally twice a year (CDS I and CDS II). Successful candidates then appear for the SSB interview.',
+      },
+      {
+        questionEn: 'What is the minimum qualification for CDS?',
+        answerEn:
+          'It varies by academy. The IMA entry generally requires any graduation; the INA entry requires an engineering degree (B.E./B.Tech) with Physics and Mathematics at the 10+2 level; the AFA entry generally requires graduation with Physics and Mathematics; the OTA entry is open to graduates and final-year students. Confirm exact requirements in the current UPSC notification.',
+      },
+      {
+        questionEn: 'Is CDS for all three armed forces?',
+        answerEn:
+          'Yes. CDS covers entries to the Indian Army (IMA, OTA), Indian Navy (INA), and Indian Air Force (AFA). Each academy has its own eligibility and selection criteria — check the official notification for the differences.',
+      },
+    ],
+    relatedExamSlugs: ['cds'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'nda-entrance-guide',
+      'how-to-prepare-for-upsc',
+      'how-to-join-indian-armed-forces',
+      'afcat-exam-guide',
+    ],
+    sources: [
+      { label: 'Union Public Service Commission (UPSC) — official site', url: 'https://upsc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'cds exam guide',
+      'combined defence services examination',
+      'cds upsc eligibility',
+      'how to join army navy air force via cds',
+      'ima ina afa ota entry',
+      'cds written exam ssb',
+    ],
+    tags: ['government-exams'],
+  },
+  {
+    slug: 'afcat-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'AFCAT Exam Guide',
+    descriptionEn:
+      'A neutral, factual overview of the Air Force Common Admission Test (AFCAT) — what it is, the broad selection stages, and the entry branches — with all specifics deferred to the official Indian Air Force source.',
+    readMinutes: 5,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Indian Air Force' },
+      { label: 'Mode', value: 'Online (computer-based test)' },
+      { label: 'Frequency', value: 'Twice a year (Cycle 01 and Cycle 02)' },
+      { label: 'Leads to', value: 'Flying branch, Ground Duty (Technical), Ground Duty (Non-Technical)' },
+      { label: 'Official site', value: 'careerairforce.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What AFCAT is',
+        bodyEn:
+          'The Air Force Common Admission Test (AFCAT) is conducted by the Indian Air Force twice a year. It is the primary route to join the Indian Air Force as a commissioned officer in the Flying Branch or the Ground Duty branches — Technical and Non-Technical.\n\nIt is a computer-based online examination, and candidates who qualify are called for the Air Force Selection Board (AFSB) process.',
+        bullets: [
+          'Flying Branch — pilot entry',
+          'Ground Duty (Technical) — engineering and allied branches',
+          'Ground Duty (Non-Technical) — administration, logistics, accounts, education, and meteorology branches',
+        ],
+      },
+      {
+        headingEn: 'Selection stages',
+        bodyEn:
+          'The broad selection process involves a written AFCAT online test, followed by a multi-day Air Force Selection Board (AFSB) interview for those who qualify. Medical standards are assessed separately. The exact structure, question types, and marks allocation are set in the official IAF notification each cycle.',
+        bullets: [
+          'AFCAT written test (online, computer-based)',
+          'Air Force Selection Board (AFSB) — multi-day assessment',
+          'Medical examination',
+        ],
+      },
+      {
+        headingEn: 'Broad eligibility',
+        bodyEn:
+          'Eligibility varies by branch. The Flying Branch broadly requires Physics and Mathematics at the 10+2 level with a minimum marks norm. Ground Duty branches generally require a relevant degree. Age limits differ by branch and are set officially each cycle.\n\nAlways check the current AFCAT notification on careerairforce.gov.in for exact eligibility — rules can change.',
+      },
+      {
+        headingEn: 'Use official information',
+        bodyEn:
+          'Age limits, minimum-marks norms, vacancy counts, and syllabus details are set by the Indian Air Force each cycle and are subject to change. This guide does not quote those figures. Confirm all current details in the official AFCAT notification before applying. No preparation guarantees selection.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who conducts AFCAT?',
+        answerEn:
+          'AFCAT is conducted by the Indian Air Force, generally twice a year. Registration and notifications are available on careerairforce.gov.in and afcat.cdac.in.',
+      },
+      {
+        questionEn: 'Can I join the Flying Branch through AFCAT?',
+        answerEn:
+          'Yes. AFCAT is one route to the Flying Branch. Eligibility for Flying includes Physics and Mathematics at the 10+2 level, among other requirements. Confirm exact criteria in the current official notification.',
+      },
+      {
+        questionEn: 'What happens after clearing the AFCAT written test?',
+        answerEn:
+          'Candidates who qualify the written test are called for the Air Force Selection Board (AFSB), a multi-day assessment process that includes a variety of tests and an interview. Medical standards are also assessed.',
+      },
+    ],
+    relatedExamSlugs: ['afcat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'cds-exam-guide',
+      'nda-entrance-guide',
+      'how-to-join-indian-armed-forces',
+    ],
+    sources: [
+      { label: 'Indian Air Force — careerairforce.gov.in (official)', url: 'https://careerairforce.gov.in' },
+      { label: 'AFCAT portal — afcat.cdac.in (official)', url: 'https://afcat.cdac.in/AFCAT/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'afcat exam guide',
+      'air force common admission test',
+      'afcat eligibility',
+      'how to join indian air force afcat',
+      'afcat flying branch ground duty',
+      'afcat afsb selection process',
+    ],
+    tags: ['government-exams'],
+  },
+  {
+    slug: 'capf-assistant-commandant-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'CAPF Assistant Commandant (AC) Exam Guide',
+    descriptionEn:
+      'A neutral, factual overview of the UPSC Central Armed Police Forces (Assistant Commandants) Examination — what it is, which forces it covers, and the broad selection stages — with all specifics deferred to the official UPSC source.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'Union Public Service Commission (UPSC)' },
+      { label: 'Mode', value: 'Offline (written examination)' },
+      { label: 'Frequency', value: 'Once a year' },
+      { label: 'Forces covered', value: 'BSF, CRPF, CISF, ITBP, SSB' },
+      { label: 'Official site', value: 'upsc.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What the CAPF AC Examination is',
+        bodyEn:
+          'The Central Armed Police Forces (Assistant Commandants) Examination is conducted by the Union Public Service Commission (UPSC) to recruit Group A officers — Assistant Commandants — for five central armed police forces: the Border Security Force (BSF), Central Reserve Police Force (CRPF), Central Industrial Security Force (CISF), Indo-Tibetan Border Police (ITBP), and Sashastra Seema Bal (SSB).\n\nIt is a written examination followed by a physical efficiency test, medical examination, and interview.',
+        bullets: [
+          'Border Security Force (BSF)',
+          'Central Reserve Police Force (CRPF)',
+          'Central Industrial Security Force (CISF)',
+          'Indo-Tibetan Border Police (ITBP)',
+          'Sashastra Seema Bal (SSB)',
+        ],
+      },
+      {
+        headingEn: 'Selection stages',
+        bodyEn:
+          'The broad selection process involves a written examination (conducted by UPSC) with two papers, a physical standards test and physical efficiency test, a medical examination, and an interview or personality test. The exact pattern, marks, and physical standards are set in the official UPSC CAPF notification each cycle.',
+        bullets: [
+          'Written examination — two papers (conducted by UPSC)',
+          'Physical standards test and physical efficiency test',
+          'Medical examination',
+          'Interview / personality test',
+        ],
+      },
+      {
+        headingEn: 'Broad eligibility',
+        bodyEn:
+          'The examination is broadly open to graduates, within an age range set officially. Physical fitness requirements form an integral part of the selection process. Exact age limits, category relaxations, and subject requirements are set by UPSC each cycle and should be confirmed in the official notification.\n\nNo preparation can guarantee selection — the examination is competitive and multi-stage.',
+      },
+      {
+        headingEn: 'How to approach preparation',
+        bodyEn:
+          'The written examination typically covers general ability, intelligence, general studies, and essay and comprehension. Preparation that builds general awareness, analytical thinking, and clear writing is broadly relevant.\n\nPhysical fitness is central to the later stages — developing stamina and strength alongside academic preparation is advisable.',
+      },
+      {
+        headingEn: 'Use official information',
+        bodyEn:
+          'Vacancy counts, age limits, cut-offs, physical standards, and detailed exam patterns are set by UPSC each cycle and can change. This guide does not quote those figures. Confirm all current details in the official UPSC CAPF AC notification on upsc.gov.in before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who conducts the CAPF AC Examination?',
+        answerEn:
+          'The Central Armed Police Forces (Assistant Commandants) Examination is conducted by the Union Public Service Commission (UPSC), once a year. Details are on upsc.gov.in.',
+      },
+      {
+        questionEn: 'Which forces can I join through CAPF AC?',
+        answerEn:
+          'The examination covers five forces: BSF, CRPF, CISF, ITBP, and SSB. Allocation to a specific force depends on your rank, preference, and vacancies — as set in the official notification.',
+      },
+      {
+        questionEn: 'Is there a physical test in the CAPF AC selection process?',
+        answerEn:
+          'Yes. A physical standards test and physical efficiency test are part of the selection process, along with a medical examination. Physical fitness requirements are set in the official UPSC notification each cycle.',
+      },
+    ],
+    relatedExamSlugs: ['capf-ac'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-prepare-for-upsc',
+      'cds-exam-guide',
+      'how-to-join-indian-armed-forces',
+      'nda-entrance-guide',
+    ],
+    sources: [
+      { label: 'Union Public Service Commission (UPSC) — official site', url: 'https://upsc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'capf assistant commandant exam',
+      'upsc capf ac guide',
+      'bsf crpf cisf itbp ssb officer entry',
+      'central armed police forces exam',
+      'capf ac eligibility selection',
+      'upsc capf written exam interview',
+    ],
+    tags: ['government-exams'],
+  },
+  {
+    slug: 'state-psc-exams-overview',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'State PSC Exams: An Overview',
+    descriptionEn:
+      'A neutral overview of State Public Service Commission (PSC) exams in India — what they are, how they are structured, and the main state-level commissions — with all specifics deferred to each state\'s official PSC.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What State PSC exams are',
+        bodyEn:
+          'Every state and union territory in India has a Public Service Commission — a constitutional body that recruits officers for state government services. State PSC examinations select candidates for Group A and Group B posts such as Deputy Collector, Deputy Superintendent of Police (DSP), Block Development Officer, and other state administrative and allied service roles.\n\nEach state PSC is independent: it sets its own eligibility, pattern, syllabus, and schedule. Specific details — vacancies, age limits, language of examination, optional subjects, and cut-offs — vary by state and cycle and must be checked on each state PSC\'s official website.',
+      },
+      {
+        headingEn: 'Broad exam structure',
+        bodyEn:
+          'Most State PSC examinations follow a three-stage pattern broadly similar to the UPSC Civil Services Examination: a preliminary objective screening test, a mains written examination (often descriptive), and an interview or personality test. Some commissions combine or modify stages; some posts may not include an interview.\n\nSyllabus components commonly include general studies, current affairs, the state\'s history, geography, culture and administrative context, and sometimes a language paper or optional subject. The exact structure is set by each commission officially.',
+        bullets: [
+          'Preliminary examination — objective, for screening',
+          'Mains examination — usually written / descriptive',
+          'Interview / personality test (for many posts)',
+        ],
+      },
+      {
+        headingEn: 'Major State PSCs',
+        bodyEn:
+          'Well-known commissions include the Uttar Pradesh Public Service Commission (UPPSC), Bihar Public Service Commission (BPSC), Maharashtra Public Service Commission (MPSC), Madhya Pradesh Public Service Commission (MPPSC), Rajasthan Public Service Commission (RPSC), Tamil Nadu Public Service Commission (TNPSC), Andhra Pradesh Public Service Commission (APPSC), Telangana State Public Service Commission (TSPSC), Kerala Public Service Commission (Kerala PSC), Karnataka Public Service Commission (KPSC), and many others.\n\nEach commission\'s official website is the only authoritative source for its notifications, eligibility, syllabus, and dates.',
+      },
+      {
+        headingEn: 'Eligibility and language',
+        bodyEn:
+          'A graduate degree is typically required for officer-level posts, but some posts have different academic requirements. Age limits, category relaxations, number of attempts, language of examination, and domicile requirements vary significantly by state and post — always check the official notification for the specific exam you are targeting.\n\nMany State PSC exams are conducted in the state\'s official language alongside or instead of English. Some include a compulsory language paper.',
+      },
+      {
+        headingEn: 'Use official information',
+        bodyEn:
+          'Because each state PSC is independent, there is no single source for all state exam specifics. This guide does not quote cut-offs, vacancies, exact age limits, or dates for any state. Always refer to the official website of the relevant state PSC for current, binding information before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Are State PSC exams the same across all states?',
+        answerEn:
+          'No. Each State Public Service Commission is an independent constitutional body. While the broad structure (preliminary, mains, interview) is similar to UPSC, each state sets its own eligibility, syllabus, language, age limits, and schedule. Always check the official website of the specific state PSC you are targeting.',
+      },
+      {
+        questionEn: 'What posts can I get through State PSC exams?',
+        answerEn:
+          'State PSC exams recruit for Group A and Group B posts in state government — typically administrative, police, revenue, development, and allied services. The specific posts and their grade/pay are notified by each commission officially.',
+      },
+      {
+        questionEn: 'Is UPSC preparation useful for State PSC exams?',
+        answerEn:
+          'Many State PSC syllabi cover substantial overlap with the UPSC Civil Services syllabus — especially in general studies and current affairs. However, state-specific topics (history, geography, culture, administration) are usually a distinct requirement. Build the common foundation first, then add state-specific material.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-prepare-for-upsc',
+      'ssc-cgl-exam-guide',
+      'bank-po-exam-guide',
+      'career-options-after-12th-arts',
+    ],
+    sources: [
+      { label: 'Union Public Service Commission (UPSC) — official site (reference for UPSC pattern)', url: 'https://upsc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'state psc exams overview',
+      'uppsc bpsc mpsc mppsc rpsc',
+      'state public service commission india',
+      'how state civil services exams work',
+      'state psc eligibility pattern',
+      'government jobs state psc',
+    ],
+    tags: ['government-exams'],
+  },
+  {
+    slug: 'how-to-join-indian-armed-forces',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Join the Indian Armed Forces',
+    descriptionEn:
+      'A neutral overview of the main routes to join the Indian Army, Navy, and Air Force as commissioned officers — NDA, CDS, AFCAT, and other entries — with all details deferred to official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The Indian Armed Forces',
+        bodyEn:
+          'The Indian Armed Forces comprise three wings — the Indian Army, the Indian Navy, and the Indian Air Force — each with its own recruitment process for commissioned officers. Entry routes vary by wing, education level, and the type of commission sought (permanent or short-service).\n\nThis guide describes the main officer-entry routes at a structural level. Eligibility, vacancies, age limits, and notification dates are set by each service or by UPSC for the relevant examination and change each cycle — always verify on the official recruitment website.',
+      },
+      {
+        headingEn: 'Entry after Class 12 — NDA route',
+        bodyEn:
+          'The National Defence Academy (NDA) is the primary route to join all three wings after Class 12. The written NDA examination is conducted by UPSC, and successful candidates join the NDA for a tri-service training programme before commissioning into their chosen service.\n\nThe Air Force and Navy wings at NDA generally require Physics and Mathematics at the 10+2 level; the Army wing has different subject requirements. Confirm exact eligibility in the official UPSC NDA notification.',
+      },
+      {
+        headingEn: 'Entry after graduation — CDS and AFCAT',
+        bodyEn:
+          'Graduate-level entry routes include the Combined Defence Services (CDS) Examination (conducted by UPSC) for Army, Navy, and Air Force entries, and the Air Force Common Admission Test (AFCAT) (conducted by the Indian Air Force) for Flying and Ground Duty officer entries.\n\nBoth involve a written examination followed by a Services Selection Board (SSB) or Air Force Selection Board (AFSB) process. Eligibility, entry branches, and subject requirements differ — check the respective official notifications.',
+        bullets: [
+          'CDS (UPSC) — IMA, INA, AFA, OTA entries',
+          'AFCAT (Indian Air Force) — Flying, Ground Duty (Technical and Non-Technical)',
+        ],
+      },
+      {
+        headingEn: 'Technical and short-service entries',
+        bodyEn:
+          'Each service also offers various technical entry schemes (for engineering graduates), short-service commission entries, and specialist entries (for medical, law, education, and other domains). These are notified separately by each service through their official recruitment portals.\n\nThe Army notifies entries via joinindianarmy.nic.in, the Navy via joinindiannavy.gov.in, and the Air Force via careerairforce.gov.in.',
+        bullets: [
+          'Technical Entry Scheme (TES) — Army (10+2 level)',
+          'Technical Graduate Course (TGC) — Army (engineering graduates)',
+          'Similar technical and short-service entries exist for the Navy and Air Force — check official portals',
+        ],
+      },
+      {
+        headingEn: 'Use official information',
+        bodyEn:
+          'The specifics of every entry — eligibility, age limits, vacancies, selection stages, medical standards — are set by the conducting body (UPSC or the individual service) each cycle and are subject to change. No preparation or guidance can guarantee selection. Verify all details on the official portals before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the earliest I can join the Indian Armed Forces?',
+        answerEn:
+          'The NDA route allows entry after Class 12 — candidates appearing in or having passed Class 12 can apply, subject to official age limits. Graduation-level routes such as CDS and AFCAT require a relevant degree. Confirm exact eligibility in the respective official notifications.',
+      },
+      {
+        questionEn: 'Do I need to write UPSC for all armed forces entries?',
+        answerEn:
+          'No. UPSC conducts the NDA and CDS examinations. AFCAT is conducted by the Indian Air Force independently. Many technical and short-service entries are notified and managed by the individual service directly — check joinindianarmy.nic.in, joinindiannavy.gov.in, and careerairforce.gov.in for service-specific entries.',
+      },
+      {
+        questionEn: 'Is there a common path for all three services?',
+        answerEn:
+          'NDA is the common joint-service route at the 12th level. At the graduate level, CDS covers Army, Navy, and Air Force entries. Beyond these, each service has its own direct entries and technical schemes notified separately.',
+      },
+    ],
+    relatedExamSlugs: ['cds', 'afcat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'nda-entrance-guide',
+      'cds-exam-guide',
+      'afcat-exam-guide',
+      'capf-assistant-commandant-guide',
+      'how-to-prepare-for-upsc',
+    ],
+    sources: [
+      { label: 'Join Indian Army — official recruitment portal', url: 'https://joinindianarmy.nic.in' },
+      { label: 'Join Indian Navy — official recruitment portal', url: 'https://joinindiannavy.gov.in' },
+      { label: 'Indian Air Force — careerairforce.gov.in (official)', url: 'https://careerairforce.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to join indian armed forces',
+      'join indian army navy air force',
+      'nda cds afcat routes',
+      'officer entry indian military',
+      'how to become commissioned officer india',
+      'armed forces entry after 12th graduation',
+    ],
+    tags: ['government-exams'],
+  },
+
+// ─────────────────────────── Set 9 — Teaching, research & academia ────────
+  {
+    slug: 'ctet-and-tet-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'CTET & State TET Exam Guide',
+    descriptionEn:
+      'A clear overview of the Central Teacher Eligibility Test (CTET) and state-level TETs — who conducts them, Paper I vs Paper II, broad eligibility, and how they connect to school-teaching appointments.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body (CTET)', value: 'Central Board of Secondary Education (CBSE)' },
+      { label: 'Mode', value: 'Offline — pen-and-paper (OMR sheet)' },
+      { label: 'Frequency', value: 'Typically twice a year (sessions vary; confirm on official site)' },
+      { label: 'Eligibility (broad)', value: 'Relevant teacher-education qualification as per NCTE norms' },
+      { label: 'Official site (CTET)', value: 'https://ctet.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is CTET and why does it exist?',
+        bodyEn:
+          'The Central Teacher Eligibility Test (CTET) is a national-level eligibility test conducted by the Central Board of Secondary Education (CBSE) to assess whether a candidate has the knowledge, aptitude and ability required to teach in school. It is a qualification — not a direct appointment — that a candidate must hold before being considered for a teaching post in centrally administered schools such as Kendriya Vidyalayas (KV) and Navodaya Vidyalayas (NV), as well as many other schools that recognise the certificate.\n\nThe Right of Children to Free and Compulsory Education Act (RTE Act) made it mandatory for all states and Union Territories to set a minimum standard for teacher recruitment, leading to CTET at the central level and equivalent State TETs at the state level.',
+      },
+      {
+        headingEn: 'Paper I versus Paper II',
+        bodyEn:
+          'CTET has two separate papers, each targeting a different school level. A candidate may appear for one or both depending on the class level they wish to teach.',
+        bullets: [
+          'Paper I — for teaching Classes 1 to 5 (primary level)',
+          'Paper II — for teaching Classes 6 to 8 (upper primary level)',
+          'Candidates who wish to teach both levels must qualify both papers',
+        ],
+      },
+      {
+        headingEn: 'Eligibility at a glance',
+        bodyEn:
+          'Eligibility for each paper is governed by norms set by the National Council for Teacher Education (NCTE). In broad terms, Paper I requires a Senior Secondary qualification combined with a recognised teacher-education diploma or degree in elementary education, while Paper II typically requires a graduate qualification combined with a B.Ed degree or an equivalent NCTE-recognised teacher-education qualification.\n\nExact percentage requirements, recognised diploma/degree titles, and any relaxations for reserved categories are specified in the official CTET notification each cycle. Always verify the current eligibility criteria on ctet.nic.in before applying, as these norms can be updated.',
+      },
+      {
+        headingEn: 'State TETs and how they differ',
+        bodyEn:
+          'Every state and Union Territory conducts its own State Teacher Eligibility Test (TET) for recruitment to government schools under state jurisdiction. State TETs are typically conducted by the respective State Board of Education or the state government\'s designated body.\n\nThe key practical difference: CTET is valid for centrally administered schools nationwide, whereas a State TET generally qualifies you only for government school posts within that state. Many states require candidates to hold a valid State TET in addition to or instead of CTET for state-government-school posts. If you are targeting a specific state, check whether CTET alone is accepted or whether the state\'s own TET is required.',
+      },
+      {
+        headingEn: 'Exam day — what to expect',
+        bodyEn:
+          'CTET is conducted in offline, pen-and-paper mode using OMR sheets. Each paper consists of multiple-choice questions covering topics such as Child Development and Pedagogy, Language I and II, and subject-specific content. The exam is typically held across multiple cities on the same day.\n\nAdmit cards, centre details, and the official information bulletin — which carries the complete and authoritative eligibility criteria, syllabus, marking scheme and important dates — are published on ctet.nic.in. Since exam-specific details (dates, centre allocation, exact question distribution) are set afresh each cycle, always refer to the current official notification.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is CTET conducted online or offline?',
+        answerEn:
+          'CTET is conducted in offline, pen-and-paper mode using OMR sheets. Candidates mark answers on a printed answer sheet at the examination centre. This is different from computer-based (CBT) exams such as UGC NET.',
+      },
+      {
+        questionEn: 'Does clearing CTET guarantee a teaching job?',
+        answerEn:
+          'No. Qualifying CTET makes you eligible to apply for teacher recruitment — it is a minimum eligibility criterion, not a guarantee of appointment. Actual recruitment is done separately by the respective school or recruitment board, and selection depends on further tests, merit and available vacancies.',
+      },
+      {
+        questionEn: 'Can I use CTET to teach in a state government school?',
+        answerEn:
+          'It depends on the state. Some states accept CTET for their government school posts; others require their own State TET. Check the official recruitment notification of the specific state or school board you are applying to for the definitive answer.',
+      },
+    ],
+    relatedExamSlugs: ['ctet', 'ugc-net'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ugc-net-jrf-exam-guide',
+      'how-to-become-a-teacher-in-india',
+      'how-to-become-a-professor-in-india',
+    ],
+    sources: [
+      { label: 'CTET — Official portal (CBSE)', url: 'https://ctet.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'ctet exam guide',
+      'state tet exam',
+      'central teacher eligibility test',
+      'ctet paper 1 paper 2',
+      'ctet eligibility',
+      'teacher eligibility test india',
+    ],
+    tags: ['teaching-and-research', 'government-exams'],
+  },
+  {
+    slug: 'ugc-net-jrf-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'UGC NET & JRF Exam Guide',
+    descriptionEn:
+      'An overview of the UGC NET conducted by NTA — what it is for, how the exam is structured, the difference between NET for Assistant Professor eligibility and NET-JRF, and broad eligibility.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Conducting body', value: 'National Testing Agency (NTA) on behalf of the University Grants Commission (UGC)' },
+      { label: 'Mode', value: 'Online — Computer-Based Test (CBT)' },
+      { label: 'Frequency', value: 'Typically twice a year (June and December cycles; confirm on official site)' },
+      { label: 'Eligibility (broad)', value: 'Master\'s degree or equivalent from a recognised university' },
+      { label: 'Official site', value: 'https://ugcnet.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What UGC NET determines',
+        bodyEn:
+          'The University Grants Commission National Eligibility Test (UGC NET) is a national-level eligibility test conducted by the National Testing Agency (NTA) on behalf of the University Grants Commission. It determines whether an Indian national is eligible for three categories:\n\nFirst, award of the Junior Research Fellowship (JRF) and appointment as Assistant Professor — the highest-scoring candidates who also meet the JRF age criterion. Second, appointment as Assistant Professor and admission to Ph.D. — candidates who meet the NET threshold but not the JRF threshold. Third, admission to Ph.D. only — candidates who meet a lower qualifying threshold but are not eligible for JRF or Assistant Professor under the criteria for that cycle.\n\nThe exact thresholds and which category a candidate qualifies for are determined after each exam and published by NTA/UGC. Always verify the current categories and cut-offs on ugcnet.nta.nic.in.',
+      },
+      {
+        headingEn: 'Exam structure',
+        bodyEn:
+          'UGC NET is conducted in Computer-Based Test (CBT) mode across a wide range of subjects, covering humanities, social sciences, sciences, languages, education, and several professional fields. The exam has two papers taken in a single session:\n\nPaper I is common to all candidates and covers general teaching and research aptitude, reasoning, comprehension and general awareness. Paper II is subject-specific and tests knowledge in the candidate\'s chosen discipline. The exact number of questions, marks per question, marking scheme (including whether negative marking applies) and time allocation are specified in the official information bulletin published on ugcnet.nta.nic.in each cycle.',
+        bullets: [
+          'Paper I — teaching/research aptitude; common to all subjects',
+          'Paper II — subject-specific content (chosen by the candidate)',
+          'Both papers are conducted in a single session on the same day',
+        ],
+      },
+      {
+        headingEn: 'NET versus NET-JRF',
+        bodyEn:
+          'Qualifying candidates fall into one of three categories based on their score and whether they meet the JRF age criterion: (1) JRF + Assistant Professor eligibility — the top band for candidates who also meet the JRF age criterion; (2) Assistant Professor eligibility + Ph.D. admission — candidates who meet the NET threshold but not the JRF threshold; (3) Ph.D. admission only — candidates who meet a lower qualifying threshold but are not eligible for JRF or Assistant Professor under that cycle\'s criteria. Only candidates in the first category receive a JRF award. Candidates in the second and third categories do not receive a JRF.\n\nThe age limit for JRF, the thresholds for each category, and any category relaxations are specified in the official information bulletin each cycle. Always verify the current categories and cut-offs on ugcnet.nta.nic.in.',
+      },
+      {
+        headingEn: 'Broad eligibility',
+        bodyEn:
+          'Candidates must hold a Master\'s degree (or be appearing in the final year of their Master\'s) in the relevant subject from a recognised university, with a minimum percentage as specified in the current information bulletin. Percentage requirements, category relaxations (SC/ST/OBC-NCL/PwD/Transgender) and the minimum qualifying marks for NET and JRF are all set in the official notification.\n\nAlways verify the current eligibility criteria, minimum marks, and age limit from the official information bulletin published on ugcnet.nta.nic.in before applying, as these can change between cycles.',
+      },
+      {
+        headingEn: 'How to use a NET qualification',
+        bodyEn:
+          'A valid UGC NET certificate for Assistant Professor is one of the principal eligibility criteria for teaching positions in most Indian colleges and universities under the UGC framework. Many universities and state public service commissions require it in their recruitment notifications for college-level faculty positions.\n\nA NET-JRF award can be used to apply for a funded PhD fellowship at eligible universities and research institutes. The fellowship involves a two-stage tenure; the second stage is subject to satisfactory progress as reviewed by a committee. Details of JRF activation and tenure are available on the UGC/NTA websites.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between UGC NET and CSIR NET?',
+        answerEn:
+          'Both determine eligibility for Assistant Professor and JRF in India, but they cover different subject areas. UGC NET covers humanities, social sciences, languages, education, commerce, and several science fields. CSIR NET is specifically for five science disciplines: Chemical Sciences, Earth Sciences, Life Sciences, Mathematical Sciences and Physical Sciences. If your subject is one of those five, you typically sit CSIR NET; for all other subjects, you sit UGC NET.',
+      },
+      {
+        questionEn: 'Is a PhD required to qualify for UGC NET?',
+        answerEn:
+          'No. A Master\'s degree (or final-year Master\'s) in the relevant subject is the minimum educational qualification to sit UGC NET. A PhD is not a prerequisite for appearing in or qualifying NET. However, a PhD may be required by specific institutions for promotion to Associate Professor or Professor levels.',
+      },
+      {
+        questionEn: 'Does qualifying UGC NET guarantee a faculty job?',
+        answerEn:
+          'No. Qualifying UGC NET makes you eligible to apply for Assistant Professor positions — it is a minimum eligibility criterion, not a guarantee of appointment. Actual selection depends on the institution\'s recruitment process, available vacancies, and merit among applicants. No exam or qualification can guarantee employment.',
+      },
+    ],
+    relatedExamSlugs: ['ugc-net', 'csir-net'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ctet-and-tet-exam-guide',
+      'csir-net-exam-guide',
+      'how-to-become-a-professor-in-india',
+      'how-to-become-a-teacher-in-india',
+    ],
+    sources: [
+      { label: 'UGC NET — Official portal (NTA)', url: 'https://ugcnet.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'ugc net exam guide',
+      'ugc net jrf',
+      'ugc net assistant professor eligibility',
+      'ugc net exam pattern',
+      'nta ugc net',
+      'junior research fellowship india',
+    ],
+    tags: ['teaching-and-research'],
+  },
+  {
+    slug: 'csir-net-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'CSIR NET Exam Guide',
+    descriptionEn:
+      'A clear overview of the CSIR-UGC NET conducted by NTA — what it tests, the five science subjects it covers, the JRF and Lectureship/Assistant Professor categories, and broad eligibility.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Full name', value: 'CSIR-UGC National Eligibility Test' },
+      { label: 'Conducting body', value: 'National Testing Agency (NTA) on behalf of the Council of Scientific and Industrial Research (CSIR)' },
+      { label: 'Mode', value: 'Online — Computer-Based Test (CBT)' },
+      { label: 'Frequency', value: 'Typically twice a year (June and December cycles; confirm on official site)' },
+      { label: 'Eligibility (broad)', value: 'Master\'s degree (or equivalent) in a relevant science subject from a recognised university' },
+      { label: 'Official site', value: 'https://csirnet.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What CSIR NET determines',
+        bodyEn:
+          'The CSIR-UGC National Eligibility Test (CSIR NET) is conducted by the National Testing Agency (NTA) on behalf of the Council of Scientific and Industrial Research (CSIR). It determines eligibility for three categories: (1) Junior Research Fellowship (JRF) and appointment as Lecturer/Assistant Professor — the top band for candidates who also meet the JRF age criterion; (2) Lectureship/Assistant Professor eligibility + Ph.D. admission — candidates who meet the NET threshold but not the JRF threshold; (3) Ph.D. admission only. Exact thresholds and categories are published by NTA/CSIR after each exam on csirnet.nta.nic.in.\n\nCSIR NET is the science-specific counterpart of UGC NET. If your subject is one of the five CSIR disciplines (see below), you sit CSIR NET; for most other subjects you sit UGC NET.',
+      },
+      {
+        headingEn: 'The five subject areas',
+        bodyEn:
+          'CSIR NET is conducted for exactly five subject areas. Candidates must choose one when registering.',
+        bullets: [
+          'Chemical Sciences',
+          'Earth Sciences',
+          'Life Sciences',
+          'Mathematical Sciences',
+          'Physical Sciences',
+        ],
+      },
+      {
+        headingEn: 'Exam structure',
+        bodyEn:
+          'CSIR NET is conducted in Computer-Based Test (CBT) mode. The exam has three parts: Part A (common to all subjects — general aptitude, reasoning and comprehension), Part B (core subject MCQs), and Part C (higher-order analytical and conceptual subject questions). All three parts are sat in a single session.\n\nThe exact number of questions per part, marks allocation, negative marking rules and total marks are specified in the official information bulletin published on csirnet.nta.nic.in each cycle. Do not rely on figures from previous bulletins, as the exam pattern can be revised.',
+      },
+      {
+        headingEn: 'JRF versus Lectureship/Assistant Professor',
+        bodyEn:
+          'Candidates who meet the qualifying criteria fall into three outcome categories: (1) JRF + Lectureship/Assistant Professor — top-scoring candidates who also meet the JRF age criterion receive both a JRF award and Lectureship (LS) eligibility; (2) Lectureship/Assistant Professor + Ph.D. admission — candidates who meet the NET threshold but not the JRF threshold receive LS eligibility and PhD admission eligibility; (3) Ph.D. admission only — candidates who meet a lower qualifying threshold but are not eligible for JRF or Lectureship under that cycle\'s criteria. Not all qualifying candidates receive a Lectureship (LS) certificate — those in the third category receive only Ph.D. admission eligibility.\n\nThe age limit for JRF, the qualifying marks thresholds for each category, and any category relaxations are set in the official notification each cycle. Always verify these on csirnet.nta.nic.in before assuming they are the same as in a previous year.',
+      },
+      {
+        headingEn: 'Broad eligibility and who should consider CSIR NET',
+        bodyEn:
+          'To appear in CSIR NET, a candidate must hold a Master\'s degree (or be in the final year of their Master\'s) in a subject within one of the five CSIR discipline areas, from a recognised university, with a minimum percentage as specified in the current information bulletin. Final-year candidates admitted provisionally must complete their Master\'s within the time frame specified in the bulletin.\n\nCSIR NET is most relevant for science graduates who want to pursue a funded PhD through JRF, or who aim to build a career as a faculty member in a science or technology department. Candidates in engineering, technology, agriculture and veterinary sciences may be eligible for the GATE-based route for some of these goals — check the official CSIR/NTA and UGC guidelines for your specific subject.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is CSIR NET the same as UGC NET?',
+        answerEn:
+          'They are separate exams with the same purpose (JRF + Assistant Professor eligibility) but different subject coverage. UGC NET covers a broad range of subjects including humanities, social sciences, languages, commerce, and several science fields. CSIR NET covers only five science disciplines: Chemical Sciences, Earth Sciences, Life Sciences, Mathematical Sciences and Physical Sciences. If your Master\'s subject falls in one of those five, you would typically take CSIR NET.',
+      },
+      {
+        questionEn: 'Can I apply for CSIR NET with an engineering degree?',
+        answerEn:
+          'This depends on your specific discipline and the current eligibility rules. Candidates with B.E./B.Tech. or M.E./M.Tech. degrees may be eligible for certain CSIR NET subjects such as Mathematical Sciences or Earth Sciences in some cases, but the rules are set in the official information bulletin each cycle. Always check the current bulletin on csirnet.nta.nic.in for definitive eligibility criteria for your subject.',
+      },
+      {
+        questionEn: 'Does qualifying CSIR NET guarantee a research fellowship or faculty job?',
+        answerEn:
+          'No. Qualifying CSIR NET makes you eligible to apply for JRF fellowships and Assistant Professor / Lecturer positions — it is an eligibility criterion, not a guarantee of either. JRF positions are limited and awarded through a merit-based process. Faculty appointments depend on the institution\'s recruitment and available vacancies. No exam result can guarantee employment or a fellowship.',
+      },
+    ],
+    relatedExamSlugs: ['csir-net', 'ugc-net'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ugc-net-jrf-exam-guide',
+      'how-to-become-a-professor-in-india',
+      'how-to-become-a-teacher-in-india',
+    ],
+    sources: [
+      { label: 'CSIR NET — Official portal (NTA)', url: 'https://csirnet.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'csir net exam guide',
+      'csir ugc net',
+      'csir net jrf',
+      'csir net subjects',
+      'csir net eligibility',
+      'science research fellowship india',
+    ],
+    tags: ['teaching-and-research'],
+  },
+  {
+    slug: 'how-to-become-a-teacher-in-india',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become a Teacher in India',
+    descriptionEn:
+      'A neutral, step-by-step overview of the main routes to becoming a school teacher in India — the required teacher-education qualifications, the TET/CTET eligibility test, and how recruitment typically works.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Teaching as a career — the broad picture',
+        bodyEn:
+          'Teaching in Indian schools spans a wide range of levels and institutional types — from pre-primary and primary classes all the way to upper secondary, across central government schools, state government schools, private aided and unaided schools, and international schools. The entry requirements, qualifications and recruitment processes vary significantly by level and by the type of school.\n\nThis guide focuses on the mainstream route to becoming a school teacher at the primary and upper primary level through the recognised teacher-education qualification and TET pathway. Always verify current requirements from the relevant state education department, CBSE, NCTE or the official recruitment authority.',
+      },
+      {
+        headingEn: 'Step 1 — Complete the required teacher-education qualification',
+        bodyEn:
+          'The National Council for Teacher Education (NCTE) is the statutory body that sets the minimum qualifications for school teachers in India. The specific qualification required depends on the level you wish to teach:\n\nFor primary classes (I to V), a recognised diploma or degree in elementary education is the standard requirement. For upper primary classes (VI to VIII), a Bachelor of Education (B.Ed) degree is the widely recognised route. For secondary and senior secondary classes (IX to XII), a B.Ed is generally the standard qualification.\n\nThe NCTE publishes the official recognition norms and the list of recognised teacher-education programmes. Always verify that the specific programme and institution you are considering is recognised by NCTE, as unrecognised qualifications will not be accepted.',
+        bullets: [
+          'Pre-primary / Nursery: Diploma in Early Childhood Care and Education or equivalent (NCTE norms)',
+          'Primary — Classes I to V: Diploma in Elementary Education (D.El.Ed.) or equivalent',
+          'Upper Primary — Classes VI to VIII: B.Ed or equivalent NCTE-recognised qualification',
+          'Secondary & Senior Secondary — Classes IX to XII: B.Ed (NCTE-recognised) typically required',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — Clear the Teacher Eligibility Test (TET or CTET)',
+        bodyEn:
+          'Passing a Teacher Eligibility Test (TET) is a mandatory eligibility requirement for appointment in most government and many private schools, as established under the RTE Act. There are two categories of TET:\n\nCTET (Central Teacher Eligibility Test), conducted by CBSE, is required for central government school positions (Kendriya Vidyalaya, Navodaya Vidyalaya, etc.) and is accepted by many other schools. State TETs are conducted by individual states for state-government school positions within that state.\n\nCTET has two papers: Paper I for teachers of Classes I to V, and Paper II for teachers of Classes VI to VIII. A candidate who wishes to teach both levels must qualify both papers. Clearing a TET does not guarantee appointment — it is a minimum eligibility hurdle before the recruitment process begins.',
+      },
+      {
+        headingEn: 'Step 3 — Apply for recruitment',
+        bodyEn:
+          'With the relevant teacher-education qualification and TET/CTET certificate in hand, you can apply for teaching positions when vacancies are advertised. Recruitment channels include:\n\nCentral government schools (KVS, NVS, Sainik Schools) release recruitment notifications through their official portals. State government schools recruit through the respective State Education Board or State Public Service Commission. Private schools conduct their own selection processes, which vary widely.\n\nRecruitment typically involves a written test or merit-based shortlisting, followed by a teaching demonstration and/or interview. Selection criteria, reservation norms and vacancy counts are set by each recruiting authority and change each cycle — always refer to the official notification.',
+      },
+      {
+        headingEn: 'Higher secondary and specialised teaching',
+        bodyEn:
+          'For teaching at the higher secondary level (Classes XI and XII), schools generally require a postgraduate degree in the relevant subject in addition to a B.Ed. Subject teachers for science, mathematics, commerce and languages at this level often need both a PG qualification and a B.Ed.\n\nSpecialised schools — such as those offering the International Baccalaureate, Cambridge IGCSE/A Levels, or Montessori programmes — may have additional or different requirements set by their respective accreditation bodies. These requirements fall outside NCTE norms and are set by the school or its accrediting organisation.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is a B.Ed mandatory to become a school teacher in India?',
+        answerEn:
+          'It depends on the class level. For primary classes (I to V), a B.Ed is not the standard requirement — a Diploma in Elementary Education or an equivalent NCTE-recognised qualification typically suffices. For upper primary (VI to VIII) and secondary levels, a B.Ed is generally required. Exact norms are set by NCTE and can vary; always check the current NCTE recognition norms and the specific recruitment notification.',
+      },
+      {
+        questionEn: 'Does clearing CTET mean I will get a teaching job?',
+        answerEn:
+          'No. Qualifying CTET (or a State TET) is a minimum eligibility requirement for applying to government school teaching posts — it does not guarantee appointment. Actual selection depends on available vacancies, the institution\'s recruitment process, and merit among eligible candidates. No exam result can guarantee a job.',
+      },
+      {
+        questionEn: 'Which is more useful for school teaching — CTET or State TET?',
+        answerEn:
+          'This depends on which schools you are targeting. CTET is required for central government schools (KVS, NVS) and is accepted by many schools nationally. State TET is required for state government school posts in that specific state, and some states do not accept CTET in place of their own TET. If you want to teach in a specific state\'s government schools, check whether that state requires its own TET or accepts CTET — this is specified in the state\'s official recruitment notifications.',
+      },
+    ],
+    relatedExamSlugs: ['ctet', 'ugc-net'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ctet-and-tet-exam-guide',
+      'ugc-net-jrf-exam-guide',
+      'how-to-become-a-professor-in-india',
+    ],
+    sources: [
+      { label: 'CTET — Official portal (CBSE)', url: 'https://ctet.nic.in' },
+      { label: 'NCTE — National Council for Teacher Education', url: 'https://ncte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become a teacher in india',
+      'b.ed teacher qualification',
+      'ctet tet school teacher',
+      'teacher eligibility india',
+      'school teaching career india',
+      'teacher education qualification india',
+    ],
+    tags: ['teaching-and-research'],
+  },
+  {
+    slug: 'how-to-become-a-professor-in-india',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become a Professor in India',
+    descriptionEn:
+      'A neutral, structured overview of the routes to a faculty or teaching career in Indian universities and colleges — the UGC NET/JRF eligibility path, the PhD route, and how progression typically works.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The academic career ladder in India',
+        bodyEn:
+          'A teaching career in Indian higher education typically progresses through three levels: Assistant Professor, Associate Professor, and Professor. Most faculty careers begin at the Assistant Professor level, and progression to higher levels generally requires a combination of teaching experience, research output, and additional qualifications.\n\nThe University Grants Commission (UGC) sets the minimum eligibility criteria for faculty positions in universities and colleges under its purview, and most state government and many private institutions follow the same standards. The specific criteria are published in the UGC\'s Regulations on Minimum Qualifications for Appointment of Teachers — always refer to the current version, as it can be revised.',
+      },
+      {
+        headingEn: 'Route 1 — UGC NET qualification',
+        bodyEn:
+          'For most humanities, social science, language, commerce and several science subjects, qualifying UGC NET (conducted by NTA) is the principal route to Assistant Professor eligibility. UGC NET has three categories of outcome based on performance and eligibility: (1) JRF + Assistant Professor — the top band for candidates who also meet the JRF age criterion; (2) Assistant Professor + Ph.D. admission — qualifies for faculty positions and PhD admission but not the JRF; (3) Ph.D. admission only — qualifies for PhD admission but not for JRF or Assistant Professor under that cycle\'s criteria. Exact thresholds are set after each exam and published on ugcnet.nta.nic.in.\n\nA Master\'s degree (or final-year Master\'s) in the relevant subject from a recognised university is the broad entry requirement for sitting UGC NET. All exam-specific details — minimum percentage, age limits, qualifying marks — are set in the official information bulletin on ugcnet.nta.nic.in.',
+        bullets: [
+          'UGC NET — for humanities, social sciences, languages, commerce, education, and several other fields',
+          'CSIR NET — for the five science disciplines (Chemical, Earth, Life, Mathematical, Physical Sciences)',
+          'Both exams determine Assistant Professor eligibility and JRF award',
+        ],
+      },
+      {
+        headingEn: 'Route 2 — PhD qualification',
+        bodyEn:
+          'A PhD in the relevant subject from a recognised university is an alternative or complementary route to faculty positions. Under UGC Regulations, candidates who have been awarded a PhD degree in accordance with the UGC (Minimum Standards and Procedure for Award of M.Phil./Ph.D. Degrees) Regulations may be exempted from the NET requirement for certain faculty appointments.\n\nHowever, the applicability of this exemption, the specific programmes covered, and any additional conditions are governed by the current UGC Regulations and each institution\'s own recruitment norms. For science subjects, the CSIR NET or UGC NET plus PhD combination is typically the strongest profile. Do not assume exemption applies to a particular role — always check the official recruitment notification.',
+      },
+      {
+        headingEn: 'Getting a PhD — the JRF route',
+        bodyEn:
+          'Qualifying UGC NET or CSIR NET with a JRF award provides eligibility to apply for funded PhD fellowships at universities and research institutions. JRF is one of the most common funded routes to a PhD in India for candidates who do not have another funding source.\n\nAlternatively, candidates can apply for PhD programmes through the admission processes of individual universities, which typically include a written entrance test and/or interview conducted by the university. Admission criteria, funded seats and entrance test formats vary by institution — check each university\'s official PhD admissions page.',
+      },
+      {
+        headingEn: 'Progression beyond Assistant Professor',
+        bodyEn:
+          'Progression to Associate Professor and Professor levels requires meeting UGC\'s Academic Performance Indicators (API) or equivalent criteria, which typically include a combination of teaching experience, research publications, and a PhD (or in-service completion of PhD). The exact requirements — including the number of years of service, minimum API scores and publication criteria — are specified in the UGC Regulations and each institution\'s service rules.\n\nPrivate universities and autonomous institutions may have their own progression criteria, which can differ from the UGC framework. If you are targeting a specific institution, review its faculty recruitment and promotion norms directly.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is UGC NET mandatory to become a professor in India?',
+        answerEn:
+          'UGC NET is mandatory for most Assistant Professor appointments in colleges and universities under the UGC framework for subjects other than the five CSIR disciplines. For those five science subjects, CSIR NET serves the equivalent role. Candidates with a qualifying PhD degree (awarded under UGC norms) may be eligible for exemption from NET for certain appointments — but this exemption is not universal. Always check the specific recruitment notification and the current UGC Regulations for the definitive rule.',
+      },
+      {
+        questionEn: 'What is the difference between UGC NET and CSIR NET for a teaching career?',
+        answerEn:
+          'Both exams determine eligibility for Assistant Professor and JRF, but cover different subject areas. UGC NET is for humanities, social sciences, languages, commerce, education, and several other fields. CSIR NET covers five science disciplines: Chemical Sciences, Earth Sciences, Life Sciences, Mathematical Sciences and Physical Sciences. If your subject is in that list, you sit CSIR NET; otherwise you sit UGC NET.',
+      },
+      {
+        questionEn: 'Is a PhD required to become a professor?',
+        answerEn:
+          'A PhD is generally required to progress to Associate Professor or Professor level, and is strongly preferred at many research-focused institutions even for Assistant Professor. For entry-level Assistant Professor positions at many colleges, a Master\'s degree plus UGC NET qualification is the standard minimum. The exact requirement depends on the UGC\'s current Regulations and the specific institution\'s norms — check the official recruitment notification.',
+      },
+    ],
+    relatedExamSlugs: ['ugc-net', 'csir-net'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ugc-net-jrf-exam-guide',
+      'csir-net-exam-guide',
+      'ctet-and-tet-exam-guide',
+      'how-to-become-a-teacher-in-india',
+    ],
+    sources: [
+      { label: 'UGC NET — Official portal (NTA)', url: 'https://ugcnet.nta.nic.in' },
+      { label: 'CSIR NET — Official portal (NTA)', url: 'https://csirnet.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become a professor in india',
+      'ugc net assistant professor',
+      'phd route professor india',
+      'csir net professor career',
+      'academic career india',
+      'higher education faculty eligibility india',
+    ],
+    tags: ['teaching-and-research'],
+  },
+
+{
+    slug: 'bba-course-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'BBA Course Guide',
+    descriptionEn:
+      'What a Bachelor of Business Administration (BBA) degree covers, how to get admitted, which universities offer it, and the career paths it opens — neutral and fact-based.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Degree type', value: 'Undergraduate (Bachelor\'s) — management' },
+      { label: 'Typical duration', value: '3 years (six semesters)' },
+      { label: 'Eligibility', value: 'Class 12 pass in any stream; minimum percentage varies by institution — confirm with each university' },
+      { label: 'Main admission routes', value: 'CUET UG (for central universities); university-specific entrance tests; merit-based direct admission at many private colleges' },
+      { label: 'Official source (CUET)', value: 'cuet.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is a BBA?',
+        bodyEn:
+          'A Bachelor of Business Administration (BBA) is a three-year undergraduate degree focused on core business and management subjects. It gives students a grounding in areas such as management principles, marketing, finance, human resources, organisational behaviour, and business communication.\n\nThe degree is offered by central universities, state universities, deemed universities, and private colleges across India. Curricula vary between institutions, so the exact subjects and specialisations available depend on the university you attend.',
+      },
+      {
+        headingEn: 'Who can apply and how admission works',
+        bodyEn:
+          'A pass in Class 12 in any stream is generally the minimum requirement. Most institutions set their own minimum-percentage criteria, which vary and can change each year — always confirm the current requirement with the specific institution.\n\nFor central universities, admission is through CUET UG (Common University Entrance Test), conducted by the NTA. Many state universities and private colleges run their own entrance tests or admit on the basis of Class 12 merit. Well-known institution-level tests include IPU CET (Guru Gobind Singh Indraprastha University) and SET (Symbiosis Entrance Test), among others — confirm which test a specific university accepts on its official website.',
+        bullets: [
+          'Central universities: CUET UG (NTA) — cuet.nta.nic.in',
+          'Some state/private universities: institution-specific entrance tests',
+          'Some private colleges: direct merit-based admission on Class 12 marks',
+        ],
+      },
+      {
+        headingEn: 'What you study in a BBA',
+        bodyEn:
+          'A typical BBA syllabus covers foundational management subjects in the early semesters and more specialised areas later. Common subjects include:\n\nManagement principles, business economics, financial accounting, marketing management, human resource management, business law, organisational behaviour, and quantitative methods. Many programmes also include a summer internship and a final-year project, though the exact structure is set by each university.',
+        bullets: [
+          'Core: management, marketing, finance, HR, business law',
+          'Applied: internship (typically after Year 2) and project work',
+          'Electives and specialisations vary — confirm with the university',
+        ],
+      },
+      {
+        headingEn: 'Career paths after a BBA',
+        bodyEn:
+          'A BBA is a general-management degree and can lead in several directions depending on the further qualifications a student pursues and the sector they work in. Common next steps include:\n\nPostgraduate study (MBA / PGDM) — the BBA is a popular foundation before an MBA, and CUET PG or CAT are the main entrance routes to postgraduate management programmes.\n\nDirect entry into junior roles in business, banking, sales, marketing, logistics, retail, and financial services — the nature and availability of such roles vary widely by employer, location, and economic conditions, and no specific outcome is guaranteed.',
+        bullets: [
+          'MBA / PGDM after BBA — via CAT, MAT, CMAT, XAT, or CUET PG',
+          'Junior roles in management trainee, sales, marketing, operations, HR tracks',
+          'Specialised professional qualifications: CA (ICAI), CS (ICSI), CMA (ICMAI)',
+        ],
+      },
+      {
+        headingEn: 'BBA vs B.Com vs BMS — how to choose',
+        bodyEn:
+          'The BBA, B.Com and BMS (Bachelor of Management Studies) are all three-year undergraduate degrees in the business/commerce space but emphasise different things.\n\nBBA is management-focused with a practical orientation. B.Com is accounts-and-finance-heavy and a strong base for CA or professional commerce qualifications. BMS is management-oriented but with a commerce backdrop (common in Mumbai University-affiliated colleges). None of these is universally better; the right choice depends on your intended career direction and the institutions available to you.\n\nAlways compare the specific syllabi, admission requirements, and industry connections of the programmes you are considering before deciding.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can a science or arts student join a BBA?',
+        answerEn:
+          'Yes. Most BBA programmes accept students from any stream — science, commerce, or arts — as long as the minimum Class 12 percentage requirement is met. Confirm with the specific university, as some institutions may have stream preferences or additional requirements.',
+      },
+      {
+        questionEn: 'Is CUET compulsory for BBA admission?',
+        answerEn:
+          'CUET UG is required for BBA admission at central universities. State universities, deemed universities, and private colleges have their own admission processes — some use their own entrance tests, others admit on merit. Check the official website of each institution you are applying to.',
+      },
+      {
+        questionEn: 'Is a BBA a good path before an MBA?',
+        answerEn:
+          'Many students pursue an MBA after a BBA because the undergraduate degree provides a business foundation. However, MBA programmes also accept graduates from any discipline, and prior work experience is valued by many top programmes. Whether a BBA-MBA sequence suits your goals is a personal decision; research the MBA programmes you want and their preferences before committing.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'bcom-vs-bba-which-to-choose',
+      'career-options-after-12th-commerce',
+      'bcom-honours-course-guide',
+      'cat-exam-eligibility-and-pattern',
+      'universities-accepting-cuet-ug',
+    ],
+    sources: [
+      { label: 'NTA — CUET UG official site', url: 'https://cuet.nta.nic.in' },
+      { label: 'UGC — University Grants Commission', url: 'https://www.ugc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['bba course', 'bba admission', 'bba syllabus', 'bba career options', 'bba vs bcom', 'bachelor of business administration'],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'bca-course-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'BCA Course Guide',
+    descriptionEn:
+      'What a Bachelor of Computer Applications (BCA) degree covers, how admission works, what you study, and the career paths it leads to — neutral and fact-based.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Degree type', value: 'Undergraduate (Bachelor\'s) — computer applications' },
+      { label: 'Typical duration', value: '3 years (six semesters); some universities offer a 4-year BCA — confirm with each institution' },
+      { label: 'Eligibility', value: 'Class 12 pass; many universities require Mathematics at 10+2 level — confirm with the specific institution' },
+      { label: 'Main admission routes', value: 'CUET UG (for central universities); university/college-specific entrance tests; merit-based at many institutions' },
+      { label: 'Official source (CUET)', value: 'cuet.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is a BCA?',
+        bodyEn:
+          'A Bachelor of Computer Applications (BCA) is a three-year undergraduate degree (some universities have moved to a four-year structure — check with the institution) focused on computing and software. It provides foundational knowledge in programming, data structures, databases, networking, software development, and web technologies.\n\nBCA is offered by central universities, state universities, deemed universities, and autonomous colleges. The syllabus and the languages or frameworks taught vary between institutions.',
+      },
+      {
+        headingEn: 'Eligibility and admission',
+        bodyEn:
+          'A pass in Class 12 is the standard minimum. Many universities require or prefer Mathematics as one of the Class 12 subjects, though this varies — confirm with each institution before applying.\n\nFor central universities, BCA admission uses CUET UG (NTA). State universities and private colleges typically hold their own entrance tests or admit on Class 12 merit. The minimum percentage criteria differ by institution and can change annually.',
+        bullets: [
+          'Central universities: CUET UG — cuet.nta.nic.in',
+          'State/private: institution-specific test or merit-based',
+          'Mathematics at 10+2: required by many programmes — verify with your target institution',
+        ],
+      },
+      {
+        headingEn: 'What you study in a BCA',
+        bodyEn:
+          'A typical BCA covers both theory and practical computing subjects. Common areas include:\n\nProgramming fundamentals (commonly C, C++, Java, Python), data structures and algorithms, database management systems (DBMS), operating systems, computer networks, software engineering, web development, and mathematics for computing.\n\nMost programmes also include practical lab sessions and a project in the final year. The specific subjects and technologies taught depend on the university.',
+        bullets: [
+          'Programming: C, C++, Java, Python (exact languages vary by institution)',
+          'Core: data structures, DBMS, OS, networking, software engineering',
+          'Applied: web development, project work, and practical labs',
+        ],
+      },
+      {
+        headingEn: 'Career paths after a BCA',
+        bodyEn:
+          'A BCA graduate can pursue several directions. Postgraduate study is a common next step — the MCA (Master of Computer Applications) is a two-year postgraduate programme that builds on the BCA. Some graduates also choose an M.Sc. in Computer Science or an MBA.\n\nEntry-level roles in software development, web development, testing, technical support, and IT operations are also possible, though the availability of such roles varies by employer, location, skills, and economic conditions, and no specific outcome is guaranteed.\n\nThe BCA covers similar computing ground to a B.Sc. Computer Science or B.Tech CSE but has its own identity as an applications-focused degree; the comparison with B.Tech/B.Sc. is addressed in a related guide.',
+        bullets: [
+          'Postgraduate: MCA, M.Sc. Computer Science, MBA (via CAT/other)',
+          'Entry-level tech roles: development, testing, support — vary by employer and skills',
+          'Professional certifications alongside BCA to build applied skills',
+        ],
+      },
+      {
+        headingEn: 'BCA vs B.Sc. Computer Science vs B.Tech CSE',
+        bodyEn:
+          'These three undergraduate programmes all have a computing focus but differ in emphasis and depth.\n\nBCA (3 years) is applications-oriented — programming, web, and software with lighter mathematics and theory. B.Sc. Computer Science (3 years) has a more science and mathematics base. B.Tech CSE (4 years) is engineering-focused with AICTE-regulated technical depth and is the standard route to core engineering roles.\n\nNeither is universally better than the others; the right choice depends on your aptitude, the quality of the specific institution you can access, and your intended career direction.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Mathematics compulsory for BCA?',
+        answerEn:
+          'Many universities require Mathematics as a Class 12 subject for BCA admission, but the requirement varies. Some institutions accept students from any stream. Always check the specific admission criteria on the official website of the college or university you plan to apply to.',
+      },
+      {
+        questionEn: 'What is the difference between BCA and MCA?',
+        answerEn:
+          'BCA is a three-year undergraduate degree (entry after Class 12). MCA (Master of Computer Applications) is a two-year postgraduate programme typically pursued after a BCA or B.Sc. in a related subject. MCA admission routes include NIMCET and university-specific tests — check each institution.',
+      },
+      {
+        questionEn: 'Can a BCA graduate get a job in software?',
+        answerEn:
+          'BCA graduates do work in software and IT-related roles, but entry into specific roles depends on the skills developed, the institutions attended, the employer, and the job market at the time. No specific placement outcome is guaranteed. Building a strong portfolio and practical skills during the degree improves employability.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-after-12th-science',
+      'computer-science-engineering-overview',
+      'btech-vs-bsc-which-to-choose',
+      'universities-accepting-cuet-ug',
+      'data-science-courses-in-india',
+    ],
+    sources: [
+      { label: 'NTA — CUET UG official site', url: 'https://cuet.nta.nic.in' },
+      { label: 'UGC — University Grants Commission', url: 'https://www.ugc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['bca course', 'bca admission', 'bca syllabus', 'bachelor of computer applications', 'bca career options', 'bca vs btech cse'],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'bcom-honours-course-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'B.Com (Honours) Course Guide',
+    descriptionEn:
+      'What a B.Com (Honours) degree covers, how CUET and university admission work, what sets it apart from a regular B.Com, and the career paths it leads to.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Degree type', value: 'Undergraduate (Bachelor\'s) — commerce with specialisation' },
+      { label: 'Typical duration', value: '3 years (six semesters); some universities now follow a 4-year Honours with Research structure under NEP 2020 — confirm with the institution' },
+      { label: 'Eligibility', value: 'Class 12 pass, typically in Commerce stream; minimum percentage criteria vary by institution — confirm with each university' },
+      { label: 'Main admission routes', value: 'CUET UG (for central universities including Delhi University); university/college-specific processes for state and private universities' },
+      { label: 'Official source (CUET)', value: 'cuet.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is B.Com (Honours)?',
+        bodyEn:
+          'B.Com (Honours) is a three-year undergraduate degree in Commerce (some universities under NEP 2020 have introduced a four-year Honours with Research option — check with your institution). It is more focused and academically intensive than a regular B.Com, typically including specialised papers in a chosen area such as Accountancy, Finance, or Business Economics, alongside core commerce subjects.\n\nThe degree is most prominently offered at Delhi University (DU) colleges and at other central and state universities. Syllabi, specialisations, and the admission criteria vary between universities.',
+      },
+      {
+        headingEn: 'Admission: CUET and Delhi University',
+        bodyEn:
+          'For central universities, including all Delhi University colleges, admission to B.Com (Honours) is through CUET UG (Common University Entrance Test), conducted by the NTA. The Common Seat Allocation System (CSAS) portal is used for DU seat allocation — both CUET score and choice-filling on CSAS determine admission to a specific DU college.\n\nState universities and private colleges have their own admission processes — some use state entrance tests, some use CUET, and some admit on Class 12 merit. Check each institution\'s official website for the current-year process.\n\nMinimum eligibility (Class 12 stream, minimum percentage, required subjects) is set by each institution and can change each year.',
+        bullets: [
+          'Delhi University: CUET UG + CSAS portal — du.ac.in, cuet.nta.nic.in',
+          'Other central universities: CUET UG',
+          'State/private: institution-specific processes — check official website',
+        ],
+      },
+      {
+        headingEn: 'What you study in B.Com (Honours)',
+        bodyEn:
+          'The core curriculum typically includes financial accounting, business mathematics and statistics, business economics, corporate law, cost accounting, income tax law and practice, and management accounting. Honours papers in the chosen specialisation add depth beyond the regular B.Com.\n\nMany programmes also include a research project or dissertation component, especially under NEP-2020-reformed curricula. The exact subjects are set by each university — always verify the current syllabus on the official university or college website.',
+        bullets: [
+          'Core: financial accounting, economics, law, costing, tax, statistics',
+          'Honours/specialisation papers: vary by university and stream chosen',
+          'Practical component: projects, case studies, internship (at many colleges)',
+        ],
+      },
+      {
+        headingEn: 'B.Com (Honours) vs B.Com (Pass / Programme)',
+        bodyEn:
+          'A B.Com (Honours) is more specialised and academically demanding than a regular B.Com (Pass or Programme). The Honours degree is aimed at students who want to go deeper into a specific commerce area or pursue competitive postgraduate programmes and professional qualifications.\n\nA regular B.Com (Pass/Programme) is broader and more general, which suits students who want flexibility. Neither is universally superior; the choice should be based on your goals, the specific colleges you can access, and your academic preparation.',
+      },
+      {
+        headingEn: 'Career paths after B.Com (Honours)',
+        bodyEn:
+          'A B.Com (Honours) graduate can move into professional qualifications or postgraduate study. Common directions include:\n\nChartered Accountancy (CA) — many students begin the ICAI foundation or Intermediate route alongside or after their B.Com. Company Secretaryship (CS) via ICSI, CMA via ICMAI, and the CFA programme are other professional qualification routes.\n\nPostgraduate degrees — M.Com, MBA (via CAT/CUET PG), or economics/finance master\'s degrees. Entry-level roles in accounting, banking, financial services, and commerce-related fields are also possible, though availability and conditions vary by employer and economic context, and no specific outcome is guaranteed.',
+        bullets: [
+          'Professional: CA (ICAI), CS (ICSI), CMA (ICMAI), CFA (CFA Institute)',
+          'Postgraduate: M.Com, MBA via CAT, CUET PG master\'s programmes',
+          'Entry-level commerce/finance/banking roles — vary by employer and market',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is CUET compulsory for B.Com (Honours) admission?',
+        answerEn:
+          'CUET UG is compulsory for admission to central universities, including all Delhi University colleges. State universities and private colleges have their own admission processes — some use CUET, others use their own tests or Class 12 merit. Check the official website of each institution you are applying to.',
+      },
+      {
+        questionEn: 'Can a science or arts student apply for B.Com (Honours)?',
+        answerEn:
+          'Many colleges offering B.Com (Honours) prefer or require Commerce as the Class 12 stream. Some institutions also accept students from other streams but may have additional requirements. Confirm the current eligibility criteria with the specific college or university before applying.',
+      },
+      {
+        questionEn: 'Is B.Com (Honours) a good base for CA preparation?',
+        answerEn:
+          'Many CA aspirants pursue B.Com (Honours) alongside their ICAI articleship and exams because the curriculum overlaps with CA Foundation and Intermediate subjects. However, the CA programme can be started after Class 12 without a B.Com degree — the decision to combine them should be based on your study plan and workload capacity. Refer to icai.org for the official CA route.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'bcom-vs-bba-which-to-choose',
+      'career-options-after-12th-commerce',
+      'ca-chartered-accountancy-guide',
+      'how-to-get-admission-in-delhi-university',
+      'universities-accepting-cuet-ug',
+    ],
+    sources: [
+      { label: 'NTA — CUET UG official site', url: 'https://cuet.nta.nic.in' },
+      { label: 'University of Delhi — official site', url: 'https://du.ac.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['bcom honours course', 'bcom honours admission', 'delhi university bcom honours', 'bcom honours vs bcom pass', 'bcom honours career options', 'cuet bcom'],
+    tags: ['courses-after-12th', 'commerce-and-finance'],
+  },
+  {
+    slug: 'ba-courses-and-career-options',
+    category: 'career',
+    region: 'india',
+    titleEn: 'BA Courses & Career Options',
+    descriptionEn:
+      'What a BA (Bachelor of Arts) degree involves, the subjects and streams available, how admission works, and the career paths it opens — neutral and arts-positive.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Degree type', value: 'Undergraduate (Bachelor\'s) — humanities and social sciences' },
+      { label: 'Typical duration', value: '3 years (six semesters); 4-year Honours with Research at some universities under NEP 2020 — confirm with institution' },
+      { label: 'Eligibility', value: 'Class 12 pass in any stream; some Honours programmes prefer Arts/Humanities stream — confirm with each institution' },
+      { label: 'Main admission routes', value: 'CUET UG (for central universities); institution-specific processes for state and private universities' },
+      { label: 'Official source (CUET)', value: 'cuet.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is a BA degree?',
+        bodyEn:
+          'A Bachelor of Arts (BA) is a three-year undergraduate degree (some universities under NEP 2020 now offer a 4-year Honours with Research — check with the specific institution) in the humanities and social sciences. It is one of the most widely offered undergraduate degrees in India, available at central universities, state universities, autonomous colleges, and private institutions.\n\nA BA can be a single-Honours programme (focused on one subject), a double-Honours or joint programme (two subjects), or a general BA (Pass/Programme) with multiple subjects. The structure depends on the university and college.',
+      },
+      {
+        headingEn: 'Subjects and streams in a BA',
+        bodyEn:
+          'BA programmes cover a wide range of humanities and social science disciplines. Commonly available subjects include:\n\nHumanities: English, Hindi, Sanskrit, History, Philosophy, Geography. Social sciences: Economics, Political Science, Sociology, Psychology, Public Administration. Languages: regional languages, foreign languages (French, German, Spanish, etc.).\n\nThe subjects offered at a particular college and the combinations allowed vary — check the official course list of the college or university you are considering.',
+        bullets: [
+          'Humanities: English, History, Philosophy, Geography',
+          'Social sciences: Economics, Political Science, Sociology, Psychology',
+          'Languages: regional and foreign language programmes',
+        ],
+      },
+      {
+        headingEn: 'Admission: CUET and state processes',
+        bodyEn:
+          'For central universities — including Delhi University, Banaras Hindu University, Jawaharlal Nehru University, and others — BA admission is through CUET UG (NTA). For DU, the CSAS portal is used for seat allocation after CUET.\n\nState universities and private colleges have their own processes: some use state entrance tests, some use CUET, and many admit on Class 12 merit. Minimum percentage requirements and stream preferences are set by each institution and can change each year.\n\nArts students may find their Class 12 domain subjects align well with CUET domain papers, but students from science and commerce backgrounds also apply for BA programmes — confirm eligibility with your target institution.',
+        bullets: [
+          'Central universities: CUET UG + institution\'s own allocation process',
+          'State/private: institution-specific entrance or merit-based admission',
+          'Verify current-year eligibility on the official college or university website',
+        ],
+      },
+      {
+        headingEn: 'Career paths after a BA',
+        bodyEn:
+          'A BA degree opens a broad range of further study and career directions. The arts and social sciences are not a narrow path — they lead into many sectors.\n\nHigher education: MA in the same or a related subject; integrated or combined postgraduate programmes at central universities. Competitive examinations: the UPSC Civil Services (IAS/IPS/IFS) and other government service exams are popular routes for BA graduates, as the syllabus often overlaps with social sciences and humanities. SSC, state PSC, bank, and defence exams are also taken by BA graduates.\n\nProfessional courses: LLB (law) after a BA is a well-established route; a BEd (teacher training) after a BA leads to teaching; mass communication and journalism programmes accept BA graduates. Management: many BA graduates pursue an MBA after gaining work experience — CAT and other MBA entrance tests are open to graduates of any discipline.',
+        bullets: [
+          'Higher studies: MA, M.Phil., integrated PhD in humanities/social sciences',
+          'Government exams: UPSC CSE, state PSC, SSC, banking — via own eligibility criteria',
+          'Professional: LLB (3-year) after BA, BEd (teacher training), journalism/mass comm',
+          'MBA after BA via CAT or other management entrance tests',
+        ],
+      },
+      {
+        headingEn: 'Is a BA a "lesser" degree?',
+        bodyEn:
+          'No. A BA is one of the oldest and most widely recognised undergraduate degrees globally. The value of a BA depends on the subject studied, the institution, the grades achieved, and the path taken after graduation — as it does for any degree.\n\nThe arts and social sciences develop critical thinking, communication, research, and analytical skills that are relevant across sectors. Government services, journalism, law, international relations, academia, NGOs, public policy, and corporate roles all employ BA graduates. Framing any stream as inherently better or worse than another oversimplifies a complex and personal choice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can a science student do a BA?',
+        answerEn:
+          'Yes, most BA programmes accept students from any Class 12 stream. Some Honours subjects — particularly social science and humanities disciplines — are open to all streams. Confirm the eligibility criteria for the specific subject and institution you are interested in.',
+      },
+      {
+        questionEn: 'Is a BA enough for UPSC preparation?',
+        answerEn:
+          'A degree in any discipline (including BA) is the minimum academic qualification to appear for the UPSC Civil Services Examination. Many successful UPSC candidates have a BA background. However, success depends on preparation quality, not the degree stream. Verify the current eligibility criteria on upsc.gov.in before applying.',
+      },
+      {
+        questionEn: 'What is the difference between BA Honours and BA Pass?',
+        answerEn:
+          'BA Honours (or BA Hons) is a specialised programme focused primarily on one or two subjects, with greater academic depth. BA Pass (or BA Programme at some universities) is broader, covering several subjects at a less intensive level. Honours is generally considered more academically rigorous, but the right choice depends on your interests and the colleges available to you.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-after-12th-arts',
+      'how-to-get-admission-in-delhi-university',
+      'universities-accepting-cuet-ug',
+      'how-to-prepare-for-upsc',
+      'journalism-mass-communication-courses',
+    ],
+    sources: [
+      { label: 'NTA — CUET UG official site', url: 'https://cuet.nta.nic.in' },
+      { label: 'UGC — University Grants Commission', url: 'https://www.ugc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ba courses', 'bachelor of arts', 'ba career options', 'ba subjects india', 'ba vs bsc', 'ba honours admission'],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'bsc-courses-and-career-options',
+    category: 'career',
+    region: 'india',
+    titleEn: 'B.Sc Courses & Career Options',
+    descriptionEn:
+      'What a B.Sc (Bachelor of Science) degree covers, the streams and subjects available, how admission works, and the career paths it leads to — neutral and fact-based.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Degree type', value: 'Undergraduate (Bachelor\'s) — science and applied sciences' },
+      { label: 'Typical duration', value: '3 years (six semesters); 4-year Honours with Research at some universities under NEP 2020 — confirm with institution' },
+      { label: 'Eligibility', value: 'Class 12 pass in Science stream; specific subject requirements (PCM or PCB) depend on the B.Sc programme chosen — confirm with each institution' },
+      { label: 'Main admission routes', value: 'CUET UG (for central universities); institution-specific or state entrance tests for many state/private colleges' },
+      { label: 'Official source (CUET)', value: 'cuet.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is a B.Sc degree?',
+        bodyEn:
+          'A Bachelor of Science (B.Sc) is a three-year undergraduate degree in the sciences and applied sciences (some universities have moved to a four-year structure under NEP 2020 — check with the institution). It is offered as a single-subject Honours programme, a multi-subject general programme, or in applied and vocational science areas.\n\nB.Sc programmes are available at central universities, state universities, autonomous colleges, and private institutions across India. The standard requirement is a Class 12 science background, with specific subject requirements depending on the B.Sc programme — PCM (Physics, Chemistry, Mathematics) for physical/mathematical science programmes, or PCB (Physics, Chemistry, Biology) for life science and health-related programmes.',
+      },
+      {
+        headingEn: 'Major B.Sc streams and subjects',
+        bodyEn:
+          'B.Sc is not a single degree — it covers a wide range of disciplines. Common streams include:\n\nPhysical and mathematical sciences: B.Sc Physics, B.Sc Chemistry, B.Sc Mathematics, B.Sc Statistics. Life sciences: B.Sc Botany, B.Sc Zoology, B.Sc Microbiology, B.Sc Biotechnology, B.Sc Biochemistry. Applied and vocational sciences: B.Sc Computer Science, B.Sc IT, B.Sc Agriculture, B.Sc Nursing, B.Sc Home Science. Multidisciplinary and newer programmes: B.Sc Data Science, B.Sc Environmental Science.\n\nThe subjects and their combinations available at a particular college depend on the institution. Always check the official course list of the specific college before applying.',
+        bullets: [
+          'Physical sciences: Physics, Chemistry, Mathematics, Statistics',
+          'Life sciences: Biology, Botany, Zoology, Microbiology, Biotechnology',
+          'Applied: Computer Science, IT, Agriculture, Nursing, Environmental Science',
+        ],
+      },
+      {
+        headingEn: 'Admission process',
+        bodyEn:
+          'For central universities, B.Sc admission uses CUET UG (NTA). For DU, the CSAS portal allocates seats after CUET scores. State universities and many colleges have their own processes — some use state entrance tests, some use CUET, and many admit on Class 12 merit.\n\nMinimum eligibility requirements (specific subjects, minimum percentage) vary by programme and institution and can change each year. Always check the current-year eligibility on the official website of the university or college you are applying to.\n\nFor B.Sc Nursing and B.Sc Agriculture, separate entrance tests may apply at the state or national level — verify with the relevant institution or state authority.',
+        bullets: [
+          'Central universities: CUET UG + institution\'s allocation process',
+          'State/private: institution-specific test or Class 12 merit admission',
+          'B.Sc Nursing / Agriculture: may have separate state/national entrance tests',
+        ],
+      },
+      {
+        headingEn: 'Career paths after a B.Sc',
+        bodyEn:
+          'A B.Sc opens several directions depending on the discipline and further qualifications pursued.\n\nPostgraduate study: M.Sc in the same or a related discipline; M.Tech through GATE (for B.Sc graduates who meet GATE eligibility criteria); M.Phil and Ph.D for research careers. A B.Sc in Computer Science is also a stepping stone to an MCA.\n\nProfessional and applied routes: B.Sc Nursing leads to registered nursing practice (regulated by the Indian Nursing Council). B.Sc Agriculture leads to agronomic and related roles. B.Sc in science subjects provides eligibility for many government exams (SSC, PSC, DRDO/ISRO/CSIR through their own written tests).\n\nCompetitive exams: CSIR NET/JRF (for science-stream students aiming for research/lectureship), GATE (for M.Tech via COAP/CCMT), and state-level PSC science posts all accept B.Sc graduates (eligibility conditions apply — verify on official sites).\n\nThe career scope after a B.Sc varies widely by subject, institution, skills, and further qualifications. No specific outcome is guaranteed.',
+        bullets: [
+          'Postgraduate: M.Sc (any science), MCA (after B.Sc CS), M.Tech via GATE',
+          'Research: CSIR NET/JRF, GATE fellowship, Ph.D programmes',
+          'Professional: nursing (INC-regulated), agriculture, environmental science roles',
+          'Government exams: SSC, state PSC, DRDO/ISRO/CSIR tests — check eligibility',
+        ],
+      },
+      {
+        headingEn: 'B.Sc vs B.Tech — what is the difference?',
+        bodyEn:
+          'B.Sc and B.Tech are both undergraduate science/technology degrees but differ in structure, depth, and purpose.\n\nB.Sc (3 years) is a science and research-oriented degree with broader subject coverage and lighter mathematics-engineering content in many streams. B.Tech (4 years) is an engineering degree regulated by AICTE with a structured, professionally accredited curriculum specifically designed to produce engineers.\n\nFor core engineering roles and PSU technical jobs, a B.Tech is generally required. B.Sc graduates with relevant discipline backgrounds can apply to M.Tech programmes via GATE (eligibility conditions apply). Neither is universally better — the choice depends on the subject, institution quality, and career goals.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can a PCM student do B.Sc Biology?',
+        answerEn:
+          'Standard B.Sc biology programmes typically require Biology (PCB) at Class 12. Some multidisciplinary or applied programmes may be flexible — check the specific eligibility criteria with the institution you plan to apply to.',
+      },
+      {
+        questionEn: 'Is GATE open to B.Sc graduates?',
+        answerEn:
+          'GATE is open to B.Sc / B.A. / B.Com graduates (3-year programmes) who wish to seek admission to Master\'s programmes at IITs and IISc, as well as to B.Sc (Research) / 4-year B.Sc graduates and students in the qualifying final year — subject to specific eligibility conditions set each cycle. Eligibility criteria change each year; verify the current requirements on the official GATE website (search for the current year\'s GATE site via GOAPS, the GATE Online Application Processing System) before applying.',
+      },
+      {
+        questionEn: 'What is CSIR NET and who can apply?',
+        answerEn:
+          'CSIR NET (National Eligibility Test for JRF/Lectureship) is conducted by NTA on behalf of CSIR for disciplines like Life Sciences, Chemical Sciences, Physical Sciences, Mathematical Sciences, and Earth Sciences. It is open to M.Sc graduates (and final-year students) in the relevant discipline. A B.Sc alone is typically not sufficient — confirm the current eligibility on csirnet.nta.nic.in.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug', 'gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-after-12th-science',
+      'courses-after-12th-pcm',
+      'courses-after-12th-pcb',
+      'btech-vs-bsc-which-to-choose',
+      'universities-accepting-cuet-ug',
+    ],
+    sources: [
+      { label: 'NTA — CUET UG official site', url: 'https://cuet.nta.nic.in' },
+      { label: 'UGC — University Grants Commission', url: 'https://www.ugc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['bsc courses', 'bachelor of science', 'bsc career options', 'bsc subjects india', 'bsc vs btech', 'bsc admission'],
+    tags: ['courses-after-12th'],
+  },
+
+{
+    slug: 'b-arch-architecture-course-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'B.Arch (Architecture) Course Guide',
+    descriptionEn:
+      'What the B.Arch degree is, how admission works through NATA and other routes, what the course covers, and what graduates broadly do — a factual overview with no income promises.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Degree', value: 'Bachelor of Architecture (B.Arch)' },
+      { label: 'Duration', value: '5 years (full-time, as specified by the Council of Architecture)' },
+      { label: 'Regulatory body', value: 'Council of Architecture (CoA)' },
+      { label: 'Primary admission route', value: 'NATA (National Aptitude Test in Architecture) and/or JEE Paper 2 (B.Arch paper) — confirm current requirements on the official sources' },
+      { label: 'Official site', value: 'https://www.coa.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What B.Arch is',
+        bodyEn:
+          'Bachelor of Architecture (B.Arch) is the recognised undergraduate professional degree in architecture in India. The Council of Architecture (CoA), established under the Architects Act, 1972, is the statutory body that regulates architectural education and the profession across the country.\n\nThe B.Arch programme is five years in duration as prescribed by the Council of Architecture. Completion and registration with the CoA is required before a graduate can use the title "Architect" in India. Because the CoA sets the standards and recognises programmes, always verify that the institution you are considering is CoA-recognised before enrolling.',
+      },
+      {
+        headingEn: 'Admission routes',
+        bodyEn:
+          'The two primary national-level admission routes into B.Arch programmes are NATA (National Aptitude Test in Architecture), conducted by the Council of Architecture, and the B.Arch paper of JEE (Paper 2), conducted by the National Testing Agency (NTA). Some states and institutions run their own entrance tests in addition to or instead of these, so check the specific admission route for each institution you are applying to.\n\nNATA tests spatial aptitude, drawing ability, and aesthetic sensitivity. The exact pattern, eligibility, and test calendar are set by the CoA each cycle — verify them on the official NATA website before applying.',
+        bullets: [
+          'NATA — conducted by the Council of Architecture',
+          'JEE Paper 2 (B.Arch) — conducted by NTA; score used by some centrally funded institutes',
+          'State-level and institution-specific tests — check each institution separately',
+        ],
+      },
+      {
+        headingEn: 'What the course covers',
+        bodyEn:
+          'B.Arch combines design studios, technical subjects (structures, building materials, construction technology), professional practice, history and theory of architecture, and site-based learning. Studio work is central to most programmes and demands sustained, creative engagement over the five years.\n\nSome institutions also offer specialisations or elective streams in areas such as urban design, landscape, or interior architecture within the B.Arch framework, but structures vary across recognised colleges.',
+      },
+      {
+        headingEn: 'After B.Arch',
+        bodyEn:
+          'After registering with the Council of Architecture, graduates can practise architecture in India. Many go on to postgraduate study — M.Arch or related degrees — or into fields such as urban planning, construction management, interior design, academia, or public-sector roles.\n\nThis guide describes courses and career directions broadly and makes no income or placement claims. The scope of practice and further study depends on individual choices, institution reputation, and evolving professional demand — none of which can be guaranteed.',
+      },
+      {
+        headingEn: 'Plan with official information',
+        bodyEn:
+          'Because admission criteria, NATA patterns, and CoA regulations can change each cycle, verify the current requirements directly on the official sources: the Council of Architecture site for CoA recognition and NATA, and NTA for JEE Paper 2. Confirm CoA recognition of any institution before paying fees.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I get into B.Arch in India?',
+        answerEn:
+          'The main national routes are NATA (conducted by the Council of Architecture) and JEE Paper 2 (B.Arch, conducted by NTA). Some colleges also hold their own tests. Check the specific admission route for each institution and verify current eligibility on the official sources.',
+      },
+      {
+        questionEn: 'How long is the B.Arch course?',
+        answerEn:
+          'B.Arch is a five-year degree as prescribed by the Council of Architecture. Some programmes may have slight structural variations, so confirm the duration and structure with the specific institution.',
+      },
+      {
+        questionEn: 'Do I need to register with the Council of Architecture after B.Arch?',
+        answerEn:
+          'Yes. Registration with the Council of Architecture is required to use the title "Architect" and practise in India. Confirm the current registration process on the CoA official site.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'courses-after-12th-pcm',
+      'career-options-after-12th-arts',
+      'career-options-in-design-after-12th',
+      'career-options-after-12th-science',
+    ],
+    sources: [
+      { label: 'Council of Architecture — official site', url: 'https://www.coa.gov.in' },
+      { label: 'NTA — JEE (Paper 2) information', url: 'https://jeemain.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'b arch course',
+      'architecture course india',
+      'b arch admission nata',
+      'bachelor of architecture',
+      'b arch eligibility',
+      'nata architecture entrance',
+    ],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'b-pharm-pharmacy-course-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'B.Pharm / Pharmacy Course Guide',
+    descriptionEn:
+      'What the B.Pharm and D.Pharm courses are, how admission works, the Pharmacy Council of India\'s regulatory role, and what graduates broadly do — a factual overview with no health claims or income promises.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Degree', value: 'Bachelor of Pharmacy (B.Pharm) — 4 years; Diploma in Pharmacy (D.Pharm) — 2 years' },
+      { label: 'Regulatory body', value: 'Pharmacy Council of India (PCI)' },
+      { label: 'Primary admission route', value: 'State-level pharmacy entrance tests or merit-based; some states use NEET or common entrance; confirm per institution' },
+      { label: 'Official site', value: 'https://www.pci.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What pharmacy courses are',
+        bodyEn:
+          'Pharmacy education in India is regulated by the Pharmacy Council of India (PCI) under the Pharmacy Act, 1948. The PCI sets the standards for pharmacy courses, approves institutions, and maintains the register of pharmacists.\n\nThe two main entry-level qualifications are:\n\n- D.Pharm (Diploma in Pharmacy): a two-year diploma, typically the minimum requirement for pharmacy registration and retail practice.\n- B.Pharm (Bachelor of Pharmacy): a four-year undergraduate degree that forms the basis for further study and a wider range of roles.\n\nHigher study options include M.Pharm and Pharm.D (Doctor of Pharmacy), which involve longer and more specialised programmes. Confirm the exact duration and structure of any programme with the specific institution and PCI.',
+      },
+      {
+        headingEn: 'How admission works',
+        bodyEn:
+          'Admission routes vary by state and institution. Some states conduct a common pharmacy entrance test; others admit on the basis of Class 12 marks (typically Physics, Chemistry, and Biology or Mathematics) or a central/state combined merit list. A few institutions also use NEET scores for certain programmes.\n\nAlways confirm the specific admission route for each institution and state on their official admissions page, as routes and eligibility change from year to year.',
+      },
+      {
+        headingEn: 'What the courses cover',
+        bodyEn:
+          'B.Pharm combines subjects such as pharmaceutical chemistry, pharmacology, pharmacognosy, pharmaceutics, biochemistry, and pharmacy practice. The curriculum is aligned with PCI norms and includes practical laboratory work. Some programmes have an industrial training component.\n\nD.Pharm focuses on the practical and clinical aspects of dispensing and community pharmacy over two years.',
+      },
+      {
+        headingEn: 'After B.Pharm or D.Pharm',
+        bodyEn:
+          'After registering with the state pharmacy council, graduates can work in community and hospital pharmacies, pharmaceutical manufacturing and quality control, regulatory affairs, drug information, research, and academia, among other areas. Many B.Pharm graduates also pursue M.Pharm or Pharm.D for specialisation.\n\nThis guide describes courses and career directions broadly and makes no clinical, earnings, or placement claims. Actual paths depend on individual choices, institution, and registration status.',
+      },
+      {
+        headingEn: 'Plan with official information',
+        bodyEn:
+          'Because PCI norms, admission routes, and registration requirements can change, verify the current requirements on the Pharmacy Council of India official site and with the relevant state pharmacy council before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between D.Pharm and B.Pharm?',
+        answerEn:
+          'D.Pharm is a two-year diploma that is the minimum qualification for pharmacy registration; B.Pharm is a four-year degree that opens a wider range of roles and further study options such as M.Pharm. Both are regulated by the Pharmacy Council of India.',
+      },
+      {
+        questionEn: 'Does B.Pharm require NEET?',
+        answerEn:
+          'Not universally — admission routes vary by state and institution. Some use a state pharmacy entrance test, others use Class 12 merit, and a few use NEET scores. Confirm the route for each institution on its official admissions page.',
+      },
+      {
+        questionEn: 'Who regulates pharmacy education in India?',
+        answerEn:
+          'The Pharmacy Council of India (PCI), established under the Pharmacy Act, 1948, regulates pharmacy education and maintains the pharmacist register. State pharmacy councils handle registration at the state level.',
+      },
+    ],
+    relatedExamSlugs: ['neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'courses-after-12th-pcb',
+      'allied-health-sciences-careers',
+      'career-options-after-neet-besides-mbbs',
+      'bpt-physiotherapy-course-guide',
+    ],
+    sources: [
+      { label: 'Pharmacy Council of India — official site', url: 'https://www.pci.nic.in' },
+      { label: 'NTA — NEET UG official site', url: 'https://neet.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'b pharm course',
+      'pharmacy course india',
+      'b pharm admission',
+      'bachelor of pharmacy',
+      'd pharm course',
+      'pharmacy council of india',
+    ],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'bsc-agriculture-course-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'B.Sc Agriculture Course Guide',
+    descriptionEn:
+      'What the B.Sc Agriculture degree is, how admission works, the ICAR context, and what graduates broadly do — a factual overview with no income promises.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Degree', value: 'Bachelor of Science in Agriculture (B.Sc Agriculture)' },
+      { label: 'Duration', value: '4 years (as per ICAR norms for recognised programmes)' },
+      { label: 'National coordinating body', value: 'Indian Council of Agricultural Research (ICAR)' },
+      { label: 'National entrance', value: 'CUET (ICAR-UG), conducted by NTA on behalf of ICAR for ICAR-affiliated and SAU admission — confirm current pattern on the official ICAR and NTA sites' },
+      { label: 'Official site', value: 'https://icar.org.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What B.Sc Agriculture is',
+        bodyEn:
+          'B.Sc Agriculture is an undergraduate degree that covers the science, technology, and management of crop production, soil, plant protection, and related agricultural systems. The Indian Council of Agricultural Research (ICAR) coordinates agricultural education in India, prescribes model curricula, and accredits State Agricultural Universities (SAUs) and other institutions offering agriculture degrees.\n\nThe standard programme duration under ICAR norms is four years, with academic and practical components including farm-based training. Confirm the duration and structure with the specific institution you are applying to.',
+      },
+      {
+        headingEn: 'Admission routes',
+        bodyEn:
+          'Admission into B.Sc Agriculture programmes at ICAR-affiliated colleges and State Agricultural Universities is largely through CUET (ICAR-UG), conducted by the National Testing Agency (NTA) on behalf of ICAR. CUET (ICAR-UG) uses CUET science subject papers — the specific subjects, pattern, and eligibility are set by NTA and ICAR each cycle.\n\nSome state governments also run their own Combined Agriculture Entrance Tests or admit through a state merit process, and some private institutions use their own tests. Always verify the current admission route for each institution on its official admissions page.',
+        bullets: [
+          'CUET (ICAR-UG) — conducted by NTA on behalf of ICAR for ICAR-affiliated and State Agricultural University seats (national-level)',
+          'State agriculture entrance tests — varies by state',
+          'Institution-specific tests — some private colleges',
+        ],
+      },
+      {
+        headingEn: 'What the course covers',
+        bodyEn:
+          'The B.Sc Agriculture curriculum typically covers agronomy, soil science, plant pathology, agricultural entomology, horticulture, genetics and plant breeding, agricultural economics, agricultural engineering basics, and farm management. Practical training on university farms is a common feature of ICAR-affiliated programmes.\n\nSpecialisations and elective options vary by institution.',
+      },
+      {
+        headingEn: 'After B.Sc Agriculture',
+        bodyEn:
+          'Graduates can pursue postgraduate study in agricultural sciences, plant science, agribusiness, and related fields — often through ICAR AIEEA PG for public university admission. Career directions include government agricultural services, research institutions (such as ICAR institutes), agribusiness, banking and rural finance, food and crop industries, and entrepreneurial farming ventures.\n\nThis guide describes courses and career directions broadly and makes no earnings or placement claims. Actual paths depend on individual choices, scores, and the opportunities available in a student\'s region at the time of graduation.',
+      },
+      {
+        headingEn: 'Plan with official information',
+        bodyEn:
+          'Because ICAR norms, entrance patterns, and State Agricultural University admission processes can change each cycle, verify the current requirements on the ICAR official site and on the relevant state university\'s admissions page before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the duration of B.Sc Agriculture?',
+        answerEn:
+          'Under ICAR norms for recognised programmes, B.Sc Agriculture is typically four years including practical farm training. Confirm the structure with the specific institution.',
+      },
+      {
+        questionEn: 'What entrance exam is used for B.Sc Agriculture admission?',
+        answerEn:
+          'The main national-level entrance is CUET (ICAR-UG), conducted by NTA on behalf of the Indian Council of Agricultural Research, for ICAR and State Agricultural University seats. Some states and private institutions use their own tests. Confirm on the official ICAR or state university site.',
+      },
+      {
+        questionEn: 'What can I do after B.Sc Agriculture?',
+        answerEn:
+          'Options include postgraduate study (often via ICAR AIEEA PG), government agricultural services, research institutions, agribusiness, rural finance, food industries, and entrepreneurship. Verify current opportunities and selection processes officially.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-after-12th-science',
+      'courses-after-12th-pcb',
+      'courses-after-12th-pcm',
+      'career-options-after-12th-arts',
+    ],
+    sources: [
+      { label: 'Indian Council of Agricultural Research (ICAR) — official site', url: 'https://icar.org.in' },
+      { label: 'NTA — ICAR CUET (ICAR-UG) examinations', url: 'https://exams.nta.nic.in/icar/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'bsc agriculture course',
+      'agriculture course india',
+      'bsc agriculture admission',
+      'icar aieea',
+      'bachelor of agriculture',
+      'agriculture course after 12th',
+    ],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'bpt-physiotherapy-course-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'BPT (Physiotherapy) Course Guide',
+    descriptionEn:
+      'What the BPT degree is, how admission typically works, and what physiotherapy graduates broadly do — a factual overview with no health-efficacy claims or income promises.',
+    readMinutes: 5,
+    keyFacts: [
+      { label: 'Degree', value: 'Bachelor of Physiotherapy (BPT)' },
+      { label: 'Duration', value: '4.5 years (including a compulsory 6-month internship)' },
+      { label: 'Regulatory framework', value: 'National Commission for Allied and Healthcare Professions (NCAHP) — for NCAHP-covered programmes' },
+      { label: 'Admission route', value: 'Varies by state and institution — some use NEET, others use state/university merit or entrance tests; confirm per institution' },
+      { label: 'Official site', value: 'https://ncahp.abdm.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What BPT is',
+        bodyEn:
+          'BPT (Bachelor of Physiotherapy) is an undergraduate degree in physiotherapy, a regulated allied health profession in India. The programme is generally 4.5 years in duration, including a compulsory six-month internship that is part of the degree requirement.\n\nPhysiotherapy education and registration in India is increasingly governed by the National Commission for Allied and Healthcare Professions (NCAHP) under the National Commission for Allied and Healthcare Professions Act, 2021, which aims to standardise the allied health professions. Confirm that the institution you are considering is affiliated with a recognised university and, where applicable, approved under the NCAHP framework.',
+      },
+      {
+        headingEn: 'How admission works',
+        bodyEn:
+          'Admission routes for BPT vary across states and institutions. Some institutions use NEET scores as part of the admission process, while others rely on Class 12 merit (typically requiring Physics, Chemistry, and Biology), and a few conduct institution-specific tests. There is currently no single mandatory national entrance test for BPT across all institutions.\n\nVerify the current admission route for each specific institution and state on their official admissions page, as routes and requirements change annually.',
+      },
+      {
+        headingEn: 'What the course covers',
+        bodyEn:
+          'BPT combines foundational biomedical sciences (anatomy, physiology, pathology, pharmacology) with clinical physiotherapy subjects such as musculoskeletal and orthopaedic physiotherapy, neurological physiotherapy, cardiopulmonary physiotherapy, paediatric physiotherapy, and sports physiotherapy. Clinical training across affiliated hospitals is an integral part of the programme, and the degree is completed by a six-month compulsory internship.',
+      },
+      {
+        headingEn: 'After BPT',
+        bodyEn:
+          'After completing BPT and fulfilling any applicable registration requirements, graduates can work in hospitals, rehabilitation centres, sports facilities, and community health settings. Many go on to postgraduate study — Masters in Physiotherapy (MPT) — to specialise in a specific area. Some pursue research, teaching, or public-health roles.\n\nThis guide describes the BPT course and broad career directions only. It makes no clinical, efficacy, or income claims. Actual career paths depend on individual performance, location, and demand at the time of practice.',
+      },
+      {
+        headingEn: 'Plan with official information',
+        bodyEn:
+          'Because admission routes, NCAHP regulations, and registration requirements are evolving, verify current requirements with the NCAHP, the relevant state council (where applicable), and the specific institution before applying or enrolling.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How long is the BPT course?',
+        answerEn:
+          'BPT is generally 4.5 years, including a compulsory six-month internship. Confirm the exact duration and structure with the specific institution.',
+      },
+      {
+        questionEn: 'Does BPT require NEET?',
+        answerEn:
+          'Not universally. Some institutions use NEET scores for BPT admission; others admit on Class 12 merit or through institution-specific tests. Check the admission route for each specific institution.',
+      },
+      {
+        questionEn: 'Who regulates physiotherapy in India?',
+        answerEn:
+          'Physiotherapy is an allied health profession increasingly covered by the National Commission for Allied and Healthcare Professions (NCAHP) under the NCAHP Act, 2021. Verify current registration requirements on the official NCAHP site.',
+      },
+    ],
+    relatedExamSlugs: ['neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'allied-health-sciences-careers',
+      'courses-after-12th-pcb',
+      'career-options-after-neet-besides-mbbs',
+      'b-pharm-pharmacy-course-guide',
+    ],
+    sources: [
+      { label: 'National Commission for Allied and Healthcare Professions (NCAHP) — official site', url: 'https://ncahp.abdm.gov.in' },
+      { label: 'Ministry of Health and Family Welfare — official site', url: 'https://www.mohfw.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'bpt physiotherapy course',
+      'bachelor of physiotherapy',
+      'bpt admission india',
+      'physiotherapy course after 12th',
+      'bpt course duration',
+      'physiotherapy degree india',
+    ],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'b-ed-course-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'B.Ed Course Guide',
+    descriptionEn:
+      'What the B.Ed degree is, how admission works, the NCTE regulatory framework, and the route to school teaching through TET and CTET — a factual overview with no income promises.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Degree', value: 'Bachelor of Education (B.Ed)' },
+      { label: 'Duration', value: '2 years for holders of a standard 3-year degree; NCTE is reintroducing a 1-year B.Ed from 2026-27 for postgraduates and 4-year degree holders — verify current norms on the official NCTE site' },
+      { label: 'Regulatory body', value: 'National Council for Teacher Education (NCTE)' },
+      { label: 'Admission route', value: 'State B.Ed entrance tests, central university tests (incl. CUET PG at some institutions), or institution-specific; confirm per state and institution' },
+      { label: 'Official site', value: 'https://ncte.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What B.Ed is',
+        bodyEn:
+          'Bachelor of Education (B.Ed) is the standard pre-service teacher education degree in India, required for teaching in most recognised schools. It prepares graduates for the professional practice of teaching at the secondary and senior-secondary levels.\n\nThe National Council for Teacher Education (NCTE), a statutory body under the Ministry of Education, regulates teacher education in India. NCTE sets norms and standards for B.Ed programmes and grants recognition to institutions. Confirm that any institution you are considering holds valid NCTE recognition before enrolling.',
+      },
+      {
+        headingEn: 'Duration and structure',
+        bodyEn:
+          'Until recently, the standard B.Ed was a two-year full-time programme. NCTE has announced the reintroduction of a one-year B.Ed from the 2026-27 session for candidates holding a postgraduate degree or a four-year bachelor\'s degree; holders of a standard three-year undergraduate degree continue with the two-year route. Verify the current norms on the official NCTE site before applying.\n\nThere is also a four-year integrated B.Ed offered by some central universities for candidates who opt for a combined undergraduate-plus-teacher-education pathway directly after Class 12 — the duration and structure of these programmes differ.\n\nThe B.Ed curriculum includes foundational education theory, pedagogy of school subjects, practice teaching (school internship), and professional courses. The exact structure is prescribed by NCTE and implemented by the affiliating university.',
+      },
+      {
+        headingEn: 'Admission routes',
+        bodyEn:
+          'Admission to B.Ed programmes varies across states and institutions. Most states conduct a State B.Ed Entrance Test (CET B.Ed or similar); central universities may use their own tests or CUET PG (conducted by NTA); some private institutions have their own admission process.\n\nEligibility for the two-year B.Ed generally requires a graduation degree (bachelor\'s degree) with a minimum percentage — the exact percentage requirement is set by NCTE and may vary by institution. For the four-year integrated B.Ed, entry is after Class 12. Confirm the current eligibility and admission route for each institution on its official admissions page.',
+        bullets: [
+          'State B.Ed entrance tests — conducted by most states for government and aided institutions',
+          'CUET PG (NTA) — accepted at select central universities',
+          'Institution-specific tests — some private and deemed universities',
+        ],
+      },
+      {
+        headingEn: 'TET, CTET and the route to school teaching',
+        bodyEn:
+          'Holding a B.Ed from an NCTE-recognised institution makes a candidate eligible to appear in teacher eligibility tests required for appointment in government schools. The two main tests are:\n\n- CTET (Central Teacher Eligibility Test): conducted by the Central Board of Secondary Education (CBSE) on behalf of the Ministry of Education, for teaching in central government schools.\n- State TET (Teacher Eligibility Test): conducted by each state education board or examination body, for teaching in state government schools.\n\nPassing a TET is a required qualification for appointment as a school teacher in most government schools, but it does not by itself guarantee an appointment — actual teacher recruitment is through separate state or central recruitment processes and is subject to vacancy, merit, and local rules. Confirm the current TET requirements and recruitment process on the official CBSE (for CTET) and your state education department\'s sites.',
+      },
+      {
+        headingEn: 'Plan with official information',
+        bodyEn:
+          'Because NCTE norms, B.Ed eligibility, TET requirements, and state recruitment rules can change, verify the current requirements on the NCTE official site, the CBSE CTET site, and your state education department before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is B.Ed required to become a school teacher in India?',
+        answerEn:
+          'For most recognised school positions, a B.Ed from an NCTE-recognised institution is required alongside passing the relevant TET (CTET or state TET). Specific requirements vary by school type and state — confirm on the official NCTE and state education department sites.',
+      },
+      {
+        questionEn: 'What is the difference between CTET and State TET?',
+        answerEn:
+          'CTET is conducted by CBSE for eligibility to teach in central government schools; State TETs are conducted by individual state boards for state government school appointments. B.Ed holders may need to appear in one or both depending on where they plan to teach.',
+      },
+      {
+        questionEn: 'How long is a B.Ed degree?',
+        answerEn:
+          'The two-year B.Ed is for holders of a standard three-year undergraduate degree. NCTE has announced a one-year B.Ed from 2026-27 for postgraduates and four-year degree holders. Confirm the current structure and eligibility on the official NCTE site. Some central universities also offer a four-year integrated B.Ed programme for entry directly after Class 12.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-after-12th-arts',
+      'career-options-after-12th-science',
+      'career-options-after-12th-commerce',
+      'online-degree-vs-regular-degree',
+    ],
+    sources: [
+      { label: 'National Council for Teacher Education (NCTE) — official site', url: 'https://ncte.gov.in' },
+      { label: 'CBSE — CTET official site', url: 'https://ctet.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'b ed course',
+      'bachelor of education',
+      'b ed admission india',
+      'teacher education degree',
+      'ctet eligibility b ed',
+      'ncte b ed norms',
+    ],
+    tags: ['courses-after-12th', 'teaching-and-research'],
+  },
+
+{
+    slug: 'polytechnic-and-diploma-courses-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Polytechnic & Diploma Courses Guide',
+    descriptionEn:
+      'What polytechnic diploma courses are, how state DTE admissions work, and the practical engineering and technology paths they lead to — a neutral overview with no salary claims.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Recognition body', value: 'All India Council for Technical Education (AICTE)' },
+      { label: 'Typical duration', value: '3 years (6 semesters) for engineering/technology diplomas' },
+      { label: 'Minimum eligibility', value: 'Class 10 pass (for most engineering diplomas); Class 12 for some programmes' },
+      { label: 'Admission route', value: 'State DTE / Board of Technical Education; merit or state-level entrance test (varies by state)' },
+      { label: 'Official site', value: 'aicte.gov.in (recognition); your state DTE / technical education board' },
+    ],
+    sections: [
+      {
+        headingEn: 'What polytechnic diploma courses are',
+        bodyEn:
+          'Polytechnic institutions offer diploma-level programmes in engineering, technology, pharmacy, architecture, and a few other technical fields. They are recognised and approved by the All India Council for Technical Education (AICTE) and affiliated to the respective State Board of Technical Education.\n\nUnlike a B.Tech or B.E. degree, a polytechnic diploma typically takes three years after Class 10 and is structured to build practical, hands-on technical skills alongside theory. Some states also offer lateral-entry diplomas for candidates who complete Class 12 first.',
+      },
+      {
+        headingEn: 'Common branches and fields',
+        bodyEn:
+          'Diploma programmes are available across a wide range of engineering and applied-technology fields. The exact branches on offer vary by institution and state.',
+        bullets: [
+          'Civil engineering',
+          'Mechanical engineering',
+          'Electrical engineering',
+          'Electronics and communication engineering',
+          'Computer science and information technology',
+          'Chemical engineering',
+          'Diploma in pharmacy (D.Pharm)',
+          'Architecture assistantship (in some states)',
+        ],
+      },
+      {
+        headingEn: 'How admissions work',
+        bodyEn:
+          'Polytechnic admissions are managed by each state through its Directorate of Technical Education (DTE) or equivalent board. Most states run a centralised admission process (CAP) where seats are allotted on merit based on Class 10 marks or a state-level entrance test — the process varies.\n\nAll volatile specifics — number of seats, cut-off marks, application dates, and reservation details — are set afresh each year. Always confirm the current cycle\'s process on your state DTE\'s official website.',
+      },
+      {
+        headingEn: 'What a diploma can lead to',
+        bodyEn:
+          'A diploma from an AICTE-approved polytechnic can lead to direct employment in technical roles, further study through the lateral-entry route into the second year of a B.Tech programme, or advanced diploma / post-diploma specialisations. Specific outcomes vary by field, employer, and state; no employment or placement is guaranteed.',
+      },
+      {
+        headingEn: 'Choosing a polytechnic',
+        bodyEn:
+          'Verify that the institution is listed on the AICTE approval dashboard and is affiliated to your state\'s Board of Technical Education before applying. Check the branch options, infrastructure, and industry exposure available. Admission only through official state DTE channels helps avoid unauthorised or unrecognised programmes.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I join a polytechnic after Class 10?',
+        answerEn:
+          'Yes. Most polytechnic diploma programmes in engineering and technology are open to Class 10 pass candidates. Some programmes — for example, D.Pharm — may require Class 12 with specific subjects. Check the official eligibility for the course and state you are targeting.',
+      },
+      {
+        questionEn: 'Is an AICTE-approved diploma equivalent to a degree?',
+        answerEn:
+          'A diploma and a degree are different qualifications. A diploma is a lateral-entry-eligible qualification that can lead to direct B.Tech second-year admission, but it is not the same as a full degree. Confirm equivalence requirements for any specific employer or further-study programme officially.',
+      },
+      {
+        questionEn: 'Which body approves polytechnic colleges in India?',
+        answerEn:
+          'The All India Council for Technical Education (AICTE) approves and regulates polytechnic (diploma-level) institutions in India. Colleges are also affiliated to their respective State Board of Technical Education. Verify approval on the official AICTE website at aicte.gov.in before enrolling.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'courses-after-12th-pcm',
+      'lateral-entry-after-diploma-explained',
+      'iti-courses-and-trades-guide',
+      'how-to-choose-engineering-college',
+      'btech-vs-bsc-which-to-choose',
+    ],
+    sources: [
+      { label: 'AICTE — official site (diploma-level institution approvals)', url: 'https://www.aicte.gov.in/' },
+      { label: 'DTE Maharashtra — polytechnic admissions (example state portal)', url: 'https://dte.maharashtra.gov.in/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'polytechnic courses India',
+      'diploma after class 10',
+      'DTE polytechnic admission',
+      'AICTE diploma colleges',
+      'polytechnic engineering diploma',
+      'diploma courses after 10th',
+    ],
+    tags: ['courses-after-12th', 'engineering'],
+  },
+  {
+    slug: 'iti-courses-and-trades-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'ITI Courses & Trades Guide',
+    descriptionEn:
+      'What ITI programmes are, how NCVT and SCVT certification works under the Directorate General of Training (DGT), which trades are available, and the broad eligibility — a neutral factual overview.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Governing body', value: 'Directorate General of Training (DGT), Ministry of Skill Development and Entrepreneurship' },
+      { label: 'Certification', value: 'NCVT (National Council for Vocational Training) or SCVT (State Council for Vocational Training)' },
+      { label: 'Course duration', value: '6 months to 2 years, depending on trade' },
+      { label: 'Minimum eligibility', value: 'Class 8 pass for some trades; Class 10 pass for most engineering trades' },
+      { label: 'Official site', value: 'dgt.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What ITIs are and how they work',
+        bodyEn:
+          'Industrial Training Institutes (ITIs) are post-secondary vocational training institutions set up under the Craftsmen Training Scheme (CTS), which is administered by the Directorate General of Training (DGT) under the Ministry of Skill Development and Entrepreneurship, Government of India.\n\nITIs offer practical, trade-specific training in two main certification streams. Trainees enrolled under NCVT-designated trades follow a syllabus set by the DGT and are assessed through the All India Trade Test (AITT), after which they receive a National Trade Certificate (NTC). Trainees in SCVT-designated trades are certified by their state\'s Board of Technical Education under a state-level scheme.',
+      },
+      {
+        headingEn: 'Trades and duration',
+        bodyEn:
+          'There are well over a hundred trades available, broadly grouped into engineering trades and non-engineering trades. Duration ranges from six months to two years depending on the trade.',
+        bullets: [
+          'Engineering trades (examples): Electrician, Fitter, Mechanic (Motor Vehicle), Welder, Turner, Machinist, Electronics Mechanic',
+          'Non-engineering trades (examples): Stenographer, Draughtsman, Dress Making, Cutting & Sewing, Plumber, Carpenter',
+          'Duration: 6 months (some certificate trades), 1 year, or 2 years (most engineering trades)',
+        ],
+      },
+      {
+        headingEn: 'Eligibility and admission',
+        bodyEn:
+          'The broad eligibility depends on the trade. Some trades accept candidates who have completed Class 8; most engineering trades require a Class 10 pass. Some advanced or specialist trades specify Class 12 with science subjects. Age and specific qualification requirements are published in each state\'s official admission notification.\n\nAdmission is conducted by state governments through their State Directorate of Employment and Training or equivalent body. Seats are allotted via a centralised or state-managed process — check your state\'s official portal for current-cycle details.',
+      },
+      {
+        headingEn: 'Government and private ITIs',
+        bodyEn:
+          'Both government-run and private ITIs (Industrial Training Centres, or ITCs) operate under the DGT framework. Government ITIs are run directly by state governments; private ITIs are affiliated and recognised by the state. When choosing an institute, verify its affiliation to the DGT / state Directorate and confirm it is NCVT-affiliated if you want a nationally recognised NTC certificate.',
+      },
+      {
+        headingEn: 'After completing ITI training',
+        bodyEn:
+          'After clearing the All India Trade Test, NCVT-certified trainees receive a National Trade Certificate. This can be a route to employment in industry, apprenticeship under the Apprentices Act, further technical study, or government recruitment in relevant technical posts — though specific eligibility for any role is set by the employer or recruiting body and is not guaranteed.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between NCVT and SCVT certification?',
+        answerEn:
+          'NCVT (National Council for Vocational Training) certification is governed centrally by the DGT and is nationally recognised. SCVT (State Council for Vocational Training) certification is state-level and managed by each state\'s technical education board. NCVT-affiliated institutes follow the DGT syllabus and assess trainees through the AITT; SCVT institutes follow the respective state board\'s scheme.',
+      },
+      {
+        questionEn: 'Can I do ITI after Class 8?',
+        answerEn:
+          'Some trades accept Class 8 pass candidates, but most engineering trades require a Class 10 pass. The exact eligibility is specified in each state\'s admission notification and in the DGT trade list. Always verify eligibility for the specific trade you are targeting on the official DGT or state portal.',
+      },
+      {
+        questionEn: 'Is ITI training a good path if I cannot continue full-time schooling?',
+        answerEn:
+          'ITI programmes offer structured, recognised, practical skill training that can serve as a direct pathway to technical employment or apprenticeship. Whether it suits your situation depends on your trade interest, location, and goals. No outcome is guaranteed — verify programmes and institutions on official sources before enrolling.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'polytechnic-and-diploma-courses-guide',
+      'lateral-entry-after-diploma-explained',
+      'skill-certificate-courses-after-12th',
+      'courses-after-12th-pcm',
+    ],
+    sources: [
+      { label: 'DGT — Directorate General of Training, Ministry of Skill Development & Entrepreneurship', url: 'https://dgt.gov.in/en' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'ITI courses India',
+      'ITI trades list',
+      'NCVT SCVT certification',
+      'industrial training institute',
+      'DGT training',
+      'ITI after class 10',
+    ],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'paramedical-courses-after-12th',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Paramedical Courses After 12th',
+    descriptionEn:
+      'A neutral overview of paramedical diploma and degree programmes available after Class 12 — what they cover, how admissions work, and the regulatory bodies involved. No health claims or salary figures.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What paramedical courses are',
+        bodyEn:
+          'Paramedical programmes train students in allied health and diagnostic roles that support clinical care — such as medical laboratory technology, radiology, physiotherapy, operation theatre technology, optometry, and others. They are distinct from medicine (MBBS) and nursing, though they share some general healthcare context.\n\nProgrammes are available at the diploma level (typically 1–2 years) and at the undergraduate degree level (typically 3–4 years as a BSc). Some postgraduate routes also exist. This guide focuses on the options available after Class 12.',
+      },
+      {
+        headingEn: 'Common paramedical programmes after Class 12',
+        bodyEn:
+          'The courses listed below are among those commonly available at diploma or undergraduate level after Class 12 with Physics, Chemistry, and Biology (PCB). Availability, duration, and admission routes vary by institution and state.',
+        bullets: [
+          'DMLT — Diploma in Medical Laboratory Technology',
+          'BSc MLT — Bachelor of Science in Medical Laboratory Technology',
+          'DMRT / BSc Radiology and Imaging Technology',
+          'BPT — Bachelor of Physiotherapy',
+          'DOT / B.Sc. in Operation Theatre Technology',
+          'Diploma / BSc in Optometry',
+          'BSc in Cardiology / Cardiac Technology',
+          'Diploma / BSc in Dialysis Technology',
+          'DRIT — Diploma in Radiography and Imaging Technology',
+        ],
+      },
+      {
+        headingEn: 'Eligibility and admission',
+        bodyEn:
+          'Most paramedical diploma and BSc programmes require a Class 12 pass with Physics, Chemistry, and Biology (PCB). Many institutions also specify a minimum aggregate percentage, which varies — always verify the exact eligibility requirement on the official institution or state board site.\n\nAdmission is through institution-level merit lists, state-level paramedical common entrance tests, or in some cases through NEET (for certain programmes in specific institutions). There is no single national entrance test for all paramedical courses. Check the official admission notice for each institution separately.',
+      },
+      {
+        headingEn: 'Regulatory bodies',
+        bodyEn:
+          'Paramedical education in India is regulated across multiple statutory bodies. The National Commission for Allied and Healthcare Professions (NCAHP), established under the NCAHP Act 2021, is the overarching statutory regulator for allied and healthcare professionals across ten professional categories — covering most of the programmes listed above (medical laboratory technology, radiology and imaging, physiotherapy, operation theatre technology, optometry, dialysis technology, and cardiovascular technology, among others). The official NCAHP site is ncahp.abdm.gov.in.\n\nOther sector-specific bodies continue to operate alongside NCAHP for their respective areas: the Indian Nursing Council (INC) for nursing, the Pharmacy Council of India (PCI) for pharmacy, the Rehabilitation Council of India (RCI) for rehabilitation and special education, and the National Medical Commission (NMC) for certain medical and allied-health routes. State governments and state health boards regulate additional programmes and colleges.\n\nAlways verify that a programme is recognised by the relevant statutory body (NCAHP or the applicable sector regulator) before enrolling.',
+      },
+      {
+        headingEn: 'Choosing a programme and institution',
+        bodyEn:
+          'When choosing a paramedical programme, verify the institution\'s recognition with the relevant regulatory body (INC, PCI, RCI, state health board, or UGC for degree-granting institutions). Confirm the specific eligibility criteria, clinical training or internship structure, and what the qualification permits you to practise — on official sources, not from agents or aggregator sites. This guide does not make clinical claims or state earnings.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is a NEET score needed for paramedical courses?',
+        answerEn:
+          'NEET is not required for most paramedical diploma and BSc programmes. Some specific institutions or state-level processes may use NEET scores as one criterion, but it is not a universal requirement. Confirm the admission process for each institution or state on its official site.',
+      },
+      {
+        questionEn: 'Which regulator oversees paramedical courses in India?',
+        answerEn:
+          'The National Commission for Allied and Healthcare Professions (NCAHP), established under the NCAHP Act 2021, is the primary overarching statutory regulator for allied and healthcare professions in India, covering ten professional categories including medical laboratory technology, radiology and imaging, physiotherapy, operation theatre technology, optometry, dialysis technology, and cardiovascular technology. Other bodies also operate for their areas: nursing falls under the Indian Nursing Council (INC), pharmacy under the Pharmacy Council of India (PCI), rehabilitation under the Rehabilitation Council of India (RCI), and many programmes under state health boards. Always check recognition with the relevant statutory body (NCAHP or the applicable sector regulator).',
+      },
+      {
+        questionEn: 'Can PCB students do paramedical courses?',
+        answerEn:
+          'Yes. Most paramedical diploma and BSc programmes require a Class 12 pass with PCB as the minimum stream. Some may also accept PCM candidates or have additional criteria — confirm eligibility on the official institution site.',
+      },
+    ],
+    relatedExamSlugs: ['neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'courses-after-12th-pcb',
+      'nursing-courses-in-india',
+      'allied-health-sciences-careers',
+      'bds-dental-course-guide',
+      'skill-certificate-courses-after-12th',
+    ],
+    sources: [
+      { label: 'NCAHP — National Commission for Allied and Healthcare Professions (official site)', url: 'https://ncahp.abdm.gov.in/' },
+      { label: 'Indian Nursing Council (INC) — official site', url: 'https://www.indiannursingcouncil.org/' },
+      { label: 'UGC — list of statutory bodies and professional councils', url: 'https://www.ugc.gov.in/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'paramedical courses after 12th',
+      'DMLT course India',
+      'BSc paramedical',
+      'radiology course after 12th',
+      'physiotherapy course India',
+      'paramedical admission India',
+    ],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'lateral-entry-after-diploma-explained',
+    category: 'admissions',
+    region: 'india',
+    titleEn: 'Lateral Entry After Diploma, Explained',
+    descriptionEn:
+      'How diploma holders can seek direct admission to the second year of a B.Tech programme through state lateral-entry processes — eligibility, state-specific tests (OCET, AP ECET, TS ECET), and what to verify officially.',
+    readMinutes: 5,
+    keyFacts: [
+      { label: 'Entry point', value: 'Second year (third semester) of B.Tech / B.E.' },
+      { label: 'Route name', value: 'Lateral Entry; state-specific tests vary — e.g. OCET (Haryana), AP ECET (Andhra Pradesh), TS ECET (Telangana)' },
+      { label: 'Broad eligibility', value: '3-year diploma in engineering or technology from an AICTE-approved / recognised institution' },
+      { label: 'Admission route', value: 'State-level merit or entrance test; varies by state' },
+      { label: 'Regulation', value: 'AICTE norms apply; each state manages its own lateral-entry process' },
+    ],
+    sections: [
+      {
+        headingEn: 'What lateral entry is',
+        bodyEn:
+          'Lateral entry is a route that allows diploma holders in engineering or technology to seek direct admission to the second year (i.e., third semester) of a B.Tech or B.E. programme, bypassing the first year. It is recognised under AICTE norms and is available in most states, though the exact process, intake size, and available institutions differ by state.\n\nThe underlying idea is that the three-year polytechnic diploma already covers foundational engineering content equivalent to a B.Tech first year, so qualified diploma graduates can continue at a higher level without repeating that foundation.',
+      },
+      {
+        headingEn: 'Broad eligibility',
+        bodyEn:
+          'The typical broad eligibility for lateral entry is a three-year diploma in engineering or technology from an AICTE-approved institution (or an institution recognised by the relevant state government). Most states also specify a minimum aggregate percentage in the diploma, with relaxations for reserved categories — consult your state\'s official notification for the exact figure.\n\nSome states extend eligibility to BSc graduates (in relevant science streams) seeking lateral entry into engineering programmes; this varies by state and institution. Confirm the exact eligibility criteria on the official state authority\'s site.',
+      },
+      {
+        headingEn: 'How state-level lateral entry works',
+        bodyEn:
+          'The lateral-entry process is state-managed. Some states conduct a dedicated entrance test while others admit on the basis of diploma marks alone through a centralised merit process.\n\nHaryana conducts the OCET (Online Common Entrance Test), organised by HSTES — also referred to colloquially as LEET in older sources. Andhra Pradesh\'s AP ECET, Telangana\'s TS ECET, and similar state tests are other examples of state-specific lateral-entry routes. Each has its own pattern, dates, and counselling process, all set afresh each cycle. Always refer to the official conducting body\'s notification for current rules.',
+        bullets: [
+          'Haryana: OCET (Online Common Entrance Test), conducted by HSTES (formerly called LEET in older references)',
+          'Andhra Pradesh: AP ECET (Engineering Common Entrance Test for Lateral Entry)',
+          'Telangana: TS ECET',
+          'Other states: merit-based or separate state exam — check your state DTE',
+        ],
+      },
+      {
+        headingEn: 'Branch and seat availability',
+        bodyEn:
+          'Lateral-entry seats are a separate intake (sometimes called a supernumerary or supplementary intake) from the regular first-year intake. The number of available seats, branches, and participating institutions are determined by each state\'s technical education authority. Not every branch or college has lateral-entry seats — confirm availability officially before applying.',
+      },
+      {
+        headingEn: 'What to verify before applying',
+        bodyEn:
+          'Before applying to a lateral-entry programme, verify: (1) the institution is AICTE-approved and participates in the state\'s lateral-entry scheme; (2) your diploma branch qualifies for the B.Tech branch you want to enter (branch-mapping rules vary); (3) the minimum aggregate required in your diploma; and (4) the current-cycle application process, dates, and counselling schedule — all on the state\'s official DTE / technical education authority site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need JEE Main for B.Tech lateral entry?',
+        answerEn:
+          'No. Lateral entry uses a separate, state-level process — either a state entrance test (such as OCET in Haryana, AP ECET in Andhra Pradesh, TS ECET in Telangana) or merit based on diploma marks. JEE Main is not required. Each state\'s official process is set by its technical education authority.',
+      },
+      {
+        questionEn: 'Can I do lateral entry into any engineering branch?',
+        answerEn:
+          'Not necessarily. Most states specify branch-mapping rules — for example, a diploma in electrical engineering may be eligible for specific B.Tech branches. The exact branch compatibility is set in the state\'s official notification. Confirm the allowed branch combinations on the official site before applying.',
+      },
+      {
+        questionEn: 'Is lateral-entry B.Tech recognised the same way as a regular B.Tech?',
+        answerEn:
+          'A B.Tech degree earned through lateral entry from an AICTE-approved institution is an AICTE-recognised degree. However, some recruiters or institutions may ask about the entry route; confirm any specific employer or further-study requirements on the relevant official source.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'polytechnic-and-diploma-courses-guide',
+      'btech-vs-bsc-which-to-choose',
+      'how-to-choose-engineering-college',
+      'courses-after-12th-pcm',
+    ],
+    sources: [
+      { label: 'AICTE — official site (lateral entry norms)', url: 'https://www.aicte.gov.in/' },
+      { label: 'HSTES — Haryana OCET / lateral entry eligibility (official state portal)', url: 'https://hstes.org.in/EligibilityBTechLEET' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'lateral entry after diploma B.Tech',
+      'OCET LEET lateral entry exam Haryana',
+      'diploma to B.Tech 2nd year',
+      'AP ECET TS ECET lateral entry',
+      'B.Tech lateral entry eligibility',
+      'direct 2nd year engineering admission',
+    ],
+    tags: ['courses-after-12th', 'engineering'],
+  },
+  {
+    slug: 'skill-certificate-courses-after-12th',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Skill & Certificate Courses After 12th',
+    descriptionEn:
+      'A neutral overview of short-term skill and certificate courses available after Class 12 in India — including government skill schemes and sector-specific programmes — with no salary claims or guarantees.',
+    readMinutes: 5,
+    sections: [
+      {
+        headingEn: 'What skill and certificate courses are',
+        bodyEn:
+          'Skill and certificate courses are short-to-medium-duration vocational programmes that focus on a specific job role or technical skill rather than a broad academic discipline. They are distinct from degree or diploma programmes in scope and duration, typically ranging from a few weeks to one year, and are structured around practical, employment-oriented outcomes.\n\nThey can be pursued alongside or after regular schooling, and are open to a wide range of candidates including Class 10 or Class 12 pass students and working adults looking to add a certified skill.',
+      },
+      {
+        headingEn: 'Government skill schemes',
+        bodyEn:
+          'The Government of India supports short-term skill certification through several official schemes under the Ministry of Skill Development and Entrepreneurship.\n\nThe Pradhan Mantri Kaushal Vikas Yojana (PMKVY), currently in its fourth iteration (PMKVY 4.0), funds short-term training through partner training centres across India. Training is aligned to the National Skills Qualifications Framework (NSQF) and covers sectors such as healthcare, IT, retail, construction, electronics, hospitality, agriculture, and logistics. The official application portal is the Skill India Digital Hub at skillindiadigital.gov.in.\n\nThe National Skill Development Corporation (NSDC), under the same ministry, partners with training providers to deliver certification programmes. The NSDC framework supports the PMKVY ecosystem and its network of training partners.',
+        bullets: [
+          'PMKVY 4.0 — short-term training, free for eligible candidates, certification linked to NSQF job roles',
+          'Skill India Digital Hub (skillindiadigital.gov.in) — official portal to find courses and enrol',
+          'Sectors covered: IT, healthcare, construction, retail, hospitality, electronics, logistics, and more',
+        ],
+      },
+      {
+        headingEn: 'Other certificate and skill routes',
+        bodyEn:
+          'Beyond government schemes, recognised certificate programmes are available from:\n\nUniversity and college short courses — many universities and autonomous institutions offer certificate programmes in areas such as computer applications, web development, digital marketing, accounting software, foreign languages, and graphics design, usually on a semester or short-term basis.\n\nSector-specific certification bodies — for example, IT certifications from global technology bodies, accounting software certifications, and trade-specific certificates from recognised industry bodies. Confirm recognition by checking with the certifying body directly.\n\nOpen and distance mode — institutes such as IGNOU offer certificate programmes in several vocational fields through distance or online mode. Verify the programme is UGC-recognised or backed by a statutory body before enrolling.',
+      },
+      {
+        headingEn: 'How to evaluate a skill course',
+        bodyEn:
+          'Before enrolling in any skill or certificate programme, check:\n\n(1) Is the course affiliated to or recognised by a statutory or government body (NSDC/NSQF, UGC, AICTE, or a sector skill council)? (2) Who delivers the assessment and what certificate is issued? (3) Is the training centre listed on the official PMKVY/Skill India portal or a verified roster? (4) Are there any fees, and is the cost structure clearly stated upfront?\n\nBe cautious of programmes that guarantee employment or income levels — no skill course can guarantee a job or a specific earning level, and such claims should be treated with scepticism.',
+      },
+      {
+        headingEn: 'Skill courses and further study',
+        bodyEn:
+          'Skill and certificate courses can complement formal education or serve as a standalone qualification. Some NSQF-aligned certificates have defined credit-transfer pathways into diploma or degree programmes — check current AICTE and UGC guidelines on credit recognition if this matters for your plan. The landscape for credit transfer is evolving and should be verified on official sources at the time of application.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I find a PMKVY training centre near me?',
+        answerEn:
+          'Use the official Skill India Digital Hub at skillindiadigital.gov.in. You can search by district, sector, and job role to find PMKVY-affiliated training centres. The portal is operated by the Ministry of Skill Development and Entrepreneurship.',
+      },
+      {
+        questionEn: 'Are skill certificates valid for government jobs?',
+        answerEn:
+          'Eligibility for government recruitment is set by the recruiting body in its official notification. Some technical posts may accept NSQF-aligned certificates or ITI/NCVT qualifications; others specify a diploma or degree. Always check the official recruitment notification for the exact qualification required.',
+      },
+      {
+        questionEn: 'Can I do a skill course while studying for Class 12?',
+        answerEn:
+          'Many short-term skill programmes are flexible in schedule and can be pursued alongside regular study. Check the duration, timing, and commitment required for the specific course before enrolling.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'iti-courses-and-trades-guide',
+      'polytechnic-and-diploma-courses-guide',
+      'online-degree-vs-regular-degree',
+      'courses-after-12th-pcm',
+    ],
+    sources: [
+      { label: 'Skill India Digital Hub — PMKVY official portal', url: 'https://www.skillindiadigital.gov.in/' },
+      { label: 'Ministry of Skill Development & Entrepreneurship — PMKVY 4.0', url: 'https://www.msde.gov.in/offerings/schemes-and-services/details/pradhan-mantri-kaushal-vikas-yojana-4-0-pmkvy-4-0-2021' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'skill courses after 12th India',
+      'PMKVY certificate courses',
+      'Skill India short term training',
+      'certificate courses after 12th',
+      'NSDC vocational courses',
+      'skill certification India',
+    ],
+    tags: ['courses-after-12th'],
+  },
+
+// ─────────────────────────── Set 13 — How to become (professions) I ──────────
+  {
+    slug: 'how-to-become-a-pilot-in-india',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become a Pilot in India',
+    descriptionEn:
+      'A step-by-step overview of the commercial pilot licence (CPL) route in India — DGCA requirements, flying training organisations, Class 1 medical, and what to verify on the official DGCA site before you apply.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Licensing authority', value: 'Directorate General of Civil Aviation (DGCA)' },
+      { label: 'Licence sought', value: 'Commercial Pilot Licence (CPL)' },
+      { label: 'Training route', value: 'DGCA-approved Flying Training Organisation (FTO)' },
+      { label: 'Medical requirement', value: 'DGCA Class 1 medical certificate' },
+      { label: 'Official site', value: 'dgca.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'The route to a commercial pilot licence',
+        bodyEn:
+          'In India, a person who wants to fly commercially must obtain a Commercial Pilot Licence (CPL) issued by the Directorate General of Civil Aviation (DGCA). The broad path runs from a Student Pilot Licence (SPL) to a Private Pilot Licence (PPL) and then to a CPL, with total flying hours accumulated across the stages.\n\nAll licences, eligibility requirements, medical standards, and flying-hour thresholds are set by DGCA and can be updated. Always read the current Aircraft Rules and DGCA Civil Aviation Requirements (CARs) before you plan.',
+      },
+      {
+        headingEn: 'DGCA Class 1 medical clearance',
+        bodyEn:
+          'A DGCA Class 1 medical certificate is a non-negotiable requirement for a CPL. It is issued by DGCA-authorised medical examiners and covers vision, hearing, cardiovascular health, and other parameters. Some conditions may disqualify a candidate from the Class 1 standard. Seek a medical evaluation early — before committing to the expense of flying training — to confirm eligibility.',
+        bullets: [
+          'Issued by DGCA-authorised medical examiners',
+          'Covers vision, hearing, and cardiovascular fitness, among other areas',
+          'Must be obtained and maintained throughout flying training and career',
+          'Standards are defined in DGCA Civil Aviation Requirements (Series L) — verify on dgca.gov.in',
+        ],
+      },
+      {
+        headingEn: 'Flying training organisations (FTOs)',
+        bodyEn:
+          'Flying training in India must be done at an FTO approved by DGCA. DGCA publishes a list of approved FTOs on its official website. Training is resource-intensive — it involves ground schooling, simulator sessions, and logged flying hours — and the associated costs are generally high. Verify current fees directly with the FTO and confirm its DGCA approval status before enrolling.\n\nSome candidates choose DGCA-approved FTOs abroad. In either case, the licence must ultimately be validated or endorsed by DGCA under applicable rules.',
+      },
+      {
+        headingEn: 'After the CPL: type ratings and airline entry',
+        bodyEn:
+          'A CPL alone qualifies a pilot to fly commercially as co-pilot on certain aircraft. To command a multi-crew airliner, a pilot typically also needs an instrument rating (IR) and an Airline Transport Pilot Licence (ATPL) — and airlines require a type rating on their specific aircraft, which they usually provide during induction.\n\nEntry requirements, selection processes, and the number of flying hours airlines require before hiring vary and are set entirely by individual airlines. This guide does not quote exact hour counts or hiring criteria; verify current requirements with the airline or on the official DGCA website.',
+        bullets: [
+          'CPL: required to act as pilot-in-command or co-pilot for remuneration',
+          'Instrument Rating (IR): required for instrument flight rules (IFR) operations',
+          'Multi-Engine Rating: required to fly multi-engine aircraft',
+          'ATPL: required to act as pilot-in-command of a scheduled air transport aircraft',
+        ],
+      },
+      {
+        headingEn: 'Key things to verify on the official DGCA site',
+        bodyEn:
+          'Before starting any flying training, check the DGCA website (dgca.gov.in) for the current list of approved FTOs, the applicable Civil Aviation Requirements for pilot licensing (Series L), and the current eligibility conditions including minimum age and educational qualifications. Requirements are updated periodically and third-party summaries may be outdated.\n\nBecoming a commercial pilot requires significant commitment of time and resources, and selection for airline employment is competitive. No preparation or training can guarantee employment.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the minimum qualification to start pilot training in India?',
+        answerEn:
+          'DGCA sets the eligibility conditions — including minimum age, educational qualifications, and medical standards — in its Civil Aviation Requirements. Verify the current requirements on dgca.gov.in before applying, as they are subject to revision.',
+      },
+      {
+        questionEn: 'Which authority issues pilot licences in India?',
+        answerEn:
+          'The Directorate General of Civil Aviation (DGCA) is the regulatory authority that issues Student Pilot Licences, Private Pilot Licences, and Commercial Pilot Licences in India.',
+      },
+      {
+        questionEn: 'Is a DGCA Class 1 medical certificate mandatory for a CPL?',
+        answerEn:
+          'Yes. A valid DGCA Class 1 medical certificate is required for a CPL and must be maintained throughout a commercial flying career. The standards are specified in DGCA Civil Aviation Requirements and can be verified on dgca.gov.in.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-join-merchant-navy',
+      'how-to-become-an-ias-officer',
+      'career-options-after-12th-science',
+    ],
+    sources: [
+      { label: 'Directorate General of Civil Aviation (DGCA) — official site', url: 'https://www.dgca.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become a pilot in india',
+      'dgca cpl licence',
+      'commercial pilot licence india',
+      'dgca class 1 medical',
+      'flying training organisation india',
+      'pilot career india',
+    ],
+    tags: ['career-paths'],
+  },
+  {
+    slug: 'how-to-join-merchant-navy',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Join the Merchant Navy',
+    descriptionEn:
+      'An overview of the main routes into the Merchant Navy from India — DG Shipping-approved courses, IMU CET, pre-sea training, and what to verify on the official DG Shipping website before you apply.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Regulatory authority', value: 'Directorate General of Shipping (DG Shipping), Government of India' },
+      { label: 'Admission gateway (one route)', value: 'Indian Maritime University Common Entrance Test (IMU CET)' },
+      { label: 'Training type', value: 'Pre-sea training at DG Shipping-approved maritime institutes' },
+      { label: 'Official site', value: 'dgma.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'The Merchant Navy and who regulates it',
+        bodyEn:
+          'The Merchant Navy refers to the commercial fleet of ships that carries cargo and passengers internationally. In India, the Directorate General of Shipping (DG Shipping) under the Ministry of Ports, Shipping and Waterways regulates merchant shipping, seafarer certification, and approved training institutes.\n\nA career at sea can begin through several departments — deck (navigation), engine, and catering/hospitality — each with its own entry route and certification pathway. Eligibility, course durations, and entry conditions are set officially and updated periodically.',
+      },
+      {
+        headingEn: 'Main entry routes',
+        bodyEn:
+          'There are two broad paths into the Merchant Navy from India.\n\nThe first is through the Indian Maritime University (IMU), a central university that conducts the IMU Common Entrance Test (IMU CET) for admission to undergraduate nautical and marine engineering programmes at IMU campuses and affiliated institutes.\n\nThe second is through DG Shipping-approved maritime institutes that offer pre-sea training courses such as the Graduate Marine Engineering (GME) programme, the Electro-Technical Officer (ETO) course, and ratings courses. Entry eligibility for these courses varies and is set by DG Shipping.',
+        bullets: [
+          'IMU CET: for B.Sc. Nautical Science, B.Tech. Marine Engineering and related UG programmes',
+          'DG Shipping-approved pre-sea courses: GME, ETO, ratings, and others',
+          'Verify the current approved-institute list on dgma.gov.in before enrolling',
+        ],
+      },
+      {
+        headingEn: 'Certification and the STCW framework',
+        bodyEn:
+          'Seafarers worldwide work within the Standards of Training, Certification and Watchkeeping (STCW) framework of the International Maritime Organization (IMO). Indian seafarers must obtain certificates of competency issued or recognised by DG Shipping in line with STCW requirements.\n\nCertification is progressive: completing an approved pre-sea training course and the required sea service leads to certificates of competency that allow a seafarer to hold responsible positions aboard ships. The exact certification stages and sea-service requirements are set in the Merchant Shipping Act and DG Shipping circulars.',
+      },
+      {
+        headingEn: 'Medical fitness requirements',
+        bodyEn:
+          'A medical fitness certificate from a DG Shipping-approved doctor is required before joining pre-sea training and throughout a seafaring career. The fitness standard covers eyesight, hearing, cardiovascular health, and other parameters. Confirm the current medical requirements on the DG Shipping website before enrolling.',
+      },
+      {
+        headingEn: 'What to verify on the official DG Shipping site',
+        bodyEn:
+          'Before committing to any training or institute, verify the current list of DG Shipping-approved institutes and courses on dgma.gov.in. Institute approvals can be granted or withdrawn, and only approved institutes\' courses count towards DG Shipping certification. Also confirm the current eligibility conditions — including any educational qualifications and the applicable seafarer medical standards — on the official site, as these are revised periodically.\n\nA career at sea involves demanding conditions and long periods away from home; research the lifestyle carefully before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is IMU CET, and who conducts it?',
+        answerEn:
+          'The Indian Maritime University Common Entrance Test (IMU CET) is an entrance test for admission to undergraduate programmes at IMU campuses and affiliated maritime institutes. It is conducted by the Indian Maritime University (IMU), a central university under the Ministry of Ports, Shipping and Waterways. Verify current eligibility and dates on the IMU official website.',
+      },
+      {
+        questionEn: 'Which authority approves maritime training institutes in India?',
+        answerEn:
+          'The Directorate General of Shipping (DG Shipping), Government of India, approves maritime training institutes and pre-sea courses. Only training from approved institutes is recognised for seafarer certification.',
+      },
+      {
+        questionEn: 'Do I need a medical certificate to join the Merchant Navy?',
+        answerEn:
+          'Yes. A medical fitness certificate from a DG Shipping-approved medical examiner is required. The standards cover eyesight, hearing, and general fitness and are set under DG Shipping regulations. Verify the current requirements on dgma.gov.in.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-become-a-pilot-in-india',
+      'how-to-become-an-ias-officer',
+      'nda-entrance-guide',
+      'career-options-after-12th-science',
+    ],
+    sources: [
+      { label: 'Directorate General of Maritime Administration (DGMA) / DG Shipping — official site', url: 'https://dgma.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to join merchant navy india',
+      'merchant navy courses after 12th',
+      'imu cet entrance test',
+      'dg shipping approved institutes',
+      'pre-sea training india',
+      'merchant navy career india',
+    ],
+    tags: ['career-paths'],
+  },
+  {
+    slug: 'how-to-become-an-ias-officer',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become an IAS Officer',
+    descriptionEn:
+      'A clear, neutral overview of the route to the Indian Administrative Service — through the UPSC Civil Services Examination, its three stages, and what to verify on the official UPSC website.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Recruiting body', value: 'Union Public Service Commission (UPSC)' },
+      { label: 'Examination', value: 'Civil Services Examination (CSE)' },
+      { label: 'Stages', value: 'Preliminary examination → Main examination → Personality test (interview)' },
+      { label: 'Eligibility level', value: 'Graduate (details set in official notification)' },
+      { label: 'Official site', value: 'upsc.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What the IAS is and how one enters it',
+        bodyEn:
+          'The Indian Administrative Service (IAS) is one of the All India Services of the Government of India. IAS officers are recruited through the Civil Services Examination (CSE) conducted by the Union Public Service Commission (UPSC). The same examination recruits for several other central services alongside the IAS, including the IPS and IFS.\n\nThere is no shortcut or direct appointment to the IAS: all candidates who wish to join must clear the CSE. The examination is open to graduates subject to official eligibility conditions — including age limits and a permitted number of attempts — set in the official notification each year.',
+      },
+      {
+        headingEn: 'The three stages of the Civil Services Examination',
+        bodyEn:
+          'The UPSC Civil Services Examination is conducted in three stages. Candidates who clear each stage proceed to the next.\n\nThe Preliminary Examination consists of objective-type papers and is used as a screening stage; marks in one of the preliminary papers count towards the merit list while the other is qualifying. The Main Examination is a written examination of multiple papers including an essay, general studies papers, and an optional subject paper. The Personality Test (interview) is the final stage and is conducted by a UPSC board.',
+        bullets: [
+          'Stage 1 — Preliminary Examination: objective papers, screening stage',
+          'Stage 2 — Main Examination: written papers (essay, general studies, optional subject)',
+          'Stage 3 — Personality Test: interview before a UPSC board',
+        ],
+      },
+      {
+        headingEn: 'Eligibility and attempt limits',
+        bodyEn:
+          'To appear for the CSE, a candidate must hold a degree from a recognised university (or an equivalent qualification). Eligibility also includes age limits and a permitted number of attempts, both of which vary by category and are set officially in the UPSC notification. These conditions are revised from time to time, so always verify the current eligibility in the official UPSC notification rather than relying on third-party summaries.',
+      },
+      {
+        headingEn: 'Training after selection',
+        bodyEn:
+          'Candidates who clear all three stages and receive an IAS allocation undergo foundational training at the Lal Bahadur Shastri National Academy of Administration (LBSNAA) in Mussoorie, followed by probationer training in the field. The IAS cadre allocation process is set officially by the Government of India.',
+      },
+      {
+        headingEn: 'Preparing for the examination',
+        bodyEn:
+          'Effective preparation typically involves building a strong foundation in the UPSC-prescribed syllabus, consistent current-affairs study, and regular answer-writing practice for the mains. The personality test rewards clarity of thought and an informed perspective on issues — it is not a test of personality alone.\n\nThe examination is competitive and no preparation can guarantee selection. Plan your preparation around the official syllabus and notification, not coaching-industry claims.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the UPSC Civil Services Exam the only way to become an IAS officer?',
+        answerEn:
+          'Yes. Entry into the IAS is exclusively through the UPSC Civil Services Examination. There is no direct or lateral entry route for fresh candidates outside the CSE process.',
+      },
+      {
+        questionEn: 'How many times can one attempt the UPSC Civil Services Exam?',
+        answerEn:
+          'The permitted number of attempts varies by category (general, OBC, SC/ST, etc.) and is set officially in the UPSC notification each year. Verify the current attempt limits on upsc.gov.in.',
+      },
+      {
+        questionEn: 'What is the role of an IAS officer?',
+        answerEn:
+          'IAS officers serve as administrators in the central and state governments in a wide range of roles — district administration, policy formulation, public sector management, and more. The specific responsibilities depend on the cadre and posting.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-become-an-ips-officer',
+      'how-to-prepare-for-upsc',
+      'nda-entrance-guide',
+      'career-options-after-12th-arts',
+    ],
+    sources: [
+      { label: 'Union Public Service Commission (UPSC) — official site', url: 'https://www.upsc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become an ias officer',
+      'ias officer route india',
+      'upsc civil services exam ias',
+      'ias preparation upsc',
+      'upsc cse stages',
+      'ias eligibility upsc',
+    ],
+    tags: ['career-paths', 'government-exams'],
+  },
+  {
+    slug: 'how-to-become-an-ips-officer',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become an IPS Officer',
+    descriptionEn:
+      'A neutral overview of the route to the Indian Police Service — through the UPSC Civil Services Examination, the three stages, and what to verify on the official UPSC website.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Recruiting body', value: 'Union Public Service Commission (UPSC)' },
+      { label: 'Examination', value: 'Civil Services Examination (CSE)' },
+      { label: 'Stages', value: 'Preliminary examination → Main examination → Personality test (interview)' },
+      { label: 'Physical standards', value: 'Set officially in the UPSC notification — verify on upsc.gov.in' },
+      { label: 'Official site', value: 'upsc.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What the IPS is and how one enters it',
+        bodyEn:
+          'The Indian Police Service (IPS) is one of the All India Services of the Government of India. IPS officers lead and supervise police forces at the district, state, and central levels. Like the IAS, entry into the IPS is exclusively through the Civil Services Examination (CSE) conducted by the Union Public Service Commission (UPSC).\n\nThe same examination recruits for both the IAS and IPS, as well as several other central services. A candidate\'s rank in the CSE merit list and their declared service preference determine whether they receive an IPS allocation. The examination is open to graduates who meet the official eligibility conditions.',
+      },
+      {
+        headingEn: 'The three stages of the Civil Services Examination',
+        bodyEn:
+          'The CSE follows the same three-stage structure for IPS as for IAS: a Preliminary Examination (objective, screening stage), a Main Examination (written, multiple papers), and a Personality Test (interview before a UPSC board). All three stages must be cleared in sequence.\n\nThe syllabus, pattern, and schedule are set officially in the UPSC notification each year. Candidates choose their optional subject for the mains from the list of subjects prescribed by UPSC.',
+        bullets: [
+          'Stage 1 — Preliminary Examination: objective papers, screening stage',
+          'Stage 2 — Main Examination: written papers including essay, general studies, optional subject',
+          'Stage 3 — Personality Test: interview before a UPSC board',
+        ],
+      },
+      {
+        headingEn: 'Physical standards for IPS',
+        bodyEn:
+          'In addition to the written examination and interview, IPS candidates must meet physical standards — including height, eyesight, and chest measurements — as prescribed by the Ministry of Home Affairs and notified through UPSC. Relaxations for certain categories are set officially. Verify the current physical standards in the official notification, as they can be revised.',
+      },
+      {
+        headingEn: 'Eligibility and attempt limits',
+        bodyEn:
+          'The eligibility conditions — minimum educational qualification, age limits, and permitted number of attempts — are the same broad framework as for other civil services. They vary by category and are set in the annual UPSC notification. Always read the official notification for the current figures before applying.',
+      },
+      {
+        headingEn: 'Training after selection and cadre allocation',
+        bodyEn:
+          'Candidates allocated to the IPS undergo training at the Sardar Vallabhbhai Patel National Police Academy (SVPNPA) in Hyderabad. They are then assigned to a state cadre and undergo district-level field training. The cadre allocation process is governed by rules set by the Government of India.\n\nSelecting the IPS as a career involves commitment to public service in a physically and operationally demanding environment. Approach preparation with a realistic understanding of the process and its competition, and no coaching or study plan can guarantee selection.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there any exam other than the UPSC CSE to become an IPS officer?',
+        answerEn:
+          'No. Entry into the IPS for direct recruits is exclusively through the UPSC Civil Services Examination. State Police Services recruit separately through State Public Service Commissions, but those are different services from the IPS.',
+      },
+      {
+        questionEn: 'What physical standards must an IPS candidate meet?',
+        answerEn:
+          'Physical standards (height, eyesight, chest measurements) are set officially by the Ministry of Home Affairs and notified through UPSC. Verify the current standards in the official UPSC notification at upsc.gov.in, as they are subject to revision.',
+      },
+      {
+        questionEn: 'What is the role of an IPS officer?',
+        answerEn:
+          'IPS officers lead and manage police forces at the district, range, and state levels, as well as in central police organisations. Specific roles depend on cadre and posting.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-become-an-ias-officer',
+      'how-to-prepare-for-upsc',
+      'nda-entrance-guide',
+    ],
+    sources: [
+      { label: 'Union Public Service Commission (UPSC) — official site', url: 'https://www.upsc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become an ips officer',
+      'ips officer route india',
+      'upsc civil services exam ips',
+      'ips eligibility upsc',
+      'ips physical standards',
+      'ips training svpnpa',
+    ],
+    tags: ['career-paths', 'government-exams'],
+  },
+  {
+    slug: 'how-to-become-a-software-engineer',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become a Software Engineer',
+    descriptionEn:
+      'A practical, skills-first guide to building a career in software engineering in India — degree and non-degree routes, core skills to develop, and how to approach the field without salary or job-guarantee claims.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What software engineering involves',
+        bodyEn:
+          'Software engineering is the discipline of designing, developing, testing, and maintaining software systems. It spans a wide range of roles — front-end and back-end development, full-stack engineering, mobile apps, systems programming, data engineering, DevOps, and more. No single description covers all of it.\n\nWhat makes the field distinct is that demonstrable skill and a portfolio of work carry significant weight alongside formal credentials. Employers assess candidates on what they can build and reason through, not credentials alone.',
+      },
+      {
+        headingEn: 'Degree route: B.Tech / B.E. in Computer Science or IT',
+        bodyEn:
+          'The most common formal route in India is a four-year B.Tech or B.E. in Computer Science Engineering (CSE), Information Technology (IT), or a related branch from a recognised university or institute. These programmes build foundational knowledge in algorithms, data structures, operating systems, databases, computer networks, and software development.\n\nAdmission to government institutes is typically through JEE Main (NITs/IIITs), JEE Advanced (IITs), or state CETs. Private universities have their own entrance processes. A B.Sc. (Computer Science) is a three-year alternative, though its scope and recognition vary by employer and context.',
+        bullets: [
+          'B.Tech / B.E. CSE or IT — four-year professional degree, admission via JEE or state CET',
+          'B.Sc. Computer Science — three-year science degree, varies by institute',
+          'Integrated M.Sc. / M.Tech programmes — five-year option at select institutes',
+        ],
+      },
+      {
+        headingEn: 'Non-degree and self-taught routes',
+        bodyEn:
+          'A significant number of working software engineers entered the field through self-study, coding bootcamps, or intensive online programmes rather than a conventional computer-science degree. This route requires disciplined self-direction: the learner must build the same foundational concepts — data structures and algorithms, system design basics, databases, version control — that a degree imparts.\n\nOnline learning platforms, open-source contribution, and project portfolios on platforms like GitHub are commonly used by self-taught engineers to demonstrate competence. This path is viable but requires the candidate to compensate for the absence of a structured curriculum and institutional placement support.',
+      },
+      {
+        headingEn: 'Core skills to develop',
+        bodyEn:
+          'Regardless of entry route, the following are widely expected by employers at early-career level:\n\nStrong fundamentals in data structures and algorithms are essential for problem-solving rounds in technical interviews. Proficiency in at least one mainstream programming language (such as Python, Java, C++, or JavaScript) is expected, along with the ability to read and reason about code in other languages. Understanding of databases (relational and/or NoSQL), basic computer networking, and version control with Git is standard.\n\nCommunication, the ability to break down problems, and collaborative working — in code reviews, pair programming, and team projects — matter as much as pure technical skill in most engineering roles.',
+        bullets: [
+          'Data structures and algorithms (for problem-solving interviews)',
+          'At least one mainstream programming language',
+          'Databases: relational (SQL) and/or NoSQL',
+          'Version control: Git',
+          'Basic computer networking and operating systems concepts',
+          'Software development practices: testing, debugging, code review',
+        ],
+      },
+      {
+        headingEn: 'Getting started: projects, internships, and continuous learning',
+        bodyEn:
+          'Building real projects — even small ones — is the most direct way to develop and demonstrate ability. Contributing to open-source projects, participating in hackathons, and maintaining a public code portfolio help at the early-career stage. Internships during or after a degree are a standard route to first employment in established companies.\n\nSoftware engineering evolves quickly: keeping up with new tools, frameworks, and practices is a continuous requirement, not a one-time effort. The field rewards curiosity and a habit of building.\n\nThis guide does not quote salary ranges, placement statistics, or job-count projections. The scope for software engineers varies widely by role, employer, location, and individual performance, and no course or programme can guarantee employment.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a computer science degree to become a software engineer?',
+        answerEn:
+          'A formal degree in computer science or a related engineering branch is a common and well-supported route, particularly for structured learning and institutional placement opportunities. However, a meaningful number of working software engineers have entered the field through self-study, bootcamps, or online learning, combined with a portfolio of demonstrable work. The emphasis the field places on skill and output makes both routes viable, though they require different strategies.',
+      },
+      {
+        questionEn: 'Which programming language should I learn first?',
+        answerEn:
+          'There is no single correct answer. Python is widely used for beginners due to its readable syntax and breadth of application. Java and C++ are commonly taught in degree programmes. JavaScript is essential for web development. The most important thing at the start is to get deeply familiar with at least one language — the underlying concepts of programming transfer across languages.',
+      },
+      {
+        questionEn: 'Is a B.Tech in CSE necessary for a software engineering career?',
+        answerEn:
+          'A B.Tech CSE provides a structured four-year foundation and is the most common entry point in India, especially for roles at larger companies that use it as a screening criterion. It is not the only route, but for candidates who can access it, it is a well-established and supported path. Skills, projects, and problem-solving ability matter alongside or instead of the credential, depending on the employer.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'jee-advanced', 'gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'computer-science-engineering-overview',
+      'how-to-become-an-ias-officer',
+      'btech-cse-vs-data-science',
+      'data-science-courses-in-india',
+      'ai-courses-in-india',
+    ],
+    sources: [
+      { label: 'All India Council for Technical Education (AICTE) — official site', url: 'https://www.aicte.gov.in' },
+      { label: 'University Grants Commission (UGC) — official site', url: 'https://www.ugc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become a software engineer india',
+      'software engineer career india',
+      'btech cse career path',
+      'self-taught software engineer',
+      'software engineering skills india',
+      'computer science career',
+    ],
+    tags: ['career-paths', 'engineering'],
+  },
+
+// ─────────────────────────── Set 14 — How to become (professions) II ────────
+  {
+    slug: 'how-to-become-a-scientist-in-india',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become a Scientist in India',
+    descriptionEn:
+      'The educational path and key routes to a research or scientist role in India — science degrees, doctoral research, and how central bodies such as ISRO, DRDO, and CSIR recruit.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Minimum qualification', value: 'Bachelor\'s degree in a relevant science or engineering field; PhD typically required for research positions' },
+      { label: 'Key recruitment bodies', value: 'ISRO, DRDO, CSIR, DAE, DBT, DST-funded institutions' },
+      { label: 'Common selection tests', value: 'GATE (engineering/technology), CSIR-UGC NET (science), JEST, institution-specific exams' },
+      { label: 'Official sites', value: 'isro.gov.in, drdo.gov.in, csir.res.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What the path to a scientist role looks like',
+        bodyEn:
+          'A career in scientific research in India typically begins with a strong undergraduate degree in science or engineering, followed by a master\'s degree and then a PhD (doctorate). The PhD is the standard qualification for independent research positions in government laboratories, universities, and major research organisations.\n\nSome routes — particularly to junior technical or scientist trainee positions in bodies like ISRO and DRDO — recruit graduates and postgraduates directly, but research-grade roles generally expect doctoral-level training.',
+      },
+      {
+        headingEn: 'Major research organisations and how they recruit',
+        bodyEn:
+          'India\'s key public research organisations include the Indian Space Research Organisation (ISRO), the Defence Research and Development Organisation (DRDO), the Council of Scientific and Industrial Research (CSIR) and its national laboratories, and institutions under the Department of Atomic Energy (DAE) and the Department of Biotechnology (DBT).\n\nEach organisation runs its own recruitment process. ISRO and DRDO often advertise for Scientist/Engineer posts and may use GATE scores or conduct their own written tests and interviews. CSIR laboratories recruit scientists through a selection process; junior research fellowships are commonly entered through the CSIR-UGC NET examination. Exact eligibility, vacancy counts, and selection criteria are announced in each organisation\'s official recruitment notification, so always verify on the official site.',
+        bullets: [
+          'ISRO — space science, satellite technology, launch vehicles (isro.gov.in)',
+          'DRDO — defence research and technology (drdo.gov.in)',
+          'CSIR national laboratories — wide scientific disciplines (csir.res.in)',
+          'DAE institutions — nuclear science and applications',
+          'DBT — biological and life sciences',
+        ],
+      },
+      {
+        headingEn: 'Role of GATE and CSIR-UGC NET',
+        bodyEn:
+          'GATE (Graduate Aptitude Test in Engineering), conducted by IISc and the IITs on a rotating basis, is widely used as a qualifying criterion for scientist and engineer posts in ISRO, DRDO, and public-sector undertakings. It also qualifies candidates for M.Tech admission, which strengthens a research profile.\n\nThe CSIR-UGC NET examination, conducted by NTA, is the gateway to Junior Research Fellowships (JRF) in CSIR laboratories and for lectureship eligibility. JEST (Joint Entrance Screening Test) is used by several institutions for doctoral and postdoctoral programmes in physics and theoretical computer science.\n\nAll eligibility criteria, exam patterns, and scores accepted are set in the official notification for each cycle.',
+      },
+      {
+        headingEn: 'University and PhD route',
+        bodyEn:
+          'Many scientists build their career through the university system: completing a PhD at an IIT, IISc, IISER, NIT, central university or other recognised research institution, and then moving into postdoctoral research and faculty or laboratory positions. IISc Bengaluru, the IISERs, and the IITs are among the prominent institutions offering strong research environments for science disciplines.\n\nAdmission to PhD programmes typically requires a qualifying master\'s degree and selection through an institution\'s own entrance or an accepted national test (GATE, CSIR-UGC NET, JEST). Confirm the current intake and eligibility rules on each institution\'s official website.',
+      },
+      {
+        headingEn: 'Planning your path',
+        bodyEn:
+          'There is no single mandatory route, and the right sequence depends on the field (physics, chemistry, biology, engineering) and the organisation you target. The broad steps are: relevant BSc or B.Tech → MSc or M.Tech (strengthens eligibility) → PhD → research positions or ongoing applications during doctoral study via JRF/SRF fellowships.\n\nNo path guarantees a position; competition is high and availability varies by field and organisation. Always verify current eligibility, vacancy, and selection details in the official notification before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a PhD to become a scientist in India?',
+        answerEn:
+          'For most independent research positions at organisations like ISRO, DRDO, and CSIR laboratories, a PhD is the standard qualification. Some junior or technical positions recruit graduates and postgraduates, but research-grade scientist roles typically require doctoral training. Verify exact eligibility in each organisation\'s official notification.',
+      },
+      {
+        questionEn: 'What is the role of GATE in becoming a scientist?',
+        answerEn:
+          'GATE scores are used by ISRO, DRDO, and several public-sector bodies as a qualifying criterion for scientist/engineer recruitment. A good GATE score also enables M.Tech admission, which can strengthen a research profile. The exact role of GATE in any particular recruitment is stated in the official notification.',
+      },
+      {
+        questionEn: 'What is CSIR-UGC NET and why does it matter?',
+        answerEn:
+          'CSIR-UGC NET (conducted by NTA) is the qualifying exam for Junior Research Fellowships in CSIR laboratories and for assistant professor eligibility in science subjects. A JRF fellowship supports full-time doctoral research in a CSIR lab. Eligibility, exam pattern, and fellowship conditions are set in the official notification.',
+      },
+    ],
+    relatedExamSlugs: ['gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-prepare-for-gate',
+      'career-options-after-gate',
+      'higher-studies-options-after-btech',
+      'how-to-become-an-architect-in-india',
+    ],
+    sources: [
+      { label: 'ISRO — Indian Space Research Organisation (official)', url: 'https://www.isro.gov.in' },
+      { label: 'CSIR — Council of Scientific and Industrial Research (official)', url: 'https://www.csir.res.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become a scientist in india',
+      'scientist career india',
+      'isro drdo scientist recruitment',
+      'csir net jrf',
+      'phd research career india',
+      'gate for scientist jobs',
+    ],
+    tags: ['career-paths'],
+  },
+  {
+    slug: 'how-to-become-an-architect-in-india',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become an Architect in India',
+    descriptionEn:
+      'The path to becoming a registered architect in India — the B.Arch degree, NATA, the Council of Architecture, and what registration to practise involves.',
+    readMinutes: 5,
+    keyFacts: [
+      { label: 'Core qualification', value: 'Bachelor of Architecture (B.Arch) — 5-year programme' },
+      { label: 'Main national entrance', value: 'NATA (National Aptitude Test in Architecture), conducted by the Council of Architecture' },
+      { label: 'Registration body', value: 'Council of Architecture (CoA) — coa.gov.in' },
+      { label: 'Requirement to use the title "Architect"', value: 'Registration with the Council of Architecture under the Architects Act, 1972' },
+    ],
+    sections: [
+      {
+        headingEn: 'Overview of the path',
+        bodyEn:
+          'To practise as an architect in India, the standard route is: complete Class 12 (typically with Physics, Chemistry, and Mathematics), qualify an entrance test such as NATA, complete a recognised five-year Bachelor of Architecture (B.Arch) programme, and then register with the Council of Architecture (CoA).\n\nThe Architects Act, 1972 and the Council of Architecture govern the profession. Using the title "Architect" or holding yourself out as an architect without CoA registration is restricted by law.',
+      },
+      {
+        headingEn: 'NATA — National Aptitude Test in Architecture',
+        bodyEn:
+          'NATA is conducted by the Council of Architecture and is one of the main national-level entrance tests used for B.Arch admissions. Many state and private institutions also accept JEE Main Paper 2 (B.Arch) scores, and some run their own entrance processes.\n\nNATA tests drawing, visual aptitude, mathematical reasoning, and general aptitude for architecture. Eligibility (minimum subject requirement, number of attempts, etc.) is set in each year\'s official NATA information bulletin, so verify the current rules on the official CoA site before applying.',
+      },
+      {
+        headingEn: 'The B.Arch degree',
+        bodyEn:
+          'The Bachelor of Architecture is a five-year professional undergraduate programme covering architectural design, building technology, construction, urban planning, and related disciplines. B.Arch programmes must be recognised by the Council of Architecture for the degree to be valid for registration. Confirm that any institution you consider is listed as a recognised school on the CoA website.',
+      },
+      {
+        headingEn: 'Council of Architecture registration',
+        bodyEn:
+          'After completing a recognised B.Arch programme, graduates must register with the Council of Architecture to use the title "Architect" and to practise the profession. The CoA maintains the Register of Architects under the Architects Act, 1972.\n\nRegistration requirements, any training period requirements, and the current process are published on the official CoA website at coa.gov.in. Requirements can be updated, so confirm the current rules directly from the official source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is NATA compulsory to get into B.Arch in India?',
+        answerEn:
+          'NATA is one of the main national-level entrance routes, but many institutions also accept JEE Main Paper 2 (B.Arch) scores, and some run their own entrance tests. Check the admission requirements of your target institutions for the current cycle.',
+      },
+      {
+        questionEn: 'Can I practise as an architect without registering with the CoA?',
+        answerEn:
+          'Under the Architects Act, 1972, using the title "Architect" and practising as one requires registration with the Council of Architecture (CoA). Verify the current requirements on the official CoA website at coa.gov.in.',
+      },
+      {
+        questionEn: 'How long is the B.Arch programme?',
+        answerEn:
+          'The Bachelor of Architecture is a five-year professional undergraduate programme. The programme must be from an institution recognised by the Council of Architecture.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-in-design-after-12th',
+      'nift-nid-entrance-guide',
+      'how-to-become-a-scientist-in-india',
+      'career-options-after-12th-science',
+    ],
+    sources: [
+      { label: 'Council of Architecture — official site (coa.gov.in)', url: 'https://www.coa.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become an architect in india',
+      'b arch admission india',
+      'nata entrance test',
+      'council of architecture registration',
+      'architect career india',
+      'b arch course india',
+    ],
+    tags: ['career-paths'],
+  },
+  {
+    slug: 'how-to-become-a-pharmacist',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become a Pharmacist',
+    descriptionEn:
+      'The qualifications, registration, and routes to a pharmacy career in India — D.Pharm, B.Pharm, the Pharmacy Council of India, and state Pharmacy Council registration.',
+    readMinutes: 5,
+    keyFacts: [
+      { label: 'Core qualifications', value: 'D.Pharm (Diploma in Pharmacy) or B.Pharm (Bachelor of Pharmacy)' },
+      { label: 'Regulatory body', value: 'Pharmacy Council of India (PCI) — pci.gov.in' },
+      { label: 'Registration requirement', value: 'Registration with the State Pharmacy Council is required to practise as a pharmacist' },
+      { label: 'Postgraduate route', value: 'M.Pharm (Master of Pharmacy); Pharm.D for clinical pharmacy' },
+    ],
+    sections: [
+      {
+        headingEn: 'Overview of the pharmacy career path',
+        bodyEn:
+          'Pharmacy is a regulated healthcare profession in India, governed by the Pharmacy Act, 1948 and overseen by the Pharmacy Council of India (PCI). To practise as a pharmacist, a person must hold a recognised pharmacy qualification and be registered with the State Pharmacy Council of the state in which they intend to work.\n\nThere are two main entry-level qualifications: the Diploma in Pharmacy (D.Pharm) and the Bachelor of Pharmacy (B.Pharm). Both require Physics, Chemistry, and Biology (or Mathematics) in Class 12.',
+      },
+      {
+        headingEn: 'D.Pharm and B.Pharm — what they are',
+        bodyEn:
+          'The D.Pharm is a two-year diploma programme that qualifies graduates to register as a pharmacist and work in dispensing and retail pharmacy. The B.Pharm is a four-year undergraduate degree that provides broader scientific and clinical training and opens more roles, including industrial pharmacy, regulatory affairs, and research.\n\nPCI-approved institutions conduct both programmes; the institution and programme must be approved by the PCI for the qualification to be recognised for registration. Admission to B.Pharm in many states involves state-level pharmacy entrance tests or merit-based admission; check the current process for your target state.',
+      },
+      {
+        headingEn: 'State Pharmacy Council registration',
+        bodyEn:
+          'After completing a PCI-recognised D.Pharm or B.Pharm programme, graduates must register with the State Pharmacy Council of their state before practising. Each state has its own council operating under the PCI framework.\n\nRegistration requirements, fees, and renewal conditions are set by the respective State Pharmacy Council. Confirm the current process on the official State Pharmacy Council website or the PCI\'s official site at pci.gov.in.',
+      },
+      {
+        headingEn: 'Postgraduate and clinical pharmacy options',
+        bodyEn:
+          'After completing a B.Pharm, graduates can pursue an M.Pharm (Master of Pharmacy) in a specialisation such as pharmaceutics, pharmacology, pharmaceutical analysis, or clinical pharmacy. GPAT (Graduate Pharmacy Aptitude Test) is a national-level entrance test for M.Pharm admissions and central government fellowships, currently conducted by the National Board of Examinations in Medical Sciences (NBEMS). The official portal is natboard.edu.in. Eligibility and exam pattern are confirmed in the official notification each cycle.\n\nPharm.D is a six-year Doctor of Pharmacy programme (or two years post-B.Pharm) focused on clinical pharmacy practice. Admission is through state-level counselling or institution-specific processes in most cases. Eligibility, pattern, and admission processes are confirmed in the official notification each cycle.',
+      },
+      {
+        headingEn: 'Scope of a pharmacy career',
+        bodyEn:
+          'A pharmacist can work across a range of settings: hospital and clinical pharmacy, community and retail pharmacy, the pharmaceutical industry (manufacturing, quality control, regulatory affairs), research and development, and academic roles. The scope varies by qualification, experience, location, and sector, and cannot be generalised or guaranteed. There is no single defined career trajectory — it depends on individual goals and choices.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need to register to practise as a pharmacist in India?',
+        answerEn:
+          'Yes. Under the Pharmacy Act, 1948, practising as a pharmacist requires registration with the State Pharmacy Council of the state where you intend to work. The Pharmacy Council of India (PCI) oversees the framework; state councils handle individual registration. Verify the current requirements on the official PCI site at pci.gov.in or your State Pharmacy Council.',
+      },
+      {
+        questionEn: 'What is the difference between D.Pharm and B.Pharm?',
+        answerEn:
+          'D.Pharm is a two-year diploma that qualifies you to register and practise in dispensing and retail pharmacy. B.Pharm is a four-year degree that provides broader training and wider career options including research, industry, and clinical pharmacy. Both require PCI-approved institutions; B.Pharm is also required before pursuing M.Pharm.',
+      },
+      {
+        questionEn: 'What is GPAT and why does it matter for pharmacists?',
+        answerEn:
+          'GPAT (Graduate Pharmacy Aptitude Test) is the national entrance test for M.Pharm admissions and for central government fellowships for pharmacy graduates. It is currently conducted by the National Board of Examinations in Medical Sciences (NBEMS) — official site natboard.edu.in. A good GPAT score improves access to postgraduate study and fellowship opportunities. Eligibility and exam pattern are set in the official notification.',
+      },
+    ],
+    relatedExamSlugs: ['neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-become-a-doctor-in-india',
+      'career-options-after-neet-besides-mbbs',
+      'bams-ayurveda-course-guide',
+      'allied-health-sciences-careers',
+    ],
+    sources: [
+      { label: 'Pharmacy Council of India — official site (pci.gov.in)', url: 'https://pci.gov.in/en/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become a pharmacist in india',
+      'pharmacy career india',
+      'd pharm b pharm difference',
+      'pharmacy council of india registration',
+      'b pharm course india',
+      'gpat exam pharmacy',
+    ],
+    tags: ['career-paths'],
+  },
+  {
+    slug: 'how-to-become-a-judge-judiciary-exams',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become a Judge (Judiciary Exams)',
+    descriptionEn:
+      'The route to the Indian judiciary — the LLB qualification, state judicial service exams for Civil Judge / Judicial Magistrate posts, and the path to the higher judiciary.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Minimum qualification', value: 'LLB or integrated BA LLB from a recognised institution' },
+      { label: 'Entry route (lower judiciary)', value: 'State Judicial Service Examination (conducted by High Courts / State Public Service Commissions)' },
+      { label: 'Entry post (lower judiciary)', value: 'Civil Judge (Junior Division) / Judicial Magistrate (varies by state)' },
+      { label: 'Higher judiciary', value: 'District Judge / High Court / Supreme Court — through separate selection or elevation processes' },
+    ],
+    sections: [
+      {
+        headingEn: 'The structure of the Indian judiciary',
+        bodyEn:
+          'The Indian judicial system has broadly two levels relevant to direct recruitment: the subordinate (or district) judiciary — the entry point for most aspiring judges — and the higher judiciary comprising the High Courts and the Supreme Court.\n\nDirect entry to the subordinate judiciary is through state judicial service exams. High Court and Supreme Court judges are appointed through separate constitutional processes, not open competitive exams. This guide focuses on the direct entry route to the subordinate judiciary.',
+      },
+      {
+        headingEn: 'Qualifying as a lawyer first',
+        bodyEn:
+          'The fundamental prerequisite for any judicial service exam is a law degree recognised by the Bar Council of India — either a five-year integrated LLB (after Class 12) or a three-year LLB (after any bachelor\'s degree). Without a recognised law degree, you cannot apply for judicial service examinations.\n\nFor Civil Judge (Junior Division) posts, the Supreme Court of India in its May 2025 ruling in All India Judges Association v. Union of India restored a mandatory three-year legal practice requirement (counted from the date of provisional enrolment with a State Bar Council) for all applicants nationwide. High Courts have been directed to amend their rules accordingly. For the District Judge (direct recruitment) route, a minimum period of practice as an advocate is also typically required. Confirm the current specific requirements for your target state and post in the official notification — rules are updated and can vary in their implementation.',
+      },
+      {
+        headingEn: 'State judicial service examinations',
+        bodyEn:
+          'Each state and union territory conducts its own judicial service examination for entry-level posts in the subordinate judiciary, typically for the post of Civil Judge (Junior Division) or Judicial Magistrate. These exams are usually conducted by the respective High Court or the State Public Service Commission.\n\nA typical state judicial service exam has a written stage (preliminary + mains, covering substantive law, procedural law, language, and general knowledge) followed by a viva voce (interview). Exact syllabus, eligibility (including any practice requirement), number of attempts, age limits, and vacancy numbers are set in the official notification issued by the conducting authority each cycle — always verify on the official state-specific source.',
+        bullets: [
+          'Preliminary written exam — objective-type screening',
+          'Main written exam — detailed law papers',
+          'Viva voce (interview)',
+        ],
+      },
+      {
+        headingEn: 'District Judge route (direct recruitment)',
+        bodyEn:
+          'Most states also have a direct recruitment route for District Judge (Entry Level) positions through the High Court. This typically requires a minimum number of years\' practice as an advocate (the exact requirement varies and is set in each High Court\'s notification). The selection process is similarly written test plus interview.\n\nPromotion from the Civil Judge / Judicial Magistrate level is a separate route to District Judge through the regular promotion system.',
+      },
+      {
+        headingEn: 'The path beyond the subordinate judiciary',
+        bodyEn:
+          'Appointments to the High Courts and the Supreme Court are made through a constitutional process involving the collegium system, not open competitive examinations. Advocates of standing may be elevated to the High Court bench; High Court judges may be elevated to the Supreme Court. This route is distinct from the judicial service exam route and depends on professional standing and the collegium\'s process.\n\nThere is no single guaranteed path; all aspirants should plan for the judicial service exam route and verify current details in the official notification for their state.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the first exam to appear for to become a judge?',
+        answerEn:
+          'For entry to the subordinate judiciary (Civil Judge / Judicial Magistrate), the first step is the state judicial service examination conducted by the High Court or State Public Service Commission of your state. There is no single national exam; each state conducts its own. Verify the current syllabus, eligibility, and schedule in the official notification.',
+      },
+      {
+        questionEn: 'Do I need to practise as a lawyer before appearing for a judicial service exam?',
+        answerEn:
+          'Following the Supreme Court\'s May 2025 ruling (All India Judges Association v. Union of India), a minimum three years of legal practice (counted from provisional State Bar Council enrolment) is now a mandatory nationwide requirement for Civil Judge (Junior Division) posts. For the District Judge (direct recruitment) route, a longer practice period is typically required — the exact period varies by state. Always confirm the current specific requirement in the official notification for your state.',
+      },
+      {
+        questionEn: 'Can I directly become a High Court judge through an exam?',
+        answerEn:
+          'No. High Court judges are appointed through a constitutional process (the collegium system), not open competitive examinations. The competitive exam route leads to the subordinate (district) judiciary.',
+      },
+    ],
+    relatedExamSlugs: ['clat', 'ailet'],
+    relatedCollegeSlugs: ['nlu-delhi'],
+    relatedGuideSlugs: [
+      'how-to-become-a-lawyer-in-india',
+      'career-options-after-llb',
+      'clat-eligibility-and-exam-pattern',
+      'how-to-prepare-for-upsc',
+    ],
+    sources: [
+      { label: 'Bar Council of India — official site', url: 'https://www.barcouncilofindia.org' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become a judge in india',
+      'judiciary exam india',
+      'civil judge exam',
+      'state judicial service exam',
+      'law career judiciary india',
+      'judicial magistrate recruitment',
+    ],
+    tags: ['career-paths', 'law'],
+  },
+  {
+    slug: 'how-to-become-cabin-crew-air-hostess',
+    category: 'career',
+    region: 'india',
+    titleEn: 'How to Become Cabin Crew / Air Hostess',
+    descriptionEn:
+      'Eligibility criteria, training, and the airline recruitment process for cabin crew roles in India — a gender-neutral guide to this aviation career.',
+    readMinutes: 5,
+    sections: [
+      {
+        headingEn: 'What the cabin crew role involves',
+        bodyEn:
+          'Cabin crew — the term covers all flight attendants regardless of gender — are responsible for passenger safety, emergency procedures, and in-flight service on commercial flights. It is a regulated aviation role: crew must hold a Cabin Crew Attestation (formerly known as the Cabin Crew Certificate) issued by the Directorate General of Civil Aviation (DGCA), the civil aviation regulator in India.\n\nThis guide covers the general eligibility and process; airlines set their own specific requirements, which vary and can change, so always verify with the airline you apply to.',
+      },
+      {
+        headingEn: 'Typical eligibility criteria',
+        bodyEn:
+          'Airlines set their own specific criteria, but commonly required qualifications include:\n\n- Minimum Class 12 (10+2) pass from a recognised board; many airlines prefer or require a bachelor\'s degree\n- Proficiency in English (and often Hindi and/or a regional language, depending on the airline and route)\n- Meeting the airline\'s physical standards (vision, height, reach, overall fitness) as stated in their official job posting\n- Age, medical fitness, and other requirements vary by airline and are stated in each recruitment notification\n\nNo government-set minimum marks or single national age limit applies; requirements differ between Indian and international airlines. Always read the eligibility conditions in the airline\'s official job advertisement.',
+        bullets: [
+          'Minimum Class 12 pass (bachelor\'s degree preferred by many airlines)',
+          'English proficiency; additional languages an advantage',
+          'Medical and physical fitness as per the airline\'s official criteria',
+          'Age requirements as stated in the airline\'s recruitment notification',
+        ],
+      },
+      {
+        headingEn: 'Training and DGCA attestation',
+        bodyEn:
+          'Cabin crew must complete DGCA-approved initial training covering aircraft emergency procedures, safety equipment, first aid, and service protocols. Airlines conduct this training in-house after selection; some candidates also complete pre-joining courses at DGCA-approved aviation training organisations.\n\nAfter successfully completing initial training, crew are issued a Cabin Crew Attestation by the DGCA, which is required to work on a commercial aircraft. The attestation must be kept current. Training standards and DGCA requirements are published on the official DGCA site at dgca.gov.in.',
+      },
+      {
+        headingEn: 'The airline recruitment process',
+        bodyEn:
+          'Airlines typically recruit through their own official career portals or authorised recruitment drives. The selection process generally includes a written or online aptitude screening, a group discussion or interview round, physical assessment, and a final personal interview. Document verification and a medical examination are conducted before a final offer.\n\nThird-party agencies charging fees for guaranteed placement are not authorised by airlines; apply only through the airline\'s official channels or verified authorised processes. No cabin crew selection process guarantees employment, and requirements vary between airlines and aircraft types.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What qualification is required to become cabin crew in India?',
+        answerEn:
+          'A minimum pass in Class 12 (10+2) from a recognised board is the baseline for most airlines; many airlines prefer or require a bachelor\'s degree. Proficiency in English and meeting the airline\'s physical and medical criteria are also standard requirements. Eligibility conditions vary by airline — check the official job posting.',
+      },
+      {
+        questionEn: 'Is there a government exam to become cabin crew?',
+        answerEn:
+          'There is no single national competitive exam. Airlines recruit directly through their own processes. However, all cabin crew must hold a DGCA Cabin Crew Attestation, which is issued after completing DGCA-approved training — typically provided by the airline after selection.',
+      },
+      {
+        questionEn: 'Do private courses or institutes guarantee cabin crew placement?',
+        answerEn:
+          'No. Airlines recruit through their own official channels; no private course or third-party agency can guarantee placement. Be cautious of fee-charging agents claiming guaranteed jobs. Apply only through official airline career portals or verified recruitment drives.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-after-12th-science',
+      'career-options-after-12th-arts',
+      'hotel-management-course-guide',
+      'how-to-become-a-scientist-in-india',
+    ],
+    sources: [
+      { label: 'DGCA — Directorate General of Civil Aviation (official)', url: 'https://www.dgca.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to become cabin crew in india',
+      'air hostess eligibility india',
+      'cabin crew recruitment india',
+      'dgca cabin crew attestation',
+      'flight attendant career india',
+      'cabin crew training india',
+    ],
+    tags: ['career-paths'],
+  },
+
+{
+    slug: 'how-to-prepare-for-jee-main',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'How to Prepare for JEE Main',
+    descriptionEn:
+      'A practical, strategy-first guide to preparing for JEE Main — covering the syllabus base, study approach, mock tests, and common pitfalls to avoid. No fabricated shortcuts or guarantees.',
+    readMinutes: 7,
+    keyFacts: [
+      { label: 'Conducting body', value: 'National Testing Agency (NTA)' },
+      { label: 'Subjects', value: 'Physics, Chemistry, Mathematics' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Official site', value: 'jeemain.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'Start with the official syllabus and NCERT',
+        bodyEn:
+          'The single most reliable foundation for JEE Main preparation is the NCERT textbook series for Classes 11 and 12 in Physics, Chemistry, and Mathematics. The exam tests concepts and application rooted in the NCERT curriculum, and many questions — particularly in Chemistry — can be answered thoroughly with a strong grasp of NCERT content alone.\n\nBefore buying any guide or enrolling in any course, download the official JEE Main information bulletin from jeemain.nta.nic.in. The bulletin carries the official syllabus, marking scheme, and eligibility rules for that cycle. Syllabi can be revised, so always work from the current official document, not a copy from a previous year.',
+        bullets: [
+          'NCERT textbooks (Classes 11 and 12) are the primary resource for all three subjects',
+          'Download the current-year information bulletin from jeemain.nta.nic.in',
+          'Map the official syllabus before buying any supplementary material',
+        ],
+      },
+      {
+        headingEn: 'Build subject-wise strength progressively',
+        bodyEn:
+          'Most students find it effective to cover one subject chapter by chapter — understanding the concepts, then solving problems from basic to advanced — rather than switching randomly between all three. Physics and Mathematics require consistent problem-solving practice; Chemistry has a larger recall component and tends to reward regular short-revision sessions.\n\nIdentify your stronger and weaker topics early and plan revision cycles accordingly. No single allocation of time between subjects is optimal for everyone — adjust based on your mock-test performance, not assumptions.',
+        bullets: [
+          'Physics: concept clarity + varied problem practice across mechanics, electricity, optics and modern physics',
+          'Mathematics: formula fluency + practice across calculus, coordinate geometry, algebra and trigonometry',
+          'Chemistry: NCERT inorganic and organic reading + physical chemistry problem practice',
+        ],
+      },
+      {
+        headingEn: 'Mock tests and previous-year papers',
+        bodyEn:
+          'Regular timed mock tests are one of the highest-value preparation activities. They train you to manage time within the actual exam duration, reveal patterns in your errors, and reduce anxiety on test day.\n\nUse official NTA practice tests where available. Previous-year JEE Main papers are publicly available and show the question style, difficulty range, and topic frequency over time. After every mock, spend at least as much time reviewing errors as you did taking the test — understanding why you got something wrong is more useful than doing another paper without reflection.',
+        bullets: [
+          'Attempt full-length timed mocks under exam conditions',
+          'Review every error to distinguish concept gaps from careless mistakes',
+          'Use official NTA practice papers as a primary resource',
+          'Analyse topic-wise performance to adjust your revision schedule',
+        ],
+      },
+      {
+        headingEn: 'Revision, notes, and time management',
+        bodyEn:
+          'Short, regular revision sessions are more effective than marathon sessions before the exam. Maintain a set of concise notes — formulas, reaction summaries, common error types — that you can review quickly in the weeks before the exam.\n\nBuild a realistic daily schedule that includes study blocks, practice time, breaks, and adequate sleep. Fatigue reduces accuracy and speed, and consistent moderate effort over several months generally produces better outcomes than intense short bursts. There is no single schedule that works for every student; the goal is consistency, not a fixed number of hours.',
+      },
+      {
+        headingEn: 'What to keep in mind',
+        bodyEn:
+          'JEE Main is a competitive examination and outcomes depend on a wide range of factors including overall candidate performance that year. No preparation strategy, resource, or course guarantees a particular score or percentile. The cutoff for qualifying to JEE Advanced and the cutoffs for NIT/IIIT admission through JoSAA change each cycle and are published in the official results and counselling notifications — not before the exam.\n\nFocus on building genuine subject understanding rather than chasing predicted cut-offs. Verify the current eligibility rules, attempt limits, and application process directly on jeemain.nta.nic.in before you register.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is NCERT enough to clear JEE Main?',
+        answerEn:
+          'NCERT is the essential foundation, particularly for Chemistry, but JEE Main also includes questions that require practice beyond NCERT for Physics and Mathematics. Most students supplement NCERT with standard reference books and solved problem sets. Whether NCERT alone is sufficient depends on the target score and the individual\'s depth of understanding.',
+      },
+      {
+        questionEn: 'How many mock tests should I take before JEE Main?',
+        answerEn:
+          'There is no fixed number; quality of review matters more than quantity. Many students find that taking a full-length mock every week or two in the final months, and thoroughly analysing each one, is more beneficial than taking a large number of tests without structured review.',
+      },
+      {
+        questionEn: 'Can I prepare for JEE Main without coaching?',
+        answerEn:
+          'Yes — self-study with NCERT, official practice papers, and good supplementary resources has helped many students clear JEE Main. Whether coaching adds value depends on the individual\'s self-discipline, access to resources, and need for structured guidance. See the related guide on JEE/NEET preparation without coaching.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'jee-advanced'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'jee-main-exam-pattern-and-syllabus',
+      'jee-main-eligibility-criteria',
+      'how-to-apply-for-jee-main',
+      'jee-neet-preparation-without-coaching',
+      'how-to-make-a-study-timetable-for-exams',
+      'drop-year-for-jee-neet-worth-it',
+    ],
+    sources: [
+      { label: 'NTA — JEE Main official site', url: 'https://jeemain.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to prepare for jee main',
+      'jee main preparation strategy',
+      'jee main study plan',
+      'jee main ncert',
+      'jee main mock tests',
+      'jee main tips',
+    ],
+    tags: ['exam-preparation', 'jee'],
+  },
+  {
+    slug: 'how-to-prepare-for-neet',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'How to Prepare for NEET',
+    descriptionEn:
+      'A strategy-first guide to NEET UG preparation — NCERT-based foundations, subject-wise approach, mock tests, and what to keep in mind about realistic outcomes.',
+    readMinutes: 7,
+    keyFacts: [
+      { label: 'Conducting body', value: 'National Testing Agency (NTA)' },
+      { label: 'Subjects', value: 'Physics, Chemistry, Biology (Botany + Zoology)' },
+      { label: 'Mode', value: 'Pen and paper (offline OMR)' },
+      { label: 'Official site', value: 'neet.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'Start with the official syllabus and NCERT',
+        bodyEn:
+          'NEET UG is based on the Class 11 and 12 curriculum in Physics, Chemistry, and Biology (Botany and Zoology). NCERT textbooks are the most widely recommended primary resource because the exam draws directly from NCERT content — particularly in Biology, where a large share of questions are rooted in NCERT paragraphs, diagrams, and terminology.\n\nBefore anything else, download the current-year information bulletin from neet.nta.nic.in to confirm the official syllabus, marking scheme, and eligibility. The bulletin is the only authoritative source; syllabi and rules have changed in past cycles and may change again.',
+        bullets: [
+          'NCERT Biology (Classes 11 and 12) is the single most important resource',
+          'NCERT Physics and Chemistry provide the conceptual base for those sections',
+          'Download the current information bulletin from neet.nta.nic.in for the official syllabus',
+        ],
+      },
+      {
+        headingEn: 'Subject-wise approach',
+        bodyEn:
+          'Biology carries the largest share of the total marks in NEET and should receive proportional attention. The subject rewards thorough reading of NCERT, careful memorisation of diagrams and taxonomy, and understanding of processes rather than rote learning of disconnected facts.\n\nPhysics in NEET focuses on application and numericals across mechanics, optics, electricity and modern physics. Chemistry spans physical (numerical problems), organic (reactions and mechanisms) and inorganic (largely NCERT-based facts and reactions). Each section requires a different approach; practise identifying which type of problem a question is before attempting it.',
+        bullets: [
+          'Biology: thorough NCERT reading + diagrams + previous-year paper patterns',
+          'Physics: conceptual clarity + numerical practice',
+          'Chemistry: NCERT inorganic + organic reaction practice + physical chemistry problems',
+        ],
+      },
+      {
+        headingEn: 'Mock tests and previous-year papers',
+        bodyEn:
+          'NEET is a pen-and-paper, OMR-based exam with a defined time limit and a negative-marking scheme (confirm the current values in the official bulletin). Practising under exam conditions — with a physical answer sheet and a timer — helps you manage time, reduce OMR errors, and build composure.\n\nPrevious-year NEET papers show topic distribution and question style and are among the most reliable preparation resources available. After each mock, identify topics where you lost marks and revisit the underlying NCERT content, not just the correct answers.',
+        bullets: [
+          'Practise with physical OMR sheets to simulate the actual exam format',
+          'Time every practice session to build speed and accuracy',
+          'Review errors chapter by chapter after every mock test',
+          'Previous-year NTA papers are a primary free resource',
+        ],
+      },
+      {
+        headingEn: 'Revision and consistency',
+        bodyEn:
+          'NEET covers a very large syllabus across two years of study. Regular, spaced revision — returning to covered topics at intervals — helps retention far more than a single intensive session close to the exam. Many students find it useful to maintain subject-wise short notes for Biology definitions and reactions that can be reviewed in the final weeks.\n\nThere is no single revision schedule that works for everyone. Build a routine that allows adequate sleep, breaks, and physical activity — sustained performance over months depends on overall wellbeing, not only study hours.',
+      },
+      {
+        headingEn: 'Realistic expectations and official information',
+        bodyEn:
+          'NEET is a highly competitive exam taken by a large number of candidates each year. No preparation approach, resource, or coaching programme guarantees a particular rank, percentile, or seat allocation. Admission cutoffs for MBBS and BDS at government and private institutions change every counselling cycle and are published by the MCC and state counselling bodies after results — not before the exam.\n\nAlways verify eligibility, application dates, and the current marking scheme on the official NTA NEET site before registering. For counselling details, refer to the Medical Counselling Committee at mcc.nic.in.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is NCERT enough for NEET Biology?',
+        answerEn:
+          'NCERT is indispensable for NEET Biology and many students find it sufficient as the primary text. However, previous-year papers show that some questions require careful reading of NCERT diagrams, footnotes, and examples that are easy to skip. Most toppers recommend reading every line and figure in NCERT Biology rather than relying on notes alone.',
+      },
+      {
+        questionEn: 'How long does NEET preparation typically take?',
+        answerEn:
+          'This varies widely. Many students begin alongside Class 11 and 12, completing the syllabus over two years. Others prepare intensively in one focused year. The time required depends on your starting level, study consistency, and target. There is no fixed minimum and no preparation period guarantees a particular outcome.',
+      },
+      {
+        questionEn: 'Can I prepare for NEET without coaching?',
+        answerEn:
+          'Yes — self-study with NCERT and previous-year papers has enabled many students to clear NEET. Whether coaching adds value depends on your access to resources, self-discipline, and need for structured feedback. The related guide on preparation without coaching covers this in more detail.',
+      },
+    ],
+    relatedExamSlugs: ['neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'neet-exam-pattern-and-syllabus',
+      'neet-ug-eligibility-criteria',
+      'jee-neet-preparation-without-coaching',
+      'how-to-make-a-study-timetable-for-exams',
+      'drop-year-for-jee-neet-worth-it',
+    ],
+    sources: [
+      { label: 'NTA — NEET official site', url: 'https://neet.nta.nic.in' },
+      { label: 'MCC — Medical Counselling Committee', url: 'https://mcc.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to prepare for neet',
+      'neet preparation strategy',
+      'neet study plan',
+      'neet ncert',
+      'neet mock tests',
+      'neet biology tips',
+    ],
+    tags: ['exam-preparation', 'neet'],
+  },
+  {
+    slug: 'jee-neet-preparation-without-coaching',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'JEE/NEET Preparation Without Coaching',
+    descriptionEn:
+      'A balanced, evidence-based look at preparing for JEE Main and NEET without coaching — the free and official resources available, the realistic challenges, and how to build an effective self-study structure.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Is self-study a realistic option?',
+        bodyEn:
+          'Students have cleared JEE Main and NEET through self-study, and many continue to do so each year. Self-study is a realistic path, particularly for students who have strong academic self-discipline, access to good study material, and the ability to identify and correct their own errors.\n\nAt the same time, it is not the right fit for everyone. Some students benefit from the structured schedule, peer environment, and rapid doubt-clearing that a good classroom provides. Neither path is universally superior — the right choice depends on the individual. This guide is about making the self-study path effective if that is the route you choose, not about claiming it is easy or that it guarantees success.',
+      },
+      {
+        headingEn: 'Free and official resources',
+        bodyEn:
+          'Several high-quality resources for JEE Main and NEET preparation are available free of charge:\n\nNCERT textbooks (Classes 11 and 12) are the foundational resource for both exams and are freely available on the NCERT website (ncert.nic.in). The NTA publishes official practice tests and previous-year papers on its portals (jeemain.nta.nic.in and neet.nta.nic.in). The government\'s SWAYAM platform (swayam.gov.in) and NPTEL offer subject courses at no cost. The PM e-VIDYA initiative (diksha.gov.in) provides additional curriculum-aligned digital content.\n\nBeyond these, public domain problem books and reference texts widely used for JEE/NEET preparation are available in libraries and as used copies. The cost of preparation need not be a barrier to a structured approach.',
+        bullets: [
+          'NCERT textbooks — ncert.nic.in (free PDF download)',
+          'NTA official practice tests — jeemain.nta.nic.in, neet.nta.nic.in',
+          'SWAYAM and NPTEL courses — swayam.gov.in (free online courses)',
+          'PM e-VIDYA / DIKSHA — diksha.gov.in (curriculum-aligned digital content)',
+          'Previous-year papers — available from the official NTA portals',
+        ],
+      },
+      {
+        headingEn: 'Building structure without a classroom',
+        bodyEn:
+          'The main challenge in self-study is creating the external structure that a coaching class provides automatically. Effective self-study requires:\n\nA realistic daily schedule that covers all subjects and includes timed practice. Regular self-testing through full-length mocks, not just chapter exercises. A system for resolving doubts — whether through reliable reference books, online subject forums, or a trusted teacher or peer. Honest tracking of performance across topics so you know where to direct extra effort.\n\nThe absence of a coaching timetable means the responsibility for covering the full syllabus, revising systematically, and catching errors falls entirely on the student. This is manageable with discipline, but underestimating it is one of the common reasons self-study plans stall.',
+        bullets: [
+          'Build a written weekly schedule covering all subjects',
+          'Take full-length timed mocks regularly and review every error',
+          'Keep a doubt log and resolve each item — do not skip unresolved concepts',
+          'Track topic-wise mock performance to guide revision priorities',
+        ],
+      },
+      {
+        headingEn: 'When coaching may add value',
+        bodyEn:
+          'Coaching is not required to clear JEE Main or NEET, but it may be genuinely useful in specific situations: if you find it hard to self-schedule, if you need consistent doubt-clearing access, if a particular subject is significantly weak and needs structured teaching, or if a competitive peer environment helps you stay motivated.\n\nIf you are considering coaching, evaluate the quality and teaching style of the specific institute or faculty — not brand name or marketing claims. Verify independently whether past results are representative. No coaching programme can guarantee a specific rank or seat, and claims of guaranteed selection should be treated with caution regardless of source.',
+      },
+      {
+        headingEn: 'Expectations and outcomes',
+        bodyEn:
+          'Preparation method — coaching or self-study — is one of many variables that affect performance in a competitive exam. The result also depends on effort, the quality of resources used, subject understanding, exam-day performance, and the overall competition that year. No method guarantees success, and a coaching or self-study programme that worked for one student may not produce the same outcome for another.\n\nAlways verify the current syllabus, eligibility, and exam dates directly on the official NTA portals before you begin and before you register.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I get into an IIT or AIIMS without coaching?',
+        answerEn:
+          'Students do gain admission to IITs and AIIMS through self-study every year. It requires strong self-discipline, good resources, and rigorous mock-test practice. It is a realistic path but not an easy one, and it does not come with any guarantee of outcome.',
+      },
+      {
+        questionEn: 'What free resources are available for JEE and NEET?',
+        answerEn:
+          'NCERT textbooks are freely available as PDFs on ncert.nic.in. Official NTA practice tests are on the JEE Main and NEET portals. SWAYAM (swayam.gov.in) and the DIKSHA platform (diksha.gov.in) offer free curriculum-aligned courses. Previous-year papers are also available from the NTA portals at no cost.',
+      },
+      {
+        questionEn: 'Is online coaching better than self-study?',
+        answerEn:
+          'Online coaching provides structured teaching and doubt-clearing support and can work well for students who need that structure. Self-study offers flexibility and lower cost. Neither is universally better — the right choice depends on your learning style, financial situation, and access to good content. See the related guide on online vs offline coaching for a wider comparison.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'jee-advanced', 'neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-prepare-for-jee-main',
+      'how-to-prepare-for-neet',
+      'online-vs-offline-coaching-which-is-better',
+      'how-to-make-a-study-timetable-for-exams',
+      'drop-year-for-jee-neet-worth-it',
+    ],
+    sources: [
+      { label: 'NTA — JEE Main official site', url: 'https://jeemain.nta.nic.in' },
+      { label: 'NTA — NEET official site', url: 'https://neet.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'jee preparation without coaching',
+      'neet preparation without coaching',
+      'self study jee neet',
+      'free resources jee neet',
+      'can i crack jee without coaching',
+      'neet self study tips',
+    ],
+    tags: ['exam-preparation'],
+  },
+  {
+    slug: 'online-vs-offline-coaching-which-is-better',
+    category: 'comparison',
+    region: 'india',
+    titleEn: 'Online vs Offline Coaching: Which Is Better?',
+    descriptionEn:
+      'A neutral, student-focused comparison of online and offline coaching for entrance exam preparation — what each offers, who each suits, and how to choose based on your own situation.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Neither is universally better',
+        bodyEn:
+          'Online and offline coaching are two delivery formats for structured instruction, each with genuine advantages and real limitations. Neither is universally superior — the right choice depends on the individual student\'s learning style, financial situation, location, exam target, and family circumstances.\n\nThis guide describes what each format typically offers so you can make a decision based on your own situation. It does not recommend one over the other, and it does not endorse any coaching brand or programme.',
+      },
+      {
+        headingEn: 'What online coaching typically offers',
+        bodyEn:
+          'Online coaching delivers instruction via video lectures, live or recorded, accessed through a platform or app. Common features include recorded lectures you can replay, live doubt-clearing sessions, digital study material, and online test series.\n\nPotential advantages include flexibility (study at your own pace and schedule), access from any location (particularly useful in cities or towns where quality offline coaching is unavailable), lower cost in many cases, and the ability to choose from a wider range of teachers and courses.',
+        bullets: [
+          'Flexibility of schedule and self-pacing on recorded content',
+          'Accessible from any location with internet connectivity',
+          'Can be more affordable than residential or large-city offline programmes',
+          'Wider choice of teachers and specialised topic courses',
+        ],
+      },
+      {
+        headingEn: 'What offline coaching typically offers',
+        bodyEn:
+          'Offline coaching means attending regular classes in a physical centre. Common features include live teaching with immediate doubt-clearing, a fixed daily/weekly schedule that provides external structure, peer competition from classmates, and in many cases on-campus practice tests.\n\nPotential advantages include accountability through attendance and a fixed routine, immediate face-to-face interaction with teachers, and peer motivation from studying alongside other aspirants. For students who struggle to self-schedule, the imposed structure can be a meaningful benefit.',
+        bullets: [
+          'Fixed schedule provides external discipline and routine',
+          'Face-to-face doubt-clearing in real time',
+          'Peer study environment and competitive motivation',
+          'Immediate feedback during class discussions',
+        ],
+      },
+      {
+        headingEn: 'Factors to weigh in your decision',
+        bodyEn:
+          'Rather than asking which format is "better", consider the questions that are specific to your situation:\n\nDo you have reliable, fast internet access at home? If connectivity is inconsistent, live online sessions may be frustrating. Can you maintain a disciplined schedule without external enforcement? If not, a fixed offline timetable may help. Is a good offline coaching centre available in your town or city? Many high-quality offline programmes are concentrated in certain cities, which may require relocation and additional cost. What is your budget? Both formats have a wide fee range; compare actual costs including travel, boarding, and material for offline versus the platform fee for online.\n\nAlso consider the specific faculty and programme quality, not the brand or format. A good teacher in any format generally outperforms a poor one in either format.',
+        bullets: [
+          'Internet reliability and device access at home',
+          'Your ability to self-schedule and self-motivate',
+          'Availability of quality offline options in your location',
+          'Total cost including travel and accommodation for offline',
+          'Quality of the specific faculty and test series, not just the brand',
+        ],
+      },
+      {
+        headingEn: 'Cautions about marketing claims',
+        bodyEn:
+          'Both online and offline coaching programmes use success stories and rank claims in their marketing. Evaluate these carefully: ask what proportion of enrolled students achieve the claimed outcome, not just how many top-rankers a programme has produced. A small number of high-rank results does not tell you about the experience of the majority of students.\n\nNo coaching programme — online or offline — can guarantee a specific rank, percentile, or admission outcome. Claims of "guaranteed selection" or "100% result" should be treated with scepticism regardless of format. The preparation effort and exam performance of the student remain the primary determinants of outcome.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is online coaching sufficient for JEE or NEET?',
+        answerEn:
+          'Many students clear JEE Main and NEET using online coaching or a combination of online resources and self-study. Whether online coaching is sufficient depends on the quality of the programme, the student\'s internet access, and their ability to study consistently without an external timetable. It is a realistic option for many, but not automatically the right choice for everyone.',
+      },
+      {
+        questionEn: 'Is offline coaching worth the high fee?',
+        answerEn:
+          'That depends on the specific programme, its faculty, and your own needs. High fees do not guarantee high quality, and lower-cost options — online or offline — have produced competitive results. Evaluate the faculty, the test series, and the doubt-clearing system before committing, rather than deciding on fee level or brand name alone.',
+      },
+      {
+        questionEn: 'Can I combine online and offline coaching?',
+        answerEn:
+          'Yes — many students use a combination, such as an offline coaching programme supplemented by specific online topic courses, or an online coaching subscription alongside a local offline test series. A hybrid approach is legitimate as long as you have a clear plan and are not overloading your schedule.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'jee-advanced', 'neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-prepare-for-jee-main',
+      'how-to-prepare-for-neet',
+      'jee-neet-preparation-without-coaching',
+      'how-to-make-a-study-timetable-for-exams',
+    ],
+    sources: [
+      { label: 'NTA — JEE Main official site', url: 'https://jeemain.nta.nic.in' },
+      { label: 'NTA — NEET official site', url: 'https://neet.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'online vs offline coaching',
+      'online coaching for jee neet',
+      'offline coaching vs online coaching india',
+      'best coaching for jee neet',
+      'is online coaching good for jee',
+      'coaching comparison india',
+    ],
+    tags: ['exam-preparation'],
+  },
+  {
+    slug: 'how-to-make-a-study-timetable-for-exams',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'How to Make a Study Timetable for Exams',
+    descriptionEn:
+      'Practical, evidence-informed guidance on building a study timetable that you can actually follow — covering scheduling principles, subject balance, review cycles, and the wellbeing factors that affect sustained performance.',
+    readMinutes: 5,
+    sections: [
+      {
+        headingEn: 'Why a timetable matters — and why most fail',
+        bodyEn:
+          'A study timetable is a planning tool, not a promise. Many students create ambitious timetables that look thorough on paper but break down within days because they do not account for real-life variation, fatigue, or the time that tasks actually take.\n\nAn effective timetable is one you can follow consistently — not the most intensive one you can imagine. Start with a realistic audit of your day: how many hours are genuinely available after school, coaching, travel, meals, and adequate sleep (most students need 7–8 hours)? Build your timetable around that number, not around an aspirational target.',
+      },
+      {
+        headingEn: 'Principles for building a schedule you can follow',
+        bodyEn:
+          'Several practical principles help make a timetable more durable:\n\nAllocate time by subject difficulty and syllabus weight, not equally. If one subject is weaker or covers more content, give it proportionally more time. Do not neglect a stronger subject entirely — it still needs revision to stay sharp.\n\nSchedule varied tasks rather than one subject for hours at a stretch. Alternating between learning new content, practising problems, and reviewing previous material in a session helps maintain focus better than a single activity.\n\nBuild in buffer time. Every week should have at least one session that is unscheduled or reserved for catching up. Real life will interrupt your plan, and buffer time prevents a single disruption from derailing the week.\n\nInclude breaks. Short breaks between study blocks (the Pomodoro approach is popular: 25 minutes study, 5 minutes break) help maintain concentration. Longer breaks within the day are also necessary.',
+        bullets: [
+          'Audit your genuinely available hours before scheduling anything',
+          'Weigh time allocation by subject difficulty, not equally',
+          'Vary tasks within sessions: learn, practise, review',
+          'Include buffer sessions for catch-up and rest',
+          'Plan short breaks between study blocks to maintain focus',
+        ],
+      },
+      {
+        headingEn: 'Fitting revision and mock tests into the schedule',
+        bodyEn:
+          'A good timetable is not only about covering new content — it must also include structured revision and regular mock tests. Many students spend all their scheduled time on new chapters and arrive at the exam with large gaps in recalled content.\n\nA useful rule of thumb: for every block of time spent learning new material, plan a revision session within a few days. Spaced repetition — returning to a topic at increasing intervals — is one of the most reliably effective methods for long-term retention.\n\nSchedule at least one full-length timed mock test per week or fortnight in the months before the exam, and allocate separate time for post-mock review. The review session is as important as the test itself.',
+        bullets: [
+          'Plan revision sessions within days of covering new content',
+          'Use spaced repetition: return to topics at increasing intervals',
+          'Schedule full-length mocks and separate review sessions',
+        ],
+      },
+      {
+        headingEn: 'Wellbeing, sleep, and sustainable study',
+        bodyEn:
+          'Physical and mental wellbeing directly affect learning and recall. A student who is consistently sleep-deprived or under severe stress will retain less, make more errors in practice, and perform below their actual knowledge level on exam day.\n\nSleep is not optional preparation time. Most adolescents and young adults need 7–8 hours of sleep for optimal cognitive function. Regular physical activity — even a 20–30 minute walk — supports mood and concentration. If you are experiencing persistent anxiety, difficulty concentrating, or other distress around exam preparation, speak with a trusted adult, school counsellor, or qualified professional. These concerns are common and there is support available.',
+        bullets: [
+          'Protect 7–8 hours of sleep — do not routinely trade sleep for study',
+          'Include physical activity in your weekly schedule',
+          'Take regular breaks and avoid studying for hours without rest',
+          'Seek support if preparation-related anxiety becomes persistent',
+        ],
+      },
+      {
+        headingEn: 'Review and adjust',
+        bodyEn:
+          'A timetable should be treated as a working document, not a fixed contract. Review it weekly: note what you completed, what you did not, and why. Adjust the plan based on what you observe — if a subject is taking longer than estimated, reschedule; if a particular time slot is consistently unproductive, move it.\n\nConsistency over months matters more than following a perfect schedule for a few days. A moderate, sustainable routine followed reliably will almost always outperform an intensive plan that breaks down repeatedly. Verify the current exam dates and session schedule on the official NTA portals (jeemain.nta.nic.in or neet.nta.nic.in) when planning your overall preparation timeline.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many hours should I study per day for JEE or NEET?',
+        answerEn:
+          'There is no universally correct number. What matters is productive, focused time, not total hours. Many students find that 6–8 hours of quality study, with breaks and adequate sleep, is more effective than 12+ hours of poor-quality or unfocused study. Assess your own concentration, energy, and retention — not a number you saw online.',
+      },
+      {
+        questionEn: 'Should I study the same subjects every day?',
+        answerEn:
+          'Most students benefit from covering all three subjects across the week to prevent gaps in retention. A common approach is to cover each subject on most days, varying the topics within each subject. Avoiding one subject for extended periods is generally counterproductive, even for a strong subject.',
+      },
+      {
+        questionEn: 'What should I do if I fall behind my timetable?',
+        answerEn:
+          'Falling behind is normal and does not mean the timetable has failed. Use buffer time or reduce the pace for the next session rather than attempting to "catch up" all at once. If you are consistently behind, the plan may be too ambitious — revise it to be more realistic rather than abandoning it entirely.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'jee-advanced', 'neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-prepare-for-jee-main',
+      'how-to-prepare-for-neet',
+      'jee-neet-preparation-without-coaching',
+      'online-vs-offline-coaching-which-is-better',
+      'drop-year-for-jee-neet-worth-it',
+      'how-to-prepare-for-cat',
+    ],
+    sources: [
+      { label: 'NTA — JEE Main official site', url: 'https://jeemain.nta.nic.in' },
+      { label: 'NTA — NEET official site', url: 'https://neet.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to make a study timetable',
+      'study schedule for jee neet',
+      'study plan for competitive exams',
+      'how to study effectively for board exams',
+      'exam preparation timetable india',
+      'study timetable tips',
+    ],
+    tags: ['exam-preparation'],
+  },
+
+{
+    slug: 'how-to-choose-a-stream-after-10th',
+    category: 'admissions',
+    region: 'india',
+    titleEn: 'How to Choose a Stream After 10th',
+    descriptionEn:
+      'A neutral, decision-focused guide to picking Science, Commerce or Arts after Class 10 — based on interests, aptitude and goals, not on perceived prestige.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Why stream choice matters — and why it is not permanent',
+        bodyEn:
+          'The stream you choose after Class 10 shapes which subjects you study in Classes 11 and 12, which entrance exams you can appear for, and which undergraduate courses you can apply to. It is an important decision — but not an irreversible one. Many students successfully switch fields at the undergraduate or postgraduate level, and some courses such as law and management accept students from any stream.\n\nThe key is to make an informed choice based on what genuinely interests you and where your aptitude lies, rather than on social pressure or the assumption that one stream is inherently better than the others.',
+      },
+      {
+        headingEn: 'Understanding the three main streams',
+        bodyEn:
+          'Most schools in India offer three broad streams at the Class 11 level:\n\nScience (PCM or PCB): Physics and Chemistry are common to both variants. PCM (Physics, Chemistry, Mathematics) is the route to engineering entrance exams such as JEE; PCB (Physics, Chemistry, Biology) is the route to medical entrance (NEET). Some schools allow both Math and Biology together.\n\nCommerce: Typically includes Accountancy, Business Studies, and Economics, with optional Mathematics. It leads naturally to courses such as B.Com, BBA, CA, CS, and management programmes.\n\nArts / Humanities: Includes subjects such as History, Political Science, Geography, Sociology, Psychology, and languages. It leads to a wide range of undergraduate and professional routes including law, journalism, civil services, social sciences, design, and management.',
+        bullets: [
+          'Science PCM — engineering, B.Sc., architecture, data science, defence',
+          'Science PCB — medicine, pharmacy, nursing, allied health sciences',
+          'Commerce — chartered accountancy, company secretaryship, B.Com, BBA, MBA',
+          'Arts / Humanities — law, civil services, journalism, social work, design, education',
+        ],
+      },
+      {
+        headingEn: 'How to evaluate your own interests and aptitude',
+        bodyEn:
+          'Stream choice works best when it reflects your actual preferences rather than peer pressure or parental expectation. Consider:\n\nSubject enjoyment: Which Class 9–10 subjects did you find genuinely interesting and relatively easy to engage with? Consistent interest in a subject is a useful signal — not a guarantee, but a starting point.\n\nCareer paths you are considering: If there is a broad direction you find compelling (medicine, finance, creative fields, public service), trace which stream opens that door. But hold the specific career loosely — interests evolve during undergraduate study.\n\nPractical constraints: Subject availability at your school, the workload you can manage, and whether you need specific subjects for the college or course you are aiming for.',
+      },
+      {
+        headingEn: 'Arts is not a lesser choice',
+        bodyEn:
+          'A persistent and unfair stereotype frames the Arts / Humanities stream as a fallback for students who did not score highly enough for Science or Commerce. This is incorrect. Arts leads to competitive and respected careers in law, the civil services (IAS/IPS/IFS), journalism, research, design, education, and many more areas. The Humanities stream demands strong analytical writing, critical thinking, and reading — skills valued across almost every profession.\n\nEvery stream has its own rigour and its own rewarding destinations. Choose based on where your interests lie, not on a social hierarchy that does not reflect actual career outcomes.',
+      },
+      {
+        headingEn: 'Practical steps before you decide',
+        bodyEn:
+          'Talk to people working in fields you are curious about. Speak with your school\'s career counsellor if one is available. Look at the subject combinations your target colleges require for the courses you might consider. And give yourself permission to be uncertain — most students do not have a fixed career goal at 15 or 16, and that is entirely normal.\n\nFinally, verify the subject combination your school or board offers and the specific eligibility requirements of courses you are considering, since these vary by institution and board. The information here is general guidance; always confirm requirements from the official sources of the colleges or universities you are targeting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I change my stream after Class 11?',
+        answerEn:
+          'Switching streams mid-Class 11 is difficult and not commonly permitted once the academic year is underway, as it typically requires changing schools. It is better to research carefully before choosing. At the undergraduate level, however, many subjects and professions are accessible regardless of which Class 12 stream you completed.',
+      },
+      {
+        questionEn: 'Is Science compulsory for a good career?',
+        answerEn:
+          'No. Many highly respected and competitive career paths — law, the civil services, finance, journalism, social sciences, education, design — do not require a Science background. Career outcomes depend far more on the quality of your undergraduate education, your skills, and your work than on your Class 11–12 stream.',
+      },
+      {
+        questionEn: 'What if I want to do both Mathematics and Biology?',
+        answerEn:
+          'Some schools and boards allow students to take both Mathematics and Biology in addition to Physics and Chemistry. Check with your school whether this combination is offered, as availability varies by institution.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug', 'jee-main', 'neet-ug', 'clat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'science-vs-commerce-vs-arts-how-to-choose',
+      'career-options-after-12th-science',
+      'career-options-after-12th-commerce',
+      'career-options-after-12th-arts',
+      'courses-after-12th-pcm',
+      'courses-after-12th-pcb',
+    ],
+    sources: [
+      { label: 'CBSE — Class XI subject combinations', url: 'https://www.cbse.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to choose stream after 10th',
+      'science commerce arts which stream to choose',
+      'stream selection after class 10',
+      'which stream is best after 10th',
+      'career options after 10th',
+      'choosing subjects after class 10',
+    ],
+    tags: ['school-and-boards', 'courses-after-12th'],
+  },
+  {
+    slug: 'science-vs-commerce-vs-arts-how-to-choose',
+    category: 'comparison',
+    region: 'india',
+    titleEn: 'Science vs Commerce vs Arts: How to Choose',
+    descriptionEn:
+      'A neutral comparison of the Science, Commerce and Arts streams — what each involves, where each leads, and how to decide based on your interests and goals, not on rankings.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'No stream is universally better',
+        bodyEn:
+          'Science, Commerce, and Arts are three distinct academic pathways — each with its own subjects, its own entrance exams, and its own set of undergraduate and professional routes. None is objectively superior to the others. The right choice depends entirely on what genuinely interests you, what you want to study at the undergraduate level, and what broader career direction you are leaning towards.\n\nComparing streams as "better" or "worse" misrepresents how careers actually work. Students from all three streams build rewarding professional lives. The question to ask is not "which stream is best?" but "which stream fits me best?"',
+      },
+      {
+        headingEn: 'Science: what it involves and where it leads',
+        bodyEn:
+          'The Science stream centres on Physics, Chemistry, and either Mathematics (PCM) or Biology (PCB), with some schools allowing both. It demands comfort with quantitative reasoning, logical problem-solving, and a willingness to work with abstract concepts.\n\nPCM opens routes to engineering (JEE → NITs, IIITs, IITs), architecture, B.Sc. Mathematics/Physics/Statistics, data science, defence (NDA), and later paths in research or postgraduate management. PCB opens the route to medicine (NEET → MBBS, BDS, BAMS, nursing), pharmacy, and the life sciences. Science typically demands consistent daily effort and does not suit students who find quantitative subjects unengaging.',
+        bullets: [
+          'PCM: engineering (JEE), B.Sc., architecture, defence (NDA), data science',
+          'PCB: medicine (NEET), pharmacy, nursing, allied health, life sciences',
+          'Both: research, B.Sc., later MBA or civil services possible from Science too',
+        ],
+      },
+      {
+        headingEn: 'Commerce: what it involves and where it leads',
+        bodyEn:
+          'The Commerce stream typically covers Accountancy, Business Studies, Economics, and optional Mathematics. It suits students who are interested in how businesses and economies work, and who enjoy analytical and organisational thinking.\n\nCommerce leads to undergraduate degrees such as B.Com and BBA, and to professional qualifications including CA (ICAI), CS (ICSI), and CMA (ICMAI). It is also a natural feeder into management programmes (MBA via CAT, XAT, or other exams) and finance-oriented careers. Optional Mathematics in Commerce can keep some Science-adjacent routes open; confirm subject requirements with your school.',
+        bullets: [
+          'B.Com, BBA, B.Com (Hons) — undergraduate options',
+          'CA (ICAI), CS (ICSI), CMA (ICMAI) — professional qualifications',
+          'MBA (via CAT/MAT/XAT), banking, investment, finance roles',
+          'Civil services (Economics/Commerce optional subjects in UPSC)',
+        ],
+      },
+      {
+        headingEn: 'Arts / Humanities: what it involves and where it leads',
+        bodyEn:
+          'The Arts or Humanities stream typically includes subjects such as History, Political Science, Geography, Sociology, Psychology, Philosophy, Economics, and languages. It builds skills in critical reading, analytical writing, argumentation, and the understanding of human societies and institutions.\n\nArts leads to undergraduate programmes in the social sciences, humanities, fine arts, and languages at central, state, and deemed universities (many now through CUET). It is the primary route into law (5-year integrated LLB via CLAT/AILET), civil services preparation, journalism, social work, education, design, and performing arts. Many of India\'s civil servants, judges, journalists, and policymakers come from Humanities backgrounds.\n\nArts is not a fallback. It is a distinct, rigorous stream with its own competitive admissions and its own demanding professional paths.',
+        bullets: [
+          'BA (various social science and humanities programmes)',
+          '5-year integrated law (CLAT, AILET) — open to all streams, Arts is a natural fit',
+          'Civil services (UPSC CSE) — History, Polity, Geography as optional subjects',
+          'Journalism, social work, education, design, performing arts',
+          'MA, PhD, research careers in humanities and social sciences',
+        ],
+      },
+      {
+        headingEn: 'How to make your decision',
+        bodyEn:
+          'Start by identifying the subjects you found genuinely engaging in Class 9 and 10 — not just the ones you scored well in, but the ones you were actually curious about. Then trace the career directions you find interesting and check which stream opens those doors.\n\nSpeak to your school\'s career counsellor, to students a few years ahead of you, and if possible to working professionals in fields that interest you. Look at the official subject requirements for undergraduate courses you are considering, since these vary by institution and board.\n\nThis guidance is general. Always verify subject combinations, eligibility requirements, and entrance exam specifics directly with the schools, boards, and institutions involved.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can a Commerce student get into law?',
+        answerEn:
+          'Yes. CLAT and AILET, the main entrances to the National Law Universities, are open to students from all streams — Science, Commerce, and Arts. There is no stream restriction for 5-year integrated LLB programmes.',
+      },
+      {
+        questionEn: 'Can an Arts student do an MBA?',
+        answerEn:
+          'Yes. MBA programmes, including those at the IIMs (via CAT), accept graduates from any undergraduate degree and any stream. Stream does not determine MBA eligibility; a bachelor\'s degree in any discipline is typically the requirement.',
+      },
+      {
+        questionEn: 'Which stream has the best scope?',
+        answerEn:
+          'There is no single answer. Each stream leads to a wide range of outcomes, and career scope varies enormously by field, institution, individual effort, and regional context. A student who genuinely enjoys their stream and engages deeply with it will generally do better than one who chose it for perceived prestige.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'neet-ug', 'clat', 'cuet-ug', 'cat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-choose-a-stream-after-10th',
+      'career-options-after-12th-science',
+      'career-options-after-12th-commerce',
+      'career-options-after-12th-arts',
+      'courses-after-12th-pcm',
+      'courses-after-12th-pcb',
+    ],
+    sources: [
+      { label: 'CBSE — curriculum and subject combinations', url: 'https://www.cbse.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'science vs commerce vs arts',
+      'which stream after 10th',
+      'science or commerce or arts',
+      'stream comparison after class 10',
+      'science commerce arts scope',
+      'best stream after 10th',
+    ],
+    tags: ['school-and-boards', 'courses-after-12th'],
+  },
+  {
+    slug: 'cbse-vs-icse-vs-state-board-difference',
+    category: 'comparison',
+    region: 'india',
+    titleEn: 'CBSE vs ICSE vs State Board: What Is the Difference?',
+    descriptionEn:
+      'A factual, neutral comparison of CBSE, ICSE and state boards — who administers them, how they differ in curriculum scope, and how each is recognised for higher education.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Three types of board, not three tiers',
+        bodyEn:
+          'India has multiple school boards, and students and families often wonder whether one is "better" than another. The answer depends on what you are comparing — curriculum breadth, school availability, teaching approach, and which board\'s certificates are recognised for a given purpose. None of the major boards is universally superior; each has strengths suited to different students and circumstances.\n\nThe three you will most commonly encounter are CBSE (a central board), ICSE/ISC (administered by CISCE, a private board), and the various state boards, which each state government administers for schools in that state.',
+      },
+      {
+        headingEn: 'CBSE — Central Board of Secondary Education',
+        bodyEn:
+          'CBSE is the largest central board in India and is administered by the Government of India. It follows the NCERT curriculum and framework. CBSE schools are found across India and abroad, making it particularly practical for families who move frequently.\n\nFor competitive entrance exams — JEE, NEET, CUET, and most other national entrance tests — the syllabus is closely aligned with the NCERT-based CBSE curriculum. This alignment is often cited as a practical advantage for students targeting national-level exams, though students from all boards appear and succeed in these exams.',
+        bullets: [
+          'Administered by: Government of India (Ministry of Education)',
+          'Curriculum: NCERT-based',
+          'Medium of instruction: English and Hindi (primarily); some regional languages',
+          'Widely available: central and many private schools across India',
+          'Recognised by: all Indian universities and government bodies',
+        ],
+      },
+      {
+        headingEn: 'ICSE / ISC — Council for the Indian School Certificate Examinations (CISCE)',
+        bodyEn:
+          'ICSE (Indian Certificate of Secondary Education, Class 10) and ISC (Indian School Certificate, Class 12) are administered by the Council for the Indian School Certificate Examinations (CISCE), a private, non-governmental board.\n\nThe CISCE curriculum is often described as broader in scope — it includes more elective subjects, a stronger emphasis on English language and literature, and internal assessment components. CISCE schools are concentrated mainly in urban areas. ICSE/ISC certificates are recognised by Indian universities and the Association of Indian Universities (AIU). Some international universities also recognise ISC for direct undergraduate entry.',
+        bullets: [
+          'Administered by: Council for the Indian School Certificate Examinations (CISCE)',
+          'Curriculum: broader subject range; strong English component; internal assessment',
+          'Recognised by: Indian universities (AIU); many international universities',
+          'School availability: primarily urban; fewer schools than CBSE overall',
+        ],
+      },
+      {
+        headingEn: 'State boards',
+        bodyEn:
+          'Each Indian state has its own board of secondary education — for example, the Maharashtra State Board, West Bengal Board of Secondary Education, Tamil Nadu State Board, Karnataka SSLC Board, and many others. Collectively, state boards educate the majority of school students in India.\n\nState boards vary considerably in their curriculum, examination style, and grading patterns. For students planning to study in their home state, the state board is often the most practical choice because many state colleges and state-level entrance exams are calibrated to the state board\'s curriculum. For national entrance exams, students on state boards typically need to supplement their preparation to align with NCERT-based content, which most national exams follow.\n\nState board certificates are directly recognised by Indian universities, including central, state, and private universities — no additional equivalency certificate is required for domestic state board qualifications.',
+      },
+      {
+        headingEn: 'How to choose — and what does not change between boards',
+        bodyEn:
+          'For higher education within India, all major boards are recognised — you can sit CUET and apply to central universities, appear for JEE or NEET, and gain admission to state colleges regardless of which board you are on. Board choice therefore matters more for day-to-day schooling experience (teaching approach, school culture, subject range) than for whether you can access higher education.\n\nPractical questions to weigh: Which schools are available to you? Is your family likely to relocate? Are you targeting national entrance exams (where NCERT-alignment is relevant) or primarily state-level exams? Do you value breadth of subjects (relevant to ICSE) or consistency and portability (CBSE)?\n\nThis is general guidance. Verify subject availability, specific entrance exam requirements, and university recognition directly with the relevant boards, institutions, and official sources.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is CBSE better for JEE and NEET preparation?',
+        answerEn:
+          'JEE and NEET are based on NCERT content, which aligns closely with the CBSE curriculum. Students from other boards — ICSE or state boards — routinely qualify for JEE and NEET; they typically supplement their preparation with NCERT textbooks. Board choice does not determine your chances; preparation quality does.',
+      },
+      {
+        questionEn: 'Are ICSE marks accepted by all Indian universities?',
+        answerEn:
+          'Yes. ICSE and ISC are recognised Indian school board qualifications and are accepted by universities across India. No additional equivalency certificate is required for ICSE/ISC students seeking admission to Indian universities.',
+      },
+      {
+        questionEn: 'Does board choice affect CUET eligibility?',
+        answerEn:
+          'No. CUET UG is open to candidates who have passed or are appearing in Class 12 from any recognised board — CBSE, CISCE, or any state board. Verify current eligibility details in the official NTA CUET information bulletin.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug', 'jee-main', 'neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-choose-a-stream-after-10th',
+      'how-important-is-class-12-percentage',
+      'how-to-score-well-in-board-exams',
+      'universities-accepting-cuet-ug',
+    ],
+    sources: [
+      { label: 'CBSE — official site', url: 'https://www.cbse.gov.in' },
+      { label: 'CISCE — official site', url: 'https://www.cisce.org' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'cbse vs icse vs state board',
+      'cbse icse state board difference',
+      'which board is better cbse or icse',
+      'cbse vs state board',
+      'icse vs cbse',
+      'school board comparison india',
+    ],
+    tags: ['school-and-boards'],
+  },
+  {
+    slug: 'how-to-score-well-in-board-exams',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'How to Score Well in Board Exams',
+    descriptionEn:
+      'Practical, evidence-based strategies for Class 10 and Class 12 board exam preparation — study planning, revision, answer writing, and managing stress — without any guarantees.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Understanding what board exams actually test',
+        bodyEn:
+          'Board exams — whether CBSE, CISCE, or a state board — primarily test your understanding and clear expression of the curriculum taught in that year. Unlike competitive entrance exams, they do not usually require speed-solving at extreme difficulty; they reward thorough preparation, accurate recall, and organised, legible answers.\n\nUnderstanding this distinction matters for preparation. The strategies that work best for boards are different from pure speed-drilling: they emphasise covering the syllabus completely, practising the answer format the board expects, and managing your time efficiently across papers.',
+      },
+      {
+        headingEn: 'Study planning: cover the syllabus, then revise',
+        bodyEn:
+          'The most reliable preparation framework for boards has two phases: first, ensure you have studied everything in the prescribed syllabus; second, revise repeatedly — ideally at least two full revision passes before the exam.\n\nA practical approach is to map out the remaining time before exams, divide the syllabus into manageable daily targets, and track your progress week by week. Prioritise chapters or units that carry more marks (your board\'s previous-year mark distribution guides, usually available from official sample papers, help here) without ignoring lower-weight topics entirely.\n\nConsistency over time matters far more than cramming. Regular short sessions with active recall — closing the book and trying to write or say what you just read — tend to be more effective than long passive re-reading sessions.',
+        bullets: [
+          'Map the full syllabus and split it into weekly targets',
+          'Use official sample papers and previous-year mark distributions as a guide',
+          'Allow at least two full revision passes before exam day',
+          'Active recall (closing the book, then recalling) over passive re-reading',
+          'Prioritise high-weight chapters without neglecting others',
+        ],
+      },
+      {
+        headingEn: 'Answer writing and exam technique',
+        bodyEn:
+          'For most board exams, how you write your answer is nearly as important as whether you know the content. Boards typically publish official sample question papers and marking schemes — these are invaluable because they show the exact format and key points examiners look for.\n\nPractical techniques that help:\n\nStructure your answers: headings, bullet points (where the question format allows), and clear paragraphs make long answers easier to mark and reduce the chance that the examiner misses a valid point you have made.\n\nTime management during the exam: allocate time roughly proportional to marks (a 5-mark question gets more time than a 1-mark question). Leave a few minutes at the end to re-read and fill in anything you missed.\n\nPractise with previous years\' papers under timed conditions — this is the single most useful exercise for board exam readiness.',
+        bullets: [
+          'Download and study the official sample papers and marking schemes from your board\'s website',
+          'Practise full previous-year papers under timed, exam-like conditions',
+          'Structure long answers with clear headings and points',
+          'Allocate time in proportion to marks during the exam',
+        ],
+      },
+      {
+        headingEn: 'Managing stress and maintaining well-being',
+        bodyEn:
+          'Board exam stress is very common and entirely understandable. Some level of stress can sharpen focus, but sustained high anxiety impairs the very cognitive performance you need.\n\nA few practices that many students find helpful: maintaining a predictable daily routine (including fixed sleep and wake times), taking short breaks between study sessions, keeping up some physical activity, and staying connected with friends and family. Sleep matters — evidence consistently shows that sleep consolidates memory and that cutting sleep to study more usually backfires.\n\nIf stress feels unmanageable, talk to a trusted adult, your school counsellor, or a family member. There is no shame in asking for support, and it is far better to address it than to push through alone. These are only general suggestions; for ongoing anxiety or distress, consult a qualified counsellor or health professional.',
+      },
+      {
+        headingEn: 'An important note on guarantees',
+        bodyEn:
+          'No preparation method, coaching programme, study material, or guide — including this one — can guarantee a particular score or result. Board exam outcomes depend on many variables, including the examination itself on the day, how specific questions are worded, and how you are feeling at the time.\n\nWhat good preparation does is maximise your readiness so that you perform as close to your potential as possible. That is a worthwhile goal in itself — regardless of the final number.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many months before the exam should I start serious preparation?',
+        answerEn:
+          'There is no fixed answer, as it depends on how much of the syllabus you have already covered in class and how comfortable you are with each subject. A common approach is to complete the syllabus by three to four months before the exam and spend the remaining time on revision and past papers. The earlier you start structured revision, the more passes you can complete.',
+      },
+      {
+        questionEn: 'Are coaching classes necessary for board exams?',
+        answerEn:
+          'Not necessarily. Many students do well in board exams through self-study using NCERT or prescribed textbooks and official sample papers. Coaching can provide structure and peer-group accountability, but it is not a requirement. The most important factors are consistent effort, regular revision, and practising the exam format.',
+      },
+      {
+        questionEn: 'Where can I find official sample papers and marking schemes?',
+        answerEn:
+          'CBSE publishes official sample question papers and marking schemes on its official website (cbse.gov.in). CISCE publishes specimen papers on cisce.org. State boards typically publish specimen papers on their respective official websites. Always download these directly from the official board site.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug', 'jee-main', 'neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-important-is-class-12-percentage',
+      'cbse-vs-icse-vs-state-board-difference',
+      'how-to-choose-a-stream-after-10th',
+      'drop-year-for-jee-neet-worth-it',
+    ],
+    sources: [
+      { label: 'CBSE — sample papers and marking schemes', url: 'https://www.cbse.gov.in' },
+      { label: 'CISCE — specimen question papers', url: 'https://www.cisce.org' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how to score well in board exams',
+      'board exam preparation tips',
+      'class 12 board exam strategy',
+      'cbse board exam tips',
+      'how to study for board exams',
+      'board exam study plan',
+    ],
+    tags: ['school-and-boards', 'exam-preparation'],
+  },
+  {
+    slug: 'how-important-is-class-12-percentage',
+    category: 'admissions',
+    region: 'india',
+    titleEn: 'How Important Is Your Class 12 Percentage?',
+    descriptionEn:
+      'A balanced look at where Class 12 marks actually matter — CUET-based university admissions, eligibility norms for professional courses, and entrance-exam-based routes where marks are less central.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'The short answer: it depends on your path',
+        bodyEn:
+          'How much your Class 12 percentage matters depends on which colleges, courses, or exams you are targeting. For some routes — particularly direct merit-based undergraduate admissions at certain colleges and professional course eligibility — Class 12 marks carry significant weight. For others — especially entrance-exam-based admissions such as JEE, NEET, or CLAT — rank in the entrance exam is the primary criterion, though Class 12 performance must still meet a minimum eligibility threshold.\n\nUnderstanding which scenario applies to your goals will help you calibrate how much weight to place on your board percentage versus entrance exam preparation.',
+      },
+      {
+        headingEn: 'Where Class 12 marks matter most',
+        bodyEn:
+          'Direct merit-based admissions: Some colleges and programmes — certain B.Com (Hons) programmes, undergraduate arts, social science, and humanities programmes — use Class 12 board marks as a significant or primary factor in shortlisting or admission.\n\nCUET (Common University Entrance Test): Since the introduction of CUET UG by the NTA, most central universities have moved towards a CUET-score-based admission system rather than raw board percentages. However, Class 12 qualification (having passed the board exam) remains a mandatory eligibility condition. The exact minimum percentage required may vary by university and programme — verify directly with the institution.\n\nProfessional course eligibility: Many professional and technical programmes set a minimum Class 12 aggregate percentage as an eligibility criterion — for example, minimum aggregate in relevant subjects for engineering or medical eligibility norms. These thresholds are stated in the official information bulletin of each exam and can change each cycle.\n\nState-level and private college admissions: Many state universities and private colleges still use Class 12 marks directly for shortlisting, particularly for programmes not covered by a national entrance test.',
+        bullets: [
+          'CUET UG — CUET score drives admission; Class 12 pass is eligibility baseline',
+          'JEE / NIT admission — Class 12 eligibility norm applies alongside entrance rank',
+          'NEET — Class 12 with PCB + minimum marks required for eligibility',
+          'State university and private college direct admissions — board marks often primary',
+          'Professional certifications (CA, CS) — Class 12 pass is the eligibility gate',
+        ],
+      },
+      {
+        headingEn: 'Where entrance exam rank is the primary driver',
+        bodyEn:
+          'For admission to IITs, NITs, IIITs, and GFTIs through JoSAA, the JEE Main and JEE Advanced ranks are the determining factors. Class 12 marks must meet an official eligibility norm (historically a minimum aggregate or top-percentile performance in the board, set each year by the JAB/JoSAA authorities), but beyond that threshold, the rank is what matters — a higher board percentage does not compensate for a lower rank.\n\nSimilarly, for NLU admissions via CLAT, the CLAT rank drives seat allocation. For IIM admissions via CAT, a minimum Class 12 percentage is part of the eligibility check (the exact figure is set by each IIM in its own process), but it is the CAT percentile and subsequent interview/WAT performance that determine admission.\n\nIn all these cases, Class 12 marks function as a qualifying hurdle rather than a ranking criterion.',
+      },
+      {
+        headingEn: 'After admission: does Class 12 percentage stay relevant?',
+        bodyEn:
+          'Once you are in a college or programme, Class 12 marks matter very little for most purposes. Academic progress is judged by your college GPA or CGPA. Some early career opportunities (a few private-sector recruiters, some government job eligibility norms) include a Class 12 percentage filter, but these vary widely by employer and role.\n\nFor postgraduate admissions and competitive exams after graduation, Class 12 marks rarely appear as a criterion. The practical shelf life of Class 12 percentage as a selection criterion is relatively short for most career paths.',
+      },
+      {
+        headingEn: 'A balanced perspective',
+        bodyEn:
+          'It is worth taking your Class 12 board exams seriously and doing your best — meeting eligibility norms reliably, maximising your options (especially if you are undecided about your path), and building the study habits that will serve you at the undergraduate level. But excessive anxiety about a specific percentage target beyond what your target courses require is unlikely to be productive.\n\nFocus your effort proportionally: if you are targeting an entrance-exam-based route, entrance exam preparation deserves the majority of your focused effort. If you are targeting a merit-based or CUET-based route, board performance is more central.\n\nAlways verify the current-year eligibility norms and admission criteria directly from the official websites of the exams and institutions you are targeting — these details are updated each cycle.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there a minimum Class 12 percentage to apply for JEE or NEET?',
+        answerEn:
+          'For JEE Main, there is no percentage-of-marks requirement to appear for the exam itself; the requirement is passing the Class 12 examination with the required subjects. For NIT/IIIT/GFTI admission via JoSAA, an additional eligibility norm applies (historically a minimum aggregate or board percentile), which is specified in the official information bulletin each year. For NEET, a minimum aggregate percentage in Physics, Chemistry, and Biology is required — the current figure is stated in the official NTA NEET bulletin. Always confirm from the current-year official notification.',
+      },
+      {
+        questionEn: 'Do IIMs require a minimum Class 12 percentage for CAT?',
+        answerEn:
+          'Yes. Most IIMs set their own minimum academic criteria, which typically include a minimum Class 12 percentage, as part of their shortlisting process for interviews. The exact threshold varies by IIM and is published in each IIM\'s admission notification. Check the current notification of the specific IIMs you are targeting.',
+      },
+      {
+        questionEn: 'Does Class 12 percentage matter for studying abroad?',
+        answerEn:
+          'It varies by destination and university. Most international undergraduate applications consider your secondary school performance alongside standardised tests (SAT, A Levels, IB, etc.). Some universities ask for a predicted or final Class 12 percentage as part of the application. It is best to check the admission requirements of each university you are considering.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-ug', 'jee-main', 'neet-ug', 'cat', 'clat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-score-well-in-board-exams',
+      'cbse-vs-icse-vs-state-board-difference',
+      'universities-accepting-cuet-ug',
+      'how-to-choose-a-stream-after-10th',
+    ],
+    sources: [
+      { label: 'NTA — CUET UG official site', url: 'https://cuet.nta.nic.in' },
+      { label: 'NTA — JEE Main official site', url: 'https://jeemain.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how important is class 12 percentage',
+      'class 12 marks for college admission',
+      'class 12 percentage for jee neet',
+      'does board percentage matter',
+      'cuet vs board marks',
+      'class 12 eligibility criteria colleges',
+    ],
+    tags: ['school-and-boards'],
+  },
+
+{
+    slug: 'digital-marketing-career-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Digital Marketing Career Guide',
+    descriptionEn:
+      'A neutral overview of digital marketing as a career — the key skill areas, how students and graduates can enter the field, and what the work involves across channels and platforms.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Field type', value: 'Skill-led, multi-channel marketing discipline' },
+      { label: 'Entry routes', value: 'Degree, diploma, self-taught + portfolio, internships' },
+      { label: 'Core skill areas', value: 'SEO, content, paid media, social media, analytics, email' },
+      { label: 'Relevant certifications', value: 'Google Digital Garage, Meta Blueprint, HubSpot Academy (all free)' },
+      { label: 'Official resources', value: 'Google Digital Garage (grow.google), Meta Blueprint (facebookblueprint.com)' },
+    ],
+    sections: [
+      {
+        headingEn: 'What digital marketing involves',
+        bodyEn:
+          'Digital marketing covers the planning, execution, and measurement of marketing activities carried out through online channels — search engines, social media platforms, email, content, and paid advertising. Practitioners work across a variety of sub-disciplines, often specialising in one or two while developing a working knowledge of the rest.\n\nThe field is skill-driven: demonstrable work — campaign results, content portfolios, analytics reports, and certifications — carries significant weight alongside formal qualifications.',
+      },
+      {
+        headingEn: 'Core skill areas',
+        bodyEn:
+          'Digital marketing is broad, and most roles require a mix of skills drawn from several areas:',
+        bullets: [
+          'Search Engine Optimisation (SEO) — improving a website\'s organic visibility in search results through on-page, technical, and link-based methods.',
+          'Search Engine Marketing (SEM) / Paid Search — running and optimising paid ad campaigns on search platforms.',
+          'Content marketing — creating and distributing articles, videos, and other formats to attract and retain an audience.',
+          'Social media marketing — managing brand presence and paid campaigns across social platforms.',
+          'Email marketing — designing, sending, and analysing email campaigns for engagement and retention.',
+          'Web analytics — using tools such as Google Analytics to measure traffic, behaviour, and campaign performance.',
+          'Conversion rate optimisation (CRO) — testing and improving web pages to increase the proportion of visitors who take a desired action.',
+        ],
+      },
+      {
+        headingEn: 'How to enter the field',
+        bodyEn:
+          'There is no single mandatory qualification for digital marketing. Graduates enter through a variety of routes:\n\nFormal degrees in marketing, mass communication, business, or related fields provide a conceptual foundation and are recognised by many employers. Specialised postgraduate diplomas and short courses in digital marketing, offered by universities and private institutes, focus more directly on the tools and techniques in use.\n\nSelf-study combined with free platform certifications — Google Digital Garage, Meta Blueprint, HubSpot Academy, and similar programmes — is a practical and widely recognised route. Building a portfolio through freelance work, internships, or personal projects is often as valuable as the certificate itself.\n\nInternships and entry-level roles (content writer, social media executive, PPC analyst, SEO analyst) are the common first step into a full-time career in the field.',
+      },
+      {
+        headingEn: 'Specialisations and career directions',
+        bodyEn:
+          'As practitioners gain experience they typically specialise. Common directions include SEO specialist, paid media (PPC) manager, social media manager, content strategist, email marketing manager, marketing analyst, and growth manager. Some move towards broader roles such as digital marketing manager or head of marketing, while others move into product marketing, brand management, or marketing technology (MarTech) roles.\n\nThe work can be carried out in-house at a company, at a digital marketing agency, or as a freelancer. The mix of channels and tools varies considerably by employer and industry.',
+      },
+      {
+        headingEn: 'Skills development and learning resources',
+        bodyEn:
+          'The tools and best practices in digital marketing change frequently. Practitioners regularly update their skills through platform documentation, industry blogs, short courses, and certifications. Widely used free resources include Google\'s own learning platforms, Meta Blueprint, and HubSpot Academy — all of which offer structured courses and recognised certifications.\n\nThere are no income guarantees in any career, and outcomes vary widely by role, sector, employer, and location. Research current opportunities through official job portals and company career pages.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a marketing degree to work in digital marketing?',
+        answerEn:
+          'A formal degree is not the only route. Many practitioners enter through self-study, platform certifications, internships, and portfolio work. A degree in marketing, business, or communications is an advantage for some roles but is not a universal requirement — skills and demonstrated work are typically given significant weight.',
+      },
+      {
+        questionEn: 'Which certifications are recognised in digital marketing?',
+        answerEn:
+          'Widely recognised free certifications include Google Digital Garage (Fundamentals of Digital Marketing), Google Analytics, Meta Blueprint, and HubSpot Academy. These are offered directly by the platforms whose tools practitioners use and are generally valued by employers. Verify availability and current course content on the official platform sites.',
+      },
+      {
+        questionEn: 'Is digital marketing a field where one can work freelance?',
+        answerEn:
+          'Yes, many digital marketing tasks — SEO, content creation, paid media management, social media management — lend themselves to freelance arrangements. Building a demonstrable portfolio and client track record is important for establishing a freelance practice. Outcomes vary and are not guaranteed.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-in-design-after-12th',
+      'journalism-mass-communication-courses',
+      'data-science-courses-in-india',
+      'ux-ui-design-career-guide',
+      'product-management-career-guide',
+    ],
+    sources: [
+      { label: 'Grow with Google (India) — training and certifications', url: 'https://grow.google/intl/en_in/' },
+      { label: 'Meta Blueprint — digital marketing courses', url: 'https://www.facebookblueprint.com/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'digital marketing career',
+      'how to enter digital marketing',
+      'digital marketing courses india',
+      'seo content marketing career',
+      'digital marketing certifications',
+      'digital marketing skills',
+    ],
+    tags: ['new-age-careers'],
+  },
+  {
+    slug: 'ux-ui-design-career-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'UX/UI Design Career Guide',
+    descriptionEn:
+      'A neutral overview of UX and UI design as careers — what the roles involve, how to build skills and a portfolio, the typical entry paths, and the tools practitioners use.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Field type', value: 'Skill-led, portfolio-driven design discipline' },
+      { label: 'Entry routes', value: 'Degree/diploma, bootcamp, self-taught + portfolio, internships' },
+      { label: 'Core tools', value: 'Figma, Adobe XD, Sketch (design); InVision, Marvel (prototyping)' },
+      { label: 'Key methods', value: 'User research, wireframing, prototyping, usability testing' },
+      { label: 'Official resources', value: 'NID (nid.edu), NIFT (nift.ac.in), IxDF — Interaction Design Foundation (interaction-design.org)' },
+    ],
+    sections: [
+      {
+        headingEn: 'UX and UI design — what they mean',
+        bodyEn:
+          'UX (User Experience) design focuses on the overall experience a person has when using a product — how intuitive, accessible, and effective it is. It involves research, information architecture, user flows, and testing.\n\nUI (User Interface) design focuses on the visual and interactive layer — typography, colour, buttons, icons, and the overall look and feel of screens. In practice the two disciplines overlap significantly, and many practitioners work across both.\n\nDigital products — apps, websites, dashboards, software — are the primary context for UX/UI work today, though the principles extend to any designed interaction.',
+      },
+      {
+        headingEn: 'Core activities and methods',
+        bodyEn:
+          'A UX/UI designer\'s work typically spans several stages of a product\'s development:',
+        bullets: [
+          'User research — interviews, surveys, usability tests, and analysis to understand how people actually use a product.',
+          'Wireframing — low-fidelity sketches or digital outlines of screens and flows, used to test structure before visual design begins.',
+          'Prototyping — interactive mock-ups that simulate how a product will behave, used for testing and stakeholder review.',
+          'Visual design — producing the final look of screens, including colour palettes, typography, icons, and component libraries.',
+          'Usability testing — observing real users interact with a prototype or product to identify friction and improve the design.',
+          'Collaboration with product managers and engineers — handing off designs with clear specifications for development.',
+        ],
+      },
+      {
+        headingEn: 'How to enter the field',
+        bodyEn:
+          'UX/UI design is strongly portfolio-driven. Employers typically review a candidate\'s portfolio of case studies — documented projects that show the full design process from research to final screens — alongside any formal qualifications.\n\nFormal routes include undergraduate and postgraduate programmes in design (NID, NIFT, design schools at IITs), HCI, or visual communication. Many practitioners also enter through bootcamps, online courses, or self-study, supplemented by personal projects, internships, and freelance work.\n\nNo single certification or degree is universally required, but the depth and quality of the portfolio is central to most hiring decisions in this field.',
+      },
+      {
+        headingEn: 'Tools of the trade',
+        bodyEn:
+          'Figma is currently the most widely used tool for UI design and prototyping in professional settings. Adobe XD and Sketch are also in broad use. For user research and testing, practitioners use methods ranging from in-person interviews to remote tools. Familiarity with at least one major design tool is expected at the entry level.\n\nTool preferences change as the industry evolves — follow current job listings in your target sector to understand what is in demand.',
+      },
+      {
+        headingEn: 'Career directions',
+        bodyEn:
+          'Common roles include UX designer, UI designer, UX researcher, product designer, interaction designer, and UX writer. With experience, practitioners may move into senior design roles, design management, or specialised areas such as service design, accessibility, or design systems.\n\nWork is available in-house (technology companies, startups, enterprises, government digital projects) and at design agencies. Freelancing is also a common arrangement. Outcomes vary by role, sector, and location — research current opportunities on official job portals.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a design degree to become a UX/UI designer?',
+        answerEn:
+          'A design degree is not the only path. Many practitioners have entered through bootcamps, self-study, and online courses, building their portfolio through personal and freelance projects. Formal design education (NID, NIFT, IIT design programmes) provides strong foundations and network access, but the portfolio carries significant weight in hiring decisions regardless of educational background.',
+      },
+      {
+        questionEn: 'What is the difference between UX and UI design?',
+        answerEn:
+          'UX (User Experience) design focuses on the overall experience — how easy and useful a product is, based on research and testing. UI (User Interface) design focuses on the visual layer — what the product looks like and how its interface elements behave. The two roles frequently overlap and many practitioners work across both.',
+      },
+      {
+        questionEn: 'Is Figma the industry standard tool?',
+        answerEn:
+          'As of mid-2026 Figma is widely used in professional settings for UI design and prototyping. Adobe XD and Sketch are also in use. Tool adoption shifts over time — check current job listings in your target sector to see what employers require.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-in-design-after-12th',
+      'nift-nid-entrance-guide',
+      'computer-science-engineering-overview',
+      'digital-marketing-career-guide',
+      'full-stack-developer-career-guide',
+      'product-management-career-guide',
+      'animation-vfx-and-gaming-careers',
+    ],
+    sources: [
+      { label: 'National Institute of Design — academic programmes', url: 'https://www.nid.edu/academics' },
+      { label: 'Interaction Design Foundation — UX career resources', url: 'https://www.interaction-design.org/literature/topics/ux-design' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'ux ui design career',
+      'how to become ux designer india',
+      'ui ux design courses',
+      'ux portfolio',
+      'user experience design career',
+      'figma career',
+    ],
+    tags: ['new-age-careers', 'design-arts-media'],
+  },
+  {
+    slug: 'full-stack-developer-career-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Full-Stack Developer Career Guide',
+    descriptionEn:
+      'A neutral overview of full-stack development as a career — what it involves, the skills a practitioner needs, how to enter the field whether through a degree or self-taught route, and how the work is organised.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Field type', value: 'Software development combining front-end and back-end skills' },
+      { label: 'Entry routes', value: 'CS/IT degree, bootcamp, self-taught portfolio + projects' },
+      { label: 'Front-end core', value: 'HTML, CSS, JavaScript; frameworks such as React or Vue' },
+      { label: 'Back-end core', value: 'A server-side language (Node.js, Python, Java, etc.) + databases' },
+      { label: 'Official resources', value: 'AICTE-approved CS/IT programmes; Mozilla Developer Network (MDN)' },
+    ],
+    sections: [
+      {
+        headingEn: 'What a full-stack developer does',
+        bodyEn:
+          'A full-stack developer works across both the front end (the part of a web application that users interact with directly — pages, layouts, forms, interactive elements) and the back end (the server logic, databases, APIs, and infrastructure that power those interfaces). The term "full-stack" reflects this breadth rather than implying mastery of every possible technology.\n\nIn practice the balance varies: some roles lean primarily towards front-end or back-end work while still requiring working knowledge of the other side. The specific stack — the combination of languages, frameworks, and tools — differs between companies and projects.',
+      },
+      {
+        headingEn: 'Front-end skills',
+        bodyEn:
+          'The front end is built using web standards and the frameworks layered on top of them:',
+        bullets: [
+          'HTML — the structural markup of web pages.',
+          'CSS — styling and layout, including responsive design for different screen sizes.',
+          'JavaScript — interactivity and dynamic behaviour in the browser.',
+          'Front-end frameworks / libraries — React, Vue, Angular, and Svelte are widely used; the dominant choice shifts over time and varies by employer.',
+          'Build tools, version control (Git), and basic command-line proficiency are also expected at the professional level.',
+        ],
+      },
+      {
+        headingEn: 'Back-end skills',
+        bodyEn:
+          'The back end involves server-side programming and data management:',
+        bullets: [
+          'A server-side language — Node.js (JavaScript), Python, Java, Go, Ruby, PHP, and others are all in use; the right choice depends on the context.',
+          'Databases — both relational (PostgreSQL, MySQL) and non-relational (MongoDB, Redis) databases are commonly used.',
+          'APIs — designing and building REST or GraphQL APIs that the front end and other services call.',
+          'Authentication, security basics, and deployment fundamentals — understanding how applications are hosted and secured.',
+          'Cloud platforms (AWS, Azure, Google Cloud) are increasingly relevant even at the junior level.',
+        ],
+      },
+      {
+        headingEn: 'How to enter the field',
+        bodyEn:
+          'A formal degree in Computer Science, Information Technology, or Software Engineering (from a UGC- or AICTE-recognised institution) provides a strong theoretical foundation and is a common route into software development roles. Graduates from other disciplines who learn programming independently are also regularly hired, particularly where they have demonstrable projects and problem-solving ability.\n\nBootcamps and structured self-study programmes offer accelerated paths. Open-source contributions, personal projects hosted on public repositories, and internships are commonly used to build a portfolio that demonstrates practical ability.\n\nNo single route is universally required. Hiring decisions in this field are significantly influenced by demonstrated technical skills, problem-solving approach in interviews, and the ability to learn quickly.',
+      },
+      {
+        headingEn: 'Career directions',
+        bodyEn:
+          'Full-stack development is a broad entry point. With experience practitioners often specialise — moving deeper into front-end engineering, back-end systems, mobile development, DevOps/infrastructure, or architecture. Some move into technical lead, engineering manager, or product-adjacent roles.\n\nWork is available at product companies, IT services firms, startups, agencies, and government technology organisations. Remote and distributed work arrangements are common in this field. Outcomes vary by role, employer, location, and the specific technologies in use — research current opportunities through official job portals and company career pages.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a Computer Science degree to become a full-stack developer?',
+        answerEn:
+          'A CS degree is not the only route. Many practitioners have entered the field through self-study, bootcamps, and project portfolios. A UGC/AICTE-recognised degree in CS or IT provides a strong foundation and is valued by many employers, but demonstrated skills, problem-solving ability, and relevant projects carry significant weight in hiring decisions regardless of formal background.',
+      },
+      {
+        questionEn: 'Which programming language should I learn first?',
+        answerEn:
+          'There is no single answer — the right choice depends on the type of work you are targeting. JavaScript is central to web front-end development and is also widely used on the back end (Node.js). Python is broadly used for back-end services and data work. Java and C++ are prominent in enterprise and systems contexts. Research what employers in your target sector use and focus there.',
+      },
+      {
+        questionEn: 'How important is building personal projects?',
+        answerEn:
+          'Personal and open-source projects are widely used to demonstrate practical ability, especially for candidates who do not yet have professional experience. A portfolio of projects that shows full-stack work — a working application with both front-end interface and back-end logic — is commonly reviewed by interviewers alongside technical assessments.',
+      },
+    ],
+    relatedExamSlugs: ['gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'computer-science-engineering-overview',
+      'data-science-courses-in-india',
+      'ai-courses-in-india',
+      'cyber-security-career-guide',
+      'btech-cse-vs-data-science',
+      'ux-ui-design-career-guide',
+      'product-management-career-guide',
+    ],
+    sources: [
+      { label: 'Mozilla Developer Network (MDN) — Web technology documentation', url: 'https://developer.mozilla.org/en-US/' },
+      { label: 'AICTE — approved institutions for CS/IT programmes', url: 'https://www.aicte.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'full stack developer career',
+      'how to become full stack developer india',
+      'full stack development courses',
+      'web development career',
+      'front end back end developer',
+      'full stack developer skills',
+    ],
+    tags: ['new-age-careers', 'engineering'],
+  },
+  {
+    slug: 'product-management-career-guide',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Product Management Career Guide',
+    descriptionEn:
+      'A neutral overview of product management as a career — what a product manager does, the skills the role requires, how practitioners typically enter the field, and the directions it can lead.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What product management involves',
+        bodyEn:
+          'A product manager (PM) is responsible for guiding the development of a product — typically a software product or digital service — from conception through to delivery and ongoing improvement. The role sits at the intersection of user needs, business objectives, and technical feasibility.\n\nProduct managers do not generally write code or design interfaces themselves. Instead, they define what should be built and why, set priorities, work with engineering, design, and data teams to shape how it is built, and measure whether it is achieving its intended outcomes.',
+      },
+      {
+        headingEn: 'Core responsibilities',
+        bodyEn:
+          'While the specifics vary by company and product, a product manager\'s work typically spans:',
+        bullets: [
+          'Understanding users — conducting or commissioning research to understand user problems, needs, and behaviour.',
+          'Defining the product vision and roadmap — deciding which problems to solve and in what order, aligned with business goals.',
+          'Writing product requirements — translating user needs and business goals into clear specifications that engineering and design teams can work from.',
+          'Prioritisation — making trade-offs between competing features, improvements, and technical work.',
+          'Stakeholder communication — working with leadership, sales, marketing, and customer support to align expectations and gather input.',
+          'Measurement — defining success metrics and using data to evaluate whether product changes are delivering the intended outcomes.',
+        ],
+      },
+      {
+        headingEn: 'Skills and knowledge areas',
+        bodyEn:
+          'Product management draws on a combination of analytical, communication, and strategic skills rather than a single technical specialism:\n\nAnalytical skills — the ability to work with data, interpret metrics, and make structured decisions under uncertainty. Communication and writing — the ability to explain complex ideas clearly to technical and non-technical audiences. User empathy — a genuine interest in understanding how people use products and what problems they face. Technical literacy — not coding ability, but enough understanding of how software is built to have productive conversations with engineers. Business acumen — understanding how the product fits into the broader commercial context.\n\nFamiliarity with product discovery frameworks, agile methodologies, and experimentation practices is commonly expected at the professional level.',
+      },
+      {
+        headingEn: 'How to enter the field',
+        bodyEn:
+          'There is no single mandatory qualification for product management. Common entry routes include:\n\nMoving internally from adjacent roles — engineering, design, data analysis, and business analysis are all common backgrounds from which people transition into PM roles, often after demonstrating product thinking in their existing position.\n\nMBAs and specialist courses — some business schools and technology programmes offer product management courses or concentrations. An MBA from a recognised institution is a pathway for some, particularly into product roles at larger organisations.\n\nEntry-level and associate PM programmes — some larger technology companies run structured programmes for recent graduates entering product management; these are competitive and typically require strong analytical and communication skills.\n\nBuilding relevant skills through adjacent project experience — contributing to product work in a current role, running small experiments, writing product documents, and developing a structured way of thinking about user problems.',
+      },
+      {
+        headingEn: 'Career directions',
+        bodyEn:
+          'Product management career paths vary significantly by company size, stage, and sector. Common progression goes from associate PM or PM to senior PM, principal PM, and in larger organisations to group PM, director of product, VP of product, or Chief Product Officer (CPO).\n\nSome PMs specialise — in platform products, growth, data products, or enterprise software. Others move into general management, entrepreneurship, or strategy roles.\n\nThe field is present across technology companies, startups, financial services, e-commerce, and enterprise software. Outcomes vary by role, organisation, sector, and location — there are no guaranteed career trajectories. Research current opportunities through official job portals and company career pages.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a technical background to become a product manager?',
+        answerEn:
+          'Technical literacy — understanding broadly how software is built — is helpful and expected in many PM roles, but writing code is generally not required. People enter product management from engineering, design, data, business, and other backgrounds. What is typically valued is strong analytical thinking, communication, user empathy, and structured problem-solving.',
+      },
+      {
+        questionEn: 'Is an MBA necessary for product management?',
+        answerEn:
+          'An MBA is one pathway into product management, particularly into roles at certain larger organisations, but it is not universally required. Many practitioners enter through internal transitions from adjacent roles, structured associate PM programmes at technology companies, or by demonstrating product thinking progressively in their work. Research the specific requirements of roles and organisations you are targeting.',
+      },
+      {
+        questionEn: 'What is the difference between a product manager and a project manager?',
+        answerEn:
+          'A product manager is responsible for deciding what to build and why — defining the product vision, user needs, and priorities. A project manager is responsible for how a defined piece of work is executed — timelines, resource coordination, and delivery. The two roles are complementary but distinct, and are sometimes separated and sometimes combined depending on the organisation.',
+      },
+    ],
+    relatedExamSlugs: ['cat', 'gmat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'computer-science-engineering-overview',
+      'data-science-courses-in-india',
+      'mba-after-engineering-worth-it',
+      'cat-exam-eligibility-and-pattern',
+      'digital-marketing-career-guide',
+      'ux-ui-design-career-guide',
+      'full-stack-developer-career-guide',
+    ],
+    sources: [
+      { label: 'AICTE — technology education and industry linkage', url: 'https://www.aicte.gov.in' },
+      { label: 'UGC — higher education institutional listings', url: 'https://www.ugc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'product management career india',
+      'how to become product manager',
+      'product manager skills',
+      'product management courses',
+      'pm career path',
+      'product management after engineering',
+    ],
+    tags: ['new-age-careers'],
+  },
+  {
+    slug: 'animation-vfx-and-gaming-careers',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Animation, VFX & Gaming Careers',
+    descriptionEn:
+      'A neutral overview of careers in animation, visual effects (VFX), and game development in India — the main roles, how to study, the institutions involved, and the types of work available.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Field type', value: 'Creative-technical fields spanning film, broadcast, and interactive media' },
+      { label: 'Entry routes', value: 'Undergraduate/diploma programmes, specialised institutes, self-taught portfolio' },
+      { label: 'Regulatory context', value: 'AICTE-approved and UGC-recognised institutes offer formal programmes' },
+      { label: 'Industry body', value: 'Media & Entertainment Skills Council (MESC) — a Sector Skills Council under the National Skill Development Corporation' },
+      { label: 'Official resources', value: 'AICTE (aicte.gov.in); MESC (mescindia.org); NID (nid.edu)' },
+    ],
+    sections: [
+      {
+        headingEn: 'Three related but distinct fields',
+        bodyEn:
+          'Animation, VFX, and game development share underlying technical and artistic skills but are distinct professional areas:\n\nAnimation encompasses 2D and 3D animation for film, television, streaming platforms, advertising, and digital media. Animators bring characters, environments, and motion to life using principles of movement, timing, and storytelling.\n\nVisual Effects (VFX) is the process of creating or manipulating imagery — compositing live-action footage with digital elements, generating environments, crowds, explosions, and other effects that cannot be practically filmed. VFX is central to film and television production.\n\nGame development combines programming, art, animation, sound, and design into interactive experiences. The field ranges from large studio productions to independent (indie) games, mobile games, and educational or simulation software.',
+      },
+      {
+        headingEn: 'Core roles and skills',
+        bodyEn:
+          'Each field contains a range of specialised roles:',
+        bullets: [
+          'Animation: character animator, 3D modeller, rigging artist, background artist, motion graphics designer, storyboard artist.',
+          'VFX: compositing artist, matte painter, simulation artist (cloth, fluid, particles), matchmove artist, VFX supervisor.',
+          'Game development: game programmer (gameplay, engine, tools), game artist (concept art, 3D modelling, texturing), level designer, game designer, sound designer, QA (quality assurance) tester.',
+          'Common technical tools: Autodesk Maya and 3ds Max, Adobe Creative Suite, Blender, Unreal Engine, Unity, Nuke (compositing) — the relevant set differs by specialism.',
+        ],
+      },
+      {
+        headingEn: 'How to study animation, VFX, or game development',
+        bodyEn:
+          'Formal programmes are available at several levels. Undergraduate degrees and diploma programmes are offered by specialised private institutes, AICTE-approved institutions, and design schools including NID (for animation and communication design). Programme names vary — Bachelor of Science in Animation and Multimedia, Bachelor of Design (Communication Design), Diploma in VFX, and similar.\n\nThe Media & Entertainment Skills Council (MESC), a Sector Skills Council under the National Skill Development Corporation (NSDC), also offers vocational qualifications and has published occupational standards for roles in this sector.\n\nSelf-taught practitioners who build strong portfolios through personal projects, open-source tools (such as Blender for 3D), game jam participation, and freelance work have also entered the industry. Portfolio quality is central to hiring in these fields.\n\nAlways verify programme recognition and accreditation on the official AICTE or UGC portals before enrolling.',
+      },
+      {
+        headingEn: 'Career directions and types of work',
+        bodyEn:
+          'Animation studios, VFX studios, broadcast channels, streaming platforms, advertising agencies, game studios, mobile gaming companies, educational technology firms, and simulation and training organisations all employ professionals in these fields.\n\nIndia has a growing number of studios and production houses that work on domestic and international projects. Game development has an expanding domestic sector alongside work done for international publishers.\n\nFreelancing, particularly in animation and motion graphics, is a common arrangement. Like all creative and technical careers, outcomes depend on skills, portfolio, specialisation, and the specific employer — there are no guaranteed outcomes.',
+      },
+      {
+        headingEn: 'Building skills and a portfolio',
+        bodyEn:
+          'A strong portfolio of work — animations, VFX shots, or playable game demos — is central to entering these fields. Free and open-source tools (Blender for 3D modelling and animation; Unity and Unreal Engine for games, both of which offer free tiers) allow students to build portfolio work before or alongside any formal programme.\n\nGame jams (organised events where small teams build a game in a short time) are a recognised way to build a body of work and demonstrate the ability to complete and ship a project. Online communities, tutorials, and platform learning resources from the major tool vendors supplement formal education.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Are there government-recognised programmes in animation and VFX?',
+        answerEn:
+          'Yes. AICTE-approved institutions offer formal programmes in animation, multimedia, and related areas. NID offers communication design programmes that include animation. The Media & Entertainment Skills Council (MESC), a Sector Skills Council under the NSDC, has published vocational qualification standards for roles in this sector. Verify any programme\'s recognition on the official AICTE (aicte.gov.in) or NID (nid.edu) portals before enrolling.',
+      },
+      {
+        questionEn: 'Do I need expensive software to learn animation or VFX?',
+        answerEn:
+          'Not necessarily. Blender is a professional-grade, open-source 3D tool used widely in animation and VFX production. Unity and Unreal Engine both offer free access tiers for learning and independent development. Many professional concepts and portfolio projects can be built with free tools before investing in commercial software.',
+      },
+      {
+        questionEn: 'What is the difference between animation and VFX?',
+        answerEn:
+          'Animation involves creating motion and characters from scratch — drawing, rigging, and animating digital or hand-drawn figures. VFX (Visual Effects) involves integrating digitally created elements with live-action footage — compositing, environment extensions, simulations. The two fields share tools and techniques but have different primary applications: animation is central to films, series, and advertising; VFX is central to live-action film and television production.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-in-design-after-12th',
+      'nift-nid-entrance-guide',
+      'ux-ui-design-career-guide',
+      'full-stack-developer-career-guide',
+      'digital-marketing-career-guide',
+    ],
+    sources: [
+      { label: 'National Institute of Design — academic programmes', url: 'https://www.nid.edu/academics' },
+      { label: 'Media & Entertainment Skills Council (MESC) — NSDC Sector Skills Council', url: 'https://www.mescindia.org/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'animation career india',
+      'vfx career india',
+      'game development career india',
+      'animation courses india',
+      'how to become animator india',
+      'gaming jobs india',
+    ],
+    tags: ['new-age-careers', 'design-arts-media'],
+  },
+
+// ─────────────────────────── Set 18 — Specialized & PG entrance exams ───────
+  {
+    slug: 'cuet-pg-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'CUET PG Exam Guide',
+    descriptionEn:
+      'A plain-language guide to CUET PG — who conducts it, which universities accept it, the broad format, and how it differs from CUET UG.',
+    readMinutes: 5,
+    keyFacts: [
+      { label: 'Full name', value: 'Common University Entrance Test (Postgraduate)' },
+      { label: 'Conducting body', value: 'National Testing Agency (NTA)' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Used for', value: 'PG admission to central, state, deemed and private universities' },
+      { label: 'Official site', value: 'exams.nta.nic.in/cuet-pg' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is CUET PG?',
+        bodyEn:
+          'CUET PG (Common University Entrance Test — Postgraduate) is a national, computer-based entrance test conducted by the National Testing Agency (NTA). It was introduced so that students seeking admission to postgraduate programmes across central universities and many other participating institutions would have a single, standardised test to take — rather than separate entrance tests for each university.\n\nThe score is accepted for PG admission across a large and growing number of central, state, deemed and private universities. The exact list of participating universities and the programmes they fill through CUET PG is published on the official portal each cycle.',
+      },
+      {
+        headingEn: 'How is it different from CUET UG?',
+        bodyEn:
+          'CUET UG is for undergraduate (Class 12 level) admission, while CUET PG is for admission to postgraduate programmes and requires a completed or in-progress bachelor\'s degree. The two tests are separate examinations with different syllabuses, application portals, and result cycles. Candidates should take care to register for the correct test on the official NTA portal.',
+        bullets: [
+          'CUET UG — for undergraduate admission; Class 12 pass or appearing required',
+          'CUET PG — for postgraduate admission; bachelor\'s degree required',
+          'Both conducted by NTA; different syllabuses and application windows',
+        ],
+      },
+      {
+        headingEn: 'Eligibility and who should appear',
+        bodyEn:
+          'Candidates who have completed a bachelor\'s degree (or are in their final year) in the relevant subject discipline can apply for CUET PG. Precise eligibility — minimum percentage, subject requirements, and whether final-year candidates are allowed — is set each year in the official information bulletin and varies by programme and university. Always confirm the exact criteria on the official NTA site before applying.',
+      },
+      {
+        headingEn: 'Exam structure and format',
+        bodyEn:
+          'CUET PG is conducted in computer-based test (CBT) mode. Each paper is subject-specific and typically contains multiple-choice questions drawn from the relevant postgraduate subject area. The exact number of questions, sections, duration and marking scheme are set in the official notification and can vary by subject paper. Check the current information bulletin for the paper-specific details applicable to your programme.\n\nNTA usually provides official practice tests on its portal, which is a reliable way to familiarise yourself with the CBT interface.',
+      },
+      {
+        headingEn: 'Universities and programmes',
+        bodyEn:
+          'The CUET PG score is used by a wide range of institutions — central universities, state universities, deemed universities and private universities — for admission to PG programmes in arts, science, commerce, social sciences, law, and several professional fields. The list expands each year as more institutions participate.\n\nEach participating university sets its own cut-off and merit process independently of NTA; NTA\'s role is limited to conducting the test and declaring results. Always check the admission portal of the specific university you are targeting for its cut-off and merit process. No admission is guaranteed by any score.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is CUET PG mandatory for PG admission to all central universities?',
+        answerEn:
+          'Most central universities participate in CUET PG for their PG programmes, but not all programmes at all central universities are necessarily filled through CUET PG. Check the official portal and each university\'s own admission notice to confirm which programmes use CUET PG in the current cycle.',
+      },
+      {
+        questionEn: 'Can I use my CUET PG score for state or private universities?',
+        answerEn:
+          'Yes — many state, deemed and private universities have opted into CUET PG. The full list of participating institutions for each cycle is published on the official NTA portal. Verify with your target university directly.',
+      },
+      {
+        questionEn: 'When does the CUET PG application open?',
+        answerEn:
+          'Application dates are announced by NTA each cycle. Visit the official portal (exams.nta.nic.in/cuet-pg) for the current notification and schedule. Dates change year to year, so do not rely on the previous year\'s schedule.',
+      },
+    ],
+    relatedExamSlugs: ['cuet-pg', 'cuet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'cuet-ug-eligibility-and-exam-pattern',
+      'cuet-ug-syllabus-and-subjects',
+      'how-to-prepare-for-cuet',
+      'universities-accepting-cuet-ug',
+      'neet-pg-exam-guide',
+    ],
+    sources: [
+      { label: 'NTA — CUET PG official portal', url: 'https://exams.nta.nic.in/cuet-pg/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'cuet pg exam guide',
+      'cuet pg eligibility',
+      'cuet pg universities',
+      'cuet pg nta',
+      'common university entrance test pg',
+      'cuet pg vs cuet ug',
+    ],
+    tags: ['specialized-exams', 'cuet'],
+  },
+  {
+    slug: 'neet-pg-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'NEET PG Exam Guide',
+    descriptionEn:
+      'An overview of NEET PG — who conducts it, what it is for, eligibility (MBBS graduates), the broad structure, and the counselling route for MD/MS admission.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Full name', value: 'National Eligibility cum Entrance Test (Postgraduate)' },
+      { label: 'Conducting body', value: 'National Board of Examinations in Medical Sciences (NBEMS)' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Eligibility', value: 'MBBS degree holders and final-year MBBS students (see official bulletin)' },
+      { label: 'Used for', value: 'MD, MS and PG Diploma admission in India' },
+      { label: 'Official site', value: 'natboard.edu.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is NEET PG?',
+        bodyEn:
+          'NEET PG (National Eligibility cum Entrance Test — Postgraduate) is a national entrance test for admission to postgraduate medical programmes — MD (Doctor of Medicine), MS (Master of Surgery) and PG Diploma courses — at medical colleges across India. It is conducted by the National Board of Examinations in Medical Sciences (NBEMS), an autonomous body under the Ministry of Health and Family Welfare.\n\nNEET PG replaced multiple separate state and institutional entrance tests, creating a single merit list used for seat allocation at both central and state levels.',
+      },
+      {
+        headingEn: 'Who can appear — eligibility',
+        bodyEn:
+          'Candidates who hold an MBBS degree from a Medical Council of India (MCI) / National Medical Commission (NMC) recognised institution, or who are in their final year of MBBS, are eligible to apply. Completion of the compulsory rotating internship (or being within a specified period of completing it) is a condition for admission, even if candidates are allowed to appear in the test earlier.\n\nExact eligibility conditions — including the internship-completion deadline and any percentage norms — are published in the official information bulletin each year. Confirm the current rules on natboard.edu.in before applying, as these conditions can change.',
+      },
+      {
+        headingEn: 'Exam format',
+        bodyEn:
+          'NEET PG is conducted as a computer-based test (CBT) in a single sitting. The question paper draws broadly from the MBBS curriculum across clinical and pre-clinical subjects. The exact number of questions, total marks, duration, and marking scheme (including any negative marking) are set in the official information bulletin for each cycle. Do not rely on older-year details — verify on the official site.',
+      },
+      {
+        headingEn: 'Counselling and seat allocation',
+        bodyEn:
+          'After the NEET PG result, counselling is conducted separately at two levels: the Medical Counselling Committee (MCC) handles the All-India Quota (AIQ) seats and central institution seats, while state counselling authorities handle state-quota seats. Candidates must register separately for whichever counselling rounds they are eligible for.\n\nThe NEET PG rank determines counselling eligibility, but the actual seat you receive depends on your rank relative to others in the same counselling round, the subjects on offer, and the college preferences you submit. No score or rank guarantees admission to a specific college or subject.',
+      },
+      {
+        headingEn: 'NEET PG and NBEMS examinations',
+        bodyEn:
+          'NBEMS also conducts a range of other postgraduate and fellowship examinations in medical sciences — including NEET MDS (for dental postgraduate admission) and various FNB and DNB examinations. NEET PG specifically covers allopathic postgraduate medical programmes (MD/MS/PG Diploma). Check the NBEMS exam calendar at natboard.edu.in for the current schedule of all NBEMS examinations.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can final-year MBBS students appear for NEET PG?',
+        answerEn:
+          'The eligibility conditions for NEET PG — including whether final-year MBBS students may appear — are set by NBEMS each year. Refer to the official information bulletin on natboard.edu.in for the current-year rules before applying.',
+      },
+      {
+        questionEn: 'How many seats are filled through NEET PG?',
+        answerEn:
+          'NEET PG covers both the All-India Quota (AIQ) seats handled by MCC and state-quota seats managed by individual state counselling bodies. The total seat matrix is published during the counselling process. Check natboard.edu.in and mcc.nic.in for current figures.',
+      },
+      {
+        questionEn: 'Is NEET PG required for DNB seats as well?',
+        answerEn:
+          'DNB (Diplomate of National Board) seats are filled separately through NBEMS processes. Some DNB seats use the NEET PG score. Check the official NBEMS notifications on natboard.edu.in for the current admission route for DNB programmes.',
+      },
+    ],
+    relatedExamSlugs: ['neet-pg', 'neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'neet-ug-eligibility-criteria',
+      'how-to-become-a-doctor-in-india',
+      'aiims-vs-government-medical-college',
+      'cuet-pg-exam-guide',
+      'iit-jam-exam-guide',
+    ],
+    sources: [
+      { label: 'NBEMS — official site and notifications', url: 'https://natboard.edu.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'neet pg exam guide',
+      'neet pg eligibility',
+      'neet pg md ms admission',
+      'neet pg nbems',
+      'neet pg counselling',
+      'postgraduate medical entrance india',
+    ],
+    tags: ['specialized-exams', 'neet'],
+  },
+  {
+    slug: 'nata-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'NATA (Architecture) Exam Guide',
+    descriptionEn:
+      'A clear overview of NATA — the National Aptitude Test in Architecture conducted by the Council of Architecture — for students planning a B.Arch degree in India.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Full name', value: 'National Aptitude Test in Architecture' },
+      { label: 'Conducting body', value: 'Council of Architecture (CoA)' },
+      { label: 'Mode', value: 'Hybrid — Part A (drawing, offline) + Part B (MCQ/NCQ, CBT)' },
+      { label: 'Used for', value: 'B.Arch admission at schools of architecture across India' },
+      { label: 'Official site', value: 'nata.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is NATA?',
+        bodyEn:
+          'NATA (National Aptitude Test in Architecture) is the national-level aptitude test for admission to the five-year B.Arch (Bachelor of Architecture) programme at schools of architecture across India. It is conducted by the Council of Architecture (CoA), the statutory body that regulates architectural education in India under the Architects Act, 1972.\n\nMany schools of architecture use a NATA score as a mandatory component of their admission process. Some institutions (such as NITs for their B.Arch seats) use JEE Paper 2 instead of or alongside NATA — check each institution\'s own admission notice for the test it requires.',
+      },
+      {
+        headingEn: 'Test structure',
+        bodyEn:
+          'NATA is a hybrid test conducted in two parts in the same sitting. Part A is an offline drawing and composition test — candidates draw on paper using pencils and colours. Part B is a computer-based test (CBT) covering mathematics, logical reasoning, visual reasoning, and architectural awareness.\n\nThe exam is typically conducted over multiple sessions and phases in a year, allowing candidates more than one opportunity to appear. The exact number of questions, marks, duration, and the number of attempts permitted in one year are set by CoA and published in the official information bulletin. Always verify the current year\'s rules on nata.in.',
+      },
+      {
+        headingEn: 'Eligibility',
+        bodyEn:
+          'The standard requirement is passing Class 10+2 (or an equivalent 10+3 Diploma) with Mathematics as a subject. Precise eligibility — minimum marks, whether the diploma route qualifies, and any domicile norms — is detailed in the CoA information bulletin each year. Confirm on nata.in before applying.\n\nFor admission to architecture programmes at NITs and centrally funded institutes, candidates additionally need to qualify the JEE architecture paper, so the two tests can overlap depending on the institutions you target.',
+      },
+      {
+        headingEn: 'Preparing for NATA',
+        bodyEn:
+          'NATA\'s drawing component tests spatial reasoning, proportion, colour sense, and freehand sketching — skills that are distinct from typical board-exam preparation. Practising observation drawing, perspective drawing, and quick compositions from memory is widely recommended.\n\nThe CBT component covers basic mathematics (up to Class 12 level), logical and visual reasoning, and awareness of architecture and the built environment. Reviewing past NATA question papers (available on nata.in) and practising CBT mock tests is a practical preparation strategy. No preparation approach guarantees a score; consistent practice over time is the primary factor.',
+      },
+      {
+        headingEn: 'Using your NATA score',
+        bodyEn:
+          'A NATA score is a qualifying criterion — institutions set their own cut-offs and merit formulas (typically combining NATA score and Class 12 marks). The CoA does not conduct centralised counselling; each institution or state counselling body runs its own admissions process. Check each target institution\'s admission portal for its cut-off, counselling schedule, and seat matrix. No NATA score guarantees a seat at any particular institution.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is NATA compulsory for all B.Arch programmes in India?',
+        answerEn:
+          'NATA is widely required for B.Arch admission, but some centrally funded institutions (such as NITs) use JEE Paper 2 instead. Check the admission notice of each specific institution to know which test it requires.',
+      },
+      {
+        questionEn: 'How many times can I appear for NATA in a year?',
+        answerEn:
+          'CoA conducts NATA in multiple sessions and phases. The maximum number of attempts permitted in one academic year is stated in the official NATA information bulletin at nata.in. Verify the current-year rules before registering.',
+      },
+      {
+        questionEn: 'What subjects are tested in NATA?',
+        answerEn:
+          'NATA tests drawing and composition (Part A — offline) and mathematics, logical reasoning, visual reasoning, and architectural awareness (Part B — CBT). The exact syllabus and weight of each section are in the official NATA information bulletin.',
+      },
+    ],
+    relatedExamSlugs: ['nata'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'career-options-in-design-after-12th',
+      'nift-nid-entrance-guide',
+      'courses-after-12th-pcm',
+      'nchm-jee-hotel-management-exam-guide',
+    ],
+    sources: [
+      { label: 'Council of Architecture — NATA official site', url: 'https://www.nata.in/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'nata exam guide',
+      'nata architecture exam',
+      'nata eligibility',
+      'nata council of architecture',
+      'b arch entrance exam india',
+      'nata exam pattern',
+    ],
+    tags: ['specialized-exams'],
+  },
+  {
+    slug: 'iit-jam-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'IIT JAM (M.Sc Admission) Exam Guide',
+    descriptionEn:
+      'A guide to IIT JAM — the Joint Admission Test for Masters conducted by the IITs — for science graduates seeking M.Sc and other postgraduate programmes at the IITs and IISc.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Full name', value: 'Joint Admission Test for Masters (JAM)' },
+      { label: 'Conducting body', value: 'IITs (organising institute rotates annually); jointly with IISc' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Used for', value: 'M.Sc and other post-bachelor programmes at IITs and IISc' },
+      { label: 'Official site', value: 'jam2026.iitb.ac.in (URL changes annually by organising IIT)' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is IIT JAM?',
+        bodyEn:
+          'IIT JAM (Joint Admission Test for Masters) is the national entrance test for admission to M.Sc (two-year), Joint M.Sc–Ph.D, M.Sc–Ph.D Dual Degree, and other post-bachelor\'s programmes at the IITs and IISc Bengaluru. It is conducted jointly by the IITs and IISc on a rotational basis, with one IIT serving as the organising institute each year.\n\nJAM opened the IIT system to science graduates from any undergraduate institution — not only engineering graduates — giving students from B.Sc programmes access to postgraduate study at India\'s premier technical institutes.',
+      },
+      {
+        headingEn: 'Test papers and subjects',
+        bodyEn:
+          'JAM is conducted as a computer-based test. There are multiple test papers, each corresponding to a science subject — such as Physics, Chemistry, Mathematics, Statistics, Biotechnology, Geology, and Economics. Candidates choose the paper(s) relevant to the M.Sc programme they are targeting, and different IITs require different JAM papers for different programmes.\n\nThe exact list of test papers, number of questions, types of questions (MCQ, MSQ, NAT), total marks, duration, and negative-marking rules are published in the official information brochure each year. Always verify these details on the official site for the current cycle.',
+      },
+      {
+        headingEn: 'Eligibility',
+        bodyEn:
+          'Candidates who have a bachelor\'s degree (or are in their final year) in the relevant discipline can apply. The minimum aggregate percentage requirement — and whether it applies with or without rounding — is specified in the official information brochure. Eligibility also varies by the specific M.Sc programme and the IIT you are applying to; some programmes have subject-specific prerequisites.\n\nConfirm the eligibility for your target programme and institution on the official JAM site and the individual IIT\'s graduate admissions page each year.',
+      },
+      {
+        headingEn: 'Admission process and counselling',
+        bodyEn:
+          'Qualifying in JAM does not guarantee admission. Shortlisted candidates apply for admission to specific IIT programmes through a centralised portal (JOAPS — JAM Online Application Processing System). Seat allocation is based on JAM score, the number of seats, the programme preferences submitted, and eligibility. Each IIT sets its own cut-off independently.\n\nApplicants for programmes at IISc should check IISc\'s own graduate admissions portal, as the process may differ. No score guarantees a seat at any particular institute or programme.',
+      },
+      {
+        headingEn: 'Why consider IIT JAM?',
+        bodyEn:
+          'JAM is one of the few routes through which a science graduate from any background can access the IIT ecosystem for postgraduate study — benefiting from IIT faculty, research infrastructure, peer groups, and the academic credential. Programmes cover pure and applied sciences, mathematics, statistics, and interdisciplinary areas.\n\nCareer directions after an IIT M.Sc include research (Ph.D programmes in India and abroad), industry roles in relevant technical fields, and professional postgraduate programmes. Outcomes vary widely by subject, institute, and individual — there are no guaranteed placements.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which IIT conducts JAM each year?',
+        answerEn:
+          'The organising institute rotates — a different IIT is designated each year. The official website for each cycle is announced by the current organising IIT. The current year\'s official JAM website is published by the organising IIT (e.g. jam2026.iitb.ac.in for JAM 2026). Search "IIT JAM" followed by the current year to find the active portal.',
+      },
+      {
+        questionEn: 'Can engineering graduates appear for IIT JAM?',
+        answerEn:
+          'JAM is primarily aimed at science graduates (B.Sc and related degrees), but engineering graduates can also apply if they meet the eligibility for the target programme. Check the specific programme\'s eligibility on the official JAM site.',
+      },
+      {
+        questionEn: 'Is a JAM score valid for more than one year?',
+        answerEn:
+          'The validity of a JAM score is set in the official brochure each year. Typically scores are valid for admission in the same academic year as the examination. Verify on the official site for the current year\'s rules.',
+      },
+    ],
+    relatedExamSlugs: ['iit-jam', 'gate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-to-prepare-for-gate',
+      'higher-studies-options-after-btech',
+      'mtech-vs-ms-vs-mba-after-btech',
+      'neet-pg-exam-guide',
+      'cuet-pg-exam-guide',
+    ],
+    sources: [
+      { label: 'IIT JAM 2026 official website (IIT Bombay, organising institute)', url: 'https://jam2026.iitb.ac.in/' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'iit jam exam guide',
+      'iit jam msc admission',
+      'joint admission test for masters',
+      'iit jam eligibility',
+      'iit jam test papers',
+      'msc at iit how to apply',
+    ],
+    tags: ['specialized-exams'],
+  },
+  {
+    slug: 'nchm-jee-hotel-management-exam-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'NCHM JEE (Hotel Management) Exam Guide',
+    descriptionEn:
+      'An overview of NCHM JEE — the joint entrance examination for B.Sc Hospitality and Hotel Administration admission at IHMs — conducted by NTA.',
+    readMinutes: 5,
+    keyFacts: [
+      { label: 'Full name', value: 'National Council for Hotel Management Joint Entrance Examination (NCHM JEE)' },
+      { label: 'Conducting body', value: 'National Testing Agency (NTA) on behalf of NCHMCT' },
+      { label: 'Mode', value: 'Computer-based test (CBT)' },
+      { label: 'Programme', value: 'B.Sc Hospitality and Hotel Administration (B.Sc HHA) at IHMs' },
+      { label: 'Official site', value: 'nchmjee.nta.nic.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is NCHM JEE?',
+        bodyEn:
+          'NCHM JEE (National Council for Hotel Management Joint Entrance Examination) is the national entrance test for admission to the B.Sc in Hospitality and Hotel Administration (B.Sc HHA) programme at Institutes of Hotel Management (IHMs) affiliated with the National Council for Hotel Management and Catering Technology (NCHMCT), an autonomous body under the Ministry of Tourism, Government of India.\n\nThe examination is conducted by the National Testing Agency (NTA) on behalf of NCHMCT. Qualifying the NCHM JEE is the primary route to seats at the IHMs, which are among the most recognised hospitality institutes in India.',
+      },
+      {
+        headingEn: 'Eligibility',
+        bodyEn:
+          'Candidates who have passed Class 12 (or an equivalent qualifying examination) from a recognised board are generally eligible to apply. Some IHMs may set age limits or additional eligibility conditions — these are published in the official information bulletin each year.\n\nConfirm the precise eligibility — including any minimum-percentage requirement, age conditions, and whether the current year allows students appearing in Class 12 to apply — on the official NTA portal before applying.',
+      },
+      {
+        headingEn: 'Exam format',
+        bodyEn:
+          'NCHM JEE is a computer-based test (CBT). The question paper covers English language, reasoning and logical deduction, numerical ability and analytical aptitude, general knowledge and current affairs, and aptitude for service sector. The exact number of questions, total marks, duration, and marking scheme are published in the official notification each cycle.\n\nNTA has adjusted the exam duration and number of questions in recent cycles, so always refer to the current-year information bulletin on nchmjee.nta.nic.in for the latest format.',
+      },
+      {
+        headingEn: 'Institutes and programmes',
+        bodyEn:
+          'IHMs affiliated with NCHMCT are spread across India and offer the three-year B.Sc HHA programme. After completing B.Sc HHA, graduates may pursue M.Sc Hospitality Administration or other postgraduate programmes, or enter the hospitality industry in food production, front office, food and beverage, housekeeping, and related areas.\n\nPrivate hotel management institutes may not require the NCHM JEE score and run their own admission processes. Check each institution\'s own admission portal. Career outcomes in hospitality vary widely by employer, location, and individual; there are no guaranteed placements.',
+      },
+      {
+        headingEn: 'Counselling and seat allocation',
+        bodyEn:
+          'After results are declared, NCHMCT runs a centralised counselling process for seat allocation across IHMs. Candidates must register for counselling separately and submit their college and programme preferences. Seats are allocated on the basis of NCHM JEE rank, category, and preferences submitted. Check the NCHMCT counselling portal (nchmcounselling.nic.in) for the current-year schedule.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is NCHM JEE the only route to IHM admission?',
+        answerEn:
+          'For NCHMCT-affiliated IHMs, the NCHM JEE score is the standard admission route. Private hotel management institutes that are not affiliated with NCHMCT may run their own entrance tests or use other criteria. Check each institution\'s admission notice.',
+      },
+      {
+        questionEn: 'What is the B.Sc HHA programme?',
+        answerEn:
+          'B.Sc in Hospitality and Hotel Administration (B.Sc HHA) is a three-year undergraduate programme offered at IHMs under NCHMCT. It covers food production, food and beverage service, front office operations, housekeeping, and hospitality management, with practical training included.',
+      },
+      {
+        questionEn: 'Can I apply for NCHM JEE while in Class 12?',
+        answerEn:
+          'Generally, candidates who are appearing in Class 12 in the current year are eligible to apply. The final eligibility conditions are published in the official information bulletin on nchmjee.nta.nic.in each cycle — verify before applying.',
+      },
+    ],
+    relatedExamSlugs: ['nchm-jee'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'hotel-management-course-guide',
+      'career-options-in-design-after-12th',
+      'nift-nid-entrance-guide',
+      'nata-exam-guide',
+    ],
+    sources: [
+      { label: 'NTA — NCHM JEE official portal', url: 'https://nchmjee.nta.nic.in' },
+      { label: 'NTA — NCHM JEE exam page', url: 'https://exams.nta.nic.in/nchm-jee/' },
+      { label: 'NCHMCT — Ministry of Tourism autonomous body', url: 'https://www.nchm.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'nchm jee exam guide',
+      'hotel management entrance exam india',
+      'ihm admission nchm jee',
+      'b.sc hospitality hotel administration',
+      'nchmct jee 2026',
+      'nta hotel management exam',
+    ],
+    tags: ['specialized-exams', 'design-arts-media'],
+  },
+
+// ─────────────────────────── Set 19 — MBA entrances, rank & decisions ──────────
+  {
+    slug: 'ipmat-and-integrated-bba-mba-guide',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'IPMAT & Integrated Programme in Management (IIM) Guide',
+    descriptionEn:
+      'An overview of IPMAT — the aptitude test for the five-year Integrated Programme in Management at IIM Indore and IIM Rohtak — covering eligibility, broad exam structure, and the integrated management degree it leads to.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Programme', value: 'Five-Year Integrated Programme in Management (IPM)' },
+      { label: 'Institutes', value: 'IIM Indore (IPMAT Indore) and IIM Rohtak (IPMAT Rohtak) — separate tests' },
+      { label: 'Entry level', value: 'After Class 12 (no prior degree required)' },
+      { label: 'Mode', value: 'Computer-based test' },
+      { label: 'Official site (IIM Indore)', value: 'iimidr.ac.in' },
+      { label: 'Official site (IIM Rohtak)', value: 'iimrohtak.ac.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is the IPMAT?',
+        bodyEn:
+          'IPMAT stands for Integrated Programme in Management Aptitude Test. It is the entrance examination for admission to the five-year integrated management programmes offered by IIM Indore and IIM Rohtak. Unlike CAT, which requires a bachelor\'s degree, IPMAT is taken directly after Class 12.\n\nThe two institutes run separate tests — IPMAT Indore (conducted by IIM Indore) and IPMAT Rohtak (conducted by IIM Rohtak) — each with its own notification, schedule, and process. Always refer to the respective official institute website for current details.',
+      },
+      {
+        headingEn: 'What degree does it lead to?',
+        bodyEn:
+          'The integrated programme spans five years and leads to a management degree on completion. IIM Indore\'s IPM culminates in a Bachelor of Arts (Foundations of Management) and MBA from the institute. IIM Rohtak\'s programme awards dual BBA and MBA degrees.\n\nStudents who successfully complete the programme earn a management qualification comparable to a postgraduate management degree, without the need for a separate undergraduate degree or a subsequent CAT/GMAT attempt.',
+      },
+      {
+        headingEn: 'Broad eligibility and exam structure',
+        bodyEn:
+          'Both tests are designed for Class 12 pass or appearing students. The broad eligibility — including age limits, minimum marks, and category relaxations — is set in the official notification each cycle and must be verified on the official site before applying.\n\nBoth tests are computer-based and broadly cover quantitative ability and verbal ability. IIM Rohtak\'s paper also includes a logical reasoning section. The number of questions, duration, marking, and negative-marking rules are published in each year\'s official notification.',
+        bullets: [
+          'Eligibility: Class 12 pass or appearing (exact criteria per official notification)',
+          'Mode: computer-based test',
+          'Sections: broadly quantitative ability and verbal ability (IIM Rohtak also includes logical reasoning)',
+          'Exact question counts, duration and marking: see the official notification',
+        ],
+      },
+      {
+        headingEn: 'Selection process after IPMAT',
+        bodyEn:
+          'Shortlisted candidates are typically called for a further stage — such as a personal interview or written skill assessment — before final admission. The exact process and weightages are set by each institute and published officially each year. No part of the selection process guarantees admission; all decisions rest with the respective institute.',
+      },
+      {
+        headingEn: 'How IPMAT differs from CAT',
+        bodyEn:
+          'CAT is a postgraduate management entrance test requiring a bachelor\'s degree, used for admission to the two-year MBA or equivalent at the IIMs and many other institutes. IPMAT is an undergraduate entry point — you sit it after Class 12 and earn the management degree over five years. Both routes lead to an IIM management qualification, but via different timelines and eligibility conditions. Neither route is universally better; the right choice depends on your goals and situation.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who conducts IPMAT?',
+        answerEn:
+          'IPMAT Indore is conducted by IIM Indore (iimidr.ac.in) and IPMAT Rohtak is conducted by IIM Rohtak (iimrohtak.ac.in). They are separate exams with separate applications and schedules.',
+      },
+      {
+        questionEn: 'Can I take IPMAT after Class 12 without a degree?',
+        answerEn:
+          'Yes. IPMAT is specifically designed for students who have passed or are appearing in Class 12. The exact eligibility criteria — including minimum marks and age limits — are published in the official notification each year.',
+      },
+      {
+        questionEn: 'Does clearing IPMAT guarantee admission?',
+        answerEn:
+          'No. Clearing the aptitude test shortlists you for subsequent stages, which may include a personal interview or other assessment. Final admission is at the sole discretion of the respective institute based on its selection process.',
+      },
+    ],
+    relatedExamSlugs: ['ipmat', 'cat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'mat-cmat-xat-other-mba-entrance-exams',
+      'cat-exam-eligibility-and-pattern',
+      'top-iims-in-india-list',
+    ],
+    sources: [
+      { label: 'IIM Indore — IPM admissions', url: 'https://iimidr.ac.in/programmes/academic-programmes/five-year-integrated-programme-in-management-ipm/ipm-admissions-details/' },
+      { label: 'IIM Rohtak — IPM admission', url: 'https://www.iimrohtak.ac.in/ipm-admission.php' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['ipmat', 'integrated programme management', 'iim indore ipmat', 'iim rohtak ipmat', 'bba mba integrated', 'management after 12th'],
+    tags: ['mba', 'courses-after-12th'],
+  },
+  {
+    slug: 'mat-cmat-xat-other-mba-entrance-exams',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'MAT, CMAT, XAT & Other MBA Entrance Exams',
+    descriptionEn:
+      'An overview of the major MBA entrance exams in India beyond CAT — MAT, CMAT, XAT, NMAT, and SNAP — covering who conducts each exam, what it leads to, and how they differ from CAT.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'MAT conducting body', value: 'All India Management Association (AIMA)' },
+      { label: 'CMAT conducting body', value: 'National Testing Agency (NTA)' },
+      { label: 'XAT conducting body', value: 'XLRI Xavier School of Management' },
+      { label: 'NMAT conducting body', value: 'Graduate Management Admission Council (GMAC)' },
+      { label: 'SNAP conducting body', value: 'Symbiosis International (Deemed University)' },
+    ],
+    sections: [
+      {
+        headingEn: 'Why more than one MBA entrance exam?',
+        bodyEn:
+          'Different business schools accept different entrance tests. CAT is accepted by the IIMs and hundreds of other institutes, but many prominent schools either run their own exam or accept alternatives to CAT. Understanding which tests a target school accepts is the first step in planning your MBA entrance strategy.',
+      },
+      {
+        headingEn: 'MAT — Management Aptitude Test',
+        bodyEn:
+          'MAT is conducted by the All India Management Association (AIMA). It is held multiple times a year, making it one of the more frequently scheduled national MBA entrance tests in India. MAT scores are accepted by a large number of AICTE-approved management institutes across the country. The test broadly covers language comprehension, mathematical skills, data analysis, intelligence and reasoning, and Indian and global environment. The exact schedule, fee, and pattern are published on the official AIMA website.',
+        bullets: [
+          'Conducting body: All India Management Association (AIMA)',
+          'Frequency: multiple windows per year (see mat.aima.in for current schedule)',
+          'Mode: paper-based and computer-based options (verify current availability on official site)',
+        ],
+      },
+      {
+        headingEn: 'CMAT — Common Management Admission Test',
+        bodyEn:
+          'CMAT is conducted by the National Testing Agency (NTA) and is accepted by AICTE-approved MBA and PGDM programmes across India. It is a computer-based national test. The broad sections and pattern are published in the official NTA notification each year. CMAT scores are specifically recognised by many institutes that participate in the centralised CMAT admission process.',
+        bullets: [
+          'Conducting body: National Testing Agency (NTA)',
+          'Official site: exams.nta.ac.in/CMAT',
+          'Broadly covers: language comprehension, quantitative techniques, logical reasoning, general awareness, innovation & entrepreneurship',
+        ],
+      },
+      {
+        headingEn: 'XAT — Xavier Aptitude Test',
+        bodyEn:
+          'XAT is conducted by XLRI Xavier School of Management and is accepted for admission to XLRI Jamshedpur, XLRI Delhi, and several other leading institutes. It includes a distinctive decision-making section alongside quantitative ability and verbal ability. The exact pattern, duration, and scoring are published on the official XAT website each year.\n\nNMAT is conducted by GMAC (the same body that conducts the GMAT) and is the primary entrance test for NMIMS schools and accepted by several other business schools. SNAP is conducted by Symbiosis International (Deemed University) and is the entrance test for Symbiosis institutes offering MBA programmes. Each exam has its own official site, schedule, and eligibility — verify current details officially before applying.',
+        bullets: [
+          'XAT official site: xatonline.in',
+          'NMAT official site: mba.com/exams/nmat',
+          'SNAP official site: snaptest.org',
+        ],
+      },
+      {
+        headingEn: 'How to choose which exams to take',
+        bodyEn:
+          'Most serious MBA applicants take multiple entrance tests, since different target schools may require different exams. The practical approach is to list your target institutes first, check which exams they accept, and then prepare for those. Each exam has its own strengths, pattern, and accepted school list — no exam is universally "better" than another. Eligibility, registration deadlines, and fees are published in each exam\'s official notification; always verify current details on the official websites.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is MAT accepted by the IIMs?',
+        answerEn:
+          'No. The IIMs accept CAT scores (not MAT, CMAT, or SNAP) for their flagship programmes. MAT and CMAT are accepted by a different, broader set of AICTE-approved management institutes.',
+      },
+      {
+        questionEn: 'Can I take multiple MBA entrance exams in the same year?',
+        answerEn:
+          'Yes. Most candidates apply to multiple exams — for example CAT, XAT, CMAT, and SNAP — depending on which institutes they are targeting. There is no restriction on taking more than one exam.',
+      },
+      {
+        questionEn: 'Who conducts NMAT?',
+        answerEn:
+          'NMAT is conducted by GMAC (Graduate Management Admission Council), the same body that conducts the GMAT. It is the primary entrance test for NMIMS schools and is also accepted by several other business schools. Check mba.com/exams/nmat for current details.',
+      },
+    ],
+    relatedExamSlugs: ['ipmat', 'cat', 'gmat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ipmat-and-integrated-bba-mba-guide',
+      'cat-exam-eligibility-and-pattern',
+      'how-to-prepare-for-cat',
+      'top-iims-in-india-list',
+    ],
+    sources: [
+      { label: 'AIMA — MAT official site', url: 'https://mat.aima.in' },
+      { label: 'NTA — CMAT official site', url: 'https://exams.nta.ac.in/CMAT' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['mat exam', 'cmat exam', 'xat exam', 'nmat', 'snap exam', 'mba entrance exams india besides cat'],
+    tags: ['mba'],
+  },
+  {
+    slug: 'jee-main-marks-vs-rank-explained',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'JEE Main Marks vs Rank, Explained',
+    descriptionEn:
+      'A plain-language explanation of how JEE Main raw marks are converted into NTA percentile scores, how the All India Rank (AIR) is derived, and why two candidates with the same marks can end up with different ranks.',
+    readMinutes: 5,
+    sections: [
+      {
+        headingEn: 'Why raw marks do not directly give you a rank',
+        bodyEn:
+          'JEE Main is conducted in multiple sessions and shifts across different dates. Because different sets of students attempt question papers of slightly varying difficulty levels, comparing raw marks directly across sessions would be unfair. To address this, the National Testing Agency (NTA) converts raw marks into a percentile score using a normalisation procedure.',
+      },
+      {
+        headingEn: 'What is an NTA percentile score?',
+        bodyEn:
+          'Your NTA percentile score is not a percentage of questions you answered correctly — it is a relative measure of your performance compared to other candidates who appeared in the same session. Specifically, it represents the percentage of candidates in your session who scored equal to or less than you.\n\nFor example, if your percentile score is 95, it means you scored equal to or more than 95% of the candidates in your session. The top scorer in each session receives a percentile of 100. Percentile scores are calculated to several decimal places to distinguish between candidates with similar performance.',
+        bullets: [
+          'Percentile = (Number of candidates in your session scoring ≤ your raw marks ÷ Total candidates in your session) × 100',
+          'The highest raw score in each session is normalised to a percentile of 100',
+          'Percentile scores are calculated to several decimal places',
+        ],
+      },
+      {
+        headingEn: 'How the All India Rank (AIR) is calculated',
+        bodyEn:
+          'After all sessions are complete, NTA merges the percentile scores from every session into a combined merit list. The All India Rank (AIR) is assigned based on this combined percentile — the candidate with the highest percentile gets rank 1. Candidates who appeared in both sessions have their best NTA score (highest percentile) used for the merit list.\n\nBecause rank depends on the percentile (a relative measure) rather than your absolute marks, a candidate\'s final rank can vary even if their raw score stays the same — it depends on how many candidates appeared, how the paper difficulty varied, and the score distribution in that session. The NTA publishes its normalisation procedure document on the official JEE Main website; reading it gives you the most accurate, current explanation.',
+      },
+      {
+        headingEn: 'Tie-breaking rules',
+        bodyEn:
+          'When two or more candidates have the same percentile score (to the stated decimal places), NTA applies published tie-breaking rules to assign distinct ranks. Tie-breaking typically considers performance in individual sections (mathematics, physics, chemistry) and the ratio of correct to incorrect answers, in a prescribed order. The exact tie-breaking sequence is published in the official information bulletin each year.',
+      },
+      {
+        headingEn: 'What marks vs rank tables cannot tell you',
+        bodyEn:
+          'Various coaching institutes publish "expected marks vs rank" tables, but these are estimates based on historical patterns and are not official. Your actual rank depends on the current year\'s total candidate count, the difficulty distribution across sessions, and the performance of everyone who sat the exam. Use such tables only as rough orientation, not as a guarantee of any specific rank. For authoritative information, refer to the official JEE Main website.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Why is the NTA percentile not the same as my marks percentage?',
+        answerEn:
+          'They are completely different measures. Your marks percentage is the fraction of total marks you scored. Your NTA percentile is a relative rank — the percentage of candidates in your session who scored equal to or less than you. A high percentile means you outperformed a large fraction of your session\'s candidates, regardless of the absolute mark.',
+      },
+      {
+        questionEn: 'If I score the same marks in both sessions, will I get the same rank?',
+        answerEn:
+          'Not necessarily. Your rank depends on the relative performance of all candidates across sessions. A score that yields a high percentile in one session may yield a different percentile in another session with a different score distribution.',
+      },
+      {
+        questionEn: 'Where can I read the official normalisation procedure?',
+        answerEn:
+          'NTA publishes its normalisation and percentile calculation procedure document on the official JEE Main website (jeemain.nta.nic.in). Check the documents section for the current year\'s official notification and normalisation procedure.',
+      },
+    ],
+    relatedExamSlugs: ['jee-main', 'jee-advanced'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'jee-main-exam-pattern-and-syllabus',
+      'neet-marks-vs-rank-explained',
+      'cat-percentile-vs-marks-explained',
+    ],
+    sources: [
+      { label: 'NTA — JEE Main normalisation procedure (official document)', url: 'https://jeemain.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['jee main marks vs rank', 'jee main percentile explained', 'nta score percentile', 'jee main normalisation', 'how jee rank is calculated'],
+    tags: ['exam-preparation', 'jee'],
+  },
+  {
+    slug: 'neet-marks-vs-rank-explained',
+    category: 'exam-prep',
+    region: 'india',
+    titleEn: 'NEET Marks vs Rank, Explained',
+    descriptionEn:
+      'A plain-language explanation of how NEET UG raw marks relate to All India Rank — how percentile scores are calculated, why the same mark can yield different ranks across years, and how tie-breaking works.',
+    readMinutes: 5,
+    sections: [
+      {
+        headingEn: 'Raw marks and All India Rank are not the same thing',
+        bodyEn:
+          'NEET UG is a single national entrance test conducted by the National Testing Agency (NTA). Your raw score is the total marks you earn based on correct and incorrect answers under the marking scheme stated in the official notification. Your All India Rank (AIR) is derived from where your score sits relative to every other candidate who appeared — not from your absolute marks alone.',
+      },
+      {
+        headingEn: 'How the NTA converts marks to percentile and rank',
+        bodyEn:
+          'NTA uses a percentile-based system for NEET UG. Your percentile score reflects the percentage of candidates who scored equal to or less than you. The candidate with the highest raw score receives a percentile of 100, and rank 1 is assigned to that candidate.\n\nThe broad relationship is: your rank is approximately the total number of candidates multiplied by (1 minus your percentile divided by 100). However, because of tie-breaking rules, the final rank can differ slightly from this estimate. When NEET is conducted in multiple sessions (as it sometimes is), a normalisation procedure is applied to compare scores across sessions fairly, in a manner similar to JEE Main.',
+        bullets: [
+          'Percentile = (Candidates scoring ≤ your marks ÷ Total candidates) × 100',
+          'Rank 1 goes to the candidate(s) with the highest raw score',
+          'Multi-session years: normalisation is applied to ensure fair cross-session comparison',
+        ],
+      },
+      {
+        headingEn: 'Why the same mark gives a different rank each year',
+        bodyEn:
+          'Your rank depends on the total number of candidates who appeared, the distribution of scores across the entire population, and (in multi-session years) the difficulty variation between sessions. These variables change every year. A mark of, say, 600 may yield a very different rank in a year with a larger or higher-scoring candidate pool compared to another year. This is why coaching-institute "marks vs rank" tables from previous years are estimates, not guarantees.',
+      },
+      {
+        headingEn: 'Tie-breaking rules',
+        bodyEn:
+          'When two or more candidates have identical raw scores, NTA applies published tie-breaking rules. These typically compare Biology marks first, then Chemistry, then the ratio of correct to incorrect answers, in an order specified in the official information bulletin. Ties resolved through these rules mean that two students with the same mark can receive different ranks.',
+      },
+      {
+        headingEn: 'What this means for counselling',
+        bodyEn:
+          'NEET AIR determines eligibility and priority during the Medical Counselling Committee (MCC) centralised counselling for MBBS and BDS seats. State-quota seats use state rank, which is generated from the same NEET score. The specific score required to qualify or to secure a seat in a particular institute varies every year and is set by the official counselling process — no unofficial prediction tool can guarantee a specific outcome.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the NEET qualifying cutoff the same every year?',
+        answerEn:
+          'No. The qualifying percentile (cut-off percentile) is set each year in the official result notification. The actual minimum marks corresponding to that percentile change with the score distribution of the year. Always check the official NTA result notification for the current qualifying marks.',
+      },
+      {
+        questionEn: 'Does the same NEET score guarantee a medical seat?',
+        answerEn:
+          'No. Securing a seat depends on your rank in the overall and category merit lists, the number of available seats in each counselling round, the preferences you submit, and seat-matrix changes each year. No score level guarantees a specific seat or college.',
+      },
+      {
+        questionEn: 'Where can I find the official NEET rank list?',
+        answerEn:
+          'NTA publishes the NEET UG result, percentile scores, and All India Rank on the official NEET website (neet.nta.nic.in) after each examination cycle. The MCC counselling process is at mcc.nic.in.',
+      },
+    ],
+    relatedExamSlugs: ['neet-ug'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'neet-exam-pattern-and-syllabus',
+      'jee-main-marks-vs-rank-explained',
+      'cat-percentile-vs-marks-explained',
+      'neet-counselling-process-mcc',
+    ],
+    sources: [
+      { label: 'NTA — NEET UG official website', url: 'https://neet.nta.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['neet marks vs rank', 'neet rank calculation', 'neet percentile explained', 'how neet rank is calculated', 'neet qualifying cutoff'],
+    tags: ['exam-preparation', 'neet'],
+  },
+  {
+    slug: 'best-courses-and-degrees-for-government-jobs',
+    category: 'career',
+    region: 'india',
+    titleEn: 'Best Courses & Degrees for Government Jobs',
+    descriptionEn:
+      'A neutral overview of which degrees and educational backgrounds open which government-exam routes in India — UPSC, SSC, banking, defence, and railways — without guarantees or hype.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'How government exams relate to degrees',
+        bodyEn:
+          'Most central government competitive exams in India specify a minimum educational qualification — typically a recognised bachelor\'s degree from any discipline. This means candidates from almost any graduation background are eligible for the same pool of major exams. The degree subject opens or restricts specific exam routes, but for the broadest central exams — UPSC Civil Services, SSC CGL, and most banking exams — any recognised bachelor\'s degree is sufficient.',
+      },
+      {
+        headingEn: 'UPSC Civil Services — any graduate can apply',
+        bodyEn:
+          'The UPSC Civil Services Examination (IAS, IPS, IFS and allied services) requires a bachelor\'s degree in any subject from a recognised university. There is no requirement for a specific stream. Final-year students are permitted to apply at the preliminary stage, subject to conditions in the official notification.\n\nWhile there is no mandatory subject, candidates often find it useful to align their optional subject (at the Mains stage) with a subject they studied in depth — but this is a personal strategy choice, not a formal requirement. Eligibility, age limits, and attempt limits are set in the official UPSC notification each year.',
+        bullets: [
+          'Minimum qualification: any recognised bachelor\'s degree',
+          'Optional subject: any from the official UPSC list (not restricted by graduation subject)',
+          'Final-year students may apply at Prelims stage (subject to conditions)',
+          'Eligibility details: upsc.gov.in',
+        ],
+      },
+      {
+        headingEn: 'SSC and banking exams — graduation in any discipline',
+        bodyEn:
+          'SSC CGL requires a bachelor\'s degree in any subject for most posts (a few posts specify particular subjects such as statistics or mathematics — check the official SSC notification). IBPS PO, IBPS Clerk, SBI PO, and RBI Grade B all require a bachelor\'s degree in any discipline from a recognised university. Class 12 pass is sufficient for SSC CHSL and some railway exams (RRB NTPC clerical posts).\n\nEngineering graduates are additionally eligible for technical PSU recruitment (DRDO, BHEL, ONGC, and others) via GATE scores, and for specialist officer posts in banks that require a specific discipline.',
+        bullets: [
+          'SSC CGL: any bachelor\'s degree (a few posts specify subject — see official notification)',
+          'IBPS PO / SBI PO / RBI Grade B: any recognised bachelor\'s degree',
+          'SSC CHSL: Class 12 pass',
+          'Technical PSUs via GATE: engineering/science discipline required',
+        ],
+      },
+      {
+        headingEn: 'Defence and other specialist routes',
+        bodyEn:
+          'NDA (National Defence Academy) allows Class 12 pass entry for the Army wing; Physics, Chemistry, and Mathematics (PCM) at Class 12 are required for the Navy and Air Force wings. The CDS (Combined Defence Services) examination, also conducted by UPSC, requires a bachelor\'s degree (specific discipline for technical entries in the Air Force and Navy).\n\nState public service commissions (State PSCs) generally follow similar patterns to UPSC at the state level, with eligibility details set in each state\'s official notification. Teaching (CTET, TET) and other public-sector exams carry their own qualification requirements per official notification.',
+      },
+      {
+        headingEn: 'Choosing a degree with government exams in mind',
+        bodyEn:
+          'Since most central exams accept any graduate, the primary decision is your interest and aptitude rather than a specific degree. A few practical considerations: completing your degree is a prerequisite, so choosing a programme you will see through to completion matters; a subject you find engaging is easier to study intensively; and technical or professional degrees (engineering, medicine, law, agriculture) open additional specialist government-exam routes.\n\nThere is no single "best" degree for government jobs, and no degree guarantees selection in any examination. Selection depends on performance in a competitive process where candidates from all disciplines compete. Always verify current eligibility requirements on the official conducting body\'s website before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is any specific degree compulsory for the UPSC Civil Services exam?',
+        answerEn:
+          'No. UPSC Civil Services requires a bachelor\'s degree in any subject from a recognised university. No specific stream is mandatory. Verify the current eligibility criteria on upsc.gov.in.',
+      },
+      {
+        questionEn: 'Can an engineering graduate apply for SSC CGL or IBPS PO?',
+        answerEn:
+          'Yes. An engineering degree is a recognised bachelor\'s degree, making the holder eligible for SSC CGL, IBPS PO, SBI PO, and most other graduate-level central government exams. Technically, an engineering graduate may additionally qualify for technical/specialist posts.',
+      },
+      {
+        questionEn: 'Do reserved categories receive relaxations in eligibility for government exams?',
+        answerEn:
+          'Yes. Most government exams provide relaxations in age limits and, for some exams, minimum marks for candidates belonging to reserved categories (SC, ST, OBC, EWS, PwBD), as specified in the official notification. Always check the current notification for exact relaxation details.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ssc-cgl-exam-guide',
+      'how-to-prepare-for-upsc',
+      'bank-po-exam-guide',
+      'nda-entrance-guide',
+    ],
+    sources: [
+      { label: 'UPSC — official website', url: 'https://upsc.gov.in' },
+      { label: 'SSC — official website', url: 'https://ssc.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: ['best degrees for government jobs india', 'government jobs after graduation', 'upsc eligibility degree', 'ssc cgl eligibility', 'courses for government exams'],
+    tags: ['government-exams', 'courses-after-12th'],
+  },
+
+{
+    slug: 'pm-and-central-government-scholarships-overview',
+    category: 'scholarships',
+    region: 'india',
+    titleEn: 'Central Government Scholarships Overview',
+    descriptionEn:
+      'A plain-English overview of the major central government scholarship schemes available to Indian students — how the National Scholarship Portal works, who can apply, and how to stay safe from scams.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Central portal', value: 'National Scholarship Portal (scholarships.gov.in)' },
+      { label: 'Administered by', value: 'Ministry of Education and other central ministries' },
+      { label: 'Mode', value: 'Online applications via NSP' },
+      { label: 'Eligibility basis', value: 'Academic merit + income criteria (varies per scheme)' },
+      { label: 'Official site', value: 'https://scholarships.gov.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What are central government scholarships?',
+        bodyEn:
+          'Central government scholarships are financial support programmes funded by the Government of India and administered through central ministries such as the Ministry of Education, Ministry of Social Justice and Empowerment, Ministry of Tribal Affairs, and others. They are intended to support students at various levels — from school through postgraduate study — who meet published eligibility criteria.\n\nThese schemes exist alongside state government scholarships (which vary by state) and are separate from international funding programmes such as Fulbright or DAAD. This guide covers only the central government tier; state schemes are covered in a companion guide.',
+      },
+      {
+        headingEn: 'The National Scholarship Portal (NSP)',
+        bodyEn:
+          'The National Scholarship Portal (scholarships.gov.in) is the official, single online platform for applying to most central government scholarship schemes. Students can discover relevant schemes, submit applications, track status, and receive disbursements through Direct Benefit Transfer (DBT) via the NSP.\n\nThe portal is the authoritative source for current scheme names, eligibility conditions, documents required, application windows, and award amounts. Because amounts, income limits and application dates are revised from year to year, always check scholarships.gov.in directly for the current cycle — no third-party summary (including this guide) can substitute for the official current notification.',
+        bullets: [
+          'Official portal: scholarships.gov.in',
+          'Covers pre-matric, post-matric and merit-cum-means schemes',
+          'Awards are disbursed directly to bank accounts via DBT',
+          'Application windows vary by scheme and open annually — check NSP for dates',
+        ],
+      },
+      {
+        headingEn: 'Types of schemes on the NSP',
+        bodyEn:
+          'Central scholarship schemes on the NSP typically fall into a few broad categories. Pre-matric schemes support students still in school (before Class 10). Post-matric schemes support Class 11 and above, including undergraduate, postgraduate and professional study. Merit-cum-Means schemes combine academic performance with income criteria.\n\nSome schemes are linked to specific groups recognised under official government programmes — for instance, schemes under the Ministry of Tribal Affairs or the Ministry of Minority Affairs. All eligibility conditions, including any category-based criteria, are set out in the official scheme notification on scholarships.gov.in and must be verified there.\n\nExamples of well-known central schemes include the Central Sector Scheme of Scholarships for College and University Students (administered by the Ministry of Education) and the INSPIRE scholarship for science students (administered by the Department of Science and Technology). Both are covered in separate dedicated guides; this guide provides only an overview of the landscape.',
+      },
+      {
+        headingEn: 'How to apply: general process',
+        bodyEn:
+          'The general process for applying through the NSP is: register on the portal with your Aadhaar-linked details, search for schemes you may be eligible for, fill in the application form, upload the required documents (usually mark sheets, income certificate, bank details), and submit before the official deadline.\n\nInstitutions registered with the NSP often need to verify applications before they are forwarded. Check whether your school or college is registered on the NSP, as unregistered institutions may not be able to process your application.\n\nEvery step — including which documents are required, whether Aadhaar linkage is mandatory, and the deadline — is specified in the official scheme notification on scholarships.gov.in. Confirm all details there before applying.',
+      },
+      {
+        headingEn: 'Avoiding scams and incorrect information',
+        bodyEn:
+          'Legitimate central government scholarships are free to apply for through the official NSP portal. You should never pay any individual or agency a fee to apply for, or to "guarantee" receipt of, a government scholarship — this is a scam. Any legitimate award is based on published criteria and disbursed directly to your bank account.\n\nBe cautious of unofficial websites, social-media posts, or agents claiming to process NSP applications for a fee, or claiming to have information on amounts and deadlines not published on scholarships.gov.in. Always verify all scheme details — including whether a particular scheme is currently active — directly on the official portal.\n\nNo scholarship can guarantee admission to a specific institution, and no one can guarantee that your application will be selected. Apply honestly with correct documents and verify the current eligibility criteria from the official source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Where do I apply for central government scholarships?',
+        answerEn:
+          'Most central government scholarships are applied for through the official National Scholarship Portal at scholarships.gov.in. Some schemes (such as INSPIRE) have their own dedicated portals — check the scheme\'s official notification for the correct application route.',
+      },
+      {
+        questionEn: 'Are central government scholarships only for specific categories of students?',
+        answerEn:
+          'Different schemes have different eligibility criteria, which may include academic merit, family income, course of study, or other criteria specified in the official notification. The eligibility for each scheme is set out on scholarships.gov.in — check each scheme individually to see whether you qualify.',
+      },
+      {
+        questionEn: 'Should I pay someone to apply for a government scholarship on my behalf?',
+        answerEn:
+          'No. Applying through the official NSP portal (scholarships.gov.in) is free. Anyone asking for payment to process your application or to "guarantee" a scholarship is attempting a scam. Never pay any fee to an unofficial intermediary.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'national-scholarship-portal-guide',
+      'inspire-scholarship-guide',
+      'state-government-scholarships-overview',
+      'education-loan-for-studies-in-india',
+    ],
+    sources: [
+      { label: 'National Scholarship Portal — official site', url: 'https://scholarships.gov.in' },
+      { label: 'Ministry of Education — scholarship schemes', url: 'https://www.education.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'central government scholarships india',
+      'national scholarship portal',
+      'NSP scholarships',
+      'government scholarships after 12th',
+      'scholarships.gov.in',
+      'central sector scholarship',
+    ],
+    tags: ['scholarships'],
+  },
+  {
+    slug: 'state-government-scholarships-overview',
+    category: 'scholarships',
+    region: 'india',
+    titleEn: 'State Government Scholarships Overview',
+    descriptionEn:
+      'An overview of how state government scholarship schemes work in India — where to find them, how they differ from central schemes, and how to verify details from official state portals.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Why state scholarships matter',
+        bodyEn:
+          'Alongside central government schemes on the National Scholarship Portal, every Indian state and union territory administers its own set of scholarship programmes. State scholarships are often specifically designed for students who are domiciled in that state, studying in state institutions, or enrolled in courses at particular levels recognised by the state government.\n\nBecause these programmes are administered at the state level, their names, eligibility conditions, amounts, and application processes vary considerably from state to state. This guide explains how to find and navigate state schemes; it does not quote specific amounts or deadlines because those are revised every academic year.',
+      },
+      {
+        headingEn: 'How state scholarship portals work',
+        bodyEn:
+          'Most states have moved to an online application system, either through a dedicated state scholarship portal or through the state\'s Department of Social Welfare, Higher Education, Backward Classes, or Minority Welfare. Some state schemes are also integrated into the National Scholarship Portal (scholarships.gov.in), while others must be applied for separately on the state portal.\n\nThe first step is to identify the official scholarship portal for your state. This is typically accessible through the state government\'s official website (usually a .gov.in or .nic.in domain). Search for "[your state name] scholarship portal" and look for the .gov.in or .nic.in result — avoid unofficial or commercial sites that may carry inaccurate information.',
+        bullets: [
+          'Some state schemes appear on the National Scholarship Portal (scholarships.gov.in)',
+          'Others are applied for directly on a state-specific .gov.in portal',
+          'The state Higher Education or Social Welfare department website is the authoritative source',
+          'Eligibility, domicile rules, income limits, and document requirements vary per state and per scheme',
+        ],
+      },
+      {
+        headingEn: 'Common types of state scholarship schemes',
+        bodyEn:
+          'While details vary by state, common categories of state scholarship include: post-matric scholarships for students from economically weaker sections studying after Class 10; merit scholarships for top performers in state board examinations; schemes for students pursuing professional courses such as engineering, medicine, or law at state institutions; and fee-waiver or reimbursement schemes linked to college admission.\n\nSome states also run schemes specifically for students from particular social or economic groups as defined under their own state laws. Eligibility for any such scheme is governed by the official scheme notification from the relevant state authority — check the official portal for your state.',
+      },
+      {
+        headingEn: 'How to find and apply',
+        bodyEn:
+          'Start with the official website of your state government — look for the Department of Higher Education, Department of Social Welfare, or equivalent. Look specifically for ".gov.in" or ".nic.in" domains. Most state portals require you to register with your Aadhaar-linked details, fill an online form, upload mark sheets and income certificate, and submit before the published deadline.\n\nNote that domicile requirements — rules about how long you must have lived in the state to be eligible — differ widely between schemes and states. Some schemes are available only to students who have studied in state-board schools; others are open more broadly. Always read the full scheme notification before applying.',
+      },
+      {
+        headingEn: 'Scam awareness and key reminders',
+        bodyEn:
+          'Government scholarship applications — at both central and state level — are free to submit through official portals. If anyone asks you to pay a fee to apply for a government scholarship or to "guarantee" your application, this is a scam. Never pay any intermediary, and never share your Aadhaar details or banking credentials with unofficial sources.\n\nBecause state portals, scheme names, and eligibility conditions change each academic year, no third-party website — including this guide — should be relied on for precise current details. Always verify the latest information on your state\'s official portal before the application deadline.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Where do I find my state\'s scholarship portal?',
+        answerEn:
+          'Search for "[your state name] scholarship portal" and look for the official .gov.in or .nic.in result, usually linked from your state government\'s Department of Higher Education or Social Welfare. Some state schemes also appear on the central National Scholarship Portal at scholarships.gov.in.',
+      },
+      {
+        questionEn: 'Can I apply for both central and state scholarships?',
+        answerEn:
+          'In many cases, yes — central and state schemes are separate programmes. However, some state schemes may have conditions about other funding you receive. Read the eligibility conditions for each scheme individually on the official portal before applying.',
+      },
+      {
+        questionEn: 'Do I need a domicile certificate to apply for state scholarships?',
+        answerEn:
+          'Most state scholarship schemes require a domicile certificate from that state. The specific documents required are listed in the official scheme notification on the state portal — verify the current requirements before applying.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'pm-and-central-government-scholarships-overview',
+      'national-scholarship-portal-guide',
+      'education-loan-for-studies-in-india',
+      'scholarships-for-indian-students-abroad',
+    ],
+    sources: [
+      { label: 'National Scholarship Portal — official site', url: 'https://scholarships.gov.in' },
+      { label: 'Ministry of Education — official site', url: 'https://www.education.gov.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'state government scholarships india',
+      'state scholarship portal',
+      'scholarship for domicile students',
+      'post-matric scholarship state',
+      'state merit scholarship india',
+      'how to apply state scholarship',
+    ],
+    tags: ['scholarships'],
+  },
+  {
+    slug: 'education-loan-for-studies-in-india',
+    category: 'scholarships',
+    region: 'india',
+    titleEn: 'Education Loan for Studies in India',
+    descriptionEn:
+      'A plain factual overview of how education loans work for domestic study in India — the general process, key schemes to know, and what to check at your bank. Not financial advice; verify all terms with your lender.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Type of product', value: 'Education loan (domestic study)' },
+      { label: 'Key government scheme', value: 'PM-Vidyalaxmi (pmvidyalaxmi.co.in)' },
+      { label: 'Other reference scheme', value: 'Vidya Lakshmi Portal (vidyalakshmi.co.in)' },
+      { label: 'Regulated by', value: 'Reserve Bank of India (RBI) guidelines + lender terms' },
+      { label: 'Official site (PM-Vidyalaxmi)', value: 'https://pmvidyalaxmi.co.in' },
+    ],
+    sections: [
+      {
+        headingEn: 'What is an education loan for domestic study?',
+        bodyEn:
+          'An education loan for domestic study is a loan from a bank or financial institution to help a student fund higher education in India. It typically covers tuition fees and may cover other costs such as examination fees, hostel charges, and the purchase of books or equipment, depending on the lender\'s policy.\n\nThis guide covers the general concept and the process. It does not quote specific interest rates, loan amounts, moratorium periods, or other terms — those vary by lender, scheme, and year, and must be verified directly with the lending institution or on the relevant official portal. This is not financial advice; consult a qualified financial advisor or your bank for personal guidance.',
+      },
+      {
+        headingEn: 'Government-linked schemes: PM-Vidyalaxmi and Vidya Lakshmi',
+        bodyEn:
+          'The Indian government has established schemes intended to make education finance more accessible.\n\nPM-Vidyalaxmi (pmvidyalaxmi.co.in) is the current government portal for applying for collateral-free, guarantor-free education loans under a central government credit-guarantee scheme. It was approved by the Union Cabinet in November 2024 and is intended for students admitted to Quality Higher Education Institutions (QHEIs) as notified under the scheme. The portal carries the current list of eligible institutions and scheme conditions — verify the latest criteria and process on pmvidyalaxmi.co.in directly.\n\nThe Vidya Lakshmi Portal (vidyalakshmi.co.in) is an older portal that allows students to apply to multiple participating banks for education loans through a single interface. It is maintained by the government and lists participating banks and their products. Check both portals for the current state of each initiative.',
+        bullets: [
+          'PM-Vidyalaxmi: pmvidyalaxmi.co.in (current central government scheme)',
+          'Vidya Lakshmi: vidyalakshmi.co.in (multi-bank application portal)',
+          'Eligible institutions and terms are listed on each portal — verify before applying',
+          'Not all institutions or loan amounts are covered under every scheme',
+        ],
+      },
+      {
+        headingEn: 'General loan process',
+        bodyEn:
+          'The general process for obtaining an education loan involves: confirming your admission to an eligible institution, approaching a bank (public sector, private sector, or through a government portal), submitting required documents (admission letter, fee schedule, identity and address proof, income documents for co-applicants), and awaiting the sanction decision.\n\nMost loans require a co-applicant (usually a parent or guardian) who is responsible for the loan alongside the student. For loans below a certain amount, many public sector banks do not require collateral (security); above that threshold, collateral is typically required. The exact threshold, what counts as collateral, and the documentation list are all lender-specific — confirm them with the bank.\n\nLoan disbursement typically happens in stages linked to fee demands. Repayment usually begins after a moratorium period (the course duration plus a set time after graduation or employment). All of these terms vary by lender, scheme, and loan amount.',
+      },
+      {
+        headingEn: 'What to check before applying',
+        bodyEn:
+          'Before applying for an education loan, confirm the following directly with your bank or on the official portal: whether your institution and course are eligible under the scheme you are considering; the current interest rate and whether it is fixed or floating; any processing fees charged by the lender; the moratorium period and when repayment begins; what collateral (if any) is required; and the documentation list.\n\nInterest rates and processing fees for education loans are set by each lender and reviewed periodically. Because they change, no third-party source (including this guide) can give you the current rate — check the lender\'s official website or visit the branch directly.',
+      },
+      {
+        headingEn: 'Loan vs scholarship: key differences',
+        bodyEn:
+          'An education loan must be repaid with interest; a scholarship does not need to be repaid. Many students pursue both — a scholarship reduces the amount borrowed, lowering the eventual repayment burden. The central government scholarship schemes (on scholarships.gov.in) and the PM-Vidyalaxmi loan scheme are separate programmes that can sometimes be used together, depending on eligibility.\n\nIf you are eligible for a government scholarship, applying for it before taking a loan is sensible, as it may reduce the amount you need to borrow. Confirm the interaction between loan and scholarship disbursements with your institution and lender, as terms differ.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Where do I apply for an education loan under the central government scheme?',
+        answerEn:
+          'The PM-Vidyalaxmi portal at pmvidyalaxmi.co.in is the current central government portal for applying for collateral-free education loans under the official credit-guarantee scheme. The Vidya Lakshmi portal at vidyalakshmi.co.in allows applications to multiple banks simultaneously. Check both portals for the current process and eligible institutions.',
+      },
+      {
+        questionEn: 'Do I need collateral for an education loan in India?',
+        answerEn:
+          'For loans up to a certain amount, many public sector banks do not require collateral, and the PM-Vidyalaxmi scheme provides a government credit guarantee for eligible students and institutions. For larger amounts, collateral is typically required. The threshold and requirements vary by lender — verify with your bank directly.',
+      },
+      {
+        questionEn: 'Is taking an education loan the same as getting a scholarship?',
+        answerEn:
+          'No. An education loan must be repaid with interest after the moratorium period. A scholarship is a grant that does not need to be repaid. Both are different sources of education funding and can sometimes be used in combination, depending on your eligibility.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'pm-and-central-government-scholarships-overview',
+      'state-government-scholarships-overview',
+      'national-scholarship-portal-guide',
+      'education-loan-for-study-abroad',
+    ],
+    sources: [
+      { label: 'PM-Vidyalaxmi — official government portal', url: 'https://pmvidyalaxmi.co.in' },
+      { label: 'Vidya Lakshmi Portal — official site', url: 'https://www.vidyalakshmi.co.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'education loan for studies in india',
+      'education loan domestic',
+      'PM-Vidyalaxmi loan',
+      'Vidya Lakshmi portal',
+      'bank education loan india',
+      'collateral free education loan india',
+    ],
+    tags: ['scholarships'],
+  },
+  {
+    slug: 'list-of-entrance-exams-after-12th-in-india',
+    category: 'admissions',
+    region: 'india',
+    titleEn: 'Entrance Exams After 12th: The Complete List',
+    descriptionEn:
+      'A structured overview of all the major national and state entrance exams Indian students can appear for after Class 12 — grouped by field, with links to dedicated guides for each.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why so many entrance exams?',
+        bodyEn:
+          'India does not have a single, universal entrance exam for all undergraduate courses. Instead, admission to different fields is governed by separate exams — some national, some state-level — each conducted by a different authority. This can seem confusing at first, but the structure is logical: the exam you need depends on which field you want to study and which institutions you are targeting.\n\nThis guide groups the main exams by field so you can quickly find the ones relevant to your goals. Every exam has a dedicated guide on this site with more detail on eligibility, pattern, and preparation — follow the links in each section.',
+      },
+      {
+        headingEn: 'Engineering entrance exams',
+        bodyEn:
+          'Engineering is served by a two-tier national system and a set of state-level exams.\n\nJEE Main (conducted by NTA) is the national exam for admission to NITs, IIITs, and centrally funded technical institutes. JEE Advanced (conducted by an IIT on a rotation basis) is the second stage for IIT admission — only top JEE Main qualifiers can appear.\n\nState-level Common Entrance Tests (CETs) are conducted by each state for admission to state engineering colleges. Major examples include MHT CET (Maharashtra), KCET (Karnataka), WBJEE (West Bengal), AP EAPCET (Andhra Pradesh), TS EAMCET (Telangana), KEAM (Kerala), and GUJCET (Gujarat). Private universities also conduct their own tests: BITSAT (BITS Pilani), VITEEE (VIT), and COMEDK UGET (Karnataka private colleges).\n\nThe eligibility, pattern, marking, and dates for every exam are set in the official notification for that cycle — verify on the conducting body\'s official site.',
+        bullets: [
+          'JEE Main → NITs, IIITs, GFTIs (national)',
+          'JEE Advanced → IITs (national, for top JEE Main qualifiers)',
+          'MHT CET → Maharashtra state colleges',
+          'KCET → Karnataka state colleges',
+          'WBJEE → West Bengal state colleges',
+          'AP EAPCET → Andhra Pradesh state colleges',
+          'TS EAMCET → Telangana state colleges',
+          'BITSAT → BITS Pilani campuses',
+          'VITEEE → VIT University',
+        ],
+      },
+      {
+        headingEn: 'Medical, dental and health science exams',
+        bodyEn:
+          'NEET UG (conducted by NTA) is the single national entrance exam for all MBBS, BDS, and AYUSH (BAMS, BHMS, BUMS, BSMS) undergraduate courses in India. Admission to AIIMS campuses is also through NEET UG. Counselling for the All-India Quota is conducted by the Medical Counselling Committee (MCC); states conduct their own state-quota counselling.\n\nFor nursing, pharmacy, and allied health courses, admission practices vary: some institutions use NEET scores, others use institutional or state-level tests, and some use Class 12 merit. Check each institution\'s official admission process.',
+        bullets: [
+          'NEET UG → MBBS, BDS, BAMS, BHMS, BUMS, BSMS (national)',
+          'MCC counselling → All-India Quota MBBS/BDS/AYUSH seats',
+          'State counselling → State quota seats',
+        ],
+      },
+      {
+        headingEn: 'Central university and general undergraduate exams',
+        bodyEn:
+          'CUET UG (Common University Entrance Test, conducted by NTA) is used by all central universities and a growing number of state, deemed, and private universities for undergraduate admission across streams — arts, science, and commerce. Universities that previously admitted on Class 12 merit alone, such as Delhi University, now use CUET UG scores.\n\nFor many state universities and affiliated colleges, admission is still on Class 12 board marks directly, without a separate entrance exam. Check each university\'s official admission notification.',
+        bullets: [
+          'CUET UG → Central universities, many state/deemed/private universities',
+          'Delhi University → admission via CUET UG',
+          'State affiliating universities → often Class 12 merit-based; check officially',
+        ],
+      },
+      {
+        headingEn: 'Law, design, management and other exams',
+        bodyEn:
+          'Law: CLAT (Common Law Admission Test, conducted by the Consortium of NLUs) is the main exam for the National Law Universities. NLU Delhi admits through AILET (its own separate test). State law colleges have their own admission processes.\n\nDesign: NIFT Entrance Exam (NIFTEE, conducted by NTA on behalf of NIFT) for admission to the National Institute of Fashion Technology; NID DAT (Design Aptitude Test) for the National Institute of Design campuses.\n\nHotel Management: NCHM JEE (conducted by NTA) is the main exam for admission to the Institutes of Hotel Management under the National Council for Hotel Management.\n\nManagement at the undergraduate level: some universities use their own tests for BBA or BMS programmes; CUET UG is also accepted by many. The national CAT and XAT exams are for postgraduate MBA programmes and are not listed here.\n\nFor all exams, the conducting body, eligibility, dates, and application process are set annually in the official notification.',
+        bullets: [
+          'CLAT → National Law Universities (NLUs)',
+          'AILET → NLU Delhi',
+          'NIFT Entrance → National Institute of Fashion Technology',
+          'NID DAT → National Institute of Design',
+          'NCHM JEE → IHM institutes (hotel management)',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which entrance exam do I need after 12th to get into a central university?',
+        answerEn:
+          'CUET UG (Common University Entrance Test, conducted by NTA) is required for all central universities and many state, deemed, and private universities. Check the specific university\'s official admission notification to confirm whether it uses CUET UG or its own process.',
+      },
+      {
+        questionEn: 'Is NEET compulsory for all medical courses after 12th?',
+        answerEn:
+          'Yes, NEET UG (conducted by NTA) is the single national entrance exam for MBBS, BDS, and AYUSH undergraduate courses in India. All government and private medical and dental colleges recognised by the National Medical Commission (NMC) or National Dental Commission (NDC) admit through NEET UG.',
+      },
+      {
+        questionEn: 'Can I appear in multiple state-level engineering CETs?',
+        answerEn:
+          'Yes, there is generally no restriction on appearing in multiple state CETs, provided you meet each exam\'s eligibility criteria (which are set in the official notification). Appearing in multiple exams widens your college options. Check each exam\'s eligibility rules before registering.',
+      },
+    ],
+    relatedExamSlugs: [
+      'jee-main',
+      'jee-advanced',
+      'neet-ug',
+      'cuet-ug',
+      'clat',
+      'ailet',
+      'bitsat',
+      'viteee',
+      'mht-cet',
+      'kcet',
+      'wbjee',
+      'ap-eapcet',
+      'ts-eamcet',
+    ],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'how-college-admission-process-works-in-india',
+      'career-options-after-12th-science',
+      'career-options-after-12th-commerce',
+      'career-options-after-12th-arts',
+      'courses-after-12th-pcm',
+      'courses-after-12th-pcb',
+      'jee-main-vs-jee-advanced-difference',
+      'neet-ug-eligibility-criteria',
+      'cuet-ug-eligibility-and-exam-pattern',
+      'clat-eligibility-and-exam-pattern',
+      'universities-accepting-cuet-ug',
+    ],
+    sources: [
+      { label: 'NTA — official site (JEE, NEET, CUET, NCHM JEE)', url: 'https://nta.ac.in' },
+      { label: 'Consortium of NLUs — CLAT official site', url: 'https://consortiumofnlus.ac.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'entrance exams after 12th india',
+      'list of entrance exams after 12th',
+      'all entrance exams after class 12',
+      'engineering medical law design entrance exams',
+      'which exam after 12th',
+      'entrance exams india undergraduate',
+    ],
+    tags: ['courses-after-12th'],
+  },
+  {
+    slug: 'how-college-admission-process-works-in-india',
+    category: 'admissions',
+    region: 'india',
+    titleEn: 'How College Admission Works in India',
+    descriptionEn:
+      'A clear overview of the different admission routes for undergraduate study in India — entrance exams, Class 12 merit, CUET, counselling processes, and what to expect at each stage.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Three main admission routes',
+        bodyEn:
+          'Undergraduate admission to Indian colleges and universities runs through three broad routes, depending on the institution and course:\n\n1. Entrance exam + centralised counselling: used by most professional and technical programmes (engineering via JEE, medicine via NEET, law via CLAT). You first take the entrance exam, then a centralised body allocates seats based on your rank.\n\n2. CUET UG score: all central universities and many state, deemed, and private universities now use the Common University Entrance Test (CUET UG) for arts, science, commerce, and other undergraduate programmes. A single CUET UG score can be used to apply to multiple participating universities.\n\n3. Class 12 board merit: many state universities and affiliated colleges still admit directly on Class 12 marks, without a separate entrance exam. Students apply to the college directly and merit lists are released based on board scores.\n\nSome institutions use a combination — for example, requiring a minimum Class 12 percentage alongside an entrance rank. Check each institution\'s official admission notification.',
+      },
+      {
+        headingEn: 'Entrance exam-based admission and counselling',
+        bodyEn:
+          'For professional courses, the typical sequence is: appear in the relevant entrance exam → results published → register for centralised counselling → fill preferences (a ranked list of colleges and branches) → seat allotment based on rank and preferences → report to the allotted college and pay fees.\n\nKey centralised counselling bodies include:\n- JoSAA: Joint Seat Allocation Authority, for IITs, NITs, IIITs, and GFTIs (JEE-based)\n- MCC: Medical Counselling Committee, for the All-India Quota MBBS/BDS/AYUSH seats (NEET-based)\n- Consortium of NLUs: for the National Law Universities (CLAT-based)\n- State counselling authorities for state-quota seats under each state CET or NEET quota\n\nThe counselling schedule, document list, and seat matrix are published by each authority before the process opens. Because these change each year, always follow the official counselling authority\'s notifications.',
+        bullets: [
+          'JoSAA → IITs, NITs, IIITs, GFTIs (JEE Main + JEE Advanced)',
+          'MCC → All-India Quota MBBS/BDS/AYUSH seats (NEET UG)',
+          'Consortium of NLUs → NLU seats (CLAT)',
+          'State authorities → State-quota engineering, medical, law seats',
+        ],
+      },
+      {
+        headingEn: 'CUET UG: one exam, many universities',
+        bodyEn:
+          'CUET UG (conducted by NTA) allows you to apply to all central universities and a growing number of other participating institutions with a single test score. The exam covers domain-specific subjects, language proficiency, and a general test — you choose the subjects relevant to the programme you are applying to.\n\nEach participating university sets its own programme-specific requirements — which CUET subjects it will consider, the minimum score threshold (if any), and its own application form. Passing CUET UG does not automatically give you admission; you must still apply separately to each university, and seat allocation is based on the CUET score, the programme\'s criteria, and available seats.\n\nCUET UG is compulsory for all central universities from the current cycle. Check each university\'s official admission notification for its specific requirements.',
+      },
+      {
+        headingEn: 'Board-merit-based admission',
+        bodyEn:
+          'For programmes at many state affiliating universities and their affiliated colleges — common for B.A., B.Sc., B.Com, and similar courses — admission is based directly on Class 12 board marks. Students apply online or in person to the college or university, and merit lists are published (sometimes in multiple rounds). Seats fill progressively, so apply early and track the cutoff trends on the college\'s official site.\n\nSome colleges under this route are highly competitive and publish high cutoffs, especially for popular subjects. Cutoffs change each year depending on the applicant pool — they cannot be predicted in advance and should be checked on the college\'s official admission portal for the current cycle.',
+      },
+      {
+        headingEn: 'Key things to plan before you apply',
+        bodyEn:
+          'Before starting any application, confirm: the entrance exam(s) required for the programme and institution you want; the eligibility conditions (stream, subjects, minimum percentage — set per institution); application deadlines for the exam and for each institution; whether the institution participates in centralised counselling or has a direct application process; and the documents typically required (Class 12 mark sheet, certificates, ID, photographs).\n\nAll of these details are published in the official admission notification of each institution and the official information bulletin of each exam body. Eligibility, dates, and processes change every academic year, so verify the current details on official sources before you apply. This guide provides a structural overview only — it cannot substitute for the official notification.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need to appear in a separate entrance exam for every college I apply to?',
+        answerEn:
+          'Not necessarily. For national exams like JEE Main, NEET UG, and CUET UG, a single exam score is used to apply to many colleges or universities. For state-level engineering exams, one state CET score can be used for all participating colleges in that state. Some institutions still use direct board-merit admission. Check each institution\'s official admission notification to know which route applies.',
+      },
+      {
+        questionEn: 'What is JoSAA counselling?',
+        answerEn:
+          'JoSAA (Joint Seat Allocation Authority) is the centralised counselling body that allocates seats in the IITs, NITs, IIITs, and GFTIs based on JEE Main and JEE Advanced ranks. After the JEE results are announced, eligible candidates register on the JoSAA portal, fill their college and branch preferences, and receive seat allotments in multiple rounds. The process and schedule are published on the official JoSAA website (josaa.nic.in) each cycle.',
+      },
+      {
+        questionEn: 'Is CUET UG compulsory for all universities?',
+        answerEn:
+          'CUET UG is compulsory for all central universities for undergraduate admission. A growing number of state, deemed, and private universities also participate in CUET UG, but it is not compulsory for all institutions. Check whether each university you are applying to uses CUET UG or its own admission process on that university\'s official website.',
+      },
+    ],
+    relatedExamSlugs: [
+      'jee-main',
+      'jee-advanced',
+      'neet-ug',
+      'cuet-ug',
+      'clat',
+    ],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'list-of-entrance-exams-after-12th-in-india',
+      'josaa-counselling-process-explained',
+      'neet-counselling-process-mcc',
+      'cuet-ug-eligibility-and-exam-pattern',
+      'universities-accepting-cuet-ug',
+      'career-options-after-12th-science',
+      'how-to-choose-engineering-college',
+      'private-vs-government-college-india',
+    ],
+    sources: [
+      { label: 'NTA — official site (JEE, NEET, CUET)', url: 'https://nta.ac.in' },
+      { label: 'JoSAA — Joint Seat Allocation Authority', url: 'https://josaa.nic.in' },
+    ],
+    lastVerified: '2026-06-06',
+    keywords: [
+      'how college admission works in india',
+      'college admission process india',
+      'entrance exam counselling india',
+      'josaa cuet neet admission',
+      'how to get college admission after 12th',
+      'India undergraduate admission process',
+    ],
+    tags: ['courses-after-12th'],
   },
 ];
 

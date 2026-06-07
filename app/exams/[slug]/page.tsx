@@ -6,6 +6,8 @@ import { ArrowUpRight, Calendar, Clock, FileText, Award } from 'lucide-react';
 import { ENTRANCE_EXAMS, getExamBySlug } from '@/lib/admission-guides';
 import { COLLEGES } from '@/lib/colleges';
 import { REGIONS } from '@/lib/regions';
+import ContentActions from '@/components/ContentActions';
+import PageQuickLinks from '@/components/PageQuickLinks';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -200,6 +202,9 @@ export default async function ExamDetailPage({ params }: Props) {
         </section>
       )}
 
+      {/* Like / Share / Print */}
+      <ContentActions title={`${exam.shortName} — ${exam.fullName}`} />
+
       {/* Related / Next steps */}
       {(relatedExams.length > 0 || region) && (
         <section>
@@ -243,6 +248,9 @@ export default async function ExamDetailPage({ params }: Props) {
           Ask GSB AI →
         </Link>
       </section>
+
+      {/* Quick links — popular topics & guides */}
+      <PageQuickLinks currentPath={`/exams/${exam.slug}`} />
 
     </div>
   );

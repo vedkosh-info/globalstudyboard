@@ -106,6 +106,149 @@ hr {
   color: var(--color-forest);
 }
 
+/* ─── Floating Action Buttons (Quick Links) ─────────────────────────────── */
+
+.gsb-fab {
+  position: fixed;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid #c7d2fe;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #1B3A6B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1200;
+  opacity: 0.75;
+  box-shadow: 0 4px 14px rgba(27, 58, 107, 0.12);
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gsb-fab:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(27, 58, 107, 0.18);
+}
+
+/* Scroll-to-top — bottom slot */
+.gsb-fab--scroll {
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+}
+
+.gsb-fab--scroll.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+.gsb-fab--scroll.is-visible {
+  opacity: 0.75;
+  pointer-events: auto;
+}
+
+/* Recent history — middle slot */
+.gsb-fab--history {
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Google FAB — top slot (wrapper positions it) */
+.gsb-fab-google-row {
+  position: fixed;
+  right: 20px;
+  bottom: calc(140px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1200;
+  flex-direction: row-reverse;
+}
+
+.gsb-fab--google {
+  position: static;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #c7d2fe;
+}
+
+/* Google toast bubble */
+.gsb-fab-google-toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #1B3A6B;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(27, 58, 107, 0.22);
+  animation: gsb-toast-in 0.22s ease-out both;
+  line-height: 1.2;
+}
+
+.gsb-fab-google-toast:hover {
+  background: #152e55;
+  text-decoration: none;
+  color: #fff;
+}
+
+.gsb-fab-toast-brand {
+  color: #C9A227;
+  font-weight: 700;
+}
+
+.gsb-fab-toast-plus {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #C9A227;
+}
+
+.gsb-fab-g {
+  font-size: 1.125rem;
+  font-weight: 800;
+  font-family: var(--font-display, Fraunces, serif);
+  color: #1B3A6B;
+  line-height: 1;
+}
+
+@keyframes gsb-toast-in {
+  from { opacity: 0; transform: translateX(8px) scale(0.95); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .gsb-fab {
+    width: 44px;
+    height: 44px;
+    right: 16px;
+  }
+  .gsb-fab--scroll  { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+  .gsb-fab--history { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+  .gsb-fab-google-row {
+    right: 16px;
+    bottom: calc(128px + env(safe-area-inset-bottom, 0px));
+  }
+  .gsb-fab-google-toast {
+    font-size: 0.75rem;
+    padding: 8px 13px;
+  }
+}
+
+/* Hide FABs and interactive chrome on print */
+@media print {
+  .gsb-fab,
+  .gsb-fab-google-row,
+  .no-print { display: none !important; }
+}
+
 /* Section dividers — Editorial style */
 .section-rule {
   display: flex;

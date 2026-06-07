@@ -6,6 +6,8 @@ import { ArrowUpRight, MapPin, CalendarDays, GraduationCap, Globe2 } from 'lucid
 import { COLLEGES, getCollegeBySlug } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { REGIONS } from '@/lib/regions';
+import ContentActions from '@/components/ContentActions';
+import PageQuickLinks from '@/components/PageQuickLinks';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -311,6 +313,9 @@ export default async function CollegeDetailPage({ params }: Props) {
         </div>
       )}
 
+      {/* Like / Share / Print */}
+      <ContentActions title={college.nameEn} />
+
       {/* Related / Next steps */}
       {(siblingColleges.length > 0 || region) && (
         <section>
@@ -361,6 +366,9 @@ export default async function CollegeDetailPage({ params }: Props) {
           Ask GSB AI →
         </Link>
       </section>
+
+      {/* Quick links — popular topics & guides */}
+      <PageQuickLinks currentPath={`/colleges/${college.slug}`} />
     </div>
   );
 }
