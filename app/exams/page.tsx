@@ -38,6 +38,21 @@ export const metadata: Metadata = {
 };
 
 export default function ExamsIndexPage() {
+  const itemListJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': 'https://www.globalstudyboard.com/exams',
+    name: 'University Entrance Exams — GlobalStudyBoard',
+    description: 'Every university entrance exam worldwide — SAT, ACT, GRE, GMAT, IELTS, JEE, NEET and more.',
+    numberOfItems: ENTRANCE_EXAMS.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: ENTRANCE_EXAMS.map((e, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `${e.shortName} — ${e.fullName}`,
+      url: `https://www.globalstudyboard.com/exams/${e.slug}`,
+    })),
+  });
   const items: ExamCard[] = ENTRANCE_EXAMS.map((e) => ({
     id: e.id,
     slug: e.slug,
@@ -52,6 +67,7 @@ export default function ExamsIndexPage() {
 
   return (
     <div className="space-y-14">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd }} />
       <header className="max-w-3xl">
         <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3">
           Standardised tests

@@ -34,6 +34,21 @@ export const metadata: Metadata = {
 };
 
 export default function CollegesIndexPage() {
+  const itemListJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': 'https://www.globalstudyboard.com/colleges',
+    name: 'Universities Worldwide — GlobalStudyBoard',
+    description: 'University profiles across the USA, UK, Europe, Canada, Australia, the Middle East and India.',
+    numberOfItems: COLLEGES.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: COLLEGES.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.nameEn,
+      url: `https://www.globalstudyboard.com/colleges/${c.slug}`,
+    })),
+  });
   const items: CollegeCard[] = COLLEGES.map((c) => ({
     id: c.id,
     slug: c.slug,
@@ -48,6 +63,7 @@ export default function CollegesIndexPage() {
 
   return (
     <div className="space-y-14">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd }} />
       <header className="max-w-3xl">
         <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3">
           University profiles

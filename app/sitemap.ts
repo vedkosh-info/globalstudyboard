@@ -5,10 +5,15 @@ import { COLLEGES } from '@/lib/colleges';
 import { GUIDES } from '@/lib/guides';
 import { TOPICS } from '@/lib/topics';
 
+// Statically pre-generated at build time — never re-run on each request.
+export const dynamic = 'force-static';
+
 const BASE = 'https://www.globalstudyboard.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString();
+  // Fixed to the last known content-update date so the sitemap is stable
+  // between deployments and CDN-cacheable. Update when site structure changes.
+  const now = '2026-06-09';
   return [
     { url: BASE,                  lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE}/regions`,     lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },

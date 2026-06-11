@@ -24,15 +24,21 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // Non-www → www canonical redirect (CDN-level, before middleware).
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'globalstudyboard.com' }],
         destination: 'https://www.globalstudyboard.com/:path*',
         permanent: true,
       },
+      // Legacy locale prefixes retired (single-language English site).
+      // Handled here at routing level so middleware never runs for these paths.
+      { source: '/hi', destination: '/', permanent: true },
+      { source: '/en', destination: '/', permanent: true },
+      { source: '/hi/:path*', destination: '/:path*', permanent: true },
+      { source: '/en/:path*', destination: '/:path*', permanent: true },
     ];
   },
-
   async headers() {
     return [
       {
@@ -45,9 +51,10 @@ const nextConfig = {
           {
             key: 'Permissions-Policy',
             value:
-              'geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()',
+              'geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()',
           },
           { key: 'X-DNS-Prefetch-Control', value: 'off' },
+          { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
         ],
       },
     ];

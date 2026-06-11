@@ -13,7 +13,8 @@ import { COLLEGES } from './colleges';
 import { ENTRANCE_EXAMS } from './admission-guides';
 import { GUIDES } from './guides';
 import { REGIONS, type RegionSlug } from './regions';
-import { TOPICS, TOPIC_SLUGS, getTopicBySlug, guidesForTopic } from './topics';
+import { TOPICS, TOPIC_SLUGS, getTopicBySlug } from './topics';
+import { guidesForTopic } from './topic-guides';
 
 export type ContentType = 'college' | 'exam' | 'region' | 'guide';
 
@@ -281,6 +282,9 @@ export function validateContent(): CmiReport {
     topicSlugs.set(t.slug, (topicSlugs.get(t.slug) ?? 0) + 1);
     if (!t.title) errors.push(`Topic "${t.slug}" is missing a title.`);
     if (!t.description) errors.push(`Topic "${t.slug}" is missing a description.`);
+    if (t.region && !REGION_SLUGS.has(t.region)) {
+      errors.push(`Topic "${t.slug}" has unknown region "${t.region}".`);
+    }
     for (const gs of t.guideSlugs) {
       if (!guideSlugs.has(gs)) {
         errors.push(`Topic "${t.slug}" curates guide slug "${gs}", which does not exist.`);

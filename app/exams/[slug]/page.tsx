@@ -64,8 +64,31 @@ export default async function ExamDetailPage({ params }: Props) {
     (e) => e.slug !== exam.slug && (e.region === exam.region || e.domain === exam.domain),
   ).slice(0, 4);
 
+
+  const examLd = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalTest',
+    '@id': `https://www.globalstudyboard.com/exams/${exam.slug}`,
+    name: exam.shortName,
+    alternateName: exam.fullName,
+    description: exam.descriptionEn,
+    inLanguage: 'en',
+    url: `https://www.globalstudyboard.com/exams/${exam.slug}`,
+    about: { '@type': 'Thing', name: exam.domain.replace(/-/g, ' ') },
+    ...(exam.websiteUrl ? { sameAs: exam.websiteUrl } : {}),
+    publisher: {
+      '@type': 'Organization',
+      '@id': 'https://www.globalstudyboard.com/#organization',
+      name: 'GlobalStudyBoard',
+    },
+  };
+
   return (
     <div className="max-w-4xl mx-auto space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(examLd) }}
+      />
 
       <header>
         <Link

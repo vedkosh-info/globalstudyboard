@@ -125,14 +125,19 @@ export default async function CollegeDetailPage({ params }: Props) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollegeOrUniversity',
+    '@id': `https://www.globalstudyboard.com/colleges/${college.slug}`,
     name: college.nameEn,
+    description: college.descriptionEn.slice(0, 300),
     url: college.websiteUrl,
+    ...(college.websiteUrl ? { sameAs: college.websiteUrl } : {}),
     foundingDate: String(college.established),
+    inLanguage: 'en',
     address: {
       '@type': 'PostalAddress',
       addressLocality: college.city,
       ...(college.state ? { addressRegion: college.state } : {}),
     },
+    mainEntityOfPage: `https://www.globalstudyboard.com/colleges/${college.slug}`,
   };
 
   return (

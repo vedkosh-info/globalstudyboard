@@ -1,26 +1,21 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 
-import {
-  TOPICS,
-  TOPIC_GROUP_LABELS,
-  getTopicsByGroup,
-  guidesForTopic,
-  type TopicGroup,
-} from '@/lib/topics';
+import { TOPICS } from '@/lib/topics';
+import { guidesForTopic } from '@/lib/topic-guides';
 import { itemListLd } from '@/lib/structured-data';
+import TopicsIndex, { type TopicCard } from '@/components/TopicsIndex';
 
 export const metadata: Metadata = {
   title: 'Topics — Explore Exams, Courses & Careers by Theme',
   description:
-    'Browse GlobalStudyBoard by topic — JEE, NEET, MBA, government exams, study abroad, scholarships and more. Curated hubs linking every related guide and exam.',
+    'Browse GlobalStudyBoard by topic — JEE, NEET, MBA, government exams, US admissions, study abroad, scholarships and more. Curated hubs linking every related guide and exam.',
   keywords: [
     'study topics',
     'jee neet guides',
     'government exams india',
     'courses after 12th',
     'mba cat guides',
+    'us college admissions',
     'study abroad from india',
   ],
   alternates: { canonical: 'https://www.globalstudyboard.com/topics' },
@@ -29,7 +24,7 @@ export const metadata: Metadata = {
     url: 'https://www.globalstudyboard.com/topics',
     title: 'Topics — Explore Exams, Courses & Careers by Theme',
     description:
-      'Curated hubs that gather every guide and exam on a theme — JEE, NEET, MBA, government exams, study abroad and more.',
+      'Curated hubs that gather every guide and exam on a theme — JEE, NEET, MBA, government exams, US admissions, study abroad and more.',
     images: ['/opengraph-image'],
   },
   twitter: {
@@ -40,9 +35,18 @@ export const metadata: Metadata = {
   },
 };
 
-const GROUP_ORDER: TopicGroup[] = ['exams', 'fields', 'after-12th', 'study-abroad', 'prep-funding'];
-
 export default function TopicsIndexPage() {
+  // Serializable cards for the client renderer (guide counts computed once here).
+  const cards: TopicCard[] = TOPICS.map((t) => ({
+    slug: t.slug,
+    label: t.label,
+    title: t.title,
+    description: t.description,
+    group: t.group,
+    region: t.region ?? null,
+    count: guidesForTopic(t.slug).length,
+  }));
+
   const itemListJson = JSON.stringify(
     itemListLd({
       name: 'Study topics',
@@ -66,44 +70,12 @@ export default function TopicsIndexPage() {
         </h1>
         <p className="text-stone-700 text-lg leading-relaxed">
           Curated hubs that gather every guide and exam on a theme — from JEE, NEET and MBA to
-          government exams, careers and studying abroad — so you can go deep on exactly what you
-          need.
+          government exams, careers, US admissions and studying abroad — so you can go deep on
+          exactly what you need.
         </p>
       </header>
 
-      {GROUP_ORDER.map((group) => {
-        const topics = getTopicsByGroup(group);
-        if (topics.length === 0) return null;
-        return (
-          <section key={group}>
-            <div className="section-rule mb-5">
-              <span>{TOPIC_GROUP_LABELS[group]}</span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {topics.map((t) => {
-                const count = guidesForTopic(t.slug).length;
-                return (
-                  <Link
-                    key={t.slug}
-                    href={`/topics/${t.slug}`}
-                    className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col"
-                  >
-                    <h2 className="font-display text-lg font-bold tracking-editorial text-ink leading-snug mb-2 group-hover:text-forest-700">
-                      {t.title}
-                    </h2>
-                    <p className="text-stone-600 text-sm leading-relaxed m-0 flex-1">
-                      {t.description}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
-                      {count} guide{count === 1 ? '' : 's'} <ArrowUpRight className="w-4 h-4" />
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-        );
-      })}
+      <TopicsIndex topics={cards} />
     </div>
   );
 }

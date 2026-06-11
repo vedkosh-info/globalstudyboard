@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { Sparkles, ChevronRight } from 'lucide-react';
 import GSBAIChat from '@/components/GSBAIChat';
 
-export const revalidate = false;
-
 export const metadata: Metadata = {
   title: 'Ask GSB AI — Free University Admission AI Assistant',
   description:

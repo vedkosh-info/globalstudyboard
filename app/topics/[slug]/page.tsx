@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { TOPICS, getTopicBySlug, guidesForTopic } from '@/lib/topics';
+import { TOPICS, getTopicBySlug } from '@/lib/topics';
+import { guidesForTopic } from '@/lib/topic-guides';
 import { GUIDE_CATEGORY_LABELS, type GuideCategory } from '@/lib/guides';
 import { resolveDisplayRegions } from '@/lib/regions';
 import { getExamBySlug } from '@/lib/admission-guides';

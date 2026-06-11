@@ -1,0 +1,8 @@
+# Never upload build artefacts or dev tooling to Vercel.
+# Vercel installs fresh node_modules and builds .next itself.
+node_modules
+.next
+.git
+.env.local
+.env*.local
+*.tsbuildinfo

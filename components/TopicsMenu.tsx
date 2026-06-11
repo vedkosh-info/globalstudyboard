@@ -5,12 +5,22 @@ import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
 import { TOPICS, TOPIC_GROUP_LABELS, type TopicGroup } from '@/lib/topics';
+import { useRegion } from '@/components/RegionProvider';
 
-const GROUP_ORDER: TopicGroup[] = ['exams', 'fields', 'after-12th', 'study-abroad', 'prep-funding'];
+const GROUP_ORDER: TopicGroup[] = [
+  'exams',
+  'fields',
+  'after-12th',
+  'study-abroad',
+  'study-in-usa',
+  'study-in-canada',
+  'prep-funding',
+];
 
 /** Desktop "Topics" mega-menu — a grouped dropdown of every topic hub. */
 export default function TopicsMenu() {
   const [open, setOpen] = useState(false);
+  const { effectiveRegion } = useRegion();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,7 +58,9 @@ export default function TopicsMenu() {
       {open && (
         <div className="absolute right-0 top-full mt-1 w-[min(92vw,720px)] bg-cream-50 border border-stone-200 rounded-2xl shadow-xl p-5 grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-5 z-50">
           {GROUP_ORDER.map((group) => {
-            const topics = TOPICS.filter((t) => t.group === group);
+            const topics = TOPICS.filter(
+              (t) => t.group === group && (!t.region || t.region === effectiveRegion),
+            );
             if (topics.length === 0) return null;
             return (
               <div key={group}>

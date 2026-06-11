@@ -1,5 +1,4 @@
-import type { Guide } from './guides';
-import { GUIDES } from './guides';
+import type { RegionSlug } from './regions';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Topics — pillar / hub pages for SEO topical authority.
@@ -21,6 +20,8 @@ export type TopicGroup =
   | 'fields' // fields of study & careers
   | 'after-12th' // choosing a path after school
   | 'study-abroad'
+  | 'study-in-usa' // USA destination hubs (shown only when the USA region is selected)
+  | 'study-in-canada' // Canada destination hubs (shown only when the Canada region is selected)
   | 'prep-funding'; // exam strategy + scholarships
 
 export const TOPIC_GROUP_LABELS: Record<TopicGroup, string> = {
@@ -28,6 +29,8 @@ export const TOPIC_GROUP_LABELS: Record<TopicGroup, string> = {
   fields: 'Fields & Careers',
   'after-12th': 'After 12th',
   'study-abroad': 'Study Abroad',
+  'study-in-usa': 'Study in the USA',
+  'study-in-canada': 'Study in Canada',
   'prep-funding': 'Preparation & Funding',
 };
 
@@ -43,6 +46,13 @@ export interface Topic {
   /** Optional longer hub intro prose (paragraphs split on blank lines). */
   intro?: string;
   group: TopicGroup;
+  /**
+   * Optional destination region this hub belongs to. Region-tagged hubs surface
+   * in the /topics index and the Topics mega-menu ONLY when that region is the
+   * effective selection; region-less hubs are always shown. The hub page itself
+   * (and every guide page) stays directly reachable + indexable regardless.
+   */
+  region?: RegionSlug;
   /**
    * Curated guide slugs to seed the hub from the existing catalogue. New guides
    * normally join via `guide.tags` instead; both are merged + de-duplicated.
@@ -519,6 +529,646 @@ export const TOPICS: Topic[] = [
     examSlugs: ['cuet-pg', 'neet-pg', 'nata', 'iit-jam', 'nchm-jee'],
     keywords: ['specialized entrance exams india', 'cuet pg exam', 'neet pg md ms', 'nata architecture exam', 'iit jam msc', 'nchm jee hotel management'],
   },
+
+  // ───────────── USA top-100 — region-gated hubs (region: 'usa') ─────────────
+  {
+    slug: 'us-admissions',
+    label: 'US Admissions',
+    title: 'US College Admissions',
+    description:
+      'How US undergraduate admissions work — the Common App, Early Decision and Early Action, the timeline, essays and how colleges read applications.',
+    intro:
+      'US college admissions can seem complex from the outside, but the core process follows a clear structure. Most four-year colleges use a holistic review that weighs academic performance, standardised test scores (where required), personal essays, extracurricular activities, and letters of recommendation together — no single factor determines admission on its own.\n\nThis hub covers everything prospective students need to navigate the process confidently: which application platforms to use, how Early Decision and Early Action differ, when to submit each piece of the application, how to build a balanced college list, and what to expect from the moment you submit to the day you commit. All guidance is based on official sources — individual college policies and deadlines change each year, so always verify specifics with each institution directly.',
+    group: 'study-in-usa',
+    region: 'usa',
+    guideSlugs: [
+      'how-us-college-admissions-work',
+      'common-app-vs-coalition-app',
+      'early-decision-vs-early-action-explained',
+      'us-college-application-timeline',
+      'how-many-colleges-should-you-apply-to',
+      'how-to-write-the-common-app-essay',
+      'college-supplemental-essays-guide',
+      'letters-of-recommendation-for-us-colleges',
+      'extracurricular-activities-for-college-applications',
+      'how-to-build-a-college-list',
+      'us-college-rankings-explained',
+      'understanding-college-acceptance-rates',
+      'reach-match-safety-schools-explained',
+      'waitlists-and-deferrals-explained',
+      'how-colleges-read-applications',
+      'how-to-answer-why-this-college-essay',
+      'demonstrated-interest-explained',
+      'legacy-and-first-generation-applicants',
+      'how-to-handle-a-waitlist-or-deferral',
+      'how-to-compare-financial-aid-offers',
+      'complete-guide-to-applying-to-us-colleges',
+      'us-college-admissions-glossary',
+      'international-student-guide-to-studying-in-usa',
+      'scholarships-for-international-students-in-usa',
+      'affordable-ways-to-study-in-usa',
+    ],
+    examSlugs: [
+      'sat',
+      'act',
+      'ap-exams',
+    ],
+    keywords: [
+      'US college admissions',
+      'how to apply to US college',
+      'Common App',
+      'Early Decision Early Action',
+      'US college application timeline',
+      'holistic review admissions',
+    ],
+  },
+  {
+    slug: 'sat-act-testing',
+    label: 'SAT, ACT & Testing',
+    title: 'SAT, ACT & US College Testing',
+    description:
+      'The digital SAT, the enhanced ACT, AP credit, test-optional vs test-required policies, and how to prepare and superscore.',
+    intro:
+      'Standardised testing is a central part of US college admissions for most applicants, but the landscape has changed significantly in recent years. The SAT is now fully digital and adaptive; the ACT has introduced a shorter format; and test-optional policies — once near-universal — have been reinstated as requirements at several highly selective universities. Understanding each test and the current policy at each school you are targeting helps you plan your testing timeline.\n\nThese guides explain the structure and scoring of the digital SAT and the enhanced ACT in plain language, walk through how to decide between them, interpret what a strong score means for your specific college list, and clarify how test-optional policies actually work in 2026. Every volatile detail — fees, test dates, score ranges, and individual college policies — is linked to the official source and should be verified there before you act.',
+    group: 'study-in-usa',
+    region: 'usa',
+    guideSlugs: [
+      'digital-sat-explained',
+      'enhanced-act-explained',
+      'sat-vs-act-which-to-take',
+      'is-test-optional-still-a-thing',
+      'what-is-a-good-sat-score-explained',
+      'how-to-prepare-for-the-sat',
+      'how-to-prepare-for-the-act',
+      'ap-exams-and-college-credit',
+      'psat-and-national-merit-explained',
+      'how-superscoring-works',
+    ],
+    examSlugs: [
+      'sat',
+      'act',
+      'ap-exams',
+    ],
+    keywords: [
+      'digital SAT',
+      'ACT test',
+      'SAT vs ACT',
+      'test-optional colleges',
+      'SAT score percentile',
+      'US college admissions tests',
+      'SAT ACT superscoring',
+    ],
+  },
+  {
+    slug: 'financial-aid-usa',
+    label: 'Financial Aid (USA)',
+    title: 'Financial Aid & Paying for College (USA)',
+    description:
+      'FAFSA, the CSS Profile, grants vs loans vs work-study, need-blind vs need-aware, merit vs need-based aid, and the true cost of attendance.',
+    intro:
+      'Paying for a U.S. college education involves navigating a system of federal, state, and institutional funding sources — each with its own application process, eligibility rules, and conditions. The foundation of the federal system is the FAFSA, which determines access to federal grants, subsidized loans, and work-study for eligible students. Many selective colleges also require the CSS Profile to assess eligibility for their own institutional aid funds.\n\nUnderstanding the different types of aid — and how they interact — is as important as knowing how to apply for them. Gift aid (grants and scholarships) does not need to be repaid; loans do. Need-based aid depends on financial circumstances; merit-based scholarships depend on achievement. Whether a college is need-blind or need-aware in its admissions process affects how applying for aid may influence your application. The guides in this hub walk through each topic clearly, citing official U.S. government and College Board sources, so you can make informed decisions about how to fund your studies.',
+    group: 'study-in-usa',
+    region: 'usa',
+    guideSlugs: [
+      'fafsa-explained-how-to-apply',
+      'css-profile-explained',
+      'types-of-financial-aid-grants-loans-work-study',
+      'need-blind-vs-need-aware-admissions',
+      'merit-scholarships-vs-need-based-aid',
+      'cost-of-attendance-explained',
+      'how-to-pay-for-college-in-usa',
+      'federal-student-loans-explained',
+      'how-to-find-and-win-scholarships',
+      'net-price-calculator-explained',
+    ],
+    examSlugs: [
+      'sat',
+      'act',
+    ],
+    keywords: [
+      'fafsa how to apply',
+      'css profile',
+      'financial aid usa',
+      'grants loans work-study',
+      'need-blind admissions',
+      'merit scholarships vs need-based aid',
+      'college financial aid',
+      'paying for college usa',
+    ],
+  },
+  {
+    slug: 'us-universities',
+    label: 'US Universities',
+    title: 'US Universities: Types, Rankings & Getting In',
+    description:
+      'Ivy League, liberal arts colleges, public flagships and R1 research universities — how they differ, how rankings work, and how to choose and get in.',
+    intro:
+      'The United States is home to more than 4,000 degree-granting institutions spanning a wide range of types, sizes, and missions. Understanding the landscape — the difference between an Ivy League university, an R1 research university, a liberal arts college, and a public flagship — is the first step toward building a thoughtful, realistic college list. The category of a university shapes class size, teaching style, research access, campus culture, and ultimately what your four years of study will feel like.\n\nNo type is universally better than another. The right university is the one that best matches your academic programme, learning style, financial situation, and personal priorities. This hub brings together guides that explain what each type of US institution is, how they compare, and how to approach the process of choosing and applying — so you can make a well-informed decision grounded in facts rather than prestige alone.',
+    group: 'study-in-usa',
+    region: 'usa',
+    guideSlugs: [
+      'types-of-us-universities',
+      'what-is-the-ivy-league',
+      'liberal-arts-colleges-explained',
+      'public-vs-private-universities-usa',
+      'how-to-choose-a-us-college',
+      'how-to-get-into-an-ivy-league-school',
+      'how-to-get-into-harvard',
+      'how-to-get-into-mit',
+      'how-to-get-into-stanford',
+      'how-to-get-into-top-engineering-schools-usa',
+      'athletic-recruitment-and-sports-scholarships-usa',
+      'honors-colleges-and-programs-explained',
+      'bs-md-combined-medical-programs',
+      'co-op-programs-explained',
+      'double-major-minor-and-dual-degree-explained',
+    ],
+    examSlugs: [
+      'sat',
+      'act',
+      'ap-exams',
+      'toefl',
+      'ielts',
+    ],
+    keywords: [
+      'types of us universities',
+      'ivy league colleges',
+      'liberal arts colleges usa',
+      'public vs private university usa',
+      'r1 research university',
+      'how to choose a us college',
+      'best universities in the usa',
+      'us college admissions guide',
+    ],
+  },
+  {
+    slug: 'us-majors-careers',
+    label: 'Majors & Careers (USA)',
+    title: 'College Majors & Careers (USA)',
+    description:
+      'How to choose a major and what popular US majors involve — computer science, nursing, business, engineering, data science and pre-professional tracks.',
+    intro:
+      'Choosing a college major is one of the most visible decisions in a US undergraduate application, yet it is rarely as fixed as it seems. Most US universities allow students to declare a major by the end of their sophomore year and to change it thereafter, so the initial choice is a starting point rather than a binding commitment. What matters most is making a thoughtful, interest-led decision with a clear understanding of each programme\'s structure, accreditation, and requirements.\n\nThis hub brings together guides covering the major academic fields students most commonly consider at US universities — including computer science, nursing, business and finance, and engineering — alongside a practical framework for making the choice itself. Each guide is written to help you understand what a field covers and what to look for in a programme, without fabricating salary claims or employment guarantees. Use the official pages of each university, the relevant accrediting body, and official US government resources to verify any specific figures before you decide.',
+    group: 'study-in-usa',
+    region: 'usa',
+    guideSlugs: [
+      'how-to-choose-a-college-major',
+      'computer-science-major-guide-usa',
+      'nursing-degree-guide-usa',
+      'business-and-finance-majors-usa',
+      'engineering-majors-usa',
+      'data-science-and-ai-majors-usa',
+      'pre-med-track-explained',
+      'pre-law-track-explained',
+      'undecided-major-what-to-do',
+      'stem-vs-liberal-arts-which-to-choose',
+    ],
+    examSlugs: [
+      'sat',
+      'act',
+      'ap-exams',
+      'gre',
+      'gmat',
+    ],
+    keywords: [
+      'us college majors guide',
+      'how to choose a major usa',
+      'computer science major usa',
+      'nursing degree usa',
+      'business major usa',
+      'engineering majors usa',
+    ],
+  },
+  {
+    slug: 'international-students-usa',
+    label: 'International Students (USA)',
+    title: 'International Students: Studying in the USA',
+    description:
+      'For international applicants — applying to US universities, the I-20 and SEVIS, the F-1 visa interview, proof of funds, and English-test requirements.',
+    intro:
+      'Applying to US universities as an international student involves navigating both the academic admissions process and a set of legal and documentary requirements unique to studying abroad. From choosing and applying to SEVP-certified universities through centralised platforms, to receiving your I-20, paying the SEVIS fee, preparing for your F-1 visa interview, and demonstrating the financial resources to cover your cost of attendance — each step has official rules set by the university, the US Department of State, and the Department of Homeland Security.\n\nThis hub brings together the essential guides for international applicants: how the US application process works, what the I-20 and SEVIS system are and why they matter, how to prepare for the F-1 visa interview, what financial documentation is required, and how to find and meet the English proficiency requirements for the universities on your list. All information here reflects stable, official facts — always verify current requirements directly with your university and at the official US government sources before taking action.',
+    group: 'study-in-usa',
+    region: 'usa',
+    guideSlugs: [
+      'how-to-apply-to-us-universities-as-an-international-student',
+      'i-20-and-sevis-explained',
+      'f1-visa-interview-preparation',
+      'proof-of-funds-for-f1-visa',
+      'english-test-requirements-for-us-universities',
+      'opt-and-cpt-explained',
+      'stem-opt-extension-explained',
+      'credential-evaluation-for-us-admission',
+      'j1-vs-f1-visa-explained',
+      'on-campus-jobs-for-international-students',
+    ],
+    examSlugs: [
+      'toefl',
+      'ielts',
+      'duolingo-english-test',
+      'pte-academic',
+      'sat',
+      'act',
+    ],
+    keywords: [
+      'international students USA',
+      'apply to US universities international student',
+      'I-20 SEVIS explained',
+      'F-1 visa interview',
+      'proof of funds F1 visa',
+      'English test requirements US universities',
+      'study in USA international student guide',
+    ],
+  },
+  {
+    slug: 'us-grad-school',
+    label: 'US Graduate School',
+    title: 'US Graduate School: MS, PhD & Funding',
+    description:
+      'Applying to US graduate programmes — MS and PhD admissions, the GRE-optional landscape, funding through assistantships, and the application package.',
+    intro:
+      'US graduate education spans two main paths: coursework master\'s programmes that give you advanced professional skills, and research-based programmes — including many MS tracks and virtually all PhD programmes — where you join a department, work with a faculty advisor, and contribute original research to your field. Navigating which path fits your goals, which programmes are the right fit, and how to fund your studies are the three questions these guides address.\n\nEvery fact that varies by programme — test requirements, funding availability, deadlines, stipend amounts — is deferred to the official source for that specific programme, because no general guide can be authoritative on current details. Use these guides to understand the structure and ask better questions; use each programme\'s official pages and the official US government resources to verify before acting.',
+    group: 'study-in-usa',
+    region: 'usa',
+    guideSlugs: [
+      'how-to-apply-to-us-grad-school',
+      'ms-in-usa-application-guide',
+      'phd-in-usa-funding-and-admission',
+      'do-you-need-the-gre-for-grad-school',
+      'assistantships-ta-ra-funding-explained',
+      'mba-in-usa-application-guide',
+      'gmat-vs-gre-for-mba',
+      'how-to-get-into-us-law-school',
+      'how-to-get-into-us-medical-school',
+      'llm-in-usa-for-international-lawyers',
+    ],
+    examSlugs: [
+      'gre',
+      'gmat',
+      'toefl',
+      'ielts',
+      'lsat',
+      'mcat',
+    ],
+    keywords: [
+      'us graduate school',
+      'ms in usa',
+      'phd in usa',
+      'graduate school application usa',
+      'gre for grad school',
+      'teaching assistantship usa',
+      'us phd funding',
+      'us grad school admissions',
+    ],
+  },
+  {
+    slug: 'us-college-life',
+    label: 'US College Life',
+    title: 'US College Life, Transfer & Practicalities',
+    description:
+      'Transferring from community college, housing, health insurance, the GPA and credit system, campus jobs and living costs at US universities.',
+    intro:
+      'Choosing how to enter and navigate the US higher education system involves more than picking a university. Millions of students start at community colleges and transfer to four-year institutions — a legitimate, cost-effective pathway supported by formal articulation agreements in many states. Others explore alternative routes such as dual enrollment (earning college credit while still in high school) or take a deliberate gap year before enrolling. Understanding how credits transfer, how deferral works, and what the associate degree offers can shape your entire academic and financial trajectory.\n\nThis hub covers the practical side of US college life for students at every stage: the two-year pathway and transfer process, the meaning and uses of the associate degree, dual enrollment for high schoolers, and how to plan a purposeful gap year with or without a university deferral. Every guide is based on official sources and offers guidance only — verify specific deadlines, tuition, and policies on the official websites of the institutions and government agencies involved.',
+    group: 'study-in-usa',
+    region: 'usa',
+    guideSlugs: [
+      'community-college-to-university-transfer',
+      'how-to-transfer-colleges-usa',
+      'associate-degree-explained',
+      'dual-enrollment-explained',
+      'gap-year-before-us-college',
+      'on-campus-vs-off-campus-housing',
+      'student-health-insurance-usa',
+      'cost-of-living-for-students-by-us-city',
+      'campus-jobs-and-work-study',
+      'us-grading-gpa-and-credit-system-explained',
+    ],
+    examSlugs: [
+      'sat',
+      'act',
+      'ap-exams',
+    ],
+    keywords: [
+      'US college transfer',
+      'community college pathway USA',
+      'associate degree USA',
+      'dual enrollment USA',
+      'gap year before college USA',
+      'transfer university USA',
+      'US college life',
+      'college credit high school USA',
+    ],
+  },
+
+  // ───────────── Canada top-100 — region-gated hubs (region: 'canada') ─────────────
+  {
+    slug: 'canada-admissions',
+    label: 'Canada Admissions',
+    title: 'Canadian University Admissions: How to Apply, Timelines & Requirements',
+    description:
+      'Understand how university admissions work in Canada — province-run systems, direct and OUAC applications, application timelines, and the academic and language requirements you need.',
+    intro:
+      'Applying to university in Canada works differently from many other countries: there is no single national application portal, education is run by each province and territory, and most decisions rest on your academic grades and required prerequisite subjects rather than US-style holistic review. These guides walk through how Canadian admissions work, the two main ways to apply (directly to each university, or through Ontario\'s centralized OUAC service), a general fall-intake timeline, and the academic and language requirements universities look for. Exact fees, deadlines, scores, and rules vary by university and province and change each year — always verify the current details on the official university or Government of Canada source before you apply.',
+    group: 'study-in-canada',
+    region: 'canada',
+    guideSlugs: [
+      'how-canadian-university-admissions-work',
+      'how-to-apply-to-canadian-universities',
+      'canadian-university-application-timeline',
+      'ouac-application-guide',
+      'admission-requirements-for-canadian-universities',
+      'how-to-study-in-canada-as-an-international-student',
+      'application-fees-and-documents-canada',
+      'statement-of-purpose-for-canadian-universities',
+      'letters-of-recommendation-canada',
+      'how-to-choose-a-canadian-university',
+      'community-college-pathways-in-canada',
+      'college-to-university-transfer-canada',
+      'foundation-and-pathway-programs-canada',
+      'conditional-admission-canada',
+      'studying-in-canada-after-12th-from-india',
+      'study-in-canada-vs-australia',
+      'canada-study-permit-vs-usa-f1',
+      'is-canada-good-for-international-students',
+      'public-vs-private-colleges-in-canada',
+      'direct-entry-vs-pathway-canada',
+      'complete-guide-to-studying-in-canada',
+      'canada-study-permit-and-admission-glossary',
+      'international-student-guide-to-canada',
+      'affordable-ways-to-study-in-canada',
+      'roadmap-to-study-in-canada-from-india',
+    ],
+    examSlugs: [
+      'ielts',
+      'toefl',
+      'duolingo-english-test',
+      'pte-academic',
+    ],
+    keywords: [
+      'canadian university admissions',
+      'how to apply to canadian universities',
+      'ouac application ontario',
+      'canada university application timeline',
+      'admission requirements canada universities',
+      'study in canada admissions process',
+    ],
+  },
+  {
+    slug: 'canada-tests-grades',
+    label: 'Canada Tests & Grades',
+    title: 'Tests & English Requirements for Studying in Canada',
+    description:
+      'Understand the English- and French-language tests Canadian universities accept — IELTS, TOEFL, the Duolingo English Test, PTE Academic, and French tests like TEF/TCF — including how scoring works, why minimums vary by university and program, and where to confirm the exact requirement.',
+    intro:
+      'Most Canadian university programs are taught in English, so international applicants whose first language is not English usually have to prove their English ability with a recognised test. The most widely accepted tests are IELTS Academic and TOEFL iBT, while a growing number of universities also accept the Duolingo English Test or PTE Academic — though acceptance is not universal. French proficiency matters mainly for French-language and Quebec programs, often via tests such as TEF or TCF. Crucially, there is no single national score requirement: each university and program sets its own minimum and can revise it every admission cycle, so always verify the exact requirement on the official source before you apply. These guides explain how each test works and how to choose the right one for your shortlist.',
+    group: 'study-in-canada',
+    region: 'canada',
+    guideSlugs: [
+      'ielts-for-canada-requirements',
+      'toefl-vs-ielts-for-canada',
+      'duolingo-english-test-for-canada',
+      'english-proficiency-requirements-canada',
+      'french-language-requirements-for-canada',
+      'grade-requirements-for-canadian-universities',
+      'percentage-to-gpa-conversion-for-canada',
+      'how-the-canadian-grading-system-works',
+      'do-canadian-universities-require-sat',
+      'wes-credential-evaluation-for-canada',
+    ],
+    examSlugs: [
+      'ielts',
+      'toefl',
+      'duolingo-english-test',
+      'pte-academic',
+    ],
+    keywords: [
+      'english test for canada universities',
+      'ielts vs toefl canada',
+      'duolingo english test canada',
+      'english proficiency requirements canada',
+      'french language requirements canada',
+      'study in canada english requirements',
+    ],
+  },
+  {
+    slug: 'study-permit-canada',
+    label: 'Canada Study Permit',
+    title: 'Canada Study Permit: Application, PAL, Proof of Funds & Documents',
+    description:
+      'A neutral, official-source guide to the Canada study permit for international students — what it is, how to apply through IRCC, the Provincial Attestation Letter (PAL), proof of funds and the GIC option, and the documents you need.',
+    intro:
+      'Most international students need a study permit issued by Immigration, Refugees and Citizenship Canada (IRCC) to study in Canada. These guides explain the study permit in plain language — what it is and how it differs from a visa, the step-by-step application, the Provincial Attestation Letter (PAL) introduced in January 2024, proof-of-funds and the Guaranteed Investment Certificate (GIC), and a high-level documents checklist. Everything here is general information, not immigration advice: rules change frequently and the Student Direct Stream (SDS) was ended on 8 November 2024, so always verify the current requirements on the official Government of Canada source before you act.',
+    group: 'study-in-canada',
+    region: 'canada',
+    guideSlugs: [
+      'canada-study-permit-explained',
+      'how-to-apply-for-a-canada-study-permit',
+      'provincial-attestation-letter-pal-explained',
+      'proof-of-funds-and-gic-for-canada',
+      'study-permit-documents-checklist',
+      'designated-learning-institution-dli-explained',
+      'biometrics-and-medical-exam-for-canada',
+      'study-permit-processing-times',
+      'study-permit-refusal-reasons-and-reapplying',
+      'bringing-family-on-a-canada-study-permit',
+    ],
+    examSlugs: [
+      'ielts',
+      'toefl',
+    ],
+    keywords: [
+      'canada study permit',
+      'how to apply for canada study permit',
+      'provincial attestation letter PAL',
+      'proof of funds GIC canada',
+      'canada study permit documents checklist',
+      'canada student visa requirements',
+    ],
+  },
+  {
+    slug: 'canada-tuition-funding',
+    label: 'Tuition & Funding in Canada',
+    title: 'Cost of Studying in Canada: Tuition, Living Costs & Budgeting',
+    description:
+      'Understand the real cost of studying in Canada — university tuition, student living expenses, practical budgeting, and how Canada compares with the USA and UK. Ranges only, with official sources to confirm current figures.',
+    intro:
+      'Planning the money side of studying in Canada means looking at two things: what you pay your university (tuition and compulsory fees) and what it costs to live (housing, food, transit, insurance). Both vary widely — tuition by program and university, living costs by city and lifestyle — so these guides give honest ranges and point you to the official figures to confirm. They also explain why the study-permit proof-of-funds amount is not the same as your actual living cost, show how to build a working student budget, and compare Canada neutrally with the USA and UK. Tuition, living costs, and immigration thresholds change every academic year, so always verify the latest numbers on the official Government of Canada and university sources before you commit.',
+    group: 'study-in-canada',
+    region: 'canada',
+    guideSlugs: [
+      'cost-of-studying-in-canada',
+      'tuition-fees-at-canadian-universities',
+      'cost-of-living-in-canada-for-students',
+      'how-to-budget-as-a-student-in-canada',
+      'canada-vs-usa-vs-uk-for-studies',
+      'scholarships-for-international-students-in-canada',
+      'canada-government-scholarships',
+      'university-entrance-awards-canada',
+      'osap-and-provincial-student-aid',
+      'how-to-fund-your-studies-in-canada',
+    ],
+    examSlugs: [
+      'ielts',
+      'toefl',
+    ],
+    keywords: [
+      'cost of studying in canada',
+      'tuition fees at canadian universities',
+      'cost of living in canada for students',
+      'student budget canada',
+      'canada vs usa vs uk for studies',
+      'study in canada cost for international students',
+    ],
+  },
+  {
+    slug: 'canada-universities',
+    label: 'Canada Universities',
+    title: 'Universities in Canada: Rankings, U15, Colleges & Top-School Admissions',
+    description:
+      'Understand Canada\'s higher-education landscape — how to read attributed rankings, what the U15 research-university group means, the difference between colleges and universities, and how admission works at the University of Toronto and UBC.',
+    intro:
+      'Choosing where to study in Canada means cutting through rankings, labels, and admission jargon. This hub explains how to read university rankings (and why QS, Times Higher Education, and Maclean\'s disagree), what the U15 group of research-intensive universities actually is, how Canadian colleges differ from universities, and how admission works at two of the country\'s best-known universities. Every guide defers volatile figures — fees, deadlines, cutoffs, and admit rates — to the official source with a verify-on-official nudge, and treats all study-permit information as general guidance, not immigration advice.',
+    group: 'study-in-canada',
+    region: 'canada',
+    guideSlugs: [
+      'top-universities-in-canada',
+      'u15-universities-explained',
+      'college-vs-university-in-canada',
+      'university-of-toronto-admission-guide',
+      'ubc-admission-guide',
+      'mcgill-university-admission-guide',
+      'university-of-waterloo-admission-guide',
+      'how-to-get-into-top-canadian-universities',
+      'community-colleges-in-canada-explained',
+      'choosing-between-canadian-provinces',
+      'studying-in-ontario-guide',
+      'studying-in-british-columbia-guide',
+      'studying-in-quebec-guide',
+      'studying-in-alberta-guide',
+      'best-provinces-to-study-in-canada',
+    ],
+    examSlugs: [
+      'ielts',
+      'toefl',
+      'duolingo-english-test',
+      'gre',
+    ],
+    keywords: [
+      'universities in canada',
+      'top universities in canada',
+      'u15 universities canada',
+      'college vs university canada',
+      'university of toronto admission',
+      'ubc admission guide',
+    ],
+  },
+  {
+    slug: 'canada-majors-careers',
+    label: 'Majors & Careers',
+    title: 'Majors and Careers: Studying in Canada',
+    description:
+      'Explore popular fields of study in Canada — Computer Science, Engineering, Business and MBA, Data Science and AI — and how co-op education builds work experience into your degree.',
+    intro:
+      'Choosing what to study is one of the biggest decisions for students heading to Canada. This hub covers some of the most-searched fields — Computer Science, Engineering, Business and MBA, and Data Science and AI — along with how co-operative education (co-op) integrates paid work terms into a degree. Each guide explains what programs cover, the role of co-op, English-test and entry expectations, and where to verify the exact requirements on official sources. We defer all volatile specifics such as fees, scores, and rankings to official sources, attribute any rankings to their issuer, and make no salary, placement, admission, or immigration guarantees.',
+    group: 'study-in-canada',
+    region: 'canada',
+    guideSlugs: [
+      'computer-science-in-canada',
+      'engineering-programs-in-canada',
+      'business-and-mba-in-canada',
+      'data-science-and-ai-programs-canada',
+      'co-op-education-in-canada-explained',
+      'health-and-nursing-programs-in-canada',
+      'study-medicine-in-canada',
+      'study-law-in-canada',
+      'diploma-vs-degree-in-canada',
+      'in-demand-courses-in-canada',
+    ],
+    examSlugs: [
+      'ielts',
+      'toefl',
+      'duolingo-english-test',
+      'pte-academic',
+      'gmat',
+      'gre',
+    ],
+    keywords: [
+      'study majors in canada',
+      'computer science in canada',
+      'engineering programs canada',
+      'mba in canada',
+      'data science and ai canada',
+      'co-op education canada',
+    ],
+  },
+  {
+    slug: 'work-and-stay-canada',
+    label: 'Work & Stay in Canada',
+    title: 'Working and Staying in Canada as an International Student',
+    description:
+      'Official IRCC and Service Canada facts on working while you study in Canada, the off-campus hour limit, co-op and post-graduation work permits, and getting a Social Insurance Number — general information to verify on the official Government of Canada source.',
+    intro:
+      'Many international students want to work while they study in Canada and gain Canadian experience afterwards. This hub gathers the essentials — working on-campus and off-campus, the off-campus hour limit updated in 2024, the co-op work permit for required placements, the Post-Graduation Work Permit (PGWP), and the Social Insurance Number (SIN) you need to be paid. Everything here is general information drawn from official Government of Canada sources, not immigration advice; work and permit rules change, so always confirm the current rules on the official IRCC or Service Canada source before you act.',
+    group: 'study-in-canada',
+    region: 'canada',
+    guideSlugs: [
+      'working-while-studying-in-canada',
+      'post-graduation-work-permit-pgwp-explained',
+      'co-op-work-permit-canada',
+      'social-insurance-number-for-students',
+      'on-campus-vs-off-campus-jobs-canada',
+      'staying-in-canada-after-graduation',
+      'express-entry-for-international-graduates',
+      'provincial-nominee-program-for-students',
+      'canadian-experience-class-explained',
+      'study-permit-to-permanent-residence-overview',
+    ],
+    examSlugs: [
+      'ielts',
+    ],
+    keywords: [
+      'work while studying in canada',
+      'post graduation work permit canada',
+      'off campus work hours canada',
+      'co-op work permit canada',
+      'social insurance number students canada',
+      'international student jobs canada',
+    ],
+  },
+  {
+    slug: 'canada-student-life',
+    label: 'Student Life in Canada',
+    title: 'Student Life in Canada: Settling In as an International Student',
+    description:
+      'Practical, welcoming guides to everyday student life in Canada — campus culture and weather, health insurance by province, housing, banking, phone plans and transit.',
+    intro:
+      'Settling into a new country is about more than admission and a study permit — it is the day-to-day reality of campus culture, the seasons, health coverage, finding a place to live, opening a bank account, and getting a phone and transit pass. These guides cover the practical side of student life in Canada in plain English. Because rules and costs (especially provincial health coverage, residence fees, and phone and transit terms) differ by province, city and provider and change over time, each guide points you to the official source to verify the current details for your own situation. Immigration-related points such as study permits and work eligibility are presented as general information, not immigration advice — always confirm them on the official Government of Canada source.',
+    group: 'study-in-canada',
+    region: 'canada',
+    guideSlugs: [
+      'student-life-in-canada',
+      'health-insurance-for-international-students-canada',
+      'student-housing-in-canada',
+      'opening-a-bank-account-as-a-student-canada',
+      'phone-and-transit-for-students-canada',
+      'arriving-in-canada-student-checklist',
+      'what-to-pack-for-canada',
+      'part-time-jobs-and-budgeting-canada',
+      'canadian-campus-life-and-culture',
+      'student-safety-and-support-services-canada',
+    ],
+    examSlugs: [
+      'ielts',
+      'toefl',
+    ],
+    keywords: [
+      'student life in canada',
+      'international student life canada',
+      'health insurance international students canada',
+      'student housing canada',
+      'opening a bank account student canada',
+      'phone and transit for students canada',
+    ],
+  },
 ];
 
 // ─────────────────────────────── Helpers ────────────────────────────────────
@@ -533,28 +1183,7 @@ export const getTopicBySlug = (slug: string): Topic | undefined => TOPIC_BY_SLUG
 export const getTopicsByGroup = (group: TopicGroup): Topic[] =>
   TOPICS.filter((t) => t.group === group);
 
-/**
- * Every guide shown on a topic hub: the curated `guideSlugs` (in their listed
- * order) merged with any guide that tags the topic, de-duplicated. Returns the
- * full Guide objects, skipping any slug that no longer resolves.
- */
-export function guidesForTopic(slug: string): Guide[] {
-  const topic = TOPIC_BY_SLUG.get(slug);
-  if (!topic) return [];
-  const order = new Map<string, number>();
-  topic.guideSlugs.forEach((s, i) => order.set(s, i));
-  let next = topic.guideSlugs.length;
-  for (const g of GUIDES) {
-    if (g.tags?.includes(slug) && !order.has(g.slug)) order.set(g.slug, next++);
-  }
-  return GUIDES.filter((g) => order.has(g.slug)).sort(
-    (a, b) => (order.get(a.slug) ?? 0) - (order.get(b.slug) ?? 0),
-  );
-}
-
-/** Topics a given guide belongs to (explicit tags first, then any curated hub). */
-export function topicsForGuide(guide: Guide): Topic[] {
-  const slugs = new Set<string>(guide.tags ?? []);
-  for (const t of TOPICS) if (t.guideSlugs.includes(guide.slug)) slugs.add(t.slug);
-  return TOPICS.filter((t) => slugs.has(t.slug));
-}
+// guidesForTopic() + topicsForGuide() live in ./topic-guides — they depend on the
+// heavy GUIDES data array and are kept out of this module so Client Components can
+// import the lightweight TOPICS array + labels here without bundling GUIDES into
+// the browser. Import those helpers from '@/lib/topic-guides' (server-side only).

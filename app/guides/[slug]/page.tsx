@@ -7,7 +7,7 @@ import { GUIDES, getGuideBySlug, GUIDE_CATEGORY_LABELS } from '@/lib/guides';
 import { getExamBySlug } from '@/lib/admission-guides';
 import { getCollegeBySlug } from '@/lib/colleges';
 import { REGIONS } from '@/lib/regions';
-import { topicsForGuide } from '@/lib/topics';
+import { topicsForGuide } from '@/lib/topic-guides';
 import { howToLd, isHowToGuide } from '@/lib/structured-data';
 import KeyFacts from '@/components/KeyFacts';
 import ContentActions from '@/components/ContentActions';
@@ -37,6 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: guide.titleEn,
       description: desc,
       images: ['/opengraph-image'],
+      publishedTime: guide.lastVerified,
+      modifiedTime: guide.lastVerified,
     },
     twitter: {
       card: 'summary_large_image',
@@ -73,17 +75,28 @@ export default async function GuideDetailPage({ params }: Props) {
   const articleLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': `https://www.globalstudyboard.com/guides/${guide.slug}#article`,
     headline: guide.titleEn,
     description: guide.descriptionEn,
     inLanguage: 'en',
+    url: `https://www.globalstudyboard.com/guides/${guide.slug}`,
     datePublished: guide.lastVerified,
     dateModified: guide.lastVerified,
     image: ['https://www.globalstudyboard.com/opengraph-image'],
-    author: { '@type': 'Organization', name: 'GlobalStudyBoard', url: 'https://www.globalstudyboard.com' },
+    author: {
+      '@type': 'Organization',
+      '@id': 'https://www.globalstudyboard.com/#organization',
+      name: 'GlobalStudyBoard',
+      url: 'https://www.globalstudyboard.com',
+    },
     publisher: {
       '@type': 'Organization',
+      '@id': 'https://www.globalstudyboard.com/#organization',
       name: 'GlobalStudyBoard',
-      logo: { '@type': 'ImageObject', url: 'https://www.globalstudyboard.com/icon.svg' },
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.globalstudyboard.com/icon.svg',
+      },
     },
     mainEntityOfPage: `https://www.globalstudyboard.com/guides/${guide.slug}`,
   };

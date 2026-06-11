@@ -8,8 +8,6 @@ import { REGIONS } from '@/lib/regions';
 import HomeHero from '@/components/HomeHero';
 import HomeRegionGrid from '@/components/HomeRegionGrid';
 
-export const revalidate = false;
-
 export const metadata: Metadata = {
   title: { absolute: 'GlobalStudyBoard — Universities, Exams & Scholarships Worldwide' },
   description:

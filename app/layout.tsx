@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import type { Metadata, Viewport } from 'next';
-import { Inter, Noto_Sans_Devanagari, Fraunces } from 'next/font/google';
+import { Inter, Fraunces } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -27,11 +27,6 @@ const display = Fraunces({
   axes: ['opsz', 'SOFT'],
 });
 
-const devanagari = Noto_Sans_Devanagari({
-  subsets: ['devanagari'],
-  variable: '--font-devanagari',
-  display: 'swap',
-});
 
 export const viewport: Viewport = {
   themeColor: '#14532D',
@@ -69,6 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'GlobalStudyBoard',
+    locale: 'en_US',
     title: 'GlobalStudyBoard — Universities, Exams & Scholarships Worldwide',
     description:
       'Free guide to universities, entrance exams, and scholarships worldwide. Compare SAT, GRE, IELTS, A-Levels and more. Ask GSB AI for personalised guidance.',
@@ -106,14 +102,27 @@ const websiteJsonLd = JSON.stringify({
       '@id': 'https://www.globalstudyboard.com/#organization',
       name: 'GlobalStudyBoard',
       url: 'https://www.globalstudyboard.com',
-      logo: 'https://www.globalstudyboard.com/icon.svg',
+      logo: {
+        '@type': 'ImageObject',
+        '@id': 'https://www.globalstudyboard.com/#logo',
+        url: 'https://www.globalstudyboard.com/icon.svg',
+        contentUrl: 'https://www.globalstudyboard.com/icon.svg',
+      },
       description: 'Free guide to universities, entrance exams, and scholarships worldwide.',
+      email: 'bcode8.labs@gmail.com',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: 'bcode8.labs@gmail.com',
+        availableLanguage: 'English',
+      },
     },
     {
       '@type': 'WebSite',
       '@id': 'https://www.globalstudyboard.com/#website',
       name: 'GlobalStudyBoard',
       url: 'https://www.globalstudyboard.com',
+      inLanguage: 'en',
       description: 'Free guide to universities, entrance exams, and scholarships worldwide.',
       publisher: { '@id': 'https://www.globalstudyboard.com/#organization' },
       potentialAction: {
@@ -132,7 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${display.variable} ${devanagari.variable}`}
+      className={`${sans.variable} ${display.variable}`}
       suppressHydrationWarning
     >
       <body>

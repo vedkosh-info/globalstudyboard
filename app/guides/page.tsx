@@ -45,6 +45,21 @@ const CATEGORY_ORDER: GuideCategory[] = [
 ];
 
 export default function GuidesIndexPage() {
+  const itemListJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': 'https://www.globalstudyboard.com/guides',
+    name: 'Study Guides — GlobalStudyBoard',
+    description: 'Guides to entrance exams, admissions, careers and studying abroad.',
+    numberOfItems: GUIDES.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: GUIDES.map((g, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: g.titleEn,
+      url: `https://www.globalstudyboard.com/guides/${g.slug}`,
+    })),
+  });
   const items: GuideCard[] = GUIDES.map((g) => ({
     slug: g.slug,
     titleEn: g.titleEn,
@@ -67,6 +82,7 @@ export default function GuidesIndexPage() {
 
   return (
     <div className="space-y-14">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd }} />
       <header className="max-w-3xl">
         <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3">
           Study guides

@@ -44,6 +44,10 @@ ${items}
 </rss>`;
 
   return new Response(xml, {
-    headers: { 'Content-Type': 'application/rss+xml; charset=utf-8' },
+    headers: {
+      'Content-Type': 'application/rss+xml; charset=utf-8',
+      // Cache aggressively — feed content only changes on redeploy.
+      'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
+    },
   });
 }

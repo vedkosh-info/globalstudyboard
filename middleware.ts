@@ -1,21 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  // Single-language (English) site. Retire any legacy locale-prefixed URLs
-  // (/hi/*, /en/*) with a permanent redirect to the bare English URL.
-  if (pathname === '/hi' || pathname === '/en') {
-    const url = request.nextUrl.clone();
-    url.pathname = '/';
-    return NextResponse.redirect(url, 301);
-  }
-  if (pathname.startsWith('/hi/') || pathname.startsWith('/en/')) {
-    const url = request.nextUrl.clone();
-    url.pathname = pathname.slice(3) || '/';
-    return NextResponse.redirect(url, 301);
-  }
-
   const hostname = request.nextUrl.hostname;
   const isLocalhost =
     hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
@@ -62,25 +47,32 @@ export function middleware(request: NextRequest) {
   ];
   if (!isLocalhost) csp.push('upgrade-insecure-requests');
 
-  const cspValue = csp.join('; ');
-
   const response = NextResponse.next();
 
-  response.headers.set('Content-Security-Policy', cspValue);
-  response.headers.set('X-Frame-Options', 'SAMEORIGIN');
+  response.headers.set('Content-Security-Policy', csp.join('; '));
   response.headers.set('X-Content-Type-Options', 'nosniff');
+  response.headers.set('X-Frame-Options', 'SAMEORIGIN');
   response.headers.set('X-XSS-Protection', '1; mode=block');
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   response.headers.set('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
   response.headers.set('X-DNS-Prefetch-Control', 'off');
+  response.headers.set(
+    'Permissions-Policy',
+    'geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()',
+  );
 
   if (!isLocalhost) {
-    response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+    response.headers.set(
+      'Strict-Transport-Security',
+      'max-age=31536000; includeSubDomains; preload',
+    );
   }
 
   return response;
 }
 
+// Locale redirects (/hi, /en → bare paths) are handled in next.config.js
+// at routing level so they never reach this middleware.
 export const config = {
   matcher: [
     '/((?!_next/static|_next/image|api/|images/|fonts/|favicon\\.ico|icon\\.png|apple-icon\\.png|manifest\\.webmanifest|ads\\.txt|robots\\.txt|sitemap|[^/]+\\.(?:png|jpe?g|gif|webp|svg|ico|ttf|woff2?|otf|txt|xml|json|html|pdf|css)).*)',
