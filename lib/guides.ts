@@ -33074,6 +33074,9059 @@ export const GUIDES: Guide[] = [
     keywords: ['study in canada from india roadmap', 'canada study plan indian students', 'how to apply canada from india', 'canada study permit india timeline', 'indian students canada step by step'],
     tags: ['canada-admissions'],
   },
+  {
+    slug: 'how-to-study-in-australia-complete-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'How to Study in Australia: Complete Guide',
+    descriptionEn:
+      'An end-to-end overview for international students: how to choose a course and university, apply, secure a Confirmation of Enrolment, apply for the Student visa (subclass 500), and arrive in Australia.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How studying in Australia works',
+        bodyEn:
+          'Australia is a popular destination for international students, with universities, vocational (VET) providers, and English-language colleges across the country. Most international students follow a clear sequence: pick a course and institution, meet the entry requirements, receive and accept an offer, get a Confirmation of Enrolment (CoE), and then apply for a student visa before travelling.\n\nThere is no single national application portal for international students applying to Australian universities. In most cases you apply directly to each university (or through that university\'s authorised channels). The state-based Tertiary Admission Centres are mainly pathways for domestic school-leavers, not the usual route for international applicants.',
+      },
+      {
+        headingEn: 'Step 1 — Choose your course and institution',
+        bodyEn:
+          'Decide what you want to study and at what level (undergraduate, postgraduate coursework, or research). Then shortlist institutions that offer it. The official Study Australia website lets you search courses and providers, and every university publishes its programs, entry requirements, intakes, and fees on its own website.\n\nWhen comparing universities, you may see global rankings such as QS or Times Higher Education (THE). Treat these as one input among many — alongside the specific course content, location, and entry requirements — and always confirm details on the university\'s own site.',
+        bullets: [
+          'Confirm the course is offered to international students at your chosen campus',
+          'Check the level and duration, and whether it is a coursework or research degree',
+          'Note the intake (Semester 1 or Semester 2) and the application lead time',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — Check entry requirements and apply',
+        bodyEn:
+          'Each course sets its own academic prerequisites and English-language requirements. Common evidence of English proficiency includes IELTS, TOEFL iBT, PTE Academic, or other tests the university and the Department of Home Affairs accept — the accepted tests and required scores vary by course and visa, so check both the university page and the official immigration guidance.\n\nApply directly through the university\'s international application system, submitting your academic transcripts, proof of English, identification, and any course-specific documents. If you meet the conditions, the university issues a Letter of Offer.',
+      },
+      {
+        headingEn: 'Step 3 — Accept your offer and get a CoE',
+        bodyEn:
+          'After you accept the offer and pay the required deposit, the institution issues a Confirmation of Enrolment (CoE) for each course. The CoE is the official enrolment document you need for your student visa application. International students are generally required to hold Overseas Student Health Cover (OSHC) for the duration of their stay — your institution can explain the arrangements.\n\nVisa requirements, health-cover rules, and accepted documents are set by the Australian Government and can change. This is general information, not immigration advice — always verify the current requirements on the official government source before acting.',
+      },
+      {
+        headingEn: 'Step 4 — Apply for the Student visa (subclass 500)',
+        bodyEn:
+          'International students studying a registered full-time course usually apply for the Student visa (subclass 500). Applications are made through the Department of Home Affairs. As part of the application, applicants must meet the requirements the Department sets — these have included the Genuine Student requirement, evidence of enrolment (your CoE), health cover, and financial capacity.\n\nThe exact criteria, fees, processing times, and conditions are determined by the Department of Home Affairs and change from time to time. Confirm everything on immi.homeaffairs.gov.au before you apply, and remember this is general information, not immigration advice.',
+        bullets: [
+          'Apply through the Department of Home Affairs once you have your CoE',
+          'Meet the Genuine Student and other requirements set by the Department',
+          'Verify current fees, conditions, and processing times on the official site',
+        ],
+      },
+      {
+        headingEn: 'Step 5 — Prepare to arrive and study',
+        bodyEn:
+          'Once your visa is granted, plan your arrival around your course start date. Arrange accommodation, understand your visa conditions (including any limits on work while studying, which the Department of Home Affairs sets and updates), and complete your enrolment with the university.\n\nGive yourself time for each stage — choosing, applying, accepting, the visa, and travel can take several months in total, so start early and work backwards from your intended intake.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there one national portal to apply to Australian universities?',
+        answerEn:
+          'No. Australia has no single national application portal for international students. You generally apply directly to each university. The state Tertiary Admission Centres (such as UAC, VTAC, QTAC, SATAC) are mainly for domestic school-leavers.',
+      },
+      {
+        questionEn: 'What document do I need for a student visa?',
+        answerEn:
+          'You typically need a Confirmation of Enrolment (CoE), which the institution issues after you accept your offer. The CoE is a key document for the Student visa (subclass 500). Verify the full requirement list on the Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'When does the academic year start in Australia?',
+        answerEn:
+          'Most Australian universities have two main intakes: Semester 1 (around February/March) and Semester 2 (around July/August). Some courses also offer additional intakes. Confirm exact dates with your chosen university.',
+      },
+      {
+        questionEn: 'Do I need health cover as an international student?',
+        answerEn:
+          'International students on a student visa are generally required to hold Overseas Student Health Cover (OSHC) for their stay. Your institution can explain the arrangements, and you should confirm current rules on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-apply-to-australian-universities', 'entry-requirements-for-australian-universities', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['how to study in australia', 'study in australia for international students', 'student visa subclass 500', 'studying in australia guide', 'australia student visa requirements'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Application route', value: 'Mostly direct to each university (no single national portal)' },
+      { label: 'Main intakes', value: 'Semester 1 (Feb/Mar) and Semester 2 (Jul/Aug)' },
+      { label: 'Key enrolment document', value: 'Confirmation of Enrolment (CoE)' },
+      { label: 'Student visa', value: 'Subclass 500 — verify on immi.homeaffairs.gov.au' },
+    ],
+  },
+  {
+    slug: 'how-to-apply-to-australian-universities',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'How to Apply to Australian Universities',
+    descriptionEn:
+      'How international students apply to Australian universities — direct applications versus state admission centres, the documents you need, and how the offer letter and Confirmation of Enrolment fit in.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two application routes',
+        bodyEn:
+          'There are two broad ways students apply to Australian universities, and which one applies to you depends largely on whether you are a domestic or an international student.\n\nDomestic school-leavers (and some other domestic applicants) often apply through a state-based Tertiary Admission Centre, which can manage multiple preferences across universities in that state. International students, by contrast, usually apply directly to each university or through that university\'s authorised application channels. There is no single national portal for international applicants.',
+        bullets: [
+          'Direct to the university — the common route for international students',
+          'State Tertiary Admission Centre — mainly for domestic school-leavers',
+        ],
+      },
+      {
+        headingEn: 'Applying directly to a university',
+        bodyEn:
+          'For a direct application, you use the university\'s own international application system. You select the course, confirm you meet its prerequisites, and submit the required documents. Many universities also accept applications through authorised representatives, but the underlying assessment is made by the university.\n\nBecause each university sets its own process, deadlines, and document list, apply to each one separately and follow that institution\'s instructions exactly.',
+      },
+      {
+        headingEn: 'Documents you typically need',
+        bodyEn:
+          'Requirements vary by course and university, but international applicants are commonly asked for academic transcripts and certificates, proof of English proficiency (for example IELTS, TOEFL iBT, or PTE Academic, where accepted), a copy of your passport, and any course-specific items such as a statement of purpose, portfolio, or references.\n\nAlways confirm the exact list on the specific course page, because missing or incorrect documents are a common cause of delays.',
+        bullets: [
+          'Academic transcripts and qualification certificates',
+          'Proof of English proficiency (accepted tests vary by course)',
+          'Passport or identification',
+          'Course-specific items (statement, portfolio, references) where required',
+        ],
+      },
+      {
+        headingEn: 'From offer letter to Confirmation of Enrolment',
+        bodyEn:
+          'If your application is successful, the university issues a Letter of Offer. This may be conditional (you still need to meet certain conditions, such as a final English score) or unconditional. Once you accept the offer and pay the required deposit, the university issues a Confirmation of Enrolment (CoE).\n\nThe CoE is the official document that confirms your enrolment in a registered course and is needed for your student visa application. Keep your offer letter and CoE safe, as you will refer to them throughout the visa and arrival process.',
+      },
+      {
+        headingEn: 'International versus domestic applicants',
+        bodyEn:
+          'The distinction matters because it affects the route, the fees, and sometimes the deadlines. Domestic applicants frequently use a state admission centre and may be considered for government-supported places, while international students apply on international fee arrangements directly to the university.\n\nIf you are unsure which category you fall into, check the university\'s definition of a domestic versus international student, as eligibility depends on citizenship, residency, and visa status. This is general guidance — verify your specific situation with the university and, for visa matters, the official government source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do international students apply through UAC or VTAC?',
+        answerEn:
+          'Usually no. The state Tertiary Admission Centres are mainly for domestic school-leavers. International students normally apply directly to each university or through its authorised channels. Check the specific centre\'s guidance, as some accept limited international applications.',
+      },
+      {
+        questionEn: 'Can I apply to several universities at once?',
+        answerEn:
+          'Yes. As an international student you can apply directly to multiple universities, submitting a separate application to each. Each university assesses your application and may issue its own offer.',
+      },
+      {
+        questionEn: 'What is the difference between a Letter of Offer and a CoE?',
+        answerEn:
+          'A Letter of Offer is the university\'s offer of a place (sometimes conditional). A Confirmation of Enrolment (CoE) is issued after you accept and pay the deposit, and confirms your enrolment in a registered course for visa purposes.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-australia-complete-guide', 'entry-requirements-for-australian-universities', 'uac-vtac-satac-qtac-application-centres-guide'],
+    sources: [
+      { label: 'Study Australia — How to apply to study (official Australian Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/how-to-apply-to-study' },
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['how to apply to australian universities', 'apply to university in australia', 'australian university application for international students', 'direct application australian university', 'confirmation of enrolment australia'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'International route', value: 'Apply directly to each university (or authorised channel)' },
+      { label: 'Domestic route', value: 'Often via a state Tertiary Admission Centre' },
+      { label: 'Offer document', value: 'Letter of Offer (conditional or unconditional)' },
+      { label: 'Enrolment document', value: 'Confirmation of Enrolment (CoE) after acceptance' },
+    ],
+  },
+  {
+    slug: 'australian-university-application-process-and-timeline',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'Australian University Application Process and Timeline',
+    descriptionEn:
+      'Understand the Semester 1 and Semester 2 intakes, typical application lead times, and how to plan backwards from your start date — with exact deadlines deferred to each university.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The two main intakes',
+        bodyEn:
+          'Most Australian universities run two main intakes each year: Semester 1, which typically begins around February or March, and Semester 2, which typically begins around July or August. Some universities and courses also offer additional or trimester intakes.\n\nNot every course is available in both intakes, and some competitive or specialised programs admit students only once a year. Always check the specific course page to confirm which intakes it offers.',
+        bullets: [
+          'Semester 1 — typically starts around February/March',
+          'Semester 2 — typically starts around July/August',
+          'Some courses offer extra intakes; some admit only once a year',
+        ],
+      },
+      {
+        headingEn: 'Typical lead times',
+        bodyEn:
+          'International students generally benefit from applying several months ahead of their intended start date. This lead time covers application assessment, accepting the offer and paying the deposit, receiving the Confirmation of Enrolment, and then the student visa process — which itself can take time and is handled by the Department of Home Affairs.\n\nBecause each stage has its own duration and universities set their own application deadlines, there is no single fixed timeline that applies everywhere. Treat the months before your intake as a planning window and confirm the actual cut-off dates with each university.',
+      },
+      {
+        headingEn: 'A sensible way to plan backwards',
+        bodyEn:
+          'Rather than working forward from today, work backwards from your intended start date. Identify the intake, then leave time for the visa, then the offer and CoE, then the application itself, and finally any English test you still need to take.\n\nBuilding in buffer at each step reduces the risk that a delay in one stage forces you to defer to the next intake.',
+        bullets: [
+          'Pick your intake (Semester 1 or Semester 2) and start date',
+          'Allow time for the student visa (handled by the Department of Home Affairs)',
+          'Allow time to accept the offer and receive your CoE',
+          'Allow time for the application and any pending English test',
+        ],
+      },
+      {
+        headingEn: 'Deferring and changing your start',
+        bodyEn:
+          'If your plans change, many universities allow you to defer your offer to a later intake, subject to their policy and to course availability. Deferral can also affect your visa timing, so coordinate any change with both the university and your understanding of the official visa requirements.\n\nPolicies on deferral, deadlines, and conditions differ between universities and can change, so rely on the university\'s current published process rather than general assumptions.',
+      },
+      {
+        headingEn: 'Where to confirm exact dates',
+        bodyEn:
+          'Exact application deadlines, offer-acceptance dates, and semester start dates are published by each university and updated each year. This guide gives the typical shape of the calendar, not the precise dates.\n\nFor visa-related timing, the Department of Home Affairs is the official source. This is general information, not immigration advice — verify current processing times and requirements on the official government source before you commit to a plan.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'When should I start my application for Australia?',
+        answerEn:
+          'It is generally wise to begin several months before your intended intake, because the application, offer, CoE, and student visa stages each take time. Exact deadlines vary by university, so check each one and plan backwards from your start date.',
+      },
+      {
+        questionEn: 'Which intake is better, Semester 1 or Semester 2?',
+        answerEn:
+          'Neither is universally better. Semester 1 (around February/March) and Semester 2 (around July/August) both work; the right choice depends on course availability, your readiness, and your visa timeline. Confirm which intakes your course offers.',
+      },
+      {
+        questionEn: 'Can I defer my offer to a later intake?',
+        answerEn:
+          'Many universities allow deferral to a later intake, subject to their policy and course availability. Deferral can affect your visa timing, so coordinate with the university and check official visa guidance.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-apply-to-australian-universities', 'entry-requirements-for-australian-universities', 'how-to-study-in-australia-complete-guide'],
+    sources: [
+      { label: 'Study Australia — Plan your studies (official Australian Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies' },
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['australian university application timeline', 'australia university intakes', 'semester 1 semester 2 australia', 'when to apply australian university', 'australia application deadlines'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Semester 1', value: 'Typically starts around February/March' },
+      { label: 'Semester 2', value: 'Typically starts around July/August' },
+      { label: 'Planning approach', value: 'Work backwards from your start date, with buffers' },
+      { label: 'Exact deadlines', value: 'Set by each university — verify on its official site' },
+    ],
+  },
+  {
+    slug: 'entry-requirements-for-australian-universities',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'Entry Requirements for Australian Universities',
+    descriptionEn:
+      'The three pillars of admission — academic prerequisites, English-language proficiency, and supporting documents — and how they vary by course and university, with specifics deferred to official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Requirements vary by course and level',
+        bodyEn:
+          'There is no single set of entry requirements for all Australian universities. Each course defines its own criteria based on the level of study (undergraduate, postgraduate coursework, or research) and the field. What gets you into one program may not satisfy another, even at the same university.\n\nFor that reason, the most reliable approach is to read the specific course page for every program you are considering, rather than assuming a general standard.',
+      },
+      {
+        headingEn: 'Academic prerequisites',
+        bodyEn:
+          'Academic entry typically depends on your previous qualifications. Undergraduate courses usually require completion of secondary school (or a recognised equivalent), sometimes with particular subjects or a minimum level of achievement. Postgraduate courses usually require a relevant bachelor\'s degree, and research degrees often require a strong academic record and, in some cases, a research proposal or supervisor.\n\nUniversities assess international qualifications against their own standards. The exact prerequisites and equivalencies are set by each university and can change, so confirm them on the official course page.',
+        bullets: [
+          'Undergraduate — completion of secondary school or recognised equivalent',
+          'Postgraduate coursework — a relevant bachelor\'s degree',
+          'Research degrees — strong academic record, sometimes a proposal or supervisor',
+        ],
+      },
+      {
+        headingEn: 'English-language proficiency',
+        bodyEn:
+          'Because programs are taught in English, international applicants usually need to demonstrate English-language proficiency. Universities commonly accept tests such as IELTS, TOEFL iBT, and PTE Academic, and some accept others. The required scores differ by course and level, and English requirements also apply for the student visa.\n\nNote that the university\'s English requirement and the visa English requirement are set separately — by the university and by the Department of Home Affairs respectively. Always check both, and verify the visa requirement on the official government source, as it can change.',
+        bullets: [
+          'Common accepted tests include IELTS, TOEFL iBT, and PTE Academic',
+          'Required scores vary by course, level, and university',
+          'A separate English requirement may apply for the student visa',
+        ],
+      },
+      {
+        headingEn: 'Supporting documents',
+        bodyEn:
+          'Beyond grades and English, most applications ask for supporting documents. These commonly include certified academic transcripts and certificates, proof of English, a copy of your passport, and, depending on the course, items such as a statement of purpose, a portfolio, a CV, or references.\n\nSubmitting complete and correctly certified documents helps avoid delays. The exact list is course-specific, so follow the university\'s instructions precisely.',
+      },
+      {
+        headingEn: 'Pathways if you do not yet meet requirements',
+        bodyEn:
+          'If you do not currently meet a course\'s entry requirements, many universities and providers offer pathway options such as foundation programs, diplomas, or English-language courses that can lead into the degree. Availability and structure differ by institution.\n\nThese pathways are published by each university, and admission to the main degree is still subject to meeting the relevant conditions. Confirm the details and any conditions directly with the institution.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What English test do Australian universities accept?',
+        answerEn:
+          'Universities commonly accept IELTS, TOEFL iBT, and PTE Academic, and some accept others. The required score varies by course and university. A separate English requirement may also apply for the student visa, set by the Department of Home Affairs.',
+      },
+      {
+        questionEn: 'Are entry requirements the same for every course?',
+        answerEn:
+          'No. Each course sets its own academic prerequisites, English requirements, and document list, depending on the level and field. Always check the specific course page for every program you are considering.',
+      },
+      {
+        questionEn: 'What if I do not meet the entry requirements?',
+        answerEn:
+          'Many universities offer pathway options such as foundation programs, diplomas, or English-language courses that can lead into a degree. Availability and conditions vary, so confirm the details directly with the institution.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-apply-to-australian-universities', 'how-to-study-in-australia-complete-guide', 'australian-university-application-process-and-timeline'],
+    sources: [
+      { label: 'Study Australia — How to apply to study, incl. entry requirements (official Australian Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/how-to-apply-to-study' },
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['entry requirements australian universities', 'australia university english requirements', 'ielts score for australian university', 'documents for australian university application', 'australia university admission requirements'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Academic entry', value: 'Varies by course and level — set by each university' },
+      { label: 'English tests', value: 'Commonly IELTS, TOEFL iBT, PTE Academic (scores vary)' },
+      { label: 'Visa English', value: 'Separate requirement — verify on the official government source' },
+      { label: 'Pathways', value: 'Foundation, diploma, or English courses where offered' },
+    ],
+  },
+  {
+    slug: 'uac-vtac-satac-qtac-application-centres-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'UAC, VTAC, QTAC, SATAC: State Admission Centres Guide',
+    descriptionEn:
+      'What each Australian state Tertiary Admission Centre does, why they are mainly domestic school-leaver pathways, and why international students usually apply directly to each university.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What a Tertiary Admission Centre is',
+        bodyEn:
+          'A Tertiary Admission Centre (TAC) is a state or territory body that processes applications to participating universities and other tertiary institutions in that area, mainly for domestic school-leavers. Rather than applying to each institution separately, an applicant can submit a single application with ordered preferences, and the centre helps coordinate offers across the participating institutions.\n\nTACs are primarily a domestic pathway. International students generally do not use them as the standard route — they apply directly to each university instead.',
+      },
+      {
+        headingEn: 'The main centres by state',
+        bodyEn:
+          'Australia\'s states and territories have their own admission centres. The names you will most commonly encounter are listed below. Each centre publishes the institutions it serves, its application process, and its key dates on its official website.',
+        bullets: [
+          'UAC — Universities Admissions Centre (New South Wales and the ACT)',
+          'VTAC — Victorian Tertiary Admissions Centre (Victoria)',
+          'QTAC — Queensland Tertiary Admissions Centre (Queensland)',
+          'SATAC — South Australian Tertiary Admissions Centre (South Australia and the Northern Territory)',
+          'TISC — Tertiary Institutions Service Centre (Western Australia)',
+        ],
+      },
+      {
+        headingEn: 'Why international students usually apply direct',
+        bodyEn:
+          'Because the admission centres are designed primarily around domestic school-leaver admission, international students generally apply directly to each university or through that university\'s authorised channels. This lets the university assess international qualifications, English proficiency, and fee status, and then issue a Letter of Offer and a Confirmation of Enrolment for the visa process.\n\nSome centres do handle certain international or non-school-leaver applications, but this varies, so do not assume a centre is your route. Check each centre\'s guidance and, in most cases, plan to apply directly to the university.',
+      },
+      {
+        headingEn: 'When a centre might be relevant',
+        bodyEn:
+          'A Tertiary Admission Centre can be relevant if you are a domestic applicant, or in specific situations a centre explicitly supports. The centres also publish useful information about courses and selection that any prospective student can read.\n\nIf you think a centre might apply to you, confirm your eligibility and the correct process on that centre\'s official website rather than relying on general descriptions, because each centre sets and updates its own rules.',
+      },
+      {
+        headingEn: 'How to use this information',
+        bodyEn:
+          'Treat the admission centres as the domestic-focused coordination layer, and direct-to-university applications as the usual international route. The two are not competing options for most international students — the direct route is the standard one.\n\nWhatever your situation, verify the current process on the official source: each university\'s international admissions pages for direct applications, and the relevant centre\'s website if a centre applies to you.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What does a Tertiary Admission Centre do?',
+        answerEn:
+          'A Tertiary Admission Centre processes applications to participating tertiary institutions in its state or territory, mainly for domestic school-leavers, allowing a single application with ordered preferences. Examples include UAC, VTAC, QTAC, SATAC, and TISC.',
+      },
+      {
+        questionEn: 'Should international students apply through UAC, VTAC, QTAC, or SATAC?',
+        answerEn:
+          'Usually not. These centres are mainly domestic school-leaver pathways. International students generally apply directly to each university. Some centres handle limited international applications, so check the specific centre\'s guidance.',
+      },
+      {
+        questionEn: 'Which centre covers which state?',
+        answerEn:
+          'UAC covers New South Wales and the ACT, VTAC covers Victoria, QTAC covers Queensland, SATAC covers South Australia and the Northern Territory, and TISC covers Western Australia. Confirm current coverage on each centre\'s official site.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-apply-to-australian-universities', 'how-to-study-in-australia-complete-guide', 'australian-university-application-process-and-timeline'],
+    sources: [
+      { label: 'Universities Admissions Centre (UAC) — official site', url: 'https://www.uac.edu.au' },
+      { label: 'Victorian Tertiary Admissions Centre (VTAC) — official site', url: 'https://www.vtac.edu.au' },
+      { label: 'Study Australia — How to apply to study (official Australian Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/how-to-apply-to-study' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['uac vtac qtac satac', 'tertiary admission centre australia', 'how to apply university australia state centre', 'uac application', 'do international students use uac'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'UAC', value: 'Universities Admissions Centre — NSW and the ACT' },
+      { label: 'VTAC / QTAC', value: 'Victoria / Queensland admission centres' },
+      { label: 'SATAC / TISC', value: 'South Australia and NT / Western Australia' },
+      { label: 'International students', value: 'Usually apply directly to each university' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-new-zealand-complete-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'How to Study in New Zealand: Complete Guide',
+    descriptionEn:
+      'An end-to-end overview for international students: how to choose a university and programme, apply, secure a student visa, and prepare to arrive in New Zealand — with official sources to verify every step.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'The big picture',
+        bodyEn:
+          'Studying in New Zealand follows a clear sequence: choose a programme and university, apply directly and receive an offer of place, accept and pay where required, apply for a student visa, then arrange accommodation and travel before you arrive.\n\nNew Zealand has eight universities, all government-funded and quality-assured. International students also study at institutes of technology, polytechnics, and private training establishments, but this guide focuses on the university route. Each step below links to an official source you should verify before acting, because fees, dates, and rules change every year.',
+      },
+      {
+        headingEn: 'Step 1 — Choose your university and programme',
+        bodyEn:
+          'Start by deciding what you want to study and at what level (undergraduate, postgraduate, or research). Then shortlist universities that offer that programme and check their entry requirements, intake dates, and tuition on each university\'s own website.\n\nWhen you read rankings, treat them as one input among many and note which body issued them (for example QS or THE), the year, and the methodology. Fit — programme content, location, support services, and total cost — usually matters more than a single ranking number.',
+        bullets: [
+          'New Zealand has eight universities; you apply to each one directly',
+          'Decide level: undergraduate, postgraduate taught, or research',
+          'Compare programmes, entry requirements, intakes, and total cost',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — Apply and get an offer of place',
+        bodyEn:
+          'There is no single national undergraduate admissions portal in New Zealand — international students apply directly to each university (online), usually for a fee that varies by institution. You submit your academic transcripts, proof of English proficiency, and any programme-specific documents, then wait for a decision.\n\nIf you are accepted, the university issues an offer of place. This document is central to the next steps: you typically need it (and proof you have met any conditions) before you can apply for your student visa.',
+      },
+      {
+        headingEn: 'Step 3 — Apply for a student visa',
+        bodyEn:
+          'Once you hold an offer of place from an education provider, you apply to Immigration New Zealand for the appropriate student visa. The official requirements typically cover your offer of place, evidence of funds to support yourself, and other conditions set by Immigration New Zealand.\n\nThis is general information, not immigration advice. Visa categories, evidence requirements, processing times, and fees change — always read and follow the current rules on the official Immigration New Zealand website before you apply, and verify on the official government source.',
+        bullets: [
+          'You usually need an offer of place before applying for the visa',
+          'Requirements typically include proof of funds and the offer of place',
+          'Verify current rules on immigration.govt.nz — this is not immigration advice',
+        ],
+      },
+      {
+        headingEn: 'Step 4 — Costs, funds, and insurance',
+        bodyEn:
+          'Plan for tuition plus living costs (accommodation, food, transport, and insurance). Tuition differs by university and programme, and living costs differ by city, so build your budget from each university\'s published international-tuition figures and official living-cost guidance rather than from estimates.\n\nInsurance and health-cover expectations for international students are set out in official guidance; confirm what applies to your visa and provider before you travel.',
+      },
+      {
+        headingEn: 'Step 5 — Prepare to arrive',
+        bodyEn:
+          'After your visa is approved, arrange accommodation (university halls or private rental), book travel, and complete any enrolment steps your university requires. Many universities run orientation programmes and offer support services for international students — use them.\n\nUse the official Study with New Zealand portal for general planning information and each university\'s international-student pages for the specifics of your offer.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many universities are there in New Zealand?',
+        answerEn:
+          'New Zealand has eight universities, all government-funded. International students also study at institutes of technology, polytechnics, and private training establishments, but the eight universities are the focus of this guide.',
+      },
+      {
+        questionEn: 'Is there one national application portal for New Zealand universities?',
+        answerEn:
+          'No. There is no single national undergraduate admissions portal — international students apply directly to each university, usually online and for a fee that varies by institution.',
+      },
+      {
+        questionEn: 'Do I need an offer of place before I apply for a student visa?',
+        answerEn:
+          'Generally yes. You typically need an offer of place from an education provider before you apply to Immigration New Zealand for a student visa. This is general information, not immigration advice — verify the current requirements on immigration.govt.nz.',
+      },
+      {
+        questionEn: 'How much does it cost to study in New Zealand?',
+        answerEn:
+          'Costs vary by university, programme, and city, so we do not quote figures here. Build your budget from each university\'s published international-tuition figures plus official living-cost guidance, and verify them on the official sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-new-zealand-from-india', 'how-to-apply-to-new-zealand-universities', 'entry-requirements-for-new-zealand-universities'],
+    sources: [
+      { label: 'Study with New Zealand — official government portal', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'Immigration New Zealand — Study visas', url: 'https://www.immigration.govt.nz/study/study-visas/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['how to study in new zealand', 'study in new zealand for international students', 'new zealand student visa', 'apply to new zealand university', 'studying in new zealand guide'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Universities in New Zealand', value: 'Eight (all government-funded)' },
+      { label: 'How you apply', value: 'Directly to each university — no single national portal' },
+      { label: 'Student visa', value: 'Immigration New Zealand (verify current rules; not immigration advice)' },
+      { label: 'Plan for', value: 'Tuition + living costs + insurance (figures vary — check official sources)' },
+    ],
+  },
+  {
+    slug: 'how-to-apply-to-new-zealand-universities',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'How to Apply to New Zealand Universities',
+    descriptionEn:
+      'How international students apply to New Zealand\'s eight universities — applying directly to each institution, what an offer of place is, deadlines and intakes, and how to verify every requirement officially.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'You apply directly to each university',
+        bodyEn:
+          'New Zealand has eight universities, and international students apply to each one directly rather than through a single national undergraduate portal. If you are applying to more than one university, you submit a separate application to each, usually online and usually for an application fee that the university sets.\n\nThis differs from systems that use a centralised undergraduate clearing house. In New Zealand the university itself manages your application, assesses your documents, and issues the decision.',
+      },
+      {
+        headingEn: 'Find the programme and check requirements',
+        bodyEn:
+          'Begin on the university\'s own website. Locate the exact programme you want, then read its entry requirements, intake dates, application deadlines, and tuition for international students. Requirements differ by programme and by university, so check each one separately rather than assuming they are the same.',
+        bullets: [
+          'Search the specific programme on each university\'s website',
+          'Note entry requirements, intakes, deadlines, and international tuition',
+          'Requirements vary by programme — confirm for each one',
+        ],
+      },
+      {
+        headingEn: 'Submit your application',
+        bodyEn:
+          'Most universities run an online application system where you create an account, enter your details, upload supporting documents, and pay any application fee. Typical supporting documents include academic transcripts and proof of English-language proficiency, plus programme-specific items where required.\n\nBecause the exact document set and any fees vary by university and programme, follow the checklist on the university\'s own application page rather than a generic list.',
+      },
+      {
+        headingEn: 'The offer of place',
+        bodyEn:
+          'If your application is successful, the university issues an offer of place. It may be unconditional, or conditional on you meeting certain requirements (for example, final results or an English-test score). You usually accept the offer and pay any required deposit or tuition to confirm your place.\n\nThe offer of place is also the document you typically need before applying for a student visa, so keep it safe and read its conditions carefully.',
+      },
+      {
+        headingEn: 'Intakes, deadlines, and planning',
+        bodyEn:
+          'New Zealand universities generally have set intakes during the year, and application deadlines differ by programme. Some competitive or limited-entry programmes close earlier or have additional selection steps. Apply well ahead of the deadline so you have time to arrange your visa, funds, accommodation, and travel.\n\nExact intake months, deadlines, and fees change every year — always verify them on each university\'s official website and use the Study with New Zealand portal for general guidance.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply through one portal for all New Zealand universities?',
+        answerEn:
+          'No. There is no single national undergraduate admissions portal. You apply directly to each of New Zealand\'s eight universities, usually online and for a fee set by that university.',
+      },
+      {
+        questionEn: 'What is an offer of place?',
+        answerEn:
+          'It is the document a university issues when it accepts your application. It may be unconditional or conditional, and you usually need it before applying for a student visa. Read its conditions carefully and accept it as instructed.',
+      },
+      {
+        questionEn: 'Can I apply to more than one university?',
+        answerEn:
+          'Yes. Because each university manages its own admissions, you can submit separate applications to several universities, each with its own form and (usually) its own application fee.',
+      },
+      {
+        questionEn: 'When are the application deadlines?',
+        answerEn:
+          'Intakes and deadlines vary by university and programme and change each year, so we do not list specific dates here. Check the exact dates on each university\'s official website and apply well in advance.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: ['university-of-auckland'],
+    relatedGuideSlugs: ['how-to-study-in-new-zealand-complete-guide', 'entry-requirements-for-new-zealand-universities', 'application-documents-checklist-australia-and-new-zealand'],
+    sources: [
+      { label: 'Study with New Zealand — official government portal', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'University of Auckland — Apply (international)', url: 'https://www.auckland.ac.nz/en/study/applications-and-admissions.html' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['how to apply to new zealand universities', 'apply to university in new zealand', 'new zealand university application', 'offer of place new zealand', 'study in new zealand application process'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'How to apply', value: 'Directly to each university — no national portal' },
+      { label: 'Universities', value: 'Eight government-funded universities' },
+      { label: 'Key document', value: 'Offer of place (often needed before the visa)' },
+      { label: 'Deadlines & fees', value: 'Vary by university and programme — verify on each official site' },
+    ],
+  },
+  {
+    slug: 'entry-requirements-for-new-zealand-universities',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'Entry Requirements for New Zealand Universities',
+    descriptionEn:
+      'What New Zealand universities typically look for from international applicants — academic prerequisites, English-language proficiency, and supporting documents — and why you must check each university and programme.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Requirements vary by university and programme',
+        bodyEn:
+          'There is no single national entry standard for New Zealand\'s eight universities. Each university sets its own admission requirements, and within a university each programme can differ. The categories below — academic, English-language, and supporting documents — describe the usual structure, but the exact thresholds are defined by each university and change over time.\n\nTreat this as a map of what to look for, then confirm the precise requirements on the official website for the specific programme you want.',
+      },
+      {
+        headingEn: 'Academic requirements',
+        bodyEn:
+          'Universities assess your prior academic qualifications against their own entry criteria. For undergraduate study, this usually means your secondary-school qualification and results; for postgraduate study, your previous degree, grades, and sometimes relevant background. Some programmes also have specific subject prerequisites (for example, particular subjects studied at school or in a prior degree).\n\nInternational qualifications are assessed for equivalence by the university, so how your qualification maps to their requirement is determined by that university, not by a fixed global table.',
+        bullets: [
+          'Undergraduate: your school qualification and results',
+          'Postgraduate: your prior degree, grades, and any relevant background',
+          'Some programmes require specific subjects as prerequisites',
+        ],
+      },
+      {
+        headingEn: 'English-language proficiency',
+        bodyEn:
+          'Because programmes are taught in English, universities require evidence of English-language proficiency from applicants whose first language is not English or who have not previously studied in English. Accepted tests commonly include IELTS, TOEFL, PTE Academic, and others, and the score a university accepts depends on the university and the level or programme.\n\nThere is no single universal score, and the list of accepted tests and the required levels are set by each university, so check the specific programme\'s English requirement and which tests it accepts.',
+      },
+      {
+        headingEn: 'Supporting documents',
+        bodyEn:
+          'Alongside meeting the academic and English requirements, you typically provide supporting documents with your application. The exact set varies by university and programme; some research or professional programmes ask for additional items such as references, a personal statement, or a portfolio.\n\nAlways use the document checklist on the university\'s own application page rather than a generic list, because requirements differ between institutions and between programmes.',
+      },
+      {
+        headingEn: 'How to confirm what applies to you',
+        bodyEn:
+          'For the requirement that matters to your application, go to the programme page on the university\'s official website and read the entry requirements, English-language requirements, and document list there. Use the Study with New Zealand portal for general planning, but rely on each university\'s official pages for the exact thresholds — and remember these can change each year.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there one entry requirement for all New Zealand universities?',
+        answerEn:
+          'No. Each of the eight universities sets its own admission requirements, and they can differ by programme within a university. Check the exact requirement on the official website for the specific programme.',
+      },
+      {
+        questionEn: 'What English test do New Zealand universities accept?',
+        answerEn:
+          'Universities commonly accept tests such as IELTS, TOEFL, and PTE Academic, but the accepted tests and required scores vary by university and programme. Confirm which tests and scores your chosen programme accepts.',
+      },
+      {
+        questionEn: 'How are my international qualifications assessed?',
+        answerEn:
+          'The university assesses how your qualification maps to its entry requirement. There is no single fixed global table — the equivalence is determined by each university, so check with the university you are applying to.',
+      },
+      {
+        questionEn: 'Do all programmes need references or a personal statement?',
+        answerEn:
+          'No. Supporting-document requirements vary. Some programmes ask for references, a personal statement, or a portfolio while others do not. Use the document checklist on the university\'s own application page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'duolingo-english-test'],
+    relatedCollegeSlugs: ['university-of-otago'],
+    relatedGuideSlugs: ['how-to-apply-to-new-zealand-universities', 'application-documents-checklist-australia-and-new-zealand', 'statement-of-purpose-for-australia-and-new-zealand'],
+    sources: [
+      { label: 'Study with New Zealand — official government portal', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'University of Otago — International study information', url: 'https://www.otago.ac.nz/international' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['entry requirements new zealand universities', 'new zealand university admission requirements', 'english requirements new zealand university', 'study in new zealand eligibility', 'academic requirements new zealand'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Who sets requirements', value: 'Each university (and each programme) individually' },
+      { label: 'Academic', value: 'School results (UG) or prior degree (PG); some subject prerequisites' },
+      { label: 'English proficiency', value: 'Tests such as IELTS/TOEFL/PTE — accepted scores vary by programme' },
+      { label: 'Always verify', value: 'Exact thresholds on each university\'s official programme page' },
+    ],
+  },
+  {
+    slug: 'application-documents-checklist-australia-and-new-zealand',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'Application Documents Checklist for Australia and New Zealand',
+    descriptionEn:
+      'The documents international students typically prepare when applying to universities in Australia and New Zealand — transcripts, English-test results, identity documents, and more — with a reminder that the exact list varies by university.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Use this as a starting point, not a fixed list',
+        bodyEn:
+          'Universities in Australia and New Zealand each set their own application requirements, and the exact documents differ by university, by programme, and by your level of study. This guide describes the items applicants commonly prepare so you can get organised early — but the authoritative checklist is always the one on the university\'s own application page.\n\nGather and scan clear copies of your documents in advance, and follow each university\'s instructions on format, certification, and translation.',
+      },
+      {
+        headingEn: 'Academic records',
+        bodyEn:
+          'Your academic history is central to any application. Applicants commonly provide academic transcripts and certificates from previous study — secondary school for undergraduate entry, and prior degree(s) for postgraduate entry. If your documents are not in English, universities usually ask for certified translations.\n\nExactly which records are required, and whether they must be certified, depends on the university and programme, so check the specific instructions.',
+        bullets: [
+          'Academic transcripts and completion certificates',
+          'Secondary-school records (undergraduate) or degree records (postgraduate)',
+          'Certified English translations where documents are not in English',
+        ],
+      },
+      {
+        headingEn: 'English-language evidence',
+        bodyEn:
+          'If you need to prove English-language proficiency, you will typically provide your test results — for example IELTS, TOEFL, or PTE Academic — at the level the university requires. The accepted tests and required scores vary by university and programme, so confirm which test results your chosen programme accepts before you book a test.',
+      },
+      {
+        headingEn: 'Identity and other supporting documents',
+        bodyEn:
+          'Applications generally require proof of identity, most commonly a valid passport. Depending on the university and programme, you may also be asked for additional items such as a statement of purpose or personal statement, references or recommendation letters, a CV/resume, or a portfolio for creative or professional programmes.\n\nBecause these requirements differ widely, do not assume any of them applies — instead, work from the official document checklist for the specific programme. Note that documents needed for a student visa (handled by the relevant government immigration authority) are separate from your university application documents.',
+      },
+      {
+        headingEn: 'Prepare and verify',
+        bodyEn:
+          'Create a folder of clear, correctly named copies, complete the university\'s online application, and upload exactly what it asks for. For Australia, university websites and the official Study Australia portal set out requirements; for New Zealand, use each university\'s website and the Study with New Zealand portal.\n\nRequirements change every year, so verify the current checklist on the official source before you submit.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there a single document checklist for all universities?',
+        answerEn:
+          'No. Each university in Australia and New Zealand sets its own requirements, which also vary by programme and level. Use the official checklist on the university\'s application page as your authoritative list.',
+      },
+      {
+        questionEn: 'Do my documents need to be in English?',
+        answerEn:
+          'If your documents are not in English, universities usually require certified translations alongside the originals. Check the specific university\'s instructions on translation and certification.',
+      },
+      {
+        questionEn: 'Are visa documents the same as application documents?',
+        answerEn:
+          'No. Documents you submit to a university for admission are separate from documents required for a student visa, which are handled by the relevant government immigration authority. Check each set on its official source.',
+      },
+      {
+        questionEn: 'Will I always need references or a personal statement?',
+        answerEn:
+          'Not necessarily. Items such as references, a personal statement, a CV, or a portfolio are required by some programmes and not others. Confirm what your specific programme asks for rather than assuming.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['entry-requirements-for-new-zealand-universities', 'statement-of-purpose-for-australia-and-new-zealand', 'how-to-apply-to-new-zealand-universities'],
+    sources: [
+      { label: 'Study Australia — official Australian Government portal', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Study with New Zealand — official government portal', url: 'https://www.studywithnewzealand.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['application documents for australia university', 'documents needed to study in new zealand', 'university application checklist australia', 'study abroad documents australia new zealand', 'what documents to apply university'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Authoritative list', value: 'Each university\'s own application page' },
+      { label: 'Common items', value: 'Transcripts, English-test results, passport' },
+      { label: 'Sometimes required', value: 'Statement of purpose, references, CV, portfolio' },
+      { label: 'Visa documents', value: 'Separate from application documents (immigration authority)' },
+    ],
+  },
+  {
+    slug: 'statement-of-purpose-for-australia-and-new-zealand',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'Statement of Purpose for Australia and New Zealand',
+    descriptionEn:
+      'When universities in Australia and New Zealand ask for a statement of purpose or personal statement, how to structure one clearly, and why it must be entirely your own original work.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'When you actually need one',
+        bodyEn:
+          'A statement of purpose (SOP), sometimes called a personal statement, is a short written piece explaining who you are, what you want to study, and why. Not every application requires one — whether it is needed depends on the university, the programme, and your level of study, and some programmes (often postgraduate, research, or competitive courses) ask for it while many undergraduate applications do not.\n\nBefore you spend time writing, check the application requirements for your specific programme on the university\'s official website to confirm whether a statement is required and any length or format limits.',
+      },
+      {
+        headingEn: 'What a statement typically covers',
+        bodyEn:
+          'When a statement is required, it usually gives the admissions team context that grades alone do not. Common elements include your academic background and interests, your motivation for the chosen programme, relevant experience, and your goals after study. Always follow any prompts or questions the university provides, because some give a specific structure to address.',
+        bullets: [
+          'Your academic background and what draws you to the field',
+          'Why this programme and this university fit your goals',
+          'Relevant experience (projects, work, research) where applicable',
+          'What you hope to do after the programme',
+        ],
+      },
+      {
+        headingEn: 'How to write it clearly',
+        bodyEn:
+          'Write in clear, plain English and keep to the length the university specifies. Open with a focused introduction, develop a few well-chosen points with concrete examples, and close with your goals. Be specific rather than generic — mention the actual programme and why it suits you — and proofread carefully.\n\nIf the university provides prompts, answer them directly and in order. A focused, honest statement is more persuasive than a long, vague one.',
+      },
+      {
+        headingEn: 'It must be your own original work',
+        bodyEn:
+          'Your statement must be written by you and be truthful. Universities expect original work, and submitting text that is copied, written by someone else, or fabricated is an academic-integrity violation that can lead to your application being rejected or an offer being withdrawn.\n\nYou may ask a teacher or mentor for general feedback, but the writing, ideas, and claims must be genuinely your own. Do not invent achievements, and do not copy from sample statements you find online.',
+      },
+      {
+        headingEn: 'No statement guarantees admission',
+        bodyEn:
+          'A strong statement can help your application, but it is only one part of a decision that also weighs your academic record, English proficiency, and how you meet the programme\'s requirements. No statement guarantees admission, and you should be wary of any service that promises it can.\n\nFor the exact requirement and any prompts, always rely on the university\'s official application page; use the official Study Australia and Study with New Zealand portals for general guidance.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do all Australian and New Zealand universities require a statement of purpose?',
+        answerEn:
+          'No. Whether a statement is required depends on the university, programme, and level. Some programmes ask for one and many do not. Check your specific programme\'s application requirements on the official website.',
+      },
+      {
+        questionEn: 'How long should a statement of purpose be?',
+        answerEn:
+          'Follow the length the university specifies, as limits vary by programme. We do not give a fixed word count here — use the exact requirement and any prompts on the university\'s official application page.',
+      },
+      {
+        questionEn: 'Can someone else write my statement for me?',
+        answerEn:
+          'No. Your statement must be your own original, truthful work. Submitting copied, ghost-written, or fabricated content is an academic-integrity violation that can lead to rejection or a withdrawn offer. You may seek general feedback, but the writing must be yours.',
+      },
+      {
+        questionEn: 'Does a good statement guarantee I get in?',
+        answerEn:
+          'No. A statement is one part of the decision alongside your academic record, English proficiency, and meeting the programme requirements. No statement guarantees admission, and you should be cautious of any service that claims otherwise.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['application-documents-checklist-australia-and-new-zealand', 'entry-requirements-for-new-zealand-universities', 'how-to-apply-to-new-zealand-universities'],
+    sources: [
+      { label: 'Study Australia — official Australian Government portal', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Study with New Zealand — official government portal', url: 'https://www.studywithnewzealand.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['statement of purpose australia', 'personal statement new zealand university', 'how to write sop for australia', 'sop for study abroad', 'statement of purpose for university application'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'When required', value: 'Varies by university, programme, and level — check the programme page' },
+      { label: 'Must be', value: 'Your own original, truthful work (academic integrity)' },
+      { label: 'Length & prompts', value: 'Follow the university\'s specified limit and questions' },
+      { label: 'Guarantees', value: 'No statement guarantees admission' },
+    ],
+  },
+  {
+    slug: 'australia-student-visa-subclass-500-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Australia Student Visa (Subclass 500) Guide',
+    descriptionEn:
+      'A clear, neutral overview of the Australian Student visa (subclass 500) — what it is, who needs it, the conditions attached (study, health cover, and work hours), and where to verify the current rules. General information only, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the subclass 500 visa is',
+        bodyEn:
+          'The Student visa (subclass 500) is the visa most international students use to study a registered, full-time course in Australia. It lets you stay in Australia for the duration of your study, generally for up to five years in line with your enrolment.\n\nIt is administered by the Australian Government Department of Home Affairs. The details below describe the visa in general terms; the binding rules, conditions, and amounts are set by the Department and can change, so always confirm the current requirements on the official Home Affairs website before you apply.\n\nThis is general information only and is not immigration advice.',
+      },
+      {
+        headingEn: 'Who needs a subclass 500 visa',
+        bodyEn:
+          'If you are not an Australian citizen or permanent resident and you want to study a course registered on the Commonwealth Register of Institutions and Courses for Overseas Students (CRICOS), you generally need a Student visa. You apply after you have an offer and your education provider issues a Confirmation of Enrolment (CoE).',
+        bullets: [
+          'For full-time study in a CRICOS-registered course',
+          'You usually need a Confirmation of Enrolment (CoE) before you apply',
+          'Family members can be included in your application (subject to the Department\'s rules)',
+        ],
+      },
+      {
+        headingEn: 'Main conditions attached to the visa',
+        bodyEn:
+          'A subclass 500 visa comes with conditions you must meet for the whole time you hold it. The most important ones for everyday student life are that you must remain enrolled and maintain satisfactory course progress and attendance, hold adequate health insurance for the duration of your stay, and keep your contact and enrolment details up to date with your provider and the Department.\n\nThe exact conditions are listed on your visa grant notice, and the Department\'s website explains each one in detail.',
+        bullets: [
+          'Stay enrolled in a CRICOS-registered course and maintain progress/attendance',
+          'Hold Overseas Student Health Cover (OSHC) for the duration of your stay',
+          'Keep your address and enrolment details current',
+        ],
+      },
+      {
+        headingEn: 'Working on a Student visa',
+        bodyEn:
+          'The subclass 500 visa allows limited work. During course sessions, work is capped — the Department\'s published limit is 48 hours per fortnight while your course is in session — and this cap does not apply during scheduled course breaks. There are specific rules for postgraduate research students and other situations.\n\nWork-hour limits have changed in recent years and can change again, so confirm the current limit and any exceptions on the official Home Affairs website before relying on it.',
+      },
+      {
+        headingEn: 'Other things the visa requires',
+        bodyEn:
+          'Beyond enrolment, applicants generally need to meet the Genuine Student requirement, show they have enough money to support their study and stay, meet English-language requirements set by their provider and the Department, and satisfy health and character requirements. Each of these is explained in its own dedicated guide and on the Department\'s site.',
+        bullets: [
+          'Meet the Genuine Student (GS) requirement',
+          'Show evidence of sufficient funds',
+          'Meet English-language, health, and character requirements',
+        ],
+      },
+      {
+        headingEn: 'Where to verify before you apply',
+        bodyEn:
+          'Visa rules, conditions, fees, and amounts are set by the Australian Government and are updated regularly. Use the official Department of Home Affairs Student visa (subclass 500) page as your single source of truth, and verify every figure and condition there before you apply or make plans. This page provides guidance only and is not a substitute for the official rules or for professional immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How long can I stay on a subclass 500 visa?',
+        answerEn:
+          'The visa is granted for the duration of your study, generally for up to five years aligned with your enrolment. The exact length on your visa depends on your course. Check your visa grant notice and the official Home Affairs site for current rules.',
+      },
+      {
+        questionEn: 'Can I work while studying on this visa?',
+        answerEn:
+          'Yes, within limits. The Department\'s published cap is 48 hours per fortnight while your course is in session, with no cap during scheduled course breaks, and different rules for some students. Work-hour rules change, so verify the current limit on the official Home Affairs website.',
+      },
+      {
+        questionEn: 'Do I need health insurance for the subclass 500 visa?',
+        answerEn:
+          'Yes. You generally must hold Overseas Student Health Cover (OSHC) for the full duration of your Student visa. Confirm the requirement and approved arrangements on the official Department of Home Affairs site.',
+      },
+      {
+        questionEn: 'Is this immigration advice?',
+        answerEn:
+          'No. This is general information drawn from official sources. Immigration rules change frequently and individual circumstances differ — verify everything on the official Department of Home Affairs website and seek qualified advice for your situation.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'australia-student-visa-financial-requirements',
+      'genuine-student-requirement-for-australia-student-visa',
+      'australia-student-visa-application-process',
+      'overseas-student-health-cover-oshc-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Study Australia (Australian Government)', url: 'https://www.studyaustralia.gov.au/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'australia student visa',
+      'subclass 500 visa',
+      'student visa subclass 500',
+      'australia student visa conditions',
+      'australia student visa work hours',
+      'how to get australia student visa',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'Visa', value: 'Student visa (subclass 500)' },
+      { label: 'Authority', value: 'Australian Government Department of Home Affairs' },
+      { label: 'Requires', value: 'Confirmation of Enrolment (CoE) in a CRICOS course' },
+      { label: 'Work limit (term)', value: '48 hours per fortnight while in session (verify current rule)' },
+      { label: 'Verify on', value: 'immi.homeaffairs.gov.au' },
+    ],
+  },
+  {
+    slug: 'australia-student-visa-financial-requirements',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Australia Student Visa Financial Requirements',
+    descriptionEn:
+      'How the financial-capacity requirement works for the Australian Student visa (subclass 500) — what evidence of funds covers, why the savings figure was raised in 2024, and where to confirm the exact amount. General information only, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why a financial requirement exists',
+        bodyEn:
+          'When you apply for a Student visa (subclass 500), the Australian Government Department of Home Affairs expects you to show that you can genuinely support yourself while you study. The purpose is to confirm you have access to enough money to cover your tuition, living costs, and travel without relying on unauthorised work.\n\nThis page explains the requirement in general terms. The binding rules and the exact amounts are set by the Department and change over time, so always confirm the current figure on the official Home Affairs website. This is general information only and is not immigration advice.',
+      },
+      {
+        headingEn: 'What the funds need to cover',
+        bodyEn:
+          'Broadly, the evidence of funds is meant to demonstrate you can meet the costs of living and studying in Australia. The Department publishes a benchmark amount for living costs (the financial-capacity figure) and also considers tuition and travel costs as part of the overall assessment.',
+        bullets: [
+          'Living costs in Australia (a published benchmark amount)',
+          'Course tuition fees',
+          'Travel costs to and from Australia',
+          'Funds for any accompanying family members, where applicable',
+        ],
+      },
+      {
+        headingEn: 'The 2024 increase to the savings figure',
+        bodyEn:
+          'The living-costs benchmark used for the financial-capacity requirement was raised in 2024. This means the amount of savings an applicant may need to evidence is higher than figures quoted in older guides and articles.\n\nBecause the exact amount is set by the Department and can be updated again, this guide deliberately does not quote a specific Australian-dollar figure. Look up the current financial-capacity amount on the official Home Affairs website and treat any number you see elsewhere as potentially out of date.',
+      },
+      {
+        headingEn: 'Types of evidence that may be accepted',
+        bodyEn:
+          'The Department sets out the kinds of evidence it will consider. These can include savings held for a required period, a loan from a recognised financial institution, or evidence of a sponsor\'s capacity, among others. Exactly what is acceptable, and any required holding period, is defined by the Department.\n\nDo not assume what worked previously still applies — check the current evidence rules and accepted documents on the official Home Affairs website before you prepare your application.',
+        bullets: [
+          'Personal or family savings (often for a set period)',
+          'An eligible education loan from a recognised institution',
+          'Evidence of a sponsor\'s income or financial capacity',
+        ],
+      },
+      {
+        headingEn: 'How it connects to the rest of your application',
+        bodyEn:
+          'The financial requirement is assessed alongside the Genuine Student requirement, your enrolment (Confirmation of Enrolment), health cover (OSHC), and English-language, health, and character requirements. A complete, well-documented application addresses all of these together. See the related guides for each component.',
+      },
+      {
+        headingEn: 'Where to verify the exact amount',
+        bodyEn:
+          'Financial figures for the subclass 500 visa change and are jurisdiction-specific. The official Department of Home Affairs Student visa page (and its financial-capacity guidance) is the authoritative source — confirm the current amount and accepted evidence there before applying. This guide is informational only and is not professional or immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much money do I need for an Australia student visa?',
+        answerEn:
+          'The Department of Home Affairs publishes a financial-capacity benchmark for living costs, plus tuition and travel. The benchmark was raised in 2024, so older figures may be outdated. We deliberately do not quote an amount — check the current figure on the official Home Affairs website.',
+      },
+      {
+        questionEn: 'Did the financial requirement change recently?',
+        answerEn:
+          'Yes. The living-costs benchmark used for the financial-capacity requirement was increased in 2024. Always use the current amount published by the Department of Home Affairs rather than a number from an older source.',
+      },
+      {
+        questionEn: 'What evidence of funds is accepted?',
+        answerEn:
+          'The Department may accept savings (sometimes held for a set period), an eligible loan from a recognised institution, or evidence of a sponsor\'s capacity, among others. The accepted documents and any holding period are defined by the Department — verify them on the official Home Affairs site.',
+      },
+      {
+        questionEn: 'Is meeting the financial requirement a guarantee of a visa?',
+        answerEn:
+          'No. Meeting the financial requirement is one part of the assessment. The Department considers your whole application, including the Genuine Student requirement. No guide or agent can guarantee a visa outcome.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'australia-student-visa-subclass-500-guide',
+      'genuine-student-requirement-for-australia-student-visa',
+      'australia-student-visa-application-process',
+      'overseas-student-health-cover-oshc-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Study Australia (Australian Government)', url: 'https://www.studyaustralia.gov.au/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'australia student visa financial requirements',
+      'how much money for australia student visa',
+      'subclass 500 financial requirement',
+      'australia student visa proof of funds',
+      'australia student visa savings amount',
+      'evidence of funds australia student visa',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'Requirement', value: 'Evidence of funds for living, tuition and travel' },
+      { label: 'Living-costs benchmark', value: 'Raised in 2024 (verify current amount)' },
+      { label: 'Authority', value: 'Australian Government Department of Home Affairs' },
+      { label: 'Exact amount', value: 'Not fixed here — confirm on official site' },
+      { label: 'Verify on', value: 'immi.homeaffairs.gov.au' },
+    ],
+  },
+  {
+    slug: 'genuine-student-requirement-for-australia-student-visa',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Genuine Student (GS) Requirement for the Australia Student Visa',
+    descriptionEn:
+      'What the Genuine Student (GS) requirement is, how it replaced the Genuine Temporary Entrant (GTE) requirement in March 2024, what it asks applicants to show, and where to verify the current rules. General information only, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Genuine Student requirement is',
+        bodyEn:
+          'The Genuine Student (GS) requirement is a criterion for the Student visa (subclass 500). It asks an applicant to satisfy the Australian Government Department of Home Affairs that they are coming to Australia genuinely to study, and that they understand what their course and visa involve.\n\nThis page explains the requirement in general terms. The official questions, guidance, and how the requirement is weighed are set by the Department and can change, so confirm the current details on the official Home Affairs website. This is general information only and is not immigration advice.',
+      },
+      {
+        headingEn: 'GS replaced GTE in March 2024',
+        bodyEn:
+          'The Genuine Student requirement replaced the earlier Genuine Temporary Entrant (GTE) requirement. The change took effect on 23 March 2024. If you read older articles that refer to "GTE", be aware that the current requirement for new subclass 500 applications is the Genuine Student requirement.\n\nBecause guidance like this is frequently updated, always check the official Home Affairs page to confirm which requirement and which questions currently apply to your application.',
+        bullets: [
+          'Old requirement: Genuine Temporary Entrant (GTE)',
+          'Current requirement: Genuine Student (GS)',
+          'Change took effect on 23 March 2024',
+        ],
+      },
+      {
+        headingEn: 'What applicants are typically asked to show',
+        bodyEn:
+          'Under the Genuine Student requirement, applicants generally respond to targeted questions and provide information that helps the Department understand their circumstances and study intentions. This commonly covers your reasons for choosing the course and provider, your ties and circumstances, and your understanding of living and studying in Australia.\n\nThe exact questions and the supporting information requested are defined by the Department. Answer them honestly and in your own words — fabricated or copied responses can undermine an application.',
+        bullets: [
+          'Your reasons for choosing the course, provider, and Australia',
+          'Your circumstances and relevant background',
+          'Your understanding of the conditions and obligations of the visa',
+        ],
+      },
+      {
+        headingEn: 'How it is assessed',
+        bodyEn:
+          'The Department assesses the Genuine Student requirement by considering the applicant\'s responses and overall circumstances together. It is not a single pass/fail test taken in isolation — it is part of the broader decision on whether to grant the visa, alongside enrolment, finances, health cover, and English, health, and character requirements.\n\nThere is no checklist that guarantees a positive outcome. The most reliable approach is a truthful, consistent, well-evidenced application that matches your enrolment and circumstances.',
+      },
+      {
+        headingEn: 'Where to verify the current rules',
+        bodyEn:
+          'The Genuine Student requirement, and the questions and guidance behind it, are published and updated by the Australian Government. Use the official Department of Home Affairs Student visa page and its Genuine Student guidance as your source of truth, and confirm the current requirements there before you apply. This guide is informational only and is not professional or immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is GTE still required for the Australia student visa?',
+        answerEn:
+          'No. The Genuine Temporary Entrant (GTE) requirement was replaced by the Genuine Student (GS) requirement, effective 23 March 2024. New subclass 500 applications are assessed against the Genuine Student requirement. Verify the current rule on the official Home Affairs site.',
+      },
+      {
+        questionEn: 'What does the Genuine Student requirement ask?',
+        answerEn:
+          'It generally asks applicants to show they intend to study genuinely — covering reasons for choosing the course, provider and Australia, their circumstances, and their understanding of the visa. The exact questions are defined by the Department of Home Affairs.',
+      },
+      {
+        questionEn: 'How can I meet the Genuine Student requirement?',
+        answerEn:
+          'Respond honestly and in your own words, keep your answers consistent with your enrolment and circumstances, and provide the supporting information the Department requests. There is no guaranteed formula — the Department assesses each application on its overall merits.',
+      },
+      {
+        questionEn: 'Is the Genuine Student requirement a pass/fail interview?',
+        answerEn:
+          'It is not a standalone test. It forms part of the broader visa decision and is considered alongside your enrolment, finances, health cover, and other requirements. Check the official Department of Home Affairs guidance for how it currently applies.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'australia-student-visa-subclass-500-guide',
+      'australia-student-visa-financial-requirements',
+      'australia-student-visa-application-process',
+      'overseas-student-health-cover-oshc-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Department of Home Affairs — Immigration and citizenship', url: 'https://immi.homeaffairs.gov.au/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'genuine student requirement australia',
+      'gs requirement australia student visa',
+      'genuine student vs gte',
+      'gte replaced by genuine student',
+      'australia student visa genuine student',
+      'subclass 500 genuine student',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'Requirement', value: 'Genuine Student (GS)' },
+      { label: 'Replaced', value: 'Genuine Temporary Entrant (GTE)' },
+      { label: 'Effective', value: '23 March 2024' },
+      { label: 'Authority', value: 'Australian Government Department of Home Affairs' },
+      { label: 'Verify on', value: 'immi.homeaffairs.gov.au' },
+    ],
+  },
+  {
+    slug: 'australia-student-visa-application-process',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Australia Student Visa Application Process',
+    descriptionEn:
+      'A step-by-step overview of how to apply for the Australian Student visa (subclass 500) — from getting a Confirmation of Enrolment to lodging through ImmiAccount — with the documents commonly required. General information only, not immigration advice.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Before you start',
+        bodyEn:
+          'You generally apply for a Student visa (subclass 500) after you have an offer from an Australian education provider and a Confirmation of Enrolment (CoE) for a course registered on CRICOS. The application is made online to the Australian Government Department of Home Affairs.\n\nThe steps below are a general guide. The official process, required documents, fees, and processing times are set by the Department and can change, so confirm each step on the official Home Affairs website. This is general information only and is not immigration advice.',
+      },
+      {
+        headingEn: 'Step 1 — Get your offer and Confirmation of Enrolment (CoE)',
+        bodyEn:
+          'Apply to your chosen provider, accept the offer, and obtain a Confirmation of Enrolment (CoE) for each course. The CoE is a key document for your visa application. You usually also arrange Overseas Student Health Cover (OSHC) at this stage, as it is needed for the visa.',
+      },
+      {
+        headingEn: 'Step 2 — Create an ImmiAccount and complete the application',
+        bodyEn:
+          'Most applicants lodge online through ImmiAccount, the Department\'s online portal. You create an account, complete the Student visa (subclass 500) application form, and answer the required questions, including those for the Genuine Student requirement.',
+        bullets: [
+          'Create an ImmiAccount on the Department of Home Affairs website',
+          'Complete the subclass 500 application form',
+          'Answer the Genuine Student questions honestly and in your own words',
+        ],
+      },
+      {
+        headingEn: 'Step 3 — Attach your supporting documents',
+        bodyEn:
+          'You upload the documents the Department asks for. These commonly include your CoE, evidence of OSHC, evidence of sufficient funds (the financial-capacity requirement), English-language evidence as required, and identity documents. Health examinations and police/character documents may also be required.\n\nThe exact document checklist depends on your circumstances and is set by the Department. Use the official document checklist on the Home Affairs site rather than an unofficial list.',
+        bullets: [
+          'Confirmation of Enrolment (CoE)',
+          'Evidence of Overseas Student Health Cover (OSHC)',
+          'Evidence of funds (financial-capacity requirement)',
+          'English-language evidence (if required)',
+          'Identity, health, and character documents (as required)',
+        ],
+      },
+      {
+        headingEn: 'Step 4 — Pay the fee and lodge',
+        bodyEn:
+          'You pay the visa application charge and lodge the application through ImmiAccount. The Department sets the fee and may update it, so check the current charge on the official site before paying. After lodging, you may be asked to complete health examinations or provide biometrics.',
+      },
+      {
+        headingEn: 'Step 5 — Wait for a decision and check your conditions',
+        bodyEn:
+          'Processing times vary by course, location, and individual circumstances, and are published and updated by the Department. If your visa is granted, read your visa grant notice carefully — it sets out your visa conditions, including health-cover and work-hour rules. Verify anything you are unsure about on the official Home Affairs website.\n\nNo guide or agent can guarantee a visa outcome or a particular processing time.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Where do I apply for the Australia student visa?',
+        answerEn:
+          'Most applicants apply online through ImmiAccount, the Department of Home Affairs online portal. You complete the subclass 500 form, attach documents, and pay the fee there. Confirm the current process on the official Home Affairs website.',
+      },
+      {
+        questionEn: 'What documents do I need for the subclass 500 visa?',
+        answerEn:
+          'Commonly a Confirmation of Enrolment (CoE), evidence of OSHC, evidence of funds, English-language evidence (if required), and identity, health, and character documents. The exact checklist depends on your circumstances and is set by the Department — use its official checklist.',
+      },
+      {
+        questionEn: 'How long does the student visa take to process?',
+        answerEn:
+          'Processing times vary by course, location, and individual circumstances and are published by the Department of Home Affairs. We do not quote a fixed time — check the current processing-time guidance on the official Home Affairs site.',
+      },
+      {
+        questionEn: 'Do I need my Confirmation of Enrolment before applying?',
+        answerEn:
+          'In most cases, yes — you generally need a Confirmation of Enrolment (CoE) for a CRICOS-registered course before lodging the visa application. Confirm the current requirement on the official Department of Home Affairs website.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'australia-student-visa-subclass-500-guide',
+      'australia-student-visa-financial-requirements',
+      'genuine-student-requirement-for-australia-student-visa',
+      'overseas-student-health-cover-oshc-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Department of Home Affairs — Applying online in ImmiAccount', url: 'https://immi.homeaffairs.gov.au/help-support/applying-online-or-on-paper/online' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'australia student visa application process',
+      'how to apply for australia student visa',
+      'subclass 500 application',
+      'immiaccount student visa',
+      'australia student visa documents',
+      'apply student visa australia online',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'Apply via', value: 'ImmiAccount (online)' },
+      { label: 'Key document', value: 'Confirmation of Enrolment (CoE)' },
+      { label: 'Also needed', value: 'OSHC, evidence of funds, Genuine Student responses' },
+      { label: 'Authority', value: 'Australian Government Department of Home Affairs' },
+      { label: 'Verify on', value: 'immi.homeaffairs.gov.au' },
+    ],
+  },
+  {
+    slug: 'overseas-student-health-cover-oshc-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Overseas Student Health Cover (OSHC) Guide',
+    descriptionEn:
+      'What Overseas Student Health Cover (OSHC) is, why it is mandatory for the Australian Student visa (subclass 500), what it broadly covers, and how to find an approved provider. General information only, not immigration or insurance advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What OSHC is',
+        bodyEn:
+          'Overseas Student Health Cover (OSHC) is health insurance designed for international students in Australia. It helps cover the cost of certain medical and hospital care while you study.\n\nThis page explains OSHC in general terms. The rules around OSHC, what policies must cover, and which providers are approved are set by the Australian Government, and product details are set by each provider — so confirm the current requirements and policy details on the official sources before you decide. This is general information only and is not immigration or insurance advice.',
+      },
+      {
+        headingEn: 'Why it is mandatory for the subclass 500 visa',
+        bodyEn:
+          'Holding adequate health insurance is a condition of the Student visa (subclass 500). In practice, this generally means maintaining OSHC for the entire duration of your visa — typically arranged before your visa is granted and kept current for as long as you hold the visa.\n\nLetting your cover lapse can put you in breach of your visa conditions. Always confirm the current health-cover requirement on the official Department of Home Affairs website.',
+        bullets: [
+          'Adequate health cover is a subclass 500 visa condition',
+          'OSHC generally must be maintained for the whole visa duration',
+          'Usually arranged before the visa is granted',
+        ],
+      },
+      {
+        headingEn: 'What OSHC broadly covers',
+        bodyEn:
+          'OSHC is intended to provide a baseline of health cover for international students, such as certain doctor visits, hospital treatment, ambulance cover, and some prescription medicines, with limits and exclusions that vary by policy.\n\nIt is not the same as comprehensive private health insurance, and there are things it may not cover. Read the policy documents and the official guidance carefully so you understand inclusions, limits, and waiting periods before you rely on it.',
+        bullets: [
+          'Some out-of-hospital medical services (e.g. doctor visits)',
+          'In-hospital treatment and ambulance cover (per policy)',
+          'Some prescription medicines (with limits)',
+          'Exclusions, limits, and waiting periods vary by policy',
+        ],
+      },
+      {
+        headingEn: 'Choosing an approved provider',
+        bodyEn:
+          'OSHC can only be provided by health insurers approved to offer it. The Australian Government publishes information on OSHC and the approved providers; many students arrange cover through their education provider or directly with an insurer.\n\nThis guide does not endorse any specific provider or policy. Compare approved providers and policies on their merits, and verify that any policy meets the official OSHC requirements before purchasing.',
+        bullets: [
+          'Use an insurer approved to offer OSHC',
+          'You can often arrange cover via your education provider or directly',
+          'Compare policies on coverage, limits, and service — no single product is endorsed here',
+        ],
+      },
+      {
+        headingEn: 'Keeping your cover valid',
+        bodyEn:
+          'Because OSHC is tied to your visa duration, it is important to keep it active for the whole time you study, including renewing it if your course or visa is extended. If your circumstances change, check what you need to do to stay compliant.\n\nConfirm the current requirements with the official Department of Home Affairs guidance and your insurer, and keep evidence of your cover with your other visa documents.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is OSHC compulsory for an Australia student visa?',
+        answerEn:
+          'Yes. Holding adequate health cover is a condition of the subclass 500 visa, which in practice generally means maintaining OSHC for the full duration of your visa. Confirm the current requirement on the official Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'What does OSHC cover?',
+        answerEn:
+          'OSHC is intended to provide a baseline of cover — such as certain doctor visits, hospital treatment, ambulance, and some prescriptions — with limits and exclusions that vary by policy. Read your policy documents and the official OSHC guidance for the exact inclusions.',
+      },
+      {
+        questionEn: 'How do I get OSHC?',
+        answerEn:
+          'You arrange OSHC with an insurer approved to provide it, often through your education provider or directly with the insurer, usually before your visa is granted. Compare approved providers and confirm the policy meets the official OSHC requirements before purchasing.',
+      },
+      {
+        questionEn: 'How long do I need to keep OSHC?',
+        answerEn:
+          'Generally for the entire duration of your Student visa, renewing it if your course or visa is extended. Letting it lapse can breach your visa conditions. Verify the current requirement on the official Department of Home Affairs site and with your insurer.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'australia-student-visa-subclass-500-guide',
+      'australia-student-visa-financial-requirements',
+      'genuine-student-requirement-for-australia-student-visa',
+      'australia-student-visa-application-process',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — Overseas Student Health Cover (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/overseas-student-health-cover' },
+      { label: 'Study Australia (Australian Government) — Health and safety', url: 'https://www.studyaustralia.gov.au/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'overseas student health cover',
+      'oshc australia',
+      'oshc student visa',
+      'is oshc mandatory australia',
+      'what does oshc cover',
+      'oshc approved providers',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'What it is', value: 'Overseas Student Health Cover (OSHC) — student health insurance' },
+      { label: 'Mandatory', value: 'Yes — a subclass 500 visa condition' },
+      { label: 'Duration', value: 'Generally for the full visa duration' },
+      { label: 'Providers', value: 'Insurers approved to offer OSHC (none endorsed here)' },
+      { label: 'Verify on', value: 'immi.homeaffairs.gov.au' },
+    ],
+  },
+  {
+    slug: 'new-zealand-student-visa-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'New Zealand Student Visa Guide',
+    descriptionEn:
+      'What the New Zealand student visa is, who needs it, and the main conditions attached to it — explained as neutral Immigration New Zealand facts, with a verify-on-official nudge. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the New Zealand student visa is',
+        bodyEn:
+          'A student visa is the immigration permission that lets an international student live in New Zealand while studying a full course at an approved education provider. It is administered by Immigration New Zealand (INZ), the government agency responsible for visas. The most common route for full-time, fee-paying international students is the fee-paying student visa.\n\nThis page explains the visa at a structural level so you know how the pieces fit together. It is general information only and not immigration advice. Visa categories, conditions, and eligibility change, so always confirm the current details on the official Immigration New Zealand website before you apply or make plans.',
+      },
+      {
+        headingEn: 'Who needs a student visa',
+        bodyEn:
+          'In general, if you are not a New Zealand citizen or resident and you intend to study a course longer than a short visitor-permitted period, you will normally need a student visa for that study. Short courses may sometimes be undertaken on a different visa category. Because the thresholds and exceptions are set by Immigration New Zealand and can change, check your specific situation against the official guidance rather than assuming.',
+        bullets: [
+          'Administered by Immigration New Zealand (immigration.govt.nz)',
+          'Most full-time international students use the fee-paying student visa',
+          'Short or part-time study may fall under different visa rules — verify',
+        ],
+      },
+      {
+        headingEn: 'Core things you usually need',
+        bodyEn:
+          'For a fee-paying student visa, Immigration New Zealand generally expects an applicant to hold an offer of place from an approved education provider, to show they can meet the cost of their tuition and living, and to satisfy health and character requirements. You also typically need acceptable insurance arrangements for your time in New Zealand.\n\nThe exact evidence, forms, and standards are set out on the official INZ website and are updated from time to time. Treat the list below as the broad shape of what is assessed, and confirm the current requirements before applying.',
+        bullets: [
+          'An offer of place from an approved New Zealand institution',
+          'Evidence you can meet tuition and living costs (proof of funds)',
+          'Health and character requirements',
+          'Acceptable insurance for your stay',
+        ],
+      },
+      {
+        headingEn: 'Conditions attached to the visa',
+        bodyEn:
+          'A student visa is granted for a specific course at a specific provider, so it carries conditions. These usually relate to the institution and programme you are enrolled in, maintaining your enrolment and attendance, and any limits on working while you study. Eligible students may be allowed to work a limited number of hours during term and additional hours in scheduled breaks, but the precise rules depend on your visa and course and are set by Immigration New Zealand.\n\nBecause working rights and other conditions vary by visa type and change over time, read the conditions on your own visa carefully and verify the current rules on the official source. See the companion guide on student-visa working hours for how Australia and New Zealand differ.',
+      },
+      {
+        headingEn: 'Keeping your visa valid',
+        bodyEn:
+          'A student visa is tied to your enrolment, so staying enrolled and meeting your provider\'s requirements matters for keeping it valid. If your circumstances change — for example, you change provider, change course level, or want to extend your stay — you generally need to follow the official process with Immigration New Zealand. Plan renewals or changes well before your visa expires.\n\nAgain, this is general information and not immigration advice. Immigration decisions rest with Immigration New Zealand, and rules change, so verify everything on the official government source before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who issues student visas for New Zealand?',
+        answerEn:
+          'Immigration New Zealand (INZ), the government agency, processes and decides student visa applications. The official information is on immigration.govt.nz. This page is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Do I need a student visa for a short course?',
+        answerEn:
+          'Not always — some short study may be possible on a different visa category, while longer full-time courses normally require a student visa. The thresholds are set by Immigration New Zealand and can change, so check your specific situation on the official website.',
+      },
+      {
+        questionEn: 'Can I work on a New Zealand student visa?',
+        answerEn:
+          'Eligible students may be allowed to work a limited number of hours during the academic term and more in scheduled breaks, but this depends on your visa and course. Read the conditions on your own visa and verify the current rules on the official Immigration New Zealand source.',
+      },
+      {
+        questionEn: 'Is studying in New Zealand a guarantee of residence later?',
+        answerEn:
+          'No. A student visa is permission to study; it does not guarantee any later residence or work outcome. Any future immigration pathway has its own separate criteria and decisions rest with Immigration New Zealand. Verify on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'new-zealand-student-visa-financial-requirements',
+      'new-zealand-student-visa-application-process',
+      'student-visa-working-hours-australia-and-new-zealand',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Immigration New Zealand — Visas for studying in New Zealand', url: 'https://www.immigration.govt.nz/study/study-visas/visas-for-studying-in-new-zealand/' },
+      { label: 'Immigration New Zealand — Fee Paying Student Visa', url: 'https://www.immigration.govt.nz/visas/fee-paying-student-visa/' },
+      { label: 'Study with New Zealand — Official government site', url: 'https://www.studywithnewzealand.govt.nz/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'new zealand student visa',
+      'nz student visa requirements',
+      'fee paying student visa new zealand',
+      'how to get a student visa for new zealand',
+      'immigration new zealand student visa',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'Authority', value: 'Immigration New Zealand (INZ)' },
+      { label: 'Common route', value: 'Fee-paying student visa' },
+      { label: 'Usually required', value: 'Offer of place, proof of funds, insurance' },
+      { label: 'Working rights', value: 'Limited hours for eligible students — verify on INZ' },
+      { label: 'Nature', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'new-zealand-student-visa-financial-requirements',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'New Zealand Student Visa Financial Requirements',
+    descriptionEn:
+      'How proof of funds works for the New Zealand student visa — what kinds of evidence Immigration New Zealand assesses, and why exact NZD figures must be checked on the official source. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why funds evidence matters',
+        bodyEn:
+          'When you apply for a New Zealand student visa, Immigration New Zealand (INZ) generally needs to be satisfied that you can pay your tuition and support yourself during your studies. Showing this is usually called proof of funds. It is one of the core parts of a fee-paying student visa application, alongside your offer of place and health and character requirements.\n\nThis page explains the kinds of evidence involved at a structural level. It is general information only and not immigration advice. The exact amounts, the months they must cover, and the acceptable forms of evidence are set by Immigration New Zealand and change over time, so confirm the current standards on the official website before you rely on any figure.',
+      },
+      {
+        headingEn: 'The two costs you usually evidence',
+        bodyEn:
+          'Funds evidence typically covers two things: the cost of your course (tuition) and your living costs while you study. For tuition, your offer of place or fee receipt usually shows the amount and whether any of it has been paid. For living costs, Immigration New Zealand sets a benchmark amount for the period of study that an applicant is generally expected to show.\n\nThe specific NZD living-cost figure and how long it must cover are published by INZ and can be updated, so this guide deliberately does not quote a number — check the current requirement on the official source.',
+        bullets: [
+          'Tuition — usually evidenced by your offer of place or fee receipt',
+          'Living costs — a benchmark amount set by Immigration New Zealand',
+          'Exact NZD figures and the period covered change — verify on INZ',
+        ],
+      },
+      {
+        headingEn: 'Forms of evidence often accepted',
+        bodyEn:
+          'Immigration New Zealand assesses whether the money is genuinely available to you. Acceptable evidence commonly includes things like bank statements or financial undertakings, sponsorship arrangements, scholarship or grant letters, or other recognised arrangements for holding study funds. Some students arrange funds through a recognised financial product designed for student living costs.\n\nWhat counts as acceptable, and the documentation it must carry, is defined by INZ and can differ by situation. Always match your evidence to the current official requirements rather than to a general description.',
+        bullets: [
+          'Bank statements or evidence of available funds',
+          'Scholarship, grant, or sponsorship letters where applicable',
+          'Recognised arrangements for holding study funds',
+        ],
+      },
+      {
+        headingEn: 'Tips for presenting funds clearly',
+        bodyEn:
+          'Applications are easier to assess when the money trail is clear. That generally means evidence that is current, in formats INZ recognises, and that clearly shows the funds belong to you or a genuine supporter. If funds come from a sponsor, the relationship and the sponsor\'s ability to support you usually need to be documented.\n\nNone of this is a checklist you can rely on blindly — the official requirements are the authority. Prepare your documents against the live INZ guidance and seek your provider\'s admissions help where you are unsure.',
+      },
+      {
+        headingEn: 'Important limits to remember',
+        bodyEn:
+          'Meeting the funds requirement is necessary but not the whole application — health, character, insurance, and your offer of place all matter too. And satisfying the financial requirement does not guarantee a visa; immigration decisions rest with Immigration New Zealand.\n\nThis is general information, not immigration advice. Because amounts and rules change frequently, verify every figure and requirement on the official government source before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much money do I need for a New Zealand student visa?',
+        answerEn:
+          'Immigration New Zealand sets a living-cost benchmark for the period of study, plus you evidence your tuition. The exact NZD amounts change over time, so we do not quote a figure here — check the current requirement on the official Immigration New Zealand website.',
+      },
+      {
+        questionEn: 'What documents prove I have enough funds?',
+        answerEn:
+          'Commonly accepted evidence includes bank statements or proof of available funds, scholarship or sponsorship letters, and recognised arrangements for holding study funds. The acceptable forms are defined by Immigration New Zealand and can change — verify on the official source.',
+      },
+      {
+        questionEn: 'Can a sponsor fund my studies in New Zealand?',
+        answerEn:
+          'Sponsorship arrangements may be accepted, but the sponsor relationship and their ability to support you generally need to be documented to Immigration New Zealand\'s standards. Confirm what is acceptable on the official website. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Does showing the funds guarantee my visa?',
+        answerEn:
+          'No. Funds are one required element among several (offer of place, health, character, insurance). Meeting them does not guarantee a visa — decisions rest with Immigration New Zealand. Verify all requirements on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'new-zealand-student-visa-guide',
+      'new-zealand-student-visa-application-process',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Immigration New Zealand — Student fund requirements', url: 'https://www.immigration.govt.nz/process-to-apply/applying-for-a-visa/providing-evidence-and-documents-to-support-your-visa-application/student-fund-requirements/' },
+      { label: 'Immigration New Zealand — Fee Paying Student Visa', url: 'https://www.immigration.govt.nz/visas/fee-paying-student-visa/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'new zealand student visa financial requirements',
+      'proof of funds new zealand student visa',
+      'nz student visa money required',
+      'living costs new zealand student visa',
+      'student visa funds new zealand',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'Authority', value: 'Immigration New Zealand (INZ)' },
+      { label: 'Costs evidenced', value: 'Tuition + living costs' },
+      { label: 'Living-cost amount', value: 'INZ benchmark — verify current NZD figure' },
+      { label: 'Evidence', value: 'Bank statements, scholarships, recognised fund arrangements' },
+      { label: 'Nature', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'new-zealand-student-visa-application-process',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'New Zealand Student Visa Application Process',
+    descriptionEn:
+      'A step-by-step overview of applying for a New Zealand student visa through Immigration New Zealand — from offer of place to a decision. General information, not immigration advice; verify on the official source.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How the process is structured',
+        bodyEn:
+          'Applying for a New Zealand student visa generally follows a clear sequence: secure a place to study, gather the evidence Immigration New Zealand (INZ) needs, submit the application, and wait for a decision. Most fee-paying student visa applications are made online through the official Immigration New Zealand system.\n\nThis is a structural overview to help you plan. It is general information only and not immigration advice. The exact steps, forms, fees, and processing times are set by Immigration New Zealand and change over time, so always follow the current instructions on the official website.',
+      },
+      {
+        headingEn: 'Step 1 — Get an offer of place',
+        bodyEn:
+          'Before you can apply for a fee-paying student visa, you usually need an offer of place from an approved New Zealand education provider for a course you can study as an international student. The offer typically confirms the course, its duration, and the tuition fee. Your provider\'s international office is the right contact for admission questions.',
+        bullets: [
+          'Apply and receive an offer of place from an approved provider',
+          'Check the course is one international students can enrol in',
+          'Keep the offer details — you will need them for the visa',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — Gather your evidence',
+        bodyEn:
+          'Once you have an offer, prepare the supporting documents. Immigration New Zealand generally assesses your funds (tuition and living costs), your health and character, and your insurance arrangements, alongside identity documents. Some applicants need to meet health requirements such as medical or chest X-ray certificates depending on their circumstances.\n\nThe precise document list is published by INZ and can vary by situation, so build your file against the live official requirements. See the companion guide on financial requirements for how proof of funds is evidenced.',
+        bullets: [
+          'Proof of funds for tuition and living costs',
+          'Health and character documents as required',
+          'Acceptable insurance arrangements',
+          'Identity and passport documents',
+        ],
+      },
+      {
+        headingEn: 'Step 3 — Submit your application',
+        bodyEn:
+          'Most students apply online through Immigration New Zealand\'s official system, upload their documents, and pay the application charge. Applying well ahead of your course start date is sensible, because processing takes time and may vary by season and application volume.\n\nThe official portal, the forms, and the charges are all on the INZ website. Use only the official channel and confirm the current fee and process before you submit.',
+        bullets: [
+          'Create an application through the official INZ system',
+          'Upload the required documents and pay the charge',
+          'Apply early — processing times vary',
+        ],
+      },
+      {
+        headingEn: 'Step 4 — Decision and conditions',
+        bodyEn:
+          'After assessment, Immigration New Zealand decides the application. If granted, your student visa will set out conditions — the provider and course it covers, your study obligations, and any limits on working. Read these conditions carefully, because they govern what you may and may not do while studying.\n\nIf you need to extend or change your study later, you generally follow the official process again, in good time before your visa expires.',
+      },
+      {
+        headingEn: 'Plan around official timelines',
+        bodyEn:
+          'Because processing times are not fixed and can change, plan your application around the official guidance and your course start date rather than around an assumed turnaround. Track any updates Immigration New Zealand publishes for your visa type.\n\nThis is general information, not immigration advice, and a visa is never guaranteed — decisions rest with Immigration New Zealand. Verify every step, fee, and timeline on the official government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the main steps to apply for a New Zealand student visa?',
+        answerEn:
+          'Broadly: get an offer of place from an approved provider, gather evidence (funds, health, character, insurance, identity), submit the application — usually online through Immigration New Zealand — and wait for a decision. Confirm the exact steps on the official website; this is general information, not advice.',
+      },
+      {
+        questionEn: 'Do I apply online or on paper?',
+        answerEn:
+          'Most fee-paying student visa applications are made online through Immigration New Zealand\'s official system. Use only the official channel and check the current process on immigration.govt.nz before you submit.',
+      },
+      {
+        questionEn: 'When should I apply for the visa?',
+        answerEn:
+          'Apply well before your course start date, because processing times vary by season and volume. Check the current processing guidance on the official Immigration New Zealand website and plan accordingly.',
+      },
+      {
+        questionEn: 'Will my visa be approved if I submit everything?',
+        answerEn:
+          'No outcome is guaranteed. Submitting a complete application helps, but the decision rests with Immigration New Zealand against the current criteria. Verify requirements on the official source. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'new-zealand-student-visa-guide',
+      'new-zealand-student-visa-financial-requirements',
+      'bringing-family-on-a-student-visa-australia-new-zealand',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Immigration New Zealand — Fee Paying Student Visa (how to apply)', url: 'https://www.immigration.govt.nz/visas/fee-paying-student-visa/' },
+      { label: 'Immigration New Zealand — Visas for studying in New Zealand', url: 'https://www.immigration.govt.nz/study/study-visas/visas-for-studying-in-new-zealand/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'new zealand student visa application process',
+      'how to apply for nz student visa',
+      'student visa new zealand steps',
+      'apply student visa immigration new zealand',
+      'nz student visa application',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'Authority', value: 'Immigration New Zealand (INZ)' },
+      { label: 'Typical mode', value: 'Online application via official INZ system' },
+      { label: 'Prerequisite', value: 'Offer of place from an approved provider' },
+      { label: 'Assessed', value: 'Funds, health, character, insurance' },
+      { label: 'Nature', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'student-visa-working-hours-australia-and-new-zealand',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Student Visa Working Hours: Australia and New Zealand',
+    descriptionEn:
+      'How work-hour rules differ for student visas in Australia and New Zealand — presented as neutral official facts with a verify-on-official nudge. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two countries, two sets of rules',
+        bodyEn:
+          'International students on a study visa in Australia and in New Zealand may be allowed to work, but the rules are set separately by each country\'s immigration authority and are not the same. Australia\'s rules come from the Department of Home Affairs; New Zealand\'s come from Immigration New Zealand.\n\nThis page compares the two at a structural level so you understand that they differ and where to check each. It is general information only and not immigration advice. Work-hour limits change from time to time, so always confirm the current rule for your specific visa on the relevant official government source.',
+      },
+      {
+        headingEn: 'Australia — work limits during study',
+        bodyEn:
+          'On the Australian student visa (subclass 500), eligible students are generally permitted to work a capped number of hours while their course is in session, with the cap commonly expressed per fortnight, and typically more freedom to work during scheduled course breaks. The Australian Government has adjusted this cap over time, so the current figure should be taken from the Department of Home Affairs rather than from memory.',
+        bullets: [
+          'Australian student visa: subclass 500',
+          'Work cap during term is commonly expressed per fortnight',
+          'More work is usually allowed in scheduled course breaks',
+          'Confirm the current cap on the Department of Home Affairs site',
+        ],
+      },
+      {
+        headingEn: 'New Zealand — work limits during study',
+        bodyEn:
+          'On a New Zealand student visa, eligible students may be allowed to work a limited number of hours per week during the academic term, and often additional hours during scheduled holidays, depending on the visa and course. The eligibility and the precise hours are set by Immigration New Zealand and are stated on each visa\'s conditions.\n\nAs with Australia, the rule can change and depends on your circumstances, so read your own visa conditions and verify the current limit on the official Immigration New Zealand source.',
+        bullets: [
+          'Eligibility and hours are set by Immigration New Zealand',
+          'Work hours during term are commonly expressed per week',
+          'Additional hours may be allowed in scheduled breaks',
+          'Your own visa conditions are the authority — verify on INZ',
+        ],
+      },
+      {
+        headingEn: 'Why the comparison matters',
+        bodyEn:
+          'Because the two countries use different units (Australia often per fortnight, New Zealand often per week) and different eligibility rules, you cannot assume one country\'s limit applies to the other. Comparing them is useful for planning, but the only reliable figure for you is the one on your own visa and on the relevant official site.\n\nNeither country\'s working rights should be read as a substitute for your study obligations — your visa is primarily for study, and work is a conditional extra.',
+      },
+      {
+        headingEn: 'Practical reminders',
+        bodyEn:
+          'Keep a few things in mind: check your specific visa\'s conditions, since not every student is eligible to work and limits can differ by course type or level; track official updates, because caps have changed in both countries; and remember that working rights are conditional and tied to maintaining your enrolment.\n\nThis is general information, not immigration advice. Verify the current work-hour rules for your visa on the Department of Home Affairs (Australia) or Immigration New Zealand (New Zealand) before relying on them.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many hours can a student work in Australia?',
+        answerEn:
+          'On the subclass 500 student visa, eligible students may work a capped number of hours while the course is in session (commonly expressed per fortnight), with more freedom in scheduled breaks. The Australian Government has changed this cap over time — verify the current figure on the Department of Home Affairs site. General information, not advice.',
+      },
+      {
+        questionEn: 'How many hours can a student work in New Zealand?',
+        answerEn:
+          'Eligible students on a New Zealand student visa may work a limited number of hours per week during term and often more during scheduled holidays, depending on the visa and course. The exact limit is on your visa conditions — verify on the official Immigration New Zealand source.',
+      },
+      {
+        questionEn: 'Are the Australia and New Zealand work limits the same?',
+        answerEn:
+          'No. The two countries set their rules separately and even use different units (Australia often per fortnight, New Zealand often per week). Do not assume one applies to the other — check each on its official government source.',
+      },
+      {
+        questionEn: 'Is every student allowed to work?',
+        answerEn:
+          'Not necessarily — eligibility depends on your visa and course. Some study visas restrict or do not permit work. Always read your own visa conditions and verify on the relevant official source. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'new-zealand-student-visa-guide',
+      'bringing-family-on-a-student-visa-australia-new-zealand',
+      'study-in-australia-from-india',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Australian Government — Department of Home Affairs (Student visa 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Immigration New Zealand — Working on a student visa', url: 'https://www.immigration.govt.nz/study/once-you-have-a-student-visa/working-on-a-student-visa/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'student visa working hours australia',
+      'student visa working hours new zealand',
+      'how many hours can a student work in australia',
+      'work limit student visa new zealand',
+      'subclass 500 work hours',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'Australia authority', value: 'Department of Home Affairs (subclass 500)' },
+      { label: 'New Zealand authority', value: 'Immigration New Zealand' },
+      { label: 'Units differ', value: 'AU often per fortnight; NZ often per week' },
+      { label: 'Rules change', value: 'Verify current caps on each official source' },
+      { label: 'Nature', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'bringing-family-on-a-student-visa-australia-new-zealand',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Bringing Family on a Student Visa: Australia and New Zealand',
+    descriptionEn:
+      'How dependant and partner provisions work for student visas in Australia and New Zealand — presented as neutral official facts that differ by country and have changed recently. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Family provisions differ by country',
+        bodyEn:
+          'Some international students want to bring a partner or children with them while they study. Both Australia and New Zealand have provisions for accompanying family members, but the rules are set separately by each country\'s immigration authority, differ in detail, and have been adjusted in recent years.\n\nThis page gives a structural overview so you know the provisions exist and where to verify them. It is general information only and not immigration advice. Because the eligibility and conditions for family members change, confirm the current rules for your situation on the relevant official government source before making any plans.',
+      },
+      {
+        headingEn: 'Australia — accompanying family members',
+        bodyEn:
+          'Under the Australian student visa framework (subclass 500), an eligible student may be able to include certain family members — generally a partner and dependent children — as members of the family unit, either in the original application or by a later application. There are requirements the student and the family members must meet, and conditions that apply to the family members\' stay.\n\nThe Australian Government has updated aspects of these provisions over time, so the current eligibility, evidence, and any conditions should be taken from the Department of Home Affairs rather than assumed.',
+        bullets: [
+          'Provisions sit under the student visa (subclass 500) framework',
+          'Eligible family members are generally a partner and dependent children',
+          'Requirements and conditions apply — and have been updated',
+          'Verify current rules on the Department of Home Affairs site',
+        ],
+      },
+      {
+        headingEn: 'New Zealand — partners and children',
+        bodyEn:
+          'New Zealand has its own visa categories through which a student\'s partner or dependent children may be able to join them, depending on the student\'s study and circumstances. These are separate visa categories with their own eligibility, and the options can depend on the level and type of study the main applicant is undertaking.\n\nImmigration New Zealand sets and updates these rules, so check the current eligibility and the relevant partner or dependent-child visa pathways on the official Immigration New Zealand website for your specific case.',
+        bullets: [
+          'Partner and dependent-child options are separate visa categories',
+          'Eligibility can depend on the student\'s study level and type',
+          'Set by Immigration New Zealand and updated over time',
+          'Verify the current pathway on the official INZ source',
+        ],
+      },
+      {
+        headingEn: 'Things family members often need to consider',
+        bodyEn:
+          'Whichever country you choose, bringing family usually means more to plan for: additional funds to support them, suitable insurance, and understanding any study or work conditions attached to the family members\' visas. Children\'s schooling arrangements may also have their own rules.\n\nThese are practical considerations, not a complete list — the official requirements are the authority and they differ between Australia and New Zealand. Build your plan against the live official guidance for the country you are applying to.',
+        bullets: [
+          'Extra funds to support accompanying family members',
+          'Insurance arrangements for family members',
+          'Any study or work conditions on family members\' visas',
+          'School-enrolment rules for accompanying children',
+        ],
+      },
+      {
+        headingEn: 'Verify before you plan',
+        bodyEn:
+          'Because family provisions have changed recently in both countries and depend heavily on individual circumstances, do not rely on general descriptions or on what applied to someone else. Confirm the current eligibility and conditions for your exact situation on the Department of Home Affairs (Australia) or Immigration New Zealand (New Zealand).\n\nThis is general information, not immigration advice, and nothing here guarantees any outcome — decisions rest with the relevant immigration authority. Always verify on the official government source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I bring my partner on a student visa to Australia?',
+        answerEn:
+          'Under the subclass 500 framework, an eligible student may be able to include certain family members, generally a partner and dependent children, subject to requirements and conditions. These provisions have been updated over time — verify the current rules on the Department of Home Affairs site. General information, not advice.',
+      },
+      {
+        questionEn: 'Can my family join me on a student visa in New Zealand?',
+        answerEn:
+          'New Zealand has separate visa categories through which a partner or dependent children may be able to join a student, with eligibility that can depend on the level and type of study. Check the current pathways and criteria on the official Immigration New Zealand website for your situation.',
+      },
+      {
+        questionEn: 'Are the family rules the same in Australia and New Zealand?',
+        answerEn:
+          'No. Each country sets its own family provisions, they differ in detail, and both have changed in recent years. Do not assume one country\'s rules apply to the other — verify each on its official government source.',
+      },
+      {
+        questionEn: 'Will I definitely be able to bring my family?',
+        answerEn:
+          'Not guaranteed. Family provisions depend on eligibility, evidence, and the current rules, and decisions rest with the relevant immigration authority. Confirm your specific eligibility on the official source. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'new-zealand-student-visa-guide',
+      'new-zealand-student-visa-application-process',
+      'student-visa-working-hours-australia-and-new-zealand',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Australian Government — Department of Home Affairs (Student visa 500: family members)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Immigration New Zealand — Visas for studying in New Zealand', url: 'https://www.immigration.govt.nz/study/study-visas/visas-for-studying-in-new-zealand/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'bringing family on student visa australia',
+      'student visa dependant new zealand',
+      'partner visa student australia',
+      'bring spouse on student visa new zealand',
+      'subclass 500 family members',
+    ],
+    tags: ['anz-student-visas'],
+    keyFacts: [
+      { label: 'Australia authority', value: 'Department of Home Affairs (subclass 500)' },
+      { label: 'New Zealand authority', value: 'Immigration New Zealand' },
+      { label: 'Eligible family', value: 'Generally a partner and dependent children' },
+      { label: 'Rules changed', value: 'Both countries updated provisions — verify' },
+      { label: 'Nature', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'group-of-eight-go8-universities-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'Group of Eight (Go8) Universities Guide',
+    descriptionEn:
+      'What the Group of Eight (Go8) is, the eight member universities, what membership means for research and admissions, and how to use the Go8 when shortlisting where to study in Australia.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Group of Eight is',
+        bodyEn:
+          'The Group of Eight (Go8) is a coalition of eight long-established, research-intensive Australian universities. It describes itself as a group of leading research universities and works as a sector body that advocates on higher-education and research policy on behalf of its members.\n\nIt is important to understand what the Go8 is not. It is not an official government ranking, an accreditation body, or a guarantee of quality above every other institution. Many excellent universities in Australia sit outside the Go8. Membership simply tells you that these eight universities share a strong, long-standing focus on research alongside teaching.',
+      },
+      {
+        headingEn: 'The eight member universities',
+        bodyEn:
+          'The Go8 has eight members, located across several Australian states and territories. Each is a comprehensive university offering a wide range of undergraduate and postgraduate programs.',
+        bullets: [
+          'University of Melbourne (Victoria)',
+          'University of Sydney (New South Wales)',
+          'University of New South Wales — UNSW Sydney (New South Wales)',
+          'Australian National University — ANU (Canberra, ACT)',
+          'Monash University (Victoria)',
+          'University of Queensland — UQ (Queensland)',
+          'University of Western Australia — UWA (Western Australia)',
+          'Adelaide University (South Australia) — the institution formed by the merger of the University of Adelaide and the University of South Australia, which opened in 2026',
+        ],
+      },
+      {
+        headingEn: 'What Go8 membership actually means',
+        bodyEn:
+          'Go8 universities tend to be older, comprehensive institutions with large research programs, doctoral training, and broad subject coverage. For a student, the practical signals are a wide course catalogue, established research supervision for higher-degree research, and well-developed support services.\n\nMembership does not change how you apply, what you must score, or what fees you pay — those are set by each university individually. Treat the Go8 label as one input when shortlisting, not as a ranking of which university is best for you. The right university depends on your course, campus, location, budget, and goals.',
+      },
+      {
+        headingEn: 'Go8 and university rankings',
+        bodyEn:
+          'You will often see Go8 universities placed highly in international league tables. Where a ranking is quoted, always check which body issued it — for example the QS World University Rankings (published by QS Quacquarelli Symonds) or the Times Higher Education (THE) World University Rankings. Different rankings use different methods and can disagree, and positions change each year.\n\nUse rankings as background context only, never as the single deciding factor, and verify a university\'s current standing on the official ranking body\'s website rather than relying on a remembered figure.',
+      },
+      {
+        headingEn: 'How to use the Go8 when shortlisting',
+        bodyEn:
+          'A sensible approach is to start from the course and outcome you want, then check which universities — Go8 or otherwise — offer a strong, well-matched program. Compare entry requirements, campus location and cost of living, the structure of the degree, available scholarships, and student support.\n\nFor international students, also confirm the official entry requirements (academic and English-language) and the Australian Government\'s Genuine Student requirement on each university\'s official admissions pages. Visa and policy rules change frequently — this is general information, not immigration advice, so verify current rules on the official government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which universities are in the Group of Eight?',
+        answerEn:
+          'The eight members are the University of Melbourne, University of Sydney, UNSW Sydney, Australian National University (ANU), Monash University, University of Queensland (UQ), University of Western Australia (UWA), and Adelaide University (the institution formed by the merger of the University of Adelaide and the University of South Australia, which opened in 2026).',
+      },
+      {
+        questionEn: 'Is the Go8 an official government ranking?',
+        answerEn:
+          'No. The Go8 is a self-organised coalition of eight research-intensive universities, not a government ranking or an accreditation system. Many strong Australian universities are not Go8 members.',
+      },
+      {
+        questionEn: 'Is a Go8 university always the best choice?',
+        answerEn:
+          'Not necessarily. Go8 membership signals a strong research focus, but the best university for you depends on your specific course, campus, location, budget, and goals. Compare programs directly rather than choosing on the label alone.',
+      },
+      {
+        questionEn: 'Does applying to a Go8 university work differently?',
+        answerEn:
+          'No. Each Go8 university sets its own admission process, entry requirements, and fees, just like any other Australian university. There is no shared Go8 application or guaranteed entry.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'university-of-melbourne-admission-guide',
+      'university-of-sydney-admission-guide',
+      'australian-national-university-anu-admission-guide',
+      'unsw-sydney-admission-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Group of Eight (Go8) — official site', url: 'https://go8.edu.au/' },
+      { label: 'Study Australia (Australian Government) — list of Australian universities', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'group of eight universities',
+      'go8 universities australia',
+      'best universities in australia',
+      'top australian universities',
+      'go8 members list',
+      'research universities australia',
+    ],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'What it is', value: 'Coalition of 8 research-intensive Australian universities' },
+      { label: 'Number of members', value: 'Eight' },
+      { label: 'States/territories', value: 'VIC, NSW, ACT, QLD, WA, SA' },
+      { label: 'Official body', value: 'Go8 (self-organised; not a government ranking)' },
+    ],
+  },
+  {
+    slug: 'university-of-melbourne-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'University of Melbourne Admission Guide',
+    descriptionEn:
+      'How admission to the University of Melbourne works for international students — the official application routes, academic and English-language requirements, document checklist, and where to verify current rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About the University of Melbourne',
+        bodyEn:
+          'The University of Melbourne is a comprehensive, research-intensive university based in Melbourne, Victoria, and a member of the Group of Eight. It offers undergraduate, graduate coursework, and graduate research programs across a broad range of disciplines.\n\nThis guide explains the official admission process at a structural level. Specific entry scores, application fees, deadlines, and prerequisite subjects are set by the University and change between intakes, so always confirm the current details for your exact course on the official Study site.',
+      },
+      {
+        headingEn: 'How to apply (the official routes)',
+        bodyEn:
+          'For undergraduate study, how you apply depends on your background. International students completing an Australian Year 12 (in or outside Australia) or the International Baccalaureate (IB) Diploma in Australia or New Zealand apply for the start-of-year intake through VTAC (the Victorian Tertiary Admissions Centre). All other international students apply directly to the University of Melbourne through its online application portal.\n\nFor graduate coursework and graduate research, applications are generally made directly to the University. Some intakes run for both the start-of-year (Semester 1) and mid-year (Semester 2) entry points — check which intakes your course offers.',
+        bullets: [
+          'Australian Year 12 / IB in Australia or NZ (undergraduate, start-year): apply via VTAC',
+          'All other international undergraduates: apply directly to the University',
+          'Graduate coursework / research: apply directly to the University',
+        ],
+      },
+      {
+        headingEn: 'Academic and English-language requirements',
+        bodyEn:
+          'To be eligible for an undergraduate degree, you must have completed the Victorian Certificate of Education (VCE) or a recognised equivalent qualification, met the minimum entry score (ATAR or equivalent) for your course, satisfied any prerequisite-subject requirements, completed any extra selection task such as an audition or interview where the course requires one, and met the University\'s minimum English-language requirements.\n\nThe University accepts a range of recognised English-language tests to meet its English requirement. Required scores differ by course and level, so check the official entry-requirements page for your specific program rather than assuming a single threshold.',
+      },
+      {
+        headingEn: 'Documents and the application fee',
+        bodyEn:
+          'Documents required vary by background but commonly include academic transcripts, predicted or final results, English-language test results where applicable, and any documents needed for a selection task. Non-English documents typically need an accredited translation.\n\nDirect international applications are subject to a non-refundable application fee per application. The exact fee is published on the official Study site and can change — verify the current amount before you submit.',
+      },
+      {
+        headingEn: 'After an offer: OSHC and student visa',
+        bodyEn:
+          'If you receive and accept an offer, international students arrange Overseas Student Health Cover (OSHC) and apply for an Australian student visa (subclass 500). As part of admission and the visa process, applicants must meet the Australian Government\'s Genuine Student requirement.\n\nVisa and health-cover rules are set by the Australian Government and change frequently. This is general information, not immigration advice — verify the current requirements on the official Department of Home Affairs website before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do international students apply to the University of Melbourne?',
+        answerEn:
+          'Most international undergraduates apply directly to the University through its online portal. Those completing an Australian Year 12 or the IB Diploma in Australia or New Zealand apply for the start-year intake via VTAC. Graduate applicants generally apply directly.',
+      },
+      {
+        questionEn: 'What ATAR or entry score do I need?',
+        answerEn:
+          'The minimum entry score depends on the specific course and changes between intakes. There is no single university-wide number — check the official entry-requirements page for your exact program and verify it before applying.',
+      },
+      {
+        questionEn: 'Which English tests does the University accept?',
+        answerEn:
+          'The University accepts a range of recognised English-language tests to meet its minimum requirement, with required scores varying by course. Confirm the accepted tests and scores for your program on the official Study site.',
+      },
+      {
+        questionEn: 'Is there an application fee?',
+        answerEn:
+          'Direct international applications are subject to a non-refundable application fee per application. The current amount is published on the official Study site and can change, so verify it before you submit.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: ['university-of-melbourne'],
+    relatedGuideSlugs: [
+      'group-of-eight-go8-universities-guide',
+      'university-of-sydney-admission-guide',
+      'unsw-sydney-admission-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'University of Melbourne — How to apply', url: 'https://study.unimelb.edu.au/how-to-apply' },
+      { label: 'University of Melbourne — Undergraduate international entry requirements', url: 'https://study.unimelb.edu.au/how-to-apply/undergraduate-study/international-applications/entry-requirements' },
+      { label: 'Australian Government — Department of Home Affairs (Student visa, subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'university of melbourne admission',
+      'how to apply university of melbourne',
+      'university of melbourne international students',
+      'university of melbourne entry requirements',
+      'unimelb application',
+    ],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'Melbourne, Victoria, Australia' },
+      { label: 'Group', value: 'Group of Eight (Go8) member' },
+      { label: 'Undergrad application', value: 'Direct, or via VTAC for Aus Year 12 / IB in Aus & NZ' },
+      { label: 'Intakes', value: 'Start-year (Sem 1) and mid-year (Sem 2), course-dependent' },
+    ],
+  },
+  {
+    slug: 'university-of-sydney-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'University of Sydney Admission Guide',
+    descriptionEn:
+      'A step-by-step look at the official University of Sydney admission process for international students — how to apply, entry and English-language requirements, OSHC, and where to verify current rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About the University of Sydney',
+        bodyEn:
+          'The University of Sydney is a comprehensive, research-intensive university in Sydney, New South Wales, and a member of the Group of Eight. It offers undergraduate and postgraduate programs across a wide range of disciplines.\n\nThis guide describes the official admission process. Specific entry scores, fees, deadlines, and prerequisites vary by course and intake, so confirm the current details for your exact program on the University\'s official study pages.',
+      },
+      {
+        headingEn: 'The official application steps',
+        bodyEn:
+          'The University sets out a clear sequence for international applicants. In broad terms you find your course and review its entry requirements, prepare your documents (academic certificates, proof of English proficiency, and identity documents), check application deadlines and intake dates, then submit your application either directly to the University or through an authorised representative.\n\nAfter submission, you respond to your offer (which may be conditional or unconditional), arrange health cover, and apply for your student visa.',
+        bullets: [
+          'Find your course and check entry requirements',
+          'Prepare documents (transcripts, English proof, ID)',
+          'Check deadlines and intake dates',
+          'Submit directly or via an authorised representative',
+          'Accept your offer and pay the required fees',
+          'Arrange OSHC and apply for the student visa',
+        ],
+      },
+      {
+        headingEn: 'Entry and English-language requirements',
+        bodyEn:
+          'International students must meet the entry requirements set by the University as well as the Australian Government\'s Genuine Student requirement. Academic entry is based on recognised overseas qualifications or an equivalent entry score for your chosen course.\n\nYou must also meet the University\'s English-language proficiency requirement, which can be satisfied through a range of recognised tests. Required scores depend on the course and level — check the official English-requirements page for your specific program rather than assuming a single threshold.',
+      },
+      {
+        headingEn: 'Documents and translations',
+        bodyEn:
+          'Your application package typically includes academic certificates and transcripts, evidence of English-language proficiency, and identity documents. Where your documents are not in English, the University generally requires a translation by a government-accredited translator (such as a NAATI-accredited translator, or an equivalent).\n\nThe University also notes options such as preparation or pathway programs and recognition of prior learning for some applicants — review whether these apply to your situation on the official site.',
+      },
+      {
+        headingEn: 'After an offer: OSHC and student visa',
+        bodyEn:
+          'Once you accept your offer and pay the required fees, international students arrange Overseas Student Health Cover (OSHC) and apply for the Australian student visa (subclass 500). Meeting the Genuine Student requirement is part of this process.\n\nVisa and health-cover rules are set by the Australian Government and change frequently. This is general information, not immigration advice — verify current requirements on the official Department of Home Affairs website before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to the University of Sydney as an international student?',
+        answerEn:
+          'You find your course, prepare your documents, check deadlines, and submit your application either directly to the University or through an authorised representative. After an offer, you arrange OSHC and apply for a student visa.',
+      },
+      {
+        questionEn: 'What entry score do I need?',
+        answerEn:
+          'Entry is based on recognised qualifications or an equivalent entry score that varies by course. There is no single university-wide number — check the official entry requirements for your specific program and verify them before applying.',
+      },
+      {
+        questionEn: 'Do I need certified translations of my documents?',
+        answerEn:
+          'If your documents are not in English, the University generally requires a translation by a government-accredited translator (for example NAATI-accredited, or an equivalent). Confirm the exact requirement on the official site.',
+      },
+      {
+        questionEn: 'Can I apply through an agent?',
+        answerEn:
+          'Yes. The University accepts applications submitted directly or through an authorised representative. Either way, you must meet the University\'s entry requirements and the Australian Government\'s Genuine Student requirement.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: ['university-of-sydney'],
+    relatedGuideSlugs: [
+      'group-of-eight-go8-universities-guide',
+      'university-of-melbourne-admission-guide',
+      'unsw-sydney-admission-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'University of Sydney — How to apply (international students)', url: 'https://www.sydney.edu.au/study/applying/how-to-apply/international-students.html' },
+      { label: 'Australian Government — Department of Home Affairs (Student visa, subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'university of sydney admission',
+      'how to apply university of sydney',
+      'university of sydney international students',
+      'university of sydney entry requirements',
+      'usyd application',
+    ],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'Sydney, New South Wales, Australia' },
+      { label: 'Group', value: 'Group of Eight (Go8) member' },
+      { label: 'Apply via', value: 'Directly or through an authorised representative' },
+      { label: 'Key requirement', value: 'Entry requirements + Australian Genuine Student requirement' },
+    ],
+  },
+  {
+    slug: 'australian-national-university-anu-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'Australian National University (ANU) Admission Guide',
+    descriptionEn:
+      'How admission to the Australian National University (ANU) in Canberra works — the official application routes by student type and degree level, requirements, alternative entry pathways, and where to verify current rules.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'About ANU',
+        bodyEn:
+          'The Australian National University (ANU) is a research-intensive university located in Canberra, the capital of Australia, and a member of the Group of Eight. It offers undergraduate, postgraduate coursework, and postgraduate research programs.\n\nThis guide outlines the official admission process at a structural level. Specific entry scores, fees, deadlines, and program requirements are set by ANU and change between intakes, so confirm the current details for your exact program on the official ANU site.',
+      },
+      {
+        headingEn: 'How the application is structured',
+        bodyEn:
+          'ANU guides applicants through a pathway based on a few key choices. You first identify your student type (domestic or international), then your degree level (undergraduate, postgraduate coursework, or postgraduate research), and then the specific program you want — including joint or dual-award research options where offered.\n\nBecause requirements and steps differ by program and student type, ANU directs you to the requirements for your chosen program. Read those program-specific pages carefully rather than relying on a single generic checklist.',
+        bullets: [
+          'Step 1: Choose student type (domestic / international)',
+          'Step 2: Choose degree level (undergraduate / postgraduate coursework / research)',
+          'Step 3: Choose your specific program and read its requirements',
+        ],
+      },
+      {
+        headingEn: 'Requirements and English-language proficiency',
+        bodyEn:
+          'Admission to ANU is based on meeting the academic entry requirements for your chosen program, which depend on your qualifications and the program level. International applicants must also meet ANU\'s English-language requirements, which can be met through a range of recognised tests.\n\nRequired entry scores and English-test scores vary by program, so check the official requirements for your specific program. Do not assume one threshold applies across all courses.',
+      },
+      {
+        headingEn: 'Alternative entry pathways',
+        bodyEn:
+          'ANU lists alternative pathways for applicants who do not fit the standard route. These can include non-award study, transferring to ANU from another institution, and a work-and-life-experience-based entry scheme for eligible applicants.\n\nIf you think a standard application may not reflect your situation, review these pathways on the official site to see whether you qualify, and confirm the conditions before applying.',
+      },
+      {
+        headingEn: 'After an offer: OSHC and student visa',
+        bodyEn:
+          'International students who accept an offer arrange Overseas Student Health Cover (OSHC) and apply for the Australian student visa (subclass 500), and must meet the Australian Government\'s Genuine Student requirement.\n\nVisa and health-cover rules are set by the Australian Government and change frequently. This is general information, not immigration advice — verify the current requirements on the official Department of Home Affairs website before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Where is ANU located?',
+        answerEn:
+          'ANU is located in Canberra, the capital of Australia, within the Australian Capital Territory (ACT). It is a member of the Group of Eight.',
+      },
+      {
+        questionEn: 'How do I apply to ANU?',
+        answerEn:
+          'You choose your student type and degree level, select your specific program, and follow that program\'s requirements and application steps on the official ANU site. International and domestic routes differ, so use the path that matches your situation.',
+      },
+      {
+        questionEn: 'Does ANU offer alternative entry pathways?',
+        answerEn:
+          'Yes. ANU lists alternative pathways such as non-award study, transferring from another institution, and a work-and-life-experience-based entry scheme for eligible applicants. Check the official site to see whether you qualify.',
+      },
+      {
+        questionEn: 'What entry score and English level do I need?',
+        answerEn:
+          'Both depend on your specific program and student type. There is no single university-wide figure — check the official requirements for your chosen program and verify them before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: ['australian-national-university'],
+    relatedGuideSlugs: [
+      'group-of-eight-go8-universities-guide',
+      'university-of-melbourne-admission-guide',
+      'unsw-sydney-admission-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Australian National University — Apply', url: 'https://study.anu.edu.au/apply' },
+      { label: 'Australian Government — Department of Home Affairs (Student visa, subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'anu admission',
+      'australian national university application',
+      'how to apply anu',
+      'anu international students',
+      'anu entry requirements',
+    ],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'Canberra, ACT, Australia' },
+      { label: 'Group', value: 'Group of Eight (Go8) member' },
+      { label: 'Application route', value: 'By student type + degree level + specific program' },
+      { label: 'Alternative pathways', value: 'Non-award, transfer, work/life-experience entry (eligibility applies)' },
+    ],
+  },
+  {
+    slug: 'unsw-sydney-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'UNSW Sydney Admission Guide',
+    descriptionEn:
+      'How admission to UNSW Sydney works for international students — the official application routes, the three-term (UNSW 3+) calendar, entry and English-language requirements, and where to verify current rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About UNSW Sydney',
+        bodyEn:
+          'The University of New South Wales (UNSW Sydney) is a comprehensive, research-intensive university in Sydney, New South Wales, and a member of the Group of Eight. It offers undergraduate, postgraduate coursework, and higher-degree research programs.\n\nThis guide explains the official admission process at a structural level. Specific entry scores, fees, deadlines, and prerequisites are set by UNSW and change between intakes, so confirm the current details for your exact program on the official UNSW site.',
+      },
+      {
+        headingEn: 'How to apply (the official routes)',
+        bodyEn:
+          'UNSW separates applicants into clear groups: domestic undergraduate, domestic postgraduate, international students, and higher-degree research. For admissions, UNSW classifies you as a domestic student if you are an Australian or New Zealand citizen, an Australian permanent resident, or a permanent humanitarian visa holder; everyone else is classified as an international student.\n\nThe exact application steps depend on whether you are domestic or international and on the type of degree. International applicants follow the international application route and may apply directly to UNSW or through an authorised representative — check the steps for your degree level on the official site.',
+        bullets: [
+          'Identify your applicant group (domestic vs international; degree level)',
+          'International students apply via the international route',
+          'Apply directly to UNSW or through an authorised representative',
+        ],
+      },
+      {
+        headingEn: 'The UNSW 3+ three-term calendar',
+        bodyEn:
+          'UNSW runs on a three-term academic calendar (sometimes called UNSW 3+). There are three teaching terms across the year, with terms commencing around February, June, and September, plus an optional summer term in January.\n\nA full-time load is generally three courses per term, and you typically enrol once per year. This structure affects intake timing and when you start, so plan around the official term dates. Exact term and census dates are published on the official UNSW calendar and change each year — verify them there.',
+      },
+      {
+        headingEn: 'Entry and English-language requirements',
+        bodyEn:
+          'Academic entry to UNSW is based on recognised qualifications or an equivalent entry score for your chosen program, which varies by course and level. International applicants must also meet UNSW\'s English-language requirements, which can be satisfied through a range of recognised tests.\n\nRequired entry and English-test scores differ by program, so check the official requirements for your specific course rather than assuming a single threshold across all programs.',
+      },
+      {
+        headingEn: 'After an offer: OSHC and student visa',
+        bodyEn:
+          'International students who accept an offer arrange Overseas Student Health Cover (OSHC) and apply for the Australian student visa (subclass 500), and must meet the Australian Government\'s Genuine Student requirement.\n\nVisa and health-cover rules are set by the Australian Government and change frequently. This is general information, not immigration advice — verify the current requirements on the official Department of Home Affairs website before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does UNSW use trimesters?',
+        answerEn:
+          'UNSW runs a three-term academic calendar (UNSW 3+) with terms commencing around February, June, and September, plus an optional summer term in January. A full-time load is generally three courses per term. Verify exact term dates on the official UNSW calendar.',
+      },
+      {
+        questionEn: 'Am I a domestic or international applicant at UNSW?',
+        answerEn:
+          'For admissions, UNSW treats Australian or New Zealand citizens, Australian permanent residents, and permanent humanitarian visa holders as domestic students. Everyone else is classified as an international student.',
+      },
+      {
+        questionEn: 'How do international students apply to UNSW?',
+        answerEn:
+          'International applicants follow the international application route and may apply directly to UNSW or through an authorised representative. The exact steps depend on your degree level — check the official site.',
+      },
+      {
+        questionEn: 'What entry score and English level do I need?',
+        answerEn:
+          'Both depend on your specific program and level. There is no single university-wide figure — check the official entry and English-language requirements for your chosen course and verify them before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: ['unsw-sydney'],
+    relatedGuideSlugs: [
+      'group-of-eight-go8-universities-guide',
+      'university-of-sydney-admission-guide',
+      'university-of-melbourne-admission-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'UNSW Sydney — How to apply', url: 'https://www.unsw.edu.au/study/how-to-apply' },
+      { label: 'UNSW Sydney — About UNSW trimesters (academic calendar)', url: 'https://www.unsw.edu.au/study/your-future/about-trimesters' },
+      { label: 'Australian Government — Department of Home Affairs (Student visa, subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'unsw admission',
+      'how to apply unsw',
+      'unsw sydney international students',
+      'unsw entry requirements',
+      'unsw trimesters',
+      'unsw 3+ calendar',
+    ],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'Sydney, New South Wales, Australia' },
+      { label: 'Group', value: 'Group of Eight (Go8) member' },
+      { label: 'Academic calendar', value: 'Three terms (UNSW 3+): Feb, Jun, Sep + optional Jan summer term' },
+      { label: 'Apply via', value: 'Directly or through an authorised representative' },
+    ],
+  },
+  {
+    slug: 'monash-university-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'Monash University Admission Guide for International Students',
+    descriptionEn:
+      'How international students apply to Monash University in Melbourne — entry requirements, English-language proof, intakes, and where to confirm the current rules on the official Monash site.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About Monash University',
+        bodyEn:
+          'Monash University is a large public research university based in Melbourne, in the state of Victoria, with several campuses across the region. It is a member of Australia\'s Group of Eight (Go8) research-intensive universities and teaches a broad range of undergraduate and postgraduate programs.\n\nThis guide explains the general shape of the international application — entry requirements, English proof, intakes and the steps. Because requirements differ by course and change each year, always confirm the current details for your specific program on the official Monash website before you apply.',
+      },
+      {
+        headingEn: 'Entry requirements (general)',
+        bodyEn:
+          'Admission to Monash is course-by-course. Each undergraduate and postgraduate program publishes its own academic entry requirement, and many competitive courses (for example in medicine, design, engineering or law) have additional criteria such as prerequisite subjects, a portfolio, an interview or an admissions test.\n\nMonash assesses international qualifications against its own country-by-country entry standards, so the grades expected from an Indian, IB, A-Level or other school system are mapped to a Monash equivalent. Check the entry requirement on the specific course page rather than assuming a single university-wide cut-off.',
+        bullets: [
+          'Academic entry requirement is set per course — check the course page',
+          'Some programs need prerequisite subjects, a portfolio, an interview, or an admissions test',
+          'International qualifications are mapped to Monash\'s country-specific entry standards',
+          'No fabricated cut-off here — the official figure is on the course page',
+        ],
+      },
+      {
+        headingEn: 'English-language requirements',
+        bodyEn:
+          'International applicants whose first language is not English usually need to prove English proficiency. Monash accepts several recognised tests, and the required score differs by course (some, such as health or education programs, ask for higher scores).\n\nCommonly accepted tests include IELTS Academic, TOEFL iBT, Pearson PTE Academic and others; Monash lists the exact accepted tests and minimum scores on its English-requirements page. Confirm the current accepted tests and scores there before booking a test.',
+        bullets: [
+          'IELTS Academic, TOEFL iBT and PTE Academic are commonly accepted',
+          'Required scores vary by course — some programs ask for higher scores',
+          'Verify the current accepted tests and minimum scores on the official Monash English-requirements page',
+        ],
+      },
+      {
+        headingEn: 'Intakes and how to apply',
+        bodyEn:
+          'Monash generally runs major intakes during the year, and exact application deadlines depend on the course and your location. International students can apply directly through Monash\'s online application system or through an authorised representative; some research degrees follow a separate admission route.\n\nA typical sequence is: choose your course, check you meet the academic and English requirements, gather your documents (transcripts, certificates, proof of English, passport), submit the application, and respond to any offer with the steps Monash specifies. Always work from the deadlines on the official course and how-to-apply pages.',
+        bullets: [
+          'Apply directly through Monash\'s online system or an authorised representative',
+          'Research degrees can follow a separate admission process',
+          'Deadlines depend on the course and intake — read the official course page',
+        ],
+      },
+      {
+        headingEn: 'Fees, scholarships and the student visa',
+        bodyEn:
+          'Tuition fees at Monash vary by course and are published on each program page; the university also offers a range of scholarships for international students with their own eligibility rules. Do not rely on remembered figures — fees and scholarship amounts are updated each year on the official site.\n\nStudying in Australia on a full-time basis generally requires a student visa (subclass 500) from the Australian Department of Home Affairs, which has its own conditions including health-cover (OSHC) and financial requirements. This is general information, not immigration advice — verify all visa rules on the official Australian Government source before acting.',
+        bullets: [
+          'Tuition fees and scholarship values are on the official Monash pages — verify current figures',
+          'Full-time study usually needs a subclass 500 student visa (Department of Home Affairs)',
+          'Visa conditions include health cover (OSHC) and financial evidence — confirm on the official government source',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the entry requirements for Monash University?',
+        answerEn:
+          'There is no single university-wide cut-off. Each Monash course sets its own academic entry requirement, and competitive programs may add prerequisites, a portfolio, an interview or an admissions test. Check the requirement on your specific course page on the official Monash website.',
+      },
+      {
+        questionEn: 'Which English tests does Monash accept?',
+        answerEn:
+          'Monash commonly accepts tests such as IELTS Academic, TOEFL iBT and Pearson PTE Academic, with the minimum score depending on the course. Confirm the current list of accepted tests and the required scores on the official Monash English-requirements page before booking.',
+      },
+      {
+        questionEn: 'How do international students apply to Monash?',
+        answerEn:
+          'You can apply directly through Monash\'s online application system or via an authorised representative. Choose your course, check the academic and English requirements, gather your documents, and submit by the deadline shown on the official course page. Research degrees may use a separate process.',
+      },
+      {
+        questionEn: 'Do I need a student visa to study at Monash?',
+        answerEn:
+          'Full-time international study in Australia generally requires a student visa (subclass 500) from the Department of Home Affairs, with conditions such as health cover (OSHC). This is general information, not immigration advice — verify the current rules on the official Australian Government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['university-of-queensland-admission-guide', 'best-universities-in-australia-for-international-students', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Monash University — official site', url: 'https://www.monash.edu' },
+      { label: 'Monash — English entry requirements', url: 'https://www.monash.edu/admissions/entry-requirements/english-language' },
+      { label: 'Australian Government — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['monash university admission', 'monash university entry requirements', 'monash university for international students', 'how to apply to monash university', 'monash english requirements'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Type', value: 'Public research university (Group of Eight)' },
+      { label: 'Main location', value: 'Melbourne, Victoria, Australia' },
+      { label: 'Entry requirement', value: 'Set per course — verify on the official course page' },
+      { label: 'English tests', value: 'IELTS / TOEFL iBT / PTE Academic and others (scores vary by course)' },
+      { label: 'Student visa', value: 'Full-time study generally needs subclass 500 — verify on the official government source' },
+    ],
+  },
+  {
+    slug: 'university-of-queensland-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'University of Queensland (UQ) Admission Guide for International Students',
+    descriptionEn:
+      'A clear walkthrough of applying to the University of Queensland in Brisbane — entry requirements, English proof, intakes, and where to confirm the current rules on the official UQ site.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About the University of Queensland',
+        bodyEn:
+          'The University of Queensland (UQ) is a public research university based in Brisbane, in the state of Queensland, with campuses across the region. It is a member of Australia\'s Group of Eight (Go8) and offers a wide range of undergraduate, postgraduate coursework and research programs.\n\nThis guide outlines the general international-application process. Requirements differ by program and are updated every year, so always confirm the current details for your chosen course on the official UQ website before applying.',
+      },
+      {
+        headingEn: 'Entry requirements (general)',
+        bodyEn:
+          'UQ sets entry requirements on a per-program basis. Each undergraduate and postgraduate course publishes its own academic requirement, and competitive programs may add prerequisites, a portfolio, an interview or an admissions test.\n\nUQ assesses overseas qualifications against its own country-by-country entry standards, so school or degree results from India, the IB, A-Levels or other systems are mapped to a UQ equivalent. Read the entry requirement on the specific program page rather than assuming one university-wide cut-off.',
+        bullets: [
+          'Academic entry requirement is set per program — check the program page',
+          'Some courses require prerequisite subjects, a portfolio, an interview, or an admissions test',
+          'Overseas qualifications are mapped to UQ\'s country-specific entry standards',
+        ],
+      },
+      {
+        headingEn: 'English-language requirements',
+        bodyEn:
+          'International applicants whose first language is not English generally need to demonstrate English proficiency. UQ accepts several recognised tests, and the minimum score differs by program (some, such as health or education courses, expect higher scores).\n\nCommonly accepted tests include IELTS Academic, TOEFL iBT and Pearson PTE Academic, among others. UQ publishes the exact accepted tests and required scores on its English-requirements page — confirm the current details there before booking a test.',
+        bullets: [
+          'IELTS Academic, TOEFL iBT and PTE Academic are commonly accepted',
+          'Required scores vary by program — some ask for higher scores',
+          'Verify the current accepted tests and scores on the official UQ English-requirements page',
+        ],
+      },
+      {
+        headingEn: 'Intakes and how to apply',
+        bodyEn:
+          'UQ runs major intakes through the year, and exact deadlines depend on the program and your circumstances. International students can apply directly through UQ\'s online application system or via an authorised representative; higher-degree research programs use a separate admission route.\n\nA usual sequence is: choose your program, confirm you meet the academic and English requirements, gather your documents (transcripts, certificates, English proof, passport), submit your application, and follow the steps UQ specifies for any offer. Work from the deadlines on the official program and apply pages.',
+        bullets: [
+          'Apply directly through UQ\'s online system or an authorised representative',
+          'Higher-degree research programs follow a separate process',
+          'Deadlines depend on the program and intake — read the official program page',
+        ],
+      },
+      {
+        headingEn: 'Fees, scholarships and the student visa',
+        bodyEn:
+          'Tuition at UQ varies by program and is published on each course page; UQ also offers scholarships for international students with their own eligibility rules. Fees and scholarship amounts change each year, so rely only on the figures on the official site, never on remembered numbers.\n\nFull-time study in Australia generally requires a student visa (subclass 500) from the Australian Department of Home Affairs, with conditions including health cover (OSHC) and financial evidence. This is general information, not immigration advice — verify all visa requirements on the official Australian Government source before acting.',
+        bullets: [
+          'Tuition fees and scholarship values are on the official UQ pages — verify current figures',
+          'Full-time study usually needs a subclass 500 student visa (Department of Home Affairs)',
+          'Visa conditions include health cover (OSHC) — confirm on the official government source',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the entry requirements for the University of Queensland?',
+        answerEn:
+          'UQ sets entry requirements per program — there is no single university-wide cut-off. Each course publishes its own academic requirement and some add prerequisites, a portfolio, an interview or a test. Check your specific program page on the official UQ website.',
+      },
+      {
+        questionEn: 'Which English tests does UQ accept?',
+        answerEn:
+          'UQ commonly accepts IELTS Academic, TOEFL iBT and Pearson PTE Academic, with the minimum score depending on the program. Confirm the current accepted tests and required scores on the official UQ English-requirements page before booking.',
+      },
+      {
+        questionEn: 'When can international students start at UQ?',
+        answerEn:
+          'UQ runs major intakes during the year, with deadlines that depend on the program and intake. Apply directly through UQ\'s online system or an authorised representative, and follow the dates published on the official program page.',
+      },
+      {
+        questionEn: 'Do I need a visa to study at UQ?',
+        answerEn:
+          'Full-time international study in Australia generally requires a student visa (subclass 500) from the Department of Home Affairs, with conditions such as health cover (OSHC). This is general information, not immigration advice — verify the current rules on the official Australian Government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['monash-university-admission-guide', 'best-universities-in-australia-for-international-students', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'University of Queensland — official site', url: 'https://www.uq.edu.au' },
+      { label: 'UQ — English language requirements', url: 'https://study.uq.edu.au/admissions/english-language-requirements' },
+      { label: 'Australian Government — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['university of queensland admission', 'uq entry requirements', 'university of queensland international students', 'how to apply to uq', 'uq english requirements'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Type', value: 'Public research university (Group of Eight)' },
+      { label: 'Main location', value: 'Brisbane, Queensland, Australia' },
+      { label: 'Entry requirement', value: 'Set per program — verify on the official program page' },
+      { label: 'English tests', value: 'IELTS / TOEFL iBT / PTE Academic and others (scores vary by program)' },
+      { label: 'Student visa', value: 'Full-time study generally needs subclass 500 — verify on the official government source' },
+    ],
+  },
+  {
+    slug: 'university-of-western-australia-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'University of Western Australia (UWA) Admission Guide for International Students',
+    descriptionEn:
+      'How international students apply to the University of Western Australia in Perth — entry requirements, English proof, intakes, and where to confirm the current rules on the official UWA site.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About the University of Western Australia',
+        bodyEn:
+          'The University of Western Australia (UWA) is a public research university in Perth, in the state of Western Australia. It is a member of Australia\'s Group of Eight (Go8) and offers undergraduate, postgraduate coursework and research programs across a broad range of fields.\n\nThis guide explains the general international-application process. Requirements differ by course and change each year, so always confirm the current details for your specific program on the official UWA website before applying.',
+      },
+      {
+        headingEn: 'Entry requirements (general)',
+        bodyEn:
+          'UWA sets admission requirements course by course. Each undergraduate and postgraduate program publishes its own academic requirement, and some competitive courses add criteria such as prerequisite subjects, a portfolio, an interview or an admissions test.\n\nUWA assesses international qualifications against its own country-by-country standards, so results from Indian boards, the IB, A-Levels or other systems are mapped to a UWA equivalent. Read the entry requirement on the specific course page rather than assuming a single university-wide cut-off.',
+        bullets: [
+          'Academic entry requirement is set per course — check the course page',
+          'Some programs need prerequisite subjects, a portfolio, an interview, or an admissions test',
+          'International qualifications are mapped to UWA\'s country-specific standards',
+        ],
+      },
+      {
+        headingEn: 'English-language requirements',
+        bodyEn:
+          'International applicants whose first language is not English usually need to prove English proficiency. UWA accepts several recognised tests, and the required score differs by course (some programs ask for higher scores).\n\nCommonly accepted tests include IELTS Academic, TOEFL iBT and Pearson PTE Academic, among others. UWA lists the exact accepted tests and minimum scores on its English-requirements page — confirm the current details there before booking a test.',
+        bullets: [
+          'IELTS Academic, TOEFL iBT and PTE Academic are commonly accepted',
+          'Required scores vary by course — some ask for higher scores',
+          'Verify the current accepted tests and scores on the official UWA English-requirements page',
+        ],
+      },
+      {
+        headingEn: 'Intakes and how to apply',
+        bodyEn:
+          'UWA runs major intakes during the year, with deadlines that depend on the course and your circumstances. International students can apply directly through UWA\'s online application system or via an authorised representative; higher-degree research programs use a separate admission route.\n\nA usual sequence is: choose your course, confirm you meet the academic and English requirements, gather your documents (transcripts, certificates, English proof, passport), submit your application, and follow UWA\'s steps for any offer. Always use the deadlines on the official course and apply pages.',
+        bullets: [
+          'Apply directly through UWA\'s online system or an authorised representative',
+          'Higher-degree research programs follow a separate process',
+          'Deadlines depend on the course and intake — read the official course page',
+        ],
+      },
+      {
+        headingEn: 'Fees, scholarships and the student visa',
+        bodyEn:
+          'Tuition at UWA varies by course and is published on each program page; UWA also offers scholarships for international students with their own eligibility rules. Fees and scholarship amounts are updated each year, so rely only on the figures on the official site.\n\nFull-time study in Australia generally requires a student visa (subclass 500) from the Australian Department of Home Affairs, with conditions including health cover (OSHC) and financial evidence. This is general information, not immigration advice — verify all visa rules on the official Australian Government source before acting.',
+        bullets: [
+          'Tuition fees and scholarship values are on the official UWA pages — verify current figures',
+          'Full-time study usually needs a subclass 500 student visa (Department of Home Affairs)',
+          'Visa conditions include health cover (OSHC) — confirm on the official government source',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the entry requirements for UWA?',
+        answerEn:
+          'UWA sets entry requirements course by course — there is no single university-wide cut-off. Each program publishes its own academic requirement, and some add prerequisites, a portfolio, an interview or a test. Check your specific course page on the official UWA website.',
+      },
+      {
+        questionEn: 'Which English tests does UWA accept?',
+        answerEn:
+          'UWA commonly accepts IELTS Academic, TOEFL iBT and Pearson PTE Academic, with the minimum score depending on the course. Confirm the current accepted tests and required scores on the official UWA English-requirements page before booking.',
+      },
+      {
+        questionEn: 'How do international students apply to UWA?',
+        answerEn:
+          'You can apply directly through UWA\'s online application system or via an authorised representative. Choose your course, confirm the academic and English requirements, gather your documents, and submit by the deadline on the official course page. Research degrees may use a separate process.',
+      },
+      {
+        questionEn: 'Do I need a student visa to study at UWA?',
+        answerEn:
+          'Full-time international study in Australia generally requires a student visa (subclass 500) from the Department of Home Affairs, with conditions such as health cover (OSHC). This is general information, not immigration advice — verify the current rules on the official Australian Government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['university-of-adelaide-admission-guide', 'best-universities-in-australia-for-international-students', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'University of Western Australia — official site', url: 'https://www.uwa.edu.au' },
+      { label: 'UWA — English language requirements', url: 'https://www.uwa.edu.au/study/how-to-apply/pathways-and-eligibility/english-language-requirements' },
+      { label: 'Australian Government — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['university of western australia admission', 'uwa entry requirements', 'uwa international students', 'how to apply to uwa', 'uwa english requirements'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Type', value: 'Public research university (Group of Eight)' },
+      { label: 'Main location', value: 'Perth, Western Australia' },
+      { label: 'Entry requirement', value: 'Set per course — verify on the official course page' },
+      { label: 'English tests', value: 'IELTS / TOEFL iBT / PTE Academic and others (scores vary by course)' },
+      { label: 'Student visa', value: 'Full-time study generally needs subclass 500 — verify on the official government source' },
+    ],
+  },
+  {
+    slug: 'university-of-adelaide-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'University of Adelaide Admission Guide for International Students',
+    descriptionEn:
+      'A clear guide to applying in Adelaide, South Australia — entry requirements, English proof, intakes, and where to confirm the current rules on the official site. Note: in January 2026 the University of Adelaide and the University of South Australia combined to form Adelaide University.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About the University of Adelaide and Adelaide University',
+        bodyEn:
+          'The University of Adelaide was a long-established public research university in Adelaide, the capital of South Australia. In January 2026 it combined with the University of South Australia to form a new institution, Adelaide University, which is a member of Australia\'s Group of Eight (Go8) and offers a wide range of undergraduate, postgraduate coursework and research programs. If you previously searched for "University of Adelaide", the official information now sits on the Adelaide University website (adelaide.edu.au).\n\nThis guide outlines the general international-application process for studying in Adelaide. Requirements differ by program and are updated every year, so always confirm the current details for your chosen course on the official Adelaide University website before applying.',
+      },
+      {
+        headingEn: 'Entry requirements (general)',
+        bodyEn:
+          'Adelaide sets entry requirements on a per-program basis. Each undergraduate and postgraduate course publishes its own academic requirement, and competitive programs may add criteria such as prerequisite subjects, a portfolio, an interview or an admissions test.\n\nThe university assesses overseas qualifications against its own country-by-country standards, so results from Indian boards, the IB, A-Levels or other systems are mapped to an Adelaide equivalent. Read the entry requirement on the specific program page rather than assuming one university-wide cut-off.',
+        bullets: [
+          'Academic entry requirement is set per program — check the program page',
+          'Some courses require prerequisite subjects, a portfolio, an interview, or an admissions test',
+          'Overseas qualifications are mapped to Adelaide\'s country-specific standards',
+        ],
+      },
+      {
+        headingEn: 'English-language requirements',
+        bodyEn:
+          'International applicants whose first language is not English generally need to demonstrate English proficiency. Adelaide accepts several recognised tests, and the minimum score differs by program (some, such as health or education courses, expect higher scores).\n\nCommonly accepted tests include IELTS Academic, TOEFL iBT and Pearson PTE Academic, among others. The university publishes the exact accepted tests and required scores on its English-requirements page — confirm the current details there before booking a test.',
+        bullets: [
+          'IELTS Academic, TOEFL iBT and PTE Academic are commonly accepted',
+          'Required scores vary by program — some ask for higher scores',
+          'Verify the current accepted tests and scores on the official Adelaide English-requirements page',
+        ],
+      },
+      {
+        headingEn: 'Intakes and how to apply',
+        bodyEn:
+          'Adelaide runs major intakes during the year, with deadlines that depend on the program and your circumstances. International students can apply directly through the university\'s online application system or via an authorised representative; higher-degree research programs use a separate admission route.\n\nA usual sequence is: choose your program, confirm you meet the academic and English requirements, gather your documents (transcripts, certificates, English proof, passport), submit your application, and follow the university\'s steps for any offer. Use the deadlines on the official program and apply pages.',
+        bullets: [
+          'Apply directly through Adelaide\'s online system or an authorised representative',
+          'Higher-degree research programs follow a separate process',
+          'Deadlines depend on the program and intake — read the official program page',
+        ],
+      },
+      {
+        headingEn: 'Fees, scholarships and the student visa',
+        bodyEn:
+          'Tuition at Adelaide varies by program and is published on each course page; the university also offers scholarships for international students with their own eligibility rules. Fees and scholarship amounts change each year, so rely only on the figures on the official site.\n\nFull-time study in Australia generally requires a student visa (subclass 500) from the Australian Department of Home Affairs, with conditions including health cover (OSHC) and financial evidence. This is general information, not immigration advice — verify all visa rules on the official Australian Government source before acting.',
+        bullets: [
+          'Tuition fees and scholarship values are on the official Adelaide pages — verify current figures',
+          'Full-time study usually needs a subclass 500 student visa (Department of Home Affairs)',
+          'Visa conditions include health cover (OSHC) — confirm on the official government source',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the entry requirements for the University of Adelaide?',
+        answerEn:
+          'Adelaide sets entry requirements per program — there is no single university-wide cut-off. Each course publishes its own academic requirement, and some add prerequisites, a portfolio, an interview or a test. Check your specific program page on the official Adelaide University website (the University of Adelaide combined with UniSA to form Adelaide University in January 2026).',
+      },
+      {
+        questionEn: 'Which English tests does the University of Adelaide accept?',
+        answerEn:
+          'Adelaide commonly accepts IELTS Academic, TOEFL iBT and Pearson PTE Academic, with the minimum score depending on the program. Confirm the current accepted tests and required scores on the official Adelaide English-requirements page before booking.',
+      },
+      {
+        questionEn: 'When can international students start at Adelaide?',
+        answerEn:
+          'The University of Adelaide runs major intakes during the year, with deadlines that depend on the program and intake. Apply directly through the university\'s online system or an authorised representative, and follow the dates on the official program page.',
+      },
+      {
+        questionEn: 'Do I need a visa to study at the University of Adelaide?',
+        answerEn:
+          'Full-time international study in Australia generally requires a student visa (subclass 500) from the Department of Home Affairs, with conditions such as health cover (OSHC). This is general information, not immigration advice — verify the current rules on the official Australian Government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['university-of-western-australia-admission-guide', 'best-universities-in-australia-for-international-students', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Adelaide University (formerly University of Adelaide) — official site', url: 'https://www.adelaide.edu.au' },
+      { label: 'Adelaide University — English language proficiency', url: 'https://www.adelaide.edu.au/study/international-students/how-to-apply/entry-requirements/english-language-proficiency/' },
+      { label: 'Australian Government — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['university of adelaide admission', 'university of adelaide entry requirements', 'university of adelaide international students', 'how to apply to university of adelaide', 'adelaide english requirements'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Type', value: 'Public research university (Group of Eight)' },
+      { label: 'Institution', value: 'University of Adelaide combined with UniSA to form Adelaide University (January 2026)' },
+      { label: 'Main location', value: 'Adelaide, South Australia' },
+      { label: 'Entry requirement', value: 'Set per program — verify on the official program page' },
+      { label: 'English tests', value: 'IELTS / TOEFL iBT / PTE Academic and others (scores vary by program)' },
+      { label: 'Student visa', value: 'Full-time study generally needs subclass 500 — verify on the official government source' },
+    ],
+  },
+  {
+    slug: 'best-universities-in-australia-for-international-students',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Best Universities in Australia for International Students: How to Compare',
+    descriptionEn:
+      'There is no single "best" university — only the right fit for you. Learn how to read attributed rankings (QS, THE), weigh course, location and cost, and where to verify everything on official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Why there is no single "best" university',
+        bodyEn:
+          '"Best" depends entirely on what you want — your subject, budget, location, career goals and learning style. A university that is ideal for one student may be a poor fit for another. So instead of chasing a single number, it helps to compare a shortlist against criteria that matter to you.\n\nThis guide explains how to use rankings sensibly, what else to weigh, and where to confirm the facts. We do not rank universities ourselves or present any ranking as a final verdict — rankings are one input among several, and they are always attributed to the body that issues them.',
+      },
+      {
+        headingEn: 'How to read rankings (attributed, not absolute)',
+        bodyEn:
+          'Several independent organisations publish global and subject rankings, including the QS World University Rankings (Quacquarelli Symonds) and the Times Higher Education (THE) World University Rankings. Each uses its own methodology — research output, reputation surveys, citations, international mix and more — so the same university can sit at different positions in different tables.\n\nTreat a ranking as a starting point, not proof of quality for your needs. A subject-specific ranking is usually more useful than an overall one if you already know your field. Always read the current table on the official QS or THE website, since positions and methods change each year, and check the issuer\'s own notes on how it was compiled.',
+        bullets: [
+          'QS World University Rankings — published by Quacquarelli Symonds (QS)',
+          'THE World University Rankings — published by Times Higher Education (THE)',
+          'Methodologies differ, so positions differ between tables',
+          'Subject rankings are often more useful than overall rankings — verify the current table on the issuer\'s site',
+        ],
+      },
+      {
+        headingEn: 'Australia\'s research-intensive group',
+        bodyEn:
+          'A widely cited grouping in Australia is the Group of Eight (Go8), an association of research-intensive universities. Membership describes a shared research focus, not a ranking of teaching quality for every course, and many excellent programs sit outside the Go8 too.\n\nUse the Go8 label as context, not as a shortcut for "best". Strong programs exist across Australia\'s public universities, including technology-focused and regional institutions, so judge each course on its own merits rather than the group its university belongs to.',
+        bullets: [
+          'The Group of Eight (Go8) is an association of research-intensive Australian universities',
+          'Membership signals research focus, not a per-course quality ranking',
+          'Strong programs exist outside the Go8 as well — compare courses, not just groups',
+        ],
+      },
+      {
+        headingEn: 'Factors that matter as much as rankings',
+        bodyEn:
+          'For an international student, several practical factors often matter more than a few places in a ranking table. Weigh the course content and structure, the campus city and climate, total cost (tuition plus living), available scholarships, student support, and any professional accreditation your career needs.\n\nLocation is a big one: Australian universities span very different cities — for example Melbourne, Sydney, Brisbane, Perth and Adelaide — each with its own cost of living, climate and job market. Decide what environment suits you, then shortlist universities that fit.',
+        bullets: [
+          'Course content, structure and any professional accreditation',
+          'Total cost — tuition plus living expenses in that city',
+          'Scholarships and student-support services',
+          'City, climate and post-study opportunities — these vary widely across Australia',
+        ],
+      },
+      {
+        headingEn: 'Verify the facts before you decide',
+        bodyEn:
+          'Whatever shortlist you build, confirm the specifics on official sources before committing. Tuition fees, entry requirements, English-test scores, scholarship rules and intake dates all change each year and are only reliable on the official university website.\n\nStudying full-time in Australia generally requires a student visa (subclass 500) from the Australian Department of Home Affairs, which has its own conditions including health cover (OSHC). For broad, government-curated information about studying in Australia you can start at Study Australia (studyaustralia.gov.au). This is general information, not immigration advice — verify all visa and policy details on the official Australian Government source before acting.',
+        bullets: [
+          'Confirm fees, entry requirements, scholarships and dates on each official university site',
+          'Full-time study generally needs a subclass 500 student visa (Department of Home Affairs)',
+          'Study Australia (studyaustralia.gov.au) is an official starting point — verify visa rules on the government source',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which is the best university in Australia for international students?',
+        answerEn:
+          'There is no single best university — the right choice depends on your subject, budget, location and goals. Use attributed rankings such as QS and Times Higher Education as one input, weigh course, cost and city, and verify everything on the official university websites.',
+      },
+      {
+        questionEn: 'Are university rankings reliable?',
+        answerEn:
+          'Rankings from bodies like QS (Quacquarelli Symonds) and Times Higher Education (THE) are useful as a starting point, but each uses a different methodology, so positions vary between tables. Treat them as one factor and read the current table on the issuer\'s official site.',
+      },
+      {
+        questionEn: 'What is the Group of Eight?',
+        answerEn:
+          'The Group of Eight (Go8) is an association of research-intensive Australian universities. Membership signals a research focus, not a per-course quality ranking, and strong programs also exist outside the Go8. Compare individual courses rather than relying on the group label.',
+      },
+      {
+        questionEn: 'What should I check before choosing an Australian university?',
+        answerEn:
+          'Compare course content, total cost (tuition plus living), the campus city and climate, scholarships, student support and any professional accreditation. Confirm fees, entry requirements and dates on each official university site, and check student-visa rules on the official Australian Government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['monash-university-admission-guide', 'university-of-queensland-admission-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'QS World University Rankings — official site', url: 'https://www.topuniversities.com/world-university-rankings' },
+      { label: 'Times Higher Education — World University Rankings', url: 'https://www.timeshighereducation.com/world-university-rankings' },
+      { label: 'Study Australia — Australian Government', url: 'https://www.studyaustralia.gov.au' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['best universities in australia', 'top universities in australia for international students', 'qs ranking australian universities', 'group of eight australia', 'how to choose a university in australia'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Ranking bodies', value: 'QS (Quacquarelli Symonds) and Times Higher Education (THE) — attributed, methodologies differ' },
+      { label: 'Research grouping', value: 'Group of Eight (Go8) — research focus, not a per-course ranking' },
+      { label: 'What to weigh', value: 'Course, total cost, city/climate, scholarships, accreditation' },
+      { label: 'Official starting point', value: 'Study Australia (studyaustralia.gov.au)' },
+      { label: 'Student visa', value: 'Full-time study generally needs subclass 500 — verify on the official government source' },
+    ],
+  },
+  {
+    slug: 'universities-in-new-zealand-complete-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Universities in New Zealand: Complete Guide',
+    descriptionEn:
+      'A clear guide to New Zealand\'s eight universities — where each is located, what each is broadly known for, and how to compare them for your course, city, and budget without relying on a single ranking.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'New Zealand has eight universities',
+        bodyEn:
+          'New Zealand has exactly eight universities, all of them publicly funded and quality-assured under the national education system. They are recognised collectively by Universities New Zealand (Te Pōkai Tara), the sector\'s official representative body.\n\nSeven of the eight are comprehensive universities offering a broad spread of subjects across arts, sciences, commerce, engineering, and health; one, Lincoln University, is a specialist land-based university focused on agriculture, environment, and related fields. Each university sets its own programmes, entry requirements, and fees, so always check details on the specific university\'s official website.',
+        bullets: [
+          'University of Auckland (Waipapa Taumata Rau) — Auckland',
+          'Auckland University of Technology (AUT) — Auckland',
+          'University of Waikato — Hamilton',
+          'Massey University — campuses including Palmerston North, Auckland, Wellington',
+          'Victoria University of Wellington (Te Herenga Waka) — Wellington',
+          'University of Canterbury — Christchurch',
+          'Lincoln University — near Christchurch',
+          'University of Otago — Dunedin',
+        ],
+      },
+      {
+        headingEn: 'What each is broadly known for',
+        bodyEn:
+          'Every New Zealand university offers a wide range of well-regarded programmes, and no single one is "the best" for everyone — the right choice depends on your subject and goals. As a neutral orientation only: Auckland and AUT are the two large universities in the country\'s biggest city; Otago is New Zealand\'s oldest university and is well known for health sciences; Canterbury has a long association with engineering; Victoria University of Wellington sits in the capital near government and policy institutions; Massey is known for distance and multi-campus delivery and land-based and veterinary study; Waikato is a younger comprehensive university; and Lincoln specialises in agriculture and land-based sciences.\n\nThese are general descriptions, not judgements of quality. Confirm a programme\'s actual content, structure, and standing on the university\'s own official course pages before deciding.',
+      },
+      {
+        headingEn: 'How rankings fit in (use them carefully)',
+        bodyEn:
+          'International ranking tables such as the QS World University Rankings and the Times Higher Education (THE) World University Rankings are published by independent organisations using their own methodologies. They can give a rough sense of global research reputation, but they are not an official New Zealand government measure and they change each year.\n\nUse rankings as one input among several, and always attribute any ranking figure to the body that issued it (for example, "QS" or "THE") rather than treating it as a fixed fact. For your specific course, departmental fit and graduate outcomes often matter more than an institution\'s overall position.',
+      },
+      {
+        headingEn: 'How to compare the eight for your needs',
+        bodyEn:
+          'Rather than starting from a ranking, start from your course and circumstances. Compare the universities that actually offer your programme on the factors that will shape your study and daily life.',
+        bullets: [
+          'Programme: is your exact course offered, and does its structure and specialisations match your goals?',
+          'Entry requirements: academic and English-language criteria for international applicants (these vary by programme)',
+          'Location and city: climate, size, cost of living, and student community in Auckland, Wellington, Christchurch, Dunedin, Hamilton, or Palmerston North',
+          'Cost: tuition for your programme plus living costs — verify both on official sources',
+          'Support: international student services, accommodation, and academic support',
+        ],
+      },
+      {
+        headingEn: 'Quality assurance and recognition',
+        bodyEn:
+          'All eight universities operate within New Zealand\'s national quality-assurance framework, and their qualifications sit on the New Zealand Qualifications Framework. For courses that lead to a regulated profession (for example, in health or engineering), confirm the specific programme\'s professional recognition on the university\'s official site and with the relevant New Zealand professional body, because recognition is set per programme, not per university.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many universities does New Zealand have?',
+        answerEn:
+          'New Zealand has eight universities: the University of Auckland, Auckland University of Technology, the University of Waikato, Massey University, Victoria University of Wellington, the University of Canterbury, Lincoln University, and the University of Otago.',
+      },
+      {
+        questionEn: 'Which New Zealand university is the best?',
+        answerEn:
+          'There is no single "best" university — each has different strengths, and the right choice depends on your subject, goals, location, and budget. Compare the universities that offer your specific programme rather than relying on an overall ranking.',
+      },
+      {
+        questionEn: 'Are New Zealand university degrees internationally recognised?',
+        answerEn:
+          'New Zealand\'s eight universities are publicly funded and quality-assured, and their qualifications sit on the New Zealand Qualifications Framework. For any programme tied to a regulated profession, confirm professional recognition on the university\'s official page and with the relevant professional body.',
+      },
+      {
+        questionEn: 'Do all eight universities teach in English?',
+        answerEn:
+          'Yes — the language of instruction is English, and international applicants typically need to meet an English-language requirement. The exact level varies by programme, so check the entry requirements on each university\'s official website.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['university-of-auckland-admission-guide', 'university-of-otago-admission-guide', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Universities New Zealand — our universities', url: 'https://www.universitiesnz.ac.nz/universities' },
+      { label: 'Study with New Zealand — official Government site', url: 'https://www.studywithnewzealand.govt.nz/en' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['universities in new zealand', 'list of new zealand universities', 'how many universities in new zealand', 'best universities in new zealand', 'study in new zealand'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Number of universities', value: 'Eight (all publicly funded)' },
+      { label: 'Representative body', value: 'Universities New Zealand (Te Pōkai Tara)' },
+      { label: 'Language of instruction', value: 'English' },
+      { label: 'Qualifications framework', value: 'New Zealand Qualifications Framework' },
+    ],
+  },
+  {
+    slug: 'university-of-auckland-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'University of Auckland Admission Guide',
+    descriptionEn:
+      'How international students apply to the University of Auckland — the official admission steps, where to check entry and English-language requirements, and how to confirm fees and deadlines on auckland.ac.nz.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About the University of Auckland',
+        bodyEn:
+          'The University of Auckland (Waipapa Taumata Rau) is a comprehensive public university located in Auckland, New Zealand\'s largest city. It offers undergraduate and postgraduate programmes across faculties including arts, business and economics, science, engineering, medical and health sciences, education and social work, law, and creative arts and industries.\n\nThis guide explains the general application process for international applicants. Because programme details, requirements, fees, and dates are set by the university and updated regularly, always confirm specifics on the university\'s official website before applying.',
+      },
+      {
+        headingEn: 'The application process in outline',
+        bodyEn:
+          'For international applicants, the University of Auckland describes the journey as: apply for admission to a programme, then accept an offer of place if you receive one. Applications are submitted through the university\'s official online application portal.',
+        bullets: [
+          'Choose a programme and read its specific entry requirements on the official site',
+          'Prepare documents — typically academic transcripts and proof of English-language proficiency',
+          'Submit your application through the official "Apply now" portal',
+          'Receive a decision; if successful, accept your offer of place and follow enrolment steps',
+          'Use your offer to support your New Zealand student visa application (see below)',
+        ],
+      },
+      {
+        headingEn: 'Entry and English-language requirements',
+        bodyEn:
+          'Academic entry requirements vary by programme and by your country of prior study, and there is usually an English-language requirement for international applicants. The University of Auckland publishes its entry requirements and accepted English tests on its official admissions pages.\n\nDo not assume a single cut-off — required grades and accepted English tests and scores differ between programmes and can change each year. Check the exact entry requirements for your chosen programme on the official site, and verify any English-test score directly there.',
+      },
+      {
+        headingEn: 'Fees, scholarships, and key dates',
+        bodyEn:
+          'Tuition fees depend on the specific programme and your fee status, and the university publishes current international fees on its official site. Scholarships for international students are also listed officially, each with its own eligibility and deadlines.\n\nApplication and enrolment dates vary by programme and intake. Treat all fee, scholarship, and date figures as time-sensitive and confirm them on the University of Auckland\'s official pages — do not rely on third-party summaries.',
+      },
+      {
+        headingEn: 'Student visa and next steps',
+        bodyEn:
+          'If you accept an offer, you will generally need a New Zealand student visa to study on-campus as an international student. Student visa requirements, conditions, and processing are managed by Immigration New Zealand, and you should verify the current rules and required documents on the official Immigration New Zealand website.\n\nThis is general information, not immigration advice. Immigration rules change frequently — always verify on the official government source before acting, and use your university offer as part of your visa application rather than the other way around.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to the University of Auckland as an international student?',
+        answerEn:
+          'Choose a programme, read its official entry requirements, prepare your transcripts and English-language evidence, and submit through the university\'s official online application portal. If you receive an offer, accept it and complete enrolment.',
+      },
+      {
+        questionEn: 'What English test does the University of Auckland accept?',
+        answerEn:
+          'The university accepts recognised English-language tests, but the required test and minimum score vary by programme and can change. Check the accepted tests and scores for your specific programme on the official University of Auckland admissions pages.',
+      },
+      {
+        questionEn: 'How much does it cost to study at the University of Auckland?',
+        answerEn:
+          'International tuition depends on your specific programme and fee status. The University of Auckland publishes current international fees on its official website — verify the figure for your programme there, as fees change each year.',
+      },
+      {
+        questionEn: 'Do I need a visa to study at the University of Auckland?',
+        answerEn:
+          'International students generally need a New Zealand student visa to study on-campus. Visa rules are set by Immigration New Zealand — verify the current requirements on the official government source. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: ['university-of-auckland'],
+    relatedGuideSlugs: ['universities-in-new-zealand-complete-guide', 'university-of-otago-admission-guide', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'University of Auckland — applications and admissions', url: 'https://www.auckland.ac.nz/en/study/applications-and-admissions.html' },
+      { label: 'Immigration New Zealand — study visas', url: 'https://www.immigration.govt.nz/study/study-visas/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['university of auckland admission', 'university of auckland application', 'study at university of auckland', 'university of auckland international students', 'university of auckland entry requirements'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'Auckland, New Zealand' },
+      { label: 'Type', value: 'Public comprehensive university' },
+      { label: 'Apply via', value: 'Official online application portal' },
+      { label: 'English requirement', value: 'Required for international applicants (varies by programme)' },
+    ],
+  },
+  {
+    slug: 'university-of-otago-admission-guide',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'University of Otago Admission Guide',
+    descriptionEn:
+      'How international students apply to the University of Otago in Dunedin — the official application steps, entry and English-language requirements, and how to confirm fees and dates on otago.ac.nz.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About the University of Otago',
+        bodyEn:
+          'The University of Otago (Otakou Whakaihu Waka) is New Zealand\'s oldest university, based in Dunedin in the South Island, with additional teaching locations elsewhere in the country. It is a comprehensive public university offering programmes across the humanities, sciences, commerce, and health sciences.\n\nThis guide outlines the general application process for international students. Programme requirements, fees, and dates are set by the university and updated each year, so confirm the specifics on the official University of Otago website before applying.',
+      },
+      {
+        headingEn: 'How the application works',
+        bodyEn:
+          'The University of Otago manages international applications online through its official student system. You create an account, complete the application, and upload the required documents. PhD and thesis-only Master\'s applications are generally handled separately with the support of a supervisor.',
+        bullets: [
+          'Choose your programme and read its official entry requirements',
+          'Create an account in the university\'s official online application system',
+          'Upload scanned official academic transcripts and identity documents as instructed',
+          'Provide evidence of English-language proficiency where required',
+          'Submit, then respond to any offer and complete enrolment',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and documents',
+        bodyEn:
+          'Entry requirements depend on the programme and on your previous qualifications. For undergraduate study you are typically asked for scanned copies of your official high school or foundation transcripts; for postgraduate study, your official tertiary transcripts. You will also usually need to evidence your identity — for example, a certified copy of the personal-details page of your passport.\n\nAccepted documents and exact requirements are published officially and can change, so follow the document checklist on the University of Otago\'s official international pages for your specific application.',
+      },
+      {
+        headingEn: 'English-language requirements, fees, and dates',
+        bodyEn:
+          'International applicants usually need to meet an English-language requirement; the accepted tests and minimum scores vary by programme and are listed on the official site. Application periods also vary by programme and intake, and some programmes have their own timelines.\n\nTuition fees and any scholarships are published officially, each with its own conditions. Treat all fee, scholarship, score, and date figures as time-sensitive and verify them on the University of Otago\'s official website rather than relying on summaries.',
+      },
+      {
+        headingEn: 'Student visa and next steps',
+        bodyEn:
+          'If you accept an offer, you will generally need a New Zealand student visa to study on-campus. Student visa requirements and processing are handled by Immigration New Zealand; verify the current rules and required documents on the official Immigration New Zealand website.\n\nThis is general information, not immigration advice. Immigration rules change frequently — always verify on the official government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Where is the University of Otago located?',
+        answerEn:
+          'The University of Otago is based in Dunedin in New Zealand\'s South Island and is the country\'s oldest university, with additional teaching locations elsewhere in New Zealand.',
+      },
+      {
+        questionEn: 'How do international students apply to the University of Otago?',
+        answerEn:
+          'Applications are made online through the university\'s official student system: create an account, complete the application, and upload your transcripts and identity documents. Check programme-specific requirements and dates on the official site.',
+      },
+      {
+        questionEn: 'What documents do I need to apply to Otago?',
+        answerEn:
+          'Typically scanned official academic transcripts (high school or foundation for undergraduate; tertiary for postgraduate) plus identity evidence such as a certified copy of your passport\'s personal-details page. Follow the official document checklist for your application.',
+      },
+      {
+        questionEn: 'Do I need a visa to study at the University of Otago?',
+        answerEn:
+          'International students generally need a New Zealand student visa to study on-campus. Visa rules are set by Immigration New Zealand — verify the current requirements on the official government source. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: ['university-of-otago'],
+    relatedGuideSlugs: ['universities-in-new-zealand-complete-guide', 'university-of-auckland-admission-guide', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'University of Otago — how to apply (international)', url: 'https://www.otago.ac.nz/international/future-students/how-to-apply' },
+      { label: 'Immigration New Zealand — study visas', url: 'https://www.immigration.govt.nz/study/study-visas/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['university of otago admission', 'university of otago application', 'study at university of otago', 'university of otago international students', 'university of otago dunedin'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'Dunedin, South Island, New Zealand' },
+      { label: 'Distinction', value: 'New Zealand\'s oldest university' },
+      { label: 'Apply via', value: 'Official online student application system' },
+      { label: 'English requirement', value: 'Required for international applicants (varies by programme)' },
+    ],
+  },
+  {
+    slug: 'how-to-choose-a-university-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'How to Choose a University in Australia',
+    descriptionEn:
+      'A neutral framework for choosing an Australian university — start from your course, then weigh city, cost, work options, accreditation, and support, instead of picking by an overall ranking.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Start with the course, not the ranking',
+        bodyEn:
+          'Australia has a large number of universities, and many offer strong programmes in any given field. There is no single "best" university for everyone — the right choice is the one whose course, location, and support fit your goals and circumstances.\n\nThe most reliable starting point is the specific course you want to study. The official Study Australia website (run by the Australian Government) provides a course search to help you find and compare programmes and providers. Begin from your subject, then narrow by the factors below.',
+      },
+      {
+        headingEn: 'Check the course and its entry requirements',
+        bodyEn:
+          'Look closely at the course itself: its structure, majors and electives, duration, practical components, and how it maps to what you want to do afterwards. Then read the entry requirements, which include academic criteria and an English-language level and which vary by course and provider.',
+        bullets: [
+          'Does the course content and specialisation match your goals?',
+          'What are the academic and English-language entry requirements?',
+          'Are there practical placements, internships, or research components?',
+          'How long is the course, and when are the intakes?',
+        ],
+      },
+      {
+        headingEn: 'Weigh city, cost, and lifestyle',
+        bodyEn:
+          'Where you study shapes your daily life and budget. Australia\'s cities differ in size, climate, cost of living, and student community, and tuition and living costs vary between courses and locations.\n\nUse the official Study Australia cost guidance to estimate both tuition and living expenses, and verify current fees on each provider\'s own website. Consider accommodation, transport, and the overall cost of the city alongside the headline tuition figure.',
+        bullets: [
+          'City size, climate, and student community',
+          'Tuition for your specific course (verify officially)',
+          'Living costs: accommodation, food, transport',
+          'Distance from home and travel connections',
+        ],
+      },
+      {
+        headingEn: 'Accreditation, recognition, and support',
+        bodyEn:
+          'Make sure any provider you consider is officially recognised to teach international students, and that your course is properly accredited — especially if it leads to a regulated profession, where professional recognition is set per course. Check this on official sources rather than assuming.\n\nAlso weigh the support around you: international student services, academic and language support, careers help, and the availability of an active student community. These can matter as much as the course content for how well you settle in and succeed.',
+      },
+      {
+        headingEn: 'Consider work and post-study options as factors',
+        bodyEn:
+          'Many international students think about work during study and options after graduating. Work rights while studying, and post-study work visas such as the Temporary Graduate visa (subclass 485), are governed by the Australian Department of Home Affairs and depend on your visa, course, and circumstances. Where you study (including whether a location is a designated regional area) can affect some settings.\n\nTreat these as one input into your choice, and verify the current rules on the official Department of Home Affairs source. This is general information, not immigration advice — there is no guarantee that any course or location leads to a particular visa or migration outcome.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which is the best university in Australia?',
+        answerEn:
+          'There is no single best university for everyone. The right choice depends on your course, city, budget, work plans, and the support you need. Start from the specific programme you want, then compare providers on those factors.',
+      },
+      {
+        questionEn: 'Should I choose an Australian university by its ranking?',
+        answerEn:
+          'Rankings from bodies such as QS or THE can be one input, but they are not an official government measure and change yearly. For your specific course, departmental fit, accreditation, cost, and location often matter more than an overall ranking.',
+      },
+      {
+        questionEn: 'How can I compare course costs across Australian universities?',
+        answerEn:
+          'Use the official Study Australia website to estimate tuition and living costs and to compare courses, then verify the current fee for your specific course on each provider\'s official website, as fees change each year.',
+      },
+      {
+        questionEn: 'Does where I study in Australia affect my visa or work options?',
+        answerEn:
+          'Work rights and post-study work visas are governed by the Department of Home Affairs and can depend on your course and location, including whether it is a designated regional area. Verify current rules on the official government source. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['regional-universities-in-australia-guide', 'universities-in-new-zealand-complete-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — plan your studies (official Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies' },
+      { label: 'Study Australia — find a course', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/find-a-course' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['how to choose a university in australia', 'best university in australia', 'choosing a university australia', 'study in australia', 'australian universities for international students'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Best starting point', value: 'Your specific course, not an overall ranking' },
+      { label: 'Official course search', value: 'Study Australia (Australian Government)' },
+      { label: 'Key factors', value: 'Course, city, cost, work options, accreditation, support' },
+      { label: 'Visa/work rules', value: 'Department of Home Affairs — verify on official source' },
+    ],
+  },
+  {
+    slug: 'regional-universities-in-australia-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Regional Universities in Australia Guide',
+    descriptionEn:
+      'What "regional" means in Australia, what studying at a regional university or campus can involve, and how regional study may affect some post-study work settings — with all visa specifics deferred to the Department of Home Affairs.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What "regional" means in Australia',
+        bodyEn:
+          'In an Australian study context, "regional" refers to designated areas outside the largest cities. For immigration and post-study work purposes, the Australian Government defines designated regional areas, which generally exclude the major metropolitan centres of Sydney, Melbourne, and Brisbane and include a range of other cities and areas.\n\nThe exact list of postcodes and the categories that areas fall into are set officially and can change. This guide explains the concept in general terms; for the current definition and which locations qualify, always check the official Department of Home Affairs source.',
+      },
+      {
+        headingEn: 'Studying at a regional university or campus',
+        bodyEn:
+          'A regional university or campus is simply one located in a designated regional area rather than in a major capital city. Students often weigh a different mix of factors when considering regional study.',
+        bullets: [
+          'Setting: smaller cities or towns, often with a close-knit campus community',
+          'Cost of living: living costs differ by location — verify for your specific city',
+          'Course availability: confirm your exact programme is offered at that campus',
+          'Lifestyle: access to nature and local communities versus big-city amenities',
+          'Support: international student services and accommodation at that location',
+        ],
+      },
+      {
+        headingEn: 'Regional study and post-study work settings',
+        bodyEn:
+          'One reason students ask about regional study is that, under Australian Government rules, studying and living in a designated regional area can affect some post-study work settings. In particular, the Temporary Graduate visa (subclass 485) includes provisions under which graduates from a higher-education provider in a designated regional area, who then live in an eligible regional area, may be able to apply for additional stay, with the amount depending on the area\'s category.\n\nThe specific eligibility, area categories, durations, and conditions are set by the Department of Home Affairs and change over time. We deliberately do not state the figures here — verify the current rules on the official Department of Home Affairs source before relying on them. This is general information, not immigration advice, and there is no guarantee that studying in a regional area leads to any particular visa or migration outcome.',
+      },
+      {
+        headingEn: 'Checking eligibility the right way',
+        bodyEn:
+          'Whether a particular university, campus, or location counts as "regional" for a given benefit depends on official definitions tied to postcodes and visa rules — not on general impressions. Before making a decision based on regional benefits, confirm three things on official sources.',
+        bullets: [
+          'That the provider and campus are in a currently designated regional area (Department of Home Affairs)',
+          'That your intended course is offered at that campus and is properly accredited (provider\'s official site)',
+          'The current post-study work rules and any regional provisions (Department of Home Affairs)',
+        ],
+      },
+      {
+        headingEn: 'Weighing regional study overall',
+        bodyEn:
+          'Regional study is neither better nor worse than studying in a major city — it is a different fit. Some students value a smaller setting, potentially lower living costs, and a strong sense of community; others prefer the scale and amenities of a large city. The right answer depends on your course, budget, lifestyle, and plans.\n\nMake the academic fit and cost work first, then factor in any official post-study considerations as confirmed on the Department of Home Affairs source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What counts as a regional area in Australia for study?',
+        answerEn:
+          'The Australian Government designates regional areas, which generally exclude the major centres of Sydney, Melbourne, and Brisbane. The exact postcodes and categories are set officially and change over time — check the current definition on the Department of Home Affairs source.',
+      },
+      {
+        questionEn: 'Does studying at a regional Australian university affect post-study work options?',
+        answerEn:
+          'It can. Under Department of Home Affairs rules, graduating from a provider in a designated regional area and living there may allow some graduates additional stay under the Temporary Graduate visa (subclass 485). The specifics change — verify on the official government source. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Is a regional university worse than a city university?',
+        answerEn:
+          'No. Regional and city study are simply different fits, not better or worse. Regional study may offer a smaller community and different living costs; city study offers greater scale and amenities. Choose based on your course, budget, and lifestyle.',
+      },
+      {
+        questionEn: 'How do I confirm whether a campus is regional?',
+        answerEn:
+          'Do not rely on general impressions — whether a location is "regional" for a benefit is tied to official postcodes and visa rules. Confirm it on the Department of Home Affairs source, and confirm your course and its accreditation on the provider\'s official website.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-choose-a-university-in-australia', 'study-in-australia-from-india', 'universities-in-new-zealand-complete-guide'],
+    sources: [
+      { label: 'Department of Home Affairs — Temporary Graduate visa (subclass 485)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485' },
+      { label: 'Study Australia — Temporary Graduate visa guidance (official Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-move/your-guide-to-visas/temporary-graduate-visa-subclass-485' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['regional universities in australia', 'regional study australia', 'designated regional area australia', 'subclass 485 regional', 'study in regional australia'],
+    tags: ['anz-universities'],
+    keyFacts: [
+      { label: 'Regional definition', value: 'Set by the Australian Government (Department of Home Affairs)' },
+      { label: 'Generally excludes', value: 'Sydney, Melbourne, Brisbane' },
+      { label: 'Post-study link', value: 'May affect subclass 485 stay — verify officially' },
+      { label: 'Important', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'best-courses-to-study-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Best Courses to Study in Australia',
+    descriptionEn:
+      'A neutral guide to popular fields of study in Australia for international students — engineering, IT, health, business, and more — plus how to choose a course that fits your goals.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How to read “best course” lists',
+        bodyEn:
+          'There is no single “best” course in Australia — the right course depends on your interests, your prior subjects, your budget, and the career or further study you are aiming for. Lists that rank fields by demand or salary go out of date quickly and vary by state and employer, so treat any such claim with caution.\n\nThis guide describes fields that international students commonly study in Australia and gives a simple framework for choosing. It does not promise jobs, migration outcomes, or specific salaries — those depend on many factors outside any course.',
+      },
+      {
+        headingEn: 'Fields international students commonly study',
+        bodyEn:
+          'Australian universities offer a broad range of disciplines across undergraduate (bachelor) and postgraduate (master, graduate diploma) levels. The fields below are widely offered and frequently chosen by international students; choosing among them is a personal decision, not a ranking.',
+        bullets: [
+          'Engineering (civil, mechanical, electrical, software and more)',
+          'Information technology and computer science',
+          'Health and nursing (registration-based professions)',
+          'Business, management, accounting and finance',
+          'Sciences, data science and environmental studies',
+          'Education, social sciences, design and the arts',
+        ],
+      },
+      {
+        headingEn: 'A simple way to choose',
+        bodyEn:
+          'Start from what you want to do after the course, then work backwards. Check the entry requirements (prior subjects, English-language scores), the course structure, the campus location and cost of living, and whether the course leads to a profession that requires registration or accreditation.\n\nFor professional fields such as engineering, nursing, teaching and accounting, the course often needs to be accredited by the relevant professional body if you intend to practise — so confirm accreditation and any registration steps before you enrol.',
+        bullets: [
+          'Match prior subjects and English requirements to the course',
+          'Compare course structure, duration and campus location',
+          'Check professional accreditation if you plan to practise',
+          'Factor in tuition and living costs for the full course',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and English tests',
+        bodyEn:
+          'Each course sets its own academic entry requirements, and most require evidence of English-language proficiency. Australian institutions commonly accept tests such as IELTS, TOEFL iBT, PTE Academic and others; the exact test and minimum score depend on the institution and course.\n\nExact entry scores, accepted tests and minimums change between intakes — verify the current requirement on the official university course page and the official test provider before you apply.',
+      },
+      {
+        headingEn: 'Cost, intakes and student visa basics',
+        bodyEn:
+          'Tuition fees, living costs and scholarship options differ by institution, course and city, and they change each year, so do not rely on figures from unofficial lists — check the official university page and the official Study Australia and Australian Government sources.\n\nInternational students studying on campus generally need a Student visa (subclass 500). Visa rules, financial-capacity requirements and conditions are set by the Australian Government and can change. This is general information, not immigration advice — verify the current requirements on the official Australian Department of Home Affairs source before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which course gives the best job or salary in Australia?',
+        answerEn:
+          'No course can promise a job or a particular salary — outcomes depend on the field, your skills, the employer, the location and the wider job market, all of which change over time. Choose a course that fits your interests and goals, and verify any career-outcome claims with official and institutional sources.',
+      },
+      {
+        questionEn: 'Do I need to study a specific course to get permanent residency?',
+        answerEn:
+          'Studying in Australia does not guarantee permanent residency, and migration is a separate process governed by the Australian Government. This is general information, not immigration advice. Always verify migration rules on the official Australian Department of Home Affairs source.',
+      },
+      {
+        questionEn: 'How do I compare courses across universities?',
+        answerEn:
+          'Compare entry requirements, course structure and duration, campus location, cost, and whether the course is accredited for the profession you want. Use official university course pages and the official Study Australia website rather than ranking blogs.',
+      },
+      {
+        questionEn: 'Where can I see official information about studying in Australia?',
+        answerEn:
+          'Study Australia (studyaustralia.gov.au), run by the Australian Government, is the official starting point, alongside each university’s own .edu.au course pages. For visa information, use the Australian Department of Home Affairs.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'best-universities-australia-engineering',
+      'it-and-computer-science-courses-in-australia',
+      'business-and-management-courses-in-australia',
+      'nursing-courses-in-australia-for-international-students',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'best courses to study in australia',
+      'popular courses in australia for international students',
+      'what to study in australia',
+      'study in australia',
+      'courses in australia for indian students',
+    ],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Levels offered', value: 'Bachelor, graduate diploma and master degrees' },
+      { label: 'Common fields', value: 'Engineering, IT, health/nursing, business, sciences' },
+      { label: 'English tests', value: 'IELTS, TOEFL iBT, PTE Academic and others (institution sets the minimum)' },
+      { label: 'Student visa', value: 'Subclass 500 — verify current rules on the official Home Affairs source' },
+    ],
+  },
+  {
+    slug: 'best-universities-australia-engineering',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Best Universities in Australia for Engineering',
+    descriptionEn:
+      'How to choose an Australian university for engineering — accreditation by Engineers Australia, how rankings work, entry requirements, and what to verify before applying.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'What “best for engineering” really means',
+        bodyEn:
+          'Australia has many universities offering engineering degrees, and “best” depends on the discipline you want (civil, mechanical, electrical, software, mechatronics and more), the campus, the cost, and your own goals. Rather than chasing a single ranking, weigh accreditation, course structure, location and fit.\n\nThis guide explains the things that actually matter when comparing engineering programs in Australia, without naming any university as superior — that judgement is yours.',
+      },
+      {
+        headingEn: 'Accreditation by Engineers Australia (the key check)',
+        bodyEn:
+          'For professional engineering qualifications, the most important check is accreditation by Engineers Australia, the body that accredits engineering programs in Australia. An accredited qualification is recognised under the Washington Accord, an international agreement on the substantial equivalence of engineering degrees among signatory bodies.\n\nAccreditation status and the list of accredited programs are maintained by Engineers Australia and can change, so confirm a specific program’s current accreditation on the official Engineers Australia source before you enrol.',
+        bullets: [
+          'Look for programs accredited by Engineers Australia',
+          'Accredited programs are recognised under the Washington Accord',
+          'Verify the specific program’s status on the official source',
+        ],
+      },
+      {
+        headingEn: 'How to use rankings sensibly',
+        bodyEn:
+          'University rankings can be one input, but only when you know who published them and what they measure. Well-known global rankings include the QS World University Rankings (published by Quacquarelli Symonds) and the Times Higher Education (THE) World University Rankings, each of which also publishes subject-level tables for engineering and technology.\n\nRankings use different methods, change each year, and can differ sharply between providers. Always attribute a ranking to its issuer and check the current edition directly on the QS or THE official website rather than relying on second-hand figures.',
+        bullets: [
+          'QS World University Rankings — published by Quacquarelli Symonds',
+          'Times Higher Education (THE) World University Rankings',
+          'Methods and results differ by provider and year — verify the current edition',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and English',
+        bodyEn:
+          'Engineering programs typically expect strong prior mathematics and, for many disciplines, physics, plus evidence of English-language proficiency. Accepted English tests commonly include IELTS, TOEFL iBT and PTE Academic, with the minimum set by each university and course.\n\nExact academic prerequisites, accepted tests and minimum scores change between intakes — verify the current requirement on the official university course page and the official test provider before applying.',
+      },
+      {
+        headingEn: 'Cost, location and student visa basics',
+        bodyEn:
+          'Tuition, living costs, scholarships and campus facilities differ by university and city and change each year, so use official university pages and the official Study Australia site for current figures rather than ranking blogs.\n\nMost international engineering students study on a Student visa (subclass 500). Visa rules and conditions are set by the Australian Government and can change. This is general information, not immigration advice — verify the current requirements on the official Australian Department of Home Affairs source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which Australian university is the best for engineering?',
+        answerEn:
+          'There is no single best university for engineering — it depends on the discipline, campus, cost and your goals. Compare Engineers Australia accreditation, course structure and fit, and treat any ranking as one attributed input you verify on the issuer’s site (e.g. QS or THE).',
+      },
+      {
+        questionEn: 'Why does Engineers Australia accreditation matter?',
+        answerEn:
+          'Engineers Australia accredits engineering programs in Australia, and an accredited qualification is recognised under the Washington Accord. If you intend to practise as an engineer, accreditation is an important check. Confirm a program’s current status on the official Engineers Australia source.',
+      },
+      {
+        questionEn: 'Are QS and THE rankings the same?',
+        answerEn:
+          'No. QS World University Rankings (by Quacquarelli Symonds) and Times Higher Education (THE) rankings use different methods and can give different results, and both change each year. Always attribute a ranking to its issuer and check the current edition on that issuer’s official website.',
+      },
+      {
+        questionEn: 'What English score do I need for engineering in Australia?',
+        answerEn:
+          'It varies by university and course. Australian universities commonly accept IELTS, TOEFL iBT and PTE Academic, but the minimum score is set per program. Verify the current requirement on the official university course page and the official test provider.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'best-courses-to-study-in-australia',
+      'it-and-computer-science-courses-in-australia',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Engineers Australia — accreditation of engineering programs', url: 'https://www.engineersaustralia.org.au/about-us/accreditation' },
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'QS World University Rankings — official site', url: 'https://www.topuniversities.com/world-university-rankings' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'best universities in australia for engineering',
+      'engineering universities australia',
+      'engineers australia accreditation',
+      'study engineering in australia',
+      'australia engineering rankings',
+    ],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Accreditation body', value: 'Engineers Australia (Washington Accord signatory)' },
+      { label: 'Disciplines', value: 'Civil, mechanical, electrical, software, mechatronics and more' },
+      { label: 'Rankings', value: 'QS (Quacquarelli Symonds) and THE — attribute and verify the current edition' },
+      { label: 'English tests', value: 'IELTS, TOEFL iBT, PTE Academic (institution sets the minimum)' },
+    ],
+  },
+  {
+    slug: 'nursing-courses-in-australia-for-international-students',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Nursing Courses in Australia for International Students',
+    descriptionEn:
+      'An overview of studying nursing in Australia as an international student — the Bachelor of Nursing, registration through AHPRA and the NMBA, English requirements, and what to verify officially.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Nursing study in Australia: the basics',
+        bodyEn:
+          'Nursing is a regulated health profession in Australia, and the most common entry pathway is the Bachelor of Nursing, an undergraduate degree offered by many Australian universities. Postgraduate and conversion pathways also exist for those with prior qualifications.\n\nBecause nursing is a registered profession, studying it is closely linked to registration requirements — the steps you take to become eligible to practise as a nurse. This guide describes the structure neutrally and points you to official sources; it is not clinical or career advice and makes no promise of employment or migration outcomes.',
+      },
+      {
+        headingEn: 'Registration: AHPRA and the NMBA',
+        bodyEn:
+          'In Australia, health practitioner registration is administered by the Australian Health Practitioner Regulation Agency (AHPRA) together with the relevant National Board. For nursing, the relevant board is the Nursing and Midwifery Board of Australia (NMBA), which sets registration standards.\n\nTo register and practise as a nurse, you generally must complete an approved program of study and meet the NMBA’s standards (including English-language standards). Registration requirements, approved programs and standards are set by AHPRA and the NMBA and can change — verify the current requirements on the official AHPRA and NMBA source before relying on them.',
+        bullets: [
+          'AHPRA administers health practitioner registration',
+          'The NMBA sets nursing registration standards',
+          'Approved program + NMBA standards are generally required to register',
+          'Verify current standards on the official AHPRA/NMBA source',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and English',
+        bodyEn:
+          'Bachelor of Nursing programs set their own academic entry requirements, and as a registered health profession, nursing also has English-language standards for registration in addition to any course admission requirement. Universities commonly accept English tests such as IELTS, TOEFL iBT, PTE Academic and OET; the accepted tests and minimum scores for course entry and for registration are set separately.\n\nExact admission and English requirements change between intakes — verify the current requirement on the official university course page, and the registration English standard on the official NMBA source.',
+      },
+      {
+        headingEn: 'Placements and accreditation',
+        bodyEn:
+          'Nursing degrees typically include supervised clinical placements as part of the course, arranged through the university. Programs that lead to registration are approved through the national accreditation arrangements overseen by AHPRA and the NMBA.\n\nConfirm that a specific program is an approved program of study for registration, and understand the placement structure, by checking the official university page and the official AHPRA/NMBA source.',
+      },
+      {
+        headingEn: 'Cost, intakes and student visa basics',
+        bodyEn:
+          'Tuition, living costs and scholarship options vary by university and city and change each year — use official university pages and the official Study Australia site rather than unofficial lists.\n\nInternational nursing students generally study on a Student visa (subclass 500). Visa rules are set by the Australian Government and can change. This is general information, not immigration advice — verify current requirements on the official Australian Department of Home Affairs source, and remember that studying nursing does not guarantee a job, registration outcome, or permanent residency.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I become a registered nurse in Australia as an international student?',
+        answerEn:
+          'The common pathway is to complete an approved program such as a Bachelor of Nursing and meet the standards set by the Nursing and Midwifery Board of Australia (NMBA), with registration administered by AHPRA. Requirements can change — verify them on the official AHPRA and NMBA source. This is general information, not career or immigration advice.',
+      },
+      {
+        questionEn: 'What are AHPRA and the NMBA?',
+        answerEn:
+          'AHPRA is the Australian Health Practitioner Regulation Agency, which administers registration for health professions. The NMBA is the Nursing and Midwifery Board of Australia, which sets the standards for nursing registration. Both publish their requirements on official sources you should verify directly.',
+      },
+      {
+        questionEn: 'What English score do I need for nursing in Australia?',
+        answerEn:
+          'There can be two separate requirements — one for course admission set by the university, and one for registration set by the NMBA. Accepted tests commonly include IELTS, TOEFL iBT, PTE Academic and OET, but minimums vary. Verify the current standards on the official university and NMBA sources.',
+      },
+      {
+        questionEn: 'Does studying nursing in Australia guarantee a job or PR?',
+        answerEn:
+          'No. No course guarantees employment, registration, or permanent residency — these depend on factors outside any program and on government processes that can change. This is general information, not immigration advice; verify migration rules on the official Australian Department of Home Affairs source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'best-courses-to-study-in-australia',
+      'it-and-computer-science-courses-in-australia',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Nursing and Midwifery Board of Australia (NMBA) — official site', url: 'https://www.nursingmidwiferyboard.gov.au' },
+      { label: 'AHPRA — Australian Health Practitioner Regulation Agency', url: 'https://www.ahpra.gov.au' },
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'nursing courses in australia for international students',
+      'study nursing in australia',
+      'bachelor of nursing australia',
+      'ahpra nursing registration',
+      'nmba registered nurse australia',
+    ],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Common pathway', value: 'Bachelor of Nursing (undergraduate)' },
+      { label: 'Registration', value: 'AHPRA + Nursing and Midwifery Board of Australia (NMBA)' },
+      { label: 'English tests', value: 'IELTS, TOEFL iBT, PTE Academic, OET (course and registration set separately)' },
+      { label: 'Student visa', value: 'Subclass 500 — verify current rules on the official Home Affairs source' },
+    ],
+  },
+  {
+    slug: 'it-and-computer-science-courses-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'IT and Computer Science Courses in Australia',
+    descriptionEn:
+      'An overview of IT and computer science degrees in Australia for international students — typical specialisations, entry and English requirements, accreditation, and what to verify officially.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'IT and computer science: what you can study',
+        bodyEn:
+          'Australian universities offer a wide range of computing degrees at undergraduate and postgraduate level, often under titles such as Bachelor of Computer Science, Bachelor of Information Technology, or specialised master degrees. Course content and specialisations vary by university.\n\nThis guide describes the field neutrally and explains what to check before applying. It does not rank programs, promise jobs or salaries, or guarantee migration outcomes — those depend on many factors and on processes outside any course.',
+      },
+      {
+        headingEn: 'Common specialisations',
+        bodyEn:
+          'Computing degrees frequently let you focus on a particular area as you progress. The specialisations below are commonly offered; availability and naming differ by institution, so check each course page.',
+        bullets: [
+          'Software engineering and software development',
+          'Data science, artificial intelligence and machine learning',
+          'Cybersecurity and networks',
+          'Cloud computing and systems',
+          'Human–computer interaction and UX',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and English',
+        bodyEn:
+          'Computing programs set their own academic entry requirements, and most expect evidence of English-language proficiency. Many computer science courses also assume a mathematics background; postgraduate courses may expect a relevant prior degree or foundational study.\n\nAustralian universities commonly accept English tests such as IELTS, TOEFL iBT and PTE Academic, with the minimum set per course. Exact prerequisites and scores change between intakes — verify the current requirement on the official university course page and the official test provider before applying.',
+      },
+      {
+        headingEn: 'Accreditation and professional recognition',
+        bodyEn:
+          'Some IT and computing degrees are accredited by the Australian Computer Society (ACS), the professional association for Australia’s ICT sector. Accreditation can matter for professional recognition, and Australian software-engineering programs may also be accredited by Engineers Australia.\n\nAccreditation status varies by program and can change — if professional recognition matters to you, confirm a specific course’s status on the official ACS or Engineers Australia source.',
+        bullets: [
+          'Some programs are accredited by the Australian Computer Society (ACS)',
+          'Software-engineering programs may be accredited by Engineers Australia',
+          'Verify a specific course’s accreditation on the official source',
+        ],
+      },
+      {
+        headingEn: 'Cost, intakes and student visa basics',
+        bodyEn:
+          'Tuition, living costs and scholarships differ by university and city and change each year, so use official university pages and the official Study Australia site for current figures.\n\nInternational students generally study on a Student visa (subclass 500). Visa rules and conditions are set by the Australian Government and can change. This is general information, not immigration advice — verify current requirements on the official Australian Department of Home Affairs source, and note that studying IT does not guarantee a job or permanent residency.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between IT and computer science degrees in Australia?',
+        answerEn:
+          'Naming and content vary by university. Broadly, computer science often emphasises theory, algorithms and mathematics, while information technology can be more applied and systems-focused — but there is overlap and many hybrid courses. Check each official course page for the actual structure.',
+      },
+      {
+        questionEn: 'Is ACS accreditation important?',
+        answerEn:
+          'The Australian Computer Society (ACS) accredits some ICT programs, and accreditation can support professional recognition. Whether it matters depends on your goals. Confirm a specific course’s accreditation status on the official ACS source.',
+      },
+      {
+        questionEn: 'Do I need a maths background for computer science in Australia?',
+        answerEn:
+          'Many computer science courses assume some mathematics, and requirements vary by program and level. Verify the prerequisites on the official university course page before applying.',
+      },
+      {
+        questionEn: 'Does an IT degree in Australia guarantee a job or PR?',
+        answerEn:
+          'No. No course can guarantee employment, a salary, or permanent residency — these depend on the job market and on government processes that can change. This is general information, not immigration advice; verify migration rules on the official Australian Department of Home Affairs source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'best-courses-to-study-in-australia',
+      'best-universities-australia-engineering',
+      'business-and-management-courses-in-australia',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Australian Computer Society (ACS) — accreditation program', url: 'https://www.acs.org.au/cpd-education/acs-accreditation-program.html' },
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'it and computer science courses in australia',
+      'study computer science in australia',
+      'bachelor of information technology australia',
+      'cs degree australia for international students',
+      'acs accreditation australia',
+    ],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Common degrees', value: 'Bachelor of Computer Science / Information Technology; specialised master degrees' },
+      { label: 'Specialisations', value: 'Software engineering, data science/AI, cybersecurity, cloud, UX' },
+      { label: 'Accreditation', value: 'Australian Computer Society (ACS); software engineering via Engineers Australia' },
+      { label: 'English tests', value: 'IELTS, TOEFL iBT, PTE Academic (institution sets the minimum)' },
+    ],
+  },
+  {
+    slug: 'business-and-management-courses-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Business and Management Courses in Australia',
+    descriptionEn:
+      'An overview of business and management study in Australia — undergraduate degrees, postgraduate options including the MBA, accreditation, English requirements, and what to verify officially.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Business study in Australia: the landscape',
+        bodyEn:
+          'Australian universities offer business and management programs across levels — undergraduate degrees such as the Bachelor of Business or Bachelor of Commerce, and postgraduate options including the Master of Business Administration (MBA), specialised master degrees, and graduate diplomas.\n\nThis guide describes the field neutrally and explains what to check before applying. It does not rank programs or promise jobs, salaries, or migration outcomes, which depend on many factors outside any course.',
+      },
+      {
+        headingEn: 'Undergraduate vs postgraduate options',
+        bodyEn:
+          'Undergraduate business degrees (typically three years, varying by structure and any honours year) give a broad foundation and often allow a major such as accounting, finance, marketing or management. Postgraduate options suit those with prior study or work experience and include specialised master degrees and the MBA.\n\nMBA programs commonly expect prior work experience and sometimes a test such as the GMAT or GRE, but requirements vary by school. Verify the specific entry requirements on the official university course page.',
+        bullets: [
+          'Undergraduate: Bachelor of Business / Commerce with a chosen major',
+          'Postgraduate: specialised master degrees and the MBA',
+          'MBA entry may consider work experience and GMAT/GRE — varies by school',
+        ],
+      },
+      {
+        headingEn: 'Common majors and specialisations',
+        bodyEn:
+          'Business degrees usually let you focus on one or more areas. Availability and naming differ by institution, so confirm on each course page.',
+        bullets: [
+          'Accounting and finance',
+          'Marketing and management',
+          'International business and economics',
+          'Human resource management',
+          'Business analytics and information systems',
+        ],
+      },
+      {
+        headingEn: 'Accreditation and professional pathways',
+        bodyEn:
+          'Some business schools hold international accreditations (for example AACSB, EQUIS or AMBA), which relate to the school or program rather than to you individually. Separately, professional fields such as accounting have their own recognition: accounting programs may be accredited by professional bodies such as CPA Australia and Chartered Accountants Australia and New Zealand (CA ANZ) if you intend to pursue that profession.\n\nAccreditation status varies and can change — if professional recognition matters to you, confirm a specific program’s status on the official accrediting body’s source.',
+      },
+      {
+        headingEn: 'Cost, English and student visa basics',
+        bodyEn:
+          'Tuition, living costs and scholarships differ by university and city and change each year — use official university pages and the official Study Australia site for current figures. Business courses also require evidence of English-language proficiency, with tests such as IELTS, TOEFL iBT and PTE Academic commonly accepted and the minimum set per course; verify the current requirement on the official course page and test provider.\n\nInternational students generally study on a Student visa (subclass 500). Visa rules are set by the Australian Government and can change. This is general information, not immigration advice — verify current requirements on the official Australian Department of Home Affairs source, and note that a business degree does not guarantee a job, salary, or permanent residency.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need work experience for an MBA in Australia?',
+        answerEn:
+          'Many MBA programs consider prior work experience, and some also look at a test such as the GMAT or GRE, but requirements vary by school. Verify the specific entry requirements on the official university course page.',
+      },
+      {
+        questionEn: 'What is the difference between a Bachelor of Business and a Bachelor of Commerce?',
+        answerEn:
+          'Naming and structure vary by university. Both are undergraduate business degrees; a Bachelor of Commerce sometimes leans toward accounting, finance and economics, while a Bachelor of Business can be broader — but this differs by institution. Check each official course page.',
+      },
+      {
+        questionEn: 'Is professional accreditation important for accounting in Australia?',
+        answerEn:
+          'If you intend to pursue the accounting profession, accreditation by bodies such as CPA Australia or Chartered Accountants Australia and New Zealand (CA ANZ) can matter. Confirm a specific program’s status on the official accrediting body’s source.',
+      },
+      {
+        questionEn: 'Does a business degree in Australia guarantee a job or PR?',
+        answerEn:
+          'No. No course can guarantee employment, a salary, or permanent residency — these depend on the job market and on government processes that can change. This is general information, not immigration advice; verify migration rules on the official Australian Department of Home Affairs source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'gmat', 'gre'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'best-courses-to-study-in-australia',
+      'it-and-computer-science-courses-in-australia',
+      'best-universities-australia-engineering',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'business and management courses in australia',
+      'mba in australia',
+      'bachelor of business australia',
+      'study business in australia',
+      'business courses australia for international students',
+    ],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Undergraduate', value: 'Bachelor of Business / Commerce with a chosen major' },
+      { label: 'Postgraduate', value: 'Specialised master degrees and the MBA' },
+      { label: 'Accreditation', value: 'School-level (AACSB/EQUIS/AMBA); accounting via CPA Australia / CA ANZ' },
+      { label: 'English tests', value: 'IELTS, TOEFL iBT, PTE Academic (institution sets the minimum)' },
+    ],
+  },
+  {
+    slug: 'data-science-and-analytics-courses-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Data Science and Analytics Courses in Australia',
+    descriptionEn:
+      'A practical guide to data science and analytics courses at Australian universities for international students — what the field covers, course levels, typical entry requirements, and the official sources to check before applying.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What data science and analytics covers',
+        bodyEn:
+          'Data science and analytics sit at the meeting point of statistics, computer science, and domain knowledge. Programs typically build skills in programming, data wrangling, statistics and probability, machine learning, data visualisation, and the responsible use of data.\n\nAustralian universities offer this area under several names — Data Science, Business Analytics, Applied Data Analytics, Statistics, and Artificial Intelligence among them. The exact title and the balance between technical depth and business application vary by university and faculty, so read each course outline carefully rather than assuming two similarly named degrees are identical.',
+      },
+      {
+        headingEn: 'Course levels available',
+        bodyEn:
+          'You can study this field at different levels depending on your background and goals. Undergraduate bachelor degrees usually run over three years (some with an additional honours year), while postgraduate coursework masters are commonly offered as shorter, more specialised programs. Many universities also offer graduate certificates and graduate diplomas as shorter entry points, and research pathways for those aiming at a thesis-based degree.',
+        bullets: [
+          'Bachelor degrees (often with an optional honours year)',
+          'Graduate certificates and graduate diplomas (shorter pathways)',
+          'Masters by coursework (specialised, professional focus)',
+          'Research degrees for those pursuing a thesis pathway',
+        ],
+      },
+      {
+        headingEn: 'Typical entry requirements',
+        bodyEn:
+          'Entry requirements differ by university and course. Undergraduate entry is generally based on your prior academic results, and many data-focused courses expect a solid background in mathematics. Postgraduate coursework entry usually requires a relevant bachelor degree, and some programs ask for prior study in mathematics, statistics, or programming.\n\nInternational students also need to meet an English-language requirement, commonly evidenced through tests such as IELTS, TOEFL iBT, or PTE Academic. The exact scores, prerequisite subjects, and any work-experience expectations are set by each university and change over time, so confirm them on the official course page before you apply.',
+      },
+      {
+        headingEn: 'Choosing a course that fits',
+        bodyEn:
+          'Because the field is broad, it helps to compare programs on what they actually teach and how they assess. Look at the core subjects, the elective options, whether there is an applied project or industry placement, and the software and tools used.\n\nConsider whether you want a more technical, computing-heavy path or a more business and decision-focused analytics path — both are valid, and the right choice depends on your interests and prior study. The QS and THE subject rankings, attributed to those organisations, can be one input when shortlisting, but course content and fit matter more than any single ranking.',
+      },
+      {
+        headingEn: 'Costs, visas, and verifying details',
+        bodyEn:
+          'Tuition fees, intakes, and scholarship options vary widely between universities and are published on each institution\'s official site. International students studying on campus generally do so on a student visa (subclass 500) and arrange health cover; these are official Government of Australia matters and should be checked on the Department of Home Affairs website.\n\nThis guide is general information about studying the subject, not immigration or financial advice. Always verify fees, entry rules, and visa requirements on the official sources before making any decision.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a computer science background to study data science in Australia?',
+        answerEn:
+          'Not always. Some courses are designed for students from quantitative or business backgrounds, while others assume prior programming or strong mathematics. Check each course\'s stated prerequisites on the official university page, as they differ.',
+      },
+      {
+        questionEn: 'What English test scores do I need?',
+        answerEn:
+          'Each university sets its own English-language requirement, accepting tests such as IELTS, TOEFL iBT, or PTE Academic. The required score varies by university and course, so confirm the current figure on the official course page.',
+      },
+      {
+        questionEn: 'Is data science a good career choice in Australia?',
+        answerEn:
+          'Data and analytics skills are used across many industries, but demand and outcomes vary by role, location, and experience. No course can guarantee a job. Focus on building strong skills and a portfolio, and treat any outcome claims with caution.',
+      },
+      {
+        questionEn: 'How long do these courses take?',
+        answerEn:
+          'It depends on the level. Bachelor degrees commonly run three years (plus an optional honours year), while masters by coursework are shorter and more specialised. Exact durations are listed on each university\'s official course page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['masters-degree-in-australia-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Government of Australia site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['data science courses in australia', 'business analytics masters australia', 'study data science australia', 'data analytics degree australia'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Field', value: 'Statistics, computing, machine learning and applied analytics' },
+      { label: 'Levels', value: 'Bachelor, graduate certificate/diploma, masters, research' },
+      { label: 'English tests', value: 'IELTS / TOEFL iBT / PTE Academic (score set by university)' },
+      { label: 'Verify on', value: 'Official university course pages and studyaustralia.gov.au' },
+    ],
+  },
+  {
+    slug: 'health-and-medical-courses-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Health and Medical Courses in Australia',
+    descriptionEn:
+      'An overview of health and medical study options in Australia for international students — the range of courses, how entry typically works, the role of professional registration, and the official sources to verify before applying.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'A broad field, not just medicine',
+        bodyEn:
+          'Health is one of the largest study areas in Australia and spans far more than a medical degree. Alongside medicine and dentistry, universities offer programs in nursing, pharmacy, physiotherapy, occupational therapy, public health, biomedical science, nutrition and dietetics, psychology, and many allied health fields.\n\nWhich course suits you depends on the profession you are interested in, your prior study, and your long-term goals. This guide describes study pathways at a high level; it is not medical, clinical, or career advice.',
+      },
+      {
+        headingEn: 'Undergraduate and postgraduate routes',
+        bodyEn:
+          'Some health professions are entered through an undergraduate degree taken straight after school, while others — including many medical programs — are offered as graduate-entry degrees that follow a prior bachelor degree. Several universities run both undergraduate and graduate-entry models.\n\nBecause the structure varies so much between professions and universities, it is important to map the specific pathway for the career you want, rather than assuming one model applies everywhere.',
+        bullets: [
+          'Undergraduate degrees entered after secondary school',
+          'Graduate-entry degrees that follow a prior bachelor degree',
+          'Postgraduate coursework masters and graduate diplomas',
+          'Research degrees in health and biomedical sciences',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements are often competitive',
+        bodyEn:
+          'Health and medical courses commonly have specific entry requirements that go beyond academic results. Depending on the course, these can include prerequisite science subjects, an admissions test, and an interview. Places in some programs are limited, which makes entry competitive — this is a neutral description of how selection works, not a judgement of any course or applicant.\n\nInternational students also meet an English-language requirement through tests such as IELTS, TOEFL iBT, or PTE Academic, and some health courses set higher English thresholds than other degrees. The exact requirements differ by university and course and change over time, so confirm them on the official course page.',
+      },
+      {
+        headingEn: 'Professional registration and accreditation',
+        bodyEn:
+          'Many health professions in Australia are regulated. To practise, graduates typically need to be registered with the relevant national body. Registration for many health professions is administered through the Australian Health Practitioner Regulation Agency (AHPRA) and the National Boards, and individual professions have their own registration standards.\n\nIf your goal is to practise in a particular profession, check the registration requirements with the relevant authority early — including any requirements that apply to internationally trained or international-student graduates. Registration rules are set by the regulators and can change, so always verify the current standards on the official source.',
+      },
+      {
+        headingEn: 'Costs, visas, and where to verify',
+        bodyEn:
+          'Tuition fees and scholarships vary by university and are published on each institution\'s official site; some health courses have higher fees than other degrees. International students studying on campus generally do so on a student visa (subclass 500) and arrange health cover, which are Government of Australia matters to check on the Department of Home Affairs website.\n\nThis page is general information about study options, not medical, clinical, immigration, or career advice. Always confirm course details, registration rules, and visa requirements on the official sources before deciding.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can international students study medicine in Australia?',
+        answerEn:
+          'Many Australian universities admit international students to medical and other health programs, though places can be limited and entry is often competitive. Check each university\'s official course page for the specific entry pathway and any quotas for international applicants.',
+      },
+      {
+        questionEn: 'Do I need to register to work in a health profession?',
+        answerEn:
+          'Most regulated health professions require registration with the relevant national body, with registration for many professions administered through AHPRA and the National Boards. Verify the requirements for your profession on the official regulator\'s website.',
+      },
+      {
+        questionEn: 'Are there entrance tests for medical and health courses?',
+        answerEn:
+          'Some courses require an admissions test and an interview in addition to academic results, while others do not. Requirements vary by course and university, so confirm them on the official course page.',
+      },
+      {
+        questionEn: 'Will studying a health course guarantee me a job or registration?',
+        answerEn:
+          'No. Completing a course does not guarantee employment or professional registration, and registration has its own separate requirements set by the regulators. Always check the current rules on the official sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['masters-degree-in-australia-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Government of Australia site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'AHPRA — Australian Health Practitioner Regulation Agency', url: 'https://www.ahpra.gov.au' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['health and medical courses in australia', 'study medicine in australia', 'nursing courses australia international students', 'allied health courses australia'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Field', value: 'Medicine, nursing, pharmacy, allied health, public health and more' },
+      { label: 'Entry', value: 'Undergraduate or graduate-entry; some courses need a test/interview' },
+      { label: 'Registration', value: 'Many professions registered via AHPRA and the National Boards' },
+      { label: 'Verify on', value: 'Official university course pages and ahpra.gov.au' },
+    ],
+  },
+  {
+    slug: 'masters-degree-in-australia-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Masters Degree in Australia Guide',
+    descriptionEn:
+      'How a masters degree works in Australia for international students — coursework versus research masters, typical entry requirements, duration, and the official sources to verify fees and visa rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Coursework and research masters',
+        bodyEn:
+          'Australian universities offer two broad types of masters degree. A masters by coursework is structured around taught subjects, assignments, and often a capstone project or professional placement, and is the more common choice for career-focused postgraduate study. A masters by research is built mainly around an independent research project and a thesis, supervised by an academic, and is often a step towards a doctorate.\n\nChoosing between them depends on whether you want professional, applied study or a research-intensive pathway. Some fields also offer extended or specialised masters that combine elements of both.',
+        bullets: [
+          'Masters by coursework — taught subjects, projects, professional focus',
+          'Masters by research — independent research and a thesis',
+        ],
+      },
+      {
+        headingEn: 'Typical entry requirements',
+        bodyEn:
+          'Entry to a coursework masters usually requires a relevant bachelor degree, and some programs accept related work experience or ask for specific prior subjects. A research masters typically requires a strong academic record and, in many cases, a research proposal and a supervisor willing to take you on.\n\nInternational students also meet an English-language requirement through tests such as IELTS, TOEFL iBT, or PTE Academic. The exact entry scores, prerequisites, and any work-experience expectations are set by each university and course and can change, so confirm them on the official course page before applying.',
+      },
+      {
+        headingEn: 'How long a masters takes',
+        bodyEn:
+          'The length of a masters in Australia varies by field, by university, and by how much credit you receive for prior study. Some programs are shorter and intensive, while others run longer, particularly where professional accreditation or a substantial research component is involved.\n\nBecause duration differs so widely, treat any single figure with caution and check the official course page for the exact length, available intakes, and study load options for the specific program you are considering.',
+      },
+      {
+        headingEn: 'Applying and choosing a program',
+        bodyEn:
+          'Applications are usually made directly to the university, with deadlines and intakes that vary by program. When comparing options, look beyond the title to the core subjects, electives, assessment style, and whether there is an internship, project, or thesis.\n\nThe QS and THE subject rankings, attributed to those organisations, can be one input when shortlisting universities, but course content, fit, and your own goals should weigh more heavily than any single ranking.',
+      },
+      {
+        headingEn: 'Costs, visas, and verifying details',
+        bodyEn:
+          'Tuition fees and scholarship options vary by university and program and are published on each institution\'s official site. International students studying on campus generally do so on a student visa (subclass 500) and arrange appropriate health cover; these are Government of Australia matters to confirm on the Department of Home Affairs website.\n\nThis guide is general information about postgraduate study, not immigration or financial advice. Always verify fees, entry rules, and visa requirements on the official sources before deciding.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between a coursework and a research masters?',
+        answerEn:
+          'A coursework masters is built around taught subjects and projects with a professional focus, while a research masters centres on an independent research project and a thesis. Each university\'s official course page explains which model a given program follows.',
+      },
+      {
+        questionEn: 'Do I need work experience to do a masters in Australia?',
+        answerEn:
+          'It depends on the program. Some accept entry directly from a bachelor degree, while others — particularly professional or executive programs — may expect relevant work experience. Check the stated entry requirements on the official course page.',
+      },
+      {
+        questionEn: 'How long does a masters in Australia take?',
+        answerEn:
+          'Duration varies by field, university, and credit for prior study, so there is no single answer. Confirm the exact length and study-load options on the official course page for your chosen program.',
+      },
+      {
+        questionEn: 'Will a masters guarantee me a job or skilled migration?',
+        answerEn:
+          'No. A degree does not guarantee employment or any migration outcome. Skilled migration is a separate Government of Australia process with its own rules, so verify current requirements on the Department of Home Affairs website and treat this as general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'gre'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['mba-in-australia-guide', 'data-science-and-analytics-courses-in-australia', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Government of Australia site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['masters degree in australia', 'masters in australia for international students', 'coursework vs research masters australia', 'postgraduate study in australia'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Types', value: 'Masters by coursework or masters by research' },
+      { label: 'Entry', value: 'Relevant bachelor degree; some need prior subjects or experience' },
+      { label: 'English tests', value: 'IELTS / TOEFL iBT / PTE Academic (score set by university)' },
+      { label: 'Verify on', value: 'Official university course pages and studyaustralia.gov.au' },
+    ],
+  },
+  {
+    slug: 'mba-in-australia-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'MBA in Australia Guide',
+    descriptionEn:
+      'What an MBA in Australia involves for international students — typical structure, the role of GMAT or GRE and work experience, how to compare programs, and the official sources to verify fees and visa rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What an MBA is',
+        bodyEn:
+          'A Master of Business Administration (MBA) is a postgraduate management degree designed to broaden general business and leadership skills. Programs typically cover areas such as strategy, finance, marketing, operations, people management, and leadership, often through case studies, group projects, and applied assignments.\n\nAustralian business schools offer MBAs in different formats — full-time, part-time, and executive options — so the right choice depends on your stage of career and how you want to study.',
+      },
+      {
+        headingEn: 'Typical entry requirements',
+        bodyEn:
+          'MBA entry requirements vary by business school. Many programs expect a bachelor degree and a period of relevant professional work experience, and some ask for a GMAT or GRE score. Other programs place more weight on work experience and may not require a standardised admissions test.\n\nInternational students also meet an English-language requirement through tests such as IELTS, TOEFL iBT, or PTE Academic. Because requirements differ between schools and change over time, confirm the exact work-experience, test, and English expectations on the official program page before applying.',
+        bullets: [
+          'A bachelor degree (most programs)',
+          'Relevant work experience (commonly expected; varies by school)',
+          'GMAT or GRE where required by the school',
+          'English-language test for international students',
+        ],
+      },
+      {
+        headingEn: 'Comparing MBA programs',
+        bodyEn:
+          'MBAs differ widely in structure, length, and focus. When comparing, look at the core curriculum, electives and specialisations, the format (full-time, part-time, executive), the cohort profile, and any internship, consulting project, or international component.\n\nRankings of MBA programs are published by various organisations and should be read as that organisation\'s view, attributed to them. Use rankings only as one input; fit with your goals, format, and budget usually matters more.',
+      },
+      {
+        headingEn: 'Outcomes — set realistic expectations',
+        bodyEn:
+          'An MBA can help develop management skills and broaden a professional network, but outcomes vary by individual, industry, experience, and economic conditions. No program can guarantee a particular job, salary, promotion, or migration outcome.\n\nBe cautious of any claim that promises a specific result. Look instead at what a program teaches and the support it offers, and weigh the time and cost against your own objectives.',
+      },
+      {
+        headingEn: 'Costs, visas, and where to verify',
+        bodyEn:
+          'MBA tuition fees vary considerably between schools and are published on each institution\'s official site, along with any scholarship options. International students studying on campus generally do so on a student visa (subclass 500) and arrange health cover; these are Government of Australia matters to confirm on the Department of Home Affairs website.\n\nThis guide is general information about MBA study, not financial or immigration advice. Always verify fees, entry rules, and visa requirements on the official sources before deciding.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need the GMAT or GRE for an MBA in Australia?',
+        answerEn:
+          'It depends on the school. Some MBA programs require a GMAT or GRE score, while others weigh work experience more heavily and may not require a test. Check the official program page for the specific requirement.',
+      },
+      {
+        questionEn: 'How much work experience do I need?',
+        answerEn:
+          'Many Australian MBAs expect a period of relevant professional experience, but the amount varies by program, and some have different entry routes. Confirm the work-experience requirement on the official program page.',
+      },
+      {
+        questionEn: 'How long is an MBA in Australia?',
+        answerEn:
+          'Length varies by format and school — full-time, part-time, and executive options differ. Check the official program page for the exact duration and study-load options.',
+      },
+      {
+        questionEn: 'Will an MBA guarantee a higher salary or a job?',
+        answerEn:
+          'No. Outcomes depend on many factors and no program can guarantee a salary, job, or migration result. Treat any such promise with caution and focus on a program\'s content and fit with your goals.',
+      },
+    ],
+    relatedExamSlugs: ['gmat', 'gre', 'ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['masters-degree-in-australia-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Government of Australia site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['mba in australia', 'mba in australia for international students', 'gmat for mba australia', 'best mba programs australia'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Degree', value: 'Master of Business Administration (postgraduate management)' },
+      { label: 'Formats', value: 'Full-time, part-time, and executive options' },
+      { label: 'Entry', value: 'Bachelor degree; work experience and GMAT/GRE where required' },
+      { label: 'Verify on', value: 'Official business-school program pages and studyaustralia.gov.au' },
+    ],
+  },
+  {
+    slug: 'vocational-education-and-tafe-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Vocational Education and TAFE in Australia',
+    descriptionEn:
+      'A clear guide to vocational education and TAFE in Australia for international students — what the VET sector offers, the qualifications available, pathways to university, and the official sources to verify before applying.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What VET and TAFE mean',
+        bodyEn:
+          'Vocational education and training (VET) is the part of Australia\'s education system focused on practical, job-related skills. TAFE (Technical and Further Education) institutes are major public providers within the VET sector, alongside a range of other registered training organisations.\n\nVET courses are designed to prepare students for specific occupations and trades, with an emphasis on hands-on learning. They are an alternative or a complement to university study, depending on your goals.',
+      },
+      {
+        headingEn: 'Qualifications you can earn',
+        bodyEn:
+          'The VET sector offers nationally recognised qualifications at several levels. These commonly include certificates (often numbered I to IV), diplomas, and advanced diplomas, each building on the last. The level and duration depend on the qualification and the field of study.\n\nMany VET courses are practical and industry-aligned, sometimes including workplace training. The specific structure, entry requirements, and length are set by each provider and published on their official site.',
+        bullets: [
+          'Certificates (commonly levels I to IV)',
+          'Diplomas and advanced diplomas',
+          'Practical, occupation-focused training, sometimes with workplace components',
+        ],
+      },
+      {
+        headingEn: 'Pathways to university',
+        bodyEn:
+          'A VET qualification can be a pathway to further study. Some students use a diploma or advanced diploma as a stepping stone into a related university degree, and in some cases may receive credit towards that degree for prior VET study.\n\nCredit arrangements and pathway options vary by qualification and by the receiving university, so if a university degree is your goal, check the specific articulation and credit-transfer rules with the relevant provider and university before enrolling.',
+      },
+      {
+        headingEn: 'Studying VET as an international student',
+        bodyEn:
+          'International students can study VET courses that are registered for overseas students. Entry requirements, including English-language requirements evidenced through tests such as IELTS, TOEFL iBT, or PTE Academic, are set by each provider and course.\n\nInternational students studying on campus generally do so on a student visa (subclass 500) and arrange health cover; these are Government of Australia matters to confirm on the Department of Home Affairs website. This guide is general information, not immigration advice — always verify the current requirements on the official sources.',
+      },
+      {
+        headingEn: 'Choosing a provider and verifying details',
+        bodyEn:
+          'When comparing VET options, look at the qualification level, the course content and any workplace component, the provider\'s facilities and support, and whether the course leads towards the occupation or further study you want.\n\nFees, intakes, entry rules, and pathway arrangements vary by provider and change over time, so confirm them on the official provider and Government of Australia sources before deciding. This page is general guidance, not financial or immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between TAFE and university in Australia?',
+        answerEn:
+          'TAFE and other VET providers focus on practical, occupation-related skills and offer certificates and diplomas, while universities offer degrees with a more academic focus. Many students use VET as a pathway to university; check specific options on the official provider and university sites.',
+      },
+      {
+        questionEn: 'Can a VET qualification lead to a university degree?',
+        answerEn:
+          'In many cases, yes — a diploma or advanced diploma can be a pathway into a related degree, sometimes with credit. Arrangements vary, so confirm the articulation and credit-transfer rules with the specific university before enrolling.',
+      },
+      {
+        questionEn: 'Can international students study VET or TAFE courses?',
+        answerEn:
+          'Yes, international students can enrol in VET courses registered for overseas students. Entry and English requirements are set by each provider, and students generally study on a student visa (subclass 500). Verify the current rules on the official sources.',
+      },
+      {
+        questionEn: 'How long do VET courses take?',
+        answerEn:
+          'Duration depends on the qualification level and field, from shorter certificates to longer diplomas and advanced diplomas. Check the exact length on the official provider\'s course page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['masters-degree-in-australia-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Government of Australia site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['vocational education and tafe in australia', 'tafe courses for international students', 'vet courses australia', 'tafe to university pathway australia'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Sector', value: 'Vocational Education and Training (VET); TAFE is a major public provider' },
+      { label: 'Qualifications', value: 'Certificates (I-IV), diplomas, advanced diplomas' },
+      { label: 'Pathways', value: 'Can lead to related university degrees, sometimes with credit' },
+      { label: 'Verify on', value: 'Official provider sites and studyaustralia.gov.au' },
+    ],
+  },
+  {
+    slug: 'best-courses-to-study-in-new-zealand',
+    category: 'career',
+    region: 'australia-nz',
+    titleEn: 'Best Courses to Study in New Zealand',
+    descriptionEn:
+      'A neutral overview of popular fields international students study in New Zealand, how to choose a course for your goals, and where to verify entry requirements and outcomes on official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How to read "best courses" sensibly',
+        bodyEn:
+          'There is no single "best" course in New Zealand — the right course is the one that fits your interests, your prior study, your budget, and what you want to do afterwards. Demand for graduates shifts over time and varies by region and industry, so treat any "top course" list as a starting point for research, not a promise of a job.\n\nThis guide describes fields that international students commonly study in New Zealand and points you to official sources to verify entry requirements, fees, and accreditation. Always confirm the current details for a specific programme on the university\'s own website before you apply.',
+      },
+      {
+        headingEn: 'Fields international students often study',
+        bodyEn:
+          'New Zealand universities and institutes of technology offer a broad mix of programmes across science, technology, health, business, and the humanities. The following fields are popular among international students, listed without ranking — each suits a different set of interests and strengths.',
+        bullets: [
+          'Engineering and technology (see the dedicated engineering guide)',
+          'Information technology, data, and computer science',
+          'Nursing, health sciences, and allied health (see the dedicated nursing guide)',
+          'Business, management, accounting, and finance',
+          'Agriculture, horticulture, environmental science, and sustainability',
+          'Sciences such as biology, chemistry, physics, and earth science',
+          'Creative fields including design, media, and the arts',
+        ],
+      },
+      {
+        headingEn: 'What to check before you choose',
+        bodyEn:
+          'Before committing to a programme, look past the course title and check the details that actually affect your study and your plans. A course that sounds appealing may have specific subject prerequisites, English-language requirements, or accreditation that matters for professional registration.',
+        bullets: [
+          'Entry requirements and any subject prerequisites for your chosen programme',
+          'English-language test requirements (such as IELTS, TOEFL, PTE Academic, or Duolingo English Test) accepted by the university',
+          'Whether the course is professionally accredited, if your field needs registration to practise',
+          'Indicative tuition fees and the cost of living, verified on official sources',
+          'Work-while-studying conditions on your student visa (verify with Immigration New Zealand)',
+        ],
+      },
+      {
+        headingEn: 'Levels of study and qualifications',
+        bodyEn:
+          'New Zealand qualifications are organised on the New Zealand Qualifications Framework (NZQF), which ranges from certificates and diplomas through bachelor\'s, postgraduate, master\'s, and doctoral levels. International students can study at universities, institutes of technology and polytechnics, and other accredited providers.\n\nChoosing the right level depends on your prior education and goals — for example, a bachelor\'s degree for a first qualification, or a postgraduate or master\'s programme to specialise further. Confirm how your existing qualifications map onto the NZQF with the provider you apply to.',
+      },
+      {
+        headingEn: 'A simple way to decide',
+        bodyEn:
+          'Start from what you enjoy and are good at, then narrow down using the practical filters above. Shortlist a few programmes, compare them side by side on the official university pages, and reach out to the institution if anything is unclear.\n\nNo course can guarantee a particular job, salary, or visa outcome. Use official New Zealand government and university sources for entry, cost, and career-pathway information, and verify everything before you apply.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which course is the best to study in New Zealand?',
+        answerEn:
+          'There is no universally best course — it depends on your interests, background, budget, and goals. Use official university pages to compare entry requirements, fees, and accreditation, and choose the programme that fits your plans.',
+      },
+      {
+        questionEn: 'Do New Zealand courses guarantee a job after graduation?',
+        answerEn:
+          'No. No course guarantees employment, a salary, or a visa outcome. Graduate demand varies by field, region, and time, so research outcomes on official sources and treat any "in-demand" claim as something to verify.',
+      },
+      {
+        questionEn: 'What English test do I need for a New Zealand course?',
+        answerEn:
+          'Requirements vary by university and programme. Many accept tests such as IELTS, TOEFL, PTE Academic, or the Duolingo English Test, with the required score set by the institution. Confirm the accepted tests and scores on the university\'s official admissions page.',
+      },
+      {
+        questionEn: 'Where can I check official course information?',
+        answerEn:
+          'Use Study with New Zealand (the official government study portal) and the individual university websites for entry requirements, fees, and qualifications, and Immigration New Zealand for visa and work conditions.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'duolingo-english-test'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['engineering-courses-in-new-zealand', 'nursing-and-healthcare-courses-in-new-zealand', 'choosing-the-right-course-for-australia-and-new-zealand', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Study with New Zealand — official government study portal', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'Immigration New Zealand — official site', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['best courses to study in new zealand', 'courses in new zealand for international students', 'study in new zealand', 'popular courses new zealand', 'what to study in new zealand'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Qualifications framework', value: 'New Zealand Qualifications Framework (NZQF)' },
+      { label: 'Providers', value: 'Universities, institutes of technology and polytechnics, and other accredited providers' },
+      { label: 'Official course portal', value: 'Study with New Zealand (studywithnewzealand.govt.nz)' },
+      { label: 'English tests', value: 'Accepted tests and scores set by each university — verify officially' },
+    ],
+  },
+  {
+    slug: 'engineering-courses-in-new-zealand',
+    category: 'career',
+    region: 'australia-nz',
+    titleEn: 'Engineering Courses in New Zealand',
+    descriptionEn:
+      'An overview of studying engineering in New Zealand — common disciplines, how professional accreditation through Engineering New Zealand works, and what to verify before you apply.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Studying engineering in New Zealand',
+        bodyEn:
+          'New Zealand universities offer engineering programmes across a range of disciplines, typically leading to a bachelor\'s degree (often a professional Bachelor of Engineering with Honours) and onward to postgraduate and research study. Programmes combine theory, design, and practical project work.\n\nThe specific structure, duration, and entry requirements differ by university and discipline, so always confirm the details for a particular programme on the university\'s official website before applying.',
+      },
+      {
+        headingEn: 'Common engineering disciplines',
+        bodyEn:
+          'Engineering is a broad area, and the disciplines available vary between institutions. The following are commonly offered, listed without ranking — your choice should reflect your interests and strengths rather than any notion of one branch being "better".',
+        bullets: [
+          'Civil and structural engineering',
+          'Mechanical engineering',
+          'Electrical and electronic engineering',
+          'Software and computer systems engineering',
+          'Chemical and process engineering',
+          'Environmental and civil-related specialisations',
+          'Mechatronics and biomedical engineering (at some universities)',
+        ],
+      },
+      {
+        headingEn: 'Professional accreditation and Engineering New Zealand',
+        bodyEn:
+          'Engineering New Zealand is the professional body for engineers in New Zealand and is involved in accrediting qualifications and supporting professional recognition. New Zealand is a signatory to the Washington Accord, an international agreement on the recognition of engineering qualifications among participating bodies.\n\nAccreditation can matter for your professional pathway, including recognition of your degree and routes to professional registration. Requirements and the list of accredited programmes change over time, so verify the current status of a specific programme and any registration pathway directly with Engineering New Zealand and the university.',
+      },
+      {
+        headingEn: 'Entry requirements and English',
+        bodyEn:
+          'Engineering programmes generally expect a strong background in mathematics and physics, and international students must usually meet an English-language requirement. Universities accept tests such as IELTS, TOEFL, PTE Academic, or the Duolingo English Test, with the required score set by the institution.\n\nBecause subject prerequisites and English-score thresholds are programme-specific and updated periodically, check the official admissions page for the exact requirements before you apply.',
+      },
+      {
+        headingEn: 'After your engineering degree',
+        bodyEn:
+          'Graduates may continue into postgraduate study or seek work in engineering and related sectors. Demand for particular engineering skills varies by discipline, region, and time, and no degree guarantees a job, a salary, or a visa outcome.\n\nIf you plan to work in New Zealand after study, review the relevant visa conditions with Immigration New Zealand, and treat any "in-demand" claims as something to verify on official sources rather than assume.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is engineering in New Zealand professionally accredited?',
+        answerEn:
+          'Engineering New Zealand is the professional body that accredits engineering qualifications, and New Zealand is a Washington Accord signatory. Accredited programmes vary, so confirm a specific programme\'s status with Engineering New Zealand and the university.',
+      },
+      {
+        questionEn: 'What background do I need for engineering courses?',
+        answerEn:
+          'Engineering programmes usually expect a strong foundation in mathematics and physics, plus the English-language level set by the university. Exact subject prerequisites are programme-specific — check the official admissions page.',
+      },
+      {
+        questionEn: 'Does an engineering degree guarantee a job or visa in New Zealand?',
+        answerEn:
+          'No. No degree guarantees employment, a salary, or a visa outcome. Graduate demand varies by discipline and region. Verify work and visa conditions with Immigration New Zealand and outcomes on official sources.',
+      },
+      {
+        questionEn: 'Which engineering discipline should I choose?',
+        answerEn:
+          'No single discipline is universally "best". Choose based on your interests, strengths, and goals, and compare programmes on official university pages, including their accreditation and entry requirements.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'duolingo-english-test'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['best-courses-to-study-in-new-zealand', 'choosing-the-right-course-for-australia-and-new-zealand', 'best-courses-for-jobs-and-pr-in-australia-and-new-zealand', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Engineering New Zealand — official site', url: 'https://www.engineeringnz.org' },
+      { label: 'Study with New Zealand — official government study portal', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'Immigration New Zealand — official site', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['engineering courses in new zealand', 'study engineering in new zealand', 'engineering new zealand accreditation', 'bachelor of engineering new zealand', 'washington accord new zealand'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Common award', value: 'Bachelor of Engineering (Honours), plus postgraduate and research degrees' },
+      { label: 'Professional body', value: 'Engineering New Zealand' },
+      { label: 'International recognition', value: 'New Zealand is a Washington Accord signatory' },
+      { label: 'English tests', value: 'IELTS, TOEFL, PTE Academic, or Duolingo English Test — score set by university' },
+    ],
+  },
+  {
+    slug: 'nursing-and-healthcare-courses-in-new-zealand',
+    category: 'career',
+    region: 'australia-nz',
+    titleEn: 'Nursing and Healthcare Courses in New Zealand',
+    descriptionEn:
+      'An overview of nursing and health-related study in New Zealand — common programmes, how registration through the Nursing Council of New Zealand works, and what to verify before applying.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Studying nursing and healthcare in New Zealand',
+        bodyEn:
+          'New Zealand universities and institutes of technology offer nursing and a range of health-related programmes. Nursing is commonly studied as a bachelor\'s degree that combines classroom learning with supervised clinical placements, and there are postgraduate options for further specialisation.\n\nThis guide describes the field in general terms and where to verify the details. It does not provide clinical or health advice. Programme structure, duration, and entry requirements differ by provider, so always confirm them on the institution\'s official website.',
+      },
+      {
+        headingEn: 'Health-related fields you can study',
+        bodyEn:
+          'Beyond nursing, health study in New Zealand spans many areas. The fields below are offered at various institutions, listed without ranking — availability and entry requirements vary, so check each provider.',
+        bullets: [
+          'Nursing (bachelor\'s and postgraduate programmes)',
+          'Health sciences and public health',
+          'Allied health fields such as physiotherapy and occupational therapy',
+          'Pharmacy',
+          'Medical and biomedical sciences',
+          'Midwifery (at providers that offer it)',
+        ],
+      },
+      {
+        headingEn: 'Registration and the Nursing Council of New Zealand',
+        bodyEn:
+          'The Nursing Council of New Zealand is the regulatory authority responsible for the registration of nurses and for setting the standards required to practise as a registered nurse in New Zealand. To work as a registered nurse, you generally need to meet the Council\'s requirements, which can include qualifications, competence, and English-language standards.\n\nRegistration requirements — and the pathways for internationally qualified nurses — are set by the Council and can change. Verify the current requirements directly with the Nursing Council of New Zealand before making plans that depend on registration. Other health professions are regulated by their own responsible authorities under New Zealand law.',
+      },
+      {
+        headingEn: 'Entry requirements and English',
+        bodyEn:
+          'Nursing and health programmes typically have specific academic prerequisites and an English-language requirement, and many include health, vaccination, and police-check conditions tied to clinical placements. Universities accept English tests such as IELTS, TOEFL, PTE Academic, or the Duolingo English Test, with the required score set by the institution; regulators may set their own English standards for registration.\n\nBecause these requirements are programme-specific and updated periodically, confirm the exact prerequisites and any placement conditions on the official admissions page before you apply.',
+      },
+      {
+        headingEn: 'After a nursing or health qualification',
+        bodyEn:
+          'Graduates may seek registration in their profession and work in healthcare settings, or continue into postgraduate study. No qualification guarantees employment, a salary, registration, or a visa outcome — these depend on meeting the relevant regulator\'s standards and immigration rules.\n\nIf you plan to work in New Zealand after study, review the relevant visa conditions with Immigration New Zealand, and confirm registration requirements with the Nursing Council of New Zealand or the appropriate regulator.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who regulates nursing in New Zealand?',
+        answerEn:
+          'The Nursing Council of New Zealand is the regulatory authority for the registration of nurses and sets the standards to practise as a registered nurse. Verify current registration requirements, including for internationally qualified nurses, directly with the Council.',
+      },
+      {
+        questionEn: 'Does a nursing degree guarantee registration or a job?',
+        answerEn:
+          'No. Registration depends on meeting the Nursing Council of New Zealand\'s standards, and employment and visa outcomes are not guaranteed. Confirm the current requirements with the Council and the relevant authorities.',
+      },
+      {
+        questionEn: 'What English level do nursing courses require?',
+        answerEn:
+          'Universities accept tests such as IELTS, TOEFL, PTE Academic, or the Duolingo English Test, with the score set by the institution; regulators may set separate English standards for registration. Confirm the exact requirements on official sources.',
+      },
+      {
+        questionEn: 'Do health courses include clinical placements?',
+        answerEn:
+          'Many nursing and health programmes include supervised clinical placements, which can involve health, vaccination, and police-check conditions. Check the specific programme\'s placement requirements on the university\'s official admissions page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'duolingo-english-test'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['best-courses-to-study-in-new-zealand', 'choosing-the-right-course-for-australia-and-new-zealand', 'best-courses-for-jobs-and-pr-in-australia-and-new-zealand', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Nursing Council of New Zealand — official site', url: 'https://www.nursingcouncil.org.nz' },
+      { label: 'Study with New Zealand — official government study portal', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'Immigration New Zealand — official site', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['nursing courses in new zealand', 'study nursing in new zealand', 'healthcare courses new zealand', 'nursing council of new zealand registration', 'bachelor of nursing new zealand'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Common award', value: 'Bachelor of Nursing, plus postgraduate options' },
+      { label: 'Nursing regulator', value: 'Nursing Council of New Zealand' },
+      { label: 'Clinical placements', value: 'Common in nursing/health programmes; may have health and check conditions' },
+      { label: 'English tests', value: 'IELTS, TOEFL, PTE Academic, or Duolingo English Test — score set by university' },
+    ],
+  },
+  {
+    slug: 'best-courses-for-jobs-and-pr-in-australia-and-new-zealand',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Best Courses for Jobs and PR in Australia and New Zealand',
+    descriptionEn:
+      'How course choice may relate to skilled-occupation pathways in Australia and New Zealand — explained as neutral official facts, with no guarantee of permanent residence, and pointers to verify everything on official government sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Important: this is general information, not advice',
+        bodyEn:
+          'This guide explains, in general terms, how the course you study can relate to skilled-work and residence pathways in Australia and New Zealand. It is general information only and is not immigration, legal, or career advice.\n\nNo course leads automatically to a job or to permanent residence. Skilled-migration systems are run by the governments of each country, the rules change, and outcomes depend on many factors specific to your situation. Always verify current requirements on the official government sources and consider professional advice for your circumstances.',
+      },
+      {
+        headingEn: 'How course choice can relate to skilled pathways',
+        bodyEn:
+          'Both Australia and New Zealand operate skilled-migration systems that consider, among other things, a person\'s occupation, skills, and qualifications. Some pathways reference official lists of occupations. Because of this, the field you study and the qualification you earn can be relevant to which pathways you might later be eligible for.\n\nHowever, being in a particular field is not the same as qualifying for a visa or for residence. Eligibility depends on the specific programme, your overall profile, current government policy, and meeting all the official criteria at the time you apply.',
+      },
+      {
+        headingEn: 'Australia — where to check official occupation information',
+        bodyEn:
+          'In Australia, skilled visa pathways such as the points-tested skilled visas are administered by the Department of Home Affairs and may reference occupation lists and a skills-assessment process. Rather than relying on any third-party "PR course" list, check the official Department of Home Affairs information for the current visa options, occupation lists, and criteria.\n\nThis is general information, not immigration advice. Verify the current rules on the official Australian Government source before making any decision, because policies and lists change.',
+        bullets: [
+          'Australian skilled visas are administered by the Department of Home Affairs',
+          'Some pathways reference official skilled-occupation lists and a skills assessment',
+          'Occupation lists and criteria change — confirm the current details officially',
+        ],
+      },
+      {
+        headingEn: 'New Zealand — where to check official occupation information',
+        bodyEn:
+          'In New Zealand, skilled-residence pathways such as the Skilled Migrant Category are administered by Immigration New Zealand. New Zealand also maintains official lists, including the Green List, which identifies certain roles for streamlined residence or work pathways. These lists and the associated criteria are set by the government and updated over time.\n\nTo understand how a field might relate to a pathway, check the official Immigration New Zealand information for the current categories, the Green List, and eligibility criteria. This is general information, not immigration advice — verify the current rules on the official New Zealand Government source.',
+        bullets: [
+          'New Zealand skilled-residence pathways are administered by Immigration New Zealand',
+          'The Green List identifies certain roles for streamlined pathways',
+          'Lists and criteria change — confirm the current details officially',
+        ],
+      },
+      {
+        headingEn: 'A balanced way to choose',
+        bodyEn:
+          'Choosing a course only because it appears on a "PR" list is risky: lists change, eligibility is about much more than your field, and studying something you are not suited to rarely ends well. A more reliable approach is to pick a course that fits your interests and strengths, check that it is properly accredited, and then research how that field currently relates to skilled pathways using official sources.\n\nKeep in mind that no provider, agent, or guide can guarantee a job, a visa, or permanent residence. Treat any such guarantee as a warning sign, and base your plans on the official government information for each country.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which course guarantees PR in Australia or New Zealand?',
+        answerEn:
+          'No course guarantees permanent residence in either country. Skilled-migration outcomes depend on official criteria, your overall profile, and current government policy. Verify the current rules with the Department of Home Affairs (Australia) and Immigration New Zealand.',
+      },
+      {
+        questionEn: 'Do occupation lists decide whether I can get a visa?',
+        answerEn:
+          'Occupation lists are one factor in some pathways, not a decision on their own. Eligibility also depends on skills assessment, points, qualifications, and other criteria. Always check the current official lists and rules before relying on them.',
+      },
+      {
+        questionEn: 'What is the New Zealand Green List?',
+        answerEn:
+          'The Green List is an official Immigration New Zealand list identifying certain roles for streamlined residence or work pathways. It is updated over time, so confirm the current list and criteria on the official Immigration New Zealand website.',
+      },
+      {
+        questionEn: 'Should I choose my course based only on PR chances?',
+        answerEn:
+          'It is risky to do so — lists change and eligibility involves much more than your field. Choose a course that fits your interests and is accredited, then research how that field relates to skilled pathways using official sources. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['best-courses-to-study-in-new-zealand', 'choosing-the-right-course-for-australia-and-new-zealand', 'engineering-courses-in-new-zealand', 'nursing-and-healthcare-courses-in-new-zealand', 'study-in-australia-from-india', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Australian Government — Department of Home Affairs (visas)', url: 'https://immi.homeaffairs.gov.au' },
+      { label: 'Immigration New Zealand — official site', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['best courses for pr in australia', 'courses for jobs in new zealand', 'skilled occupation list australia', 'green list new zealand', 'study pathway to pr australia new zealand'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Australia administrator', value: 'Department of Home Affairs (immi.homeaffairs.gov.au)' },
+      { label: 'New Zealand administrator', value: 'Immigration New Zealand (immigration.govt.nz)' },
+      { label: 'Key reference lists', value: 'Skilled-occupation lists (Australia); Green List (New Zealand) — change over time' },
+      { label: 'Guarantee', value: 'No course guarantees a job, visa, or permanent residence' },
+    ],
+  },
+  {
+    slug: 'choosing-the-right-course-for-australia-and-new-zealand',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Choosing the Right Course for Australia and New Zealand',
+    descriptionEn:
+      'A practical, neutral framework for choosing a course when planning to study in Australia or New Zealand — weighing interest, accreditation, cost, and work options, with official sources to verify each factor.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Start with fit, not hype',
+        bodyEn:
+          'The best course for you is the one that matches your interests, strengths, prior study, and goals — not whatever appears on a "top" or "trending" list. Studying a subject you are genuinely suited to makes the experience more rewarding and the outcomes more realistic.\n\nThis guide offers a simple framework you can apply to programmes in both Australia and New Zealand. It is general guidance, not personalised advice, and no course can guarantee a job, salary, visa, or residence outcome.',
+      },
+      {
+        headingEn: 'Factor 1 — interest and strengths',
+        bodyEn:
+          'Begin by being honest about what you enjoy and where your strengths lie. A course you find engaging is one you are more likely to complete well. Consider the subjects you have done before, the topics you return to in your spare time, and the kind of work you can imagine doing.\n\nShortlist a few fields, then look at the actual curriculum of specific programmes — course titles can be misleading, so read what you would really study.',
+      },
+      {
+        headingEn: 'Factor 2 — accreditation and recognition',
+        bodyEn:
+          'If your field needs professional registration to practise — for example engineering, nursing, or other regulated professions — check that the programme is accredited by the relevant body and that it supports the registration pathway you need. In Australia and New Zealand, professional bodies and regulators set these standards, and they can change over time.',
+        bullets: [
+          'Confirm the programme is properly accredited for your intended profession',
+          'Check that it supports any registration pathway you will need',
+          'Verify the institution and qualification are officially recognised',
+        ],
+      },
+      {
+        headingEn: 'Factor 3 — cost and value',
+        bodyEn:
+          'Tuition fees and living costs vary widely by institution, location, and programme. Look at the full picture — fees, living expenses, and the length of the course — rather than the headline tuition alone, and check what scholarships the institution officially offers.\n\nDo not rely on figures from unofficial sources. Confirm current fees on the university\'s official pages and cost-of-living and student-visa financial requirements on the official government sources for each country.',
+      },
+      {
+        headingEn: 'Factor 4 — work options and pathways',
+        bodyEn:
+          'If working during or after study matters to you, check the official conditions. Student visas in Australia and New Zealand have rules about working while studying, and there are separate post-study work and skilled-migration pathways with their own criteria.\n\nThese rules are set by the Australian Department of Home Affairs and Immigration New Zealand and change over time. This is general information, not immigration advice — verify the current conditions on the official government source before relying on them, and never assume a course guarantees a particular outcome.',
+        bullets: [
+          'Working-while-studying conditions are set on the student visa — verify officially',
+          'Post-study work and skilled pathways have separate criteria',
+          'Australia: Department of Home Affairs; New Zealand: Immigration New Zealand',
+        ],
+      },
+      {
+        headingEn: 'Put it together',
+        bodyEn:
+          'Score each shortlisted programme against these factors — interest, accreditation, cost, and work options — using official sources for every hard fact. Compare a small number of options side by side, and contact the institution if anything is unclear.\n\nThere is no universally "right" course, only the one that best fits you. Use official Australian and New Zealand government and university sources, verify the current details, and remember that no choice guarantees a job, salary, visa, or residence.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I choose between similar courses?',
+        answerEn:
+          'Compare them on the factors that matter to you — interest and curriculum, accreditation, total cost, and work options — using official university and government sources. Read the real curriculum rather than relying on the course title.',
+      },
+      {
+        questionEn: 'Why does accreditation matter when choosing a course?',
+        answerEn:
+          'If your field needs registration to practise, accreditation by the relevant professional body affects whether your degree supports that pathway. Confirm a programme\'s accreditation and registration pathway with the relevant regulator and the university.',
+      },
+      {
+        questionEn: 'How should I budget for studying in Australia or New Zealand?',
+        answerEn:
+          'Look at fees, living costs, and course length together, and check official student-visa financial requirements. Confirm current fees on the university\'s official pages and costs on the official government sources for each country.',
+      },
+      {
+        questionEn: 'Can I work while studying in Australia or New Zealand?',
+        answerEn:
+          'Student visas in both countries have conditions on working while studying, and these change over time. This is general information, not immigration advice — verify current conditions with the Department of Home Affairs (Australia) and Immigration New Zealand.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'duolingo-english-test'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['best-courses-to-study-in-new-zealand', 'engineering-courses-in-new-zealand', 'nursing-and-healthcare-courses-in-new-zealand', 'best-courses-for-jobs-and-pr-in-australia-and-new-zealand', 'study-in-australia-from-india', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government study portal', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Study with New Zealand — official government study portal', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'Australian Government — Department of Home Affairs (visas)', url: 'https://immi.homeaffairs.gov.au' },
+      { label: 'Immigration New Zealand — official site', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['how to choose a course in australia', 'choosing a course in new zealand', 'right course to study abroad australia', 'course selection australia new zealand', 'which course to study in australia'],
+    tags: ['anz-courses-careers'],
+    keyFacts: [
+      { label: 'Key factors', value: 'Interest and strengths, accreditation, cost, and work options' },
+      { label: 'Accreditation', value: 'Check with the relevant professional body if your field needs registration' },
+      { label: 'Official study portals', value: 'Study Australia and Study with New Zealand' },
+      { label: 'Guarantee', value: 'No course guarantees a job, salary, visa, or residence' },
+    ],
+  },
+  {
+    slug: 'cost-of-studying-in-australia-for-international-students',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Cost of Studying in Australia for International Students',
+    descriptionEn:
+      'How much it costs to study in Australia — the tuition and living-cost components international students plan for, why figures vary by course and university, and how to confirm exact amounts on official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The two big cost buckets',
+        bodyEn:
+          'When budgeting for study in Australia, separate your spending into two clear buckets: tuition fees (what the university charges for your course) and living costs (housing, food, transport, insurance, and personal expenses). Treat them independently — a course with high tuition can sit in a city with lower living costs, and the reverse is also true.\n\nBoth buckets are quoted in Australian dollars (AUD). Because amounts change every academic year and differ widely between universities and courses, the only reliable figures are the ones published on each university\'s official fee page and the Australian Government\'s study and visa websites. Use the ranges and components below to plan, then verify exact numbers on the official source.',
+        bullets: [
+          'Tuition fees — set per course, per year, by each university',
+          'Living costs — housing, food, transport, insurance, personal',
+          'All figures in Australian dollars (AUD), changing each year',
+        ],
+      },
+      {
+        headingEn: 'Tuition fees vary by course and level',
+        bodyEn:
+          'International tuition in Australia is charged per course and per year, and the range is wide. Undergraduate and postgraduate coursework programs are priced differently, and fees also depend heavily on the field of study — laboratory-based science, engineering, and clinical or medical programs typically cost more than classroom-based humanities or business degrees.\n\nWe deliberately do not publish a single tuition figure, because doing so would be misleading: each university sets its own fees and revises them annually. The accurate number for your specific course is on that university\'s official international-fees page. Look up the exact program you want, for the exact intake year, before you budget.',
+      },
+      {
+        headingEn: 'Living costs and the visa financial requirement',
+        bodyEn:
+          'Beyond tuition, you budget for accommodation, food and groceries, public transport, mobile and internet, study materials, and personal spending. Living costs vary by city and by lifestyle — a share house in a regional area is very different from a studio in a major city centre.\n\nSeparately, the Australian student visa (Subclass 500) has a financial-capacity requirement: applicants must show they can cover tuition, travel, and living costs for their stay. The Australian Government sets and periodically updates the specific living-cost amount used for this requirement, so always confirm the current figure on the Department of Home Affairs website rather than relying on an older number. This is general information, not immigration or financial advice — verify the current requirement on the official government source before you apply.',
+        bullets: [
+          'Accommodation — on-campus, share house, homestay, or rental',
+          'Food, transport, phone/internet, study materials, personal',
+          'Subclass 500 financial-capacity requirement — official amount, set by the Government',
+        ],
+      },
+      {
+        headingEn: 'Other costs to plan for',
+        bodyEn:
+          'A complete budget includes more than tuition and rent. Plan for Overseas Student Health Cover (OSHC), which student-visa holders are generally required to hold for the duration of their stay; one-time costs such as airfare, the visa application charge, and initial setup (deposit, bedding, kitchen items); and ongoing costs like textbooks and, for some courses, equipment or field-trip fees.\n\nOSHC premiums and the visa charge are set by health insurers and the Government respectively and change over time, so check the current amounts on the official sources. Building these into your plan early avoids surprises after you arrive.',
+        bullets: [
+          'Overseas Student Health Cover (OSHC) — required for the visa duration',
+          'One-time: airfare, visa application charge, arrival setup',
+          'Ongoing: textbooks, equipment, course-specific fees',
+        ],
+      },
+      {
+        headingEn: 'How to build a realistic budget',
+        bodyEn:
+          'Work in this order. First, get the exact annual tuition for your chosen course from the university\'s official fee page. Second, estimate annual living costs using the Government\'s current student living-cost guidance and the cost of the specific city you are moving to. Third, add OSHC, the visa charge, airfare, and arrival setup. Fourth, factor in whether part-time work during study (allowed within the conditions of the student visa) may offset some living costs — but never rely on it to cover tuition.\n\nKeep a contingency buffer for currency movement and unexpected expenses. Because every figure here changes annually, re-check the official sources close to your intake rather than trusting last year\'s numbers.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much does it cost to study in Australia?',
+        answerEn:
+          'The total depends on your course, university, and city, and the figures change every year, so there is no single accurate number. Plan for two buckets — tuition (set per course by each university) and living costs (housing, food, transport, insurance, personal). Look up your exact course fee on the university\'s official international-fees page and confirm the current living-cost requirement on the Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'Why do you not give an exact tuition figure?',
+        answerEn:
+          'Because publishing one would be misleading. Each university sets its own fees per course and revises them annually, and fields like engineering or medicine cost more than humanities. The only reliable figure is the one on the official university fee page for your specific program and intake year.',
+      },
+      {
+        questionEn: 'Do I have to show money for the student visa?',
+        answerEn:
+          'The Subclass 500 student visa has a financial-capacity requirement covering tuition, travel, and living costs. The Government sets and updates the specific living-cost amount, so confirm the current figure on the Department of Home Affairs website. This is general information, not immigration advice — verify on the official government source before applying.',
+      },
+      {
+        questionEn: 'Can part-time work cover my study costs?',
+        answerEn:
+          'Student-visa holders can usually work part-time within the conditions of their visa, which may help offset some living expenses. However, you should never rely on work to cover tuition, and you must still meet the visa financial requirement before arriving. Check the current work conditions on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-living-in-australia-for-students', 'scholarships-to-study-in-australia', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Department of Home Affairs — Student visa (Subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['cost of studying in australia', 'tuition fees in australia for international students', 'how much does it cost to study in australia', 'australia student budget', 'australia living costs international students'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Currency', value: 'Australian dollars (AUD)' },
+      { label: 'Main cost buckets', value: 'Tuition (per course, per year) + living costs' },
+      { label: 'Visa financial rule', value: 'Subclass 500 financial-capacity requirement (official amount)' },
+      { label: 'Health cover', value: 'Overseas Student Health Cover (OSHC) usually required' },
+      { label: 'Verify on', value: 'Each university fee page + Department of Home Affairs' },
+    ],
+  },
+  {
+    slug: 'cost-of-living-in-australia-for-students',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Cost of Living in Australia for Students',
+    descriptionEn:
+      'A practical breakdown of living costs for students in Australia — accommodation, food, transport, insurance, and personal expenses — with why they vary by city and how to confirm current figures officially.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What "living costs" actually includes',
+        bodyEn:
+          'Living costs are everything you spend to live in Australia beyond your tuition fees. The main categories are accommodation, food and groceries, public transport, health insurance, mobile and internet, study materials, and personal or social spending.\n\nThese costs are quoted in Australian dollars (AUD) and vary a great deal by city, by the type of accommodation you choose, and by your own lifestyle. Rather than a single total, think in ranges per category and adjust for where you will actually live. The Australian Government publishes current living-cost guidance for students on its official study and visa websites — use that as your anchor and verify it close to your intake.',
+        bullets: [
+          'Accommodation, food, transport, insurance, phone/internet',
+          'Study materials and personal/social spending',
+          'All in AUD; varies by city, housing type, and lifestyle',
+        ],
+      },
+      {
+        headingEn: 'Accommodation — usually the biggest cost',
+        bodyEn:
+          'Housing is typically a student\'s largest single expense, and the range is wide. Common options include university-managed or purpose-built student accommodation, a shared house or apartment with other students, homestay with a local family, or a private rental.\n\nLocation drives the price: living in or near a major city centre generally costs more than a regional area or an outer suburb with a longer commute. Because rents change continually and differ by city and suburb, we do not quote a fixed figure — check current listings for your specific city and the university\'s accommodation office for managed options.',
+        bullets: [
+          'University / purpose-built student accommodation',
+          'Shared house or apartment (often the most economical)',
+          'Homestay with a local family, or a private rental',
+        ],
+      },
+      {
+        headingEn: 'Everyday costs: food, transport, and bills',
+        bodyEn:
+          'Day-to-day spending covers groceries and eating out, public transport, and utilities such as electricity and gas (sometimes included in rent), plus a mobile plan and home internet. Cooking at home and using student transport concessions where available can meaningfully reduce these costs.\n\nMany Australian cities have student travel concessions or capped fares, though eligibility for international students differs by state and transport network — check the local transport authority for your city. As with everything here, treat these as variable amounts to estimate per city rather than fixed national figures.',
+        bullets: [
+          'Groceries and eating out — cooking at home saves the most',
+          'Public transport — check local student concessions by state',
+          'Utilities, mobile, and internet (some bills may be included in rent)',
+        ],
+      },
+      {
+        headingEn: 'Health cover and one-time setup costs',
+        bodyEn:
+          'Student-visa holders are generally required to hold Overseas Student Health Cover (OSHC) for the duration of their stay; premiums are set by approved insurers and form part of your budget. On arrival, plan for one-time setup costs such as a rental deposit (bond), bedding and kitchen basics, and any initial connection fees.\n\nThese are separate from your weekly living costs and are easy to overlook. Build them into your initial budget so your first weeks in Australia are not a financial shock.',
+        bullets: [
+          'Overseas Student Health Cover (OSHC) — required for the visa duration',
+          'Rental bond/deposit and arrival setup (bedding, kitchen, connections)',
+          'Premiums and fees set by insurers/providers — confirm current amounts',
+        ],
+      },
+      {
+        headingEn: 'Costs differ by city — plan for yours',
+        bodyEn:
+          'There is no single "cost of living in Australia" because it changes from city to city and year to year. Major cities tend to have higher accommodation costs than smaller or regional cities, while everyday costs vary less dramatically. Some students choose regional study locations partly for lower living costs.\n\nTo build a realistic estimate, combine the Australian Government\'s current student living-cost guidance with research on the specific city you are moving to. Keep a contingency buffer for currency movement, and remember the student visa has its own financial-capacity requirement — verify the current figure on the Department of Home Affairs website. This is general information, not financial or immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the cost of living for students in Australia?',
+        answerEn:
+          'It varies by city, accommodation type, and lifestyle, and changes each year, so there is no single figure. Budget by category — accommodation, food, transport, insurance, phone/internet, study materials, and personal spending — and anchor your estimate to the Australian Government\'s current student living-cost guidance for the specific city you will live in.',
+      },
+      {
+        questionEn: 'What is usually the biggest expense?',
+        answerEn:
+          'Accommodation is typically the largest single cost, and it depends heavily on the city and the type of housing — managed student accommodation, a shared house, homestay, or a private rental. Sharing and choosing an outer suburb or regional area generally costs less than a city-centre studio.',
+      },
+      {
+        questionEn: 'Is living in a regional city cheaper?',
+        answerEn:
+          'Accommodation in smaller or regional cities is often lower than in major city centres, which is one reason some students choose regional study locations. Everyday costs vary less. Research the specific city and confirm figures locally rather than assuming a national average.',
+      },
+      {
+        questionEn: 'Do I need health insurance, and is it a separate cost?',
+        answerEn:
+          'Student-visa holders are generally required to hold Overseas Student Health Cover (OSHC) for the duration of their stay. It is a separate cost from tuition and weekly living expenses, with premiums set by approved insurers — confirm the current amount on an official source when budgeting.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-studying-in-australia-for-international-students', 'scholarships-to-study-in-australia', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Department of Home Affairs — Student visa (Subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['cost of living in australia for students', 'student living expenses australia', 'how much money do i need to study in australia', 'australia accommodation cost students', 'living costs australia international students'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Currency', value: 'Australian dollars (AUD)' },
+      { label: 'Largest cost', value: 'Accommodation (varies by city + housing type)' },
+      { label: 'Health cover', value: 'OSHC usually required for visa duration' },
+      { label: 'Visa financial rule', value: 'Subclass 500 financial-capacity requirement (official amount)' },
+      { label: 'Verify on', value: 'Study Australia + Department of Home Affairs' },
+    ],
+  },
+  {
+    slug: 'scholarships-to-study-in-australia',
+    category: 'scholarships',
+    region: 'australia-nz',
+    titleEn: 'Scholarships to Study in Australia',
+    descriptionEn:
+      'An overview of the main types of scholarships for international students in Australia — university awards, Australian Government scholarships, and external funding — with how to find them officially and avoid scams.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Three main sources of funding',
+        bodyEn:
+          'Scholarships for international students in Australia come from three broad sources: the universities themselves, the Australian Government, and external organisations. Each has its own eligibility rules, application process, and deadlines, and these change every year.\n\nThe value, number, and criteria of any scholarship are set by the body offering it and are revised annually. We deliberately do not state amounts or deadlines here, because publishing figures that change would mislead you. For every award you consider, confirm the current value, eligibility, and closing date on the official provider\'s website before relying on it.',
+        bullets: [
+          'University scholarships — offered by each institution',
+          'Australian Government scholarships — e.g. Australia Awards, Destination Australia',
+          'External scholarships — from organisations, foundations, and bodies',
+        ],
+      },
+      {
+        headingEn: 'University scholarships',
+        bodyEn:
+          'Most Australian universities offer their own scholarships for international students, which may be merit-based, need-based, or tied to a specific faculty, course, or country of origin. Some reduce tuition by a set portion; others are fixed awards. Many are applied for as part of, or alongside, your admission application.\n\nBecause every university runs its own scheme with its own criteria and timelines, the most reliable approach is to check the official scholarships page of each university you are applying to. Eligibility is set by secular, academic, and financial criteria defined by the institution.',
+      },
+      {
+        headingEn: 'Australian Government scholarships',
+        bodyEn:
+          'The Australian Government funds scholarship programs that international students may be eligible for, depending on the program\'s rules and the applicant\'s country and circumstances. Two well-known examples are Australia Awards (administered through the Department of Foreign Affairs and Trade) and the Destination Australia program (administered through the Department of Education), which supported study at regional campuses. Note that, per the Department of Education, Destination Australia has had no further funding rounds since 1 July 2024 (existing recipients continue to be supported), so check its official page for the current position.\n\nThese programs have specific, secular eligibility criteria and official application channels, and their rules and availability change over time. Detailed guides to both appear elsewhere in this set. For current rules, status, and deadlines, always use the official government program pages.',
+        bullets: [
+          'Australia Awards — Department of Foreign Affairs and Trade (dfat.gov.au)',
+          'Destination Australia — Department of Education (education.gov.au)',
+          'Eligibility and deadlines set officially each round',
+        ],
+      },
+      {
+        headingEn: 'External and country-specific scholarships',
+        bodyEn:
+          'Beyond universities and the Australian Government, some external organisations, foundations, professional bodies, and home-country agencies offer scholarships that can be used to study in Australia. Eligibility is defined by each provider on secular, academic, or financial grounds.\n\nThe key is to apply only through the provider\'s official channel. Search systematically, note each program\'s deadline and criteria, and never pay a third party who claims to "arrange" a government or university scholarship for a fee.',
+      },
+      {
+        headingEn: 'No guarantees — and how to avoid scams',
+        bodyEn:
+          'No website, agent, or service can guarantee you a scholarship. Awards are competitive and decided by the official body against published criteria. Be cautious of anyone promising guaranteed funding or asking for payment to "secure" a government or university scholarship — legitimate scholarships are applied for free through official channels, and selection is never sold.\n\nProtect yourself by applying directly on official university and government websites, verifying every figure and deadline on the official source, and keeping copies of your applications. This is general guidance, not financial advice — confirm all current details officially before you apply.',
+        bullets: [
+          'No service can guarantee a scholarship — selection is competitive',
+          'Never pay a third party to "secure" a government/university award',
+          'Apply only through official university and government channels',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What scholarships are available to study in Australia?',
+        answerEn:
+          'Funding comes from three main sources: university scholarships (offered by each institution), Australian Government scholarships such as Australia Awards and Destination Australia, and external scholarships from organisations and bodies. Each has its own secular eligibility, process, and deadlines — confirm current details on the official provider\'s website.',
+      },
+      {
+        questionEn: 'Do you list the scholarship amounts and deadlines?',
+        answerEn:
+          'No, because values, numbers, and closing dates are set by each provider and change every year — publishing them would mislead you. For every award, check the official university or government program page for the current amount, eligibility, and deadline.',
+      },
+      {
+        questionEn: 'Can a scholarship be guaranteed if I pay an agent?',
+        answerEn:
+          'No. Scholarships are competitive and awarded by the official body against published criteria; selection is never sold. Be cautious of anyone promising guaranteed funding or charging a fee to "secure" a government or university scholarship. Apply only through official channels, which are free.',
+      },
+      {
+        questionEn: 'Are these scholarships based on religion?',
+        answerEn:
+          'The scholarships covered here use secular criteria — typically academic merit, financial need, country of origin, or course of study — defined by the university or government program. Always read the official eligibility rules for each award before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['australia-awards-scholarships-guide', 'destination-australia-scholarship-guide', 'cost-of-studying-in-australia-for-international-students'],
+    sources: [
+      { label: 'Study Australia — Scholarships (official Australian Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/scholarships' },
+      { label: 'Australian Government — Australia Awards (DFAT)', url: 'https://www.dfat.gov.au/people-to-people/australia-awards' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['scholarships to study in australia', 'australia scholarships for international students', 'fully funded scholarships australia', 'university scholarships australia', 'how to get a scholarship in australia'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Main sources', value: 'Universities, Australian Government, external organisations' },
+      { label: 'Government examples', value: 'Australia Awards (DFAT), Destination Australia (Education)' },
+      { label: 'Eligibility basis', value: 'Secular — merit, need, country, or course' },
+      { label: 'Guarantee', value: 'None — competitive; never pay to "secure" an award' },
+      { label: 'Verify on', value: 'Official university + government program pages' },
+    ],
+  },
+  {
+    slug: 'australia-awards-scholarships-guide',
+    category: 'scholarships',
+    region: 'australia-nz',
+    titleEn: 'Australia Awards Scholarships Guide',
+    descriptionEn:
+      'What Australia Awards are — long-term scholarships funded by the Australian Government — including who administers them, the secular eligibility basis, and how to find current rules on the official source.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What Australia Awards are',
+        bodyEn:
+          'Australia Awards are scholarships funded by the Australian Government for international study, administered primarily through the Department of Foreign Affairs and Trade (DFAT). They support study and professional development in Australia for eligible applicants, with a focus on building skills and links between Australia and partner countries.\n\nThe program\'s scope, the participating countries, the fields of study covered, and the benefits are all defined officially by DFAT and reviewed over time. Because these details change, treat the points below as an orientation and confirm the current rules on the official Australia Awards pages before applying.',
+        bullets: [
+          'Funded by the Australian Government',
+          'Administered primarily through the Department of Foreign Affairs and Trade (DFAT)',
+          'Supports eligible international study and professional development',
+        ],
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Eligibility for Australia Awards is set by DFAT and depends on factors such as the applicant\'s country of citizenship/residence, the participating-country list for the relevant round, age, academic background, and (for some streams) work experience. The criteria are secular — based on these defined, non-religious factors.\n\nBecause eligibility and the list of participating countries are revised for each intake, you must check the official program page for your country and round. Do not assume rules from a previous year still apply.',
+        bullets: [
+          'Defined by DFAT per round and per participating country',
+          'Factors may include country, age, academics, and work experience',
+          'Secular criteria — confirm the current list and rules officially',
+        ],
+      },
+      {
+        headingEn: 'What the scholarship may cover',
+        bodyEn:
+          'Australia Awards scholarships are generally designed to cover the major costs of study, which can include tuition and certain associated allowances, as defined by the program for each round. The exact benefits, conditions, and obligations attached to the award are set out officially.\n\nWe deliberately do not list specific monetary amounts here, because they are determined by the program and can change. For the precise inclusions, conditions, and any return-of-service or other obligations, read the official Australia Awards documentation for your intake.',
+      },
+      {
+        headingEn: 'How and when to apply',
+        bodyEn:
+          'Australia Awards open and close within official application windows that vary by country and round, and applications are made through the official channels DFAT specifies. The process typically involves meeting eligibility, preparing supporting documents, and submitting by the published deadline.\n\nBecause windows and steps differ each year and by country, the only reliable source for how and when to apply is the official Australia Awards website for your country. Start early, since gathering documents and meeting eligibility can take time.',
+        bullets: [
+          'Application windows vary by country and round',
+          'Apply only through DFAT\'s official channels',
+          'Check the official program page for your country\'s deadline and steps',
+        ],
+      },
+      {
+        headingEn: 'Important: no guarantees, verify officially',
+        bodyEn:
+          'Australia Awards are highly competitive and awarded by the official selection process against published criteria. No website, agent, or service can guarantee you an award, and you should never pay a third party who claims to secure one — legitimate applications are made free through official channels.\n\nThis guide is general information, not immigration or financial advice. Because eligibility, benefits, participating countries, and deadlines are all set and updated officially, verify every detail on the official Australia Awards source before you apply.',
+        bullets: [
+          'Competitive — selection follows the official process and criteria',
+          'No guarantees; never pay a third party to "secure" an award',
+          'Verify all current details on the official Australia Awards source',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are Australia Awards?',
+        answerEn:
+          'Australia Awards are scholarships funded by the Australian Government for international study and professional development, administered primarily through the Department of Foreign Affairs and Trade (DFAT). Scope, participating countries, eligibility, and benefits are defined officially and change over time, so confirm current rules on the official Australia Awards pages.',
+      },
+      {
+        questionEn: 'Who is eligible for an Australia Award?',
+        answerEn:
+          'Eligibility is set by DFAT per round and may depend on country of citizenship/residence, the participating-country list, age, academic background, and sometimes work experience. The criteria are secular. Because the rules and country list are revised each intake, check the official program page for your country and round.',
+      },
+      {
+        questionEn: 'What does the scholarship cover?',
+        answerEn:
+          'Australia Awards are generally designed to cover the major costs of study, with the exact inclusions, conditions, and obligations defined officially for each round. We do not list amounts because they change — read the official Australia Awards documentation for your intake for the precise benefits and conditions.',
+      },
+      {
+        questionEn: 'Can I be guaranteed an Australia Award if I pay someone?',
+        answerEn:
+          'No. The awards are competitive and decided by the official selection process; selection is never sold. Never pay a third party who claims to secure one — applications are made free through DFAT\'s official channels. This is general information, not immigration or financial advice; verify on the official source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['scholarships-to-study-in-australia', 'destination-australia-scholarship-guide', 'cost-of-studying-in-australia-for-international-students'],
+    sources: [
+      { label: 'Australian Government — Australia Awards (DFAT)', url: 'https://www.dfat.gov.au/people-to-people/australia-awards' },
+      { label: 'Study Australia — Scholarships (official Australian Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/scholarships' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['australia awards scholarships', 'australia awards eligibility', 'dfat australia awards', 'australian government scholarships for international students', 'how to apply for australia awards'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Funded by', value: 'Australian Government' },
+      { label: 'Administered by', value: 'Department of Foreign Affairs and Trade (DFAT)' },
+      { label: 'Eligibility basis', value: 'Secular — country, age, academics, experience (per round)' },
+      { label: 'Guarantee', value: 'None — competitive; never pay to "secure" an award' },
+      { label: 'Verify on', value: 'Official Australia Awards pages (dfat.gov.au)' },
+    ],
+  },
+  {
+    slug: 'destination-australia-scholarship-guide',
+    category: 'scholarships',
+    region: 'australia-nz',
+    titleEn: 'Destination Australia Scholarship Guide',
+    descriptionEn:
+      'What the Destination Australia program is — Australian Government scholarships supporting study at regional campuses — including who administers it, the secular eligibility basis, its current funding status, and where to verify details officially.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What Destination Australia is',
+        bodyEn:
+          'Destination Australia is a scholarship program funded by the Australian Government, administered through the Department of Education, that supports students to study at education providers in regional Australia. Its purpose is to encourage study at regional campuses by helping participating providers offer scholarships to eligible students.\n\nImportant — current status: according to the Department of Education, as part of the 2024–25 Budget the Australian Government announced there would be no further funding rounds of the Destination Australia program from 1 July 2024, while existing scholarship recipients continue to be supported for the remainder of their studies (subject to eligibility). This means the program is not currently running new application rounds. Always confirm the latest position on the official Department of Education program page, as program funding can change.',
+        bullets: [
+          'Funded by the Australian Government, administered through the Department of Education',
+          'No further funding rounds from 1 July 2024 (per the Department of Education); existing recipients still supported',
+          'Supports study at regional Australian education providers',
+        ],
+      },
+      {
+        headingEn: 'Who it is for and how it is offered',
+        bodyEn:
+          'When funding rounds were running, Destination Australia scholarships were offered through participating education providers in regional areas, and both domestic and international students could be eligible depending on the program\'s rules. Because the scholarships are administered by the providers under the program framework, the practical application route was through the participating regional provider you wished to study at.\n\nEligibility is defined on secular grounds set by the program and the provider — there is no religious criterion. As noted above, new funding rounds ceased from 1 July 2024, so check the official program information and the specific provider\'s scholarship page for the current position before assuming an award is open.',
+        bullets: [
+          'Offered via participating regional education providers (when rounds were running)',
+          'Could be open to domestic and international students per the rules',
+          'Confirm the current status on the official program page and the provider\'s site',
+        ],
+      },
+      {
+        headingEn: 'What it supports',
+        bodyEn:
+          'The program is designed to support the cost of studying at a regional campus, with the value and conditions of each scholarship defined officially for the relevant round and offered through the participating provider. The intent is to make regional study more accessible.\n\nWe deliberately do not state specific amounts here, because the value is set by the program and provider and can change. For the precise value, duration, and conditions, read the official Destination Australia information and the participating provider\'s scholarship details for your intake.',
+      },
+      {
+        headingEn: 'Why study regionally',
+        bodyEn:
+          'Studying at a regional campus can appeal for several practical reasons, and the Destination Australia program was created to support that choice. Regional locations may offer a different campus experience and, often, lower living costs than major city centres — though costs always vary by location, so verify them for the specific area.\n\nIf a regional provider and course suit your goals, check what scholarships that provider currently offers — including whether any Destination Australia support remains available — directly on the official program page and the provider\'s site, since new program rounds ceased from 1 July 2024. Many regional providers also run their own scholarships independent of this program.',
+        bullets: [
+          'Encourages study at regional campuses',
+          'Regional areas may offer lower living costs (varies by location)',
+          'Confirm course and scholarship details with the official provider',
+        ],
+      },
+      {
+        headingEn: 'Important: no guarantees, verify officially',
+        bodyEn:
+          'Where Destination Australia scholarships have been available, they are limited and offered competitively through participating providers under the official program rules. No website, agent, or service can guarantee you one, and you should never pay a third party claiming to secure a government scholarship — legitimate applications are made free through official channels.\n\nThis guide is general information, not immigration or financial advice. Because the program\'s funding status, participating providers, eligibility, and values are set and updated officially — and new funding rounds ceased from 1 July 2024 — verify the current position and every detail on the official Department of Education program page and the provider\'s site before relying on it.',
+        bullets: [
+          'Limited and competitive — offered through participating providers',
+          'No guarantees; never pay a third party to "secure" a scholarship',
+          'Verify the current status + details on education.gov.au and the provider\'s site',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the Destination Australia scholarship?',
+        answerEn:
+          'Destination Australia is an Australian Government scholarship program, administered through the Department of Education, that supports students to study at regional Australian education providers. According to the Department of Education, there are no further funding rounds from 1 July 2024 (existing recipients continue to be supported), so the program is not currently running new application rounds. Confirm the latest position on the official Department of Education program page.',
+      },
+      {
+        questionEn: 'Who can get a Destination Australia scholarship?',
+        answerEn:
+          'The scholarships are offered through participating regional education providers, and both domestic and international students could be eligible depending on the program\'s rules. Eligibility is secular and set by the program and provider. Note that new funding rounds ceased from 1 July 2024, so check the official Department of Education program page and the provider\'s site for the current position before assuming an award is open.',
+      },
+      {
+        questionEn: 'Can I still apply for Destination Australia?',
+        answerEn:
+          'According to the Department of Education, there are no further funding rounds of the program from 1 July 2024, so it is not currently open to new applicants (existing recipients keep their support). When rounds were running, applications were made through the participating regional provider. Always check the official Department of Education program page and the provider\'s scholarship page for the current position, as program funding can change.',
+      },
+      {
+        questionEn: 'Is a Destination Australia scholarship guaranteed?',
+        answerEn:
+          'No. The scholarships are limited and offered competitively through participating providers under official rules; selection is never sold, and you should never pay a third party to "secure" one. This is general information, not immigration or financial advice — verify all details on education.gov.au and the provider\'s site.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['scholarships-to-study-in-australia', 'australia-awards-scholarships-guide', 'cost-of-living-in-australia-for-students'],
+    sources: [
+      { label: 'Australian Government — Destination Australia (Department of Education)', url: 'https://www.education.gov.au/destination-australia' },
+      { label: 'Study Australia — Scholarships (official Australian Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/scholarships' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['destination australia scholarship', 'destination australia program', 'regional study scholarship australia', 'australian government regional scholarship', 'how to apply for destination australia'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Funded by', value: 'Australian Government (Department of Education)' },
+      { label: 'Focus', value: 'Study at regional Australian education providers' },
+      { label: 'Funding status', value: 'No further funding rounds from 1 July 2024; existing recipients supported' },
+      { label: 'Eligibility basis', value: 'Secular — set by program + participating provider' },
+      { label: 'Verify on', value: 'Official program page (education.gov.au) + provider site' },
+    ],
+  },
+  {
+    slug: 'cost-of-studying-in-new-zealand',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Cost of Studying in New Zealand: Tuition and Living Costs',
+    descriptionEn:
+      'A clear breakdown of the cost of studying in New Zealand for international students — tuition by level, living-cost components, and where to verify exact figures on official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How to think about the total cost',
+        bodyEn:
+          'The cost of studying in New Zealand has two broad parts: tuition fees you pay to your university, and living costs you cover yourself (accommodation, food, transport, insurance, and personal expenses). Both vary widely by university, city, course, and lifestyle, so the most reliable budget is built from official figures rather than rough estimates.\n\nThis guide explains the components so you can assemble your own up-to-date budget. Because fees and indicative living amounts are set fresh each year and differ between institutions, always confirm current figures on each university\'s official fees page and the New Zealand government education and immigration sites before you rely on a number.',
+        bullets: [
+          'Tuition — set by each university, varies by programme and level',
+          'Living costs — accommodation, food, transport, insurance, personal',
+          'One-off costs — visa fee, flights, initial setup, course materials',
+        ],
+      },
+      {
+        headingEn: 'Tuition fees by level',
+        bodyEn:
+          'International tuition in New Zealand is charged per year (or per programme) and depends heavily on the field of study — programmes such as laboratory sciences, engineering, and clinical subjects typically cost more than classroom-based humanities or business courses. Postgraduate and research degrees are priced separately from undergraduate degrees.\n\nNew Zealand has eight government-funded universities, each publishing its own international fee schedule. Rather than quote a single figure, check the official fees page of each university you are considering for the exact annual amount for your specific programme and intake year.',
+      },
+      {
+        headingEn: 'Living-cost components',
+        bodyEn:
+          'Living costs depend on your city and how you live. Auckland and Wellington tend to cost more than smaller centres, and shared flatting is usually cheaper than living alone or in fully catered halls of residence. The main components to budget for are accommodation, utilities and internet, groceries and eating out, public transport, mobile and other bills, and personal spending.\n\nImmigration New Zealand publishes an indicative amount of funds a student visa applicant must show to demonstrate they can support themselves. Treat that figure as a baseline reference for the visa, not a complete budget, and confirm the current amount on the official Immigration New Zealand site.',
+        bullets: [
+          'Accommodation — halls of residence, homestay, or shared flatting',
+          'Food, transport, phone, internet, and utilities',
+          'Health insurance and personal/leisure spending',
+        ],
+      },
+      {
+        headingEn: 'Insurance and one-off costs',
+        bodyEn:
+          'International students in New Zealand are generally required to hold appropriate medical and travel insurance for the duration of their study, under the education sector\'s pastoral-care rules — your university can confirm acceptable policies. Beyond tuition and living costs, budget for one-off items: the student visa application fee, return flights, an initial settling-in fund for bond and setup, and course-specific materials or equipment.\n\nExact insurance requirements, visa fees, and any levies change over time, so verify each on the official source before you commit.',
+      },
+      {
+        headingEn: 'Ways to manage and reduce costs',
+        bodyEn:
+          'Several factors can lower your total outlay: choosing a programme or city with lower fees and rents, applying for scholarships, sharing accommodation, and budgeting carefully. A New Zealand student visa may allow limited part-time work during study and additional hours in scheduled breaks, subject to the conditions on your visa — check the current work rights on the official Immigration New Zealand site, as these are set by the government and can change.\n\nThis is general information to help you plan, not financial advice. For a personal budget or funding plan, consult a qualified financial adviser and the official university and government sources.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much does it cost to study in New Zealand?',
+        answerEn:
+          'It depends on your university, programme, city, and lifestyle. Tuition is set per programme by each university, and living costs vary by location. Build your budget from each university\'s official fees page plus the indicative living amount published by Immigration New Zealand, and verify current figures before relying on them.',
+      },
+      {
+        questionEn: 'Is the cost the same at every New Zealand university?',
+        answerEn:
+          'No. Each of New Zealand\'s universities sets its own international fee schedule, and amounts differ by programme and level. Compare the official fees pages of the specific universities and courses you are considering.',
+      },
+      {
+        questionEn: 'Can I work part-time to help with living costs?',
+        answerEn:
+          'A New Zealand student visa may permit limited part-time work during study and more during scheduled breaks, subject to your visa conditions. This is general information, not immigration advice — confirm the current work rights and limits on the official Immigration New Zealand site.',
+      },
+      {
+        questionEn: 'Do I need health insurance as an international student?',
+        answerEn:
+          'International students are generally required to hold appropriate medical and travel insurance while studying in New Zealand. Your university can confirm acceptable policies and the current requirement.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['scholarships-to-study-in-new-zealand', 'cost-of-studying-australia-vs-new-zealand-compared', 'education-loan-for-studying-in-australia-and-new-zealand', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Study with New Zealand — official', url: 'https://www.studywithnewzealand.govt.nz/en' },
+      { label: 'Immigration New Zealand — visas for studying in New Zealand', url: 'https://www.immigration.govt.nz/study/study-visas/visas-for-studying-in-new-zealand/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['cost of studying in new zealand', 'new zealand tuition fees for international students', 'cost of living new zealand student', 'study in new zealand cost', 'new zealand student budget'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Two main cost parts', value: 'Tuition (set by each university) + living costs (your own)' },
+      { label: 'Government-funded universities', value: 'Eight universities, each with its own fee schedule' },
+      { label: 'Living-cost reference', value: 'Indicative amount published by Immigration New Zealand for the student visa' },
+      { label: 'Insurance', value: 'Appropriate medical + travel insurance generally required' },
+      { label: 'Verify on', value: 'Each university fees page + official NZ government sites' },
+    ],
+  },
+  {
+    slug: 'scholarships-to-study-in-new-zealand',
+    category: 'scholarships',
+    region: 'australia-nz',
+    titleEn: 'Scholarships to Study in New Zealand for International Students',
+    descriptionEn:
+      'An overview of scholarship types for international students in New Zealand — university, government, and external awards — with how to find them and verify eligibility on official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Types of scholarships available',
+        bodyEn:
+          'Scholarships that help international students study in New Zealand fall into a few broad categories: awards offered directly by universities, awards administered by the New Zealand government, and external awards from foundations, employers, or a student\'s home-country programmes. Each has its own eligibility, value, coverage, and deadlines, and these are set by the awarding body — not by GlobalStudyBoard.\n\nNo scholarship is guaranteed, and competition is often strong. Use this guide to understand the landscape, then confirm every detail (eligibility, amount, what it covers, and how to apply) on the official scholarship page before you apply.',
+        bullets: [
+          'University scholarships — merit, entrance, and faculty/programme awards',
+          'Government scholarships — administered by New Zealand government bodies',
+          'External awards — foundations, employers, home-country schemes',
+        ],
+      },
+      {
+        headingEn: 'University scholarships',
+        bodyEn:
+          'New Zealand\'s universities offer a range of scholarships for international students, which may include entrance or merit awards based on academic achievement, faculty- or programme-specific scholarships, and research scholarships for postgraduate study. Some are awarded automatically on the basis of your application; others require a separate scholarship application.\n\nThe most reliable place to find these is each university\'s official scholarships database, where you can filter by level, citizenship, and field. Amounts and criteria differ by university and change each year, so always check the current listing.',
+      },
+      {
+        headingEn: 'Government and external scholarships',
+        bodyEn:
+          'The New Zealand government administers scholarship programmes for international students through its official channels; eligibility and country coverage vary by programme. In addition, students may be eligible for external awards offered by foundations, professional bodies, or schemes in their home country.\n\nAll genuine scholarships assess applicants on secular, published criteria — typically academic merit, field of study, financial need, or community involvement. Confirm eligibility and deadlines on the official programme page, and apply directly through the official channel.',
+      },
+      {
+        headingEn: 'How to search and apply',
+        bodyEn:
+          'A practical approach: start with the official scholarships database of each university on your shortlist, then check New Zealand government scholarship listings and any home-country or external schemes you may qualify for. Note each award\'s eligibility, value, what it covers (full or partial), and its deadline, which often falls before or alongside the admission deadline.\n\nApply early and prepare a strong application — typically academic records, a statement, and references where required. Read each award\'s instructions carefully, as requirements differ.',
+      },
+      {
+        headingEn: 'Avoiding scholarship scams',
+        bodyEn:
+          'Genuine scholarships never ask you to pay a fee to "guarantee" or "secure" an award, and no service can promise you a scholarship. Be cautious of anyone asking for payment, personal banking details, or upfront charges in exchange for a guaranteed scholarship — these are red flags.\n\nApply only through official university and government websites. This guide is general information, not a guarantee of funding; verify every scholarship on its official source before sharing any information or money.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What scholarships are available to study in New Zealand?',
+        answerEn:
+          'There are university scholarships (merit, entrance, faculty, and research awards), New Zealand government scholarship programmes, and external awards from foundations or home-country schemes. Eligibility, value, and deadlines vary by award — check each official scholarship page.',
+      },
+      {
+        questionEn: 'Are New Zealand scholarships fully funded?',
+        answerEn:
+          'Some scholarships are full (covering tuition and sometimes living costs) and many are partial. What each award covers is set by the awarding body and stated on its official page. Confirm the exact coverage before applying.',
+      },
+      {
+        questionEn: 'Where do I find New Zealand university scholarships?',
+        answerEn:
+          'Use each university\'s official scholarships database, where you can filter by study level, citizenship, and field. This is the most accurate, up-to-date source, since amounts and criteria change each year.',
+      },
+      {
+        questionEn: 'Can a service guarantee me a scholarship?',
+        answerEn:
+          'No. No legitimate service can guarantee a scholarship, and genuine scholarships never charge a fee to secure one. Apply only through official university and government channels, and treat any pay-to-guarantee offer as a red flag.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-studying-in-new-zealand', 'university-scholarships-in-australia-guide', 'education-loan-for-studying-in-australia-and-new-zealand', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Study with New Zealand — scholarships', url: 'https://www.studywithnewzealand.govt.nz/en/study-options/scholarships' },
+      { label: 'Education New Zealand — official', url: 'https://www.enz.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['scholarships to study in new zealand', 'new zealand scholarships for international students', 'nz university scholarships', 'fully funded scholarship new zealand', 'how to get scholarship in new zealand'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Scholarship types', value: 'University, government, and external/home-country awards' },
+      { label: 'Best search tool', value: 'Each university\'s official scholarships database' },
+      { label: 'Criteria', value: 'Secular only — merit, field, financial need, involvement' },
+      { label: 'Scam caution', value: 'Genuine awards never charge a fee to guarantee a scholarship' },
+      { label: 'Verify on', value: 'Official university + NZ government scholarship pages' },
+    ],
+  },
+  {
+    slug: 'education-loan-for-studying-in-australia-and-new-zealand',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Education Loan for Studying in Australia and New Zealand: An Overview',
+    descriptionEn:
+      'A factual overview of education-loan options for students heading to Australia or New Zealand — types of loans, what costs they can cover, and what to discuss with a qualified adviser.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What an education loan can cover',
+        bodyEn:
+          'An education loan (also called a student loan) is borrowed money used to fund studies, repaid over time with interest. For students going to Australia or New Zealand, loans are typically arranged in the student\'s home country, since these are the main funding routes available to international students. Loans can usually be applied to tuition fees and to associated costs such as living expenses, travel, insurance, and study materials — the exact list depends on the lender and product.\n\nThis guide is a neutral, factual overview to help you understand how education loans generally work. It is not financial advice. Loan terms, interest rates, fees, and eligibility vary by lender and change over time, and the right choice depends on your circumstances — so consult a qualified financial adviser and the lender\'s official information before borrowing.',
+        bullets: [
+          'Tuition fees and university charges',
+          'Living costs, accommodation, and travel',
+          'Insurance, study materials, and related expenses',
+        ],
+      },
+      {
+        headingEn: 'Common types of student loans',
+        bodyEn:
+          'Education loans for overseas study generally fall into two broad types. Secured loans are backed by collateral such as property or fixed deposits, while unsecured loans are granted without collateral, often based on the borrower\'s or a co-applicant\'s income and credit profile. Many loans involve a co-applicant (such as a parent or guardian) who shares responsibility for repayment.\n\nLenders differ in the maximum amount, interest structure, processing fees, moratorium (a period before repayment begins), and repayment tenure they offer. Compare these features across lenders using each lender\'s official documentation, rather than relying on general figures, which can be out of date.',
+      },
+      {
+        headingEn: 'Documents and eligibility',
+        bodyEn:
+          'While requirements differ by lender, education-loan applications commonly ask for an admission offer or proof of enrolment, academic records, identity and address proof, financial documents for the borrower and co-applicant, and details of the course and its costs. Some lenders consider the institution and course as part of their assessment.\n\nEligibility criteria, required documents, and processing timelines are set by each lender and can change. Always confirm the current list directly with the lender before applying, and allow enough time, as loan processing and disbursement can take several weeks.',
+      },
+      {
+        headingEn: 'Questions to ask before borrowing',
+        bodyEn:
+          'Before taking any education loan, it helps to understand the full cost and terms. Ask the lender clear questions and get the answers in writing, so you can compare options on a like-for-like basis. Key points include the total cost over the life of the loan, when repayment starts, whether the rate is fixed or variable, and any fees or penalties.\n\nBecause borrowing is a significant financial commitment, discuss your situation with a qualified financial adviser. GlobalStudyBoard provides general information only and does not recommend any lender or product.',
+        bullets: [
+          'What is the interest rate, and is it fixed or variable?',
+          'When does repayment begin (is there a moratorium)?',
+          'What are the processing fees, prepayment terms, and penalties?',
+          'What is the total repayment over the full tenure?',
+        ],
+      },
+      {
+        headingEn: 'Funding to know about in Australia and New Zealand',
+        bodyEn:
+          'International students should be aware that some government-backed student-loan schemes in Australia and New Zealand are available only to citizens, permanent residents, or specific eligible groups, not to all international students. Whether you qualify for any such scheme depends on the official eligibility rules, which are set by those governments and can change.\n\nFor accurate, current details, check the official Australian and New Zealand government education pages, and treat your home-country education loan as the primary route unless an official source confirms you are eligible for something else. This is general information, not financial or immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can international students get an education loan for Australia or New Zealand?',
+        answerEn:
+          'International students typically arrange education loans in their home country, as these are the main funding routes available. Loan types, amounts, and eligibility vary by lender. Confirm current terms with the lender and consult a qualified financial adviser before borrowing.',
+      },
+      {
+        questionEn: 'What costs can an education loan cover?',
+        answerEn:
+          'Depending on the lender and product, a loan can usually cover tuition fees plus associated costs such as living expenses, travel, insurance, and study materials. The exact coverage is set by the lender — check their official documentation.',
+      },
+      {
+        questionEn: 'What is the difference between a secured and an unsecured education loan?',
+        answerEn:
+          'A secured loan is backed by collateral such as property or a fixed deposit, while an unsecured loan is granted without collateral, often based on income and credit profile. Terms, limits, and rates differ by lender; compare official details before deciding.',
+      },
+      {
+        questionEn: 'Are Australian and New Zealand government student loans open to international students?',
+        answerEn:
+          'Some government-backed student-loan schemes in Australia and New Zealand are limited to citizens, permanent residents, or specific eligible groups. Eligibility is set by those governments and can change. Verify on the official government education pages; this is general information, not advice.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-studying-in-new-zealand', 'cost-of-studying-australia-vs-new-zealand-compared', 'scholarships-to-study-in-new-zealand', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official (Australian Government)', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Study with New Zealand — official', url: 'https://www.studywithnewzealand.govt.nz/en' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['education loan for australia', 'student loan to study in new zealand', 'study abroad loan australia new zealand', 'education loan for overseas study', 'how to fund studies in australia'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'What it is', value: 'Borrowed money for studies, repaid with interest over time' },
+      { label: 'Two broad types', value: 'Secured (with collateral) and unsecured (no collateral)' },
+      { label: 'Usually arranged', value: 'In the student\'s home country for international students' },
+      { label: 'Important note', value: 'General information only — not financial advice' },
+      { label: 'Before borrowing', value: 'Consult a qualified financial adviser; confirm terms with the lender' },
+    ],
+  },
+  {
+    slug: 'cost-of-studying-australia-vs-new-zealand-compared',
+    category: 'comparison',
+    region: 'australia-nz',
+    titleEn: 'Cost of Studying: Australia vs New Zealand Compared',
+    descriptionEn:
+      'A neutral, component-by-component comparison of the cost of studying in Australia versus New Zealand — tuition, living costs, insurance, and visa funds — with no winner declared.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Comparing costs the right way',
+        bodyEn:
+          'Australia and New Zealand are both popular English-speaking study destinations, and the cost of studying in each depends on the same building blocks: tuition, living costs, health cover, and one-off expenses. Rather than declare one country cheaper overall — which would be misleading, since it depends entirely on your university, city, course, and lifestyle — this guide compares the components so you can build two realistic budgets and decide for yourself.\n\nAll specific amounts should come from official sources, because fees and indicative figures are set each year and vary by institution. Use each university\'s official fees page and the official Australian and New Zealand government education and immigration sites to confirm current numbers.',
+      },
+      {
+        headingEn: 'Tuition fees',
+        bodyEn:
+          'In both countries, international tuition is set by each individual university and varies by field of study and level — laboratory, engineering, and clinical programmes typically cost more than classroom-based courses, and postgraduate fees are priced separately from undergraduate.\n\nBecause both Australia and New Zealand publish per-university, per-programme fees, the only accurate comparison is a like-for-like one: pick the specific universities and courses you are considering in each country and compare their official fee schedules side by side for the same intake year.',
+        bullets: [
+          'Fees are set per university and per programme in both countries',
+          'Lab/engineering/clinical courses generally cost more than classroom-based',
+          'Compare the same level and field for a fair picture',
+        ],
+      },
+      {
+        headingEn: 'Living costs',
+        bodyEn:
+          'Living costs in both countries depend mainly on the city and your lifestyle. Larger cities such as Sydney and Melbourne in Australia, or Auckland and Wellington in New Zealand, generally have higher accommodation costs than smaller centres, and shared living is usually cheaper than living alone.\n\nBoth governments publish an indicative amount a student visa applicant should show to demonstrate they can support themselves. These figures are useful reference points for budgeting and for the visa, but they are set by each government and change, so confirm the current amounts on the official Australian Department of Home Affairs and Immigration New Zealand sites.',
+      },
+      {
+        headingEn: 'Health cover and one-off costs',
+        bodyEn:
+          'Health cover differs between the two countries. Australia generally requires international students to hold Overseas Student Health Cover (OSHC) for the duration of their visa, while New Zealand generally requires international students to hold appropriate medical and travel insurance under its pastoral-care rules. The exact requirement and cost are set officially and should be checked on each country\'s official source.\n\nBoth destinations also involve one-off costs: a student visa application fee, return flights, an initial settling-in fund, and course materials. These vary and change, so verify each on the relevant official site.',
+        bullets: [
+          'Australia — Overseas Student Health Cover (OSHC) generally required',
+          'New Zealand — appropriate medical and travel insurance generally required',
+          'One-off costs — visa fee, flights, setup, materials (verify current amounts)',
+        ],
+      },
+      {
+        headingEn: 'Putting it together',
+        bodyEn:
+          'To compare fairly, build two budgets using official figures: tuition for your chosen programme in each country, living costs for your chosen city, the required health cover, and one-off costs. Add any scholarships you may be eligible for, and remember that both a subclass 500 student visa in Australia and a New Zealand student visa may allow limited part-time work under conditions set by each government — check the current rights on the official immigration sites.\n\nThere is no single "cheaper" country; the answer depends on your specific choices. This guide is general information to support your planning, not financial or immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is it cheaper to study in Australia or New Zealand?',
+        answerEn:
+          'There is no single answer — it depends on your university, city, course, and lifestyle in each country. The reliable way to compare is to build two budgets from official figures (tuition, living costs, health cover, one-off costs) for your specific choices and compare them side by side.',
+      },
+      {
+        questionEn: 'How does health cover differ between the two countries?',
+        answerEn:
+          'Australia generally requires Overseas Student Health Cover (OSHC) for the duration of the student visa, while New Zealand generally requires appropriate medical and travel insurance under its pastoral-care rules. Confirm the exact current requirement and cost on each country\'s official source.',
+      },
+      {
+        questionEn: 'Where do I find accurate tuition fees for each country?',
+        answerEn:
+          'Tuition is set per university and per programme in both Australia and New Zealand. Use the official fees page of each specific university and course you are considering, for the same intake year, to compare like for like.',
+      },
+      {
+        questionEn: 'Can students work part-time in both countries?',
+        answerEn:
+          'Both an Australian subclass 500 student visa and a New Zealand student visa may permit limited part-time work, subject to conditions set by each government. This is general information, not immigration advice — verify the current work rights on the official Australian and New Zealand immigration sites.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-studying-in-new-zealand', 'scholarships-to-study-in-new-zealand', 'university-scholarships-in-australia-guide', 'education-loan-for-studying-in-australia-and-new-zealand'],
+    sources: [
+      { label: 'Study Australia — living and education costs (Australian Government)', url: 'https://www.studyaustralia.gov.au/en/life-in-australia/living-and-education-costs' },
+      { label: 'Study with New Zealand — official', url: 'https://www.studywithnewzealand.govt.nz/en' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['cost of studying australia vs new zealand', 'australia vs new zealand for international students', 'study in australia or new zealand cost', 'cheaper to study australia or new zealand', 'australia new zealand tuition comparison'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Same cost building blocks', value: 'Tuition, living costs, health cover, one-off costs' },
+      { label: 'Tuition', value: 'Set per university + per programme in both countries' },
+      { label: 'Health cover', value: 'Australia: OSHC; New Zealand: medical + travel insurance' },
+      { label: 'No single winner', value: 'Cheaper country depends on your specific choices' },
+      { label: 'Verify on', value: 'University fees pages + official AU/NZ government sites' },
+    ],
+  },
+  {
+    slug: 'university-scholarships-in-australia-guide',
+    category: 'scholarships',
+    region: 'australia-nz',
+    titleEn: 'University Scholarships in Australia: A Guide for International Students',
+    descriptionEn:
+      'How university scholarships in Australia work for international students — merit, entrance, and faculty awards — plus how to find them and verify eligibility on official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What university scholarships are',
+        bodyEn:
+          'Many Australian universities offer scholarships to international students to help with the cost of study. These are separate from government and external awards and are administered by the universities themselves. They can range from partial fee reductions to more substantial awards, and each has its own eligibility criteria, value, coverage, and deadlines set by the university.\n\nThis guide explains the common scholarship types and how to find them. Because every award differs and amounts and criteria change each year, always confirm the current details on the university\'s official scholarships page, and apply directly through the official channel. No scholarship is guaranteed.',
+        bullets: [
+          'Offered and administered by individual universities',
+          'Range from partial fee reductions to larger awards',
+          'Eligibility, value, and deadlines are set by each university',
+        ],
+      },
+      {
+        headingEn: 'Common types of university scholarships',
+        bodyEn:
+          'University scholarships in Australia commonly fall into a few categories. Entrance or merit scholarships reward strong academic results and are often awarded as part of, or shortly after, the admission process. Faculty- or programme-specific scholarships support students in a particular field or school. Research scholarships support postgraduate research students, and some universities offer awards linked to need, region, or other criteria.\n\nSome scholarships are awarded automatically based on your application, while others require a separate scholarship application — the university\'s official listing states which applies for each award.',
+        bullets: [
+          'Entrance / merit awards based on academic achievement',
+          'Faculty- or programme-specific awards',
+          'Research scholarships for postgraduate study',
+        ],
+      },
+      {
+        headingEn: 'How to find and apply',
+        bodyEn:
+          'Each Australian university maintains an official scholarships database where you can search and filter by study level, citizenship or residency, and field of study. This is the most reliable place to find awards you are eligible for, since the listings are kept current.\n\nNote each award\'s eligibility, value, what it covers (full or partial), whether a separate application is required, and its deadline — which can fall before or alongside the admission deadline. Prepare any required documents, such as academic records, a statement, and references, and apply early.',
+      },
+      {
+        headingEn: 'Eligibility and what awards cover',
+        bodyEn:
+          'University scholarships assess applicants on published, secular criteria — most commonly academic merit, but also field of study, financial need, community involvement, or region of origin, depending on the award. Coverage varies: some awards reduce tuition by a set percentage or amount, some are one-off payments, and a smaller number are more comprehensive.\n\nBecause the exact eligibility and coverage are set by each university and revised periodically, confirm them on the official scholarship page rather than relying on summaries. Read the terms carefully, including whether the award continues each year and any conditions attached to keeping it.',
+      },
+      {
+        headingEn: 'Applying safely',
+        bodyEn:
+          'Apply for university scholarships only through the university\'s official website. Genuine scholarships never charge a fee to guarantee an award, and no service or agent can promise you a scholarship. Treat any pay-to-guarantee offer, or a request for upfront payment or banking details in exchange for a scholarship, as a red flag.\n\nThis guide is general information, not a guarantee of funding. Combine university scholarships with other planning — government and external awards, and careful budgeting — and verify every detail on the official source before you apply.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do Australian universities offer scholarships to international students?',
+        answerEn:
+          'Yes, many Australian universities offer scholarships to international students, including entrance/merit, faculty-specific, and research awards. Eligibility, value, and deadlines are set by each university — check the official scholarships page of the universities you are considering.',
+      },
+      {
+        questionEn: 'How do I find university scholarships in Australia?',
+        answerEn:
+          'Use each university\'s official scholarships database, where you can filter by study level, citizenship, and field of study. This is the most accurate and up-to-date source, since amounts and criteria change each year.',
+      },
+      {
+        questionEn: 'Do I need a separate application for a university scholarship?',
+        answerEn:
+          'It depends on the award. Some scholarships are granted automatically based on your admission application; others require a separate scholarship application. The university\'s official listing for each award states which applies.',
+      },
+      {
+        questionEn: 'Can a university scholarship cover my full tuition?',
+        answerEn:
+          'Coverage varies by award — some reduce tuition by a set percentage or amount, while a smaller number are more comprehensive. What each award covers is set by the university and stated on its official scholarship page. Confirm the exact coverage before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: ['university-of-melbourne'],
+    relatedGuideSlugs: ['scholarships-to-study-in-new-zealand', 'cost-of-studying-australia-vs-new-zealand-compared', 'education-loan-for-studying-in-australia-and-new-zealand', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — scholarships (Australian Government)', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/scholarships' },
+      { label: 'University of Melbourne — scholarships', url: 'https://scholarships.unimelb.edu.au' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['university scholarships in australia', 'australia scholarships for international students', 'merit scholarship australian universities', 'how to get scholarship in australia', 'australia university scholarship guide'],
+    tags: ['anz-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Who offers them', value: 'Individual Australian universities (separate from govt awards)' },
+      { label: 'Common types', value: 'Entrance/merit, faculty-specific, and research scholarships' },
+      { label: 'Best search tool', value: 'Each university\'s official scholarships database' },
+      { label: 'Criteria', value: 'Secular only — merit, field, need, involvement, region' },
+      { label: 'Verify on', value: 'Official university scholarship pages; never pay to guarantee' },
+    ],
+  },
+  {
+    slug: 'temporary-graduate-visa-485',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Temporary Graduate Visa (Subclass 485) Guide',
+    descriptionEn:
+      'A neutral overview of Australia\'s Temporary Graduate visa (subclass 485) — its two streams, who it is broadly for, and why eligibility, age limits, and stay duration must be confirmed on the official Department of Home Affairs source.',
+    readMinutes: 7,
+    keyFacts: [
+      { label: 'Visa', value: 'Temporary Graduate visa (subclass 485), Australia' },
+      { label: 'Administered by', value: 'Australian Department of Home Affairs' },
+      { label: 'Streams', value: 'Post-Higher Education Work stream and Post-Study Work stream' },
+      { label: 'Eligibility / duration', value: 'Set by Home Affairs; changed in 2024–2025 — verify the current rules' },
+      { label: 'Status', value: 'A temporary visa — it is not permanent residence' },
+    ],
+    sections: [
+      {
+        headingEn: 'What the subclass 485 visa is',
+        bodyEn:
+          'The Temporary Graduate visa (subclass 485) is an Australian temporary visa that lets some recent graduates of Australian study stay in Australia for a period after they finish their course. It is administered by the Australian Department of Home Affairs.\n\nThis page is general information only and is not immigration advice. Eligibility rules, the conditions of each stream, age limits, and how long you may stay are set by the Australian Government and have changed in recent years. Always confirm the current requirements on the official Department of Home Affairs source before relying on anything here, and consider a registered migration agent for advice on your own situation.',
+      },
+      {
+        headingEn: 'The two streams',
+        bodyEn:
+          'The subclass 485 visa has two streams. The Post-Higher Education Work stream (formerly called the Graduate Work stream) is broadly for graduates with qualifications and, in some cases, skills relevant to occupations on a relevant list. The Post-Study Work stream is broadly for graduates of a higher-education degree from an Australian institution.\n\nWhich stream you may be eligible for, and what each stream requires, is defined by Home Affairs. The exact rules differ between the streams, so read the official stream-by-stream guidance carefully.',
+        bullets: [
+          'Post-Higher Education Work stream (formerly the Graduate Work stream)',
+          'Post-Study Work stream (broadly for higher-education degree graduates)',
+          'Each stream has its own eligibility rules — confirm on Home Affairs',
+        ],
+      },
+      {
+        headingEn: 'Eligibility and duration changed in 2024–2025',
+        bodyEn:
+          'Important: the eligibility settings for the subclass 485 visa — including the maximum age to apply and how long the visa may be granted for — were changed by the Australian Government across 2024 and 2025. Because these specifics are volatile and depend on your qualification and circumstances, this guide does not state a fixed age limit or a fixed number of months of stay.\n\nFor the current age limit, study and English requirements, and the period of stay that applies to your situation, check the official Department of Home Affairs page for the subclass 485 visa. Rules change frequently — verify on the official government source before acting.',
+      },
+      {
+        headingEn: 'Common requirements to check',
+        bodyEn:
+          'While the precise criteria are set by Home Affairs and can change, applicants are generally expected to confirm a range of standard requirements. Treat the list below as a prompt of what to look up officially, not as the final rule.',
+        bullets: [
+          'Holding (or recently holding) an eligible student visa',
+          'Having completed an eligible Australian qualification (the "Australian study requirement")',
+          'Meeting the relevant English language requirement',
+          'Meeting health, character, and health-insurance requirements',
+          'Being under the maximum age that applies (set by Home Affairs)',
+          'Applying within the required time after finishing study',
+        ],
+      },
+      {
+        headingEn: 'It is a temporary visa — not permanent residence',
+        bodyEn:
+          'The subclass 485 visa is a temporary visa. Holding it, or studying in Australia, does not guarantee permanent residence or any later visa. Permanent residence in Australia is decided through entirely separate processes with their own criteria.\n\nIf permanent residence is a goal, research the relevant pathways directly and independently, and remember that decisions rest with the Australian Government. No course, agent, or website can guarantee a visa or permanent residence.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the two streams of the subclass 485 visa?',
+        answerEn:
+          'The Post-Higher Education Work stream (formerly the Graduate Work stream) and the Post-Study Work stream. Each has its own eligibility rules, which you should confirm on the official Department of Home Affairs source.',
+      },
+      {
+        questionEn: 'How long can I stay on a subclass 485 visa?',
+        answerEn:
+          'The period of stay depends on your stream, qualification, and current government settings, which changed across 2024–2025. This guide does not state a fixed duration — check the current period on the official Department of Home Affairs page for your situation.',
+      },
+      {
+        questionEn: 'Is there an age limit for the subclass 485 visa?',
+        answerEn:
+          'There is a maximum age to apply, but it was changed by the Australian Government in recent years, so we do not quote a figure here. Verify the current age limit on the official Home Affairs source.',
+      },
+      {
+        questionEn: 'Does the subclass 485 visa lead to permanent residence?',
+        answerEn:
+          'No — it is a temporary visa and does not guarantee permanent residence. Permanent residence is decided through separate processes. This is general information, not immigration advice; verify everything on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['working-while-studying-in-australia-rules', 'finding-a-graduate-job-in-australia-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Australian Department of Home Affairs — Temporary Graduate visa (subclass 485)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485' },
+      { label: 'Study Australia (Australian Government) — official student information', url: 'https://www.studyaustralia.gov.au/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['subclass 485 visa', 'temporary graduate visa australia', 'post study work visa australia', '485 visa streams', 'graduate visa australia for international students'],
+    tags: ['work-and-stay-anz'],
+  },
+  {
+    slug: 'working-while-studying-in-australia-rules',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Working While Studying in Australia: Rules',
+    descriptionEn:
+      'A neutral, factual overview of work rights for international students in Australia on a student visa (subclass 500) — including the work-hours limit during term — with a clear nudge to verify the current rule on the Department of Home Affairs source.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Visa', value: 'Student visa (subclass 500), Australia' },
+      { label: 'Work-hours limit (in session)', value: 'Up to 48 hours per fortnight during study sessions — verify current rule' },
+      { label: 'During recognised breaks', value: 'Hours limit is generally relaxed — confirm on Home Affairs' },
+      { label: 'Set by', value: 'Australian Department of Home Affairs (visa condition 8105)' },
+    ],
+    sections: [
+      {
+        headingEn: 'Work rights come with your student visa',
+        bodyEn:
+          'Most international students in Australia hold a student visa (subclass 500), which generally includes limited work rights. The exact conditions are set by the Australian Department of Home Affairs and attached to your visa.\n\nThis page is general information only and is not immigration advice. Work-rights rules have changed in recent years and can change again, so always confirm the current conditions on the official Department of Home Affairs source and on your own visa grant notice before working.',
+      },
+      {
+        headingEn: 'The work-hours limit during term',
+        bodyEn:
+          'While your course is in session, student-visa holders are generally limited in how many hours they may work. The current cap is up to 48 hours per fortnight (a "fortnight" is a two-week period) during study sessions. This is applied through the standard work-limit visa condition (commonly condition 8105).\n\nBecause this figure has changed before, do not assume it — verify the current per-fortnight limit on the official Home Affairs source. Working more than your visa allows can put your visa at risk.',
+        bullets: [
+          'Up to 48 hours per fortnight while your course is in session (verify current rule)',
+          'A fortnight means a 14-day period',
+          'Applied via a visa work-limit condition (commonly 8105)',
+        ],
+      },
+      {
+        headingEn: 'During scheduled breaks',
+        bodyEn:
+          'During recognised course breaks (for example, official holiday periods set by your institution), the fortnightly hours limit is generally relaxed for student-visa holders. The precise treatment of breaks is defined by Home Affairs, so confirm what applies to your course and visa.\n\nKeep evidence of your enrolment and term dates, and check whether any work you do — paid or unpaid — counts toward the limit.',
+      },
+      {
+        headingEn: 'Course progress and other conditions',
+        bodyEn:
+          'A student visa also carries other conditions — for example, maintaining enrolment and satisfactory course progress and attendance. Work should not come at the cost of these conditions, since your primary purpose on a subclass 500 visa is study.\n\nFamily members included on some student visas may have their own, different work rights. Always read your own grant notice and the official guidance rather than relying on what other students tell you.',
+      },
+      {
+        headingEn: 'Where to verify the rules',
+        bodyEn:
+          'Work conditions, the hours limit, and how breaks are treated are all set by the Australian Government and can change. Rules change frequently — verify on the official government source before acting.\n\nThis is general information, not immigration advice. For advice about your own situation, consider a registered migration agent, your institution\'s international student support office, or the official Home Affairs channels.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many hours can I work on a student visa in Australia?',
+        answerEn:
+          'While your course is in session, the current limit is up to 48 hours per fortnight. This has changed before, so verify the current per-fortnight cap on the official Department of Home Affairs source.',
+      },
+      {
+        questionEn: 'Can I work more hours during holidays?',
+        answerEn:
+          'During recognised course breaks, the fortnightly hours limit is generally relaxed for student-visa holders. Confirm exactly how breaks are treated on the official Home Affairs guidance for your course and visa.',
+      },
+      {
+        questionEn: 'What happens if I work more than my visa allows?',
+        answerEn:
+          'Working beyond your visa conditions can put your visa at risk. Always stay within the current limit and check your own visa grant notice. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Do my course attendance and progress still matter if I work?',
+        answerEn:
+          'Yes. A subclass 500 visa requires you to maintain enrolment and satisfactory course progress and attendance. Study is the primary purpose of the visa, so work should not compromise these conditions.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['part-time-jobs-for-international-students-in-australia', 'tax-file-number-and-working-in-australia', 'temporary-graduate-visa-485'],
+    sources: [
+      { label: 'Australian Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Study Australia (Australian Government) — work in Australia', url: 'https://www.studyaustralia.gov.au/en/work-in-australia' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['working while studying in australia', 'student visa work hours australia', '48 hours per fortnight', 'subclass 500 work rights', 'how many hours can international students work australia'],
+    tags: ['work-and-stay-anz'],
+  },
+  {
+    slug: 'part-time-jobs-for-international-students-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Part-Time Jobs for International Students in Australia',
+    descriptionEn:
+      'A practical, neutral overview of the kinds of part-time work international students commonly do in Australia, how to look for jobs, and how work hours are tied to your student-visa conditions — with no income guarantees.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'Who this is for', value: 'International students in Australia on a student visa (subclass 500)' },
+      { label: 'Hours tied to', value: 'Your visa work conditions — set by the Department of Home Affairs' },
+      { label: 'To get paid you generally need', value: 'A Tax File Number (TFN) from the ATO' },
+      { label: 'Earnings', value: 'Vary widely — no job, hours, or income is guaranteed' },
+    ],
+    sections: [
+      {
+        headingEn: 'How student work fits around study',
+        bodyEn:
+          'Many international students in Australia take on part-time or casual work alongside their studies. Before you start, remember that any work must fit within the conditions of your student visa (subclass 500), and study remains your primary purpose on that visa.\n\nThe number of hours you may work is set by the Australian Department of Home Affairs and is currently limited while your course is in session. This page is general information, not immigration advice — see the related guide on working-while-studying rules and verify the current hours limit on the official Home Affairs source.',
+      },
+      {
+        headingEn: 'Common types of student jobs',
+        bodyEn:
+          'Students work across many sectors. The roles below are simply examples of work commonly available to students; availability depends heavily on your city, skills, schedule, and the local job market. There is no guarantee of finding any particular role or income.',
+        bullets: [
+          'Hospitality and food service (cafés, restaurants, catering)',
+          'Retail and customer service',
+          'On-campus roles (library, student services, events) where offered',
+          'Tutoring and academic support, where you are qualified',
+          'Administrative, reception, or data-entry roles',
+          'Warehousing, delivery, and other casual work',
+        ],
+      },
+      {
+        headingEn: 'Where to look for work',
+        bodyEn:
+          'Most universities run a careers or employment service that lists student-friendly roles and can help with résumés and interview practice. Beyond campus, students use mainstream Australian job platforms and apply in person to local businesses.\n\nUse your institution\'s international student support and careers services — they understand student work limits and local expectations, and their help is usually free.',
+        bullets: [
+          'Your university careers / employment service and job board',
+          'Mainstream Australian job-search platforms',
+          'Local businesses (in person, with a simple résumé)',
+          'Your institution\'s international student support office',
+        ],
+      },
+      {
+        headingEn: 'Getting set up to be paid',
+        bodyEn:
+          'To work and be paid correctly in Australia, you generally need a Tax File Number (TFN), which you apply for through the Australian Taxation Office (ATO). Employers also typically pay superannuation (retirement savings) on top of wages for eligible workers.\n\nSee the related guide on the Tax File Number and working in Australia for how to apply and what to expect. This is factual information, not financial or tax advice.',
+      },
+      {
+        headingEn: 'Know your rights and stay within your visa',
+        bodyEn:
+          'Workers in Australia, including international students, have workplace rights — for example, minimum pay rates and safe conditions. The Fair Work Ombudsman is the official Australian Government body for workplace rights and entitlements.\n\nAlways keep your work within your visa\'s hours limit and conditions, since exceeding them can put your visa at risk. Verify visa work rules on the official Department of Home Affairs source — rules change frequently, so confirm before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many hours can a student work part-time in Australia?',
+        answerEn:
+          'Your hours are limited by your student visa while your course is in session (currently up to 48 hours per fortnight). This has changed before — verify the current limit on the official Department of Home Affairs source.',
+      },
+      {
+        questionEn: 'What kinds of part-time jobs do students usually do?',
+        answerEn:
+          'Common examples include hospitality, retail, customer service, on-campus roles, and tutoring where you are qualified. Availability varies by city and market, and no role or income is guaranteed.',
+      },
+      {
+        questionEn: 'Do I need anything official before I start working?',
+        answerEn:
+          'You generally need a Tax File Number (TFN) from the Australian Taxation Office to be paid correctly. See the related TFN guide. This is factual information, not financial advice.',
+      },
+      {
+        questionEn: 'Where can I get help finding a student job?',
+        answerEn:
+          'Your university\'s careers or employment service and international student support office are good first stops — they understand student work limits and local norms, and their help is usually free.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['working-while-studying-in-australia-rules', 'tax-file-number-and-working-in-australia', 'finding-a-graduate-job-in-australia-guide'],
+    sources: [
+      { label: 'Study Australia (Australian Government) — work in Australia', url: 'https://www.studyaustralia.gov.au/en/work-in-australia' },
+      { label: 'Australian Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['part time jobs for international students australia', 'student jobs australia', 'casual work for students australia', 'on campus jobs australia', 'how to find a part time job in australia'],
+    tags: ['work-and-stay-anz'],
+  },
+  {
+    slug: 'finding-a-graduate-job-in-australia-guide',
+    category: 'career',
+    region: 'australia-nz',
+    titleEn: 'Finding a Graduate Job in Australia: Guide',
+    descriptionEn:
+      'A neutral, practical guide to searching for a graduate job in Australia after you finish study — how to use careers services, build applications, and understand that work rights depend on your visa, with no placement or salary guarantee.',
+    readMinutes: 7,
+    keyFacts: [
+      { label: 'Who this is for', value: 'Recent graduates of Australian study seeking work' },
+      { label: 'Work rights', value: 'Depend on your visa (e.g. subclass 485) — verify on Home Affairs' },
+      { label: 'Key supports', value: 'University careers services, graduate programs, professional networks' },
+      { label: 'Outcomes', value: 'Vary by field, market, and individual — no job or salary is guaranteed' },
+    ],
+    sections: [
+      {
+        headingEn: 'Start with your visa and work rights',
+        bodyEn:
+          'Before a graduate job search, be clear about what visa lets you work in Australia after study. Many graduates apply for a Temporary Graduate visa (subclass 485) to work temporarily after finishing, but eligibility and conditions are set by the Australian Department of Home Affairs.\n\nThis page is general career information, not immigration advice. Confirm your work rights and any time limits on the official Home Affairs source before relying on them — rules change frequently, so verify before acting. No outcome is guaranteed.',
+      },
+      {
+        headingEn: 'Use your university careers service',
+        bodyEn:
+          'Australian universities typically run a careers and employability service that continues to support recent graduates. These services list graduate roles, run employer events, and review applications. Using them early is one of the most practical steps you can take.',
+        bullets: [
+          'Graduate job boards and employer listings',
+          'Résumé (CV) and cover-letter reviews',
+          'Mock interviews and assessment-centre practice',
+          'Careers fairs and employer information sessions',
+        ],
+      },
+      {
+        headingEn: 'Understand graduate programs and direct hiring',
+        bodyEn:
+          'Some larger Australian employers run structured graduate programs with set intake periods, while many roles are filled through ordinary direct applications year-round. Both are valid routes.\n\nResearch the typical hiring cycle in your field, note application windows for graduate programs, and apply broadly. Eligibility for some programs can depend on your work rights, so check requirements carefully.',
+        bullets: [
+          'Structured graduate programs (often with fixed intake dates)',
+          'Direct applications to advertised roles, year-round',
+          'Internships and casual roles that can lead to offers',
+        ],
+      },
+      {
+        headingEn: 'Build strong applications and networks',
+        bodyEn:
+          'Tailor each application to the role, use clear examples of your skills, and keep an updated professional profile. Networking — through alumni, professional associations, university events, and informational conversations — is a normal and effective part of job searching in Australia.\n\nIf your field has a professional body or registration requirement, look into it early, as some roles cannot be done without the relevant accreditation or registration.',
+      },
+      {
+        headingEn: 'Keep expectations realistic',
+        bodyEn:
+          'Graduate outcomes vary widely by field, location, the state of the job market, and individual circumstances. No website, university, or service can guarantee a job, a particular salary, or a permanent-residence outcome.\n\nFocus on what you can control — strong applications, relevant experience, networking, and using official supports — and verify any visa or work-rights facts on the official Australian Government sources.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What visa lets me work in Australia after I graduate?',
+        answerEn:
+          'Many graduates apply for a Temporary Graduate visa (subclass 485), but eligibility and conditions are set by the Department of Home Affairs and have changed recently. Verify the current rules on the official Home Affairs source. This is not immigration advice.',
+      },
+      {
+        questionEn: 'How do I find graduate jobs in Australia?',
+        answerEn:
+          'Start with your university careers service, look into structured graduate programs and their intake dates, apply directly to advertised roles, and build professional networks. Outcomes vary and no job is guaranteed.',
+      },
+      {
+        questionEn: 'Are graduate jobs or salaries guaranteed after studying in Australia?',
+        answerEn:
+          'No. Graduate outcomes depend on your field, the job market, and individual circumstances. No service can guarantee a job, salary, or migration outcome.',
+      },
+      {
+        questionEn: 'Do I need professional registration to work in my field?',
+        answerEn:
+          'Some fields require registration or accreditation with a professional body before you can practise. Check your field\'s requirements early, and verify any official details on the relevant authority\'s site.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['temporary-graduate-visa-485', 'tax-file-number-and-working-in-australia', 'part-time-jobs-for-international-students-in-australia'],
+    sources: [
+      { label: 'Study Australia (Australian Government) — life and work in Australia', url: 'https://www.studyaustralia.gov.au/' },
+      { label: 'Australian Department of Home Affairs — Temporary Graduate visa (subclass 485)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['finding a graduate job in australia', 'graduate jobs australia for international students', 'graduate programs australia', 'how to get a job in australia after study', 'australia graduate job search'],
+    tags: ['work-and-stay-anz'],
+  },
+  {
+    slug: 'tax-file-number-and-working-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Tax File Number (TFN) and Working in Australia',
+    descriptionEn:
+      'A factual overview of the Australian Tax File Number (TFN) — what it is, why you generally need one to work, how to apply through the ATO, and how superannuation works — written as neutral information, not financial or tax advice.',
+    readMinutes: 6,
+    keyFacts: [
+      { label: 'What it is', value: 'A Tax File Number (TFN) — your personal reference in Australia\'s tax system' },
+      { label: 'Issued by', value: 'Australian Taxation Office (ATO)' },
+      { label: 'Why you need it', value: 'To work and be taxed correctly; helps avoid higher withholding' },
+      { label: 'Superannuation', value: 'Retirement savings employers generally pay for eligible workers' },
+      { label: 'Cost', value: 'Applying for a TFN through the ATO is free' },
+    ],
+    sections: [
+      {
+        headingEn: 'What a Tax File Number is',
+        bodyEn:
+          'A Tax File Number (TFN) is a personal reference number used in Australia\'s tax and superannuation systems. It is issued by the Australian Taxation Office (ATO). If you work in Australia — including as an international student — you generally need a TFN so you can be taxed correctly.\n\nThis page is general, factual information and is not financial, tax, or immigration advice. For guidance on your own circumstances, use the official ATO channels or a registered tax professional.',
+      },
+      {
+        headingEn: 'Why you need a TFN to work',
+        bodyEn:
+          'You can technically start a job without a TFN, but if you do not provide one to your employer within the allowed time, tax may be withheld from your pay at a higher rate. Providing a valid TFN helps ensure the correct amount of tax is taken out.\n\nYou give your TFN to your employer (and to your bank and super fund where relevant) — never publish it publicly. Keep your TFN private and secure, as it is sensitive personal information.',
+        bullets: [
+          'Lets your employer withhold tax at the correct rate',
+          'Used when you lodge an annual tax return',
+          'Kept private — given only to your employer, bank, super fund, and the ATO',
+        ],
+      },
+      {
+        headingEn: 'How to apply through the ATO',
+        bodyEn:
+          'International students and other eligible foreign passport holders generally apply for a TFN through the Australian Taxation Office. Applying for a TFN is free — you do not need to pay anyone to get one.\n\nThe exact application method and what you need can change, so follow the current steps on the official ATO website. As a general guide, applicants are usually asked to confirm details such as those below.',
+        bullets: [
+          'Apply online via the official ATO website (the method can change)',
+          'Have your passport / visa details and an Australian address ready',
+          'Applying is free — beware of anyone charging a fee to "get" a TFN for you',
+          'Your TFN is sent to you after processing — keep it secure',
+        ],
+      },
+      {
+        headingEn: 'Superannuation explained neutrally',
+        bodyEn:
+          'Superannuation (often called "super") is Australia\'s system of retirement savings. For eligible employees, employers generally pay super contributions on top of wages into a super fund. The rules on who is eligible and the contribution rate are set by the Australian Government.\n\nThis is described here only as a neutral fact of working in Australia. For the current rules, eligibility, and any options when you leave Australia, check the official ATO information rather than relying on general descriptions.',
+      },
+      {
+        headingEn: 'Tax returns and where to verify',
+        bodyEn:
+          'People who work in Australia usually need to lodge a tax return each financial year, reporting income and tax paid. Your residency status for tax purposes affects how you are taxed, and this is determined under ATO rules, separately from your visa status.\n\nBecause tax rules and rates can change, verify everything on the official ATO source before acting. This guide is general information, not tax or financial advice — consider the ATO\'s help channels or a registered tax agent for your situation.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a Tax File Number to work in Australia?',
+        answerEn:
+          'You generally need a TFN to be taxed correctly. Without providing one to your employer in time, tax may be withheld at a higher rate. Apply through the official Australian Taxation Office (ATO).',
+      },
+      {
+        questionEn: 'How much does a TFN cost?',
+        answerEn:
+          'Applying for a TFN through the ATO is free. Be cautious of anyone charging a fee to obtain a TFN for you. Follow the official ATO steps, which can change over time.',
+      },
+      {
+        questionEn: 'What is superannuation?',
+        answerEn:
+          'Superannuation ("super") is Australia\'s retirement-savings system. Employers generally pay super contributions for eligible employees on top of wages. The rules are set by the government — check current details on the official ATO source. This is general information, not financial advice.',
+      },
+      {
+        questionEn: 'Will I need to lodge a tax return?',
+        answerEn:
+          'People who work in Australia usually need to lodge a tax return each financial year. Your tax residency status, determined under ATO rules, affects how you are taxed. Verify the current requirements on the official ATO website.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['working-while-studying-in-australia-rules', 'part-time-jobs-for-international-students-in-australia', 'finding-a-graduate-job-in-australia-guide'],
+    sources: [
+      { label: 'Australian Taxation Office (ATO) — Tax file number', url: 'https://www.ato.gov.au/individuals-and-families/tax-file-number' },
+      { label: 'Australian Taxation Office (ATO) — Super for individuals', url: 'https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['tax file number australia', 'how to apply for tfn', 'tfn for international students', 'superannuation australia explained', 'working and tax in australia'],
+    tags: ['work-and-stay-anz'],
+  },
+  {
+    slug: 'skilled-migration-to-australia-points-system-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Skilled Migration to Australia: Points System Guide',
+    descriptionEn:
+      'A neutral, official overview of Australia\'s points-tested skilled migration — how the SkillSelect Expression of Interest works, what the points test covers, and where to verify the current requirements with the Department of Home Affairs.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What points-tested skilled migration is',
+        bodyEn:
+          'Australia\'s general skilled migration visas — the Skilled Independent visa (subclass 189), the Skilled Nominated visa (subclass 190), and the Skilled Work Regional (Provisional) visa (subclass 491) — are points-tested. This means you are assessed against a points test, and applicants are invited to apply based on their points score and other factors.\n\nThis guide explains the framework at a high level. It is general information, not immigration advice. The criteria are detailed and are updated from time to time, so confirm the current rules on the official Department of Home Affairs source before relying on anything here.',
+      },
+      {
+        headingEn: 'How SkillSelect and the Expression of Interest work',
+        bodyEn:
+          'To be considered for a points-tested skilled visa, you first submit an Expression of Interest (EOI) through SkillSelect, the Australian Government\'s online system. In the EOI you provide details about your skills, qualifications, work experience, and English language ability, and the system calculates an indicative points score.\n\nSubmitting an EOI is not a visa application. From the pool of EOIs, the Department of Home Affairs issues invitations to apply, and only an invited applicant can then lodge the visa. A skills assessment by the relevant assessing authority and a nominated occupation on the applicable skilled occupation list are usually required.',
+        bullets: [
+          'Submit an Expression of Interest (EOI) in SkillSelect',
+          'An EOI is not a visa application — you must be invited to apply',
+          'A skills assessment and an occupation on the relevant list are usually required',
+        ],
+      },
+      {
+        headingEn: 'What the points test considers',
+        bodyEn:
+          'The points test awards points for a range of factors. These commonly include age, English language proficiency, skilled employment experience (in Australia and overseas), educational qualifications, and other factors such as state or territory nomination or eligible family sponsorship for the relevant visas.\n\nThere is a published minimum number of points you must reach to be eligible to be invited, but the score at which invitations are actually issued can be higher and varies between invitation rounds and occupations. Because the exact points awarded for each factor — and the score needed in a given round — are set by the Department of Home Affairs and can change, this guide deliberately does not state round-specific cut-offs. Use the official points calculator and check current settings on the Department of Home Affairs website.',
+        bullets: [
+          'Factors include age, English, skilled work experience, and qualifications',
+          'Nomination or eligible sponsorship can add points for the relevant visas',
+          'The invitation score varies by round and occupation — verify on the official source',
+        ],
+      },
+      {
+        headingEn: 'The three main points-tested visas',
+        bodyEn:
+          'The subclass 189 (Skilled Independent) is a permanent visa that does not require sponsorship or nomination. The subclass 190 (Skilled Nominated) is a permanent visa that requires nomination by an Australian state or territory government. The subclass 491 (Skilled Work Regional) is a provisional (temporary) visa that requires either nomination by a state or territory or sponsorship by an eligible family member living in a designated regional area, and can lead to permanent residence through the subclass 191 visa once its requirements are met.\n\nEach visa has its own eligibility rules, conditions, and occupation lists. The detailed guides for subclass 189, 190, and 491 cover them individually.',
+      },
+      {
+        headingEn: 'Where to verify the current rules',
+        bodyEn:
+          'The Department of Home Affairs is the authoritative source for skilled migration — the points test, eligibility, occupation lists, fees, invitation rounds, and the application process. The settings are reviewed and can change.\n\nStudying in Australia does not by itself lead to skilled migration or permanent residence; meeting the criteria of the relevant visa at the time you apply is what matters, and no study path or visa can guarantee residence. Before you act, read the current information on immi.homeaffairs.gov.au and verify every detail. This guide is general information only and is not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is skilled migration to Australia points-tested?',
+        answerEn:
+          'Yes. The subclass 189, 190, and 491 visas are points-tested. You submit an Expression of Interest in SkillSelect, and invitations to apply are issued based on points and other factors. Because the points and invitation scores are set by the Department of Home Affairs and can change, verify the current requirements on the official source.',
+      },
+      {
+        questionEn: 'How many points do I need?',
+        answerEn:
+          'There is a published minimum to be eligible to be invited, but the score at which invitations are actually issued can be higher and varies by round and occupation. This guide does not state round-specific cut-offs because they change. Use the official points calculator and check current settings on the Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'Does studying in Australia lead to permanent residence?',
+        answerEn:
+          'Not automatically. Study and post-study work experience may help build a relevant profile, but skilled migration depends on meeting the criteria of the relevant visa at the time you apply. No study path can guarantee residence. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Where do I confirm the current criteria?',
+        answerEn:
+          'Use immi.homeaffairs.gov.au. The Department of Home Affairs is the authoritative source for the points test, eligibility, occupation lists, fees, and the application process. Verify all details there before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'subclass-189-skilled-independent-visa-guide',
+      'subclass-190-state-nominated-visa-guide',
+      'subclass-491-skilled-work-regional-visa-guide',
+      'permanent-residency-pathways-after-studying-in-australia',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — SkillSelect', url: 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect' },
+      { label: 'Department of Home Affairs — Points calculator', url: 'https://immi.homeaffairs.gov.au/help-support/tools/points-calculator' },
+      { label: 'Department of Home Affairs — Skilled occupation list', url: 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skill-occupation-list' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'skilled migration to australia',
+      'australia points system immigration',
+      'skillselect expression of interest',
+      'australia pr points test',
+      'general skilled migration australia',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Managed by', value: 'Department of Home Affairs' },
+      { label: 'System', value: 'Points-tested via a SkillSelect Expression of Interest (EOI)' },
+      { label: 'Visas', value: 'Subclass 189, 190, and 491 (each has its own rules)' },
+      { label: 'Cut-offs', value: 'Invitation scores vary by round and occupation — verify on the official source' },
+      { label: 'Guarantee', value: 'No guarantee; study does not by itself lead to permanent residence' },
+    ],
+  },
+  {
+    slug: 'subclass-189-skilled-independent-visa-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Subclass 189 Skilled Independent Visa Guide',
+    descriptionEn:
+      'A neutral, official overview of the Skilled Independent visa (subclass 189) — a points-tested permanent visa that does not require sponsorship or nomination, with all current criteria deferred to the Department of Home Affairs.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What the subclass 189 visa is',
+        bodyEn:
+          'The Skilled Independent visa (subclass 189) is a permanent visa for invited skilled workers. Its points-tested stream does not require sponsorship by an employer, nomination by a state or territory, or sponsorship by a family member — applicants are invited based on the points test and other factors.\n\nThis guide explains the framework at a high level. It is general information, not immigration advice. The criteria are detailed and can change, so confirm the current rules on the official Department of Home Affairs source before relying on anything here.',
+      },
+      {
+        headingEn: 'How you are invited to apply',
+        bodyEn:
+          'To be considered, you submit an Expression of Interest (EOI) through SkillSelect, with your occupation, skills assessment, and details that feed into a points score. The Department of Home Affairs then issues invitations to apply from the pool of EOIs.\n\nAn EOI is not a visa application — only an invited applicant can lodge the subclass 189. A suitable skills assessment and a nominated occupation on the applicable skilled occupation list are generally required.',
+        bullets: [
+          'Submit an EOI in SkillSelect with your occupation and skills assessment',
+          'You must be invited to apply before lodging the visa',
+          'No employer, state, or family sponsorship is required for this visa',
+        ],
+      },
+      {
+        headingEn: 'Points and eligibility',
+        bodyEn:
+          'The subclass 189 is points-tested. Points are awarded for factors such as age, English language ability, skilled employment experience, and qualifications. There is a published minimum number of points to be eligible to be invited, but the score at which invitations are actually issued can be higher and varies between rounds and occupations.\n\nBecause these settings are determined by the Department of Home Affairs and can change, this guide does not state specific point totals or round cut-offs. Use the official points calculator and check current requirements on the Department of Home Affairs website.',
+        bullets: [
+          'Points for age, English, skilled work experience, and qualifications',
+          'Published minimum to be eligible; actual invitation score can be higher',
+          'Exact points and cut-offs — verify on the official source',
+        ],
+      },
+      {
+        headingEn: 'What permanent residence allows',
+        bodyEn:
+          'If granted, the subclass 189 is a permanent visa, so the holder can live and work anywhere in Australia. Permanent residents in Australia generally have access to certain services and a pathway toward citizenship, subject to the rules in force.\n\nThe specific entitlements, conditions, and obligations attached to the visa are set by the Department of Home Affairs and should be confirmed on the official source for your circumstances.',
+      },
+      {
+        headingEn: 'Where to verify the current rules',
+        bodyEn:
+          'The Department of Home Affairs is the authoritative source for the subclass 189 — the points test, eligibility, occupation lists, fees, invitation rounds, and the application process.\n\nStudying in Australia does not by itself lead to a subclass 189 visa; meeting the criteria at the time you apply is what matters, and no study path or visa can guarantee residence. Before you act, read the current information on immi.homeaffairs.gov.au and verify every detail. This guide is general information only and is not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does the subclass 189 need sponsorship or nomination?',
+        answerEn:
+          'No. The points-tested subclass 189 does not require employer sponsorship, state or territory nomination, or family sponsorship. Applicants are invited based on the points test and other factors. Verify the current rules on the Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'Is the subclass 189 permanent?',
+        answerEn:
+          'Yes. If granted, it is a permanent visa that lets the holder live and work anywhere in Australia. The specific entitlements and conditions are set by the Department of Home Affairs — confirm them on the official source.',
+      },
+      {
+        questionEn: 'How many points do I need for the subclass 189?',
+        answerEn:
+          'There is a published minimum to be eligible to be invited, but the actual invitation score can be higher and varies by round and occupation. This guide does not state cut-offs because they change. Use the official points calculator and check current settings on the Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'Can studying in Australia get me a subclass 189?',
+        answerEn:
+          'Not automatically. Study and later skilled work experience may help build a relevant profile, but the visa depends on meeting the criteria at the time you apply. No study path can guarantee it. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'skilled-migration-to-australia-points-system-guide',
+      'subclass-190-state-nominated-visa-guide',
+      'subclass-491-skilled-work-regional-visa-guide',
+      'permanent-residency-pathways-after-studying-in-australia',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — Skilled Independent visa (subclass 189)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-independent-189' },
+      { label: 'Department of Home Affairs — SkillSelect', url: 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'subclass 189 visa',
+      'skilled independent visa australia',
+      'australia 189 points',
+      'permanent skilled visa australia',
+      '189 visa eligibility',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Managed by', value: 'Department of Home Affairs' },
+      { label: 'Visa type', value: 'Permanent, points-tested skilled visa' },
+      { label: 'Sponsorship', value: 'No employer, state, or family sponsorship required' },
+      { label: 'Selection', value: 'Invited from SkillSelect; invitation score varies — verify on the official source' },
+      { label: 'Guarantee', value: 'No guarantee; outcomes depend on meeting criteria at time of application' },
+    ],
+  },
+  {
+    slug: 'subclass-190-state-nominated-visa-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Subclass 190 State Nominated Visa Guide',
+    descriptionEn:
+      'A neutral, official overview of the Skilled Nominated visa (subclass 190) — a points-tested permanent visa that requires nomination by an Australian state or territory, with all current criteria deferred to the Department of Home Affairs.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What the subclass 190 visa is',
+        bodyEn:
+          'The Skilled Nominated visa (subclass 190) is a permanent visa for invited skilled workers who are nominated by an Australian state or territory government. It is points-tested, and nomination is part of how applicants become eligible to be invited.\n\nThis guide explains the framework at a high level. It is general information, not immigration advice. The criteria are detailed and can change, so confirm the current rules on the official Department of Home Affairs source — and on the relevant state or territory source — before relying on anything here.',
+      },
+      {
+        headingEn: 'The role of state or territory nomination',
+        bodyEn:
+          'For the subclass 190, an Australian state or territory must nominate you. Each state and territory runs its own nomination program, with its own occupation lists, criteria, and processes, which can change and may open and close during the year.\n\nNomination also contributes points under the points test for this visa. Because each program is set by its own government, this guide does not list state occupations or criteria — check the relevant state or territory government source as well as the Department of Home Affairs.',
+        bullets: [
+          'An Australian state or territory must nominate you',
+          'Each state/territory runs its own program, lists, and criteria',
+          'State occupation lists change — verify on the relevant official source',
+        ],
+      },
+      {
+        headingEn: 'Points, EOI, and eligibility',
+        bodyEn:
+          'You submit an Expression of Interest (EOI) through SkillSelect and, for many state programs, also apply to the state or territory for nomination. Points are awarded for factors such as age, English, skilled employment, qualifications, and the state or territory nomination itself.\n\nThere is a published minimum number of points to be eligible to be invited, but the score at which invitations are issued can be higher and varies. Because these settings are determined by the Department of Home Affairs and the states, this guide does not state specific point totals or cut-offs. Use the official points calculator and check current requirements on the official sources.',
+        bullets: [
+          'Submit an EOI in SkillSelect and seek state/territory nomination',
+          'Nomination adds points under this visa\'s points test',
+          'Exact points and cut-offs — verify on the official source',
+        ],
+      },
+      {
+        headingEn: 'Commitment to the nominating state',
+        bodyEn:
+          'States and territories nominate applicants who intend to live and work in their jurisdiction. As a general expectation, subclass 190 holders are asked to live and work in the nominating state or territory, commonly for the first two years after the visa is granted.\n\nThe exact commitment and how it is expressed are set by each nominating state or territory and by the Department of Home Affairs, so confirm what applies to you on the official sources rather than relying on a general description.',
+      },
+      {
+        headingEn: 'Where to verify the current rules',
+        bodyEn:
+          'The Department of Home Affairs is the authoritative source for the subclass 190 points test, eligibility, fees, and application process, and each state or territory government is authoritative for its own nomination program.\n\nStudying in Australia does not by itself lead to a subclass 190 visa; meeting the criteria at the time you apply is what matters, and no study path or visa can guarantee residence. Before you act, read the current information on immi.homeaffairs.gov.au and the relevant state or territory source, and verify every detail. This guide is general information only and is not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does the subclass 190 require state nomination?',
+        answerEn:
+          'Yes. You must be nominated by an Australian state or territory government. Each runs its own program with its own occupation lists and criteria, which can change. Verify the current rules on the Department of Home Affairs and the relevant state or territory source.',
+      },
+      {
+        questionEn: 'Is the subclass 190 permanent?',
+        answerEn:
+          'Yes. If granted, it is a permanent visa. States generally expect holders to live and work in the nominating state or territory, commonly for the first two years. Confirm the exact commitment on the official sources for your circumstances.',
+      },
+      {
+        questionEn: 'How many points do I need for the subclass 190?',
+        answerEn:
+          'There is a published minimum to be eligible to be invited, but the actual invitation score can be higher and varies. State nomination also adds points. This guide does not state cut-offs because they change — use the official points calculator and check current settings on the official sources.',
+      },
+      {
+        questionEn: 'Where do I find the state occupation lists?',
+        answerEn:
+          'On each state or territory government\'s own migration website, alongside the Department of Home Affairs information. Lists and criteria differ by state and can change, so always verify the current ones on the official sources. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'skilled-migration-to-australia-points-system-guide',
+      'subclass-189-skilled-independent-visa-guide',
+      'subclass-491-skilled-work-regional-visa-guide',
+      'permanent-residency-pathways-after-studying-in-australia',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — Skilled Nominated visa (subclass 190)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-nominated-190' },
+      { label: 'Department of Home Affairs — SkillSelect', url: 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'subclass 190 visa',
+      'skilled nominated visa australia',
+      'state nomination australia 190',
+      'australia 190 points',
+      '190 visa state sponsorship',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Managed by', value: 'Department of Home Affairs (with state/territory nomination)' },
+      { label: 'Visa type', value: 'Permanent, points-tested skilled visa' },
+      { label: 'Nomination', value: 'Requires nomination by an Australian state or territory' },
+      { label: 'Commitment', value: 'Generally expected to live/work in the nominating state — verify on the official source' },
+      { label: 'Guarantee', value: 'No guarantee; outcomes depend on meeting criteria at time of application' },
+    ],
+  },
+  {
+    slug: 'subclass-491-skilled-work-regional-visa-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Subclass 491 Skilled Work Regional (Provisional) Visa Guide',
+    descriptionEn:
+      'A neutral, official overview of the Skilled Work Regional (Provisional) visa (subclass 491) — a points-tested provisional visa for regional Australia that can lead to permanent residence, with all current criteria deferred to the Department of Home Affairs.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the subclass 491 visa is',
+        bodyEn:
+          'The Skilled Work Regional (Provisional) visa (subclass 491) is a provisional (temporary) visa for skilled workers who want to live and work in designated regional areas of Australia. It is points-tested, and it can provide a pathway toward permanent residence when its requirements are met.\n\nThis guide explains the framework at a high level. It is general information, not immigration advice. The criteria are detailed and can change, so confirm the current rules on the official Department of Home Affairs source before relying on anything here.',
+      },
+      {
+        headingEn: 'Nomination or eligible family sponsorship',
+        bodyEn:
+          'To be eligible, you generally need either nomination by an Australian state or territory government, or sponsorship by an eligible family member who lives in a designated regional area. Each state and territory runs its own nomination program, with its own occupation lists and criteria, which can change.\n\nBecause the regional definitions, nomination programs, and sponsorship rules are set by government and can change, this guide does not list regional areas or state occupations — check the Department of Home Affairs and the relevant state or territory source.',
+        bullets: [
+          'Requires state/territory nomination OR eligible family sponsorship in a regional area',
+          'Each state/territory runs its own program, lists, and criteria',
+          'Designated regional areas are defined by the Department of Home Affairs',
+        ],
+      },
+      {
+        headingEn: 'Provisional conditions and living regionally',
+        bodyEn:
+          'The subclass 491 is provisional, so it is granted for a set period rather than permanently. Holders are required to live, work, and study only in a designated regional area while on the visa.\n\nThe exact visa period and the specific conditions are set by the Department of Home Affairs and should be confirmed on the official source. This guide does not state the precise duration, because such settings can change.',
+        bullets: [
+          'A provisional (temporary) visa granted for a set period',
+          'Must live, work, and study in a designated regional area',
+          'Exact period and conditions — verify on the official source',
+        ],
+      },
+      {
+        headingEn: 'Pathway to permanent residence (subclass 191)',
+        bodyEn:
+          'The subclass 491 can lead to permanent residence through the Permanent Residence (Skilled Regional) visa (subclass 191), once the holder has met the requirements — which include holding the provisional visa for a qualifying period and meeting an income requirement and other conditions.\n\nThe qualifying period, income evidence, and other requirements for the subclass 191 are set by the Department of Home Affairs and can change. Holding a subclass 491 does not guarantee permanent residence; you must meet the subclass 191 criteria when you apply. Confirm the current requirements on the official source.',
+        bullets: [
+          'Permanent residence is via the subclass 191 visa',
+          'Requires a qualifying period on the 491 plus an income and other requirements',
+          'Holding a 491 does not guarantee PR — meet the 191 criteria when you apply',
+        ],
+      },
+      {
+        headingEn: 'Where to verify the current rules',
+        bodyEn:
+          'The Department of Home Affairs is the authoritative source for the subclass 491 and subclass 191 — the points test, eligibility, designated regional areas, fees, conditions, and the application process — and each state or territory government is authoritative for its own nomination program.\n\nStudying in Australia does not by itself lead to a subclass 491 visa or to permanent residence; meeting the criteria at the time you apply is what matters, and no study path or visa can guarantee residence. Before you act, read the current information on immi.homeaffairs.gov.au and verify every detail. This guide is general information only and is not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the subclass 491 a permanent visa?',
+        answerEn:
+          'No. It is a provisional (temporary) visa granted for a set period, and holders must live, work, and study in a designated regional area. It can lead to permanent residence through the subclass 191 once its requirements are met. Verify the current rules on the Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'What do I need to be eligible for the subclass 491?',
+        answerEn:
+          'You generally need either nomination by an Australian state or territory or sponsorship by an eligible family member living in a designated regional area, plus a positive skills assessment and an eligible occupation. Programs and lists differ by state and can change — confirm them on the official sources.',
+      },
+      {
+        questionEn: 'How does the subclass 491 lead to permanent residence?',
+        answerEn:
+          'Through the Permanent Residence (Skilled Regional) visa (subclass 191), once you have held the 491 for a qualifying period and met an income requirement and other conditions. Holding a 491 does not guarantee PR — you must meet the 191 criteria when you apply. Verify the current requirements on the Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'How many points do I need for the subclass 491?',
+        answerEn:
+          'There is a published minimum to be eligible to be invited, but the actual invitation score can be higher and varies. This guide does not state cut-offs because they change. Use the official points calculator and check current settings on the Department of Home Affairs website. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'skilled-migration-to-australia-points-system-guide',
+      'subclass-189-skilled-independent-visa-guide',
+      'subclass-190-state-nominated-visa-guide',
+      'permanent-residency-pathways-after-studying-in-australia',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — Skilled Work Regional (Provisional) visa (subclass 491)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-work-regional-provisional-491' },
+      { label: 'Department of Home Affairs — Permanent Residence (Skilled Regional) visa (subclass 191)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-regional-191' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'subclass 491 visa',
+      'skilled work regional visa australia',
+      'regional provisional visa 491',
+      'australia 491 to pr',
+      '491 visa eligibility',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Managed by', value: 'Department of Home Affairs (with state/territory nomination)' },
+      { label: 'Visa type', value: 'Provisional (temporary), points-tested regional visa' },
+      { label: 'Eligibility', value: 'State/territory nomination OR eligible family sponsorship in a regional area' },
+      { label: 'PR pathway', value: 'Subclass 191 after meeting its requirements — verify on the official source' },
+      { label: 'Guarantee', value: 'No guarantee of PR; you must meet the subclass 191 criteria when you apply' },
+    ],
+  },
+  {
+    slug: 'permanent-residency-pathways-after-studying-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Permanent Residency Pathways After Studying in Australia',
+    descriptionEn:
+      'A neutral, official overview of how studying, working, and skilled migration can connect in Australia — presented as facts only, with no guarantee that study leads to permanent residence, and all current rules deferred to the Department of Home Affairs.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How the pieces can connect',
+        bodyEn:
+          'Some international graduates move from study to temporary post-study work and, later, toward skilled migration. These are separate visas with separate rules, and one does not automatically lead to the next. This guide explains, as neutral facts, how they can connect — it is general information, not immigration advice.\n\nImportantly, studying in Australia does not by itself lead to permanent residence. Each step has its own criteria that you must meet at the time you apply, and no study path or visa can guarantee residence. Always confirm the current rules on the official Department of Home Affairs source.',
+      },
+      {
+        headingEn: 'Study and post-study work',
+        bodyEn:
+          'A student visa (subclass 500) lets eligible people study in Australia, with limits on how much they can work during their course. After finishing an eligible qualification, some graduates may be eligible for the Temporary Graduate visa (subclass 485), which is a temporary visa that can allow a period of work in Australia.\n\nThe eligibility, streams, age limits, and durations for the subclass 485 are set by the Department of Home Affairs and have changed in recent times, so confirm the current settings on the official source. Time spent working on a post-study work visa can help some graduates build skilled work experience.',
+        bullets: [
+          'Study on a student visa (subclass 500), with work limits during the course',
+          'Eligible graduates may apply for the Temporary Graduate visa (subclass 485)',
+          'The 485 is temporary — its streams and duration can change; verify on the official source',
+        ],
+      },
+      {
+        headingEn: 'Skilled migration options',
+        bodyEn:
+          'Skilled work experience and qualifications can be relevant to Australia\'s points-tested skilled visas — the Skilled Independent visa (subclass 189, permanent), the Skilled Nominated visa (subclass 190, permanent, state-nominated), and the Skilled Work Regional (Provisional) visa (subclass 491, which can lead to permanent residence via the subclass 191).\n\nThese visas use a points test through SkillSelect, and you must be invited to apply. The points, occupation lists, and invitation scores are set by the Department of Home Affairs and can change, so this guide does not state cut-offs. The dedicated guides cover each visa in detail.',
+        bullets: [
+          'Subclass 189 — permanent, no nomination required',
+          'Subclass 190 — permanent, requires state/territory nomination',
+          'Subclass 491 — provisional, regional, can lead to PR via subclass 191',
+        ],
+      },
+      {
+        headingEn: 'Other routes exist too',
+        bodyEn:
+          'Skilled migration is not the only route, and not everyone follows the same path. Depending on circumstances, other visa options (for example, employer-sponsored routes) may be relevant. Each has its own eligibility rules set by the Department of Home Affairs.\n\nBecause individual circumstances and the rules in force both matter, treat this as a general map rather than a personal plan, and verify the options that apply to you on the official source.',
+      },
+      {
+        headingEn: 'No guarantees — verify everything official',
+        bodyEn:
+          'There is no automatic or guaranteed pathway from studying in Australia to permanent residence. Each visa is assessed on its own criteria at the time you apply, and immigration rules change.\n\nThe Department of Home Affairs is the authoritative source for every visa mentioned here — eligibility, points, occupation lists, fees, conditions, and processing. Before you act, read the current information on immi.homeaffairs.gov.au and verify every detail. This guide is general information only and is not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does studying in Australia lead to permanent residence?',
+        answerEn:
+          'Not automatically. Study, post-study work, and skilled migration are separate steps with separate rules, and one does not guarantee the next. Permanent residence depends on meeting the criteria of the relevant visa when you apply. This is general information, not immigration advice — verify on the Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'What is the usual order of visas?',
+        answerEn:
+          'Many graduates go from a student visa (subclass 500) to a Temporary Graduate visa (subclass 485), and some later pursue a points-tested skilled visa (subclass 189, 190, or 491). Each is separate, with its own criteria that can change. Confirm the current rules on the official source.',
+      },
+      {
+        questionEn: 'Can a skilled visa lead to permanent residence?',
+        answerEn:
+          'The subclass 189 and 190 are permanent if granted, and the provisional subclass 491 can lead to permanent residence via the subclass 191 once its requirements are met. All are points-tested and require an invitation. No study path guarantees any of them — verify the current rules on the Department of Home Affairs website.',
+      },
+      {
+        questionEn: 'Where should I check the current rules?',
+        answerEn:
+          'Use immi.homeaffairs.gov.au for every visa mentioned — eligibility, points, occupation lists, fees, conditions, and processing. Rules change, so verify all details there before acting. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'skilled-migration-to-australia-points-system-guide',
+      'subclass-189-skilled-independent-visa-guide',
+      'subclass-190-state-nominated-visa-guide',
+      'subclass-491-skilled-work-regional-visa-guide',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Department of Home Affairs — Visa listing', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing' },
+      { label: 'Department of Home Affairs — SkillSelect', url: 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'pr after studying in australia',
+      'permanent residency pathways australia',
+      'study to pr australia',
+      'post study work to pr australia',
+      'australia pr for international students',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Managed by', value: 'Department of Home Affairs' },
+      { label: 'Pathway', value: 'Study (500) → post-study work (485) → skilled visa (189/190/491) — each is separate' },
+      { label: 'Permanent visas', value: 'Subclass 189 and 190 are permanent; 491 can lead to PR via subclass 191' },
+      { label: 'Selection', value: 'Skilled visas are points-tested via SkillSelect — verify on the official source' },
+      { label: 'Guarantee', value: 'No guarantee; study does not by itself lead to permanent residence' },
+    ],
+  },
+  {
+    slug: 'new-zealand-post-study-work',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'New Zealand Post-Study Work Visa Guide',
+    descriptionEn:
+      'A neutral, official overview of the New Zealand Post Study Work Visa — what it is, how the length is tied to your qualification and where you studied, and where to verify the current rules on the Immigration New Zealand website.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Post Study Work Visa is',
+        bodyEn:
+          'The Post Study Work Visa is an immigration category managed by Immigration New Zealand that lets eligible international graduates stay in New Zealand and work after completing a qualifying course of study. It is generally an open work visa, which means the holder is not tied to a single employer and may work for most employers while it is valid.\n\nThis page explains the framework in plain terms so you can understand how the visa fits into the study journey. It is general information, not immigration advice. Eligibility rules, the qualifications that count, and how the length is calculated are set by Immigration New Zealand and change from time to time, so always confirm the current criteria on the official government source before you rely on anything here.',
+      },
+      {
+        headingEn: 'How the length is decided',
+        bodyEn:
+          'A key feature of the Post Study Work Visa is that the duration you may be granted is tied to factors such as the level of the qualification you completed and, in some cases, where in New Zealand you studied. Higher-level qualifications and certain study locations can be associated with different lengths.\n\nBecause the exact length tied to each qualification level is set in policy and has been adjusted in the past, this guide deliberately does not state a fixed number of months or years. Check the precise duration that applies to your qualification on the Immigration New Zealand website before making plans.',
+        bullets: [
+          'Duration is linked to your qualification level and, in some cases, study location',
+          'It is generally an open work visa (not tied to one employer)',
+          'Exact lengths are set by Immigration New Zealand and can change — verify the current figure',
+        ],
+      },
+      {
+        headingEn: 'Who may be eligible',
+        bodyEn:
+          'Eligibility typically depends on having completed an acceptable qualification in New Zealand, holding a valid visa at the time you apply, and meeting Immigration New Zealand\'s health, character, and other requirements. Not every course or qualification leads to a Post Study Work Visa, and the rules differ for different qualification levels.\n\nBecause the list of qualifying study and the conditions are detailed and subject to change, confirm your specific situation against the official eligibility criteria rather than assuming a course qualifies.',
+        bullets: [
+          'Completion of an acceptable New Zealand qualification',
+          'A valid visa held at the time of application',
+          'Health, character, and other requirements met as set by Immigration New Zealand',
+        ],
+      },
+      {
+        headingEn: 'How it connects to staying longer in New Zealand',
+        bodyEn:
+          'For many graduates, the Post Study Work Visa is a period to gain skilled work experience that may later support an application under a residence category, such as the Skilled Migrant Category. However, holding a Post Study Work Visa does not by itself guarantee residence, and residence pathways have their own separate criteria.\n\nTreat the post-study work period as an opportunity, not a guarantee. Outcomes depend entirely on Immigration New Zealand\'s rules at the time you apply for any further visa, and those rules can change.',
+      },
+      {
+        headingEn: 'Where to verify the current rules',
+        bodyEn:
+          'Immigration New Zealand is the single authoritative source for who can apply, the qualifications that count, the length granted, fees, and how to apply. Visa settings are reviewed periodically, so a figure that was correct in one intake may differ in another.\n\nBefore you apply, read the current Post Study Work Visa page on immigration.govt.nz and verify every detail there. This guide is general information to help you understand the framework — it is not a substitute for the official criteria and is not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How long is the New Zealand Post Study Work Visa?',
+        answerEn:
+          'The length you may be granted is tied to factors such as your qualification level and, in some cases, where you studied in New Zealand. Because these settings are set in policy and can change, this guide does not state a fixed figure — confirm the current duration for your qualification on the Immigration New Zealand website.',
+      },
+      {
+        questionEn: 'Is it an open work visa?',
+        answerEn:
+          'The Post Study Work Visa is generally an open work visa, meaning the holder is usually not tied to a single employer. Always confirm the exact conditions of any visa granted to you on the official Immigration New Zealand source.',
+      },
+      {
+        questionEn: 'Does a Post Study Work Visa guarantee residence in New Zealand?',
+        answerEn:
+          'No. It is a temporary work visa. Residence pathways such as the Skilled Migrant Category have their own separate criteria, and no visa or study outcome can be guaranteed. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Where do I confirm the current rules?',
+        answerEn:
+          'Use immigration.govt.nz. Immigration New Zealand is the authoritative source for eligibility, qualifying study, duration, fees, and how to apply. Verify all details there before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'working-while-studying-in-new-zealand-rules',
+      'skilled-migrant-category-resident-visa-new-zealand',
+      'post-study-work-and-pr-australia-vs-new-zealand',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Immigration New Zealand — Post Study Work Visa', url: 'https://www.immigration.govt.nz/visas/post-study-work-visa/' },
+      { label: 'Study with New Zealand — official government site', url: 'https://www.studywithnewzealand.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'new zealand post study work visa',
+      'post study work visa nz',
+      'work after study in new zealand',
+      'nz graduate work visa',
+      'how long is nz post study work visa',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Managed by', value: 'Immigration New Zealand' },
+      { label: 'Visa type', value: 'Generally an open work visa (post-study)' },
+      { label: 'Duration', value: 'Tied to qualification level and, in some cases, study location — verify on the official source' },
+      { label: 'Guarantee', value: 'No guarantee of residence; residence has separate criteria' },
+    ],
+  },
+  {
+    slug: 'working-while-studying-in-new-zealand-rules',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Working While Studying in New Zealand: Rules',
+    descriptionEn:
+      'A neutral, official overview of the rules for working while you study in New Zealand on a student visa — including the part-time hour limits during term and how to verify the current conditions with Immigration New Zealand.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Can international students work in New Zealand?',
+        bodyEn:
+          'Many international students in New Zealand may be eligible to work part-time while studying, depending on the conditions attached to their student visa. The right to work is not automatic for every student or every course — it is granted through specific visa conditions set by Immigration New Zealand.\n\nThis page explains the general framework. It is general information, not immigration advice. Confirm the exact conditions printed on your own visa and the current rules on the official Immigration New Zealand website before working.',
+      },
+      {
+        headingEn: 'Hour limits during term and breaks',
+        bodyEn:
+          'Eligible students are typically allowed to work up to a set number of hours per week during the academic term — this weekly cap has been adjusted over time (it was 20 hours per week and was increased more recently) — and full-time during scheduled holidays or breaks, where their visa permits. The precise hour cap and the conditions for breaks are set by Immigration New Zealand and have been adjusted in the past.\n\nBecause this limit can change, always verify the current weekly hour limit and break rules on the official source rather than assuming a figure. Working more than your visa allows can have serious consequences for your visa status.',
+        bullets: [
+          'Eligible students may work up to a set weekly limit during term (this cap has been increased over time — verify the current figure on the official source)',
+          'Full-time work may be permitted during scheduled breaks where the visa allows',
+          'The exact limits are set by Immigration New Zealand and can change',
+        ],
+      },
+      {
+        headingEn: 'Which students qualify',
+        bodyEn:
+          'Eligibility to work usually depends on factors such as the type and level of course, its duration, and whether it leads to a qualification that allows work rights. Conditions can differ for school students, those on shorter courses, and postgraduate or research students.\n\nBecause eligibility is tied to your specific course and visa, check whether your visa carries work conditions and what they are. If it does not, you are not permitted to work, regardless of general rules you may read elsewhere.',
+        bullets: [
+          'Work rights depend on course type, level, and duration',
+          'Some students (for example on certain short courses) may have no work rights',
+          'Postgraduate and research students may have different conditions',
+        ],
+      },
+      {
+        headingEn: 'Tax, rights, and your study obligations',
+        bodyEn:
+          'If you work in New Zealand you will generally need an IRD number from Inland Revenue, and you are entitled to the same minimum employment rights and protections as other workers. Working while studying should also fit around your course requirements, since maintaining satisfactory attendance and progress is part of holding a student visa.\n\nFor the official position on employment rights and tax, rely on the relevant New Zealand government agencies, and for visa work conditions rely on Immigration New Zealand.',
+      },
+      {
+        headingEn: 'Where to verify the current rules',
+        bodyEn:
+          'Immigration New Zealand sets and updates the work conditions for student visas. The number of hours, the courses that qualify, and break-period rules are all defined there and can be reviewed periodically.\n\nBefore you take up any job, read the current information on immigration.govt.nz and check the conditions on your own visa. This guide is general information only and is not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many hours can students work in New Zealand during term?',
+        answerEn:
+          'Eligible students may work up to a set weekly limit during term. This cap has been adjusted over time (it was 20 hours per week and was increased more recently), so this guide does not fix a figure — verify the current limit on the Immigration New Zealand website and check the conditions on your own visa.',
+      },
+      {
+        questionEn: 'Can I work full-time during the holidays?',
+        answerEn:
+          'Where your visa allows, you may be able to work full-time during scheduled course breaks or holidays. Confirm the exact rule for your visa on the official Immigration New Zealand source.',
+      },
+      {
+        questionEn: 'Do all international students have the right to work?',
+        answerEn:
+          'No. Work rights depend on your course type, level, and duration, and are granted only through the conditions on your visa. If your visa has no work conditions, you cannot work. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Do I need a tax number to work?',
+        answerEn:
+          'You will generally need an IRD number from Inland Revenue to work in New Zealand. Check the official Inland Revenue and Immigration New Zealand sources for current requirements.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'new-zealand-post-study-work',
+      'skilled-migrant-category-resident-visa-new-zealand',
+      'post-study-work-and-pr-australia-vs-new-zealand',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Immigration New Zealand — working on a student visa', url: 'https://www.immigration.govt.nz/study/once-you-have-a-student-visa/working-on-a-student-visa/' },
+      { label: 'Study with New Zealand — official government site', url: 'https://www.studywithnewzealand.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'working while studying in new zealand',
+      'student visa work hours new zealand',
+      'can international students work in nz',
+      'part time work new zealand student',
+      '20 hours work new zealand student',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Set by', value: 'Immigration New Zealand (via student visa conditions)' },
+      { label: 'Term-time work', value: 'Eligible students up to a set weekly limit (recently increased — verify the current figure on the official source)' },
+      { label: 'Breaks', value: 'Full-time may be permitted during scheduled breaks where the visa allows' },
+      { label: 'Eligibility', value: 'Depends on course type, level, and visa conditions' },
+    ],
+  },
+  {
+    slug: 'skilled-migrant-category-resident-visa-new-zealand',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Skilled Migrant Category Resident Visa (New Zealand) Guide',
+    descriptionEn:
+      'A neutral, official overview of New Zealand\'s Skilled Migrant Category resident visa — a points-based residence pathway revised in 2023 to a points system, with all current criteria deferred to Immigration New Zealand.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Skilled Migrant Category is',
+        bodyEn:
+          'The Skilled Migrant Category is a residence visa managed by Immigration New Zealand for people with skills, qualifications, or work experience that New Zealand recognises. A resident visa allows the holder to live, work, and study in New Zealand, subject to its conditions.\n\nThis guide explains the framework at a high level. It is general information, not immigration advice. The selection criteria are detailed and are updated from time to time, so confirm the current rules on the official Immigration New Zealand source before relying on anything here.',
+      },
+      {
+        headingEn: 'A points-based system (revised in 2023)',
+        bodyEn:
+          'The Skilled Migrant Category works on a points basis: applicants are assessed against criteria that award points, and a threshold must be met to be eligible. In 2023 the category was revised to a points system that awards points for factors such as recognised skilled work and qualifications.\n\nBecause the exact number of points required, and how points are awarded for each factor, are set in policy and were changed in this revision, this guide deliberately does not state specific point totals. Check the current point requirements and how each factor is scored on the Immigration New Zealand website.',
+        bullets: [
+          'Residence is assessed on a points threshold',
+          'The category was revised in 2023 to a points system',
+          'Exact points required and how each factor scores — verify on the official source',
+        ],
+      },
+      {
+        headingEn: 'What is typically assessed',
+        bodyEn:
+          'Points-based skilled residence schemes generally consider factors such as recognised skilled employment, relevant qualifications, and occupational registration where a profession requires it. Applicants also usually need to meet health, character, and English-language requirements.\n\nBecause the precise factors and how they are weighted are defined by Immigration New Zealand and can change, treat this only as a general picture and confirm the specific requirements that apply to you.',
+        bullets: [
+          'Recognised skilled work and/or qualifications',
+          'Occupational registration where the profession requires it',
+          'Health, character, and English-language requirements',
+        ],
+      },
+      {
+        headingEn: 'How study can connect to this pathway',
+        bodyEn:
+          'For some international graduates, time spent studying in New Zealand and gaining skilled work experience afterwards (for example on a Post Study Work Visa) can help build a profile relevant to a later Skilled Migrant Category application. However, studying in New Zealand does not by itself lead to residence, and meeting the criteria at the time you apply is what matters.\n\nResidence outcomes depend entirely on the rules in force when you apply and on your individual circumstances. No study path or visa can guarantee residence.',
+      },
+      {
+        headingEn: 'Where to verify the current rules',
+        bodyEn:
+          'Immigration New Zealand is the authoritative source for the Skilled Migrant Category — the points required, how factors are scored, eligibility, fees, and the application process. The 2023 revision shows that these settings are reviewed and can change.\n\nBefore you act, read the current Skilled Migrant Category information on immigration.govt.nz and verify every detail. This guide is general information only and is not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the Skilled Migrant Category points-based?',
+        answerEn:
+          'Yes. It assesses applicants against a points threshold. The category was revised in 2023 to a points system. Because the exact points and scoring are set in policy and can change, confirm the current requirements on the Immigration New Zealand website.',
+      },
+      {
+        questionEn: 'How many points do I need?',
+        answerEn:
+          'This guide does not state a fixed number, because the threshold and how points are awarded are set by Immigration New Zealand and were changed in the 2023 revision. Check the current point requirements on the official source.',
+      },
+      {
+        questionEn: 'Does studying in New Zealand lead to residence?',
+        answerEn:
+          'Not automatically. Study and post-study work experience can help build a relevant profile, but residence depends on meeting the Skilled Migrant Category criteria at the time you apply. No study path can guarantee residence. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Where do I confirm the current criteria?',
+        answerEn:
+          'Use immigration.govt.nz. Immigration New Zealand is the authoritative source for points, eligibility, fees, and the application process. Verify all details there before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'new-zealand-post-study-work',
+      'green-list-occupations-new-zealand-guide',
+      'post-study-work-and-pr-australia-vs-new-zealand',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Immigration New Zealand — Skilled Migrant Category Resident Visa', url: 'https://www.immigration.govt.nz/visas/skilled-migrant-category-resident-visa/' },
+      { label: 'Immigration New Zealand — official site', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'skilled migrant category new zealand',
+      'new zealand resident visa points',
+      'nz skilled migrant points system',
+      'permanent residence new zealand skilled',
+      'skilled migrant category 2023',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Managed by', value: 'Immigration New Zealand' },
+      { label: 'Visa type', value: 'Residence visa (points-based)' },
+      { label: 'System', value: 'Revised in 2023 to a points system — verify current points on the official source' },
+      { label: 'Guarantee', value: 'No guarantee; outcomes depend on meeting criteria at time of application' },
+    ],
+  },
+  {
+    slug: 'green-list-occupations-new-zealand-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Green List Occupations in New Zealand Guide',
+    descriptionEn:
+      'A neutral, official overview of New Zealand\'s Green List — roles identified as in demand that can have streamlined work-to-residence and residence pathways, with the full occupation list deferred to Immigration New Zealand.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What the Green List is',
+        bodyEn:
+          'The Green List is a list maintained by Immigration New Zealand of occupations identified as in demand in New Zealand. Roles on the list can be associated with more streamlined pathways to work and, in some cases, residence, compared with other roles.\n\nThis guide explains the concept in general terms. It is general information, not immigration advice. The occupations on the list, the conditions attached to each, and the pathways available are all defined by Immigration New Zealand and are reviewed and updated, so confirm the current details on the official source.',
+      },
+      {
+        headingEn: 'Why it matters for residence pathways',
+        bodyEn:
+          'For some occupations on the Green List, there are designated pathways that can lead toward residence, which is why students and graduates often look at it when planning a career in New Zealand. The specific pathway, the requirements (such as qualifications, registration, or work experience), and any timeframes depend on the role and its category on the list.\n\nBecause these conditions are detailed and can change, do not assume a particular pathway applies to a role — check the official entry for that occupation on the Immigration New Zealand website.',
+        bullets: [
+          'Some roles have streamlined work-to-residence or residence pathways',
+          'Requirements (qualifications, registration, experience) vary by role',
+          'Conditions and timeframes are set by Immigration New Zealand and can change',
+        ],
+      },
+      {
+        headingEn: 'The list changes — we do not reproduce it',
+        bodyEn:
+          'The set of occupations on the Green List is reviewed and updated by Immigration New Zealand, and roles can be added or removed. For that reason this guide deliberately does not reproduce the list of occupations or claim that any specific role is or is not on it.\n\nThe only reliable way to know whether an occupation is on the Green List today, and what pathway and conditions apply, is to check the current, official list on immigration.govt.nz.',
+        bullets: [
+          'Occupations can be added or removed over time',
+          'This guide does not list specific roles — the official list is the source of truth',
+          'Always check the current Green List on the official website',
+        ],
+      },
+      {
+        headingEn: 'How students and graduates use it',
+        bodyEn:
+          'Prospective and current students sometimes research the Green List when considering which course or career direction to pursue in New Zealand, since some in-demand roles can offer clearer pathways. This can be one input into planning, alongside your own interests and the official entry requirements for a profession.\n\nKeep in mind that being qualified for an occupation on the list does not by itself guarantee a visa or residence — each pathway has its own criteria that you must meet at the time you apply.',
+      },
+      {
+        headingEn: 'Where to verify the current list and pathways',
+        bodyEn:
+          'Immigration New Zealand publishes and updates the Green List, including which occupations are on it, which pathway each belongs to, and the conditions for each. Because the list is reviewed periodically, an occupation\'s status can differ between reviews.\n\nBefore making study or career decisions based on the Green List, read the current list and pathway details on immigration.govt.nz and verify everything there. This guide is general information only and is not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the New Zealand Green List?',
+        answerEn:
+          'It is a list maintained by Immigration New Zealand of occupations identified as in demand, where roles can have more streamlined pathways to work and, in some cases, residence. The list and its conditions are set by Immigration New Zealand and can change.',
+      },
+      {
+        questionEn: 'Which jobs are on the Green List?',
+        answerEn:
+          'The occupations are reviewed and updated by Immigration New Zealand, so this guide does not reproduce the list. Check the current, official Green List on immigration.govt.nz to see which roles are included today and the conditions for each.',
+      },
+      {
+        questionEn: 'Does a Green List job guarantee residence?',
+        answerEn:
+          'No. Roles on the list can have streamlined pathways, but each pathway has its own criteria you must meet, and nothing is guaranteed. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Where do I check the current Green List?',
+        answerEn:
+          'Use immigration.govt.nz. Immigration New Zealand is the authoritative source for the occupations on the Green List, the pathway each belongs to, and the conditions. Verify all details there.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'skilled-migrant-category-resident-visa-new-zealand',
+      'new-zealand-post-study-work',
+      'post-study-work-and-pr-australia-vs-new-zealand',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Immigration New Zealand — Green List occupations', url: 'https://www.immigration.govt.nz/work/requirements-for-work-visas/green-list-occupations-qualifications-and-skills/green-list-roles-jobs-we-need-people-for-in-new-zealand/' },
+      { label: 'Immigration New Zealand — official site', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'green list new zealand',
+      'new zealand green list occupations',
+      'nz in demand jobs residence',
+      'green list work to residence',
+      'skilled jobs new zealand residence',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Maintained by', value: 'Immigration New Zealand' },
+      { label: 'Purpose', value: 'In-demand occupations with streamlined work/residence pathways' },
+      { label: 'List status', value: 'Reviewed and updated — check the current official list before relying on it' },
+      { label: 'Guarantee', value: 'No guarantee; each pathway has its own criteria' },
+    ],
+  },
+  {
+    slug: 'post-study-work-and-pr-australia-vs-new-zealand',
+    category: 'comparison',
+    region: 'australia-nz',
+    titleEn: 'Post-Study Work and PR: Australia vs New Zealand',
+    descriptionEn:
+      'A neutral, factual comparison of how post-study work and permanent-residence frameworks are structured in Australia and New Zealand, with every volatile detail deferred to the official government source in each country.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How to read this comparison',
+        bodyEn:
+          'Australia and New Zealand are two separate countries, each with its own immigration system run by its own authority. This guide describes how their post-study work and permanent-residence frameworks are organised, so you can understand the structure before researching the detail.\n\nIt does not declare either country better, and it does not state specific durations, points, fees, or occupation lists, because those are set in policy and change. It is general information, not immigration advice. Verify every detail on the relevant official government source: the Australian Department of Home Affairs for Australia, and Immigration New Zealand for New Zealand.',
+      },
+      {
+        headingEn: 'Post-study work: two different visas',
+        bodyEn:
+          'In Australia, the main post-study work option for eligible graduates is the Temporary Graduate visa (subclass 485), administered by the Department of Home Affairs. In New Zealand, the equivalent is the Post Study Work Visa, administered by Immigration New Zealand.\n\nIn both countries, the length and eligibility depend on factors such as the qualification completed, and the settings are reviewed from time to time. The specific stream, duration, and conditions differ between the two systems, so check each authority\'s current rules separately rather than assuming they match.',
+        bullets: [
+          'Australia: Temporary Graduate visa (subclass 485) — Department of Home Affairs',
+          'New Zealand: Post Study Work Visa — Immigration New Zealand',
+          'Length and eligibility depend on the qualification and are set in policy — verify each separately',
+        ],
+      },
+      {
+        headingEn: 'Permanent residence: separate points systems',
+        bodyEn:
+          'Both countries use points-tested frameworks for skilled permanent or resident visas, but they are distinct systems. Australia\'s skilled migration includes points-tested visas such as the Skilled Independent visa (subclass 189) and state/territory-nominated and regional options (for example subclasses 190 and 491), managed by the Department of Home Affairs. New Zealand\'s main skilled residence pathway is the Skilled Migrant Category, which was revised in 2023 to a points system, managed by Immigration New Zealand.\n\nThe factors assessed, the points required, and how each factor is scored are defined separately by each authority and change over time. This guide does not state point totals — confirm them on each official source.',
+        bullets: [
+          'Australia: points-tested skilled visas (e.g. subclass 189, plus 190/491 nominated/regional)',
+          'New Zealand: Skilled Migrant Category (revised in 2023 to a points system)',
+          'Each has its own factors and thresholds — verify on the respective official source',
+        ],
+      },
+      {
+        headingEn: 'In-demand occupation references',
+        bodyEn:
+          'Both countries reference occupations in their skilled pathways. Australia uses official skilled occupation lists in its migration program, while New Zealand maintains the Green List of in-demand roles with streamlined pathways. The roles, categories, and conditions on these lists are reviewed and updated.\n\nBecause these lists change, this guide does not reproduce them or claim a specific occupation appears on either. Check Australia\'s official occupation lists via the Department of Home Affairs and New Zealand\'s Green List via Immigration New Zealand for the current position.',
+      },
+      {
+        headingEn: 'What this means for your planning',
+        bodyEn:
+          'The right choice depends on your own goals, your field of study, your circumstances, and the rules in force when you apply — not on which framework looks simpler on paper. Studying in either country does not by itself lead to permanent residence, and no pathway can be guaranteed.\n\nUse this comparison to understand how the two systems are shaped, then make decisions based on the current, official criteria in each country and, where appropriate, advice from a suitably qualified professional. This page is general information, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is it easier to get PR in Australia or New Zealand after studying?',
+        answerEn:
+          'This guide does not rank either country, because both use points-tested systems whose criteria, thresholds, and occupation lists are set in policy and change. Research each system on its official source — the Department of Home Affairs for Australia and Immigration New Zealand for New Zealand — and decide based on your own circumstances.',
+      },
+      {
+        questionEn: 'What are the post-study work visas called in each country?',
+        answerEn:
+          'In Australia it is the Temporary Graduate visa (subclass 485); in New Zealand it is the Post Study Work Visa. Length and eligibility depend on the qualification and are set in policy, so verify the current rules with each authority.',
+      },
+      {
+        questionEn: 'Do both countries use a points system for residence?',
+        answerEn:
+          'Yes, both use points-tested frameworks, but they are separate systems with different factors and thresholds. Australia has visas such as subclass 189 (plus nominated/regional options); New Zealand\'s Skilled Migrant Category was revised in 2023 to a points system. Verify the current points on each official source.',
+      },
+      {
+        questionEn: 'Does studying guarantee permanent residence in either country?',
+        answerEn:
+          'No. Studying does not by itself lead to residence in either country, and no pathway can be guaranteed. Outcomes depend on meeting the official criteria at the time you apply. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'new-zealand-post-study-work',
+      'skilled-migrant-category-resident-visa-new-zealand',
+      'green-list-occupations-new-zealand-guide',
+      'study-in-australia-from-india',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Australian Department of Home Affairs — Temporary Graduate visa (subclass 485)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485' },
+      { label: 'Australian Department of Home Affairs — skilled visas', url: 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skill-occupation-list' },
+      { label: 'Immigration New Zealand — official site', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'post study work australia vs new zealand',
+      'pr australia vs new zealand',
+      'subclass 485 vs nz post study work',
+      'skilled migration australia new zealand',
+      'study abroad pr pathway comparison',
+    ],
+    tags: ['work-and-stay-anz'],
+    keyFacts: [
+      { label: 'Australia authority', value: 'Department of Home Affairs (immi.homeaffairs.gov.au)' },
+      { label: 'New Zealand authority', value: 'Immigration New Zealand (immigration.govt.nz)' },
+      { label: 'Post-study work', value: 'AU: Temporary Graduate (subclass 485) · NZ: Post Study Work Visa' },
+      { label: 'Residence', value: 'Both points-tested; settings differ and change — verify on each official source' },
+    ],
+  },
+  {
+    slug: 'best-cities-to-study-in-australia',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Best Cities to Study in Australia',
+    descriptionEn:
+      'A neutral guide to Australia\'s major student cities — Melbourne, Sydney, Brisbane, Perth, Adelaide and Canberra — what each offers, living-cost ranges, and how to choose the right one for you.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'There is no single "best" city — only the best fit for you',
+        bodyEn:
+          'Australia has several large, well-established student cities, and each suits different priorities. Rather than asking which city is objectively best, it is more useful to weigh the things that matter to you: the universities and courses on offer, the cost of living, the climate, the size and pace of the city, job and internship opportunities in your field, and the kind of student community you would feel at home in.\n\nEvery major Australian city hosts globally recognised universities and a large international student population, so you can build a strong, well-supported experience in any of them. This guide describes the main options neutrally so you can match a city to your own needs.',
+      },
+      {
+        headingEn: 'The major student cities at a glance',
+        bodyEn:
+          'Australia\'s largest student hubs each have their own character. The descriptions below are general and based on official tourism, education and city information — they are starting points, not rankings.',
+        bullets: [
+          'Melbourne — a large, multicultural city in Victoria known for its arts, sport, cafe culture and several major universities.',
+          'Sydney — Australia\'s largest city, a coastal harbour city in New South Wales with a wide range of universities and industries.',
+          'Brisbane — a warmer, sub-tropical city in Queensland, often described as relaxed, with growing universities and a riverside setting.',
+          'Perth — the main city of Western Australia, coastal and comparatively spread out, in a time zone close to much of Asia.',
+          'Adelaide — a smaller, walkable South Australian capital known for festivals and a generally lower cost of living than the largest cities.',
+          'Canberra — the national capital in the ACT, a planned, quieter city that is home to several universities and many public institutions.',
+        ],
+      },
+      {
+        headingEn: 'Cost of living: budget in ranges, not fixed numbers',
+        bodyEn:
+          'Living costs differ meaningfully between cities and between neighbourhoods within the same city. As a general pattern, Sydney and Melbourne tend to sit at the higher end for rent, while cities such as Brisbane, Perth and Adelaide are often more affordable — but this varies by suburb, accommodation type (shared house, student residence, homestay) and lifestyle.\n\nThe Australian Government requires international students to show they can cover living costs as part of the Student visa (subclass 500) process, and it publishes the current financial-capacity figure officially. Because these amounts are reviewed and updated, do not rely on any number you read second-hand. Verify the current living-cost requirement and guidance on the official Australian Government source before you budget.',
+        bullets: [
+          'Major expenses: rent, food, transport, health cover (OSHC), phone/internet, study materials and personal costs.',
+          'Rent is usually the largest single cost and varies widely by city and suburb.',
+          'Use official university "cost of living" pages and the Study Australia site for current, city-specific estimates.',
+        ],
+      },
+      {
+        headingEn: 'How to choose the city that fits you',
+        bodyEn:
+          'Start from your course, then layer in lifestyle and budget. The strongest program for your field may point you to a particular city, and that is usually the most important factor. After that, compare total cost (tuition plus living), climate, distance from home, the size of the city, and the kinds of part-time work and graduate opportunities in your field.\n\nIt also helps to think about how you like to live: a large, fast-paced city, a mid-sized coastal city, or a quieter capital can each feel very different day to day. Visiting university websites, virtual tours and official city information will give you a realistic sense of each option.',
+        bullets: [
+          'Match the city to your course and field first.',
+          'Compare total annual cost (tuition + living), not just tuition.',
+          'Consider climate, city size, travel time home and the local job market.',
+          'Check each university\'s student support and accommodation options.',
+        ],
+      },
+      {
+        headingEn: 'Safety, support and settling in',
+        bodyEn:
+          'Australia is a popular, well-organised destination for international students, and universities run extensive support services — orientation programs, international student offices, health and wellbeing services, academic help and dedicated accommodation teams. Like any major city anywhere in the world, sensible everyday precautions are wise, and your university and the official Study Australia resources provide practical guidance on living safely and knowing your rights as a student.\n\nThe Australian Government sets out the rights and protections that apply to international students, including those under the consumer and education-quality framework. Reviewing the official Study Australia guidance early helps you settle in with confidence.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which Australian city is cheapest for students?',
+        answerEn:
+          'Living costs vary by city and by suburb, and they change over time, so there is no fixed answer. As a general pattern, cities such as Brisbane, Perth and Adelaide are often more affordable than Sydney and Melbourne. Use official university cost-of-living pages and the Study Australia site for current, city-specific figures.',
+      },
+      {
+        questionEn: 'Do all major Australian cities have good universities?',
+        answerEn:
+          'Yes. Every major Australian student city hosts well-established, internationally recognised universities across a wide range of fields. The best choice depends on the specific course and university that fit your goals, not on the city alone.',
+      },
+      {
+        questionEn: 'How much money do I need to live as a student in Australia?',
+        answerEn:
+          'It depends on the city, your accommodation and your lifestyle. The Australian Government also sets a financial-capacity requirement for the Student visa (subclass 500). These amounts are updated periodically — this is general information, not financial or immigration advice, so verify the current living-cost requirement on the official Australian Government source.',
+      },
+      {
+        questionEn: 'Should I choose a city based on lifestyle or on my course?',
+        answerEn:
+          'Most students find it works best to choose the right course and university first, then compare cities by cost, climate and lifestyle. A strong program in your field is usually the more important long-term factor.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['studying-in-melbourne-student-guide', 'studying-in-sydney-student-guide', 'studying-in-brisbane-student-guide', 'studying-in-perth-student-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Government Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['best cities to study in australia', 'student cities australia', 'cost of living in australia for students', 'where to study in australia', 'study destinations australia'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'Major student cities', value: 'Melbourne, Sydney, Brisbane, Perth, Adelaide, Canberra' },
+      { label: 'Choose by', value: 'Course/university first, then cost, climate and lifestyle' },
+      { label: 'Living costs', value: 'Vary by city and suburb — budget in ranges (AUD)' },
+      { label: 'Visa funds requirement', value: 'Set officially for subclass 500 — verify current figure' },
+    ],
+  },
+  {
+    slug: 'studying-in-melbourne-student-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Studying in Melbourne: Student Guide',
+    descriptionEn:
+      'A practical, neutral guide to studying in Melbourne — the universities based there, what student life and living costs are like, getting around, and how to plan your budget in ranges.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Melbourne as a student city',
+        bodyEn:
+          'Melbourne is the capital of Victoria and one of Australia\'s largest cities. It is known for its multicultural communities, arts and music scene, sport, and a well-developed cafe culture. For students, it offers a large international community, a wide choice of universities and courses, and an extensive public transport network.\n\nLike any major global city, the experience of living in Melbourne varies by neighbourhood and lifestyle. This guide describes it in general terms so you can decide whether it fits your priorities.',
+      },
+      {
+        headingEn: 'Universities based in Melbourne',
+        bodyEn:
+          'Melbourne and its surrounding region host several universities, including the University of Melbourne, along with other major institutions across the city and state of Victoria. Programs span the arts, sciences, engineering, business, health and more.\n\nWhen any global ranking is mentioned for a Melbourne university, it should always be attributed to the body that issued it (for example QS or THE) and to a specific year, because rankings change annually. Always confirm a university\'s current standing, courses and entry requirements on its own official website.',
+        bullets: [
+          'The University of Melbourne is a major, well-established university based in the city.',
+          'Other universities operate across Melbourne and the wider Victoria region.',
+          'Check each university\'s official site for current courses, campuses and entry requirements.',
+        ],
+      },
+      {
+        headingEn: 'Cost of living in Melbourne',
+        bodyEn:
+          'Melbourne generally sits at the higher end of Australian cities for living costs, alongside Sydney, though this depends heavily on where and how you live. Rent is usually the largest expense and varies between inner-city areas and outer suburbs. Other regular costs include food, public transport, health cover (OSHC), phone and internet, and study materials.\n\nBecause prices change over time, budget using ranges rather than fixed figures, and use official sources for current estimates. The University of Melbourne and other institutions publish cost-of-living guidance, and the Australian Government sets the financial-capacity requirement for the Student visa (subclass 500) — verify the current amounts on the official source.',
+        bullets: [
+          'Rent varies widely by suburb — inner-city is typically higher than outer areas.',
+          'Plan for food, transport, OSHC, phone/internet and study materials.',
+          'Use official university cost pages and Study Australia for current ranges.',
+        ],
+      },
+      {
+        headingEn: 'Getting around',
+        bodyEn:
+          'Melbourne has an extensive public transport system of trains, trams and buses, managed under the state\'s public transport network, which many students use to get to campus and around the city. The city is also known for its tram network in the central area.\n\nFares, zones and any student or concession arrangements are set by the relevant Victorian transport authority and can change, so check the current fares and eligibility on the official transport website. International students should confirm whether they qualify for any concession before assuming a discount applies.',
+      },
+      {
+        headingEn: 'Student life and support',
+        bodyEn:
+          'Melbourne offers a broad student lifestyle: libraries and study spaces, sport and recreation, festivals, food from many cultures, parks and a busy events calendar. Universities run international student offices, orientation programs, health and wellbeing services and academic support to help you settle in.\n\nFor practical guidance on living in Australia, your rights as an international student, and staying safe and well, the official Study Australia resources and your university\'s student services are the most reliable starting points.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Melbourne expensive for international students?',
+        answerEn:
+          'Melbourne tends to be one of the higher-cost Australian cities, similar to Sydney, but actual costs depend a lot on your suburb, accommodation type and lifestyle. Budget in ranges and use official university cost-of-living pages and Study Australia for current figures.',
+      },
+      {
+        questionEn: 'Which universities are in Melbourne?',
+        answerEn:
+          'Melbourne and the surrounding Victoria region host several universities, including the University of Melbourne, along with other major institutions. Check each university\'s official website for current courses, campuses and entry requirements.',
+      },
+      {
+        questionEn: 'How do students get around Melbourne?',
+        answerEn:
+          'Many students use the public transport network of trains, trams and buses. Fares, zones and any concession eligibility are set by the Victorian transport authority and can change, so check the official transport site — and confirm whether you qualify for any student concession.',
+      },
+      {
+        questionEn: 'Do I need health insurance to study in Melbourne?',
+        answerEn:
+          'International students on a Student visa are generally required to hold Overseas Student Health Cover (OSHC) for the duration of their stay. This is general information — verify the current requirement and details on the official Australian Government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: ['university-of-melbourne'],
+    relatedGuideSlugs: ['best-cities-to-study-in-australia', 'studying-in-sydney-student-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'University of Melbourne — official site', url: 'https://www.unimelb.edu.au' },
+      { label: 'Australian Government Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['studying in melbourne', 'student life melbourne', 'cost of living melbourne students', 'universities in melbourne', 'study in melbourne australia'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'State', value: 'Victoria (capital city)' },
+      { label: 'Known for', value: 'Multicultural community, arts, sport, cafe culture' },
+      { label: 'Transport', value: 'Trains, trams and buses (check official fares/concessions)' },
+      { label: 'Living costs', value: 'Higher end among Australian cities — budget in ranges (AUD)' },
+    ],
+  },
+  {
+    slug: 'studying-in-sydney-student-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Studying in Sydney: Student Guide',
+    descriptionEn:
+      'A neutral student guide to Sydney — the universities based there, what student life and living costs are like, getting around the harbour city, and how to budget realistically in ranges.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Sydney as a student city',
+        bodyEn:
+          'Sydney is the capital of New South Wales and Australia\'s largest city. It is a coastal harbour city known for its beaches, harbour, diverse communities and wide range of industries. For students, it offers a large international community, many universities and courses, and a busy job market.\n\nAs with any large city, life in Sydney differs by neighbourhood and budget. This guide describes the city in general terms so you can judge whether it matches what you are looking for.',
+      },
+      {
+        headingEn: 'Universities based in Sydney',
+        bodyEn:
+          'Sydney hosts several major universities, including the University of Sydney and UNSW Sydney, with campuses across the city and the wider New South Wales region. Programs cover the arts, sciences, engineering, business, health, law and more.\n\nWhere a ranking is cited for a Sydney university, attribute it to the issuing body (such as QS or THE) and a specific year, since rankings are updated annually. Confirm any university\'s current courses, campuses and entry requirements on its own official website.',
+        bullets: [
+          'The University of Sydney and UNSW Sydney are major universities in the city.',
+          'Other universities and campuses operate across Sydney and New South Wales.',
+          'Check each university\'s official site for current courses and entry requirements.',
+        ],
+      },
+      {
+        headingEn: 'Cost of living in Sydney',
+        bodyEn:
+          'Sydney generally sits at the higher end among Australian cities for living costs, particularly for rent, though the figure depends strongly on the suburb and your accommodation choice. Beyond rent, plan for food, transport, health cover (OSHC), phone and internet, and study materials.\n\nPrices change over time, so budget using ranges and rely on official sources. Sydney universities publish cost-of-living guidance, and the Australian Government sets the financial-capacity requirement for the Student visa (subclass 500) — verify the current amounts on the official source.',
+        bullets: [
+          'Rent is usually the biggest cost and varies widely by suburb and distance from campus.',
+          'Budget for food, transport, OSHC, phone/internet and study materials.',
+          'Use official university cost pages and Study Australia for current ranges.',
+        ],
+      },
+      {
+        headingEn: 'Getting around',
+        bodyEn:
+          'Sydney has an integrated public transport network of trains, buses, light rail and ferries, managed by the state transport authority. Many students use it to commute to campus and explore the city, and a contactless travel-card system is used across the network.\n\nFares, zones and any student or concession eligibility are set by the New South Wales transport authority and can change, so check the current fares on the official transport website and confirm whether international students qualify for any concession before assuming one applies.',
+      },
+      {
+        headingEn: 'Student life and support',
+        bodyEn:
+          'Sydney offers a varied student lifestyle, from beaches and coastal walks to cultural venues, sport, festivals and food from many cultures, alongside libraries and study spaces on campus. Universities provide international student offices, orientation, health and wellbeing services and academic support to help you settle in.\n\nFor practical advice on living in Australia, your rights as an international student, and staying safe and well, start with the official Study Australia resources and your university\'s student services.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Sydney more expensive than other Australian cities?',
+        answerEn:
+          'Sydney is generally among the higher-cost Australian cities, especially for rent, but actual costs depend heavily on suburb, accommodation and lifestyle. Budget in ranges and use official university cost-of-living pages and Study Australia for current figures.',
+      },
+      {
+        questionEn: 'Which universities are in Sydney?',
+        answerEn:
+          'Sydney hosts several major universities, including the University of Sydney and UNSW Sydney, plus other institutions across New South Wales. Check each university\'s official website for current courses, campuses and entry requirements.',
+      },
+      {
+        questionEn: 'How do students travel around Sydney?',
+        answerEn:
+          'Sydney has an integrated network of trains, buses, light rail and ferries with a contactless travel card. Fares and any concession eligibility are set by the NSW transport authority and can change, so check the official transport site and confirm whether you qualify for a student concession.',
+      },
+      {
+        questionEn: 'Do I need OSHC to study in Sydney?',
+        answerEn:
+          'International students on a Student visa are generally required to hold Overseas Student Health Cover (OSHC) for their stay. This is general information — verify the current requirement and details on the official Australian Government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: ['university-of-sydney'],
+    relatedGuideSlugs: ['best-cities-to-study-in-australia', 'studying-in-melbourne-student-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'University of Sydney — official site', url: 'https://www.sydney.edu.au' },
+      { label: 'Australian Government Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['studying in sydney', 'student life sydney', 'cost of living sydney students', 'universities in sydney', 'study in sydney australia'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'State', value: 'New South Wales (capital city)' },
+      { label: 'Setting', value: 'Coastal harbour city; Australia\'s largest city' },
+      { label: 'Transport', value: 'Trains, buses, light rail and ferries (check official fares)' },
+      { label: 'Living costs', value: 'Higher end among Australian cities — budget in ranges (AUD)' },
+    ],
+  },
+  {
+    slug: 'studying-in-brisbane-student-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Studying in Brisbane: Student Guide',
+    descriptionEn:
+      'A neutral guide to studying in Brisbane — the universities based there, what student life and living costs are like, getting around the sub-tropical city, and how to budget in ranges.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Brisbane as a student city',
+        bodyEn:
+          'Brisbane is the capital of Queensland and a major Australian city with a warm, sub-tropical climate. It sits on the Brisbane River and is often described as relaxed and outdoor-oriented. For students, it offers a sizeable international community, several universities and courses, and an accessible city centre.\n\nAs with any city, the day-to-day experience depends on your neighbourhood and lifestyle. This guide describes Brisbane in general terms so you can weigh it against your own priorities.',
+      },
+      {
+        headingEn: 'Universities based in Brisbane',
+        bodyEn:
+          'Brisbane and the surrounding South-East Queensland region host several universities, with campuses across the city. Programs cover the arts, sciences, engineering, business, health and more.\n\nIf a ranking is mentioned for a Brisbane university, attribute it to the issuing body (such as QS or THE) and a specific year, because rankings change every year. Confirm a university\'s current courses, campuses and entry requirements on its own official website.',
+        bullets: [
+          'Several universities operate across Brisbane and South-East Queensland.',
+          'Programs span a wide range of fields and study levels.',
+          'Check each university\'s official site for current courses and entry requirements.',
+        ],
+      },
+      {
+        headingEn: 'Cost of living in Brisbane',
+        bodyEn:
+          'Brisbane is often more affordable than Sydney and Melbourne, though this depends on the suburb and your accommodation choice, and prices change over time. Rent is typically the largest expense, followed by food, transport, health cover (OSHC), phone and internet, and study materials.\n\nBudget in ranges rather than fixed figures, and use official sources. Brisbane universities publish cost-of-living guidance, and the Australian Government sets the financial-capacity requirement for the Student visa (subclass 500) — verify the current amounts on the official source.',
+        bullets: [
+          'Often more affordable than Sydney or Melbourne, but it varies by suburb.',
+          'Plan for rent, food, transport, OSHC, phone/internet and study materials.',
+          'Use official university cost pages and Study Australia for current ranges.',
+        ],
+      },
+      {
+        headingEn: 'Getting around',
+        bodyEn:
+          'Brisbane has a public transport network of trains, buses and ferries (including river ferry services), managed by the regional transport authority. Many students use it to reach campus and move around the city.\n\nFares, zones and any student or concession eligibility are set by the relevant Queensland transport authority and can change, so check the current fares on the official transport website and confirm whether international students qualify for any concession before assuming one applies.',
+      },
+      {
+        headingEn: 'Student life and support',
+        bodyEn:
+          'Brisbane offers an outdoor-friendly student lifestyle with parks, riverside areas, festivals and food from many cultures, alongside campus libraries and study spaces. Universities run international student offices, orientation, health and wellbeing services and academic support to help you settle in.\n\nFor practical guidance on living in Australia, your rights as an international student, and staying safe and well, the official Study Australia resources and your university\'s student services are reliable starting points.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Brisbane cheaper than Sydney or Melbourne?',
+        answerEn:
+          'Brisbane is often more affordable than Sydney and Melbourne, but costs vary by suburb, accommodation and lifestyle and change over time. Budget in ranges and use official university cost-of-living pages and Study Australia for current figures.',
+      },
+      {
+        questionEn: 'Which universities are in Brisbane?',
+        answerEn:
+          'Brisbane and South-East Queensland host several universities with campuses across the city. Check each university\'s official website for current courses, campuses and entry requirements.',
+      },
+      {
+        questionEn: 'How do students get around Brisbane?',
+        answerEn:
+          'Brisbane has a network of trains, buses and ferries. Fares and any concession eligibility are set by the Queensland transport authority and can change, so check the official transport site and confirm whether you qualify for a student concession.',
+      },
+      {
+        questionEn: 'What is the weather like for students in Brisbane?',
+        answerEn:
+          'Brisbane has a warm, sub-tropical climate. Conditions vary by season, so check current local information when planning. Climate is one factor to weigh alongside your course, costs and lifestyle when choosing a city.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['best-cities-to-study-in-australia', 'studying-in-sydney-student-guide', 'studying-in-perth-student-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Government Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['studying in brisbane', 'student life brisbane', 'cost of living brisbane students', 'universities in brisbane', 'study in brisbane australia'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'State', value: 'Queensland (capital city)' },
+      { label: 'Climate', value: 'Warm, sub-tropical; on the Brisbane River' },
+      { label: 'Transport', value: 'Trains, buses and ferries (check official fares/concessions)' },
+      { label: 'Living costs', value: 'Often more affordable than Sydney/Melbourne — verify in ranges (AUD)' },
+    ],
+  },
+  {
+    slug: 'studying-in-perth-student-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Studying in Perth: Student Guide',
+    descriptionEn:
+      'A neutral student guide to Perth — the universities based there, what student life and living costs are like, getting around Western Australia\'s capital, and how to budget in ranges.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Perth as a student city',
+        bodyEn:
+          'Perth is the capital of Western Australia and the main city on the country\'s west coast. It is a coastal city, comparatively spread out, with a sunny climate and a time zone close to much of Asia. For students, it offers an international community, several universities and courses, and a relaxed pace of life.\n\nAs with any city, the experience varies by neighbourhood and budget. This guide describes Perth in general terms so you can decide whether it fits your priorities.',
+      },
+      {
+        headingEn: 'Universities based in Perth',
+        bodyEn:
+          'Perth hosts several universities with campuses across the city and the wider Western Australia region. Programs span the arts, sciences, engineering, business, health and more.\n\nWhere a ranking is cited for a Perth university, attribute it to the issuing body (such as QS or THE) and a specific year, since rankings are updated annually. Confirm a university\'s current courses, campuses and entry requirements on its own official website.',
+        bullets: [
+          'Several universities operate across Perth and Western Australia.',
+          'Programs cover a wide range of fields and study levels.',
+          'Check each university\'s official site for current courses and entry requirements.',
+        ],
+      },
+      {
+        headingEn: 'Cost of living in Perth',
+        bodyEn:
+          'Perth is often considered more affordable than Sydney and Melbourne for some costs, but this depends on the suburb and your accommodation choice, and prices change over time. Rent is usually the largest expense, alongside food, transport, health cover (OSHC), phone and internet, and study materials.\n\nBudget in ranges and rely on official sources. Perth universities publish cost-of-living guidance, and the Australian Government sets the financial-capacity requirement for the Student visa (subclass 500) — verify the current amounts on the official source.',
+        bullets: [
+          'Often more affordable than Sydney or Melbourne for some costs, but it varies by suburb.',
+          'Plan for rent, food, transport, OSHC, phone/internet and study materials.',
+          'Use official university cost pages and Study Australia for current ranges.',
+        ],
+      },
+      {
+        headingEn: 'Getting around',
+        bodyEn:
+          'Perth has a public transport network of trains, buses and ferries, managed by the state transport authority, which students use to reach campus and travel around the city. Because Perth is comparatively spread out, it is worth checking travel times from your accommodation to campus.\n\nFares, zones and any student or concession eligibility are set by the Western Australia transport authority and can change, so check the current fares on the official transport website and confirm whether international students qualify for any concession before assuming one applies.',
+      },
+      {
+        headingEn: 'Student life and support',
+        bodyEn:
+          'Perth offers an outdoor-oriented student lifestyle with beaches, parks, riverside areas and a sunny climate, alongside campus libraries, study spaces and a calendar of events. Universities provide international student offices, orientation, health and wellbeing services and academic support to help you settle in.\n\nFor practical guidance on living in Australia, your rights as an international student, and staying safe and well, the official Study Australia resources and your university\'s student services are reliable starting points.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Perth a good city for international students?',
+        answerEn:
+          'Perth hosts several well-established universities, has a large international community, and is often considered more affordable than the largest cities for some costs. Whether it suits you depends on your course, budget, climate preferences and lifestyle. Use official sources to compare current costs.',
+      },
+      {
+        questionEn: 'Which universities are in Perth?',
+        answerEn:
+          'Perth and Western Australia host several universities with campuses across the city. Check each university\'s official website for current courses, campuses and entry requirements.',
+      },
+      {
+        questionEn: 'How do students get around Perth?',
+        answerEn:
+          'Perth has a network of trains, buses and ferries. Because the city is comparatively spread out, check travel times to campus. Fares and any concession eligibility are set by the WA transport authority and can change, so check the official transport site.',
+      },
+      {
+        questionEn: 'Do I need OSHC to study in Perth?',
+        answerEn:
+          'International students on a Student visa are generally required to hold Overseas Student Health Cover (OSHC) for the duration of their stay. This is general information — verify the current requirement and details on the official Australian Government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['best-cities-to-study-in-australia', 'studying-in-brisbane-student-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Government Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['studying in perth', 'student life perth', 'cost of living perth students', 'universities in perth', 'study in perth australia'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'State', value: 'Western Australia (capital city)' },
+      { label: 'Setting', value: 'Coastal, comparatively spread out; time zone close to Asia' },
+      { label: 'Transport', value: 'Trains, buses and ferries (check official fares/concessions)' },
+      { label: 'Living costs', value: 'Often more affordable than Sydney/Melbourne — verify in ranges (AUD)' },
+    ],
+  },
+  {
+    slug: 'student-accommodation-in-australia-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Student Accommodation in Australia: A Guide',
+    descriptionEn:
+      'On-campus residences, off-campus rentals, purpose-built student accommodation, and homestay in Australia — how each option works, what to weigh up, and where to confirm current costs.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Your main housing options',
+        bodyEn:
+          'International students in Australia generally choose between a few well-established housing types. There is no single "best" option — the right choice depends on your budget, the city, your course location, and how independent you want to be.\n\nMost universities run accommodation services that list approved or partner options and can answer questions about contracts, so the official accommodation page of your chosen university is the most reliable starting point.',
+        bullets: [
+          'On-campus residence halls and residential colleges',
+          'Purpose-built student accommodation (PBSA) run by private providers near campus',
+          'Off-campus rentals — a shared flat/house or a private studio',
+          'Homestay — living with a local host family',
+        ],
+      },
+      {
+        headingEn: 'On-campus living',
+        bodyEn:
+          'On-campus residences and residential colleges put you close to classes, libraries, and student support. They often include some bills, internet, and structured social and academic events, which can make settling in easier for a first-year or first-time-abroad student.\n\nPlaces are usually limited and in demand, so applications often open well before the semester. Check your university\'s accommodation page early for application windows and what is included.',
+      },
+      {
+        headingEn: 'Off-campus rentals and PBSA',
+        bodyEn:
+          'Renting off campus — a room in a shared house, a flat, or a private studio — typically gives you more independence and a wider price range. Purpose-built student accommodation sits between the two: privately run buildings designed for students, often near campus, with furnished rooms and shared study and social spaces.\n\nRental rules differ by state and territory, and you will usually sign a lease and pay a bond (a refundable security deposit held under state rules). Read any lease carefully, understand your rights and obligations, and never transfer money for a property you have not been able to verify.',
+        bullets: [
+          'Leases, bond amounts, and notice periods are governed by each state/territory tenancy authority',
+          'Furnished vs unfurnished and which bills are included vary a lot — confirm in writing',
+          'Be alert to rental scams; do not pay deposits for unseen or unverified listings',
+        ],
+      },
+      {
+        headingEn: 'Homestay',
+        bodyEn:
+          'In a homestay you live with a local host, often with some meals included. Many students find it a comfortable, supported way to begin life in Australia, practise English, and learn local routines, particularly for a first semester. Universities and registered homestay services can help arrange placements; ask your institution which providers it recognises.',
+      },
+      {
+        headingEn: 'What accommodation costs',
+        bodyEn:
+          'Accommodation is one of the largest parts of a student budget, and prices vary widely by city, suburb, room type, and whether bills are included. Larger cities and inner suburbs generally cost more than regional areas or shared housing further from the centre.\n\nWe do not quote fixed rents here because they change frequently. The Australian Government\'s Study Australia portal and your university\'s accommodation and living-cost pages publish current cost-of-living guidance and indicative ranges — use those, and budget for one-off setup costs such as a bond, the first weeks of rent, and basic household items.',
+        bullets: [
+          'Costs differ by city, suburb, room type, and inclusions — always check current figures',
+          'Budget for upfront costs: bond, advance rent, and setup items',
+          'Use Study Australia and your university\'s cost-of-living pages for current ranges',
+        ],
+      },
+      {
+        headingEn: 'Practical tips before you arrive',
+        bodyEn:
+          'Start early, because the best on-campus and PBSA options fill up before semester. Consider arranging short-term or temporary accommodation for your first week or two so you can inspect off-campus places in person before committing. Confirm exactly what is included — internet, electricity, water, furniture — and keep all agreements in writing.\n\nFinally, factor in transport: a slightly cheaper place far from campus can cost more in time and travel, so weigh rent against commute when you compare options.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Should I live on campus or off campus?',
+        answerEn:
+          'Neither is universally better. On-campus living is convenient, social, and often bundles some bills, which suits many first-year students; off-campus renting can offer more independence and a wider price range. Compare cost, commute, inclusions, and how settled you want to feel, and check your university\'s accommodation page.',
+      },
+      {
+        questionEn: 'How much should I budget for accommodation in Australia?',
+        answerEn:
+          'It varies widely by city, suburb, and room type, so we do not quote a fixed figure. Use the Australian Government\'s Study Australia cost-of-living guidance and your university\'s accommodation pages for current ranges, and budget separately for upfront costs like a bond and advance rent.',
+      },
+      {
+        questionEn: 'What is a rental bond?',
+        answerEn:
+          'A bond is a refundable security deposit you pay at the start of a tenancy, held under your state or territory\'s tenancy rules and returned at the end if there is no damage or unpaid rent. The exact amount and rules differ by state — check your local tenancy authority.',
+      },
+      {
+        questionEn: 'How can I avoid accommodation scams?',
+        answerEn:
+          'Use your university\'s accommodation service or recognised providers, never pay a deposit for a property you cannot verify, be cautious of listings that pressure you to transfer money quickly, and keep all agreements in writing. If something feels off, ask your university\'s student support for help.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['opening-a-bank-account-in-australia-for-students', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Australian Government — Study Australia (living costs & accommodation)', url: 'https://www.studyaustralia.gov.au/' },
+      { label: 'University of Melbourne — Student accommodation', url: 'https://study.unimelb.edu.au/accommodation' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['student accommodation in australia', 'student housing australia', 'on campus vs off campus australia', 'homestay australia students', 'cost of accommodation australia students'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'Main options', value: 'On-campus, off-campus rental, PBSA, homestay' },
+      { label: 'Upfront cost', value: 'Usually a refundable bond + advance rent (varies by state)' },
+      { label: 'Cost guidance', value: 'Study Australia + your university\'s living-cost pages' },
+      { label: 'Apply', value: 'On-campus and PBSA fill early — start before semester' },
+    ],
+  },
+  {
+    slug: 'opening-a-bank-account-in-australia-for-students',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Opening a Bank Account in Australia for Students',
+    descriptionEn:
+      'How international students open a bank account in Australia — the documents typically needed, the difference between everyday and savings accounts, and where to confirm current requirements.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Why you may want a local account',
+        bodyEn:
+          'Having an Australian bank account makes day-to-day student life easier: receiving any wages from part-time work, paying rent and bills, and avoiding overseas card fees on everyday spending. Opening one is a common early step after arriving.\n\nThis guide explains the general process and documents. It does not recommend any particular bank or product — compare account features, fees, and conditions yourself and confirm current details directly with the bank.',
+      },
+      {
+        headingEn: 'Everyday vs savings accounts',
+        bodyEn:
+          'Most students open two linked account types. An everyday transaction account is for daily spending, comes with a debit card, and is used for purchases and bill payments. A savings account is for setting money aside and may pay interest. Many banks let you open both together.\n\nFeatures, monthly fees (and any student fee waivers), and conditions differ between banks and change over time, so always check the bank\'s current product information before opening.',
+        bullets: [
+          'Everyday/transaction account — daily spending, debit card',
+          'Savings account — set money aside, may earn interest',
+          'Fees and student waivers vary by bank — verify current terms',
+        ],
+      },
+      {
+        headingEn: 'Documents you typically need',
+        bodyEn:
+          'Banks in Australia must verify your identity before opening an account, so you will generally need identification and proof of your details. Exact requirements differ by bank, but students are commonly asked for some combination of the following. Confirm the precise list on your chosen bank\'s website before you go in.',
+        bullets: [
+          'Your passport (primary photo ID)',
+          'Your student visa / confirmation of enrolment details',
+          'A local residential address in Australia',
+          'Your Australian phone number and an email address',
+          'Sometimes a Tax File Number (TFN) — see below',
+        ],
+      },
+      {
+        headingEn: 'About the Tax File Number (TFN)',
+        bodyEn:
+          'A Tax File Number is your personal reference number in Australia\'s tax system, issued by the Australian Taxation Office (ATO). You can usually open and use a bank account without a TFN, but providing one to your bank means any interest you earn is taxed at the standard rate rather than a higher default rate. If you plan to work, a TFN is generally needed for employment too. Apply for and learn about the TFN only through the official ATO website.',
+      },
+      {
+        headingEn: 'How and when to open one',
+        bodyEn:
+          'Some banks let you start an application online before you arrive in Australia and then complete identity checks in a branch afterwards; others open the account in branch once you have an Australian address. Check your bank\'s current process.\n\nA few practical tips: keep your passport and enrolment documents handy, set up the banking app and card PIN once your account is active, and be alert to scams — a genuine bank will not ask for your full password or one-time codes by email or message. If anything seems suspicious, contact the bank through its official channels.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I open an Australian bank account before I arrive?',
+        answerEn:
+          'Some banks allow you to begin an application online from overseas and then verify your identity in a branch after you arrive, while others open the account in person once you have a local address. Check your chosen bank\'s current process on its official website.',
+      },
+      {
+        questionEn: 'What documents do I need to open a student bank account?',
+        answerEn:
+          'Requirements vary by bank, but students are commonly asked for a passport, student visa or enrolment details, an Australian address, and contact details, and sometimes a Tax File Number. Confirm the exact list with the specific bank before you apply.',
+      },
+      {
+        questionEn: 'Do I need a Tax File Number to open an account?',
+        answerEn:
+          'Usually no — you can generally open and use an account without one. However, giving your bank a Tax File Number means interest is taxed at the standard rate rather than a higher default rate, and a TFN is generally needed if you work. Apply only through the official ATO website.',
+      },
+      {
+        questionEn: 'Which bank is best for international students?',
+        answerEn:
+          'We do not endorse any bank or product. Compare account types, fees, any student fee waivers, branch and app access, and conditions, then confirm current details directly with the bank before opening an account.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['student-accommodation-in-australia-guide', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Australian Taxation Office — Tax File Number', url: 'https://www.ato.gov.au/individuals-and-families/tax-file-number' },
+      { label: 'Australian Government — Study Australia', url: 'https://www.studyaustralia.gov.au/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['open bank account in australia student', 'student bank account australia', 'tax file number australia students', 'documents to open bank account australia', 'international student banking australia'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'Account types', value: 'Everyday/transaction + savings (often linked)' },
+      { label: 'Typical ID', value: 'Passport, visa/enrolment, Australian address & contact' },
+      { label: 'TFN', value: 'Optional for accounts; issued by the ATO' },
+      { label: 'Verify', value: 'Confirm fees & process on the bank\'s official site' },
+    ],
+  },
+  {
+    slug: 'studying-in-auckland-student-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Studying in Auckland: A Student Guide',
+    descriptionEn:
+      'A neutral guide to studying in Auckland, New Zealand — its universities, getting around, accommodation and living, and the support available to international students.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Auckland at a glance',
+        bodyEn:
+          'Auckland is New Zealand\'s largest city and a major destination for international students. It sits between two harbours in the north of the country and combines a busy urban centre with easy access to beaches, parks, and the outdoors.\n\nAs a large, diverse city it hosts students from many countries, a wide range of courses, and the everyday services — transport, healthcare, shops, and student support — that international students rely on.',
+      },
+      {
+        headingEn: 'Universities and study options',
+        bodyEn:
+          'Auckland is home to several tertiary institutions, including the University of Auckland and the Auckland University of Technology, along with other providers offering vocational and pathway programmes. Course availability, entry requirements, and fees vary by institution and programme.\n\nThe official New Zealand Government student portal, Study with New Zealand, lists accredited providers and is the reliable place to check which institutions and courses are offered. Always confirm entry requirements and fees on the institution\'s own website.',
+        bullets: [
+          'University of Auckland',
+          'Auckland University of Technology (AUT)',
+          'Additional vocational and pathway providers across the city',
+        ],
+      },
+      {
+        headingEn: 'Getting around',
+        bodyEn:
+          'Auckland has a public transport network of buses, trains, and ferries, with an integrated travel card used to pay across services. Many students live near campus or along transport routes to keep commuting manageable.\n\nFares, routes, and any student or tertiary concessions change over time, so check the official Auckland Transport information for current details when you arrive.',
+      },
+      {
+        headingEn: 'Accommodation and living',
+        bodyEn:
+          'Students in Auckland typically choose university halls of residence, flatting (renting a shared house or flat), or homestay with a local host. As New Zealand\'s largest city, Auckland\'s housing costs vary by suburb and room type and are generally higher than in some smaller centres.\n\nWe do not quote fixed prices here, as they change. Use the Study with New Zealand cost-of-living guidance and your institution\'s accommodation pages for current ranges, and budget for upfront costs such as a bond and the first weeks of rent.',
+        bullets: [
+          'Halls of residence, flatting, or homestay',
+          'Costs vary by suburb and room type — check current figures',
+          'Budget for a bond and advance rent on top of weekly costs',
+        ],
+      },
+      {
+        headingEn: 'Support and student life',
+        bodyEn:
+          'Auckland\'s institutions run dedicated international student services covering orientation, academic help, wellbeing, and careers, plus clubs, societies, and sports. The city\'s coastline, parks, and nearby islands and regional areas also make it easy to explore the outdoors between studies.\n\nNew Zealand has a published Code of Practice setting out the pastoral care and wellbeing support that signed-up providers must offer international students — your institution can explain how it applies to you.',
+      },
+      {
+        headingEn: 'Visas, work, and verifying the rules',
+        bodyEn:
+          'International students in Auckland study on a New Zealand student visa. Conditions — including any limits on working while studying and post-study options — are set by Immigration New Zealand and can change. This is general information, not immigration advice: check the official Immigration New Zealand website for current visa rules and verify them on the official government source before you make plans.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which universities are in Auckland?',
+        answerEn:
+          'Auckland is home to several tertiary providers, including the University of Auckland and the Auckland University of Technology, along with vocational and pathway institutions. Use the official Study with New Zealand portal to see accredited providers and confirm courses on each institution\'s website.',
+      },
+      {
+        questionEn: 'How much does it cost to live in Auckland as a student?',
+        answerEn:
+          'Living costs vary by suburb, room type, and lifestyle, and Auckland is generally among New Zealand\'s higher-cost cities. We do not quote fixed figures — check the Study with New Zealand cost-of-living guidance and your institution\'s pages for current ranges.',
+      },
+      {
+        questionEn: 'Is public transport easy to use in Auckland?',
+        answerEn:
+          'Auckland has buses, trains, and ferries with an integrated travel card. Fares, routes, and any tertiary concessions change over time, so check the official Auckland Transport information for current details.',
+      },
+      {
+        questionEn: 'Can international students work while studying in Auckland?',
+        answerEn:
+          'Work conditions for student-visa holders are set by Immigration New Zealand and can change. This is general information, not immigration advice — check the official Immigration New Zealand website for current rules and verify them before making plans.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: ['university-of-auckland'],
+    relatedGuideSlugs: ['student-accommodation-in-new-zealand-guide', 'student-life-in-new-zealand-guide', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'New Zealand Government — Study with New Zealand', url: 'https://www.studywithnewzealand.govt.nz/' },
+      { label: 'Immigration New Zealand — Study (student visas)', url: 'https://www.immigration.govt.nz/study/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['studying in auckland', 'student life auckland', 'universities in auckland', 'cost of living auckland student', 'study in auckland international students'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'City', value: 'Auckland — New Zealand\'s largest city' },
+      { label: 'Universities', value: 'University of Auckland, AUT + other providers' },
+      { label: 'Transport', value: 'Buses, trains & ferries with an integrated card' },
+      { label: 'Verify', value: 'Visa rules on Immigration New Zealand (not advice)' },
+    ],
+  },
+  {
+    slug: 'student-accommodation-in-new-zealand-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Student Accommodation in New Zealand: A Guide',
+    descriptionEn:
+      'Halls of residence, flatting, and homestay in New Zealand — how each option works, what to consider, the upfront costs to expect, and where to confirm current prices.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Your main housing options',
+        bodyEn:
+          'International students in New Zealand usually choose between three well-established options. None is universally better — the right fit depends on your budget, your institution\'s location, how independent you want to be, and whether you prefer a structured or self-managed living arrangement.\n\nMost universities and institutes run accommodation services that list halls and approved options, so your institution\'s official accommodation page is the most reliable place to start.',
+        bullets: [
+          'Halls of residence (on or near campus)',
+          'Flatting — renting a shared house or flat off campus',
+          'Homestay — living with a local host family',
+        ],
+      },
+      {
+        headingEn: 'Halls of residence',
+        bodyEn:
+          'Halls of residence are student accommodation run by or affiliated with your institution, usually on or near campus. They often include meals or self-catering kitchens, internet, and some bills, plus organised social and academic support, which many first-year and first-time-abroad students find helpful.\n\nPlaces can be limited and popular, so applications often open before the academic year. Check your institution\'s accommodation page for application timelines and what is included.',
+      },
+      {
+        headingEn: 'Flatting',
+        bodyEn:
+          'Flatting means renting a house or flat off campus, often sharing with other students to split costs. It gives more independence and a wider price range, but you take on more responsibility — finding flatmates, signing a tenancy agreement, and managing bills.\n\nIn New Zealand most rentals involve a tenancy agreement and a bond (a refundable deposit lodged with the government\'s Tenancy Services). Read agreements carefully, understand your rights and obligations under New Zealand tenancy law, and never pay a deposit for a property you cannot verify.',
+        bullets: [
+          'Tenancy agreements and bonds are governed by New Zealand tenancy law (Tenancy Services)',
+          'Bonds are lodged with the government, not held privately by the landlord',
+          'Be alert to rental scams — verify any property and keep agreements in writing',
+        ],
+      },
+      {
+        headingEn: 'Homestay',
+        bodyEn:
+          'In a homestay you live with a local host family, often with some meals included. Many students value it as a supported, social way to settle in, practise English, and learn local routines, especially for a first semester. Institutions and recognised homestay services can arrange placements — ask your institution which providers it recommends.',
+      },
+      {
+        headingEn: 'What accommodation costs',
+        bodyEn:
+          'Accommodation is one of the biggest parts of a student budget in New Zealand and varies by city, suburb, room type, and what is included. Larger cities such as Auckland generally cost more than smaller centres, and halls with meals included compare differently to a shared flat.\n\nWe do not quote fixed prices because they change. The New Zealand Government\'s Study with New Zealand portal and your institution\'s accommodation pages publish current cost-of-living guidance and indicative ranges — use those, and budget for upfront costs such as a bond and the first weeks of rent.',
+        bullets: [
+          'Costs vary by city, suburb, room type, and inclusions',
+          'Budget for upfront costs: bond and advance rent',
+          'Use Study with New Zealand and your institution\'s cost pages for current ranges',
+        ],
+      },
+      {
+        headingEn: 'Practical tips and student wellbeing',
+        bodyEn:
+          'Apply early, because halls fill before the academic year, and consider short-term accommodation for your first week or two so you can view flats in person before committing. Confirm what is included — internet, power, furniture — and factor in transport when weighing a cheaper but distant place.\n\nNew Zealand has a published Code of Practice that sets out the pastoral care and accommodation standards signed-up providers must meet for international students, including under-18s. Your institution can explain how it applies to your accommodation.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between a hall of residence and flatting?',
+        answerEn:
+          'A hall of residence is institution-run accommodation, usually on or near campus, often including some meals, bills, and organised support — convenient and social. Flatting means renting a house or flat off campus, which offers more independence and price flexibility but more responsibility for agreements and bills.',
+      },
+      {
+        questionEn: 'How much does student accommodation cost in New Zealand?',
+        answerEn:
+          'It varies by city, suburb, room type, and inclusions, so we do not quote a fixed figure. Use the New Zealand Government\'s Study with New Zealand cost-of-living guidance and your institution\'s accommodation pages for current ranges, and budget separately for a bond and advance rent.',
+      },
+      {
+        questionEn: 'What is a bond, and how does it work in New Zealand?',
+        answerEn:
+          'A bond is a refundable security deposit paid at the start of a tenancy. In New Zealand it is lodged with the government\'s Tenancy Services rather than held by the landlord, and returned at the end if there is no damage or unpaid rent. Check the exact rules with Tenancy Services.',
+      },
+      {
+        questionEn: 'Can the institution help me find accommodation?',
+        answerEn:
+          'Yes. Most universities and institutes run accommodation services that list halls and approved options and can advise on homestay and flatting. Start with your institution\'s official accommodation page, and use recognised providers to reduce the risk of scams.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['studying-in-auckland-student-guide', 'student-life-in-new-zealand-guide', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'New Zealand Government — Study with New Zealand', url: 'https://www.studywithnewzealand.govt.nz/' },
+      { label: 'New Zealand Government — Tenancy Services (bond & tenancy)', url: 'https://www.tenancy.govt.nz/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['student accommodation new zealand', 'halls of residence new zealand', 'flatting new zealand students', 'homestay new zealand', 'cost of student accommodation new zealand'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'Main options', value: 'Halls of residence, flatting, homestay' },
+      { label: 'Upfront cost', value: 'Bond (lodged with Tenancy Services) + advance rent' },
+      { label: 'Cost guidance', value: 'Study with New Zealand + your institution\'s pages' },
+      { label: 'Apply', value: 'Halls fill before the academic year — start early' },
+    ],
+  },
+  {
+    slug: 'student-life-in-new-zealand-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Student Life in New Zealand: A Guide',
+    descriptionEn:
+      'What student life in New Zealand is like — campus culture, the support and wellbeing services available, working and getting around, and making the most of the outdoors.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'A welcoming place to study',
+        bodyEn:
+          'New Zealand is a popular destination for international students, with a friendly, diverse student community and institutions used to welcoming people from around the world. Campuses bring together students of many nationalities, and most institutions put real effort into helping newcomers settle in.\n\nThis guide gives a neutral overview of everyday student life. Specific services, costs, and rules vary by institution and over time, so always confirm details with your own institution and the official sources linked below.',
+      },
+      {
+        headingEn: 'Campus culture and getting involved',
+        bodyEn:
+          'Student life extends well beyond lectures. Universities and institutes host clubs and societies, sports, cultural groups, and events that make it easy to meet people and build a community. Joining a club or two early is one of the simplest ways to settle in and make friends.\n\nOrientation programmes at the start of each intake introduce you to your campus, services, and other new students — attending these is a good first step.',
+        bullets: [
+          'Clubs, societies, and student associations',
+          'Sports and recreation facilities',
+          'Cultural and international student groups',
+          'Orientation events for new students',
+        ],
+      },
+      {
+        headingEn: 'Support and wellbeing',
+        bodyEn:
+          'Institutions in New Zealand provide a range of student support — academic help, careers guidance, health and counselling services, and dedicated international student teams. If you are finding study or settling in difficult, reaching out to these services early is encouraged and normal.\n\nNew Zealand also has a published Pastoral Care Code of Practice that sets out the wellbeing and support that signed-up education providers must offer international students, including extra protections for under-18s. Your institution can explain the support it provides under this code.',
+      },
+      {
+        headingEn: 'Working and getting around',
+        bodyEn:
+          'Some international students take on part-time work alongside study. Any right to work, and any limits on it, is set by your student visa conditions through Immigration New Zealand and can change — this is general information, not immigration advice, so check the official Immigration New Zealand website and verify the current rules before relying on them.\n\nNew Zealand\'s cities have public transport such as buses and, in some places, trains and ferries, often with student or tertiary concessions. Fares and routes vary by city and change over time, so check the local transport provider\'s official information.',
+      },
+      {
+        headingEn: 'The outdoors and exploring',
+        bodyEn:
+          'A distinctive part of student life in New Zealand is easy access to the outdoors. Beaches, national parks, mountains, and walking tracks are often close to campuses, and many students spend weekends hiking, exploring, or visiting nearby regions.\n\nIf you head outdoors, follow local safety advice — weather and conditions can change quickly — and plan trips sensibly. Your institution\'s clubs and student association often organise group trips, which can be a great and safe way to explore.',
+      },
+      {
+        headingEn: 'Settling in and staying safe',
+        bodyEn:
+          'Adjusting to a new country takes time, and it is normal to feel unsettled at first. Building a routine, joining activities, using your institution\'s support services, and connecting with other students all help.\n\nKeep important documents safe, know how to reach your institution\'s student support and local emergency services, and stay alert to scams that target students. New Zealand institutions are experienced in supporting international students, so ask for help whenever you need it.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is student life like in New Zealand?',
+        answerEn:
+          'New Zealand offers a friendly, diverse student community with active campus life — clubs, societies, sports, and cultural groups — alongside strong support services and easy access to the outdoors. Specific offerings vary by institution, so check with your own institution for details.',
+      },
+      {
+        questionEn: 'What support is available for international students?',
+        answerEn:
+          'Institutions typically provide academic help, careers guidance, health and counselling, and dedicated international student teams. New Zealand also has a published Pastoral Care Code of Practice setting out the wellbeing support that signed-up providers must offer international students; your institution can explain how it applies.',
+      },
+      {
+        questionEn: 'Can I work part-time as a student in New Zealand?',
+        answerEn:
+          'Any right to work, and any limits, depend on your student visa conditions, which are set by Immigration New Zealand and can change. This is general information, not immigration advice — check the official Immigration New Zealand website and verify the current rules before relying on them.',
+      },
+      {
+        questionEn: 'Is it easy to explore the outdoors as a student?',
+        answerEn:
+          'Yes — beaches, parks, mountains, and walking tracks are often close to campuses, and many students explore on weekends. Follow local safety advice as conditions can change quickly, and consider group trips organised by your institution\'s clubs or student association.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['studying-in-auckland-student-guide', 'student-accommodation-in-new-zealand-guide', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'New Zealand Government — Study with New Zealand', url: 'https://www.studywithnewzealand.govt.nz/' },
+      { label: 'Immigration New Zealand — Study (student visas)', url: 'https://www.immigration.govt.nz/study/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['student life in new zealand', 'studying in new zealand experience', 'international student support new zealand', 'campus life new zealand', 'living in new zealand as a student'],
+    tags: ['anz-student-life'],
+    keyFacts: [
+      { label: 'Community', value: 'Diverse, welcoming international student body' },
+      { label: 'Support', value: 'Pastoral Care Code of Practice for signed-up providers' },
+      { label: 'Work', value: 'Set by your visa via Immigration New Zealand (not advice)' },
+      { label: 'Lifestyle', value: 'Easy access to outdoors near many campuses' },
+    ],
+  },
+  {
+    slug: 'ielts-for-australia-and-new-zealand-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'IELTS for Australia and New Zealand: A Student Guide',
+    descriptionEn:
+      'How IELTS Academic fits into university and visa applications for Australia and New Zealand — test format, who accepts it, why band requirements vary, and where to confirm the minimums.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What IELTS is and which version to take',
+        bodyEn:
+          'The International English Language Testing System (IELTS) measures English ability across four skills — Listening, Reading, Writing, and Speaking — each scored on a band from 0 to 9, with an overall band that is the average of the four.\n\nFor university study in Australia and New Zealand, the version that institutions usually ask for is IELTS Academic (not IELTS General Training). Some visa or pathway routes may reference different IELTS modules, so always check exactly which version and which scoring report a university or visa stream expects before you book.',
+        bullets: [
+          'Four skills: Listening, Reading, Writing, Speaking',
+          'Each skill and the overall score reported on a 0–9 band',
+          'IELTS Academic is the version universities typically require',
+        ],
+      },
+      {
+        headingEn: 'Who accepts IELTS in Australia and New Zealand',
+        bodyEn:
+          'IELTS is one of the most widely recognised English tests for study in both countries. Many Australian and New Zealand universities accept IELTS Academic as evidence of English proficiency, and IELTS is also commonly listed among the tests recognised for student-visa English requirements.\n\nAcceptance is not universal, however. Each institution and each visa stream publishes its own list of accepted tests, and a small number of programmes or providers may prefer a particular test. Confirm acceptance directly on the official university admissions page and the official immigration website for the country you are applying to.',
+      },
+      {
+        headingEn: 'Why the band you need varies',
+        bodyEn:
+          'There is no single IELTS score that works everywhere. The overall band and the minimum in each skill (the "sub-scores") differ by university, by course, and by level of study. Programmes with heavy reading and writing demands — for example, law, medicine, education, or some postgraduate research degrees — often set higher minimums than other courses at the same university.\n\nSeparately, the English evidence required for a student visa is set by the government, not by us. We do not publish specific band minimums here because they change and differ by route. Look up the exact requirement on the official university course page and, for the visa, on the official government immigration site.',
+        bullets: [
+          'Minimums vary by university, course, and study level',
+          'Some courses require higher per-skill sub-scores',
+          'Visa English evidence is set by each government — verify there',
+        ],
+      },
+      {
+        headingEn: 'How the test is delivered and booked',
+        bodyEn:
+          'IELTS is available in paper-based and computer-delivered formats at official test centres, and the Speaking section is a face-to-face interview with a trained examiner. Test dates, fees, identification rules, and result timelines are published by the official test owner.\n\nBecause fees and available dates change and vary by location, book through the official IELTS website or an authorised test centre and check the current date, price, and ID requirements there rather than relying on figures from third parties.',
+      },
+      {
+        headingEn: 'Planning your timeline',
+        bodyEn:
+          'Give yourself enough lead time before application deadlines. You will usually need a valid test result when you apply to a university and again, in some cases, when you lodge a visa application — and English tests have validity periods that the test owner and the receiving institution define.\n\nIf your first result does not meet a course or visa requirement, you can usually retake the whole test or, in some cases, a single section, depending on the options the test owner currently offers. Confirm validity, retake options, and how a university or the immigration authority treats them on their official pages.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do all Australian and New Zealand universities accept IELTS?',
+        answerEn:
+          'IELTS is very widely accepted, but acceptance is not guaranteed everywhere or for every programme. Always confirm on the specific university\'s official admissions page that IELTS Academic is accepted for your course and study level.',
+      },
+      {
+        questionEn: 'What IELTS band do I need?',
+        answerEn:
+          'There is no universal number — required overall and per-skill bands vary by university, course, and visa route, and they change over time. We do not list minimums here. Check the official university course page and the official government immigration site for the current requirement.',
+      },
+      {
+        questionEn: 'Should I take IELTS Academic or General Training?',
+        answerEn:
+          'University study usually requires IELTS Academic. Some visa or pathway routes may reference a different module, so verify the exact version your university and visa stream require before booking.',
+      },
+      {
+        questionEn: 'Is IELTS accepted for the student visa in both countries?',
+        answerEn:
+          'IELTS is commonly among the tests recognised for student-visa English requirements in Australia and New Zealand, but the accepted tests and any minimums are set by each government and can change. Verify on the official immigration website for the country you are applying to. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'pte-academic-for-australia-and-new-zealand-guide',
+      'toefl-for-australia-and-new-zealand',
+      'english-language-requirements-for-australian-universities',
+      'english-language-requirements-for-new-zealand-universities',
+    ],
+    sources: [
+      { label: 'IELTS — official website', url: 'https://www.ielts.org' },
+      { label: 'Australian Government — Department of Home Affairs (immigration)', url: 'https://immi.homeaffairs.gov.au' },
+      { label: 'Immigration New Zealand — official website', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'ielts for australia',
+      'ielts for new zealand',
+      'ielts academic university requirement',
+      'ielts band for student visa australia',
+      'english test for studying in australia',
+    ],
+    tags: ['anz-english-tests'],
+    keyFacts: [
+      { label: 'Test', value: 'IELTS Academic (Listening, Reading, Writing, Speaking)' },
+      { label: 'Scoring', value: 'Band 0–9 per skill and overall' },
+      { label: 'Acceptance', value: 'Widely accepted by AU/NZ universities — not universal; verify per institution' },
+      { label: 'Minimum band', value: 'Varies by university, course, and visa — confirm on official sources' },
+    ],
+  },
+  {
+    slug: 'pte-academic-for-australia-and-new-zealand-guide',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'PTE Academic for Australia and New Zealand: A Student Guide',
+    descriptionEn:
+      'A clear look at PTE Academic for university and visa applications in Australia and New Zealand — its computer-based format, who accepts it, and why required scores differ by institution and route.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What PTE Academic is',
+        bodyEn:
+          'PTE Academic (Pearson Test of English Academic) is a computer-based English proficiency test that assesses Listening, Reading, Speaking, and Writing. It is delivered on a computer at a test centre, and you do not speak to a human examiner during the test — responses, including spoken answers, are recorded and scored using Pearson\'s AI-based scoring, which the test owner says is combined with human oversight.\n\nResults are reported on the Pearson scoring scale along with scores for individual communicative skills. Universities and visa routes that accept PTE Academic specify which scores they use, so check exactly how a result will be read before you book.',
+        bullets: [
+          'Computer-based test taken at an official centre',
+          'Assesses Listening, Reading, Speaking, and Writing',
+          'No human examiner during the test; AI-based scoring on the Pearson scale',
+        ],
+      },
+      {
+        headingEn: 'Who accepts PTE Academic',
+        bodyEn:
+          'PTE Academic is accepted by many universities in Australia and New Zealand as evidence of English proficiency, and it is also commonly listed among the tests recognised for Australian student-visa English requirements.\n\nAs with any test, acceptance is not universal. Individual institutions and visa streams publish their own accepted-test lists, and some programmes may set their own preferences. Always confirm on the official university admissions page and the official immigration website for the country and route you are applying for.',
+      },
+      {
+        headingEn: 'Why required scores differ',
+        bodyEn:
+          'There is no single PTE Academic score that satisfies every situation. The overall score and the minimum required in each communicative skill vary by university, by course, and by level of study, and some competitive or language-heavy programmes set higher thresholds.\n\nFor a student visa, the English evidence requirements are set by the government, not by us, and they can change. We do not publish specific score minimums here — look them up on the official university course page and the official government immigration site for the current figures.',
+        bullets: [
+          'Overall and per-skill minimums vary by university and course',
+          'Higher thresholds are common for competitive programmes',
+          'Visa English evidence is set by the government — verify there',
+        ],
+      },
+      {
+        headingEn: 'Booking, format, and results',
+        bodyEn:
+          'PTE Academic test dates, fees, identification requirements, and result timelines are published by Pearson, the official test owner. Because PTE is fully computer-based, results are often returned relatively quickly, but the exact turnaround is defined by the test owner and can vary.\n\nFees and available dates change and differ by location, so book through the official PTE website or an authorised centre and confirm the current price, date, and ID rules there rather than relying on third-party figures.',
+      },
+      {
+        headingEn: 'Choosing PTE Academic versus other tests',
+        bodyEn:
+          'PTE Academic, IELTS Academic, and TOEFL iBT are all commonly accepted for study in Australia and New Zealand, but none is universally accepted by every institution and every route. Students sometimes prefer PTE for its computer-based format and scoring; others prefer a test they have prepared for or one a specific programme recommends.\n\nThe right choice is the test your target universities and visa route accept and that suits how you test best. Confirm the accepted tests and required scores on each official source before deciding.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is PTE Academic accepted by universities in Australia and New Zealand?',
+        answerEn:
+          'PTE Academic is accepted by many universities in both countries, but acceptance is not guaranteed for every institution or programme. Confirm on the specific university\'s official admissions page for your course and study level.',
+      },
+      {
+        questionEn: 'What PTE score do I need?',
+        answerEn:
+          'There is no universal score — required overall and per-skill scores vary by university, course, and visa route, and they change over time. We do not list minimums here. Check the official university course page and the official government immigration site.',
+      },
+      {
+        questionEn: 'Is PTE Academic accepted for the Australian student visa?',
+        answerEn:
+          'PTE Academic is commonly listed among the tests recognised for Australian student-visa English requirements, but accepted tests and any minimums are set by the government and can change. Verify on the official Department of Home Affairs website. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'How is PTE Academic different from IELTS?',
+        answerEn:
+          'PTE Academic is fully computer-based with no human examiner during the test (Pearson uses AI-based scoring combined with human oversight), while IELTS includes a face-to-face Speaking interview. Both are widely accepted but not universally, so choose the test your universities and visa route accept.',
+      },
+    ],
+    relatedExamSlugs: ['pte-academic', 'ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ielts-for-australia-and-new-zealand-guide',
+      'toefl-for-australia-and-new-zealand',
+      'english-language-requirements-for-australian-universities',
+      'english-language-requirements-for-new-zealand-universities',
+    ],
+    sources: [
+      { label: 'PTE Academic — Pearson official website', url: 'https://www.pearsonpte.com' },
+      { label: 'Australian Government — Department of Home Affairs (immigration)', url: 'https://immi.homeaffairs.gov.au' },
+      { label: 'Immigration New Zealand — official website', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'pte academic for australia',
+      'pte for new zealand universities',
+      'pte academic student visa australia',
+      'pte vs ielts australia',
+      'computer based english test for study abroad',
+    ],
+    tags: ['anz-english-tests'],
+    keyFacts: [
+      { label: 'Test', value: 'PTE Academic (Pearson) — computer-based' },
+      { label: 'Skills', value: 'Listening, Reading, Speaking, Writing' },
+      { label: 'Acceptance', value: 'Accepted by many AU/NZ universities — not universal; verify per institution' },
+      { label: 'Minimum score', value: 'Varies by university, course, and visa — confirm on official sources' },
+    ],
+  },
+  {
+    slug: 'toefl-for-australia-and-new-zealand',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'TOEFL for Australia and New Zealand: What to Know',
+    descriptionEn:
+      'How TOEFL iBT is used for university and visa applications in Australia and New Zealand — the test\'s four sections, why acceptance and required scores vary, and where to verify the details.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What TOEFL iBT measures',
+        bodyEn:
+          'TOEFL iBT (Test of English as a Foreign Language, internet-based test), run by ETS, assesses academic English across four sections — Reading, Listening, Speaking, and Writing. Each section is scored, and the section scores combine into a total score on the TOEFL scale.\n\nUniversities and visa routes that accept TOEFL specify the total and, sometimes, per-section minimums they use, so it helps to know exactly how your result will be read before you sit the test.',
+        bullets: [
+          'Four sections: Reading, Listening, Speaking, Writing',
+          'Each section scored; section scores combine into a total',
+          'Run by ETS, the official test owner',
+        ],
+      },
+      {
+        headingEn: 'Acceptance in Australia and New Zealand',
+        bodyEn:
+          'TOEFL iBT is accepted by many Australian and New Zealand universities as evidence of English proficiency, and it is commonly listed among the tests recognised for student-visa English requirements.\n\nAcceptance is not universal, though, and it can differ by programme and route. Always check the official university admissions page and the official government immigration website for the country you are applying to, to confirm TOEFL is accepted for your course and visa.',
+      },
+      {
+        headingEn: 'Why required scores vary',
+        bodyEn:
+          'There is no single TOEFL score that works for every application. The required total — and any per-section minimums — vary by university, by course, and by level of study, and some competitive or reading-and-writing-intensive programmes set higher thresholds.\n\nThe English evidence required for a student visa is set by the government, not by us, and it can change. We do not publish TOEFL score minimums here; confirm them on the official university course page and the official government immigration site.',
+        bullets: [
+          'Total and per-section minimums vary by university and course',
+          'Higher thresholds are common for competitive programmes',
+          'Visa English evidence is set by the government — verify there',
+        ],
+      },
+      {
+        headingEn: 'Booking, fees, and results',
+        bodyEn:
+          'TOEFL iBT test dates, fees, identification rules, and score-reporting timelines are published by ETS. You can usually send official score reports directly to universities, and the way scores are delivered and how long they take is defined by ETS.\n\nFees and dates change and differ by location, so register through the official TOEFL website and confirm the current price, available dates, and ID requirements there rather than relying on third-party numbers.',
+      },
+      {
+        headingEn: 'Deciding whether TOEFL is right for you',
+        bodyEn:
+          'TOEFL iBT, IELTS Academic, and PTE Academic are all commonly accepted for study in Australia and New Zealand, yet none is accepted by every institution and every visa route. Choose based on which test your target universities and your visa route accept and which format suits you.\n\nIf you are applying to several universities, check each one\'s accepted-test list, because a test accepted by one may not be the preferred or accepted option at another.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do Australian and New Zealand universities accept TOEFL?',
+        answerEn:
+          'Many universities in both countries accept TOEFL iBT, but acceptance is not guaranteed everywhere or for every programme. Confirm on the specific university\'s official admissions page for your course and study level.',
+      },
+      {
+        questionEn: 'What TOEFL score do I need?',
+        answerEn:
+          'There is no universal score — the required total and any per-section minimums vary by university, course, and visa route, and they change over time. We do not list minimums here. Check the official university course page and the official government immigration site.',
+      },
+      {
+        questionEn: 'Is TOEFL accepted for the student visa?',
+        answerEn:
+          'TOEFL is commonly among the tests recognised for student-visa English requirements in Australia and New Zealand, but accepted tests and any minimums are set by each government and can change. Verify on the official immigration website. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['toefl', 'ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ielts-for-australia-and-new-zealand-guide',
+      'pte-academic-for-australia-and-new-zealand-guide',
+      'english-language-requirements-for-australian-universities',
+      'english-language-requirements-for-new-zealand-universities',
+    ],
+    sources: [
+      { label: 'TOEFL — ETS official website', url: 'https://www.ets.org/toefl' },
+      { label: 'Australian Government — Department of Home Affairs (immigration)', url: 'https://immi.homeaffairs.gov.au' },
+      { label: 'Immigration New Zealand — official website', url: 'https://www.immigration.govt.nz' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'toefl for australia',
+      'toefl for new zealand',
+      'toefl ibt university requirement',
+      'toefl score for student visa',
+      'toefl vs ielts australia',
+    ],
+    tags: ['anz-english-tests'],
+    keyFacts: [
+      { label: 'Test', value: 'TOEFL iBT (ETS)' },
+      { label: 'Sections', value: 'Reading, Listening, Speaking, Writing' },
+      { label: 'Acceptance', value: 'Accepted by many AU/NZ universities — not universal; verify per institution' },
+      { label: 'Minimum score', value: 'Varies by university, course, and visa — confirm on official sources' },
+    ],
+  },
+  {
+    slug: 'english-language-requirements-for-australian-universities',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'English Language Requirements for Australian Universities',
+    descriptionEn:
+      'How English language requirements work for Australian universities — accepted tests, common exemptions, the difference between university and visa requirements, and where to confirm the current rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two requirements, set by different bodies',
+        bodyEn:
+          'When you apply to study in Australia, English language evidence usually matters in two separate places: the university\'s own admission requirement for your course, and the English requirement for the student visa, which is set by the Australian Government (Department of Home Affairs).\n\nThese are decided by different bodies and can differ from each other. Meeting a university\'s English requirement does not automatically satisfy the visa\'s requirement, and the reverse is also true. Treat them as two checks and confirm each on its official source.',
+        bullets: [
+          'University requirement — set by each institution for each course',
+          'Visa requirement — set by the Department of Home Affairs',
+          'Satisfying one does not automatically satisfy the other',
+        ],
+      },
+      {
+        headingEn: 'Tests universities commonly accept',
+        bodyEn:
+          'Australian universities commonly accept recognised English tests such as IELTS Academic, TOEFL iBT, and PTE Academic, and several also accept other tests depending on the course. Each university lists the tests it accepts and the scores it requires on its official admissions pages.\n\nBecause accepted tests and required scores differ by university, by course, and by level of study, do not assume a test or score that worked for one application will work for another. Confirm the accepted tests and minimums on each university\'s official course or admissions page.',
+        bullets: [
+          'IELTS Academic, TOEFL iBT, and PTE Academic are commonly accepted',
+          'Some courses accept additional tests — check the course page',
+          'Required scores vary by course and study level',
+        ],
+      },
+      {
+        headingEn: 'Exemptions and alternative evidence',
+        bodyEn:
+          'Universities may waive a test requirement in certain situations — for example, where prior study was completed in English, or where an applicant holds a qualification the university recognises as meeting its English standard. The conditions for these exemptions are defined by each university and vary.\n\nIf you think you may qualify for an exemption, do not assume it applies. Check the specific university\'s official policy and ask its admissions office, because exemption rules and the documents required to prove them differ between institutions.',
+      },
+      {
+        headingEn: 'The student-visa English requirement',
+        bodyEn:
+          'Separately from the university\'s requirement, the student visa has its own English language evidence rules set by the Department of Home Affairs. These specify which tests are accepted and any minimum scores or exemptions for visa purposes, and they can change.\n\nWe do not publish the specific visa English thresholds here because they are government-set and updated periodically. Always check the current requirement on the official Department of Home Affairs website. This is general information, not immigration advice — verify on the official government source before acting.',
+      },
+      {
+        headingEn: 'How to plan your English evidence',
+        bodyEn:
+          'Start by reading the English requirement on the official page for each course you are applying to, and note the accepted tests and scores. Then check the visa English requirement separately on the official immigration website. Aim to satisfy whichever requirement is higher, and leave time to retake a test if needed.\n\nBecause both university and visa rules change between intakes, verify everything against the current official pages close to when you apply rather than relying on older information.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which English tests do Australian universities accept?',
+        answerEn:
+          'Australian universities commonly accept IELTS Academic, TOEFL iBT, and PTE Academic, and some accept additional tests depending on the course. Acceptance and required scores vary by university and course, so confirm on each institution\'s official admissions page.',
+      },
+      {
+        questionEn: 'Is the university English requirement the same as the visa requirement?',
+        answerEn:
+          'No. The university sets its own English requirement for your course, while the student-visa English requirement is set by the Department of Home Affairs. They can differ, so meet whichever is higher and verify both on their official sources.',
+      },
+      {
+        questionEn: 'Can I be exempt from an English test?',
+        answerEn:
+          'Some universities grant exemptions — for example, for prior study in English or a recognised qualification — but the conditions vary by institution. Check the specific university\'s official policy and confirm with its admissions office rather than assuming an exemption applies.',
+      },
+      {
+        questionEn: 'What English score do I need for the student visa?',
+        answerEn:
+          'The accepted tests and any minimum scores for the student visa are set by the Australian Government and can change. We do not list them here. Verify the current requirement on the official Department of Home Affairs website. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ielts-for-australia-and-new-zealand-guide',
+      'pte-academic-for-australia-and-new-zealand-guide',
+      'toefl-for-australia-and-new-zealand',
+      'study-in-australia-from-india',
+    ],
+    sources: [
+      { label: 'Study Australia — Australian Government', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Government — Department of Home Affairs (immigration)', url: 'https://immi.homeaffairs.gov.au' },
+      { label: 'IELTS — official website', url: 'https://www.ielts.org' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'english language requirements australian universities',
+      'english test for australia university',
+      'english requirement student visa australia',
+      'ielts toefl pte australia',
+      'english exemption australian university',
+    ],
+    tags: ['anz-english-tests', 'anz-admissions'],
+    keyFacts: [
+      { label: 'Two requirements', value: 'University course requirement + student-visa English requirement' },
+      { label: 'Commonly accepted', value: 'IELTS Academic, TOEFL iBT, PTE Academic (varies by university)' },
+      { label: 'Exemptions', value: 'Possible (e.g. prior study in English) — defined by each university' },
+      { label: 'Visa thresholds', value: 'Set by the Department of Home Affairs — verify on the official site' },
+    ],
+  },
+  {
+    slug: 'english-language-requirements-for-new-zealand-universities',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'English Language Requirements for New Zealand Universities',
+    descriptionEn:
+      'How English language requirements work for New Zealand universities — accepted tests, common exemptions, the separate visa requirement, and where to confirm the current thresholds.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'University and visa requirements are separate',
+        bodyEn:
+          'Studying in New Zealand usually involves two English checks: the university\'s own admission requirement for your course, and the English requirement that applies to the student visa, which is set by the New Zealand Government (Immigration New Zealand).\n\nThese are set by different bodies and can differ. Meeting a university\'s English requirement does not automatically meet the visa requirement, and vice versa. Treat them as two separate checks and confirm each on its official source.',
+        bullets: [
+          'University requirement — set by each institution for each course',
+          'Visa requirement — set by Immigration New Zealand',
+          'Meeting one does not automatically meet the other',
+        ],
+      },
+      {
+        headingEn: 'Tests universities commonly accept',
+        bodyEn:
+          'New Zealand universities commonly accept recognised English tests such as IELTS Academic, TOEFL iBT, and PTE Academic, and several accept additional tests depending on the programme. Each university publishes the tests it accepts and the scores required on its official admissions pages.\n\nAccepted tests and required scores vary by university, by course, and by level of study, so check each institution\'s official course or admissions page rather than assuming a single score works everywhere.',
+        bullets: [
+          'IELTS Academic, TOEFL iBT, and PTE Academic are commonly accepted',
+          'Some programmes accept additional tests — check the programme page',
+          'Required scores vary by course and study level',
+        ],
+      },
+      {
+        headingEn: 'Exemptions and alternative evidence',
+        bodyEn:
+          'Universities may waive a test requirement in defined situations — for example, where previous study was undertaken in English, or where an applicant holds a qualification the university accepts as meeting its English standard. The conditions are set by each university and differ between them.\n\nIf you think an exemption might apply to you, confirm it with the specific university rather than assuming. The qualifying conditions and the documents needed to prove them vary by institution, so check the university\'s official policy and ask its admissions office.',
+      },
+      {
+        headingEn: 'The student-visa English requirement',
+        bodyEn:
+          'Alongside the university\'s requirement, the student visa has its own English evidence rules set by Immigration New Zealand. These define which tests are accepted and any minimum scores or alternative evidence accepted for visa purposes, and they can change over time.\n\nWe do not publish specific visa English thresholds here because they are government-set and updated periodically. Check the current requirement on the official Immigration New Zealand website. This is general information, not immigration advice — verify on the official government source before acting.',
+      },
+      {
+        headingEn: 'Planning your English evidence',
+        bodyEn:
+          'Begin by reading the English requirement on the official page for each programme you are applying to, and note the accepted tests and scores. Then check the visa English requirement separately on the official immigration website, and plan to satisfy whichever requirement is higher.\n\nBecause both university and visa rules can change between intakes, verify everything against the current official pages close to your application date, and leave time to retake a test if your first result falls short.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which English tests do New Zealand universities accept?',
+        answerEn:
+          'New Zealand universities commonly accept IELTS Academic, TOEFL iBT, and PTE Academic, and some accept additional tests depending on the programme. Acceptance and required scores vary by university and course, so confirm on each institution\'s official admissions page.',
+      },
+      {
+        questionEn: 'Is the university requirement the same as the visa requirement?',
+        answerEn:
+          'No. Each university sets its own English requirement for your course, while the student-visa English requirement is set by Immigration New Zealand. They can differ, so meet whichever is higher and verify both on their official sources.',
+      },
+      {
+        questionEn: 'Can I be exempt from an English test?',
+        answerEn:
+          'Some universities grant exemptions — for example, for prior study in English or a recognised qualification — but conditions vary by institution. Check the specific university\'s official policy and confirm with its admissions office rather than assuming an exemption applies.',
+      },
+      {
+        questionEn: 'What English level do I need for the student visa?',
+        answerEn:
+          'The accepted tests and any thresholds for the student visa are set by the New Zealand Government and can change. We do not list them here. Verify the current requirement on the official Immigration New Zealand website. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ielts-for-australia-and-new-zealand-guide',
+      'pte-academic-for-australia-and-new-zealand-guide',
+      'toefl-for-australia-and-new-zealand',
+      'study-in-new-zealand-from-india',
+    ],
+    sources: [
+      { label: 'Study with New Zealand — New Zealand Government', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'Immigration New Zealand — official website', url: 'https://www.immigration.govt.nz' },
+      { label: 'IELTS — official website', url: 'https://www.ielts.org' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: [
+      'english language requirements new zealand universities',
+      'english test for new zealand university',
+      'english requirement student visa new zealand',
+      'ielts toefl pte new zealand',
+      'english exemption new zealand university',
+    ],
+    tags: ['anz-english-tests', 'anz-admissions'],
+    keyFacts: [
+      { label: 'Two requirements', value: 'University course requirement + student-visa English requirement' },
+      { label: 'Commonly accepted', value: 'IELTS Academic, TOEFL iBT, PTE Academic (varies by university)' },
+      { label: 'Exemptions', value: 'Possible (e.g. prior study in English) — defined by each university' },
+      { label: 'Visa thresholds', value: 'Set by Immigration New Zealand — verify on the official site' },
+    ],
+  },
+  {
+    slug: 'ielts-vs-pte-for-australia-student-visa',
+    category: 'comparison',
+    region: 'australia-nz',
+    titleEn: 'IELTS vs PTE for the Australia Student Visa',
+    descriptionEn:
+      'A neutral comparison of IELTS and PTE Academic for studying in Australia — test format, how each is scored, results timing, and where each is accepted. Both are widely recognised; verify exact score requirements on the official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two recognised tests, one goal',
+        bodyEn:
+          'IELTS (International English Language Testing System) and PTE Academic (Pearson Test of English Academic) are two of the most widely recognised English-proficiency tests for studying in Australia. Both are accepted by many Australian universities for admission, and both are listed among the tests the Australian Department of Home Affairs recognises for the Student visa (subclass 500).\n\nNeither test is universally "better" — they assess the same four skills in different formats, and the right choice depends on which format suits you, where you plan to apply, and which test the specific university and visa pathway you are targeting will accept. Always confirm acceptance and the exact score required with each university and on the official Home Affairs source.',
+      },
+      {
+        headingEn: 'How each test is structured',
+        bodyEn:
+          'Both tests assess Listening, Reading, Writing, and Speaking. The way they are delivered differs, and this is often the deciding factor for students.',
+        bullets: [
+          'IELTS Academic — available as a paper-based or computer-delivered test; the Speaking section is a one-to-one interview with a human examiner.',
+          'PTE Academic — fully computer-based; Speaking is recorded at a computer and scored by automated technology, with no human interviewer.',
+          'Both cover the same four skills, but the task types, timing, and on-screen experience differ — try official practice material for each before deciding.',
+        ],
+      },
+      {
+        headingEn: 'How they are scored',
+        bodyEn:
+          'IELTS reports results on a band scale for each of the four skills and an overall band score. PTE Academic reports results on a points scale for the overall score and for individual skills.\n\nBecause the scales are different, a score on one test does not map one-to-one onto the other. Universities and the visa framework publish the minimum they require on each test separately. Do not assume an equivalence — check the specific number each institution and the Student visa pathway ask for on their official pages.',
+      },
+      {
+        headingEn: 'Results timing and retakes',
+        bodyEn:
+          'Turnaround time for results differs between the two tests and can change, so the official websites are the place to confirm current timelines. Both tests can be retaken, and both run test sessions frequently at authorised test centres.\n\nWhen planning, work backwards from your university application deadlines and any visa timelines, and book early — availability at your preferred centre and date is not guaranteed.',
+      },
+      {
+        headingEn: 'How to choose between them',
+        bodyEn:
+          'There is no single right answer. A practical way to decide is to confirm acceptance first, then match the format to your strengths.',
+        bullets: [
+          'Confirm both your target universities and the Student visa pathway accept the test you plan to take — acceptance can vary by institution and pathway.',
+          'Consider the Speaking format: a human interview (IELTS) versus a computer-recorded response scored by technology (PTE).',
+          'Take an official practice test for each to see which task types and on-screen experience suit you.',
+          'Check the exact minimum score each university and the visa pathway require — and the results turnaround — on the official sources before booking.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Are both IELTS and PTE accepted for the Australia Student visa?',
+        answerEn:
+          'Both IELTS and PTE Academic are listed among the English tests the Australian Department of Home Affairs recognises for the Student visa (subclass 500). The accepted tests and the score each requires can change, so verify the current list and minimum scores on the official Home Affairs website before you book.',
+      },
+      {
+        questionEn: 'Which test is easier?',
+        answerEn:
+          'Neither is objectively easier — they test the same skills in different formats. Some students prefer the human Speaking interview in IELTS; others prefer PTE\'s fully computer-based delivery. Try official practice material for both and pick the format that suits you.',
+      },
+      {
+        questionEn: 'Does my university accept both?',
+        answerEn:
+          'Many Australian universities accept both, but acceptance and the required score vary by institution and sometimes by course. Always confirm with the specific university\'s official admissions page rather than assuming.',
+      },
+      {
+        questionEn: 'Can I use my IELTS or PTE score for both admission and the visa?',
+        answerEn:
+          'Universities and the visa framework set their requirements separately, and the minimum each asks for may differ. Check the exact score needed for your course on the university\'s site and for the Student visa pathway on the official Home Affairs source. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['english-test-score-requirements-explained-australia-nz', 'duolingo-english-test-for-australia-and-new-zealand', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Australian Government — Department of Home Affairs, Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'IELTS — official site', url: 'https://www.ielts.org' },
+      { label: 'PTE Academic — Pearson official site', url: 'https://www.pearsonpte.com' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['ielts vs pte for australia', 'ielts or pte for student visa', 'pte academic australia', 'english test for australia student visa', 'subclass 500 english test'],
+    tags: ['anz-english-tests'],
+    keyFacts: [
+      { label: 'Skills tested (both)', value: 'Listening, Reading, Writing, Speaking' },
+      { label: 'IELTS Speaking', value: 'One-to-one interview with a human examiner' },
+      { label: 'PTE Speaking', value: 'Computer-recorded, automated scoring' },
+      { label: 'Score requirement', value: 'Set by each university and the visa pathway — verify on official sources' },
+    ],
+  },
+  {
+    slug: 'english-test-score-requirements-explained-australia-nz',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'English Test Score Requirements Explained (Australia and NZ)',
+    descriptionEn:
+      'How English-test score requirements work for studying in Australia and New Zealand — the difference between a university\'s admission requirement and a visa pathway requirement, why they can differ, and how to check the exact number you need.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why there are two different requirements',
+        bodyEn:
+          'When you study in Australia or New Zealand as an international student, your English score can matter in two separate places: getting into the course (the university\'s academic admission requirement) and the student visa pathway (the immigration framework). These are set by different bodies and can ask for different things.\n\nUnderstanding that these are two distinct requirements — and that meeting one does not automatically mean you meet the other — saves a lot of confusion. This guide explains how the system works, without quoting specific minimum scores, because those numbers are set officially and change.',
+      },
+      {
+        headingEn: 'The university admission requirement',
+        bodyEn:
+          'Each university sets the English level it expects for each course. Requirements often differ between undergraduate and postgraduate study, and some programs (for example, those with heavy writing or clinical components) may ask for a higher level than others.\n\nUniversities also typically specify not just an overall score but minimum scores in individual skills (such as Writing or Speaking). Because of this, two students with the same overall score can have different outcomes if one falls short in a single section. Always read the exact requirement on the specific course page.',
+        bullets: [
+          'Set per course, and often differs between undergraduate and postgraduate levels.',
+          'May require minimum scores in each skill, not just an overall score.',
+          'Listed which tests are accepted (for example IELTS, TOEFL, PTE) on the official admissions page.',
+        ],
+      },
+      {
+        headingEn: 'The student visa pathway requirement',
+        bodyEn:
+          'Separately from the university, the immigration authority of each country has its own framework for the student visa. In Australia this is administered by the Department of Home Affairs for the Student visa (subclass 500); in New Zealand it is administered by Immigration New Zealand.\n\nThe accepted tests, the scores expected, and the situations in which an English test is required for the visa are all set officially and can change. Verify the current rules on the official government source for the country you are applying to. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'How accepted tests and scores are published',
+        bodyEn:
+          'Both universities and immigration authorities publish lists of which tests they accept and the score they require. These are the only reliable place to get the number, because they are updated officially and can differ from older information circulating online.\n\nWhen you check, look for three things: which tests are accepted, the overall score required, and any minimum per-skill scores. Note them for both your course and your visa pathway separately.',
+      },
+      {
+        headingEn: 'What to do before you book a test',
+        bodyEn:
+          'A little planning avoids retakes. Confirm the requirements at both levels first, then choose and schedule your test with enough time before your deadlines.',
+        bullets: [
+          'Check the exact English requirement on each target course\'s official admissions page.',
+          'Check the visa pathway requirement on the official government source (Home Affairs for Australia, Immigration New Zealand for NZ).',
+          'Confirm which test(s) are accepted by both, then book the one that works for both.',
+          'Leave time for results and a possible retake — and verify any figure on the official source, as requirements change.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the English score I need for my course the same as for my visa?',
+        answerEn:
+          'Not necessarily. The university sets the academic requirement for the course, while the immigration authority sets the visa pathway requirement separately. The two can differ, so check both on their official sources.',
+      },
+      {
+        questionEn: 'Why does a per-skill minimum matter?',
+        answerEn:
+          'Many universities require a minimum in each skill (Listening, Reading, Writing, Speaking), not just an overall score. You can meet the overall number but still fall short if one section is below the minimum. Read the exact per-skill requirement on the course page.',
+      },
+      {
+        questionEn: 'Where do I find the exact score I need?',
+        answerEn:
+          'On the official sources only: the specific university course page for admission, and the official government immigration site (Department of Home Affairs for Australia, Immigration New Zealand for NZ) for the visa pathway. These are kept current; older figures online may be out of date.',
+      },
+      {
+        questionEn: 'Do all courses ask for the same English level?',
+        answerEn:
+          'No. Requirements vary by course and by study level, and some programs ask for a higher level than others. Always check the specific course rather than assuming a single university-wide number.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ielts-vs-pte-for-australia-student-visa', 'duolingo-english-test-for-australia-and-new-zealand', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Australian Government — Department of Home Affairs, Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Immigration New Zealand — Student visas', url: 'https://www.immigration.govt.nz/new-zealand-visas/options/study' },
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['english requirements australia university', 'ielts score for australia student visa', 'english test requirements new zealand', 'english score for study in australia', 'minimum ielts for australia'],
+    tags: ['anz-english-tests'],
+    keyFacts: [
+      { label: 'Two separate requirements', value: 'University admission + student visa pathway' },
+      { label: 'Australia visa authority', value: 'Department of Home Affairs (subclass 500)' },
+      { label: 'New Zealand visa authority', value: 'Immigration New Zealand' },
+      { label: 'Per-skill minimums', value: 'Often required by universities — check each course' },
+    ],
+  },
+  {
+    slug: 'duolingo-english-test-for-australia-and-new-zealand',
+    category: 'admissions',
+    region: 'australia-nz',
+    titleEn: 'Duolingo English Test for Australia and New Zealand',
+    descriptionEn:
+      'What the Duolingo English Test is, how it works, and how it fits applications to Australia and New Zealand. University acceptance is growing but not universal, and the test is not currently accepted for the Australian Student visa (subclass 500) — verify with each university and on the official government sources.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What the Duolingo English Test is',
+        bodyEn:
+          'The Duolingo English Test (DET) is an online English-proficiency test taken on a computer at home, rather than at a test centre. It is adaptive — the difficulty of questions adjusts to your responses — and the session is recorded and reviewed under the test\'s remote proctoring rules.\n\nIts at-home format and typically quick turnaround have made it popular with international students. However, popularity is not the same as universal acceptance, so the most important step is confirming where it is accepted for your specific plans.',
+      },
+      {
+        headingEn: 'How the test works',
+        bodyEn:
+          'Because it is computer-adaptive, the DET does not follow a fixed set of questions for everyone. It assesses English across integrated tasks and reports a score on its own scale, along with sub-scores. As with other tests, this scale does not map one-to-one onto IELTS, TOEFL, or PTE, so any institution that accepts it publishes the DET score it requires separately.',
+        bullets: [
+          'Taken online from home on a computer, under remote proctoring rules.',
+          'Computer-adaptive — question difficulty adjusts to your answers.',
+          'Reports a score on its own scale; check the exact DET score each university requires.',
+        ],
+      },
+      {
+        headingEn: 'Acceptance is growing for admission — but not universal',
+        bodyEn:
+          'A growing number of universities in Australia and New Zealand accept the Duolingo English Test for admission, but acceptance is not universal, and it can vary by course and by study level. Some institutions accept it for certain programs and not others.\n\nVisa acceptance is a separate question, decided by the immigration authority rather than the university — and here the position is more restrictive (see the next section). The list of tests accepted for a visa can differ from the list a university accepts, so always confirm both — with each university and on the official government source — because these lists change.',
+      },
+      {
+        headingEn: 'Using the DET for the visa pathway',
+        bodyEn:
+          'This is where the Duolingo English Test currently differs most from tests like IELTS, TOEFL iBT and PTE Academic. For Australia, the Department of Home Affairs publishes the list of English tests it accepts for the Student visa (subclass 500), and the Duolingo English Test is not on that list — Home Affairs does not accept scores from "at-home" or online tests for the visa. So even where a university accepts the DET for admission, it cannot currently be used as the English evidence for the subclass 500 visa itself.\n\nFor New Zealand, the English level for studying is generally set by your education provider rather than by Immigration New Zealand, and where an approved English test is required, online or at-home tests are likewise not accepted. Do not assume a test accepted by your university is automatically accepted for the visa, or vice versa. These rules are set officially and can change, so verify the current position on the official government source (Department of Home Affairs for Australia, Immigration New Zealand for NZ) before relying on the DET. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'How to check before you commit',
+        bodyEn:
+          'Because acceptance varies, confirm it for your exact situation before booking the test.',
+        bullets: [
+          'Check each target university\'s official admissions page to see if the DET is accepted for your course and level — and the score required.',
+          'Check the current visa position on the official government source (Home Affairs for Australia, Immigration New Zealand for NZ); note that the DET is not currently accepted for the Australian Student visa (subclass 500).',
+          'Plan to take an accepted test (such as IELTS, TOEFL iBT, or PTE Academic) where the DET is not accepted for your university or the visa.',
+          'Verify all figures and acceptance lists on the official sources, as they change.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the Duolingo English Test accepted in Australia and New Zealand?',
+        answerEn:
+          'For university admission, a growing number of institutions in both countries accept it, but acceptance is not universal and can vary by course and study level. For the visa, the position is more restrictive — it is not currently accepted for the Australian Student visa (subclass 500), as Home Affairs does not accept at-home or online tests. Confirm admission acceptance with each university, and the visa position on the official government source.',
+      },
+      {
+        questionEn: 'Can I use the Duolingo English Test for the Australian student visa?',
+        answerEn:
+          'No — the Duolingo English Test is not on the Department of Home Affairs list of tests accepted for the Student visa (subclass 500), because Home Affairs does not accept "at-home" or online tests for the visa. A university may still accept it for admission, but you would need an accepted test (such as IELTS, TOEFL iBT or PTE Academic) as the English evidence for the visa. These lists are set officially and can change, so verify on the official government source. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'How is the Duolingo English Test different from IELTS or PTE?',
+        answerEn:
+          'It is taken online from home, is computer-adaptive, and usually has a quick turnaround, whereas IELTS and PTE are taken at authorised test centres. It also uses its own score scale, which does not convert one-to-one to other tests.',
+      },
+      {
+        questionEn: 'Should I take a backup test as well?',
+        answerEn:
+          'It is sensible to identify a backup (such as IELTS, TOEFL, or PTE) in case a specific university or the visa pathway does not accept the Duolingo English Test for your situation. Confirm acceptance on the official sources before deciding.',
+      },
+    ],
+    relatedExamSlugs: ['duolingo-english-test', 'ielts', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ielts-vs-pte-for-australia-student-visa', 'english-test-score-requirements-explained-australia-nz', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Duolingo English Test — official site', url: 'https://englishtest.duolingo.com' },
+      { label: 'Australian Government — Department of Home Affairs, Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Immigration New Zealand — Student visas', url: 'https://www.immigration.govt.nz/new-zealand-visas/options/study' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['duolingo english test australia', 'duolingo test new zealand', 'is duolingo accepted in australia', 'duolingo english test for student visa', 'det australia universities'],
+    tags: ['anz-english-tests'],
+    keyFacts: [
+      { label: 'Format', value: 'Online, at-home, computer-adaptive with remote proctoring' },
+      { label: 'University acceptance', value: 'Growing but not universal — varies by course' },
+      { label: 'Australia visa (subclass 500)', value: 'Not currently accepted — Home Affairs excludes at-home/online tests; verify officially' },
+      { label: 'Score scale', value: 'Own scale; does not convert one-to-one to IELTS/PTE' },
+    ],
+  },
+  {
+    slug: 'australia-vs-uk-for-international-students',
+    category: 'comparison',
+    region: 'australia-nz',
+    titleEn: 'Australia vs UK for International Students',
+    descriptionEn:
+      'A neutral, facts-only comparison of studying in Australia versus the United Kingdom — degree structure, academic calendar, costs, English tests, and the kinds of factors to weigh. Neither destination is "better"; verify all specifics on official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How to use this comparison',
+        bodyEn:
+          'Australia and the United Kingdom are both long-established study destinations with many highly regarded universities. This guide compares them on practical, factual dimensions — it does not declare either country better, because the right choice depends entirely on your course, budget, and personal priorities.\n\nEvery figure that changes year to year (tuition, living costs, visa fees, work-hour limits, post-study options) is deferred to the official source. Treat the points below as a framework for your own research, and verify the specifics for your situation.',
+      },
+      {
+        headingEn: 'Degree structure and academic calendar',
+        bodyEn:
+          'The two systems differ in some structural ways that affect how long you study and when you start.',
+        bullets: [
+          'Undergraduate degree length differs by country and course — UK bachelor\'s degrees are often three years (longer in Scotland and for some programs), while Australian bachelor\'s degrees are commonly three to four years depending on the course.',
+          'Taught master\'s programs in the UK are frequently one year; in Australia they often run longer — check each specific program.',
+          'Intakes differ: UK universities commonly have a main autumn intake (with some January starts), while Australian universities commonly run major intakes around February and July. Confirm intake dates on each university\'s site.',
+        ],
+      },
+      {
+        headingEn: 'Costs and funding',
+        bodyEn:
+          'Tuition and living costs vary widely by university, course, and city in both countries, and they change each year. There is no single "cheaper" country — a particular course in one city may cost more or less than a comparable course elsewhere.\n\nBoth countries also have scholarships offered by universities and, in some cases, by government programs. Because amounts, eligibility, and deadlines change, look these up on the official university and government sources rather than relying on general figures.',
+        bullets: [
+          'Tuition is set per course and per university — compare the actual programs you are considering.',
+          'Living costs depend heavily on the city; major cities are typically more expensive.',
+          'Scholarships exist in both countries — check official university and government scholarship pages for current details.',
+        ],
+      },
+      {
+        headingEn: 'English tests and entry requirements',
+        bodyEn:
+          'Both countries\' universities commonly accept recognised English tests such as IELTS, TOEFL, and PTE, though the accepted tests and required scores vary by university and course. Entry requirements also differ by program and study level.\n\nFor English requirements, always check the specific course page. For the destination\'s student visa, the accepted tests and any English evidence are set by that country\'s immigration authority — verify on the official government source.',
+      },
+      {
+        headingEn: 'Visas, work and post-study — neutral facts only',
+        bodyEn:
+          'Each country runs its own student-visa and post-study framework, administered by its government. In Australia, the Student visa (subclass 500) is administered by the Department of Home Affairs. In the UK, the Student visa is administered by the UK Government (GOV.UK). Rules on visa conditions, permitted work during study, and post-study options are set officially and change from time to time.\n\nThis guide does not predict or evaluate any policy. Treat work-hour limits, post-study work options, and visa conditions as facts to confirm on the official government source for each country at the time you apply. This is general information, not immigration advice — verify on the official government source.',
+      },
+      {
+        headingEn: 'Weighing it up for yourself',
+        bodyEn:
+          'Rather than asking which country is "better", match each destination to what matters most to you.',
+        bullets: [
+          'Course fit: does the specific program, its structure, and its length suit your goals?',
+          'Total cost: compare actual tuition plus realistic living costs for the cities you are considering.',
+          'Climate, location, and lifestyle preferences, which are personal.',
+          'Visa, work and post-study rules — check the current official rules for each country before deciding, as they change.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Australia or the UK better for international students?',
+        answerEn:
+          'Neither is universally better — it depends on your course, budget, preferred city, and personal priorities. Both have many well-regarded universities. Compare the specific programs you are considering and verify costs and visa rules on official sources.',
+      },
+      {
+        questionEn: 'Are UK degrees shorter than Australian ones?',
+        answerEn:
+          'Often, but not always. UK bachelor\'s degrees are frequently three years and taught master\'s programs frequently one year, while Australian degrees can run longer depending on the course. Check the length of each specific program you are interested in.',
+      },
+      {
+        questionEn: 'Which country is cheaper to study in?',
+        answerEn:
+          'There is no single answer — tuition and living costs vary by university, course, and city in both countries and change every year. Compare the actual programs and cities you are considering using official sources.',
+      },
+      {
+        questionEn: 'Do both accept the same English tests?',
+        answerEn:
+          'Universities in both countries commonly accept tests such as IELTS, TOEFL, and PTE, but the accepted tests and required scores vary by institution and course, and visa requirements are set separately by each government. Verify on the official sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['australia-vs-usa-for-international-students', 'english-test-score-requirements-explained-australia-nz', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Government — Department of Home Affairs, Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'UK Government — Student visa (GOV.UK)', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['australia vs uk for international students', 'study in australia or uk', 'australia vs uk universities', 'studying in australia vs uk cost', 'australia or uk for masters'],
+    tags: ['anz-english-tests'],
+    keyFacts: [
+      { label: 'UK degree length', value: 'Bachelor\'s often 3 years; taught master\'s often 1 year (varies)' },
+      { label: 'Australia degree length', value: 'Bachelor\'s commonly 3-4 years (varies by course)' },
+      { label: 'Main intakes', value: 'UK: mainly autumn; Australia: commonly Feb and Jul' },
+      { label: 'Visa authorities', value: 'Australia: Home Affairs (subclass 500); UK: GOV.UK' },
+    ],
+  },
+  {
+    slug: 'australia-vs-usa-for-international-students',
+    category: 'comparison',
+    region: 'australia-nz',
+    titleEn: 'Australia vs USA for International Students',
+    descriptionEn:
+      'A neutral, facts-only comparison of studying in Australia versus the United States — degree structure, admissions, costs, English tests, and the factors to weigh. Neither destination is "better"; verify all specifics on official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How to use this comparison',
+        bodyEn:
+          'Australia and the United States both host many highly regarded universities and attract large numbers of international students. This guide lays out factual differences to help you decide — it does not declare either country better, because the best fit depends on your course, finances, and personal priorities.\n\nAnything that changes year to year (tuition, living costs, visa fees, work rules, post-study options) is deferred to the official source. Use the points below as a research framework and confirm the specifics for your own situation.',
+      },
+      {
+        headingEn: 'Degree structure and academic style',
+        bodyEn:
+          'The two systems are organised differently, which affects course length and how you study.',
+        bullets: [
+          'US bachelor\'s degrees are commonly four years and often include broad general-education requirements before specialising; Australian bachelor\'s degrees are commonly three to four years and are frequently more specialised from the start — this varies by course.',
+          'Master\'s program length varies in both countries by program and field — check each specific program.',
+          'Academic calendars differ: US universities commonly start a main intake in late summer/autumn, while Australian universities commonly run major intakes around February and July. Confirm intake dates on each university\'s site.',
+        ],
+      },
+      {
+        headingEn: 'Admissions and entry requirements',
+        bodyEn:
+          'Admission processes differ in emphasis. US applications often consider a broader profile and may ask for standardised tests for some programs, while Australian admission is frequently based primarily on academic qualifications, with requirements set per course.\n\nRequirements vary widely by university, program, and study level in both countries, so the specific course page is the reliable source. Do not assume one country\'s process applies to the other.',
+      },
+      {
+        headingEn: 'Costs and funding',
+        bodyEn:
+          'Tuition and living costs vary widely by university, course, and city in both countries, and change each year. There is no single "more affordable" country — a given program in one city may cost more or less than a comparable program elsewhere.\n\nBoth countries have scholarships and funding offered by universities and other bodies. Because amounts, eligibility, and deadlines change, check the official university and program sources rather than relying on general figures.',
+        bullets: [
+          'Tuition is set per course and per university — compare the actual programs you are considering.',
+          'Living costs depend heavily on the city and region.',
+          'Scholarships and funding exist in both countries — check official university and program pages for current details.',
+        ],
+      },
+      {
+        headingEn: 'English tests and standardised tests',
+        bodyEn:
+          'Universities in both countries commonly accept recognised English tests such as IELTS, TOEFL, and PTE, though accepted tests and required scores vary by institution and course. Some US programs may also ask for admissions tests such as the GRE or GMAT for certain graduate courses, while many Australian programs do not.\n\nAlways confirm which tests a specific program requires on its official admissions page, and confirm the visa English requirement separately on the official government source.',
+      },
+      {
+        headingEn: 'Visas, work and post-study — neutral facts only',
+        bodyEn:
+          'Each country runs its own student-visa and post-study framework, administered by its government. In Australia, the Student visa (subclass 500) is administered by the Department of Home Affairs. In the United States, student visas (such as the F-1) and related programs are administered by the US Government. Rules on visa conditions, permitted work during study, and post-study options are set officially and change from time to time.\n\nThis guide does not predict or evaluate any policy. Treat work rules, post-study options, and visa conditions as facts to confirm on the official government source for each country at the time you apply. This is general information, not immigration advice — verify on the official government source.',
+      },
+      {
+        headingEn: 'Weighing it up for yourself',
+        bodyEn:
+          'Instead of asking which country is "better", match each destination to your own priorities.',
+        bullets: [
+          'Course fit: does the specific program and its structure suit your goals?',
+          'Total cost: compare actual tuition plus realistic living costs for the cities you are considering.',
+          'Application style: a broader holistic process versus a more qualification-led one.',
+          'Visa, work and post-study rules — check the current official rules for each country before deciding, as they change.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Australia or the USA better for international students?',
+        answerEn:
+          'Neither is universally better — it depends on your course, budget, preferred location, and priorities. Both have many well-regarded universities. Compare the specific programs you are considering and verify costs and visa rules on official sources.',
+      },
+      {
+        questionEn: 'Are US degrees longer than Australian ones?',
+        answerEn:
+          'US bachelor\'s degrees are commonly four years and often include broad general-education requirements, while Australian bachelor\'s degrees are commonly three to four years and frequently more specialised from the start. Master\'s length varies in both. Check each specific program.',
+      },
+      {
+        questionEn: 'Do I need the GRE or GMAT for Australia?',
+        answerEn:
+          'Many Australian programs do not require the GRE or GMAT, whereas some US graduate programs do. Requirements vary by program in both countries, so confirm what each specific course asks for on its official admissions page.',
+      },
+      {
+        questionEn: 'Which is cheaper, Australia or the USA?',
+        answerEn:
+          'There is no single answer — tuition and living costs vary by university, course, and city in both countries and change every year. Compare the actual programs and cities you are considering using official sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'gre', 'gmat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['australia-vs-uk-for-international-students', 'english-test-score-requirements-explained-australia-nz', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Government — Department of Home Affairs, Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'U.S. Department of State — Student Visa', url: 'https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['australia vs usa for international students', 'study in australia or usa', 'australia vs us universities', 'studying in australia vs usa cost', 'australia or usa for masters'],
+    tags: ['anz-english-tests'],
+    keyFacts: [
+      { label: 'US degree length', value: 'Bachelor\'s commonly 4 years, often with general-education requirements' },
+      { label: 'Australia degree length', value: 'Bachelor\'s commonly 3-4 years, often specialised earlier (varies)' },
+      { label: 'Admissions tests', value: 'Some US grad programs ask GRE/GMAT; many AU programs do not' },
+      { label: 'Visa authorities', value: 'Australia: Home Affairs (subclass 500); USA: US Government (F-1)' },
+    ],
+  },
+  {
+    slug: 'complete-guide-to-studying-in-australia-and-new-zealand',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Complete Guide to Studying in Australia and New Zealand',
+    descriptionEn:
+      'A single overview of the full journey to study in Australia or New Zealand — choosing a course and university, applying, the student visa, funding, and working while you study — with every volatile figure deferred to the official source.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'The six stages of the journey',
+        bodyEn:
+          'Studying in Australia or New Zealand follows the same broad path whichever country you pick: choose a course and university, meet and prove the entry requirements, apply and accept an offer, arrange your student visa, fund your studies, and (optionally) work during and after your course. This guide gives you the map; each stage has its own detailed guide on GlobalStudyBoard for the specifics.\n\nThe most important habit to build early is verifying everything on the official source. Tuition, living-cost figures, English-test scores, deadlines, and visa rules are all set by the university or the government and can change every year, so treat any number you read anywhere as a prompt to confirm it officially — not as a fixed fact.',
+      },
+      {
+        headingEn: 'Stage 1 and 2 — choose a course, then meet the requirements',
+        bodyEn:
+          'Start with the course, not just the university. Decide your level (undergraduate, postgraduate coursework, or research), shortlist programmes that match your background and goals, and then compare the universities that offer them. Both countries have well-regarded universities across cities and regional areas.\n\nEvery programme lists its own entry requirements: an academic benchmark (your previous qualification and grades), an English-language requirement (commonly demonstrated through tests such as IELTS, TOEFL iBT, PTE Academic, or others the university accepts), and any subject prerequisites. The required scores and qualifications vary by university and course, so read each programme page on the official university website.',
+        bullets: [
+          'Pick the course level and field first, then the university',
+          'Check the academic and English-language entry requirements per programme',
+          'Confirm accepted English tests and minimum scores on the official university page',
+        ],
+      },
+      {
+        headingEn: 'Stage 3 — apply and accept your offer',
+        bodyEn:
+          'International students generally apply directly to each Australian or New Zealand university through its online application portal, submitting transcripts, English-test results, a statement of purpose where required, and any references. Some courses have additional steps such as portfolios or interviews.\n\nIf an application is successful you receive an offer. For Australia, accepting and meeting the conditions of your offer leads to a Confirmation of Enrolment (CoE), which you need for the student visa. New Zealand universities issue an Offer of Place that supports your visa application. Watch each university\'s intake deadlines — both countries mainly run two main intakes a year.',
+      },
+      {
+        headingEn: 'Stage 4 — the student visa (general information only)',
+        bodyEn:
+          'To study, you apply for a student visa: in Australia the Student visa (subclass 500), and in New Zealand the student visa administered by Immigration New Zealand. Both typically require proof of enrolment, evidence of sufficient funds, health and character requirements, and health-insurance arrangements (Overseas Student Health Cover, OSHC, is required for most student-visa holders in Australia).\n\nThis is general information, not immigration advice. Visa criteria, fees, processing times, and conditions are set by the government and change frequently — always verify the current rules on the official government source (the Australian Department of Home Affairs or Immigration New Zealand) before you act, and seek a registered professional if you need advice on your own case.',
+      },
+      {
+        headingEn: 'Stage 5 and 6 — fund your studies, then work',
+        bodyEn:
+          'Funding usually combines personal or family funds, scholarships, and sometimes an education loan. Universities and governments in both countries offer scholarships with their own eligibility rules and deadlines — apply early and never pay anyone who "guarantees" an award, as no legitimate scholarship is guaranteed.\n\nMany student visas allow limited paid work during study and there are post-study work options in both countries, each with its own conditions and time limits set by the government. Working rules and any caps on hours change, so confirm what your specific visa allows on the official government source before relying on it.',
+        bullets: [
+          'Combine savings, scholarships, and (if needed) an education loan',
+          'Apply for scholarships early; never pay for a "guaranteed" award',
+          'Check work rights and post-study work options on the official government source',
+        ],
+      },
+      {
+        headingEn: 'How to use this overview',
+        bodyEn:
+          'Use this guide as your starting checklist, then open the detailed GlobalStudyBoard guide for each stage and each country. If you are deciding between the two destinations, read a side-by-side comparison first; if you have chosen a country, follow that country\'s step-by-step roadmap. Whatever you read, confirm the live figures and rules on the official university and government websites before you commit.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Should I choose Australia or New Zealand first?',
+        answerEn:
+          'Either approach works. Many students first decide the destination based on course fit, location, and budget, then follow that country\'s process. If you are unsure, compare the two systems side by side before applying — there is no single "better" choice, only the one that fits your goals.',
+      },
+      {
+        questionEn: 'Do I apply through a central portal?',
+        answerEn:
+          'For international students, you generally apply directly to each university through its own portal in both countries. Australia\'s state Tertiary Admission Centres are mainly domestic school-leaver pathways. Always follow the application instructions on the official university website.',
+      },
+      {
+        questionEn: 'Does studying there guarantee permanent residency or a job?',
+        answerEn:
+          'No. Both countries have post-study work and skilled-migration options, but none is guaranteed and all are decided by the government under criteria that change. Treat any immigration information as general only, not advice, and verify it on the official government source.',
+      },
+      {
+        questionEn: 'How do I avoid relying on outdated figures?',
+        answerEn:
+          'Confirm every fee, living-cost estimate, English-test score, deadline, and visa rule on the official university or government source at the time you apply. Numbers published anywhere can be out of date because they are revised each year.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-australia-vs-new-zealand', 'studying-in-australia-after-12th-from-india', 'roadmap-to-study-in-new-zealand-from-india', 'study-in-australia-from-india', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Study Australia — Australian Government', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Study with New Zealand — New Zealand Government', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'Australian Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Immigration New Zealand — Visas for studying in New Zealand', url: 'https://www.immigration.govt.nz/study/study-visas/visas-for-studying-in-new-zealand/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['study in australia and new zealand', 'how to study in australia', 'how to study in new zealand', 'studying abroad in australia', 'student visa australia new zealand', 'study abroad guide australia nz'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Destinations', value: 'Australia and New Zealand' },
+      { label: 'Australia student visa', value: 'Student visa (subclass 500) — verify on the official government source' },
+      { label: 'New Zealand student visa', value: 'Student visa via Immigration New Zealand — verify on the official government source' },
+      { label: 'English tests commonly accepted', value: 'IELTS, TOEFL iBT, PTE Academic and others (check the university)' },
+      { label: 'Note', value: 'General information, not immigration or financial advice' },
+    ],
+  },
+  {
+    slug: 'study-in-australia-vs-new-zealand',
+    category: 'comparison',
+    region: 'australia-nz',
+    titleEn: 'Study in Australia vs New Zealand: A Neutral Comparison',
+    descriptionEn:
+      'A balanced, facts-only comparison of studying in Australia versus New Zealand — education systems, cost factors, work rights, and post-study pathways — to help you decide by your own goals, with no winner declared.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two strong destinations, different fits',
+        bodyEn:
+          'Australia and New Zealand are both popular, English-language study destinations with internationally recognised universities. Neither is universally "better" — the right choice depends on your course, budget, lifestyle preference, and long-term plans. This guide lays out the factors to compare so you can decide for yourself, and points you to the official sources for the figures that matter.',
+      },
+      {
+        headingEn: 'Education systems and universities',
+        bodyEn:
+          'Both countries offer undergraduate, postgraduate coursework, and research degrees, and both have a mix of larger metropolitan universities and universities in smaller cities and regional areas. Australia has a larger number of universities overall, while New Zealand has a smaller, well-regarded set of public universities. Both appear in global rankings published by independent bodies such as QS and Times Higher Education (THE); rankings are one input among many and should be read as the ranking body\'s own assessment, not an absolute measure of fit.\n\nApplication is mostly direct to each university in both countries for international students, with two main intakes a year. Specific entry requirements, intakes, and course availability differ by university, so compare programme pages directly.',
+        bullets: [
+          'Australia: a larger number of universities across many cities and regions',
+          'New Zealand: a smaller set of public universities',
+          'Rankings (QS, THE) are one input — attributed to the issuer, not absolute',
+        ],
+      },
+      {
+        headingEn: 'Cost factors to compare',
+        bodyEn:
+          'Tuition and living costs vary widely by country, city, university, and course, and are revised regularly, so this guide does not quote figures — compare the current numbers on each official source. When you compare, look at the same components on both sides: tuition for your specific course, estimated living costs (which the governments use as a guide for the visa), health-cover or insurance costs, and any application or visa fees.\n\nBecause both countries set indicative living-cost amounts for student-visa purposes and update them, always take those figures from the official government source rather than older summaries.',
+        bullets: [
+          'Tuition for your exact course (official university page)',
+          'Estimated living costs (official government guidance)',
+          'Health cover/insurance and visa/application fees',
+        ],
+      },
+      {
+        headingEn: 'Work rights and post-study options (general information)',
+        bodyEn:
+          'Both countries generally allow eligible student-visa holders to do some paid work during study, and both offer post-study work options after graduation — in Australia the Temporary Graduate visa (subclass 485) and in New Zealand the Post Study Work Visa — each with its own eligibility criteria, duration, and conditions set by the government. Both countries also have separate skilled-migration systems that some graduates may later explore.\n\nThis is general information, not immigration advice. Work-hour rules, post-study work durations, and migration criteria change frequently and differ between the two countries, so verify the current rules for each on the official government source (the Australian Department of Home Affairs or Immigration New Zealand). Studying in either country does not guarantee a job, a post-study visa, or permanent residency.',
+      },
+      {
+        headingEn: 'Lifestyle, location and scale',
+        bodyEn:
+          'Australia is a larger country with major cities, regional centres, and a wide range of climates; New Zealand is smaller with two main islands and its own distinct environment and pace. Both are known for a high standard of living and an international student community. Lifestyle fit is personal — consider city size, climate, distance from home, and the kind of student experience you want, and research each city using official and university sources.',
+      },
+      {
+        headingEn: 'How to decide',
+        bodyEn:
+          'Make a short list of what matters most to you — course and university fit, total cost, work and post-study options, and lifestyle — and compare Australia and New Zealand on each using official sources. There is no single right answer; the better destination is the one that best matches your priorities and budget. Once you choose, follow that country\'s detailed admission and visa guides.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which is cheaper, Australia or New Zealand?',
+        answerEn:
+          'It depends on the city, university, and course, and the figures change every year, so there is no fixed answer. Compare tuition and the official estimated living-cost guidance for your specific situation on each government and university source before deciding.',
+      },
+      {
+        questionEn: 'Which country gives a better chance of permanent residency?',
+        answerEn:
+          'Both have post-study work and skilled-migration pathways, but neither guarantees residency, and the criteria differ and change. This is general information, not immigration advice — verify the current rules for each country on the official government source.',
+      },
+      {
+        questionEn: 'Are New Zealand universities as good as Australian ones?',
+        answerEn:
+          'Both countries have well-regarded, internationally recognised universities. Independent rankings such as QS and THE assess them, but "good" depends on the course and your goals. Compare specific programmes rather than relying on overall rankings alone.',
+      },
+      {
+        questionEn: 'Can I apply to both and decide later?',
+        answerEn:
+          'Yes. You can apply to universities in both countries and compare offers before accepting one and arranging the matching student visa. Follow each university\'s official application instructions and deadlines.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['complete-guide-to-studying-in-australia-and-new-zealand', 'studying-in-australia-after-12th-from-india', 'roadmap-to-study-in-new-zealand-from-india', 'study-in-australia-from-india', 'study-in-new-zealand-from-india'],
+    sources: [
+      { label: 'Study Australia — Australian Government', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Study with New Zealand — New Zealand Government', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'Australian Department of Home Affairs — Visas', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing' },
+      { label: 'Immigration New Zealand — Visas for studying in New Zealand', url: 'https://www.immigration.govt.nz/study/study-visas/visas-for-studying-in-new-zealand/' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['australia vs new zealand for study', 'study in australia or new zealand', 'australia vs new zealand international students', 'compare australia new zealand study', 'australia new zealand which is better study', 'study abroad australia vs new zealand'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Approach', value: 'Neutral comparison — decide by your own goals' },
+      { label: 'Australia post-study work', value: 'Temporary Graduate visa (subclass 485) — verify officially' },
+      { label: 'New Zealand post-study work', value: 'Post Study Work Visa — verify officially' },
+      { label: 'Cost & visa figures', value: 'Not quoted here — confirm on official sources' },
+      { label: 'Rankings', value: 'Attributed to QS / THE; one input, not absolute' },
+    ],
+  },
+  {
+    slug: 'studying-in-australia-after-12th-from-india',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Studying in Australia After 12th from India',
+    descriptionEn:
+      'A practical, neutral route for Indian students to begin an undergraduate degree in Australia after Class 12 — eligibility, English tests, application steps, the student visa, and funding — with all volatile figures deferred to official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Can you go to Australia right after Class 12?',
+        bodyEn:
+          'Yes — Indian students can apply to Australian universities for an undergraduate (bachelor\'s) degree after completing Class 12. Each university and course sets its own academic entry requirement based on your Class 12 board results, and some students enter through a foundation or diploma pathway before the main degree. The exact academic benchmark depends on the university and programme, so check each programme page on the official university website.\n\nStart early. A typical plan is to research courses and universities, sit an English test, apply, accept an offer, and then apply for the student visa — all of which take time across an application cycle.',
+      },
+      {
+        headingEn: 'Step 1 — check eligibility and shortlist courses',
+        bodyEn:
+          'Decide your field of study and shortlist undergraduate programmes that accept Indian Class 12 qualifications. Compare the entry requirements, course structure, location, and cost on the official university sites. If your results or subjects do not directly meet a degree\'s requirement, look at recognised foundation or pathway programmes that lead into it.',
+        bullets: [
+          'Confirm the Class 12 academic requirement for each course (official page)',
+          'Check subject prerequisites for your intended degree',
+          'Consider a foundation/pathway route if you need a bridge into the degree',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — meet the English-language requirement',
+        bodyEn:
+          'Australian universities require evidence of English proficiency. This is commonly shown through a test such as IELTS, TOEFL iBT, or PTE Academic, among others a university may accept; some applicants may qualify through other evidence the university recognises. The accepted tests and the minimum scores differ by university and course, so confirm exactly what your chosen programme requires before you book a test.',
+      },
+      {
+        headingEn: 'Step 3 — apply and accept your offer',
+        bodyEn:
+          'Apply directly to each university through its online application portal, submitting your Class 12 documents, English-test results, a statement of purpose if required, and any other requested materials. If you receive an offer and meet its conditions, you accept it; for the student visa you will need a Confirmation of Enrolment (CoE) from the university. Note each university\'s intake deadlines, as Australia mainly runs two intakes a year.',
+      },
+      {
+        headingEn: 'Step 4 — the student visa (general information)',
+        bodyEn:
+          'After accepting your offer and receiving your CoE, you apply for the Australian Student visa (subclass 500). It typically requires proof of enrolment, evidence of sufficient funds, health and character requirements, the Genuine Student requirement, and arranging Overseas Student Health Cover (OSHC).\n\nThis is general information, not immigration advice. The criteria, fees, and processing times are set by the Australian Department of Home Affairs and change regularly — verify the current requirements on the official government source before applying, and consult a registered professional for advice on your specific case. For step-by-step details, see the GlobalStudyBoard guide on studying in Australia from India.',
+      },
+      {
+        headingEn: 'Step 5 — plan your funding',
+        bodyEn:
+          'Plan how you will fund tuition and living costs — typically through family funds, scholarships, or an education loan. Australian universities and the government offer scholarships with their own eligibility rules and deadlines; apply early and be cautious of anyone who promises to secure your place or your funding, because no legitimate admission or scholarship outcome can be promised in advance. Confirm current tuition, living-cost estimates, and scholarship details on the official university and government sources rather than older figures.',
+        bullets: [
+          'Budget for tuition plus living and health-cover costs (verify officially)',
+          'Apply early for university and government scholarships',
+          'Be wary of anyone promising a sure place or sure funding',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What Class 12 percentage do I need for Australia?',
+        answerEn:
+          'There is no single fixed percentage — each university and course sets its own academic requirement, and some students use a foundation or pathway route. Check the entry requirements for your specific programme on the official university website.',
+      },
+      {
+        questionEn: 'Which English test do I need?',
+        answerEn:
+          'Universities commonly accept tests such as IELTS, TOEFL iBT, and PTE Academic, among others, but the accepted tests and minimum scores vary by university and course. Confirm what your chosen programme requires before booking a test.',
+      },
+      {
+        questionEn: 'Do I need a foundation year after 12th?',
+        answerEn:
+          'Not always. Many Indian students enter a bachelor\'s degree directly, while others use a foundation or diploma pathway if they need a bridge into the degree. It depends on the university\'s requirements and your results.',
+      },
+      {
+        questionEn: 'What visa do I apply for?',
+        answerEn:
+          'For full-time study you apply for the Australian Student visa (subclass 500) after accepting your offer and receiving a Confirmation of Enrolment. This is general information, not immigration advice — verify the current rules on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-australia-from-india', 'complete-guide-to-studying-in-australia-and-new-zealand', 'study-in-australia-vs-new-zealand', 'is-australia-good-for-international-students'],
+    sources: [
+      { label: 'Study Australia — Australian Government', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'IELTS — official site', url: 'https://www.ielts.org' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['study in australia after 12th', 'australia study after 12th from india', 'how to study in australia after 12th', 'undergraduate in australia from india', 'australia student visa after 12th', 'bachelors in australia for indian students'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Level', value: 'Undergraduate (bachelor\'s) after Class 12' },
+      { label: 'English tests', value: 'IELTS, TOEFL iBT, PTE Academic and others (check the university)' },
+      { label: 'Student visa', value: 'Student visa (subclass 500) — verify on the official government source' },
+      { label: 'Health cover', value: 'OSHC required for most student-visa holders — verify officially' },
+      { label: 'Note', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'is-australia-good-for-international-students',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Is Australia Good for International Students?',
+    descriptionEn:
+      'A balanced, factual look at what Australia offers international students and the practical considerations to weigh — universities, English-language study, costs, work options, and support — without overselling or any guarantees.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'A balanced view',
+        bodyEn:
+          'Australia is one of the most popular destinations for international students, with English-language teaching, internationally recognised universities, and a large international student community. Whether it is "good" for you depends on your course, budget, and goals — this guide sets out what Australia offers and the practical points to weigh, so you can decide based on facts rather than marketing.',
+      },
+      {
+        headingEn: 'What Australia offers',
+        bodyEn:
+          'Australia has many universities across major cities and regional areas, offering undergraduate, postgraduate coursework, and research degrees across a wide range of fields. Several Australian universities feature in global rankings published by independent bodies such as QS and Times Higher Education (THE) — read these as the ranking body\'s own assessment and one input among many. Universities typically provide international student support services, and there are official frameworks for student health cover and consumer protections for international education.',
+        bullets: [
+          'English-language teaching and a large international student community',
+          'Universities in major cities and regional areas across many fields',
+          'International student support services and official health-cover frameworks',
+        ],
+      },
+      {
+        headingEn: 'Practical considerations to weigh',
+        bodyEn:
+          'Set against the benefits are practical factors to plan for. Tuition and living costs vary by city, university, and course and are revised regularly, so budget carefully using official figures. Australia is geographically distant from many home countries, which affects travel and time zones. Climate and city size vary widely, and adjusting to a new country takes time. None of these is a drawback unique to Australia — they are simply factors to research and plan around.',
+        bullets: [
+          'Budget for tuition plus living and health-cover costs (verify officially)',
+          'Consider distance, travel, and time-zone differences from home',
+          'Plan for settling in: climate, city size, and adjustment time',
+        ],
+      },
+      {
+        headingEn: 'Work and post-study options (general information)',
+        bodyEn:
+          'Many student-visa holders are generally allowed to do some paid work during study, and Australia offers post-study work options such as the Temporary Graduate visa (subclass 485) after graduation, with eligibility and conditions set by the government. Some graduates later explore Australia\'s skilled-migration system.\n\nThis is general information, not immigration advice, and studying in Australia does not guarantee a job, a post-study visa, or permanent residency. Work-hour rules and post-study work conditions change, so verify the current rules on the official government source (the Australian Department of Home Affairs).',
+      },
+      {
+        headingEn: 'Is it right for you?',
+        bodyEn:
+          'Australia suits many international students well, but the honest answer is that "good" is personal. Match Australia against your priorities — course and university fit, total cost, work options, distance, and lifestyle — and compare it with other destinations if you are still deciding. Use official university and government sources for every figure and rule, and avoid any source that promises guaranteed outcomes.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Australia a safe and welcoming place to study?',
+        answerEn:
+          'Australia hosts a large international student community and universities provide student support services, with official frameworks for international education. As anywhere, experiences vary by city and circumstance, so research your specific destination using official university and government sources.',
+      },
+      {
+        questionEn: 'Is studying in Australia expensive?',
+        answerEn:
+          'Tuition and living costs vary widely by city, university, and course and change every year, so there is no single answer. Budget using the current official figures for your situation rather than older estimates.',
+      },
+      {
+        questionEn: 'Will studying in Australia help me settle there?',
+        answerEn:
+          'Australia has post-study work and skilled-migration options, but none is guaranteed and all are decided by the government under criteria that change. This is general information, not immigration advice — verify the current rules on the official government source.',
+      },
+      {
+        questionEn: 'How do I decide if Australia is right for me?',
+        answerEn:
+          'Weigh your course fit, budget, work options, distance from home, and lifestyle preferences, and compare Australia with other destinations. The right choice is personal — base it on official facts, not on any guarantee of outcomes.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['complete-guide-to-studying-in-australia-and-new-zealand', 'study-in-australia-vs-new-zealand', 'studying-in-australia-after-12th-from-india', 'study-in-australia-from-india'],
+    sources: [
+      { label: 'Study Australia — Australian Government', url: 'https://www.studyaustralia.gov.au' },
+      { label: 'Australian Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Australian Government — Department of Education', url: 'https://www.education.gov.au' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['is australia good for international students', 'studying in australia pros and cons', 'why study in australia', 'australia for international students', 'is australia worth it for study', 'benefits of studying in australia'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Teaching language', value: 'English' },
+      { label: 'Universities', value: 'Across major cities and regional areas; several ranked by QS / THE' },
+      { label: 'Post-study work', value: 'Temporary Graduate visa (subclass 485) — verify officially' },
+      { label: 'Costs', value: 'Vary by city/university/course — confirm on official sources' },
+      { label: 'Note', value: 'Balanced view; no guarantees; not immigration advice' },
+    ],
+  },
+  {
+    slug: 'roadmap-to-study-in-new-zealand-from-india',
+    category: 'study-abroad',
+    region: 'australia-nz',
+    titleEn: 'Roadmap to Study in New Zealand from India',
+    descriptionEn:
+      'A step-by-step timeline for Indian students planning to study in New Zealand — researching courses, English tests, applications, the student visa, and funding — with all volatile figures deferred to official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Your journey at a glance',
+        bodyEn:
+          'Studying in New Zealand from India follows a clear sequence: research courses and universities, sit an English test, apply and accept an Offer of Place, apply for the student visa, and plan your funding and arrival. Starting early — ideally well ahead of your intended intake — gives you room for each step, since applications, test bookings, and visa processing all take time.\n\nNew Zealand has a smaller set of well-regarded public universities, and international students generally apply directly to each one. A simple way to plan is to work backwards from your intended intake and give each stage generous time. Throughout, confirm every figure and rule on the official university and government sources, because tuition, living-cost estimates, scores, deadlines, and visa rules are revised regularly.',
+      },
+      {
+        headingEn: 'Step 1 — research courses and universities',
+        bodyEn:
+          'Decide your level (undergraduate, postgraduate coursework, or research) and field, then shortlist New Zealand universities and programmes that fit. Compare course structure, location, entry requirements, and cost on the official university websites. Check whether your Indian qualification meets each programme\'s academic requirement, and note any subject prerequisites.',
+        bullets: [
+          'Choose your level and field, then shortlist programmes',
+          'Check the academic entry requirement for your Indian qualification',
+          'Compare location, course structure, and cost on official sources',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — sit an English test',
+        bodyEn:
+          'New Zealand universities require evidence of English proficiency, commonly through a test such as IELTS, TOEFL iBT, or PTE Academic, among others a university may accept. The accepted tests and minimum scores vary by university and course, so confirm exactly what your chosen programme needs before you book and sit a test. Build test preparation and the test date into your timeline.',
+      },
+      {
+        headingEn: 'Step 3 — apply and accept your Offer of Place',
+        bodyEn:
+          'Apply directly to each university through its application portal, submitting your academic transcripts, English-test results, a statement of purpose if required, and any other requested documents. A successful application leads to an Offer of Place, which you accept and which supports your student-visa application. Watch each university\'s intake deadlines, as New Zealand mainly runs two main intakes a year.',
+      },
+      {
+        headingEn: 'Step 4 — apply for the student visa (general information)',
+        bodyEn:
+          'With your Offer of Place, you apply for the New Zealand student visa, administered by Immigration New Zealand. It typically requires proof of enrolment, evidence of sufficient funds, and health and character requirements, among other conditions.\n\nThis is general information, not immigration advice. Visa criteria, fees, and processing times are set by Immigration New Zealand and change regularly — verify the current requirements on the official government source before applying, and seek a registered professional for advice on your own case. For more detail, see the GlobalStudyBoard guide on studying in New Zealand from India.',
+      },
+      {
+        headingEn: 'Step 5 — plan funding and arrival',
+        bodyEn:
+          'Plan how you will fund tuition and living costs — through family funds, scholarships, or an education loan. New Zealand universities and the government offer scholarships with their own eligibility rules and deadlines; apply early and never pay for a "guaranteed" award, as none is guaranteed. Then plan practical arrival steps such as accommodation and travel. Confirm current tuition, living-cost estimates, and scholarship details on the official university and government sources.',
+        bullets: [
+          'Budget for tuition plus living costs (verify officially)',
+          'Apply early for university and government scholarships',
+          'Plan accommodation and travel before you depart',
+          'Follow the sequence: research, test, apply, visa, fund and arrive',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How early should I start the New Zealand process?',
+        answerEn:
+          'Start well ahead of your intended intake. Researching courses, preparing for and sitting an English test, applying, and visa processing all take time, so beginning early gives you room at each step. Check each university\'s intake deadlines on its official site.',
+      },
+      {
+        questionEn: 'Which English test does New Zealand require?',
+        answerEn:
+          'Universities commonly accept tests such as IELTS, TOEFL iBT, and PTE Academic, among others, but the accepted tests and minimum scores vary by university and course. Confirm what your chosen programme requires before booking a test.',
+      },
+      {
+        questionEn: 'What do I get after a successful application?',
+        answerEn:
+          'A successful application results in an Offer of Place from the university, which you accept and which supports your student-visa application to Immigration New Zealand. Follow the official instructions for both steps.',
+      },
+      {
+        questionEn: 'What visa do I need to study in New Zealand?',
+        answerEn:
+          'You apply for the New Zealand student visa, administered by Immigration New Zealand, after accepting your Offer of Place. This is general information, not immigration advice — verify the current requirements on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-new-zealand-from-india', 'complete-guide-to-studying-in-australia-and-new-zealand', 'study-in-australia-vs-new-zealand', 'studying-in-australia-after-12th-from-india'],
+    sources: [
+      { label: 'Study with New Zealand — New Zealand Government', url: 'https://www.studywithnewzealand.govt.nz' },
+      { label: 'Immigration New Zealand — Visas for studying in New Zealand', url: 'https://www.immigration.govt.nz/study/study-visas/visas-for-studying-in-new-zealand/' },
+      { label: 'IELTS — official site', url: 'https://www.ielts.org' },
+    ],
+    lastVerified: '2026-06-12',
+    keywords: ['study in new zealand from india', 'how to study in new zealand from india', 'new zealand study roadmap', 'new zealand student visa from india', 'steps to study in new zealand', 'new zealand universities for indian students'],
+    tags: ['anz-admissions'],
+    keyFacts: [
+      { label: 'Audience', value: 'Indian students planning to study in New Zealand' },
+      { label: 'English tests', value: 'IELTS, TOEFL iBT, PTE Academic and others (check the university)' },
+      { label: 'Offer document', value: 'Offer of Place from the university' },
+      { label: 'Student visa', value: 'Via Immigration New Zealand — verify on the official government source' },
+      { label: 'Note', value: 'General information, not immigration advice' },
+    ],
+  },
 ];
 
 export const getGuideBySlug = (slug: string): Guide | undefined =>
