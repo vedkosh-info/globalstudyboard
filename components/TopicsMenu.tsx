@@ -15,6 +15,7 @@ const GROUP_ORDER: TopicGroup[] = [
   'study-in-usa',
   'study-in-canada',
   'study-in-australia-nz',
+  'study-in-europe',
   'prep-funding',
 ];
 

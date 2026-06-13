@@ -42127,6 +42127,8521 @@ export const GUIDES: Guide[] = [
       { label: 'Note', value: 'General information, not immigration advice' },
     ],
   },
+  {
+    slug: 'how-to-study-in-europe-complete-guide-for-international-students',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'How to Study in Europe: Complete Guide',
+    descriptionEn:
+      'A step-by-step overview for international students who want to study in Europe — how to choose a country and programme, apply, arrange a student visa, fund your studies, and arrive, with links to official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Europe is many systems, not one',
+        bodyEn:
+          'Europe is a continent of many countries, each with its own universities, languages of instruction, fees, and admission rules. There is no single pan-European application portal and no single set of requirements — a programme in Germany, France, the Netherlands, Sweden, or Italy each follows its own national process.\n\nThe best way to approach studying in Europe is to first decide what you want to study and where, then follow that specific country and university\'s official steps. This guide gives you the shared shape of the journey so you know what to plan for, while you confirm the exact rules on each official source.',
+      },
+      {
+        headingEn: 'Step 1 — Choose a country and programme',
+        bodyEn:
+          'Start from the programme, not the country. Search the official study portals for each destination to see which universities offer your subject, in which language, and at what level. Language of instruction matters most: some programmes are taught in English (more often at master\'s level), while others require the local language.\n\nFactors worth weighing include the language of instruction, tuition cost, living costs, the structure of the degree, and your post-study plans. No single country is "best" — the right fit depends on your subject, budget, and goals.',
+        bullets: [
+          'Language of instruction (English-taught vs local-language)',
+          'Tuition and living costs (verify the current figures officially)',
+          'Programme content, level, and degree length',
+          'Your longer-term study or career goals',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — Apply the country\'s way',
+        bodyEn:
+          'Each country runs its own admission system, so you apply where that country tells you to. Germany commonly uses uni-assist or direct university applications; France uses the "Études en France" / Campus France procedure; the Netherlands uses Studielink; Sweden uses universityadmissions.se; Italy uses Universitaly and the pre-enrolment process. Always check the exact portal and deadlines for your chosen university.\n\nDeadlines, document requirements, and application fees differ by country and university, and they change each cycle. Confirm everything on the official university and national portal before you submit.',
+      },
+      {
+        headingEn: 'Step 3 — Student visa or residence permit',
+        bodyEn:
+          'If you are not an EU/EEA national, you will usually need a student visa or residence permit to study in a European country. Each country has its own national immigration authority, requirements, and process — for example proof of admission, proof of funds, and health insurance are commonly required, but the exact conditions vary.\n\nThis is general information, not immigration advice. Apply through the official government immigration authority for your destination, follow its current instructions, and verify on the official government source before acting, because rules change frequently.',
+      },
+      {
+        headingEn: 'Step 4 — Fund your studies',
+        bodyEn:
+          'Plan for both tuition and living costs. Some public universities in certain countries charge low or no tuition fees, while others (and most private institutions) charge tuition; scholarships such as Erasmus+ and national or university schemes may help. Many countries also ask you to show proof of sufficient funds as part of the visa or residence-permit process.\n\nNever rely on remembered figures for fees, living costs, or proof-of-funds amounts — these are set officially and updated regularly, so confirm the current numbers on the official source for your country and university.',
+      },
+      {
+        headingEn: 'Step 5 — Arrive and settle in',
+        bodyEn:
+          'Once admitted and granted a visa or permit, plan your arrival: arrange accommodation, register where required (some countries require you to register your address or your residence permit after arrival), set up health insurance, and complete any university enrolment steps.\n\nUse the official "study in" portal for your destination and your university\'s international office for the most reliable arrival checklist. Requirements such as address registration and permit collection vary by country.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there one application portal for all of Europe?',
+        answerEn:
+          'No. There is no single pan-European application portal. Each country runs its own system — for example Studielink in the Netherlands, universityadmissions.se in Sweden, and the Études en France / Campus France procedure for France. Apply through the portal your chosen country and university specify.',
+      },
+      {
+        questionEn: 'Can I study in Europe in English?',
+        answerEn:
+          'Many universities offer English-taught programmes, which are generally more common at master\'s level than at bachelor\'s level. Availability varies by country and subject, so search the official study portals and university pages to find English-taught options.',
+      },
+      {
+        questionEn: 'Do international students need a visa to study in Europe?',
+        answerEn:
+          'Non-EU/EEA nationals usually need a student visa or residence permit, while requirements differ for EU/EEA nationals. Each country has its own immigration authority and rules. This is general information, not immigration advice — verify on the official government source for your destination.',
+      },
+      {
+        questionEn: 'Is studying in Europe free?',
+        answerEn:
+          'It depends on the country and institution. Some public universities charge low or no tuition, while others and most private institutions charge tuition. Always confirm the current tuition and living-cost figures on the official university or national source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-choose-a-country-to-study-in-europe', 'english-taught-programs-in-europe', 'european-higher-education-and-bologna-process-explained', 'study-in-germany-from-india', 'study-in-france-from-india'],
+    sources: [
+      { label: 'European Commission — Education and training', url: 'https://education.ec.europa.eu' },
+      { label: 'Your Europe — Studying abroad in the EU', url: 'https://europa.eu/youreurope/citizens/education/university/index_en.htm' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to study in europe', 'study in europe for international students', 'studying in europe guide', 'study abroad in europe', 'apply to european universities'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Application portal', value: 'No single EU-wide portal — each country has its own system' },
+      { label: 'Language', value: 'Varies; many English-taught programmes, more common at master\'s level' },
+      { label: 'Visa / permit', value: 'Usually required for non-EU/EEA students (per-country rules)' },
+      { label: 'Verify', value: 'Confirm fees, deadlines and visa rules on each official source' },
+    ],
+  },
+  {
+    slug: 'european-higher-education-and-bologna-process-explained',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'European Higher Education and the Bologna Process',
+    descriptionEn:
+      'Understand how European degrees are structured — the Bologna three-cycle system (bachelor, master, doctorate), ECTS credits, and the difference between research universities and universities of applied sciences.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Bologna Process is',
+        bodyEn:
+          'The Bologna Process is an intergovernmental cooperation that created the European Higher Education Area (EHEA) to make degree systems across participating countries more comparable and compatible. Its goal is to help students and qualifications move more easily between countries.\n\nFor a student, the practical result is that degrees across many European countries follow a shared structure and a common credit system, which makes comparing programmes — and transferring between them — more straightforward. The number of participating countries is published officially; check ehea.info for the current count.',
+      },
+      {
+        headingEn: 'The three cycles',
+        bodyEn:
+          'The Bologna framework organises higher education into three main cycles. The first cycle is the bachelor\'s degree, the second cycle is the master\'s degree, and the third cycle is the doctorate (PhD). A short cycle (for example certain higher vocational qualifications) can sit within or alongside the first cycle in some systems.\n\nExact degree lengths vary by country and programme, so confirm the duration of a specific degree on the university\'s official page.',
+        bullets: [
+          'First cycle — Bachelor\'s degree',
+          'Second cycle — Master\'s degree',
+          'Third cycle — Doctorate (PhD)',
+        ],
+      },
+      {
+        headingEn: 'ECTS credits',
+        bodyEn:
+          'The European Credit Transfer and Accumulation System (ECTS) is the shared credit system used across the EHEA. It measures learning in credits based on workload, and a typical full-time academic year is defined as 60 ECTS credits.\n\nECTS makes it easier to compare the size of programmes and to transfer credit between institutions and countries — for example during an Erasmus+ exchange. The exact credits attached to a specific degree are set by the university, so check the programme page.',
+      },
+      {
+        headingEn: 'Types of institutions',
+        bodyEn:
+          'European higher education includes different types of institutions. Research universities (in some countries called comprehensive or classical universities) emphasise academic research and theory and award degrees up to doctorate level. Universities of applied sciences (called Fachhochschulen in Germany, hogescholen in the Netherlands, and similar names elsewhere) emphasise professional, practice-oriented education, often with strong industry links.\n\nNeither type is universally "better" — they serve different goals. Choose based on whether you want a more research-focused or a more applied, professional programme.',
+        bullets: [
+          'Research / classical universities — academic and research-focused, up to PhD',
+          'Universities of applied sciences — professional, practice-oriented',
+        ],
+      },
+      {
+        headingEn: 'Why it matters for international students',
+        bodyEn:
+          'Because many European countries share the Bologna structure and ECTS, a bachelor\'s from one EHEA country is generally recognised as a comparable first-cycle qualification when you apply for a master\'s in another. This makes building a study path across countries more predictable.\n\nRecognition of a specific qualification still depends on the receiving university\'s and country\'s rules, so confirm admission and recognition requirements on the official university source for the programme you want.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the three cycles of the Bologna Process?',
+        answerEn:
+          'The three cycles are the bachelor\'s degree (first cycle), the master\'s degree (second cycle), and the doctorate or PhD (third cycle). Some systems also include a short cycle within the first cycle.',
+      },
+      {
+        questionEn: 'How many ECTS credits is one academic year?',
+        answerEn:
+          'A typical full-time academic year is defined as 60 ECTS credits in the European Credit Transfer and Accumulation System. The exact credits for a specific degree are set by the university.',
+      },
+      {
+        questionEn: 'How many countries are in the Bologna Process / EHEA?',
+        answerEn:
+          'A number of European countries participate in the European Higher Education Area, and the official figure is published on the EHEA portal. Check ehea.info for the current count rather than relying on a remembered number.',
+      },
+      {
+        questionEn: 'What is the difference between a research university and a university of applied sciences?',
+        answerEn:
+          'Research (or classical) universities focus on academic study and research and award degrees up to PhD level. Universities of applied sciences focus on professional, practice-oriented education, often with industry links. Neither is universally better — they suit different goals.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-europe-complete-guide-for-international-students', 'english-taught-programs-in-europe', 'application-documents-for-european-universities', 'how-to-choose-a-country-to-study-in-europe'],
+    sources: [
+      { label: 'EHEA — European Higher Education Area', url: 'https://ehea.info' },
+      { label: 'European Commission — European Higher Education Area and the Bologna Process', url: 'https://education.ec.europa.eu/education-levels/higher-education/inclusive-and-connected-higher-education/bologna-process' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['bologna process explained', 'european higher education area', 'ects credits', 'ehea', 'three cycle degree system europe', 'universities of applied sciences'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Framework', value: 'Bologna Process / European Higher Education Area (EHEA)' },
+      { label: 'Degree cycles', value: 'Bachelor (1st), Master (2nd), Doctorate (3rd)' },
+      { label: 'Credit system', value: 'ECTS — 60 credits per full-time academic year' },
+      { label: 'Official portal', value: 'ehea.info (verify participating-country count)' },
+    ],
+  },
+  {
+    slug: 'english-taught-programs-in-europe',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'English-Taught Programs in Europe',
+    descriptionEn:
+      'How to find and apply to English-taught degree programmes in Europe — where they are common, how to search official portals, and the English-language tests universities typically ask for.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'You can study in Europe in English',
+        bodyEn:
+          'Across Europe, many universities offer degree programmes taught entirely in English, even in countries where English is not the main local language. This makes Europe accessible to international students who do not speak the local language.\n\nThat said, availability varies a lot by country, university, and subject. English-taught programmes are generally more common at master\'s level than at bachelor\'s level, so the level you are applying for affects how many options you will find.',
+      },
+      {
+        headingEn: 'Where English-taught programmes are common',
+        bodyEn:
+          'English-taught options are widely available in several countries — the Netherlands and the Nordic countries (such as Sweden, Denmark, and Finland) are well known for offering many, and Germany, France, Italy, Spain and others also offer English-taught degrees, particularly at master\'s level.\n\nThe exact number and range of programmes differ by country and change over time, so use the official study portals and university course catalogues to see what is currently offered for your subject and level.',
+      },
+      {
+        headingEn: 'How to find them',
+        bodyEn:
+          'The most reliable way to find English-taught programmes is to search the official "study in" portal for each country and the course catalogues on individual university websites, filtering by language of instruction and level.\n\nMany national portals let you filter programmes by "taught in English". Always confirm the language of instruction, entry requirements, and deadlines on the official university programme page before applying.',
+        bullets: [
+          'Search each country\'s official study portal (e.g. studyinnl.org for the Netherlands)',
+          'Filter by language of instruction = English and by degree level',
+          'Confirm details on the individual university programme page',
+        ],
+      },
+      {
+        headingEn: 'English-language proof',
+        bodyEn:
+          'If your programme is taught in English and English is not your first language, universities usually require proof of English proficiency. Commonly accepted tests include IELTS, TOEFL, PTE Academic, and in some cases the Duolingo English Test, but the tests accepted and the minimum scores are set by each university.\n\nNever assume a particular test or score will be accepted. Check the specific programme\'s admission page for which tests it accepts and the required minimum, and verify the current requirement on the official source.',
+        bullets: [
+          'Common tests: IELTS, TOEFL, PTE Academic, Duolingo English Test (acceptance varies)',
+          'Minimum scores and accepted tests are set per university and programme',
+        ],
+      },
+      {
+        headingEn: 'A note on local language and daily life',
+        bodyEn:
+          'Even if your degree is fully in English, learning some of the local language can help with daily life, part-time opportunities, and integration. Many universities offer local-language courses for international students.\n\nThis is a practical consideration, not an admission requirement for an English-taught programme. Check what language support your university offers.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Are there many English-taught programmes in Europe?',
+        answerEn:
+          'Yes, many European universities offer English-taught degrees, even in non-English-speaking countries. Availability varies by country, university and subject, and such programmes are generally more common at master\'s level than at bachelor\'s level.',
+      },
+      {
+        questionEn: 'Which countries offer the most English-taught programmes?',
+        answerEn:
+          'The Netherlands and Nordic countries such as Sweden, Denmark and Finland are well known for offering many English-taught programmes, and Germany, France, Italy and Spain also offer them, especially at master\'s level. Use official portals to check current offerings.',
+      },
+      {
+        questionEn: 'Do I need an English test for an English-taught programme?',
+        answerEn:
+          'Usually yes, if English is not your first language. Tests such as IELTS, TOEFL, PTE Academic, and sometimes the Duolingo English Test are commonly accepted, but the accepted tests and minimum scores are set by each university. Check the programme\'s admission page.',
+      },
+      {
+        questionEn: 'How do I find English-taught programmes?',
+        answerEn:
+          'Search each country\'s official study portal and individual university course catalogues, filtering by language of instruction (English) and degree level. Confirm the language, entry requirements and deadlines on the official university programme page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'duolingo-english-test'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-europe-complete-guide-for-international-students', 'how-to-choose-a-country-to-study-in-europe', 'application-documents-for-european-universities', 'study-in-netherlands-from-india'],
+    sources: [
+      { label: 'European Commission — Higher education', url: 'https://education.ec.europa.eu/education-levels/higher-education' },
+      { label: 'Study in NL — official Netherlands study portal', url: 'https://www.studyinnl.org' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['english taught programs in europe', 'study in europe in english', 'english taught masters europe', 'english degrees in europe', 'study in europe without learning language'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Availability', value: 'Widely offered; more common at master\'s level' },
+      { label: 'Where to find', value: 'Official country study portals + university catalogues' },
+      { label: 'English proof', value: 'IELTS / TOEFL / PTE / Duolingo — acceptance set per university' },
+      { label: 'Verify', value: 'Confirm language of instruction on the official programme page' },
+    ],
+  },
+  {
+    slug: 'how-to-choose-a-country-to-study-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'How to Choose a Country to Study in Europe',
+    descriptionEn:
+      'A practical framework for deciding where in Europe to study — weighing language of instruction, cost, programme fit, work rights, and lifestyle, without assuming any one country is best.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Start from your priorities, not a ranking',
+        bodyEn:
+          'There is no single "best" country to study in Europe — the right choice depends on what matters most to you. Two students with different subjects, budgets, and goals may rightly choose very different countries.\n\nA useful approach is to list your own priorities first (for example: language, cost, the specific programme, and your post-study plans), then compare countries against that list using official sources. This keeps the decision grounded in your needs rather than someone else\'s ranking.',
+      },
+      {
+        headingEn: 'Language of instruction',
+        bodyEn:
+          'Language is often the most decisive factor. Decide whether you want to study in English or are willing to study in (or learn) the local language. English-taught programmes exist across Europe but are more common at master\'s level, so the level you are applying for affects your options.\n\nIf you choose a local-language programme, you will usually need to prove proficiency in that language. Check the language of instruction and any language-test requirement on the official university programme page.',
+      },
+      {
+        headingEn: 'Cost of study and living',
+        bodyEn:
+          'Tuition and living costs vary widely across European countries and cities. Some public universities charge low or no tuition while others charge fees, and the cost of living differs significantly between locations.\n\nDo not rely on remembered figures. Look up the current tuition for your specific programme on the university\'s official page and the typical living costs on the official "study in" portal for that country, then build a realistic budget.',
+        bullets: [
+          'Tuition: varies by country, university, and whether it is public or private',
+          'Living costs: differ by country and city',
+          'Funding: scholarships such as Erasmus+ and national/university schemes may help',
+        ],
+      },
+      {
+        headingEn: 'Programme fit and institution type',
+        bodyEn:
+          'Match the country to where your subject is strong and where the programme structure suits you. Consider whether you want a research-focused university or a more applied, professional programme at a university of applied sciences, and whether the curriculum, specialisations, and degree length fit your goals.\n\nIf rankings matter to you, use them as one input only and always note who issued them — for example QS or THE publish their own rankings. Rankings should never be the sole basis for the decision.',
+      },
+      {
+        headingEn: 'Work rights and after-study options',
+        bodyEn:
+          'Many students also consider whether they can work part-time while studying and what options exist after graduation. Rules on student work hours and post-study stay differ by country and are set by each national government.\n\nThis is general information, not immigration advice. Treat work and post-study rules as neutral official facts, check them on the official government source for your destination, and verify before acting — there is no guarantee that studying leads to work or residence.',
+      },
+      {
+        headingEn: 'Lifestyle and personal fit',
+        bodyEn:
+          'Finally, weigh the practical and personal factors: climate, city size, distance from home, community, and how comfortable you feel about settling there. These are personal and there is no right answer — a place that suits one student may not suit another.\n\nWhere possible, read official student-life information on each country\'s study portal and university international-office pages to get a realistic picture before deciding.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which is the best country to study in Europe?',
+        answerEn:
+          'There is no single best country — it depends on your subject, budget, preferred language of instruction, and goals. The most useful approach is to define your priorities and compare countries against them using official sources.',
+      },
+      {
+        questionEn: 'How important is language when choosing a country?',
+        answerEn:
+          'Language is often the most decisive factor. Decide whether you want an English-taught programme (more common at master\'s level) or a local-language one, since local-language programmes usually require proof of proficiency. Confirm the language of instruction on the official university page.',
+      },
+      {
+        questionEn: 'Should I choose a country based on university rankings?',
+        answerEn:
+          'Rankings can be one input, but they should not be the sole basis for your choice. Always note who issued a ranking, such as QS or THE, and weigh it alongside programme fit, cost, language, and your own goals.',
+      },
+      {
+        questionEn: 'Can I work while studying in Europe?',
+        answerEn:
+          'Many countries allow some part-time work for students, but the rules and hour limits differ by country and are set by each national government. This is general information, not immigration advice — verify the current rules on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-europe-complete-guide-for-international-students', 'english-taught-programs-in-europe', 'european-higher-education-and-bologna-process-explained', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'European Commission — Education and training', url: 'https://education.ec.europa.eu' },
+      { label: 'Your Europe — Studying abroad in the EU', url: 'https://europa.eu/youreurope/citizens/education/university/index_en.htm' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to choose a country to study in europe', 'best country to study in europe', 'where to study in europe', 'study in europe cost comparison', 'choosing study destination europe'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Key factors', value: 'Language, cost, programme fit, work rights, lifestyle' },
+      { label: 'No single "best"', value: 'Depends on your subject, budget and goals' },
+      { label: 'Rankings', value: 'Use as one input; attribute to issuer (QS / THE)' },
+      { label: 'Verify', value: 'Confirm fees, language and work rules on official sources' },
+    ],
+  },
+  {
+    slug: 'application-documents-for-european-universities',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'Application Documents for European Universities',
+    descriptionEn:
+      'The documents European universities typically ask international applicants for — academic transcripts, language certificates, a motivation letter, references, and CV — plus how requirements vary by country.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Requirements vary — confirm each one officially',
+        bodyEn:
+          'Every European country and university sets its own application requirements, and there is no single shared document checklist. What follows is the document set you will most commonly encounter, so you can prepare in advance — but the exact list, formats, and any translation or certification rules differ by university and country.\n\nAlways confirm the precise required documents, accepted formats, and deadlines on the official university programme page and the relevant national portal before you submit.',
+      },
+      {
+        headingEn: 'Academic transcripts and certificates',
+        bodyEn:
+          'Universities almost always ask for proof of your previous education — for example school-leaving certificates and transcripts for a bachelor\'s application, or your bachelor\'s degree and transcripts for a master\'s application. Some countries or universities require these to be officially certified, and a few use recognition or pre-evaluation services.\n\nBecause certification, translation, and recognition rules vary widely, check exactly what your chosen university and country require, and whether documents must be translated into the local language or English.',
+        bullets: [
+          'Previous degree / school-leaving certificate and transcripts',
+          'Possible official certification, translation, or recognition requirement',
+        ],
+      },
+      {
+        headingEn: 'Language certificate',
+        bodyEn:
+          'If your programme is taught in English, you will usually need an English-language certificate such as IELTS, TOEFL, PTE Academic, or sometimes the Duolingo English Test. If the programme is taught in the local language, you will typically need proof of proficiency in that language instead.\n\nThe accepted tests and minimum scores are set by each university and programme, so verify the requirement on the official admission page rather than assuming a particular test or score is accepted.',
+      },
+      {
+        headingEn: 'Motivation letter, CV, and references',
+        bodyEn:
+          'Many programmes ask for a statement of purpose or motivation letter explaining why you want to study the programme, a curriculum vitae (CV) summarising your education and experience, and one or more letters of recommendation from teachers or supervisors.\n\nNot every programme requires all of these, and the expected length and content differ. Check the official programme page for which of these are required and any specific instructions.',
+        bullets: [
+          'Motivation letter / statement of purpose',
+          'CV / résumé',
+          'Letters of recommendation (number varies by programme)',
+        ],
+      },
+      {
+        headingEn: 'Write your own application — academic integrity',
+        bodyEn:
+          'Your motivation letter and application must be your own original work. Submitting an essay written by someone else, a purchased document, or a fabricated certificate is academic dishonesty and can lead to rejection or withdrawal of an offer.\n\nWrite honestly about your own background and goals. It is fine to ask a teacher or mentor for feedback, but the work, the experiences, and the documents you submit must be genuinely yours.',
+      },
+      {
+        headingEn: 'Stay organised and meet deadlines',
+        bodyEn:
+          'Because requirements differ by university and some documents (certification, translation, test results) take time to obtain, start early and track each programme\'s checklist and deadline separately. Missing a document or a deadline is a common, avoidable reason applications are not considered.\n\nUse the official university and national portal as your source of truth for the document list and deadlines, and verify them as cycles can change each year.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What documents do European universities usually require?',
+        answerEn:
+          'Commonly required documents include academic transcripts and your previous degree or school-leaving certificate, a language certificate, a motivation letter or statement of purpose, a CV, and letters of recommendation. The exact list varies by university and country, so confirm it on the official programme page.',
+      },
+      {
+        questionEn: 'Do my documents need to be translated or certified?',
+        answerEn:
+          'Sometimes. Some countries and universities require official certification, translation into the local language or English, or recognition through a pre-evaluation service. Requirements vary widely — check what your specific university and country require.',
+      },
+      {
+        questionEn: 'What language test do I need for my application?',
+        answerEn:
+          'For English-taught programmes, tests such as IELTS, TOEFL, PTE Academic, and sometimes the Duolingo English Test are commonly accepted; for local-language programmes you usually need proof of that language. The accepted tests and minimum scores are set per university, so verify on the official admission page.',
+      },
+      {
+        questionEn: 'Can someone else write my motivation letter?',
+        answerEn:
+          'No. Your motivation letter and application must be your own original work. Submitting work written by someone else, a purchased document, or a fabricated certificate is academic dishonesty and can lead to rejection. You may seek feedback, but the work must be genuinely yours.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'duolingo-english-test'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-europe-complete-guide-for-international-students', 'english-taught-programs-in-europe', 'european-higher-education-and-bologna-process-explained', 'how-to-choose-a-country-to-study-in-europe'],
+    sources: [
+      { label: 'European Commission — Higher education', url: 'https://education.ec.europa.eu/education-levels/higher-education' },
+      { label: 'Study in Germany — official DAAD portal (application guidance)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['documents for european university application', 'how to apply to university in europe', 'motivation letter europe university', 'transcripts for study abroad europe', 'application requirements europe'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Typical documents', value: 'Transcripts, language certificate, motivation letter, CV, references' },
+      { label: 'Varies by', value: 'Country and university (formats, translation, certification)' },
+      { label: 'Language proof', value: 'IELTS / TOEFL / PTE / Duolingo or local-language proof' },
+      { label: 'Integrity', value: 'Application must be your own original work' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-germany-complete-guide',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Study in Germany: Complete Guide',
+    descriptionEn:
+      'An end-to-end guide to studying in Germany — public-university tuition and the semester contribution, the APS certificate, finding a programme, applying via uni-assist or directly, and the student visa process.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Why Germany attracts international students',
+        bodyEn:
+          'Germany is one of the most popular study destinations in Europe, with a large network of public and private universities and many degree programmes taught in English at master\'s level. Most public universities are state-funded, which keeps the cost of study low compared with many other countries.\n\nThis guide walks through the main steps in order — understanding costs, getting your documents ready (including the APS certificate for some applicants), choosing a programme, applying, and arranging your student visa. Treat it as a roadmap; the exact rules, fees, and deadlines are set by each university and the German authorities, so always confirm them on the official sources linked below.',
+      },
+      {
+        headingEn: 'Tuition and the semester contribution',
+        bodyEn:
+          'At most public universities in Germany there is no tuition fee for undergraduate and many master\'s programmes — and importantly, this applies to international students as well, not only German or EU students. However, students still pay a "semester contribution" (Semesterbeitrag) each semester, which typically covers administration and student-services costs and often a local public-transport pass.\n\nThere is an important exception: the state of Baden-Württemberg charges a tuition fee per semester for students from outside the EU/EEA at its public universities. Private universities set their own (usually higher) fees. Exact amounts vary by university and state and change over time, so verify the current semester contribution and any tuition fee on the official source before you budget.',
+        bullets: [
+          'Most public universities: no tuition for international students, but a semester contribution applies',
+          'Baden-Württemberg: a per-semester tuition fee for non-EU/EEA students (verify the current figure)',
+          'Private universities set their own fees',
+        ],
+      },
+      {
+        headingEn: 'The APS certificate (required for Indian applicants)',
+        bodyEn:
+          'Applicants from certain countries, including India, must obtain an APS certificate (from the Akademische Prüfstelle, the Academic Evaluation Centre) before applying to German universities or for a student visa. The APS verifies your previous academic documents.\n\nBecause the APS requirement and procedure are country-specific and can change, check the German diplomatic mission or APS page for your country for the current process, documents, and fee. This is general information, not immigration advice — always verify on the official government source.',
+      },
+      {
+        headingEn: 'Finding a programme and checking entry requirements',
+        bodyEn:
+          'Start by searching official course databases to find programmes that match your field and language of instruction. For each programme, read the entry requirements carefully — these typically include your previous qualification, a language certificate (German or English depending on the programme), and sometimes a standardised test or a portfolio.\n\nWhether your Indian school-leaving or bachelor\'s qualification gives you direct entry depends on how it is recognised in Germany. Some applicants need a foundation pathway (Studienkolleg) first — see the companion guide on whether you need a Studienkolleg.',
+      },
+      {
+        headingEn: 'Applying: uni-assist or directly',
+        bodyEn:
+          'German universities receive applications in two main ways. Many use uni-assist, a central service that checks and forwards international applications on behalf of member universities; others accept applications directly through their own portal. Always check on the specific university\'s page which route applies, because it is not the same for every institution.\n\nuni-assist charges a handling fee per application. The exact fee, accepted documents, and deadlines are published on uni-assist.de and on each university\'s admissions page — confirm them there before you submit. See the companion uni-assist application guide for the step-by-step process.',
+      },
+      {
+        headingEn: 'Student visa and next steps',
+        bodyEn:
+          'Once you hold an admission or sometimes a conditional offer, students from outside the EU/EEA generally need to apply for a national (long-stay) student visa at the German mission in their country, and later a residence permit after arrival. Typical requirements include proof of admission, proof of sufficient funds (often via a blocked account), health insurance, and the APS certificate where required.\n\nVisa rules, financial-proof amounts, and processing differ by country and change over time. This is general information, not immigration advice — verify the current requirements on the official German government source (Federal Foreign Office / make-it-in-germany.de) before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is studying in Germany really tuition-free for international students?',
+        answerEn:
+          'At most public universities there is no tuition fee even for international students, but you still pay a semester contribution every semester. The state of Baden-Württemberg is an exception and charges a per-semester tuition fee for non-EU/EEA students. Verify the current figures on the official source.',
+      },
+      {
+        questionEn: 'Do I need an APS certificate to study in Germany?',
+        answerEn:
+          'Applicants from certain countries, including India, must obtain an APS certificate before applying or applying for a visa. Check the German mission or APS page for your country for the current procedure and documents.',
+      },
+      {
+        questionEn: 'Do I apply through uni-assist or directly to the university?',
+        answerEn:
+          'It depends on the university. Many German universities use uni-assist to process international applications, while others accept applications directly. Check each university\'s admissions page to see which route applies before you apply.',
+      },
+      {
+        questionEn: 'What is the semester contribution?',
+        answerEn:
+          'The semester contribution (Semesterbeitrag) is a fee paid each semester that typically covers administration and student-services costs, and at many universities includes a local public-transport pass. The amount varies by university — confirm it on the official source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uni-assist-application-guide', 'studienkolleg-do-i-need-it', 'study-in-germany-from-india', 'daad-scholarship-for-indians'],
+    sources: [
+      { label: 'Study in Germany (DAAD) — official portal', url: 'https://www.study-in-germany.de/en/' },
+      { label: 'uni-assist — official site', url: 'https://www.uni-assist.de/en/' },
+      { label: 'Make it in Germany — Federal Government portal', url: 'https://www.make-it-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to study in germany', 'study in germany for international students', 'study in germany free tuition', 'aps certificate germany', 'study in germany requirements', 'german student visa'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Tuition (most public universities)', value: 'No tuition fee for international students; a semester contribution applies' },
+      { label: 'Notable exception', value: 'Baden-Württemberg charges per-semester tuition for non-EU/EEA students (verify current figure)' },
+      { label: 'APS certificate', value: 'Required for applicants from certain countries, including India' },
+      { label: 'Application routes', value: 'uni-assist (many universities) or directly to the university' },
+    ],
+  },
+  {
+    slug: 'uni-assist-application-guide',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'Uni-Assist Application Guide',
+    descriptionEn:
+      'What uni-assist is, which German universities use it, how to apply step by step, and the per-application handling fee — with all current figures and deadlines deferred to the official uni-assist source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What uni-assist is',
+        bodyEn:
+          'uni-assist (the University Application Service for International Students) is a central organisation that receives and pre-checks applications from international applicants on behalf of its member universities in Germany. It verifies that your documents are complete and that your qualifications meet formal requirements, then forwards your application to the university for the actual admission decision.\n\nIt is important to understand that uni-assist does not decide whether you are admitted — the university makes that decision. uni-assist handles the document check and forwarding step.',
+      },
+      {
+        headingEn: 'Which universities use uni-assist',
+        bodyEn:
+          'Many — but not all — German universities are uni-assist members. Some universities accept international applications directly through their own portals instead. Whether you apply through uni-assist or directly is decided by each university, and it can even differ between programmes at the same institution.\n\nAlways check the specific programme\'s admissions page to confirm the correct application route before you start. The official list of member universities is maintained on uni-assist.de.',
+      },
+      {
+        headingEn: 'How to apply: the main steps',
+        bodyEn:
+          'The typical process runs through the uni-assist online portal. You create an account, select the universities and programmes you want to apply to, upload your required documents (such as your previous qualifications and language certificates), and pay the handling fee. uni-assist then checks your documents and forwards a results report and your application to the universities.\n\nDocument requirements, accepted certificate formats, and whether certified copies must also be posted vary by university and can change, so follow the exact instructions shown for each programme on the portal.',
+        bullets: [
+          'Create an account on the uni-assist online portal',
+          'Select your target universities and programmes',
+          'Upload the required documents for each application',
+          'Pay the handling fee',
+          'uni-assist checks and forwards your application to the universities',
+        ],
+      },
+      {
+        headingEn: 'The handling fee',
+        bodyEn:
+          'uni-assist charges a handling fee for processing applications, typically structured as one amount for your first application in an application term and a smaller amount for each additional application in the same term. The exact fee structure is set by uni-assist and can change.\n\nDo not rely on a figure you read elsewhere — check the current fee schedule on uni-assist.de before you apply, and verify the accepted payment methods there too.',
+      },
+      {
+        headingEn: 'Deadlines and timing',
+        bodyEn:
+          'Because uni-assist needs time to check your documents before forwarding them, you should apply well before the university\'s own deadline — the documents must reach uni-assist and be processed in time. Each programme sets its own deadline, and these differ for winter and summer intakes.\n\nConfirm both the programme deadline and any uni-assist-specific cut-off on the official sources, and apply early to allow for document checks and any requests for corrections.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does uni-assist decide if I get admitted?',
+        answerEn:
+          'No. uni-assist checks and forwards your application; the university makes the admission decision. uni-assist confirms your documents are complete and your qualifications meet formal requirements.',
+      },
+      {
+        questionEn: 'Do all German universities use uni-assist?',
+        answerEn:
+          'No. Many universities use uni-assist, but others accept international applications directly. Check the specific programme\'s admissions page to confirm the correct route.',
+      },
+      {
+        questionEn: 'How much does uni-assist cost?',
+        answerEn:
+          'uni-assist charges a handling fee per application, usually with one amount for your first application and a smaller amount for each additional one in the same term. The current fee is published on uni-assist.de — verify it there before applying.',
+      },
+      {
+        questionEn: 'When should I submit my uni-assist application?',
+        answerEn:
+          'Apply well before the programme deadline so uni-assist has time to check and forward your documents. Deadlines differ by programme and by winter or summer intake — confirm them on the official sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-germany-complete-guide', 'studienkolleg-do-i-need-it', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'uni-assist — official site', url: 'https://www.uni-assist.de/en/' },
+      { label: 'Study in Germany (DAAD) — official portal', url: 'https://www.study-in-germany.de/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['uni-assist application', 'how to apply uni-assist', 'uni-assist fee', 'uni-assist germany', 'apply german university international student'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'What it is', value: 'Central service that checks and forwards international applications to member universities' },
+      { label: 'Admission decision', value: 'Made by the university, not by uni-assist' },
+      { label: 'Coverage', value: 'Many (not all) German universities — check each programme\'s route' },
+      { label: 'Handling fee', value: 'Per-application fee set by uni-assist (verify current schedule on uni-assist.de)' },
+    ],
+  },
+  {
+    slug: 'studienkolleg-do-i-need-it',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'Studienkolleg: Do I Need It?',
+    descriptionEn:
+      'A clear explanation of the German Studienkolleg foundation course and the Feststellungsprüfung assessment — who needs it, who can enter a degree directly, and how to check the recognition of your qualification.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What a Studienkolleg is',
+        bodyEn:
+          'A Studienkolleg is a preparatory foundation course in Germany for international applicants whose school-leaving qualification is not recognised as equivalent to the German university-entrance qualification (the Hochschulzugangsberechtigung). It bridges that gap so you can go on to a degree programme.\n\nThe course usually lasts up to a year, is organised around subject-specific tracks, and concludes with a final assessment called the Feststellungsprüfung.',
+      },
+      {
+        headingEn: 'The Feststellungsprüfung',
+        bodyEn:
+          'The Feststellungsprüfung is the assessment examination taken at the end of the Studienkolleg. Passing it certifies that you have reached the level required to begin an undergraduate degree in your chosen subject area in Germany.\n\nStudienkollegs offer different subject-focused tracks (for example, courses oriented towards engineering and sciences, or towards humanities and social sciences), and you choose the track that matches your intended degree.',
+      },
+      {
+        headingEn: 'Who needs a Studienkolleg — and who can enter directly',
+        bodyEn:
+          'Whether you need a Studienkolleg depends entirely on how your previous qualification is recognised in Germany, which varies by country and by the qualification itself. Some applicants can be admitted to a German bachelor\'s programme directly; others must complete a Studienkolleg first; and some can enter directly only after first completing a period of study at a recognised university in their home country.\n\nFor Indian and many other applicants, the rules are specific and can change, so do not assume — check your individual case using the official tools and sources below.',
+      },
+      {
+        headingEn: 'How to check your case',
+        bodyEn:
+          'Germany maintains an official database (anabin) that records how foreign qualifications are assessed, and the DAAD provides guidance on entry requirements by country. These are the right places to confirm whether your school-leaving certificate gives you direct entry or whether a Studienkolleg is needed.\n\nThe university you apply to ultimately confirms your specific path, so always check the requirements on the programme page as well. Treat any general summary as a starting point, not a final answer.',
+        bullets: [
+          'Use the official anabin database to see how your qualification is assessed',
+          'Read the DAAD guidance on entry requirements for your country',
+          'Confirm your specific path with the university\'s admissions office',
+        ],
+      },
+      {
+        headingEn: 'Language requirements',
+        bodyEn:
+          'Studienkolleg courses and the degree programmes that follow are usually taught in German, so a German-language qualification is typically required for both entry to the Studienkolleg and the subsequent degree. There is often a language test for admission to the Studienkolleg itself.\n\nThe exact language level and accepted certificates are set by each Studienkolleg and university and can change, so verify the current requirements on the official source before you plan.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is a Studienkolleg?',
+        answerEn:
+          'It is a foundation course for international applicants whose school-leaving qualification is not recognised as equivalent to the German university-entrance qualification. It prepares you for a German degree and ends with the Feststellungsprüfung assessment.',
+      },
+      {
+        questionEn: 'Do all international students need a Studienkolleg?',
+        answerEn:
+          'No. Whether you need one depends on how your previous qualification is recognised in Germany. Some applicants enter a degree directly, while others must complete a Studienkolleg first. Check your individual case using the official anabin database and DAAD guidance.',
+      },
+      {
+        questionEn: 'What is the Feststellungsprüfung?',
+        answerEn:
+          'It is the final assessment examination at the end of the Studienkolleg. Passing it certifies that you have reached the level needed to begin an undergraduate degree in your chosen subject area in Germany.',
+      },
+      {
+        questionEn: 'Is the Studienkolleg taught in German?',
+        answerEn:
+          'Studienkolleg courses are usually taught in German, and a German-language qualification is typically required, often with a language test for admission. Verify the exact level and accepted certificates on the official source.',
+      },
+    ],
+    relatedExamSlugs: ['testas', 'ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-germany-complete-guide', 'uni-assist-application-guide', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Study in Germany (DAAD) — official portal', url: 'https://www.study-in-germany.de/en/' },
+      { label: 'DAAD — official site', url: 'https://www.daad.de/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['studienkolleg germany', 'do i need studienkolleg', 'feststellungsprufung', 'german university entrance qualification', 'study in germany after 12th'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'What it is', value: 'Foundation course for applicants whose qualification is not recognised for direct entry' },
+      { label: 'Final assessment', value: 'Feststellungsprüfung (assessment examination)' },
+      { label: 'Typical duration', value: 'Up to about one year (verify on the official source)' },
+      { label: 'Who needs it', value: 'Depends on recognition of your qualification — check anabin / DAAD' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-france-complete-guide',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Study in France: Complete Guide',
+    descriptionEn:
+      'An end-to-end guide to studying in France — the Études en France / Campus France procedure, finding and applying to a programme, and the student visa — with all fees and deadlines deferred to official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Why study in France',
+        bodyEn:
+          'France has a large higher-education system that includes universities, specialised "grandes écoles", and business and engineering schools, with a growing number of programmes taught in English alongside French-taught ones. It is a long-standing destination for international students across many fields.\n\nThis guide explains the main steps in order: how the Campus France procedure works, how to find and apply to a programme, and how the student visa fits in. The exact fees, deadlines, and requirements are set by the French authorities and each institution, so confirm the current details on the official sources linked below.',
+      },
+      {
+        headingEn: 'The Campus France / Études en France procedure',
+        bodyEn:
+          'For students from many countries, including India, the application to French higher education goes through an official online procedure called "Études en France", managed by Campus France. It is a mandatory pre-application step that centralises your application, hosts an interview where required, and connects to your visa application.\n\nWhether the procedure applies to you depends on your country of residence and your level of study. See the companion guide on the Campus France application process for the step-by-step details, and confirm on campusfrance.org whether it is required for your case.',
+      },
+      {
+        headingEn: 'Finding a programme and checking requirements',
+        bodyEn:
+          'Use official course databases to find programmes by field and language of instruction. For each programme, read the entry requirements, which typically cover your previous qualification, a language certificate (French or English depending on the programme), and sometimes additional tests or interviews.\n\nMake a shortlist that matches your academic background and language ability, and note each programme\'s deadlines early, because intakes and cut-off dates differ between institutions.',
+      },
+      {
+        headingEn: 'Tuition and costs',
+        bodyEn:
+          'Tuition at public institutions in France is regulated, and the amount that applies to you can depend on your level of study and status. Private institutions and some specialised schools set their own, often higher, fees. You should also budget for living costs and compulsory items such as student health cover.\n\nBecause fees and any registration charges are set officially and change over time, do not rely on an unofficial figure — verify the current amounts on the official French government or institution source before you budget.',
+      },
+      {
+        headingEn: 'Student visa and residence',
+        bodyEn:
+          'Students from outside the EU/EEA generally need a long-stay student visa to study in France, and the Campus France procedure is typically linked to the visa application. Common requirements include proof of admission, proof of sufficient funds, accommodation details, and health cover, with a validation or residence step after arrival.\n\nVisa rules, financial-proof amounts, and processing differ by country and change over time. This is general information, not immigration advice — verify the current requirements on the official French government source (France-Visas) before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I have to use Campus France to apply?',
+        answerEn:
+          'For students from many countries, including India, the Études en France procedure managed by Campus France is a mandatory pre-application step. Whether it applies depends on your country of residence and level of study — confirm on campusfrance.org.',
+      },
+      {
+        questionEn: 'Are programmes in France taught in English?',
+        answerEn:
+          'France offers both French-taught and a growing number of English-taught programmes, especially at master\'s level. Check each programme\'s language of instruction and language-certificate requirement before applying.',
+      },
+      {
+        questionEn: 'How much is tuition in France?',
+        answerEn:
+          'Tuition at public institutions is regulated and can depend on your level of study and status; private and specialised institutions set their own fees. Verify the current amounts on the official French government or institution source.',
+      },
+      {
+        questionEn: 'Do I need a visa to study in France?',
+        answerEn:
+          'Students from outside the EU/EEA generally need a long-stay student visa, and the Campus France procedure is usually linked to it. Verify the current requirements on the official France-Visas source. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['campus-france-application-process', 'study-in-france-from-india', 'how-to-study-in-germany-complete-guide'],
+    sources: [
+      { label: 'Campus France — official site', url: 'https://www.campusfrance.org/en' },
+      { label: 'France-Visas — official government portal', url: 'https://france-visas.gouv.fr/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to study in france', 'study in france for international students', 'campus france', 'etudes en france', 'study in france requirements', 'france student visa'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Pre-application procedure', value: 'Études en France (Campus France) — mandatory for students from many countries, including India' },
+      { label: 'Languages of instruction', value: 'French and a growing number of English-taught programmes' },
+      { label: 'Tuition (public institutions)', value: 'Regulated; depends on level/status (verify current figure)' },
+      { label: 'Student visa', value: 'Long-stay student visa generally required for non-EU/EEA students (verify on France-Visas)' },
+    ],
+  },
+  {
+    slug: 'campus-france-application-process',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'Campus France Application Process',
+    descriptionEn:
+      'A step-by-step explanation of the Études en France online procedure managed by Campus France — who must use it, the main stages, and how it connects to your French student visa.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What Campus France and Études en France are',
+        bodyEn:
+          'Campus France is the official French agency that promotes French higher education and supports international students, and "Études en France" is its online application procedure. For students from many countries, this procedure is the required gateway to apply to French institutions and to prepare the student visa.\n\nThe procedure centralises your application, the documents you submit, and an interview where one is required, and it links to the visa stage so the steps are joined up.',
+      },
+      {
+        headingEn: 'Who must use the procedure',
+        bodyEn:
+          'The Études en France procedure is mandatory for students who reside in one of the countries connected to the system — a list that includes India and many others. If your country is connected, you generally cannot bypass the procedure to apply directly.\n\nBecause the list of connected countries and the exact scope can change, confirm on campusfrance.org whether the procedure applies to your country and your intended level of study before you begin.',
+      },
+      {
+        headingEn: 'The main steps',
+        bodyEn:
+          'The procedure runs through your country\'s Campus France online platform. In broad terms you create an account and academic profile, build your list of programme choices, complete your file with the required documents, pay the Campus France procedure fee where it applies, and attend an interview if one is requested. Your file is then reviewed and connected to the visa stage.\n\nThe precise stages, documents, and order can differ by country, so follow the exact instructions shown on your country\'s Campus France platform.',
+        bullets: [
+          'Create your account and academic profile',
+          'Add your programme choices',
+          'Complete your file with the required documents',
+          'Pay the procedure fee where applicable',
+          'Attend the interview if requested',
+          'Proceed to the connected visa stage',
+        ],
+      },
+      {
+        headingEn: 'Fees and deadlines',
+        bodyEn:
+          'The Études en France procedure usually involves a procedure fee, and there are deadlines that differ by country and by intake. These amounts and dates are set officially and change from year to year.\n\nDo not rely on figures from unofficial sources — check the current procedure fee, deadlines, and accepted payment methods for your country on campusfrance.org and the connected official portals before you proceed.',
+      },
+      {
+        headingEn: 'How it connects to your visa',
+        bodyEn:
+          'For students from outside the EU/EEA, the Études en France procedure is designed to connect to the long-stay student visa application, so completing it correctly is part of preparing your visa. After your acceptance, you continue with the visa steps through the official channels.\n\nVisa requirements and processing differ by country and change over time. This is general information, not immigration advice — verify the current visa requirements on the official French government source (France-Visas) before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the Campus France procedure mandatory?',
+        answerEn:
+          'For students residing in a connected country, including India, the Études en France procedure is the required way to apply to French institutions and prepare the visa. Confirm on campusfrance.org whether it applies to your country and level of study.',
+      },
+      {
+        questionEn: 'What are the main steps in Études en France?',
+        answerEn:
+          'In broad terms: create your account and academic profile, add programme choices, complete your file with documents, pay the procedure fee where applicable, attend an interview if requested, and proceed to the connected visa stage. Exact steps differ by country.',
+      },
+      {
+        questionEn: 'How much does the Campus France procedure cost?',
+        answerEn:
+          'There is usually a procedure fee, which varies by country and changes over time. Check the current fee and accepted payment methods for your country on campusfrance.org.',
+      },
+      {
+        questionEn: 'Does Campus France handle my visa?',
+        answerEn:
+          'The procedure is designed to connect to the long-stay student visa application for non-EU/EEA students, but the visa itself is processed through the official channels. Verify the current visa requirements on France-Visas. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-france-complete-guide', 'study-in-france-from-india', 'how-to-study-in-germany-complete-guide'],
+    sources: [
+      { label: 'Campus France — official site', url: 'https://www.campusfrance.org/en' },
+      { label: 'France-Visas — official government portal', url: 'https://france-visas.gouv.fr/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['campus france application process', 'etudes en france procedure', 'campus france steps', 'campus france india', 'apply to french university', 'campus france fee'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'What it is', value: 'Études en France — the official online application procedure run by Campus France' },
+      { label: 'Who must use it', value: 'Students residing in a connected country, including India (verify scope on campusfrance.org)' },
+      { label: 'Includes', value: 'Account/profile, programme choices, document file, interview where required, visa connection' },
+      { label: 'Procedure fee', value: 'Applies in most cases; varies by country (verify current fee)' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-netherlands-complete-guide',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Study in the Netherlands: Complete Guide',
+    descriptionEn:
+      'A step-by-step guide to studying in the Netherlands — research universities (WO) vs universities of applied sciences (HBO), the central Studielink application, numerus fixus deadlines, and the student residence permit.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Two types of Dutch higher education: WO and HBO',
+        bodyEn:
+          'Dutch higher education is divided into two clear tracks, and choosing the right one is the first step. Research universities (in Dutch, WO — wetenschappelijk onderwijs) focus on academic, theory-led study and research; universities of applied sciences (HBO — hoger beroepsonderwijs) focus on professional, practice-oriented programmes with strong industry links.\n\nNeither track is "better" — they suit different goals. A WO bachelor\'s is typically the route towards research-focused master\'s study, while an HBO programme leans towards applied, profession-ready skills. Check which track each programme sits in before you apply, and confirm the details on the official Study in NL portal.',
+        bullets: [
+          'WO — research universities, academic and theory-led',
+          'HBO — universities of applied sciences, professional and practice-led',
+          'Both award internationally recognised bachelor\'s and master\'s degrees',
+        ],
+      },
+      {
+        headingEn: 'Studielink: the central application portal',
+        bodyEn:
+          'Most applications to Dutch higher education go through Studielink, the official national registration and application portal. You create an account, add the programme(s) you want, and submit your enrolment request there. Some institutions ask international applicants to also apply or upload documents through their own systems, so always read each programme\'s admissions page first.\n\nThe Study in NL portal (an initiative of Nuffic) is the official starting point for understanding admission requirements and the application steps. Entry requirements, language-test levels, and document lists are set by each university and vary by programme — verify them on the official source.',
+      },
+      {
+        headingEn: 'Numerus fixus: capped programmes and the fixed deadline',
+        bodyEn:
+          'Some popular programmes have a numerus fixus — a fixed, limited number of places. These programmes have an earlier, strict application deadline (the official deadline for numerus fixus programmes is 15 January), and admission is decided through a selection procedure rather than first-come-first-served. Most other programmes have a later deadline.\n\nBecause exact deadlines, the list of numerus fixus programmes, and selection criteria change each year, confirm the current dates and rules on the official Study in NL and university websites before you apply.',
+        bullets: [
+          'Numerus fixus programmes — fixed places, selection-based, 15 January deadline',
+          'Most other programmes — a later application deadline',
+          'Always confirm the current-year deadline on the official source',
+        ],
+      },
+      {
+        headingEn: 'English-taught programmes and language tests',
+        bodyEn:
+          'The Netherlands offers a wide range of English-taught bachelor\'s and master\'s programmes, which is one reason it is popular with international students. Most English-taught programmes ask for proof of English proficiency through a recognised test such as IELTS or TOEFL, with the required score set by each programme.\n\nDo not assume a single threshold applies everywhere — required scores and accepted tests differ by university and programme. Check each programme\'s official admission page for the exact requirement.',
+      },
+      {
+        headingEn: 'Student visa and residence permit',
+        bodyEn:
+          'Whether you need an entry visa and a residence permit depends on your nationality. For many non-EU/EEA students, the Dutch university acts as the official sponsor and applies for the entry visa (MVV, where required) and the study residence permit on your behalf through the Immigration and Naturalisation Service (IND).\n\nThis is general information, not immigration advice. Immigration rules, fees, and required proof of funds change and depend on your situation, so verify everything on the official IND website before making plans.',
+        bullets: [
+          'Your university is usually the official IND sponsor for the permit',
+          'EU/EEA students do not need a study residence permit',
+          'Verify entry-visa and permit rules on the official government source',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between WO and HBO?',
+        answerEn:
+          'WO (research universities) offer academic, theory-led and research-focused programmes, while HBO (universities of applied sciences) offer professional, practice-oriented programmes. Both award recognised degrees — they simply suit different study goals.',
+      },
+      {
+        questionEn: 'Do I apply through Studielink or the university?',
+        answerEn:
+          'Most applications go through Studielink, the central national portal. Some universities also require international applicants to apply or submit documents through their own systems, so check each programme\'s admissions page.',
+      },
+      {
+        questionEn: 'What is a numerus fixus programme?',
+        answerEn:
+          'A numerus fixus programme has a fixed, limited number of places and a strict early application deadline (officially 15 January), with admission decided by a selection procedure. Confirm the current list and dates on the official source.',
+      },
+      {
+        questionEn: 'Do I need a student visa for the Netherlands?',
+        answerEn:
+          'It depends on your nationality. EU/EEA students do not need a study residence permit; many non-EU/EEA students have their entry visa and residence permit arranged by the sponsoring university through the IND. This is general information, not immigration advice — verify on the official IND website.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-netherlands-from-india', 'english-taught-bachelors-germany', 'how-to-study-in-sweden-complete-guide'],
+    sources: [
+      { label: 'Study in NL (Nuffic) — How to apply', url: 'https://www.studyinnl.org/plan-your-stay/how-to-apply' },
+      { label: 'IND — Residence permit for study', url: 'https://ind.nl/en/residence-permits/study' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to study in netherlands', 'studielink application', 'wo vs hbo netherlands', 'numerus fixus', 'study in netherlands for international students', 'netherlands student visa'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Central application portal', value: 'Studielink' },
+      { label: 'Two tracks', value: 'WO (research universities) and HBO (universities of applied sciences)' },
+      { label: 'Numerus fixus deadline', value: '15 January (capped programmes — verify on official source)' },
+      { label: 'Residence permit body', value: 'Immigration and Naturalisation Service (IND)' },
+    ],
+  },
+  {
+    slug: 'english-taught-bachelors-germany',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'English-Taught Bachelor\'s Programs in Germany',
+    descriptionEn:
+      'How to find English-taught bachelor\'s degrees in Germany, why there are more English options at master\'s than bachelor\'s level, and where to search programmes and check requirements on official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Yes, English-taught bachelor\'s programmes exist',
+        bodyEn:
+          'Germany does offer bachelor\'s programmes taught fully in English, so you do not necessarily need German to begin an undergraduate degree there. They are available across a range of subjects and institution types, including public and private universities and universities of applied sciences.\n\nThat said, English-taught options are more common at master\'s level than at bachelor\'s level, and many undergraduate programmes are still taught in German. So the choice at bachelor\'s level is real but more limited — plan to search carefully rather than assume every programme has an English track.',
+      },
+      {
+        headingEn: 'Where to search for English programmes',
+        bodyEn:
+          'The official DAAD International Programmes database (on the Study in Germany portal) lets you search degree programmes and filter by language of instruction (English) and degree level (Bachelor or Master). This is the most reliable starting point because it draws on official programme listings.\n\nUse it to shortlist programmes, then open each university\'s own official page to confirm the curriculum, intake, and admission requirements. Programme availability changes year to year, so verify everything against the official source.',
+        bullets: [
+          'Search the DAAD International Programmes database on the Study in Germany portal',
+          'Filter by language of instruction (English) and degree level (Bachelor)',
+          'Confirm each shortlisted programme on the university\'s own official page',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and the HZB',
+        bodyEn:
+          'To study a bachelor\'s in Germany you must hold a recognised higher education entrance qualification (in German, the Hochschulzugangsberechtigung, or HZB). Whether your school-leaving certificate qualifies directly — or whether you need a preparatory course (Studienkolleg) and an assessment test — depends on your country and qualification.\n\nThe DAAD admission database and the official anabin/uni-assist information can help you check how your qualification is assessed. Because recognition rules vary by country, confirm your specific case on the official source before applying.',
+      },
+      {
+        headingEn: 'English proof — and do you still need German?',
+        bodyEn:
+          'English-taught programmes usually require proof of English proficiency through a recognised test such as IELTS or TOEFL, with the required level set by each programme. Some programmes accept other evidence of English ability, so read the admission page carefully.\n\nEven in an English-taught degree, some German can help with daily life, part-time work, and integration. A few "English-taught" programmes also include German-language modules over time. Treat any language claim as programme-specific and verify it on the official source.',
+        bullets: [
+          'English proficiency usually shown via IELTS or TOEFL (level set per programme)',
+          'Some programmes accept alternative proof of English',
+          'Basic German helps with daily life even on an English-taught course',
+        ],
+      },
+      {
+        headingEn: 'Tuition and next steps',
+        bodyEn:
+          'Tuition arrangements in Germany vary: many public universities charge little or no tuition for first-degree study, while some programmes (and private universities) charge fees, and a semester contribution typically applies. Exact tuition, semester fees, and any state-specific charges change and differ by institution, so confirm the current figures on the official source rather than relying on general claims.\n\nOnce you have shortlisted English-taught programmes, check each one\'s deadlines and whether you apply directly or via uni-assist, and read our broader guide to studying in Germany for the full step-by-step.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I do a bachelor\'s in Germany entirely in English?',
+        answerEn:
+          'Yes — English-taught bachelor\'s programmes exist across several subjects. They are fewer than at master\'s level, so search the official DAAD International Programmes database and confirm each programme on the university\'s own page.',
+      },
+      {
+        questionEn: 'Are there more English programmes at master\'s than bachelor\'s level?',
+        answerEn:
+          'Generally yes — English-taught options are more common at master\'s level, while many bachelor\'s programmes are taught in German. The undergraduate choice is real but more limited, so plan to search carefully.',
+      },
+      {
+        questionEn: 'Do I still need German for an English-taught degree?',
+        answerEn:
+          'Not for the coursework itself if the programme is fully in English, but basic German helps with daily life, part-time work, and integration. Some programmes also include German modules — check the programme page.',
+      },
+      {
+        questionEn: 'How do I prove my school qualification is enough?',
+        answerEn:
+          'You need a recognised higher education entrance qualification (HZB). Whether your certificate qualifies directly or needs a Studienkolleg depends on your country — check the DAAD and anabin/uni-assist information and verify your case on the official source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-germany-from-india', 'daad-scholarship-for-indians', 'how-to-study-in-netherlands-complete-guide'],
+    sources: [
+      { label: 'DAAD — International Programmes in Germany (database)', url: 'https://www2.daad.de/deutschland/studienangebote/international-programmes/en/' },
+      { label: 'DAAD — official portal', url: 'https://www.daad.de/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['english taught bachelors germany', 'study in germany in english', 'english bachelor programs germany', 'german universities english programs', 'daad international programmes', 'bachelor in germany for international students'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'English bachelor\'s available?', value: 'Yes — fewer than at master\'s level' },
+      { label: 'Where to search', value: 'DAAD International Programmes database (Study in Germany portal)' },
+      { label: 'Entry qualification', value: 'Recognised higher education entrance qualification (HZB)' },
+      { label: 'English proof', value: 'Usually IELTS or TOEFL (level set per programme)' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-italy-complete-guide',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Study in Italy: Complete Guide',
+    descriptionEn:
+      'A step-by-step guide to studying in Italy — Universitaly pre-enrolment, applying to universities, the student visa, regional DSU support, and English-taught medicine via the IMAT.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How Italian university admission works',
+        bodyEn:
+          'Italy has public and private universities offering bachelor\'s (laurea triennale), master\'s, and single-cycle degrees. You apply to each university for your chosen programme, meeting its admission requirements; some programmes are open-access while others are admission-restricted and require an entrance test.\n\nThe official starting point for understanding the procedure for international applicants is the Ministry\'s "Studiare in Italia" portal, which publishes the annual rules (the yearly circular) on enrolment procedures and visas. Always confirm the current-year procedure there, because details are updated each academic year.',
+      },
+      {
+        headingEn: 'Universitaly pre-enrolment',
+        bodyEn:
+          'International students who need a visa complete a pre-enrolment (pre-iscrizione) on the official Universitaly portal. You select your programme and university there, and the application is linked to your study-visa request at the Italian embassy or consulate.\n\nUniversitaly is the official Ministry portal for this step, so use it directly rather than third-party sites. The pre-enrolment window and the exact steps are set each year — verify the current dates and process on the official source.',
+        bullets: [
+          'Complete pre-enrolment (pre-iscrizione) on the official Universitaly portal',
+          'Link your pre-enrolment to the study-visa application',
+          'Confirm the current-year window on the official source',
+        ],
+      },
+      {
+        headingEn: 'Student visa and residence permit',
+        bodyEn:
+          'Non-EU students who will study in Italy for longer than 90 days generally apply for a national study visa at the Italian embassy or consulate in their country, supported by their Universitaly pre-enrolment. After arriving in Italy, students typically apply for a residence permit (permesso di soggiorno) within the required time.\n\nThis is general information, not immigration advice. Visa categories, required documents, proof of funds, and timelines change and depend on your situation, so verify everything on the official government and consular sources before you travel.',
+        bullets: [
+          'Apply for the study visa at the Italian embassy/consulate (stay over 90 days)',
+          'Apply for the residence permit (permesso di soggiorno) after arrival',
+          'Verify visa and permit rules on the official government source',
+        ],
+      },
+      {
+        headingEn: 'English-taught medicine via the IMAT',
+        bodyEn:
+          'Italy is well known for English-taught medicine and surgery degrees at public universities. Admission to these programmes is through the IMAT (International Medical Admissions Test), a competitive entrance exam, with places allocated by ranking.\n\nThe number of seats, the test content, the registration steps, and the cut-off rankings are set each year and are competitive, so no result can be guaranteed. Check the official Universitaly and ministry information for the current IMAT procedure and dates.',
+      },
+      {
+        headingEn: 'Tuition and DSU regional support',
+        bodyEn:
+          'Tuition at Italian public universities is often income-based, and many regions run a "right to university study" (Diritto allo Studio Universitario, or DSU) system that can offer support such as scholarships, fee reductions, and student services based on financial and merit criteria.\n\nEligibility, amounts, and deadlines for DSU benefits and scholarships vary by region and change each year, so confirm what applies to your university and region on the official source. Treat all fee and support figures as something to verify, not assume.',
+        bullets: [
+          'Public-university tuition is often income-based',
+          'Regional DSU systems may offer scholarships, fee cuts, and services',
+          'Eligibility and amounts vary by region — verify on the official source',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is Universitaly used for?',
+        answerEn:
+          'Universitaly is the official Ministry portal where international students complete pre-enrolment (pre-iscrizione) for their programme. The pre-enrolment is linked to the study-visa application at the Italian embassy or consulate.',
+      },
+      {
+        questionEn: 'Can I study medicine in Italy in English?',
+        answerEn:
+          'Yes — several public universities offer English-taught medicine and surgery. Admission is through the competitive IMAT entrance test, with places allocated by ranking. Check the current procedure on the official source.',
+      },
+      {
+        questionEn: 'Do I need a visa to study in Italy?',
+        answerEn:
+          'Non-EU students staying longer than 90 days generally need a national study visa, supported by Universitaly pre-enrolment, and a residence permit after arrival. This is general information, not immigration advice — verify on official government sources.',
+      },
+      {
+        questionEn: 'What is DSU support?',
+        answerEn:
+          'DSU (Diritto allo Studio Universitario) is the regional "right to study" system that can offer scholarships, fee reductions, and student services based on financial and merit criteria. Eligibility and amounts vary by region and year — confirm on the official source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['bocconi-university'],
+    relatedGuideSlugs: ['how-to-study-in-spain-complete-guide', 'how-to-study-in-netherlands-complete-guide', 'how-to-study-in-sweden-complete-guide'],
+    sources: [
+      { label: 'Studiare in Italia (MUR) — international students', url: 'https://www.studiare-in-italia.it/studentistranieri/' },
+      { label: 'Universitaly — official Ministry portal', url: 'https://www.universitaly.it' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to study in italy', 'universitaly pre-enrolment', 'study medicine in italy in english', 'imat italy', 'italy student visa', 'study in italy for international students'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Pre-enrolment portal', value: 'Universitaly (official Ministry portal)' },
+      { label: 'English-taught medicine entry', value: 'IMAT (International Medical Admissions Test)' },
+      { label: 'Visa', value: 'National study visa for stays over 90 days (non-EU)' },
+      { label: 'Regional support', value: 'DSU (Diritto allo Studio Universitario) — varies by region' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-spain-complete-guide',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Study in Spain: Complete Guide',
+    descriptionEn:
+      'A step-by-step guide to studying in Spain — applying to universities, recognising your qualifications (homologación and UNEDasiss), and the student visa, with all volatile details deferred to official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Spanish universities and degree levels',
+        bodyEn:
+          'Spain has public and private universities offering bachelor\'s (grado), master\'s (máster), and doctoral programmes, plus a growing number of English-taught options especially at master\'s level. You apply to the university and programme that fit your goals, meeting its specific admission requirements.\n\nAdmission routes differ between bachelor\'s and master\'s, and between Spanish-taught and English-taught programmes. Read each programme\'s official admissions page early, since requirements, language proof, and deadlines vary by university and change each year.',
+      },
+      {
+        headingEn: 'Recognising your qualifications: homologación and UNEDasiss',
+        bodyEn:
+          'For international applicants, the trickiest step is often getting your prior qualification recognised so a Spanish university will accept it. Depending on your situation, this can involve homologación or equivalencia of your qualification, or, for undergraduate entry, an accreditation service such as UNEDasiss that helps Spanish universities assess foreign school-leaving qualifications.\n\nWhich route applies — and the documents, legalisation, and timelines involved — depends on your country and the programme. Because this varies and changes, confirm exactly what you need on the official Ministry and UNEDasiss sources before applying.',
+        bullets: [
+          'Homologación / equivalencia — recognition of a foreign qualification',
+          'UNEDasiss — accreditation service often used for undergraduate access',
+          'The right route depends on your country and programme — verify officially',
+        ],
+      },
+      {
+        headingEn: 'Applying and language requirements',
+        bodyEn:
+          'Once your qualification route is clear, you apply to your chosen university and programme. Spanish-taught programmes usually require proof of Spanish proficiency, while English-taught programmes ask for an English test such as IELTS or TOEFL, with the level set by each programme.\n\nDeadlines, intakes, and accepted tests differ across universities, and some regions or universities have their own application steps. Check each programme\'s official page for the exact requirements rather than assuming a single national standard.',
+      },
+      {
+        headingEn: 'Student visa and residence',
+        bodyEn:
+          'Non-EU/EEA students who will study in Spain for longer than 90 days generally apply for a student visa at the Spanish embassy or consulate in their country, and may need to arrange a student stay authorisation for longer programmes after arrival. EU/EEA students do not need a student visa.\n\nThis is general information, not immigration advice. Visa types, required documents, proof of funds, and processing depend on your situation and change, so verify everything on the official Spanish government and consular sources before you travel.',
+        bullets: [
+          'Non-EU students staying over 90 days generally need a student visa',
+          'EU/EEA students do not need a student visa',
+          'Verify visa and stay-authorisation rules on the official government source',
+        ],
+      },
+      {
+        headingEn: 'Tuition, costs and next steps',
+        bodyEn:
+          'Tuition in Spain varies widely: public universities often charge per-credit public fees that differ by region and by whether a programme is a bachelor\'s or master\'s, while private universities set their own fees. Living costs also vary by city.\n\nBecause tuition, regional fees, and living costs change every year, treat any figure as something to confirm on the official source rather than a fixed number. Once your qualification recognition and programme choice are settled, line up your visa application timeline well in advance.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is homologación?',
+        answerEn:
+          'Homologación (or equivalencia) is the official recognition of a foreign qualification so it can be used in Spain. Whether you need it, and the exact process, depends on your country and programme — verify on the official Ministry source.',
+      },
+      {
+        questionEn: 'What is UNEDasiss used for?',
+        answerEn:
+          'UNEDasiss is an accreditation service that helps Spanish universities assess foreign school-leaving qualifications for undergraduate access. Requirements vary by university, so confirm what your target programme needs on the official source.',
+      },
+      {
+        questionEn: 'Can I study in Spain in English?',
+        answerEn:
+          'Yes — a growing number of programmes, especially master\'s, are English-taught and ask for an English test such as IELTS or TOEFL. Spanish-taught programmes usually require proof of Spanish. Check each programme\'s page.',
+      },
+      {
+        questionEn: 'Do I need a student visa for Spain?',
+        answerEn:
+          'Non-EU/EEA students staying longer than 90 days generally need a student visa; EU/EEA students do not. This is general information, not immigration advice — verify the current rules on the official Spanish government and consular sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['complutense-university-of-madrid'],
+    relatedGuideSlugs: ['how-to-study-in-italy-complete-guide', 'how-to-study-in-netherlands-complete-guide', 'how-to-study-in-sweden-complete-guide'],
+    sources: [
+      { label: 'Ministry of Science, Innovation and Universities (Spain) — Universities', url: 'https://www.ciencia.gob.es/Universidades.html' },
+      { label: 'Ministry of Foreign Affairs (Spain) — visas', url: 'https://www.exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Servicios-consulares.aspx' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to study in spain', 'homologacion spain', 'unedasiss', 'spain student visa', 'study in spain in english', 'study in spain for international students'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Degree levels', value: 'Grado (bachelor\'s), máster, and doctorate' },
+      { label: 'Qualification recognition', value: 'Homologación / equivalencia or UNEDasiss (varies by case)' },
+      { label: 'English proof', value: 'IELTS or TOEFL for English-taught programmes (level set per programme)' },
+      { label: 'Visa', value: 'Student visa for non-EU/EEA stays over 90 days' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-sweden-complete-guide',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Study in Sweden: Complete Guide',
+    descriptionEn:
+      'A step-by-step guide to studying in Sweden — the central universityadmissions.se portal, applying and ranking choices, tuition and scholarships for non-EU students, and the student residence permit.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'One central application portal',
+        bodyEn:
+          'Sweden makes applying unusually straightforward: most bachelor\'s and master\'s programmes taught in English are applied for through one central portal, University Admissions in Sweden (universityadmissions.se), run in cooperation with the country\'s universities and university colleges.\n\nYou create one account, search programmes and courses, add your choices, rank them in order of preference, and submit one application — then upload your supporting documents. Read each programme\'s entry requirements first, because they are set by the individual universities.',
+        bullets: [
+          'Apply through the central universityadmissions.se portal',
+          'Add and rank your programme choices in order of preference',
+          'One application, one set of supporting documents',
+        ],
+      },
+      {
+        headingEn: 'Applying and ranking your choices',
+        bodyEn:
+          'Within a single application you can usually list several programmes and rank them; if you are admitted to a higher-ranked choice, lower choices are set aside, which is why the order matters. There is a set application period each admission round, with a deadline to apply and a later deadline to submit documents and (for those who must pay it) the application fee.\n\nThe exact dates, document rules, and required English and academic qualifications are set each year and per programme, so confirm the current round\'s deadlines and requirements on the official portal before you apply.',
+      },
+      {
+        headingEn: 'Tuition and application fees for non-EU students',
+        bodyEn:
+          'Students who are not citizens of the EU/EEA or Switzerland generally pay an application fee and tuition fees, while EU/EEA and Swiss students typically do not pay tuition. Tuition amounts are set by each university and differ by programme and subject.\n\nBecause application and tuition fees change and vary by university, treat any figure as something to verify on the official source rather than a fixed number. The central portal explains who must pay the application fee and how the tuition process is handled by each university.',
+        bullets: [
+          'Non-EU/EEA/Swiss students generally pay an application fee and tuition',
+          'EU/EEA and Swiss students typically pay no tuition',
+          'Tuition is set per university and programme — verify the current figures officially',
+        ],
+      },
+      {
+        headingEn: 'Scholarships',
+        bodyEn:
+          'Tuition-paying students may be able to apply for scholarships, including those offered by the Swedish Institute and by individual Swedish universities. These are competitive and have their own eligibility criteria and deadlines, so no award can be guaranteed.\n\nCheck the official Swedish Institute and university scholarship pages for what is currently available, who is eligible, and when to apply — and note that scholarship and admission applications are separate processes with separate deadlines.',
+        bullets: [
+          'Swedish Institute scholarships and university scholarships may be available',
+          'Scholarships are competitive with their own criteria and deadlines',
+          'Scholarship and admission applications are separate — check both officially',
+        ],
+      },
+      {
+        headingEn: 'Student residence permit',
+        bodyEn:
+          'Non-EU/EEA students who are admitted to a programme generally apply for a residence permit for studies through the Swedish Migration Agency (Migrationsverket). For tuition-paying students, the residence permit process typically does not begin until the first tuition instalment has been paid.\n\nThis is general information, not immigration advice. Permit requirements, proof of funds, insurance, fees, and processing depend on your situation and change, so verify everything on the official Migrationsverket website before making plans.',
+        bullets: [
+          'Apply for a study residence permit through Migrationsverket (non-EU/EEA)',
+          'For fee-paying students, the permit process starts after the first tuition payment',
+          'Verify permit rules and proof-of-funds on the official government source',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to universities in Sweden?',
+        answerEn:
+          'Most English-taught programmes are applied for through one central portal, universityadmissions.se. You create one account, add and rank your programme choices, submit a single application, and upload supporting documents.',
+      },
+      {
+        questionEn: 'Why does the order of my choices matter?',
+        answerEn:
+          'You rank your choices in one application. If you are admitted to a higher-ranked choice, lower ones are set aside — so list your true first preference highest. Confirm the current rules on the official portal.',
+      },
+      {
+        questionEn: 'Do I have to pay tuition in Sweden?',
+        answerEn:
+          'Students who are not from the EU/EEA or Switzerland generally pay an application fee and tuition, set by each university; EU/EEA and Swiss students typically do not pay tuition. Verify the current figures on the official source.',
+      },
+      {
+        questionEn: 'Do I need a residence permit to study in Sweden?',
+        answerEn:
+          'Non-EU/EEA students generally need a residence permit for studies through Migrationsverket, and for fee-paying students the process usually starts after the first tuition payment. This is general information, not immigration advice — verify on the official source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['kth-royal-institute'],
+    relatedGuideSlugs: ['how-to-study-in-netherlands-complete-guide', 'how-to-study-in-italy-complete-guide', 'how-to-study-in-spain-complete-guide'],
+    sources: [
+      { label: 'University Admissions in Sweden — official portal', url: 'https://www.universityadmissions.se' },
+      { label: 'Swedish Migration Agency (Migrationsverket)', url: 'https://www.migrationsverket.se/en.html' },
+      { label: 'Swedish Institute (si.se) — scholarships', url: 'https://si.se/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to study in sweden', 'universityadmissions.se', 'study in sweden tuition', 'sweden scholarships for international students', 'sweden student residence permit', 'study in sweden for international students'],
+    tags: ['europe-admissions'],
+    keyFacts: [
+      { label: 'Central application portal', value: 'University Admissions in Sweden (universityadmissions.se)' },
+      { label: 'Tuition', value: 'Non-EU/EEA/Swiss students generally pay (verify per university)' },
+      { label: 'Scholarships', value: 'Swedish Institute and university scholarships (competitive)' },
+      { label: 'Residence permit body', value: 'Swedish Migration Agency (Migrationsverket)' },
+    ],
+  },
+  {
+    slug: 'top-universities-in-europe-for-international-students',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Top Universities in Europe for International Students',
+    descriptionEn:
+      'An overview of well-known universities across Europe that welcome international students — what to look at beyond rankings, how degree programmes differ by country, and how to shortlist the right fit.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Europe has many strong universities, not one "best"',
+        bodyEn:
+          'Europe is home to a large number of long-established, research-intensive universities spread across Germany, France, the Netherlands, Italy, Spain, Sweden, Switzerland, and many other countries. There is no single "top" university for everyone — the right choice depends on your subject, the language of instruction, the cost, and where you want to live and study.\n\nThis guide describes how to think about a shortlist rather than presenting a ranked list as fact. Where rankings are mentioned, they belong to the body that publishes them, and you should always check the current edition on the official source.',
+      },
+      {
+        headingEn: 'How European university rankings are published',
+        bodyEn:
+          'You will often see European universities appear in international ranking tables. The QS World University Rankings are published by Quacquarelli Symonds (QS), and the THE World University Rankings are published by Times Higher Education (THE). These are two separate organisations using different methods, so a university can sit at different positions in each.\n\nTreat any ranking as one input among many, attributed to its publisher, and verify the latest edition directly on the QS or THE website. A higher rank does not guarantee a better experience for your specific subject or goals.',
+        bullets: [
+          'QS World University Rankings — published by QS (Quacquarelli Symonds)',
+          'THE World University Rankings — published by Times Higher Education',
+          'Rankings differ by method; always check the current year on the official source',
+        ],
+      },
+      {
+        headingEn: 'Notable universities students often consider',
+        bodyEn:
+          'Across Europe, students frequently shortlist research universities such as ETH Zurich and EPFL in Switzerland, the Technical University of Munich (TUM), LMU Munich and Heidelberg University in Germany, TU Delft and the University of Amsterdam in the Netherlands, Sorbonne University and Sciences Po in France, KTH Royal Institute of Technology and Karolinska Institute in Sweden, Bocconi University in Italy, KU Leuven in Belgium, and Complutense University of Madrid in Spain.\n\nThis is a descriptive sample, not a ranking. Each institution has its own subject strengths, languages of instruction, and admission requirements — none is presented here as better or worse than another.',
+      },
+      {
+        headingEn: 'What actually matters when choosing',
+        bodyEn:
+          'Look beyond the name. The most decision-relevant factors are whether the programme is taught in a language you are fluent in, whether your subject is strong there, the total cost of tuition and living, the admission requirements you can realistically meet, and the visa or residence-permit pathway for that country.',
+        bullets: [
+          'Language of instruction (English-taught vs national-language programmes)',
+          'Subject and programme fit for your goals',
+          'Total cost — tuition plus living expenses (verify on the official source)',
+          'Admission requirements you can meet (grades, tests, documents)',
+          'Visa / residence-permit pathway for that country',
+        ],
+      },
+      {
+        headingEn: 'Where to verify official information',
+        bodyEn:
+          'Tuition, deadlines, programme lists, and entry requirements change every academic year and differ by country and programme. Use each university\'s own official website for admissions detail, and country-level official portals such as Study in Germany, Campus France, and Study in NL for the bigger picture.\n\nAlways verify fees, deadlines, and eligibility on the official source before applying — figures and rules are updated regularly.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which is the best university in Europe?',
+        answerEn:
+          'There is no single best university for everyone. The right choice depends on your subject, the language of instruction, cost, and where you want to study. Use rankings only as one attributed input (QS or THE) and verify the current edition on their official sites.',
+      },
+      {
+        questionEn: 'Can I study in Europe in English?',
+        answerEn:
+          'Many European universities offer English-taught programmes, especially at master\'s level, while a large number of bachelor\'s programmes are taught in the national language. Check the language of instruction on each programme\'s official page before applying.',
+      },
+      {
+        questionEn: 'Are European university rankings reliable?',
+        answerEn:
+          'Rankings such as QS and THE are produced by different organisations using different methods, so positions vary between them. Use them as one input among many — alongside subject fit, cost, and language — and confirm the latest edition on the publisher\'s official website.',
+      },
+      {
+        questionEn: 'How do I shortlist universities in Europe?',
+        answerEn:
+          'Start from your subject and budget, then filter by language of instruction, admission requirements you can meet, and the visa pathway for that country. Verify each detail on the university\'s official admissions page and the country\'s official study portal.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-get-admission-in-tu-munich', 'how-to-get-admission-in-tu-delft', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Study in Germany — official portal (DAAD/Govt of Germany)', url: 'https://www.study-in-germany.com/en/' },
+      { label: 'Campus France — official French government agency', url: 'https://www.campusfrance.org/en' },
+      { label: 'Study in NL — official Netherlands study portal', url: 'https://www.studyinnl.org/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['top universities in europe', 'best universities in europe for international students', 'study in europe', 'european universities ranking', 'universities in europe taught in english', 'how to choose a university in europe'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'How to read rankings', value: 'Attributed to QS or THE; verify current edition on the official source' },
+      { label: 'Languages', value: 'English-taught and national-language programmes both common' },
+      { label: 'Decide by', value: 'Subject fit, language, total cost, admission requirements, visa pathway' },
+      { label: 'Verify on', value: 'University official site + country study portal' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-tu-munich',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in TU Munich (Technical University of Munich)',
+    descriptionEn:
+      'A step-by-step overview of the official admission process at the Technical University of Munich (TUM) for international students — degree levels, requirements, language proof, and the application portal.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'About TUM and what it offers',
+        bodyEn:
+          'The Technical University of Munich (TUM) is a public research university in Germany offering bachelor\'s, master\'s, teacher-training, medical, and doctoral programmes across engineering, natural sciences, life sciences, medicine, management, and more. It offers programmes taught in German and a number taught in English.\n\nThis guide outlines the official application route. It does not state admit rates or cut-offs — those are not published as a fixed figure and depend on the programme and year. Always confirm current requirements on the official TUM website.',
+      },
+      {
+        headingEn: 'Step 1 — Choose a programme and check its requirements',
+        bodyEn:
+          'Start on the official TUM degree-programme finder and select the exact programme you want. Each programme lists its own entry requirements, language of instruction, and any subject-specific criteria (for example an aptitude assessment for certain courses).\n\nRequirements differ between bachelor\'s and master\'s entry and between German-taught and English-taught programmes, so read the specific programme page rather than relying on a general rule.',
+        bullets: [
+          'Use the official TUM programme finder to pick your exact course',
+          'Bachelor\'s, master\'s, teacher-training, medicine and doctoral routes differ',
+          'Check the language of instruction (German or English) for that programme',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — Confirm your entrance qualification and language proof',
+        bodyEn:
+          'International applicants need a recognised higher-education entrance qualification. TUM evaluates foreign qualifications against German recognition standards, and some applicants may need a preparatory pathway (Studienkolleg) before a bachelor\'s programme. Verify how your specific qualification is assessed on the official TUM admission pages.\n\nYou will also need to prove proficiency in the language of instruction. German-taught programmes require German-language certificates, and English-taught programmes require English-language proof. The accepted certificates and minimum levels are set by TUM per programme, so check the official requirement and never assume a score.',
+        bullets: [
+          'Recognised higher-education entrance qualification required',
+          'Some applicants may need Studienkolleg before a bachelor\'s — verify on TUM',
+          'Language proof: German for German-taught, English (e.g. TOEFL/IELTS) for English-taught',
+        ],
+      },
+      {
+        headingEn: 'Step 3 — Apply through the TUM application portal',
+        bodyEn:
+          'Applications are submitted online through the official TUM application portal (the TUMonline / Application Info Portal system). You create an account, complete the application for your chosen programme, upload the required documents, and submit by the programme deadline.\n\nDeadlines vary by programme and intake (winter and summer semesters), and some documents may also need to be sent in a specified form. Follow the instructions shown for your specific programme on the official portal.',
+        bullets: [
+          'Apply online via the official TUM application portal',
+          'Upload documents and submit before the programme deadline',
+          'Deadlines differ by programme and by winter/summer intake',
+        ],
+      },
+      {
+        headingEn: 'Step 4 — After admission: enrolment and visa',
+        bodyEn:
+          'If you receive an offer, you complete enrolment with TUM by the stated deadline. International students from outside the EU/EEA will typically also need a German student visa or residence permit; this is handled by the relevant German government authority, not the university.\n\nThis is general information, not immigration advice. Student-visa rules, financial-proof requirements, and processing steps are set by the German government and change — verify the current requirements on the official German government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the acceptance rate at TUM?',
+        answerEn:
+          'TUM does not publish a single fixed acceptance rate, and selectivity depends on the programme and year. Focus on meeting the published entry requirements for your specific programme rather than on an admit-rate figure. Verify current requirements on the official TUM website.',
+      },
+      {
+        questionEn: 'Does TUM offer programmes in English?',
+        answerEn:
+          'Yes, TUM offers a number of programmes taught in English, particularly at master\'s level, alongside many German-taught programmes. Check the language of instruction on the specific programme page, as the required language proof depends on it.',
+      },
+      {
+        questionEn: 'Do I need German to study at TUM?',
+        answerEn:
+          'It depends on the programme. German-taught programmes require German-language proof, while English-taught programmes require English-language proof instead. Confirm the exact certificate and level required on the official TUM admission page for your programme.',
+      },
+      {
+        questionEn: 'How do I apply to TUM as an international student?',
+        answerEn:
+          'Choose your programme on the official TUM programme finder, confirm your entrance qualification and language proof, then apply online through the official TUM application portal and submit before the deadline. Verify every requirement on tum.de.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'testas'],
+    relatedCollegeSlugs: ['tu-munich'],
+    relatedGuideSlugs: ['how-to-get-admission-in-lmu-munich', 'top-universities-in-europe-for-international-students', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'TUM — official application and admission', url: 'https://www.tum.de/en/studies/application' },
+      { label: 'Study in Germany — official portal (DAAD/Govt of Germany)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['tu munich admission', 'how to get into tum', 'technical university of munich application', 'tum requirements for international students', 'tum masters application', 'study at tu munich'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'Technical University of Munich (TUM), Germany — public research university' },
+      { label: 'Degree levels', value: 'Bachelor\'s, master\'s, teacher-training, medicine, doctoral' },
+      { label: 'Apply via', value: 'Official TUM application portal (online)' },
+      { label: 'Language proof', value: 'German or English depending on the programme — verify on TUM' },
+      { label: 'Verify on', value: 'tum.de (official)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-lmu-munich',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in LMU Munich (Ludwig-Maximilians-Universität)',
+    descriptionEn:
+      'A step-by-step overview of the official admission process at LMU Munich for international students — degree levels, where to apply, entrance qualifications, and language requirements.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About LMU Munich',
+        bodyEn:
+          'Ludwig-Maximilians-Universität München (LMU Munich) is a public research university in Germany with a broad range of subjects across the humanities, social sciences, law, economics, natural sciences, and medicine. It offers programmes mainly taught in German, with some master\'s and doctoral programmes taught in English.\n\nThis guide describes the official application route only. It does not state admit rates or cut-offs, which LMU does not publish as a fixed figure — focus on meeting the published requirements and verify them on the official LMU website.',
+      },
+      {
+        headingEn: 'Step 1 — Pick your programme and find where to apply',
+        bodyEn:
+          'On the official LMU website, choose your exact degree programme and check where the application is submitted. Depending on the programme, international applicants apply either to the LMU International Office, to the Office of the University Registrar (Studentenkanzlei), or in some cases through the national Foundation for University Admission (Stiftung für Hochschulzulassung).\n\nThe correct route depends on the programme and your qualification, so use LMU\'s official "Where do I apply?" guidance for your specific case rather than assuming one channel.',
+        bullets: [
+          'International Office — for many international applications',
+          'Office of the University Registrar (Studentenkanzlei) — in certain cases',
+          'Stiftung für Hochschulzulassung — for some programmes',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — Confirm your entrance qualification',
+        bodyEn:
+          'International applicants generally need a recognised university entrance qualification (such as a school-leaving certificate equivalent to the German Abitur). LMU points applicants to official recognition tools to check whether their certificate qualifies them for a German degree programme.\n\nWhere a qualification is not directly sufficient, a preparatory pathway may be required before a bachelor\'s programme. Verify how your qualification is assessed using LMU\'s official prerequisites pages.',
+      },
+      {
+        headingEn: 'Step 3 — Meet the language requirement',
+        bodyEn:
+          'Because most LMU programmes are taught in German, applicants usually need to prove German-language proficiency for admission and enrolment. Master\'s, doctoral, and double-degree programmes taught in English are an exception and instead require English-language proof.\n\nThe accepted certificates and minimum levels are set by LMU and depend on the programme, so check the official language requirement for your programme and do not assume a particular score.',
+        bullets: [
+          'German-taught programmes — German-language proof required',
+          'English-taught master\'s/doctoral/double-degree — English proof instead',
+          'Accepted certificates and levels are set per programme by LMU',
+        ],
+      },
+      {
+        headingEn: 'Step 4 — Submit, enrol, and arrange your visa',
+        bodyEn:
+          'Complete your application by the deadline shown for your programme and intake. If admitted, you enrol with LMU by the date stated in your admission letter and submit the required documents.\n\nInternational students from outside the EU/EEA usually also need a German student visa or residence permit, which is handled by the relevant German government authority. This is general information, not immigration advice — verify the current visa rules on the official German government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Where do international students apply at LMU Munich?',
+        answerEn:
+          'It depends on the programme. International applicants apply to the LMU International Office, the Office of the University Registrar, or the national Foundation for University Admission. Use LMU\'s official "Where do I apply?" guidance for your specific programme.',
+      },
+      {
+        questionEn: 'Do I need German to study at LMU Munich?',
+        answerEn:
+          'For most LMU programmes, which are taught in German, you need German-language proof. English-taught master\'s, doctoral, and double-degree programmes are an exception and require English proof instead. Confirm the requirement for your programme on the official LMU site.',
+      },
+      {
+        questionEn: 'What is the acceptance rate at LMU Munich?',
+        answerEn:
+          'LMU does not publish a single fixed acceptance rate, and selectivity varies by programme and year. Concentrate on meeting the published entry requirements for your chosen programme and verify them on the official LMU website.',
+      },
+      {
+        questionEn: 'What entrance qualification do I need for LMU?',
+        answerEn:
+          'You generally need a recognised university entrance qualification equivalent to the German Abitur. LMU directs applicants to official recognition tools to check eligibility, and some applicants may need a preparatory pathway first. Verify your case on LMU\'s official prerequisites pages.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'testas'],
+    relatedCollegeSlugs: ['lmu-munich'],
+    relatedGuideSlugs: ['how-to-get-admission-in-tu-munich', 'how-to-get-admission-in-heidelberg-university', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'LMU Munich — official applications for admission', url: 'https://www.lmu.de/en/study/degree-students/applications-for-admission/' },
+      { label: 'Study in Germany — official portal (DAAD/Govt of Germany)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['lmu munich admission', 'how to get into lmu munich', 'ludwig maximilian university application', 'lmu requirements for international students', 'lmu munich masters', 'study at lmu munich'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'Ludwig-Maximilians-Universität München (LMU), Germany — public research university' },
+      { label: 'Apply to', value: 'International Office / Registrar / national admission foundation (varies by programme)' },
+      { label: 'Main language', value: 'Mostly German-taught; some English-taught master\'s/doctoral' },
+      { label: 'Language proof', value: 'German, or English for English-taught — verify on LMU' },
+      { label: 'Verify on', value: 'lmu.de (official)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-heidelberg-university',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in Heidelberg University (Germany)',
+    descriptionEn:
+      'A step-by-step overview of the official admission process at Heidelberg University (Ruprecht-Karls-Universität Heidelberg) for international students — degree levels, qualification recognition, language proof, and enrolment.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About Heidelberg University',
+        bodyEn:
+          'Heidelberg University (Ruprecht-Karls-Universität Heidelberg) is a public research university in Germany offering bachelor\'s, master\'s, and doctoral programmes across the humanities, law, social sciences, natural sciences, life sciences, and medicine. Programmes are offered in German and, for several master\'s and doctoral courses, in English.\n\nNote: this guide is about Heidelberg University in Germany (uni-heidelberg.de), which is unrelated to the similarly named university in the United States. It describes the official process only and does not state admit rates or cut-offs.',
+      },
+      {
+        headingEn: 'Step 1 — Choose a programme and check requirements',
+        bodyEn:
+          'Begin on the official Heidelberg University study pages and select your exact degree programme. Each programme lists its own entry requirements, language of instruction, and any subject-specific conditions.\n\nRequirements differ between bachelor\'s, master\'s, and doctoral entry, and between German-taught and English-taught programmes, so always read the specific programme page on the official site.',
+      },
+      {
+        headingEn: 'Step 2 — Get your qualification recognised',
+        bodyEn:
+          'International applicants need a recognised higher-education entrance qualification. Heidelberg assesses foreign qualifications using Germany\'s official evaluation framework (provided by the Central Office for Foreign Education, ZAB), and recognition is part of the admission procedure.\n\nDepending on your country and certificate, applications from international students may be processed via the university or a central application service — confirm the correct submission route for your case on the official Heidelberg admission pages.',
+        bullets: [
+          'Recognised higher-education entrance qualification required',
+          'Foreign qualifications assessed using Germany\'s official ZAB framework',
+          'Confirm whether you apply via the university or a central service',
+        ],
+      },
+      {
+        headingEn: 'Step 3 — Meet the language requirement',
+        bodyEn:
+          'For German-taught programmes, applicants must prove German-language proficiency. Heidelberg\'s German proficiency examination is the Deutsche Sprachprüfung für den Hochschulzugang (DSH); applicants typically need to reach the level stated for their programme (for example DSH-2) or provide an accepted equivalent certificate.\n\nEnglish-taught programmes instead require English-language proof. The accepted certificates and required levels are set by Heidelberg per programme, so verify the exact requirement on the official site rather than assuming a score.',
+        bullets: [
+          'German-taught — German proof (e.g. DSH at the level set for the programme)',
+          'English-taught — English-language proof instead',
+          'Accepted certificates/levels are set per programme — verify on Heidelberg',
+        ],
+      },
+      {
+        headingEn: 'Step 4 — Apply online, enrol, and arrange your visa',
+        bodyEn:
+          'Submit your application through Heidelberg\'s official online application system by the programme deadline, then complete enrolment if you are admitted (Heidelberg uses a digital enrolment process). Follow the document instructions shown for your specific programme.\n\nInternational students from outside the EU/EEA usually also need a German student visa or residence permit, handled by the relevant German government authority. This is general information, not immigration advice — verify the current rules on the official German government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is this the Heidelberg University in Germany or the US?',
+        answerEn:
+          'This guide is about Heidelberg University in Germany (Ruprecht-Karls-Universität Heidelberg, uni-heidelberg.de). It is unrelated to the similarly named institution in the United States. Always use the official German university site for admission details.',
+      },
+      {
+        questionEn: 'Do I need German to study at Heidelberg University?',
+        answerEn:
+          'For German-taught programmes, yes — you typically need German proof such as the DSH at the level set for your programme, or an accepted equivalent. English-taught programmes require English proof instead. Verify the exact requirement on the official Heidelberg site.',
+      },
+      {
+        questionEn: 'How are my foreign qualifications assessed at Heidelberg?',
+        answerEn:
+          'Heidelberg evaluates foreign higher-education entrance qualifications using Germany\'s official framework from the Central Office for Foreign Education (ZAB) as part of the admission procedure. Confirm how your specific certificate is assessed on the official Heidelberg admission pages.',
+      },
+      {
+        questionEn: 'What is the acceptance rate at Heidelberg University?',
+        answerEn:
+          'Heidelberg does not publish a single fixed acceptance rate, and selectivity varies by programme and year. Focus on meeting the published entry requirements for your programme and verify them on the official university website.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'testas'],
+    relatedCollegeSlugs: ['heidelberg-university'],
+    relatedGuideSlugs: ['how-to-get-admission-in-lmu-munich', 'how-to-get-admission-in-tu-munich', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Heidelberg University — official application and enrolment', url: 'https://www.uni-heidelberg.de/en/study/application-enrolment' },
+      { label: 'Study in Germany — official portal (DAAD/Govt of Germany)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['heidelberg university admission', 'how to get into heidelberg university', 'uni heidelberg application international students', 'heidelberg germany university requirements', 'dsh heidelberg', 'study at heidelberg university'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'Ruprecht-Karls-Universität Heidelberg (Germany) — public research university' },
+      { label: 'Degree levels', value: 'Bachelor\'s, master\'s, doctoral' },
+      { label: 'Qualification check', value: 'Foreign qualifications assessed via Germany\'s official ZAB framework' },
+      { label: 'Language proof', value: 'German (e.g. DSH) or English for English-taught — verify on Heidelberg' },
+      { label: 'Verify on', value: 'uni-heidelberg.de (official)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-tu-delft',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in TU Delft (Delft University of Technology)',
+    descriptionEn:
+      'A step-by-step overview of the official admission process at TU Delft for international students — degree levels, applying via Studielink, numerus fixus programmes, requirements, and language proof.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'About TU Delft',
+        bodyEn:
+          'Delft University of Technology (TU Delft) is a public technical university in the Netherlands offering bachelor\'s (BSc), master\'s (MSc), and doctoral programmes in engineering, technology, design, and applied sciences. Bachelor\'s programmes are often taught in English or Dutch, and master\'s programmes are typically taught in English.\n\nThis guide outlines the official application route. It does not state admit rates or cut-offs — TU Delft does not publish these as a fixed figure, so focus on meeting the published requirements and verify them on the official TU Delft website.',
+      },
+      {
+        headingEn: 'Step 1 — Choose your programme and read its admission page',
+        bodyEn:
+          'On the official TU Delft website, select your exact BSc or MSc programme and read its admission requirements. The page tells you the language of instruction, the academic requirements, any required tests, and the deadlines for international and Dutch applicants.\n\nBachelor\'s and master\'s requirements differ, and some programmes have additional steps such as a matching procedure or extra selection, so always rely on the specific programme page.',
+      },
+      {
+        headingEn: 'Step 2 — Understand numerus fixus (limited places)',
+        bodyEn:
+          'Some Dutch bachelor\'s programmes have a fixed number of places, known as numerus fixus. For these programmes, places are awarded through a selection procedure, and there are typically stricter and earlier deadlines — including a national deadline for registering your interest via Studielink.\n\nIf your chosen TU Delft programme is numerus fixus, plan well ahead and follow the official selection and deadline instructions exactly. Whether a programme is numerus fixus, and the rules for it, are set by the university and can change — verify the current status on the official TU Delft programme page.',
+        bullets: [
+          'Numerus fixus = a fixed number of study places, filled by selection',
+          'Earlier deadlines apply, including registering interest via Studielink',
+          'Confirm whether your programme is numerus fixus on the official TU Delft page',
+        ],
+      },
+      {
+        headingEn: 'Step 3 — Register in Studielink and apply at TU Delft',
+        bodyEn:
+          'Applications to Dutch universities go through Studielink, the official national application portal. You create a Studielink account and register your enrolment request for your chosen TU Delft programme, and TU Delft then guides you through its own application steps and document uploads.\n\nFollow both the Studielink registration and the TU Delft application instructions for your specific programme, and submit everything before the relevant deadline.',
+        bullets: [
+          'Register your enrolment request in the official Studielink portal',
+          'Complete the TU Delft application steps and upload required documents',
+          'Submit before the deadline (earlier for numerus fixus programmes)',
+        ],
+      },
+      {
+        headingEn: 'Step 4 — Language proof, qualification check, and visa',
+        bodyEn:
+          'For English-taught programmes, international applicants generally need to prove English-language proficiency (for example with TOEFL or IELTS), and your prior qualifications must meet the academic requirement set for the programme. The accepted certificates and minimum scores are set by TU Delft per programme, so verify them on the official admission page rather than assuming a score.\n\nIf admitted, international students from outside the EU/EEA usually also need a Dutch entry visa and/or residence permit; in the Netherlands the university often coordinates this with the national immigration authority. This is general information, not immigration advice — verify the current rules on the official Dutch government source before acting.',
+        bullets: [
+          'English proof (e.g. TOEFL/IELTS) for English-taught programmes — level set by TU Delft',
+          'Prior qualifications must meet the programme\'s academic requirement',
+          'Non-EU/EEA students typically need a Dutch visa/residence permit — verify officially',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply to TU Delft through Studielink?',
+        answerEn:
+          'Yes. Applications to Dutch universities, including TU Delft, are registered through Studielink, the official national portal. After registering your enrolment request in Studielink, you complete TU Delft\'s own application steps and document uploads.',
+      },
+      {
+        questionEn: 'What is numerus fixus at TU Delft?',
+        answerEn:
+          'Numerus fixus means a programme has a fixed number of study places filled through a selection procedure, with earlier deadlines (including a national Studielink registration deadline). Check whether your chosen TU Delft programme is numerus fixus on its official programme page and plan ahead.',
+      },
+      {
+        questionEn: 'What is the acceptance rate at TU Delft?',
+        answerEn:
+          'TU Delft does not publish a single fixed acceptance rate, and selectivity depends on the programme and year (and on whether it is numerus fixus). Focus on meeting the published entry requirements for your programme and verify them on the official TU Delft website.',
+      },
+      {
+        questionEn: 'Do I need English test scores for TU Delft?',
+        answerEn:
+          'For English-taught programmes, international applicants generally need to prove English proficiency, for example with TOEFL or IELTS. The accepted tests and minimum scores are set by TU Delft per programme, so confirm the exact requirement on the official admission page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['tu-delft'],
+    relatedGuideSlugs: ['top-universities-in-europe-for-international-students', 'how-to-get-admission-in-tu-munich', 'study-in-netherlands-from-india'],
+    sources: [
+      { label: 'TU Delft — official admission and application', url: 'https://www.tudelft.nl/en/education/admission-and-application' },
+      { label: 'Studielink — official Netherlands application portal', url: 'https://www.studielink.nl/' },
+      { label: 'Study in NL — official Netherlands study portal', url: 'https://www.studyinnl.org/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['tu delft admission', 'how to get into tu delft', 'delft university of technology application', 'tu delft requirements international students', 'studielink tu delft', 'numerus fixus tu delft'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'Delft University of Technology (TU Delft), Netherlands — public technical university' },
+      { label: 'Degree levels', value: 'Bachelor\'s (BSc), master\'s (MSc), doctoral' },
+      { label: 'Apply via', value: 'Studielink (official national portal) + TU Delft application steps' },
+      { label: 'Numerus fixus', value: 'Some bachelor\'s programmes have limited places + earlier deadlines' },
+      { label: 'Verify on', value: 'tudelft.nl (official)' },
+    ],
+  },
+  {
+    slug: 'apply-to-eth-zurich-international',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Apply to ETH Zurich (International Students)',
+    descriptionEn:
+      'A clear, official guide to applying to ETH Zurich as an international student — admission categories for non-Swiss applicants, the entrance-examination route, language requirements, and where to verify the current rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About ETH Zurich and what this guide covers',
+        bodyEn:
+          'ETH Zurich (Eidgenössische Technische Hochschule Zürich) is a public science and technology university in Zurich, Switzerland. It teaches and researches across engineering, the natural sciences, mathematics, architecture, and related fields, and is consistently placed among the leading technical universities worldwide in the QS and THE rankings (rankings are produced by those bodies, not by ETH).\n\nThis guide explains the official admission route for international applicants. Admission rules, deadlines, and any entrance-examination requirements are set by ETH Zurich and reviewed each year, so always confirm the current details on the official ETH Zurich website before you apply.',
+      },
+      {
+        headingEn: 'How admission works for non-Swiss applicants',
+        bodyEn:
+          'ETH Zurich admits bachelor\'s applicants on the basis of its Admissions Ordinance. How you are assessed depends mainly on the upper-secondary leaving certificate (school-leaving diploma) you hold and the country it is from.\n\nApplicants with a non-Swiss matriculation certificate are handled by the ETH Admissions Office, which decides whether your diploma gives direct admission or whether an entrance examination is required. The exact category that applies to you is determined by ETH from your specific qualification, so check the official admission pages for your country and diploma.',
+        bullets: [
+          'Some recognised diplomas can give admission without an entrance examination',
+          'Other diplomas require a reduced or comprehensive entrance examination (see below)',
+          'The ETH Admissions Office determines which case applies to your qualification',
+        ],
+      },
+      {
+        headingEn: 'The entrance-examination route',
+        bodyEn:
+          'For applicants whose secondary-school diploma is not directly recognised for admission, ETH Zurich offers an entrance examination. Depending on the qualification, this can be a reduced entrance examination (covering selected subjects) or a comprehensive entrance examination (covering a broader subject range).\n\nWhether you need an entrance examination, and whether it is the reduced or comprehensive version, depends on your individual diploma — this is exactly the kind of detail that varies by country and changes over time, so do not assume; verify your case on the official ETH Zurich admission pages.',
+      },
+      {
+        headingEn: 'Language requirements',
+        bodyEn:
+          'For bachelor\'s programmes, the main teaching language at ETH Zurich is German, and applicants are generally expected to demonstrate the required level of German for admission, while a working command of English is also indispensable for studies. Many master\'s programmes are taught in English and have English-language requirements instead.\n\nBecause accepted certificates and the required levels differ by programme and degree level, and can change, confirm the current language requirement for your specific programme on the official ETH Zurich website.',
+      },
+      {
+        headingEn: 'Applying step by step (general shape)',
+        bodyEn:
+          'In broad terms, the process is: choose your programme and degree level; check the admission category and any entrance-examination requirement for your diploma; prepare the required documents and proof of language proficiency; and submit your application through ETH\'s online application system within the published deadline.\n\nDeadlines, document lists, and any application fee are set by ETH and differ between bachelor\'s and master\'s entry, so use the official ETH Zurich admission and application pages as your single source of truth and note the dates that apply to your intake.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do all international applicants have to sit an entrance examination at ETH Zurich?',
+        answerEn:
+          'No. Some recognised upper-secondary diplomas allow admission without an entrance examination, while other qualifications require a reduced or comprehensive entrance examination. The ETH Admissions Office decides which case applies to your specific diploma — verify your situation on the official ETH Zurich admission pages.',
+      },
+      {
+        questionEn: 'What language do I need for a bachelor\'s degree at ETH Zurich?',
+        answerEn:
+          'The main teaching language for bachelor\'s programmes is German, so applicants are generally expected to show the required German proficiency, and a command of English is also indispensable. Many master\'s programmes are taught in English. Confirm the exact requirement for your programme on the official website.',
+      },
+      {
+        questionEn: 'Does ETH Zurich guarantee admission if I meet the minimum requirements?',
+        answerEn:
+          'No university can guarantee admission. Meeting the formal requirements lets you apply, but admission decisions follow ETH\'s official criteria and process. This page is general information, not an admission guarantee — always confirm current rules and deadlines on the official ETH Zurich website.',
+      },
+      {
+        questionEn: 'Where do I find the official, current admission rules?',
+        answerEn:
+          'On ethz.ch, in the studies / admission and registration sections, which reference the ETH Admissions Ordinance. Because requirements and deadlines are reviewed each year, treat the official ETH Zurich pages as the authoritative source and verify before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['eth-zurich'],
+    relatedGuideSlugs: ['how-to-get-admission-in-epfl', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'ETH Zurich — Bachelor studies (official)', url: 'https://ethz.ch/en/studies/bachelor.html' },
+      { label: 'ETH Zurich — Registration and application (official)', url: 'https://ethz.ch/en/studies/registration-application/bachelor.html' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to apply to eth zurich', 'eth zurich admission international students', 'eth zurich entrance exam', 'eth zurich bachelor requirements', 'study at eth zurich'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'ETH Zurich, Switzerland (public technical university)' },
+      { label: 'Bachelor teaching language', value: 'Mainly German (English also indispensable) — verify per programme' },
+      { label: 'Entrance examination', value: 'Reduced or comprehensive exam may apply by diploma — verify with ETH' },
+      { label: 'Authoritative source', value: 'Official ETH Zurich admission pages (ethz.ch)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-epfl',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in EPFL',
+    descriptionEn:
+      'An official-source guide to EPFL admission in Lausanne, Switzerland — bachelor and master routes for international applicants, language of instruction, and where to confirm the current requirements.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What EPFL is',
+        bodyEn:
+          'EPFL (École polytechnique fédérale de Lausanne) is a public science and technology university in Lausanne, Switzerland, focused on engineering, the natural and computer sciences, mathematics, architecture, and life sciences. It features regularly among the leading technical universities in the QS and THE rankings (rankings are issued by those organisations, not by EPFL).\n\nThis guide outlines the official admission route. Because requirements, deadlines, and fees are set by EPFL and updated each year, always verify the current details on the official EPFL website before applying.',
+      },
+      {
+        headingEn: 'Bachelor admission for international applicants',
+        bodyEn:
+          'Admission to the first year of a bachelor\'s degree at EPFL depends on the upper-secondary leaving certificate (school-leaving diploma) you hold and its country of origin. Some diplomas can give direct access, while others may require additional steps such as an entrance examination, in line with EPFL\'s official admission rules.\n\nThe exact route for your qualification is determined by EPFL, and these criteria differ by country and can change, so check the bachelor admission section on epfl.ch for the case that applies to you rather than assuming a single path.',
+        bullets: [
+          'Eligibility is assessed from your specific secondary diploma and country',
+          'Direct admission applies to some qualifications; others need extra steps',
+          'An entrance examination may apply in certain cases — confirm on EPFL\'s site',
+        ],
+      },
+      {
+        headingEn: 'Master admission',
+        bodyEn:
+          'Master\'s admission at EPFL is based on a recognised bachelor\'s degree in a relevant field and a competitive academic file, assessed by the relevant section. Required documents typically include academic transcripts, a degree (or proof of expected completion), and supporting materials defined per programme.\n\nMany master\'s programmes are taught in English, and admission is selective and programme-specific. Use the official EPFL master admission pages to confirm the documents, prerequisites, and deadlines for the programme you want.',
+      },
+      {
+        headingEn: 'Language of instruction',
+        bodyEn:
+          'At EPFL, bachelor\'s programmes are generally taught in French, so applicants should be prepared for French-language study at that level, while many master\'s programmes are taught in English. The accepted language certificates and required levels are set by EPFL and differ by degree level and programme.\n\nConfirm the exact language requirement for your chosen programme on the official EPFL website, as these requirements can change between intakes.',
+      },
+      {
+        headingEn: 'How to apply',
+        bodyEn:
+          'The general shape of the process is: pick your programme and level; check the admission requirements for your diploma or degree; prepare the required documents and any language proof; and submit your application through EPFL\'s online application system before the published deadline.\n\nDeadlines and any application fee are defined by EPFL and differ between bachelor and master entry, so treat the official EPFL admission pages as your authoritative source and note the dates for your intake.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is EPFL in Zurich?',
+        answerEn:
+          'No. EPFL is located in Lausanne, in the French-speaking part of Switzerland. ETH Zurich is the separate federal technical university in Zurich. The two are different institutions with their own admissions.',
+      },
+      {
+        questionEn: 'What language do I need at EPFL?',
+        answerEn:
+          'Bachelor\'s programmes are generally taught in French, so French-language ability is expected at that level, while many master\'s programmes are taught in English. Accepted certificates and required levels are set by EPFL — verify the requirement for your specific programme on the official website.',
+      },
+      {
+        questionEn: 'How selective is EPFL master admission?',
+        answerEn:
+          'Master\'s admission is competitive and assessed per programme from your academic record and supporting documents. Meeting the prerequisites lets you apply but does not guarantee a place — this is general information, not an admission guarantee. Confirm requirements on epfl.ch.',
+      },
+      {
+        questionEn: 'Where do I find the current EPFL admission requirements?',
+        answerEn:
+          'In the admission section of epfl.ch, separated by bachelor, master, and doctorate. Because requirements and deadlines change each year, use the official EPFL pages as your single source of truth and verify before you apply.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['epfl'],
+    relatedGuideSlugs: ['apply-to-eth-zurich-international', 'how-to-get-admission-in-sorbonne-university'],
+    sources: [
+      { label: 'EPFL — Education (official)', url: 'https://www.epfl.ch/education/en/' },
+      { label: 'EPFL — Admission (official)', url: 'https://www.epfl.ch/education/admission/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to get admission in epfl', 'epfl admission requirements', 'epfl international students', 'epfl bachelor master', 'study at epfl lausanne'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'EPFL, Lausanne, Switzerland (public technical university)' },
+      { label: 'Bachelor language', value: 'Generally French; many master\'s in English — verify per programme' },
+      { label: 'Bachelor admission', value: 'Based on your secondary diploma + country — route varies, verify with EPFL' },
+      { label: 'Authoritative source', value: 'Official EPFL admission pages (epfl.ch)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-sorbonne-university',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in Sorbonne University',
+    descriptionEn:
+      'An official-source guide to Sorbonne Université admission in Paris — the Campus France route for many international applicants, Licence and Master entry, French-language expectations, and where to verify the rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About Sorbonne Université',
+        bodyEn:
+          'Sorbonne Université is a public research university in Paris, France, organised around faculties of Humanities, Science and Engineering, and Medicine. It is among the well-known European research universities and appears in the QS and THE rankings (rankings are issued by those bodies, not by the university).\n\nThis guide explains the official admission routes for international students. Admission procedures, deadlines, and any fees are set by Sorbonne Université and the relevant French authorities and are reviewed each year, so always confirm the current details on the official sources before applying.',
+      },
+      {
+        headingEn: 'The Campus France route for many international applicants',
+        bodyEn:
+          'For students from many countries, applying to a French public university involves the official Campus France "Études en France" (Studies in France) procedure rather than applying to the university directly. Campus France is the French government agency that supports international students and channels many applications and the related visa steps.\n\nWhether you apply through Campus France, through a national platform, or directly to the university depends on your country, your level of entry, and the programme. Check the official Campus France portal and the Sorbonne Université admission pages to confirm which procedure applies to your situation.',
+        bullets: [
+          'Many non-EU applicants use the Campus France "Études en France" procedure',
+          'The correct route depends on your country, level, and programme',
+          'Campus France also provides official visa and residence-permit guidance',
+        ],
+      },
+      {
+        headingEn: 'Licence (bachelor) and Master entry',
+        bodyEn:
+          'Entry to a Licence (the French bachelor\'s degree) generally requires a recognised secondary-school leaving qualification, while entry to a Master generally requires a recognised bachelor\'s-level degree in a relevant field, assessed by the faculty. Selection criteria and required documents are defined per programme.\n\nBecause requirements differ between faculties, programmes, and levels, and can change, use the official Sorbonne Université admission pages (and Campus France where it applies) to confirm exactly what your chosen programme expects.',
+      },
+      {
+        headingEn: 'Language of instruction and proof',
+        bodyEn:
+          'Many programmes at Sorbonne Université are taught in French, so a proof of French-language proficiency is commonly required, while some programmes — particularly at master\'s level — may be taught wholly or partly in English with English-language requirements instead.\n\nAccepted certificates and the required levels are set by the university and can differ by programme, so verify the exact language requirement for the programme you are applying to on the official website before you apply.',
+      },
+      {
+        headingEn: 'How to apply step by step (general shape)',
+        bodyEn:
+          'In outline: identify your programme and level; check whether you apply via Campus France, a national platform, or directly; prepare your academic documents and language proof; submit through the correct procedure within the deadline; and, once admitted, follow the official student-visa and residence-permit steps for France.\n\nDeadlines and document requirements are defined by the university and the French authorities, so treat the official Sorbonne Université and Campus France pages as your authoritative sources and note the dates for your intake. This is general information, not immigration advice — verify visa steps on the official government source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply to Sorbonne Université directly or through Campus France?',
+        answerEn:
+          'It depends on your country, level of entry, and programme. Many international applicants — particularly non-EU students — use the official Campus France "Études en France" procedure, while other cases apply through a national platform or directly. Confirm your route on the Campus France portal and the Sorbonne Université admission pages.',
+      },
+      {
+        questionEn: 'Do I need to know French?',
+        answerEn:
+          'Many programmes are taught in French and require proof of French proficiency, while some master\'s programmes may be taught in English. Accepted certificates and required levels are set per programme — verify the requirement for your specific programme on the official website.',
+      },
+      {
+        questionEn: 'Is the Sorbonne the same as the old "University of Paris"?',
+        answerEn:
+          'Sorbonne Université is a present-day public research university in Paris. The historical University of Paris was reorganised into several separate universities. For admission, follow the official Sorbonne Université pages for the institution you are applying to.',
+      },
+      {
+        questionEn: 'Where do I verify deadlines and visa steps?',
+        answerEn:
+          'Deadlines and admission rules are on the official Sorbonne Université and Campus France pages; the student-visa procedure is on the official French government visa portal. Because rules change, verify on these official sources before acting — this guide is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['sorbonne-university'],
+    relatedGuideSlugs: ['how-to-get-admission-in-sciences-po', 'study-in-france-from-india'],
+    sources: [
+      { label: 'Sorbonne Université — official site', url: 'https://www.sorbonne-universite.fr/en' },
+      { label: 'Campus France — official portal', url: 'https://www.campusfrance.org/en' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to get admission in sorbonne university', 'sorbonne university international admission', 'sorbonne campus france', 'study at sorbonne paris', 'sorbonne licence master'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'Sorbonne Université, Paris, France (public research university)' },
+      { label: 'Main application route', value: 'Often Campus France "Études en France" for many international applicants' },
+      { label: 'Language', value: 'Many programmes in French; some in English — verify per programme' },
+      { label: 'Authoritative sources', value: 'sorbonne-universite.fr + campusfrance.org' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-sciences-po',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in Sciences Po',
+    descriptionEn:
+      'An official-source guide to Sciences Po admission in France — its own application procedure, undergraduate (Bachelor/College) and Master routes, dual and joint degrees, and where to confirm the current rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What Sciences Po is',
+        bodyEn:
+          'Sciences Po (Institut d\'études politiques de Paris) is a selective French university specialising in the social sciences — politics, economics, law, history, sociology, and related fields — with its main campus in Paris and several regional campuses. It is internationally recognised and appears in subject rankings such as those published by QS and THE (rankings are issued by those bodies, not by Sciences Po).\n\nThis guide explains its official admission routes. Procedures, deadlines, and fees are set by Sciences Po and reviewed each year, so always confirm the current details on the official Sciences Po website before applying.',
+      },
+      {
+        headingEn: 'Sciences Po runs its own admissions',
+        bodyEn:
+          'Sciences Po operates its own application procedures for its programmes rather than admitting solely through a single national platform. Applications are made through the Sciences Po admissions system, with the route and required documents depending on the programme and your background.\n\nBecause Sciences Po manages its process directly and updates it each cycle, use its official "Admissions and Financial Aid" pages as your single source of truth for the procedure that applies to you.',
+        bullets: [
+          'Sciences Po has its own application procedure for its programmes',
+          'The exact route depends on the programme and your prior education',
+          'Separate procedures exist for undergraduate, master\'s, and other programmes',
+        ],
+      },
+      {
+        headingEn: 'Undergraduate (Bachelor / College) admission',
+        bodyEn:
+          'The Sciences Po undergraduate College leads to a Bachelor degree and admits students through its own undergraduate admissions procedure. Applicants are assessed on their academic record and the elements required by the procedure, with international applicants able to apply through the routes Sciences Po defines for them.\n\nThe specific requirements, components, and deadlines are set by Sciences Po and can change between cycles, so confirm them on the official undergraduate admissions pages for the intake you are targeting.',
+      },
+      {
+        headingEn: 'Master\'s, dual and joint degrees',
+        bodyEn:
+          'At graduate level, Sciences Po offers master\'s programmes with their own application procedures, as well as prestigious dual and joint degrees run with partner universities. For a dual degree, you may apply through the procedure defined by the partnership, which can differ from a standard single-degree application.\n\nRequirements, partner-specific steps, and deadlines vary by programme and partnership, so check the official Sciences Po graduate admissions pages and the specific programme page for the route that applies to you.',
+      },
+      {
+        headingEn: 'Language requirements and how to apply',
+        bodyEn:
+          'Sciences Po offers programmes taught in French and programmes taught in English, with the language requirement and accepted certificates depending on the programme you choose. Many programmes require proof of proficiency in the language of instruction.\n\nIn outline, the process is: choose your programme; check the matching Sciences Po admissions procedure and language requirement; prepare the required documents; and apply through the official system by the deadline. Treat the official Sciences Po admissions pages as authoritative, and verify any student-visa steps for France on the official government source — this is general information, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does Sciences Po have its own admissions procedure?',
+        answerEn:
+          'Yes. Sciences Po operates its own application procedures for its programmes through its admissions system, rather than admitting solely via a single national platform. The exact route depends on the programme and your background — confirm it on the official Sciences Po "Admissions and Financial Aid" pages.',
+      },
+      {
+        questionEn: 'Can international students apply for the undergraduate College?',
+        answerEn:
+          'Yes. The Sciences Po undergraduate College admits international applicants through the routes Sciences Po defines. The specific requirements and deadlines are set by Sciences Po and can change each cycle — verify them on the official undergraduate admissions pages.',
+      },
+      {
+        questionEn: 'What are dual degrees at Sciences Po?',
+        answerEn:
+          'Dual and joint degrees are programmes run with partner universities, where you study at both institutions. Applications may follow a partnership-specific procedure that differs from a standard application. Check the official Sciences Po pages and the specific programme page for details.',
+      },
+      {
+        questionEn: 'Is Sciences Po taught in French or English?',
+        answerEn:
+          'Both — Sciences Po offers programmes in French and programmes in English, with language requirements depending on the programme. Many require proof of proficiency in the language of instruction. Confirm the requirement for your chosen programme on the official website.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['sciences-po'],
+    relatedGuideSlugs: ['how-to-get-admission-in-sorbonne-university', 'study-in-france-from-india'],
+    sources: [
+      { label: 'Sciences Po — official site', url: 'https://www.sciencespo.fr/en/' },
+      { label: 'Sciences Po — Admissions and Financial Aid (official)', url: 'https://www.sciencespo.fr/en/admissions-and-financial-aid/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to get admission in sciences po', 'sciences po admissions international', 'sciences po bachelor college', 'sciences po dual degree', 'study at sciences po paris'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'Sciences Po, France (selective social-sciences university)' },
+      { label: 'Application route', value: 'Sciences Po\'s own admissions procedure (per programme)' },
+      { label: 'Languages', value: 'Programmes in French and in English — verify per programme' },
+      { label: 'Authoritative source', value: 'Official Sciences Po Admissions pages (sciencespo.fr)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-university-of-amsterdam',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in University of Amsterdam',
+    descriptionEn:
+      'An official-source guide to University of Amsterdam (UvA) admission — registering through Studielink, English-taught bachelor and master entry, numerus fixus/selection, and where to verify the current requirements.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About the University of Amsterdam',
+        bodyEn:
+          'The University of Amsterdam (UvA) is a public research university in Amsterdam, the Netherlands, offering a wide range of bachelor\'s and master\'s programmes, including many taught in English. It is among the well-known European research universities and appears in the QS and THE rankings (rankings are issued by those bodies, not by the university).\n\nThis guide explains how international students apply. Admission requirements, deadlines, and any tuition are set by UvA and reviewed each year, so always confirm the current details on the official UvA website before applying.',
+      },
+      {
+        headingEn: 'Studielink — the national application step',
+        bodyEn:
+          'Applications to Dutch universities go through Studielink, the national online enrolment platform, where you register your details and the programme you are applying for. Many UvA programmes then ask you to complete a separate application in the university\'s own system in addition to the Studielink registration.\n\nThe exact combination of Studielink plus any UvA-specific application depends on the programme, so follow the application instructions on the official UvA programme page alongside Studielink to make sure you complete every required step.',
+        bullets: [
+          'Register for your programme in Studielink (the national platform)',
+          'Complete any additional UvA application step the programme requires',
+          'Follow the official UvA programme page for the exact steps and order',
+        ],
+      },
+      {
+        headingEn: 'Admission requirements for international applicants',
+        bodyEn:
+          'Bachelor\'s admission generally requires a secondary-school diploma that is considered equivalent to the Dutch pre-university level, plus any programme-specific subject requirements. Master\'s admission generally requires a relevant bachelor\'s-level degree and any specified prerequisites, assessed per programme.\n\nBecause equivalency and programme-specific requirements vary and can change, check the admission-requirements section of the official UvA programme page for the qualification and subjects your chosen programme expects.',
+      },
+      {
+        headingEn: 'Numerus fixus and selection programmes',
+        bodyEn:
+          'Some UvA programmes have a numerus fixus (a capped number of places) or a selection procedure, which usually means an earlier application deadline and additional selection steps beyond meeting the basic requirements. These programmes admit a limited number of applicants through a defined selection process.\n\nWhether a programme is numerus fixus or selective, and what the selection involves, is set by UvA and can change year to year, so confirm this on the official programme page early, as the deadlines are typically earlier than for non-selective programmes.',
+      },
+      {
+        headingEn: 'Language requirements and how to apply',
+        bodyEn:
+          'For English-taught programmes, UvA requires proof of English proficiency through an accepted test or exemption, while Dutch-taught programmes require Dutch proficiency. The accepted tests and required scores are set per programme.\n\nIn outline, the process is: choose your programme and check its requirements and deadline; register in Studielink; complete any UvA-specific application; and submit your documents and language proof on time. Use the official UvA pages as your authoritative source, and verify any student-visa or residence-permit steps for the Netherlands on the official government source — this is general information, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is Studielink and do I have to use it?',
+        answerEn:
+          'Studielink is the Netherlands\' national online enrolment platform, used to register for university programmes. For UvA, you register in Studielink and many programmes also require a separate application in UvA\'s own system. Follow the official UvA programme page for the exact steps.',
+      },
+      {
+        questionEn: 'What is a numerus fixus programme?',
+        answerEn:
+          'A numerus fixus programme has a capped number of places and a selection procedure, usually with an earlier deadline and extra selection steps. Whether a programme is numerus fixus is set by UvA and can change — check the official programme page early.',
+      },
+      {
+        questionEn: 'Are there English-taught programmes at UvA?',
+        answerEn:
+          'Yes, UvA offers many programmes taught in English, which require proof of English proficiency through an accepted test or exemption. Accepted tests and required scores are set per programme — verify the requirement on the official programme page.',
+      },
+      {
+        questionEn: 'Where do I confirm deadlines and visa steps?',
+        answerEn:
+          'Admission requirements and deadlines are on the official UvA programme pages and Study in NL; the student-visa/residence-permit procedure for the Netherlands is on the official government source. Because rules change, verify there before acting — this guide is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['university-of-amsterdam'],
+    relatedGuideSlugs: ['study-in-netherlands-from-india', 'how-to-get-admission-in-sciences-po'],
+    sources: [
+      { label: 'University of Amsterdam — Education (official)', url: 'https://www.uva.nl/en/education/education.html' },
+      { label: 'Study in NL — Nuffic (official)', url: 'https://www.studyinnl.org/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to get admission in university of amsterdam', 'uva admission international students', 'studielink application', 'uva numerus fixus', 'study at university of amsterdam'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'University of Amsterdam (UvA), Netherlands (public research university)' },
+      { label: 'Application platform', value: 'Studielink (national) + UvA\'s own application where required' },
+      { label: 'Selection', value: 'Some programmes are numerus fixus / selective with earlier deadlines' },
+      { label: 'Authoritative sources', value: 'uva.nl + studyinnl.org' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-bocconi-university',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in Bocconi University',
+    descriptionEn:
+      'A step-by-step guide to applying to Bocconi University in Milan — Bachelor and Master programmes, the selection sessions, the accepted admission tests, required documents, and where to verify the current process.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'About Bocconi University',
+        bodyEn:
+          'Bocconi University (Universita Bocconi) is a private university in Milan, Italy, known internationally for its programmes in economics, management, finance, data science, and law. Many of its degrees are taught fully in English, which makes it a popular choice for international applicants.\n\nThis guide explains the official structure of the application process. Programme lists, deadlines, test requirements, and fees are set by the university each year and can change, so always confirm the current details on the official Bocconi admissions pages before you apply.',
+      },
+      {
+        headingEn: 'Choose your programme and check entry requirements',
+        bodyEn:
+          'Bocconi offers Bachelor, Master of Science, Law (a single-cycle programme), and PhD pathways. Start by selecting a specific programme on the official site, because each programme states its own academic background, language, and document requirements.\n\nFor Bachelor admission you generally apply during your final year of secondary school (or after completing it). For a Master of Science you normally need a relevant Bachelor\'s degree. Read the requirements on the programme page itself rather than relying on summaries.',
+        bullets: [
+          'Pick the exact programme (Bachelor, MSc, Law, or PhD)',
+          'Read that programme\'s own academic and language requirements',
+          'Note the documents it asks for (transcripts, CV, references where required)',
+        ],
+      },
+      {
+        headingEn: 'Understand the selection sessions',
+        bodyEn:
+          'Bocconi admits applicants through scheduled selection sessions (rounds) rather than a single deadline. For Bachelor and Law programmes there are typically an earlier session and a later session within the admission cycle, and applying in an earlier session can give you more time.\n\nMaster of Science programmes run their own application rounds with separate timelines. The exact session dates change every cycle, so check the current calendar on the official admissions page and apply within an open session.',
+      },
+      {
+        headingEn: 'Take an accepted admission test',
+        bodyEn:
+          'Selection at Bocconi includes a test component. For Bachelor and Law programmes, applicants take an accepted admission test — this can be the Bocconi online test or, depending on the programme, an international test such as the SAT or ACT (with the LSAT accepted for the Law programme). Master of Science admission considers your academic record and may require a recognised test such as the GMAT or GRE for certain programmes.\n\nThe accepted tests, how scores are weighed against your academic record, and any minimum requirements are defined by Bocconi for each programme and cycle. Confirm exactly which test your chosen programme accepts on the official admissions page before booking anything.',
+        bullets: [
+          'Bachelor / Law: Bocconi online test, or SAT/ACT (LSAT accepted for Law)',
+          'Master of Science: academic record plus GMAT or GRE where the programme requires it',
+          'Always verify the accepted test per programme on the official page',
+        ],
+      },
+      {
+        headingEn: 'Submit your application online and track the outcome',
+        bodyEn:
+          'Applications are completed through Bocconi\'s official online application portal. You create an account, fill in your details, upload the required documents, and submit within an open selection session. An application fee usually applies — the current amount is stated on the official site.\n\nAfter you submit, you receive the result for that session according to the published timeline. If you are admitted, the offer comes with enrolment steps and deadlines that you must complete to confirm your place.',
+      },
+      {
+        headingEn: 'Plan English proficiency and funding early',
+        bodyEn:
+          'Because many Bocconi programmes are taught in English, international applicants usually need to show English proficiency through an accepted test such as IELTS or TOEFL, unless they qualify for an exemption defined by the university. Check the exact accepted certificates and any exemptions on the official site.\n\nTuition and any merit-based or need-based financial aid are described on Bocconi\'s official funding pages. Amounts and eligibility change each year — review the current figures there and verify before you rely on them.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Where is Bocconi University located?',
+        answerEn:
+          'Bocconi University is located in Milan, Italy. Many of its Bachelor and Master programmes are taught in English.',
+      },
+      {
+        questionEn: 'Is there an admission test for Bocconi?',
+        answerEn:
+          'Yes. Selection includes a test component. Bachelor and Law applicants take an accepted admission test (the Bocconi online test, or SAT/ACT, with LSAT accepted for Law), while certain Master of Science programmes may require the GMAT or GRE. Confirm the accepted test for your specific programme on the official admissions page.',
+      },
+      {
+        questionEn: 'How are applicants selected — through rounds or one deadline?',
+        answerEn:
+          'Bocconi uses scheduled selection sessions (rounds) within each admission cycle rather than a single deadline. Applying in an earlier session can give you more time. The session dates change each year, so check the current calendar on the official site.',
+      },
+      {
+        questionEn: 'Do I need an English test to apply?',
+        answerEn:
+          'For English-taught programmes you usually need to show English proficiency through an accepted test such as IELTS or TOEFL, unless you qualify for an exemption defined by the university. Verify the accepted certificates and exemptions on the official Bocconi page.',
+      },
+      {
+        questionEn: 'Does Bocconi guarantee admission if I meet the requirements?',
+        answerEn:
+          'No university can guarantee admission. Meeting the stated requirements lets you apply, but places are limited and selection is competitive. Always treat the official admissions pages as the source of truth for the current process.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'gmat', 'gre'],
+    relatedCollegeSlugs: ['bocconi-university'],
+    relatedGuideSlugs: ['how-to-get-admission-in-ku-leuven', 'how-to-get-admission-in-aarhus-university'],
+    sources: [
+      { label: 'Bocconi University — Admissions (official)', url: 'https://www.unibocconi.it/en/admissions' },
+      { label: 'Bocconi University — official site', url: 'https://www.unibocconi.it/en' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['bocconi university admission', 'how to apply to bocconi', 'bocconi admission test', 'study at bocconi milan', 'bocconi bachelor application', 'bocconi masters requirements'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'Bocconi University (Milan, Italy)' },
+      { label: 'Programmes', value: 'Bachelor, Master of Science, Law, PhD — many taught in English' },
+      { label: 'Selection', value: 'Scheduled selection sessions (rounds) + accepted admission test' },
+      { label: 'Accepted tests', value: 'Bocconi online test, SAT/ACT (LSAT for Law); GMAT/GRE for some MSc' },
+      { label: 'Apply at', value: 'unibocconi.it/en/admissions (verify current cycle)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-kth-royal-institute',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in KTH Royal Institute of Technology',
+    descriptionEn:
+      'A practical guide to applying to KTH Royal Institute of Technology in Stockholm — how the Swedish national admissions portal works, master\'s requirements, English proficiency, documents, and where to verify the current process.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'About KTH Royal Institute of Technology',
+        bodyEn:
+          'KTH Royal Institute of Technology (Kungliga Tekniska hogskolan) is a public technical university in Stockholm, Sweden, offering a wide range of engineering, technology, and architecture programmes. It runs many two-year master\'s programmes taught in English, which attracts international applicants.\n\nThis guide describes the official structure of how to apply. Programme lists, requirements, fees, and deadlines change each admission round, so confirm the current details on KTH\'s official pages and the Swedish national admissions portal before applying.',
+      },
+      {
+        headingEn: 'Apply through the Swedish national admissions portal',
+        bodyEn:
+          'Most degree applications to KTH are made through Sweden\'s national admissions service, University Admissions (universityadmissions.se), not directly to the university. This single portal handles applications to Swedish universities, lets you rank your programme choices, and is where you upload supporting documents.\n\nYou create an account, search for the KTH programme, add it to your selection, rank your choices, and submit within the application period. Always cross-check the KTH programme page too, because KTH lists programme-specific requirements alongside the central process.',
+        bullets: [
+          'Create an account on universityadmissions.se',
+          'Search for and select the KTH programme',
+          'Rank your choices and submit within the application period',
+          'Upload the required supporting documents',
+        ],
+      },
+      {
+        headingEn: 'Check the entry requirements for your programme',
+        bodyEn:
+          'For a master\'s programme at KTH you generally need a relevant bachelor\'s degree, and each programme states the specific academic background it expects (for example, particular prior courses or a related field). Bachelor\'s-level programmes have their own qualifying requirements.\n\nBecause requirements differ by programme, read the requirements on the specific KTH programme page rather than assuming. Confirm that your degree and subjects match what the programme asks for before you apply.',
+      },
+      {
+        headingEn: 'Meet the English language requirement',
+        bodyEn:
+          'KTH\'s English-taught programmes require you to demonstrate English proficiency. This is usually shown through an accepted test such as IELTS or TOEFL, with the accepted tests and how scores are evaluated defined by the admissions process — some applicants may qualify for an exemption based on prior study.\n\nThe exact accepted certificates and any exemption rules are published officially. Verify them on University Admissions and the KTH site, and plan your test date so your results arrive before the document deadline.',
+      },
+      {
+        headingEn: 'Submit documents, fees, and meet deadlines',
+        bodyEn:
+          'After applying, you provide the required documents (such as transcripts and degree certificates) and, for applicants who are required to pay, an application fee and tuition. Whether an application fee and tuition apply depends on your citizenship category as defined by the Swedish authorities — EU/EEA and some other applicants are treated differently from fee-paying applicants.\n\nDeadlines for applying, paying, and submitting documents are strict and set centrally. Note the current dates on the official portal and submit everything on time, because late or incomplete applications can be deprioritised.',
+      },
+      {
+        headingEn: 'Funding and scholarships',
+        bodyEn:
+          'For applicants who pay tuition, KTH and external bodies offer some scholarships, and there are also country-wide options to research. Eligibility, amounts, and deadlines are set by each scheme and change every year.\n\nReview the official KTH scholarship pages and Swedish scholarship sources for the current options, and apply early — scholarship deadlines often fall around the same time as, or before, the admission deadline.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to KTH?',
+        answerEn:
+          'Most degree applications go through Sweden\'s national admissions portal, universityadmissions.se. You create an account, select the KTH programme, rank your choices, upload documents, and submit within the application period. Check the KTH programme page for programme-specific requirements too.',
+      },
+      {
+        questionEn: 'Where is KTH located?',
+        answerEn:
+          'KTH Royal Institute of Technology is a public technical university in Stockholm, Sweden, with several campuses in and around the city.',
+      },
+      {
+        questionEn: 'What do I need for a KTH master\'s programme?',
+        answerEn:
+          'You generally need a relevant bachelor\'s degree and proof of English proficiency. Each programme lists its specific academic background and document requirements, so confirm them on the official KTH programme page before applying.',
+      },
+      {
+        questionEn: 'Do I have to pay an application fee and tuition?',
+        answerEn:
+          'It depends on your citizenship category as defined by the Swedish authorities. EU/EEA and certain other applicants are treated differently from fee-paying applicants. Verify your category and the current fees on universityadmissions.se.',
+      },
+      {
+        questionEn: 'Are there scholarships for international students at KTH?',
+        answerEn:
+          'Yes, KTH and external bodies offer some scholarships for tuition-paying students, alongside country-wide options. Eligibility, amounts, and deadlines change each year, so check the official KTH scholarship pages and apply early.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'gre'],
+    relatedCollegeSlugs: ['kth-royal-institute'],
+    relatedGuideSlugs: ['how-to-get-admission-in-karolinska-institute', 'how-to-get-admission-in-aarhus-university'],
+    sources: [
+      { label: 'KTH — Master\'s programmes (official)', url: 'https://www.kth.se/en/studies/master' },
+      { label: 'University Admissions in Sweden — Apply to master\'s', url: 'https://www.universityadmissions.se/en/apply-to-masters/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['kth admission', 'how to apply to kth', 'kth masters application', 'study at kth stockholm', 'kth royal institute requirements', 'universityadmissions sweden'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'KTH Royal Institute of Technology (Stockholm, Sweden)' },
+      { label: 'Apply via', value: 'universityadmissions.se (Swedish national portal)' },
+      { label: 'Master\'s entry', value: 'Relevant bachelor\'s degree + English proficiency' },
+      { label: 'English tests', value: 'Accepted tests such as IELTS / TOEFL (verify per programme)' },
+      { label: 'Fees', value: 'Depend on citizenship category (verify on official portal)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-karolinska-institute',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in Karolinska Institutet',
+    descriptionEn:
+      'A clear guide to the admission process at Karolinska Institutet in Stockholm — how to apply through the Swedish national portal, programme and English requirements, documents, fees, and where to verify the current details.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'About Karolinska Institutet',
+        bodyEn:
+          'Karolinska Institutet (KI) is a public medical university in Stockholm, Sweden, focused on medicine and the health sciences. It offers programmes and courses in areas such as biomedicine, public health, and global health, including options taught in English.\n\nThis guide covers only the admission process — how to apply and what the university asks for. It does not give medical, clinical, or health guidance. Programme availability, requirements, fees, and deadlines change each cycle, so confirm the current details on the official KI education pages before applying.',
+      },
+      {
+        headingEn: 'Find your programme on the official education site',
+        bodyEn:
+          'Start on Karolinska Institutet\'s official education site, where you can browse programmes and courses and filter for those taught in English. KI offers global master\'s programmes and some English-taught options at other levels, each with its own admission requirements.\n\nSelect a specific programme first, because the entry requirements, required documents, and any selection criteria are defined per programme. Read the programme page itself rather than relying on general summaries.',
+      },
+      {
+        headingEn: 'Apply through the Swedish national admissions portal',
+        bodyEn:
+          'Like other Swedish universities, KI takes most degree applications through Sweden\'s national admissions service, University Admissions (universityadmissions.se). You create an account, search for the KI programme, rank your choices, upload your documents, and submit within the application period.\n\nThe portal manages the application, document submission, and (where applicable) the application fee. Always check the KI programme page alongside the portal, since KI publishes programme-specific instructions and selection details there.',
+        bullets: [
+          'Browse and choose a programme on the official KI education site',
+          'Apply through universityadmissions.se within the application period',
+          'Rank your choices and upload the required documents',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and selection',
+        bodyEn:
+          'Admission requirements vary by programme. A master\'s programme generally requires a relevant bachelor\'s degree, and specific programmes may expect particular prior subjects or a related background. Selection methods (for example, how applicants are ranked) are defined for each programme.\n\nBecause KI is a health-sciences university, individual programmes can have additional academic prerequisites. Read the exact requirements and selection criteria on the official programme page, and make sure your qualification matches before you apply.',
+      },
+      {
+        headingEn: 'English proficiency, fees, and deadlines',
+        bodyEn:
+          'For English-taught programmes you usually need to show English proficiency through an accepted test such as IELTS or TOEFL, unless you qualify for an exemption defined by the admissions process. Whether an application fee and tuition apply depends on your citizenship category as defined by the Swedish authorities.\n\nDeadlines for applying, paying, and submitting documents are set centrally and are strict. Confirm the current accepted tests, fee categories, and dates on University Admissions and the KI site, and submit everything on time.',
+      },
+      {
+        headingEn: 'Funding and scholarships',
+        bodyEn:
+          'For tuition-paying applicants, KI and external bodies offer some scholarships, and broader Swedish scholarship options also exist. Each scheme sets its own eligibility, amount, and deadline, and these change every year.\n\nReview the official KI scholarship pages and recognised Swedish scholarship sources for the current options, and apply early because scholarship deadlines can fall before the admission deadline.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to Karolinska Institutet?',
+        answerEn:
+          'Most degree applications go through Sweden\'s national admissions portal, universityadmissions.se. You choose the KI programme on the official education site, then apply through the portal — ranking your choices, uploading documents, and submitting within the application period.',
+      },
+      {
+        questionEn: 'Where is Karolinska Institutet located?',
+        answerEn:
+          'Karolinska Institutet is a public medical university in Stockholm, Sweden, focused on medicine and the health sciences.',
+      },
+      {
+        questionEn: 'What are the entry requirements?',
+        answerEn:
+          'Requirements vary by programme. A master\'s programme generally requires a relevant bachelor\'s degree plus English proficiency, and some programmes expect specific prior subjects. Always read the exact requirements on the official KI programme page.',
+      },
+      {
+        questionEn: 'Do I need an English test?',
+        answerEn:
+          'For English-taught programmes you usually need to show English proficiency through an accepted test such as IELTS or TOEFL, unless you qualify for an exemption. Verify the accepted certificates and exemptions on the official portal.',
+      },
+      {
+        questionEn: 'Does this guide give medical or clinical advice?',
+        answerEn:
+          'No. This guide covers only the admission process — how to apply and what KI requires. It does not provide medical, clinical, or health guidance. For programme content, consult the official KI pages.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['karolinska-institute'],
+    relatedGuideSlugs: ['how-to-get-admission-in-kth-royal-institute', 'how-to-get-admission-in-aarhus-university'],
+    sources: [
+      { label: 'Karolinska Institutet — Education (official)', url: 'https://education.ki.se/' },
+      { label: 'University Admissions in Sweden — Apply to master\'s', url: 'https://www.universityadmissions.se/en/apply-to-masters/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['karolinska institutet admission', 'how to apply to karolinska', 'karolinska masters application', 'study at karolinska stockholm', 'karolinska global masters', 'ki sweden admission'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'Karolinska Institutet (Stockholm, Sweden) — medical university' },
+      { label: 'Apply via', value: 'universityadmissions.se (Swedish national portal)' },
+      { label: 'Master\'s entry', value: 'Relevant bachelor\'s degree + English proficiency (per programme)' },
+      { label: 'English tests', value: 'Accepted tests such as IELTS / TOEFL (verify per programme)' },
+      { label: 'Fees', value: 'Depend on citizenship category (verify on official portal)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-ku-leuven',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in KU Leuven',
+    descriptionEn:
+      'A step-by-step guide to applying to KU Leuven in Belgium — how the online application works for international applicants, master\'s requirements, English proficiency, deadlines, and where to verify the current process.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'About KU Leuven',
+        bodyEn:
+          'KU Leuven (Katholieke Universiteit Leuven) is a public university in Belgium, with its main campus in the city of Leuven and additional campuses across Flanders. It offers a broad range of programmes, including many master\'s programmes taught fully in English.\n\nThis guide explains the official structure of the application process. Programme requirements, deadlines, and fees are set by the university each year and can change, so confirm the current details on the official KU Leuven application pages before you apply.',
+      },
+      {
+        headingEn: 'Check the application route for your background',
+        bodyEn:
+          'KU Leuven\'s application process depends on the type of qualification you hold. Applicants with a non-Belgian (non-Flemish) degree go through a formal application before they can register, while some applicants with local diplomas follow a different route.\n\nBecause the steps differ by background, start on the official application page, identify the route that matches your qualifications, and follow that route. This avoids submitting through the wrong process.',
+        bullets: [
+          'Identify your applicant category (e.g. non-Flemish degree holder)',
+          'Follow the matching application route on the official page',
+          'Check the specific programme page for extra requirements',
+        ],
+      },
+      {
+        headingEn: 'Select a programme and meet its entry requirements',
+        bodyEn:
+          'Choose a specific KU Leuven programme, because each one states its own academic background, required documents, and any additional conditions. For a master\'s programme you generally need a relevant bachelor\'s degree, and some programmes expect particular prior subjects.\n\nSome programmes are selective or have a limited intake. Read the requirements on the programme page itself and make sure your qualification matches before you apply.',
+      },
+      {
+        headingEn: 'Apply online and submit your documents',
+        bodyEn:
+          'Applications are submitted through KU Leuven\'s official online application system. You create an account, complete the application form, and upload the required documents such as transcripts, your degree certificate, and any programme-specific items.\n\nAn application fee may apply for some applicants — the current amount and any exemptions are stated on the official site. Submit a complete application, because missing documents can delay or weaken your application.',
+      },
+      {
+        headingEn: 'Meet the language requirement',
+        bodyEn:
+          'For English-taught programmes, KU Leuven requires proof of English proficiency, usually through an accepted test such as IELTS or TOEFL, unless you qualify for an exemption defined by the university. Dutch-taught programmes have their own language requirements.\n\nThe exact accepted certificates and exemptions are published officially. Verify them on the KU Leuven language-requirements page, and plan your test so results arrive before the deadline.',
+      },
+      {
+        headingEn: 'Deadlines, tuition, and scholarships',
+        bodyEn:
+          'Application deadlines at KU Leuven often differ by programme and by applicant category, and applying earlier is generally safer. Tuition fees depend on your programme and citizenship category as defined by the relevant authorities.\n\nKU Leuven and external bodies offer some scholarships, each with its own eligibility, amount, and deadline that change every year. Check the official deadline, tuition, and scholarship pages for the current details and apply early.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to KU Leuven?',
+        answerEn:
+          'You apply through KU Leuven\'s official online application system. First identify the application route for your qualification (for example, as a non-Flemish degree holder), then complete the form and upload the required documents within the programme\'s deadline.',
+      },
+      {
+        questionEn: 'Where is KU Leuven located?',
+        answerEn:
+          'KU Leuven is a public university in Belgium, with its main campus in the city of Leuven and additional campuses across Flanders.',
+      },
+      {
+        questionEn: 'What do I need for a master\'s programme at KU Leuven?',
+        answerEn:
+          'You generally need a relevant bachelor\'s degree and proof of English proficiency for English-taught programmes. Each programme lists its specific academic background and documents, so confirm them on the official programme page.',
+      },
+      {
+        questionEn: 'Do I need an English test?',
+        answerEn:
+          'For English-taught programmes, KU Leuven requires proof of English proficiency, usually through an accepted test such as IELTS or TOEFL, unless you qualify for an exemption. Verify the accepted certificates on the official language-requirements page.',
+      },
+      {
+        questionEn: 'When are the application deadlines?',
+        answerEn:
+          'Deadlines often differ by programme and by applicant category, and applying earlier is generally safer. Check the current deadline on your specific programme page on the official KU Leuven site.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['ku-leuven'],
+    relatedGuideSlugs: ['how-to-get-admission-in-bocconi-university', 'how-to-get-admission-in-aarhus-university'],
+    sources: [
+      { label: 'KU Leuven — Application (official)', url: 'https://www.kuleuven.be/english/application' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['ku leuven admission', 'how to apply to ku leuven', 'ku leuven masters application', 'study at ku leuven belgium', 'ku leuven english requirements', 'ku leuven international students'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'KU Leuven (Leuven, Belgium)' },
+      { label: 'Apply via', value: 'KU Leuven official online application system' },
+      { label: 'Master\'s entry', value: 'Relevant bachelor\'s degree + English proficiency (per programme)' },
+      { label: 'English tests', value: 'Accepted tests such as IELTS / TOEFL (verify per programme)' },
+      { label: 'Routes', value: 'Differ by qualification (e.g. non-Flemish degree holders)' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-aarhus-university',
+    category: 'admissions',
+    region: 'europe',
+    titleEn: 'How to Get Admission in Aarhus University',
+    descriptionEn:
+      'A practical guide to applying to Aarhus University in Denmark — how international applicants apply for master\'s programmes, entry and English requirements, documents, deadlines, and where to verify the current process.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'About Aarhus University',
+        bodyEn:
+          'Aarhus University (Aarhus Universitet) is a public university in Aarhus, Denmark, offering programmes across the arts, sciences, health, business, social sciences, and technical fields. It runs a range of master\'s programmes taught in English, which attracts international applicants.\n\nThis guide describes the official structure of the application process. Programme lists, requirements, deadlines, and fees change each admission cycle, so confirm the current details on Aarhus University\'s official international and admission pages before applying.',
+      },
+      {
+        headingEn: 'Find your programme and the right level',
+        bodyEn:
+          'Aarhus University offers bachelor\'s and master\'s degree programmes, with dedicated official sites for each level. Start by browsing the English-taught programmes and selecting a specific one, because entry requirements and documents are defined per programme.\n\nFor a master\'s programme you generally need a relevant bachelor\'s degree. Read the requirements on the specific programme page rather than relying on general summaries, and check that your background matches what it expects.',
+        bullets: [
+          'Browse English-taught programmes on the official site',
+          'Select a specific programme and read its requirements',
+          'Confirm your degree and subjects match the programme',
+        ],
+      },
+      {
+        headingEn: 'Check entry requirements for master\'s admission',
+        bodyEn:
+          'Master\'s admission at Aarhus University generally requires a relevant bachelor\'s degree, and individual programmes may specify particular prior courses or a related field. Some programmes are competitive and may rank applicants when there are more applicants than places.\n\nBecause the requirements differ by programme, read the admission requirements on the official programme page and the international admission pages. Make sure you meet both the general and the programme-specific requirements before you apply.',
+      },
+      {
+        headingEn: 'Meet the English language requirement',
+        bodyEn:
+          'For English-taught programmes, Aarhus University requires proof of English proficiency, usually through an accepted test such as IELTS or TOEFL, unless you qualify for an exemption defined by the university. The accepted tests and any exemptions are published officially.\n\nVerify the exact accepted certificates and exemption rules on the official admission pages, and plan your test date so your results arrive before the document deadline.',
+      },
+      {
+        headingEn: 'Apply, submit documents, and meet deadlines',
+        bodyEn:
+          'You apply through Aarhus University\'s official application channels for your programme level, create the required account, complete the application, and upload your documents such as transcripts and your degree certificate. An application fee and tuition may apply depending on your citizenship category as defined by the Danish authorities.\n\nDeadlines for applying and submitting documents are set by the university and are strict. Note the current dates on the official site and submit a complete application on time, because late or incomplete applications can be rejected.',
+      },
+      {
+        headingEn: 'Tuition and scholarships',
+        bodyEn:
+          'Whether you pay tuition depends on your citizenship category — applicants from outside the EU/EEA (and Switzerland) are generally treated differently from those within it. Aarhus University and external bodies offer some scholarships for fee-paying students, each with its own eligibility, amount, and deadline.\n\nThese figures change every year. Review the official tuition and scholarship pages for the current options and verify your category before relying on any number, and apply early because scholarship deadlines can fall before the admission deadline.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to Aarhus University?',
+        answerEn:
+          'You apply through Aarhus University\'s official application channels for your programme level (bachelor\'s or master\'s). You select a specific programme, complete the application, and upload the required documents within the published deadline.',
+      },
+      {
+        questionEn: 'Where is Aarhus University located?',
+        answerEn:
+          'Aarhus University is a public university in Aarhus, Denmark, with several campus locations in and around the city.',
+      },
+      {
+        questionEn: 'What do I need for a master\'s programme at Aarhus?',
+        answerEn:
+          'You generally need a relevant bachelor\'s degree and proof of English proficiency for English-taught programmes. Each programme lists its specific academic background and documents, so confirm them on the official programme page.',
+      },
+      {
+        questionEn: 'Do I have to pay tuition?',
+        answerEn:
+          'It depends on your citizenship category as defined by the Danish authorities. Applicants from outside the EU/EEA and Switzerland are generally treated differently from those within it. Verify your category and the current fees on the official site.',
+      },
+      {
+        questionEn: 'Are there scholarships for international students?',
+        answerEn:
+          'Aarhus University and external bodies offer some scholarships for fee-paying students. Eligibility, amounts, and deadlines change each year, so check the official scholarship pages and apply early.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['aarhus-university'],
+    relatedGuideSlugs: ['how-to-get-admission-in-kth-royal-institute', 'how-to-get-admission-in-ku-leuven'],
+    sources: [
+      { label: 'Aarhus University — Master\'s degree (official)', url: 'https://masters.au.dk/' },
+      { label: 'Aarhus University — International students (official)', url: 'https://international.au.dk/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['aarhus university admission', 'how to apply to aarhus university', 'aarhus masters application', 'study at aarhus denmark', 'aarhus university english requirements', 'aarhus university international students'],
+    tags: ['europe-universities'],
+    keyFacts: [
+      { label: 'University', value: 'Aarhus University (Aarhus, Denmark)' },
+      { label: 'Apply via', value: 'Official Aarhus University application channels (per level)' },
+      { label: 'Master\'s entry', value: 'Relevant bachelor\'s degree + English proficiency (per programme)' },
+      { label: 'English tests', value: 'Accepted tests such as IELTS / TOEFL (verify per programme)' },
+      { label: 'Fees', value: 'Depend on citizenship category (verify on official site)' },
+    ],
+  },
+  {
+    slug: 'germany-student-visa-guide-from-india',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Germany Student Visa Guide',
+    descriptionEn:
+      'A clear, neutral overview of the German national long-stay (type D) student visa — when you need it, the conditions involved, and where to apply through the German mission abroad.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Which visa students need for Germany',
+        bodyEn:
+          'To study a full degree programme in Germany, students from many countries (including India) apply for a national long-stay visa, commonly called the type D student visa. It is issued for the purpose of study and is different from a short-stay Schengen visa used for short visits.\n\nThe German Federal Foreign Office (Auswärtiges Amt) sets the official requirements, and the visa is applied for at the competent German mission (embassy or consulate) abroad before you travel. This is general information, not immigration advice — verify the current rules on the official government source.',
+        bullets: [
+          'Full-degree study → national long-stay (type D) student visa',
+          'Applied for at the German mission abroad before travel',
+          'Different from a short-stay Schengen visa',
+        ],
+      },
+      {
+        headingEn: 'Who applies and when',
+        bodyEn:
+          'Whether you need a visa, and which one, depends on your nationality and the length of your stay. Nationals of some countries can enter Germany without a visa and apply for a residence permit after arrival, while others must obtain the visa before entry — the official Foreign Office pages list how this works for each nationality.\n\nThere is also a student applicant visa for those who have not yet received a final admission letter but need to be in Germany to complete the application process. Confirm which category fits your situation on the official source.',
+      },
+      {
+        headingEn: 'Common conditions attached to the visa',
+        bodyEn:
+          'A student visa is typically tied to specific conditions: admission (or a strong prospect of admission) to a recognised German institution, evidence that you can finance your studies, and valid health insurance. These are checked as part of the application.\n\nThe precise documents, formats, and any fees are set by the authorities and can change between application cycles, so always work from the checklist published by the German mission handling your application.',
+        bullets: [
+          'Admission or prospect of admission to a recognised institution',
+          'Proof you can finance your studies',
+          'Valid health insurance coverage',
+        ],
+      },
+      {
+        headingEn: 'From visa to residence permit',
+        bodyEn:
+          'The long-stay visa usually lets you enter Germany and begin your studies. After arrival, students generally register locally and apply to the local foreigners authority (Ausländerbehörde) for a residence permit for study purposes that covers the rest of their programme.\n\nThe steps, appointment systems, and timelines vary by city and can change, so follow the instructions from your local authority and the official portals rather than relying on second-hand accounts.',
+      },
+      {
+        headingEn: 'Where to verify the official rules',
+        bodyEn:
+          'The most reliable sources are the German Federal Foreign Office (for the visa itself), the official Make it in Germany portal (the government\'s information service), and Study in Germany (the DAAD-supported portal). The specific German embassy or consulate responsible for your country publishes the binding checklist and any appointment process.\n\nBecause requirements change frequently, treat any figure or rule you read elsewhere as a prompt to confirm — verify on the official government source before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What kind of visa do I need to study in Germany?',
+        answerEn:
+          'For a full degree programme you generally apply for a national long-stay (type D) student visa at the German mission abroad. This differs from a short-stay Schengen visa. Confirm the category that applies to your nationality and stay on the official Foreign Office source.',
+      },
+      {
+        questionEn: 'Do I apply for the visa before or after I get my admission?',
+        answerEn:
+          'A student visa normally requires admission or a strong prospect of admission. A separate student applicant visa exists for those who still need to complete the application from within Germany. Check which category fits your situation on the official source.',
+      },
+      {
+        questionEn: 'Is the visa the same as a residence permit?',
+        answerEn:
+          'No. The long-stay visa typically lets you enter and begin studying; after arrival students usually apply to the local foreigners authority for a residence permit for the rest of the programme. Steps vary by city — follow the official local instructions.',
+      },
+      {
+        questionEn: 'Where should I confirm the current requirements?',
+        answerEn:
+          'Use the German Federal Foreign Office, the Make it in Germany portal, Study in Germany, and the specific German embassy or consulate for your country. Rules change frequently, so verify on the official government source. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'germany-student-visa-financial-requirements',
+      'blocked-account-germany',
+      'health-insurance-for-students-in-germany',
+      'study-in-germany-from-india',
+    ],
+    sources: [
+      { label: 'German Federal Foreign Office — visa information', url: 'https://www.auswaertiges-amt.de/en/visa-service' },
+      { label: 'Make it in Germany — official government portal', url: 'https://www.make-it-in-germany.com/en/' },
+      { label: 'Study in Germany — DAAD-supported portal', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'germany student visa',
+      'germany student visa from india',
+      'national long stay visa germany',
+      'type d visa germany',
+      'student visa for germany requirements',
+      'how to apply for german student visa',
+    ],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'Visa type for degree study', value: 'National long-stay (type D) student visa' },
+      { label: 'Where you apply', value: 'German mission (embassy/consulate) abroad' },
+      { label: 'Authority for rules', value: 'German Federal Foreign Office (Auswärtiges Amt)' },
+      { label: 'After arrival', value: 'Residence permit via the local foreigners authority' },
+    ],
+  },
+  {
+    slug: 'blocked-account-germany',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Blocked Account for Germany, Explained',
+    descriptionEn:
+      'What a German blocked account (Sperrkonto) is, how it works as one way to show proof of funds for the student visa, and why the required amount is set yearly — verify it on the official source.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What a blocked account is',
+        bodyEn:
+          'A blocked account, known in German as a Sperrkonto, is a special bank account often used by international students to demonstrate that they can cover their living costs in Germany. You deposit a set amount, and the funds are "blocked" so that you can withdraw only a limited sum each month after you arrive.\n\nIt is one recognised way to show proof of funds for the German student visa, but it is not the only option. This is general information, not immigration advice — verify the current rules on the official government source.',
+      },
+      {
+        headingEn: 'How it works in practice',
+        bodyEn:
+          'You typically open the account with a provider that offers blocked accounts, transfer the required amount before applying for your visa, and receive a confirmation you can submit with your application. Once you reach Germany and complete the local steps, the account converts to allow a fixed monthly withdrawal for living expenses.\n\nProviders, fees, and exact procedures differ, so use the details published by the provider you choose and cross-check them against the official guidance.',
+        bullets: [
+          'Open a blocked account with a recognised provider',
+          'Transfer the required amount before the visa application',
+          'Withdraw a limited amount each month after arrival',
+        ],
+      },
+      {
+        headingEn: 'How much money is required',
+        bodyEn:
+          'The amount you must hold in a blocked account is set by the German authorities and reviewed periodically — it is not a fixed, permanent figure. Because it can change from year to year, this guide deliberately does not quote a euro amount.\n\nAlways read the current required sum directly from the German Federal Foreign Office or Make it in Germany before opening your account, and verify on the official government source.',
+      },
+      {
+        headingEn: 'Alternatives to a blocked account',
+        bodyEn:
+          'A blocked account is common, but the official rules usually accept other forms of proof of funds too — for example certain scholarships, or a formal declaration of commitment from a sponsor who can demonstrate sufficient means. The accepted alternatives and their conditions are listed on the official sources.\n\nWhich option is right depends on your circumstances, so review the current list of accepted evidence and confirm the details before deciding.',
+      },
+      {
+        headingEn: 'Where to verify before you pay',
+        bodyEn:
+          'Treat the blocked-account requirement as something to confirm at the time you apply, not a number to memorise. The German Federal Foreign Office and Make it in Germany publish the current amount and the accepted proof-of-funds options, and the German mission for your country may add specifics.\n\nBecause requirements and amounts change, verify on the official government source before transferring any money.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is a blocked account (Sperrkonto)?',
+        answerEn:
+          'It is a special bank account used by many international students to show they can fund their living costs in Germany. You deposit a set amount that is "blocked", then withdraw a limited sum each month after arrival. It is one accepted proof-of-funds option for the student visa.',
+      },
+      {
+        questionEn: 'How much do I need in a blocked account?',
+        answerEn:
+          'The required amount is set by the German authorities and reviewed periodically, so it can change year to year. We do not quote a figure here — read the current amount on the German Federal Foreign Office or Make it in Germany and verify on the official source.',
+      },
+      {
+        questionEn: 'Is a blocked account the only way to prove funds?',
+        answerEn:
+          'No. Official rules generally accept other evidence too, such as certain scholarships or a formal declaration of commitment from a sponsor. Check the current accepted options on the official sources before deciding. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'When does the money become available?',
+        answerEn:
+          'After you arrive in Germany and complete the local steps, the account usually allows a fixed monthly withdrawal for living expenses. Exact procedures depend on your provider, so follow their instructions and the official guidance.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'germany-student-visa-financial-requirements',
+      'germany-student-visa-guide-from-india',
+      'health-insurance-for-students-in-germany',
+      'study-in-germany-from-india',
+    ],
+    sources: [
+      { label: 'German Federal Foreign Office — visa information', url: 'https://www.auswaertiges-amt.de/en/visa-service' },
+      { label: 'Make it in Germany — securing funding for your studies', url: 'https://www.make-it-in-germany.com/en/study-vocational-training/studies-in-germany/complete/securing-funding' },
+      { label: 'Study in Germany — proof of financing', url: 'https://www.study-in-germany.com/en/plan-your-studies/requirements/proof-of-financing/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'blocked account germany',
+      'sperrkonto germany',
+      'proof of funds germany student visa',
+      'how much money for blocked account germany',
+      'blocked account for student visa',
+      'germany blocked account explained',
+    ],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'German name', value: 'Sperrkonto (blocked account)' },
+      { label: 'Purpose', value: 'One accepted proof-of-funds option for the student visa' },
+      { label: 'Required amount', value: 'Set yearly by the authorities — verify on the official source' },
+      { label: 'How funds release', value: 'Limited monthly withdrawal after arrival' },
+    ],
+  },
+  {
+    slug: 'germany-student-visa-financial-requirements',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Germany Student Visa Financial Requirements',
+    descriptionEn:
+      'The proof-of-funds part of the German student visa explained — the accepted options (blocked account, scholarship, sponsor), why the amount is set yearly, and where to confirm it officially.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Why proof of funds matters',
+        bodyEn:
+          'For the German student visa, applicants generally have to show that they can cover their living costs while studying. This "proof of funds" (Finanzierungsnachweis) is one of the core conditions checked during the visa process, alongside admission and health insurance.\n\nThe goal is simply to demonstrate that you can support yourself for the period of study. This is general information, not immigration advice — verify the current rules on the official government source.',
+      },
+      {
+        headingEn: 'Accepted ways to show funds',
+        bodyEn:
+          'The official rules usually accept several forms of financial proof. A blocked account (Sperrkonto) is the most widely used, but it is not the only one — other recognised options commonly include certain scholarships and a formal declaration of commitment from a sponsor who can show sufficient means.\n\nThe exact list of accepted evidence, and the documents each requires, are published on the official sources and can vary by mission, so confirm what applies to your case.',
+        bullets: [
+          'Blocked account (Sperrkonto)',
+          'Recognised scholarship awards',
+          'Formal declaration of commitment by a sponsor with sufficient means',
+        ],
+      },
+      {
+        headingEn: 'How much is needed',
+        bodyEn:
+          'The minimum amount you must demonstrate is set by the German authorities and reviewed periodically — it changes over time, so this guide does not quote a euro figure. The current sum, and how it is calculated for a year of study, are published on the German Federal Foreign Office and Make it in Germany pages.\n\nRead the figure that applies at the time you apply, and verify on the official government source before arranging your finances.',
+      },
+      {
+        headingEn: 'Putting your evidence together',
+        bodyEn:
+          'In practice, applicants prepare the financial proof in the format the German mission specifies — for example a blocked-account confirmation, a scholarship award letter, or a completed declaration of commitment with supporting documents. Submitting it correctly is part of a smooth application.\n\nBecause formats and acceptable documents differ between missions and can change, always follow the checklist from the embassy or consulate handling your application rather than a general template.',
+      },
+      {
+        headingEn: 'Where to confirm the official requirement',
+        bodyEn:
+          'The German Federal Foreign Office sets the visa requirements, Make it in Germany explains financing options in plain language, and Study in Germany offers general guidance for international students. The specific German mission for your country provides the binding checklist.\n\nSince both the accepted options and the required amount can change, treat anything you read elsewhere as a prompt to confirm — verify on the official government source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much money do I need to show for a German student visa?',
+        answerEn:
+          'The required amount is set by the German authorities and reviewed periodically, so it changes over time. We do not quote a figure — read the current sum on the German Federal Foreign Office or Make it in Germany and verify on the official source.',
+      },
+      {
+        questionEn: 'What counts as proof of funds?',
+        answerEn:
+          'Official rules generally accept a blocked account (Sperrkonto), certain scholarships, or a formal declaration of commitment from a sponsor with sufficient means, among other options. Check the current accepted list and required documents on the official sources.',
+      },
+      {
+        questionEn: 'Do I have to use a blocked account?',
+        answerEn:
+          'Not necessarily. A blocked account is the most common option, but it is one of several accepted forms of proof. Review the alternatives on the official source and choose what fits your situation. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Where do I confirm the exact requirement?',
+        answerEn:
+          'Use the German Federal Foreign Office and Make it in Germany for the rules and amount, and the specific German embassy or consulate for your country for the binding checklist. Requirements change, so verify on the official government source before you apply.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'blocked-account-germany',
+      'germany-student-visa-guide-from-india',
+      'health-insurance-for-students-in-germany',
+      'daad-scholarship-for-indians',
+    ],
+    sources: [
+      { label: 'German Federal Foreign Office — visa information', url: 'https://www.auswaertiges-amt.de/en/visa-service' },
+      { label: 'Make it in Germany — securing funding for your studies', url: 'https://www.make-it-in-germany.com/en/study-vocational-training/studies-in-germany/complete/securing-funding' },
+      { label: 'Study in Germany — proof of financing', url: 'https://www.study-in-germany.com/en/plan-your-studies/requirements/proof-of-financing/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'germany student visa financial requirements',
+      'proof of funds germany',
+      'finanzierungsnachweis germany',
+      'how much money for germany student visa',
+      'germany student visa funds requirement',
+      'financial proof for german visa',
+    ],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'German term', value: 'Finanzierungsnachweis (proof of funds)' },
+      { label: 'Common options', value: 'Blocked account, scholarship, or sponsor declaration' },
+      { label: 'Required amount', value: 'Set yearly — verify on the official source' },
+      { label: 'Binding checklist', value: 'Published by the German mission for your country' },
+    ],
+  },
+  {
+    slug: 'health-insurance-for-students-in-germany',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Health Insurance for Students in Germany',
+    descriptionEn:
+      'Why health insurance is required for enrolment and the student visa in Germany, the difference between statutory (public) and private cover, and where to confirm what applies to you.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Why health insurance is required',
+        bodyEn:
+          'In Germany, valid health insurance is mandatory — universities generally require proof of cover before you can enrol, and it is one of the conditions for the student visa and residence permit. You are expected to be insured for the duration of your studies.\n\nThis is a practical, factual requirement rather than an optional add-on. This is general information, not immigration advice — verify the current rules on the official government source.',
+      },
+      {
+        headingEn: 'Statutory (public) versus private insurance',
+        bodyEn:
+          'Germany has two broad routes: statutory (public) health insurance, often called gesetzliche Krankenversicherung, and private health insurance. Many enrolled students use statutory insurance, while some — depending on their age, programme, or status — may use or be required to use private cover.\n\nWhich route applies depends on your individual circumstances and the official rules, so this guide does not endorse any one provider or plan. Check the conditions that apply to your situation on the official sources.',
+        bullets: [
+          'Statutory (public) — gesetzliche Krankenversicherung',
+          'Private health insurance — for those who qualify or are required to use it',
+          'Which one applies depends on your circumstances and the official rules',
+        ],
+      },
+      {
+        headingEn: 'Insurance for the visa application',
+        bodyEn:
+          'When applying for the student visa, you usually need to show health insurance valid at least for the initial period of your stay, with the format and minimum coverage specified by the German mission. After you arrive and enrol, you typically arrange the cover that applies for the rest of your studies.\n\nThe exact documents accepted at the visa stage versus the enrolment stage can differ, so follow the checklist from the mission and your university.',
+      },
+      {
+        headingEn: 'Existing cover and EU arrangements',
+        bodyEn:
+          'Some students arrive with existing cover that may be recognised — for instance, certain visitors hold a European Health Insurance Card under EU arrangements, and others may have eligible cover from their home country. Whether such cover is accepted for enrolment and the visa depends on the official rules.\n\nDo not assume an existing policy is sufficient; confirm acceptance with your university and the official sources before relying on it.',
+      },
+      {
+        headingEn: 'Where to confirm what you need',
+        bodyEn:
+          'Study in Germany and Make it in Germany explain the health-insurance requirement for international students in plain language, and your chosen university\'s international office states exactly what proof it accepts for enrolment. The German mission specifies what is needed for the visa.\n\nBecause requirements can change and depend on your status, treat any figure or rule as a prompt to confirm — verify on the official source before you decide.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is health insurance compulsory for students in Germany?',
+        answerEn:
+          'Yes. Valid health insurance is generally required to enrol at a German university and is a condition for the student visa and residence permit. You are expected to be covered for the duration of your studies. Confirm the current rules on the official source.',
+      },
+      {
+        questionEn: 'What is the difference between statutory and private insurance?',
+        answerEn:
+          'Statutory (public) insurance, or gesetzliche Krankenversicherung, is used by many enrolled students, while private health insurance applies to some depending on age, programme, or status. Which one applies depends on your circumstances and the official rules — check what fits your situation.',
+      },
+      {
+        questionEn: 'Do I need insurance before I apply for the visa?',
+        answerEn:
+          'Usually you need to show cover valid at least for the initial period of your stay, in the format the German mission specifies, then arrange the cover for the rest of your studies after enrolment. Follow the checklist from the mission and your university.',
+      },
+      {
+        questionEn: 'Will my existing or home-country insurance be accepted?',
+        answerEn:
+          'It depends. Some cover — such as a European Health Insurance Card under EU arrangements or eligible home-country policies — may be recognised, but acceptance is decided by the official rules. Confirm with your university and the official sources before relying on it.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'germany-student-visa-guide-from-india',
+      'germany-student-visa-financial-requirements',
+      'blocked-account-germany',
+      'study-in-germany-from-india',
+    ],
+    sources: [
+      { label: 'Study in Germany — health insurance for students', url: 'https://www.study-in-germany.com/en/plan-your-studies/requirements/health-insurance/' },
+      { label: 'Make it in Germany — official government portal', url: 'https://www.make-it-in-germany.com/en/' },
+      { label: 'German Federal Foreign Office — visa information', url: 'https://www.auswaertiges-amt.de/en/visa-service' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'health insurance for students in germany',
+      'student health insurance germany',
+      'public vs private health insurance germany students',
+      'gesetzliche krankenversicherung students',
+      'germany student visa health insurance',
+      'do i need health insurance to study in germany',
+    ],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'Requirement', value: 'Mandatory for enrolment, visa and residence permit' },
+      { label: 'Two routes', value: 'Statutory (public) or private — depends on your status' },
+      { label: 'Public scheme name', value: 'Gesetzliche Krankenversicherung' },
+      { label: 'Confirm with', value: 'University international office + official portals' },
+    ],
+  },
+  {
+    slug: 'student-visa-types-in-europe-schengen-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Student Visas in Europe: Schengen and National Visas Explained',
+    descriptionEn:
+      'The difference between a short-stay Schengen visa and a long-stay national (type D) student visa or residence permit in Europe — and what travelling within the Schengen area means for students.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two different things: short-stay vs long-stay',
+        bodyEn:
+          'When people say "Schengen visa", they usually mean a short-stay visa for visits of up to a limited number of days. Studying a full programme in Europe is different: it normally requires a long-stay national visa (often called a type D visa) and/or a residence permit issued by the country you will study in.\n\nUnderstanding this distinction early avoids confusion when you plan your application. This is general information, not immigration advice — verify the current rules on the official government source.',
+        bullets: [
+          'Short-stay Schengen visa → short visits',
+          'Long-stay national (type D) visa / residence permit → full study programmes',
+        ],
+      },
+      {
+        headingEn: 'The long-stay national (type D) route for students',
+        bodyEn:
+          'For degree study, most students apply for a long-stay national visa or residence permit issued by the specific country — Germany, France, the Netherlands, Italy, Spain, Sweden and others each run their own system. The visa is granted for the purpose of study and is tied to that country\'s requirements.\n\nBecause each country sets its own conditions, documents, and procedures, you apply through that country\'s official channel and confirm the details there rather than assuming a single Europe-wide process.',
+      },
+      {
+        headingEn: 'What "Schengen" means for travel',
+        bodyEn:
+          'The Schengen area is a group of European countries that have removed routine border checks between them. Many holders of a long-stay national visa or residence permit from a Schengen country may also travel to other Schengen countries for short stays — commonly framed as up to 90 days within any 180-day period — for visits.\n\nThe exact conditions, and which countries are included, are defined by official EU and national rules and can change, so confirm what your particular permit allows on the official source before you travel.',
+      },
+      {
+        headingEn: 'Not every European country is in Schengen',
+        bodyEn:
+          'It is worth remembering that "Europe", "the EU", and "the Schengen area" are not the same thing. Some European countries are in the EU but apply their own arrangements, and some non-EU countries take part in Schengen. A few popular study destinations operate their own immigration systems.\n\nSo your travel rights and visa type depend on the specific country you study in and your permit — always check the official rules for that country and for the Schengen area as it currently stands.',
+      },
+      {
+        headingEn: 'How to apply and where to verify',
+        bodyEn:
+          'In practice, you identify the country you will study in, apply for that country\'s long-stay national visa or residence permit through its official channel, and follow any post-arrival steps such as registering or collecting a residence permit. The country\'s mission or immigration authority is the binding source.\n\nFor general orientation, the EU Immigration Portal explains visa categories and the EU\'s study mobility framework, but the country-specific official source always governs. Verify on the official government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a Schengen visa to study in Europe?',
+        answerEn:
+          'Usually not for a full programme. A short-stay Schengen visa is for short visits, while degree study normally requires a long-stay national (type D) visa and/or residence permit from the specific country. Confirm the right category on that country\'s official source.',
+      },
+      {
+        questionEn: 'Can I travel to other European countries on my student permit?',
+        answerEn:
+          'Many holders of a long-stay national visa or residence permit from a Schengen country may travel to other Schengen countries for short visits, commonly up to 90 days in any 180-day period. The exact conditions are set by official rules, so verify what your permit allows.',
+      },
+      {
+        questionEn: 'Is every European country part of Schengen?',
+        answerEn:
+          'No. "Europe", "the EU", and "the Schengen area" are different. Some EU countries apply their own arrangements, some non-EU countries take part in Schengen, and several destinations run their own immigration systems. Your rights depend on the specific country and permit.',
+      },
+      {
+        questionEn: 'Where do I apply for a student visa in Europe?',
+        answerEn:
+          'You apply through the official channel of the country you will study in — its embassy, consulate, or immigration authority. The EU Immigration Portal gives general orientation, but the country-specific official source governs. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'germany-student-visa-guide-from-india',
+      'study-in-france-from-india',
+      'study-in-netherlands-from-india',
+      'study-in-germany-from-india',
+    ],
+    sources: [
+      { label: 'EU Immigration Portal — official EU information', url: 'https://immigration-portal.ec.europa.eu/index_en' },
+      { label: 'European Union — official portal', url: 'https://european-union.europa.eu/index_en' },
+      { label: 'German Federal Foreign Office — visa information', url: 'https://www.auswaertiges-amt.de/en/visa-service' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'student visa types in europe',
+      'schengen visa vs national visa',
+      'type d visa europe',
+      'long stay national visa europe',
+      'student visa schengen explained',
+      'travel within schengen on student visa',
+    ],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'Short-stay visa', value: 'Schengen visa — for short visits' },
+      { label: 'Study visa', value: 'Long-stay national (type D) visa / residence permit' },
+      { label: 'Issued by', value: 'The specific country you study in' },
+      { label: 'Schengen travel', value: 'Often short visits within the area — verify your permit' },
+    ],
+  },
+  {
+    slug: 'france-student-visa-guide-from-india',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'France Student Visa Guide (VLS-TS)',
+    descriptionEn:
+      'How the French long-stay student visa (VLS-TS) works for international students — the Etudes en France process, the France-Visas application, what you typically need, and validation after arrival. Neutral official facts, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the VLS-TS student visa is',
+        bodyEn:
+          'Most international students who come to France for a study programme longer than a few months apply for a long-stay visa that also serves as a residence permit. In official French terms this is the VLS-TS (visa de long sejour valant titre de sejour) for studies. It lets you live and study in France for the duration of your course, subject to the conditions set by the French authorities.\n\nThis page explains the general shape of the process so you know what to expect. It is general information, not immigration advice — the exact requirements, fees, and steps are set by the French government and can change, so verify everything on the official France-Visas portal before you apply.',
+      },
+      {
+        headingEn: 'Step 1 — Etudes en France and Campus France',
+        bodyEn:
+          'For many countries, including India, France runs a structured pre-application platform called Etudes en France, managed by Campus France. Students from these countries are normally expected to create an Etudes en France account, build their study project, and (where applicable) complete a Campus France interview before the visa stage.\n\nCampus France guides you through choosing a programme, submitting your academic file, and securing your admission. Completing this step correctly is what later unlocks the visa appointment, so follow the official Campus France instructions for your country closely.',
+        bullets: [
+          'Create your Etudes en France account and complete your study project',
+          'Submit academic documents and follow the Campus France steps for your country',
+          'Secure an admission / acceptance from a recognised French institution',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — Apply through France-Visas',
+        bodyEn:
+          'The official visa application itself goes through France-Visas, the French government\'s visa portal. You fill in the online form, get your personalised list of supporting documents, and then book an appointment with the relevant visa centre or consulate for your region to submit biometrics and your file.\n\nTypical supporting elements for a student file include proof of admission, evidence that you can cover your living costs, accommodation arrangements, and a valid passport — but the exact list is generated for your situation by France-Visas. Treat the portal\'s own document list as the authority and do not rely on unofficial checklists.',
+      },
+      {
+        headingEn: 'Step 3 — Validate your visa after you arrive',
+        bodyEn:
+          'A key feature of the VLS-TS is that, after you arrive in France, you generally have to validate it online within a set period for it to function as your residence permit. This validation is done through the official French administration portal and usually involves confirming your arrival details and paying the relevant tax/fee.\n\nBecause this post-arrival validation is easy to overlook and is time-limited, note the deadline given to you and complete it on the official government site. Skipping it can affect the legal validity of your stay.',
+      },
+      {
+        headingEn: 'Working and renewing during your studies',
+        bodyEn:
+          'France allows international students to work a limited number of hours alongside their studies, within the rules set by the authorities, and student status can usually be renewed as you progress through your programme. The specific work-hour limits, renewal conditions, and any post-study options are defined by French law and are revised from time to time.\n\nDo not assume a fixed number from memory or from older guides. Confirm the current work allowance and renewal rules on the official French government sources, and remember this is general information rather than personalised immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply for the visa before or after getting admission?',
+        answerEn:
+          'You normally secure admission first (often via Etudes en France / Campus France for eligible countries), and then apply for the long-stay student visa through France-Visas. Proof of admission is a core part of the visa file.',
+      },
+      {
+        questionEn: 'Is the VLS-TS a visa or a residence permit?',
+        answerEn:
+          'It is a long-stay visa that also serves as a residence permit for the study period, which is why it must usually be validated online after you arrive in France. Always confirm the current validation step and deadline on the official government portal.',
+      },
+      {
+        questionEn: 'How much money do I need to show?',
+        answerEn:
+          'French authorities require proof that you can cover your living costs, but the exact amount and accepted forms of proof are set officially and can change each year. Check the current figure and document rules on France-Visas and Campus France rather than relying on an unofficial number.',
+      },
+      {
+        questionEn: 'Can I work while studying in France?',
+        answerEn:
+          'International students are generally allowed to work a capped number of hours alongside full-time study, under the rules set by the French government. Verify the current limit on the official sources — this is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-france-from-india', 'italy-student-visa-guide-from-india', 'spain-student-visa-guide-from-india'],
+    sources: [
+      { label: 'France-Visas — official French government visa portal', url: 'https://france-visas.gouv.fr/en/' },
+      { label: 'Campus France — official study-in-France agency', url: 'https://www.campusfrance.org/en' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['france student visa', 'vls-ts student visa', 'campus france etudes en france', 'long stay visa france', 'study in france visa process'],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'Visa type', value: 'VLS-TS — long-stay visa valid as a residence permit (studies)' },
+      { label: 'Pre-application', value: 'Etudes en France / Campus France for eligible countries' },
+      { label: 'Where to apply', value: 'France-Visas official government portal' },
+      { label: 'After arrival', value: 'Online validation within the set deadline (verify on official portal)' },
+    ],
+  },
+  {
+    slug: 'netherlands-student-visa-and-residence-permit',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Netherlands Student Visa and Residence Permit',
+    descriptionEn:
+      'How studying in the Netherlands works for immigration — why your university usually applies to the IND for the entry visa (MVV) and residence permit on your behalf, what you provide, and what to verify. Neutral official facts, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How the Dutch student route is different',
+        bodyEn:
+          'For studying in the Netherlands, the immigration process works differently from many other countries: in most cases your Dutch university or college handles the application with the Immigration and Naturalisation Service (the IND) on your behalf, rather than you filing directly at a consulate.\n\nThis page describes the general process so you understand who does what. It is general information, not immigration advice — the official rules, fees, and requirements are set by the Dutch government (IND) and can change, so always verify the current details on the official IND website.',
+      },
+      {
+        headingEn: 'The MVV (entry visa) and the residence permit',
+        bodyEn:
+          'Depending on your nationality, you may need an entry visa called an MVV (machtiging tot voorlopig verblijf) to travel to the Netherlands, plus a residence permit (VVR) to stay for your studies. Students from some countries need both; students from certain other countries are exempt from the MVV but still need the residence permit.\n\nYour institution, acting as a recognised sponsor, typically submits the combined application to the IND for you. The IND assesses it and, if approved, you collect your MVV (where required) and later your residence-permit card. Confirm which documents apply to your nationality on the IND site.',
+        bullets: [
+          'MVV = the entry visa some nationalities need to travel to the Netherlands',
+          'Residence permit (VVR) = permission to stay and study',
+          'A recognised-sponsor institution usually applies to the IND for both',
+        ],
+      },
+      {
+        headingEn: 'What you typically provide',
+        bodyEn:
+          'Because the university is the sponsor, much of your interaction is with the institution\'s international office rather than directly with immigration. You generally supply documents such as a valid passport, proof of admission, and evidence that you can fund your studies and living costs, which the institution forwards to the IND.\n\nThe exact paperwork, the proof-of-funds amount, and how it must be shown are defined officially and updated periodically. Follow your university\'s instructions and the official IND requirements rather than an unofficial checklist.',
+      },
+      {
+        headingEn: 'After approval and during your studies',
+        bodyEn:
+          'Once the IND approves the application, you complete any remaining steps — for example collecting the MVV sticker (if applicable) and the residence-permit card — and may need to register locally after you arrive. The residence permit is tied to your enrolment and to making sufficient study progress.\n\nThe Netherlands also has rules on working alongside study and on options after graduation, but these are governed by Dutch law and revised over time. Verify the current work allowance, study-progress norms, and any post-study options on the official IND sources, and treat this page as general information, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply for the Dutch student visa myself?',
+        answerEn:
+          'Usually not directly. In most cases your Dutch university or college, as a recognised sponsor, applies to the IND for your entry visa (MVV, if needed) and residence permit on your behalf. You provide the required documents to the institution.',
+      },
+      {
+        questionEn: 'What is the difference between the MVV and the residence permit?',
+        answerEn:
+          'The MVV is an entry visa that some nationalities need in order to travel to the Netherlands, while the residence permit (VVR) is the permission to actually stay and study. Whether you need the MVV depends on your nationality — check the official IND website.',
+      },
+      {
+        questionEn: 'How much money do I need to show for a Dutch student permit?',
+        answerEn:
+          'You must show you can fund your tuition and living costs, but the exact amount and the accepted proof are set officially by the IND and can change each year. Confirm the current figure on the official IND source rather than relying on an older number.',
+      },
+      {
+        questionEn: 'Can I work while studying in the Netherlands?',
+        answerEn:
+          'There are rules that allow international students to work within limits, but the specifics depend on your situation and on current Dutch regulations. Verify the latest rules on the official IND site — this is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-netherlands-from-india', 'france-student-visa-guide-from-india', 'sweden-student-residence-permit-guide'],
+    sources: [
+      { label: 'IND — Netherlands Immigration and Naturalisation Service (study)', url: 'https://ind.nl/en/residence-permits/study' },
+      { label: 'Study in NL — official study-in-the-Netherlands portal', url: 'https://www.studyinnl.org/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['netherlands student visa', 'mvv netherlands', 'ind residence permit study', 'study in netherlands visa', 'dutch student residence permit'],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'Who applies', value: 'Your university (recognised sponsor) usually applies to the IND for you' },
+      { label: 'Entry visa', value: 'MVV — required for some nationalities (verify on IND)' },
+      { label: 'Stay permit', value: 'Residence permit (VVR) tied to enrolment and study progress' },
+      { label: 'Authority', value: 'Immigration and Naturalisation Service (IND)' },
+    ],
+  },
+  {
+    slug: 'italy-student-visa-guide-from-india',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Italy Student Visa Guide (Type D)',
+    descriptionEn:
+      'How the Italian long-stay study visa works — Universitaly pre-enrolment, the national (type D) visa at the consulate, and the residence permit after arrival. Neutral official facts, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The Italian study-visa route in brief',
+        bodyEn:
+          'To study in Italy on a programme longer than a short stay, international students normally apply for a national long-stay visa, often called a type D visa, for study purposes. The process combines an online pre-enrolment step with a visa application at the Italian diplomatic mission (embassy or consulate) responsible for your area.\n\nThis page outlines the general process so you know the sequence. It is general information, not immigration advice — the official requirements, fees, and steps are set by the Italian authorities and can change, so verify everything on the official sources before applying.',
+      },
+      {
+        headingEn: 'Step 1 — Pre-enrolment on Universitaly',
+        bodyEn:
+          'Italy uses an official national portal called Universitaly for the pre-enrolment of international students. You typically create an account, select your chosen university and programme, and submit your pre-enrolment application there. The university confirms your pre-enrolment through the same system.\n\nThis Universitaly step links your chosen course to your subsequent visa application, so completing it correctly and on time is important. Follow the instructions on the official Universitaly portal and from your chosen institution.',
+        bullets: [
+          'Create your Universitaly account and choose your university and programme',
+          'Submit the pre-enrolment application and get it confirmed by the university',
+          'Keep your pre-enrolment confirmation for the visa appointment',
+        ],
+      },
+      {
+        headingEn: 'Step 2 — Apply for the type D study visa',
+        bodyEn:
+          'After pre-enrolment, you apply for the national (type D) study visa at the Italian embassy or consulate (or its authorised visa centre) for your region. You generally book an appointment and submit your documents in person, including your passport and the supporting evidence the mission asks for.\n\nTypical elements of a study-visa file include proof of admission/pre-enrolment, evidence of sufficient financial means, accommodation, and health-insurance cover — but the exact list is set by the Italian Ministry of Foreign Affairs and the specific mission. Use the official requirements from the consulate handling your application, not an unofficial checklist.',
+      },
+      {
+        headingEn: 'Step 3 — Residence permit after you arrive',
+        bodyEn:
+          'Once you arrive in Italy on a long-stay study visa, you usually have to apply for a residence permit (permesso di soggiorno) within a set period. This is a standard part of staying in Italy for the longer term and is handled through the official Italian channels after arrival.\n\nBecause this post-arrival step is time-limited, note the deadline you are given and follow the official process. The exact procedure and any fees are defined by the Italian authorities and can change.',
+      },
+      {
+        headingEn: 'Working and other conditions',
+        bodyEn:
+          'Italy allows international students to work a limited number of hours alongside study under the conditions set by Italian law, and there are defined rules for renewing your permit as your studies continue. The specific work-hour allowance, financial thresholds, and renewal conditions are official and are revised over time.\n\nDo not rely on a remembered figure or an old guide. Confirm the current rules on the official Italian government and ministry sources, and treat this page as general information, not personalised immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is Universitaly and do I have to use it?',
+        answerEn:
+          'Universitaly is Italy\'s official national portal where international students complete pre-enrolment for their chosen university and programme. For most degree-seeking international students it is a required step before the study-visa application. Follow the official portal\'s instructions.',
+      },
+      {
+        questionEn: 'Where do I apply for the Italian student visa?',
+        answerEn:
+          'You apply for the national (type D) study visa at the Italian embassy or consulate (or its authorised visa centre) responsible for your area, after completing Universitaly pre-enrolment. Use the official mission\'s requirements for your file.',
+      },
+      {
+        questionEn: 'Do I need a residence permit as well as the visa?',
+        answerEn:
+          'Yes — after arriving in Italy on a long-stay study visa you generally have to apply for a residence permit (permesso di soggiorno) within a set period. Confirm the current procedure and deadline on the official Italian sources.',
+      },
+      {
+        questionEn: 'How much money do I need to show?',
+        answerEn:
+          'You must show sufficient financial means for your stay, but the exact amount and accepted proof are set officially and can change each year. Check the current requirement with the Italian consulate handling your application — this is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['france-student-visa-guide-from-india', 'spain-student-visa-guide-from-india', 'netherlands-student-visa-and-residence-permit'],
+    sources: [
+      { label: 'Universitaly — official Italian student pre-enrolment portal', url: 'https://www.universitaly.it/' },
+      { label: 'Italian Ministry of Foreign Affairs — visa portal', url: 'https://vistoperitalia.esteri.it/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['italy student visa', 'type d study visa italy', 'universitaly pre-enrolment', 'study in italy visa', 'permesso di soggiorno study'],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'Visa type', value: 'National long-stay (type D) study visa' },
+      { label: 'Pre-enrolment', value: 'Universitaly official national portal' },
+      { label: 'Where to apply', value: 'Italian embassy / consulate (or authorised visa centre)' },
+      { label: 'After arrival', value: 'Residence permit (permesso di soggiorno) within the set deadline' },
+    ],
+  },
+  {
+    slug: 'spain-student-visa-guide-from-india',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Spain Student Visa Guide',
+    descriptionEn:
+      'How the Spanish student visa works for a long study programme — applying at the Spanish consulate with proof of admission and funds, and what to do after arrival. Neutral official facts, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'When you need a Spanish student visa',
+        bodyEn:
+          'International students coming to Spain for a study programme longer than a short stay generally need a student visa, applied for at the Spanish consulate or embassy (or its authorised visa centre) responsible for your area of residence. The visa covers study, training, or research for the duration set by the authorities.\n\nThis page describes the general process. It is general information, not immigration advice — the official requirements, fees, and steps are set by the Spanish government and can change, so verify the current rules on the official sources before you apply.',
+      },
+      {
+        headingEn: 'Apply at the Spanish consulate',
+        bodyEn:
+          'The student visa is applied for through the Spanish diplomatic mission for your jurisdiction. You typically book an appointment, complete the application form, and submit your file in person, including your passport and the supporting documents the consulate specifies.\n\nBecause consulates can have area-specific instructions, always use the requirements published by the specific Spanish consulate handling your application, and the official Spanish Ministry of Foreign Affairs information, rather than an unofficial list.',
+        bullets: [
+          'Apply at the Spanish consulate / embassy for your region of residence',
+          'Book an appointment and submit your documents in person',
+          'Follow that consulate\'s own published requirements',
+        ],
+      },
+      {
+        headingEn: 'Proof of admission and funds',
+        bodyEn:
+          'A central part of the Spanish student-visa file is proof that you have been admitted to or enrolled in a recognised Spanish institution or programme, together with evidence that you can support yourself financially during your stay. Health-insurance cover and accommodation details are also commonly required.\n\nThe precise documents, the financial means required, and how they must be evidenced are set officially and can be updated each year. Treat the consulate\'s official document list as the authority.',
+      },
+      {
+        headingEn: 'After you arrive in Spain',
+        bodyEn:
+          'Depending on the length of your stay and the type of visa issued, you may need to take further steps after arriving — for example obtaining a foreigner identity card (TIE) within a set period. These post-arrival steps are part of the official process and are handled through the Spanish authorities.\n\nNote any deadlines you are given and follow the official guidance. Spain also has rules on working alongside study and on what you can do after your programme, but these are governed by Spanish law and change over time.',
+      },
+      {
+        headingEn: 'Working and other conditions',
+        bodyEn:
+          'Spain permits international students to work a limited amount alongside study under the conditions defined by Spanish law, and study permits can usually be renewed as your programme continues. The specific work-hour limits, financial thresholds, and renewal rules are official and are revised periodically.\n\nDo not rely on a number from memory or an older guide. Confirm the current rules on the official Spanish government sources, and remember this is general information, not personalised immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Where do I apply for a Spanish student visa?',
+        answerEn:
+          'You apply at the Spanish consulate or embassy (or its authorised visa centre) responsible for your area of residence. Each mission can have area-specific instructions, so use that consulate\'s official requirements.',
+      },
+      {
+        questionEn: 'What is the main document I need?',
+        answerEn:
+          'A core requirement is proof of admission or enrolment in a recognised Spanish institution or programme, alongside evidence of sufficient financial means and usually health-insurance cover. The exact list is set officially — check the consulate handling your application.',
+      },
+      {
+        questionEn: 'Do I need to do anything after arriving in Spain?',
+        answerEn:
+          'Depending on your visa and the length of your stay, you may need further steps such as obtaining a foreigner identity card (TIE) within a set period. Follow the official Spanish guidance and note any deadlines given to you.',
+      },
+      {
+        questionEn: 'Can I work while studying in Spain?',
+        answerEn:
+          'International students may generally work within limits under Spanish rules, but the specifics depend on your situation and current regulations. Verify the latest rules on the official Spanish government sources — this is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['italy-student-visa-guide-from-india', 'france-student-visa-guide-from-india', 'sweden-student-residence-permit-guide'],
+    sources: [
+      { label: 'Spain Ministry of Foreign Affairs — official portal', url: 'https://www.exteriores.gob.es/en/Paginas/index.aspx' },
+      { label: 'Spain Ministry of Universities — official information', url: 'https://www.universidades.gob.es/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['spain student visa', 'study in spain visa', 'spanish student visa requirements', 'tie spain student', 'student visa for spain'],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'Where to apply', value: 'Spanish consulate / embassy for your region of residence' },
+      { label: 'Core document', value: 'Proof of admission or enrolment at a recognised institution' },
+      { label: 'Also commonly needed', value: 'Proof of funds and health-insurance cover (verify on official source)' },
+      { label: 'After arrival', value: 'Possible foreigner identity card (TIE) within the set deadline' },
+    ],
+  },
+  {
+    slug: 'sweden-student-residence-permit-guide',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Sweden Student Residence Permit Guide',
+    descriptionEn:
+      'How studying in Sweden works for immigration — applying for a residence permit for studies with the Swedish Migration Agency (Migrationsverket) after you are admitted. Neutral official facts, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'A residence permit, not just a visa',
+        bodyEn:
+          'For studies in Sweden longer than a short stay, international students normally apply for a residence permit for studies, handled by the Swedish Migration Agency (Migrationsverket). The application is usually made online after you have been admitted to a Swedish university or college.\n\nThis page describes the general process so you know the sequence. It is general information, not immigration advice — the official requirements, fees, and steps are set by the Swedish authorities and can change, so verify the current details on the official Migrationsverket website before applying.',
+      },
+      {
+        headingEn: 'Get admitted first',
+        bodyEn:
+          'The residence-permit process generally starts after you have an admission to a Swedish programme, often through the national application service. Your admission and, where relevant, the first tuition payment are typically part of what you reference in the permit application.\n\nBecause the permit is built on your admission, make sure your university place is confirmed before, or as part of, applying for the permit, and follow the official sequence described by Migrationsverket and the admissions service.',
+        bullets: [
+          'Secure admission to a Swedish university or college',
+          'Note any first-instalment tuition payment requirement',
+          'Then apply for the residence permit for studies',
+        ],
+      },
+      {
+        headingEn: 'Apply with Migrationsverket',
+        bodyEn:
+          'The residence-permit application is normally completed online on the Migrationsverket website. You provide your passport details, proof of admission, evidence that you can support yourself financially for the period of study, and comprehensive health-insurance cover where required.\n\nThe exact documents, the maintenance (financial means) requirement, and how they must be shown are defined officially and can be updated each year. Treat the Migrationsverket requirements as the authority and avoid relying on unofficial checklists.',
+      },
+      {
+        headingEn: 'After approval and during your studies',
+        bodyEn:
+          'If your permit is granted, you receive documentation and, for longer stays, typically a residence-permit card. The permit is tied to your studies, and longer programmes may require you to extend the permit as you progress, again through Migrationsverket.\n\nSweden also has rules on working alongside study and on what you may do after graduating, but these are governed by Swedish law and are revised over time. Confirm the current work rules, maintenance amounts, extension conditions, and any post-study options on the official Migrationsverket sources, and treat this page as general information, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I get a visa or a residence permit to study in Sweden?',
+        answerEn:
+          'For studies longer than a short stay you generally apply for a residence permit for studies, handled by the Swedish Migration Agency (Migrationsverket), rather than a standard short-stay visa. The application is usually made online after admission.',
+      },
+      {
+        questionEn: 'When do I apply for the permit?',
+        answerEn:
+          'You normally apply after you have been admitted to a Swedish university or college, and any required first tuition instalment can be part of the process. Follow the official sequence described by Migrationsverket and the admissions service.',
+      },
+      {
+        questionEn: 'How much money do I need to show?',
+        answerEn:
+          'You must show you can support yourself for the period of study (a maintenance requirement), but the exact amount and accepted proof are set officially and can change each year. Check the current figure on the official Migrationsverket source.',
+      },
+      {
+        questionEn: 'Can I work while studying in Sweden?',
+        answerEn:
+          'There are rules that allow international students to work alongside study, and there can be options after graduation, but the specifics are governed by current Swedish regulations. Verify the latest rules on the official Migrationsverket site — this is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['kth-royal-institute'],
+    relatedGuideSlugs: ['netherlands-student-visa-and-residence-permit', 'france-student-visa-guide-from-india', 'spain-student-visa-guide-from-india'],
+    sources: [
+      { label: 'Migrationsverket — Swedish Migration Agency (studying in Sweden)', url: 'https://www.migrationsverket.se/English/Private-individuals/Studying-in-Sweden.html' },
+      { label: 'University Admissions in Sweden — official admissions service', url: 'https://www.universityadmissions.se/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['sweden student residence permit', 'study in sweden visa', 'migrationsverket student permit', 'residence permit for studies sweden', 'sweden student permit requirements'],
+    tags: ['europe-student-visas'],
+    keyFacts: [
+      { label: 'Permit type', value: 'Residence permit for studies' },
+      { label: 'Authority', value: 'Swedish Migration Agency (Migrationsverket)' },
+      { label: 'When to apply', value: 'Usually online after admission' },
+      { label: 'Key requirement', value: 'Proof of admission + maintenance (funds) — verify amount on official source' },
+    ],
+  },
+  {
+    slug: 'daad-scholarships-for-international-students',
+    category: 'scholarships',
+    region: 'europe',
+    titleEn: 'DAAD Scholarships for International Students',
+    descriptionEn:
+      'A clear overview of DAAD scholarships for international students wanting to study in Germany — what DAAD is, the main programme types, who can apply, and how to verify amounts and deadlines on the official source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What DAAD is',
+        bodyEn:
+          'DAAD stands for the Deutscher Akademischer Austauschdienst — the German Academic Exchange Service. It is a publicly funded organisation that supports academic exchange and offers one of the largest scholarship programmes in the world for international students, researchers, and academics coming to Germany.\n\nDAAD does not run a single scholarship. Instead, it operates a searchable database of many different funding programmes, each with its own purpose, target group, eligibility rules, and deadline. The starting point for everyone is the official DAAD scholarship database on daad.de.',
+      },
+      {
+        headingEn: 'The main DAAD programme types',
+        bodyEn:
+          'DAAD funding is organised by the kind of study or research you are doing and your career stage. Because there are many programmes, the right one for you depends on your degree level, your subject, and whether you want a full degree in Germany or a shorter stay.\n\nUse the official database filters (country of origin, status, and funding purpose) to find programmes you are eligible for — the database is the only authoritative list, since programmes are added, paused, or updated each cycle.',
+        bullets: [
+          'Master\'s degree scholarships — full or partial funding for a postgraduate degree in Germany',
+          'Doctoral / PhD scholarships — for research degrees and structured doctoral programmes',
+          'Research grants — for short or longer research stays for graduates and academics',
+          'University staff and faculty exchange programmes',
+          'Subject-specific and development-focused programmes for selected fields and regions',
+        ],
+      },
+      {
+        headingEn: 'Who can apply',
+        bodyEn:
+          'Eligibility is set per programme and is based on secular, academic criteria — typically your highest completed degree, your academic record, your field of study, and sometimes your country of origin or professional experience. Some programmes are open worldwide; others target particular regions or disciplines.\n\nMany degree-level scholarships expect a strong academic background and a clear study or research plan. Language requirements vary: some programmes need German, others accept English-taught study with an English test. Always read the individual programme page for the exact requirements that apply to you.',
+      },
+      {
+        headingEn: 'What the funding covers and how to apply',
+        bodyEn:
+          'DAAD scholarships commonly contribute toward living costs and may include elements such as travel, health insurance support, or study-related allowances, depending on the programme. The exact amounts, the duration, and what is included are published only on each official programme page and change between cycles, so do not rely on figures quoted elsewhere — verify them on the official source.\n\nApplications are submitted through the channel named on the programme page (often the DAAD portal), by that programme\'s deadline. Read the requirements carefully and prepare your documents early, as some programmes ask for transcripts, references, a proposal, and proof of language ability.',
+      },
+      {
+        headingEn: 'Avoiding scams and staying realistic',
+        bodyEn:
+          'DAAD scholarships are free to apply for through official channels. Be cautious of any website, agent, or message that asks for payment to "guarantee" a DAAD scholarship or admission, promises selection in exchange for a fee, or directs you to a non-official application site. No scholarship can be guaranteed.\n\nIf you are an Indian student, you can also read our companion guide on DAAD scholarships for Indians for region-specific context — but the official DAAD database remains the single source of truth for every applicant, wherever you are from.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there one DAAD scholarship, or many?',
+        answerEn:
+          'Many. DAAD runs a large database of separate programmes, each with its own target group, eligibility, funding, and deadline. You search the official database on daad.de to find the ones you qualify for.',
+      },
+      {
+        questionEn: 'Do I need to speak German for a DAAD scholarship?',
+        answerEn:
+          'It depends on the programme. Some require German proficiency; others fund English-taught study and accept an English test. Check the language requirement on each individual programme page.',
+      },
+      {
+        questionEn: 'How much does a DAAD scholarship pay?',
+        answerEn:
+          'Amounts, duration, and what is covered are set per programme and change between cycles. We do not quote figures here — confirm the current values on the official DAAD programme page before applying.',
+      },
+      {
+        questionEn: 'Does it cost money to apply for a DAAD scholarship?',
+        answerEn:
+          'Applying through official DAAD channels is free. Treat any request for payment to secure or guarantee a DAAD scholarship as a warning sign of a scam, and no scholarship outcome can be guaranteed.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['daad-scholarship-for-indians', 'deutschlandstipendium-and-germany-scholarships', 'scholarships-eu-students', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'DAAD — scholarship database (official)', url: 'https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/' },
+      { label: 'Study in Germany — official portal (DAAD)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['daad scholarship', 'daad scholarships for international students', 'study in germany scholarship', 'daad masters scholarship', 'daad phd scholarship', 'german academic exchange service'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Provider', value: 'DAAD — German Academic Exchange Service (Deutscher Akademischer Austauschdienst)' },
+      { label: 'Programme types', value: 'Master\'s, doctoral/PhD, research grants, staff exchange, subject-specific (varies)' },
+      { label: 'Eligibility', value: 'Secular, academic — set per programme (degree, record, field, sometimes region)' },
+      { label: 'Amounts & deadlines', value: 'Set per programme; verify on the official DAAD database' },
+    ],
+  },
+  {
+    slug: 'cost-of-studying-and-living-in-germany',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Cost of Studying and Living in Germany',
+    descriptionEn:
+      'A practical breakdown of what it costs to study in Germany — public-university tuition and the semester contribution, plus living costs like rent, food, insurance, and transport. Figures are deferred to official sources you should verify.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Tuition at public universities',
+        bodyEn:
+          'Most public universities in Germany charge no general tuition fee for undergraduate and many postgraduate programmes, including for international students. This is one of the main reasons Germany is a popular study destination.\n\nThere are exceptions. The state of Baden-Württemberg, for example, charges tuition fees per semester for non-EU/EEA students at its public universities, and some specialised or non-consecutive master\'s programmes charge fees anywhere in the country. Private universities set their own tuition. Because these rules and amounts differ by state and programme and change over time, confirm the exact figure on the official university page and the official Germany study portal.',
+      },
+      {
+        headingEn: 'The semester contribution',
+        bodyEn:
+          'Even where there is no tuition, almost every public university charges a "semester contribution" (Semesterbeitrag) each semester. This is an administrative fee that commonly funds the student union services and, at many universities, a public-transport ticket valid in the local area.\n\nThe amount varies by university and changes periodically, so it is not quoted here — check the current semester contribution on your specific university\'s official website. It is usually modest compared with tuition fees elsewhere, but you should budget for it.',
+      },
+      {
+        headingEn: 'Living costs — the main components',
+        bodyEn:
+          'Your day-to-day budget in Germany is driven by several components, and the total depends heavily on the city — large cities like Munich tend to be more expensive than smaller university towns. Plan for the categories below rather than a single number.',
+        bullets: [
+          'Rent and utilities — usually the largest expense; varies widely by city and housing type',
+          'Health insurance — mandatory for enrolment; students typically need statutory or equivalent cover',
+          'Food and groceries',
+          'Public transport — sometimes partly covered by the semester ticket',
+          'Study materials, mobile/internet, and personal expenses',
+        ],
+      },
+      {
+        headingEn: 'Proof of funds for the visa',
+        bodyEn:
+          'If you need a student visa, German authorities generally require you to show you can cover your living costs for the first year, often via a blocked account (Sperrkonto) or another accepted form of financial proof. The required amount is set officially and is reviewed from time to time.\n\nThe exact blocked-account amount, accepted proof types, and procedures are immigration matters decided by the German authorities — we do not quote the figure here. Verify the current requirement on the official German Federal Foreign Office and the official Germany study portal before you arrange your finances. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'Ways to manage the cost',
+        bodyEn:
+          'Many students combine sources to cover their budget: scholarships (such as DAAD or the Deutschlandstipendium), part-time work within the limits set for international students, and careful choice of city and housing. Student-union halls of residence are often more affordable than the private market.\n\nWork rules for international students, including how many days or hours you may work, are set officially and have limits — check the current rules on the official sources and never assume part-time earnings will fully cover your costs. This is general information, not financial or immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is studying in Germany really tuition-free?',
+        answerEn:
+          'At most public universities there is no general tuition fee, including for international students. Exceptions exist — for example Baden-Württemberg charges non-EU/EEA students per semester, and some special master\'s programmes and all private universities charge fees. Verify your specific programme on the official university site.',
+      },
+      {
+        questionEn: 'What is the semester contribution?',
+        answerEn:
+          'It is an administrative fee (Semesterbeitrag) charged each semester even where there is no tuition. It commonly funds student services and, at many universities, a local transport ticket. The amount varies by university — check the current figure on the university\'s official page.',
+      },
+      {
+        questionEn: 'How much money do I need to show for a student visa?',
+        answerEn:
+          'German authorities generally require proof you can cover the first year\'s living costs, often via a blocked account. The amount is set officially and changes over time, so we do not quote it here — confirm the current requirement on the official German Federal Foreign Office and Germany study portal. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Can I cover my living costs with a part-time job?',
+        answerEn:
+          'Part-time work can help, but international-student work hours are limited by official rules, and earnings may not fully cover your costs. Treat work as a supplement, not a guarantee, and check the current work-hour rules on the official sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['free-tuition-universities-europe', 'deutschlandstipendium-and-germany-scholarships', 'daad-scholarships-for-international-students', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Study in Germany — official portal (funding & costs)', url: 'https://www.study-in-germany.com/en/plan-your-studies/preparation/funding/' },
+      { label: 'German Federal Foreign Office — studying in Germany visa & proof of funds', url: 'https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/606850-606850' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['cost of studying in germany', 'living costs in germany for students', 'study in germany for free', 'germany student budget', 'blocked account germany', 'semester contribution germany'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Public-university tuition', value: 'No general tuition at most public universities (exceptions: Baden-Württemberg non-EU, some master\'s, private universities)' },
+      { label: 'Semester contribution', value: 'Charged each semester; amount varies by university — verify officially' },
+      { label: 'Main living costs', value: 'Rent, mandatory health insurance, food, transport, personal expenses' },
+      { label: 'Visa proof of funds', value: 'Often a blocked account; amount set officially — verify on the official source' },
+    ],
+  },
+  {
+    slug: 'free-tuition-universities-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Free and Low-Tuition Universities in Europe',
+    descriptionEn:
+      'Where public-university tuition in Europe is free or low — and where international (non-EU) students typically still pay. A clear, accurate guide that defers all exact fees to official national and university sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'What "free tuition" really means in Europe',
+        bodyEn:
+          'Several European countries fund their public universities so that tuition is free or very low — but the key detail is who qualifies for the free or reduced rate. In many countries the no-tuition or low-tuition rule applies to citizens of that country and to students from the EU/EEA, while students from outside the EU/EEA pay a separate, often higher, tuition fee.\n\nSo "free university in Europe" is accurate in some cases and misleading in others. Whether you pay depends on the country, the university, your level of study, and your nationality. Always confirm the exact fee for your situation on the official university and national source.',
+      },
+      {
+        headingEn: 'Germany — broadly no tuition at public universities',
+        bodyEn:
+          'Germany is the best-known example. Most public universities charge no general tuition fee even for international students, though a semester contribution still applies and a few states or programmes are exceptions (for instance, Baden-Württemberg charges non-EU/EEA students per semester).\n\nBecause this is the most generous common case for international students, Germany is covered in detail in our dedicated guides on the cost of studying in Germany and Germany scholarships. Verify the current rules on the official Germany study portal.',
+      },
+      {
+        headingEn: 'The Nordic countries — free for EU/EEA, fees for many others',
+        bodyEn:
+          'Some Nordic public universities have historically had no tuition for domestic and EU/EEA students. However, several charge tuition fees to students from outside the EU/EEA, so a non-EU student often does pay even where an EU student does not.\n\nThe specifics differ by country and have changed over time, and scholarship schemes sometimes exist for international students. Do not assume "Nordic = free" for everyone — check the official national admissions or study portal for the country you are considering and your nationality.',
+        bullets: [
+          'Rules differ by country and by EU/EEA vs non-EU/EEA status',
+          'Some countries charge non-EU/EEA students tuition while EU students study fee-free',
+          'Scholarships for international students may offset costs in some schemes',
+          'Always verify the current fee and any scholarship on the official national portal',
+        ],
+      },
+      {
+        headingEn: 'Other countries with low public tuition',
+        bodyEn:
+          'A number of other European countries keep public-university tuition relatively low compared with English-speaking destinations, though non-EU students may face higher rates than locals, and amounts vary by country, region, and programme. Some also charge registration or administrative contributions even where "tuition" is low.\n\nRather than memorise figures that change yearly, treat the official national study portal and the specific university\'s fees page as the authoritative source for your country, level, and nationality.',
+      },
+      {
+        headingEn: 'How to check accurately and avoid surprises',
+        bodyEn:
+          'Before you build your budget around "free" or "low" tuition, confirm four things on official sources: whether your nationality qualifies for the free/low rate, the fee for your exact programme and level, any compulsory contributions or registration fees, and the living-cost and visa proof-of-funds requirements, which apply regardless of tuition.\n\nNo outcome — admission, a fee waiver, or a scholarship — can be guaranteed. We deliberately do not quote euro figures here because they change by year, country, and programme; the official sources are the only reliable place to confirm them.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which European countries have free university tuition?',
+        answerEn:
+          'Several fund public universities so tuition is free or low, but eligibility usually depends on nationality. Germany has no general tuition at most public universities even for internationals; some Nordic and other countries are free for EU/EEA students but charge non-EU/EEA students. Confirm your case on the official national source.',
+      },
+      {
+        questionEn: 'Do non-EU students pay tuition in Europe?',
+        answerEn:
+          'Often, yes. In many countries the free or low rate applies to domestic and EU/EEA students, while students from outside the EU/EEA pay a separate tuition fee. Whether you pay depends on the country, university, level, and your nationality — verify it officially.',
+      },
+      {
+        questionEn: 'Is studying in Germany free for international students?',
+        answerEn:
+          'At most public universities there is no general tuition fee even for international students, though a semester contribution applies and exceptions exist (such as Baden-Württemberg charging non-EU/EEA students). Check your specific programme on the official Germany study portal.',
+      },
+      {
+        questionEn: 'Why don\'t you list the exact fees?',
+        answerEn:
+          'Fees change by year, country, programme, and nationality, and false precision could mislead your budgeting. We point you to the official national and university sources, which are the only reliable place to confirm the current figure for your situation.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-studying-and-living-in-germany', 'scholarships-eu-students', 'deutschlandstipendium-and-germany-scholarships', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Study in Germany — official portal (funding & costs)', url: 'https://www.study-in-germany.com/en/plan-your-studies/preparation/funding/' },
+      { label: 'Study in Europe — official EU education portal', url: 'https://education.ec.europa.eu/study-in-europe' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['free universities in europe', 'free tuition europe', 'cheap universities in europe for international students', 'study in europe for free', 'low tuition europe', 'free university for non eu students'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Key principle', value: 'Free/low rate often applies to EU/EEA; non-EU/EEA students may pay' },
+      { label: 'Germany', value: 'No general tuition at most public universities, incl. internationals (exceptions apply)' },
+      { label: 'Nordic & others', value: 'Often free for EU/EEA; some charge non-EU/EEA students — varies by country' },
+      { label: 'Exact fees', value: 'Deferred to official national and university sources' },
+    ],
+  },
+  {
+    slug: 'scholarships-eu-students',
+    category: 'scholarships',
+    region: 'europe',
+    titleEn: 'Scholarships to Study in Europe for International Students',
+    descriptionEn:
+      'How scholarships for studying in Europe work for international students, including non-EU applicants — EU-wide, national, and university awards, with secular eligibility, scam-caution, and figures deferred to official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How scholarships in Europe are structured',
+        bodyEn:
+          'Funding to study in Europe comes from several different levels, and most international students apply to a mix of them. Understanding where each type sits helps you target the ones you actually qualify for rather than chasing every advertised award.\n\nEligibility for every legitimate scholarship is based on secular, academic, or financial-need criteria — such as your grades, your field, your level of study, and sometimes your country of origin. Each programme sets its own rules, amounts, and deadlines, which you confirm on its official page.',
+        bullets: [
+          'EU-wide programmes (for example, support linked to EU education initiatives)',
+          'National scholarship schemes run by a country\'s government or agencies',
+          'University-specific scholarships, fee waivers, and merit awards',
+          'Programme- or subject-specific funding, including some joint international degrees',
+        ],
+      },
+      {
+        headingEn: 'EU-wide and Erasmus+ opportunities',
+        bodyEn:
+          'The EU supports international student mobility through education initiatives, and some joint master\'s programmes offer scholarships to selected students from around the world. Availability, eligibility, and the application route depend on the specific programme and intake.\n\nThe authoritative starting points are the official EU education portals — use them to see what is currently offered and who can apply, since programmes and funding change between cycles.',
+      },
+      {
+        headingEn: 'National and university scholarships',
+        bodyEn:
+          'Many European countries run their own scholarship schemes for international students through national agencies, and individual universities offer merit scholarships, need-based support, or tuition waivers — which matter especially where non-EU students pay tuition. Germany\'s DAAD and the Deutschlandstipendium are well-known examples covered in our dedicated guides.\n\nTo find these, check the official national study portal for your target country and the scholarships or fees page of each university you apply to. Apply early: scholarship deadlines are often earlier than, or tied to, the admission deadline.',
+      },
+      {
+        headingEn: 'Eligibility, documents, and deadlines',
+        bodyEn:
+          'Typical scholarship applications ask for academic transcripts, proof of admission or application, a statement or motivation letter, references, and proof of language ability (an English or other language test, depending on the programme). Requirements vary, so read each programme page carefully.\n\nAmounts, what is covered, and deadlines are set per programme and change between cycles — we do not quote figures here. Verify every detail on the official source for that scholarship before you rely on it.',
+      },
+      {
+        headingEn: 'Avoiding scams and staying realistic',
+        bodyEn:
+          'Legitimate scholarships do not ask you to pay a fee to "secure" or "guarantee" an award, and no scholarship or admission can be guaranteed. Be cautious of agents or websites that promise selection in return for money, ask for payment outside official channels, or pressure you to act immediately.\n\nApply to several programmes you genuinely qualify for, keep your own copies of everything you submit, and rely only on official portals and university pages. This is general information, not financial advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can non-EU students get scholarships to study in Europe?',
+        answerEn:
+          'Yes. Many EU-wide programmes, national schemes, and university scholarships are open to international students from outside the EU. Eligibility is set per programme on secular, academic, or need-based criteria — check each official programme page for who can apply.',
+      },
+      {
+        questionEn: 'Where do I find scholarships for Europe?',
+        answerEn:
+          'Start with the official EU education portals for EU-wide and Erasmus+ opportunities, the official national study portal of your target country, and the scholarships or fees page of each university you apply to. These official sources are the reliable place to see current awards.',
+      },
+      {
+        questionEn: 'How much do European scholarships pay?',
+        answerEn:
+          'Amounts, coverage, and duration are set per scholarship and change between cycles, so we do not quote figures here. Confirm the current value and what is included on the official programme page before applying.',
+      },
+      {
+        questionEn: 'How do I avoid scholarship scams?',
+        answerEn:
+          'Legitimate scholarships are free to apply for through official channels and never guarantee an award for a fee. Treat any request for payment to "secure" a scholarship, or any promise of guaranteed selection, as a warning sign, and use only official portals and university pages.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['daad-scholarships-for-international-students', 'deutschlandstipendium-and-germany-scholarships', 'free-tuition-universities-europe', 'daad-scholarship-for-indians'],
+    sources: [
+      { label: 'Study in Europe — official EU education portal', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'Erasmus+ — official EU programme', url: 'https://erasmus-plus.ec.europa.eu/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['scholarships to study in europe', 'scholarships in europe for international students', 'fully funded scholarships europe', 'erasmus mundus scholarship', 'europe scholarship for indian students', 'free scholarship europe'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Funding levels', value: 'EU-wide / Erasmus+, national schemes, and university awards' },
+      { label: 'Open to non-EU?', value: 'Many programmes are open to international students worldwide — check each' },
+      { label: 'Eligibility', value: 'Secular — academic merit, field, level, sometimes need or origin' },
+      { label: 'Amounts & deadlines', value: 'Set per programme; verify on the official source' },
+    ],
+  },
+  {
+    slug: 'deutschlandstipendium-and-germany-scholarships',
+    category: 'scholarships',
+    region: 'europe',
+    titleEn: 'Deutschlandstipendium and Other Germany Scholarships',
+    descriptionEn:
+      'An overview of scholarships for studying in Germany — the merit-based Deutschlandstipendium, DAAD programmes, and foundation scholarships — with secular eligibility and all amounts and deadlines deferred to official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The Deutschlandstipendium',
+        bodyEn:
+          'The Deutschlandstipendium is a national merit-based scholarship in Germany. It is awarded by participating universities and is funded jointly by the federal government and private sponsors, which is part of what makes it distinctive.\n\nIt recognises strong academic performance and potential, and the criteria also consider personal circumstances and social commitment, depending on the university. Applications are made through the participating university rather than centrally, so the process and selection are handled by the institution you apply to.',
+      },
+      {
+        headingEn: 'Who can apply and how it works',
+        bodyEn:
+          'The Deutschlandstipendium is generally open to enrolled and prospective students at participating universities, including international students, on secular academic and merit-based criteria. Because each university runs its own selection, eligibility details, the application window, and the documents required differ by institution.\n\nThe scholarship amount and duration are set under the official scheme and can change, and not every university participates. Verify whether your university takes part and confirm the current amount, criteria, and deadline on the official Deutschlandstipendium source and your university\'s page.',
+      },
+      {
+        headingEn: 'DAAD scholarships',
+        bodyEn:
+          'The DAAD (German Academic Exchange Service) runs a large database of scholarship programmes for international students, researchers, and academics across master\'s, doctoral, and research stays. Each programme has its own target group, eligibility, funding, and deadline.\n\nDAAD is covered in detail in our dedicated guide on DAAD scholarships for international students — start there, then use the official DAAD database to find the specific programmes you qualify for.',
+      },
+      {
+        headingEn: 'Foundation and other scholarships',
+        bodyEn:
+          'Germany also has a number of organisations and gifted-student support bodies that offer scholarships, often based on academic excellence and, in some cases, social commitment. Some are open to international students; others have specific eligibility. Individual universities additionally offer their own awards and need-based support.\n\nEligibility for all of these is secular and merit- or need-based. The official scheme pages and each university\'s scholarship page are the authoritative source for who can apply, what is funded, and when to apply.',
+        bullets: [
+          'National merit scheme — the Deutschlandstipendium (via participating universities)',
+          'DAAD programmes — master\'s, doctoral, and research funding',
+          'Gifted-student and foundation scholarships (eligibility varies)',
+          'University-specific scholarships and need-based support',
+        ],
+      },
+      {
+        headingEn: 'Applying wisely and avoiding scams',
+        bodyEn:
+          'Apply to the schemes you genuinely qualify for, prepare documents such as transcripts and a motivation letter early, and watch deadlines, which can fall before or alongside admission. Legitimate German scholarships do not charge a fee to "guarantee" selection, and no scholarship or admission outcome can be guaranteed.\n\nWe deliberately do not quote amounts or deadlines here because they are set officially and change — confirm everything on the official Deutschlandstipendium, DAAD, and university sources. This is general information, not financial advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the Deutschlandstipendium?',
+        answerEn:
+          'It is a national merit-based scholarship in Germany, awarded by participating universities and funded jointly by the federal government and private sponsors. It recognises academic performance and potential; you apply through the participating university, not centrally.',
+      },
+      {
+        questionEn: 'Can international students get the Deutschlandstipendium?',
+        answerEn:
+          'It is generally open to enrolled and prospective students at participating universities, including international students, on secular merit-based criteria. Each university runs its own selection, so confirm eligibility and the deadline on your university\'s official page.',
+      },
+      {
+        questionEn: 'What is the difference between the Deutschlandstipendium and DAAD?',
+        answerEn:
+          'The Deutschlandstipendium is a national merit scholarship awarded through participating universities. DAAD is the German Academic Exchange Service, which runs a large database of separate scholarship programmes for international study and research. Many students consider both.',
+      },
+      {
+        questionEn: 'How much do Germany scholarships pay?',
+        answerEn:
+          'Amounts and durations are set under each official scheme and can change, so we do not quote figures here. Verify the current value, eligibility, and deadline on the official Deutschlandstipendium, DAAD, or university source before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['daad-scholarships-for-international-students', 'cost-of-studying-and-living-in-germany', 'scholarships-eu-students', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Deutschlandstipendium — official site (English)', url: 'https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/english_node.html' },
+      { label: 'DAAD — scholarship database (official)', url: 'https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['deutschlandstipendium', 'germany scholarship', 'scholarships in germany for international students', 'merit scholarship germany', 'study in germany scholarship', 'german university scholarship'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Deutschlandstipendium', value: 'National merit scholarship, awarded via participating universities; federal + private funding' },
+      { label: 'Application route', value: 'Through the participating university, not centrally' },
+      { label: 'Other Germany scholarships', value: 'DAAD programmes, foundation/gifted-student awards, university scholarships' },
+      { label: 'Amounts & deadlines', value: 'Set officially per scheme; verify on the official source' },
+    ],
+  },
+  {
+    slug: 'erasmus-mundus-scholarships-guide',
+    category: 'scholarships',
+    region: 'europe',
+    titleEn: 'Erasmus Mundus Scholarships Guide',
+    descriptionEn:
+      'How the Erasmus Mundus Joint Masters (EMJM) scholarships work for international students — what they fund, who can apply, how to apply through the joint programme, and how they differ from Erasmus+.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What an Erasmus Mundus scholarship is',
+        bodyEn:
+          'An Erasmus Mundus Joint Masters (EMJM) is a high-quality, integrated master\'s programme delivered jointly by a group of universities in different countries. Selected programmes come with a limited number of full scholarships funded by the European Union for the strongest applicants from around the world.\n\nThe scholarship is attached to the programme, not awarded separately. You do not apply to a central "Erasmus Mundus fund"; instead you apply to a specific EMJM master\'s, and the consortium running it selects who receives a scholarship.',
+        bullets: [
+          'A joint master\'s run by several universities across more than one country',
+          'A set number of EU-funded scholarships per programme, awarded to top applicants',
+          'Open to students worldwide, subject to each programme\'s academic criteria',
+        ],
+      },
+      {
+        headingEn: 'How EMJM differs from Erasmus+',
+        bodyEn:
+          'Erasmus+ is the European Union\'s broad programme for education, training, youth and sport, and it includes many activities such as student exchanges, traineeships and staff mobility. Erasmus Mundus Joint Masters are one specific funding line within Erasmus+ that supports full degree programmes plus scholarships for international students.\n\nIn short: Erasmus+ is the wide umbrella; Erasmus Mundus is the scholarship-bearing joint-master\'s strand under it. If you want an exchange semester within an existing degree, that is the wider Erasmus+ side; if you want a full multi-country master\'s with a possible scholarship, that is Erasmus Mundus.',
+      },
+      {
+        headingEn: 'Who can apply and what it covers',
+        bodyEn:
+          'Eligibility is set by each EMJM programme, but applicants generally need a relevant bachelor\'s degree (or to be in their final year and graduating before the master\'s begins) and to meet the programme\'s language and academic requirements. Students from across the world may apply, and many programmes reserve scholarships for applicants from a range of countries.\n\nWhere a scholarship is awarded, it is designed to support participation costs — which can include a contribution towards study, travel and living — but the exact amounts, the number of scholarships and any country-specific conditions vary by programme and change between intakes. Always confirm the current figures and rules on the official Erasmus+ pages and on the individual programme\'s own website.',
+      },
+      {
+        headingEn: 'How to find and apply to a programme',
+        bodyEn:
+          'Start from the official Erasmus Mundus catalogue, which lists the available joint master\'s programmes and links to each one\'s website. Choose programmes that match your subject and background, then apply directly to the consortium that runs each one — not to a general portal.\n\nApplication windows commonly open in the autumn for courses beginning the following academic year, but every programme sets its own deadline, documents and selection process. You usually apply to the master\'s and are automatically considered for a scholarship, or you tick a box to be considered; read each programme\'s instructions carefully.',
+        bullets: [
+          'Use the official catalogue to shortlist programmes in your field',
+          'Apply directly to each programme\'s consortium by its own deadline',
+          'Follow each programme\'s exact rule on how scholarship consideration works',
+        ],
+      },
+      {
+        headingEn: 'Avoid scams and unofficial promises',
+        bodyEn:
+          'No legitimate programme, agent or website can guarantee you an Erasmus Mundus scholarship, and you should never pay a third party a "processing" or "guarantee" fee to secure one. Selection is competitive and decided by the academic consortium.\n\nApply only through the official Erasmus+ pages and the programmes\' own official websites, and verify every fact — amounts, eligibility, deadlines — on those official sources before you act, because details change between intakes. This is general information, not personalised advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Erasmus Mundus the same as Erasmus+?',
+        answerEn:
+          'No. Erasmus+ is the wide EU programme covering many education and mobility activities. Erasmus Mundus Joint Masters are one specific strand within Erasmus+ that fund full joint master\'s degrees and offer scholarships to international students.',
+      },
+      {
+        questionEn: 'Do I apply for the scholarship separately?',
+        answerEn:
+          'No. You apply to a specific Erasmus Mundus Joint Masters programme, and the consortium that runs it selects scholarship holders. There is no separate central application for the money.',
+      },
+      {
+        questionEn: 'Can students from any country apply?',
+        answerEn:
+          'Generally yes — students from across the world may apply, subject to each programme\'s academic and language requirements. Some scholarships have country-related conditions, so check the specific programme and the official Erasmus+ pages.',
+      },
+      {
+        questionEn: 'How much does the scholarship pay?',
+        answerEn:
+          'Amounts, the number of scholarships and any conditions vary by programme and change between intakes. We do not list figures here — verify the current amounts on the official Erasmus+ pages and the programme\'s own website.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['erasmus-plus-programme-explained', 'eiffel-scholarship-france-guide', 'swedish-institute-and-nordic-scholarships-guide', 'holland-scholarship-and-netherlands-funding-guide'],
+    sources: [
+      { label: 'European Commission — Erasmus Mundus Joint Masters scholarships', url: 'https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters-scholarships' },
+      { label: 'European Commission — Erasmus+ programme', url: 'https://erasmus-plus.ec.europa.eu/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['erasmus mundus scholarship', 'erasmus mundus joint masters', 'emjm scholarship', 'study in europe scholarship', 'fully funded masters in europe', 'erasmus mundus vs erasmus plus'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Programme type', value: 'EU-funded joint master\'s (EMJM) with scholarships' },
+      { label: 'Run by', value: 'A consortium of universities across more than one country' },
+      { label: 'Who can apply', value: 'International students worldwide (per programme criteria)' },
+      { label: 'How to apply', value: 'Directly to each programme\'s consortium, not a central portal' },
+      { label: 'Amounts / deadlines', value: 'Vary by programme — verify on the official source' },
+    ],
+  },
+  {
+    slug: 'erasmus-plus-programme-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Erasmus+ Programme Explained',
+    descriptionEn:
+      'A plain-English overview of Erasmus+, the European Union\'s programme for education, training, youth and sport — what it covers, how student exchanges work, and how it differs from Erasmus Mundus scholarships.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What Erasmus+ is',
+        bodyEn:
+          'Erasmus+ is the European Union\'s programme to support education, training, youth and sport across Europe and with partner countries. It funds a wide range of activities, the best known of which is the chance for students to spend a study or traineeship period abroad as part of their existing degree.\n\nFor most students, Erasmus+ is not a separate degree you enrol in; it is a framework that lets you do part of your studies at a partner institution in another country and have that period recognised back home.',
+      },
+      {
+        headingEn: 'What it covers for students',
+        bodyEn:
+          'Through Erasmus+, eligible students can take a study exchange at a partner university abroad, or do a traineeship (work placement) with an organisation in another country, usually for a set number of months. Periods abroad are arranged so the credits you earn count towards your home degree.\n\nParticipants can receive a grant to help with the additional costs of going abroad, with extra support available for students who have fewer opportunities. The exact grant levels, durations and conditions are set by your home institution\'s national rules and by the programme, so confirm them with your university\'s international office.',
+        bullets: [
+          'Study exchange at a partner university in another country',
+          'Traineeships / work placements abroad',
+          'Recognition of the period abroad towards your home degree',
+        ],
+      },
+      {
+        headingEn: 'Erasmus+ vs Erasmus Mundus',
+        bodyEn:
+          'It is easy to confuse the two names. Erasmus+ is the broad umbrella programme covering many education and mobility activities. Erasmus Mundus Joint Masters are one specific strand within Erasmus+ that fund full joint master\'s degrees and carry scholarships for international students.\n\nIf you are an enrolled student wanting a semester or placement abroad, that is the wider Erasmus+ mobility side. If you want a full multi-country master\'s degree with a possible scholarship, look at Erasmus Mundus. The two serve different purposes.',
+      },
+      {
+        headingEn: 'How to take part',
+        bodyEn:
+          'Erasmus+ student mobility is normally arranged through your own university, not by applying to the EU directly. Your institution decides which partner universities it has agreements with, who is eligible, and how to apply, so the international or Erasmus office on your campus is the place to start.\n\nWho can participate depends on your country and institution\'s status in the programme. Because rules, partner lists and grant conditions differ by country and change over time, always confirm the current details on the official Erasmus+ pages and with your university.',
+      },
+      {
+        headingEn: 'Key things to remember',
+        bodyEn:
+          'Erasmus+ is about structured, recognised mobility within an existing course, supported by a grant — it is not a guarantee of a place abroad, and selection is handled by your institution. There is also support designed to widen access for students who face barriers.\n\nThis page is general information, not personalised advice. Verify eligibility, deadlines and grant details with your university\'s international office and the official Erasmus+ website before making plans.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Erasmus+ a degree or an exchange?',
+        answerEn:
+          'For most students it is an exchange: you spend a study or traineeship period at a partner institution abroad as part of your existing degree, and the period is recognised back home. The Erasmus Mundus strand is different — those are full joint master\'s degrees.',
+      },
+      {
+        questionEn: 'How do I apply for Erasmus+ mobility?',
+        answerEn:
+          'Through your own university, not directly to the EU. Your institution sets the partner universities, eligibility and process, so contact your campus international or Erasmus office.',
+      },
+      {
+        questionEn: 'Does Erasmus+ give a grant?',
+        answerEn:
+          'Participants can receive a grant to help with the extra costs of studying abroad, with additional support for students with fewer opportunities. Amounts and conditions are set nationally and by the programme — confirm them with your university.',
+      },
+      {
+        questionEn: 'What is the difference between Erasmus+ and Erasmus Mundus?',
+        answerEn:
+          'Erasmus+ is the broad EU programme covering many education and mobility activities. Erasmus Mundus Joint Masters are one specific strand within it that fund full joint master\'s degrees and carry scholarships for international students.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['erasmus-mundus-scholarships-guide', 'eiffel-scholarship-france-guide', 'swedish-institute-and-nordic-scholarships-guide', 'holland-scholarship-and-netherlands-funding-guide'],
+    sources: [
+      { label: 'European Commission — Erasmus+ programme', url: 'https://erasmus-plus.ec.europa.eu/' },
+      { label: 'European Commission — Erasmus+ opportunities for students', url: 'https://erasmus-plus.ec.europa.eu/opportunities/individuals/students' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['what is erasmus plus', 'erasmus plus programme', 'erasmus exchange programme', 'study abroad in europe erasmus', 'erasmus plus traineeship', 'erasmus plus vs erasmus mundus'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'What it is', value: 'EU programme for education, training, youth and sport' },
+      { label: 'Best known for', value: 'Student study exchanges and traineeships abroad' },
+      { label: 'Apply through', value: 'Your own university\'s international / Erasmus office' },
+      { label: 'Not the same as', value: 'Erasmus Mundus (full joint master\'s + scholarships)' },
+    ],
+  },
+  {
+    slug: 'eiffel-scholarship-france-guide',
+    category: 'scholarships',
+    region: 'europe',
+    titleEn: 'Eiffel Scholarship (France) Guide',
+    descriptionEn:
+      'The France Excellence Eiffel Scholarship explained — who runs it, who is eligible, the master\'s and PhD levels it supports, and why your French institution (not you) must submit the application.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Eiffel Scholarship is',
+        bodyEn:
+          'The France Excellence Eiffel Scholarship Programme is a scholarship set up by the French Ministry for Europe and Foreign Affairs to help French higher education institutions attract talented international students to their advanced degree programmes.\n\nIt is a competitive, merit-based award aimed at students seen as future leaders in the public and private sectors. The scholarship is awarded to study at a French institution and is widely recognised as one of France\'s flagship international scholarships.',
+      },
+      {
+        headingEn: 'Who is eligible',
+        bodyEn:
+          'The Eiffel programme is open to international students (non-French nationals) and supports study at master\'s and doctoral (PhD) level in France. Selection is based on academic excellence and the strength of the candidate\'s profile, judged against the programme\'s priority fields.\n\nThere are conditions on age and on prior scholarships, and these are set out — and updated — in the official call each year. Eligibility, priority subject areas and any age limits should always be checked on the official Campus France Eiffel pages before you apply, because they can change between campaigns.',
+        bullets: [
+          'For international (non-French) students',
+          'Supports master\'s and PhD level study in France',
+          'Merit-based, with priority fields defined in each year\'s official call',
+        ],
+      },
+      {
+        headingEn: 'How the application works — through the institution',
+        bodyEn:
+          'A crucial feature of the Eiffel programme is that students cannot apply directly. Only French higher education institutions may submit Eiffel applications, and they nominate the candidates they wish to put forward.\n\nIn practice this means you first secure (or apply for) admission to a French institution, then ask that institution\'s international relations office whether it will nominate you for the Eiffel scholarship and what its internal deadline is. The institution assembles and submits the file to Campus France on your behalf.',
+      },
+      {
+        headingEn: 'What it covers and key dates',
+        bodyEn:
+          'The Eiffel scholarship provides financial support towards living costs and may include other benefits associated with the award, but the precise components, monthly allowance and any travel or insurance elements are defined in the official programme rules and can change between campaigns.\n\nThe campaign runs on an annual cycle, typically opening in the autumn with an institutional submission deadline early in the following year and results announced in spring. Because the exact amounts and dates change each year, confirm them on the official Campus France Eiffel pages rather than relying on figures from elsewhere.',
+      },
+      {
+        headingEn: 'Practical tips and cautions',
+        bodyEn:
+          'Because the institution drives the application, timing matters: contact your target French institution early — well before the official deadline — to ask if it participates and how its internal selection works. Missing the institution\'s internal cut-off means missing the scholarship.\n\nNo agent or website can guarantee you an Eiffel scholarship, and you should not pay any third party to "secure" one; selection is competitive and decided through the official process. This is general information, not personalised advice — verify all current eligibility, components and deadlines on the official source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I apply for the Eiffel scholarship myself?',
+        answerEn:
+          'No. Only French higher education institutions may submit Eiffel applications and they nominate the candidates. You apply for admission to a French institution and ask it to nominate you for the scholarship.',
+      },
+      {
+        questionEn: 'Which levels does the Eiffel scholarship cover?',
+        answerEn:
+          'It supports study at master\'s and doctoral (PhD) level at French institutions. Check the official call for the current scope and any priority subject areas.',
+      },
+      {
+        questionEn: 'Who runs the Eiffel programme?',
+        answerEn:
+          'It was set up by the French Ministry for Europe and Foreign Affairs and is managed by Campus France. Applications are submitted by French institutions to Campus France.',
+      },
+      {
+        questionEn: 'How much does the Eiffel scholarship pay?',
+        answerEn:
+          'It provides financial support towards living costs and may include other benefits, but the exact components and amounts are set in the official rules and change between campaigns. Verify the current figures on the official Campus France Eiffel pages.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-france-from-india', 'erasmus-mundus-scholarships-guide', 'swedish-institute-and-nordic-scholarships-guide', 'holland-scholarship-and-netherlands-funding-guide'],
+    sources: [
+      { label: 'Campus France — Eiffel Excellence Scholarship Programme', url: 'https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence' },
+      { label: 'Campus France — official site', url: 'https://www.campusfrance.org/en' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['eiffel scholarship france', 'eiffel excellence scholarship', 'france excellence scholarship', 'scholarship to study in france', 'campus france eiffel', 'french government scholarship masters phd'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Set up by', value: 'French Ministry for Europe and Foreign Affairs' },
+      { label: 'Managed by', value: 'Campus France' },
+      { label: 'Levels', value: 'Master\'s and PhD study in France' },
+      { label: 'Who applies', value: 'The French institution nominates you — not you directly' },
+      { label: 'Amounts / dates', value: 'Set annually — verify on the official source' },
+    ],
+  },
+  {
+    slug: 'swedish-institute-and-nordic-scholarships-guide',
+    category: 'scholarships',
+    region: 'europe',
+    titleEn: 'Swedish Institute and Nordic Scholarships Guide',
+    descriptionEn:
+      'An overview of Swedish Institute (SI) scholarships for master\'s study in Sweden, plus how funding works across the Nordic countries — eligibility, how to apply, and where to verify the official details.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Swedish Institute (SI) scholarships',
+        bodyEn:
+          'The Swedish Institute is a public agency that runs scholarships for international students who want to study a master\'s programme in Sweden. Its best-known scheme, the SI Scholarships for Global Professionals, supports full-time master\'s study and targets applicants with leadership experience who want to contribute to a more sustainable world.\n\nThe scholarship is competitive and merit-based. It is designed to cover study and living support during the master\'s, with the precise components and amounts set out in the official rules each year.',
+        bullets: [
+          'Run by the Swedish Institute, a public agency',
+          'For full-time master\'s study in Sweden',
+          'Competitive and merit-based, with a leadership focus',
+        ],
+      },
+      {
+        headingEn: 'Who can apply for SI scholarships',
+        bodyEn:
+          'Eligibility for the SI Scholarships for Global Professionals includes being a citizen of one of the programme\'s eligible countries, applying for a master\'s programme that is on the SI\'s eligible-programme list, being liable to pay tuition fees, and having demonstrated leadership experience.\n\nThe list of eligible countries and eligible programmes is defined by the SI and can change between intakes, so you must check the current lists on the official Swedish Institute pages — do not assume your country or programme qualifies without confirming.',
+      },
+      {
+        headingEn: 'How to apply (admission first)',
+        bodyEn:
+          'A key point is the order of steps: you first apply for a master\'s programme through the national application service, University Admissions (universityadmissions.se), and then make a separate scholarship application to the Swedish Institute within its own, usually short, application window.\n\nThe scholarship application opens only after you have applied for your programme(s), and SI scholarship selection happens after the university application stage. Read the SI\'s instructions carefully, because both the programme deadline and the scholarship window must be met, and they fall on different dates.',
+        bullets: [
+          'Step 1: apply for your master\'s via University Admissions (universityadmissions.se)',
+          'Step 2: apply separately to the Swedish Institute within its window',
+          'Both the programme deadline and the scholarship window must be met',
+        ],
+      },
+      {
+        headingEn: 'Scholarships elsewhere in the Nordics',
+        bodyEn:
+          'Funding routes differ across the Nordic countries, so treat each one separately. In several Nordic countries, a large share of the available funding comes from individual universities rather than a single national scholarship, and some publicly funded study options are tied to specific nationalities or programme types.\n\nBecause arrangements, tuition rules and any nationality conditions vary by country and change over time, use each country\'s official study portal — for example the national "study in" portals and the relevant universities\' own scholarship pages — to find what is genuinely available to you. Avoid assuming that a scheme in one Nordic country exists in another.',
+      },
+      {
+        headingEn: 'Verify carefully and avoid scams',
+        bodyEn:
+          'No scholarship can be guaranteed, and you should never pay an agent or website a fee to "secure" an SI or Nordic scholarship; selection is competitive and runs through official channels only. Apply through the official Swedish Institute and University Admissions websites, and through universities\' own official pages.\n\nThis page is general information, not personalised advice. Always confirm the current eligibility, amounts, deadlines and country lists on the official sources before you act, because these details change between intakes.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who runs the SI scholarships?',
+        answerEn:
+          'The Swedish Institute, a Swedish public agency. Its SI Scholarships for Global Professionals support full-time master\'s study in Sweden for eligible international applicants.',
+      },
+      {
+        questionEn: 'Do I apply for the scholarship before or after the programme?',
+        answerEn:
+          'You apply for your master\'s programme first through University Admissions (universityadmissions.se), then make a separate scholarship application to the Swedish Institute within its own window. Both deadlines must be met.',
+      },
+      {
+        questionEn: 'Are all countries eligible for SI scholarships?',
+        answerEn:
+          'No. The SI Scholarships for Global Professionals are limited to citizens of a defined list of eligible countries, and only certain master\'s programmes are eligible. Check the current lists on the official Swedish Institute pages.',
+      },
+      {
+        questionEn: 'Is scholarship funding the same across all Nordic countries?',
+        answerEn:
+          'No. Funding routes differ by country, and in several Nordic countries much of the available funding comes from individual universities rather than one national scheme. Use each country\'s official study portal and universities\' own pages to check.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['kth-royal-institute'],
+    relatedGuideSlugs: ['erasmus-mundus-scholarships-guide', 'eiffel-scholarship-france-guide', 'holland-scholarship-and-netherlands-funding-guide', 'erasmus-plus-programme-explained'],
+    sources: [
+      { label: 'Swedish Institute — scholarships', url: 'https://si.se/en/apply/scholarships/' },
+      { label: 'University Admissions in Sweden — official application service', url: 'https://www.universityadmissions.se/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['swedish institute scholarship', 'si scholarship sweden', 'scholarship to study in sweden', 'study masters in sweden funding', 'nordic scholarships for international students', 'si scholarships for global professionals'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Run by', value: 'The Swedish Institute (public agency)' },
+      { label: 'Level', value: 'Full-time master\'s study in Sweden' },
+      { label: 'Apply via', value: 'University Admissions first, then SI separately' },
+      { label: 'Eligibility', value: 'Defined country + programme lists — verify on the official source' },
+      { label: 'Nordic funding', value: 'Often via individual universities — check each country' },
+    ],
+  },
+  {
+    slug: 'holland-scholarship-and-netherlands-funding-guide',
+    category: 'scholarships',
+    region: 'europe',
+    titleEn: 'Holland Scholarship and Netherlands Funding',
+    descriptionEn:
+      'How the Holland Scholarship (NL Scholarship) and university grants work for international students in the Netherlands — who is eligible, what to expect as a first-year grant, and how to apply through your institution.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Holland Scholarship is',
+        bodyEn:
+          'The Holland Scholarship — now also presented as the NL Scholarship — is a scholarship for international students who want to study in the Netherlands. It is financed by the Dutch Ministry of Education, Culture and Science together with a number of Dutch research universities and universities of applied sciences.\n\nIt is a one-time grant intended to help with the costs of your first year of study. Importantly, it is not a full-tuition scholarship; it is a partial contribution, so you should plan your overall budget accordingly.',
+        bullets: [
+          'Funded by the Dutch Ministry of Education plus participating institutions',
+          'A one-time grant for the first year of study',
+          'A partial contribution — not a full-tuition scholarship',
+        ],
+      },
+      {
+        headingEn: 'Who is eligible',
+        bodyEn:
+          'The Holland Scholarship is aimed at international students from outside the European Economic Area (EEA) who are applying to a full-time bachelor\'s or master\'s programme at a participating Dutch institution, and who do not already hold a degree from a Dutch institution.\n\nEach participating university sets its own specific conditions, fields of study and selection criteria within the programme, so the precise rules depend on where you apply. Confirm the current eligibility on the official Study in NL pages and on your chosen institution\'s scholarship page.',
+      },
+      {
+        headingEn: 'How to apply — through your institution',
+        bodyEn:
+          'You do not apply for the Holland Scholarship through a central national portal. Instead, you apply directly through your chosen Dutch institution, which administers the scholarship and sets its own deadline and requirements.\n\nThat means your first step is to apply for a place on a programme, then follow that institution\'s instructions for the Holland Scholarship. Because each participating research university and university of applied sciences has its own deadline and field-of-study rules, check those carefully and apply on time.',
+        bullets: [
+          'Apply through your chosen Dutch institution, not a central portal',
+          'Each institution sets its own deadline and field rules',
+          'Apply for your programme first, then follow the scholarship instructions',
+        ],
+      },
+      {
+        headingEn: 'Other funding routes in the Netherlands',
+        bodyEn:
+          'The Holland Scholarship is only one option. Many Dutch universities and universities of applied sciences offer their own scholarships and grants, and there are other schemes — including the Erasmus Mundus joint-master\'s scholarships — that international students in the Netherlands may be able to use.\n\nFunding for study in the Netherlands is decentralised, so the best approach is to search the official Study in NL scholarship finder and each institution\'s own scholarship pages to see what you qualify for. Do not assume one institution\'s offer is available at another.',
+      },
+      {
+        headingEn: 'Verify the details and stay safe',
+        bodyEn:
+          'No scholarship is guaranteed, and you should never pay an agent or website a fee to "secure" the Holland Scholarship or any Dutch grant; awards are decided through the institutions\' own official processes. Apply only via the official Study in NL pages and your institution\'s official website.\n\nThis page is general information, not personalised advice. Amounts, eligibility and deadlines change between intakes and differ by institution, so always confirm the current details on the official sources before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the Holland Scholarship a full-tuition scholarship?',
+        answerEn:
+          'No. It is a one-time, partial grant for the first year of study, not full-tuition coverage. Plan the rest of your budget accordingly and check the current amount on the official Study in NL pages.',
+      },
+      {
+        questionEn: 'Who is eligible for the Holland Scholarship?',
+        answerEn:
+          'It is generally for non-EEA international students applying to a full-time bachelor\'s or master\'s at a participating Dutch institution who do not already hold a degree from a Dutch institution. Each institution sets its own specific conditions.',
+      },
+      {
+        questionEn: 'How do I apply for the Holland Scholarship?',
+        answerEn:
+          'Through your chosen Dutch institution, which administers the scholarship and sets its own deadline and requirements — not through a central national portal. Apply for your programme first, then follow the institution\'s scholarship instructions.',
+      },
+      {
+        questionEn: 'What other funding is available in the Netherlands?',
+        answerEn:
+          'Many Dutch institutions offer their own scholarships, and schemes such as Erasmus Mundus joint-master\'s scholarships may apply. Use the official Study in NL scholarship finder and each institution\'s pages to find what you qualify for.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['tu-delft'],
+    relatedGuideSlugs: ['study-in-netherlands-from-india', 'erasmus-mundus-scholarships-guide', 'eiffel-scholarship-france-guide', 'swedish-institute-and-nordic-scholarships-guide'],
+    sources: [
+      { label: 'Study in NL (Nuffic) — Holland Scholarship', url: 'https://www.studyinnl.org/finances/holland-scholarship' },
+      { label: 'Study in NL (Nuffic) — scholarships and funding', url: 'https://www.studyinnl.org/finances/scholarships' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['holland scholarship', 'nl scholarship netherlands', 'study in netherlands scholarship', 'scholarship for international students netherlands', 'dutch university grants', 'holland scholarship eligibility'],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Funded by', value: 'Dutch Ministry of Education + participating institutions' },
+      { label: 'Type', value: 'One-time, partial first-year grant (not full tuition)' },
+      { label: 'Who can apply', value: 'Non-EEA students at participating Dutch institutions' },
+      { label: 'Apply via', value: 'Your chosen institution, not a central portal' },
+      { label: 'Amounts / deadlines', value: 'Vary by institution — verify on the official source' },
+    ],
+  },
+  {
+    slug: 'cost-of-studying-in-europe-by-country',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Cost of Studying in Europe by Country',
+    descriptionEn:
+      'A neutral, country-by-country overview of what studying in Europe can cost — how tuition and living expenses vary across Germany, France, the Netherlands, the Nordics and more, with every figure deferred to the official source.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Why the cost varies so much across Europe',
+        bodyEn:
+          'There is no single "cost of studying in Europe" — the figure depends heavily on the country, the type of institution (public or private), the level of study, and the city you live in. Public universities in some countries charge little or no tuition for certain students, while in others international students pay differentiated fees set by the institution.\n\nThis guide groups the main study destinations so you can see the broad pattern. Treat every number you read anywhere as indicative only: official tuition and the cost of living are revised each academic year, currencies move, and rules differ for EU/EEA versus non-EU/EEA students. Always confirm the current figures on each country\'s official portal and on the specific university\'s website before you budget.',
+      },
+      {
+        headingEn: 'Two parts of the budget: tuition and living costs',
+        bodyEn:
+          'Your total budget has two separate parts that should never be merged. Tuition (and any semester contribution or registration fee) is set by the institution or the national system. Living costs — accommodation, food, transport, health insurance, study materials and personal spending — depend on the city and your lifestyle, and are often the larger share of the budget over a full degree.',
+        bullets: [
+          'Tuition / semester contribution — set by the country or the university; differs for EU/EEA vs non-EU/EEA students',
+          'Living costs — rent, food, transport, health insurance, books, personal spending; varies most by city',
+          'One-off costs — visa or residence-permit fees, proof-of-funds requirement, travel, initial deposit',
+        ],
+      },
+      {
+        headingEn: 'German-speaking countries: Germany',
+        bodyEn:
+          'Germany is widely known for low or no tuition at many public universities, though students typically pay a per-semester contribution that covers administration and often a local transport pass. Some federal states and certain programmes (for example some master\'s or non-EU enrolments) can charge tuition, so this is not universal.\n\nThe exact semester contribution, any tuition that applies to your situation, and the living-cost expectation (including the amount you may need to show for a residence permit) are published officially — verify them on the DAAD "Study in Germany" portal and on your chosen university\'s site before relying on any figure.',
+      },
+      {
+        headingEn: 'France, the Netherlands and the Nordic countries',
+        bodyEn:
+          'In France, public universities charge regulated annual tuition, and non-EU/EEA students are generally subject to higher "differentiated" fees than EU/EEA students; some institutions offer exemptions or partial waivers. Private and specialised schools (such as business and engineering grandes écoles) set their own, often substantially higher, fees.\n\nIn the Netherlands, EU/EEA students typically pay the statutory tuition rate while non-EU/EEA students pay institutional rates that are higher and vary by programme. Across the Nordic countries the picture differs by nation and by student group — some charge tuition to non-EU/EEA students while EU/EEA and exchange students may be exempt. Because each system treats EU/EEA and non-EU/EEA students differently, check the exact current rate for your nationality and programme on the official portal listed below and on the university\'s own fee page.',
+        bullets: [
+          'France — regulated public tuition; non-EU/EEA "differentiated" fees usually higher; private schools set their own',
+          'Netherlands — statutory rate (EU/EEA) vs higher institutional rate (non-EU/EEA), varies by programme',
+          'Nordics — varies by country and student group; non-EU/EEA students may pay tuition, EU/EEA often exempt',
+        ],
+      },
+      {
+        headingEn: 'How to build a realistic country budget',
+        bodyEn:
+          'Build your estimate from official sources in this order: (1) the country\'s official study portal for the national rules and any proof-of-funds requirement, (2) the specific university\'s fee page for your exact programme and student group, and (3) the city\'s typical living costs. Add visa/residence-permit fees and a buffer for currency movement and one-off setup costs.\n\nRankings such as QS or THE describe academic reputation, not affordability — a higher-ranked university is not automatically more expensive or cheaper, so judge cost on the official fee page, not on a ranking. Never rely on a single headline number; the only reliable figures are the current ones on the official sources.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is it true that studying in some European countries is free?',
+        answerEn:
+          'Some public universities in certain countries charge little or no tuition for some student groups, but students often still pay a semester contribution, and living costs always apply. Whether "free or low tuition" applies depends on the country, your nationality (EU/EEA vs non-EU/EEA), the programme and the institution. Confirm the exact rule on the official portal and the university\'s site.',
+      },
+      {
+        questionEn: 'Why do different sources quote very different costs?',
+        answerEn:
+          'Tuition and living costs are revised every academic year, vary by city and student group, and are quoted in different currencies. Older or generalised figures go out of date quickly. Use the current numbers on each country\'s official study portal and the specific university\'s fee page rather than any single quoted estimate.',
+      },
+      {
+        questionEn: 'Do EU and non-EU students pay the same tuition?',
+        answerEn:
+          'Often not. Many European systems set one rate for EU/EEA (and sometimes Swiss) students and a higher rate for non-EU/EEA students, and the gap differs by country and programme. Always check the rate that applies to your specific nationality and course on the official source.',
+      },
+      {
+        questionEn: 'Which part of the budget is usually bigger — tuition or living costs?',
+        answerEn:
+          'It depends on the country. Where public tuition is low, living costs (especially rent) are usually the larger part of the total over a full degree. Where institutional tuition is high, tuition can dominate. Budget both parts separately using official and city-level figures.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'tuition-fees-for-international-students-in-europe',
+      'cost-of-living-for-students-in-europe',
+      'cheapest-european-countries-to-study-for-international-students',
+      'education-loans-for-studying-in-europe',
+    ],
+    sources: [
+      { label: 'DAAD — Costs of education and living', url: 'https://www.daad.de/en/studying-in-germany/living-in-germany/finances/' },
+      { label: 'Campus France — Tuition fees in France', url: 'https://www.campusfrance.org/en/tuition-fees-France' },
+      { label: 'Study in NL (Nuffic) — Finances', url: 'https://www.studyinnl.org/finances' },
+      { label: 'University Admissions Sweden — Fees & scholarships', url: 'https://www.universityadmissions.se/en/fees-scholarships-residence-permit/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'cost of studying in europe',
+      'cost of studying in europe by country',
+      'how much does it cost to study in europe',
+      'study in europe tuition fees',
+      'study abroad europe budget',
+      'cheapest country to study in europe',
+    ],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Two budget parts', value: 'Tuition / semester contribution + living costs (rent, food, transport, insurance)' },
+      { label: 'Biggest variable', value: 'Country, public vs private institution, city, and EU/EEA vs non-EU/EEA status' },
+      { label: 'Tuition rule', value: 'Many systems charge non-EU/EEA students more than EU/EEA students — verify your rate' },
+      { label: 'Where to confirm', value: 'Each country\'s official study portal + the specific university\'s fee page' },
+      { label: 'Note', value: 'All amounts change yearly — figures here are deferred to official sources' },
+    ],
+  },
+  {
+    slug: 'cheapest-european-countries-to-study-for-international-students',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Cheapest European Countries to Study for International Students',
+    descriptionEn:
+      'A neutral look at lower-cost study destinations in Europe — what makes some countries more affordable, how tuition and living costs combine, and why you should always confirm current figures on official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What "cheapest" really means for students',
+        bodyEn:
+          'Affordability is not just tuition. A country with low or no tuition can still be expensive once high rent and living costs are added, and a country with moderate tuition can be very affordable to live in. "Cheapest" therefore means the combination of tuition, the semester contribution (if any), and the day-to-day cost of living in the city where you study.\n\nThis guide describes the factors neutrally — no country is "better" or "worse", only different. Costs are revised every year and depend on your nationality (EU/EEA vs non-EU/EEA), programme and city, so use this as a framework and confirm every figure on the official portals before deciding.',
+      },
+      {
+        headingEn: 'Countries often described as more affordable',
+        bodyEn:
+          'Several European destinations are frequently described as lower-cost because of low public tuition, a modest cost of living, or both. Germany is well known for low or no tuition at many public universities (with a per-semester contribution), and a number of Central and Eastern European countries are often cited for lower living costs. Some Nordic systems are tuition-free for EU/EEA and exchange students even though living costs there can be higher.\n\nBecause each system treats EU/EEA and non-EU/EEA students differently, "affordable" can mean very different things depending on your nationality. The only reliable way to compare is to check the current tuition for your specific student group and the typical living cost of the actual city on official sources.',
+        bullets: [
+          'Low/no public tuition for some groups — e.g. Germany (semester contribution still applies)',
+          'Lower typical living costs — often cited for several Central/Eastern European cities',
+          'Tuition-free for EU/EEA + exchange students in some Nordic systems (living costs may be higher)',
+          'Always check whether the rule applies to EU/EEA or non-EU/EEA students',
+        ],
+      },
+      {
+        headingEn: 'Funding can change the real cost',
+        bodyEn:
+          'Scholarships, fee waivers and EU mobility funding can lower the effective cost in any country, sometimes more than the headline tuition difference between two destinations. Programmes such as Erasmus+ support eligible student mobility, national bodies and universities offer their own scholarships, and some institutions grant partial tuition waivers.\n\nThese schemes have their own eligibility rules, deadlines and amounts, all set officially and updated regularly. No scholarship is guaranteed, so build your budget on the assumption you pay full cost and treat any funding as a bonus you must apply for through the official channel.',
+      },
+      {
+        headingEn: 'How to compare destinations fairly',
+        bodyEn:
+          'To compare like with like, add tuition (for your nationality and programme) to a realistic annual living-cost estimate for the specific city, then factor in any visa/residence-permit fee and proof-of-funds requirement. Compare those total figures, not tuition alone.\n\nDo not use university rankings (QS, THE) as a cost signal — they measure academic reputation, not affordability. And do not judge a country by reputation or hearsay; the official portal and the university\'s own fee page are the only dependable sources, and the figures there change each year.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which is the single cheapest country to study in Europe?',
+        answerEn:
+          'There is no fixed answer, because "cheapest" depends on your nationality, programme, city and the current year\'s tuition and living costs. A country with low tuition may have high rent, and vice versa. Compare the total of tuition plus living costs for your specific situation using official sources.',
+      },
+      {
+        questionEn: 'Can I study in Europe for free?',
+        answerEn:
+          'Some public universities charge little or no tuition for certain student groups, but a semester contribution and living costs still apply, and the rule may differ for non-EU/EEA students. "Free tuition" is never the same as "free to study". Confirm the exact rule for your nationality on the official portal.',
+      },
+      {
+        questionEn: 'Do scholarships make expensive countries affordable?',
+        answerEn:
+          'They can reduce the effective cost, sometimes significantly, but no scholarship is guaranteed and each has its own eligibility and deadlines. Plan your budget assuming you pay full cost, then apply for funding through official channels such as Erasmus+, national bodies or the university.',
+      },
+      {
+        questionEn: 'Are low-cost countries lower quality?',
+        answerEn:
+          'No — cost and quality are separate. Affordability reflects national funding policy and local living costs, not academic standard. Judge academic fit on the programme and the institution, and judge cost on the official fee page; do not equate a lower cost with lower quality.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'duolingo-english-test'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'cost-of-studying-in-europe-by-country',
+      'cost-of-living-for-students-in-europe',
+      'tuition-fees-for-international-students-in-europe',
+      'study-in-germany-from-india',
+    ],
+    sources: [
+      { label: 'DAAD — Costs of education and living', url: 'https://www.daad.de/en/studying-in-germany/living-in-germany/finances/' },
+      { label: 'Erasmus+ — Opportunities for students', url: 'https://erasmus-plus.ec.europa.eu/opportunities/individuals/students' },
+      { label: 'Study in Finland — official portal', url: 'https://studyinfinland.fi/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'cheapest country to study in europe',
+      'affordable study in europe for international students',
+      'low cost study abroad europe',
+      'study in europe for free',
+      'cheapest european countries for students',
+      'affordable masters in europe',
+    ],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'What "cheap" means', value: 'Tuition + semester contribution + living costs combined, not tuition alone' },
+      { label: 'Often cited low-tuition', value: 'Germany (semester contribution applies); some Nordic systems for EU/EEA & exchange students' },
+      { label: 'Can lower real cost', value: 'Scholarships, fee waivers, Erasmus+ mobility funding (apply officially; none guaranteed)' },
+      { label: 'Compare on', value: 'Total cost for your nationality + city, from official portals — not rankings' },
+    ],
+  },
+  {
+    slug: 'cost-of-living-for-students-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Cost of Living for Students in Europe',
+    descriptionEn:
+      'A breakdown of the living-cost components international students budget for in Europe — accommodation, food, transport, health insurance and personal spending — and why the total varies so much by city and country.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Living costs are separate from tuition',
+        bodyEn:
+          'Your living costs are everything you spend to live while you study — they are completely separate from tuition and often the larger part of the budget over a full degree. The total varies widely by country and, even more, by city: a capital or a major student city is usually more expensive than a smaller town in the same country.\n\nThis guide lists the components to plan for rather than fixed amounts, because typical costs are revised regularly and differ by location and lifestyle. For real numbers, use each country\'s official study portal and the specific city or university\'s cost-of-living guidance, and verify them before you budget.',
+      },
+      {
+        headingEn: 'The main components to budget for',
+        bodyEn:
+          'Most student budgets break down into a handful of recurring categories. Accommodation (rent and utilities) is usually the largest, followed by food, local transport, health insurance, study materials, communications, and personal spending. Some countries also require you to show a specific amount of funds for a student visa or residence permit, which is set officially and changes periodically.',
+        bullets: [
+          'Accommodation — university halls, private rooms or shared flats; rent + utilities, usually the biggest item',
+          'Food and groceries — cooking at home is typically cheaper than eating out',
+          'Local transport — many cities offer student passes or discounts',
+          'Health insurance — often mandatory; rules differ for EU/EEA vs non-EU/EEA students',
+          'Study materials, phone/internet, and personal spending',
+          'Proof-of-funds amount for the visa/residence permit (where required) — set officially',
+        ],
+      },
+      {
+        headingEn: 'Why the same country can cost very differently',
+        bodyEn:
+          'Two students in the same country can have very different budgets. Rent in a large or capital city can be far higher than in a smaller town; living in university accommodation versus a private flat changes the total; and personal choices around food, travel and leisure matter a great deal.\n\nHealth insurance is another variable: many countries require students to hold valid cover, and the type and cost can differ for EU/EEA and non-EU/EEA students. Because of all this, plan around the specific city and your own circumstances, not a national average, and confirm the requirements on official sources.',
+      },
+      {
+        headingEn: 'Ways students manage living costs',
+        bodyEn:
+          'Common, legitimate ways to manage costs include choosing university or shared accommodation, using student transport passes and discounts, cooking at home, and applying for scholarships or fee waivers. Some countries also allow enrolled international students to work a limited number of hours during term, but the rules, hour limits and conditions are set by each country\'s government and change over time.\n\nIf you plan to rely on part-time work, treat it as supplementary, not as your core budget, and confirm exactly what your visa or residence permit allows on the official government source. This is general information, not financial or immigration advice — verify the current rules before you rely on them.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much do students need per month to live in Europe?',
+        answerEn:
+          'There is no single figure — the monthly amount depends heavily on the country and city, your accommodation, and your lifestyle, and the typical cost is revised regularly. Use the specific city or university\'s official cost-of-living guidance and the country\'s study portal rather than a general number.',
+      },
+      {
+        questionEn: 'What is usually the biggest expense for students?',
+        answerEn:
+          'For most students, accommodation (rent plus utilities) is the largest recurring cost, and it varies most by city. University halls or shared flats are typically more economical than renting a private flat alone. Check local housing options through the university.',
+      },
+      {
+        questionEn: 'Is health insurance included in living costs?',
+        answerEn:
+          'Health insurance is usually a separate, often mandatory, cost, and the requirement and price differ for EU/EEA versus non-EU/EEA students. Budget for it separately and confirm exactly what cover your country and university require on the official source.',
+      },
+      {
+        questionEn: 'Can I cover living costs with a part-time job?',
+        answerEn:
+          'Some countries allow enrolled international students to work a limited number of hours during term, but the rules and hour limits are set by each government and can change. Treat any earnings as supplementary, not your core budget, and verify what your visa or residence permit permits on the official government source. This is general information, not financial or immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'cost-of-studying-in-europe-by-country',
+      'cheapest-european-countries-to-study-for-international-students',
+      'tuition-fees-for-international-students-in-europe',
+      'education-loans-for-studying-in-europe',
+    ],
+    sources: [
+      { label: 'DAAD — Costs of education and living', url: 'https://www.daad.de/en/studying-in-germany/living-in-germany/finances/' },
+      { label: 'Study in NL (Nuffic) — Finances', url: 'https://www.studyinnl.org/finances' },
+      { label: 'Study in Finland — official portal', url: 'https://studyinfinland.fi/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'cost of living for students in europe',
+      'student living costs europe',
+      'monthly expenses studying in europe',
+      'student budget europe',
+      'living expenses for international students europe',
+      'how much money to study in europe',
+    ],
+    tags: ['europe-tuition-scholarships', 'europe-student-life'],
+    keyFacts: [
+      { label: 'Biggest item', value: 'Accommodation (rent + utilities), varies most by city' },
+      { label: 'Other components', value: 'Food, local transport, health insurance, study materials, personal spending' },
+      { label: 'Often mandatory', value: 'Health insurance — requirement and cost differ for EU/EEA vs non-EU/EEA students' },
+      { label: 'Visa/permit', value: 'Some countries require a proof-of-funds amount, set officially and revised periodically' },
+      { label: 'Part-time work', value: 'Some countries allow limited term-time hours — verify on the official government source' },
+    ],
+  },
+  {
+    slug: 'education-loans-for-studying-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Education Loans for Studying in Europe',
+    descriptionEn:
+      'A factual overview of how students typically fund study in Europe through education loans — the kinds of loans that exist, what lenders usually look at, and why you must verify terms with the lender and a qualified adviser.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'This is general information, not financial advice',
+        bodyEn:
+          'GlobalStudyBoard is an education-guidance resource, not a financial adviser or lender. This guide explains, in general terms, how education loans are commonly used to fund study in Europe so you know what to research — it is not financial advice and does not recommend any specific loan, lender or product.\n\nLoan availability, interest rates, amounts, eligibility, repayment terms and tax treatment vary widely by country, lender and your personal circumstances, and they change over time. Before borrowing, read the lender\'s official terms in full and consult a qualified financial adviser and your bank. We do not state any rates or amounts here on purpose — only the lender can give you accurate, current figures.',
+      },
+      {
+        headingEn: 'Common sources of education funding',
+        bodyEn:
+          'Students typically combine several funding sources rather than relying on one. Education loans are one part of that mix, alongside personal or family savings, scholarships and fee waivers, and (where permitted) limited part-time work. Understanding the full picture helps you size any loan correctly.',
+        bullets: [
+          'Education loans — from banks or specialist lenders in your home country or, in some cases, the host country',
+          'Scholarships and fee waivers — from governments, universities and EU programmes (apply officially; none guaranteed)',
+          'Personal and family savings',
+          'Limited part-time work where the visa/residence permit allows it (supplementary only)',
+        ],
+      },
+      {
+        headingEn: 'What lenders commonly look at',
+        bodyEn:
+          'While criteria differ by lender and country, education-loan applications often consider similar factors. These typically include the student\'s admission to a recognised institution and programme, the total cost (tuition plus living expenses), the loan amount requested, and the lender\'s requirements around collateral or a co-applicant/guarantor.\n\nSome loans are secured (backed by collateral) and some are unsecured; some require a co-signer. Repayment structures — including any study-period grace, the moratorium and the schedule afterwards — also vary. Treat all of these as questions to ask the lender directly; the answers depend entirely on the specific product and your situation.',
+        bullets: [
+          'Admission to a recognised institution/programme and the course details',
+          'Total cost (tuition + living costs) and the amount requested',
+          'Collateral and/or a co-applicant or guarantor, depending on the product',
+          'Repayment terms — grace/moratorium period, schedule, and any conditions',
+        ],
+      },
+      {
+        headingEn: 'How to research a loan responsibly',
+        bodyEn:
+          'Work out your total cost first — tuition for your nationality and programme plus a realistic living-cost estimate for the city, both from official sources — then borrow only what you actually need after savings and any expected (not guaranteed) scholarships. Compare offers on their full official terms, not just a headline rate, and make sure you understand the total amount repayable and the currency you repay in.\n\nBe cautious of any party promising "guaranteed" approval, a visa, or admission in exchange for a loan or fee — legitimate lenders do not guarantee immigration or admission outcomes. Always read the official terms, ask the lender your questions in writing, and consult a qualified financial adviser before signing. This is general information only.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does GlobalStudyBoard arrange or recommend loans?',
+        answerEn:
+          'No. We provide general educational information only; we are not a lender, broker or financial adviser and we do not recommend any loan or product. For an actual loan, approach banks or recognised lenders directly, read their official terms, and consult a qualified financial adviser.',
+      },
+      {
+        questionEn: 'What interest rate or amount can I expect?',
+        answerEn:
+          'We do not state rates or amounts, because they vary by lender, country, product and your personal circumstances and change over time. Only the lender can give you accurate, current figures. Compare offers on their full official terms and confirm everything in writing before borrowing.',
+      },
+      {
+        questionEn: 'Do I need collateral or a co-signer for an education loan?',
+        answerEn:
+          'It depends entirely on the lender and product — some loans are secured or require a co-applicant/guarantor, while others are unsecured. Ask each lender directly what they require for your situation and read the official terms; do not assume one product\'s rules apply to another.',
+      },
+      {
+        questionEn: 'How much should I borrow?',
+        answerEn:
+          'As a general principle, calculate your total cost (tuition plus living costs from official sources), subtract savings and any expected scholarships, and borrow only the remaining amount you genuinely need. Understand the total repayable and the repayment terms, and seek advice from a qualified financial adviser before committing.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'cost-of-studying-in-europe-by-country',
+      'cost-of-living-for-students-in-europe',
+      'tuition-fees-for-international-students-in-europe',
+      'daad-scholarship-for-indians',
+    ],
+    sources: [
+      { label: 'DAAD — Costs of education and living', url: 'https://www.daad.de/en/studying-in-germany/living-in-germany/finances/' },
+      { label: 'Erasmus+ — Opportunities for students', url: 'https://erasmus-plus.ec.europa.eu/opportunities/individuals/students' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'education loan for study in europe',
+      'student loan to study abroad europe',
+      'how to fund study in europe',
+      'education loan for masters abroad',
+      'study abroad loan europe',
+      'funding study in europe',
+    ],
+    tags: ['europe-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Status', value: 'General information only — not financial advice; consult a qualified adviser' },
+      { label: 'Funding mix', value: 'Loans + savings + scholarships/waivers + limited permitted part-time work' },
+      { label: 'Lenders often assess', value: 'Admission, total cost, amount requested, collateral/co-applicant, repayment terms' },
+      { label: 'No figures here', value: 'Rates and amounts vary by lender/country/person — only the lender can confirm' },
+      { label: 'Caution', value: 'No legitimate lender guarantees a visa or admission in exchange for a loan' },
+    ],
+  },
+  {
+    slug: 'tuition-fees-for-international-students-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Tuition Fees for International Students in Europe',
+    descriptionEn:
+      'How tuition fees work for international students across Europe — the difference between EU/EEA and non-EU/EEA rates, public versus private institutions, and why you must confirm the exact figure on each official source.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How European tuition systems are structured',
+        bodyEn:
+          'Tuition for international students in Europe is not set by one rule — each country, and often each institution, decides its own fees within its national framework. The most important distinction in most systems is between EU/EEA (and sometimes Swiss) students and non-EU/EEA students, who frequently pay different rates.\n\nA second key distinction is public versus private institutions: public universities are typically subsidised and charge regulated or lower tuition, while private and specialised schools set their own, often higher, fees. This guide explains the patterns; for the exact figure, always check the official portal and the specific university\'s fee page, because rates are revised every academic year.',
+      },
+      {
+        headingEn: 'EU/EEA vs non-EU/EEA students',
+        bodyEn:
+          'In many European countries, EU/EEA (and in some cases Swiss) students pay the same tuition as domestic students — which can be low or, in some systems, zero for certain programmes — while non-EU/EEA international students pay a higher rate. The size of that difference, and whether it applies at all, depends on the country and the level of study.\n\nSome countries charge all international students the same institutional rate; others distinguish sharply between the two groups. A few also offer exemptions, reduced "differentiated" fees, or waivers for specific situations. Because your nationality directly affects what you pay, confirm the rate for your exact status and programme on the official source rather than assuming a single figure.',
+        bullets: [
+          'EU/EEA (and sometimes Swiss) students — often the domestic rate, which may be low or zero for some programmes',
+          'Non-EU/EEA students — frequently a higher rate, varying by country and programme',
+          'Some systems — the same institutional rate for all international students',
+          'Exemptions/waivers — may exist for specific situations; set officially',
+        ],
+      },
+      {
+        headingEn: 'Public vs private institutions, and the semester contribution',
+        bodyEn:
+          'Public universities are generally subsidised and charge regulated tuition (or, in some countries, no tuition for certain students), though many still levy a per-semester contribution that covers administration and sometimes a transport pass. Private and specialised institutions — including many business and engineering schools — set their own fees, which are usually higher.\n\nWhen you compare programmes, separate the headline tuition from any semester contribution, registration fee or other compulsory charge, so you are comparing the true total. The official fee page for each programme is the only reliable place to see exactly what is included.',
+      },
+      {
+        headingEn: 'Tuition by level and programme',
+        bodyEn:
+          'Tuition can also differ by level of study (bachelor\'s, master\'s, doctoral) and by field. In several countries doctoral candidates are treated differently — sometimes paying little or no tuition, or being employed as researchers — while master\'s programmes, especially specialised or English-taught ones, may carry distinct fees. Professional and specialised fields can be priced differently from general programmes.\n\nBecause of this variation, never generalise from one programme\'s fee to another. Look up the exact tuition for the specific level, field and student group you fall into on the official portal and the university\'s site.',
+      },
+      {
+        headingEn: 'How to confirm what you will actually pay',
+        bodyEn:
+          'To find your real tuition, check in this order: (1) the country\'s official study portal for the national rules and how EU/EEA vs non-EU/EEA status is treated, and (2) the specific university\'s fee page for your exact programme, level and student group, including any semester contribution or compulsory charge. Note the academic year the figure applies to and watch for revisions.\n\nRankings from QS or THE measure reputation, not price, so do not infer cost from a ranking. And remember that scholarships or waivers can change what you effectively pay but are never guaranteed — verify each on its official source. The only dependable numbers are the current ones on official portals and university fee pages.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do international students pay more tuition than local students in Europe?',
+        answerEn:
+          'Often, yes — many European systems charge non-EU/EEA students a higher rate than domestic and EU/EEA students, though the difference varies by country and some systems charge all international students the same institutional rate. Confirm the rate for your specific nationality and programme on the official source.',
+      },
+      {
+        questionEn: 'Is tuition really zero in some European countries?',
+        answerEn:
+          'Some public universities charge no tuition for certain student groups (often EU/EEA or exchange students), but a semester contribution and living costs still apply, and non-EU/EEA students may be charged. Whether "zero tuition" applies to you depends on the country, programme and your nationality — verify it officially.',
+      },
+      {
+        questionEn: 'Why is tuition at private schools so different from public universities?',
+        answerEn:
+          'Public universities are typically subsidised and charge regulated or lower tuition, while private and specialised institutions set their own fees to cover their costs, which are usually higher. Compare the official fee page of each specific institution rather than assuming a public rate applies everywhere.',
+      },
+      {
+        questionEn: 'Does tuition change every year?',
+        answerEn:
+          'Tuition and semester contributions are commonly revised each academic year, and rules for EU/EEA vs non-EU/EEA students can change too. Always check the figure for the current year and the exact academic year it applies to on the official portal and the university\'s fee page.',
+      },
+      {
+        questionEn: 'Can I reduce tuition with a scholarship or waiver?',
+        answerEn:
+          'Possibly — many countries and universities offer scholarships, reduced "differentiated" fees or waivers for specific situations, and EU programmes such as Erasmus+ support eligible mobility. None are guaranteed, each has its own eligibility and deadlines, so apply through the official channel and budget assuming you pay full tuition.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'cost-of-studying-in-europe-by-country',
+      'cheapest-european-countries-to-study-for-international-students',
+      'cost-of-living-for-students-in-europe',
+      'study-in-france-from-india',
+    ],
+    sources: [
+      { label: 'Campus France — Tuition fees in France', url: 'https://www.campusfrance.org/en/tuition-fees-France' },
+      { label: 'Study in NL (Nuffic) — Finances', url: 'https://www.studyinnl.org/finances' },
+      { label: 'University Admissions Sweden — Fees & scholarships', url: 'https://www.universityadmissions.se/en/fees-scholarships-residence-permit/' },
+      { label: 'DAAD — Costs of education and living', url: 'https://www.daad.de/en/studying-in-germany/living-in-germany/finances/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'tuition fees for international students in europe',
+      'eu vs non-eu tuition fees',
+      'university tuition fees europe',
+      'masters tuition fees europe international students',
+      'how much is tuition in europe',
+      'study in europe fees for indian students',
+    ],
+    tags: ['europe-tuition-scholarships', 'europe-admissions'],
+    keyFacts: [
+      { label: 'Key distinction', value: 'EU/EEA (sometimes Swiss) rate vs non-EU/EEA rate — differs by country and programme' },
+      { label: 'Public vs private', value: 'Public = regulated/lower or zero for some; private/specialised = own, often higher fees' },
+      { label: 'Semester contribution', value: 'Many public universities levy a per-semester charge separate from tuition' },
+      { label: 'Varies by', value: 'Country, institution type, level (bachelor\'s/master\'s/doctoral) and field' },
+      { label: 'Confirm on', value: 'Official study portal + the specific university\'s fee page (note the academic year)' },
+    ],
+  },
+  {
+    slug: 'best-courses-to-study-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Best Courses to Study in Europe',
+    descriptionEn:
+      'A neutral overview of popular fields international students study across Europe — from engineering and computer science to business, health, and the humanities — and a practical way to choose the right course for you.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'There is no single "best" course — only the right fit for you',
+        bodyEn:
+          'Europe is home to hundreds of universities offering programmes across almost every field, many of them taught in English. "Best" is not a fixed list: the right course is the one that matches your interests, your prior subjects, your career goals, and the entry requirements you can meet.\n\nThis guide describes the broad fields international students commonly choose so you can compare them on their own terms. It does not rank fields or promise outcomes — demand, salaries, and job prospects vary widely by country, university, programme, and the individual, and we make no guarantees about any of them.',
+      },
+      {
+        headingEn: 'Popular broad fields across Europe',
+        bodyEn:
+          'Across European universities, certain fields recur as popular choices for international students because many are offered as English-taught degrees and connect to a wide range of pathways. Each field spans many specialisations, so treat these as starting points and read each programme\'s own page for detail.',
+        bullets: [
+          'Engineering and technology (mechanical, electrical, civil, aerospace, and more)',
+          'Computer science, data science, and information technology',
+          'Business, economics, management, and the MBA',
+          'Natural and physical sciences (physics, chemistry, biology, environmental science)',
+          'Health and life sciences (subject to country-specific entry rules)',
+          'Social sciences, humanities, design, and the arts',
+        ],
+      },
+      {
+        headingEn: 'Why language of instruction matters',
+        bodyEn:
+          'Many master\'s programmes across Europe are taught fully in English, while a large share of bachelor\'s programmes — especially in countries like Germany, France, Italy, and Spain — are taught in the local language. Always confirm the language of instruction on the official programme page before applying.\n\nIf a programme is in English, you will usually need to prove your English proficiency with a test such as IELTS or TOEFL. If it is in the local language, you may need a local-language certificate. Requirements differ by university, so verify them on the official source.',
+      },
+      {
+        headingEn: 'How to choose your course',
+        bodyEn:
+          'Start from what you genuinely enjoy and are good at, then narrow by practical factors: the subjects you have already studied, the language of instruction, the country, tuition and living costs, and your longer-term plans.\n\nA useful method is to shortlist three to five programmes, then compare their official pages side by side on curriculum, entry requirements, fees, intake dates, and application deadlines. Decisions based on official information age better than those based on rankings alone.',
+        bullets: [
+          'Match the course to your prior subjects and genuine interests',
+          'Check the language of instruction and the proof you must provide',
+          'Compare curriculum, entry requirements, fees, and deadlines on official pages',
+          'Consider country, cost of living, and your own goals — not rankings alone',
+        ],
+      },
+      {
+        headingEn: 'A note on rankings',
+        bodyEn:
+          'You will see European universities featured in international rankings such as the QS World University Rankings and the Times Higher Education (THE) World University Rankings. These can be one input, but they measure broad institutional factors rather than how good a specific programme is for you.\n\nUse rankings as a starting point, always attributed to the body that issued them, and weigh them alongside the course content, entry requirements, cost, and fit. Specific course-level information always comes from the university\'s own official pages.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which course is the best to study in Europe?',
+        answerEn:
+          'There is no universally "best" course. The right course depends on your interests, prior subjects, career goals, budget, and the entry requirements you can meet. Compare programmes on their official pages rather than relying on a single ranking.',
+      },
+      {
+        questionEn: 'Are courses in Europe taught in English?',
+        answerEn:
+          'Many master\'s programmes are taught fully in English, and an increasing number of bachelor\'s programmes are too. However, many bachelor\'s degrees are taught in the local language. Always confirm the language of instruction on the official programme page.',
+      },
+      {
+        questionEn: 'Do I need an English test to study in Europe?',
+        answerEn:
+          'For English-taught programmes you usually need to prove English proficiency with a test such as IELTS or TOEFL, while local-language programmes may require a local-language certificate. The exact requirement is set by each university — verify it on the official source.',
+      },
+      {
+        questionEn: 'Will a popular course guarantee me a job?',
+        answerEn:
+          'No course guarantees a job. Demand and outcomes vary by country, university, programme, and the individual. Choose a course for genuine fit and verify any outcome claims independently on official sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'engineering-courses-in-europe-for-international-students',
+      'computer-science-and-it-courses-in-europe',
+      'business-and-mba-courses-in-europe',
+      'study-medicine-in-europe-in-english',
+    ],
+    sources: [
+      { label: 'European Commission — Study in Europe', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'European Higher Education Area (EHEA)', url: 'https://www.ehea.info' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'best courses to study in europe',
+      'popular courses in europe for international students',
+      'english taught courses in europe',
+      'what to study in europe',
+      'study in europe for indian students',
+    ],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'Region', value: 'Europe (multiple countries)' },
+      { label: 'Common fields', value: 'Engineering, computer science, business, sciences, humanities' },
+      { label: 'Language', value: 'English-taught or local-language — varies by programme' },
+      { label: 'English proof (if English-taught)', value: 'Usually IELTS or TOEFL — set by each university' },
+      { label: 'Verify on', value: 'Official university and programme pages' },
+    ],
+  },
+  {
+    slug: 'engineering-courses-in-europe-for-international-students',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Engineering Courses in Europe for International Students',
+    descriptionEn:
+      'How engineering study works across Europe — bachelor\'s and master\'s structure, English-taught options, branches you can study, and how to find and apply to the right programme.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Engineering study in Europe at a glance',
+        bodyEn:
+          'Engineering is one of the most widely offered fields across European universities and technical institutions. You will find dedicated technical universities as well as engineering faculties within broader universities, covering branches from mechanical and electrical to computer, civil, chemical, aerospace, and environmental engineering.\n\nThis guide describes how engineering programmes are generally structured and how to find them. It does not rank programmes or make any promises about jobs or salaries, which vary by country, institution, branch, and the individual.',
+      },
+      {
+        headingEn: 'Bachelor\'s and master\'s structure',
+        bodyEn:
+          'Most European countries follow the Bologna structure: a bachelor\'s degree (commonly around three years), then a master\'s (commonly around one to two years), and a doctorate for research. Many international students enter at the master\'s level, where English-taught options are most common.\n\nSome countries also offer integrated or longer engineering tracks. Programme length, structure, and titles differ by country and university, so confirm the exact details on the official programme page.',
+        bullets: [
+          'Bachelor\'s → master\'s → doctorate (Bologna three-cycle structure)',
+          'Many international students enter at master\'s level',
+          'English-taught options are most common at master\'s level',
+        ],
+      },
+      {
+        headingEn: 'English-taught vs local-language programmes',
+        bodyEn:
+          'A large number of engineering master\'s programmes across Europe are taught fully in English, which is why many international students choose them. Bachelor\'s engineering programmes are more often taught in the local language, though English-taught bachelor\'s options exist too.\n\nFor English-taught programmes you will usually need an English test such as IELTS or TOEFL; for local-language programmes you may need a local-language certificate. Always check the language of instruction and the exact proficiency requirement on the official source.',
+      },
+      {
+        headingEn: 'Entry requirements and how to apply',
+        bodyEn:
+          'Typical entry requirements include a relevant prior qualification (for a master\'s, a related bachelor\'s degree), a strong academic background in mathematics and science, proof of language proficiency, and sometimes additional documents such as a statement of purpose or letters of recommendation. Some master\'s programmes may ask for GRE scores, though many do not.\n\nApplication routes differ by country — some use a central national portal, others have you apply to each university directly. Deadlines, required documents, and any application fees are set by each university or national system, so verify them on the official programme or admissions page.',
+        bullets: [
+          'Relevant prior qualification and a strong maths/science background',
+          'Proof of language proficiency (e.g. IELTS or TOEFL for English-taught)',
+          'Some programmes may request GRE — many do not; check each one',
+          'Application route and deadlines vary by country — verify officially',
+        ],
+      },
+      {
+        headingEn: 'Finding the right programme',
+        bodyEn:
+          'Start by deciding your branch and preferred countries, then search official university and national-portal databases for English-taught engineering programmes that match. Compare curriculum, entry requirements, tuition, intake dates, and deadlines side by side.\n\nIf you want a ranking reference, note that some technical universities feature in the QS and Times Higher Education (THE) rankings; treat these as one input alongside fit, cost, and programme content, and always attribute the ranking to its issuer.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I study engineering in Europe in English?',
+        answerEn:
+          'Yes. Many engineering programmes — especially at master\'s level — are taught fully in English. Bachelor\'s engineering is more often in the local language, though English-taught options exist. Always confirm the language of instruction on the official programme page.',
+      },
+      {
+        questionEn: 'Do engineering programmes in Europe require the GRE?',
+        answerEn:
+          'It varies. Some master\'s programmes ask for GRE scores while many do not. Check each programme\'s official admissions page for its exact requirements, including any language test such as IELTS or TOEFL.',
+      },
+      {
+        questionEn: 'How long is an engineering degree in Europe?',
+        answerEn:
+          'Under the common Bologna structure, a bachelor\'s is often around three years and a master\'s around one to two years, but length and titles differ by country and university. Verify the exact duration on the official programme page.',
+      },
+      {
+        questionEn: 'Will an engineering degree from Europe get me a job?',
+        answerEn:
+          'No degree guarantees a job. Outcomes depend on the country, institution, branch, the labour market, and the individual. Choose a programme for fit and verify any career or work-related claims on official sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'gre'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'best-courses-to-study-in-europe',
+      'computer-science-and-it-courses-in-europe',
+      'study-in-germany-from-india',
+    ],
+    sources: [
+      { label: 'European Commission — Study in Europe', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'European Higher Education Area (EHEA) — Bologna structure', url: 'https://www.ehea.info' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'engineering courses in europe',
+      'study engineering in europe in english',
+      'engineering masters in europe for international students',
+      'best countries to study engineering in europe',
+      'english taught engineering programmes europe',
+    ],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'Field', value: 'Engineering and technology' },
+      { label: 'Structure', value: 'Bachelor\'s → master\'s → doctorate (Bologna)' },
+      { label: 'Language', value: 'English-taught common at master\'s; local-language common at bachelor\'s' },
+      { label: 'Tests', value: 'IELTS/TOEFL for English-taught; GRE only where required' },
+      { label: 'Verify on', value: 'Official university programme pages' },
+    ],
+  },
+  {
+    slug: 'computer-science-and-it-courses-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Computer Science and IT Courses in Europe',
+    descriptionEn:
+      'A guide to studying computer science, data science, and IT across Europe — degree structure, English-taught options, specialisations, entry requirements, and how to choose a programme.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Computer science and IT study in Europe',
+        bodyEn:
+          'Computer science (CS) and information technology (IT) are among the most popular fields for international students in Europe, with a large number of English-taught programmes, particularly at master\'s level. Programmes range from broad computer science to focused tracks in data science, artificial intelligence, cybersecurity, software engineering, and human-computer interaction.\n\nThis guide explains how these programmes are typically structured and how to choose one. It does not rank programmes or promise specific salaries or jobs, which vary by country, university, specialisation, and the individual.',
+      },
+      {
+        headingEn: 'Degree structure and specialisations',
+        bodyEn:
+          'CS and IT degrees follow the common European Bologna structure: a bachelor\'s, then a master\'s, then a doctorate for research. Bachelor\'s programmes build broad foundations in programming, mathematics, algorithms, and systems; master\'s programmes let you specialise.\n\nCommon specialisations you will encounter at master\'s level include the areas below. Each university defines its own curriculum, so read the official programme page for the exact modules.',
+        bullets: [
+          'Data science and machine learning',
+          'Artificial intelligence',
+          'Cybersecurity and information security',
+          'Software engineering and systems',
+          'Human-computer interaction and design',
+        ],
+      },
+      {
+        headingEn: 'English-taught options and language',
+        bodyEn:
+          'CS and IT have a high concentration of English-taught programmes across Europe, especially at master\'s level, which is one reason the field is popular with international students. Some bachelor\'s programmes are English-taught too, though many remain in the local language.\n\nFor English-taught programmes you will usually need a test such as IELTS or TOEFL. Confirm the language of instruction and the exact score requirement on the official programme page, since these are set by each university.',
+      },
+      {
+        headingEn: 'Entry requirements and applying',
+        bodyEn:
+          'For a master\'s, you generally need a relevant bachelor\'s degree (often in computer science, IT, or a related quantitative field) and a solid background in mathematics and programming. Additional documents such as a statement of purpose, transcripts, and letters of recommendation are common, and some programmes may request GRE scores while many do not.\n\nApplication routes differ by country — some use a national portal, others are direct to the university. Deadlines, documents, and any fees are set officially, so verify everything on the programme or admissions page before applying.',
+        bullets: [
+          'Relevant bachelor\'s plus a maths/programming background (for a master\'s)',
+          'Language proof (e.g. IELTS or TOEFL) for English-taught programmes',
+          'GRE only where a specific programme asks for it',
+          'Deadlines and application routes vary by country — verify officially',
+        ],
+      },
+      {
+        headingEn: 'Choosing a CS or IT programme',
+        bodyEn:
+          'Decide your specialisation and preferred countries first, then shortlist English-taught programmes and compare them on curriculum, entry requirements, tuition, and deadlines using official pages. Look closely at the modules and any practical or project components, since these matter more than a programme\'s name.\n\nIf you use rankings, some European universities feature in the QS and Times Higher Education (THE) rankings — treat these as one input alongside fit and cost, and attribute any ranking to the body that issued it.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Are computer science courses in Europe taught in English?',
+        answerEn:
+          'Many are, especially at master\'s level — CS and IT have a high share of English-taught programmes. Some bachelor\'s programmes are also in English, though many are in the local language. Always confirm on the official programme page.',
+      },
+      {
+        questionEn: 'What can I specialise in within computer science in Europe?',
+        answerEn:
+          'Common master\'s specialisations include data science, artificial intelligence, cybersecurity, software engineering, and human-computer interaction. Each university sets its own curriculum, so check the official programme page for exact modules.',
+      },
+      {
+        questionEn: 'Do I need the GRE for a CS master\'s in Europe?',
+        answerEn:
+          'It depends on the programme. Some ask for GRE scores while many do not. Review each programme\'s official admissions requirements, including any English test such as IELTS or TOEFL.',
+      },
+      {
+        questionEn: 'Will a CS degree from Europe guarantee a tech job?',
+        answerEn:
+          'No degree guarantees a job. Outcomes vary by country, university, specialisation, the labour market, and the individual. Choose a programme for fit and verify any career claims on official sources.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'gre'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'best-courses-to-study-in-europe',
+      'engineering-courses-in-europe-for-international-students',
+      'study-in-netherlands-from-india',
+    ],
+    sources: [
+      { label: 'European Commission — Study in Europe', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'European Higher Education Area (EHEA)', url: 'https://www.ehea.info' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'computer science courses in europe',
+      'study computer science in europe in english',
+      'data science masters in europe',
+      'it courses in europe for international students',
+      'msc computer science europe',
+    ],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'Field', value: 'Computer science and IT' },
+      { label: 'Specialisations', value: 'Data science, AI, cybersecurity, software engineering, HCI' },
+      { label: 'Structure', value: 'Bachelor\'s → master\'s → doctorate (Bologna)' },
+      { label: 'Language', value: 'High share of English-taught at master\'s level' },
+      { label: 'Verify on', value: 'Official university programme pages' },
+    ],
+  },
+  {
+    slug: 'business-and-mba-courses-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Business and MBA Courses in Europe',
+    descriptionEn:
+      'How business and MBA study works in Europe — undergraduate business degrees, the MBA, when GMAT or GRE is required, entry requirements, and how to choose a programme.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Business and management study in Europe',
+        bodyEn:
+          'Europe offers a wide range of business and management programmes, from undergraduate degrees and specialised master\'s to the Master of Business Administration (MBA). Programmes are run by universities and dedicated business schools across many countries, and many are taught in English.\n\nThis guide describes how these programmes are generally structured and what they require. It does not rank schools or make claims about salaries or job placement, which vary by country, school, programme, and the individual.',
+      },
+      {
+        headingEn: 'Undergraduate business vs the MBA',
+        bodyEn:
+          'An undergraduate business or management degree (often a bachelor\'s of around three years under the Bologna structure) gives broad foundations in areas like economics, accounting, marketing, and management for students entering after school. A master\'s in management or a specialised business master\'s builds on a prior degree.\n\nThe MBA is a postgraduate degree typically aimed at applicants who already have some work experience, focused on general management and leadership. Eligibility, format (full-time, part-time, executive), and length differ by school, so confirm the specifics on the official programme page.',
+        bullets: [
+          'Undergraduate business/management — for students entering after school',
+          'Specialised master\'s (e.g. management, finance, marketing) — builds on a prior degree',
+          'MBA — postgraduate, often expecting prior work experience',
+        ],
+      },
+      {
+        headingEn: 'When GMAT or GRE is required',
+        bodyEn:
+          'Some business master\'s programmes and many MBA programmes ask for a GMAT or GRE score as part of the application, while others do not require either. The requirement is set by each programme, and some accept either test interchangeably.\n\nBecause policies differ and some programmes waive the test under certain conditions, always check the exact admissions requirement on the official programme page rather than assuming. For English-taught programmes you will usually also need an English test such as IELTS or TOEFL.',
+        bullets: [
+          'GMAT or GRE is required by some programmes — and waived or optional at others',
+          'Some programmes accept either GMAT or GRE',
+          'English-taught programmes usually also require IELTS or TOEFL',
+          'Verify the exact requirement on each official programme page',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and applying',
+        bodyEn:
+          'Typical requirements include a relevant prior qualification (a bachelor\'s degree for a master\'s or MBA), academic transcripts, a statement of purpose or essays, letters of recommendation, and — where required — a GMAT or GRE score and a language test. MBA programmes often value relevant work experience.\n\nApplication is usually directly to the university or business school, with deadlines and any fees set by each institution. Verify the full list of required documents and the deadlines on the official admissions page.',
+      },
+      {
+        headingEn: 'Choosing a business or MBA programme',
+        bodyEn:
+          'Decide your goal first — a broad foundation, a specialisation, or a general-management MBA — then shortlist programmes and compare curriculum, format, entry requirements, tuition, and deadlines on official pages. For an MBA, look at the format and how it fits your experience level.\n\nSeveral European business schools feature in international rankings such as those published by QS and the Times Higher Education (THE), and some publish subject-specific rankings; use these as one input alongside fit and cost, always attributed to the body that issued them.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need GMAT or GRE for a business master\'s or MBA in Europe?',
+        answerEn:
+          'It depends on the programme. Some require a GMAT or GRE score, some accept either, and others do not require a test at all. Always check the exact requirement on the official programme page, as policies and waivers differ.',
+      },
+      {
+        questionEn: 'What is the difference between a business master\'s and an MBA?',
+        answerEn:
+          'A specialised business master\'s usually follows directly from a prior degree and focuses on a specific area, while an MBA is a general-management postgraduate degree that often expects some prior work experience. Eligibility and format differ by school — confirm on the official page.',
+      },
+      {
+        questionEn: 'Are business and MBA programmes in Europe taught in English?',
+        answerEn:
+          'Many are taught in English, particularly at master\'s and MBA level, though some programmes are in the local language. For English-taught programmes you usually need an English test such as IELTS or TOEFL. Confirm the language of instruction on the official page.',
+      },
+      {
+        questionEn: 'Will an MBA in Europe guarantee a high salary?',
+        answerEn:
+          'No programme guarantees a salary or a job. Outcomes vary by country, school, programme, and the individual. Choose a programme for fit and verify any salary or placement information independently on official sources.',
+      },
+    ],
+    relatedExamSlugs: ['gmat', 'gre', 'ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'best-courses-to-study-in-europe',
+      'computer-science-and-it-courses-in-europe',
+      'study-in-france-from-india',
+    ],
+    sources: [
+      { label: 'European Commission — Study in Europe', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'European Higher Education Area (EHEA)', url: 'https://www.ehea.info' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'mba in europe',
+      'business courses in europe',
+      'study mba in europe for international students',
+      'gmat for mba in europe',
+      'masters in management europe',
+    ],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'Field', value: 'Business, management, and the MBA' },
+      { label: 'Levels', value: 'Undergraduate, specialised master\'s, MBA' },
+      { label: 'Tests', value: 'GMAT or GRE where required; IELTS/TOEFL for English-taught' },
+      { label: 'MBA note', value: 'Often expects prior work experience — varies by school' },
+      { label: 'Verify on', value: 'Official university and business-school pages' },
+    ],
+  },
+  {
+    slug: 'study-medicine-in-europe-in-english',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Study Medicine in Europe in English',
+    descriptionEn:
+      'How to find English-taught medicine programmes in Europe — the study route, entrance tests that vary by country (such as Italy\'s IMAT), and what to check on official sources before applying.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'English-taught medicine in Europe',
+        bodyEn:
+          'A number of European countries offer medical degree programmes taught in English, which has made Europe a destination some international students consider for studying medicine. This guide explains the study route and how to research programmes.\n\nImportant: this is general study-route information, not medical or clinical advice, and it does not cover how to practise medicine in any country. Entry rules, programme structure, tests, and the steps required to become licensed all vary significantly by country and are set by official bodies — always verify the current details on the official source.',
+      },
+      {
+        headingEn: 'How medical study is usually structured',
+        bodyEn:
+          'Medical degrees in Europe are typically long, integrated programmes that combine pre-clinical study with clinical training, and they are longer than most other bachelor\'s degrees. Programme titles, length, and structure differ from country to country.\n\nBecause the structure varies so much, do not assume one country\'s model applies elsewhere. Read each programme\'s official page for its exact length, structure, and what the degree does and does not cover.',
+      },
+      {
+        headingEn: 'Entrance tests vary by country',
+        bodyEn:
+          'Admission to English-taught medicine programmes commonly involves a competitive entrance test, but which test is used depends on the country and university. For example, several universities in Italy use the International Medical Admissions Test (IMAT) for their English-taught medicine and surgery courses; other countries and universities use their own admissions tests or criteria.\n\nEntrance tests, eligibility, the number of places, and selection rules are set officially and change between years. Confirm exactly which test (if any) applies, and its current format and dates, on the official university or national source — do not rely on general summaries.',
+        bullets: [
+          'Italy: several universities use the IMAT for English-taught medicine',
+          'Other countries/universities: their own admissions tests or criteria',
+          'Eligibility, places, and selection rules are set officially and can change',
+          'Verify the exact test, format, and dates on the official source',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and language',
+        bodyEn:
+          'Typical requirements include a strong school-level background in science subjects (often biology and chemistry), meeting the specific entrance test or selection criteria, and proof of English proficiency for English-taught programmes (commonly a test such as IELTS or TOEFL, where required).\n\nExact subject prerequisites, accepted qualifications, and language requirements differ by country and university. Always check the official admissions page for the precise requirements before you apply.',
+        bullets: [
+          'Strong science background (often biology and chemistry)',
+          'The relevant entrance test or selection criteria for that programme',
+          'English proof (e.g. IELTS or TOEFL) where required for English-taught study',
+        ],
+      },
+      {
+        headingEn: 'Important: studying is not the same as practising',
+        bodyEn:
+          'Completing a medical degree and becoming licensed to practise medicine are separate matters, and the rules to practise differ in every country — including any country you might later wish to work in. This guide covers the study route only and does not advise on licensing, registration, or recognition of qualifications.\n\nIf practising in a particular country matters to you, research that country\'s official medical regulator and recognition rules separately and well in advance. We make no guarantees about admission, outcomes, or the ability to practise anywhere — verify everything on official sources, as this is general information and not professional advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I study medicine in Europe in English?',
+        answerEn:
+          'Yes, a number of European countries offer English-taught medical programmes. Availability, entry rules, and the entrance test differ by country and university, so confirm the details on each programme\'s official page.',
+      },
+      {
+        questionEn: 'What entrance test do I need for medicine in Europe?',
+        answerEn:
+          'It varies. For example, several universities in Italy use the IMAT for English-taught medicine, while other countries and universities use their own admissions tests or criteria. Verify exactly which test applies, and its current format, on the official source.',
+      },
+      {
+        questionEn: 'How long is a medical degree in Europe?',
+        answerEn:
+          'Medical degrees are typically long, integrated programmes combining pre-clinical and clinical study, and they are longer than most other bachelor\'s degrees. The exact length and structure differ by country and university — check the official programme page.',
+      },
+      {
+        questionEn: 'Does studying medicine in Europe let me practise as a doctor anywhere?',
+        answerEn:
+          'No. Studying and becoming licensed to practise are separate, and the rules to practise differ in every country. This guide covers the study route only; for licensing and recognition, consult the relevant country\'s official medical regulator. We make no guarantees about the ability to practise.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'best-courses-to-study-in-europe',
+      'engineering-courses-in-europe-for-international-students',
+      'computer-science-and-it-courses-in-europe',
+    ],
+    sources: [
+      { label: 'European Commission — Study in Europe', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'Study in Italy — official portal (Ministry of Foreign Affairs)', url: 'https://studyinitaly.esteri.it' },
+      { label: 'Universitaly — official Italian higher-education portal', url: 'https://www.universitaly.it' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: [
+      'study medicine in europe in english',
+      'mbbs in europe in english',
+      'english taught medicine europe',
+      'imat italy medicine',
+      'medical degree in europe for international students',
+    ],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'Field', value: 'Medicine (English-taught, where offered)' },
+      { label: 'Structure', value: 'Long integrated pre-clinical + clinical programme; length varies by country' },
+      { label: 'Entrance test', value: 'Varies by country — e.g. IMAT at some Italian universities' },
+      { label: 'Language proof', value: 'IELTS/TOEFL where required for English-taught study' },
+      { label: 'Verify on', value: 'Official university and national education sources' },
+    ],
+  },
+  {
+    slug: 'data-science-and-ai-courses-in-europe',
+    category: 'career',
+    region: 'europe',
+    titleEn: 'Data Science and AI Courses in Europe',
+    descriptionEn:
+      'A practical overview of studying data science and artificial intelligence in Europe — programme types, English-taught options, typical entry requirements, and how to research the right fit using official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What these programmes cover',
+        bodyEn:
+          'Data science and artificial intelligence (AI) programmes in Europe sit across several academic departments — computer science, mathematics and statistics, and sometimes engineering or business analytics. A data science programme typically blends programming, statistics, data handling, and machine learning, while an AI programme leans more toward machine learning, deep learning, and topics such as natural language processing or computer vision.\n\nNames vary widely between universities (for example "Data Science", "Artificial Intelligence", "Machine Learning", "Data Engineering", or "Computational Intelligence"). Read each programme\'s official module list rather than relying on the title, because the same name can mean different things at different universities.',
+      },
+      {
+        headingEn: 'Where these courses are offered',
+        bodyEn:
+          'Many universities across Europe offer data science and AI at bachelor\'s, master\'s, and doctoral level, and a large share of master\'s programmes are taught fully in English. Technical universities and large research universities are common hosts, but the field is broad and is offered in many countries.\n\nProgramme availability, structure, and admission rules differ by country and institution, so always confirm details on the official university or national study portal rather than assuming they are the same everywhere.',
+        bullets: [
+          'Offered at bachelor\'s, master\'s, and PhD level',
+          'Many master\'s programmes are English-taught',
+          'Hosted by technical and research universities across several countries',
+        ],
+      },
+      {
+        headingEn: 'Typical entry requirements',
+        bodyEn:
+          'For a master\'s in data science or AI, universities commonly look for a relevant bachelor\'s background (such as computer science, mathematics, statistics, engineering, or a quantitative discipline) and evidence of programming and mathematics ability. Some programmes accept applicants from other backgrounds if they can show enough quantitative and coding preparation.\n\nIf the programme is taught in English, you will usually need to prove English proficiency through an accepted test such as IELTS or TOEFL. Exact prerequisites, accepted tests, and minimum scores are set by each university and change over time, so verify them on the official programme page before you apply.',
+      },
+      {
+        headingEn: 'Careers the field can lead to',
+        bodyEn:
+          'Graduates work in roles connected to data and AI across many sectors — for example as data analysts, data scientists, machine-learning engineers, or research roles, depending on the programme and the individual. The specific demand, roles, and outcomes vary by country, industry, and your own experience and skills.\n\nNo course can promise a particular job, salary, or outcome. Treat any career information as general context and research current opportunities through official university career services and employer sources.',
+      },
+      {
+        headingEn: 'How to research the right programme',
+        bodyEn:
+          'Start from official sources: the European Commission\'s education portal and national study portals describe how higher education works in each country, and individual university websites list the actual programmes, modules, and admission rules. Check whether a programme is accredited and recognised in the country where it is offered.\n\nIf you are weighing data science against a broader computing or mathematics degree, the choice depends on your interests and goals rather than on which field is "better".',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a computer science background to study data science in Europe?',
+        answerEn:
+          'Not always. Many programmes prefer a quantitative background (computer science, mathematics, statistics, or engineering), but some accept applicants from other fields who can show programming and mathematics ability. Check each programme\'s official prerequisites.',
+      },
+      {
+        questionEn: 'Are data science and AI master\'s programmes taught in English?',
+        answerEn:
+          'A large share of master\'s programmes in this field are taught fully in English, though availability differs by country and university. Confirm the language of instruction and the required English test on the official programme page.',
+      },
+      {
+        questionEn: 'Is data science a good career choice?',
+        answerEn:
+          'It is one of several growing areas in computing, but demand and outcomes vary by country, sector, and individual. No course can guarantee a job or salary — research current opportunities through official university and employer sources.',
+      },
+      {
+        questionEn: 'What is the difference between a data science and an AI degree?',
+        answerEn:
+          'Data science usually emphasises statistics, data handling, and applied analysis, while AI leans more toward machine learning and topics such as deep learning, language, and vision. The overlap is large, so read the official module list of each programme rather than relying on the title.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'gre'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['masters-in-europe-for-international-students', 'how-to-choose-a-course-to-study-in-europe', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'European Commission — Education and training', url: 'https://education.ec.europa.eu' },
+      { label: 'Study in Germany (DAAD/official portal)', url: 'https://www.study-in-germany.com' },
+      { label: 'Study in NL — official study portal (Netherlands)', url: 'https://www.studyinnl.org' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['data science courses in europe', 'masters in artificial intelligence europe', 'study ai in europe', 'machine learning masters europe', 'english taught data science europe'],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'Field', value: 'Data science / artificial intelligence (computing + statistics)' },
+      { label: 'Levels offered', value: 'Bachelor\'s, master\'s, and PhD across many countries' },
+      { label: 'Language', value: 'Many master\'s programmes taught fully in English' },
+      { label: 'Typical entry', value: 'Quantitative background + programming/maths; English test if taught in English' },
+      { label: 'Verify on', value: 'Official university programme pages + national study portals' },
+    ],
+  },
+  {
+    slug: 'masters-in-europe-for-international-students',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Master\'s in Europe for International Students',
+    descriptionEn:
+      'How master\'s study works in Europe for international students — coursework vs research degrees, English-taught programmes, entry requirements, and where to verify the official rules for each country.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How master\'s degrees are structured in Europe',
+        bodyEn:
+          'Most European countries take part in the Bologna Process, a shared framework that organises higher education into bachelor\'s, master\'s, and doctoral cycles and uses a common credit system (ECTS). This makes master\'s degrees broadly comparable across countries, although the exact length and structure differ by country and programme.\n\nA master\'s typically follows a bachelor\'s degree and goes deeper into a subject. You will find master\'s programmes at universities and at universities of applied sciences, each with its own focus.',
+      },
+      {
+        headingEn: 'Coursework vs research master\'s',
+        bodyEn:
+          'Master\'s programmes broadly fall into two styles. A taught or coursework master\'s is built around lectures, seminars, assignments, and exams, often with a final project or dissertation. A research master\'s places more weight on independent research and a substantial thesis, and is often chosen by students who want to continue to a PhD.\n\nMany programmes mix both elements. Read each programme\'s official description to see how much is taught coursework and how much is independent research, since this shapes your daily study and your next steps.',
+        bullets: [
+          'Taught / coursework master\'s — lectures, seminars, assignments, project',
+          'Research master\'s — heavier independent research and thesis',
+          'Many programmes combine taught modules with a research project',
+        ],
+      },
+      {
+        headingEn: 'English-taught programmes',
+        bodyEn:
+          'You do not always need to speak the local language to study a master\'s in Europe — many universities offer programmes taught entirely in English, especially at master\'s level. The number of English-taught options varies by country and university.\n\nWhere a programme is taught in English, you will generally need to prove your English with an accepted test such as IELTS or TOEFL. Even so, learning some of the local language helps with daily life and part-time work, so consider it separately from your admission requirements.',
+      },
+      {
+        headingEn: 'Typical entry requirements',
+        bodyEn:
+          'Common requirements include a relevant bachelor\'s degree, academic transcripts, proof of language proficiency, a statement of purpose or motivation letter, and sometimes letters of recommendation. Some programmes ask for an admission test (for example GRE or GMAT for certain fields) or for specific prerequisite subjects.\n\nRequirements are set by each university and can differ even between programmes at the same institution. Always confirm the current requirements, deadlines, and accepted tests on the official programme page before you apply.',
+      },
+      {
+        headingEn: 'Tuition, funding, and application routes',
+        bodyEn:
+          'Tuition fees and living costs vary widely between countries and between universities, and some countries charge different fees for students from outside the EU/EEA. Scholarships exist at university, national, and EU level (for example Erasmus+ and country-specific schemes).\n\nApplications may go directly to the university or through a national or central application portal, depending on the country. Because fees, funding, and deadlines change every year, check the exact figures and processes on the official university and national portals rather than relying on older information.',
+      },
+      {
+        headingEn: 'Visa and residence basics',
+        bodyEn:
+          'If you are an international student from outside the EU/EEA, you will usually need a student visa or residence permit to study in a European country, issued by that country\'s government. Requirements typically include an admission offer, proof of funds, and health insurance, and the exact rules differ by country.\n\nThis is general information, not immigration advice. Always verify the current visa and residence requirements on the official government source for the country where you plan to study before making any plans.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I do a master\'s in Europe in English?',
+        answerEn:
+          'Yes. Many European universities offer master\'s programmes taught entirely in English, though the number of options varies by country and university. You will usually need to prove English proficiency with an accepted test such as IELTS or TOEFL.',
+      },
+      {
+        questionEn: 'What is the difference between a taught and a research master\'s?',
+        answerEn:
+          'A taught (coursework) master\'s centres on lectures, seminars, and assignments with a final project. A research master\'s places more weight on independent research and a thesis, and is often a step toward a PhD. Check each programme\'s official description.',
+      },
+      {
+        questionEn: 'How long is a master\'s in Europe?',
+        answerEn:
+          'It varies by country and programme. Because most countries use the shared Bologna framework, degrees are broadly comparable, but the exact duration is set by each programme — confirm it on the official university page.',
+      },
+      {
+        questionEn: 'Do I need a visa to study a master\'s in Europe?',
+        answerEn:
+          'Students from outside the EU/EEA usually need a student visa or residence permit issued by the country where they will study. Requirements differ by country. This is general information, not immigration advice — verify the rules on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'gre', 'gmat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-choose-a-course-to-study-in-europe', 'phd-and-research-opportunities-in-europe', 'masters-in-germany-without-german-language', 'study-in-france-from-india'],
+    sources: [
+      { label: 'European Higher Education Area (Bologna Process)', url: 'https://www.ehea.info' },
+      { label: 'European Commission — Education and training', url: 'https://education.ec.europa.eu' },
+      { label: 'Erasmus+ — official EU programme site', url: 'https://erasmus-plus.ec.europa.eu' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['masters in europe for international students', 'study masters in europe', 'english taught masters europe', 'masters in europe requirements', 'cheap masters in europe'],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'Framework', value: 'Most countries use the Bologna Process + ECTS credits' },
+      { label: 'Programme styles', value: 'Taught/coursework master\'s and research master\'s' },
+      { label: 'Language', value: 'Many master\'s taught in English (varies by country/university)' },
+      { label: 'Common documents', value: 'Bachelor\'s degree, transcripts, language test, motivation letter' },
+      { label: 'Verify on', value: 'Official university pages + national study portals' },
+    ],
+  },
+  {
+    slug: 'phd-and-research-opportunities-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'PhD and Research Opportunities in Europe',
+    descriptionEn:
+      'How doctoral study and research work in Europe — why a PhD is often a funded or salaried position, how to find positions, typical requirements, and where to verify the official rules per country.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How a PhD works in Europe',
+        bodyEn:
+          'A PhD (doctorate) is the highest academic degree and centres on original research that adds new knowledge to a field, supervised by an experienced academic. In many European countries a PhD is structured around an individual research project, while in others it is organised through a structured doctoral programme or graduate school with some coursework.\n\nThe exact model, duration, and rules differ by country and institution, so read the official description from the university or research institute you are interested in.',
+      },
+      {
+        headingEn: 'PhD is often a paid position',
+        bodyEn:
+          'In several European countries a PhD researcher is treated as an employee and receives a salary or a funded stipend, rather than paying tuition to study. This varies significantly by country, institution, and the source of funding — some PhDs are employment contracts, some are scholarship-funded, and arrangements differ.\n\nBecause funding models and amounts vary and change over time, never assume a fixed figure. Check the specific funding, contract type, and conditions stated in each advertised position or on the official university page, and verify on the official source.',
+        bullets: [
+          'In many countries a PhD researcher is employed and salaried',
+          'Some PhDs are funded by scholarships or research grants instead',
+          'Funding type and amount vary by country, institution, and project',
+        ],
+      },
+      {
+        headingEn: 'How to find a PhD position',
+        bodyEn:
+          'There are two common routes. In the "position-based" route, you apply to advertised, funded PhD vacancies tied to a specific project — these are posted on university websites, national research portals, and the EU\'s EURAXESS portal for researchers. In the "proposal-based" route, you approach a potential supervisor with your own research idea and then seek admission and funding.\n\nWhichever route you take, contacting potential supervisors and reading their research is usually an important step. Confirm the actual application process on the official university or institute page.',
+      },
+      {
+        headingEn: 'Typical requirements',
+        bodyEn:
+          'Most PhD positions require a relevant master\'s degree (some fields accept strong candidates through other routes), a clear research interest, academic references, and often a research proposal or statement. If the working language is English, you may need to prove English proficiency with an accepted test such as IELTS or TOEFL.\n\nRequirements are set by each university, programme, or supervisor and can differ widely, so verify the exact criteria on the official source before applying.',
+      },
+      {
+        headingEn: 'Funding and EU research schemes',
+        bodyEn:
+          'Beyond institution funding, the EU supports researcher mobility through schemes such as the Marie Skłodowska-Curie Actions, and many countries and universities run their own doctoral scholarships. Research-council and national programmes also exist in individual countries.\n\nEligibility, deadlines, and amounts for these schemes change over time. Check the official EU and national programme websites for current details rather than relying on older summaries.',
+      },
+      {
+        headingEn: 'Visa and residence for doctoral researchers',
+        bodyEn:
+          'International doctoral researchers from outside the EU/EEA usually need a student or researcher visa or residence permit, issued by the country where the research takes place. Some countries have specific routes for researchers, and the requirements differ by country.\n\nThis is general information, not immigration advice. Always verify the current visa and residence requirements on the official government source for that country before making plans.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do you get paid to do a PhD in Europe?',
+        answerEn:
+          'Often, yes — in many European countries a PhD researcher is employed and receives a salary or a funded stipend, though this varies by country, institution, and funding source. Some PhDs are scholarship-funded instead. Always check the funding stated in each specific position.',
+      },
+      {
+        questionEn: 'How do I find a PhD position in Europe?',
+        answerEn:
+          'Common routes are applying to advertised, funded vacancies (posted on university sites and portals such as EURAXESS) or approaching a potential supervisor with your own research idea. Confirm the exact process on the official university or institute page.',
+      },
+      {
+        questionEn: 'Do I need a master\'s degree to start a PhD in Europe?',
+        answerEn:
+          'Most PhD positions require a relevant master\'s degree, though some fields and countries accept strong candidates through other routes. Requirements are set by each university or supervisor — verify them on the official source.',
+      },
+      {
+        questionEn: 'Can I do a PhD in Europe in English?',
+        answerEn:
+          'Yes, many PhD positions are conducted in English, especially in research-intensive groups. If English is the working language you may need to prove proficiency with a test such as IELTS or TOEFL. Confirm the requirement on the official programme page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'gre'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['masters-in-europe-for-international-students', 'how-to-choose-a-course-to-study-in-europe', 'daad-scholarships-for-international-students'],
+    sources: [
+      { label: 'EURAXESS — Researchers in Motion (European Commission)', url: 'https://euraxess.ec.europa.eu' },
+      { label: 'Marie Skłodowska-Curie Actions (official EU site)', url: 'https://marie-sklodowska-curie-actions.ec.europa.eu' },
+      { label: 'European Commission — Education and training', url: 'https://education.ec.europa.eu' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['phd in europe for international students', 'funded phd europe', 'paid phd positions europe', 'how to find a phd in europe', 'research opportunities in europe'],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'Degree', value: 'Doctorate (PhD) — original supervised research' },
+      { label: 'Funding', value: 'Often a salaried post or funded stipend (varies by country/institution)' },
+      { label: 'Finding a position', value: 'Advertised vacancies (e.g. EURAXESS) or approach a supervisor' },
+      { label: 'Typical entry', value: 'Relevant master\'s, research interest, references; English test if applicable' },
+      { label: 'Verify on', value: 'Official university/institute pages + EU and national programme sites' },
+    ],
+  },
+  {
+    slug: 'masters-in-germany-without-german-language',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Master\'s in Germany Without German Language',
+    descriptionEn:
+      'Can you study a master\'s in Germany without speaking German? An overview of English-taught programmes, why German is still useful for daily life and work, entry requirements, and official sources to verify.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Yes — many master\'s programmes are taught in English',
+        bodyEn:
+          'You can study a master\'s in Germany without German-language skills, because many German universities offer master\'s programmes taught entirely in English. These are sometimes called "international" programmes and are found across a range of subjects, particularly in fields such as engineering, computer science, natural sciences, and business.\n\nThe number and choice of English-taught programmes varies by university and subject. The official "Study in Germany" portal and the DAAD database list programmes and let you filter by language of instruction, so use those to see what is currently available.',
+      },
+      {
+        headingEn: 'Why German is still worth learning',
+        bodyEn:
+          'Even if your degree is in English, learning German helps a great deal with daily life — housing, administration, healthcare, shopping, and making friends — and can be important for part-time work and for working in Germany after your studies. Many graduate roles outside fully international environments use German.\n\nLearning German is therefore separate from your admission requirement: it is not always needed to be admitted, but it is generally useful for living and working in the country. The Goethe-Institut and university language centres offer German courses if you choose to learn.',
+        bullets: [
+          'Helps with housing, administration, healthcare, and daily life',
+          'Useful for part-time work and many post-study jobs',
+          'Optional for admission to English-taught programmes, but valuable overall',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements for English-taught master\'s',
+        bodyEn:
+          'For an English-taught master\'s you will generally need a relevant recognised bachelor\'s degree, academic transcripts, and proof of English proficiency through an accepted test such as IELTS or TOEFL. Some programmes ask for additional documents, prerequisite subjects, or an admission test depending on the field.\n\nGerman universities set their own admission rules, and the recognition of your previous qualification may be checked (for some applicants through services such as uni-assist). Confirm the exact requirements, accepted tests, and deadlines on the official programme page before applying.',
+      },
+      {
+        headingEn: 'Where to find English-taught programmes',
+        bodyEn:
+          'The official starting points are the "Study in Germany" portal run for the German government and the DAAD (German Academic Exchange Service), whose course database lets you search master\'s programmes by language of instruction and subject. Individual university websites then give the authoritative details for each programme.\n\nAlways treat the official university page as the final word on admission, language requirements, and fees, since these are set by each university and can change.',
+      },
+      {
+        headingEn: 'Tuition, costs, and visa basics',
+        bodyEn:
+          'Tuition arrangements in Germany vary — some public universities charge little or no tuition for certain programmes while others (and many master\'s or non-EU cases) may charge fees, and you will need to cover living costs and health insurance. Do not rely on a fixed figure; check the current fees on the official university page.\n\nInternational students from outside the EU/EEA usually need a student visa or residence permit and must show proof of funds, often through a blocked account, with the amount set by the authorities. This is general information, not immigration advice — verify the current visa, financial-proof, and residence rules on the official German government source before making plans.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I do a master\'s in Germany without knowing German?',
+        answerEn:
+          'Yes. Many German universities offer master\'s programmes taught entirely in English, so German-language skills are not always required for admission. Use the official Study in Germany portal and the DAAD database to find English-taught programmes.',
+      },
+      {
+        questionEn: 'Do I still need German if my course is in English?',
+        answerEn:
+          'Not for admission to an English-taught programme, but German is very useful for daily life, administration, part-time work, and many jobs in Germany. Learning some German is recommended even when your degree is in English.',
+      },
+      {
+        questionEn: 'What English test do I need for a master\'s in Germany?',
+        answerEn:
+          'English-taught programmes usually require proof of English through an accepted test such as IELTS or TOEFL. The accepted tests and minimum scores are set by each university — confirm them on the official programme page.',
+      },
+      {
+        questionEn: 'Is a master\'s in Germany free?',
+        answerEn:
+          'Tuition arrangements vary by university and programme — some public universities charge little or no tuition while others may charge fees, and you must still cover living costs and insurance. Do not assume a fixed figure; verify the current fees on the official university page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-germany-from-india', 'masters-in-europe-for-international-students', 'daad-scholarships-for-international-students', 'how-to-choose-a-course-to-study-in-europe'],
+    sources: [
+      { label: 'Study in Germany — official portal', url: 'https://www.study-in-germany.com' },
+      { label: 'DAAD — German Academic Exchange Service', url: 'https://www.daad.de' },
+      { label: 'Make it in Germany — official government portal', url: 'https://www.make-it-in-germany.com' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['masters in germany without german', 'study in germany in english', 'english taught masters germany', 'masters in germany for international students', 'study in germany without german language'],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'English-taught master\'s', value: 'Widely available across many subjects' },
+      { label: 'German for admission', value: 'Often not required for English-taught programmes' },
+      { label: 'German for life/work', value: 'Useful for daily life, part-time work, and many jobs' },
+      { label: 'Find programmes', value: 'Study in Germany portal + DAAD course database' },
+      { label: 'Verify on', value: 'Official university pages + German government sources' },
+    ],
+  },
+  {
+    slug: 'how-to-choose-a-course-to-study-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'How to Choose a Course to Study in Europe',
+    descriptionEn:
+      'A step-by-step guide to choosing the right course and country to study in Europe — weighing your interests, language of instruction, accreditation, cost, and work options using official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Start with your interests and goals',
+        bodyEn:
+          'The best starting point is what you genuinely want to study and where you want it to lead. Look closely at each programme\'s official module list and learning outcomes rather than its title, because two programmes with the same name can be very different in content.\n\nThink about whether you want a broad foundation or a specialised focus, and whether you want a taught, coursework-heavy programme or one with more independent research. There is no single "best" course — the right choice depends on your own interests and plans.',
+        bullets: [
+          'Read the official module list, not just the programme name',
+          'Decide between a broad foundation and a specialised focus',
+          'Consider taught/coursework vs research-heavy programmes',
+        ],
+      },
+      {
+        headingEn: 'Language of instruction',
+        bodyEn:
+          'Check the language a programme is taught in. Many programmes across Europe are taught in English, especially at master\'s level, while others are in the local language. If a programme is in English you will usually need to prove English proficiency with an accepted test such as IELTS or TOEFL.\n\nEven for English-taught programmes, consider how much of the local language you will want for daily life and work, and factor that into your choice of country and city.',
+      },
+      {
+        headingEn: 'Accreditation and recognition',
+        bodyEn:
+          'Make sure the university and programme are officially recognised and accredited in the country where they are offered, so your degree is valid and respected. National study portals and education ministries, along with the European framework for higher education (the Bologna Process and ECTS credits), help you confirm that a qualification is part of the recognised system.\n\nIf you plan to use the degree for a regulated profession or in another country, check the recognition rules for that specific situation on the relevant official source.',
+      },
+      {
+        headingEn: 'Cost, funding, and living expenses',
+        bodyEn:
+          'Compare tuition fees, living costs, and available funding across your shortlisted programmes and countries. Fees and living costs vary widely, and some countries charge different tuition for students from outside the EU/EEA, so look at the total cost rather than tuition alone.\n\nResearch scholarships at university, national, and EU level (such as Erasmus+). Because fees and funding change every year, confirm the current figures on the official university and national portals instead of relying on older information.',
+      },
+      {
+        headingEn: 'Work options and practicalities',
+        bodyEn:
+          'If part-time work during study or work after graduation matters to you, check the official rules for the specific country, as these differ and change over time. Many countries allow some part-time work for international students and offer a route to look for work after graduation, but the conditions vary.\n\nThis is general information, not immigration advice. Verify the current work, visa, and post-study rules on the official government source for each country you are considering before deciding.',
+      },
+      {
+        headingEn: 'Make a shortlist and verify everything',
+        bodyEn:
+          'Bring it together by building a shortlist of programmes that fit your interests, language, budget, and goals, then verify every key detail — admission requirements, deadlines, fees, and language tests — on each official university page.\n\nApplying through the correct official channel (directly to the university or through a national portal) and meeting each deadline is essential. Treat the official sources as the final word, since they are the only place the current rules are guaranteed to be accurate.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I choose the right course to study in Europe?',
+        answerEn:
+          'Start from your interests and goals, then weigh language of instruction, accreditation and recognition, total cost and funding, and work options. Read each programme\'s official module list and verify every detail on the official university page. There is no single best course — it depends on your situation.',
+      },
+      {
+        questionEn: 'Should I choose a course in English or the local language?',
+        answerEn:
+          'Both are valid. Many programmes, especially master\'s, are taught in English, which can suit international students; local-language programmes can deepen your integration. For English-taught programmes you usually need a test such as IELTS or TOEFL. Choose based on your goals and the official requirements.',
+      },
+      {
+        questionEn: 'How do I know if a university in Europe is recognised?',
+        answerEn:
+          'Check that the university and programme are officially recognised and accredited in the country where they are offered, using national study portals and education ministries and the shared European framework (Bologna Process / ECTS). Confirm on the relevant official source.',
+      },
+      {
+        questionEn: 'Can international students work while studying in Europe?',
+        answerEn:
+          'Many countries allow some part-time work for international students, but the rules and limits differ by country and change over time. This is general information, not immigration advice — verify the current rules on the official government source for each country.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'gre', 'gmat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['masters-in-europe-for-international-students', 'phd-and-research-opportunities-in-europe', 'data-science-and-ai-courses-in-europe', 'masters-in-germany-without-german-language'],
+    sources: [
+      { label: 'European Commission — Education and training', url: 'https://education.ec.europa.eu' },
+      { label: 'European Higher Education Area (Bologna Process)', url: 'https://www.ehea.info' },
+      { label: 'Erasmus+ — official EU programme site', url: 'https://erasmus-plus.ec.europa.eu' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to choose a course in europe', 'which course to study in europe', 'choosing a university in europe', 'study in europe for international students', 'best country to study in europe'],
+    tags: ['europe-courses-careers'],
+    keyFacts: [
+      { label: 'First step', value: 'Match the course to your interests and goals (read modules)' },
+      { label: 'Language', value: 'Check English vs local-language instruction; English test if needed' },
+      { label: 'Recognition', value: 'Confirm accreditation in the country (Bologna / ECTS framework)' },
+      { label: 'Cost', value: 'Compare total cost — tuition, living, funding (varies by country)' },
+      { label: 'Verify on', value: 'Official university pages + national study portals' },
+    ],
+  },
+  {
+    slug: 'german-language-requirements-for-university',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'German Language Requirements for University',
+    descriptionEn:
+      'When you need German versus English to study in Germany — CEFR levels, which proofs universities accept, and where to confirm the exact requirement for your programme.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'German-taught vs English-taught programmes',
+        bodyEn:
+          'The language requirement to study in Germany depends entirely on the language your programme is taught in, not on the country itself. Many Bachelor\'s degrees and a large share of professional and traditional academic programmes are taught in German, so they require proof of German-language ability. At the same time, German universities now offer a wide and growing range of Master\'s and some Bachelor\'s programmes taught fully in English.\n\nBefore you do anything else, check the official page for your specific programme on the university\'s website: it will state whether the language of instruction is German, English, or a mix, and exactly which proof it accepts. The same university can have German-taught and English-taught versions of similar degrees.',
+      },
+      {
+        headingEn: 'What level of German is usually expected',
+        bodyEn:
+          'For a German-taught degree, universities generally expect a high level of German — commonly around the C1 level of the Common European Framework of Reference for Languages (CEFR), because lectures, exams and coursework are all in German. Some programmes or preparatory routes may accept a slightly different level, and a few fields specify their own standard.\n\nThe exact level required, and which certificate satisfies it, is set by each university and each programme and can change. Treat C1 as a general guide only, and confirm the precise requirement on the official programme page rather than assuming a single fixed level. This is general guidance, not a guarantee that a particular score will secure admission.',
+        bullets: [
+          'German-taught programmes: typically a high level of German (often around CEFR C1) — verify per programme',
+          'English-taught programmes: usually no German required for admission, but an English-test score (e.g. IELTS or TOEFL) is',
+          'Exact level and accepted proof are set by each university — always confirm officially',
+        ],
+      },
+      {
+        headingEn: 'Which German proofs universities accept',
+        bodyEn:
+          'For German-taught admission, German universities commonly accept several recognised proofs of German. The most widely seen are the TestDaF (Test of German as a Foreign Language), taken at licensed test centres, and the DSH (Deutsche Sprachprüfung für den Hochschulzugang), taken at German universities. Other recognised certificates include certain Goethe-Institut and telc examinations, and the German Language Diploma (DSD) at the relevant level.\n\nNot every university accepts every certificate, and some accept a proof only at a specific level. Use the university\'s own admissions page or the uni-assist information to confirm which certificate and level your target programme accepts.',
+        bullets: [
+          'TestDaF — taken worldwide at licensed test centres',
+          'DSH — taken at a German university',
+          'Recognised Goethe-Institut / telc certificates (at the required level)',
+          'German Language Diploma (DSD) at the relevant level',
+        ],
+      },
+      {
+        headingEn: 'When you may be exempt from a German test',
+        bodyEn:
+          'Some applicants do not need a separate German test. Common situations include holding a German school-leaving qualification, having completed prior education in German, or applying to a programme taught entirely in English. A small number of programmes may also waive a formal German certificate under their own rules.\n\nExemptions are defined by each university and are not automatic, so never assume one applies to you. Check the official admissions page for your programme and, if anything is unclear, contact the university\'s international office to confirm in writing.',
+      },
+      {
+        headingEn: 'How to plan your language proof',
+        bodyEn:
+          'Plan backwards from the application deadline. If your programme is German-taught and you do not yet hold an accepted certificate, you will usually need months of structured study to reach the required level, plus time to register for and sit the exam and receive results before the deadline. If your programme is English-taught, focus on the required English test instead and confirm whether any basic German is needed for daily life rather than admission.\n\nFor the most reliable, up-to-date guidance on language requirements across German universities, use the official study-in-Germany portal and uni-assist, and always cross-check against your specific programme page.',
+        bullets: [
+          'Confirm the language of instruction and required proof on the programme page first',
+          'Allow time to study, register, sit the test and receive results before the deadline',
+          'Cross-check requirements on official portals — they can change each year',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need to know German to study in Germany?',
+        answerEn:
+          'It depends on the programme. German-taught degrees require proof of German (often around CEFR C1). Many Master\'s and some Bachelor\'s programmes are taught fully in English and require an English-test score instead. Check your specific programme page to confirm.',
+      },
+      {
+        questionEn: 'What level of German do most German-taught degrees ask for?',
+        answerEn:
+          'A high level — commonly around the C1 level of the CEFR — because teaching and exams are in German. The exact level is set by each university and programme and can change, so treat C1 as a guide and verify the precise requirement officially.',
+      },
+      {
+        questionEn: 'Which German certificates do universities accept?',
+        answerEn:
+          'Commonly TestDaF (taken at test centres), DSH (taken at German universities), and certain Goethe-Institut, telc and DSD certificates at the required level. Acceptance and the required level vary by university, so confirm on the official admissions page.',
+      },
+      {
+        questionEn: 'Can I study in Germany in English only?',
+        answerEn:
+          'Yes, for an English-taught programme you generally do not need German for admission, though you will usually need an English-test score such as IELTS or TOEFL. Some everyday German can still help with daily life. Always confirm the requirement on the programme page.',
+      },
+    ],
+    relatedExamSlugs: ['testas', 'ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['testdaf-vs-dsh-german-language-tests', 'goethe-zertifikat-and-german-cefr-levels-explained', 'learn-german-for-studying-in-germany', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'DAAD — Studying in Germany (official portal)', url: 'https://www.study-in-germany.com/en/' },
+      { label: 'uni-assist — applying to German universities', url: 'https://www.uni-assist.de/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['german language requirements for university', 'do i need german to study in germany', 'c1 german for university', 'german proof for admission', 'study in germany in english'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'Depends on', value: 'Language of instruction (German vs English programme)' },
+      { label: 'German-taught level', value: 'Typically high (often around CEFR C1) — verify per programme' },
+      { label: 'Common German proofs', value: 'TestDaF, DSH, recognised Goethe-Institut / telc / DSD' },
+      { label: 'English-taught', value: 'Usually an English-test score (e.g. IELTS/TOEFL), not German' },
+      { label: 'Authority', value: 'Set by each university — confirm on the programme page' },
+    ],
+  },
+  {
+    slug: 'testdaf-vs-dsh-german-language-tests',
+    category: 'comparison',
+    region: 'europe',
+    titleEn: 'TestDaF vs DSH: German Language Tests',
+    descriptionEn:
+      'A clear comparison of TestDaF and DSH — the two main German-language proofs for university admission, where each is taken, and how to choose between them.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two recognised proofs of German for university',
+        bodyEn:
+          'TestDaF and DSH are two of the most widely recognised ways to prove German-language ability for admission to German-taught university programmes. Both are designed to show that you can cope with academic study in German, and both are accepted by many German universities for that purpose.\n\nThe key practical difference is where and how you take them. TestDaF is a standardised test offered at licensed test centres in many countries, while DSH is an examination set and held by German universities themselves. They are separate exams — not two names for the same thing.',
+      },
+      {
+        headingEn: 'TestDaF — taken worldwide at test centres',
+        bodyEn:
+          'TestDaF (Test Deutsch als Fremdsprache — Test of German as a Foreign Language) is a standardised, centrally developed examination that you can take at licensed TestDaF centres in many countries around the world, including outside Germany. This makes it convenient if you want to prove your German level before you travel.\n\nTestDaF assesses reading, listening, writing and speaking, and results are reported on its own defined levels. Because it is standardised and offered internationally, the same exam format applies wherever you sit it. For exact level descriptions, formats, dates and fees, check the official TestDaF website, as these can change.',
+        bullets: [
+          'Standardised test taken at licensed centres in many countries',
+          'Assesses reading, listening, writing and speaking',
+          'Convenient to take before you arrive in Germany',
+          'Levels, format, dates and fees: see the official TestDaF site',
+        ],
+      },
+      {
+        headingEn: 'DSH — taken at a German university',
+        bodyEn:
+          'DSH (Deutsche Sprachprüfung für den Hochschulzugang — German Language Examination for University Entrance) is organised and held by German universities. It is typically taken in Germany, often shortly before a programme begins, and each university administers its own DSH within a common framework.\n\nDSH results are usually reported at graded levels (for example, an overall pass at a particular DSH level). Because each university runs its own DSH, the exact arrangements, dates and the level a given programme requires are set locally — confirm these directly with the university you are applying to.',
+        bullets: [
+          'Set and held by German universities, usually in Germany',
+          'Often taken close to the start of a programme',
+          'Reported at graded DSH levels',
+          'Exact arrangements and required level: confirm with the university',
+        ],
+      },
+      {
+        headingEn: 'TestDaF vs DSH at a glance',
+        bodyEn:
+          'Neither exam is universally "better" — they suit different situations, and many universities accept both. The right choice depends on where you are, your timeline, and what your target programme accepts.\n\nA common pattern is to take TestDaF from your home country to support your application before you travel, and to consider DSH if you are already in Germany or your university prefers it. Always check your programme\'s admissions page to see which proofs and levels it accepts before you commit to one.',
+        bullets: [
+          'TestDaF: standardised, taken at centres worldwide — good before arrival',
+          'DSH: university-run, usually in Germany — good once on-site or if preferred',
+          'Many universities accept either; some specify a required level',
+          'Decide based on location, timeline and what your programme accepts',
+        ],
+      },
+      {
+        headingEn: 'How to choose and confirm',
+        bodyEn:
+          'Start from the official admissions page for your specific programme: it will list which German proofs are accepted and at what level. If both TestDaF and DSH are accepted, choose by practicality — availability of test dates near you, timing relative to your deadline, and where you will be.\n\nThe exact scores, levels and accepted certificates can change, so verify everything against the official TestDaF site and your university\'s own pages rather than relying on a general rule. This is general guidance, and meeting a language requirement does not by itself guarantee admission.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the main difference between TestDaF and DSH?',
+        answerEn:
+          'TestDaF is a standardised test you can take at licensed centres in many countries, including outside Germany. DSH is an examination set and held by German universities, usually taken in Germany. Both can prove German ability for admission, but they are separate exams.',
+      },
+      {
+        questionEn: 'Can I take TestDaF in my home country?',
+        answerEn:
+          'Yes. TestDaF is offered at licensed test centres in many countries, so you can often take it before travelling to Germany. Check the official TestDaF website for centres, dates and fees, as these can change.',
+      },
+      {
+        questionEn: 'Does every German university accept both TestDaF and DSH?',
+        answerEn:
+          'Many universities accept both, but acceptance and the required level vary by university and programme. Some may specify a particular level or prefer one proof. Always confirm on your programme\'s official admissions page.',
+      },
+      {
+        questionEn: 'Which one should I take?',
+        answerEn:
+          'It depends on your location, timeline and what your programme accepts. TestDaF suits proving your level before arrival; DSH may suit applicants already in Germany or universities that prefer it. Check your programme requirements first, then choose on practicality.',
+      },
+    ],
+    relatedExamSlugs: ['testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['german-language-requirements-for-university', 'goethe-zertifikat-and-german-cefr-levels-explained', 'learn-german-for-studying-in-germany', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'TestDaF — official site', url: 'https://www.testdaf.de/' },
+      { label: 'DAAD — Studying in Germany (official portal)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['testdaf vs dsh', 'difference between testdaf and dsh', 'german language test for university', 'testdaf or dsh', 'german admission language exam'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'TestDaF', value: 'Standardised test at licensed centres worldwide' },
+      { label: 'DSH', value: 'Examination held by German universities (usually in Germany)' },
+      { label: 'Skills tested', value: 'Reading, listening, writing, speaking' },
+      { label: 'Acceptance', value: 'Many universities accept either — level varies by programme' },
+      { label: 'Verify on', value: 'Official TestDaF site + your university admissions page' },
+    ],
+  },
+  {
+    slug: 'testas-exam-for-germany-explained',
+    category: 'exam-prep',
+    region: 'europe',
+    titleEn: 'TestAS Exam for Germany, Explained',
+    descriptionEn:
+      'What TestAS is, who may need it, and how its core and subject-specific modules work — a standardised aptitude test for international applicants to German universities.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What TestAS is',
+        bodyEn:
+          'TestAS is a standardised aptitude test designed for international students who want to study at a German university. Rather than testing German-language ability or subject knowledge in the way a school exam does, it is built to give an indication of a student\'s general and subject-related academic aptitude for higher study.\n\nIt is one of several tools some German universities use to help assess international applicants. Whether you need it, and how it is weighed, depends on the university and programme — so always check the official admissions page for your target course.',
+      },
+      {
+        headingEn: 'Who may need to take TestAS',
+        bodyEn:
+          'TestAS is aimed primarily at international applicants — particularly those applying for Bachelor\'s-level study — though its use varies. Some universities or programmes require or recommend it, others accept it as supporting evidence, and many do not ask for it at all.\n\nBecause requirements differ, never assume TestAS is mandatory or unnecessary for you. Confirm on the official programme page or with the university\'s international office whether TestAS is required, recommended, or not needed for your specific application.',
+        bullets: [
+          'Aimed at international applicants, often at Bachelor\'s level',
+          'May be required, recommended, or not used — it varies by university',
+          'Confirm whether your programme needs it before registering',
+        ],
+      },
+      {
+        headingEn: 'How the test is structured',
+        bodyEn:
+          'TestAS is generally made up of a core module that assesses broad cognitive and reasoning skills, together with a subject-specific module relevant to the field you intend to study (for example, in areas such as humanities, mathematics/natural sciences, engineering, or economics). This structure is intended to reflect both general academic aptitude and aptitude for a particular field of study.\n\nThe exact modules available, the format, the language options in which the test can be taken, the duration and the fees are set officially and can change. For current details, rely on the official TestAS information rather than general summaries.',
+        bullets: [
+          'A core module assessing general reasoning and cognitive skills',
+          'A subject-specific module for your intended field of study',
+          'Format, modules, languages, duration and fees: see the official source',
+        ],
+      },
+      {
+        headingEn: 'How results are used',
+        bodyEn:
+          'TestAS produces a standardised result that universities can use as one input when assessing international applicants. A result is intended to help indicate academic aptitude; it does not replace your school qualifications, language proof, or the university\'s own admission criteria.\n\nHow much weight a university gives a TestAS result is its own decision, and a result does not guarantee admission. Treat TestAS as one part of a complete application and confirm its role with each university you apply to.',
+      },
+      {
+        headingEn: 'How to prepare and register',
+        bodyEn:
+          'If your target programme asks for TestAS, plan to register and sit it in good time before the application deadline, since results need to be available when you apply. Official preparation materials and sample tasks are typically provided so you can become familiar with the question types and structure beforehand.\n\nFor registration, test dates, available languages, fees and official practice resources, use the official TestAS website and the study-in-Germany portal. Requirements and arrangements can change each year, so verify on the official source before relying on any detail.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What does TestAS measure?',
+        answerEn:
+          'TestAS is an aptitude test for international students applying to German universities. It assesses general academic and subject-related aptitude through a core module and a subject-specific module, rather than testing detailed subject knowledge.',
+      },
+      {
+        questionEn: 'Do all German universities require TestAS?',
+        answerEn:
+          'No. Some universities or programmes require or recommend it, others accept it as supporting evidence, and many do not ask for it. Always confirm whether TestAS is required for your specific programme on the official admissions page.',
+      },
+      {
+        questionEn: 'How is TestAS structured?',
+        answerEn:
+          'It generally has a core module assessing broad reasoning skills and a subject-specific module for your intended field of study. The available modules, format, languages, duration and fees are set officially and can change, so check the official source.',
+      },
+      {
+        questionEn: 'Does a good TestAS result guarantee admission?',
+        answerEn:
+          'No. A TestAS result is one input universities may consider alongside your qualifications, language proof and their own criteria. How much weight it carries is each university\'s decision, and no result guarantees admission.',
+      },
+    ],
+    relatedExamSlugs: ['testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['german-language-requirements-for-university', 'testdaf-vs-dsh-german-language-tests', 'learn-german-for-studying-in-germany', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'TestAS — official site', url: 'https://www.testas.de/en/' },
+      { label: 'DAAD — Studying in Germany (official portal)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['testas exam', 'testas for germany', 'testas core module', 'testas subject module', 'aptitude test for german university'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'What it is', value: 'Standardised aptitude test for international applicants' },
+      { label: 'Structure', value: 'Core module + subject-specific module' },
+      { label: 'Often for', value: 'International applicants, frequently at Bachelor\'s level' },
+      { label: 'Required?', value: 'Varies by university — confirm per programme' },
+      { label: 'Verify on', value: 'Official TestAS site + study-in-Germany portal' },
+    ],
+  },
+  {
+    slug: 'goethe-zertifikat-and-german-cefr-levels-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Goethe-Zertifikat and German CEFR Levels Explained',
+    descriptionEn:
+      'How the CEFR levels A1 to C2 work for German, what Goethe-Institut certificates show, and which level tends to matter for studying and living in Germany.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The CEFR scale from A1 to C2',
+        bodyEn:
+          'German-language ability is commonly described using the Common European Framework of Reference for Languages (CEFR), a six-level scale used across Europe. The levels run from A1 and A2 (basic), through B1 and B2 (independent), to C1 and C2 (proficient).\n\nIn broad terms, A-levels cover everyday basics, B-levels let you handle more independent communication, and C-levels reflect the ability to use German fluently and flexibly, including in academic and professional contexts. These descriptions are general — the official CEFR and Goethe-Institut descriptors give the precise "can-do" statements for each level.',
+        bullets: [
+          'A1 / A2 — basic user (everyday phrases and simple exchanges)',
+          'B1 / B2 — independent user (more confident, broader communication)',
+          'C1 / C2 — proficient user (fluent, flexible, including academic use)',
+        ],
+      },
+      {
+        headingEn: 'What a Goethe-Zertifikat is',
+        bodyEn:
+          'The Goethe-Zertifikat is a series of German-language examinations and certificates offered by the Goethe-Institut, the cultural institute for the German language. Each Goethe-Zertifikat corresponds to a CEFR level (for example, a certificate at A1, A2, B1, B2, C1 or C2), so it provides an internationally recognised, standardised statement of your German level.\n\nGoethe-Institut certificates are widely recognised and are among the proofs that some universities and other institutions accept at the appropriate level. The exact exam formats, what each level certifies, and fees are set by the Goethe-Institut and can change, so confirm details on the official Goethe-Institut website.',
+      },
+      {
+        headingEn: 'Which level tends to matter for study',
+        bodyEn:
+          'For German-taught university study, a high level of German — often around C1 on the CEFR — is commonly expected, because lectures, reading and exams are all in German. Lower levels such as A1 or A2 are more relevant to early learning and some everyday or visa-related situations, while B-levels mark meaningful progress toward academic readiness.\n\nThe precise level a programme requires, and whether it accepts a Goethe-Institut certificate as proof, is decided by each university and can change. Use C1 only as a general reference point and confirm the exact requirement on your programme\'s official page.',
+        bullets: [
+          'German-taught degrees: typically a high level (often around C1) — verify per programme',
+          'A1/A2: basics, early learning, and some everyday or official situations',
+          'B1/B2: significant progress toward academic-level German',
+          'Whether a Goethe certificate is accepted: confirm with the university',
+        ],
+      },
+      {
+        headingEn: 'Goethe-Zertifikat for everyday life and official steps',
+        bodyEn:
+          'Beyond admission, a recognised German certificate at a given CEFR level can be useful for everyday life in Germany and may be relevant for certain official or administrative steps that ask for evidence of language ability. Requirements for any official process are set by the relevant authority and vary by situation.\n\nBecause rules around official language requirements change and differ by case, treat any non-admission requirement as something to verify on the relevant official government source. This is general information, not immigration or legal advice — always confirm what proof and level a specific process needs from the official authority handling it.',
+      },
+      {
+        headingEn: 'How to use CEFR levels when planning',
+        bodyEn:
+          'When planning your German learning, use the CEFR scale as a roadmap: set a clear target level based on what your programme (and daily life) require, then work upward step by step. A Goethe-Zertifikat at each level gives you a recognised checkpoint of your progress.\n\nFor accurate level descriptions, exam options, dates and fees, rely on the official Goethe-Institut website, and cross-check any admission requirement against your university\'s programme page. Reaching a target level is an achievement in itself, but it does not by itself guarantee admission to any programme.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What do the German CEFR levels A1 to C2 mean?',
+        answerEn:
+          'They describe German ability on a six-level scale: A1/A2 (basic), B1/B2 (independent), and C1/C2 (proficient). The official CEFR and Goethe-Institut descriptors give the precise "can-do" statements for each level.',
+      },
+      {
+        questionEn: 'What is a Goethe-Zertifikat?',
+        answerEn:
+          'It is a German-language certificate from the Goethe-Institut. Each Goethe-Zertifikat corresponds to a CEFR level (A1 to C2), giving an internationally recognised, standardised statement of your German level. Formats and fees are set by the Goethe-Institut and can change.',
+      },
+      {
+        questionEn: 'What CEFR level do I need to study in Germany?',
+        answerEn:
+          'For German-taught degrees, a high level — often around C1 — is commonly expected. The exact level and whether a Goethe certificate is accepted are set by each university and programme, so treat C1 as a guide and confirm officially.',
+      },
+      {
+        questionEn: 'Is a Goethe certificate accepted by universities?',
+        answerEn:
+          'Some universities accept recognised Goethe-Institut certificates at the appropriate level as proof of German. Acceptance and the required level vary by university and programme, so always confirm on the official admissions page.',
+      },
+    ],
+    relatedExamSlugs: ['testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['german-language-requirements-for-university', 'testdaf-vs-dsh-german-language-tests', 'learn-german-for-studying-in-germany', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Goethe-Institut — German exams and CEFR levels', url: 'https://www.goethe.de/en/spr/prf.html' },
+      { label: 'DAAD — Studying in Germany (official portal)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['goethe zertifikat', 'german cefr levels explained', 'a1 a2 b1 b2 c1 c2 german', 'goethe institut certificate', 'which german level for university'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'CEFR scale', value: 'A1, A2 (basic) · B1, B2 (independent) · C1, C2 (proficient)' },
+      { label: 'Goethe-Zertifikat', value: 'Goethe-Institut certificate mapped to a CEFR level' },
+      { label: 'Study level', value: 'German-taught degrees often expect ~C1 — verify per programme' },
+      { label: 'Recognition', value: 'Widely recognised; acceptance varies by university' },
+      { label: 'Verify on', value: 'Official Goethe-Institut site + programme page' },
+    ],
+  },
+  {
+    slug: 'learn-german-for-studying-in-germany',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Learning German for Studying in Germany',
+    descriptionEn:
+      'Why learning German helps for study and daily life in Germany, a CEFR-based roadmap from A1 to C1, and official Goethe-Institut and DAAD resources to learn it.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why learn German even for an English-taught degree',
+        bodyEn:
+          'If your programme is taught in German, learning the language is essential — you will need it for lectures, coursework and exams, and universities require proof of an appropriate level. But German is worth learning even if your degree is taught in English, because it makes everyday life, part-time work, administrative tasks and social connections much easier.\n\nIn short, German-language ability is a requirement for German-taught programmes and a practical advantage for everyone studying in Germany. How much you need depends on your programme and goals, so set your target accordingly.',
+        bullets: [
+          'German-taught degree: German is required (proof at the level your programme asks for)',
+          'English-taught degree: German is optional for admission but very helpful day-to-day',
+          'Useful for daily life, part-time work and administrative steps',
+        ],
+      },
+      {
+        headingEn: 'A CEFR roadmap from A1 to C1',
+        bodyEn:
+          'The clearest way to plan is around the CEFR scale. Beginners typically start at A1 and A2 to build everyday basics, move through B1 and B2 to handle more independent communication, and aim for C1 if a German-taught degree requires a high academic level.\n\nDecide your target level first: a high level (often around C1) is commonly expected for German-taught study, while a lower level may be enough if your degree is in English and you simply want to manage daily life. Remember that the exact level a programme requires is set by each university and can change, so confirm it officially.',
+        bullets: [
+          'A1 / A2 — everyday basics for getting started',
+          'B1 / B2 — independent communication and steady progress',
+          'C1 — high level often expected for German-taught degrees (verify per programme)',
+          'Set your target based on your programme and daily-life needs',
+        ],
+      },
+      {
+        headingEn: 'How to learn German effectively',
+        bodyEn:
+          'Most learners progress fastest with structured courses combined with consistent daily practice. Options include in-person and online courses (including Goethe-Institut courses), university preparatory or language courses, and self-study with reputable materials, ideally alongside regular speaking and listening practice.\n\nWhatever route you choose, give yourself a realistic timeline. Reaching a high level such as C1 from a beginner start usually takes sustained study over many months, so begin early and build steadily rather than rushing close to a deadline.',
+        bullets: [
+          'Structured courses (Goethe-Institut, university language courses) plus daily practice',
+          'Mix reading, listening, speaking and writing — not just grammar',
+          'Plan a realistic timeline; reaching C1 from scratch takes sustained study',
+        ],
+      },
+      {
+        headingEn: 'Proving your German level',
+        bodyEn:
+          'When you reach your target level, you will usually need a recognised certificate to prove it for admission. Common proofs include TestDaF (taken at test centres worldwide), DSH (taken at German universities), and recognised Goethe-Institut and telc certificates at the required level.\n\nWhich proof and level your programme accepts is set by each university, so confirm this on the official admissions page before deciding which exam to prepare for. Holding a certificate proves your level, but it does not by itself guarantee admission to any programme.',
+        bullets: [
+          'TestDaF — standardised test at licensed centres worldwide',
+          'DSH — examination held by German universities',
+          'Recognised Goethe-Institut / telc certificates at the required level',
+          'Accepted proof and level: confirm on your programme page',
+        ],
+      },
+      {
+        headingEn: 'Official resources to start with',
+        bodyEn:
+          'Begin with official sources so your learning and your proof are based on accurate, current information. The Goethe-Institut offers German courses and recognised certificates, and the DAAD study-in-Germany portal provides official guidance on language requirements and learning German for study.\n\nExam formats, course options, dates and fees can change, so always verify the latest details on these official sites. Use them to plan your level, choose a learning route, and confirm exactly what your target university requires.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need German if my degree is taught in English?',
+        answerEn:
+          'Not for admission, in most cases — English-taught programmes generally require an English-test score rather than German. But learning German still helps a lot with daily life, part-time work and administrative tasks, so many students learn at least the basics.',
+      },
+      {
+        questionEn: 'What German level should I aim for to study in Germany?',
+        answerEn:
+          'For a German-taught degree, a high level — often around C1 on the CEFR — is commonly expected. For an English-taught degree, a lower level may be enough for daily life. The exact requirement is set by each university, so confirm it officially.',
+      },
+      {
+        questionEn: 'How long does it take to learn German for university?',
+        answerEn:
+          'It varies by individual and intensity, but reaching a high level such as C1 from a beginner start usually takes sustained study over many months. Starting early and practising consistently is the most reliable approach.',
+      },
+      {
+        questionEn: 'Where should I learn German from?',
+        answerEn:
+          'Start with official sources such as the Goethe-Institut (courses and recognised certificates) and the DAAD study-in-Germany portal for guidance on requirements. Combine a structured course with daily reading, listening and speaking practice.',
+      },
+    ],
+    relatedExamSlugs: ['testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['german-language-requirements-for-university', 'testdaf-vs-dsh-german-language-tests', 'goethe-zertifikat-and-german-cefr-levels-explained', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Goethe-Institut — Learn German', url: 'https://www.goethe.de/en/spr.html' },
+      { label: 'DAAD — Studying in Germany (official portal)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['learn german for studying in germany', 'how to learn german for university', 'german cefr roadmap', 'german courses goethe institut', 'german level for german university'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'When required', value: 'Always for German-taught degrees; optional for English-taught' },
+      { label: 'Roadmap', value: 'A1/A2 basics · B1/B2 independent · C1 academic' },
+      { label: 'Target level', value: 'German-taught study often expects ~C1 — verify per programme' },
+      { label: 'Common proofs', value: 'TestDaF, DSH, recognised Goethe-Institut / telc' },
+      { label: 'Official resources', value: 'Goethe-Institut + DAAD study-in-Germany portal' },
+    ],
+  },
+  {
+    slug: 'language-requirements-for-studying-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Language Requirements for Studying in Europe',
+    descriptionEn:
+      'How language requirements work across Europe — English-taught vs local-language degrees, which tests universities accept, and why minimum scores differ by country and programme.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'There is no single European language rule',
+        bodyEn:
+          'Europe is not one admissions system, so there is no single language requirement that applies everywhere. Each country, and very often each university, sets its own rules, and the language you need depends entirely on the language the programme is taught in rather than on which country you study in.\n\nThe first question to settle is therefore not "what test do I need?" but "is the degree taught in English or in the local language?" Once you know that, the accepted tests and minimum levels follow.',
+      },
+      {
+        headingEn: 'English-taught vs local-language programmes',
+        bodyEn:
+          'Many universities across Germany, the Netherlands, the Nordic countries, France, Italy and Spain offer a growing number of full degrees taught entirely in English, especially at master\'s level. For these you typically prove English proficiency rather than the local language.\n\nUndergraduate degrees are more often taught in the national language, particularly at public universities, so a Bachelor\'s in France, Germany, Italy or Spain may require proof of French, German, Italian or Spanish. Always read the specific programme page — two degrees at the same university can have different requirements.',
+        bullets: [
+          'English-taught degree → prove English (commonly IELTS, TOEFL; sometimes PTE or Duolingo, where accepted)',
+          'Local-language degree → prove the national language (e.g. DELF/DALF/TCF for French, TestDaF/DSH for German)',
+          'Some programmes ask for both a working level of English and basic local language',
+        ],
+      },
+      {
+        headingEn: 'Minimum scores vary — confirm on the programme page',
+        bodyEn:
+          'The exact minimum score a university expects varies widely by institution, level of study and even by faculty. A master\'s in one country may set a different IELTS or TOEFL minimum than a comparable course elsewhere, and some selective programmes set higher bars.\n\nFor this reason, do not rely on a single "Europe-wide" number. Find the official language requirement on the specific programme\'s admissions page and verify it there before you book a test.',
+      },
+      {
+        headingEn: 'Visa and residence-permit language rules can differ',
+        bodyEn:
+          'Separately from a university\'s admission rules, some national student-visa or residence-permit processes may have their own language expectations or may accept a different set of tests than the university. The two are not always identical.\n\nThis is general information, not immigration advice. Check both the university\'s admission requirements and the relevant national government immigration source, and verify on the official government source before you apply.',
+      },
+      {
+        headingEn: 'How to find the right requirement for you',
+        bodyEn:
+          'Work in this order so you only sit the test you actually need. Confirm the language of instruction, read the programme\'s official language requirement, check whether your preferred test is accepted, then look up any separate visa-stage language rule.',
+        bullets: [
+          'Confirm whether the degree is taught in English or the local language',
+          'Open the official programme page and note the exact test(s) and minimum it lists',
+          'Check whether your chosen test (IELTS, TOEFL, PTE, Duolingo) is accepted there',
+          'Check the national immigration source for any separate visa-stage language rule',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I study in Europe in English without knowing the local language?',
+        answerEn:
+          'Yes, many universities offer full degrees taught in English, especially at master\'s level. For these you usually only need to prove English proficiency. Local-language degrees, however, require the national language. Check each programme page.',
+      },
+      {
+        questionEn: 'Which English test should I take?',
+        answerEn:
+          'IELTS and TOEFL are the most widely accepted across Europe. PTE Academic and the Duolingo English Test are accepted by a growing number of universities but not all. Confirm which tests your specific programme accepts before booking.',
+      },
+      {
+        questionEn: 'Is there one minimum score for all of Europe?',
+        answerEn:
+          'No. Minimum scores are set by each university and programme and vary by level and faculty. There is no single Europe-wide number — always read the official requirement on the programme\'s own admissions page.',
+      },
+      {
+        questionEn: 'Do I need a language test for the student visa too?',
+        answerEn:
+          'Sometimes. Some national student-visa or residence-permit processes have their own language expectations separate from the university. This is general information, not immigration advice — verify on the official government immigration source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'duolingo-english-test'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ielts-and-toefl-for-european-universities', 'french-language-tests-delf-dalf-tcf-explained', 'duolingo-and-pte-acceptance-in-europe', 'do-you-need-to-learn-the-local-language-to-study-in-europe'],
+    sources: [
+      { label: 'Study in Europe — official EU portal', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'European Higher Education Area (Bologna Process)', url: 'https://ehea.info' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['language requirements to study in europe', 'english taught programmes in europe', 'do i need to know the local language to study in europe', 'european university language requirements', 'study in europe in english'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'Who sets the rule', value: 'Each country and university individually' },
+      { label: 'Main factor', value: 'Language the programme is taught in' },
+      { label: 'Common English tests', value: 'IELTS, TOEFL (PTE/Duolingo where accepted)' },
+      { label: 'Minimum scores', value: 'Vary by university — confirm on programme page' },
+    ],
+  },
+  {
+    slug: 'ielts-and-toefl-for-european-universities',
+    category: 'exam-prep',
+    region: 'europe',
+    titleEn: 'IELTS and TOEFL for European Universities',
+    descriptionEn:
+      'A practical guide to using IELTS and TOEFL for English-taught degrees in Europe — what each test is, how they are accepted, and why minimum scores differ by university.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why English tests matter for European study',
+        bodyEn:
+          'European universities offer a large and growing number of degrees taught entirely in English, particularly at master\'s level. When a programme is English-taught and your previous education was not in English, the university will usually ask for proof of English proficiency.\n\nIELTS and TOEFL are the two most widely recognised tests for this purpose across Europe. They are accepted by universities in Germany, the Netherlands, the Nordic countries, France, Italy, Spain and beyond for their English-medium courses.',
+      },
+      {
+        headingEn: 'What IELTS and TOEFL are',
+        bodyEn:
+          'IELTS (International English Language Testing System) assesses Listening, Reading, Writing and Speaking, and is offered in Academic and General Training versions; the Academic version is the one universities ask for. TOEFL iBT, run by ETS, also tests Reading, Listening, Speaking and Writing and is delivered as an internet-based test.\n\nBoth are designed to measure academic English. Which one a university prefers, and the exact score it wants, is decided by that institution.',
+        bullets: [
+          'IELTS Academic — four sections; use the Academic (not General Training) version',
+          'TOEFL iBT — four sections; internet-based test from ETS',
+          'Both measure academic English for university-level study',
+        ],
+      },
+      {
+        headingEn: 'Minimum scores vary by university and programme',
+        bodyEn:
+          'There is no universal IELTS or TOEFL minimum for Europe. Each university sets its own required score, and that score can differ between an undergraduate and a master\'s programme, or between faculties at the same university.\n\nBecause the bar varies, always read the official admissions page for the exact programme you are applying to and note the precise minimum it lists, including any per-section minimums. Verify it on the official source before you book the test, as requirements can be updated.',
+      },
+      {
+        headingEn: 'Check validity, format and how to send scores',
+        bodyEn:
+          'Both tests have a validity window after which scores expire, and universities may require results sent directly from the test provider. Some institutions also accept specific delivery formats (for example, computer-delivered IELTS or at-home TOEFL editions) while others do not.\n\nConfirm the current validity period, accepted format and the score-reporting method on the official test provider\'s site and on the university\'s admissions page, as these details change.',
+      },
+      {
+        headingEn: 'Do you always need IELTS or TOEFL?',
+        bodyEn:
+          'Not always. Some universities waive an English test if your prior degree was taught in English, or if you completed schooling in an English-medium system, and many also accept alternatives such as PTE Academic or the Duolingo English Test. Policies differ widely.\n\nCheck the specific programme\'s requirements — a waiver or an alternative test may save you from sitting IELTS or TOEFL at all.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Are IELTS and TOEFL accepted across Europe?',
+        answerEn:
+          'Yes, IELTS Academic and TOEFL iBT are the most widely accepted English tests for English-taught degrees across European universities. Acceptance and required scores are still decided by each individual university, so confirm on the programme page.',
+      },
+      {
+        questionEn: 'What IELTS or TOEFL score do I need for Europe?',
+        answerEn:
+          'There is no single score. Minimums are set by each university and programme and vary by level and faculty. Read the official admissions page for your exact programme and verify the required score there before booking.',
+      },
+      {
+        questionEn: 'Should I take IELTS Academic or General Training?',
+        answerEn:
+          'For university admission, take IELTS Academic. The General Training version is intended for other purposes such as some work or migration routes and is generally not accepted for degree admission.',
+      },
+      {
+        questionEn: 'Can my English test be waived?',
+        answerEn:
+          'Sometimes. Some universities waive IELTS or TOEFL if your previous education was taught in English. Waiver rules differ by institution, so check the specific programme page to see whether you qualify.',
+      },
+      {
+        questionEn: 'Do IELTS or TOEFL scores expire?',
+        answerEn:
+          'Yes, both have a validity window after which results are no longer accepted, and universities may require scores sent directly from the provider. Confirm the current validity period on the official test provider\'s site.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['language-requirements-for-studying-in-europe', 'duolingo-and-pte-acceptance-in-europe', 'do-you-need-to-learn-the-local-language-to-study-in-europe'],
+    sources: [
+      { label: 'IELTS — official site', url: 'https://www.ielts.org' },
+      { label: 'TOEFL iBT — ETS official site', url: 'https://www.ets.org/toefl' },
+      { label: 'Study in Europe — official EU portal', url: 'https://education.ec.europa.eu/study-in-europe' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['ielts for european universities', 'toefl for studying in europe', 'ielts vs toefl europe', 'english test for masters in europe', 'ielts score for europe'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'Most accepted tests', value: 'IELTS Academic and TOEFL iBT' },
+      { label: 'Use the version', value: 'IELTS Academic (not General Training)' },
+      { label: 'Minimum score', value: 'Set by each university — varies' },
+      { label: 'Verify on', value: 'Programme admissions page + test provider' },
+    ],
+  },
+  {
+    slug: 'french-language-tests-delf-dalf-tcf-explained',
+    category: 'exam-prep',
+    region: 'europe',
+    titleEn: 'French Language Tests: DELF, DALF, TCF Explained',
+    descriptionEn:
+      'Understand DELF, DALF and TCF — the official French-language tests for French-taught degrees — how they map to CEFR levels, and which one you may need to apply.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'When you need a French-language test',
+        bodyEn:
+          'If you plan to study a degree taught in French, the university will usually ask you to prove your French at a certain level. This applies most often to undergraduate and many master\'s programmes at French-speaking institutions in France, and also in parts of Belgium, Switzerland and Luxembourg.\n\nIf your programme is taught in English, you generally prove English instead and may not need a French certificate at all. Always confirm the language of instruction first.',
+      },
+      {
+        headingEn: 'DELF, DALF and TCF — what they are',
+        bodyEn:
+          'DELF (Diplôme d\'Études en Langue Française) and DALF (Diplôme Approfondi de Langue Française) are official French-language diplomas awarded by France\'s Ministry of Education; once obtained they are valid for life. TCF (Test de Connaissance du Français) is a French-language test that places you at a level and whose results are valid for a limited period.\n\nAll three are managed by France Éducation international, the official body, and are mapped to the Common European Framework of Reference for Languages (CEFR).',
+        bullets: [
+          'DELF — covers CEFR levels A1 to B2; lifelong diploma',
+          'DALF — covers the advanced CEFR levels C1 and C2; lifelong diploma',
+          'TCF — a placement test giving a level result, valid for a limited time',
+        ],
+      },
+      {
+        headingEn: 'How they map to CEFR levels',
+        bodyEn:
+          'European language requirements are usually expressed in CEFR levels from A1 (beginner) to C2 (mastery). DELF certifies the A1–B2 range and DALF the C1–C2 range, while the TCF reports the level you reach on the test.\n\nA university will normally state the CEFR level it requires (for example, a B2 level for many French-taught degrees). Use that target level to decide which exam and which level to sit, and confirm the exact requirement on the programme page.',
+      },
+      {
+        headingEn: 'Which test does your university accept?',
+        bodyEn:
+          'Universities and the Campus France / Études en France process specify which French certificates they accept and at what level. Some accept DELF/DALF, some accept the TCF, and many accept more than one; certain application routes ask for a specific test.\n\nBecause accepted tests, required levels and validity periods differ by institution and can change, check the official programme requirements and the official test information before you register.',
+      },
+      {
+        headingEn: 'Plan your test around application deadlines',
+        bodyEn:
+          'These tests are scheduled on set dates and results take time to issue, so book early enough that your certificate is ready before the university and visa deadlines. If you need French for a visa or residence step as well as for admission, factor that in too.\n\nThis is general information, not immigration advice — verify any visa-stage French requirement on the official French government source before you apply.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between DELF, DALF and TCF?',
+        answerEn:
+          'DELF and DALF are lifelong French-language diplomas — DELF covers CEFR A1–B2 and DALF covers C1–C2. TCF is a test that places you at a CEFR level with results valid for a limited period. All are official and managed by France Éducation international.',
+      },
+      {
+        questionEn: 'Which French test do I need for a French university?',
+        answerEn:
+          'It depends on the university and the application route. Some accept DELF/DALF, some accept the TCF, and many accept several. Check the official programme requirements and any Études en France instructions for the exact test and level.',
+      },
+      {
+        questionEn: 'What CEFR level do French-taught degrees usually require?',
+        answerEn:
+          'Universities state the CEFR level they require, and many French-taught degrees ask around the B2 level, though this varies by programme and level of study. Confirm the exact required level on the programme\'s official page.',
+      },
+      {
+        questionEn: 'Do I need French if my programme is taught in English?',
+        answerEn:
+          'Generally no — for English-taught degrees you prove English instead. You may still find some French useful for daily life. Always confirm the language of instruction and the stated language requirement on the programme page.',
+      },
+      {
+        questionEn: 'How long are these certificates valid?',
+        answerEn:
+          'DELF and DALF diplomas are valid for life once obtained. TCF results are valid for a limited period. Confirm the current validity rules on the official France Éducation international information before you rely on a certificate.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-france-from-india', 'language-requirements-for-studying-in-europe', 'do-you-need-to-learn-the-local-language-to-study-in-europe'],
+    sources: [
+      { label: 'France Éducation international — DELF & DALF diplomas', url: 'https://www.france-education-international.fr/en/hub/diplomes-tests' },
+      { label: 'France Éducation international — TCF (tout public)', url: 'https://www.france-education-international.fr/test/tcf-tout-public' },
+      { label: 'Campus France — official site', url: 'https://www.campusfrance.org' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['delf dalf tcf difference', 'french language test for university', 'tcf for studying in france', 'french test for french university', 'cefr level for french degree'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'Official body', value: 'France Éducation international' },
+      { label: 'DELF / DALF', value: 'Lifelong diplomas (A1–B2 / C1–C2)' },
+      { label: 'TCF', value: 'Level-placement test, limited validity' },
+      { label: 'Required level', value: 'Set by university (often CEFR B2) — verify' },
+    ],
+  },
+  {
+    slug: 'duolingo-and-pte-acceptance-in-europe',
+    category: 'exam-prep',
+    region: 'europe',
+    titleEn: 'Duolingo English Test and PTE Acceptance in Europe',
+    descriptionEn:
+      'Where the Duolingo English Test and PTE Academic are accepted in Europe — why coverage is growing but not universal, and how to confirm acceptance for both the university and the visa.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Two newer alternatives to IELTS and TOEFL',
+        bodyEn:
+          'The Duolingo English Test (DET) and PTE Academic are increasingly used as English-proficiency tests for English-taught degrees in Europe. Both are convenient — PTE is computer-based with fast results, and the Duolingo English Test is taken online at home — which has driven their popularity with applicants.\n\nHowever, neither is accepted everywhere yet. Acceptance is growing across European universities but remains far less universal than IELTS or TOEFL, so they must be checked case by case.',
+      },
+      {
+        headingEn: 'What each test is',
+        bodyEn:
+          'PTE Academic, from Pearson, is a computer-based English test covering speaking, writing, reading and listening, known for quick score turnaround. The Duolingo English Test is an online, adaptive, remotely proctored English test that can be taken from home on a computer.\n\nBoth aim to measure academic English, but each university decides independently whether to accept them and at what score.',
+        bullets: [
+          'PTE Academic — computer-based test at a test centre, fast results',
+          'Duolingo English Test — online, adaptive, at-home with remote proctoring',
+          'Acceptance and required score are set by each university',
+        ],
+      },
+      {
+        headingEn: 'Acceptance is growing but not universal',
+        bodyEn:
+          'A rising number of universities in countries such as Germany, the Netherlands, the Nordic countries, Italy and Spain accept PTE Academic and/or the Duolingo English Test for their English-medium programmes. Many others still accept only IELTS or TOEFL.\n\nBecause there is no Europe-wide rule, never assume acceptance. Confirm on the specific programme\'s admissions page that your chosen test is accepted and check the minimum score it requires.',
+      },
+      {
+        headingEn: 'Check the visa stage separately',
+        bodyEn:
+          'Acceptance by a university does not automatically mean a test is accepted for the national student visa or residence permit. Some immigration processes accept a narrower set of English tests than universities do, and rules differ by country and can change.\n\nThis is general information, not immigration advice. Verify whether your test is accepted for the visa on the official national government immigration source before you commit to it.',
+      },
+      {
+        headingEn: 'How to decide which test to take',
+        bodyEn:
+          'Pick the test only after you have confirmed it works end to end. Check the programme page for university acceptance, confirm the minimum score, then check the relevant immigration source for the visa stage — and keep IELTS or TOEFL as a fallback if either step does not accept Duolingo or PTE.',
+        bullets: [
+          'Confirm the university accepts the test for your exact programme',
+          'Note the minimum score and any section requirements',
+          'Check the national immigration source for visa-stage acceptance',
+          'Keep IELTS/TOEFL as a backup where DET or PTE is not accepted',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the Duolingo English Test accepted in Europe?',
+        answerEn:
+          'It is accepted by a growing number of European universities for English-taught programmes, but not by all. Acceptance is decided per university, so confirm on the specific programme page rather than assuming it is accepted.',
+      },
+      {
+        questionEn: 'Is PTE Academic accepted by European universities?',
+        answerEn:
+          'PTE Academic is accepted by an increasing number of universities across Europe, though coverage is narrower than IELTS or TOEFL. Always check the official admissions page of your exact programme to confirm.',
+      },
+      {
+        questionEn: 'Will Duolingo or PTE be accepted for my student visa?',
+        answerEn:
+          'Not necessarily. Some national student-visa or residence-permit processes accept a narrower set of tests than universities. This is general information, not immigration advice — verify on the official government immigration source.',
+      },
+      {
+        questionEn: 'Should I just take IELTS or TOEFL to be safe?',
+        answerEn:
+          'IELTS and TOEFL have the widest acceptance across Europe, so they are a safe fallback if a programme or visa route does not accept Duolingo or PTE. Decide based on what your specific university and immigration source accept.',
+      },
+    ],
+    relatedExamSlugs: ['duolingo-english-test', 'pte-academic', 'ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ielts-and-toefl-for-european-universities', 'language-requirements-for-studying-in-europe', 'do-you-need-to-learn-the-local-language-to-study-in-europe'],
+    sources: [
+      { label: 'Duolingo English Test — official site', url: 'https://englishtest.duolingo.com' },
+      { label: 'PTE Academic — Pearson official site', url: 'https://www.pearsonpte.com' },
+      { label: 'Study in Europe — official EU portal', url: 'https://education.ec.europa.eu/study-in-europe' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['duolingo english test accepted in europe', 'pte accepted universities europe', 'duolingo for europe student visa', 'is pte accepted in europe', 'english test alternatives europe'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'Tests covered', value: 'Duolingo English Test and PTE Academic' },
+      { label: 'University acceptance', value: 'Growing but not universal — verify' },
+      { label: 'Visa acceptance', value: 'May differ — check immigration source' },
+      { label: 'Widest fallback', value: 'IELTS and TOEFL' },
+    ],
+  },
+  {
+    slug: 'do-you-need-to-learn-the-local-language-to-study-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Do You Need to Learn the Local Language to Study in Europe?',
+    descriptionEn:
+      'Whether you must learn the local language to study in Europe — when English-taught degrees are enough, when the national language is required, and why it still helps for daily life and work.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'The short answer: it depends on the programme',
+        bodyEn:
+          'Whether you need the local language depends mainly on the language your degree is taught in, not simply on which country you choose. Many European universities run full degrees in English, and for those you generally do not need the national language to be admitted.\n\nIf your programme is taught in the national language, however — common for many undergraduate courses at public universities — then you will need to prove that language at the required level. Confirm the language of instruction for each specific programme.',
+      },
+      {
+        headingEn: 'When English-taught study is enough',
+        bodyEn:
+          'A large and growing number of English-medium programmes exist across Germany, the Netherlands, the Nordic countries, France, Italy, Spain and elsewhere, especially at master\'s level. For these, proving English (commonly IELTS or TOEFL, sometimes PTE or Duolingo where accepted) usually satisfies the academic requirement.\n\nIn these cases you can study and complete your degree in English. The local language is helpful but not an admission requirement for the course itself.',
+        bullets: [
+          'English-taught degree → prove English; local language not required for admission',
+          'Most common for master\'s and many specialised programmes',
+          'Always confirm the programme page lists English as the language of instruction',
+        ],
+      },
+      {
+        headingEn: 'When the local language is required',
+        bodyEn:
+          'Programmes taught in the national language require proof of that language at the level the university sets, usually expressed as a CEFR level. For example, French-taught degrees may use DELF/DALF/TCF, and German-taught degrees may use TestDaF or DSH.\n\nClinical, regulated and many public-undergraduate programmes are especially likely to be taught locally. Check the programme\'s stated language and required level, and verify it on the official source.',
+      },
+      {
+        headingEn: 'Why local language still helps beyond the classroom',
+        bodyEn:
+          'Even on an English-taught degree, some everyday life — housing, healthcare admin, part-time work, local friendships — is easier with some of the local language. Many students take beginner classes after arriving to settle in more comfortably.\n\nLocal language can also matter for working during or after your studies, since some employers and some job roles expect it. None of this is an admission requirement, but it can shape your day-to-day experience and options.',
+      },
+      {
+        headingEn: 'Language and the visa or work stage',
+        bodyEn:
+          'Separately from admission, some national student-visa, residence-permit or post-study work routes may have their own language expectations, and these differ by country and can change. They are not always the same as the university\'s requirement.\n\nThis is general information, not immigration advice, and it is no guarantee of any work or residence outcome. Verify any language rule for the visa or post-study stage on the official national government source before you rely on it.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I study in Europe knowing only English?',
+        answerEn:
+          'Yes, if you choose an English-taught programme. Many universities, especially at master\'s level, run full degrees in English, and these require proof of English rather than the local language. Local-language degrees still require the national language.',
+      },
+      {
+        questionEn: 'Which countries have the most English-taught degrees?',
+        answerEn:
+          'English-medium programmes are common in Germany, the Netherlands, the Nordic countries and at many universities in France, Italy and Spain. Availability varies by country, university and level, so check the specific programme catalogue.',
+      },
+      {
+        questionEn: 'Do undergraduate degrees usually need the local language?',
+        answerEn:
+          'Often yes. Many undergraduate courses at public universities are taught in the national language and require proof of it. English-taught bachelor\'s degrees exist too — always confirm the language of instruction on the programme page.',
+      },
+      {
+        questionEn: 'Will the local language help me find work?',
+        answerEn:
+          'It can. Some employers and roles expect the local language for work during or after studies, even if your degree was in English. It is not an admission requirement, but learning it can widen your options for daily life and employment.',
+      },
+      {
+        questionEn: 'Does the student visa require the local language?',
+        answerEn:
+          'Sometimes. Some visa, residence-permit or post-study routes have their own language expectations that differ by country. This is general information, not immigration advice — verify on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['language-requirements-for-studying-in-europe', 'ielts-and-toefl-for-european-universities', 'french-language-tests-delf-dalf-tcf-explained'],
+    sources: [
+      { label: 'Study in Europe — official EU portal', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'European Higher Education Area (Bologna Process)', url: 'https://ehea.info' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['do you need to learn the local language to study in europe', 'study in europe without local language', 'english taught degrees in europe', 'learn german french to study in europe', 'local language for studying in europe'],
+    tags: ['europe-language-tests'],
+    keyFacts: [
+      { label: 'Decisive factor', value: 'Language the degree is taught in' },
+      { label: 'English-taught', value: 'Local language not required for admission' },
+      { label: 'Local-taught', value: 'National language proof required (CEFR level)' },
+      { label: 'Beyond class', value: 'Local language helps daily life and work' },
+    ],
+  },
+  {
+    slug: 'working-while-studying-in-europe-rules-by-country',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Working While Studying in Europe: Rules by Country',
+    descriptionEn:
+      'How part-time work rules for international students differ across European countries — what is typically allowed, where the limits come from, and why you must confirm the current rule on each official government source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'There is no single Europe-wide work rule',
+        bodyEn:
+          'A common misunderstanding is that one work limit applies across all of Europe. It does not. Each country sets its own rules for how many hours (or days) an international student may work alongside their studies, and those rules can be expressed differently — some as hours per week, others as full or half days per year.\n\nBecause the limit, the conditions, and any term-time versus holiday distinction vary by country and can change, this guide explains the shape of the rules rather than quoting one number for everywhere. Always confirm the current limit on the official government or immigration source for the specific country you are heading to.',
+      },
+      {
+        headingEn: 'How the limits are usually structured',
+        bodyEn:
+          'Most European countries allow non-EU degree students to work part-time during their course, often with a higher allowance during official holiday periods. The way the cap is written differs from country to country, so read the exact wording on the official source rather than assuming.',
+        bullets: [
+          'Germany commonly frames the allowance in full and half days per year (often cited as 120 full days or 240 half days) — confirm the current rule on the official German source before relying on it.',
+          'The Netherlands and several others express the limit as hours per week during term, sometimes with full-time work allowed in designated summer months.',
+          'France links student work to an annual hours cap (roughly equivalent to part-time) — verify the current figure on the official source.',
+          'Some countries tie work rights to your residence permit conditions, your enrolment status, or whether the job is on or off campus.',
+        ],
+      },
+      {
+        headingEn: 'Why the rules differ — and where they come from',
+        bodyEn:
+          'Student work rights are part of each country\'s national immigration and labour framework, which is why they are not standardised across Europe. The conditions attached to your student residence permit or visa are the controlling rule for you personally.\n\nThis means two students in two different European countries can have very different allowances, and the same country may update its rule between intakes. Treat any number you read in a guide (including this one) as a starting point to check, not a final answer.',
+      },
+      {
+        headingEn: 'Practical points to confirm before you arrive',
+        bodyEn:
+          'Beyond the headline hours limit, several practical conditions affect whether and how you can work. Checking these on the official source before you travel avoids surprises after enrolment.',
+        bullets: [
+          'Whether term-time and holiday limits differ, and how holidays are defined.',
+          'Whether you need any registration, work authorisation, or tax/social-security number before starting a job.',
+          'Whether internships or placements that are part of your course count toward (or are exempt from) the limit.',
+          'Whether your residence permit lists any specific work conditions you must follow.',
+        ],
+      },
+      {
+        headingEn: 'Keep study first and verify every figure',
+        bodyEn:
+          'Part-time work can help with living costs and experience, but in every European country your primary purpose on a student permit is study, and exceeding the permitted hours can affect your permit. No guide can guarantee a specific income or job, and rules change frequently.\n\nThis is general information, not immigration or legal advice. Before counting on any work allowance, verify the current rule on the official government or immigration source for your destination country.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there one work-hours limit for all of Europe?',
+        answerEn:
+          'No. Each country sets its own student work rules — some as hours per week, some as full or half days per year — and they can change. Always check the official government source for your specific destination.',
+      },
+      {
+        questionEn: 'Can I usually work more during holidays?',
+        answerEn:
+          'Many European countries allow more (sometimes full-time) work during official holiday periods, but the exact rule and how holidays are defined differ by country. Confirm the current rule on the official source before relying on it.',
+      },
+      {
+        questionEn: 'Do internships count toward my work-hours limit?',
+        answerEn:
+          'It depends on the country and whether the internship is part of your course. Some count toward the limit and some are treated separately. Verify on the official immigration source for your destination.',
+      },
+      {
+        questionEn: 'Will part-time work cover my living costs?',
+        answerEn:
+          'There is no guarantee. Permitted hours and pay vary by country, so plan your funding around the official financial requirement, not on expected earnings. This is general information, not financial advice.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['post-study-work-visa-options-in-europe-by-country', 'eu-blue-card-explained-for-graduates', 'study-in-germany-from-india', 'study-in-netherlands-from-india'],
+    sources: [
+      { label: 'Make it in Germany — official German government portal (studying)', url: 'https://www.make-it-in-germany.com/en/visa-residence/types/studying' },
+      { label: 'IND Netherlands — official immigration service', url: 'https://ind.nl/en' },
+      { label: 'Campus France — working while studying in France (official)', url: 'https://www.campusfrance.org/en/working-student' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['working while studying in europe', 'student work hours europe', 'part time jobs international students europe', 'how many hours can students work in germany', 'student work rules netherlands', 'work while studying france'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Single Europe-wide limit?', value: 'No — set per country, can change' },
+      { label: 'Common formats', value: 'Hours per week, or full/half days per year' },
+      { label: 'Controlling rule', value: 'Your student residence permit / visa conditions' },
+      { label: 'Holiday work', value: 'Often higher in many countries — verify per country' },
+      { label: 'Verify on', value: 'Each country\'s official government / immigration source' },
+    ],
+  },
+  {
+    slug: 'eu-blue-card-explained-for-graduates',
+    category: 'career',
+    region: 'europe',
+    titleEn: 'EU Blue Card Explained for Graduates',
+    descriptionEn:
+      'A clear explainer of the EU Blue Card — an employment-based residence permit for highly qualified non-EU professionals after graduation. What it is, what it is not, and why every figure must be verified on the official EU source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the EU Blue Card is',
+        bodyEn:
+          'The EU Blue Card is a work-and-residence permit that lets a highly qualified non-EU national live and work in a participating EU country. It is granted on the basis of higher professional qualifications (such as a university degree) together with a qualifying job offer or employment contract.\n\nThe scheme is set out in EU law (Directive (EU) 2021/1883), which each participating member state implements in its own national rules. So while the Blue Card is an EU-wide framework, the specific conditions are applied country by country.',
+      },
+      {
+        headingEn: 'It is an employment permit, not a study permit',
+        bodyEn:
+          'This is the most important point for students to understand: the EU Blue Card is for after you graduate and have secured qualified employment — it is not a route to come and study, and it does not replace a student visa or residence permit.\n\nTypically a graduate first studies on a student permit, then either secures a qualifying job directly or uses a post-study job-search permit (see the related guides), and only then applies for the Blue Card on the strength of that job offer.',
+      },
+      {
+        headingEn: 'Core requirements (verify the specifics per country)',
+        bodyEn:
+          'The Blue Card has a consistent shape across the EU, but the exact numbers — especially the salary threshold — are set at national level and change, so confirm them on the official source for your country.',
+        bullets: [
+          'A recognised higher professional qualification (commonly a university degree), or in some cases equivalent high-level skills as defined in national law.',
+          'A qualifying job offer or employment contract, usually for highly qualified work and for a minimum duration set in the rules.',
+          'A salary that meets the threshold set by that member state — the figure varies by country and is updated periodically (defer to the official source).',
+          'Other conditions (such as valid travel documents and, where required, recognition of your qualification) as set by the national authority.',
+        ],
+      },
+      {
+        headingEn: 'What the Blue Card can offer holders',
+        bodyEn:
+          'The Blue Card is designed to make it easier for highly qualified workers to live and work in the EU, and it generally comes with family and mobility provisions defined in the Directive and national law. The precise rights, durations, and conditions for changing jobs or moving between member states depend on the country and your situation.\n\nBecause these provisions are detailed and can change, check the current rules — including any rules on bringing family or moving to another EU country — on the official EU and national sources rather than relying on a summary.',
+      },
+      {
+        headingEn: 'Verify before you rely on any figure',
+        bodyEn:
+          'Salary thresholds, qualifying-job definitions, validity periods, and the list of participating countries are all set in law and updated over time. Treat any specific number you see online as something to confirm on the official source.\n\nThis is general information, not immigration or legal advice, and holding a degree does not guarantee a Blue Card, a job, or permanent residence. Always verify the current requirements on the official EU Immigration Portal and the relevant national government source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the EU Blue Card a student visa?',
+        answerEn:
+          'No. The EU Blue Card is an employment-based residence permit for highly qualified non-EU professionals who already have a qualifying job offer. It is used after graduation, not to come and study.',
+      },
+      {
+        questionEn: 'What is the salary threshold for the Blue Card?',
+        answerEn:
+          'There is no single EU-wide figure. Each participating member state sets and updates its own salary threshold under Directive (EU) 2021/1883. Verify the current amount on the official source for that country.',
+      },
+      {
+        questionEn: 'Do I need a job offer before applying?',
+        answerEn:
+          'Yes. The Blue Card requires a qualifying job offer or employment contract for highly qualified work, alongside a recognised higher qualification. Confirm the exact conditions on the official EU and national sources.',
+      },
+      {
+        questionEn: 'Does a Blue Card lead to permanent residence?',
+        answerEn:
+          'The Directive and national law include provisions on longer-term residence, but there is no guarantee, and the rules and timelines vary by country. Check the current conditions on the official government source — this is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['post-study-work-visa-options-in-europe-by-country', 'germany-job-seeker-visa-18-months-explained', 'netherlands-orientation-year-zoekjaar-explained', 'working-while-studying-in-europe-rules-by-country'],
+    sources: [
+      { label: 'European Commission — EU Blue Card (highly qualified talent, official)', url: 'https://home-affairs.ec.europa.eu/policies/migration-and-asylum/legal-migration-and-resettlement/work/eu-blue-card-attracting-highly-qualified-talent-eu_en' },
+      { label: 'EU Immigration Portal — EU Blue Card (country information, official)', url: 'https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/eu-blue-card_en' },
+      { label: 'Make it in Germany — official German government portal (qualified professionals)', url: 'https://www.make-it-in-germany.com/en/visa-residence/types/work-qualified-professionals' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['eu blue card', 'eu blue card requirements', 'eu blue card salary threshold', 'blue card for graduates', 'eu blue card vs work visa', 'highly qualified employment eu'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Type', value: 'Employment-based work + residence permit (not a study permit)' },
+      { label: 'Who', value: 'Highly qualified non-EU nationals with a qualifying job offer' },
+      { label: 'Legal basis', value: 'Directive (EU) 2021/1883, applied per member state' },
+      { label: 'Salary threshold', value: 'Set by each country, updated periodically — verify' },
+      { label: 'Verify on', value: 'EU Immigration Portal + national government source' },
+    ],
+  },
+  {
+    slug: 'post-study-work-visa-options-in-europe-by-country',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Post-Study Work Visa Options in Europe by Country',
+    descriptionEn:
+      'An overview of the residence permits that let international graduates stay in Europe to look for work after their studies — Germany, the Netherlands, France, Sweden and more — with all durations deferred to each official government source.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'What a post-study work option is',
+        bodyEn:
+          'Many European countries offer a residence permit that lets recent international graduates stay on after finishing their degree to look for qualified work (and in some cases to start a business). These are sometimes called job-search, orientation, or post-study permits.\n\nThey are not job offers and not a guarantee of employment — they give you a defined period to search. Each country sets its own duration, eligibility, and conditions, so this guide outlines the landscape and points you to the official source for the exact rules.',
+      },
+      {
+        headingEn: 'Country-by-country snapshot (durations vary — verify)',
+        bodyEn:
+          'The names and lengths of these permits differ by country and are updated over time. Use this snapshot to understand what exists, then confirm the current duration and eligibility on each official government source.',
+        bullets: [
+          'Germany — a post-study residence permit lets graduates of German universities stay to seek qualified employment, after which they switch to a job-based permit (commonly the EU Blue Card or work visa). See the dedicated Germany guide.',
+          'Netherlands — the orientation year (zoekjaar) lets eligible graduates stay to look for work, with free access to the labour market during that period. See the dedicated Netherlands guide.',
+          'France — the APS (autorisation provisoire de séjour) lets eligible graduates remain to look for a job or prepare to start a business in their field. Verify eligibility and duration on Campus France.',
+          'Sweden — graduates may apply to extend their residence to look for work or explore starting a business; confirm the current rule with the Swedish Migration Agency.',
+          'Other countries (for example Ireland, Denmark, Finland) operate their own post-study schemes — always check the official national source for the country you studied in.',
+        ],
+      },
+      {
+        headingEn: 'Common eligibility themes',
+        bodyEn:
+          'While the details differ, post-study permits across Europe tend to share some common building blocks. None of these replace reading the specific rules for your country.',
+        bullets: [
+          'You usually must have completed a qualifying degree at a recognised institution in that country.',
+          'There is often a time window after graduation within which you must apply.',
+          'You typically must show you can support yourself during the search period.',
+          'Work rights during the search period vary — some permits allow full labour-market access, others limit it.',
+        ],
+      },
+      {
+        headingEn: 'How it connects to longer-term work permits',
+        bodyEn:
+          'A post-study permit is usually a bridge: it gives you time to find a qualifying job, after which you move onto an employment-based permit such as the EU Blue Card or a national work visa. The post-study permit itself is generally time-limited and not renewable indefinitely.\n\nUnderstanding this sequence — student permit → post-study search permit → employment permit — helps you plan, but the exact transitions and timelines are set by each country and can change.',
+      },
+      {
+        headingEn: 'Verify everything on the official source',
+        bodyEn:
+          'Durations, eligibility, application windows, and work rights for these permits are all set by national governments and updated regularly. Treat any figure here as a prompt to check, not a final answer.\n\nThis is general information, not immigration advice, and no permit guarantees a job, a longer stay, or permanent residence. Always confirm the current rules on the official government or immigration source for your destination.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do all European countries offer a post-study work permit?',
+        answerEn:
+          'Many do, but not all, and the names, durations and conditions differ. Check the official immigration source for the specific country where you studied to see what is available.',
+      },
+      {
+        questionEn: 'Does a post-study permit guarantee a job?',
+        answerEn:
+          'No. It gives you a defined period to look for qualified work; finding a job is not guaranteed. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Can I work during the search period?',
+        answerEn:
+          'It depends on the country. Some post-study permits give full labour-market access during the search; others limit it. Verify the work rights on the official source for that country.',
+      },
+      {
+        questionEn: 'What happens after the post-study permit ends?',
+        answerEn:
+          'You generally need to have secured a qualifying job and switched to an employment-based permit (such as the EU Blue Card or a national work visa). Confirm the transition rules on the official government source.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['germany-job-seeker-visa-18-months-explained', 'netherlands-orientation-year-zoekjaar-explained', 'eu-blue-card-explained-for-graduates', 'working-while-studying-in-europe-rules-by-country'],
+    sources: [
+      { label: 'Make it in Germany — official German government portal (prospects after graduation)', url: 'https://www.make-it-in-germany.com/en/study-vocational-training/studies-in-germany/prospects-after' },
+      { label: 'IND Netherlands — residence permit for orientation year', url: 'https://ind.nl/en/residence-permits/work/residence-permit-for-orientation-year' },
+      { label: 'Campus France — Temporary Resident Permit (APS)', url: 'https://www.campusfrance.org/en/temporary-resident-permit-aps' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['post study work visa europe', 'post study work options europe', 'stay back option europe after masters', 'germany 18 month job seeker visa', 'netherlands orientation year', 'france aps work permit'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Purpose', value: 'Stay after graduation to look for qualified work' },
+      { label: 'Germany', value: 'Post-study job-seeker residence permit (defer duration)' },
+      { label: 'Netherlands', value: 'Orientation year / zoekjaar (defer duration)' },
+      { label: 'France', value: 'APS — job search / business creation (defer eligibility)' },
+      { label: 'Verify on', value: 'Each country\'s official government source' },
+    ],
+  },
+  {
+    slug: 'germany-job-seeker-visa-18-months-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Germany 18-Month Job-Seeker Residence Permit Explained',
+    descriptionEn:
+      'How the post-graduation residence permit for graduates of German universities works — staying on to find qualified employment after your degree, with all specifics deferred to the official German government source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What this permit is for',
+        bodyEn:
+          'Germany offers a residence permit that lets graduates of German universities stay on after completing their studies to look for qualified employment. It is often described as the job-seeker residence permit, or the residence permit to seek employment.\n\nIt is a bridge between finishing your degree and starting work: it gives you a defined period to find a qualified job and then switch to a job-based residence permit. It is not a job offer and not a guarantee of employment.',
+      },
+      {
+        headingEn: 'How long it lasts and what "qualified" means',
+        bodyEn:
+          'According to the official German government portal, this post-study permit allows graduates of German universities to stay for a maximum of 18 months to find qualified employment, and it is not renewable. A position is generally considered qualified when it requires skills typically acquired through academic study or qualified vocational training.\n\nDuring that period the goal is to secure a qualified job and move onto a work-based permit — most commonly the EU Blue Card or the work visa for qualified professionals. Because rules and conditions can change, confirm the current details on the official source before relying on them.',
+        bullets: [
+          'Eligibility is tied to having completed a degree at a German university (recognised qualification).',
+          'The permit is time-limited (maximum 18 months) and non-renewable — the aim is to transition to a work permit within it.',
+          'You generally must show you can support yourself during the search; confirm the current requirement on the official source.',
+        ],
+      },
+      {
+        headingEn: 'How it fits with working during the search',
+        bodyEn:
+          'This job-seeker permit is specifically about finding qualified employment after graduation, and it allows you to take up work to support yourself while you search, subject to the conditions set in the rules. The exact work conditions during this period are defined by German law and can change.\n\nFor clarity on what you may do while holding this permit — including any limits on the work you can take while searching — check the official German government source rather than assuming.',
+      },
+      {
+        headingEn: 'What it is not',
+        bodyEn:
+          'It is worth separating this permit from two things students often confuse it with. First, it is not the EU Blue Card — the Blue Card is the employment-based permit you may move onto once you have a qualifying job offer. Second, it is not the Opportunity Card (Chancenkarte), which is a separate points-based route primarily for those who do not already hold a German qualification.\n\nIf your route is graduating from a German university and then looking for qualified work, the post-study job-seeker residence permit described here is the relevant pathway — but always confirm which permit fits your exact situation on the official source.',
+      },
+      {
+        headingEn: 'Verify on the official German source',
+        bodyEn:
+          'Durations, eligibility, financial requirements, and the conditions for switching to a work permit are set by the German authorities and updated over time. Treat any figure here as a prompt to verify.\n\nThis is general information, not immigration or legal advice, and holding a German degree does not guarantee this permit, a job, the EU Blue Card, or permanent residence. Always confirm the current rules on the official Make it in Germany portal and the responsible German authority.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How long is the German post-study job-seeker permit?',
+        answerEn:
+          'The official German government portal states it allows graduates of German universities to stay for a maximum of 18 months to find qualified employment, and it is non-renewable. Verify the current rule on the official source.',
+      },
+      {
+        questionEn: 'Is this the same as the EU Blue Card?',
+        answerEn:
+          'No. The job-seeker permit is to look for qualified work after graduation; the EU Blue Card is the employment-based permit you may switch to once you have a qualifying job offer.',
+      },
+      {
+        questionEn: 'Can I work while I look for a job?',
+        answerEn:
+          'The permit is designed to let you support yourself while you search for qualified employment, subject to the conditions in German law. Confirm the exact work conditions on the official German government source.',
+      },
+      {
+        questionEn: 'Does this permit guarantee I can stay in Germany long term?',
+        answerEn:
+          'No. It is a time-limited search period; staying longer depends on securing a qualifying job and moving to a work-based permit. This is general information, not immigration advice — verify on the official source.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['eu-blue-card-explained-for-graduates', 'post-study-work-visa-options-in-europe-by-country', 'netherlands-orientation-year-zoekjaar-explained', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Make it in Germany — official German government portal (prospects after graduation)', url: 'https://www.make-it-in-germany.com/en/study-vocational-training/studies-in-germany/prospects-after' },
+      { label: 'Make it in Germany — work visa for qualified professionals', url: 'https://www.make-it-in-germany.com/en/visa-residence/types/work-qualified-professionals' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['germany job seeker visa', 'germany 18 month job seeker visa', 'post study work permit germany', 'residence permit to seek employment germany', 'work in germany after masters', 'germany graduate job search visa'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Purpose', value: 'Stay after a German degree to find qualified employment' },
+      { label: 'Duration', value: 'Maximum 18 months, non-renewable (per official portal)' },
+      { label: 'Who', value: 'Graduates of German universities' },
+      { label: 'Next step', value: 'Switch to a work permit (e.g. EU Blue Card)' },
+      { label: 'Verify on', value: 'Make it in Germany (official) + responsible authority' },
+    ],
+  },
+  {
+    slug: 'netherlands-orientation-year-zoekjaar-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Netherlands Orientation Year (Zoekjaar) Explained',
+    descriptionEn:
+      'How the Dutch orientation year (zoekjaar) residence permit lets recent graduates and researchers stay to look for work in the Netherlands — what it allows, who it is for, with all specifics deferred to the official IND source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the orientation year is',
+        bodyEn:
+          'The orientation year — known in Dutch as the zoekjaar — is a residence permit that lets eligible recent graduates, researchers, and other highly educated people stay in the Netherlands to look for work after completing their study, doctorate, or research.\n\nIt is issued by the IND (the Dutch Immigration and Naturalisation Service). It gives you a defined search period rather than a job, and it is a route many international graduates of Dutch institutions use to transition into the Dutch labour market.',
+      },
+      {
+        headingEn: 'What it allows you to do',
+        bodyEn:
+          'A key feature of the orientation year is that, according to the IND, during this period you can work freely in the Netherlands — your employer does not need a separate work permit for you. This makes it more flexible than many search permits.\n\nThe permit is designed to give you time to find suitable employment or, in some cases, to take other steps toward your career. The exact validity period and conditions are set by the IND and can change, so confirm the current details on the official source.',
+        bullets: [
+          'You can work freely during the orientation year (no separate work permit needed for your employer), per the IND.',
+          'It is aimed at recent graduates, those who completed a doctorate, researchers, and certain others who studied at designated institutions — check the eligibility list on the IND.',
+          'There is usually a time window after graduation within which you can apply — verify the current window on the official source.',
+        ],
+      },
+      {
+        headingEn: 'Who is eligible',
+        bodyEn:
+          'Eligibility for the orientation year generally covers people who recently completed a qualifying study or research in the Netherlands, as well as graduates of certain designated foreign institutions, within a defined period before applying. The precise categories and the list of qualifying institutions are set by the IND.\n\nBecause these criteria are specific and updated over time, always check the current eligibility rules and any required documents on the official IND page rather than assuming you qualify.',
+      },
+      {
+        headingEn: 'How it connects to longer-term work permits',
+        bodyEn:
+          'The orientation year is a bridge: while you hold it you can look for and take up work, and if you secure suitable employment you may move onto a work-based residence permit (for example as a highly skilled migrant) under the relevant Dutch rules.\n\nUnderstanding this sequence — student permit → orientation year → work permit — helps you plan, but the exact transitions, timelines, and any salary or contract conditions are set by the IND and can change.',
+      },
+      {
+        headingEn: 'Verify on the official IND source',
+        bodyEn:
+          'Validity, eligibility, application windows, fees, and conditions for the orientation year are all set by the IND and updated regularly. Treat any figure you read here as a prompt to confirm on the official source.\n\nThis is general information, not immigration or legal advice, and the orientation year does not guarantee a job or a longer stay. Always verify the current rules on the official IND page before relying on them.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the Dutch orientation year (zoekjaar)?',
+        answerEn:
+          'It is an IND residence permit that lets eligible recent graduates, researchers and highly educated people stay in the Netherlands to look for work after their study, doctorate or research. Verify the current rules on the official IND source.',
+      },
+      {
+        questionEn: 'Can I work during the orientation year?',
+        answerEn:
+          'Yes. The IND states that during the orientation year you can work freely, meaning your employer does not need a separate work permit for you. Confirm the conditions on the official IND page.',
+      },
+      {
+        questionEn: 'Who can apply for the orientation year?',
+        answerEn:
+          'It generally covers people who recently completed a qualifying study or research in the Netherlands, and graduates of certain designated institutions, within a set period. Check the exact eligibility list on the IND.',
+      },
+      {
+        questionEn: 'Does the orientation year guarantee a job?',
+        answerEn:
+          'No. It gives you a defined period to look for work; finding a job is not guaranteed. This is general information, not immigration advice — verify on the official IND source.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['eu-blue-card-explained-for-graduates', 'post-study-work-visa-options-in-europe-by-country', 'germany-job-seeker-visa-18-months-explained', 'study-in-netherlands-from-india'],
+    sources: [
+      { label: 'IND Netherlands — residence permit for orientation year', url: 'https://ind.nl/en/residence-permits/work/residence-permit-for-orientation-year' },
+      { label: 'IND Netherlands — official immigration service', url: 'https://ind.nl/en' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['netherlands orientation year', 'zoekjaar netherlands', 'orientation year highly educated persons', 'stay back option netherlands', 'work in netherlands after masters', 'ind orientation year permit'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Dutch name', value: 'Zoekjaar (orientation year)' },
+      { label: 'Issued by', value: 'IND (Dutch Immigration and Naturalisation Service)' },
+      { label: 'Work rights', value: 'Can work freely during the year (per IND)' },
+      { label: 'Who', value: 'Recent graduates, doctorate holders, researchers (eligibility per IND)' },
+      { label: 'Verify on', value: 'Official IND page (ind.nl)' },
+    ],
+  },
+  {
+    slug: 'france-post-study-work-visa-aps-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'France Post-Study Work Visa (APS) Explained',
+    descriptionEn:
+      'A clear, neutral explainer of France\'s post-study residence option (Autorisation Provisoire de Séjour) for international graduates — what it is, who it is meant for, and where to verify the current rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the APS is',
+        bodyEn:
+          'The Autorisation Provisoire de Séjour (APS) is a temporary residence document in France intended for international graduates who have completed a qualifying higher-education degree and wish to stay on to look for work or start a business connected to their studies. In plain terms, it is a window after graduation that lets eligible students remain in France while they search for a first professional role rather than leaving immediately when their student residence permit ends.\n\nThis is general information, not immigration advice. The APS is a national immigration measure, so the exact name, eligibility, validity period, and conditions are set by the French authorities and can change. Always verify the current rules on the official French government source before making any plans.',
+      },
+      {
+        headingEn: 'Who it is generally meant for',
+        bodyEn:
+          'The APS is aimed at graduates who finished a recognised qualifying degree in France and want a defined period to enter the job market or launch a venture linked to their field. Eligibility typically depends on factors such as the level and type of degree completed and the timing of the application relative to the end of studies.\n\nBecause the precise level of qualification required, the categories of eligible graduates, and any conditions attached are defined officially and reviewed periodically, treat any second-hand summary as a starting point only and confirm your own eligibility against the official portal.',
+        bullets: [
+          'Intended for graduates of a qualifying French higher-education degree',
+          'Purpose: job search or starting a business related to the studies',
+          'Eligibility and qualifying degree level are defined officially — verify current rules',
+        ],
+      },
+      {
+        headingEn: 'Duration and conditions — defer to the official source',
+        bodyEn:
+          'The validity period of the APS, whether it can be renewed, the work rights it carries while you search, and what happens once you secure a qualifying job offer are all set by the French authorities. These specifics have been adjusted over time, so this guide deliberately does not quote a fixed number of months or a salary figure.\n\nFor the current validity, renewal position, and the conditions that apply, check France-Visas and the official French government information before you rely on any figure. Rules change — verify on the official government source before acting.',
+      },
+      {
+        headingEn: 'From APS to a work-based status',
+        bodyEn:
+          'The APS is a job-search and transition window, not a permanent status. If a graduate finds suitable employment during this period, the next step is usually to move onto an appropriate work or talent residence status, the details of which depend on the role, the contract, and the applicable thresholds defined by the authorities.\n\nSeparately, the EU Blue Card is an employment-based residence option for highly qualified workers across many EU countries — it is granted on the basis of a qualifying job and salary after graduation, and is not a study permit. Whether and how it applies in France is set out officially, so confirm the route that fits your situation on the government portal.',
+      },
+      {
+        headingEn: 'How to plan responsibly',
+        bodyEn:
+          'Start by reading the official guidance early — ideally well before your student permit expires — so you understand the application window, the documents required, and where to apply. Keep your graduation paperwork, residence documents, and proof of your degree organised, because post-study applications are time-sensitive.\n\nNo guide or service can guarantee a residence permit, a job, or any particular outcome — decisions rest entirely with the French authorities. Use this explainer to understand the concept, then verify every current detail on the official source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What does APS stand for?',
+        answerEn:
+          'APS stands for Autorisation Provisoire de Séjour — a temporary residence authorisation in France that allows eligible international graduates to stay on to search for work or start a business linked to their studies. The current rules are published officially; verify them on the French government source.',
+      },
+      {
+        questionEn: 'How long is the APS valid for?',
+        answerEn:
+          'The validity period is set by the French authorities and has changed over time, so we do not quote a fixed figure here. Check France-Visas and the official French government information for the current duration and any renewal position before you rely on it.',
+      },
+      {
+        questionEn: 'Does the APS guarantee me a job in France?',
+        answerEn:
+          'No. The APS is a window to look for work; it is not a job offer and guarantees nothing. Finding employment and moving onto a work-based status depend on the labour market and on conditions defined by the authorities. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Is the EU Blue Card the same as the APS?',
+        answerEn:
+          'No. The EU Blue Card is an employment-based residence option for highly qualified workers, granted after graduation on the basis of a qualifying job and salary. The APS is a temporary post-study job-search permit. Verify how each applies in France on the official government portal.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-france-from-india', 'how-to-find-a-job-in-europe-after-graduation', 'italy-and-spain-post-study-stay-back-options'],
+    sources: [
+      { label: 'France-Visas — official French visa portal', url: 'https://france-visas.gouv.fr' },
+      { label: 'Campus France — official agency for international students', url: 'https://www.campusfrance.org' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['france post study work visa', 'aps france', 'autorisation provisoire de sejour', 'stay back in france after masters', 'work in france after graduation', 'france job search visa'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Permit', value: 'Autorisation Provisoire de Séjour (APS)' },
+      { label: 'Purpose', value: 'Post-study job search or starting a business' },
+      { label: 'For', value: 'Graduates of a qualifying French degree' },
+      { label: 'Validity / eligibility', value: 'Set by French authorities — verify on official source' },
+      { label: 'Official source', value: 'France-Visas (france-visas.gouv.fr)' },
+    ],
+  },
+  {
+    slug: 'sweden-and-nordics-post-study-work-options',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Sweden and Nordics Post-Study Work Options',
+    descriptionEn:
+      'A neutral overview of post-study stay-back routes in Sweden and the Nordic countries — the idea of a permit to seek work after graduation, and where to verify each country\'s current rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The shared idea: a window to seek work',
+        bodyEn:
+          'Sweden and several Nordic countries offer international graduates a way to apply for a residence permit to look for work or explore starting a business after completing their studies. The common principle is that, once you finish a qualifying degree, you may apply to extend your stay for a defined period to enter the local job market rather than leaving as soon as your student permit ends.\n\nThis is general information, not immigration advice. Each Nordic country runs its own immigration system with its own rules, validity periods, and conditions, all of which can change. Verify the current rules on each country\'s official migration authority before you plan.',
+      },
+      {
+        headingEn: 'Sweden',
+        bodyEn:
+          'In Sweden, the immigration authority is the Swedish Migration Agency (Migrationsverket). Graduates who have completed qualifying studies in Sweden may be able to apply for a residence permit to look for work or investigate running a business.\n\nThe eligibility conditions, the validity period, and the documents required are set out by Migrationsverket and have been adjusted over time, so confirm the current position there before applying.',
+        bullets: [
+          'Authority: Swedish Migration Agency (Migrationsverket)',
+          'Concept: residence permit to seek work or explore self-employment after studies',
+          'Specifics (duration, eligibility) set officially — verify on migrationsverket.se',
+        ],
+      },
+      {
+        headingEn: 'Other Nordic countries',
+        bodyEn:
+          'Denmark, Finland, and Norway each operate their own post-study and job-search arrangements through their national immigration authorities — the Danish Immigration Service (nyidanmark.dk), the Finnish Immigration Service Migri (migri.fi), and the Norwegian Directorate of Immigration UDI (udi.no). The names, durations, and conditions differ from country to country and from Sweden.\n\nBecause these are separate national systems that are reviewed periodically, do not assume the rule in one country applies in another. Check the relevant authority for the country you studied in.',
+      },
+      {
+        headingEn: 'Why specifics are deferred here',
+        bodyEn:
+          'Validity periods, fees, eligibility categories, and the exact post-study route can change in any of these countries, sometimes at short notice. To avoid giving you a figure that may be out of date, this guide intentionally points you to each official authority rather than quoting numbers.\n\nUse the official sources below as your reference, and re-check them close to the time you intend to apply. Rules change — verify on the official government source before acting.',
+      },
+      {
+        headingEn: 'Planning your transition',
+        bodyEn:
+          'Read the relevant migration authority\'s guidance early, keep your degree certificate and residence documents in order, and note any application window tied to the end of your studies. If you find a job during the search period, moving onto a work-based residence status follows that country\'s own process.\n\nNo route guarantees a job or a permit — decisions rest with each national authority. This explainer is a map of the concept, not a promise of any outcome.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I stay in Sweden after my degree to look for a job?',
+        answerEn:
+          'Sweden offers a route to apply for a residence permit to look for work or explore starting a business after qualifying studies, handled by the Swedish Migration Agency (Migrationsverket). The eligibility and validity are set officially and have changed over time — verify the current rules on migrationsverket.se.',
+      },
+      {
+        questionEn: 'Is the post-study rule the same across all Nordic countries?',
+        answerEn:
+          'No. Sweden, Denmark, Finland, and Norway each run their own immigration system with different names, durations, and conditions. Check the specific national authority for the country where you studied. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'How long can I stay to search for work?',
+        answerEn:
+          'The validity period varies by country and has been adjusted over time, so this guide does not quote a fixed figure. Confirm the current duration on the relevant migration authority\'s official website before you rely on it.',
+      },
+      {
+        questionEn: 'Does a job-search permit guarantee I will find work?',
+        answerEn:
+          'No. A job-search or post-study permit is a window to look for employment; it does not guarantee a job or a future permit. Outcomes depend on the labour market and on each authority\'s decisions.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-find-a-job-in-europe-after-graduation', 'france-post-study-work-visa-aps-explained', 'italy-and-spain-post-study-stay-back-options'],
+    sources: [
+      { label: 'Migrationsverket — Swedish Migration Agency', url: 'https://www.migrationsverket.se/English.html' },
+      { label: 'Migri — Finnish Immigration Service', url: 'https://migri.fi/en/home' },
+      { label: 'UDI — Norwegian Directorate of Immigration', url: 'https://www.udi.no/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['sweden post study work permit', 'stay back in sweden after masters', 'nordics work permit after studies', 'work in finland after graduation', 'job search permit sweden', 'norway post study work'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Concept', value: 'Residence permit to seek work after studies' },
+      { label: 'Sweden authority', value: 'Migrationsverket (migrationsverket.se)' },
+      { label: 'Other authorities', value: 'nyidanmark.dk, migri.fi, udi.no' },
+      { label: 'Specifics', value: 'Differ by country — verify on each official source' },
+    ],
+  },
+  {
+    slug: 'italy-and-spain-post-study-stay-back-options',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Italy and Spain Post-Study Stay-Back Options',
+    descriptionEn:
+      'A neutral guide to post-study stay-back options in Italy and Spain — the concept of a permit to remain and look for work after graduation, with all specifics deferred to the official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The concept of staying on to work',
+        bodyEn:
+          'Both Italy and Spain provide routes for international graduates to remain in the country for a period after finishing their studies in order to look for work or, in some cases, to move into employment or self-employment. The shared idea is that completing a recognised degree can let you apply to convert or extend your residence status rather than leaving when your student permit ends.\n\nThis is general information, not immigration advice. Italy and Spain each have their own immigration framework, and the names, durations, and conditions of these post-study options are set by the respective governments and can change. Verify the current rules on the official source for the country concerned.',
+      },
+      {
+        headingEn: 'Italy',
+        bodyEn:
+          'In Italy, official information for international students and the entry and stay framework is published by the government through portals such as Study in Italy (run by the Ministry of Foreign Affairs) and the Universitaly portal. Graduates may have options to remain for a period to seek work or to convert their student residence permit into a work-related permit, subject to the conditions defined by the authorities.\n\nThe eligibility, the length of any job-search period, and the conversion conditions are set officially and have been revised over time, so confirm the current position on the Italian government sources rather than relying on a summary.',
+        bullets: [
+          'Official info: Study in Italy (studyinitaly.esteri.it) and esteri.it',
+          'Concept: stay on to seek work or convert the study permit to a work permit',
+          'Durations and conditions defined officially — verify before applying',
+        ],
+      },
+      {
+        headingEn: 'Spain',
+        bodyEn:
+          'In Spain, the official entry and residence framework is administered by the government, with consular and visa information published through the Ministry of Foreign Affairs and related portals. International graduates may have routes to remain for a period to look for employment or to start a professional activity after their studies, under conditions set by the authorities.\n\nAs with Italy, the precise eligibility, the permitted stay-back period, and the steps to move into work are defined officially and are reviewed from time to time. Check the current Spanish government guidance before you plan.',
+        bullets: [
+          'Official info: Spanish Ministry of Foreign Affairs (exteriores.gob.es)',
+          'Concept: remain to seek work or begin a professional activity after studies',
+          'Eligibility and stay period set officially — verify on the official source',
+        ],
+      },
+      {
+        headingEn: 'Why this guide defers the numbers',
+        bodyEn:
+          'Post-study stay-back rules in Italy and Spain — including how long you may stay to search, what status you move onto, and the documents needed — can change, and the two countries differ from each other. Rather than quote a figure that could quickly date, this guide points you to each official portal.\n\nUse the sources below and re-check them when you are close to applying. Rules change — verify on the official government source before acting.',
+      },
+      {
+        headingEn: 'A note on EU-wide work routes',
+        bodyEn:
+          'Separately from any national post-study permit, the EU Blue Card is an employment-based residence option for highly qualified workers available across many EU member states. It is granted after graduation on the basis of a qualifying job offer and salary level, not as a study permit, and its national implementation differs.\n\nIf you secure a suitable role in Italy or Spain, confirm on the official government source whether the EU Blue Card or another work-based status fits your situation. No route guarantees a job, a permit, or permanent residence.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I stay in Italy after graduation to find a job?',
+        answerEn:
+          'Italy provides options for graduates to remain for a period to seek work or to convert a student residence permit into a work permit, under conditions set by the authorities. The specifics are published officially and have been revised over time — verify them on the Italian government sources.',
+      },
+      {
+        questionEn: 'What is the post-study stay-back option in Spain?',
+        answerEn:
+          'Spain offers routes for international graduates to remain to look for employment or to begin a professional activity after studies, under government-defined conditions. The eligibility and permitted period are set officially; check the Spanish Ministry of Foreign Affairs guidance for the current rules. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'How long can I stay to look for work in Italy or Spain?',
+        answerEn:
+          'The permitted stay-back period is defined officially in each country and differs between Italy and Spain, so this guide does not quote a fixed number. Confirm the current duration on the relevant official source before you rely on it.',
+      },
+      {
+        questionEn: 'Is the EU Blue Card a study permit?',
+        answerEn:
+          'No. The EU Blue Card is an employment-based residence option for highly qualified workers, granted after graduation on the basis of a qualifying job and salary. It is not a study permit. Verify its national implementation on the official government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: ['bocconi-university'],
+    relatedGuideSlugs: ['france-post-study-work-visa-aps-explained', 'sweden-and-nordics-post-study-work-options', 'how-to-find-a-job-in-europe-after-graduation'],
+    sources: [
+      { label: 'Study in Italy — official Italian Foreign Ministry portal', url: 'https://studyinitaly.esteri.it/' },
+      { label: 'Ministero degli Affari Esteri — Italy (Foreign Ministry)', url: 'https://www.esteri.it/en/' },
+      { label: 'Ministerio de Asuntos Exteriores — Spain (Foreign Ministry)', url: 'https://www.exteriores.gob.es/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['italy post study work permit', 'spain stay back after masters', 'work in italy after graduation', 'job search permit spain', 'convert student permit to work permit italy', 'post study options spain'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Concept', value: 'Stay on to seek work or convert study permit after graduation' },
+      { label: 'Italy info', value: 'Study in Italy (studyinitaly.esteri.it) + esteri.it' },
+      { label: 'Spain info', value: 'exteriores.gob.es' },
+      { label: 'Specifics', value: 'Differ by country — verify on each official source' },
+    ],
+  },
+  {
+    slug: 'how-to-find-a-job-in-europe-after-graduation',
+    category: 'career',
+    region: 'europe',
+    titleEn: 'How to Find a Job in Europe After Graduation',
+    descriptionEn:
+      'Practical, neutral guidance on searching for your first job in Europe after graduating — where to look, how official job-mobility services work, and how to prepare, with no placement or salary promises.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Start with your residence status',
+        bodyEn:
+          'Before you focus on the job hunt itself, understand what your residence status allows after graduation. Many European countries offer a post-study route — a permit to stay and look for work for a defined period — but the rules, durations, and conditions differ by country and are set by each national authority.\n\nThis is general information, not immigration advice. Your right to work, and any post-study job-search permit, are governed by the immigration authority of the country you are in. Verify your own situation on the official government source before relying on it, and read the related post-study guides in this set for France, the Nordics, Italy, Spain, Germany, and the Netherlands.',
+      },
+      {
+        headingEn: 'Where to search — official and university channels',
+        bodyEn:
+          'A good first stop is your university\'s careers service, which often lists graduate roles, internships, and employer events, and can advise on local CVs and applications. Many universities also maintain alumni networks that can point you toward openings.\n\nFor cross-border opportunities within Europe, EURES — the European Job Mobility Portal run by the European authorities — brings together job vacancies and information on living and working conditions across participating countries. It is a neutral public service you can use to explore roles and understand what working in another European country involves.',
+        bullets: [
+          'Your university careers service and alumni network',
+          'EURES — the official European Job Mobility Portal',
+          'Official sector and employer career pages',
+        ],
+      },
+      {
+        headingEn: 'Build a strong, locally adapted application',
+        bodyEn:
+          'Hiring conventions vary across Europe, so adapt your CV and cover letter to local expectations — length, format, and what to include can differ from what you are used to. Many countries value a concise, achievement-focused CV, and some employers expect a tailored cover letter for each role.\n\nLanguage matters too. While many graduate and technical roles operate in English, knowing the local language often widens your options considerably. Be honest about your language level, and consider language learning as part of your job-search strategy where it helps.',
+      },
+      {
+        headingEn: 'Network, intern, and use your study period',
+        bodyEn:
+          'The job search ideally starts before you graduate. Internships, part-time work where your permit allows it, thesis projects with companies, and career fairs all build the local contacts and experience that employers value. Many first roles come through connections made during your studies.\n\nKeep a simple record of applications and follow up politely. Treat each interview as a chance to learn about local workplace norms, and ask your careers service for mock-interview support if it is available.',
+      },
+      {
+        headingEn: 'Set realistic expectations',
+        bodyEn:
+          'Finding a first graduate job in a new country takes time and persistence, and outcomes depend on your field, the local labour market, your language skills, and your residence status. No guide, service, or platform can guarantee you a job, a particular salary, or sponsorship — be cautious of anyone who claims otherwise.\n\nUse official channels, prepare thoroughly, and verify any visa or work-rights detail on the relevant government source. Steady, well-organised effort through legitimate routes is the dependable approach.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is EURES?',
+        answerEn:
+          'EURES is the European Job Mobility Portal, an official public service run by the European authorities that gathers job vacancies and information on living and working conditions across participating European countries. It is a neutral resource for exploring roles; it does not place you in a job or guarantee employment.',
+      },
+      {
+        questionEn: 'Do I need to know the local language to get a job in Europe?',
+        answerEn:
+          'Not always — many graduate and technical roles operate in English. However, knowing the local language often widens your options significantly. Treat language learning as part of your job-search strategy where it helps, and be honest about your level.',
+      },
+      {
+        questionEn: 'Can I stay in Europe to look for a job after I graduate?',
+        answerEn:
+          'Many European countries offer a post-study route to stay and search for work for a defined period, but the rules differ by country and are set by each national immigration authority. Verify your own situation on the official government source. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Can a service guarantee me a job in Europe?',
+        answerEn:
+          'No. No legitimate service, agent, or platform can guarantee a job, a salary, or sponsorship. Outcomes depend on your field, the labour market, language skills, and residence status. Be cautious of any guarantee and rely on official channels and your university careers service.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['france-post-study-work-visa-aps-explained', 'sweden-and-nordics-post-study-work-options', 'italy-and-spain-post-study-stay-back-options', 'working-while-studying-in-germany-rules'],
+    sources: [
+      { label: 'EURES — European Job Mobility Portal', url: 'https://eures.europa.eu/index_en' },
+      { label: 'Your Europe — official EU portal on living and working', url: 'https://europa.eu/youreurope/citizens/work/index_en.htm' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to find a job in europe after graduation', 'eures job portal', 'graduate jobs in europe', 'work in europe after masters', 'job search europe international students', 'cv for european jobs'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Official cross-border portal', value: 'EURES (eures.europa.eu)' },
+      { label: 'First stops', value: 'University careers service + alumni network' },
+      { label: 'Language', value: 'English common; local language widens options' },
+      { label: 'Work rights', value: 'Set by each national authority — verify officially' },
+    ],
+  },
+  {
+    slug: 'working-while-studying-in-germany-rules',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Working While Studying in Germany: Rules',
+    descriptionEn:
+      'A neutral explainer of the rules for international students working part-time alongside their studies in Germany — the day-based limit, where it comes from, and where to verify the current rule.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Can international students work in Germany?',
+        bodyEn:
+          'International students in Germany are generally allowed to take on a limited amount of paid work alongside their studies, subject to the conditions of their residence permit and German law. Many students work part-time to gain experience and support their living costs while studying.\n\nThis is general information, not immigration advice. Work rights for students are governed by German immigration rules, which can change. Always verify the current limit and conditions on the official German government sources before you start any job.',
+      },
+      {
+        headingEn: 'The day-based working limit',
+        bodyEn:
+          'Germany expresses the student work allowance as a number of full days or half days of work permitted per year for international students from outside the EU, rather than as a fixed weekly hour cap. Working a full day or a half day is what counts toward this annual allowance.\n\nThe exact number of permitted days, and how a day is counted, are set by the German authorities and have been revised — the allowance was increased in recent years — so this guide deliberately does not lock in a fixed figure and instead points you to the official sources for the current rule. Verify the current allowance on Make it in Germany and the Federal Office for Migration and Refugees (BAMF) before relying on it.',
+        bullets: [
+          'Expressed as a number of full days or half days of work per year (non-EU students)',
+          'Counted in days of work, not a fixed weekly hour cap',
+          'The permitted number has been revised — confirm the current figure officially before you start',
+        ],
+      },
+      {
+        headingEn: 'Where the rules come from',
+        bodyEn:
+          'The authoritative sources for student work rights in Germany are the official government portals — Make it in Germany (the official portal for skilled workers and international talent) and the Federal Office for Migration and Refugees (BAMF), alongside the conditions printed on your own residence permit.\n\nUniversity student-job rules, on-campus academic roles, and mandatory internships that are part of your study programme can be treated differently from ordinary part-time work, so check how each type is counted. Your International Office can help you understand what your specific permit allows.',
+      },
+      {
+        headingEn: 'Things to check before you take a job',
+        bodyEn:
+          'Beyond the day limit, there are practical points to confirm: how your earnings interact with tax and social-contribution rules, whether a particular role (such as an academic assistant position) is counted differently, and what your residence permit explicitly states. Exceeding the permitted limit can have consequences for your status, so it is worth getting this right.\n\nBecause these details are set officially and can change, confirm them on the German government sources and with your university\'s International Office rather than relying on second-hand advice.',
+      },
+      {
+        headingEn: 'Why we defer the exact rule',
+        bodyEn:
+          'Work-hour and work-day allowances for students are reviewed by the authorities and have changed in the past. To avoid giving you a figure that may be out of date, this guide explains the structure of the rule and directs you to the official sources for the precise current number and conditions.\n\nRules change — verify on the official government source before acting. No guide can replace the official information that applies to your specific residence permit.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many days can international students work in Germany?',
+        answerEn:
+          'The allowance for non-EU students is expressed as a number of full days or half days of work per year, counted in days rather than a fixed weekly hour cap. The permitted number is set officially and has been revised in recent years, so we do not lock in a fixed figure here — verify the current rule on Make it in Germany and BAMF before you start.',
+      },
+      {
+        questionEn: 'Is the student work limit a weekly hour cap?',
+        answerEn:
+          'It has traditionally been expressed as full days and half days per year rather than a fixed weekly hour cap. How a day is counted is defined officially, so confirm the current method on the German government sources.',
+      },
+      {
+        questionEn: 'Are university assistant jobs counted the same way?',
+        answerEn:
+          'Academic or student-assistant roles at a university can be treated differently from ordinary part-time work under the rules. Check how your specific role is counted on the official sources and with your university\'s International Office. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'What happens if I work more than the permitted limit?',
+        answerEn:
+          'Exceeding the permitted work allowance can affect your residence status. Because the rules and consequences are set officially and can change, confirm the current limit and conditions on the German government sources and with your International Office before taking on extra work.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'testas'],
+    relatedCollegeSlugs: ['tu-munich'],
+    relatedGuideSlugs: ['study-in-germany-from-india', 'how-to-find-a-job-in-europe-after-graduation', 'daad-scholarship-for-indians'],
+    sources: [
+      { label: 'Make it in Germany — official portal for international talent', url: 'https://www.make-it-in-germany.com/en/' },
+      { label: 'BAMF — Federal Office for Migration and Refugees (Studying in Germany)', url: 'https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Bildung/Studium/studium-node.html' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['working while studying in germany', 'student work hours germany', '120 days work germany', 'part time jobs for students germany', 'how many hours can students work in germany', 'student job rules germany'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Allowance', value: 'A set number of full / half days of work per year (non-EU)' },
+      { label: 'Counted as', value: 'Days of work, not a weekly hour cap' },
+      { label: 'Official sources', value: 'Make it in Germany + BAMF' },
+      { label: 'Current figure', value: 'Revised in recent years — verify officially before starting work' },
+    ],
+  },
+  {
+    slug: 'permanent-residence-pathways-in-europe-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Permanent Residence Pathways in Europe, Explained',
+    descriptionEn:
+      'How a study-to-work-to-residence journey can connect in Europe — as neutral official facts. Pathways vary by country; this is general information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How the stages can connect',
+        bodyEn:
+          'Across many European countries, the route an international student takes after graduation tends to follow a common shape: a study permit while you complete your degree, then a period to look for work or stay on to work, and — after a qualifying span of lawful residence — the possibility of applying for long-term or permanent residence. Each of those stages is a separate permission with its own conditions.\n\nThis sequence is not automatic and is not guaranteed. Whether you can move from one stage to the next depends on the specific rules of the country you are in, your circumstances, and the decision of that country\'s authorities. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'Rules vary by country',
+        bodyEn:
+          'There is no single European permanent-residence rule that applies everywhere. Each country sets its own residence and settlement law, and the conditions — how long you must have lawfully lived there, what income or employment you must show, language requirements, and which permits count toward the qualifying period — differ from one country to the next.\n\nIn addition, the European Union has an EU-wide long-term residence status that several member states implement alongside their own national permanent-residence routes. Always read the official source for the specific country you are interested in.',
+        bullets: [
+          'Study permit — while you complete your degree',
+          'Post-study stay or work permit — to look for or take up a job',
+          'National permanent residence OR EU long-term residence — after a qualifying period of lawful residence',
+          'Citizenship — a separate, later process with its own law (out of scope here)',
+        ],
+      },
+      {
+        headingEn: 'What "qualifying residence" usually means',
+        bodyEn:
+          'Most permanent-residence routes count the time you have lived in the country lawfully and continuously. Time spent on a student permit may count fully, partly, or not at all toward this period, depending on the country — this is a detail people frequently get wrong, so check it for your specific destination.\n\nThe exact number of years required, how absences from the country are treated, and the income and integration conditions are set by each government and can change. Defer to the official source and verify the current rule before you rely on it.',
+      },
+      {
+        headingEn: 'Employment-based routes are separate',
+        bodyEn:
+          'Some routes to staying in Europe are based on employment rather than on length of residence. The EU Blue Card, for example, is a work-and-residence permit for qualified professionals that you apply for after you have a graduate-level job offer — it is an employment route, not a study permit, and it is not something you hold as a student.\n\nThese employment-based permits can later count toward long-term or permanent residence in many countries, but the conditions are specific. Treat each as its own permission with its own official rules.',
+      },
+      {
+        headingEn: 'Where to confirm the official rules',
+        bodyEn:
+          'Because residence and settlement law is national and changes regularly, the only reliable approach is to read the official government immigration source for your destination country, and the EU Immigration Portal for the EU-wide long-term residence status. Do not rely on summaries — confirm every figure and condition on the official source before acting.\n\nIf your situation is complex, consider qualified, accredited advice. This guide provides facts and orientation only, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does studying in Europe guarantee permanent residence?',
+        answerEn:
+          'No. A study permit, post-study work, and permanent residence are separate permissions, each granted on its own conditions by the relevant authorities. Studying may begin a pathway, but it does not guarantee work or permanent residence. Verify the current rules on the official government source for your country.',
+      },
+      {
+        questionEn: 'Is there one permanent-residence rule for all of Europe?',
+        answerEn:
+          'No. Each country sets its own permanent-residence law. Separately, the EU has an EU-wide long-term residence status that several member states implement. Always read the official source for your specific destination plus the EU Immigration Portal.',
+      },
+      {
+        questionEn: 'Does time on a student visa count toward permanent residence?',
+        answerEn:
+          'It depends on the country — student time may count fully, partly, or not at all. This is set by national law and can change, so confirm it on the official government source for your destination.',
+      },
+      {
+        questionEn: 'Is the EU Blue Card a way to stay after studying?',
+        answerEn:
+          'The EU Blue Card is an employment-based work-and-residence permit for qualified professionals, applied for after you have a graduate-level job offer. It is not a study permit. Check the official rules for whether and how it applies to you.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['eu-long-term-residence-permit-explained', 'germany-permanent-residence-after-study-explained', 'netherlands-permanent-residence-after-study-explained', 'is-europe-good-for-international-students'],
+    sources: [
+      { label: 'European Commission — EU Immigration Portal', url: 'https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal_en' },
+      { label: 'European Union — official portal', url: 'https://european-union.europa.eu/live-work-study_en' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['permanent residence in europe', 'study to work to pr europe', 'how to get pr in europe', 'permanent residency europe for students', 'stay in europe after study'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Typical sequence', value: 'Study permit → post-study work → long-term / permanent residence' },
+      { label: 'Rule-setting', value: 'National law (varies by country) + EU-wide long-term residence' },
+      { label: 'Guarantee', value: 'None — each stage is a separate decision by the authorities' },
+      { label: 'Framing', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'eu-long-term-residence-permit-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'EU Long-Term Residence Permit Explained',
+    descriptionEn:
+      'What the EU long-term residence status is — a status for non-EU nationals after a qualifying period of lawful residence. Neutral official facts; not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the EU long-term residence status is',
+        bodyEn:
+          'The EU long-term residence status is a residence status for non-EU nationals who have lived legally in an EU member state for a continuous qualifying period. It is established under EU law — the Long-Term Residents Directive (Directive 2003/109/EC) — and is implemented by participating member states alongside their own national permanent-residence routes.\n\nIt is a distinct status from a country\'s purely national permanent-residence permit, although in practice the two often overlap. This guide explains the concept; defer to the official source for the exact rules.',
+      },
+      {
+        headingEn: 'The qualifying-residence requirement',
+        bodyEn:
+          'The core condition is a period of continuous, lawful residence in the member state — under the EU directive this is typically around five years. How time spent as a student counts toward this period is treated specially under the directive and can differ by country, so it is important to check rather than assume.\n\nThe exact length, how absences are counted, and any additional conditions are set in law and applied by each member state\'s authorities. Verify the current requirement on the official source for your country before relying on it.',
+      },
+      {
+        headingEn: 'Other conditions usually required',
+        bodyEn:
+          'Beyond the residence period, applicants are generally expected to demonstrate stable and regular resources to support themselves, and to hold sickness insurance. Some member states also apply integration conditions, such as a language or civic-knowledge requirement.\n\nThe precise thresholds and documents are determined by national implementation and can change. Read the official government source for your destination for the current list.',
+        bullets: [
+          'Continuous lawful residence for the qualifying period (typically ~5 years under the directive)',
+          'Stable, regular resources to support yourself',
+          'Sickness (health) insurance',
+          'Possible integration / language condition, depending on the member state',
+        ],
+      },
+      {
+        headingEn: 'What the status can offer',
+        bodyEn:
+          'The EU long-term residence status is designed to give holders a more secure, longer-term right to reside, and the directive also includes provisions that can make it easier to move to and reside in another EU member state under certain conditions. The specific rights, and the steps to use them, depend on how each member state applies the directive.\n\nIreland and Denmark participate differently in some EU migration measures, so the status\'s availability and detail can vary — always confirm on the official source for the country concerned.',
+      },
+      {
+        headingEn: 'Where to confirm the rules',
+        bodyEn:
+          'The authoritative starting points are the EU Immigration Portal, which explains the long-term residence status at EU level, and the official immigration website of the specific member state, which sets out how that country implements it. Confirm every condition and figure on these official sources.\n\nThis guide is general information about the concept, not immigration advice. For a complex case, consider qualified, accredited guidance.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How long must I live in the EU to qualify for long-term residence?',
+        answerEn:
+          'Under the EU Long-Term Residents Directive the qualifying period is typically around five years of continuous, lawful residence in the member state, but how student time counts and the exact conditions are set by national implementation. Verify the current rule on the official source for your country.',
+      },
+      {
+        questionEn: 'Is EU long-term residence the same as a country\'s national permanent residence?',
+        answerEn:
+          'They are distinct statuses, though they often overlap in practice. The EU long-term residence status comes from EU law and is implemented by member states alongside their own national permanent-residence routes. Check the official source for how your country handles both.',
+      },
+      {
+        questionEn: 'Does the EU long-term residence status let me live in any EU country?',
+        answerEn:
+          'The directive includes provisions that can make moving to and residing in another member state easier under certain conditions, but it is not unconditional and member states apply it differently. Confirm the specifics on the EU Immigration Portal and the relevant national source.',
+      },
+      {
+        questionEn: 'Does time as a student count toward the five years?',
+        answerEn:
+          'Student time is treated specially under the directive and can be counted differently by country. Do not assume — check how your destination counts it on its official government source.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['permanent-residence-pathways-in-europe-explained', 'germany-permanent-residence-after-study-explained', 'netherlands-permanent-residence-after-study-explained', 'is-europe-good-for-international-students'],
+    sources: [
+      { label: 'European Commission — EU Immigration Portal', url: 'https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal_en' },
+      { label: 'European Commission — EU long-term residence', url: 'https://home-affairs.ec.europa.eu/policies/migration-and-asylum/migrant-integration/eu-long-term-residence_en' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['eu long term residence permit', 'eu long term resident status', 'directive 2003/109/ec', 'permanent residence eu 5 years', 'long term residence europe'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Legal basis', value: 'EU Long-Term Residents Directive (2003/109/EC)' },
+      { label: 'Qualifying period', value: 'Typically ~5 years continuous lawful residence (verify per country)' },
+      { label: 'Common conditions', value: 'Stable resources + sickness insurance (+ possible integration condition)' },
+      { label: 'Framing', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'germany-permanent-residence-after-study-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Germany Permanent Residence After Study, Explained',
+    descriptionEn:
+      'How Germany\'s settlement-permit pathway can follow study and qualified work — as neutral official facts. Defer to the official German sources; not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The settlement permit (Niederlassungserlaubnis)',
+        bodyEn:
+          'In Germany, permanent residence is granted through a settlement permit, known as the Niederlassungserlaubnis. It is an open-ended residence title, distinct from the temporary residence permits a student or recent graduate typically holds first.\n\nFor international graduates, the settlement permit is generally something you can apply for after a period of qualified employment in Germany, once the conditions are met. This guide describes the concept; the exact rules are set by German law and applied by the local immigration authorities.',
+      },
+      {
+        headingEn: 'How study can lead toward it',
+        bodyEn:
+          'A common sequence is: a residence permit for study, then — after graduating — a permit to look for a job, then a residence permit for qualified employment, and eventually the possibility of applying for a settlement permit. Holding the EU Blue Card (an employment-based permit for qualified professionals) is one route that German rules treat favourably toward settlement, often shortening the qualifying period.\n\nNone of these steps is automatic, and each is a separate permission. Whether and when you can apply for settlement depends on your specific situation and the decision of the authorities.',
+        bullets: [
+          'Residence permit for study — during your degree',
+          'Post-study job-search permit — to find qualified work',
+          'Residence permit for qualified employment (or EU Blue Card)',
+          'Settlement permit (Niederlassungserlaubnis) — once the conditions are met',
+        ],
+      },
+      {
+        headingEn: 'Conditions usually involved',
+        bodyEn:
+          'German settlement rules generally look at how long you have held a qualifying residence permit and worked, whether you have contributed to the statutory pension scheme, your ability to support yourself, adequate living space, and German-language ability. Graduates and Blue Card holders can be subject to shorter qualifying periods under specific provisions.\n\nThe exact periods, contribution requirements, and language level are set in law and can change. Do not rely on remembered figures — verify the current conditions on the official German sources.',
+      },
+      {
+        headingEn: 'Where to confirm the official rules',
+        bodyEn:
+          'The official Make it in Germany portal (run by the German government) explains residence and settlement for international professionals, and the Federal Office for Migration and Refugees (BAMF) sets out the residence-title framework. Your local Foreigners\' Authority (Ausländerbehörde) processes the application and can confirm what applies in your case.\n\nConfirm every condition and figure on these official sources before acting. This guide is general information, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is permanent residence called in Germany?',
+        answerEn:
+          'It is the settlement permit, or Niederlassungserlaubnis — an open-ended residence title distinct from the temporary permits a student or recent graduate holds first. Verify the conditions on the official German sources.',
+      },
+      {
+        questionEn: 'Can I get a settlement permit straight after graduating?',
+        answerEn:
+          'Generally the settlement permit follows a period of qualified employment after graduation, once the conditions are met; it is not granted automatically on graduation. The exact qualifying period is set by German law and can change — confirm it on Make it in Germany and with your local Foreigners\' Authority.',
+      },
+      {
+        questionEn: 'Does holding an EU Blue Card help toward settlement in Germany?',
+        answerEn:
+          'German rules treat the EU Blue Card favourably toward settlement and it can shorten the qualifying period under specific provisions. The Blue Card is an employment-based permit, not a study permit. Check the current conditions on the official sources.',
+      },
+      {
+        questionEn: 'Is German-language ability required for a settlement permit?',
+        answerEn:
+          'German settlement rules generally include a language requirement, among other conditions such as time worked and pension contributions. The exact level can change, so verify it on the official German sources for your situation.',
+      },
+    ],
+    relatedExamSlugs: ['testas'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['permanent-residence-pathways-in-europe-explained', 'eu-long-term-residence-permit-explained', 'study-in-germany-from-india', 'netherlands-permanent-residence-after-study-explained'],
+    sources: [
+      { label: 'Make it in Germany — official German government portal', url: 'https://www.make-it-in-germany.com/en/' },
+      { label: 'BAMF — Federal Office for Migration and Refugees', url: 'https://www.bamf.de/EN/Themen/MigrationAufenthalt/migrationaufenthalt-node.html' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['germany permanent residence after study', 'niederlassungserlaubnis', 'settlement permit germany', 'pr in germany for international students', 'germany blue card to pr'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Permanent residence', value: 'Settlement permit (Niederlassungserlaubnis)' },
+      { label: 'Typical route', value: 'Study → job-search permit → qualified employment / EU Blue Card → settlement' },
+      { label: 'Common conditions', value: 'Qualifying work period, pension contributions, German language (verify)' },
+      { label: 'Framing', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'netherlands-permanent-residence-after-study-explained',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Netherlands Permanent Residence After Study, Explained',
+    descriptionEn:
+      'How a permanent-residence pathway can follow study and work in the Netherlands — as neutral official facts. Defer to the IND; this is not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Permanent residence in the Netherlands',
+        bodyEn:
+          'In the Netherlands, after a qualifying period of lawful residence a non-EU national may be able to apply for a permanent residence permit. The Netherlands offers both a national permanent residence permit and, separately, the EU long-term residence status, and the Immigration and Naturalisation Service (IND) sets out the conditions for each.\n\nThis guide explains the concept. The exact conditions are decided by the IND and can change, so confirm the current rules on the official IND source.',
+      },
+      {
+        headingEn: 'How study can lead toward it',
+        bodyEn:
+          'A typical sequence is: a residence permit for study, then the orientation-year permit (the zoekjaar) that lets recent graduates look for work, then a work-related residence permit, and — after enough continuous lawful residence — the possibility of applying for permanent residence. Time on a student permit may count toward the qualifying period differently than other permits, so check how it is treated.\n\nEach step is a separate permission and none is guaranteed. Whether you can apply for permanent residence depends on your circumstances and the IND\'s decision.',
+        bullets: [
+          'Residence permit for study — during your programme',
+          'Orientation year (zoekjaar) — to search for work after graduating',
+          'Work-related residence permit (for example, highly skilled migrant)',
+          'Permanent residence — national permit or EU long-term residence, once conditions are met',
+        ],
+      },
+      {
+        headingEn: 'Conditions usually involved',
+        bodyEn:
+          'Dutch permanent-residence rules generally consider continuous lawful residence for a qualifying period, sufficient and lasting independent income, and the civic-integration requirement, which can include passing an integration exam. The way student years count toward the residence period differs from other permit types.\n\nThe exact period, income level, and integration requirement are set by Dutch law and applied by the IND, and can change. Verify the current conditions on the official IND source before relying on them.',
+      },
+      {
+        headingEn: 'Where to confirm the official rules',
+        bodyEn:
+          'The Immigration and Naturalisation Service (IND) is the official authority and publishes the conditions for the permanent residence permit and the EU long-term residence status, as well as the orientation-year and work permits that can precede them. Study in NL (the official national study portal) is a useful starting point for the study and orientation-year stages.\n\nConfirm every condition and figure on these official sources. This guide is general information, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I get permanent residence in the Netherlands after studying?',
+        answerEn:
+          'A permanent-residence pathway can follow study and work after a qualifying period of lawful residence, but it is not automatic. The conditions are set by the IND and can change — verify them on the official IND source.',
+      },
+      {
+        questionEn: 'What is the orientation year (zoekjaar)?',
+        answerEn:
+          'The orientation year is a residence permit that lets recent graduates stay in the Netherlands to look for work. It is one step that can come between study and a work permit. Check the current conditions on the IND and Study in NL.',
+      },
+      {
+        questionEn: 'Is there an integration requirement for permanent residence?',
+        answerEn:
+          'Dutch permanent-residence rules generally include a civic-integration requirement, which can involve passing an integration exam, alongside residence and income conditions. The exact requirement can change, so confirm it on the official IND source.',
+      },
+      {
+        questionEn: 'Does the Netherlands offer EU long-term residence too?',
+        answerEn:
+          'Yes — the Netherlands offers both a national permanent residence permit and the EU long-term residence status, each with its own conditions set by the IND. Read the IND source for how each applies to your situation.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['permanent-residence-pathways-in-europe-explained', 'eu-long-term-residence-permit-explained', 'study-in-netherlands-from-india', 'germany-permanent-residence-after-study-explained'],
+    sources: [
+      { label: 'IND — Immigration and Naturalisation Service (Netherlands)', url: 'https://ind.nl/en' },
+      { label: 'Study in NL — official national study portal', url: 'https://www.studyinnl.org' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['netherlands permanent residence after study', 'pr in netherlands for international students', 'zoekjaar orientation year netherlands', 'ind permanent residence permit', 'stay in netherlands after graduation'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Authority', value: 'Immigration and Naturalisation Service (IND)' },
+      { label: 'Typical route', value: 'Study → orientation year (zoekjaar) → work permit → permanent residence' },
+      { label: 'Options', value: 'National permanent residence permit OR EU long-term residence' },
+      { label: 'Framing', value: 'General information, not immigration advice' },
+    ],
+  },
+  {
+    slug: 'is-europe-good-for-international-students',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Is Europe Good for International Students?',
+    descriptionEn:
+      'A balanced, factual look at studying in Europe — the genuine strengths and the practical things to weigh up — without overselling. Verify specifics on official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'A factual way to think about it',
+        bodyEn:
+          'Europe is not one place but many countries, each with its own universities, languages, costs, and rules. So the honest answer to "is Europe good for international students?" is: it depends on the country, the programme, and what matters to you. The aim of this guide is to lay out real considerations, not to sell a destination.\n\nThe best approach is to compare specific countries and universities against your own priorities — field of study, budget, language, and the kind of experience you want — and to verify the details that matter on official sources.',
+      },
+      {
+        headingEn: 'Commonly cited strengths',
+        bodyEn:
+          'Several features draw international students to European study destinations. Many European universities appear in respected international rankings such as the QS World University Rankings and the Times Higher Education (THE) World University Rankings — always read a ranking as the view of the body that issued it, not as an absolute measure.\n\nOther frequently noted points include a wide choice of English-taught programmes (especially at master\'s level), strong research output in many fields, and, in some countries, lower or no tuition at public universities for certain students — though fees, eligibility, and living costs vary widely and must be checked per country and programme.',
+        bullets: [
+          'Many universities ranked by QS and THE (read each ranking as that body\'s view)',
+          'A wide range of English-taught programmes, especially master\'s level',
+          'Established research strength in numerous fields',
+          'Tuition and living costs that vary a lot by country — verify per programme',
+        ],
+      },
+      {
+        headingEn: 'Practical things to weigh up',
+        bodyEn:
+          'Alongside the strengths, there are practical factors worth planning for. Local language can matter for daily life and for some programmes even where the degree is taught in English. Cost of living differs sharply between cities and countries. Visa, residence, and post-study work rules are set by each national government and change over time.\n\nNone of these is a reason for or against — they are simply things to research for your specific destination so there are no surprises. Treat visa and residence questions as official facts to verify, not assumptions.',
+      },
+      {
+        headingEn: 'How to decide for your situation',
+        bodyEn:
+          'A practical method is to shortlist countries and universities that offer your field, then compare each on the dimensions that matter to you — admission requirements, language of instruction, tuition and living costs, scholarships, and the official post-study and residence rules. Programmes such as Erasmus+ also support some forms of study and exchange in Europe.\n\nThere are no guarantees in admissions, funding, work, or residence — each is decided on its own terms by universities and authorities. Use official sources to confirm the facts and decide what fits you best.',
+      },
+      {
+        headingEn: 'Where to confirm the facts',
+        bodyEn:
+          'For trustworthy information, use each country\'s official national study portal and government immigration website, the official websites of the universities you are considering, and EU-level resources such as the Erasmus+ and Study in Europe pages. Read rankings on the issuing body\'s own site.\n\nThis guide offers balanced orientation, not a recommendation, and visa or residence points here are general information, not immigration advice. Verify the specifics on the official sources for your chosen country and programme.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Europe a good place to study abroad?',
+        answerEn:
+          'It depends on the country, the programme, and your priorities — Europe is many countries with different universities, costs, languages, and rules. Compare specific options against what matters to you and verify the details on official sources. This guide gives balanced facts, not a recommendation.',
+      },
+      {
+        questionEn: 'Are European universities highly ranked?',
+        answerEn:
+          'Many European universities appear in international rankings such as QS and THE. A ranking reflects the methodology of the body that issued it, so read it as that body\'s view rather than an absolute measure, and check the issuing source directly.',
+      },
+      {
+        questionEn: 'Can I study in Europe in English?',
+        answerEn:
+          'Many European universities offer English-taught programmes, especially at master\'s level, though availability varies by country and field and some programmes still require local language. Confirm the language of instruction on the official university and national study-portal sources.',
+      },
+      {
+        questionEn: 'Is studying in Europe affordable?',
+        answerEn:
+          'Tuition and living costs vary widely by country, city, and programme — some public universities charge lower or no tuition for certain students, while others and most living costs differ a lot. Verify the current figures on the official sources for your specific country and programme.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['permanent-residence-pathways-in-europe-explained', 'study-in-germany-from-india', 'study-in-france-from-india', 'study-in-netherlands-from-india'],
+    sources: [
+      { label: 'European Commission — Study in Europe', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'Erasmus+ — official EU programme', url: 'https://erasmus-plus.ec.europa.eu/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['is europe good for international students', 'study in europe for international students', 'best country in europe to study', 'studying in europe pros and cons', 'study abroad in europe'],
+    tags: ['work-and-stay-europe'],
+    keyFacts: [
+      { label: 'Reality', value: 'Europe is many countries — strengths and costs vary by country and programme' },
+      { label: 'Rankings', value: 'Many universities ranked by QS and THE (read as the issuer\'s view)' },
+      { label: 'English programmes', value: 'Widely available, especially at master\'s level (verify per programme)' },
+      { label: 'Guarantee', value: 'None on admission, funding, work or residence — verify on official sources' },
+    ],
+  },
+  {
+    slug: 'student-accommodation-in-europe-guide',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Student Accommodation in Europe: A Practical Guide',
+    descriptionEn:
+      'How international students find housing in Europe — university halls vs private studios vs shared flats, typical cost ranges in euros, where to search, and what to check before you sign.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The main types of student housing',
+        bodyEn:
+          'Across most European study destinations, students choose between three broad options: university-managed student halls (often called student residences, dormitories, or "Studentenwohnheim" in Germany), private studios or apartments rented from a landlord, and shared flats where several students split one apartment (the German "WG" / Wohngemeinschaft, the French "colocation").\n\nHalls are usually the simplest entry point because they are aimed at students and bills are often included, but places are limited. Private and shared rentals give more choice and independence but involve a separate housing search and a tenancy contract.',
+        bullets: [
+          'University halls / student residences — student-only, often furnished, bills frequently included',
+          'Private studio or apartment — your own space, your own tenancy contract',
+          'Shared flat (WG / colocation / house-share) — split rent and common areas with flatmates',
+        ],
+      },
+      {
+        headingEn: 'What it typically costs (ranges only)',
+        bodyEn:
+          'Rent varies enormously by country and especially by city — a room in a large capital usually costs much more than in a smaller university town. As a broad orientation, monthly student rent across Europe commonly falls somewhere in the low-to-mid hundreds of euros for a hall place or a room in a shared flat, and higher for a private studio in an expensive city, often with a one-off deposit on top.\n\nThese are only rough ranges to set expectations, not quotes. Always check the current advertised price for the specific city, building, and room before budgeting, since housing costs change and differ widely.',
+        bullets: [
+          'University halls / shared rooms — usually the lower end of the range',
+          'Private studios in major cities — usually the higher end',
+          'Budget separately for a deposit (often refundable) and any agency or registration fees',
+        ],
+      },
+      {
+        headingEn: 'Where and how to search',
+        bodyEn:
+          'Start with your university\'s international office or housing service — many institutions either run their own halls or maintain lists of vetted private options for incoming students. National "study in" portals also publish housing guidance for each country.\n\nFor private and shared rentals, students typically use country-specific housing platforms and student-union noticeboards. Apply early: in popular cities demand peaks just before the semester starts, and hall places can fill months ahead.',
+      },
+      {
+        headingEn: 'Read the contract before you sign',
+        bodyEn:
+          'A tenancy contract is a legal agreement, so understand it before committing. Check what the rent includes (utilities, internet, furniture), the deposit amount and how it is returned, the notice period, and whether the contract is fixed-term or open-ended.\n\nMany European countries also require you to register your residential address with the local authority shortly after moving in (for example the "Anmeldung" in Germany). Confirm the registration step for your country and city, because it is often needed for other essentials such as opening a bank account.',
+      },
+      {
+        headingEn: 'Avoiding housing scams',
+        bodyEn:
+          'Be cautious with any listing that pressures you to pay a deposit or full rent before you have seen the place, signed a contract, or verified the landlord. Never transfer money for a flat you have not been able to confirm exists.\n\nWhen in doubt, route your search through your university housing office or an official student service. This is general guidance, not legal or financial advice — for tenancy rights and deposit rules, rely on the official sources for the specific country.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Should I arrange housing before I arrive in Europe?',
+        answerEn:
+          'Wherever possible, yes — at least a temporary arrangement. Hall places and rooms in popular cities are limited and fill early, so apply as soon as you have an offer and ask your university\'s housing service for guidance.',
+      },
+      {
+        questionEn: 'How much should I budget for rent?',
+        answerEn:
+          'It depends heavily on the country and city, with capitals typically much more expensive than smaller towns. Check the current advertised price for your specific city and room rather than relying on a single figure, and budget separately for a deposit.',
+      },
+      {
+        questionEn: 'Do I have to register my address?',
+        answerEn:
+          'Many European countries require you to register your residential address with the local authority soon after moving in. The step and its name vary by country, and it is often needed for things like banking, so confirm it on the official source for your destination.',
+      },
+      {
+        questionEn: 'How do I avoid rental scams?',
+        answerEn:
+          'Never pay a deposit or rent for a place you have not verified or for a landlord you cannot confirm, and be wary of pressure to pay before signing a contract. Using your university housing office or an official student service reduces the risk.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['opening-a-bank-account-as-a-student-in-europe', 'part-time-work-and-budgeting-for-students-in-europe', 'health-insurance-for-students-in-europe'],
+    sources: [
+      { label: 'Study in Germany — official portal (housing & living)', url: 'https://www.study-in-germany.com/en/' },
+      { label: 'Campus France — official portal (accommodation)', url: 'https://www.campusfrance.org/en' },
+      { label: 'Study in NL — official Netherlands portal', url: 'https://www.studyinnl.org/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['student accommodation in europe', 'student housing germany', 'find student housing in europe', 'student halls vs shared flat', 'cost of student accommodation europe'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'Main options', value: 'University halls, private studio, shared flat (WG / colocation)' },
+      { label: 'Cost', value: 'Varies widely by city — verify current advertised price (EUR)' },
+      { label: 'First step', value: 'University international / housing office' },
+      { label: 'Watch for', value: 'Deposits, contract terms, address registration, scams' },
+    ],
+  },
+  {
+    slug: 'health-insurance-for-students-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Health Insurance for Students in Europe',
+    descriptionEn:
+      'Why health insurance matters for international students in Europe — public vs private cover, why it is often required for enrolment or a student visa, and how to confirm the rules for your destination.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why health insurance is essential',
+        bodyEn:
+          'Health insurance is one of the practical essentials of studying in Europe, and in many countries it is not optional. Several destinations require proof of valid health cover before you can enrol at a university or be granted a student visa or residence permit.\n\nBeyond the formal requirement, cover protects you from potentially high medical costs if you fall ill or have an accident while abroad. Treat sorting out insurance as a core step in your pre-arrival checklist, alongside housing and registration.',
+      },
+      {
+        headingEn: 'Public vs private cover',
+        bodyEn:
+          'Many European countries offer students access to a statutory or public health insurance scheme, sometimes at a reduced student rate, while in other cases students take out private health insurance that meets the country\'s requirements. Which route applies can depend on your age, your country of origin, and whether you are studying within an EU/EEA framework.\n\nFor example, Germany distinguishes between public ("gesetzlich") and private ("privat") student health insurance, with specific rules on who can choose which. Because the categories, eligibility, and minimum cover differ by country, confirm what counts as acceptable insurance on the official source for your destination rather than assuming.',
+        bullets: [
+          'Public / statutory schemes — sometimes available to students at a student rate',
+          'Private insurance — must meet the country\'s minimum requirements to be accepted',
+          'EU/EEA students may have additional options under EU healthcare coordination rules',
+        ],
+      },
+      {
+        headingEn: 'The EHIC / EU healthcare coordination',
+        bodyEn:
+          'Students who are nationals of an EU or EEA country may be able to use a European Health Insurance Card (EHIC) for necessary state-provided healthcare during a stay in another EU/EEA country, under EU coordination rules. The EHIC is not a substitute for comprehensive insurance and does not cover everything.\n\nIf you are coming from outside the EU/EEA, an EHIC generally does not apply to you and you will normally need country-specific insurance. Check the official EU and national sources for exactly what is required in your situation.',
+      },
+      {
+        headingEn: 'Insurance and your visa or enrolment',
+        bodyEn:
+          'In many countries the visa, residence-permit, or university enrolment process asks for documented proof of health insurance valid for your stay. The accepted form, minimum coverage level, and whether public or private is required are set by the national authorities and the university.\n\nBecause these specifics vary and can change, always verify the current requirement on the official government and university sources for your destination before you pay for a policy. This is general information, not insurance or legal advice.',
+      },
+      {
+        headingEn: 'Choosing a policy without endorsement',
+        bodyEn:
+          'GlobalStudyBoard does not recommend or endorse any specific insurer or product. When comparing options, focus on whether a policy is officially accepted for your visa and enrolment, what it covers (doctor visits, hospital stays, prescriptions, repatriation), any excess or limits, and how long it is valid.\n\nYour university\'s international office can usually point you to the accepted route for its country, which is the safest way to make sure your cover will be recognised.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is health insurance mandatory for students in Europe?',
+        answerEn:
+          'In many European countries, yes — proof of valid health cover is often required for enrolment, a student visa, or a residence permit. The exact requirement varies by country, so confirm it on the official source for your destination.',
+      },
+      {
+        questionEn: 'Can I use an EHIC if I am from outside the EU?',
+        answerEn:
+          'Generally no. The European Health Insurance Card applies to EU/EEA nationals for state-provided healthcare in another EU/EEA country. Students from outside the EU/EEA usually need country-specific insurance.',
+      },
+      {
+        questionEn: 'Public or private insurance — which do I need?',
+        answerEn:
+          'It depends on the country and on factors such as your age and origin. Some countries offer students a public scheme; others expect a qualifying private policy. Verify which is accepted on the official national and university sources.',
+      },
+      {
+        questionEn: 'How much does student health insurance cost?',
+        answerEn:
+          'Costs vary by country, provider, and type of cover, so we do not quote a figure. Check current rates from accepted providers for your destination, and confirm the minimum coverage your visa or university requires.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['student-accommodation-in-europe-guide', 'opening-a-bank-account-as-a-student-in-europe', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Study in Germany — official portal (health insurance)', url: 'https://www.study-in-germany.com/en/' },
+      { label: 'Your Europe (EU) — European Health Insurance Card', url: 'https://europa.eu/youreurope/citizens/health/unplanned-healthcare/temporary-stays/index_en.htm' },
+      { label: 'Study in NL — official Netherlands portal', url: 'https://www.studyinnl.org/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['health insurance for students in europe', 'student health insurance germany', 'public vs private health insurance students', 'ehic student', 'health insurance for student visa europe'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'Often required for', value: 'University enrolment, student visa / residence permit' },
+      { label: 'Types', value: 'Public / statutory vs private (varies by country)' },
+      { label: 'EU/EEA students', value: 'May use EHIC for necessary state healthcare (not full cover)' },
+      { label: 'Verify', value: 'Accepted policy + minimum cover on official national source' },
+    ],
+  },
+  {
+    slug: 'opening-a-bank-account-as-a-student-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Opening a Bank Account as a Student in Europe',
+    descriptionEn:
+      'A factual guide to opening a student bank account in Europe — why you may need one, the documents banks typically ask for, and how the process differs between countries.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Why you may need a local account',
+        bodyEn:
+          'A local bank account makes everyday student life simpler: paying rent, receiving any stipend or part-time wages, and setting up direct debits for utilities or insurance. In some countries a local account is also tied to other steps in settling in.\n\nNotably, several countries that require a "blocked account" to prove living funds for a student visa — Germany being the well-known example — expect you to manage that money through a specific account once you arrive. Always confirm whether and what kind of account your destination expects.',
+      },
+      {
+        headingEn: 'Documents banks typically ask for',
+        bodyEn:
+          'Requirements vary by country and bank, but students are commonly asked for a valid passport, their visa or residence permit, proof of enrolment at the university, and proof of a local address (which is why address registration often comes first).\n\nSome banks may also ask for a local tax or identification number where one applies. Because the exact list differs, check the specific bank\'s requirements and your university\'s guidance before you go.',
+        bullets: [
+          'Valid passport (and visa / residence permit where applicable)',
+          'Proof of university enrolment / admission',
+          'Proof of local address (often after address registration)',
+          'A local tax or ID number, where the country uses one',
+        ],
+      },
+      {
+        headingEn: 'How the process differs by country',
+        bodyEn:
+          'In some countries you can begin opening an account online or even before arrival; in others you must visit a branch in person with original documents. Processing times and the documents accepted also vary.\n\nYour university\'s international office is a reliable starting point, since it usually knows which banks are commonly used by students locally and what each one requires. National "study in" portals also outline the typical steps for their country.',
+      },
+      {
+        headingEn: 'No product endorsement — what to compare',
+        bodyEn:
+          'GlobalStudyBoard does not recommend any specific bank or account. When comparing options, look at any account or card fees, whether there is a student account with reduced charges, ease of opening as a newcomer, and access to ATMs and online banking in English.\n\nFees, eligibility, and features change, so verify current details directly with the bank. This is general guidance, not financial advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a local bank account to study in Europe?',
+        answerEn:
+          'It is not always mandatory, but a local account makes paying rent, receiving wages, and setting up direct debits much easier. In some countries it also connects to other steps, such as managing a blocked account for the visa.',
+      },
+      {
+        questionEn: 'What documents do I need to open an account?',
+        answerEn:
+          'Banks commonly ask for a valid passport, your visa or residence permit, proof of enrolment, and proof of a local address; some also want a local tax or ID number. The exact list varies, so check with the specific bank.',
+      },
+      {
+        questionEn: 'Can I open an account before I arrive?',
+        answerEn:
+          'In some countries and with some banks you can start online or before arrival; in others you must visit a branch in person. Confirm the process for your destination and bank, ideally via your university\'s international office.',
+      },
+      {
+        questionEn: 'Which bank is best for students?',
+        answerEn:
+          'We do not endorse any bank. Compare account fees, whether a reduced-cost student account exists, ease of opening as a newcomer, and English-language online banking, and verify the current terms directly with the bank.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['student-accommodation-in-europe-guide', 'part-time-work-and-budgeting-for-students-in-europe', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Study in Germany — official portal (after arrival / finances)', url: 'https://www.study-in-germany.com/en/' },
+      { label: 'Campus France — official portal (daily life)', url: 'https://www.campusfrance.org/en' },
+      { label: 'Study in NL — official Netherlands portal', url: 'https://www.studyinnl.org/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['open a bank account in europe as a student', 'student bank account germany', 'documents to open bank account europe', 'blocked account germany bank', 'international student bank account europe'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'Typical documents', value: 'Passport, visa/permit, enrolment proof, local address' },
+      { label: 'Order', value: 'Address registration often comes before the account' },
+      { label: 'Process', value: 'Online or in-branch — varies by country and bank' },
+      { label: 'Note', value: 'No product endorsement — verify fees with the bank' },
+    ],
+  },
+  {
+    slug: 'part-time-work-and-budgeting-for-students-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Part-Time Work and Budgeting for Students in Europe',
+    descriptionEn:
+      'How part-time work and budgeting fit together for international students in Europe — why work-hour limits are tied to each country\'s visa rules, and how to plan a realistic student budget.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Work-hour limits are set by visa rules',
+        bodyEn:
+          'In most European countries international students on a student visa or residence permit may work part-time, but the number of hours allowed is set by that country\'s immigration rules — not by the university or employer. These limits differ between countries and can change.\n\nBecause exceeding a permitted limit can affect your immigration status, never rely on a generic number. Always confirm the current work-hour rules for your destination on the official government immigration source before taking a job. This is general information, not immigration advice.',
+        bullets: [
+          'Permitted hours are defined by the national immigration / visa rules',
+          'Limits vary by country and can be different in term-time vs holidays',
+          'Verify the current rule on the official government source before working',
+        ],
+      },
+      {
+        headingEn: 'Where students commonly find part-time jobs',
+        bodyEn:
+          'Typical student jobs include on-campus roles, hospitality, retail, tutoring, and student assistant positions at the university (in Germany, "HiWi" / studentische Hilfskraft roles are common). University career and job portals and student-union noticeboards are good starting points.\n\nKeep in mind that earnings from part-time work are meant to supplement, not fully fund, your studies. No job is guaranteed, and you should not plan your finances assuming a specific level of part-time income.',
+      },
+      {
+        headingEn: 'Building a realistic student budget',
+        bodyEn:
+          'A workable budget starts with your fixed monthly costs — rent, health insurance, and any tuition or semester contribution — then adds living costs such as food, local transport, study materials, and a buffer for the unexpected. Costs vary widely between countries and especially between large cities and smaller towns.\n\nMany national "study in" portals publish indicative living-cost guidance for their country. Use these as a starting point and check current figures, since prices change. Do not treat any single figure as a guarantee of what your costs will be.',
+        bullets: [
+          'Fixed costs — rent, health insurance, tuition / semester contribution',
+          'Living costs — food, transport, phone/internet, study materials',
+          'Always keep a buffer for emergencies and one-off setup costs',
+        ],
+      },
+      {
+        headingEn: 'Proof of funds and blocked accounts',
+        bodyEn:
+          'Several countries ask incoming students to show they can cover their living costs as part of the visa process, sometimes through a "blocked account" (notably Germany) holding a set amount you draw down monthly. The required amount is set by the authorities and is updated periodically.\n\nWe do not quote the figure here because it changes; confirm the current amount and the accepted way to prove funds on the official government source for your destination.',
+      },
+      {
+        headingEn: 'Tax and contributions',
+        bodyEn:
+          'If you work, you may have tax and social-contribution obligations, and some countries offer student-specific arrangements up to certain earnings thresholds. The rules are country-specific and can change.\n\nCheck the official tax and immigration sources for your destination, and ask your university\'s international office, rather than assuming the rules from another country apply. This is general guidance, not tax or financial advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many hours can I work as a student in Europe?',
+        answerEn:
+          'It depends entirely on the country — the permitted hours are set by each country\'s immigration rules and can differ in term-time and holidays. Confirm the current limit for your destination on the official government immigration source before taking a job.',
+      },
+      {
+        questionEn: 'Can part-time work cover all my expenses?',
+        answerEn:
+          'No — you should not plan on that. Part-time earnings are meant to supplement your funds, no job is guaranteed, and work-hour limits cap how much you can earn. Budget so your studies are funded without relying on a set level of part-time income.',
+      },
+      {
+        questionEn: 'What is a blocked account?',
+        answerEn:
+          'It is a way some countries (notably Germany) require students to prove they can cover living costs, holding a set amount you withdraw monthly. The amount is set by the authorities and changes, so verify the current figure on the official source.',
+      },
+      {
+        questionEn: 'Will I have to pay tax on a student job?',
+        answerEn:
+          'Possibly — tax and social-contribution rules vary by country, and some offer student-specific arrangements up to certain thresholds. Check the official tax and immigration sources for your destination and ask your university\'s international office.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['student-accommodation-in-europe-guide', 'opening-a-bank-account-as-a-student-in-europe', 'study-in-germany-from-india'],
+    sources: [
+      { label: 'Make it in Germany — official portal (working as a student)', url: 'https://www.make-it-in-germany.com/en/' },
+      { label: 'Study in Germany — official portal (financing & blocked account)', url: 'https://www.study-in-germany.com/en/' },
+      { label: 'Campus France — official portal (working in France)', url: 'https://www.campusfrance.org/en' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['part time work for students in europe', 'student work hours europe', 'student budget in europe', 'cost of living for students europe', 'working while studying in germany'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'Work hours', value: 'Set by each country\'s visa rules — verify on official source' },
+      { label: 'Income', value: 'Supplements funds; no job or income guaranteed' },
+      { label: 'Budget basics', value: 'Rent + insurance + tuition + living costs + buffer' },
+      { label: 'Proof of funds', value: 'Some countries require it (e.g. blocked account) — amount varies' },
+    ],
+  },
+  {
+    slug: 'schengen-travel-for-students-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Schengen Travel for Students in Europe',
+    descriptionEn:
+      'What international students should know about travelling within the Schengen area on a national student visa or residence permit — the 90/180 context, what your permit covers, and why you must verify the official rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Schengen area is',
+        bodyEn:
+          'The Schengen area is a group of European countries that have agreed to allow travel between them without routine internal border checks. For students, this is what makes it practical to visit other member countries during your studies.\n\nMembership and the precise rules are defined by official EU and national sources. This guide explains the general framework only — it does not interpret policy, and the official sources are authoritative.',
+      },
+      {
+        headingEn: 'Studying on a national visa or residence permit',
+        bodyEn:
+          'If your course lasts longer than a short stay, you typically study on a long-stay national visa or a residence permit issued by the country where you study, rather than a short-stay Schengen visa. That national permit authorises your stay in the issuing country.\n\nHolding a valid residence permit or long-stay visa from one Schengen country generally also lets you travel to other Schengen countries for short visits, subject to conditions set out in the official rules. Always confirm what your specific permit allows on the official source for the country that issued it.',
+      },
+      {
+        headingEn: 'The 90/180 rule for short stays',
+        bodyEn:
+          'For short visits within the Schengen area, a commonly referenced framework is the "90/180" rule — broadly, a limit on short-stay days within any rolling 180-day period for those travelling on that basis. Importantly, how this interacts with your status depends on whether you are travelling as a short-stay visitor or as the holder of a residence permit from a Schengen country, which are treated differently.\n\nBecause the application of these rules to a student\'s exact situation can be nuanced, do not rely on a summary. Check the official EU immigration portal and the national authority for precise, current rules. This is general information, not immigration advice.',
+        bullets: [
+          'The 90/180 framework concerns short stays, counted over a rolling period',
+          'Residence-permit holders and short-stay visitors are treated differently',
+          'Confirm how it applies to your status on the official source',
+        ],
+      },
+      {
+        headingEn: 'Carry the right documents when you travel',
+        bodyEn:
+          'Even without routine internal border checks, you should carry valid travel and identity documents when moving between Schengen countries, and checks can still happen. Typically that means your passport plus your valid residence permit or long-stay visa, and it is wise to keep proof of enrolment to hand.\n\nRequirements and any temporary checks are set by the authorities and can change, so verify what to carry before you travel on the official government sources.',
+      },
+      {
+        headingEn: 'Travel outside Schengen and re-entry',
+        bodyEn:
+          'If you plan to travel to a non-Schengen country (or your home country) and return, make sure your visa or residence permit remains valid for re-entry, and check whether a re-entry visa or any additional document is needed.\n\nRules on re-entry and on travelling while a permit is being renewed vary by country. Confirm the specifics with the official immigration authority of the country where you study before making travel plans.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I travel to other European countries on my student visa?',
+        answerEn:
+          'Holding a valid residence permit or long-stay visa from one Schengen country generally lets you make short visits to other Schengen countries, subject to the official conditions. Confirm what your specific permit allows on the official source for the issuing country.',
+      },
+      {
+        questionEn: 'What is the 90/180 rule?',
+        answerEn:
+          'It is a commonly referenced framework limiting short-stay days within any rolling 180-day period for short-stay travel. How it applies depends on whether you are a short-stay visitor or a residence-permit holder, so verify your situation on the official EU and national sources.',
+      },
+      {
+        questionEn: 'Are there border checks within Schengen?',
+        answerEn:
+          'There are generally no routine internal border checks between Schengen countries, but checks can still occur and temporary controls are sometimes introduced. Carry your passport and valid permit, and verify current requirements on the official sources before travelling.',
+      },
+      {
+        questionEn: 'What should I check before leaving and re-entering Europe?',
+        answerEn:
+          'Make sure your visa or residence permit is valid for re-entry and check whether a re-entry visa or extra document is needed, especially if a permit is being renewed. Rules vary by country, so confirm with the official immigration authority where you study.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['student-accommodation-in-europe-guide', 'health-insurance-for-students-in-europe', 'part-time-work-and-budgeting-for-students-in-europe'],
+    sources: [
+      { label: 'European Commission — EU Immigration Portal', url: 'https://immigration-portal.ec.europa.eu/index_en' },
+      { label: 'Your Europe (EU) — travel documents & short stays', url: 'https://europa.eu/youreurope/citizens/travel/entry-exit/index_en.htm' },
+      { label: 'France-Visas — official French visa portal', url: 'https://france-visas.gouv.fr/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['schengen travel for students', 'travel within europe on student visa', '90/180 rule schengen students', 'student residence permit schengen travel', 'travelling between schengen countries student'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'Long courses', value: 'Usually a national long-stay visa / residence permit' },
+      { label: 'Short visits', value: 'Permit holders may travel to other Schengen countries (conditions apply)' },
+      { label: '90/180', value: 'Short-stay framework — application depends on your status' },
+      { label: 'Always', value: 'Carry passport + valid permit; verify on official source' },
+    ],
+  },
+  {
+    slug: 'best-cities-to-study-in-europe',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Best Cities to Study in Europe',
+    descriptionEn:
+      'A neutral look at major European student cities — what each is known for, the kind of cost-of-living differences to expect, and how to choose the right city for you rather than chase a ranking.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'There is no single "best" city — only the best fit for you',
+        bodyEn:
+          'Europe has dozens of cities that host large, international student communities, and no single one is objectively the best for everyone. The right choice depends on your course, budget, language plans, and the kind of student life you want.\n\nThink of "best city" as a personal match rather than a fixed league table. A city that is ideal for an English-taught master\'s in business may be a poor fit for someone who wants low living costs or a particular research lab, and vice versa.',
+      },
+      {
+        headingEn: 'Cities students often consider',
+        bodyEn:
+          'Across the continent, a number of cities are widely known for hosting many universities and international students. Each has its own academic strengths, languages of instruction, and atmosphere — describe them by what they offer, not by ranking them against one another.\n\nUse this only as a starting list to research further on each university\'s and city\'s official pages.',
+        bullets: [
+          'Germany — Berlin, Munich, and other university cities with many English-taught master\'s options',
+          'France — Paris and large regional student cities; see Campus France for the full list',
+          'Netherlands — Amsterdam, Delft, and other cities with English-taught programmes',
+          'Italy — Milan, Bologna, Rome and historic university cities',
+          'Spain — Madrid, Barcelona and other regional hubs',
+          'Nordics — Stockholm, Copenhagen, Helsinki and Oslo for those interested in Scandinavia',
+        ],
+      },
+      {
+        headingEn: 'Cost of living varies a lot by city',
+        bodyEn:
+          'One of the biggest differences between European student cities is the cost of living — rent in particular can vary widely between a large capital and a smaller university town in the same country. Capitals and high-demand cities tend to be more expensive, while smaller cities can be more affordable.\n\nGlobalStudyBoard does not publish specific monthly cost figures because they change frequently and differ by city and lifestyle. Check each university\'s official "cost of living" or "student budget" page and the national student-information portal for current estimates before you decide.',
+      },
+      {
+        headingEn: 'How to choose your city',
+        bodyEn:
+          'Start from your course and finances, then narrow by city. The university and programme usually matter more than the city itself, so let the academic fit lead and treat the city as a tie-breaker.',
+        bullets: [
+          'Does a university there offer your exact course, in a language you can study in?',
+          'What is the realistic cost of living, including rent, on the official student-budget page?',
+          'Is student housing available, and how competitive is it?',
+          'What are the visa or residence-permit rules for that country?',
+          'Does the city\'s size, climate and student community suit how you like to live and study?',
+        ],
+      },
+      {
+        headingEn: 'Verify everything on official sources',
+        bodyEn:
+          'City reputations and "student city" lists you see online are opinions and can be out of date. Anything that affects your decision — tuition, living costs, housing, and visa rules — should be confirmed on official university and government pages for the current year.\n\nThis guide is general information to help you compare, not a recommendation of any one city over another.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which is the best student city in Europe?',
+        answerEn:
+          'There is no single best city — it depends on your course, budget, language, and preferences. Use city lists only as a starting point and choose based on the university and programme that fit you, then verify costs and visa rules on official sources.',
+      },
+      {
+        questionEn: 'Are capital cities always more expensive?',
+        answerEn:
+          'Capitals and high-demand cities are often more expensive, especially for rent, while smaller university towns can be more affordable. Costs vary by city and lifestyle, so check each university\'s official student-budget page for current estimates.',
+      },
+      {
+        questionEn: 'Should I pick the city or the university first?',
+        answerEn:
+          'Generally start from the university and course that fit your goals, then consider the city. The programme and its language of instruction usually matter more than the city itself.',
+      },
+      {
+        questionEn: 'Can I study in English in these cities?',
+        answerEn:
+          'Many cities offer English-taught programmes, especially at master\'s level, but availability varies by university and course. Always confirm the language of instruction on the official programme page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['why-study-in-europe-for-international-students', 'europe-vs-uk-vs-usa-for-international-students', 'how-to-study-in-the-nordic-countries'],
+    sources: [
+      { label: 'Study in Europe — official EU education portal', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'Campus France — official France study portal', url: 'https://www.campusfrance.org/en' },
+      { label: 'Study in Germany — official portal (DAAD)', url: 'https://www.study-in-germany.com/en/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['best cities to study in europe', 'best student cities europe', 'cheapest cities to study in europe', 'student cities in europe for international students', 'study in europe cost of living'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'How to choose', value: 'Match the university and course first, then the city' },
+      { label: 'Cost of living', value: 'Varies widely by city — verify on official student-budget pages' },
+      { label: 'Language', value: 'English-taught programmes available in many cities; confirm per course' },
+      { label: 'Verify on', value: 'Official university + national student-information portals' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-the-nordic-countries',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'How to Study in the Nordic Countries (Denmark, Finland, Norway)',
+    descriptionEn:
+      'An overview of studying in Denmark, Finland and Norway — how to apply, the residence-permit step, and how tuition differs for EU/EEA and non-EU students, with all volatile figures deferred to official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'What the Nordic countries offer',
+        bodyEn:
+          'Denmark, Finland and Norway each have respected public universities and a growing range of English-taught programmes, especially at master\'s level. They are often considered together as "the Nordics," but each country has its own admission system, tuition rules, and immigration process.\n\nTreat them as three separate destinations: apply through the right portal for each, and confirm the rules on that country\'s official sites.',
+      },
+      {
+        headingEn: 'How to apply in each country',
+        bodyEn:
+          'Application routes differ by country, and many universities have their own deadlines and entry requirements. Start from each country\'s official "study in" portal, which links to universities and application steps.',
+        bullets: [
+          'Denmark — see Study in Denmark (studyindenmark.dk) for programmes and how to apply',
+          'Finland — see Study in Finland (studyinfinland.fi); many programmes use the national Studyinfo portal',
+          'Norway — see Study in Norway (studyinnorway.no) for institutions and admission routes',
+          'Check each university\'s own page for course-specific requirements and deadlines',
+        ],
+      },
+      {
+        headingEn: 'Tuition: EU/EEA vs non-EU students',
+        bodyEn:
+          'Tuition rules in the Nordics depend heavily on your nationality. For students from the EU/EEA (and Switzerland), public-university tuition is often free or low; for students from outside the EU/EEA, several Nordic countries charge tuition fees for many programmes.\n\nGlobalStudyBoard does not publish specific fee amounts because they vary by country, university and programme and change each year. Confirm the exact tuition for your nationality and course on the official university page before applying.',
+      },
+      {
+        headingEn: 'Residence permit for studies',
+        bodyEn:
+          'After you are admitted, students from outside the EU/EEA generally need a residence permit (or, for short courses, a visa) to study in a Nordic country. Each country has its own immigration authority and requirements, including showing you can support yourself financially.\n\nApply through the correct official immigration authority for your destination, and confirm the current requirements and any financial-means figure on that government source. This is general information, not immigration advice — verify on the official government source before acting.',
+        bullets: [
+          'Denmark — the Danish Immigration Service / SIRI (nyidanmark.dk)',
+          'Finland — the Finnish Immigration Service (migri.fi)',
+          'Norway — the Norwegian Directorate of Immigration, UDI (udi.no)',
+        ],
+      },
+      {
+        headingEn: 'Costs, language and student life',
+        bodyEn:
+          'The Nordic countries can have a relatively high cost of living, so budget for rent and daily expenses alongside any tuition. Many master\'s programmes are taught in English, but learning some of the local language can help with daily life and certain jobs.\n\nCheck each university\'s official cost-of-living guidance and language requirements, and remember any work-while-studying rules are set by national immigration law and should be verified officially.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is studying in the Nordic countries free?',
+        answerEn:
+          'It depends on your nationality. For EU/EEA (and Swiss) students, public-university tuition is often free or low; for non-EU/EEA students, several Nordic countries charge tuition for many programmes. Confirm the exact fee for your course on the official university page.',
+      },
+      {
+        questionEn: 'Do I need a residence permit to study in the Nordics?',
+        answerEn:
+          'Students from outside the EU/EEA generally need a residence permit (or a visa for short courses) after admission. Apply through the country\'s official immigration authority and verify current requirements there. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Can I study in English in Denmark, Finland or Norway?',
+        answerEn:
+          'Yes, many programmes — especially master\'s — are taught in English, though availability varies by university and course. Always check the language of instruction on the official programme page.',
+      },
+      {
+        questionEn: 'How do I apply to a Nordic university?',
+        answerEn:
+          'Application routes differ by country; start from each country\'s official "study in" portal (Study in Denmark, Study in Finland, Study in Norway) and each university\'s own admissions page for deadlines and requirements.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['why-study-in-europe-for-international-students', 'best-cities-to-study-in-europe', 'how-to-study-in-switzerland-from-india-complete-guide'],
+    sources: [
+      { label: 'Study in Denmark — official portal', url: 'https://studyindenmark.dk/' },
+      { label: 'Study in Finland — official portal', url: 'https://www.studyinfinland.fi/' },
+      { label: 'Study in Norway — official portal', url: 'https://www.studyinnorway.no/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to study in the nordic countries', 'study in denmark finland norway', 'study in scandinavia for free', 'nordic universities for international students', 'tuition fees in nordic countries'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'Countries', value: 'Denmark, Finland, Norway — each with its own system' },
+      { label: 'Tuition', value: 'Often free for EU/EEA; fees for non-EU in several — verify officially' },
+      { label: 'Permit', value: 'Residence permit usually needed for non-EU after admission' },
+      { label: 'Verify on', value: 'studyindenmark.dk, studyinfinland.fi, studyinnorway.no + immigration authorities' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-switzerland-from-india-complete-guide',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'How to Study in Switzerland: Complete Guide',
+    descriptionEn:
+      'A complete overview of studying in Switzerland — how to apply, why tuition is often low but living costs are high, the cantonal residence-permit step, and language considerations, with figures deferred to official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Studying in Switzerland: the basics',
+        bodyEn:
+          'Switzerland has well-known public universities and federal institutes of technology, with programmes taught in German, French, Italian or English depending on the region and level. Master\'s and doctoral programmes in particular often have English-taught options.\n\nSwitzerland is not a member of the European Union, but it is part of the Schengen area, which affects travel and the type of permit you apply for. Treat its rules as Swiss-specific and confirm them on official Swiss sources.',
+      },
+      {
+        headingEn: 'How to apply',
+        bodyEn:
+          'You apply directly to the Swiss university or institute you want to attend; there is no single national application portal for all of them. Each institution sets its own entry requirements, deadlines, and language conditions.\n\nStart from swissuniversities.ch for an overview of recognised institutions, then follow the official admissions page of your chosen university for exact requirements.',
+        bullets: [
+          'Choose a recognised Swiss university or federal institute and your programme',
+          'Check the language of instruction and any required language certificate',
+          'Note that admission criteria for some programmes can be demanding — read the official requirements carefully',
+          'Apply directly through the institution\'s official admissions page by its deadline',
+        ],
+      },
+      {
+        headingEn: 'Tuition is often low, but living costs are high',
+        bodyEn:
+          'A notable feature of Switzerland is that tuition fees at public universities are often relatively low compared with some other countries, but the cost of living is high. This means your biggest expense is usually day-to-day living — rent, food, insurance and transport — rather than tuition.\n\nGlobalStudyBoard does not publish specific tuition or living-cost figures because they vary by institution and canton and change each year. Confirm current tuition on the university\'s official page and living-cost estimates on official student-information sources before you budget.',
+      },
+      {
+        headingEn: 'Residence permit and the cantonal system',
+        bodyEn:
+          'Switzerland is organised into cantons, and immigration formalities for students are handled at both the federal and cantonal level. After you are admitted, students generally need to obtain the appropriate visa and/or residence permit, and you typically register with the authorities in the canton where you will live.\n\nRequirements — including proof of sufficient financial means and health insurance — are set by Swiss law and the relevant cantonal authority. Verify the current process and figures on the State Secretariat for Migration (SEM) and your canton\'s official site. This is general information, not immigration advice — verify on the official government source before acting.',
+      },
+      {
+        headingEn: 'Language and student life',
+        bodyEn:
+          'The language you need depends on the region and your programme: parts of Switzerland are German-speaking, others French- or Italian-speaking, and some programmes are fully in English. Even with an English-taught course, some knowledge of the local language can help with daily life.\n\nCheck the official language requirements for your specific programme, and any work-while-studying rules with the Swiss authorities, since these are governed by national and cantonal law.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is tuition expensive in Switzerland?',
+        answerEn:
+          'Public-university tuition in Switzerland is often relatively low, but the cost of living is high, so living expenses usually form the larger part of your budget. Confirm current tuition and living-cost estimates on official university and student-information sources.',
+      },
+      {
+        questionEn: 'Is Switzerland part of the EU?',
+        answerEn:
+          'No. Switzerland is not an EU member, but it is part of the Schengen area, which affects travel and the type of visa or permit you apply for. Verify the current rules on official Swiss government sources.',
+      },
+      {
+        questionEn: 'How do I get a residence permit to study in Switzerland?',
+        answerEn:
+          'After admission, students generally need the appropriate visa and/or residence permit and usually register with the canton where they will live. Requirements are set by Swiss law and the cantonal authority — verify on the State Secretariat for Migration (SEM) and your canton. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Can I study in English in Switzerland?',
+        answerEn:
+          'Many master\'s and doctoral programmes offer English-taught options, while many bachelor\'s programmes are in German, French or Italian depending on the region. Confirm the language of instruction on the official programme page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: ['eth-zurich'],
+    relatedGuideSlugs: ['why-study-in-europe-for-international-students', 'how-to-study-in-the-nordic-countries', 'best-cities-to-study-in-europe'],
+    sources: [
+      { label: 'swissuniversities — official overview of Swiss universities', url: 'https://www.swissuniversities.ch/en' },
+      { label: 'State Secretariat for Migration (SEM) — official Swiss immigration', url: 'https://www.sem.admin.ch/sem/en/home.html' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['how to study in switzerland', 'study in switzerland from india', 'switzerland student visa', 'cost of studying in switzerland', 'universities in switzerland for international students'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'Apply', value: 'Directly to each university — no single national portal' },
+      { label: 'Tuition vs living', value: 'Tuition often low; cost of living high — verify figures officially' },
+      { label: 'EU status', value: 'Not in the EU; part of the Schengen area' },
+      { label: 'Permit', value: 'Visa/residence permit registered at cantonal level (defer to SEM + canton)' },
+    ],
+  },
+  {
+    slug: 'why-study-in-europe-for-international-students',
+    category: 'study-abroad',
+    region: 'europe',
+    titleEn: 'Why Study in Europe for International Students',
+    descriptionEn:
+      'A balanced look at the reasons international students consider Europe — and the practical things to weigh up — so you can decide with realistic expectations and no overselling.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What draws students to Europe',
+        bodyEn:
+          'Europe attracts international students for a mix of reasons: a large number of universities, many English-taught programmes (especially at master\'s level), and study systems aligned through the Bologna Process so that bachelor\'s, master\'s and doctoral degrees are broadly comparable across countries.\n\nThese are general strengths of the region, not a promise about any specific university or outcome. The right fit still depends on your course, country, and circumstances.',
+        bullets: [
+          'Many universities and a wide range of subjects across different countries',
+          'A growing number of English-taught programmes, especially master\'s',
+          'Degree structures aligned through the Bologna Process (the EHEA)',
+          'Exchange and scholarship schemes such as Erasmus+ and Erasmus Mundus',
+        ],
+      },
+      {
+        headingEn: 'Tuition and funding vary widely',
+        bodyEn:
+          'One reason students look at Europe is that tuition can be lower than in some other regions, and some countries charge little or no tuition at public universities for certain students. However, this varies a great deal by country, university, programme, and your nationality.\n\nGlobalStudyBoard does not publish specific tuition figures because they change each year and differ by case. Always confirm the exact cost for your course and nationality on the official university page, and look into official scholarships separately.',
+      },
+      {
+        headingEn: 'Things to weigh up before you decide',
+        bodyEn:
+          'A balanced decision means looking at the practical side too, not just the highlights. Consider language, cost of living, visa or residence-permit rules, and how competitive admission and housing can be.',
+        bullets: [
+          'Language of instruction — many programmes are in English, but not all; some daily life needs the local language',
+          'Cost of living can be high in some cities, even where tuition is low',
+          'Each country has its own visa or residence-permit process and financial-means requirement',
+          'Admission and student housing can be competitive — apply early and have a backup plan',
+        ],
+      },
+      {
+        headingEn: 'No guarantees — make an informed choice',
+        bodyEn:
+          'Studying in Europe can be a strong option for many students, but no destination guarantees admission, a job, or settlement. Treat any claim of guaranteed outcomes with caution.\n\nUse official university and government sources to confirm the facts that matter — course details, tuition, visa rules, and work-while-studying or post-study rules — for the specific country and year. This guide is general information to help you compare, not advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Why do international students choose Europe?',
+        answerEn:
+          'Common reasons include the large number of universities, many English-taught programmes (especially master\'s), degree structures aligned through the Bologna Process, and schemes like Erasmus+. The right fit still depends on your course, country, and circumstances.',
+      },
+      {
+        questionEn: 'Is it cheaper to study in Europe?',
+        answerEn:
+          'It can be, since tuition is lower in some countries and certain public universities charge little or no tuition for some students — but this varies widely by country, programme, and nationality. Confirm the exact cost on the official university page.',
+      },
+      {
+        questionEn: 'Can I study in Europe in English?',
+        answerEn:
+          'Many programmes are taught in English, especially at master\'s level, but availability varies by university and country, and some daily life may still require the local language. Check the language of instruction on each official programme page.',
+      },
+      {
+        questionEn: 'Does studying in Europe guarantee a job or PR?',
+        answerEn:
+          'No. No destination guarantees admission, employment, or permanent residence. Work-while-studying and post-study rules are set by each country\'s immigration law — verify them on the official government source. This is general information, not advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['europe-vs-uk-vs-usa-for-international-students', 'best-cities-to-study-in-europe', 'how-to-study-in-the-nordic-countries'],
+    sources: [
+      { label: 'Study in Europe — official EU education portal', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'European Higher Education Area (EHEA) — Bologna Process', url: 'https://www.ehea.info/' },
+      { label: 'Erasmus+ — official EU programme', url: 'https://erasmus-plus.ec.europa.eu/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['why study in europe', 'benefits of studying in europe', 'study in europe for international students', 'is europe good for international students', 'reasons to study in europe'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'Common draws', value: 'Many universities, English-taught master\'s, Bologna-aligned degrees' },
+      { label: 'Tuition', value: 'Varies widely by country/programme/nationality — verify officially' },
+      { label: 'Weigh up', value: 'Language, living costs, visa rules, competitiveness' },
+      { label: 'Guarantees', value: 'None — no destination guarantees admission, a job, or PR' },
+    ],
+  },
+  {
+    slug: 'europe-vs-uk-vs-usa-for-international-students',
+    category: 'comparison',
+    region: 'europe',
+    titleEn: 'Europe vs UK vs USA for International Students',
+    descriptionEn:
+      'A neutral, facts-only comparison of studying in continental Europe, the UK, and the USA — how the systems, languages, tuition, and rules differ — so you can decide for yourself, with specifics deferred to official sources.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How to use this comparison',
+        bodyEn:
+          'Continental Europe, the UK, and the USA are all popular study destinations, and none is universally "better" — the best choice depends entirely on your course, budget, language plans, and goals. This guide lays out how they differ as facts so you can weigh them for yourself.\n\nGlobalStudyBoard does not declare a winner and does not publish specific tuition, score, or visa figures, because these vary by university and change each year. Confirm anything decision-critical on the relevant official source.',
+      },
+      {
+        headingEn: 'Education systems and degree length',
+        bodyEn:
+          'The three regions structure degrees differently, which affects how long you study and how programmes are organised. None of these structures is inherently superior — they simply suit different plans.',
+        bullets: [
+          'Continental Europe — degrees are aligned through the Bologna Process (bachelor\'s, master\'s, doctoral); length varies by country and programme',
+          'UK — bachelor\'s and master\'s degrees are often shorter than in some other systems; check the specific programme',
+          'USA — bachelor\'s programmes are typically four years with a broad, flexible curriculum; master\'s length varies',
+          'Verify the exact duration and structure on each university\'s official programme page',
+        ],
+      },
+      {
+        headingEn: 'Language, tuition and admission tests',
+        bodyEn:
+          'Language of instruction and entry requirements differ across the three. In the UK and USA, instruction is in English; in continental Europe, many programmes are English-taught (especially master\'s) while others are in the local language.\n\nTuition and the tests universities ask for vary widely. Standardised or English-proficiency tests (such as IELTS, TOEFL, or others) may be required depending on the university and programme. GlobalStudyBoard does not publish fee amounts or score requirements — confirm both on each official university page for the current year.',
+        bullets: [
+          'Language — UK/USA in English; continental Europe varies (many English-taught master\'s)',
+          'Tuition — varies widely by country, university and programme; verify officially',
+          'Admission tests — requirements differ; check whether IELTS/TOEFL or other tests are needed',
+        ],
+      },
+      {
+        headingEn: 'Visas, work-while-studying and post-study rules',
+        bodyEn:
+          'Each destination has its own immigration system, and the rules for student visas, working during study, and any post-study stay are set by that country\'s government. These rules differ between continental European countries, the UK, and the USA, and they change over time.\n\nGlobalStudyBoard presents these only as a category to research, not as specifics, because the conditions and any figures are set by national law. Verify the current student-visa, work-hour, and post-study rules on the official government source for your destination. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'Making your decision',
+        bodyEn:
+          'Rather than asking which region is best overall, match each destination against what matters to you: the exact course, the language you can study in, the total cost, and the immigration rules for your nationality. The right answer is personal and may even be a specific university rather than a whole region.\n\nUse official sources for every decision-critical fact, and treat any claim of guaranteed admission, jobs, or settlement with caution — no destination guarantees those.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is Europe, the UK, or the USA better for international students?',
+        answerEn:
+          'None is universally better — the best choice depends on your course, budget, language, and goals. Compare them on the facts that matter to you and verify specifics like tuition and visa rules on official sources.',
+      },
+      {
+        questionEn: 'Where is tuition cheaper?',
+        answerEn:
+          'Tuition varies widely within each region, and some continental European countries charge little or no tuition for certain students, but this differs by country, programme, and nationality. Confirm the exact cost on each official university page rather than relying on general comparisons.',
+      },
+      {
+        questionEn: 'Do I need IELTS or TOEFL for all three?',
+        answerEn:
+          'English-proficiency requirements depend on the university and programme. Instruction is in English in the UK and USA and in many European programmes, but whether you need IELTS, TOEFL, or another test — and the score — is set by each university. Check the official programme page.',
+      },
+      {
+        questionEn: 'Can I work and stay after studying in each region?',
+        answerEn:
+          'Work-while-studying and post-study rules are set by each country\'s government and differ between continental Europe, the UK, and the USA, and they change over time. Verify the current rules on the official government source for your destination. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['why-study-in-europe-for-international-students', 'best-cities-to-study-in-europe', 'how-to-study-in-europe-complete-guide-for-international-students'],
+    sources: [
+      { label: 'Study in Europe — official EU education portal', url: 'https://education.ec.europa.eu/study-in-europe' },
+      { label: 'European Higher Education Area (EHEA) — Bologna Process', url: 'https://www.ehea.info/' },
+    ],
+    lastVerified: '2026-06-13',
+    keywords: ['europe vs uk vs usa for international students', 'study in europe or uk or usa', 'europe vs usa for masters', 'compare studying in europe uk usa', 'which is better europe uk or usa for study'],
+    tags: ['europe-student-life'],
+    keyFacts: [
+      { label: 'Verdict', value: 'No winner — depends on your course, budget, language and goals' },
+      { label: 'Degree systems', value: 'Europe (Bologna), UK (often shorter), USA (typically 4-yr bachelor\'s)' },
+      { label: 'Language', value: 'UK/USA in English; continental Europe varies' },
+      { label: 'Visas & work rules', value: 'Set by each government — verify officially (not immigration advice)' },
+    ],
+  },
 ];
 
 export const getGuideBySlug = (slug: string): Guide | undefined =>
