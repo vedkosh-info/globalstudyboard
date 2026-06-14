@@ -74,6 +74,12 @@ blocks the unit until fixed and re-audited.
 - [ ] `generateMetadata()` present (title, description, canonical, languages).
 - [ ] `generateStaticParams()` present for any `[slug]` route.
 - [ ] Source caption + `lastVerified` rendered where required.
+- [ ] **Freshness signal present** — a "Last updated" date shows on the page (the
+      unit's own `lastVerified`, or `SITE_REVIEWED` for listings/static pages via
+      `components/LastUpdated.tsx`); the date is truthful, not back-dated or faked.
+- [ ] **No site "established/founded" year** on this page or in the global
+      header/footer (the origin story belongs only on `/about`). A university's
+      real founding year is acceptable factual content.
 - [ ] `npm run lint` and `npm run typecheck` pass with 0 errors.
 
 ## I. Content Architecture, De-duplication & Continuity (Rule §11 — BINDING)

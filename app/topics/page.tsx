@@ -4,6 +4,8 @@ import { TOPICS } from '@/lib/topics';
 import { guidesForTopic } from '@/lib/topic-guides';
 import { itemListLd } from '@/lib/structured-data';
 import TopicsIndex, { type TopicCard } from '@/components/TopicsIndex';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'Topics — Explore Exams, Courses & Careers by Theme',
@@ -73,6 +75,7 @@ export default function TopicsIndexPage() {
           government exams, careers, US admissions and studying abroad — so you can go deep on
           exactly what you need.
         </p>
+        <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
       <TopicsIndex topics={cards} />

@@ -13,7 +13,7 @@ const BASE = 'https://www.globalstudyboard.com';
 export default function sitemap(): MetadataRoute.Sitemap {
   // Fixed to the last known content-update date so the sitemap is stable
   // between deployments and CDN-cacheable. Update when site structure changes.
-  const now = '2026-06-09';
+  const now = '2026-06-14';
   return [
     { url: BASE,                  lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE}/regions`,     lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },

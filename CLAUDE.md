@@ -74,6 +74,7 @@ public/           → Static assets
 - Every page must have `generateMetadata()` with title, description, and a self-referential canonical (no hreflang — single-language English site)
 - `generateStaticParams()` required for all `[slug]` routes
 - Content disclaimer required in footer on every content page
+- **Freshness, not founding year (BINDING — see `content-policy.md` §5).** Every page shows a "Last updated" date via `components/LastUpdated.tsx` — content pages pass the unit's own `lastVerified`; listings/region/college/static pages pass `SITE_REVIEWED` from `lib/site-meta.ts`. The footer shows `ADMISSIONS_CYCLE`. Never display a site "established/founded" year on utility/listing/content pages or the global header/footer (origin story lives only on `/about`); a *university's* real founding year is fine. Never fake/back-date a "last updated" date.
 
 ## Git Workflow (BINDING)
 - **Root repo always on `main`** — single-branch workflow

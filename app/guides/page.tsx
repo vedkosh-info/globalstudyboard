@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { GUIDES, GUIDE_CATEGORY_LABELS, type GuideCategory } from '@/lib/guides';
 import { resolveDisplayRegions } from '@/lib/regions';
 import GuidesView, { type GuideCard } from '@/components/GuidesView';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'Study Guides — Exams, Admissions, Careers & Study Abroad',
@@ -95,6 +97,7 @@ export default function GuidesIndexPage() {
           studying abroad — written in plain language and checked against official sources. Every
           time-sensitive fact links to the official site, because rules change each year.
         </p>
+        <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
       <GuidesView items={items} categories={categories} />

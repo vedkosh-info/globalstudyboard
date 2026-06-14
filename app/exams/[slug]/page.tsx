@@ -6,8 +6,11 @@ import { ArrowUpRight, Calendar, Clock, FileText, Award } from 'lucide-react';
 import { ENTRANCE_EXAMS, getExamBySlug } from '@/lib/admission-guides';
 import { COLLEGES } from '@/lib/colleges';
 import { REGIONS } from '@/lib/regions';
+import { GUIDES } from '@/lib/guides';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED, formatReviewed } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -64,6 +67,26 @@ export default async function ExamDetailPage({ params }: Props) {
     (e) => e.slug !== exam.slug && (e.region === exam.region || e.domain === exam.domain),
   ).slice(0, 4);
 
+  // Guides that cover this exam — adds rich content + cross-links for indexing.
+  const relatedGuides = GUIDES.filter((g) => g.relatedExamSlugs.includes(exam.slug)).slice(0, 3);
+
+  // FAQPage schema — structured Q&A gives Google rich-snippet candidates.
+  const faqItems: { '@type': string; name: string; acceptedAnswer: { '@type': string; text: string } }[] = [
+    { '@type': 'Question', name: `What is ${exam.shortName}?`, acceptedAnswer: { '@type': 'Answer', text: exam.descriptionEn } },
+    { '@type': 'Question', name: `Who conducts ${exam.shortName}?`, acceptedAnswer: { '@type': 'Answer', text: `${exam.shortName} is conducted by ${exam.conductingBody}. Confirm current details on the official website.` } },
+    { '@type': 'Question', name: `What is the eligibility for ${exam.shortName}?`, acceptedAnswer: { '@type': 'Answer', text: exam.eligibility } },
+    { '@type': 'Question', name: `How long is the ${exam.shortName} exam?`, acceptedAnswer: { '@type': 'Answer', text: exam.duration } },
+    { '@type': 'Question', name: `How often is ${exam.shortName} held?`, acceptedAnswer: { '@type': 'Answer', text: exam.frequency } },
+  ];
+  if (exam.costUsd) {
+    faqItems.push({ '@type': 'Question', name: `What is the ${exam.shortName} registration fee?`, acceptedAnswer: { '@type': 'Answer', text: `${exam.costUsd}. Confirm the current fee on the official website.` } });
+  }
+  relatedGuides.slice(0, 1).forEach((g) =>
+    g.faqs.slice(0, 3).forEach((faq) =>
+      faqItems.push({ '@type': 'Question', name: faq.questionEn, acceptedAnswer: { '@type': 'Answer', text: faq.answerEn } }),
+    ),
+  );
+  const faqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems };
 
   const examLd = {
     '@context': 'https://schema.org',
@@ -88,6 +111,10 @@ export default async function ExamDetailPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(examLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
       <header>
@@ -117,6 +144,8 @@ export default async function ExamDetailPage({ params }: Props) {
       <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
         {exam.descriptionEn}
       </p>
+
+      <LastUpdated date={exam.lastVerified ?? SITE_REVIEWED} />
 
       {/* Facts grid */}
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -188,7 +217,7 @@ export default async function ExamDetailPage({ params }: Props) {
           )}
           {exam.lastVerified && (
             <p className="text-stone-500 text-xs leading-relaxed max-w-xl m-0">
-              Last verified: {exam.lastVerified}.
+              Last verified: {formatReviewed(exam.lastVerified).display}.
             </p>
           )}
         </div>
@@ -255,6 +284,34 @@ export default async function ExamDetailPage({ params }: Props) {
               Explore studying in {region.displayName} →
             </Link>
           )}
+        </section>
+      )}
+
+      {/* Preparation guides */}
+      {relatedGuides.length > 0 && (
+        <section>
+          <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-5">
+            Preparation guides
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {relatedGuides.map((g) => (
+              <Link
+                key={g.slug}
+                href={`/guides/${g.slug}`}
+                className="group bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 hover:bg-cream-50 transition-colors"
+              >
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-forest-700 mb-2">
+                  {g.readMinutes} min read
+                </p>
+                <p className="font-display text-base font-bold text-ink m-0 group-hover:text-forest-700 leading-snug">
+                  {g.titleEn}
+                </p>
+                <p className="text-stone-500 text-sm mt-2 mb-0 line-clamp-2">
+                  {g.descriptionEn}
+                </p>
+              </Link>
+            ))}
+          </div>
         </section>
       )}
 

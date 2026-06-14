@@ -13,6 +13,8 @@ import {
 import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import RegionRail from '@/components/RegionRail';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ region: string }>;
@@ -84,6 +86,7 @@ export default async function RegionHubPage({ params }: Props) {
           <p className="editorial-lede text-stone-700 text-lg leading-relaxed">
             {r.educationSystemSummary}
           </p>
+          <LastUpdated date={SITE_REVIEWED} className="mt-4" />
         </header>
 
         {/* Key facts */}

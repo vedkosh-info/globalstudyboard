@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { resolveDisplayRegions } from '@/lib/regions';
 import ExamsView, { type ExamCard } from '@/components/ExamsView';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'All Entrance Exams — SAT, ACT, GRE, IELTS, A-Levels & More',
@@ -78,6 +80,7 @@ export default function ExamsIndexPage() {
         <p className="text-stone-700 text-lg leading-relaxed">
           Every test that gates a university admission, with the conducting body, frequency, format, and what scores get you in. Open any exam for the official source.
         </p>
+        <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
       <ExamsView items={items} />

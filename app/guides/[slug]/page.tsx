@@ -12,6 +12,8 @@ import { howToLd, isHowToGuide } from '@/lib/structured-data';
 import KeyFacts from '@/components/KeyFacts';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
+import LastUpdated from '@/components/LastUpdated';
+import { formatReviewed } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -176,6 +178,7 @@ export default async function GuideDetailPage({ params }: Props) {
         <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
           {guide.descriptionEn}
         </p>
+        <LastUpdated date={guide.lastVerified} className="mt-4" />
       </header>
 
       {/* Key facts (exam/process guides) */}
@@ -251,7 +254,7 @@ export default async function GuideDetailPage({ params }: Props) {
           </p>
         )}
         <p className="text-stone-500 text-xs leading-relaxed m-0">
-          Last verified: {guide.lastVerified}.
+          Last verified: {formatReviewed(guide.lastVerified).display}.
         </p>
       </section>
 

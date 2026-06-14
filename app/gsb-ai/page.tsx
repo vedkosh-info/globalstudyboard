@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Sparkles, ChevronRight } from 'lucide-react';
 import GSBAIChat from '@/components/GSBAIChat';
 
-export const metadata: Metadata = {
+const BASE_METADATA: Metadata = {
   title: 'Ask GSB AI — Free University Admission AI Assistant',
   description:
     'Get instant answers about university admissions, entrance exams, scholarships, student visas and study abroad from GSB AI. Free AI-powered guide for every country.',
@@ -32,6 +32,21 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
   },
 };
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}): Promise<Metadata> {
+  const { q } = await searchParams;
+  if (q) {
+    return {
+      ...BASE_METADATA,
+      robots: { index: false, follow: false },
+    };
+  }
+  return BASE_METADATA;
+}
 
 const TOPICS = [
   { label: 'Entrance Exams', examples: 'SAT, ACT, GRE, GMAT, A-Levels, IELTS, TOEFL' },

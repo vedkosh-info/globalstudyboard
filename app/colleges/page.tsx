@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { COLLEGES } from '@/lib/colleges';
 import { resolveDisplayRegions } from '@/lib/regions';
 import CollegesView, { type CollegeCard } from '@/components/CollegesView';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'Universities Worldwide — Profiles, Admissions & Courses',
@@ -75,6 +77,7 @@ export default function CollegesIndexPage() {
           {COLLEGES.length} institutions across the world&apos;s major study destinations. Open any
           profile for location, degree levels, the entrance tests it accepts, and the official site.
         </p>
+        <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
       <CollegesView items={items} />

@@ -28,6 +28,8 @@ const GROUP_ORDER: TopicGroup[] = [
   'study-in-canada',
   'study-in-australia-nz',
   'study-in-europe',
+  'study-in-middle-east',
+  'study-in-russia-cis',
   'prep-funding',
 ];
 

@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ShieldCheck, BookOpenCheck, RefreshCw, Globe2, AlertTriangle } from 'lucide-react';
 import { REGIONS } from '@/lib/regions';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'About GlobalStudyBoard — How We Source & Verify Information',
@@ -64,6 +66,7 @@ export default function AboutPage() {
           global admissions into one clear place — and make every claim checkable against its
           official source.
         </p>
+        <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
       {/* Honest "we're new" note */}

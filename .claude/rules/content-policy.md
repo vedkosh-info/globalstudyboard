@@ -122,6 +122,20 @@ number or rule.** Lower tiers may only add neutral colour, never override Tier 1
 - **`lastVerified` date** shown for time-sensitive data.
 - **"Verify on the official site"** nudge on visa/policy/fee blocks.
 - A standalone `/disclaimer` page, linked in the footer.
+- **Freshness signal on every page (BINDING).** Every page shows when it was last
+  updated. Content pages display the unit's own truthful `lastVerified` date;
+  listing, region, college and static pages display the site review date
+  (`SITE_REVIEWED` in `lib/site-meta.ts`, rendered via `components/LastUpdated.tsx`).
+  The global footer states the admissions cycle the content targets
+  (`ADMISSIONS_CYCLE`). Keep these dates honest — **never back-date or fabricate a
+  "last updated" date you did not actually review** (that would breach Rule A).
+  When the catalogue is broadly re-reviewed, bump `SITE_REVIEWED`.
+- **No site "established / founded" year on utility, listing, or content pages, or
+  in the global header/footer (BINDING).** A launch year adds no SEO value and can
+  bias a new site's perceived authority — present *freshness* instead ("Updated for
+  the <cycle> admissions cycle"). The site's origin story may appear **only on
+  `/about`**, framed as a mission. This does **not** restrict stating a
+  *university's* real founding year, which is legitimate factual content.
 
 ---
 

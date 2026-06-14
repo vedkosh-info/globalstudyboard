@@ -6,8 +6,11 @@ import { ArrowUpRight, MapPin, CalendarDays, GraduationCap, Globe2 } from 'lucid
 import { COLLEGES, getCollegeBySlug } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { REGIONS } from '@/lib/regions';
+import { GUIDES } from '@/lib/guides';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -111,6 +114,24 @@ export default async function CollegeDetailPage({ params }: Props) {
     (c) => c.region === college.region && c.slug !== college.slug,
   ).slice(0, 4);
 
+  // Guides covering this university — adds rich content + cross-links for indexing.
+  const relatedGuides = GUIDES.filter((g) => g.relatedCollegeSlugs.includes(college.slug)).slice(0, 3);
+
+  // FAQPage schema — structured Q&A gives Google rich-snippet candidates.
+  const collegeFaqItems: { '@type': string; name: string; acceptedAnswer: { '@type': string; text: string } }[] = [
+    { '@type': 'Question', name: `What is ${college.nameEn}?`, acceptedAnswer: { '@type': 'Answer', text: college.descriptionEn } },
+    { '@type': 'Question', name: `Where is ${college.nameEn} located?`, acceptedAnswer: { '@type': 'Answer', text: `${college.nameEn} is located in ${place}.` } },
+    { '@type': 'Question', name: `When was ${college.nameEn} established?`, acceptedAnswer: { '@type': 'Answer', text: `${college.nameEn} was established in ${college.established}.` } },
+    { '@type': 'Question', name: `What programs does ${college.nameEn} offer?`, acceptedAnswer: { '@type': 'Answer', text: `${college.nameEn} offers ${college.programLevels.map((l) => LEVEL_LABELS[l] ?? l).join(', ')} programs. Popular fields include ${college.courses.slice(0, 5).join(', ')}. Confirm the current program list on the official university website.` } },
+  ];
+  if (college.applicationPlatform) {
+    collegeFaqItems.push({ '@type': 'Question', name: `How do I apply to ${college.nameEn}?`, acceptedAnswer: { '@type': 'Answer', text: `${college.applicationPlatform}. Verify the current application process on the official university website.` } });
+  }
+  if (college.admissionExams.length > 0) {
+    collegeFaqItems.push({ '@type': 'Question', name: `What entrance exams does ${college.nameEn} require?`, acceptedAnswer: { '@type': 'Answer', text: `${college.nameEn} typically requires: ${college.admissionExams.join(', ')}. Confirm current requirements on the official website.` } });
+  }
+  const collegeFaqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: collegeFaqItems };
+
   const rankings: { body: string; rank: number; url: string }[] = [];
   if (college.ranking?.qs) {
     rankings.push({ body: 'QS World University Rankings', rank: college.ranking.qs, url: 'https://www.topuniversities.com/world-university-rankings' });
@@ -146,6 +167,10 @@ export default async function CollegeDetailPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collegeFaqLd) }}
+      />
 
       <header>
         <Link
@@ -177,6 +202,8 @@ export default async function CollegeDetailPage({ params }: Props) {
       <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
         {college.descriptionEn}
       </p>
+
+      <LastUpdated date={SITE_REVIEWED} />
 
       {/* Facts grid */}
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -353,6 +380,34 @@ export default async function CollegeDetailPage({ params }: Props) {
               Explore all universities in {region.displayName} →
             </Link>
           )}
+        </section>
+      )}
+
+      {/* Admissions guides */}
+      {relatedGuides.length > 0 && (
+        <section>
+          <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-5">
+            Admissions guides
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {relatedGuides.map((g) => (
+              <Link
+                key={g.slug}
+                href={`/guides/${g.slug}`}
+                className="group bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 hover:bg-cream-50 transition-colors"
+              >
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-forest-700 mb-2">
+                  {g.readMinutes} min read
+                </p>
+                <p className="font-display text-base font-bold text-ink m-0 group-hover:text-forest-700 leading-snug">
+                  {g.titleEn}
+                </p>
+                <p className="text-stone-500 text-sm mt-2 mb-0 line-clamp-2">
+                  {g.descriptionEn}
+                </p>
+              </Link>
+            ))}
+          </div>
         </section>
       )}
 

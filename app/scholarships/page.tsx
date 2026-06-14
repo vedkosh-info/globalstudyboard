@@ -4,6 +4,8 @@ import { ArrowUpRight, ShieldCheck, ExternalLink } from 'lucide-react';
 
 import { GUIDES } from '@/lib/guides';
 import { REGIONS } from '@/lib/regions';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'Scholarships & Funding — Official Programmes for Students',
@@ -80,6 +82,7 @@ export default function ScholarshipsIndexPage() {
           deadlines, and these change every cycle. We point you to the official programme and link
           its official source; always confirm the current details there before you apply.
         </p>
+        <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
       {/* Safety note — no guarantees, beware scams, official sources only */}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { REGIONS } from '@/lib/regions';
+import { ADMISSIONS_CYCLE } from '@/lib/site-meta';
 
 const FOOTER_SECTIONS = [
   {
@@ -72,7 +73,7 @@ export default function Footer() {
               Built for students in the United States, Europe, and beyond — with comprehensive coverage of universities and admission systems across {REGIONS.length} regions.
             </p>
             <p className="text-cream-50/50 text-[11px] leading-relaxed mt-4 font-medium tracking-wide">
-              Est. 2026 · Independent · Every fact linked to its official source.
+              Updated for the {ADMISSIONS_CYCLE} admissions cycle · Independent · Every fact linked to its official source.
             </p>
           </div>
 

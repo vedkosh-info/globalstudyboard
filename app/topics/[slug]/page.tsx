@@ -9,6 +9,8 @@ import { resolveDisplayRegions } from '@/lib/regions';
 import { getExamBySlug } from '@/lib/admission-guides';
 import { itemListLd } from '@/lib/structured-data';
 import GuidesView, { type GuideCard } from '@/components/GuidesView';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -123,6 +125,7 @@ export default async function TopicHubPage({ params }: Props) {
             ))}
           </div>
         )}
+        <LastUpdated date={SITE_REVIEWED} className="mt-4" />
       </header>
 
       {relatedExams.length > 0 && (

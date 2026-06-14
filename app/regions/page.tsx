@@ -4,6 +4,8 @@ import { ArrowUpRight } from 'lucide-react';
 
 import { REGIONS_ALPHABETICAL } from '@/lib/regions';
 import { COLLEGES } from '@/lib/colleges';
+import LastUpdated from '@/components/LastUpdated';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'Study Abroad by Region — USA, UK, Europe, Canada, Australia & More',
@@ -57,6 +59,7 @@ export default function RegionsIndexPage() {
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </p>
+        <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

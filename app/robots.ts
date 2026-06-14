@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/api/',
+      disallow: ['/api/', '/gsb-ai?*'],
     },
     sitemap: 'https://www.globalstudyboard.com/sitemap.xml',
   };

@@ -168,6 +168,11 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'The GMAT Focus Edition is accepted by over 7,700 programs at 2,400+ business schools worldwide, including every top-10 MBA program. Three sections: Quantitative Reasoning, Verbal Reasoning, Data Insights. Scores are valid for five years.',
     collegesAccepting: ['harvard', 'stanford', 'upenn', 'mit', 'columbia', 'uchicago', 'northwestern', 'oxford', 'cambridge', 'bocconi'],
+    sources: [
+      { label: 'GMAC — GMAT exam structure', url: 'https://www.mba.com/exams/gmat-exam/about/exam-structure' },
+      { label: 'GMAC — Understanding your score', url: 'https://www.mba.com/exams/gmat-exam/scores/understanding-your-score' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'mcat',
@@ -183,10 +188,14 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     totalMarks: '472–528',
     eligibility: 'Pre-med coursework recommended; intended for medical school applicants',
     websiteUrl: 'https://students-residents.aamc.org/mcat',
-    costUsd: '$345 (US/Canada) / $445 international',
+    costUsd: '$355 (US/Canada/territories) / $485 international (2026)',
     descriptionEn:
       'Required for almost all U.S. and Canadian MD programs. Four sections test biology, chemistry, physics, psychology, sociology, and critical reasoning. A competitive score is 510+ (top schools: 515+). Scores are valid for two to three years depending on the school.',
     collegesAccepting: ['harvard', 'stanford', 'upenn', 'duke', 'umich', 'ucla'],
+    sources: [
+      { label: 'AAMC — MCAT scheduling fees', url: 'https://students-residents.aamc.org/register-mcat-exam/mcat-scheduling-fees' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'lsat',
@@ -230,6 +239,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'The gold-standard UK pre-university qualification. Most universities require three A-Levels; competitive programs require A*A*A or higher. Subject combinations matter — for medicine, Chemistry plus Biology is standard. Cambridge International A-Levels are widely accepted globally.',
     collegesAccepting: ['oxford', 'cambridge', 'imperial', 'ucl', 'lse', 'edinburgh', 'manchester', 'kings-college-london', 'warwick', 'st-andrews'],
+    sources: [
+      { label: 'GOV.UK — Qualification levels', url: 'https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'ib',
@@ -248,6 +261,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'A two-year pre-university programme accepted by universities in over 90 countries. Students take six subjects (three Higher Level, three Standard Level) plus Theory of Knowledge, an Extended Essay, and CAS. Competitive scores: 38+ for top universities, 42+ for Oxbridge.',
     collegesAccepting: ['oxford', 'cambridge', 'imperial', 'ucl', 'lse', 'harvard', 'mit', 'yale', 'u-toronto', 'mcgill', 'eth-zurich'],
+    sources: [
+      { label: 'International Baccalaureate — Diploma Programme', url: 'https://www.ibo.org/programmes/diploma-programme/' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'ucat',
@@ -260,13 +277,18 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     frequency: 'July to September each year',
     mode: 'online',
     duration: '2 hours',
-    totalMarks: '1200–3600 across five subtests',
+    totalMarks: '900–2700 across three cognitive subtests, plus a Situational Judgement band',
     eligibility: 'Applicants to UK/Australian/New Zealand medical and dental schools',
     websiteUrl: 'https://www.ucat.ac.uk',
-    costUsd: '£75 UK / £115 international',
+    costUsd: '£70 UK / £115 international (2025)',
     descriptionEn:
-      'Required for most UK medical and dental schools (plus a few in Australia/NZ). Five sections test verbal reasoning, decision making, quantitative reasoning, abstract reasoning, and situational judgement. Scores are valid for one application cycle only.',
+      'Required for most UK medical and dental schools (plus a few in Australia/NZ). Four sections test verbal reasoning, decision making, quantitative reasoning, and situational judgement (Abstract Reasoning was removed from 2025). Scores are valid for one application cycle only.',
     collegesAccepting: ['kings-college-london', 'manchester', 'edinburgh', 'u-melbourne', 'unsw'],
+    sources: [
+      { label: 'UCAT Consortium — Test Format & Scoring', url: 'https://www.ucat.ac.uk/about-ucat/test-format-and-scoring/' },
+      { label: 'UCAT Consortium — FAQs (fees)', url: 'https://www.ucat.ac.uk/faqs/' },
+    ],
+    lastVerified: '2026-06-14',
   },
 
   // ─────────────────────────── Europe ───────────────────────────
@@ -288,6 +310,11 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'TestAS is an aptitude test used by German universities to assess international applicants. Includes a Core Test and a Subject-Specific Module (Engineering, Mathematics & Natural Sciences, Economics, or Humanities). Required or recommended by many German universities for bachelor\'s applicants without an EU/EEA school-leaving certificate.',
     collegesAccepting: ['tu-munich', 'lmu-munich', 'heidelberg'],
+    sources: [
+      { label: 'TestAS (g.a.s.t.) — official site', url: 'https://www.testas.de' },
+      { label: 'TestAS — digital TestAS structure', url: 'https://www.testas.de/en/teilnehmende/the-digital-testas/structure-of-the-digital-testas' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'testdaf',
@@ -307,6 +334,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'The standardised German language test for international students. A TDN 4 in all four skills (Reading, Listening, Writing, Speaking) is typically required for German-taught bachelor\'s and master\'s programs. Alternatives: DSH, Goethe-Zertifikat C2, telc Deutsch C1 Hochschule.',
     collegesAccepting: ['tu-munich', 'lmu-munich', 'heidelberg'],
+    sources: [
+      { label: 'TestDaF (g.a.s.t. / TestDaF-Institut) — official site', url: 'https://www.testdaf.de' },
+    ],
+    lastVerified: '2026-06-14',
   },
 
   // ─────────────────────────── Global English tests ───────────────────────────
@@ -328,6 +359,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'IELTS Academic is required for UK, Australia, Canada, New Zealand, and many European and U.S. universities. A band score of 6.5–7.5 is typically required by top universities. The Online version (IELTS Online) is taken at home with a proctor. Scores are valid for two years.',
     collegesAccepting: ['oxford', 'cambridge', 'imperial', 'u-toronto', 'mcgill', 'u-melbourne', 'eth-zurich', 'tu-delft'],
+    sources: [
+      { label: 'IELTS — Academic test format', url: 'https://ielts.org/take-a-test/test-types/ielts-academic-test' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'toefl',
@@ -340,13 +375,18 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     frequency: '60+ dates per year',
     mode: 'online',
     duration: '2 hours',
-    totalMarks: '0–120',
+    totalMarks: '1–6 (CEFR-aligned scale from Jan 2026; the 0–120 legacy score is also issued through Jan 2028)',
     eligibility: 'No formal prerequisite',
     websiteUrl: 'https://www.ets.org/toefl',
     costUsd: '$200–$300 (varies by country)',
     descriptionEn:
       'TOEFL iBT is accepted by 12,500+ universities in 160+ countries, including every U.S. and Canadian university. A score of 100+ is competitive for top universities (110+ for the most selective). The home edition is available globally. Scores are valid for two years.',
     collegesAccepting: ['mit', 'harvard', 'stanford', 'u-toronto', 'mcgill', 'oxford', 'eth-zurich'],
+    sources: [
+      { label: 'ETS — TOEFL iBT test content', url: 'https://www.ets.org/toefl/test-takers/ibt/about/content.html' },
+      { label: 'ETS — TOEFL iBT score scale update (Jan 2026)', url: 'https://www.ets.org/toefl/institutions/ibt/score-scale-update.html' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'duolingo',
@@ -366,6 +406,11 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'A computer-adaptive English test that can be taken at home with a webcam. Results in 48 hours. Accepted by 5,500+ institutions across the U.S., U.K., Canada, Australia, and Europe. A score of 120+ is typically required by top universities. Scores are valid for two years.',
     collegesAccepting: ['nyu', 'cmu', 'georgia-tech', 'u-toronto', 'ubc', 'tu-delft', 'kth'],
+    sources: [
+      { label: 'Duolingo English Test — Understand scoring', url: 'https://englishtest.duolingo.com/scores' },
+      { label: 'Duolingo English Test — Test takers', url: 'https://englishtest.duolingo.com/test_takers' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'pte',
@@ -385,6 +430,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'A computer-based English proficiency test with fast results (typically 48 hours). Widely accepted in the U.K. (for student visas), Australia, New Zealand, Canada, and a growing number of U.S. universities. A score of 65+ is competitive. Scores are valid for two years.',
     collegesAccepting: ['u-melbourne', 'u-sydney', 'unsw', 'imperial', 'manchester'],
+    sources: [
+      { label: 'Pearson — PTE Academic', url: 'https://www.pearsonpte.com/pte-academic' },
+    ],
+    lastVerified: '2026-06-14',
   },
 
   // ─────────────────────────── India ───────────────────────────
@@ -401,11 +450,15 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     duration: '3 hours',
     totalMarks: '300',
     eligibility: 'Class 12 pass / appearing with Physics, Chemistry, Mathematics',
-    websiteUrl: 'https://jeemain.nta.ac.in',
+    websiteUrl: 'https://jeemain.nta.nic.in',
     costUsd: 'Approx. $12 (₹1000) general / less for reserved categories',
     descriptionEn:
       'JEE Main is the gateway to NITs, IIITs, and Government-Funded Technical Institutes (GFTIs) across India. It also serves as the qualifying exam for JEE Advanced. Candidates can appear up to three consecutive years after Class 12. The paper covers Physics, Chemistry, and Mathematics at the Class 11–12 level.',
     collegesAccepting: ['nit-trichy'],
+    sources: [
+      { label: 'NTA — JEE Main official portal', url: 'https://jeemain.nta.nic.in/' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'jee-advanced',
@@ -425,6 +478,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'JEE Advanced is the entrance exam for all 23 IITs. Only top JEE Main scorers are eligible. The paper tests deep conceptual understanding in Physics, Chemistry, and Mathematics — significantly harder than JEE Main.',
     collegesAccepting: ['iit-bombay', 'iit-delhi', 'iit-madras', 'iit-kanpur', 'iit-kharagpur'],
+    sources: [
+      { label: 'JEE Advanced — official site (organising IIT)', url: 'https://jeeadv.ac.in/' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'neet-ug',
@@ -436,7 +493,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     conductingBody: 'National Testing Agency (NTA)',
     frequency: 'Once a year (May)',
     mode: 'offline',
-    duration: '3 hours 20 minutes',
+    duration: '3 hours',
     totalMarks: '720',
     eligibility: 'Class 12 with PCB (Physics, Chemistry, Biology); minimum 50% marks',
     websiteUrl: 'https://neet.nta.nic.in',
@@ -444,6 +501,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'NEET UG is the single national entrance test for MBBS, BDS, BAMS, BSMS, BUMS, and BHMS courses in India. There is no cap on attempts. It is the most competitive medical entrance exam in the world by number of applicants.',
     collegesAccepting: ['aiims-delhi'],
+    sources: [
+      { label: 'NTA — NEET (UG) official portal', url: 'https://neet.nta.nic.in/' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'cat',
@@ -463,6 +524,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'CAT is the primary gateway to all 20 IIMs and over 1,200 other business schools in India. It tests Verbal Ability & Reading Comprehension (VARC), Data Interpretation & Logical Reasoning (DILR), and Quantitative Aptitude (QA). Around 250,000 candidates take it each year.',
     collegesAccepting: ['iim-ahmedabad', 'iim-bangalore'],
+    sources: [
+      { label: 'IIM CAT — official site', url: 'https://iimcat.ac.in/' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'clat',
@@ -482,6 +547,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'CLAT is the centralised national entrance exam for admission to 24 National Law Universities (NLUs) across India for BA LLB (Hons.) and LLM programmes. NLU Delhi uses its own AILET exam instead.',
     collegesAccepting: [],
+    sources: [
+      { label: 'Consortium of NLUs — CLAT official site', url: 'https://consortiumofnlus.ac.in/' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'ailet',
@@ -501,6 +570,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     descriptionEn:
       'AILET is the entrance exam for National Law University Delhi (NLU Delhi). NLU Delhi does not participate in CLAT — applicants must take AILET separately. Around 120 seats in BA LLB (Hons.) and 70 in LL.M.',
     collegesAccepting: ['nlu-delhi'],
+    sources: [
+      { label: 'NLU Delhi — AILET official site', url: 'https://nationallawuniversitydelhi.in/' },
+    ],
+    lastVerified: '2026-06-14',
   },
   {
     id: 'gate',
