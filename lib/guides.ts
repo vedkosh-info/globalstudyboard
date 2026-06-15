@@ -68092,6 +68092,8588 @@ export const GUIDES: Guide[] = [
       { label: 'Verify on', value: 'Official university, government and regulator sources' },
     ],
   },
+  {
+    slug: 'how-to-study-in-the-uk-complete-guide',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'How to Study in the UK: Complete Guide for International Students',
+    descriptionEn:
+      'A step-by-step overview of studying in the United Kingdom — choosing a course and university, applying through UCAS, meeting entry and English requirements, the Student visa, funding, and arrival.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Pick your course and university first',
+        bodyEn:
+          'Studying in the UK starts with a course, not a city. Decide what you want to study and at what level — an undergraduate (bachelor\'s) degree, or a postgraduate (master\'s or research) degree — and then shortlist universities that teach it well and that you can afford.\n\nUse each university\'s own official course pages to compare modules, duration, and entry requirements, and the UCAS course search for a single overview. Where rankings help you shortlist, treat them as one input only and attribute them to their issuer (for example QS or Times Higher Education); they are not an admission rule.',
+        bullets: [
+          'Choose the subject and level (undergraduate vs postgraduate) before the university',
+          'Check each course\'s entry requirements on the official university website',
+          'Treat rankings (QS, THE) as one factor, attributed to the issuer — never a guarantee',
+        ],
+      },
+      {
+        headingEn: 'How you apply: UCAS for undergraduates',
+        bodyEn:
+          'Most full-time undergraduate courses in the UK are applied for through UCAS (the Universities and Colleges Admissions Service) at ucas.com, using a single application that lets you pick up to five courses and write one personal statement. Many postgraduate (master\'s) courses are applied for directly on the university\'s own website instead, and some use the UCAS postgraduate service.\n\nUCAS has fixed annual deadlines that differ by course type, so plan early. Exact dates change every cycle — confirm the current deadlines on ucas.com before you apply.',
+      },
+      {
+        headingEn: 'Entry requirements and English-language proof',
+        bodyEn:
+          'Each course sets its own academic entry requirements, usually in terms of A-levels, the International Baccalaureate, or a recognised equivalent for your country. As an international student you will normally also need to prove your English-language ability with an accepted test such as IELTS — universities and the UK Student visa each have their own minimum scores.\n\nSome competitive courses require an admissions test. Medicine and dentistry generally use the UCAT; some law courses use the LNAT; and Oxford and Cambridge run their own subject tests for certain courses. These tests and their formats change, so check the requirement on each course page and the official test website, and verify on the official source before you register.',
+      },
+      {
+        headingEn: 'The UK Student visa and the Confirmation of Acceptance for Studies',
+        bodyEn:
+          'Most international students studying a full-time course in the UK apply for a Student visa. After a university makes you an unconditional offer and you accept it, the university (a licensed student sponsor) issues a Confirmation of Acceptance for Studies (CAS), which you use in your visa application. You will normally also pay the Immigration Health Surcharge and show you can meet the financial requirement.\n\nVisa rules, fees, and the financial requirement change frequently. This is general information, not immigration advice — read the current rules and amounts on the official GOV.UK Student visa pages and verify on the official government source before acting.',
+      },
+      {
+        headingEn: 'Funding your studies',
+        bodyEn:
+          'Plan for two things: tuition fees and living costs. Many universities offer scholarships or fee discounts for international students, and external awards such as the Chevening Scholarships (for master\'s study) and Commonwealth Scholarships exist for eligible applicants. Eligibility is set by each scheme; amounts and deadlines change every year, so confirm them on the official scholarship website.\n\nBe cautious of anyone who asks you to pay for a "guaranteed" scholarship, place, or visa — official awards are never sold. Funding figures here are general guidance, not financial advice; consider speaking to a qualified adviser about loans.',
+      },
+      {
+        headingEn: 'After you arrive',
+        bodyEn:
+          'Once your visa is approved, plan your arrival around your course start date, sort accommodation (university halls or private housing), and complete any enrolment and registration steps your university requires. Most international students can access healthcare through the National Health Service (NHS) once they have paid the Immigration Health Surcharge.\n\nFollow your university\'s official international-student guidance for registration, opening a bank account, and any reporting requirements, and verify any health or visa condition on the official source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply to UK universities through UCAS?',
+        answerEn:
+          'For most full-time undergraduate courses, yes — applications go through UCAS at ucas.com, with up to five choices and one personal statement. Many master\'s courses are applied for directly on the university website instead. Check each course page.',
+      },
+      {
+        questionEn: 'Which English test do I need?',
+        answerEn:
+          'Universities accept tests such as IELTS, and the required score varies by course and by the Student visa rules. Confirm the exact test and score on the course page and the official GOV.UK guidance before booking a test.',
+      },
+      {
+        questionEn: 'Do I need an admissions test for medicine or law?',
+        answerEn:
+          'Often, yes. Medicine and dentistry generally use the UCAT, and some law courses use the LNAT; Oxford and Cambridge run their own subject tests for certain courses. Requirements change each year — verify on the official test website and the course page.',
+      },
+      {
+        questionEn: 'How much does it cost to study in the UK?',
+        answerEn:
+          'Tuition and living costs vary widely by university, course, and city, and change every year. We do not quote fixed figures — check the official university course page for tuition and GOV.UK for the visa financial requirement, and verify on the official source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'uk-student-visa-guide', 'ucas-application-process-explained'],
+    sources: [
+      { label: 'UCAS — official applications service', url: 'https://www.ucas.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'IELTS — official site', url: 'https://www.ielts.org' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to study in the uk', 'study in uk for international students', 'uk universities application', 'ucas application', 'uk student visa', 'studying in the uk'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'Undergraduate applications', value: 'Through UCAS (ucas.com) — up to five choices' },
+      { label: 'Postgraduate applications', value: 'Usually direct to the university; some via UCAS' },
+      { label: 'English proof', value: 'Accepted test such as IELTS (score varies by course/visa)' },
+      { label: 'Main visa route', value: 'UK Student visa (CAS from a licensed sponsor) — verify on GOV.UK' },
+    ],
+  },
+  {
+    slug: 'how-to-study-in-ireland-complete-guide',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'How to Study in Ireland: Complete Guide for International Students',
+    descriptionEn:
+      'A step-by-step overview of studying in Ireland — choosing a course, applying through the CAO (undergraduate) or directly (postgraduate), entry and English requirements, the student visa and Stamp 2, funding, and arrival.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Choose your course and institution',
+        bodyEn:
+          'As in the UK, an Irish study plan begins with the course. Decide the subject and the level — an undergraduate degree, or a postgraduate (taught master\'s or research) programme — and shortlist Irish universities and institutes that teach it.\n\nUse each institution\'s official course pages to compare content, duration, and entry requirements, and Education in Ireland (the official promotional body) for an overview of options. Where rankings help, treat them as one factor and attribute them to the issuer (for example QS or Times Higher Education).',
+        bullets: [
+          'Pick the subject and level before the institution',
+          'Check entry requirements on each official course page',
+          'Use educationinireland.com for a neutral overview of programmes',
+        ],
+      },
+      {
+        headingEn: 'How you apply: CAO for undergraduates, direct for postgraduates',
+        bodyEn:
+          'Most full-time undergraduate courses in the Republic of Ireland are applied for through the Central Applications Office (CAO) at cao.ie, which processes applications to participating universities and colleges. Postgraduate courses are usually applied for directly on the institution\'s own website, and some use the Postgraduate Applications Centre (PAC).\n\nThe CAO runs an annual cycle with set deadlines and a "change of mind" facility. Exact dates change each year — confirm the current deadlines on cao.ie before you apply.',
+      },
+      {
+        headingEn: 'Entry requirements and English-language proof',
+        bodyEn:
+          'Each course sets its own academic entry requirements, often expressed in Irish Leaving Certificate points but with recognised equivalents for international qualifications such as A-levels or the International Baccalaureate. International students normally also need to prove English with an accepted test such as IELTS, to the standard the course requires.\n\nSome competitive courses use admissions tests — for example, undergraduate medicine at Irish universities generally uses the HPAT. Such tests and their formats change, so check the requirement on each course page and the official test website, and verify on the official source.',
+      },
+      {
+        headingEn: 'Student visa and permission to remain (Stamp 2)',
+        bodyEn:
+          'Whether you need an entry visa before travelling to Ireland depends on your nationality. After arrival, non-EU/EEA students studying a full-time course usually register their immigration permission and receive Stamp 2, which is the permission associated with full-time study. You will generally need a letter of acceptance, proof of fees paid, and evidence of finances and private medical insurance.\n\nImmigration rules, fees, and financial requirements change frequently. This is general information, not immigration advice — read the current rules on the official Irish Immigration Service (irishimmigration.ie) and Citizens Information, and verify on the official source before acting.',
+      },
+      {
+        headingEn: 'Funding your studies',
+        bodyEn:
+          'Budget for both tuition fees and living costs, which vary by institution, course, and city. Some Irish institutions and external schemes offer scholarships to international students; eligibility, amounts, and deadlines are set by each scheme and change every year, so confirm them on the official scholarship or institution website.\n\nNever pay anyone for a "guaranteed" scholarship, place, or visa — official awards are not sold. The figures here are general guidance, not financial advice; consider speaking to a qualified adviser about any loan.',
+      },
+      {
+        headingEn: 'After you arrive',
+        bodyEn:
+          'Plan your arrival around the course start date, arrange accommodation, register with your institution, and complete your immigration registration if required for your nationality. Keep your acceptance letter, proof of fees, insurance, and finances ready for registration.\n\nFollow your institution\'s official international-student guidance for enrolment, and verify any immigration or insurance condition on the official Irish government source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply to Irish universities through the CAO?',
+        answerEn:
+          'For most full-time undergraduate courses in the Republic of Ireland, yes — applications go through the Central Applications Office (CAO) at cao.ie. Postgraduate courses are usually applied for directly on the institution website. Check each course page.',
+      },
+      {
+        questionEn: 'Do I need a visa to study in Ireland?',
+        answerEn:
+          'It depends on your nationality whether you need an entry visa before travelling. Non-EU/EEA students usually register their immigration permission (Stamp 2) after arrival. This is general information, not immigration advice — verify on irishimmigration.ie.',
+      },
+      {
+        questionEn: 'Which English test do I need for Ireland?',
+        answerEn:
+          'Institutions accept tests such as IELTS, with the required score set by each course. Confirm the exact test and score on the official course page before booking, and verify on the official source.',
+      },
+      {
+        questionEn: 'Is there an admissions test for medicine in Ireland?',
+        answerEn:
+          'Undergraduate medicine at Irish universities generally uses the HPAT alongside academic results. Requirements change each year, so verify on the official test website and each course page before you register.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-ireland-from-india', 'how-to-study-in-the-uk-complete-guide'],
+    sources: [
+      { label: 'CAO — Central Applications Office', url: 'https://www.cao.ie' },
+      { label: 'Education in Ireland — official', url: 'https://www.educationinireland.com' },
+      { label: 'Irish Immigration Service (INIS)', url: 'https://www.irishimmigration.ie' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to study in ireland', 'study in ireland for international students', 'cao application', 'ireland student visa', 'stamp 2 ireland', 'studying in ireland'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'Undergraduate applications', value: 'Through the CAO (cao.ie)' },
+      { label: 'Postgraduate applications', value: 'Usually direct to the institution; some via PAC' },
+      { label: 'English proof', value: 'Accepted test such as IELTS (score varies by course)' },
+      { label: 'Study permission', value: 'Stamp 2 for full-time non-EU/EEA students — verify on irishimmigration.ie' },
+    ],
+  },
+  {
+    slug: 'ucas-application-process-explained',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'UCAS Application Process Explained',
+    descriptionEn:
+      'What UCAS is and how it works — registering, choosing up to five courses, writing one personal statement, references, and how universities reply with conditional and unconditional offers.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What UCAS is',
+        bodyEn:
+          'UCAS — the Universities and Colleges Admissions Service — is the central organisation that handles most full-time undergraduate applications to UK universities and colleges through a single online application at ucas.com. Instead of applying to each university separately, you complete one application that UCAS shares with the courses you choose.\n\nUCAS also runs course search tools and clearing, and operates a separate service for some postgraduate courses, but its core role is the undergraduate application.',
+      },
+      {
+        headingEn: 'Up to five course choices',
+        bodyEn:
+          'A single UCAS application lets you apply to up to five courses at once — these can be at different universities, or several courses at the same university. The universities you apply to do not see where else you have applied, so your five choices are considered independently.\n\nThere are some limits: for example, you can normally apply to only one of Oxford or Cambridge in the same cycle, and there are restrictions on combining certain medicine, dentistry, and veterinary choices. Check the current rules on ucas.com.',
+        bullets: [
+          'Up to five choices in one application',
+          'Universities do not see your other choices',
+          'Special limits apply to Oxford/Cambridge and medicine/dentistry/veterinary',
+        ],
+      },
+      {
+        headingEn: 'One personal statement and a reference',
+        bodyEn:
+          'You write one personal statement that goes to all five of your choices — so it should make the case for your subject rather than one specific university. Your application also includes a reference, usually from a teacher, tutor, or someone who knows your academic ability.\n\nUCAS periodically updates how the personal statement is structured, so follow the current format and guidance on ucas.com when you write it. Keep the work entirely your own — passing off someone else\'s writing is not allowed.',
+      },
+      {
+        headingEn: 'How offers work: conditional and unconditional',
+        bodyEn:
+          'After you submit, each university considers your application and replies with a decision. A conditional offer means you have a place if you meet stated conditions — typically achieving certain grades in your final exams. An unconditional offer means the place is yours regardless of pending results, often because you already hold the required qualifications.\n\nOnce you have your decisions, UCAS asks you to reply by choosing a firm choice (your first preference) and usually an insurance choice (a back-up, often with slightly lower conditions). The exact reply deadlines are set each cycle — confirm them on ucas.com.',
+      },
+      {
+        headingEn: 'Deadlines, Extra and Clearing',
+        bodyEn:
+          'UCAS runs to annual deadlines that differ by course: an earlier deadline applies to Oxford and Cambridge and most medicine, dentistry, and veterinary courses, and a later equal-consideration deadline applies to most other courses. If you are not holding an offer, services such as UCAS Extra and, later, Clearing can help you find a place.\n\nExact dates change every cycle and we do not quote them here — check the current deadlines on ucas.com and verify on the official source before you rely on any date.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many universities can I apply to through UCAS?',
+        answerEn:
+          'You can choose up to five courses in one UCAS application — at one university or spread across several. The universities do not see your other choices, and special limits apply to Oxford/Cambridge and medicine/dentistry/veterinary. Check ucas.com.',
+      },
+      {
+        questionEn: 'Do I write a separate personal statement for each university?',
+        answerEn:
+          'No — you write one personal statement that is sent to all your choices, so it should focus on your subject and motivation rather than a single university. Follow the current UCAS format on ucas.com, and keep the writing entirely your own.',
+      },
+      {
+        questionEn: 'What is the difference between a conditional and an unconditional offer?',
+        answerEn:
+          'A conditional offer gives you a place if you meet stated conditions, usually exam grades. An unconditional offer means the place is yours regardless of pending results, often because you already hold the required qualifications.',
+      },
+      {
+        questionEn: 'When is the UCAS deadline?',
+        answerEn:
+          'There is an earlier deadline for Oxford/Cambridge and most medicine, dentistry, and veterinary courses, and a later equal-consideration deadline for most other courses. Exact dates change each cycle — confirm them on ucas.com.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-apply-to-uk-universities-step-by-step', 'uk-university-application-timeline-and-deadlines', 'how-to-study-in-the-uk-complete-guide'],
+    sources: [
+      { label: 'UCAS — official applications service', url: 'https://www.ucas.com' },
+      { label: 'UCAS — dates and deadlines for uni applications', url: 'https://www.ucas.com/applying/applying-to-university/dates-and-deadlines-for-uni-applications' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['ucas application process', 'how does ucas work', 'ucas personal statement', 'ucas five choices', 'conditional and unconditional offers', 'ucas explained'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'What it is', value: 'Central UK undergraduate application service (ucas.com)' },
+      { label: 'Course choices', value: 'Up to five in one application' },
+      { label: 'Personal statement', value: 'One statement sent to all choices' },
+      { label: 'Offer types', value: 'Conditional or unconditional; reply with firm + insurance' },
+    ],
+  },
+  {
+    slug: 'how-to-apply-to-uk-universities-step-by-step',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Apply to UK Universities Step by Step',
+    descriptionEn:
+      'A clear step-by-step walkthrough of the UCAS undergraduate journey — researching courses, registering, choosing up to five, writing the personal statement, getting a reference, submitting, and replying to offers.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Step 1 — Research courses and check requirements',
+        bodyEn:
+          'Begin by deciding your subject and shortlisting courses using the UCAS course search and each university\'s official course pages. For every shortlisted course, read the entry requirements carefully — the grades expected, any required subjects, the English-language standard for international students, and whether an admissions test or interview is involved.\n\nMedicine and dentistry generally require the UCAT; some law courses use the LNAT; and Oxford and Cambridge run their own subject tests for certain courses. These change, so confirm the requirement on each course page and the official test website.',
+      },
+      {
+        headingEn: 'Step 2 — Register on UCAS',
+        bodyEn:
+          'Create your account on ucas.com and start your application. You will enter personal details, your education history and qualifications (completed and pending), and any other information UCAS asks for. If you apply through a school or college, you may be linked to it via a buzzword so your reference can be added.\n\nWork through each section accurately — your qualifications and grades must match your official records.',
+      },
+      {
+        headingEn: 'Step 3 — Add your choices and personal statement',
+        bodyEn:
+          'Add up to five course choices, then write your personal statement following the current UCAS format. Because the same statement is sent to every choice, focus on your motivation for the subject, relevant experience, and your suitability — not one specific university.\n\nWrite it entirely yourself; submitting work that is not your own is not permitted and is checked. Give yourself time to draft and revise before the deadline.',
+        bullets: [
+          'Add up to five course choices',
+          'Write one personal statement (current UCAS format) for all choices',
+          'Keep it original — do not copy or buy a statement',
+        ],
+      },
+      {
+        headingEn: 'Step 4 — Reference, payment and submit',
+        bodyEn:
+          'Your application needs a reference, usually arranged through your school or college, or provided as directed if you apply independently. There is an application fee, the amount of which is set by UCAS and changes — check the current fee on ucas.com. Once everything is complete and checked, you submit the application to UCAS.\n\nAfter submission you can track progress in your UCAS account, where universities post their decisions.',
+      },
+      {
+        headingEn: 'Step 5 — Respond to offers',
+        bodyEn:
+          'Universities reply with conditional or unconditional offers, or sometimes a rejection. When all your decisions are in, UCAS asks you to reply by a set date: choose a firm choice (your first preference) and usually an insurance choice (a back-up, typically with slightly lower conditions).\n\nIf you are not holding an offer, UCAS Extra and later Clearing can help you find a place. Reply deadlines change each cycle — confirm them on ucas.com.',
+      },
+      {
+        headingEn: 'Step 6 — Confirmation, visa and enrolment',
+        bodyEn:
+          'When your results are published, UCAS confirms whether you have met your firm or insurance conditions. International students who accept an unconditional place then move on to the visa stage: the university issues a Confirmation of Acceptance for Studies (CAS) for the UK Student visa application.\n\nVisa rules and fees change frequently. This is general information, not immigration advice — read the current rules on GOV.UK and verify on the official government source, then complete your university\'s enrolment steps.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the first step to applying to a UK university?',
+        answerEn:
+          'Research courses using the UCAS course search and official university course pages, and check each course\'s entry requirements — grades, subjects, English standard, and any admissions test or interview — before you register on ucas.com.',
+      },
+      {
+        questionEn: 'How do I add my personal statement and choices?',
+        answerEn:
+          'Inside your UCAS application you add up to five course choices and write one personal statement in the current UCAS format. The same statement goes to all choices, so focus on the subject. Keep the writing entirely your own.',
+      },
+      {
+        questionEn: 'Is there a fee to apply through UCAS?',
+        answerEn:
+          'Yes — UCAS charges an application fee, the amount of which is set by UCAS and changes each cycle. Check the current fee on ucas.com and verify on the official source before you submit.',
+      },
+      {
+        questionEn: 'What happens after I get my offers?',
+        answerEn:
+          'You reply by a set date with a firm choice and usually an insurance choice. If you hold no offer, UCAS Extra and later Clearing can help. After results, UCAS confirms your place, and international students move to the CAS and visa stage.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'ucat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ucas-application-process-explained', 'uk-university-application-timeline-and-deadlines', 'how-to-study-in-the-uk-complete-guide'],
+    sources: [
+      { label: 'UCAS — official applications service', url: 'https://www.ucas.com' },
+      { label: 'UCAS — how to apply (undergraduate)', url: 'https://www.ucas.com/applying/applying-to-university/filling-in-your-ucas-undergraduate-application' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to apply to uk universities', 'ucas step by step', 'apply to university uk', 'ucas application guide', 'uk university application process', 'ucas choices and offers'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'Application route', value: 'UCAS (ucas.com) for undergraduate courses' },
+      { label: 'Choices', value: 'Up to five courses, one personal statement' },
+      { label: 'Reference', value: 'Required — usually via your school/college' },
+      { label: 'After offers', value: 'Reply with firm + insurance; then CAS + Student visa' },
+    ],
+  },
+  {
+    slug: 'uk-university-application-timeline-and-deadlines',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'UK University Application Timeline and Deadlines',
+    descriptionEn:
+      'How the UCAS undergraduate cycle is structured across the year, and the two main deadlines — the earlier October deadline and the later January equal-consideration deadline — explained, with exact dates deferred to the official source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The UCAS cycle runs across the year',
+        bodyEn:
+          'UK undergraduate admission runs on an annual cycle managed by UCAS. Applications typically open in the spring or summer before the year of entry, are submitted in the autumn and winter, and lead to offers, replies, and results across the following spring and summer.\n\nBecause it is a yearly cycle, the smartest approach is to start early: research courses, draft your personal statement, and arrange your reference well before any deadline.',
+      },
+      {
+        headingEn: 'Two main deadlines, by course type',
+        bodyEn:
+          'UCAS has two key on-time deadlines that depend on the course. An earlier deadline (commonly in October) applies to applications to the University of Oxford and the University of Cambridge, and to most courses in medicine, dentistry, and veterinary medicine or science. A later equal-consideration deadline (commonly in January) applies to most other undergraduate courses.\n\n"Equal consideration" means applications received by that deadline are guaranteed to be considered by the universities; applications after it may still be accepted but are considered at the universities\' discretion. The exact dates are set by UCAS each cycle — we do not quote them here.',
+        bullets: [
+          'Earlier deadline (often October): Oxford, Cambridge, and most medicine/dentistry/veterinary',
+          'Later equal-consideration deadline (often January): most other courses',
+          'Confirm the exact current dates on ucas.com',
+        ],
+      },
+      {
+        headingEn: 'What "equal consideration" actually means',
+        bodyEn:
+          'Meeting the on-time deadline does not guarantee an offer — it guarantees that the university will give your application equal consideration alongside others received on time. Universities still assess each application on its own merits against the course requirements.\n\nApplying after the deadline is sometimes possible, but places may be limited and consideration is not guaranteed, so treat the published deadlines as firm targets.',
+      },
+      {
+        headingEn: 'After the deadline: decisions, replies, Extra and Clearing',
+        bodyEn:
+          'Once applications are in, universities make decisions over the following months, and UCAS sets a date by which you must reply to your offers with a firm and an insurance choice. If you are not holding any offer, UCAS Extra lets you add a further choice, and Clearing (later in the cycle) matches applicants to courses with vacancies.\n\nResults are published in the summer, after which UCAS confirms whether you have met your conditions. Each of these stages has its own date that changes every cycle.',
+      },
+      {
+        headingEn: 'Always confirm the current dates',
+        bodyEn:
+          'Every date in the UCAS cycle — the application opening, the October and January deadlines, reply deadlines, and the Clearing window — is set fresh each year and can shift. We deliberately do not publish specific dates here, because using an out-of-date deadline could cost you a place.\n\nCheck the official key-dates page on ucas.com for the cycle you are applying in, and verify on the official source before you rely on any date.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the two main UCAS deadlines?',
+        answerEn:
+          'An earlier deadline (commonly in October) for Oxford, Cambridge, and most medicine, dentistry, and veterinary courses, and a later equal-consideration deadline (commonly in January) for most other courses. Exact dates change each cycle — confirm them on ucas.com.',
+      },
+      {
+        questionEn: 'What does the January equal-consideration deadline mean?',
+        answerEn:
+          'Applications received by that deadline are guaranteed to be considered equally by the universities. Later applications may still be accepted but are considered at the universities\' discretion, so treat the deadline as a firm target.',
+      },
+      {
+        questionEn: 'Does meeting the deadline guarantee an offer?',
+        answerEn:
+          'No. It guarantees equal consideration, not a place. Universities still assess each application on its merits against the course requirements. There are no admission guarantees.',
+      },
+      {
+        questionEn: 'Where can I find the exact UCAS dates?',
+        answerEn:
+          'On the official UCAS key-dates page at ucas.com for your year of entry. Dates are set fresh each cycle and can change, so always verify on the official source rather than relying on a date from a previous year.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: ['university-of-oxford', 'university-of-cambridge'],
+    relatedGuideSlugs: ['ucas-application-process-explained', 'how-to-apply-to-uk-universities-step-by-step', 'how-to-study-in-the-uk-complete-guide'],
+    sources: [
+      { label: 'UCAS — dates and deadlines for uni applications', url: 'https://www.ucas.com/applying/applying-to-university/dates-and-deadlines-for-uni-applications' },
+      { label: 'UCAS — official applications service', url: 'https://www.ucas.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk university application deadlines', 'ucas deadlines', 'ucas october deadline', 'ucas january deadline', 'uk application timeline', 'ucas equal consideration deadline'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'Cycle', value: 'Annual — opens spring/summer, decisions over the following year' },
+      { label: 'Earlier deadline', value: 'Often October: Oxford/Cambridge + most medicine/dentistry/veterinary' },
+      { label: 'Equal-consideration deadline', value: 'Often January: most other courses' },
+      { label: 'Exact dates', value: 'Set each cycle — verify on ucas.com' },
+    ],
+  },
+  {
+    slug: 'how-to-write-a-ucas-personal-statement',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Write a UCAS Personal Statement',
+    descriptionEn:
+      'A clear, structured guide to the UCAS personal statement for UK undergraduate applications — what admissions tutors look for, why it is one statement for all your choices, and the strict academic-integrity rules around writing your own work.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the personal statement is — and why it is one statement',
+        bodyEn:
+          'The personal statement is a written part of your UCAS undergraduate application where you explain, in your own words, why you want to study your chosen subject and what makes you a suitable candidate. It is read by admissions staff at the universities and colleges you apply to, alongside your predicted grades and academic reference.\n\nA key point that surprises many applicants: through UCAS you submit ONE personal statement, and the same statement is sent to every course choice on your application. You cannot tailor a different statement to each university, so it has to work for all of your choices at once. That is one reason most advice suggests applying to courses in the same or closely related subject areas.',
+      },
+      {
+        headingEn: 'What admissions tutors are looking for',
+        bodyEn:
+          'Admissions tutors generally want evidence that you genuinely understand and are motivated by the subject, not just a list of activities. They look for what you have read, explored, or done that connects to the course, and what you learned or concluded from it — your reflection matters more than the activity itself.\n\nBecause your single statement goes to several courses, focus on the subject and the skills it demands rather than naming a particular university. Show curiosity, relevant skills (such as analysis, problem-solving, or independent study), and a clear sense of why this subject suits you.',
+        bullets: [
+          'Genuine motivation for the subject, backed by specific examples',
+          'Wider reading, projects, or super-curricular exploration — and what you took from it',
+          'Relevant skills and experiences, with reflection rather than just a list',
+          'Clear, well-structured writing in your own voice',
+        ],
+      },
+      {
+        headingEn: 'A simple structure that works',
+        bodyEn:
+          'You do not have to follow a rigid formula, but a clear structure helps your statement read well for every course it reaches. Many strong statements open with why the subject interests you, develop the body with specific evidence of engagement and skills, and close by drawing it together.\n\nUCAS has, in recent cycles, moved toward a more guided format with set questions or prompts for the undergraduate personal statement. Because the exact format and any character or word limits are reviewed by UCAS and can change between cycles, always check the current personal-statement guidance and limits on the official UCAS website before you write.',
+        bullets: [
+          'Opening: why this subject — a specific, honest reason',
+          'Body: evidence of engagement, super-curricular work, and transferable skills',
+          'Reflection: what each experience taught you about the subject or yourself',
+          'Close: how it connects to your goals for studying the course',
+        ],
+      },
+      {
+        headingEn: 'Academic integrity — it must be your own work',
+        bodyEn:
+          'Your personal statement must be written entirely by you. UCAS runs similarity-detection on submitted statements, and copying another person\'s statement, buying a statement, or having someone else write it for you is treated as a serious integrity breach that can affect or withdraw your application.\n\nGetting feedback from a teacher, adviser, or family member on a draft you wrote yourself is normal and fine. Paying an essay-writing service, plagiarising sample statements, or submitting AI-generated text as your own is not — it is dishonest and against the rules. Write your own statement, in your own words, and keep a record of your drafts.',
+      },
+      {
+        headingEn: 'Practical tips and common mistakes',
+        bodyEn:
+          'Start early and expect several drafts — a strong statement is rewritten, not written once. Read it aloud to check it flows, and have a teacher review it for clarity and accuracy. Be specific: \'I read X and it changed how I think about Y\' is far stronger than vague claims of passion.\n\nAvoid clichéd openings, unexplained lists of activities, exaggeration, and anything you could not discuss at interview. Remember there is no guaranteed formula and no guaranteed offer — the statement is one part of a holistic decision made by each university.',
+        bullets: [
+          'Write early and revise across multiple drafts',
+          'Be specific and reflective; avoid generic claims and clichés',
+          'Only include things you could genuinely talk about',
+          'Proofread carefully for spelling, grammar, and clarity',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I write a different personal statement for each university?',
+        answerEn:
+          'No. Through UCAS you submit one personal statement, and it is sent to every course choice on your application. You cannot send a tailored version to each university, so write something that works for all of your chosen courses.',
+      },
+      {
+        questionEn: 'Is it cheating to get help with my personal statement?',
+        answerEn:
+          'Getting feedback on a draft you wrote yourself — from a teacher, adviser, or family member — is acceptable. Having someone else write it, copying another statement, buying one, or submitting AI-generated text as your own is an academic-integrity breach. UCAS checks statements for similarity, so the work must be genuinely yours.',
+      },
+      {
+        questionEn: 'How long should the personal statement be?',
+        answerEn:
+          'UCAS sets the format and any length or character limits, and these have changed between cycles. Always check the current personal-statement guidance and limits on the official UCAS website before you start writing, and verify the format for your application year.',
+      },
+      {
+        questionEn: 'Does a good personal statement guarantee an offer?',
+        answerEn:
+          'No. There is no guaranteed formula and no guaranteed offer. The personal statement is one part of a holistic decision that also considers your predicted grades, academic reference, and any admissions test or entry requirements set by the course.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ucas-points-and-tariff-explained', 'predicted-grades-and-references-explained', 'how-to-choose-uk-university-courses', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — How to write your personal statement (2026 entry onwards)', url: 'https://www.ucas.com/applying/applying-to-university/writing-your-personal-statement/how-to-write-your-personal-statement-for-2026-entry-onwards' },
+      { label: 'UCAS — Personal statement guides', url: 'https://www.ucas.com/applying/applying-to-university/writing-your-personal-statement/personal-statement-guides' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['ucas personal statement', 'how to write a personal statement', 'uk university application', 'personal statement structure', 'ucas application uk', 'personal statement tips'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'Where it is used', value: 'UCAS undergraduate application (UK)' },
+      { label: 'How many statements', value: 'One statement, sent to all course choices' },
+      { label: 'Written by', value: 'The applicant — own work only (UCAS runs similarity checks)' },
+      { label: 'Format and limits', value: 'Set by UCAS; verify current guidance on ucas.com' },
+    ],
+  },
+  {
+    slug: 'ucas-points-and-tariff-explained',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'UCAS Points and Tariff Explained',
+    descriptionEn:
+      'A plain-English guide to the UCAS Tariff — how A-levels, the International Baccalaureate, BTECs, and other qualifications convert into UCAS points, and why you should check the official tariff calculator before relying on a number.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What the UCAS Tariff is',
+        bodyEn:
+          'The UCAS Tariff is a points system that puts different post-16 qualifications onto a common scale so they can be compared. It assigns a number of points to the grades you achieve in eligible qualifications — for example A-levels, the International Baccalaureate (IB) Diploma, BTEC Nationals, Scottish Highers, and many others.\n\nThe Tariff exists so that universities can express an entry requirement in points and compare applicants holding different qualification types. Not every course uses points-based offers, however — many ask for specific grades instead.',
+      },
+      {
+        headingEn: 'How qualifications convert to points',
+        bodyEn:
+          'Each eligible qualification has a set number of points attached to each grade, based on the qualification\'s size and the grade achieved. Higher grades in larger qualifications carry more points; smaller qualifications carry fewer. You add up the points from your qualifications to get a total.\n\nThe exact point values for each grade are set by UCAS and are reviewed over time. Because these values can change and depend on the specific qualification, do not memorise a figure from elsewhere — use the official UCAS Tariff calculator to work out your total, and verify it for your application year.',
+        bullets: [
+          'Points depend on both the qualification size and the grade achieved',
+          'A-levels, IB, BTEC Nationals, Scottish Highers and more are included',
+          'You total the points across your eligible qualifications',
+          'Always confirm current values with the official UCAS Tariff calculator',
+        ],
+      },
+      {
+        headingEn: 'Points-based offers vs grade-based offers',
+        bodyEn:
+          'Universities choose how to phrase their entry requirements. Some make a points-based offer (for example, asking for a certain number of UCAS points), which gives flexibility in how you reach the total. Others make a grade-based offer (for example, specific A-level grades or an IB points total), especially for competitive or specialist courses.\n\nAlways read the entry requirements for each specific course. A course may also require particular subjects or a minimum grade in a key subject regardless of your overall points, so points alone do not tell the whole story.',
+      },
+      {
+        headingEn: 'Why you should not over-rely on points',
+        bodyEn:
+          'UCAS points are a useful comparison tool, but they are not the only thing universities consider. Many selective courses look at your specific subjects, predicted grades, personal statement, reference, and any admissions test — not just a points total.\n\nTreat the Tariff as a way to understand and compare offers, not a target you can game. The most reliable approach is to check the actual requirements published by each course and confirm how (or whether) they use the Tariff.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many UCAS points is an A-level or an IB grade worth?',
+        answerEn:
+          'Each grade in each eligible qualification has a set point value determined by UCAS, based on the qualification size and grade. These values are reviewed over time, so rather than rely on a remembered figure, use the official UCAS Tariff calculator and verify it for your application year.',
+      },
+      {
+        questionEn: 'Do all universities use UCAS points?',
+        answerEn:
+          'No. Some courses make points-based offers, while others ask for specific grades (such as particular A-level or IB results). Always check the entry requirements for each individual course, as some also require particular subjects.',
+      },
+      {
+        questionEn: 'Which qualifications count toward the Tariff?',
+        answerEn:
+          'Many post-16 qualifications are included, such as A-levels, the IB Diploma, BTEC Nationals, and Scottish Highers, among others. The full list of eligible qualifications and their point values is maintained by UCAS — check the official calculator.',
+      },
+    ],
+    relatedExamSlugs: ['a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-choose-uk-university-courses', 'predicted-grades-and-references-explained', 'how-to-write-a-ucas-personal-statement', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — Calculate your UCAS Tariff points', url: 'https://www.ucas.com/applying/before-you-apply/what-and-where-to-study/entry-requirements/calculate-your-ucas-tariff-points' },
+      { label: 'UCAS — Entry requirements', url: 'https://www.ucas.com/applying/you-apply/what-and-where-study/entry-requirements' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['ucas points', 'ucas tariff explained', 'a level ucas points', 'ib ucas points', 'ucas tariff calculator', 'uk university entry requirements'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'What it is', value: 'A points system comparing different qualifications' },
+      { label: 'Covers', value: 'A-levels, IB, BTEC Nationals, Scottish Highers and more' },
+      { label: 'Point values', value: 'Set by UCAS; verify on the official Tariff calculator' },
+      { label: 'Offer types', value: 'Points-based or grade-based — varies by course' },
+    ],
+  },
+  {
+    slug: 'predicted-grades-and-references-explained',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'Predicted Grades and References Explained',
+    descriptionEn:
+      'What predicted grades and the academic reference are in a UCAS application, where they come from, and how they shape conditional offers — explained neutrally for UK undergraduate applicants.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What predicted grades are',
+        bodyEn:
+          'Predicted grades are the results your school or college believes you are likely to achieve in your final qualifications (such as A-levels or the IB), submitted as part of your UCAS application before you have sat those exams. They are a professional judgement made by your teachers based on your performance so far.\n\nYou do not set your own predicted grades — your school does. Universities use them to assess your application and decide what kind of offer to make, since your actual results are not yet known when you apply.',
+      },
+      {
+        headingEn: 'What the academic reference is',
+        bodyEn:
+          'The reference is a statement written by someone at your school or college — usually a teacher, tutor, or careers adviser — that supports your application. In recent cycles UCAS moved the reference to a more structured format with set questions covering your suitability for higher education and any context that should be considered.\n\nLike predicted grades, the reference comes from your school, not from you. It is intended to give universities an informed, professional view of you as a student alongside the personal statement you write yourself.',
+        bullets: [
+          'Written by a teacher, tutor, or adviser at your school or college',
+          'Now follows a structured, question-based format set by UCAS',
+          'Comments on your suitability and any relevant context',
+          'Separate from your personal statement, which you write yourself',
+        ],
+      },
+      {
+        headingEn: 'How predicted grades feed into conditional offers',
+        bodyEn:
+          'When a university makes a conditional offer, it offers you a place on the condition that you meet specified results (for example, particular A-level grades or an IB points total) when your real exam results come out. Predicted grades help the university decide whether to make such an offer and at what level.\n\nIf you later meet the conditions, the place is normally confirmed; if you narrowly miss, the university may still confirm, hold the place, or you may use UCAS Clearing. Exactly how this works is governed by UCAS and each university\'s own policy, so check the official guidance for your cycle.',
+      },
+      {
+        headingEn: 'Why accuracy and context matter',
+        bodyEn:
+          'Predicted grades and the reference are meant to be honest and evidence-based. Schools are expected to predict grades fairly, and the reference can flag context — such as a significant disruption to your studies — that helps a university read your application in the round.\n\nIf you think a prediction or reference does not reflect your situation, the right step is to talk to your school early. The specifics of how predictions and references are prepared and used can vary and are reviewed over time, so rely on official UCAS guidance and your school\'s advice rather than assumptions.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who decides my predicted grades?',
+        answerEn:
+          'Your school or college decides them — they are a professional judgement by your teachers of the results you are likely to achieve. You do not set your own predicted grades, and they are submitted through UCAS as part of your application.',
+      },
+      {
+        questionEn: 'What is the difference between the reference and my personal statement?',
+        answerEn:
+          'The personal statement is written by you, in your own words. The reference is written by someone at your school or college (such as a teacher or adviser) and follows a structured format set by UCAS, giving a professional view of your suitability for higher education.',
+      },
+      {
+        questionEn: 'What happens if I miss my predicted grades?',
+        answerEn:
+          'If you miss the conditions of an offer, the university may still confirm your place, may not, or you may be able to use UCAS Clearing to find an alternative. The exact outcome depends on UCAS rules and each university\'s policy, so check the official guidance for your cycle.',
+      },
+    ],
+    relatedExamSlugs: ['a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ucas-points-and-tariff-explained', 'ucas-clearing-and-adjustment-explained', 'how-to-write-a-ucas-personal-statement', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — Understanding entry grades and predicted grades', url: 'https://www.ucas.com/applying/before-you-apply/what-and-where-to-study/entry-requirements/understanding-historical-entry-grades-data' },
+      { label: 'UCAS — How to get a UCAS reference', url: 'https://www.ucas.com/applying/applying-university/how-get-ucas-reference' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['predicted grades ucas', 'ucas reference', 'academic reference ucas', 'conditional offer uk', 'how predicted grades work', 'uk university application'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'Predicted grades', value: 'Set by your school, not by you' },
+      { label: 'Reference', value: 'Structured statement written by a teacher/adviser' },
+      { label: 'Used for', value: 'Helping universities make conditional offers' },
+      { label: 'Authority', value: 'Process governed by UCAS; verify for your cycle' },
+    ],
+  },
+  {
+    slug: 'ucas-clearing-and-adjustment-explained',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'UCAS Clearing Explained',
+    descriptionEn:
+      'How UCAS Clearing works after results day — who it is for, how to find and accept a place through the official UCAS process, and why availability and dates change each year.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What Clearing is',
+        bodyEn:
+          'Clearing is the official UCAS process that matches applicants who do not hold a confirmed place with courses that still have vacancies. It typically runs around results time and into the autumn, giving students a route into university when they are not already placed.\n\nIt is a normal, established part of the admissions cycle — not a last resort to be ashamed of. Many students find a good course through Clearing each year, and the whole process is run through your UCAS account.',
+      },
+      {
+        headingEn: 'Who Clearing is for',
+        bodyEn:
+          'Clearing is generally for applicants who are not holding a confirmed offer — for example, if you did not receive any offers, declined the offers you held, missed the conditions of your offers, or applied later in the cycle. It is also used by people applying for the first time after the main deadline.\n\nExactly who is eligible and when, and how late applications are handled, is defined by UCAS and can vary by cycle. Check your UCAS account and the official Clearing guidance to see whether and how Clearing applies to your situation.',
+        bullets: [
+          'Applicants who did not receive or accept any offers',
+          'Applicants who did not meet the conditions of their offers',
+          'People applying later in the cycle, after the main deadline',
+          'Eligibility and timing are set by UCAS — verify for your year',
+        ],
+      },
+      {
+        headingEn: 'How the Clearing process works',
+        bodyEn:
+          'In Clearing, you search for courses with available places (UCAS publishes vacancy listings), contact the universities you are interested in to discuss whether they will accept you, and then, if a university agrees, you add the choice in your UCAS account to formally accept the place.\n\nUniversities may ask about your results and suitability before agreeing informally to a place, after which you confirm it through UCAS. Always follow the steps in your UCAS account exactly, and use the official UCAS course search rather than unofficial lists.',
+        bullets: [
+          'Search official UCAS vacancy listings for available courses',
+          'Contact universities to discuss whether they can offer you a place',
+          'Add the agreed choice in your UCAS account to accept it',
+        ],
+      },
+      {
+        headingEn: 'Dates, availability and a no-guarantee note',
+        bodyEn:
+          'Clearing opening times, deadlines, and which courses have vacancies all change every year, and popular courses can fill quickly. There is no guaranteed place through Clearing — availability depends on what each university has open and your meeting their requirements.\n\nBecause the timetable and course availability are set by UCAS and individual universities and change annually, always confirm the current dates, deadlines, and live vacancies on the official UCAS website for your application year before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who can use Clearing?',
+        answerEn:
+          'Clearing is generally for applicants without a confirmed place — for example, those who did not get or accept offers, missed offer conditions, or applied later in the cycle. Eligibility and timing are set by UCAS and can vary by year, so check your UCAS account and the official guidance.',
+      },
+      {
+        questionEn: 'How do I get a place through Clearing?',
+        answerEn:
+          'You search the official UCAS vacancy listings, contact universities to discuss whether they can offer you a place, and then add the agreed choice in your UCAS account to accept it. Follow the steps in your UCAS account and use the official UCAS course search.',
+      },
+      {
+        questionEn: 'When does Clearing happen and is a place guaranteed?',
+        answerEn:
+          'Clearing typically runs around results time and into the autumn, but exact dates and available courses change every year, and there is no guaranteed place. Confirm the current dates, deadlines, and live vacancies on the official UCAS website for your application year.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['predicted-grades-and-references-explained', 'how-to-choose-uk-university-courses', 'how-to-write-a-ucas-personal-statement', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — What is Clearing?', url: 'https://www.ucas.com/applying/after-you-apply/clearing-and-results-day/what-is-clearing' },
+      { label: 'UCAS — Clearing and results day', url: 'https://www.ucas.com/applying/after-you-apply/clearing-and-results-day' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['ucas clearing', 'how does clearing work', 'clearing explained', 'university clearing uk', 'clearing places', 'ucas results day'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'What it is', value: 'Official UCAS process matching applicants to vacant courses' },
+      { label: 'Who it is for', value: 'Applicants without a confirmed place; late applicants' },
+      { label: 'How you accept', value: 'Add the agreed choice in your UCAS account' },
+      { label: 'Dates and vacancies', value: 'Change every year — verify on ucas.com' },
+    ],
+  },
+  {
+    slug: 'how-to-choose-uk-university-courses',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Choose UK University Courses',
+    descriptionEn:
+      'In the UK you apply to a specific subject or course, not just a university — this guide explains how to shortlist courses by content, entry requirements, location, and fit, neutrally and without ranking any university as the single \'best\'.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'In the UK, you apply to a course — not just a university',
+        bodyEn:
+          'A defining feature of UK undergraduate admissions is that you apply to a specific course (subject) at each university, rather than applying to the institution and choosing a major later. Through UCAS you can list up to a set number of choices, and each choice is a particular course at a particular university.\n\nThis matters because the course content, structure, and entry requirements can differ a lot between universities offering the \'same\' subject. Two history degrees, for instance, can have very different modules, assessment styles, and required subjects. So the course itself is the unit you are really choosing.',
+      },
+      {
+        headingEn: 'Start with course content and structure',
+        bodyEn:
+          'Read the official course pages for each university and compare what you would actually study: the core and optional modules, how the degree is assessed (exams, coursework, dissertation), whether there is a placement or study-abroad year, and the balance between theory and practice.\n\nLook for the parts of the subject that genuinely interest you. A course that matches your strengths and interests will usually be a better fit than one chosen only on reputation. Course details are published by each university and updated each year, so check the current pages.',
+        bullets: [
+          'Compare core and optional modules across universities',
+          'Check assessment methods — exams, coursework, dissertation',
+          'Note placement years, year abroad, or accreditation where relevant',
+          'Prioritise the topics within the subject that interest you most',
+        ],
+      },
+      {
+        headingEn: 'Check entry requirements carefully',
+        bodyEn:
+          'Every course publishes its entry requirements, which may be expressed as specific grades (such as A-levels or IB points) or as UCAS points, and often include required or preferred subjects. Some competitive courses — for example medicine, dentistry, or law at certain universities — also require an admissions test or interview.\n\nMake sure your predicted grades and subjects realistically match each course\'s requirements, and build a balanced list. Requirements are set by each university, vary by course, and can change between cycles, so confirm them on the official course page and verify any admissions-test requirement on the relevant official source.',
+      },
+      {
+        headingEn: 'Weigh location, environment and practical factors',
+        bodyEn:
+          'Beyond the course, where and how you will live for several years matters. Consider the city or campus, distance from home, living costs, accommodation, and the type of environment (large city, campus university, or smaller town) you would thrive in.\n\nIf you can, visit on an open day or attend a virtual event to get a feel for the place. These practical factors are personal — there is no single right answer, and a setting that suits one person may not suit another.',
+        bullets: [
+          'City vs campus, and the surrounding environment',
+          'Living costs, accommodation, and travel from home',
+          'Open days and virtual events to get a genuine feel',
+          'Support services and facilities relevant to your course',
+        ],
+      },
+      {
+        headingEn: 'Build a balanced, honest shortlist',
+        bodyEn:
+          'A sensible UCAS list usually mixes courses that are ambitious for you with some where your predicted grades comfortably meet the requirements, so you have realistic options whatever your results. Rankings (such as those published by QS or THE) can give context, but they reflect each ranking body\'s own methodology and should not be the only factor — and no university is the single \'best\' for everyone.\n\nFocus on fit: the course that matches your interests, where you meet the requirements, and where you would be happy to live. Confirm every detail on official university pages and UCAS for your application year before you commit your choices.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply to a UK university or to a specific course?',
+        answerEn:
+          'In the UK you apply to a specific course (subject) at each university through UCAS, not to the university in general. Each of your UCAS choices is a particular course at a particular institution, so the course content and entry requirements are central to your decision.',
+      },
+      {
+        questionEn: 'How should I shortlist courses?',
+        answerEn:
+          'Compare the actual course content and structure, check that your predicted grades and subjects match each course\'s entry requirements, and weigh practical factors like location and living costs. Build a balanced list with both ambitious and safer choices, and confirm details on official pages.',
+      },
+      {
+        questionEn: 'Should I just pick the highest-ranked university?',
+        answerEn:
+          'Rankings from bodies such as QS or THE can give useful context, but they reflect each ranking\'s own methodology and no university is the single best for everyone. Course fit, entry requirements, and where you would be happy to live usually matter more than rank alone.',
+      },
+    ],
+    relatedExamSlugs: ['a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ucas-points-and-tariff-explained', 'how-to-write-a-ucas-personal-statement', 'ucas-clearing-and-adjustment-explained', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — Choosing a course', url: 'https://www.ucas.com/applying/you-apply/what-and-where-study/choosing-course' },
+      { label: 'UCAS — Search for courses', url: 'https://www.ucas.com/explore/search/providers' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to choose a uk university course', 'choosing a degree uk', 'ucas course search', 'uk university courses', 'how to pick a degree', 'uk undergraduate courses'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'What you apply to', value: 'A specific course (subject), not just a university' },
+      { label: 'Compare on', value: 'Course content, entry requirements, location, fit' },
+      { label: 'Entry requirements', value: 'Set per course; verify on official university pages' },
+      { label: 'Rankings', value: 'Context only; attributed to QS/THE; no single \'best\'' },
+    ],
+  },
+  {
+    slug: 'cao-application-process-for-ireland-explained',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'CAO Application Process for Ireland Explained',
+    descriptionEn:
+      'A clear guide to the Central Applications Office (CAO) in Ireland — what it is, how the points system works for undergraduate offers, and how international (non-EU) applicants apply.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the CAO is',
+        bodyEn:
+          'The Central Applications Office (CAO) is the body that processes most undergraduate applications to universities and colleges in the Republic of Ireland. Instead of applying to each institution separately, applicants submit a single online application through the CAO and list the courses they are interested in.\n\nThe CAO does not decide who gets a place — the universities set the entry requirements and make the offers. The CAO collects applications, processes the order of preference, and issues offers on behalf of the participating institutions.',
+      },
+      {
+        headingEn: 'How the points system works',
+        bodyEn:
+          'For applicants using the Irish Leaving Certificate, offers are largely based on a points score calculated from the best results in a set number of subjects. Each course has a points level that reflects demand and the number of places available, and offers go to the applicants with the highest points who have listed that course.\n\nThe points required for a course are not fixed — they can rise or fall each year depending on how many people apply and how they perform. Because the cut-off is set by demand rather than published in advance, you should treat previous years\' points only as a rough guide and check the official source for current information.',
+        bullets: [
+          'Points are calculated from a defined number of subjects',
+          'Each course has a points level set by demand and available places',
+          'Cut-off points change year to year — never assume last year\'s figure',
+        ],
+      },
+      {
+        headingEn: 'How offers and preferences work',
+        bodyEn:
+          'On the CAO application you list courses in genuine order of preference. Offers are made in rounds, and you are offered the highest course on your list for which you meet the requirements and points. Accepting a place does not always remove you from consideration for a higher preference in a later round, so it is important to order your list carefully.\n\nKey requirements, application steps, and the way preferences are handled are explained in detail on the official CAO website, and the rules can be updated each cycle.',
+      },
+      {
+        headingEn: 'International (non-EU) applicants',
+        bodyEn:
+          'How you apply depends on your category and the institution. EU applicants generally apply through the CAO. Non-EU international applicants sometimes apply directly to the university\'s international admissions office and sometimes through the CAO, and this varies by institution and course.\n\nBecause the route differs, the most reliable step is to check the international admissions page of each university you are interested in, alongside the CAO website, to confirm exactly how to apply for your situation.',
+      },
+      {
+        headingEn: 'Deadlines, fees and qualifications',
+        bodyEn:
+          'The CAO operates on an annual timeline with specific opening dates, application deadlines, change-of-mind windows, and an application fee. International qualifications (such as A-levels, the IB, or your national school-leaving certificate) are assessed for equivalence against Irish entry standards.\n\nExact dates, fees, late-application rules, and how a specific qualification is scored all change from year to year. Verify every one of these on the official CAO website and the relevant university page before you apply — rules change frequently, so check the official source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply to each Irish university separately?',
+        answerEn:
+          'For undergraduate courses, most applicants apply through a single CAO application and list multiple courses, rather than applying to each institution separately. Some non-EU international applicants apply directly to a university instead — confirm the route on each university\'s international admissions page.',
+      },
+      {
+        questionEn: 'How many points do I need?',
+        answerEn:
+          'There is no single fixed number. Each course has a points level set by demand and available places, and it changes every year. Use previous years only as a rough guide and check the official CAO and university sources for current information.',
+      },
+      {
+        questionEn: 'Can international qualifications be used for the CAO?',
+        answerEn:
+          'Yes. Qualifications such as A-levels, the International Baccalaureate, and many national school-leaving certificates are assessed for equivalence. Exactly how each is scored is set out on the official CAO website and can change, so verify it for your qualification.',
+      },
+      {
+        questionEn: 'Is there an application fee and a deadline?',
+        answerEn:
+          'Yes — the CAO has annual deadlines and an application fee, with separate windows for changes of mind and late applications. The specific dates and fee change each cycle, so confirm them on the official CAO website before applying.',
+      },
+    ],
+    relatedExamSlugs: ['a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-ireland-from-india', 'uk-vs-ireland-for-international-students', 'how-to-apply-to-uk-and-ireland-as-a-postgraduate'],
+    sources: [
+      { label: 'CAO — official site', url: 'https://www.cao.ie' },
+      { label: 'Education in Ireland — official', url: 'https://www.educationinireland.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['cao application ireland', 'cao points system', 'how to apply to irish universities', 'study in ireland undergraduate', 'cao application process', 'apply to university in ireland'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'What it is', value: 'Central Applications Office — undergraduate applications in Ireland' },
+      { label: 'How offers are decided', value: 'Points-based, set by demand and available places' },
+      { label: 'Non-EU applicants', value: 'CAO or direct to the university — varies by institution' },
+      { label: 'Official source', value: 'cao.ie (verify dates, fees and rules)' },
+    ],
+  },
+  {
+    slug: 'uk-vs-ireland-for-international-students',
+    category: 'comparison',
+    region: 'uk-ireland',
+    titleEn: 'UK vs Ireland for International Students',
+    descriptionEn:
+      'A neutral, factual comparison of studying in the UK versus Ireland — application routes, degree length, language, and student visa basics — to help you decide based on your own goals.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two strong study destinations',
+        bodyEn:
+          'The United Kingdom and Ireland are both popular English-speaking study destinations with well-established universities. Neither is universally "better" — the right choice depends on your course, budget, timeline, and personal preferences.\n\nThis guide compares the practical differences so you can decide based on your own goals. Because requirements, fees, and immigration rules change regularly, treat the points below as a structural overview and verify the specifics on the official sources before deciding.',
+      },
+      {
+        headingEn: 'Application routes',
+        bodyEn:
+          'In the UK, undergraduate applications are usually submitted through UCAS, a single centralised system where you list a limited number of choices. In Ireland, most undergraduate applications go through the Central Applications Office (CAO), though some non-EU international applicants apply directly to the university.\n\nFor postgraduate study, both countries are typically a direct application to each university (with UCAS Postgraduate used by some UK programmes). The exact route varies by course, so confirm it on each university\'s admissions page.',
+        bullets: [
+          'UK undergraduate: usually UCAS',
+          'Ireland undergraduate: CAO (some non-EU applicants apply direct)',
+          'Postgraduate (both): usually direct to the university',
+        ],
+      },
+      {
+        headingEn: 'Degree length and structure',
+        bodyEn:
+          'Degree length can differ. In England, Wales, and Northern Ireland, undergraduate honours degrees are commonly three years, while in Scotland they are often four years. In Ireland, undergraduate degrees are commonly three or four years depending on the course.\n\nMany taught master\'s programmes in both countries are typically one year, though this varies. Always check the exact duration of the specific course you are considering on the university\'s official course page.',
+      },
+      {
+        headingEn: 'Language and teaching',
+        bodyEn:
+          'Both the UK and Ireland teach in English, and both generally require international students to demonstrate English proficiency through an accepted test or qualification. The exact accepted tests and score requirements are set by each university and course.\n\nBecause English-language requirements differ by institution and can change, check the specific course page for the tests and levels it accepts, and verify them on the official source.',
+      },
+      {
+        headingEn: 'Student visa basics',
+        bodyEn:
+          'The two countries have separate immigration systems. The UK uses a Student visa route administered through the UK government, while Ireland has its own study-permission and immigration registration process. Requirements such as proof of funds, healthcare arrangements, and permitted working hours differ between the two and are set by each government.\n\nThis is general information, not immigration advice. Immigration rules change frequently — check the official UK government and Irish immigration websites for the current rules before making any decision.',
+      },
+      {
+        headingEn: 'How to decide',
+        bodyEn:
+          'Rather than asking which country is "best", match each option to your priorities: the specific course and university, total length and cost, post-study plans, and the visa pathway that fits your situation. Both routes can suit different students for different reasons.\n\nShortlist courses in both countries, compare them side by side on the official university pages, and confirm the current admissions and immigration requirements before you commit.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the UK or Ireland better for international students?',
+        answerEn:
+          'Neither is universally better — it depends on your course, budget, degree length preference, and post-study plans. Compare the specific universities and courses you are considering, and check the current visa rules for each country before deciding.',
+      },
+      {
+        questionEn: 'How do the application systems differ?',
+        answerEn:
+          'UK undergraduate applications usually go through UCAS, while Irish undergraduate applications usually go through the CAO (some non-EU applicants apply directly to the university). Postgraduate study is typically a direct application in both countries.',
+      },
+      {
+        questionEn: 'Are degrees the same length in both countries?',
+        answerEn:
+          'Not always. UK undergraduate degrees are commonly three years (often four in Scotland), and Irish degrees are commonly three or four years. Many taught master\'s in both are typically one year. Check the exact duration on the official course page.',
+      },
+      {
+        questionEn: 'Do both require an English test?',
+        answerEn:
+          'Both generally require proof of English proficiency through an accepted test or qualification, but the accepted tests and required levels are set by each university and course and can change. Verify them on the specific course page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'study-in-ireland-from-india', 'cao-application-process-for-ireland-explained'],
+    sources: [
+      { label: 'UCAS — official site', url: 'https://www.ucas.com' },
+      { label: 'CAO — official site', url: 'https://www.cao.ie' },
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'Irish Immigration Service', url: 'https://www.irishimmigration.ie' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk vs ireland for international students', 'study in uk or ireland', 'uk ireland comparison students', 'studying in the uk vs ireland', 'uk ireland degree length', 'uk ireland student visa'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'UK undergraduate route', value: 'Usually UCAS' },
+      { label: 'Ireland undergraduate route', value: 'Usually CAO (some non-EU apply direct)' },
+      { label: 'Immigration', value: 'Separate UK and Irish systems — verify on official sources' },
+      { label: 'How to choose', value: 'By course, cost, degree length and post-study plans' },
+    ],
+  },
+  {
+    slug: 'entry-requirements-for-uk-universities',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'Entry Requirements for UK Universities',
+    descriptionEn:
+      'Understand how UK university entry requirements work — academic qualifications such as A-levels and the IB, English-language requirements, and where to confirm the exact grades for your course.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Requirements are set per course',
+        bodyEn:
+          'UK universities set their own entry requirements, and these vary by university and by individual course. A subject at one university can ask for different grades than the same subject elsewhere, and more competitive courses generally ask for higher grades.\n\nBecause there is no single national cut-off, the most reliable approach is to read the entry requirements on the specific course page of each university you are interested in. The structural overview below explains the kinds of requirements you will see.',
+      },
+      {
+        headingEn: 'Academic qualifications',
+        bodyEn:
+          'UK universities accept a range of school-leaving qualifications. Common routes include A-levels, the International Baccalaureate (IB) Diploma, and recognised international or national qualifications assessed for equivalence. Some courses also specify particular subjects you must have studied.\n\nThe exact grades and subjects required for each course are published by the university and updated for each admissions cycle. Never assume a figure — confirm the current requirement on the official course page.',
+        bullets: [
+          'A-levels (with specific subjects for some courses)',
+          'International Baccalaureate (IB) Diploma',
+          'Recognised international/national qualifications, assessed for equivalence',
+        ],
+      },
+      {
+        headingEn: 'English-language requirements',
+        bodyEn:
+          'International students whose first language is not English are generally required to demonstrate English proficiency. Universities accept a range of recognised tests and qualifications, and each course sets the minimum level it will accept.\n\nThe accepted tests and required scores differ by university and course and can change, so check the English-language requirements listed on the specific course page and verify them on the official source before booking any test.',
+      },
+      {
+        headingEn: 'Admissions tests for some courses',
+        bodyEn:
+          'A minority of competitive courses require an additional admissions test. For medicine and dentistry, the UCAT is the standard UK admissions test used by many universities; the BMAT has been discontinued and is no longer part of the process. Some law courses use the LNAT at certain universities, and a few subjects at some universities use their own subject-specific admissions tests.\n\nWhich test (if any) a course requires, and how it is used, is decided by each university and changes from time to time. Check the official course page and the official test website, and verify the current requirement before you apply.',
+      },
+      {
+        headingEn: 'Other parts of the application',
+        bodyEn:
+          'Beyond grades and tests, UK applications typically include a personal statement and an academic reference, submitted through UCAS for undergraduate study. Some courses also use interviews or ask for additional work, such as a portfolio for creative subjects.\n\nThe exact components, deadlines, and how each is weighted are set by the university and the UCAS cycle, so confirm them on the official UCAS and university pages for the year you are applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What grades do I need for a UK university?',
+        answerEn:
+          'There is no single answer — each university sets entry requirements per course, and competitive courses usually ask for higher grades. Check the exact grades on the specific course page, and treat any figure you see elsewhere as a guide only until you confirm the current requirement.',
+      },
+      {
+        questionEn: 'Which qualifications do UK universities accept?',
+        answerEn:
+          'Common routes include A-levels, the IB Diploma, and recognised international or national qualifications assessed for equivalence. Some courses also require particular subjects. Confirm what your target course accepts on its official page.',
+      },
+      {
+        questionEn: 'Do I need an English test?',
+        answerEn:
+          'International students whose first language is not English generally need to show English proficiency through an accepted test or qualification. The accepted tests and required scores are set by each course and can change, so verify them on the course page.',
+      },
+      {
+        questionEn: 'Do any courses need an admissions test?',
+        answerEn:
+          'Some do. The UCAT is the standard UK admissions test for medicine and dentistry at many universities (the BMAT has been discontinued), some law courses use the LNAT at certain universities, and a few subjects use their own tests. Check the course page and the official test website for the current requirement.',
+      },
+    ],
+    relatedExamSlugs: ['a-levels', 'international-baccalaureate', 'ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'international-foundation-year-explained', 'uk-vs-ireland-for-international-students'],
+    sources: [
+      { label: 'UCAS — official site', url: 'https://www.ucas.com' },
+      { label: 'UCAT — official site', url: 'https://www.ucat.ac.uk' },
+      { label: 'LNAT — official site', url: 'https://lnat.ac.uk' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['entry requirements uk universities', 'uk university entry requirements', 'a level requirements uk university', 'english requirements uk university', 'ucas entry requirements', 'qualifications for uk university'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'Set by', value: 'Each university, per course' },
+      { label: 'Common qualifications', value: 'A-levels, IB Diploma, assessed equivalents' },
+      { label: 'Medicine/dentistry test', value: 'UCAT (BMAT discontinued)' },
+      { label: 'Official source', value: 'Each course page + ucas.com (verify current grades)' },
+    ],
+  },
+  {
+    slug: 'international-foundation-year-explained',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'International Foundation Year Explained',
+    descriptionEn:
+      'What an international foundation year is, who it is for, and how a foundation or bridging programme can lead to undergraduate degree entry at universities in the UK and Ireland.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What a foundation year is',
+        bodyEn:
+          'An international foundation year (sometimes called a foundation or bridging programme) is a one-year preparatory course that helps students meet the academic and English-language requirements for undergraduate degree entry. It builds subject knowledge, study skills, and language ability needed for degree-level study.\n\nFoundation programmes are typically offered by or in partnership with universities and pathway providers, and they are designed for students whose current qualifications do not yet match the direct entry requirements for their target degree.',
+      },
+      {
+        headingEn: 'Who it is for',
+        bodyEn:
+          'A foundation year can suit international students whose school-leaving qualification or English level does not, on its own, meet the direct entry requirements for an undergraduate degree at their chosen university. It can also help students changing academic direction or strengthening preparation in a particular subject area.\n\nWhether you need a foundation year depends entirely on your qualifications and your target course. The most reliable step is to check the entry requirements of the specific degree you want and ask the university\'s admissions office whether direct entry or a foundation route applies to you.',
+        bullets: [
+          'Qualifications below the direct entry requirement for a degree',
+          'English level not yet meeting the course requirement',
+          'Preparing for a specific subject area before degree study',
+        ],
+      },
+      {
+        headingEn: 'How it leads to a degree',
+        bodyEn:
+          'A foundation year is usually linked to progression onto an undergraduate degree, often at the same university, provided you meet the required grades and conditions on the foundation programme. Successful completion can lead to entry into the first year of a related degree.\n\nProgression rules vary: some foundation programmes guarantee a route to specific degrees subject to performance, while others are more general. Always confirm exactly which degrees a foundation programme leads to, and on what conditions, with the university before enrolling.',
+      },
+      {
+        headingEn: 'Foundation year vs direct entry',
+        bodyEn:
+          'Many international students enter UK and Irish degrees directly without a foundation year, while others use a foundation year as a bridge. Neither route is "better" in general — the right path depends on whether your qualifications already meet the direct entry requirements.\n\nIf you already meet the requirements for your target degree, you may not need a foundation year. If you do not, a foundation route may help. Compare both options against the official entry requirements for your course before deciding.',
+      },
+      {
+        headingEn: 'Visa and cost considerations',
+        bodyEn:
+          'A foundation year adds an extra year of study, which affects total cost and, for international students, may have implications for the study route and any visa or study-permission requirements. These requirements are set by the UK and Irish governments and by each institution.\n\nThis is general information, not immigration or financial advice. Confirm fees with the university and check the current visa or study-permission rules on the official government source — rules change frequently, so verify them before committing.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is an international foundation year?',
+        answerEn:
+          'It is a one-year preparatory programme that helps international students meet the academic and English-language requirements for undergraduate degree entry, and it can lead to the first year of a related degree on successful completion.',
+      },
+      {
+        questionEn: 'Do I need a foundation year?',
+        answerEn:
+          'It depends on your qualifications and your target course. If you already meet the direct entry requirements, you may not need one. If your qualifications or English level fall short, a foundation route may help. Check the official course requirements and ask the university\'s admissions office.',
+      },
+      {
+        questionEn: 'Does a foundation year guarantee a degree place?',
+        answerEn:
+          'Not automatically. A foundation year usually leads to degree entry only if you meet the required grades and conditions, and the degrees it leads to vary by programme. Confirm the exact progression rules and conditions with the university before enrolling.',
+      },
+      {
+        questionEn: 'Will a foundation year affect my visa or costs?',
+        answerEn:
+          'It adds an extra year, which affects total cost and may affect the study route and any visa or study-permission requirements. This is general information, not immigration or financial advice — confirm fees with the university and the current rules on the official government source.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['entry-requirements-for-uk-universities', 'how-to-study-in-uk-from-india', 'how-to-apply-to-uk-and-ireland-as-a-postgraduate'],
+    sources: [
+      { label: 'UCAS — official site', url: 'https://www.ucas.com' },
+      { label: 'Education in Ireland — official', url: 'https://www.educationinireland.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['international foundation year', 'foundation year uk', 'foundation programme for university', 'bridging course uk university', 'foundation year for international students', 'pathway to uk degree'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'What it is', value: 'One-year preparatory programme for degree entry' },
+      { label: 'Who it is for', value: 'Students not yet meeting direct entry requirements' },
+      { label: 'Leads to', value: 'First year of a related degree (conditions apply)' },
+      { label: 'Confirm with', value: 'The university + official sources (fees and visa rules)' },
+    ],
+  },
+  {
+    slug: 'how-to-apply-to-uk-and-ireland-as-a-postgraduate',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Apply to UK and Ireland as a Postgraduate',
+    descriptionEn:
+      'A practical guide to postgraduate applications in the UK and Ireland — taught versus research routes, direct applications to each university, and where to confirm deadlines and requirements.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Postgraduate is usually a direct application',
+        bodyEn:
+          'Unlike undergraduate study, postgraduate applications in the UK and Ireland are usually made directly to each university rather than through a single central system. You apply to the specific programme through the university\'s own online application portal.\n\nSome UK postgraduate programmes use UCAS Postgraduate, but many do not, so the standard expectation is a direct application. Check the admissions page of each programme you are interested in to confirm exactly how to apply.',
+      },
+      {
+        headingEn: 'Taught vs research programmes',
+        bodyEn:
+          'Postgraduate study generally falls into two types. Taught programmes (such as a taught master\'s) are structured around modules, coursework, and often a dissertation, and you apply to a defined programme. Research programmes (such as a master\'s by research or a doctorate) are built around an independent research project, usually under a supervisor.\n\nThe two have different application steps. Taught programmes typically ask for transcripts, references, and a statement of purpose, while research programmes also usually require a research proposal and often agreement from a prospective supervisor. Check what your target programme requires on its official page.',
+        bullets: [
+          'Taught: modules, coursework, often a dissertation',
+          'Research: independent project, usually with a supervisor',
+          'Research applications often need a proposal and supervisor agreement',
+        ],
+      },
+      {
+        headingEn: 'Typical application requirements',
+        bodyEn:
+          'Most postgraduate applications ask for academic transcripts and a recognised undergraduate qualification, one or more references, and a statement of purpose or personal statement. International applicants whose first language is not English are generally required to demonstrate English proficiency through an accepted test or qualification.\n\nSome programmes — for example certain business or quantitative courses — may ask for an admissions test such as the GMAT or GRE, but this is course-specific and not universal. Always check the exact requirements, including any test, on the official programme page.',
+      },
+      {
+        headingEn: 'Deadlines and timelines',
+        bodyEn:
+          'Postgraduate deadlines vary widely. Some programmes have a single fixed deadline, while others use rolling admissions or multiple rounds, and competitive or funded programmes often close earlier. Funding and scholarship applications frequently have their own, earlier deadlines.\n\nBecause dates differ by programme and change each year, confirm the application and funding deadlines on each university\'s official page well in advance, and apply early where places or funding are limited.',
+      },
+      {
+        headingEn: 'Visa and funding basics',
+        bodyEn:
+          'International postgraduate students typically need a study visa or study permission, with requirements set by the UK and Irish governments. Funding can come from university scholarships, external scholarship schemes, or self-funding, each with its own eligibility and deadlines.\n\nThis is general information, not immigration or financial advice. Verify the current visa or study-permission rules on the official UK government and Irish immigration websites, and confirm any scholarship details on the official source — never pay anyone who promises a guaranteed place, scholarship, or visa.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply to postgraduate courses through a central system?',
+        answerEn:
+          'Usually no. Postgraduate applications in the UK and Ireland are generally made directly to each university through its own portal, though some UK programmes use UCAS Postgraduate. Confirm the route on each programme\'s admissions page.',
+      },
+      {
+        questionEn: 'What is the difference between taught and research postgraduate study?',
+        answerEn:
+          'Taught programmes are structured around modules and coursework, often with a dissertation, while research programmes centre on an independent research project under a supervisor. Research applications often also require a research proposal and a prospective supervisor.',
+      },
+      {
+        questionEn: 'Do I need a GMAT or GRE for postgraduate study?',
+        answerEn:
+          'Not usually — it is course-specific. Some programmes, such as certain business or quantitative courses, may ask for a GMAT or GRE, but many do not. Check the exact requirements, including any admissions test, on the official programme page.',
+      },
+      {
+        questionEn: 'When are postgraduate deadlines?',
+        answerEn:
+          'They vary by programme — some have a single fixed deadline, others use rolling or multiple rounds, and funded or competitive programmes often close earlier. Funding deadlines are frequently earlier still. Confirm the dates on each university\'s official page and apply early.',
+      },
+    ],
+    relatedExamSlugs: ['gre', 'gmat', 'ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'study-in-ireland-from-india', 'uk-vs-ireland-for-international-students'],
+    sources: [
+      { label: 'UCAS — Postgraduate', url: 'https://www.ucas.com/postgraduate' },
+      { label: 'Education in Ireland — official', url: 'https://www.educationinireland.com' },
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['postgraduate application uk', 'how to apply for masters in uk', 'postgraduate application ireland', 'masters application uk ireland', 'taught vs research masters', 'apply for phd uk ireland'],
+    tags: ['uk-ireland-admissions'],
+    keyFacts: [
+      { label: 'Application route', value: 'Usually direct to each university (some UK use UCAS Postgraduate)' },
+      { label: 'Programme types', value: 'Taught vs research' },
+      { label: 'Common requirements', value: 'Transcripts, references, statement of purpose, English proof' },
+      { label: 'Deadlines', value: 'Vary by programme — verify on each official page' },
+    ],
+  },
+  {
+    slug: 'top-universities-in-the-uk-for-international-students',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Top Universities in the UK for International Students',
+    descriptionEn:
+      'An overview of well-known UK universities for international students — what to look at beyond rankings (course fit, subject strength, location, support), how to use league tables sensibly, and where to verify official information.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How to read this list',
+        bodyEn:
+          'The United Kingdom hosts a large number of universities that recruit international students, and many are widely recognised for teaching and research. This guide describes some well-known institutions neutrally to help you start your research — it is not a ranking, and no single university is "the best" for everyone.\n\nThe right university for you depends on your course, your goals, your budget, and where you want to live. Use any list as a starting point, then verify every detail (entry requirements, tuition, scholarships) on each university\'s own official site before deciding.',
+      },
+      {
+        headingEn: 'Universities students often research',
+        bodyEn:
+          'Several UK universities are frequently shortlisted by international applicants across a range of subjects. The institutions below are widely known and span different cities and strengths; each has its own admissions process, entry requirements, and international-student support that you should confirm officially.',
+        bullets: [
+          'University of Oxford and University of Cambridge — collegiate universities with an earlier UCAS deadline and additional admissions steps for many courses',
+          'Imperial College London — focused on science, engineering, medicine, and business',
+          'University College London (UCL) and London School of Economics and Political Science (LSE) — large London institutions across many disciplines',
+          'University of Edinburgh, University of Manchester, King\'s College London, University of Warwick, University of Bristol, University of Glasgow, University of Leeds, Durham University — broad research universities in different UK cities',
+        ],
+      },
+      {
+        headingEn: 'What rankings do and do not tell you',
+        bodyEn:
+          'Global league tables such as the QS World University Rankings and the Times Higher Education (THE) World University Rankings are published each year by those organisations and can give a broad sense of reputation and research profile. They are useful context, but they are not the same as how good a specific course is for you, and exact positions change every edition.\n\nTreat rankings as one input among several, attribute any figure to the body that issued it (QS or THE), and check the current edition on the official ranking and university sites rather than relying on a number you saw earlier.',
+      },
+      {
+        headingEn: 'Beyond rankings: what actually matters',
+        bodyEn:
+          'For most students, course content, subject strength, graduate outcomes, location, cost of living, and the support available to international students matter more than a headline ranking. A university that is excellent for one subject may be a different fit for another.',
+        bullets: [
+          'Course modules, structure, and whether the degree matches your goals',
+          'Entry requirements for international qualifications and the English-language test accepted',
+          'Total cost — tuition plus living costs in that city — and any scholarships',
+          'International student services, careers support, and accommodation',
+        ],
+      },
+      {
+        headingEn: 'How to apply and verify',
+        bodyEn:
+          'Most UK undergraduate applications are made through UCAS, the central admissions service, which lets you apply to multiple courses in one place. Postgraduate applications are usually made directly to each university. Always confirm deadlines, entry requirements, and fees on UCAS and on each university\'s official site, as these are set by the institutions and can change.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which UK university is the best for international students?',
+        answerEn:
+          'There is no single "best" university for everyone — it depends on your subject, goals, budget, and preferences. Use rankings and lists as a starting point, then compare courses and verify entry requirements and fees on each university\'s official site.',
+      },
+      {
+        questionEn: 'Are UK rankings reliable?',
+        answerEn:
+          'League tables from bodies like QS and THE are a useful broad signal of reputation and research, but positions change each year and do not measure how well a specific course fits you. Attribute any figure to QS or THE and check the current edition.',
+      },
+      {
+        questionEn: 'How do I apply to UK universities?',
+        answerEn:
+          'Undergraduate applications generally go through UCAS, which lets you apply to several courses at once. Postgraduate applications are usually made directly to each university. Verify deadlines and requirements on UCAS and the university sites.',
+      },
+      {
+        questionEn: 'Do I need an English-language test?',
+        answerEn:
+          'Most UK universities require evidence of English proficiency from international applicants, commonly through tests such as IELTS, TOEFL, or PTE Academic. The accepted tests and required scores are set by each university and course, so confirm them officially.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: ['university-of-oxford', 'university-of-cambridge', 'imperial-college-london', 'university-college-london', 'london-school-of-economics', 'university-of-edinburgh', 'university-of-manchester'],
+    relatedGuideSlugs: ['russell-group-universities-explained', 'how-to-get-into-oxford-or-cambridge', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'QS World University Rankings', url: 'https://www.topuniversities.com/world-university-rankings' },
+      { label: 'Times Higher Education — World University Rankings', url: 'https://www.timeshighereducation.com/world-university-rankings' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['top universities in uk for international students', 'best uk universities', 'study in uk', 'uk university rankings', 'uk universities for international students'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Undergraduate applications', value: 'Mostly via UCAS (ucas.com)' },
+      { label: 'Rankings to attribute', value: 'QS and THE — check current edition' },
+      { label: 'English tests commonly accepted', value: 'IELTS, TOEFL, PTE Academic (per university)' },
+      { label: 'Verify on', value: 'UCAS + each university\'s official site' },
+    ],
+  },
+  {
+    slug: 'russell-group-universities-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Russell Group Universities Explained',
+    descriptionEn:
+      'What the Russell Group is — a UK association of research-intensive universities — which institutions belong to it, what membership does and does not mean, and how to use this when researching where to study.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What the Russell Group is',
+        bodyEn:
+          'The Russell Group is a self-organised association of large, research-intensive universities in the United Kingdom. Its member institutions are known for research activity, doctoral training, and broad subject coverage, and the group represents their shared interests publicly.\n\nIt is not a ranking and not a government body — it is a membership organisation. The official, current list of member universities is published on the Russell Group website, which is the place to confirm who belongs to it.',
+      },
+      {
+        headingEn: 'Which universities are members',
+        bodyEn:
+          'Membership covers many of the UK\'s well-known research universities across England, Scotland, Wales, and Northern Ireland. The institutions below are members; for the complete and up-to-date list, check the official Russell Group site, as the membership can change.',
+        bullets: [
+          'In and around London — Imperial College London, University College London, King\'s College London, London School of Economics and Political Science, Queen Mary University of London',
+          'Across England — University of Manchester, University of Bristol, University of Leeds, Durham University, University of Warwick, University of Birmingham, University of Sheffield, and others',
+          'Oxford and Cambridge are also members',
+          'In Scotland, Wales, and Northern Ireland — University of Edinburgh, University of Glasgow, Cardiff University, Queen\'s University Belfast, and others',
+        ],
+      },
+      {
+        headingEn: 'What membership does and does not mean',
+        bodyEn:
+          'Russell Group membership signals that a university is research-intensive, but it is not a guarantee that a particular course is the strongest choice for you, and it is not an official quality ranking. Many excellent UK universities and courses sit outside the group.\n\nTreat "Russell Group" as one descriptive label among several. For your specific subject, the depth of the course, teaching, facilities, graduate outcomes, and fit matter more than the label itself.',
+      },
+      {
+        headingEn: 'How to use this in your research',
+        bodyEn:
+          'If research intensity and a broad academic environment matter to you, the Russell Group list can be a useful filter to start with. Combine it with subject-specific research — compare course content and entry requirements — rather than choosing on the label alone.',
+        bullets: [
+          'Use the official Russell Group list to confirm current membership',
+          'Compare the actual course, not just the institution\'s status',
+          'Check entry requirements and fees on each university\'s official site',
+        ],
+      },
+      {
+        headingEn: 'Applying to Russell Group universities',
+        bodyEn:
+          'There is no separate application route for Russell Group universities — undergraduate applications are made through UCAS like any other UK university, and postgraduate applications are usually made directly to each institution. Deadlines and requirements are set by each university (Oxford and Cambridge have an earlier UCAS deadline), so verify them officially.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the Russell Group a ranking?',
+        answerEn:
+          'No. The Russell Group is a membership association of research-intensive UK universities, not a league table or quality ranking. For rankings, refer to bodies such as QS or THE, attributing any figure to the issuer.',
+      },
+      {
+        questionEn: 'Are Russell Group universities better than others?',
+        answerEn:
+          'Membership indicates research intensity, but it does not mean a particular course is the best choice for you. Many strong UK universities and courses are outside the group, so compare the actual course and fit.',
+      },
+      {
+        questionEn: 'How many universities are in the Russell Group?',
+        answerEn:
+          'The Russell Group has a defined set of member universities across the UK, but the exact membership can change. Check the official Russell Group website for the current, complete list.',
+      },
+      {
+        questionEn: 'Do I apply differently to a Russell Group university?',
+        answerEn:
+          'No. Undergraduate applications go through UCAS as normal, and postgraduate applications are usually direct to the university. Each institution sets its own deadlines and entry requirements.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: ['imperial-college-london', 'university-college-london', 'kings-college-london', 'university-of-manchester', 'university-of-warwick', 'durham-university'],
+    relatedGuideSlugs: ['top-universities-in-the-uk-for-international-students', 'how-to-get-into-oxford-or-cambridge', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'Russell Group — official site', url: 'https://russellgroup.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['russell group universities', 'what is the russell group', 'russell group universities list', 'research intensive universities uk', 'russell group meaning'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'What it is', value: 'Association of research-intensive UK universities' },
+      { label: 'Is it a ranking?', value: 'No — it is a membership group' },
+      { label: 'Official list', value: 'russellgroup.ac.uk' },
+      { label: 'Undergraduate applications', value: 'Via UCAS, same as other UK universities' },
+    ],
+  },
+  {
+    slug: 'how-to-get-into-oxford-or-cambridge',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Get Into Oxford or Cambridge',
+    descriptionEn:
+      'The Oxbridge admissions process explained — the earlier October UCAS deadline, why you normally apply to only one of the two in a cycle, admissions tests, submitted work, interviews, and choosing a college.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Oxford and Cambridge: shared features',
+        bodyEn:
+          'The University of Oxford and the University of Cambridge are both collegiate universities in England with rigorous, tutorial-style teaching and competitive admissions. They share several features that make their process different from most UK universities: an earlier application deadline, additional assessments for many courses, and interviews.\n\nThis guide explains the common steps so you can plan. Every detail — deadlines, which tests apply to your course, and what to submit — is set by the universities and changes from year to year, so confirm everything on the official Oxford and Cambridge admissions pages.',
+      },
+      {
+        headingEn: 'You normally apply to only one',
+        bodyEn:
+          'A key rule: in the same admissions cycle you can normally apply to either Oxford or Cambridge, but not both. (There are narrow exceptions, such as certain Organ Award applications — check the official guidance.) You should therefore research both and decide which university and course suit you before you apply.\n\nBoth universities welcome international applicants and assess them on academic merit. Choosing between them comes down to course structure, college system, and personal fit, not prestige alone.',
+      },
+      {
+        headingEn: 'The earlier UCAS deadline',
+        bodyEn:
+          'Oxford and Cambridge have an earlier UCAS deadline than most UK courses — historically in mid-October, well before the standard UCAS deadline for other universities. Missing it usually means you cannot apply that cycle.\n\nBecause the deadline is early, international students should start preparing their UCAS application, references, and any registration for admissions tests months in advance. Confirm the exact current date on UCAS and the university sites.',
+      },
+      {
+        headingEn: 'Admissions tests and submitted work',
+        bodyEn:
+          'Many Oxford and Cambridge courses require an admissions test and/or examples of written work as part of the assessment. Test requirements vary by course and are updated regularly — for example, some subjects use mathematics or subject-specific assessments — so you must check the current requirement for your exact course and register by the stated deadline where needed.\n\nNote that the BMAT, formerly used for some medicine applications, has been discontinued (its final sitting was in autumn 2023); UK medical and dental admissions now generally use the UCAT. Always verify which test, if any, your chosen course requires directly on the official admissions page.',
+        bullets: [
+          'Check whether your course requires an admissions test, and register on time',
+          'Prepare any written work the course asks you to submit',
+          'For medicine/dentistry, the UCAT is the standard UK admissions test (BMAT discontinued)',
+        ],
+      },
+      {
+        headingEn: 'Interviews',
+        bodyEn:
+          'Shortlisted applicants are invited to interviews, typically held in December. Interviews are academic and subject-focused — they explore how you think and reason about your subject rather than testing memorised facts. International applicants may be interviewed online or in person depending on the university\'s current arrangements.\n\nThere is no way to "guarantee" an offer; admission is competitive and decisions rest with the universities. Prepare by knowing your subject deeply and being ready to discuss problems aloud.',
+      },
+      {
+        headingEn: 'Choosing a college (or open application)',
+        bodyEn:
+          'Both universities are made up of colleges. When you apply you can either choose a specific college or make an open application, where the university assigns you to a college for consideration. Your choice of college does not change the degree you receive, and an open application is assessed on the same academic basis.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I apply to both Oxford and Cambridge in the same year?',
+        answerEn:
+          'No — in the same admissions cycle you can normally apply to only one of the two, with narrow published exceptions. Research both and choose the university and course that fit you best before applying.',
+      },
+      {
+        questionEn: 'When is the Oxbridge application deadline?',
+        answerEn:
+          'Oxford and Cambridge have an earlier UCAS deadline than most UK courses, historically in mid-October. The exact date is set each year, so confirm it on UCAS and the official university sites.',
+      },
+      {
+        questionEn: 'Do I need an admissions test for Oxford or Cambridge?',
+        answerEn:
+          'Many courses require an admissions test and/or written work, but requirements vary by course and change regularly. Check the current requirement for your exact course on the official admissions page and register on time.',
+      },
+      {
+        questionEn: 'Is the BMAT still used for medicine?',
+        answerEn:
+          'No. The BMAT was discontinued, with its final sitting in autumn 2023. UK medical and dental admissions now generally use the UCAT. Verify the test your course requires on the official site.',
+      },
+      {
+        questionEn: 'Can anything guarantee an Oxford or Cambridge place?',
+        answerEn:
+          'No. Admission is competitive and decisions rest entirely with the universities. Be cautious of any service claiming "guaranteed" entry — focus instead on a strong application and genuine subject knowledge.',
+      },
+    ],
+    relatedExamSlugs: ['ucat', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['university-of-oxford', 'university-of-cambridge'],
+    relatedGuideSlugs: ['how-to-get-admission-in-university-of-oxford', 'how-to-get-admission-in-university-of-cambridge', 'top-universities-in-the-uk-for-international-students'],
+    sources: [
+      { label: 'University of Oxford — undergraduate admissions', url: 'https://www.ox.ac.uk/admissions/undergraduate' },
+      { label: 'University of Cambridge — undergraduate study', url: 'https://www.undergraduate.study.cam.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to get into oxford', 'how to get into cambridge', 'oxbridge admissions', 'apply to oxford and cambridge', 'oxbridge application deadline', 'oxbridge interview'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Apply to both in one cycle?', value: 'No — normally only one (narrow exceptions)' },
+      { label: 'UCAS deadline', value: 'Earlier than most UK courses (verify on UCAS)' },
+      { label: 'Assessment may include', value: 'Admissions test, written work, interview' },
+      { label: 'Interviews', value: 'Typically held in December' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-university-of-oxford',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Get Admission in the University of Oxford',
+    descriptionEn:
+      'The official University of Oxford admissions process for undergraduates — the tutorial system, the earlier October UCAS deadline, admissions tests, written work, December interviews, and choosing a college.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How Oxford teaches: the tutorial system',
+        bodyEn:
+          'The University of Oxford is a collegiate university in England known for its tutorial system — small-group teaching where students discuss their work closely with academics, alongside lectures and classes. Understanding this is useful because admissions is designed to identify students who will thrive in that intensive, discussion-based environment.\n\nThis guide outlines the official undergraduate process. Exact deadlines, tests, and requirements are set by Oxford and change each year, so always confirm the current details on the official Oxford admissions pages.',
+      },
+      {
+        headingEn: 'Entry requirements and choosing a course',
+        bodyEn:
+          'Oxford sets academic entry requirements for each course, which it states in terms of A-levels, the International Baccalaureate, and recognised equivalents for international qualifications. You apply for a specific course, so the first step is to read the official course page and check whether your qualifications and subjects meet the stated requirements.\n\nBecause requirements are course-specific and updated regularly, verify them on the official Oxford site rather than relying on general information.',
+      },
+      {
+        headingEn: 'The October UCAS deadline',
+        bodyEn:
+          'Oxford has an earlier UCAS deadline than most UK universities — historically in mid-October. You apply through UCAS, and missing this deadline normally means you cannot be considered that cycle. Note you can normally apply to either Oxford or Cambridge in the same year, not both.\n\nStart early so your UCAS form, personal statement, and academic reference are ready, and so you can register for any required admissions test in time. Confirm the exact date on UCAS and the Oxford site.',
+      },
+      {
+        headingEn: 'Admissions tests and written work',
+        bodyEn:
+          'Many Oxford courses require an admissions test and/or submission of written work as part of the assessment. The specific test depends on the course and is updated regularly, so you must check the current requirement for your exact course and register by the stated deadline where one applies.\n\nFor medicine, note that the BMAT has been discontinued (final sitting autumn 2023); UK medicine now generally uses the UCAT. Verify which assessment your chosen course requires directly on the official admissions page.',
+        bullets: [
+          'Check whether your course needs an admissions test, and register on time',
+          'Prepare any written work the course asks you to submit',
+          'Medicine: the UCAT is the standard UK admissions test (BMAT discontinued)',
+        ],
+      },
+      {
+        headingEn: 'December interviews',
+        bodyEn:
+          'Shortlisted applicants are invited to interviews, which Oxford typically holds in December. Interviews are academic and subject-focused, exploring how you reason about your subject rather than testing memorised answers. They may be conducted online or in person depending on Oxford\'s current arrangements, including for international applicants.\n\nAdmission is competitive and decisions rest with the university and its colleges — no service can guarantee a place. Prepare by deepening your subject knowledge and practising thinking aloud.',
+      },
+      {
+        headingEn: 'Colleges and offers',
+        bodyEn:
+          'Oxford is made up of colleges, and you can either choose a college or make an open application in which the university assigns one for consideration. Your college does not change the Oxford degree you earn. After interviews, the university makes decisions and successful applicants receive offers, usually conditional on final exam results.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the deadline to apply to Oxford?',
+        answerEn:
+          'Oxford uses an earlier UCAS deadline than most UK universities, historically in mid-October. The exact date is set each year, so confirm it on UCAS and the official Oxford admissions site before applying.',
+      },
+      {
+        questionEn: 'Does Oxford require an admissions test?',
+        answerEn:
+          'Many Oxford courses require an admissions test and/or written work, but the requirement depends on the course and changes regularly. Check the current requirement for your exact course on the official Oxford site and register on time.',
+      },
+      {
+        questionEn: 'When are Oxford interviews held?',
+        answerEn:
+          'Oxford typically holds shortlisted interviews in December. They are academic and subject-focused and may be online or in person depending on current arrangements. Verify the current format on the official site.',
+      },
+      {
+        questionEn: 'Can I apply to both Oxford and Cambridge?',
+        answerEn:
+          'In the same admissions cycle you can normally apply to only one of the two. Decide which university and course fit you best before applying, and check the official guidance for any narrow exceptions.',
+      },
+      {
+        questionEn: 'Can I guarantee admission to Oxford?',
+        answerEn:
+          'No. Admission is competitive and decisions rest with the university and its colleges. Be wary of any service claiming "guaranteed" entry; focus on a strong, genuine application instead.',
+      },
+    ],
+    relatedExamSlugs: ['ucat', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['university-of-oxford'],
+    relatedGuideSlugs: ['how-to-get-into-oxford-or-cambridge', 'how-to-get-admission-in-university-of-cambridge', 'top-universities-in-the-uk-for-international-students'],
+    sources: [
+      { label: 'University of Oxford — undergraduate admissions', url: 'https://www.ox.ac.uk/admissions/undergraduate' },
+      { label: 'University of Oxford — admissions tests', url: 'https://www.ox.ac.uk/admissions/undergraduate/applying-to-oxford/guide/admissions-tests' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to get admission in oxford', 'university of oxford admissions', 'apply to oxford university', 'oxford entry requirements', 'oxford interview', 'oxford ucas deadline'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Application route', value: 'UCAS (earlier October deadline)' },
+      { label: 'Teaching style', value: 'Tutorial system (small-group teaching)' },
+      { label: 'Assessment may include', value: 'Admissions test, written work, interview' },
+      { label: 'Interviews', value: 'Typically December' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-university-of-cambridge',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Get Admission in the University of Cambridge',
+    descriptionEn:
+      'The official University of Cambridge admissions process for undergraduates — the Tripos course system, supervisions, the earlier October UCAS deadline, admissions assessments, interviews, and choosing a college.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How Cambridge teaches: Tripos and supervisions',
+        bodyEn:
+          'The University of Cambridge is a collegiate university in England. Its undergraduate courses are organised into the Tripos system, and teaching includes supervisions — small-group sessions, often one-to-one or in pairs, where students discuss their work with academics alongside lectures and practicals. Admissions is designed to find students who will excel in this intensive environment.\n\nThis guide outlines the official undergraduate process. Deadlines, assessments, and requirements are set by Cambridge and change each year, so confirm the current details on the official Cambridge admissions pages.',
+      },
+      {
+        headingEn: 'Entry requirements and choosing a course',
+        bodyEn:
+          'Cambridge sets academic entry requirements for each course, expressed in terms of A-levels, the International Baccalaureate, and recognised equivalents for international qualifications. You apply for a specific course, so begin by reading the official course page and checking whether your subjects and grades meet the stated requirements.\n\nRequirements are course-specific and updated regularly, so verify them on the official Cambridge site rather than relying on general summaries.',
+      },
+      {
+        headingEn: 'The October UCAS deadline',
+        bodyEn:
+          'Cambridge has an earlier UCAS deadline than most UK universities — historically in mid-October. You apply through UCAS, and missing this deadline normally means you cannot be considered that cycle. You can normally apply to either Cambridge or Oxford in the same year, not both.\n\nStart early so your UCAS form, personal statement, and reference are ready, and so you can complete any additional Cambridge application steps in time. Confirm the exact date on UCAS and the Cambridge site.',
+      },
+      {
+        headingEn: 'Admissions assessments and any written work',
+        bodyEn:
+          'Many Cambridge courses use an admissions assessment, and some ask for examples of written work. The specific assessment depends on the course and is updated regularly, so check the current requirement for your exact course and complete any registration by the stated deadline where one applies.\n\nFor medicine, note that the BMAT has been discontinued (final sitting autumn 2023); UK medicine now generally uses the UCAT. Always verify which assessment your chosen course requires on the official admissions page.',
+        bullets: [
+          'Check the admissions assessment required for your specific course',
+          'Prepare any written work the course asks you to submit',
+          'Medicine: the UCAT is the standard UK admissions test (BMAT discontinued)',
+        ],
+      },
+      {
+        headingEn: 'Interviews',
+        bodyEn:
+          'Shortlisted applicants are invited to interviews, which Cambridge typically holds in December. Interviews are academic and subject-focused, exploring how you think through problems in your subject rather than testing memorised facts. They may be online or in person depending on Cambridge\'s current arrangements, including for international applicants.\n\nAdmission is competitive and decisions rest with the university and its colleges — no service can guarantee a place. Prepare by knowing your subject deeply and practising reasoning aloud.',
+      },
+      {
+        headingEn: 'Colleges and offers',
+        bodyEn:
+          'Cambridge is made up of colleges, and you can either choose a college or make an open application in which a college is assigned for consideration. Your college does not change the Cambridge degree you earn. After interviews, the university makes decisions and successful applicants receive offers, usually conditional on final exam results.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the deadline to apply to Cambridge?',
+        answerEn:
+          'Cambridge uses an earlier UCAS deadline than most UK universities, historically in mid-October. The exact date is set each year, so confirm it on UCAS and the official Cambridge admissions site before applying.',
+      },
+      {
+        questionEn: 'Does Cambridge require an admissions assessment?',
+        answerEn:
+          'Many Cambridge courses use an admissions assessment, and some ask for written work, but this depends on the course and changes regularly. Check the current requirement for your exact course on the official Cambridge site and complete any registration on time.',
+      },
+      {
+        questionEn: 'What is the Tripos system?',
+        answerEn:
+          'Tripos is the name for the structure of Cambridge undergraduate courses, taught through lectures, practicals, and small-group supervisions. It is described in detail on the official Cambridge course pages.',
+      },
+      {
+        questionEn: 'Can I apply to both Cambridge and Oxford?',
+        answerEn:
+          'In the same admissions cycle you can normally apply to only one of the two. Decide which university and course fit you best before applying, and check the official guidance for any narrow exceptions.',
+      },
+      {
+        questionEn: 'Can I guarantee admission to Cambridge?',
+        answerEn:
+          'No. Admission is competitive and decisions rest with the university and its colleges. Be cautious of any service promising "guaranteed" entry; focus on a strong, genuine application instead.',
+      },
+    ],
+    relatedExamSlugs: ['ucat', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['university-of-cambridge'],
+    relatedGuideSlugs: ['how-to-get-into-oxford-or-cambridge', 'how-to-get-admission-in-university-of-oxford', 'top-universities-in-the-uk-for-international-students'],
+    sources: [
+      { label: 'University of Cambridge — undergraduate study', url: 'https://www.undergraduate.study.cam.ac.uk' },
+      { label: 'University of Cambridge — admission tests and assessments', url: 'https://www.undergraduate.study.cam.ac.uk/apply/how/admission-tests' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to get admission in cambridge', 'university of cambridge admissions', 'apply to cambridge university', 'cambridge entry requirements', 'cambridge interview', 'cambridge ucas deadline'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Application route', value: 'UCAS (earlier October deadline)' },
+      { label: 'Course structure', value: 'Tripos; taught via supervisions' },
+      { label: 'Assessment may include', value: 'Admissions assessment, written work, interview' },
+      { label: 'Interviews', value: 'Typically December' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-imperial-college-london',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Get Admission in Imperial College London',
+    descriptionEn:
+      'A clear, official-source guide to applying to Imperial College London as an international student — its science, engineering, medicine and business focus, the UCAS route, entry requirements, English and admissions tests, and next steps.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What Imperial College London is known for',
+        bodyEn:
+          'Imperial College London is a research university in London focused specifically on science, engineering, medicine and business — it does not offer a broad range of arts and humanities degrees. This focused profile means most of its undergraduate programmes are highly quantitative and demand a strong background in subjects such as mathematics and sciences.\n\nImperial is consistently placed among the top universities globally by ranking bodies such as QS and Times Higher Education (THE); always read a ranking alongside the body that issued it and the year. Course-specific entry requirements are set by each department, so the official Imperial course pages are the place to confirm exactly what your chosen degree expects.',
+      },
+      {
+        headingEn: 'How to apply (the UCAS route)',
+        bodyEn:
+          'Undergraduate applications to Imperial are made through UCAS, the United Kingdom\'s central application service, not directly to the university. You submit one UCAS application that can include several course choices, a personal statement, and an academic reference.\n\nApplication deadlines for many competitive courses fall earlier than the general UCAS deadline, and some Imperial courses sit within the earlier deadline group. Because exact dates change each cycle, check the current deadline for your specific course on the official UCAS and Imperial websites before you apply.',
+        bullets: [
+          'Apply through UCAS (one application, up to the allowed number of course choices)',
+          'Include a personal statement and an academic reference',
+          'Confirm the current deadline for your specific course on UCAS and imperial.ac.uk',
+          'Postgraduate applications are usually made directly to Imperial — check the course page',
+        ],
+      },
+      {
+        headingEn: 'Academic entry requirements',
+        bodyEn:
+          'Imperial accepts a range of qualifications including A-levels, the International Baccalaureate (IB) Diploma, and many international school-leaving qualifications, with required grades and subjects set per course. Mathematics is required for most science and engineering degrees, and specific science subjects are required for medicine and related programmes.\n\nThe published grade and subject requirements differ by department and can change between cycles, so use the entry-requirements section of your course page on imperial.ac.uk as the authoritative source. International qualification equivalences are listed by country on the official Imperial admissions pages.',
+      },
+      {
+        headingEn: 'English language and admissions tests',
+        bodyEn:
+          'As Imperial teaches in English, international applicants whose first language is not English usually need to evidence English proficiency through an accepted test such as IELTS, TOEFL or PTE Academic, at the level Imperial specifies for your course. Confirm which tests are accepted and the exact scores required on the official Imperial English-language requirements page, as these are reviewed periodically.\n\nSome programmes also use a subject admissions test or an interview as part of selection. For medicine, the UCAT is the standard UK medical admissions test (the BMAT has been discontinued). Certain mathematics, engineering and science courses may require their own admissions assessments such as the TMUA or ESAT, and these change frequently — verify the current requirement and registration deadline for your course on the official Imperial and test-provider websites.',
+      },
+      {
+        headingEn: 'Fees, funding and student visa',
+        bodyEn:
+          'Tuition fees for international students differ by course and are set each year, and London is a high-cost city for living expenses; do not rely on figures from third parties — confirm the current tuition and estimated living costs on the official Imperial fees and funding pages. Imperial publishes scholarships and bursaries with their own eligibility criteria, which you should check directly and never pay any third party who claims to guarantee an award.\n\nMost international students studying a full-time degree in the United Kingdom need a Student visa, which requires a Confirmation of Acceptance for Studies (CAS) from the university and payment of the Immigration Health Surcharge (IHS). This is general information, not immigration advice — verify the current Student visa requirements, fees and the IHS amount on the official UK government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply to Imperial directly or through UCAS?',
+        answerEn:
+          'Undergraduate applicants apply through UCAS, the UK\'s central application service. Many postgraduate applications are made directly to Imperial — check the specific course page on imperial.ac.uk.',
+      },
+      {
+        questionEn: 'Does Imperial require an admissions test?',
+        answerEn:
+          'It depends on the course. Medicine uses the UCAT (the BMAT has been discontinued), and some mathematics, engineering and science courses use their own assessments such as TMUA or ESAT. These change often, so confirm the current requirement on the official Imperial and test-provider pages.',
+      },
+      {
+        questionEn: 'What English test does Imperial accept?',
+        answerEn:
+          'Imperial accepts recognised tests such as IELTS, TOEFL and PTE Academic at the level it sets per course. Check the official English-language requirements page on imperial.ac.uk for the accepted tests and required scores.',
+      },
+      {
+        questionEn: 'How much does it cost to study at Imperial?',
+        answerEn:
+          'International tuition varies by course and year, and London living costs are high. There are no reliable fixed figures here — confirm current tuition, living-cost estimates and any scholarships on the official Imperial fees and funding pages.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'ucat', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['imperial-college-london'],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'uk-student-visa-guide', 'studying-in-london-as-an-international-student'],
+    sources: [
+      { label: 'Imperial College London — official site', url: 'https://www.imperial.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['imperial college london admission', 'how to apply to imperial college london', 'imperial college entry requirements', 'study at imperial international students', 'ucas application imperial', 'imperial college london international students'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'London, United Kingdom' },
+      { label: 'Focus', value: 'Science, engineering, medicine and business' },
+      { label: 'Undergraduate application', value: 'Via UCAS' },
+      { label: 'Medical admissions test', value: 'UCAT (BMAT discontinued)' },
+      { label: 'Verify on', value: 'imperial.ac.uk' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-ucl',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Get Admission in UCL (University College London)',
+    descriptionEn:
+      'An official-source guide to applying to UCL as an international student — a broad multi-faculty research university in London — covering the UCAS route, entry requirements, English tests, fees and the Student visa.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What UCL is',
+        bodyEn:
+          'University College London (UCL) is a large, multi-faculty research university in central London offering a very wide range of subjects across the arts and humanities, social sciences, sciences, engineering, the built environment, law, education, and medical and life sciences. Unlike a specialist institution, UCL gives applicants a broad choice of disciplines.\n\nUCL is consistently ranked among the leading universities worldwide by bodies such as QS and Times Higher Education (THE); read any ranking together with its issuing body and year. Because each programme is run by its own department, the official UCL course pages are where you confirm the precise requirements for your chosen degree.',
+      },
+      {
+        headingEn: 'How to apply through UCAS',
+        bodyEn:
+          'Undergraduate applications to UCL are submitted through UCAS, the United Kingdom\'s central admissions service, rather than directly to the university. Your single UCAS application includes your course choices, a personal statement, and an academic reference.\n\nDeadlines vary: some UCL courses sit in the earlier UCAS deadline group, while others follow the standard deadline. Always confirm the current deadline for your specific course on the official UCAS and UCL websites, since dates are set fresh each cycle. Postgraduate applications are generally made directly through UCL\'s own application system.',
+        bullets: [
+          'Undergraduate: apply via UCAS with a personal statement and reference',
+          'Check whether your course is in the earlier or standard UCAS deadline group',
+          'Postgraduate: apply directly through UCL\'s application system',
+          'Confirm current deadlines on ucas.com and ucl.ac.uk',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements',
+        bodyEn:
+          'UCL accepts a wide range of qualifications, including A-levels, the International Baccalaureate (IB) Diploma, and many international school-leaving qualifications, with grades and required subjects set per programme. Some courses specify particular subjects (for example, mathematics or a science) as essential.\n\nThe exact grade and subject requirements differ by department and can change between cycles, so treat the entry-requirements section of your UCL course page as the authoritative source. UCL publishes country-by-country guidance on international qualification equivalences on its official admissions pages.',
+      },
+      {
+        headingEn: 'English language and any admissions tests',
+        bodyEn:
+          'Because teaching is in English, applicants whose first language is not English normally need to meet UCL\'s English-language requirement through an accepted test such as IELTS, TOEFL or PTE Academic. UCL groups its English requirements into levels by course, so check the official UCL English-language requirements page for the accepted tests and the level your programme needs.\n\nA few UCL programmes use additional selection steps such as an interview, a written assessment, or a subject admissions test — for example, law applicants at some universities take the LNAT, and medicine uses the UCAT (the BMAT has been discontinued). These requirements change frequently, so verify whether your specific course needs a test, and its deadline, on the official UCL and test-provider websites.',
+      },
+      {
+        headingEn: 'Fees, funding and the Student visa',
+        bodyEn:
+          'International tuition fees at UCL vary by programme and are set each year, and London has high living costs; rely only on the official UCL fees pages for current tuition and estimated living expenses. UCL lists scholarships and bursaries with their own eligibility rules — apply through official channels and never pay anyone who claims to guarantee a scholarship or a place.\n\nMost international students on a full-time UK degree need a Student visa, which requires a Confirmation of Acceptance for Studies (CAS) from UCL and payment of the Immigration Health Surcharge (IHS). This is general information, not immigration advice — confirm the current Student visa rules, fees and the IHS amount on the official UK government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is UCL a specialist university or a broad one?',
+        answerEn:
+          'UCL is a broad, multi-faculty research university offering subjects across arts and humanities, social sciences, sciences, engineering, law, education, and medical and life sciences. You confirm course-specific details on the relevant UCL department page.',
+      },
+      {
+        questionEn: 'How do I apply to UCL as an undergraduate?',
+        answerEn:
+          'Undergraduate applications go through UCAS with a personal statement and an academic reference. Postgraduate applications are usually made directly through UCL\'s own system. Confirm current deadlines on ucas.com and ucl.ac.uk.',
+      },
+      {
+        questionEn: 'Does UCL require an admissions test?',
+        answerEn:
+          'Only for certain courses. For example, medicine uses the UCAT (the BMAT has been discontinued) and some law programmes use the LNAT. These change often, so verify the requirement and any deadline for your specific course on the official UCL and test-provider pages.',
+      },
+      {
+        questionEn: 'What does it cost to study at UCL?',
+        answerEn:
+          'International tuition varies by programme and year, and London living costs are high. There are no fixed figures to quote — check the official UCL fees and funding pages for current tuition, estimated living costs and any scholarships.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'ucat', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['university-college-london'],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'uk-student-visa-guide', 'studying-in-london-as-an-international-student'],
+    sources: [
+      { label: 'UCL — official site', url: 'https://www.ucl.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['ucl admission', 'how to apply to ucl', 'ucl entry requirements', 'university college london international students', 'ucas application ucl', 'study at ucl'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'London, United Kingdom' },
+      { label: 'Type', value: 'Broad multi-faculty research university' },
+      { label: 'Undergraduate application', value: 'Via UCAS' },
+      { label: 'Postgraduate application', value: 'Directly via UCL' },
+      { label: 'Verify on', value: 'ucl.ac.uk' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-lse',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Get Admission in LSE (London School of Economics)',
+    descriptionEn:
+      'An official-source guide to applying to the London School of Economics and Political Science (LSE) as an international student — its social sciences and economics focus, the UCAS route, entry requirements, English tests, fees and the Student visa.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What LSE focuses on',
+        bodyEn:
+          'The London School of Economics and Political Science (LSE) is a specialist social-science university in London, concentrating on subjects such as economics, finance, politics, international relations, law, management, sociology, geography and related fields. It does not offer the science and engineering degrees you would find at a broad multi-faculty university.\n\nLSE is widely recognised for the social sciences and is highly ranked in those fields by bodies such as QS and Times Higher Education (THE); always read a ranking with its issuing body and year. Each programme is run by an academic department, so the official LSE course pages are the authoritative place to check exactly what your degree requires.',
+      },
+      {
+        headingEn: 'How to apply through UCAS',
+        bodyEn:
+          'Undergraduate applications to LSE are made through UCAS, the United Kingdom\'s central admissions service, not directly to the school. Your single UCAS application carries your course choices, a personal statement and an academic reference.\n\nLSE\'s undergraduate programmes are competitive and selection is academically rigorous; the personal statement and predicted or achieved grades carry weight. Because deadlines are set each cycle, confirm the current undergraduate deadline on the official UCAS and LSE websites. Most LSE postgraduate (master\'s) applications are made directly through LSE\'s own graduate admissions system.',
+        bullets: [
+          'Undergraduate: apply via UCAS with a personal statement and reference',
+          'Selection is academically rigorous — grades and statement matter',
+          'Postgraduate: apply directly through LSE graduate admissions',
+          'Confirm current deadlines on ucas.com and lse.ac.uk',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements',
+        bodyEn:
+          'LSE accepts a range of qualifications including A-levels, the International Baccalaureate (IB) Diploma, and many international school-leaving qualifications, with grades and required subjects set per programme. Many LSE degrees, particularly in economics and quantitative subjects, require a strong mathematics background, and some specify particular subjects at a defined grade.\n\nThe published requirements vary by department and can change between cycles, so use the entry-requirements section of your LSE course page as the definitive source. LSE provides country-specific guidance on accepted international qualifications on its official admissions pages.',
+      },
+      {
+        headingEn: 'English language and selection steps',
+        bodyEn:
+          'As LSE teaches in English, applicants whose first language is not English usually need to meet its English-language requirement through an accepted test such as IELTS, TOEFL or PTE Academic at the level LSE specifies. LSE groups its English requirements (often described as a standard and a higher level) by programme, so check the official LSE English-language requirements page for the accepted tests and the level you need.\n\nLSE\'s undergraduate selection is generally based on the UCAS application rather than a separate admissions test or interview for most courses, though law applicants at some universities take the LNAT — confirm whether any test applies to your specific course. Because admissions criteria are reviewed periodically, verify the current requirements on the official LSE website.',
+      },
+      {
+        headingEn: 'Fees, funding and the Student visa',
+        bodyEn:
+          'International tuition fees at LSE vary by programme and are set each year, and London is an expensive city to live in; rely only on the official LSE fees and financial-support pages for current tuition and living-cost estimates. LSE publishes scholarships and bursaries with their own eligibility criteria — apply through official channels and never pay any third party claiming to guarantee an award or a place.\n\nMost international students on a full-time UK degree need a Student visa, which requires a Confirmation of Acceptance for Studies (CAS) from LSE and payment of the Immigration Health Surcharge (IHS). This is general information, not immigration advice — confirm the current Student visa requirements, fees and the IHS amount on the official UK government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What subjects can I study at LSE?',
+        answerEn:
+          'LSE specialises in the social sciences — economics, finance, politics, international relations, law, management, sociology, geography and related fields. It does not offer science or engineering degrees. Confirm available programmes on the official LSE course pages.',
+      },
+      {
+        questionEn: 'Do I need strong mathematics for LSE?',
+        answerEn:
+          'Many LSE degrees, especially economics and quantitative subjects, require a strong mathematics background and may specify particular grades. Check the entry-requirements section of your chosen LSE course page for the exact requirement.',
+      },
+      {
+        questionEn: 'Does LSE require an admissions test?',
+        answerEn:
+          'Most LSE undergraduate courses are assessed on the UCAS application rather than a separate test, though law applicants at some universities take the LNAT. Verify whether any test applies to your specific course on the official LSE pages.',
+      },
+      {
+        questionEn: 'How much does LSE cost for international students?',
+        answerEn:
+          'International tuition varies by programme and year, and London living costs are high. There are no fixed figures here — check the official LSE fees and financial-support pages for current tuition, living-cost estimates and any scholarships.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['london-school-of-economics'],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'uk-student-visa-guide', 'studying-in-london-as-an-international-student'],
+    sources: [
+      { label: 'LSE — official site', url: 'https://www.lse.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['lse admission', 'how to apply to lse', 'london school of economics entry requirements', 'lse international students', 'ucas application lse', 'study economics at lse'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'London, United Kingdom' },
+      { label: 'Focus', value: 'Social sciences, economics and related fields' },
+      { label: 'Undergraduate application', value: 'Via UCAS' },
+      { label: 'Postgraduate application', value: 'Directly via LSE' },
+      { label: 'Verify on', value: 'lse.ac.uk' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-kings-college-london',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Get Admission in King\'s College London',
+    descriptionEn:
+      'An official-source guide to applying to King\'s College London (KCL) as an international student — a broad research university in London — covering the UCAS route, entry requirements, English and admissions tests, fees and the Student visa.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What King\'s College London is',
+        bodyEn:
+          'King\'s College London (KCL) is a large, multi-faculty research university in central London offering a wide range of subjects, including the humanities, social sciences, law, business, natural and mathematical sciences, nursing and midwifery, dentistry, and medicine and health sciences. This breadth gives applicants many disciplines to choose from.\n\nKCL is consistently ranked among the leading universities worldwide by bodies such as QS and Times Higher Education (THE); always read a ranking with its issuing body and year. Each programme is administered by its own faculty, so the official KCL course pages are where you confirm the precise requirements for your chosen degree.',
+      },
+      {
+        headingEn: 'How to apply through UCAS',
+        bodyEn:
+          'Undergraduate applications to KCL are made through UCAS, the United Kingdom\'s central admissions service, not directly to the university. Your single UCAS application includes your course choices, a personal statement and an academic reference.\n\nDeadlines differ by course — some KCL programmes, including medicine and dentistry, sit in the earlier UCAS deadline group, while many others follow the standard deadline. Confirm the current deadline for your specific course on the official UCAS and KCL websites. Postgraduate applications are generally made directly through KCL\'s own application system.',
+        bullets: [
+          'Undergraduate: apply via UCAS with a personal statement and reference',
+          'Medicine and dentistry typically sit in the earlier UCAS deadline group',
+          'Postgraduate: apply directly through KCL\'s application system',
+          'Confirm current deadlines on ucas.com and kcl.ac.uk',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements',
+        bodyEn:
+          'KCL accepts a wide range of qualifications including A-levels, the International Baccalaureate (IB) Diploma, and many international school-leaving qualifications, with grades and required subjects set per programme. Some courses, especially in the sciences and health, specify particular subjects as essential.\n\nThe exact grade and subject requirements differ by faculty and can change between cycles, so treat the entry-requirements section of your KCL course page as the authoritative source. KCL publishes country-by-country guidance on accepted international qualifications on its official admissions pages.',
+      },
+      {
+        headingEn: 'English language and admissions tests',
+        bodyEn:
+          'Because teaching is in English, applicants whose first language is not English normally need to meet KCL\'s English-language requirement through an accepted test such as IELTS, TOEFL or PTE Academic at the level KCL specifies for your course. KCL groups its English requirements into bands by programme, so check the official KCL English-language requirements page for the accepted tests and the band your course needs.\n\nSome KCL courses use additional selection steps. Medicine and dentistry use the UCAT as the standard UK admissions test (the BMAT has been discontinued), and law applicants at some universities take the LNAT; interviews may also form part of selection for health programmes. These requirements change frequently, so verify whether your specific course needs a test, and its registration deadline, on the official KCL and test-provider websites.',
+      },
+      {
+        headingEn: 'Fees, funding and the Student visa',
+        bodyEn:
+          'International tuition fees at KCL vary by programme and are set each year, and London has high living costs; rely only on the official KCL fees and funding pages for current tuition and estimated living expenses. KCL lists scholarships and bursaries with their own eligibility rules — apply through official channels and never pay anyone who claims to guarantee a scholarship or a place.\n\nMost international students on a full-time UK degree need a Student visa, which requires a Confirmation of Acceptance for Studies (CAS) from KCL and payment of the Immigration Health Surcharge (IHS). This is general information, not immigration advice — confirm the current Student visa rules, fees and the IHS amount on the official UK government source before acting.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What subjects does King\'s College London offer?',
+        answerEn:
+          'KCL is a broad research university with faculties spanning humanities, social sciences, law, business, natural and mathematical sciences, nursing and midwifery, dentistry, and medicine and health sciences. Confirm available programmes on the official KCL course pages.',
+      },
+      {
+        questionEn: 'How do I apply to KCL as an undergraduate?',
+        answerEn:
+          'Undergraduate applications go through UCAS with a personal statement and an academic reference. Some courses, like medicine and dentistry, have an earlier deadline. Postgraduate applications are usually made directly through KCL. Confirm current deadlines on ucas.com and kcl.ac.uk.',
+      },
+      {
+        questionEn: 'Does KCL require an admissions test?',
+        answerEn:
+          'For some courses. Medicine and dentistry use the UCAT (the BMAT has been discontinued), and law at some universities uses the LNAT. These change often, so verify the requirement and any deadline for your specific course on the official KCL and test-provider pages.',
+      },
+      {
+        questionEn: 'What does it cost to study at KCL?',
+        answerEn:
+          'International tuition varies by programme and year, and London living costs are high. There are no fixed figures to quote — check the official KCL fees and funding pages for current tuition, estimated living costs and any scholarships.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'ucat', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['kings-college-london'],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'uk-student-visa-guide', 'studying-in-london-as-an-international-student'],
+    sources: [
+      { label: 'King\'s College London — official site', url: 'https://www.kcl.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['kings college london admission', 'how to apply to kcl', 'kcl entry requirements', 'kings college london international students', 'ucas application kcl', 'study at kings college london'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'London, United Kingdom' },
+      { label: 'Type', value: 'Broad multi-faculty research university' },
+      { label: 'Undergraduate application', value: 'Via UCAS' },
+      { label: 'Medical/dental admissions test', value: 'UCAT (BMAT discontinued)' },
+      { label: 'Verify on', value: 'kcl.ac.uk' },
+    ],
+  },
+  {
+    slug: 'studying-in-london-as-an-international-student',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Studying in London as an International Student',
+    descriptionEn:
+      'A neutral overview of studying in London — its universities, the higher cost of living, transport, the Student visa basics and student life — for international students considering a UK degree in the capital.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why students consider London',
+        bodyEn:
+          'London is home to a large concentration of universities and specialist institutions, giving international students a wide choice of subjects and programmes in a single city. Among them are broad research universities and focused specialist schools, several of which appear in global rankings by bodies such as QS and Times Higher Education (THE) — read any ranking alongside its issuing body and year.\n\nBeyond the universities themselves, students are often drawn to the city for its cultural institutions, libraries and the chance to study alongside a highly international student community. What suits you depends on your subject, budget and preferences, so compare specific courses on each university\'s official pages rather than choosing by reputation alone.',
+      },
+      {
+        headingEn: 'Cost of living: London is more expensive',
+        bodyEn:
+          'London generally has a higher cost of living than most other UK cities, particularly for accommodation. The UK Student visa rules require applicants to show they can cover living costs (maintenance funds), and the required amount is set higher for students living in London than elsewhere in the UK.\n\nBecause these maintenance amounts, tuition fees and typical rents change and vary widely, do not rely on figures from third parties — confirm the current Student visa maintenance requirement on the official UK government source, and check tuition and estimated living costs on each university\'s official fees pages. Universities also publish their own cost-of-living estimates, which are a useful planning starting point.',
+        bullets: [
+          'Accommodation is usually the largest expense in London',
+          'The Student visa maintenance amount is higher for London than the rest of the UK',
+          'Verify the current maintenance figure on the official UK government source',
+          'Check each university\'s official living-cost estimate for planning',
+        ],
+      },
+      {
+        headingEn: 'Getting around: transport',
+        bodyEn:
+          'London has an extensive public transport network including the Underground, buses, and rail services, which many students use to travel between accommodation and campus. Fares are charged by zone and can add up, so transport is a real part of a London student budget.\n\nDiscounted student travel options may be available, but eligibility and pricing change, so check the current details on the official Transport for London (TfL) website. When comparing where to live, factor in both rent and the likely transport cost from that area to your campus.',
+      },
+      {
+        headingEn: 'Student visa and working while studying',
+        bodyEn:
+          'Most international students taking a full-time degree in London need a UK Student visa, which requires a Confirmation of Acceptance for Studies (CAS) from your university, payment of the Immigration Health Surcharge (IHS), and meeting the maintenance and English-language requirements. Working rights while studying — such as any permitted hours during term time — are defined by the visa conditions.\n\nThis is general information, not immigration advice. Visa rules, fees, the IHS amount and permitted working hours change, so verify the current Student visa requirements and conditions on the official UK government source before making any plans. After your course, the Graduate Route may allow eligible graduates to stay and work for a period — check the current rules on the official UK government source.',
+      },
+      {
+        headingEn: 'Healthcare and student life',
+        bodyEn:
+          'International students who pay the Immigration Health Surcharge as part of their Student visa can generally access the National Health Service (NHS) on the same basis as a UK resident for the duration of their visa; confirm the current arrangements and what is covered on the official NHS and UK government sources. Registering with a local doctor (GP) after arrival is a common first step.\n\nLondon\'s universities offer student societies, sports, careers services and support for international students, which help with settling in and building a network. Student experiences vary by university and personal circumstances, so use official university student-life and support pages to understand what each institution provides.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is London more expensive than other UK cities for students?',
+        answerEn:
+          'Generally yes, especially for accommodation, and the UK Student visa maintenance requirement is set higher for London than the rest of the UK. Confirm the current maintenance figure on the official UK government source and check each university\'s official cost estimates.',
+      },
+      {
+        questionEn: 'Do I need a Student visa to study in London?',
+        answerEn:
+          'Most international students on a full-time degree need a UK Student visa, which requires a CAS from the university, payment of the IHS, and meeting maintenance and English requirements. This is general information, not immigration advice — verify the current rules on the official UK government source.',
+      },
+      {
+        questionEn: 'Can I work while studying in London?',
+        answerEn:
+          'Any permitted working hours are set by your Student visa conditions and can change. This is general information, not immigration advice — check the current permitted working hours and conditions on the official UK government source.',
+      },
+      {
+        questionEn: 'Can international students use the NHS in London?',
+        answerEn:
+          'Students who pay the Immigration Health Surcharge with their Student visa can generally access the NHS on the same basis as a UK resident for the visa\'s duration. Confirm the current arrangements and coverage on the official NHS and UK government sources, and register with a local GP after arrival.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: ['imperial-college-london', 'university-college-london', 'london-school-of-economics', 'kings-college-london'],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'uk-student-visa-guide', 'how-to-get-admission-in-ucl'],
+    sources: [
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'NHS — official site', url: 'https://www.nhs.uk' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['studying in london international students', 'cost of living london students', 'study in london uk', 'london student visa', 'universities in london for international students', 'student life in london'],
+    tags: ['uk-ireland-universities', 'uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'City', value: 'London, United Kingdom' },
+      { label: 'Cost of living', value: 'Higher than most UK cities (verify on official sources)' },
+      { label: 'Visa', value: 'UK Student visa (CAS + IHS required)' },
+      { label: 'Healthcare', value: 'NHS access via the Immigration Health Surcharge' },
+      { label: 'Verify on', value: 'gov.uk/student-visa' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-university-of-edinburgh',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Get Admission in the University of Edinburgh',
+    descriptionEn:
+      'A step-by-step look at applying to the University of Edinburgh as an international student — UCAS undergraduate routes, Scottish four-year honours degrees, English-language requirements, and where to verify the official details.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About the University of Edinburgh',
+        bodyEn:
+          'The University of Edinburgh is a public research university in Scotland and a member of the Russell Group of UK research universities. It teaches a broad range of subjects across its colleges and welcomes a large international student community.\n\nBecause it is in Scotland, its undergraduate honours degrees typically follow the Scottish four-year structure rather than the three-year structure common in England and Wales. Always confirm a specific programme\'s length, structure, and entry requirements on the official ed.ac.uk course pages, as these differ by subject.',
+      },
+      {
+        headingEn: 'How undergraduate applications work',
+        bodyEn:
+          'Undergraduate applications to Edinburgh are made through UCAS, the UK\'s central admissions service, not directly to the university. You build one UCAS application, list your course choices, and submit a personal statement and an academic reference.\n\nEntry requirements vary by programme and are usually expressed in terms of A-levels, Scottish Highers/Advanced Highers, the International Baccalaureate, or recognised equivalents from other school systems. Check the exact grades and required subjects for your chosen course on the official university website before you apply.',
+        bullets: [
+          'Apply through UCAS (one application, multiple course choices)',
+          'Submit a personal statement plus an academic reference',
+          'Meet the subject and grade requirements listed for each course',
+          'Watch UCAS deadlines — some courses close earlier than others',
+        ],
+      },
+      {
+        headingEn: 'Postgraduate applications',
+        bodyEn:
+          'Taught and research postgraduate programmes are normally applied for directly through the University of Edinburgh\'s own online application system rather than UCAS. Requirements typically include a relevant bachelor\'s degree at the stated level, supporting documents, and sometimes references or a research proposal.\n\nEach school sets its own entry criteria and supporting-document list, so use the official postgraduate course finder on ed.ac.uk to confirm what your specific programme needs and when it closes.',
+      },
+      {
+        headingEn: 'English-language and supporting documents',
+        bodyEn:
+          'International applicants whose first language is not English usually need to evidence their English proficiency through an accepted test such as IELTS, TOEFL, or PTE Academic, at the level set for the programme. Different subjects and levels can require different minimum scores.\n\nYou will also typically need academic transcripts and certificates. Confirm the current list of accepted tests, the exact score thresholds, and any document requirements on the official university pages — these are updated regularly.',
+      },
+      {
+        headingEn: 'Fees, funding and the student visa',
+        bodyEn:
+          'Tuition fees differ by programme and by fee status, and scholarships may be available for international students. For the latest tuition figures, fee-status rules, and scholarship options, consult the official University of Edinburgh fees and funding pages rather than third-party summaries.\n\nMost international students studying in the UK need a Student visa, which requires a Confirmation of Acceptance for Studies (CAS) from the university plus other conditions. This is general information, not immigration advice — verify all current requirements on the official UK government source at gov.uk/student-visa before making plans.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to the University of Edinburgh as an international student?',
+        answerEn:
+          'For undergraduate study you apply through UCAS with a personal statement and reference. For postgraduate study you usually apply directly via the university\'s online system. Confirm the route and requirements for your specific programme on ed.ac.uk.',
+      },
+      {
+        questionEn: 'How long is an undergraduate degree at Edinburgh?',
+        answerEn:
+          'Scottish undergraduate honours degrees are typically four years, which differs from the usual three-year structure in England and Wales. Programme length varies by subject, so check the official course page.',
+      },
+      {
+        questionEn: 'What English test does Edinburgh accept?',
+        answerEn:
+          'Edinburgh generally accepts tests such as IELTS, TOEFL, and PTE Academic, with the required score depending on the programme. Always confirm the accepted tests and current minimum scores on the official university website.',
+      },
+      {
+        questionEn: 'Do I need a student visa to study at Edinburgh?',
+        answerEn:
+          'Most international students need a UK Student visa, which requires a CAS from the university and meeting other conditions. This is general information, not immigration advice — verify current rules at gov.uk/student-visa.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['university-of-edinburgh'],
+    relatedGuideSlugs: ['studying-in-scotland-universities-and-four-year-degrees', 'how-to-study-in-uk-from-india', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'University of Edinburgh — official site', url: 'https://www.ed.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['university of edinburgh admission', 'how to apply to edinburgh university', 'edinburgh university international students', 'ucas application edinburgh', 'study in scotland'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Location', value: 'Edinburgh, Scotland, United Kingdom' },
+      { label: 'Group', value: 'Russell Group research university' },
+      { label: 'Undergraduate application', value: 'Through UCAS' },
+      { label: 'Typical honours degree length', value: 'Four years (Scottish structure) — varies by programme' },
+      { label: 'Official site', value: 'ed.ac.uk' },
+    ],
+  },
+  {
+    slug: 'studying-in-scotland-universities-and-four-year-degrees',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Studying in Scotland: Universities and Four-Year Degrees',
+    descriptionEn:
+      'Why Scottish undergraduate honours degrees usually run four years, how the flexible early years work, and an overview of well-known Scottish universities such as Edinburgh, St Andrews, and Glasgow for international students.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Scotland has a distinct degree structure',
+        bodyEn:
+          'Scotland is one of the four nations of the United Kingdom, and its universities follow a somewhat different academic tradition from those in England, Wales, and Northern Ireland. The clearest difference for an applicant is the length of an undergraduate honours degree.\n\nIn Scotland, an undergraduate honours degree typically takes four years, whereas in England and Wales the usual length is three years. This is a structural feature of the Scottish system, not a sign that one route is better than another.',
+      },
+      {
+        headingEn: 'How the four-year honours degree works',
+        bodyEn:
+          'A common feature of Scottish degrees is breadth in the early years. Many programmes let students study a wider mix of subjects in the first one or two years before specialising in their honours subject in the later years.\n\nThis can give students time to explore related fields and confirm their choice of major before committing fully. The exact level of flexibility depends on the university and the subject, so check the structure of any specific programme on its official course page.',
+        bullets: [
+          'Honours degrees are typically four years',
+          'Early years can include a broader mix of subjects',
+          'Specialisation usually deepens in the later honours years',
+          'Programme structure varies by university and subject',
+        ],
+      },
+      {
+        headingEn: 'Some well-known Scottish universities',
+        bodyEn:
+          'Scotland is home to several long-established universities that attract international students. The University of Edinburgh and the University of Glasgow are large research universities and members of the Russell Group, while the University of St Andrews is a smaller historic university on the Scottish coast.\n\nEach has its own subject strengths, campus environment, and entry requirements. Explore the official websites — ed.ac.uk, st-andrews.ac.uk, and gla.ac.uk — to compare courses and decide what suits you, rather than relying on generalisations.',
+        bullets: [
+          'University of Edinburgh — large research university, Russell Group (ed.ac.uk)',
+          'University of St Andrews — historic university on the east coast (st-andrews.ac.uk)',
+          'University of Glasgow — large research university, Russell Group (gla.ac.uk)',
+        ],
+      },
+      {
+        headingEn: 'Applying and entry requirements',
+        bodyEn:
+          'Undergraduate applications to Scottish universities are made through UCAS, the UK\'s central admissions service, with one application covering your course choices. Entry requirements are usually stated in terms of A-levels, Scottish Highers/Advanced Highers, the International Baccalaureate, or recognised equivalents.\n\nInternational applicants typically also need to evidence English proficiency through an accepted test such as IELTS, TOEFL, or PTE Academic. Confirm the exact grades, subjects, and test scores for each programme on the relevant official university website.',
+      },
+      {
+        headingEn: 'Fees, funding and the student visa',
+        bodyEn:
+          'Tuition fees and any available scholarships differ by university, programme, and fee status, so check the official fees and funding pages of each institution for current figures. Do not rely on third-party fee summaries, which can be out of date.\n\nMost international students need a UK Student visa, which requires a Confirmation of Acceptance for Studies (CAS) and meeting other conditions. This is general information, not immigration advice — verify current rules on the official UK government source at gov.uk/student-visa.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Why do Scottish degrees take four years?',
+        answerEn:
+          'Scotland follows a distinct academic tradition in which undergraduate honours degrees are typically four years, often with a broader mix of subjects in the early years before specialisation. England and Wales more commonly use a three-year structure.',
+      },
+      {
+        questionEn: 'Can I change or broaden my subject in a Scottish degree?',
+        answerEn:
+          'Many Scottish programmes allow some breadth in the first one or two years before you specialise. The exact flexibility depends on the university and subject, so check the specific course structure on the official site.',
+      },
+      {
+        questionEn: 'How do I apply to a Scottish university?',
+        answerEn:
+          'Undergraduate applications go through UCAS, the UK\'s central admissions service, with a personal statement and academic reference. Confirm the entry requirements for each programme on the relevant university website.',
+      },
+      {
+        questionEn: 'Do international students need a visa to study in Scotland?',
+        answerEn:
+          'Scotland is part of the UK, so most international students need a UK Student visa, which requires a CAS from the university. This is general information, not immigration advice — verify current rules at gov.uk/student-visa.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['university-of-edinburgh', 'university-of-st-andrews', 'university-of-glasgow'],
+    relatedGuideSlugs: ['how-to-get-admission-in-university-of-edinburgh', 'top-russell-group-universities-outside-london', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'University of Edinburgh — official site', url: 'https://www.ed.ac.uk' },
+      { label: 'University of Glasgow — official site', url: 'https://www.gla.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['study in scotland', 'scottish universities for international students', 'four year degree scotland', 'studying in scotland uk', 'edinburgh glasgow st andrews'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Nation', value: 'Scotland (part of the United Kingdom)' },
+      { label: 'Typical honours degree length', value: 'Four years — varies by programme' },
+      { label: 'Undergraduate application', value: 'Through UCAS' },
+      { label: 'Example universities', value: 'Edinburgh, St Andrews, Glasgow' },
+      { label: 'International student visa', value: 'UK Student visa (verify at gov.uk)' },
+    ],
+  },
+  {
+    slug: 'top-russell-group-universities-outside-london',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Top Russell Group Universities Outside London',
+    descriptionEn:
+      'A neutral overview of well-known Russell Group research universities outside London — including Manchester, Warwick, Bristol, Glasgow, Leeds, Durham, Birmingham, and Sheffield — and how to compare them for international study.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'What the Russell Group is',
+        bodyEn:
+          'The Russell Group is a self-selected association of UK universities that emphasise research and have a research-intensive profile. Membership is often used by applicants as one starting point when building a shortlist, though it is not the only marker of quality.\n\nMany Russell Group universities are located outside London, spread across England, Scotland, Wales, and Northern Ireland. Studying outside the capital can mean a different campus atmosphere and, in many cases, a lower cost of living — though costs and experiences vary widely by city.',
+      },
+      {
+        headingEn: 'Well-known options in England',
+        bodyEn:
+          'Several large, well-regarded Russell Group universities sit in major English cities outside London. They differ in size, subject strengths, campus style, and city setting, so the right fit depends on your course and preferences rather than any single label.\n\nUse each university\'s official website to compare programmes, entry requirements, and campus facilities directly.',
+        bullets: [
+          'University of Manchester — large city-based research university (manchester.ac.uk)',
+          'University of Warwick — campus university near Coventry (warwick.ac.uk)',
+          'University of Bristol — research university in south-west England (bristol.ac.uk)',
+          'University of Leeds — large city-based university in Yorkshire (leeds.ac.uk)',
+          'Durham University — collegiate university in north-east England (durham.ac.uk)',
+          'University of Birmingham — campus university in the Midlands (birmingham.ac.uk)',
+          'University of Sheffield — research university in South Yorkshire (sheffield.ac.uk)',
+        ],
+      },
+      {
+        headingEn: 'A well-known option in Scotland',
+        bodyEn:
+          'Russell Group membership extends beyond England. The University of Glasgow is a large research university in Scotland and a member of the Russell Group, offering a wide range of subjects.\n\nBecause it is in Scotland, its undergraduate honours degrees typically follow the four-year structure rather than the three-year structure common in England and Wales. Confirm programme length and requirements on gla.ac.uk.',
+        bullets: [
+          'University of Glasgow — large research university in Scotland (gla.ac.uk)',
+        ],
+      },
+      {
+        headingEn: 'How to compare them fairly',
+        bodyEn:
+          'Independent ranking bodies such as QS and Times Higher Education (THE) publish university rankings, and any specific position should be attributed to the body that issued it and checked for the latest edition on its own site. Rankings are one input among many, not a verdict.\n\nBeyond rankings, weigh the things that affect your day-to-day experience: the structure and content of the specific course, entry requirements, campus versus city setting, location, cost of living, and the support available to international students. No single university is universally "best" — the best fit is the one that matches your goals.',
+        bullets: [
+          'Attribute any ranking to its issuer (QS or THE) and check the current edition',
+          'Compare the specific course content and entry requirements',
+          'Consider campus style, city, and cost of living',
+          'Look at international student support and facilities',
+        ],
+      },
+      {
+        headingEn: 'Applying, fees and the student visa',
+        bodyEn:
+          'Undergraduate applications to these universities are made through UCAS, while postgraduate applications are usually made directly to each university. Tuition fees and scholarships vary by institution, programme, and fee status — check the official fees and funding pages of each university for current figures.\n\nMost international students need a UK Student visa, which requires a Confirmation of Acceptance for Studies (CAS) and meeting other conditions. This is general information, not immigration advice — verify current rules on the official UK government source at gov.uk/student-visa.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which Russell Group universities are outside London?',
+        answerEn:
+          'Many are, including Manchester, Warwick, Bristol, Leeds, Durham, Birmingham, and Sheffield in England, and Glasgow in Scotland, among others. Each has its own strengths, so compare specific courses on their official websites.',
+      },
+      {
+        questionEn: 'Is a Russell Group university always the best choice?',
+        answerEn:
+          'Not necessarily. Russell Group membership signals a research focus, but the best fit depends on your course, entry requirements, location, and budget. Strong programmes also exist outside the group.',
+      },
+      {
+        questionEn: 'How should I use university rankings?',
+        answerEn:
+          'Treat rankings as one input. Attribute any position to its issuer, such as QS or Times Higher Education, check the latest edition on their site, and weigh it alongside course content, fit, and cost.',
+      },
+      {
+        questionEn: 'How do I apply to these universities?',
+        answerEn:
+          'Undergraduate applications go through UCAS; postgraduate applications are usually made directly to each university. Confirm entry requirements and deadlines on each official website.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['university-of-manchester', 'university-of-warwick', 'university-of-bristol', 'university-of-glasgow', 'university-of-leeds', 'durham-university', 'university-of-birmingham', 'university-of-sheffield'],
+    relatedGuideSlugs: ['studying-in-scotland-universities-and-four-year-degrees', 'how-to-get-admission-in-university-of-edinburgh', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'University of Manchester — official site', url: 'https://www.manchester.ac.uk' },
+      { label: 'University of Bristol — official site', url: 'https://www.bristol.ac.uk' },
+      { label: 'Durham University — official site', url: 'https://www.durham.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['russell group universities', 'top uk universities outside london', 'best universities uk international students', 'manchester warwick bristol durham', 'study in uk'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Group', value: 'Russell Group (research-intensive UK universities)' },
+      { label: 'Example cities', value: 'Manchester, Coventry/Warwick, Bristol, Leeds, Durham, Birmingham, Sheffield, Glasgow' },
+      { label: 'Undergraduate application', value: 'Through UCAS' },
+      { label: 'Rankings', value: 'Attribute to QS or THE; check the latest edition' },
+      { label: 'International student visa', value: 'UK Student visa (verify at gov.uk)' },
+    ],
+  },
+  {
+    slug: 'top-universities-in-ireland-for-international-students',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Top Universities in Ireland for International Students',
+    descriptionEn:
+      'A neutral overview of well-known universities in the Republic of Ireland — including Trinity College Dublin, UCD, UCC, the University of Galway, and RCSI — with how applications and the CAO route work for international students.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Studying in the Republic of Ireland',
+        bodyEn:
+          'The Republic of Ireland is an English-speaking country in the European Union with several long-established universities that attract international students. Its higher-education system is separate from the UK\'s, with its own central application route for undergraduate study.\n\nIreland offers a range of bachelor\'s, master\'s, and research programmes. As with anywhere, the right choice depends on the specific course and your goals rather than reputation alone, so use official university sites to compare.',
+      },
+      {
+        headingEn: 'Some well-known Irish universities',
+        bodyEn:
+          'Ireland is home to several universities that international applicants frequently consider. They differ in size, location, subject focus, and campus character, so explore each one\'s official website to find the right match.\n\nTrinity College Dublin and University College Dublin are large universities in the capital; University College Cork and the University of Galway are major universities elsewhere in the country; and RCSI University of Medicine and Health Sciences specialises in medicine and the health sciences.',
+        bullets: [
+          'Trinity College Dublin — historic university in Dublin (tcd.ie)',
+          'University College Dublin (UCD) — large university in Dublin (ucd.ie)',
+          'University College Cork (UCC) — major university in Cork (ucc.ie)',
+          'University of Galway — university on the west coast (universityofgalway.ie)',
+          'RCSI University of Medicine and Health Sciences — specialist health-sciences university (rcsi.com)',
+        ],
+      },
+      {
+        headingEn: 'How applications work in Ireland',
+        bodyEn:
+          'Undergraduate applications in Ireland generally go through the Central Applications Office (CAO) at cao.ie, which is Ireland\'s central admissions service — distinct from the UK\'s UCAS. Some international students, particularly those outside the EU, may apply directly to a university\'s international office instead, depending on the institution and qualification.\n\nPostgraduate programmes are usually applied for directly to each university. Always confirm on the official university website whether your route is the CAO or direct application, and what documents are required.',
+        bullets: [
+          'Undergraduate: often through the CAO (cao.ie)',
+          'Some international applicants apply directly to a university',
+          'Postgraduate: usually direct to each university',
+          'Confirm the correct route on each official site',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and English proficiency',
+        bodyEn:
+          'Entry requirements vary by programme and are commonly stated in terms of recognised secondary qualifications such as the Irish Leaving Certificate, A-levels, the International Baccalaureate, or other equivalents. International applicants whose first language is not English usually need to evidence English proficiency through an accepted test such as IELTS, TOEFL, or PTE Academic.\n\nMedicine and other competitive programmes can have additional requirements — for example, some medicine routes in Ireland use the HPAT admissions test. These requirements change and differ by university, so confirm the current details on each official university source.',
+      },
+      {
+        headingEn: 'Fees, funding and study permission',
+        bodyEn:
+          'Tuition fees and any scholarships differ by university, programme, and your fee status (for example, EU versus non-EU), so check the official fees and scholarships pages of each institution for current figures. Rankings published by QS or Times Higher Education should be attributed to the issuing body and checked for the latest edition; no university is universally "best".\n\nNon-EU/EEA students normally need immigration permission to study in Ireland, and after arrival many register for residence permission (commonly referred to as Stamp 2). This is general information, not immigration advice — verify current requirements on the official Irish sources at irishimmigration.ie and citizensinformation.ie before making plans.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are some well-known universities in Ireland?',
+        answerEn:
+          'Frequently considered options include Trinity College Dublin, University College Dublin, University College Cork, the University of Galway, and RCSI for health sciences. Compare specific courses on each official website rather than relying on reputation alone.',
+      },
+      {
+        questionEn: 'How do international students apply to Irish universities?',
+        answerEn:
+          'Undergraduate applications often go through the CAO (cao.ie), though some international students apply directly to a university\'s international office. Postgraduate applications are usually direct. Confirm the correct route on each official site.',
+      },
+      {
+        questionEn: 'What English test do Irish universities accept?',
+        answerEn:
+          'Universities in Ireland generally accept tests such as IELTS, TOEFL, and PTE Academic, with the required score depending on the programme. Always confirm accepted tests and current minimum scores on the official university website.',
+      },
+      {
+        questionEn: 'Do I need permission to study in Ireland?',
+        answerEn:
+          'Non-EU/EEA students normally need immigration permission and often register for residence permission after arrival. This is general information, not immigration advice — verify current rules at irishimmigration.ie and citizensinformation.ie.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['trinity-college-dublin', 'university-college-dublin', 'university-college-cork', 'university-of-galway', 'rcsi-university'],
+    relatedGuideSlugs: ['how-to-get-admission-in-trinity-college-dublin', 'study-in-ireland-from-india', 'top-russell-group-universities-outside-london'],
+    sources: [
+      { label: 'Education in Ireland — official site', url: 'https://www.educationinireland.com' },
+      { label: 'CAO — Central Applications Office', url: 'https://www.cao.ie' },
+      { label: 'Irish Immigration Service (irishimmigration.ie)', url: 'https://www.irishimmigration.ie' },
+      { label: 'Citizens Information — Ireland', url: 'https://www.citizensinformation.ie' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['top universities in ireland', 'study in ireland for international students', 'best universities ireland', 'trinity ucd ucc galway rcsi', 'cao application ireland'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Country', value: 'Republic of Ireland (English-speaking, EU)' },
+      { label: 'Undergraduate application', value: 'Often through the CAO (cao.ie); some apply direct' },
+      { label: 'Example universities', value: 'Trinity College Dublin, UCD, UCC, University of Galway, RCSI' },
+      { label: 'Rankings', value: 'Attribute to QS or THE; check the latest edition' },
+      { label: 'Study permission', value: 'Verify at irishimmigration.ie / citizensinformation.ie' },
+    ],
+  },
+  {
+    slug: 'how-to-get-admission-in-trinity-college-dublin',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Get Admission in Trinity College Dublin',
+    descriptionEn:
+      'A step-by-step look at applying to Trinity College Dublin (the University of Dublin) as an international student — CAO and direct application routes, English-language requirements, and where to verify the official details.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'About Trinity College Dublin',
+        bodyEn:
+          'Trinity College Dublin, the University of Dublin, is a historic public research university in the centre of Dublin, the capital of the Republic of Ireland. It teaches a broad range of subjects across the arts, humanities, sciences, business, engineering, and health sciences, and has a substantial international student community.\n\nProgramme structures, entry requirements, and application routes differ by subject and level, so always confirm the details for your specific course on the official tcd.ie website before applying.',
+      },
+      {
+        headingEn: 'Undergraduate application routes',
+        bodyEn:
+          'For undergraduate study, the route can depend on where you studied and your citizenship. Many applicants apply through the Central Applications Office (CAO) at cao.ie, Ireland\'s central admissions service. Some international students — particularly those outside the EU/EEA, or those presenting qualifications such as A-levels or the International Baccalaureate — may apply directly to Trinity\'s admissions office instead.\n\nBecause the correct route varies, check the official Trinity admissions pages to confirm whether you should apply via the CAO or directly, and what supporting documents you need.',
+        bullets: [
+          'EU applicants commonly apply through the CAO (cao.ie)',
+          'Many non-EU/international applicants apply directly to Trinity',
+          'Required qualifications and documents vary by programme',
+          'Confirm your route on the official Trinity admissions pages',
+        ],
+      },
+      {
+        headingEn: 'Postgraduate applications',
+        bodyEn:
+          'Taught and research postgraduate programmes at Trinity are normally applied for directly through the university\'s own online application system. Requirements typically include a relevant bachelor\'s degree at the stated level, supporting documents, and sometimes references or a research proposal.\n\nEach school and course sets its own criteria and closing dates, so use the official postgraduate course finder on tcd.ie to confirm what your programme requires.',
+      },
+      {
+        headingEn: 'Entry requirements and English proficiency',
+        bodyEn:
+          'Entry requirements are set per programme and may be expressed in terms of recognised qualifications such as the Irish Leaving Certificate, A-levels, the International Baccalaureate, or other equivalents. International applicants whose first language is not English usually need to evidence English proficiency through an accepted test such as IELTS, TOEFL, or PTE Academic.\n\nSome competitive programmes — for example, certain medicine routes in Ireland, which can involve the HPAT admissions test — have additional requirements. These requirements change, so confirm the exact grades, subjects, and test scores for your course on the official university source.',
+      },
+      {
+        headingEn: 'Fees, funding and study permission',
+        bodyEn:
+          'Tuition fees differ by programme and by fee status (for example, EU versus non-EU), and scholarships may be available. For the latest tuition figures, fee-status rules, and scholarship options, consult the official Trinity fees and funding pages rather than third-party summaries.\n\nNon-EU/EEA students normally need immigration permission to study in Ireland and often register for residence permission (commonly referred to as Stamp 2) after arrival. This is general information, not immigration advice — verify all current requirements on the official Irish sources at irishimmigration.ie and citizensinformation.ie before making plans.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to Trinity College Dublin as an international student?',
+        answerEn:
+          'Depending on your background, you apply either through the CAO (cao.ie) or directly to Trinity\'s admissions office, and postgraduate study is usually a direct application. Confirm the correct route and requirements for your programme on tcd.ie.',
+      },
+      {
+        questionEn: 'Does Trinity College Dublin use the CAO or direct applications?',
+        answerEn:
+          'Both are used. EU applicants commonly apply through the CAO, while many non-EU/international applicants apply directly to Trinity. Check the official admissions pages to see which applies to you.',
+      },
+      {
+        questionEn: 'What English test does Trinity accept?',
+        answerEn:
+          'Trinity generally accepts tests such as IELTS, TOEFL, and PTE Academic, with the required score depending on the programme. Always confirm the accepted tests and current minimum scores on the official university website.',
+      },
+      {
+        questionEn: 'Do I need study permission for Trinity College Dublin?',
+        answerEn:
+          'Non-EU/EEA students normally need immigration permission and often register for residence permission after arrival. This is general information, not immigration advice — verify current rules at irishimmigration.ie and citizensinformation.ie.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'a-levels', 'international-baccalaureate'],
+    relatedCollegeSlugs: ['trinity-college-dublin'],
+    relatedGuideSlugs: ['top-universities-in-ireland-for-international-students', 'study-in-ireland-from-india', 'how-to-get-admission-in-university-of-edinburgh'],
+    sources: [
+      { label: 'Trinity College Dublin — official site', url: 'https://www.tcd.ie' },
+      { label: 'CAO — Central Applications Office', url: 'https://www.cao.ie' },
+      { label: 'Irish Immigration Service (irishimmigration.ie)', url: 'https://www.irishimmigration.ie' },
+      { label: 'Citizens Information — Ireland', url: 'https://www.citizensinformation.ie' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['trinity college dublin admission', 'how to apply to trinity college dublin', 'tcd international students', 'cao direct application trinity', 'study in ireland dublin'],
+    tags: ['uk-ireland-universities'],
+    keyFacts: [
+      { label: 'Full name', value: 'Trinity College Dublin, the University of Dublin' },
+      { label: 'Location', value: 'Dublin, Republic of Ireland' },
+      { label: 'Undergraduate application', value: 'CAO (cao.ie) or direct, depending on background' },
+      { label: 'Postgraduate application', value: 'Directly to Trinity (tcd.ie)' },
+      { label: 'Study permission', value: 'Verify at irishimmigration.ie / citizensinformation.ie' },
+    ],
+  },
+  {
+    slug: 'how-to-study-medicine-in-the-uk',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Study Medicine in the UK',
+    descriptionEn:
+      'A clear, step-by-step guide to applying for undergraduate Medicine (MBBS/MBChB/MBBChir) in the UK — A-level subjects, the UCAT admissions test, MMI interviews, the four medicine choices on UCAS, and where to verify each medical school\'s official requirements.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'What studying medicine in the UK looks like',
+        bodyEn:
+          'In the UK, you usually enter Medicine directly after school as an undergraduate, rather than after a separate bachelor\'s degree. The standard medical degree is awarded under different names by different universities — for example MBBS, MBChB, or MBBChir — but all lead to the same primary medical qualification.\n\nMedicine is one of the most competitive courses in the country, with many more applicants than places at most schools. Because the process is demanding and the rules differ between medical schools, treat this guide as an overview and confirm every requirement on each medical school\'s official course page before you apply.',
+      },
+      {
+        headingEn: 'A-level (and equivalent) subject requirements',
+        bodyEn:
+          'Almost every UK medical school expects strong school-leaving qualifications in the sciences. At A-level, Chemistry is required by most schools and Biology is required or strongly preferred by many; a third subject (often another science or Mathematics) is also typically needed.\n\nIf you study a different qualification — such as the International Baccalaureate, Scottish Highers, or another national system — medical schools publish their own equivalent grade and subject requirements. Required grades, accepted subjects, and accepted qualifications vary by school and change year to year, so check each medical school\'s official entry-requirements page directly.',
+        bullets: [
+          'Chemistry — required by most UK medical schools',
+          'Biology — required or strongly preferred by many',
+          'A third subject (often a science or Mathematics) — commonly required',
+          'Non-A-level qualifications (IB, Highers, etc.) — schools list their own equivalents',
+        ],
+      },
+      {
+        headingEn: 'The UCAT admissions test',
+        bodyEn:
+          'Most UK medical and dental schools require the UCAT (University Clinical Aptitude Test) as part of the application. It is a computer-based test that assesses skills such as reasoning, decision making, and situational judgement rather than curriculum knowledge.\n\nNote that the BMAT, a separate admissions test once used by some medical schools, was discontinued — its final sitting was in 2023 — so the UCAT is now the standard UK medical and dental admissions test. Registration windows, test format, scoring, and fees are set each year by the UCAT, and individual schools decide how they use UCAT results, so verify the current details on the official UCAT website (ucat.ac.uk) and on each medical school\'s admissions page.',
+      },
+      {
+        headingEn: 'The UCAS application and four medicine choices',
+        bodyEn:
+          'You apply for Medicine through UCAS, the UK\'s central undergraduate application service. Medicine has a special rule: you may use a maximum of four of your UCAS choices for Medicine (the remaining choice may be used for a related back-up course if you wish).\n\nMedicine also has an earlier UCAS deadline than most courses — typically in mid-October of the year before entry. Exact deadline dates are published by UCAS each cycle, so confirm the current deadline on ucas.com and start preparing your application and personal statement well in advance.',
+      },
+      {
+        headingEn: 'Interviews (often MMI) and selection',
+        bodyEn:
+          'Shortlisted applicants are usually invited to an interview. Many UK medical schools use the Multiple Mini Interview (MMI) format, a series of short timed stations that assess communication, ethical reasoning, motivation for medicine, and related qualities; some schools use panel interviews instead.\n\nSelection combines academic grades, the UCAT, the personal statement, and interview performance, with each school weighting these differently. There is no guaranteed route into Medicine and no fixed cut-off that applies everywhere — outcomes depend on the strength of the whole application against that year\'s competition, so research each school\'s published selection method.',
+      },
+      {
+        headingEn: 'International applicants — a note',
+        bodyEn:
+          'UK medical schools accept international students but typically reserve a limited number of places for them, and tuition fees and entry requirements for international applicants differ from those for UK students. International students will also usually need permission to study in the UK.\n\nThe UK Student visa is the standard route for full-time degree study, and applicants generally need a Confirmation of Acceptance for Studies (CAS) from a licensed sponsor. This is general information, not immigration advice — visa rules, fees, and the Immigration Health Surcharge change frequently, so verify the current requirements on the official UK government source at gov.uk/student-visa before you act.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I still need the BMAT to study medicine in the UK?',
+        answerEn:
+          'No. The BMAT was discontinued, with its final sitting in 2023. The UCAT is now the standard admissions test used by most UK medical and dental schools. Check each school\'s admissions page on its official site to confirm which test it requires.',
+      },
+      {
+        questionEn: 'How many of my UCAS choices can be for medicine?',
+        answerEn:
+          'You may use a maximum of four UCAS choices for Medicine. You can use your remaining choice for a related back-up course if you wish. Confirm the current rules on ucas.com.',
+      },
+      {
+        questionEn: 'Which A-level subjects do I need for medicine?',
+        answerEn:
+          'Most UK medical schools require Chemistry, and many require or strongly prefer Biology, plus a third subject. Exact requirements vary by school and change yearly, so always check each medical school\'s official entry-requirements page.',
+      },
+      {
+        questionEn: 'When is the UCAS deadline for medicine?',
+        answerEn:
+          'Medicine has an earlier UCAS deadline than most courses — typically in mid-October of the year before entry. The exact date is published by UCAS each cycle, so verify it on ucas.com.',
+      },
+      {
+        questionEn: 'Is admission to UK medicine guaranteed if I meet the requirements?',
+        answerEn:
+          'No. Medicine is highly competitive and meeting the minimum requirements does not guarantee a place. Selection combines grades, the UCAT, the personal statement, and interview, and outcomes depend on each year\'s competition. No service can guarantee admission.',
+      },
+    ],
+    relatedExamSlugs: ['ucat', 'a-levels'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ucat-exam-guide-for-uk-medicine', 'how-to-study-dentistry-in-the-uk', 'graduate-entry-medicine-in-the-uk-and-ireland', 'how-to-study-in-uk-from-india', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'UCAT — official admissions test site', url: 'https://www.ucat.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to study medicine in the uk', 'uk medical school requirements', 'mbbs in uk for international students', 'ucat medicine', 'ucas medicine application', 'a levels for medicine uk'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Degree awarded', value: 'MBBS / MBChB / MBBChir (primary medical qualification)' },
+      { label: 'Admissions test', value: 'UCAT (BMAT discontinued, final sitting 2023)' },
+      { label: 'UCAS choices for medicine', value: 'Maximum of four' },
+      { label: 'Application deadline', value: 'Earlier than most courses — verify on ucas.com' },
+      { label: 'Interviews', value: 'Often Multiple Mini Interviews (MMI)' },
+    ],
+  },
+  {
+    slug: 'ucat-exam-guide-for-uk-medicine',
+    category: 'exam-prep',
+    region: 'uk-ireland',
+    titleEn: 'UCAT Exam Guide for UK Medicine',
+    descriptionEn:
+      'An overview of the UCAT (University Clinical Aptitude Test) for UK medical and dental applicants — what it is, how it is structured, how schools use it, and why you should verify scoring, dates, and fees on the official UCAT site.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the UCAT is',
+        bodyEn:
+          'The UCAT (University Clinical Aptitude Test) is a computer-based admissions test used by most UK medical and dental schools as part of their selection process. It assesses cognitive skills and professional behaviours rather than testing curriculum knowledge such as Biology or Chemistry facts.\n\nThe UCAT is the standard UK medical and dental admissions test. The BMAT, a separate test that some schools previously used, was discontinued — its final sitting was in 2023 — so it is no longer a current option.',
+      },
+      {
+        headingEn: 'How the test is structured',
+        bodyEn:
+          'The UCAT is made up of several timed sections that assess different skills, including verbal reasoning, decision making, quantitative reasoning, and situational judgement. Each section uses its own question style and time limit, and the test is sat under timed, on-screen conditions.\n\nThe exact sections, number of questions, timings, and how the situational-judgement element is reported can be updated by the UCAT, so always check the current test format on the official UCAT website before you prepare.',
+        bullets: [
+          'Verbal reasoning — interpreting written information',
+          'Decision making — reasoning and judgement under given information',
+          'Quantitative reasoning — numerical problem solving',
+          'Situational judgement — responses to realistic situations',
+        ],
+      },
+      {
+        headingEn: 'How scores are used by medical schools',
+        bodyEn:
+          'Different medical and dental schools use UCAT results in different ways. Some set a minimum threshold, some rank applicants by score, some weight it alongside grades and the personal statement, and some use the situational-judgement result separately.\n\nBecause there is no single national cut-off and each school decides its own approach, look up exactly how each medical school you are interested in uses the UCAT on its official admissions pages, rather than relying on a general figure.',
+      },
+      {
+        headingEn: 'Registration, dates, and fees',
+        bodyEn:
+          'The UCAT runs within a set testing window each year, with registration and booking opening beforehand. There is a test fee, and bursary support may be available for eligible candidates.\n\nRegistration dates, the testing window, fees, and any bursary arrangements are set each cycle by the UCAT and can change, so confirm all of these on the official UCAT website (ucat.ac.uk) and plan your booking around your UCAS timeline.',
+      },
+      {
+        headingEn: 'Preparing for the UCAT',
+        bodyEn:
+          'Because the UCAT tests skills rather than recalled facts, preparation usually focuses on familiarity with the question types, timing strategies, and the official practice materials. The UCAT provides free official practice resources, which are the most reliable place to understand the real format.\n\nSitting the UCAT does not guarantee a medical or dental place — it is only one part of an application that also includes grades, the personal statement, and interviews. No course or service can guarantee admission, so focus on doing your best across the whole application.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is the UCAT the same as the BMAT?',
+        answerEn:
+          'No. They were two different admissions tests. The BMAT was discontinued, with its final sitting in 2023, while the UCAT continues as the standard UK medical and dental admissions test. Check each school\'s official admissions page for the test it requires.',
+      },
+      {
+        questionEn: 'Does the UCAT test my science knowledge?',
+        answerEn:
+          'No. The UCAT assesses cognitive skills and situational judgement rather than curriculum knowledge such as Biology or Chemistry. Preparation focuses on the question types and timing, using the official UCAT practice materials.',
+      },
+      {
+        questionEn: 'What UCAT score do I need?',
+        answerEn:
+          'There is no single national cut-off. Each medical and dental school decides how it uses the UCAT, so check the official admissions pages of the schools you are applying to for their specific approach.',
+      },
+      {
+        questionEn: 'When can I sit the UCAT and how much does it cost?',
+        answerEn:
+          'The UCAT runs within a set testing window each year and charges a test fee, with bursary support for eligible candidates. Dates and fees change each cycle, so verify the current details on the official UCAT website (ucat.ac.uk).',
+      },
+    ],
+    relatedExamSlugs: ['ucat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-medicine-in-the-uk', 'how-to-study-dentistry-in-the-uk', 'graduate-entry-medicine-in-the-uk-and-ireland'],
+    sources: [
+      { label: 'UCAT — official admissions test site', url: 'https://www.ucat.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['ucat exam guide', 'what is the ucat', 'ucat for medicine uk', 'ucat sections', 'ucat vs bmat', 'ucat registration dates'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Test type', value: 'Computer-based admissions test (skills, not curriculum)' },
+      { label: 'Used for', value: 'Most UK medical and dental schools' },
+      { label: 'Replaces', value: 'BMAT discontinued — final sitting 2023' },
+      { label: 'Dates, fees, format', value: 'Set each year — verify on ucat.ac.uk' },
+      { label: 'Practice materials', value: 'Free official resources from the UCAT' },
+    ],
+  },
+  {
+    slug: 'how-to-study-dentistry-in-the-uk',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Study Dentistry in the UK',
+    descriptionEn:
+      'A guide to applying for undergraduate Dentistry (BDS/BChD) in the UK — A-level subjects, the UCAT admissions test, interviews, the UCAS process, and where to verify each dental school\'s official requirements.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What studying dentistry in the UK looks like',
+        bodyEn:
+          'Dentistry in the UK is usually studied as an undergraduate degree entered directly after school. The dental degree is awarded under names such as BDS or BChD, and it is the primary qualification needed to train as a dentist.\n\nLike Medicine, Dentistry is highly competitive, with many more applicants than places at most schools. Requirements vary between dental schools and change year to year, so use this as an overview and confirm the details on each dental school\'s official course page before you apply.',
+      },
+      {
+        headingEn: 'A-level (and equivalent) subject requirements',
+        bodyEn:
+          'Dental schools generally expect strong science qualifications. At A-level, Chemistry and Biology are commonly required, often alongside a third subject; schools publish the exact grades and subject combinations they accept.\n\nIf you study a different qualification — such as the International Baccalaureate, Scottish Highers, or another national system — each dental school lists its own equivalent requirements. Because accepted subjects, grades, and qualifications differ by school and change over time, check each dental school\'s official entry-requirements page directly.',
+        bullets: [
+          'Chemistry and Biology — commonly required',
+          'A third subject — often required (check each school)',
+          'Non-A-level qualifications — schools list their own equivalents',
+        ],
+      },
+      {
+        headingEn: 'The UCAT admissions test',
+        bodyEn:
+          'Most UK dental schools require the UCAT (University Clinical Aptitude Test) as part of the application, in the same way as medical schools. It is a computer-based test of reasoning, decision making, and situational judgement rather than curriculum knowledge.\n\nThe BMAT, once used by some schools, was discontinued — its final sitting was in 2023 — so the UCAT is now the standard test. Registration windows, format, scoring, and fees are set each year by the UCAT, and each dental school decides how it uses the results, so verify the current details on ucat.ac.uk and each school\'s admissions page.',
+      },
+      {
+        headingEn: 'The UCAS application and interviews',
+        bodyEn:
+          'You apply for Dentistry through UCAS, the UK\'s central undergraduate application service, including a personal statement. As with Medicine, Dentistry typically has an earlier UCAS deadline than most courses, so check the current deadline on ucas.com and prepare well ahead.\n\nShortlisted applicants are usually invited to interview, often in a Multiple Mini Interview (MMI) format that assesses communication, manual awareness, motivation, and ethical reasoning. Some schools use panel interviews instead; each publishes its own selection method.',
+      },
+      {
+        headingEn: 'International applicants and selection',
+        bodyEn:
+          'UK dental schools accept international students but usually reserve a limited number of places for them, with different fees and entry requirements. International students will also generally need permission to study in the UK; the UK Student visa is the standard route and applicants usually need a Confirmation of Acceptance for Studies (CAS) from a licensed sponsor.\n\nSelection combines grades, the UCAT, the personal statement, and interview, weighted differently by each school, and there is no guaranteed route in. This is general information, not immigration advice — verify current visa rules and fees on gov.uk/student-visa, and confirm each dental school\'s requirements on its official site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is dentistry as competitive as medicine in the UK?',
+        answerEn:
+          'Dentistry is also highly competitive, with many more applicants than places at most schools. Meeting the minimum requirements does not guarantee an offer, and selection depends on the strength of the whole application against that year\'s competition.',
+      },
+      {
+        questionEn: 'Which admissions test do I need for UK dentistry?',
+        answerEn:
+          'Most UK dental schools require the UCAT. The BMAT was discontinued, with its final sitting in 2023, so the UCAT is now the standard test. Confirm the required test on each dental school\'s official admissions page.',
+      },
+      {
+        questionEn: 'What A-level subjects do dental schools want?',
+        answerEn:
+          'Chemistry and Biology are commonly required, often with a third subject, but exact requirements vary by school and change yearly. Always check each dental school\'s official entry-requirements page.',
+      },
+      {
+        questionEn: 'Do UK dental schools interview applicants?',
+        answerEn:
+          'Most do. Many use a Multiple Mini Interview (MMI) format, while some use panel interviews. Each dental school publishes its own selection method on its official site.',
+      },
+    ],
+    relatedExamSlugs: ['ucat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-medicine-in-the-uk', 'ucat-exam-guide-for-uk-medicine', 'how-to-study-in-uk-from-india', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'UCAT — official admissions test site', url: 'https://www.ucat.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to study dentistry in the uk', 'uk dental school requirements', 'bds in uk for international students', 'ucat dentistry', 'ucas dentistry application', 'a levels for dentistry uk'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Degree awarded', value: 'BDS / BChD (primary dental qualification)' },
+      { label: 'Admissions test', value: 'UCAT (BMAT discontinued, final sitting 2023)' },
+      { label: 'Application route', value: 'UCAS — earlier deadline, verify on ucas.com' },
+      { label: 'Interviews', value: 'Often Multiple Mini Interviews (MMI)' },
+      { label: 'Requirements', value: 'Vary by dental school — verify on each official site' },
+    ],
+  },
+  {
+    slug: 'how-to-study-medicine-in-ireland',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Study Medicine in Ireland',
+    descriptionEn:
+      'A guide to studying Medicine in Ireland — the undergraduate CAO route with the HPAT for Irish/EU applicants, common routes for non-EU international students, medical schools such as RCSI, UCC, Trinity and UCD, and where to verify each school\'s official requirements.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Studying medicine in Ireland — an overview',
+        bodyEn:
+          'Ireland offers undergraduate Medicine programmes at several universities, leading to a primary medical qualification. Medicine is a competitive course, and the application process differs depending on whether you apply as an Irish/EU student or as a non-EU international student.\n\nMedical schools in Ireland include institutions such as RCSI, University College Cork, Trinity College Dublin, and University College Dublin. Because requirements and routes differ by school and applicant category, treat this as an overview and confirm the current details on each medical school\'s official pages.',
+      },
+      {
+        headingEn: 'The undergraduate CAO route and the HPAT (Irish/EU applicants)',
+        bodyEn:
+          'Irish and EU applicants typically apply for undergraduate Medicine through the CAO (Central Applications Office), the central system for undergraduate entry in Ireland. For this route, applicants generally sit the HPAT (Health Professions Admission Test), which is combined with school-leaving exam results in the selection process.\n\nThe HPAT assesses reasoning and interpersonal-understanding skills rather than curriculum knowledge. The exact way HPAT results and Leaving Certificate (or equivalent) points are combined is set by the system each year, so verify the current rules on cao.ie and the official HPAT and medical-school sources before applying.',
+        bullets: [
+          'Apply through the CAO (cao.ie) for undergraduate entry',
+          'Sit the HPAT admissions test',
+          'Selection combines HPAT with school-leaving results',
+          'Exact combination rules are set each cycle — verify officially',
+        ],
+      },
+      {
+        headingEn: 'Routes for non-EU international students',
+        bodyEn:
+          'Non-EU international applicants often apply directly to Irish medical schools (or through a designated international application route) rather than only through the CAO, and the entry requirements, tests, fees, and number of available places can differ from the Irish/EU route.\n\nSome schools may require an admissions test or specific qualifications for international entry. Because these arrangements vary by school, check each medical school\'s official international-admissions pages for the route, requirements, and deadlines that apply to you.',
+      },
+      {
+        headingEn: 'Subject requirements and graduate-entry options',
+        bodyEn:
+          'Undergraduate Medicine in Ireland generally requires strong science qualifications at school-leaving level, with each school publishing the subjects and grades it accepts for different qualification systems. Confirm these on the official course pages.\n\nIreland also offers graduate-entry Medicine for applicants who already hold a bachelor\'s degree, which uses a different admissions route. That option is covered in the related graduate-entry medicine guide; verify each programme\'s specific requirements on its official site.',
+      },
+      {
+        headingEn: 'Permission to study and verifying details',
+        bodyEn:
+          'Non-EEA students who are accepted onto an eligible full-time course in Ireland generally need immigration permission to study, and on arrival typically register and receive a residence permission appropriate to study (commonly known as Stamp 2 for eligible full-time students). Permitted working hours and conditions are set by the authorities.\n\nThis is general information, not immigration advice. Study-permission rules, fees, and conditions change, so verify the current requirements on the official sources at irishimmigration.ie and citizensinformation.ie, and confirm course and fee details on each university\'s official site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do Irish and EU students apply for medicine in Ireland?',
+        answerEn:
+          'Irish and EU applicants typically apply for undergraduate Medicine through the CAO and sit the HPAT admissions test, with selection combining the HPAT and school-leaving results. The exact rules are set each cycle, so verify them on cao.ie and the official HPAT and medical-school sources.',
+      },
+      {
+        questionEn: 'How do non-EU international students apply?',
+        answerEn:
+          'Non-EU international applicants often apply directly to Irish medical schools or through a designated international route, with requirements and fees that can differ from the Irish/EU route. Check each medical school\'s official international-admissions pages.',
+      },
+      {
+        questionEn: 'Which universities offer medicine in Ireland?',
+        answerEn:
+          'Irish medical schools include institutions such as RCSI, University College Cork, Trinity College Dublin, and University College Dublin, among others. Confirm programmes and requirements on each university\'s official site.',
+      },
+      {
+        questionEn: 'Do I need permission to study medicine in Ireland?',
+        answerEn:
+          'Non-EEA students accepted onto an eligible full-time course generally need immigration permission to study and usually register for a study-appropriate permission after arriving. This is general information, not immigration advice — verify on irishimmigration.ie and citizensinformation.ie.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: ['rcsi-university', 'university-college-cork', 'trinity-college-dublin'],
+    relatedGuideSlugs: ['graduate-entry-medicine-in-the-uk-and-ireland', 'how-to-study-medicine-in-the-uk', 'study-in-ireland-from-india'],
+    sources: [
+      { label: 'CAO — Central Applications Office (Ireland)', url: 'https://www.cao.ie' },
+      { label: 'Irish Immigration Service — study in Ireland', url: 'https://www.irishimmigration.ie' },
+      { label: 'Citizens Information — students and immigration', url: 'https://www.citizensinformation.ie' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to study medicine in ireland', 'hpat ireland medicine', 'cao medicine application', 'medicine in ireland for international students', 'rcsi medicine', 'irish medical schools'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Undergraduate route (Irish/EU)', value: 'CAO (cao.ie) + HPAT admissions test' },
+      { label: 'Non-EU route', value: 'Often direct or designated international application' },
+      { label: 'Example medical schools', value: 'RCSI, UCC, Trinity, UCD (verify on each site)' },
+      { label: 'Graduate-entry option', value: 'Available — different admissions route' },
+      { label: 'Study permission', value: 'Verify at irishimmigration.ie / citizensinformation.ie' },
+    ],
+  },
+  {
+    slug: 'graduate-entry-medicine-in-the-uk-and-ireland',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'Graduate-Entry Medicine in the UK and Ireland',
+    descriptionEn:
+      'A guide to graduate-entry Medicine in the UK and Ireland for applicants who already hold a degree — how the route differs from undergraduate entry, the GAMSAT and UCAT admissions tests, and where to verify each programme\'s official requirements.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What graduate-entry medicine is',
+        bodyEn:
+          'Graduate-entry Medicine (sometimes called GEM or accelerated/graduate-entry programmes) is designed for applicants who already hold a bachelor\'s degree and want to qualify in Medicine. These programmes lead to the same primary medical qualification as the standard undergraduate route.\n\nGraduate-entry places are offered by selected universities in both the UK and Ireland, and the route is competitive. Because programmes differ in length, entry requirements, and admissions tests, confirm the details on each programme\'s official course page before applying.',
+      },
+      {
+        headingEn: 'How it differs from the standard undergraduate route',
+        bodyEn:
+          'The main difference is the entry point: graduate-entry programmes start from a previous degree, and some are shorter or more intensive than the standard undergraduate medical course. Eligibility, accepted degree backgrounds, and any required academic grades are set by each programme.\n\nSome programmes accept applicants from a wide range of first degrees, while others expect a science or health-related background. Always check the specific eligibility rules — including any minimum degree classification — on each university\'s official admissions pages.',
+        bullets: [
+          'Entry is based on a previous bachelor\'s degree',
+          'Some programmes are shorter or more intensive',
+          'Accepted degree backgrounds vary by programme',
+          'Any required degree classification is set by each university',
+        ],
+      },
+      {
+        headingEn: 'Admissions tests — GAMSAT and UCAT',
+        bodyEn:
+          'Graduate-entry Medicine programmes commonly use an admissions test as part of selection. Many use the GAMSAT (Graduate Medical School Admissions Test), and some use the UCAT or another test, depending on the university and country.\n\nWhich test a programme requires — GAMSAT, UCAT, or another — is decided by each university and can change, so check the requirement for every programme you apply to. Test formats, dates, scoring, and fees are set by the test providers, so verify those on the official GAMSAT and UCAT sources.',
+      },
+      {
+        headingEn: 'Applying in the UK and Ireland',
+        bodyEn:
+          'In the UK, graduate-entry Medicine programmes are generally applied for through UCAS, often with the same earlier Medicine deadline; confirm the current deadline and any programme-specific steps on ucas.com and each university\'s site. In Ireland, graduate-entry Medicine has its own application route that differs from the undergraduate CAO route.\n\nBecause the application mechanics differ by country and programme, follow each university\'s official instructions exactly. Interviews — frequently in a Multiple Mini Interview (MMI) format — are commonly part of selection.',
+      },
+      {
+        headingEn: 'International applicants and verifying details',
+        bodyEn:
+          'International applicants can apply to some graduate-entry programmes, but available places, fees, and entry requirements for international students vary, and students will usually need permission to study. The UK Student visa (with a CAS from a licensed sponsor) and Irish study permission are the standard routes for the UK and Ireland respectively.\n\nThere is no guaranteed route into graduate-entry Medicine, and selection is competitive across grades, tests, and interviews. This is general information, not immigration advice — verify current visa and study-permission rules on gov.uk/student-visa (UK) and irishimmigration.ie (Ireland), and confirm programme requirements on each official site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who is graduate-entry medicine for?',
+        answerEn:
+          'It is designed for applicants who already hold a bachelor\'s degree and want to qualify in Medicine. Accepted degree backgrounds and any required grades vary by programme, so check each university\'s official eligibility rules.',
+      },
+      {
+        questionEn: 'Which admissions test do I need for graduate-entry medicine?',
+        answerEn:
+          'It depends on the programme. Many use the GAMSAT, and some use the UCAT or another test. Confirm the requirement for each programme on its official admissions page, and verify test dates and fees on the official GAMSAT and UCAT sources.',
+      },
+      {
+        questionEn: 'How do I apply in the UK versus Ireland?',
+        answerEn:
+          'In the UK, graduate-entry Medicine is generally applied for through UCAS, often with the earlier Medicine deadline. In Ireland, it has its own application route that differs from the undergraduate CAO route. Follow each university\'s official instructions.',
+      },
+      {
+        questionEn: 'Is a place on graduate-entry medicine guaranteed?',
+        answerEn:
+          'No. Graduate-entry Medicine is competitive, and meeting the minimum requirements does not guarantee a place. Selection combines grades, the admissions test, and interviews. No service can guarantee admission.',
+      },
+    ],
+    relatedExamSlugs: ['ucat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-medicine-in-the-uk', 'how-to-study-medicine-in-ireland', 'ucat-exam-guide-for-uk-medicine'],
+    sources: [
+      { label: 'GAMSAT — official admissions test site', url: 'https://gamsat.acer.org' },
+      { label: 'UCAT — official admissions test site', url: 'https://www.ucat.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'CAO — Central Applications Office (Ireland)', url: 'https://www.cao.ie' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['graduate entry medicine uk', 'graduate entry medicine ireland', 'gamsat medicine', 'gem programmes uk', 'studying medicine after a degree', 'accelerated medicine degree'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Who it is for', value: 'Applicants who already hold a bachelor\'s degree' },
+      { label: 'Admissions tests', value: 'GAMSAT and/or UCAT — varies by programme' },
+      { label: 'UK application', value: 'Generally via UCAS — verify on ucas.com' },
+      { label: 'Ireland application', value: 'Own route (differs from undergraduate CAO)' },
+      { label: 'Requirements', value: 'Vary by programme — verify on each official site' },
+    ],
+  },
+  {
+    slug: 'how-to-study-law-in-the-uk',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Study Law in the UK',
+    descriptionEn:
+      'A clear guide to studying law in the UK as an international student — the LLB degree route, the LNAT admissions test that some universities require, and the neutral overview of qualifying as a solicitor or barrister.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'The LLB and other routes into law',
+        bodyEn:
+          'The most common starting point for studying law in the UK is the LLB (Bachelor of Laws), a qualifying undergraduate law degree usually taken straight after school. Some students instead read a different subject at undergraduate level and then take a law conversion course, while others enter through degree apprenticeships at certain providers.\n\nWhich route suits you depends on your goals and background. Programme structures, lengths, and entry requirements differ by university, so confirm the details for each course on the official university website before you apply.',
+        bullets: [
+          'LLB — a qualifying undergraduate law degree (the typical route)',
+          'A non-law degree followed by a recognised law conversion course',
+          'Solicitor apprenticeships or other work-based routes at some providers',
+        ],
+      },
+      {
+        headingEn: 'How undergraduate law applications work',
+        bodyEn:
+          'Undergraduate law applications are made through UCAS, the UK\'s central admissions service, rather than directly to each university. You submit one application with your course choices, a personal statement, and an academic reference.\n\nLaw is a popular and selective subject, so entry requirements expressed in A-levels, the International Baccalaureate, or recognised equivalents can be high. Check the exact grades and any required or preferred subjects for each course on the official university pages.',
+      },
+      {
+        headingEn: 'The LNAT — required by some universities, not all',
+        bodyEn:
+          'A number of UK universities ask undergraduate law applicants to sit the LNAT (the National Admissions Test for Law), which assesses reading comprehension, reasoning, and written argument rather than legal knowledge. It is important to understand that the LNAT is required only by certain universities — it is not a universal requirement for studying law in the UK.\n\nBecause the list of universities that use the LNAT, the registration windows, and how scores are used can change from year to year, do not rely on summaries. Confirm whether your chosen courses require it, and the current process, on the official LNAT website and each university\'s admissions pages, and verify on the official source before you plan.',
+      },
+      {
+        headingEn: 'English-language and supporting documents',
+        bodyEn:
+          'International applicants whose first language is not English usually need to evidence their English proficiency through an accepted test such as IELTS, TOEFL, or PTE Academic, at the level set by the programme. Law degrees often involve dense reading and writing, so required scores can be set accordingly.\n\nYou will also typically submit academic transcripts and certificates. Confirm the current accepted tests, exact score thresholds, and document list on each official university website, as these are updated regularly.',
+      },
+      {
+        headingEn: 'Qualifying as a solicitor or barrister (a neutral overview)',
+        bodyEn:
+          'A law degree is an academic qualification; becoming a practising lawyer in England and Wales involves further professional stages, and the routes for solicitors and barristers differ. Scotland and Northern Ireland have their own separate legal systems and professional pathways.\n\nThese professional requirements are set by the relevant regulators and can change over time, and they differ for international students depending on circumstances. This is a general overview, not legal or career advice — confirm the current professional routes on the official regulator and university sources, and seek qualified guidance for your situation.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do all UK universities require the LNAT for law?',
+        answerEn:
+          'No. The LNAT is required by some universities for undergraduate law entry, but not by all of them. Check each course\'s requirements on the official university website and the LNAT site, as the list of participating universities can change.',
+      },
+      {
+        questionEn: 'How do I apply to study law in the UK?',
+        answerEn:
+          'Undergraduate law is applied for through UCAS with a personal statement and an academic reference. Some courses also require the LNAT. Confirm the route and requirements for your specific course on the official university pages.',
+      },
+      {
+        questionEn: 'Does a UK law degree let me practise as a lawyer automatically?',
+        answerEn:
+          'No. A law degree is an academic qualification; practising as a solicitor or barrister involves further professional stages set by the relevant regulators, and the routes differ. Verify the current professional requirements on the official sources for your situation.',
+      },
+      {
+        questionEn: 'Will I need a Student visa to study law in the UK?',
+        answerEn:
+          'Most international students studying full-time in the UK need a Student visa, which requires a Confirmation of Acceptance for Studies (CAS) from the university plus other conditions. This is general information, not immigration advice — verify the current rules on the official source at gov.uk/student-visa.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['lnat-and-uk-law-admissions-tests-explained', 'how-to-prepare-for-competitive-uk-course-interviews', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'LNAT — official test website', url: 'https://www.lnat.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to study law in the uk', 'llb degree uk', 'lnat law admissions test', 'study law uk international students', 'ucas law application', 'qualifying as a solicitor uk'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Typical route', value: 'LLB qualifying law degree (undergraduate)' },
+      { label: 'Application service', value: 'UCAS (undergraduate)' },
+      { label: 'Admissions test', value: 'LNAT — required by some universities, not all' },
+      { label: 'English evidence', value: 'IELTS / TOEFL / PTE Academic (varies by programme)' },
+    ],
+  },
+  {
+    slug: 'lnat-and-uk-law-admissions-tests-explained',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'LNAT and UK Law Admissions Tests Explained',
+    descriptionEn:
+      'What the LNAT is, what it assesses, and which UK universities use it for undergraduate law entry — with all volatile specifics deferred to the official LNAT site and each university\'s admissions pages.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the LNAT is',
+        bodyEn:
+          'The LNAT (the National Admissions Test for Law) is an admissions test used by some UK universities as part of their selection for undergraduate law. It is designed to assess skills such as reading comprehension, interpretation, analysis, and logical reasoning, rather than any prior knowledge of law.\n\nBecause it tests reasoning and communication instead of legal content, you do not need to have studied law before sitting it. The aim is to help universities compare applicants on the verbal-reasoning skills relevant to studying law.',
+      },
+      {
+        headingEn: 'What the test assesses',
+        bodyEn:
+          'The LNAT is typically made up of two parts: a multiple-choice section based on passages of text, and a written essay section. The multiple-choice section focuses on careful reading and reasoning, while the essay asks you to construct a clear, structured argument on a given topic.\n\nThe exact structure, timing, and how each part is scored and used are set by the official test and can change, so always confirm the current format on the official LNAT website rather than relying on older descriptions.',
+        bullets: [
+          'A multiple-choice section based on reading passages (reasoning, not legal knowledge)',
+          'A written essay section assessing structured, persuasive argument',
+          'Exact timing, scoring, and format — confirm on the official LNAT site',
+        ],
+      },
+      {
+        headingEn: 'Which universities use it (this varies)',
+        bodyEn:
+          'Only certain UK universities require the LNAT for undergraduate law admission — it is not a universal requirement across all law courses. The set of participating universities is decided by the institutions themselves and has changed over time.\n\nFor this reason, do not assume a course needs the LNAT (or that it does not). Check the official LNAT website\'s list of participating universities and each university\'s own admissions pages to see exactly which of your course choices require it.',
+      },
+      {
+        headingEn: 'Registration, timing and fees — defer to the official source',
+        bodyEn:
+          'Registration windows, test dates, booking steps, any fees, and any fee-assistance arrangements for the LNAT are set by the official test administrator and can change each cycle. We deliberately do not quote specific dates or amounts here, because publishing a figure that later changes would be misleading.\n\nTo plan accurately, use the official LNAT website for the current registration and test calendar, and verify on the official source before you book. Build in time, because law application deadlines and test windows do not always line up.',
+      },
+      {
+        headingEn: 'How the LNAT fits the wider application',
+        bodyEn:
+          'Where it is required, the LNAT is one part of a fuller picture that also includes your UCAS application, predicted or achieved grades, personal statement, and academic reference. Universities weigh these elements differently, and no single component on its own decides an outcome.\n\nPreparing honestly — by practising careful reading and clear argument using the official preparation materials — is the appropriate way to get ready. No test score guarantees an offer, so focus on genuine skill-building and confirm each university\'s requirements officially.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What does the LNAT test?',
+        answerEn:
+          'The LNAT assesses reading comprehension, reasoning, and the ability to build a clear written argument — not prior legal knowledge. It usually has a multiple-choice section and an essay. Confirm the current format on the official LNAT website.',
+      },
+      {
+        questionEn: 'Do all law courses in the UK need the LNAT?',
+        answerEn:
+          'No. Only certain universities require the LNAT for undergraduate law, and the list can change. Check the official LNAT site and each university\'s admissions pages to see which of your course choices require it.',
+      },
+      {
+        questionEn: 'When do I register for the LNAT and how much does it cost?',
+        answerEn:
+          'Registration windows, test dates, and any fees are set by the official test administrator and change each cycle, so we do not quote them here. Check the current calendar and costs on the official LNAT website and verify on the official source before booking.',
+      },
+      {
+        questionEn: 'Can I prepare for the LNAT?',
+        answerEn:
+          'Yes — by practising careful reading, reasoning, and structured argument, ideally using the official preparation materials. Preparation should be honest skill-building; no LNAT score guarantees a place. Confirm requirements on the official sources.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-law-in-the-uk', 'oxbridge-and-university-admissions-tests-explained', 'how-to-prepare-for-competitive-uk-course-interviews'],
+    sources: [
+      { label: 'LNAT — official test website', url: 'https://www.lnat.ac.uk' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['lnat explained', 'national admissions test for law', 'uk law admissions test', 'which universities require lnat', 'lnat preparation', 'lnat essay section'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Test name', value: 'LNAT (National Admissions Test for Law)' },
+      { label: 'Assesses', value: 'Reading, reasoning and written argument (not legal knowledge)' },
+      { label: 'Typical structure', value: 'Multiple-choice section + an essay' },
+      { label: 'Required by', value: 'Some UK universities only — verify each course' },
+    ],
+  },
+  {
+    slug: 'how-to-study-veterinary-medicine-in-the-uk',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Study Veterinary Medicine in the UK',
+    descriptionEn:
+      'A realistic guide to applying for veterinary medicine in the UK — the degree route, the high academic and work-experience expectations, interviews, and where to verify each vet school\'s official requirements.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'The veterinary medicine degree',
+        bodyEn:
+          'Veterinary medicine in the UK is studied as a long professional undergraduate degree at a limited number of veterinary schools, leading toward registration as a veterinary surgeon. It combines science, clinical training, and practical placements over several years.\n\nThe number of vet schools is small and places are limited, which makes the subject highly competitive. Each school sets its own programme structure and requirements, so always confirm the details on that school\'s official website.',
+      },
+      {
+        headingEn: 'A competitive, science-heavy entry',
+        bodyEn:
+          'Entry to veterinary medicine is academically demanding, and offers typically require strong grades in science subjects. A-levels (or recognised equivalents such as the International Baccalaureate) including the sciences are commonly expected, with Chemistry and Biology often emphasised.\n\nExact required subjects and grades differ between vet schools and change over time. Check each school\'s official entry requirements rather than assuming a single standard applies everywhere.',
+        bullets: [
+          'Strong science grades are usually expected at A-level or equivalent',
+          'Chemistry and Biology are commonly emphasised — confirm per school',
+          'Required subjects and grades vary by vet school and can change',
+        ],
+      },
+      {
+        headingEn: 'Animal and work experience matters',
+        bodyEn:
+          'Veterinary schools place significant weight on relevant animal and work experience, because they want evidence that you understand the realities of the profession. This can include time in veterinary practices and experience with animals in other settings such as farms, kennels, or stables.\n\nThe type and amount of experience each school looks for, and how it should be evidenced, differ between institutions. Plan ahead and confirm each school\'s current expectations on its official admissions pages, as these requirements are reviewed regularly.',
+      },
+      {
+        headingEn: 'Interviews and selection',
+        bodyEn:
+          'Many veterinary schools interview shortlisted applicants, sometimes using a structured format with several short stations. Interviews often explore your motivation, understanding of the profession, ethical reasoning, and how you communicate.\n\nThe format and what is assessed vary by school. Preparing honestly by reflecting on your experiences and reading about the profession is appropriate; confirm each school\'s interview format on its official website, and remember that no preparation guarantees an offer.',
+      },
+      {
+        headingEn: 'Applying, English requirements and the visa',
+        bodyEn:
+          'Applications are made through UCAS, and because of the limited number of vet schools, the number of veterinary choices you can list may be restricted — check the current UCAS guidance. International applicants whose first language is not English usually need an accepted English test such as IELTS, at the level the school requires.\n\nMost international students also need a UK Student visa, which requires a Confirmation of Acceptance for Studies (CAS) plus other conditions. This is general information, not immigration advice — verify the current rules on the official source at gov.uk/student-visa, and confirm course requirements on each vet school\'s site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is veterinary medicine hard to get into in the UK?',
+        answerEn:
+          'Yes — there are a small number of vet schools and places are limited, so entry is highly competitive, with strong science grades and relevant experience commonly expected. Requirements vary by school, so confirm them on each official website.',
+      },
+      {
+        questionEn: 'Do I need animal or work experience to apply?',
+        answerEn:
+          'Veterinary schools place significant weight on relevant animal and work experience and usually expect evidence of it. The type, amount, and how to evidence it vary by school, so plan ahead and check each school\'s current expectations officially.',
+      },
+      {
+        questionEn: 'Which subjects do I need for veterinary medicine?',
+        answerEn:
+          'Strong science grades are typically required, with Chemistry and Biology often emphasised at A-level or recognised equivalents. Exact required subjects and grades differ by vet school and change over time, so verify each school\'s official entry requirements.',
+      },
+      {
+        questionEn: 'Are there interviews for veterinary medicine?',
+        answerEn:
+          'Many vet schools interview shortlisted applicants, sometimes in a structured multi-station format exploring motivation, understanding of the profession, and communication. Formats vary, so confirm each school\'s process on its official site. No preparation guarantees an offer.',
+      },
+    ],
+    relatedExamSlugs: ['a-levels'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-prepare-for-competitive-uk-course-interviews', 'oxbridge-and-university-admissions-tests-explained', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to study veterinary medicine in the uk', 'uk vet school requirements', 'veterinary medicine ucas', 'vet school animal work experience', 'study veterinary medicine international students', 'a levels for veterinary medicine'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Degree', value: 'Long professional undergraduate veterinary degree' },
+      { label: 'Application service', value: 'UCAS (veterinary choices may be limited)' },
+      { label: 'Common emphasis', value: 'Strong science grades (Chemistry, Biology often)' },
+      { label: 'Also weighed', value: 'Animal/work experience + interview (varies by school)' },
+    ],
+  },
+  {
+    slug: 'oxbridge-and-university-admissions-tests-explained',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'Oxbridge and University Admissions Tests Explained',
+    descriptionEn:
+      'A high-level overview of the subject admissions tests some competitive UK courses use — including tests for mathematics and the sciences — with current names, registration, and dates deferred to each university and the official testing body.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why some courses use admissions tests',
+        bodyEn:
+          'For certain highly competitive courses, some UK universities — including the most selective ones — ask applicants to sit a subject admissions test in addition to the standard UCAS application. These tests are intended to help distinguish between strong candidates by assessing subject aptitude and problem-solving.\n\nNot every course or university uses such a test, and the requirement depends entirely on the specific course you apply to. Always check each course\'s official admissions pages to learn whether a test applies.',
+      },
+      {
+        headingEn: 'The kinds of tests you may encounter',
+        bodyEn:
+          'Depending on the subject, you might come across tests aimed at mathematics and the sciences — for example admissions tests such as the TMUA and the ESAT, which are administered through external partners — as well as reasoning assessments such as the TARA used for certain courses. Some subjects have their own specialist written assessments.\n\nThis area is genuinely changeable: tests are introduced, renamed, retired, or moved between administrators from year to year (for instance, some universities have recently moved from their own in-house tests to shared external ones). So treat any list of names as indicative only, and rely on the current official information for your specific course and year.',
+        bullets: [
+          'Maths/science aptitude tests (e.g. TMUA, ESAT) via external partners',
+          'Reasoning assessments (e.g. TARA) for certain courses',
+          'Subject-specific written assessments for some courses',
+        ],
+      },
+      {
+        headingEn: 'Always confirm the current test for your course',
+        bodyEn:
+          'Because admissions tests change frequently, the most important step is to verify — on each university\'s official admissions pages and the official admissions-testing body for the current cycle — exactly which test (if any) your course requires, how to register, and the deadlines. We deliberately do not state specific dates, fees, or score thresholds here, as those change.\n\nNote too that the BMAT, previously used for some medicine applications, has been discontinued, which is a clear example of how this landscape shifts. For medicine and dentistry, the UCAT is the standard admissions test used by UK universities — but always confirm the current requirements for your chosen course officially.',
+      },
+      {
+        headingEn: 'Registration, deadlines and logistics',
+        bodyEn:
+          'Where a test is required, registration usually happens within a set window that can fall earlier than you expect, sometimes before or around the UCAS deadline, and may involve a separate booking process and test centre. Missing the registration window can affect your application.\n\nThe exact steps, windows, any fees, and any fee-assistance arrangements are set officially and vary by test and cycle. Check the official testing body and your universities\' pages early, and verify on the official source before you plan.',
+      },
+      {
+        headingEn: 'Preparing the right way',
+        bodyEn:
+          'The appropriate way to prepare is to use the official practice materials for the specific, current test and to strengthen genuine subject understanding and problem-solving. Honest preparation builds the skills the test is actually measuring.\n\nNo admissions test score, and no preparation, guarantees an offer — these tests are one part of a wider assessment that also includes grades, your personal statement, reference, and sometimes interviews. Focus on real skill-building and confirm each requirement officially.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do all competitive UK courses require an admissions test?',
+        answerEn:
+          'No. Only certain courses at certain universities require a subject admissions test, and it depends on the specific course. Check each course\'s official admissions pages to learn whether a test applies for the current cycle.',
+      },
+      {
+        questionEn: 'Which admissions tests might I need to take?',
+        answerEn:
+          'Depending on the subject you may encounter maths/science tests such as the TMUA or ESAT, reasoning assessments such as the TARA, or subject-specific written assessments. Names and administrators change yearly, so verify the current test for your course officially.',
+      },
+      {
+        questionEn: 'Is the BMAT still used?',
+        answerEn:
+          'No — the BMAT has been discontinued. For medicine and dentistry, the UCAT is the standard admissions test used by UK universities. Always confirm the current requirements for your chosen course on the official sources.',
+      },
+      {
+        questionEn: 'How should I prepare for an admissions test?',
+        answerEn:
+          'Use the official practice materials for the specific, current test and strengthen genuine subject understanding. Preparation should be honest skill-building; no test score guarantees an offer, since tests are one part of a wider assessment. Confirm requirements officially.',
+      },
+    ],
+    relatedExamSlugs: ['ucat'],
+    relatedCollegeSlugs: ['university-of-oxford', 'university-of-cambridge'],
+    relatedGuideSlugs: ['how-to-prepare-for-competitive-uk-course-interviews', 'lnat-and-uk-law-admissions-tests-explained', 'how-to-study-veterinary-medicine-in-the-uk'],
+    sources: [
+      { label: 'University of Oxford — admissions tests', url: 'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests' },
+      { label: 'University of Cambridge — undergraduate admissions', url: 'https://www.undergraduate.study.cam.ac.uk' },
+      { label: 'UCAT — official site', url: 'https://www.ucat.ac.uk' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['oxbridge admissions tests', 'uk university admissions tests', 'tmua esat admissions test', 'uat-uk tara test', 'subject admissions test uk', 'ucat medicine admissions test'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Who uses tests', value: 'Some competitive courses/universities only' },
+      { label: 'Examples (indicative)', value: 'TMUA, ESAT, TARA, subject assessments' },
+      { label: 'Medicine/dentistry', value: 'UCAT is the standard test (BMAT discontinued)' },
+      { label: 'Current names & dates', value: 'Defer to each university + official testing body' },
+    ],
+  },
+  {
+    slug: 'how-to-prepare-for-competitive-uk-course-interviews',
+    category: 'admissions',
+    region: 'uk-ireland',
+    titleEn: 'How to Prepare for Competitive UK Course Interviews',
+    descriptionEn:
+      'Honest, practical interview preparation for competitive UK courses such as medicine (including MMI formats) and Oxbridge — building structured thinking and clear communication, with no dishonest "gaming" and no guarantee of an offer.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why interviews are used',
+        bodyEn:
+          'Several competitive UK courses, including medicine and many Oxbridge subjects, interview shortlisted applicants. Interviews let universities explore how you think, communicate, and approach unfamiliar problems — qualities that grades alone do not fully show.\n\nFormats vary widely between universities and subjects, from traditional academic discussions to structured multi-station interviews. Always check the official format for each course you apply to rather than assuming one model applies everywhere.',
+      },
+      {
+        headingEn: 'Understand the format for each course',
+        bodyEn:
+          'Some courses use multiple mini interviews (MMIs), where you move through several short stations each focusing on a different task or scenario, while others use longer subject-based interviews that probe your academic thinking. Knowing which format to expect helps you prepare appropriately.\n\nThe exact format, length, and what is assessed are decided by each university and can change between cycles. Confirm the current arrangements on each university\'s official admissions pages before you prepare.',
+        bullets: [
+          'MMI — several short stations, varied tasks (common for some medicine courses)',
+          'Subject/academic interviews — deeper discussion of how you think',
+          'Format and content vary by university — confirm officially',
+        ],
+      },
+      {
+        headingEn: 'Build structured thinking and clear communication',
+        bodyEn:
+          'The most useful preparation is strengthening genuine skills: thinking out loud in a structured way, breaking problems into steps, considering different angles, and explaining your reasoning clearly and calmly. Interviewers are usually more interested in how you reason than in a single "correct" answer.\n\nPractising with unfamiliar prompts, reflecting on your own experiences honestly, and getting comfortable saying "let me work through that" all help. Reading widely around your subject also gives you genuine material to draw on.',
+      },
+      {
+        headingEn: 'Prepare ethically — no "gaming" or dishonesty',
+        bodyEn:
+          'Preparation must be honest. Do not memorise scripted answers passed off as your own, invent experiences, misrepresent your achievements, or use any dishonest tactic to "game" the interview — beyond being wrong, this undermines the very judgement the interview is testing and can have serious consequences.\n\nInstead, prepare in ways that build real ability and let your authentic thinking show. Integrity is part of what competitive courses, especially in fields like medicine, are assessing.',
+        bullets: [
+          'Practise genuine reasoning — do not memorise scripted "model" answers',
+          'Never invent experiences or misrepresent achievements',
+          'Be honest if you are unsure; reason through it openly',
+        ],
+      },
+      {
+        headingEn: 'On the day, and a realistic mindset',
+        bodyEn:
+          'Practical steps help: know the format and logistics in advance, arrive or log in early, listen carefully to each question, and take a moment to structure your thoughts before answering. Treat the interview as a conversation rather than an interrogation.\n\nFinally, keep a realistic mindset: these courses are highly competitive, and no amount of preparation guarantees an offer. Prepare honestly, do your best, and confirm each course\'s interview details on its official pages. This is general guidance, not a promise of any outcome.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is an MMI interview?',
+        answerEn:
+          'An MMI (multiple mini interview) uses several short stations, each focusing on a different task or scenario, and is common for some medicine courses. Formats vary by university and can change, so confirm the current arrangements on each official admissions page.',
+      },
+      {
+        questionEn: 'How do I prepare for an Oxbridge interview?',
+        answerEn:
+          'Focus on genuine subject understanding and structured, out-loud reasoning, and practise with unfamiliar prompts. Interviewers care more about how you think than a single correct answer. Confirm the format for your course officially, and remember no preparation guarantees an offer.',
+      },
+      {
+        questionEn: 'Should I memorise model answers?',
+        answerEn:
+          'No. Memorised scripts, invented experiences, or any dishonest attempt to "game" an interview undermine what the interview is testing and can have serious consequences. Prepare honestly by building real reasoning and communication skills so your authentic thinking shows.',
+      },
+      {
+        questionEn: 'Does good interview preparation guarantee a place?',
+        answerEn:
+          'No. These courses are highly competitive and no preparation guarantees an offer. Honest preparation improves how well you can show your genuine thinking, but the outcome depends on the full assessment. Confirm each course\'s interview details on its official pages.',
+      },
+    ],
+    relatedExamSlugs: ['ucat'],
+    relatedCollegeSlugs: ['university-of-oxford', 'university-of-cambridge'],
+    relatedGuideSlugs: ['oxbridge-and-university-admissions-tests-explained', 'how-to-study-veterinary-medicine-in-the-uk', 'how-to-study-law-in-the-uk'],
+    sources: [
+      { label: 'University of Oxford — interviews', url: 'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/interviews' },
+      { label: 'University of Cambridge — interviews', url: 'https://www.undergraduate.study.cam.ac.uk/apply/after/cambridge-interviews' },
+      { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk university interview preparation', 'medicine mmi interview preparation', 'oxbridge interview preparation', 'how to prepare for university interviews uk', 'competitive course interview tips', 'medical school interview uk'],
+    tags: ['uk-ireland-medicine-competitive'],
+    keyFacts: [
+      { label: 'Where used', value: 'Medicine, Oxbridge and other competitive courses' },
+      { label: 'Common formats', value: 'MMI (multi-station) and subject/academic interviews' },
+      { label: 'Focus', value: 'Structured reasoning + clear, honest communication' },
+      { label: 'Important', value: 'Ethical prep only; no preparation guarantees an offer' },
+    ],
+  },
+  {
+    slug: 'uk-student-visa-requirements-and-process',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'UK Student Visa: Requirements and Process',
+    descriptionEn:
+      'A plain-English walkthrough of the UK Student visa — the CAS from your university, financial evidence, English proficiency, the Immigration Health Surcharge, and the application steps. General information, not immigration advice.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'What the UK Student visa is',
+        bodyEn:
+          'The Student visa is the main UK immigration route for people aged 16 or over who have an offer to study a course at a licensed student sponsor (a university or college approved by the UK government). It replaced the older "Tier 4" student route and is the standard permission most international degree students apply under.\n\nThis page explains the building blocks of an application so you know what to prepare. It is general information only and not immigration advice — the authoritative rules, fees and eligibility are on the official UK government page, which you should check before you apply.',
+      },
+      {
+        headingEn: 'The core requirements',
+        bodyEn:
+          'To apply for a Student visa you generally need a confirmed place on an eligible course, a reference number called a CAS (Confirmation of Acceptance for Studies) issued by your sponsoring university, enough money to cover your course fees and living costs, and — for most applicants — evidence that you can read, write, speak and understand English to the required level. You will also normally pay the Immigration Health Surcharge as part of the process.',
+        bullets: [
+          'A CAS from a licensed student sponsor (your university)',
+          'Proof of financial means (course fees plus living costs — verify the exact amounts on gov.uk)',
+          'Evidence of English language ability at the required level',
+          'A valid passport or travel document',
+          'Payment of the visa application fee and the Immigration Health Surcharge',
+          'A tuberculosis (TB) test result, if you are from a country where one is required',
+        ],
+      },
+      {
+        headingEn: 'How the application process works',
+        bodyEn:
+          'In broad terms, you first secure an offer and receive your CAS from the university, then complete the online application on the official gov.uk service, pay the application fee and the Immigration Health Surcharge, and book and attend a biometrics appointment (fingerprints and a photo). Depending on your country and circumstances you may use an identity-check app or a visa application centre.\n\nExact steps, the order they happen in, and processing times vary and change, so follow the official step-by-step instructions on gov.uk and allow plenty of time before your course start date.',
+        bullets: [
+          'Hold an unconditional offer and receive your CAS',
+          'Complete the online Student visa application on gov.uk',
+          'Pay the visa fee and Immigration Health Surcharge',
+          'Provide biometrics and supporting documents',
+          'Wait for the decision before you travel',
+        ],
+      },
+      {
+        headingEn: 'Working, dependants and the Graduate route',
+        bodyEn:
+          'A Student visa usually comes with conditions on working — for example limits on hours during term time — and rules on whether you can bring dependants, both of which depend on your course and circumstances. After completing an eligible course, some graduates apply to stay in the UK under the Graduate route for a period of time.\n\nThese conditions change and are set in the official rules, so check the current position on gov.uk for your specific course rather than relying on what applied to someone else in an earlier year.',
+      },
+      {
+        headingEn: 'Key reminders before you apply',
+        bodyEn:
+          'No guide or agent can guarantee a visa — every decision rests with UK Visas and Immigration based on your individual application and the rules in force at the time. Be cautious of anyone promising a "guaranteed" visa for a fee, and never pay for a guaranteed outcome.\n\nApply only through the official gov.uk service or your university\'s international student office, keep your documents accurate and consistent with your CAS, and verify every fee and requirement on the official source before paying anything.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is a CAS and where do I get it?',
+        answerEn:
+          'A CAS (Confirmation of Acceptance for Studies) is a reference number your licensed sponsor university issues once you have firmly accepted an offer. You use it in your visa application. Your university\'s admissions or international office issues it — check the timeline with them.',
+      },
+      {
+        questionEn: 'Do I always need an English test for a Student visa?',
+        answerEn:
+          'Most applicants must show English ability to the required level, but the way you can evidence this varies — for example a recognised English test, certain qualifications, or being a national of a majority English-speaking country in some cases. Check the current acceptable evidence on gov.uk.',
+      },
+      {
+        questionEn: 'How long does a UK Student visa take to process?',
+        answerEn:
+          'Processing times vary by country and time of year and can change. Do not rely on a fixed figure — check the current guidance on gov.uk and apply well before your course start date.',
+      },
+      {
+        questionEn: 'Can I work on a UK Student visa?',
+        answerEn:
+          'Many students can work subject to conditions, such as limits on hours during term time, but this depends on your course and circumstances. The current rules are on gov.uk. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cas-confirmation-of-acceptance-for-studies-explained', 'uk-student-visa-financial-requirements', 'immigration-health-surcharge-ihs-explained', 'uk-student-visa-documents-checklist', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'UK Government — Immigration Health Surcharge', url: 'https://www.gov.uk/healthcare-immigration-application' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk student visa', 'uk student visa requirements', 'how to apply for uk student visa', 'student visa uk process', 'cas uk student visa', 'study in uk visa'],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'Visa route', value: 'UK Student visa (replaced Tier 4)' },
+      { label: 'Sponsor needed', value: 'CAS from a licensed student sponsor university' },
+      { label: 'Key evidence', value: 'Finances, English ability, valid passport' },
+      { label: 'Official source', value: 'gov.uk/student-visa (verify all current rules and fees)' },
+    ],
+  },
+  {
+    slug: 'cas-confirmation-of-acceptance-for-studies-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'CAS (Confirmation of Acceptance for Studies) Explained',
+    descriptionEn:
+      'What a CAS is, why your licensed sponsor university issues it, the information it contains, and how it feeds into your UK Student visa application. General information, not immigration advice.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What a CAS is',
+        bodyEn:
+          'A CAS — Confirmation of Acceptance for Studies — is a unique reference number that a UK university or college issues to a student it has accepted onto a course. It is not a paper certificate or a visa; it is an electronic record held on the sponsor\'s system, and you enter its reference number into your Student visa application.\n\nThink of the CAS as the university formally confirming to UK Visas and Immigration that it has offered you a specific place. This page is general information only and not immigration advice — always check the current rules on gov.uk.',
+      },
+      {
+        headingEn: 'Who issues it and when',
+        bodyEn:
+          'Only a licensed student sponsor — a university or college approved by the UK government to recruit international students — can issue a CAS. It is normally issued after you have received an offer and met the conditions to firmly accept your place, which often includes paying a deposit and providing required documents.\n\nThe timing is controlled by the university, so the best source for "when will I get my CAS" is your own admissions or international student office.',
+      },
+      {
+        headingEn: 'What a CAS typically contains',
+        bodyEn:
+          'A CAS usually records details such as your personal information, your course and its start and end dates, the level of study, the tuition fees and any deposit already paid, and a reference to the documents the university used to make your offer. You must check these details carefully, because your visa application needs to be consistent with them.',
+        bullets: [
+          'Your personal and passport details',
+          'Course title, level, and start and end dates',
+          'Tuition fee information and any deposit paid',
+          'The unique CAS reference number you use in your application',
+        ],
+      },
+      {
+        headingEn: 'How the CAS feeds into your visa application',
+        bodyEn:
+          'When you complete the online Student visa application, you enter your CAS reference so that UK Visas and Immigration can match your application to the place your sponsor has confirmed. The information you give must line up with the CAS — for example the same course and dates — and you submit your supporting documents alongside it.\n\nBecause processes and document rules change, follow the official gov.uk instructions for exactly how and where to enter your CAS and what to submit with it.',
+      },
+      {
+        headingEn: 'Common things to get right',
+        bodyEn:
+          'Check every field on your CAS as soon as you receive it and ask the university to correct any error before you apply, because mismatches can cause problems. Note any expiry or validity window the university mentions, and keep the email or statement they send you.\n\nIf anything is unclear, the university that issued the CAS is the right first point of contact, and the official gov.uk page is the authority on how the CAS is used in the visa application.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is a CAS the same as a visa?',
+        answerEn:
+          'No. A CAS is confirmation from your university that you have a place; it is one of the things you need to apply for a Student visa. The visa itself is a separate decision made by UK Visas and Immigration.',
+      },
+      {
+        questionEn: 'Who gives me my CAS?',
+        answerEn:
+          'Your university or college — specifically a licensed student sponsor — issues it, usually after you firmly accept your offer and meet its conditions. Contact your admissions or international student office about timing.',
+      },
+      {
+        questionEn: 'What should I do if my CAS has a mistake?',
+        answerEn:
+          'Contact the university that issued it and ask them to correct it before you submit your visa application, because your application should be consistent with the CAS details.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-student-visa-requirements-and-process', 'uk-student-visa-documents-checklist', 'uk-student-visa-financial-requirements', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'UK Government — Register of licensed student sponsors', url: 'https://www.gov.uk/government/publications/register-of-licensed-sponsors-students' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['what is cas uk', 'cas confirmation of acceptance for studies', 'cas uk student visa', 'how to get cas for uk', 'cas number uk university', 'uk student visa cas'],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'CAS stands for', value: 'Confirmation of Acceptance for Studies' },
+      { label: 'Issued by', value: 'Your licensed sponsor university or college' },
+      { label: 'Form', value: 'An electronic reference number, not a paper certificate' },
+      { label: 'Used for', value: 'Entering into your Student visa application (verify on gov.uk)' },
+    ],
+  },
+  {
+    slug: 'uk-student-visa-financial-requirements',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'UK Student Visa Financial Requirements',
+    descriptionEn:
+      'How the UK Student visa "maintenance funds" work in principle — money for course fees plus living costs, held for a set period before you apply. Exact amounts are set by gov.uk. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why financial evidence is required',
+        bodyEn:
+          'For a UK Student visa, applicants generally have to show they have enough money to pay for their course and to support themselves while studying, without relying on public funds. This is often called showing your "maintenance funds." The idea is to demonstrate you can meet the real costs of living and studying in the UK.\n\nThis page explains the concept so you know what to prepare. It is general information only and not immigration advice — the exact amounts, who is exempt, and how money must be evidenced are set on gov.uk, which you must check before you apply.',
+      },
+      {
+        headingEn: 'What the financial requirement usually covers',
+        bodyEn:
+          'In broad terms the requirement is made up of two parts: an amount for your tuition fees (or the outstanding balance after any deposit), and a separate amount for living costs for a set number of months. The living-cost figure commonly differs depending on whether you will study in London or elsewhere in the UK.\n\nThe precise figures change from year to year, so treat any number you see second-hand with caution and confirm the current amounts on the official gov.uk page.',
+        bullets: [
+          'Course fees for your first year (or the balance still owed)',
+          'Living costs for a set number of months — verify the figure on gov.uk',
+          'A common distinction between studying in London and outside London',
+        ],
+      },
+      {
+        headingEn: 'How long the money must be held',
+        bodyEn:
+          'The rules typically require that the required funds have been held in an eligible account for a continuous period (for example a set number of consecutive days) ending shortly before you apply, and that you can evidence this with acceptable financial documents. The exact period, the acceptable account types, and the dating rules are defined by gov.uk.\n\nBecause these details are strict and change, do not assume — read the current official guidance carefully, since an account that does not meet the holding-period rule can cause a refusal.',
+      },
+      {
+        headingEn: 'Who may be exempt or have different rules',
+        bodyEn:
+          'Some applicants are not required to show maintenance funds in the same way — for example, in certain cases based on how long you have lived in the UK, or where an official financial sponsor covers your costs. There are also specific rules about what counts as acceptable evidence and whose money it can be.\n\nWhether any exemption applies to you depends entirely on your circumstances and the current rules, so check the official gov.uk page or ask your university\'s international student team.',
+      },
+      {
+        headingEn: 'Preparing your financial evidence',
+        bodyEn:
+          'Practically, this means understanding which documents gov.uk accepts (such as certain bank statements or official letters), making sure the money sits in an eligible account for the full required period, and that the documents are recent and clearly dated. Plan ahead so the holding period is complete before you apply.\n\nThis is financial information about a visa rule, not financial advice. If you have questions about managing or transferring money, consider speaking to a qualified financial adviser, and verify every figure and rule on the official source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much money do I need for a UK Student visa?',
+        answerEn:
+          'The amount is made up of your course fees plus living costs for a set period, and the figures change each year and differ for London versus outside London. We do not quote a number here because it must be the current official one — check gov.uk for the exact amounts.',
+      },
+      {
+        questionEn: 'How long must I hold the funds before applying?',
+        answerEn:
+          'The rules usually require the money to be held in an eligible account for a continuous period ending shortly before you apply. The exact number of days and acceptable accounts are defined on gov.uk, so confirm them there.',
+      },
+      {
+        questionEn: 'Does a deposit I already paid reduce what I need to show?',
+        answerEn:
+          'In general, paying tuition or a deposit in advance can reduce the fee portion you must evidence, and this is often recorded on your CAS. The precise way it is treated is set by gov.uk — verify your specific situation there.',
+      },
+      {
+        questionEn: 'Is this financial advice?',
+        answerEn:
+          'No. This is general information about a visa requirement, not financial or immigration advice. For money matters consider a qualified adviser, and always verify the official rules on gov.uk.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-student-visa-requirements-and-process', 'cas-confirmation-of-acceptance-for-studies-explained', 'immigration-health-surcharge-ihs-explained', 'uk-student-visa-documents-checklist'],
+    sources: [
+      { label: 'UK Government — Student visa: money', url: 'https://www.gov.uk/student-visa/money' },
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk student visa financial requirements', 'uk student visa maintenance funds', 'how much money for uk student visa', 'proof of funds uk student visa', 'uk student visa bank statement', 'maintenance funds uk'],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'Two parts', value: 'Course fees + living costs for a set period' },
+      { label: 'Living-cost figure', value: 'Differs for London vs outside London (verify on gov.uk)' },
+      { label: 'Holding period', value: 'Funds held in an eligible account for a set time (per gov.uk)' },
+      { label: 'Official source', value: 'gov.uk/student-visa/money (verify exact amounts)' },
+    ],
+  },
+  {
+    slug: 'immigration-health-surcharge-ihs-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Immigration Health Surcharge (IHS) Explained',
+    descriptionEn:
+      'What the UK Immigration Health Surcharge is, how it gives visa holders access to the NHS, and how you pay it as part of a Student visa application. Exact amounts are set by gov.uk. General information, not immigration advice.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What the IHS is',
+        bodyEn:
+          'The Immigration Health Surcharge (IHS) is a payment most people make when they apply for a UK visa to come to the UK for more than six months, including students. Paying it gives you access to the National Health Service (NHS) on broadly the same basis as a UK resident for the duration of your visa, though some services may still have charges.\n\nThis page is general information only and not immigration or medical advice. The exact amount, who pays, and any exemptions are set on the official gov.uk page, which you should check before applying.',
+      },
+      {
+        headingEn: 'What it covers and how NHS access works',
+        bodyEn:
+          'Once you have paid the IHS and your visa is granted, you can generally use NHS services much like a resident — for example registering with a doctor (a GP). Some things, such as certain prescriptions, dental treatment or other specific services, can still carry their own charges that apply to residents too.\n\nThe IHS is about access to healthcare, not a description of any treatment. For how to register with the NHS and what is covered, the NHS website is the authoritative guide.',
+      },
+      {
+        headingEn: 'How much it costs and how it is calculated',
+        bodyEn:
+          'The IHS is charged at a set rate per year of your visa, and there is often a discounted student rate. The total you pay usually depends on how long your visa is for, which is linked to your course length plus any extra time added at the start or end.\n\nThe rates change, so we do not quote a figure here — confirm the current per-year amount and how it is calculated on the official gov.uk page before you pay.',
+        bullets: [
+          'Charged per year of the visa you are granted',
+          'A discounted rate often applies to students (verify on gov.uk)',
+          'Total depends on the length of your visa',
+        ],
+      },
+      {
+        headingEn: 'How and when you pay it',
+        bodyEn:
+          'You normally pay the IHS as part of completing your online Student visa application, before or alongside the visa fee. The system usually calculates the amount for you based on the dates of your application.\n\nIn limited situations a refund of some or all of the IHS may apply — for example if a visa is refused or certain conditions are met. The rules for paying and for any refund are defined by gov.uk, so follow the official process and keep your payment confirmation.',
+      },
+      {
+        headingEn: 'Things to remember',
+        bodyEn:
+          'Budget for the IHS as a separate cost on top of the visa application fee and your tuition and living costs, since it can be a significant amount for a multi-year course. Pay it only through the official gov.uk application process, never to a third party promising a discount.\n\nBecause amounts and rules change, always verify the current IHS figure and any exemption or refund rule on the official source before relying on it.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What does the IHS pay for?',
+        answerEn:
+          'Paying the IHS gives visa holders access to the NHS during their visa, broadly like a UK resident, though some services (such as certain prescriptions or dental care) can still carry charges. For details on using the NHS, see the NHS website.',
+      },
+      {
+        questionEn: 'How much is the Immigration Health Surcharge?',
+        answerEn:
+          'It is charged at a set rate per year of your visa, often with a student discount, and the total depends on your visa length. Rates change, so check the current amount on gov.uk rather than relying on a quoted figure.',
+      },
+      {
+        questionEn: 'When do I pay the IHS?',
+        answerEn:
+          'You usually pay it as part of your online Student visa application, before or alongside the visa fee. The application system typically works out the amount based on your dates.',
+      },
+      {
+        questionEn: 'Can the IHS be refunded?',
+        answerEn:
+          'In some situations a refund of part or all of the IHS may apply, for example if your visa is refused. The rules are set on gov.uk — check the official guidance for your circumstances.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-student-visa-requirements-and-process', 'uk-student-visa-financial-requirements', 'cas-confirmation-of-acceptance-for-studies-explained', 'uk-student-visa-documents-checklist'],
+    sources: [
+      { label: 'UK Government — Pay for UK healthcare as part of your immigration application', url: 'https://www.gov.uk/healthcare-immigration-application' },
+      { label: 'NHS — Using the NHS when you move to the UK', url: 'https://www.nhs.uk/nhs-services/visiting-or-moving-to-england/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['immigration health surcharge', 'ihs uk student visa', 'what is the ihs', 'uk health surcharge students', 'ihs cost uk', 'nhs access student visa'],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'IHS stands for', value: 'Immigration Health Surcharge' },
+      { label: 'Gives access to', value: 'The NHS during your visa (some services may still charge)' },
+      { label: 'Charged', value: 'Per year of visa, often a student rate (verify on gov.uk)' },
+      { label: 'Paid via', value: 'The online visa application on gov.uk' },
+    ],
+  },
+  {
+    slug: 'uk-student-visa-documents-checklist',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'UK Student Visa Documents Checklist',
+    descriptionEn:
+      'A practical overview of the documents typically needed for a UK Student visa — CAS, passport, financial evidence, English evidence, and a TB test where required. The authoritative list is on gov.uk. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How to use this checklist',
+        bodyEn:
+          'This is a general overview of the kinds of documents UK Student visa applicants are commonly asked for, to help you start gathering them early. It is not the authoritative list and it is not immigration advice — exactly which documents you must provide depends on your nationality, your course, and your circumstances.\n\nThe definitive, current list is on the official gov.uk Student visa page. Always build your final checklist from there, and from any specific guidance your university\'s international student office gives you.',
+      },
+      {
+        headingEn: 'Core documents most applicants need',
+        bodyEn:
+          'Almost every applicant will need their CAS reference from their sponsor university, a valid passport or travel document, and evidence relating to finances and English ability where required. Getting these accurate and consistent with your CAS is the foundation of a smooth application.',
+        bullets: [
+          'Your CAS reference number from your licensed sponsor',
+          'A current valid passport or travel document',
+          'Financial evidence showing the required funds (verify amounts on gov.uk)',
+          'Evidence of English language ability at the required level',
+          'A passport-style photograph as specified by the application',
+        ],
+      },
+      {
+        headingEn: 'Documents that depend on your situation',
+        bodyEn:
+          'Some documents are only needed in particular cases. For example, applicants from certain countries must provide a tuberculosis (TB) test certificate from an approved clinic; under-18 applicants and some others may need parental consent or proof of relationship; and you may need the qualifications or references that your CAS says were used to make your offer.\n\nWhether each of these applies to you is set by the current rules, so check the official gov.uk page and your CAS notes to see which extra documents you must include.',
+        bullets: [
+          'A TB test certificate, if you are from a listed country',
+          'Qualifications or transcripts referenced on your CAS',
+          'Parental or guardian consent and proof of relationship for under-18s',
+          'An official financial sponsor letter, if applicable',
+        ],
+      },
+      {
+        headingEn: 'Translations, formats and consistency',
+        bodyEn:
+          'If any document is not in English (or Welsh), the rules usually require a certified translation, and there are specific requirements for how financial and other documents must look and be dated. Details on your visa application must match your CAS — for instance the same name spelling, course and dates.\n\nBecause these formatting and translation rules are precise and can change, follow the exact requirements on gov.uk rather than guessing, and double-check everything lines up before you submit.',
+      },
+      {
+        headingEn: 'Final checks before you submit',
+        bodyEn:
+          'Before applying, confirm each document meets the current gov.uk requirements, that your financial evidence covers the full required holding period, and that you have paid the application fee and Immigration Health Surcharge. Keep digital and physical copies of everything you submit.\n\nNo checklist guarantees a visa — the decision rests with UK Visas and Immigration. Apply through the official service, never pay anyone for a "guaranteed" outcome, and verify the final document list on the official source.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What documents do I need for a UK Student visa?',
+        answerEn:
+          'Common documents include your CAS reference, a valid passport, financial evidence, evidence of English ability, and — for some applicants — a TB test certificate. The exact list depends on your situation and is set on gov.uk, so confirm it there.',
+      },
+      {
+        questionEn: 'Do I need a TB test for a UK Student visa?',
+        answerEn:
+          'A tuberculosis test certificate from an approved clinic is required for applicants from certain listed countries. Check the official gov.uk list to see whether it applies to you.',
+      },
+      {
+        questionEn: 'Do my documents need to be translated into English?',
+        answerEn:
+          'If a document is not in English or Welsh, a certified translation is generally required, and there are specific rules for how it must be presented. Follow the current requirements on gov.uk.',
+      },
+      {
+        questionEn: 'Is this the official document list?',
+        answerEn:
+          'No. This is a general overview to help you prepare. The authoritative, current list is on the official gov.uk Student visa page — always build your final checklist from there. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-student-visa-requirements-and-process', 'cas-confirmation-of-acceptance-for-studies-explained', 'uk-student-visa-financial-requirements', 'immigration-health-surcharge-ihs-explained', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'UK Government — Student visa: documents you must provide', url: 'https://www.gov.uk/student-visa/documents-you-must-provide' },
+      { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk student visa documents', 'uk student visa documents checklist', 'documents for uk student visa', 'uk student visa requirements list', 'tb test uk student visa', 'uk visa document list'],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'Foundation documents', value: 'CAS reference, valid passport, financial + English evidence' },
+      { label: 'Situational', value: 'TB test (listed countries), under-18 consent, sponsor letter' },
+      { label: 'Translations', value: 'Certified translation if not in English/Welsh' },
+      { label: 'Official source', value: 'gov.uk/student-visa (the authoritative document list)' },
+    ],
+  },
+  {
+    slug: 'ireland-student-visa-and-stamp-2-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Ireland Student Visa and Stamp 2 Explained',
+    descriptionEn:
+      'A clear, factual guide to studying in Ireland as a non-EEA student — entry visa vs no visa by nationality, registering for an Irish Residence Permit (IRP), the Stamp 2 immigration permission, and ILEP-eligible courses. Verify every detail on the official source.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Two separate steps: an entry visa and immigration permission',
+        bodyEn:
+          'For Ireland it helps to separate two things that are often confused. The first is whether you need an entry visa to travel to Ireland at all, which depends on your nationality — some nationals must apply for and be granted a study visa before they travel, while others do not need an entry visa to enter. The second is the immigration permission you receive after you arrive and register, which for full-time students is recorded as a Stamp 2.\n\nWhether you need an entry visa is set by the Irish authorities and is listed on the official Irish Immigration Service website. This is general information, not immigration advice — check whether your nationality requires a study visa, and the current process, on the official source below before making any plans.',
+      },
+      {
+        headingEn: 'Your course must be an eligible programme (ILEP / TrustEd Ireland)',
+        bodyEn:
+          'To study full-time in Ireland on a student immigration permission, your course generally needs to be an eligible programme for non-EEA students. This has historically been governed by the Interim List of Eligible Programmes (ILEP) — the official list of courses that qualify a non-EEA student for a study permission, covering approved higher-education and English-language programmes.\n\nThe Irish authorities have begun moving from the ILEP to a new statutory quality mark, "TrustEd Ireland", awarded by Quality and Qualifications Ireland (QQI): providers authorised to use that mark can recruit non-EEA students to their eligible programmes, and ILEP-listed programmes continue to operate during the transition. Because this is changing, before you accept an offer or pay any fees, confirm on the official source that your specific programme is currently eligible for a student permission — eligibility for a Stamp 2 depends on it.',
+        bullets: [
+          'Full-time study permission generally requires an officially eligible programme',
+          'Eligibility is moving from the ILEP to the TrustEd Ireland mark (QQI) — both apply during the transition',
+          'Confirm your exact course is currently eligible on the official source before paying fees',
+        ],
+      },
+      {
+        headingEn: 'Registering and getting your Irish Residence Permit (IRP)',
+        bodyEn:
+          'If you are a non-EEA national and plan to stay in Ireland for more than the short-stay period, you normally have to register your immigration permission after you arrive. When you register, you are issued an Irish Residence Permit (IRP) — a card that shows your permission to remain, along with the relevant immigration stamp.\n\nFor a full-time student at an ILEP-eligible course, the permission is typically recorded as a Stamp 2. The registration process, where you register, and any fee are set out on the official Irish Immigration Service site, so follow the current official steps and timelines there.',
+      },
+      {
+        headingEn: 'What Stamp 2 allows (and Stamp 2A)',
+        bodyEn:
+          'Stamp 2 is the immigration permission for non-EEA students enrolled full-time on an ILEP-listed course. It is time-limited and tied to your continued enrolment and attendance, and it is the permission that lets you study in Ireland as an international student. There is also a separate Stamp 2A, which applies to certain students on courses that are not on the ILEP and which carries different conditions.\n\nStudent permissions can also carry limited permission to work, but the exact conditions and any hour limits are set by the Irish authorities and change from time to time. Confirm what your specific Stamp 2 allows — including any work conditions — on the official source, and treat it as general information, not immigration advice.',
+        bullets: [
+          'Stamp 2 — full-time student on an ILEP-eligible course',
+          'Stamp 2A — certain students on non-ILEP courses (different conditions)',
+          'Work conditions and any hour limits are set officially and can change — verify',
+        ],
+      },
+      {
+        headingEn: 'EEA, Swiss and UK nationals are treated differently',
+        bodyEn:
+          'The student visa and Stamp 2 process described here applies to non-EEA nationals. Citizens of the EEA and Switzerland do not need a study permission to study in Ireland, and UK nationals have their own separate arrangements under the Common Travel Area. If you fall into one of these groups, your route is different, so check the rules that apply specifically to your nationality.',
+      },
+      {
+        headingEn: 'Where to verify — and a quick checklist',
+        bodyEn:
+          'Immigration rules, fees, and lists change, so the single most important habit is to verify everything on the official Irish Immigration Service website rather than third-party summaries. Keep your documents (acceptance letter, evidence of funds, and any health insurance) organised, as registration and any entry-visa application will ask for them.\n\nThis guide is general information and not immigration advice. For a personal situation, rely on the official source and, where needed, qualified professional help.',
+        bullets: [
+          'Check whether your nationality needs an entry visa before you travel',
+          'Confirm your course is on the current ILEP',
+          'Plan to register after arrival and receive your IRP with the correct stamp',
+          'Verify all funds, fees and conditions on irishimmigration.ie',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between an Irish study visa and a Stamp 2?',
+        answerEn:
+          'A study visa is the entry visa that some nationalities must obtain before travelling to Ireland. Stamp 2 is the immigration permission you receive after you arrive and register, recorded on your Irish Residence Permit, that allows full-time study on an ILEP-eligible course. Whether you need the entry visa depends on your nationality — verify on the official Irish Immigration Service site.',
+      },
+      {
+        questionEn: 'Do all international students need a visa to enter Ireland?',
+        answerEn:
+          'No. Some nationals must obtain a study visa before they travel, while others do not need an entry visa to enter Ireland. The current visa-required list is published by the Irish authorities, so check it for your specific nationality. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'What is the ILEP and why does it matter?',
+        answerEn:
+          'The Interim List of Eligible Programmes (ILEP) is the official list of courses that qualify a non-EEA student for a full-time study permission in Ireland. If your programme is eligible, you can generally be granted a Stamp 2. The Irish authorities are moving from the ILEP to a new "TrustEd Ireland" quality mark from Quality and Qualifications Ireland (QQI), with both applying during the transition — so always confirm your exact course is currently eligible on the official source before paying fees.',
+      },
+      {
+        questionEn: 'Do EU or UK students need a Stamp 2 for Ireland?',
+        answerEn:
+          'No. EEA and Swiss citizens do not need a study permission to study in Ireland, and UK nationals have separate arrangements under the Common Travel Area. The Stamp 2 route applies to non-EEA nationals. Check the rules that apply to your own nationality on the official source.',
+      },
+      {
+        questionEn: 'Can I work on a Stamp 2 in Ireland?',
+        answerEn:
+          'Student permissions can carry limited permission to work, but the exact conditions and any hour limits are set by the Irish authorities and change over time. Confirm what your specific Stamp 2 allows on the official Irish Immigration Service website before relying on it.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ireland-student-visa-financial-requirements',
+      'study-in-ireland-from-india',
+    ],
+    sources: [
+      { label: 'Irish Immigration Service — Coming to study in Ireland', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/' },
+      { label: 'Irish Immigration Service — Interim List of Eligible Programmes (ILEP)', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/what-are-my-study-options/interim-list-of-eligible-programmes-ilep/' },
+      { label: 'Irish Immigration Service — Registering your immigration permission (IRP)', url: 'https://www.irishimmigration.ie/registering-your-immigration-permission/' },
+      { label: 'Education in Ireland — official', url: 'https://www.educationinireland.com/en/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'ireland student visa',
+      'stamp 2 ireland',
+      'irish residence permit irp',
+      'study in ireland for international students',
+      'ilep eligible courses',
+      'ireland study permission',
+    ],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'Entry visa', value: 'Required for some nationalities; not for others (verify on official source)' },
+      { label: 'Immigration permission', value: 'Stamp 2 for full-time students on an officially eligible programme' },
+      { label: 'Eligible programmes', value: 'ILEP transitioning to the TrustEd Ireland mark (QQI) — verify current eligibility' },
+      { label: 'Residence card', value: 'Irish Residence Permit (IRP), issued on registration after arrival' },
+      { label: 'Authority', value: 'Irish Immigration Service (irishimmigration.ie)' },
+    ],
+  },
+  {
+    slug: 'ireland-student-visa-financial-requirements',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Ireland Student Visa Financial Requirements',
+    descriptionEn:
+      'How the financial (proof-of-funds) requirement works for a non-EEA student in Ireland — what evidence is typically expected, why exact euro amounts are set officially, and how to prepare. Verify all figures on the official source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why students must show funds',
+        bodyEn:
+          'A core part of studying in Ireland as a non-EEA student is showing that you can support yourself for the duration of your course without becoming a burden on public funds. This is assessed both when some nationalities apply for an entry visa and when you register your immigration permission after arrival.\n\nThe specific amount you must demonstrate, and the rules around it, are set by the Irish authorities and reviewed from time to time. For that reason this guide explains the concept rather than quoting a figure — always confirm the current amount and rules on the official Irish Immigration Service website. This is general information, not immigration or financial advice.',
+      },
+      {
+        headingEn: 'Tuition fees are part of the picture',
+        bodyEn:
+          'Alongside living costs, students are generally expected to have arranged their tuition fees. Many programmes ask you to pay all or part of the fee before you arrive, and evidence of fees paid (or arranged) is commonly part of the documentation for an entry visa or registration.\n\nTuition amounts vary widely by university and course, so check the exact fee with the institution itself. Keep official receipts or letters confirming any payment, as they may be requested.',
+      },
+      {
+        headingEn: 'Evidence of living funds',
+        bodyEn:
+          'Separately from fees, you are typically expected to show access to funds to cover living costs for your study period. The Irish authorities specify how much is required, in what form the evidence must be (for example, your own funds rather than someone else\'s), and the documentation that is acceptable.\n\nBecause both the amount and the acceptable forms of evidence are defined officially and can change, do not rely on figures you find on forums or older guides. Use the current official guidance to prepare your bank statements or other proof.',
+        bullets: [
+          'Living-cost funds are assessed separately from tuition fees',
+          'The required amount and acceptable evidence are set officially',
+          'Prepare clear, recent documentation in the form the rules specify',
+        ],
+      },
+      {
+        headingEn: 'Health insurance and other documents',
+        bodyEn:
+          'Non-EEA students are usually required to have private medical insurance covering their time in Ireland, and proof of this is commonly part of the registration documents. The exact insurance requirement is set by the Irish authorities, so confirm what is acceptable on the official source.\n\nIt is sensible to gather your acceptance letter, evidence of funds, fee receipts, and insurance details well before you travel, so registration after arrival is smooth.',
+      },
+      {
+        headingEn: 'How to prepare your finances responsibly',
+        bodyEn:
+          'Because the financial requirement is specific and time-sensitive, prepare early and verify each detail against the official guidance rather than estimates. If you are arranging an education loan or transferring funds internationally, that is a financial decision — this guide does not give financial advice, and you may wish to consult a qualified adviser and your bank.\n\nBe cautious of anyone who promises to "guarantee" a visa or a place in exchange for a fee, or who offers to arrange "show funds" for you — rely only on genuine, verifiable evidence and official channels.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much money do I need to show for an Ireland student visa?',
+        answerEn:
+          'The Irish authorities set the specific amount you must demonstrate, and it is reviewed from time to time, so this guide does not quote a figure. Check the current required amount and the acceptable form of evidence on the official Irish Immigration Service website before you apply. This is general information, not immigration or financial advice.',
+      },
+      {
+        questionEn: 'Do the funds include my tuition fees?',
+        answerEn:
+          'Tuition fees and living-cost funds are generally treated separately. You are usually expected to have arranged your fees (often paying before arrival) and, in addition, to show access to funds for living costs. Confirm the exact fee with your institution and the funds requirement with the official source.',
+      },
+      {
+        questionEn: 'Whose bank account can the funds be in?',
+        answerEn:
+          'The Irish authorities specify the acceptable form of evidence, including whose funds are accepted and how recent the statements must be. Because these rules are set officially and can change, follow the current official guidance rather than third-party summaries.',
+      },
+      {
+        questionEn: 'Do I need health insurance as a student in Ireland?',
+        answerEn:
+          'Non-EEA students are usually required to hold private medical insurance for their stay, and proof is commonly part of registration. The exact requirement is set by the Irish authorities, so confirm what insurance is acceptable on the official source before you travel.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ireland-student-visa-and-stamp-2-explained',
+      'study-in-ireland-from-india',
+    ],
+    sources: [
+      { label: 'Irish Immigration Service — Coming to study in Ireland', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/' },
+      { label: 'Irish Immigration Service — official site', url: 'https://www.irishimmigration.ie/' },
+      { label: 'Education in Ireland — official', url: 'https://www.educationinireland.com/en/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'ireland student visa financial requirements',
+      'ireland student visa proof of funds',
+      'ireland study visa bank balance',
+      'study in ireland funds requirement',
+      'ireland student visa money',
+      'non-eea student ireland finances',
+    ],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'Funds requirement', value: 'Set officially and reviewed periodically — verify on official source' },
+      { label: 'Tuition', value: 'Generally arranged/paid separately; confirm fee with the university' },
+      { label: 'Health insurance', value: 'Private medical insurance usually required for non-EEA students' },
+      { label: 'Authority', value: 'Irish Immigration Service (irishimmigration.ie)' },
+    ],
+  },
+  {
+    slug: 'bringing-dependants-on-a-uk-student-visa',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Bringing Dependants on a UK Student Visa',
+    descriptionEn:
+      'A neutral, factual explainer on dependants and the UK Student visa — who counts as a dependant, the current restriction for most students, and which limited categories may be able to bring family. Verify the current rule on GOV.UK.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What "dependant" means on a Student visa',
+        bodyEn:
+          'On the UK Student visa, a "dependant" generally refers to a partner (such as a spouse or civil partner) or a child who applies to come to the UK with you, or to join you, while you study. Each dependant makes their own application and must meet the relevant requirements.\n\nWhether you can bring dependants at all depends on your circumstances and the current rules. This guide describes the framework neutrally; for your situation, rely on the official GOV.UK guidance. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'The current rule for most students',
+        bodyEn:
+          'Under the current rules, most students on the Student visa are not able to bring dependants. The ability to bring a partner or child is limited to specific categories rather than being available to all students.\n\nBecause the precise eligibility is defined in the Immigration Rules and is the kind of detail that is updated over time, do not assume an older account still applies. Confirm the present position for your course and circumstances directly on the official source.',
+        bullets: [
+          'Most Student visa holders cannot bring dependants under the current rules',
+          'Eligibility is limited to specific categories (see below)',
+          'Always confirm the present rule on GOV.UK',
+        ],
+      },
+      {
+        headingEn: 'Categories that may differ',
+        bodyEn:
+          'The rules set out limited situations in which a student may be able to bring dependants — for example, certain students on postgraduate-level research programmes, and students who are government-sponsored, may fall within the eligible categories. Age, course level, course length, and sponsorship can all be relevant.\n\nBecause these categories are defined precisely in the Immigration Rules and can change, the only reliable way to know whether you qualify is to check the current dependant eligibility on GOV.UK against your exact course and status.',
+      },
+      {
+        headingEn: 'What a dependant application involves',
+        bodyEn:
+          'Where dependants are permitted, each person typically makes a separate application, pays the applicable fees, and may need to meet financial and other requirements. Dependants are usually also required to pay the Immigration Health Surcharge as part of their application.\n\nThe exact fees, the health surcharge amount, the funds that must be shown, and the documents required are all set officially and are reviewed periodically, so check the current figures on GOV.UK rather than relying on quoted amounts.',
+        bullets: [
+          'Each dependant generally applies separately and pays applicable fees',
+          'The Immigration Health Surcharge usually applies to dependants',
+          'Financial and documentary requirements are set officially — verify current amounts',
+        ],
+      },
+      {
+        headingEn: 'Plan around the official guidance',
+        bodyEn:
+          'Family circumstances are important, so it is worth checking the dependant rules early — ideally before you commit to a course — so there are no surprises. Your university\'s international student office can point you to the right official information, but the authoritative source is always GOV.UK.\n\nThis guide presents the current rules as neutral facts only and does not comment on them. For decisions about your family, rely on the official guidance and, where appropriate, qualified professional help.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I bring my family on a UK Student visa?',
+        answerEn:
+          'Under the current rules, most students on the Student visa cannot bring dependants. The ability to bring a partner or child is limited to specific categories. Check the present dependant eligibility for your exact course and status on the official GOV.UK guidance. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Who is eligible to bring dependants?',
+        answerEn:
+          'The Immigration Rules set out limited categories — for example, certain postgraduate-level research students and government-sponsored students may be able to bring dependants. Course level, length, and sponsorship can all be relevant. Because the categories are defined precisely and can change, confirm your eligibility on GOV.UK.',
+      },
+      {
+        questionEn: 'Does a dependant pay the Immigration Health Surcharge?',
+        answerEn:
+          'Dependants are usually required to pay the Immigration Health Surcharge as part of their application, alongside the visa fee. The exact amount is set officially and reviewed periodically, so check the current figure on GOV.UK rather than relying on a quoted amount.',
+      },
+      {
+        questionEn: 'How does a dependant apply?',
+        answerEn:
+          'Where dependants are permitted, each person generally makes a separate application, pays the applicable fees, and may need to meet financial and documentary requirements. The current fees, funds, and documents are all set officially — verify them on GOV.UK.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'english-language-requirements-for-uk-student-visa',
+      'uk-student-visa-interview-and-credibility-tips',
+      'uk-student-visa-guide',
+    ],
+    sources: [
+      { label: 'GOV.UK — Student visa: your partner and children', url: 'https://www.gov.uk/student-visa/your-partner-and-children' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'uk student visa dependants',
+      'bringing family on uk student visa',
+      'student visa partner and children uk',
+      'uk student visa dependant rules',
+      'can i bring my spouse on uk student visa',
+      'uk student dependant visa',
+    ],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'Current rule', value: 'Most Student visa holders cannot bring dependants — verify on GOV.UK' },
+      { label: 'Limited categories', value: 'E.g. certain postgraduate-research and government-sponsored students' },
+      { label: 'Who is a dependant', value: 'Partner (spouse/civil partner) or child, each applying separately' },
+      { label: 'Authority', value: 'GOV.UK — Student visa guidance' },
+    ],
+  },
+  {
+    slug: 'english-language-requirements-for-uk-student-visa',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'English Language Requirements for a UK Student Visa',
+    descriptionEn:
+      'How the English-language requirement works for the UK Student visa — approved Secure English Language Tests (SELT) including UKVI IELTS, the English-taught-degree exemption, and university assessment for degree-level courses. Verify the authoritative list and levels on GOV.UK.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Why the requirement exists',
+        bodyEn:
+          'To get a UK Student visa, you generally need to prove that you can read, write, speak, and understand English to the level required for your course. The required level and the ways you can prove it are set by the UK authorities and applied by your university (your visa sponsor).\n\nThere are a few different routes to meeting the requirement, and which one applies often depends on your course level and your nationality. This guide explains the routes in general terms — always confirm the exact level and accepted evidence for your situation on the official GOV.UK guidance. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'Route 1 — an approved Secure English Language Test (SELT)',
+        bodyEn:
+          'One common route is to take an approved Secure English Language Test (SELT) from a provider on the UK government\'s approved list, taken at an approved test centre. The UKVI version of IELTS (often called IELTS for UKVI) is a well-known example of a SELT used for visa purposes.\n\nIt is important to take the correct, approved test at an approved centre, because not every English test counts for visa purposes — only those on the official approved list do. Check the current list of approved SELT providers and the test you need on GOV.UK before booking.',
+        bullets: [
+          'A SELT must be from an approved provider, taken at an approved centre',
+          'IELTS for UKVI is a recognised example of an approved SELT',
+          'Only tests on the official approved list count for the visa — verify first',
+        ],
+      },
+      {
+        headingEn: 'Route 2 — degree-level courses and university assessment',
+        bodyEn:
+          'For courses at degree level and above, your university (as a licensed student sponsor) is often able to assess your English ability itself and confirm that you meet the requirement, rather than requiring a separate SELT. In practice this means the university decides what evidence it will accept — which may include a recognised English test, prior study in English, or its own assessment.\n\nBecause the university applies the requirement, accepted evidence can vary between institutions and courses. Ask your university\'s admissions or international team exactly what they accept, and cross-check the framework on GOV.UK.',
+      },
+      {
+        headingEn: 'Route 3 — exemptions, including study taught in English',
+        bodyEn:
+          'Some applicants are exempt from providing a separate test. For example, nationals of certain majority-English-speaking countries may not need to prove their English in the same way, and applicants who have already completed a qualifying academic qualification taught in English may be able to use that instead of a test.\n\nThe exemptions, the list of relevant nationalities, and what counts as a qualifying English-taught qualification are all defined officially and can change. Do not assume an exemption applies — confirm it for your nationality and qualifications on GOV.UK.',
+        bullets: [
+          'Nationals of certain majority-English-speaking countries may be exempt',
+          'A qualifying academic qualification taught in English may be accepted',
+          'Exemptions and the qualifying conditions are set officially — verify',
+        ],
+      },
+      {
+        headingEn: 'Levels and how to avoid mistakes',
+        bodyEn:
+          'The English level you must reach is described against a recognised framework, and the precise level depends on your course level — degree-level courses generally require a higher level than below-degree courses. Because the exact level, scores, and accepted evidence are set officially and reviewed over time, this guide does not quote specific scores.\n\nThe most common mistakes are taking a test that is not on the approved list, booking the wrong version of a test, or assuming an exemption applies. Avoid these by checking the current GOV.UK guidance and confirming with your university before you book or pay for anything.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I always need IELTS for a UK Student visa?',
+        answerEn:
+          'Not necessarily. An approved Secure English Language Test (SELT) such as IELTS for UKVI is one route, but for degree-level courses your university may assess your English itself, and some applicants are exempt (for example, certain nationalities or those with a qualifying English-taught qualification). Confirm the accepted evidence for your course on GOV.UK and with your university.',
+      },
+      {
+        questionEn: 'What is a SELT?',
+        answerEn:
+          'A Secure English Language Test (SELT) is an English test from a provider on the UK government\'s approved list, taken at an approved centre, that is accepted for visa purposes. IELTS for UKVI is a recognised example. Only tests on the official approved list count — check the current list on GOV.UK before booking.',
+      },
+      {
+        questionEn: 'Can my degree taught in English meet the requirement?',
+        answerEn:
+          'In some cases, yes — an applicant who has completed a qualifying academic qualification taught in English may be able to use it instead of a separate test. What counts as qualifying is defined officially and can change, so confirm whether your qualification is accepted on GOV.UK rather than assuming.',
+      },
+      {
+        questionEn: 'What English level do I need?',
+        answerEn:
+          'The required level is described against a recognised framework and depends on your course level, with degree-level courses generally requiring a higher level. Because the exact level and scores are set officially and reviewed over time, check the current required level on GOV.UK and with your university. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'uk-student-visa-interview-and-credibility-tips',
+      'bringing-dependants-on-a-uk-student-visa',
+      'uk-student-visa-guide',
+    ],
+    sources: [
+      { label: 'GOV.UK — Student visa: knowledge of English', url: 'https://www.gov.uk/student-visa/knowledge-of-english' },
+      { label: 'GOV.UK — Prove your English with a secure English language test (SELT)', url: 'https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt' },
+      { label: 'IELTS — official', url: 'https://www.ielts.org/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'english language requirements uk student visa',
+      'ielts for ukvi',
+      'secure english language test selt',
+      'uk student visa english requirement',
+      'english test for uk visa',
+      'uk visa english exemption',
+    ],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'Approved test route', value: 'Secure English Language Test (SELT), e.g. IELTS for UKVI' },
+      { label: 'Degree-level route', value: 'University (sponsor) may assess English itself' },
+      { label: 'Exemptions', value: 'Certain nationalities or a qualifying English-taught qualification' },
+      { label: 'Authority', value: 'GOV.UK — knowledge of English (verify level + approved list)' },
+    ],
+  },
+  {
+    slug: 'uk-student-visa-interview-and-credibility-tips',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'UK Student Visa Credibility and Interview Tips',
+    descriptionEn:
+      'What the "genuine student" credibility expectation means for a UK Student visa, how a credibility interview can work, and how to prepare honestly. Neutral, factual guidance — not immigration advice, and no guarantees.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The "genuine student" expectation',
+        bodyEn:
+          'As part of a UK Student visa application, you are expected to be a genuine student — someone who genuinely intends to study, has chosen a course and institution that make sense for you, and understands the commitment involved. Caseworkers may consider the credibility of your application, and in some cases an applicant is asked questions to confirm this.\n\nThis is a normal part of the process and nothing to be anxious about if your plans are genuine and you can explain them clearly. This guide is general information, not immigration advice, and no preparation can guarantee a visa — the decision rests with the authorities.',
+      },
+      {
+        headingEn: 'How a credibility interview can work',
+        bodyEn:
+          'Where an interview takes place, it is usually a short conversation — sometimes by video — in which you may be asked about your course, your university, why you chose them, how you will fund your studies, and your plans. The aim is simply to confirm that you understand your own application and intend to study.\n\nFormats and whether an interview happens at all vary, and the process is set by the UK authorities. Treat any official communication seriously and follow the instructions you are given.',
+        bullets: [
+          'May cover your course, university, choice of both, funding and plans',
+          'Often a short conversation, sometimes by video',
+          'Whether it happens, and the format, are set by the authorities',
+        ],
+      },
+      {
+        headingEn: 'Prepare by knowing your own application',
+        bodyEn:
+          'The best preparation is genuine familiarity with your own plans. Be able to explain, in your own words, why you chose your course and university, what the course involves, how it fits your background and goals, and how you will pay for it. Re-read your own application and supporting documents so your answers are consistent with them.\n\nThere is no script to memorise — answers should be your own and truthful. Speaking clearly and honestly about choices you have actually made is far more convincing than rehearsed lines.',
+        bullets: [
+          'Know your course content, university, and why you chose them',
+          'Be clear on how you will fund tuition and living costs',
+          'Keep your answers consistent with your application and documents',
+        ],
+      },
+      {
+        headingEn: 'Honesty is essential',
+        bodyEn:
+          'Always be truthful. Providing false information or misleading documents in a visa application is taken very seriously and can have lasting consequences for future applications. Never let anyone coach you to give answers that are not true, and never use fabricated documents — this guide does not support any attempt to mislead the process.\n\nIf you do not know an answer, it is better to be honest than to invent one. Genuine, accurate answers are what the credibility check is designed to confirm.',
+      },
+      {
+        headingEn: 'Practical preparation and where to verify',
+        bodyEn:
+          'Have your documents organised and accessible, test your internet and a quiet space if the interview is online, and be punctual for any scheduled appointment. Build in time before your course start date in case the process takes longer than expected.\n\nFor the authoritative process, evidence requirements, and any current guidance, rely on GOV.UK and on your university\'s international student office. This guide presents general, neutral information and is not immigration advice; it makes no guarantee about the outcome of any application.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there an interview for the UK Student visa?',
+        answerEn:
+          'Some applicants are asked questions to confirm they are a genuine student, and this can take the form of a short interview, sometimes by video. Whether an interview happens and its format are set by the UK authorities and can vary. Follow any official instructions you receive, and check the current process on GOV.UK. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'What does "genuine student" mean?',
+        answerEn:
+          'It means you genuinely intend to study, have chosen a course and institution that make sense for you, understand the commitment, and can fund your studies. Caseworkers may assess the credibility of an application against this. There is no trick to it — being able to explain your own genuine plans clearly is the goal.',
+      },
+      {
+        questionEn: 'How should I prepare for a credibility interview?',
+        answerEn:
+          'Know your own application well: be ready to explain your course, your university, why you chose them, and how you will fund your studies, and keep your answers consistent with your documents. Do not memorise a script — answers should be your own and truthful. No preparation can guarantee a visa; the decision rests with the authorities.',
+      },
+      {
+        questionEn: 'What happens if I give false information?',
+        answerEn:
+          'Providing false information or misleading documents in a visa application is taken very seriously and can have lasting consequences for future applications. Always answer honestly, never use fabricated documents, and never let anyone coach you to mislead the process. If you do not know an answer, be honest rather than inventing one.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'english-language-requirements-for-uk-student-visa',
+      'bringing-dependants-on-a-uk-student-visa',
+      'uk-student-visa-guide',
+    ],
+    sources: [
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'GOV.UK — Student visa: eligibility', url: 'https://www.gov.uk/student-visa/eligibility' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'uk student visa interview',
+      'uk student visa credibility interview',
+      'genuine student uk visa',
+      'uk student visa interview questions',
+      'how to prepare for uk visa interview',
+      'uk student visa tips',
+    ],
+    tags: ['uk-ireland-student-visas'],
+    keyFacts: [
+      { label: 'Expectation', value: 'Be a genuine student with credible, consistent plans' },
+      { label: 'Interview', value: 'May occur (sometimes by video); format set by the authorities' },
+      { label: 'Key principle', value: 'Honest, original answers — no scripts, no false documents' },
+      { label: 'Authority', value: 'GOV.UK — Student visa (no preparation guarantees a visa)' },
+    ],
+  },
+  {
+    slug: 'scholarships-to-study-in-the-uk-for-international-students',
+    category: 'scholarships',
+    region: 'uk-ireland',
+    titleEn: 'Scholarships to Study in the UK for International Students',
+    descriptionEn:
+      'An overview of the main scholarships for international students in the UK — Chevening, Commonwealth, GREAT, and university-run awards — with secular eligibility, where to apply, and how to avoid scholarship scams.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How UK scholarships are structured',
+        bodyEn:
+          'Scholarships for international students in the United Kingdom fall into two broad groups. The first is government and national schemes — funded by the UK government or its partners and open to students from many countries. The second is university scholarships — awards each institution runs for its own applicants, which vary widely from one university to another.\n\nMost full-fee scholarships are for postgraduate (master\'s) study; funding for undergraduate degrees is rarer and usually comes directly from individual universities. Knowing which group an award belongs to tells you where to apply and what the eligibility looks like.',
+      },
+      {
+        headingEn: 'The main national scholarships',
+        bodyEn:
+          'Three of the best-known UK scholarship routes are funded by the UK government or the British Council. Each has its own eligibility, application window, and selection process, so treat them as separate applications rather than a single pool.',
+        bullets: [
+          'Chevening Scholarships — funded by the UK Foreign, Commonwealth & Development Office (FCDO) for a one-year taught master\'s; see chevening.org',
+          'Commonwealth Scholarships — funded by the FCDO for students from eligible Commonwealth countries; see cscuk.fcdo.gov.uk',
+          'GREAT Scholarships — run by the British Council with the UK GREAT Campaign and participating universities; see britishcouncil.org',
+        ],
+      },
+      {
+        headingEn: 'University and subject-specific scholarships',
+        bodyEn:
+          'Beyond the national schemes, almost every UK university offers its own scholarships and bursaries for international students. These can be merit-based, country-specific, subject-specific, or need-aware, and the amounts range from partial fee discounts to full funding.\n\nThe most reliable way to find them is the official scholarships or funding page on each university\'s own website. Eligibility, value, and deadlines differ by institution and change each year, so always read the current criteria on the university\'s official page rather than relying on summaries elsewhere.',
+      },
+      {
+        headingEn: 'Eligibility is always secular and official',
+        bodyEn:
+          'Legitimate scholarships set out clear, secular eligibility — typically based on academic merit, your chosen course, your country of citizenship or residence, work experience, or financial need. Read each programme\'s official eligibility page carefully, because criteria differ between awards and are updated every cycle.\n\nThis page is a general overview. It does not list amounts or deadlines, because those change frequently — always confirm the current figures and rules on the official programme website before you apply.',
+      },
+      {
+        headingEn: 'Avoid scholarship scams',
+        bodyEn:
+          'Genuine scholarships never ask you to pay a fee to "secure" or "guarantee" an award, and no service can promise you a scholarship, an admission, or a visa. If someone asks for payment in exchange for a guaranteed result, treat it as a warning sign.\n\nApply only through the official programme website or the university\'s own scholarships page, and verify every detail there. When in doubt, contact the scholarship body or university directly using the contact details on their official site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the biggest scholarships to study in the UK?',
+        answerEn:
+          'The best-known national routes are Chevening (UK government, one-year master\'s), Commonwealth Scholarships (UK government, for eligible Commonwealth countries), and GREAT Scholarships (British Council with universities). Many UK universities also run their own awards. Check each official site for current eligibility and amounts.',
+      },
+      {
+        questionEn: 'Are there scholarships for undergraduate study in the UK?',
+        answerEn:
+          'Most large national scholarships are for postgraduate study. Undergraduate funding for international students usually comes directly from individual universities, so check the scholarships page of each university you are applying to.',
+      },
+      {
+        questionEn: 'How do I avoid scholarship scams?',
+        answerEn:
+          'Never pay anyone for a "guaranteed" scholarship — legitimate awards do not work that way. Apply only through the official programme or university website, and confirm every detail there. No service can guarantee a scholarship, admission, or visa.',
+      },
+      {
+        questionEn: 'Where do I find the exact amounts and deadlines?',
+        answerEn:
+          'Amounts, eligible countries, and deadlines change each cycle. Always verify the current details on the official programme website (for example chevening.org, cscuk.fcdo.gov.uk, or britishcouncil.org) or the relevant university\'s scholarships page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['chevening-scholarship-guide', 'commonwealth-scholarship-guide', 'great-scholarships-and-uk-university-scholarships', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'Chevening — official scholarships site', url: 'https://www.chevening.org/scholarships/' },
+      { label: 'Commonwealth Scholarship Commission in the UK', url: 'https://cscuk.fcdo.gov.uk/scholarships/' },
+      { label: 'British Council — GREAT Scholarships', url: 'https://www.britishcouncil.org/study-work-abroad/in-uk/scholarships-funding/great-scholarships' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['scholarships to study in uk for international students', 'uk scholarships for international students', 'chevening scholarship', 'great scholarships uk', 'uk university scholarships', 'fully funded scholarships uk'],
+    tags: ['uk-ireland-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Main national routes', value: 'Chevening, Commonwealth, GREAT Scholarships' },
+      { label: 'Funded by', value: 'UK government (FCDO) / British Council / universities' },
+      { label: 'Typical level', value: 'Mostly postgraduate (one-year master\'s)' },
+      { label: 'Eligibility', value: 'Secular and official — verify on each programme site' },
+      { label: 'Scam caution', value: 'Never pay for a "guaranteed" award' },
+    ],
+  },
+  {
+    slug: 'chevening-scholarship-guide',
+    category: 'scholarships',
+    region: 'uk-ireland',
+    titleEn: 'Chevening Scholarship Guide',
+    descriptionEn:
+      'A clear guide to the Chevening Scholarship — the UK government\'s fully funded one-year master\'s award: who funds it, headline eligibility, the unconditional-offer requirement, and how to apply safely.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Chevening Scholarship is',
+        bodyEn:
+          'Chevening is the UK government\'s international scholarship programme, funded by the Foreign, Commonwealth & Development Office (FCDO) and partner organisations. It supports outstanding individuals from eligible countries to study a one-year taught master\'s degree at a UK university.\n\nChevening is for taught master\'s study only — not undergraduate degrees and not PhDs. Applicants apply for the scholarship and for university places separately, and bring the two together during the process.',
+      },
+      {
+        headingEn: 'Headline eligibility',
+        bodyEn:
+          'Chevening sets out clear, secular eligibility on its official site. In broad terms, applicants must be a citizen of an eligible Chevening country, hold an undergraduate degree that qualifies them for a UK master\'s, have a required amount of work experience, and intend to return to their home country after the scholarship.',
+        bullets: [
+          'Be a citizen of a Chevening-eligible country',
+          'Hold an undergraduate degree that qualifies you for a UK master\'s',
+          'Have the required work experience (defer the exact amount to chevening.org)',
+          'Apply to eligible UK university courses and meet the offer requirement',
+          'Return to your home country after the scholarship period',
+        ],
+      },
+      {
+        headingEn: 'The unconditional-offer requirement',
+        bodyEn:
+          'A key feature of Chevening is that selected applicants must secure an unconditional offer from one of their chosen UK university courses by a set deadline. An unconditional offer means a confirmed place with no outstanding academic conditions.\n\nBecause this is a firm requirement with a fixed cut-off date each cycle, plan your university applications early. The exact deadline and the list of eligible courses are published on the official Chevening site and change each year — confirm them there.',
+      },
+      {
+        headingEn: 'How the application works',
+        bodyEn:
+          'You apply through the official Chevening online application during the annual application window. The process typically involves your academic and work history, your choice of up to three eligible UK courses, and a set of application essays, followed by shortlisting, interviews, and final selection.\n\nThe steps, essay questions, and timeline are set out on chevening.org and can be updated each year, so follow the current official guidance rather than older summaries.',
+      },
+      {
+        headingEn: 'Apply safely — no guarantees',
+        bodyEn:
+          'Chevening is free to apply for through the official website, and no one can guarantee you a Chevening award. Be cautious of any person or service charging a fee to "secure" the scholarship — that is not how Chevening works.\n\nThis guide is general information about how the programme is structured. It does not state amounts, deadlines, or the eligible-country list, because those change each cycle — verify all current details on the official Chevening site before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who funds the Chevening Scholarship?',
+        answerEn:
+          'Chevening is funded by the UK Foreign, Commonwealth & Development Office (FCDO) and partner organisations. It is the UK government\'s international scholarship programme.',
+      },
+      {
+        questionEn: 'Is Chevening for master\'s or PhD study?',
+        answerEn:
+          'Chevening is for one-year taught master\'s degrees only. It does not fund undergraduate degrees or PhD programmes. Confirm course eligibility on chevening.org.',
+      },
+      {
+        questionEn: 'Do I need a university offer before applying?',
+        answerEn:
+          'You can apply for the scholarship while still applying to universities, but selected applicants must obtain an unconditional offer from one of their chosen UK courses by a set deadline. Check the current deadline and rules on the official site.',
+      },
+      {
+        questionEn: 'Does Chevening cost anything to apply for?',
+        answerEn:
+          'No. You apply free of charge through the official Chevening website. No service can guarantee a Chevening award, and you should never pay anyone to "secure" one.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['scholarships-to-study-in-the-uk-for-international-students', 'commonwealth-scholarship-guide', 'great-scholarships-and-uk-university-scholarships', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'Chevening — official scholarships site', url: 'https://www.chevening.org/scholarships/' },
+      { label: 'Chevening — who can apply (eligibility)', url: 'https://www.chevening.org/scholarships/who-can-apply/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['chevening scholarship', 'chevening scholarship eligibility', 'chevening scholarship guide', 'uk government scholarship', 'chevening master\'s scholarship', 'how to apply for chevening'],
+    tags: ['uk-ireland-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Programme', value: 'Chevening Scholarship (UK government)' },
+      { label: 'Funded by', value: 'Foreign, Commonwealth & Development Office (FCDO)' },
+      { label: 'Study level', value: 'One-year taught master\'s only' },
+      { label: 'Key requirement', value: 'Unconditional UK offer by the official deadline' },
+      { label: 'Apply at', value: 'chevening.org — free; never pay for a "guarantee"' },
+    ],
+  },
+  {
+    slug: 'commonwealth-scholarship-guide',
+    category: 'scholarships',
+    region: 'uk-ireland',
+    titleEn: 'Commonwealth Scholarship Guide',
+    descriptionEn:
+      'A guide to UK Commonwealth Scholarships for students from eligible Commonwealth countries — who funds them, the master\'s, PhD, distance-learning and shared awards, and how to apply through the official commission.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What Commonwealth Scholarships are',
+        bodyEn:
+          'Commonwealth Scholarships and Fellowships enable students from eligible Commonwealth countries to study in the United Kingdom. They are funded by the UK Foreign, Commonwealth & Development Office (FCDO) and administered by the Commonwealth Scholarship Commission in the UK (CSC).\n\nThe programme is aimed at talented individuals who might not otherwise be able to study in the UK, and several award types exist to suit different levels and circumstances.',
+      },
+      {
+        headingEn: 'The main award types',
+        bodyEn:
+          'The CSC runs several distinct scholarship and fellowship schemes. Each has its own eligibility — often linked to the income classification of your home country — and its own application route, so check which schemes are open to your country on the official CSC website.',
+        bullets: [
+          'Master\'s Scholarships — for full-time taught postgraduate study in the UK',
+          'PhD Scholarships — for doctoral study (eligibility varies by country group)',
+          'Shared Scholarships — jointly run with UK universities for students from lower-income Commonwealth countries',
+          'Distance Learning Scholarships — for UK master\'s courses studied in your home country',
+        ],
+      },
+      {
+        headingEn: 'Who is eligible',
+        bodyEn:
+          'Commonwealth Scholarships are open to citizens of eligible Commonwealth countries who meet the academic and other requirements of the specific scheme they apply to. Eligibility often depends on your country\'s income classification, your proposed level of study, and how the scheme is delivered.\n\nThe exact eligible-country list and the requirements for each scheme are published on the official CSC site and are updated each cycle, so confirm your eligibility there before applying.',
+      },
+      {
+        headingEn: 'How to apply',
+        bodyEn:
+          'Most Commonwealth Scholarships are applied for through the CSC\'s official online application system, and many schemes also require nomination by an approved nominating body in your home country — such as a government agency, a participating university, or a designated organisation.\n\nBecause the nomination route and deadlines differ by scheme and country, read the application instructions for your specific scheme on the official CSC website and follow the current official process.',
+      },
+      {
+        headingEn: 'Apply safely — no guarantees',
+        bodyEn:
+          'Applying for a Commonwealth Scholarship through the official channels is free, and no person or agency can guarantee you an award. Be wary of anyone charging a fee for a "guaranteed" Commonwealth Scholarship — that is not part of the official process.\n\nThis guide describes how the programme is structured. It does not list amounts or deadlines, because those change each cycle — verify all current details on the official CSC site before you apply.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who funds Commonwealth Scholarships?',
+        answerEn:
+          'They are funded by the UK Foreign, Commonwealth & Development Office (FCDO) and administered by the Commonwealth Scholarship Commission in the UK (CSC).',
+      },
+      {
+        questionEn: 'Who can apply for a Commonwealth Scholarship?',
+        answerEn:
+          'They are for citizens of eligible Commonwealth countries who meet the requirements of the specific scheme. Eligibility often depends on your country\'s income classification — check the current eligible-country list on the official CSC site.',
+      },
+      {
+        questionEn: 'What types of Commonwealth Scholarships exist?',
+        answerEn:
+          'There are several, including Master\'s Scholarships, PhD Scholarships, Shared Scholarships, and Distance Learning Scholarships. Each has its own eligibility and application route on the CSC website.',
+      },
+      {
+        questionEn: 'Do I need a nomination to apply?',
+        answerEn:
+          'Many schemes require nomination by an approved nominating body in your home country, such as a government agency or participating university. Check the application instructions for your specific scheme on the official CSC site.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['scholarships-to-study-in-the-uk-for-international-students', 'chevening-scholarship-guide', 'great-scholarships-and-uk-university-scholarships', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'Commonwealth Scholarship Commission in the UK — scholarships', url: 'https://cscuk.fcdo.gov.uk/scholarships/' },
+      { label: 'Commonwealth Scholarship Commission in the UK — apply', url: 'https://cscuk.fcdo.gov.uk/apply/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['commonwealth scholarship', 'commonwealth scholarship uk', 'commonwealth scholarship guide', 'commonwealth scholarship commission', 'commonwealth master\'s scholarship', 'how to apply for commonwealth scholarship'],
+    tags: ['uk-ireland-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Programme', value: 'Commonwealth Scholarships (UK)' },
+      { label: 'Funded by', value: 'FCDO; administered by the CSC in the UK' },
+      { label: 'For', value: 'Citizens of eligible Commonwealth countries' },
+      { label: 'Award types', value: 'Master\'s, PhD, Shared, Distance Learning' },
+      { label: 'Apply at', value: 'cscuk.fcdo.gov.uk — often needs a nomination' },
+    ],
+  },
+  {
+    slug: 'great-scholarships-and-uk-university-scholarships',
+    category: 'scholarships',
+    region: 'uk-ireland',
+    titleEn: 'GREAT Scholarships and UK University Scholarships',
+    descriptionEn:
+      'A guide to GREAT Scholarships (run by the British Council with UK universities) and the wider world of university-run scholarships in the UK — what they cover, who is eligible, and where to apply.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What GREAT Scholarships are',
+        bodyEn:
+          'GREAT Scholarships are run by the British Council together with the UK government\'s GREAT Campaign and participating UK universities. They support students from a defined list of countries to study a one-year postgraduate course at one of the participating institutions.\n\nUnlike a single central award, GREAT Scholarships are offered through individual universities — each participating university runs its own GREAT award, so the subjects, eligible courses, and application route depend on the university you choose.',
+      },
+      {
+        headingEn: 'Who is eligible',
+        bodyEn:
+          'GREAT Scholarships are open to students from a specific set of eligible countries, studying a postgraduate course at a participating UK university. Because the programme is delivered through universities, exact eligibility — including which courses qualify — is set by each participating institution.\n\nThe list of eligible countries and participating universities is published on the British Council\'s official Study UK pages and changes each academic year, so confirm the current list there before applying.',
+      },
+      {
+        headingEn: 'How to apply for a GREAT Scholarship',
+        bodyEn:
+          'Because each GREAT Scholarship is offered through a participating university, you typically apply via that university\'s own application process for the award, often after applying to or being offered a place on an eligible course.\n\nStart on the British Council Study UK GREAT Scholarships page to see the participating universities and eligible countries, then follow the application instructions on the relevant university\'s official scholarships page.',
+      },
+      {
+        headingEn: 'University scholarships more broadly',
+        bodyEn:
+          'GREAT is one example of a university-delivered award, but nearly every UK university runs additional scholarships and bursaries for international students. These can be merit-based, country-specific, subject-specific, or need-aware, and they range from partial fee reductions to full funding.\n\nThe authoritative place to find them is each university\'s own scholarships or funding page. Read the current eligibility and deadlines there, because they differ by institution and are updated every year.',
+      },
+      {
+        headingEn: 'Apply safely — no guarantees',
+        bodyEn:
+          'Genuine GREAT and university scholarships are applied for through official British Council and university channels, and no service can guarantee you an award. Never pay a fee to a third party promising a "guaranteed" scholarship.\n\nThis guide explains how these awards are structured. It does not state amounts, eligible-country lists, or deadlines, because those change each cycle — verify all current details on the British Council and the relevant university\'s official site.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Who runs GREAT Scholarships?',
+        answerEn:
+          'GREAT Scholarships are run by the British Council together with the UK government\'s GREAT Campaign and participating UK universities. Each participating university offers its own GREAT award.',
+      },
+      {
+        questionEn: 'What level of study do GREAT Scholarships cover?',
+        answerEn:
+          'They support one-year postgraduate study at participating UK universities. The exact eligible courses depend on each university — check the British Council Study UK pages and the university\'s own scholarship page.',
+      },
+      {
+        questionEn: 'How do I find UK university scholarships?',
+        answerEn:
+          'The most reliable place is each university\'s official scholarships or funding page. Many universities offer merit-based, country-specific, or subject-specific awards for international students; eligibility and deadlines vary by institution.',
+      },
+      {
+        questionEn: 'Are these scholarships free to apply for?',
+        answerEn:
+          'Yes — apply through the official British Council and university channels. No service can guarantee a scholarship, and you should never pay a third party for a "guaranteed" award.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['scholarships-to-study-in-the-uk-for-international-students', 'chevening-scholarship-guide', 'commonwealth-scholarship-guide', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'British Council — GREAT Scholarships', url: 'https://www.britishcouncil.org/study-work-abroad/in-uk/scholarships-funding/great-scholarships' },
+      { label: 'British Council Study UK — scholarships and funding', url: 'https://study-uk.britishcouncil.org/scholarships-funding' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['great scholarships uk', 'great scholarships british council', 'uk university scholarships international students', 'british council scholarships', 'postgraduate scholarships uk', 'university funding uk international students'],
+    tags: ['uk-ireland-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Programme', value: 'GREAT Scholarships' },
+      { label: 'Run by', value: 'British Council + GREAT Campaign + universities' },
+      { label: 'Study level', value: 'One-year postgraduate at participating universities' },
+      { label: 'Delivered through', value: 'Individual participating UK universities' },
+      { label: 'Find more', value: 'Each university\'s official scholarships page' },
+    ],
+  },
+  {
+    slug: 'scholarships-to-study-in-ireland-for-international-students',
+    category: 'scholarships',
+    region: 'uk-ireland',
+    titleEn: 'Scholarships to Study in Ireland for International Students',
+    descriptionEn:
+      'An overview of scholarships for international students in Ireland — the Government of Ireland International Education Scholarships and university-run awards — with secular eligibility and where to verify the official details.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How funding works for study in Ireland',
+        bodyEn:
+          'Scholarships for international students in Ireland come from two main directions. There is a national, government-backed scheme aimed at high-calibre international students, and there are scholarships and bursaries that individual Irish universities and institutions run for their own applicants.\n\nMost named scholarships are at postgraduate level, while undergraduate support tends to come directly from individual institutions. Knowing which type an award is tells you where and how to apply.',
+      },
+      {
+        headingEn: 'Government of Ireland International Education Scholarships',
+        bodyEn:
+          'The Government of Ireland International Education Scholarships (GOI-IES) are the flagship national scheme. They are funded by the Government of Ireland in partnership with Irish higher education institutions and managed by the Higher Education Authority (HEA).\n\nThe scheme supports a year of postgraduate study (master\'s or PhD level, at NFQ levels 9 or 10) at participating Irish institutions and is aimed at international students from outside the EU/EEA, Switzerland, and the UK. The exact eligibility, number of awards, value, and deadline are set each cycle and published on the official HEA page — confirm them there.',
+      },
+      {
+        headingEn: 'University and institutional scholarships',
+        bodyEn:
+          'Beyond the national scheme, Irish universities and colleges run their own scholarships and fee reductions for international students. These can be merit-based, country-specific, or subject-specific, and they vary considerably between institutions.\n\nThe most reliable place to find them is each university\'s official international or scholarships page. Read the current eligibility, value, and deadlines there, since they change each year and differ from one institution to another.',
+      },
+      {
+        headingEn: 'Eligibility is secular and official',
+        bodyEn:
+          'As with UK awards, legitimate Irish scholarships set out clear, secular eligibility — typically based on academic merit, your chosen course, your country of origin or residence, and sometimes financial need. Read each programme\'s official eligibility page, because criteria differ between awards and are updated each cycle.\n\nFor general information on studying in Ireland as an international student, the official Education in Ireland resource is a useful starting point, but always confirm scholarship specifics on the relevant official programme or university page.',
+      },
+      {
+        headingEn: 'Apply safely — no guarantees',
+        bodyEn:
+          'Genuine Irish scholarships are applied for through official government or university channels and are free to apply for, and no service can guarantee you an award. Be cautious of anyone charging a fee for a "guaranteed" scholarship or place.\n\nThis guide is a general overview. It does not state amounts or deadlines, because those change each cycle — verify all current details on the official HEA, Education in Ireland, or relevant university website before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the main scholarship to study in Ireland?',
+        answerEn:
+          'The flagship national scheme is the Government of Ireland International Education Scholarships (GOI-IES), funded by the Government of Ireland with Irish higher education institutions and managed by the Higher Education Authority (HEA). It supports postgraduate study at participating institutions.',
+      },
+      {
+        questionEn: 'Who is eligible for the Government of Ireland scholarships?',
+        answerEn:
+          'They are aimed at high-calibre international students from outside the EU/EEA, Switzerland, and the UK, for postgraduate study at NFQ levels 9 or 10. Confirm the exact current eligibility on the official HEA page.',
+      },
+      {
+        questionEn: 'Are there university scholarships in Ireland too?',
+        answerEn:
+          'Yes. Most Irish universities and colleges run their own scholarships and fee reductions for international students. Check each institution\'s official international or scholarships page for current eligibility and deadlines.',
+      },
+      {
+        questionEn: 'How do I avoid scholarship scams in Ireland?',
+        answerEn:
+          'Apply only through official government or university channels, which are free to apply for, and verify every detail there. Never pay a third party for a "guaranteed" scholarship or place — no service can guarantee an award.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['scholarships-to-study-in-the-uk-for-international-students', 'chevening-scholarship-guide', 'commonwealth-scholarship-guide', 'study-in-ireland-from-india'],
+    sources: [
+      { label: 'Higher Education Authority — Government of Ireland International Education Scholarships', url: 'https://hea.ie/policy/internationalisation/goi-ies/' },
+      { label: 'Education in Ireland — official information for international students', url: 'https://www.educationinireland.com/en/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['scholarships to study in ireland', 'scholarships to study in ireland for international students', 'government of ireland scholarships', 'ireland international education scholarships', 'irish university scholarships', 'study in ireland funding'],
+    tags: ['uk-ireland-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Flagship scheme', value: 'Government of Ireland International Education Scholarships' },
+      { label: 'Funded by', value: 'Government of Ireland with HEIs; managed by the HEA' },
+      { label: 'Study level', value: 'Postgraduate (NFQ 9/10 — master\'s or PhD)' },
+      { label: 'Aimed at', value: 'Students from outside the EU/EEA, Switzerland, UK' },
+      { label: 'Verify at', value: 'hea.ie and each university\'s scholarships page' },
+    ],
+  },
+  {
+    slug: 'cost-of-studying-in-the-uk-for-international-students',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Cost of Studying in the UK for International Students',
+    descriptionEn:
+      'A clear breakdown of what studying in the UK costs international students — tuition ranges, living expenses, the difference London makes, and the official sources to confirm every figure before you budget.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The two big costs: tuition and living',
+        bodyEn:
+          'For an international student, the cost of studying in the UK comes down to two main parts: the tuition fee your university charges, and the living costs of where you study. The two are budgeted separately because they vary in very different ways — tuition depends on your course and university, while living costs depend mostly on your city.\n\nFigures change every academic year, differ by university and programme, and are quoted in pounds sterling (GBP). Treat any number you see as a starting point and confirm the current figure on each university\'s official fees page before you plan.',
+      },
+      {
+        headingEn: 'International tuition fees vary widely by course',
+        bodyEn:
+          'International (overseas) tuition is set by each university and is typically higher than the fee charged to UK \'home\' students. Within the same university, classroom-based subjects (such as arts, humanities, and many social sciences) usually sit at the lower end of the international range, while laboratory, engineering, and especially clinical subjects like medicine and dentistry sit much higher.\n\nBecause the spread is so large, there is no single \'UK tuition fee\'. The only reliable number is the one published for your exact course on the university\'s official fees page for your entry year.',
+        bullets: [
+          'Classroom-based degrees — lower end of the international range',
+          'Lab, engineering, and computing degrees — mid to upper range',
+          'Clinical degrees (medicine, dentistry, veterinary) — the highest range',
+          'Postgraduate and MBA fees differ from undergraduate — check separately',
+        ],
+      },
+      {
+        headingEn: 'Living costs and the London difference',
+        bodyEn:
+          'Living costs cover accommodation, food, transport, study materials, mobile and internet, and personal spending. Rent is usually the single biggest item, and it is what drives the well-known gap between London and the rest of the UK — studying in London generally costs noticeably more than studying in a smaller city or town.\n\nThe UK government also publishes a maintenance (financial-requirement) figure that Student visa applicants must show, set at a higher monthly amount for courses in London than outside it. These amounts are reviewed periodically, so check the current maintenance requirement on the official GOV.UK Student visa page rather than relying on an older figure.',
+      },
+      {
+        headingEn: 'Costs beyond tuition and rent',
+        bodyEn:
+          'When budgeting, remember the costs that sit outside tuition and day-to-day living. These are one-off or annual items that are easy to overlook but can add up, and several are paid as part of the visa process.',
+        bullets: [
+          'Student visa application fee (set on GOV.UK)',
+          'Immigration Health Surcharge (IHS), paid as part of the visa application',
+          'Flights to and from the UK',
+          'Initial setup: deposit, bedding, kitchen items, warm clothing',
+          'Course-specific costs: lab kit, field trips, studio materials, or professional registration',
+        ],
+      },
+      {
+        headingEn: 'How to build a realistic budget',
+        bodyEn:
+          'Build your estimate from official figures only: take the published tuition for your exact course, add the university\'s own suggested living-cost guidance for its city, and add the visa and health-surcharge costs from GOV.UK. Universities often publish a cost-of-living guide for international students, which is a good cross-check.\n\nKeep a contingency for currency movement, since exchange rates change and the rupee–pound (or your home currency–pound) rate today may differ by the time you pay. Scholarships, part-time work allowances, and family contributions can offset costs — those are covered in the related funding guide.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much does it cost to study in the UK as an international student?',
+        answerEn:
+          'There is no single figure — international tuition varies a lot by course and university, and living costs vary by city. Add the published tuition for your exact course to the university\'s suggested living-cost guidance and the visa and health-surcharge costs on GOV.UK to build a realistic, current estimate.',
+      },
+      {
+        questionEn: 'Is studying in London more expensive?',
+        answerEn:
+          'Living costs are generally higher in London than in most other UK cities, mainly because of rent. The UK government also sets a higher monthly maintenance requirement for Student visa applicants on courses in London than outside it. Confirm the current amounts on GOV.UK.',
+      },
+      {
+        questionEn: 'Why is medicine so much more expensive than other courses?',
+        answerEn:
+          'Clinical degrees such as medicine, dentistry, and veterinary science are among the highest-priced international courses because of the laboratory and clinical training involved. Check the exact fee for your programme and entry year on the university\'s official fees page.',
+      },
+      {
+        questionEn: 'Do international fees change every year?',
+        answerEn:
+          'Yes — universities review tuition each academic year, and the visa-related costs and maintenance figures on GOV.UK are also updated periodically. Always verify the figure for your specific course and entry year on the official source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'ucat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-studying-in-ireland-for-international-students', 'tuition-fees-at-uk-universities-explained', 'how-to-fund-your-studies-in-the-uk-and-ireland', 'budgeting-and-living-costs-for-uk-students', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'GOV.UK — Student visa (money you need)', url: 'https://www.gov.uk/student-visa/money' },
+      { label: 'UCAS — undergraduate tuition fees and student loans', url: 'https://www.ucas.com/money-and-student-life/money/student-finance/undergraduate-tuition-fees-and-student-loans' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['cost of studying in the uk for international students', 'uk tuition fees international students', 'uk study living costs', 'how much does it cost to study in the uk', 'study in uk for international students', 'uk student budget'],
+    tags: ['uk-ireland-tuition-scholarships', 'uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Main cost components', value: 'Tuition + living costs (budgeted separately)' },
+      { label: 'Currency', value: 'Pounds sterling (GBP)' },
+      { label: 'Highest-fee courses', value: 'Clinical degrees (medicine, dentistry, veterinary)' },
+      { label: 'London', value: 'Generally higher living costs than other UK cities' },
+      { label: 'Confirm figures on', value: 'University fees pages + GOV.UK' },
+    ],
+  },
+  {
+    slug: 'cost-of-studying-in-ireland-for-international-students',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Cost of Studying in Ireland for International Students',
+    descriptionEn:
+      'What it costs international students to study in Ireland — non-EU tuition ranges, living expenses, the visa financial requirement, and the official Irish sources to verify every figure.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How costs in Ireland are structured',
+        bodyEn:
+          'For an international (non-EU/EEA) student, the cost of studying in Ireland breaks into tuition charged by your university and the cost of living in your city. Tuition for non-EU students is set by each higher education institution and is generally higher than the rate that applies to EU/EEA students.\n\nAll figures are quoted in euro (EUR), change each academic year, and differ by course and university. Use any number as a guide only and confirm the current fee on the institution\'s official fees page before budgeting.',
+      },
+      {
+        headingEn: 'Non-EU tuition varies by course',
+        bodyEn:
+          'As in many countries, tuition for non-EU students depends heavily on the subject. Arts, humanities, and many social-science programmes typically sit at the lower end of the non-EU range, while science, engineering, and especially medicine and other health-science degrees sit considerably higher.\n\nThere is no single Irish tuition figure — the reliable number is the one published for your exact course and entry year on the university\'s website (for example, Trinity College Dublin, University College Dublin, University of Galway, or RCSI for medicine).',
+        bullets: [
+          'Arts, humanities, social sciences — lower end of the non-EU range',
+          'Science, technology, and engineering — mid to upper range',
+          'Medicine and health sciences — the highest range',
+          'Postgraduate fees differ from undergraduate — check separately',
+        ],
+      },
+      {
+        headingEn: 'Living costs across Ireland',
+        bodyEn:
+          'Living costs cover accommodation, food, transport, books, utilities, and personal spending, with rent usually the largest item. Costs tend to be higher in Dublin than in smaller cities and towns, so where you study materially affects your budget.\n\nIrish universities and the official Education in Ireland service publish indicative living-cost guidance for international students; use these alongside the institution\'s own figures for a realistic estimate for your city.',
+      },
+      {
+        headingEn: 'The visa financial requirement',
+        bodyEn:
+          'Non-EU/EEA students applying to study in Ireland generally need to show evidence of sufficient funds to support themselves, as part of the immigration and study-permission process. The required amount and what counts as acceptable evidence are set by the Irish immigration authorities and are reviewed from time to time.\n\nThis is general information, not immigration advice. Confirm the current financial requirement, fees, and registration rules on the official Irish Immigration Service (irishimmigration.ie) and Citizens Information pages, and verify on the official source before you act.',
+      },
+      {
+        headingEn: 'Building your Ireland budget',
+        bodyEn:
+          'Build your estimate from official numbers: the published non-EU tuition for your exact course, the university or Education in Ireland living-cost guidance for your city, and the immigration and registration costs from irishimmigration.ie. Keep a contingency for exchange-rate movement, since your home currency–euro rate can change before you pay.\n\nScholarships, family contributions, and any permitted part-time work can reduce the amount you need to fund yourself — see the related funding guide for how students combine these.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much does it cost to study in Ireland for non-EU students?',
+        answerEn:
+          'It depends on the course and university — non-EU tuition varies widely, and living costs differ by city. Combine the published tuition for your exact course with the university or Education in Ireland living-cost guidance and the immigration costs on irishimmigration.ie to build a current estimate.',
+      },
+      {
+        questionEn: 'Is Dublin more expensive than other Irish cities?',
+        answerEn:
+          'Living costs, especially rent, are generally higher in Dublin than in smaller Irish cities and towns. Check each university\'s own living-cost guidance for its specific location.',
+      },
+      {
+        questionEn: 'How much money do I need to show for an Irish student visa?',
+        answerEn:
+          'Non-EU/EEA students generally must show evidence of sufficient funds, with the amount and acceptable evidence set by the Irish immigration authorities and reviewed periodically. This is general information, not immigration advice — verify the current requirement on irishimmigration.ie.',
+      },
+      {
+        questionEn: 'Why does medicine in Ireland cost more than other courses?',
+        answerEn:
+          'Health-science degrees such as medicine involve laboratory and clinical training, which places them at the upper end of non-EU tuition. Confirm the exact fee for your programme and entry year on the university\'s official fees page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: ['trinity-college-dublin', 'university-college-dublin', 'university-of-galway'],
+    relatedGuideSlugs: ['cost-of-studying-in-the-uk-for-international-students', 'how-to-fund-your-studies-in-the-uk-and-ireland', 'budgeting-and-living-costs-for-uk-students', 'study-in-ireland-from-india'],
+    sources: [
+      { label: 'Education in Ireland — official (fees, costs & scholarships)', url: 'https://www.educationinireland.com/en/' },
+      { label: 'Citizens Information — immigration rules for non-EEA students', url: 'https://www.citizensinformation.ie/en/moving-country/moving-to-ireland/studying-in-ireland/immigration-nonEEA-students/' },
+      { label: 'Irish Immigration Service — coming to study in Ireland', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['cost of studying in ireland for international students', 'ireland tuition fees non-eu', 'study in ireland cost', 'ireland living costs students', 'how much does it cost to study in ireland', 'study in ireland from india'],
+    tags: ['uk-ireland-tuition-scholarships', 'uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Main cost components', value: 'Non-EU tuition + living costs' },
+      { label: 'Currency', value: 'Euro (EUR)' },
+      { label: 'Highest-fee courses', value: 'Medicine and health sciences' },
+      { label: 'Dublin', value: 'Generally higher living costs than smaller cities' },
+      { label: 'Confirm figures on', value: 'University fees pages + irishimmigration.ie' },
+    ],
+  },
+  {
+    slug: 'tuition-fees-at-uk-universities-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Tuition Fees at UK Universities Explained',
+    descriptionEn:
+      'How UK university tuition fees work — the home vs international distinction, why fees vary by course (especially medicine), and where to confirm the exact figure for your programme and entry year.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Home fees vs international fees',
+        bodyEn:
+          'UK universities charge two broad categories of tuition: a \'home\' fee for students who meet UK residency and status conditions, and an \'overseas\' or international fee for everyone else. International tuition is set independently by each university and is typically higher than the home rate.\n\nWhich category you fall into is decided by official fee-status assessment rules, not by where you currently live alone. If your status is unclear, ask the university\'s admissions or fees team directly, since it affects what you pay.',
+      },
+      {
+        headingEn: 'Why fees vary so much by course',
+        bodyEn:
+          'Even within one university, tuition differs by subject because courses cost different amounts to teach. Lecture- and seminar-based degrees are generally cheaper to deliver than degrees needing laboratories, workshops, studios, or clinical placements, and tuition reflects that.\n\nMedicine, dentistry, and veterinary science are consistently among the most expensive international courses for this reason. Engineering, computing, and laboratory sciences usually sit above classroom subjects but below clinical ones.',
+        bullets: [
+          'Classroom-based (arts, humanities, social sciences) — lower band',
+          'Laboratory and engineering subjects — middle band',
+          'Clinical degrees (medicine, dentistry, veterinary) — top band',
+          'Foundation, integrated master\'s, and placement years may be priced differently',
+        ],
+      },
+      {
+        headingEn: 'Undergraduate vs postgraduate fees',
+        bodyEn:
+          'Undergraduate and postgraduate tuition are set separately, so an undergraduate fee tells you little about a master\'s or MBA fee at the same university. Taught master\'s, research degrees, and professional programmes each have their own published rates.\n\nSome courses also list extra programme costs (such as bench fees for research, clinical placement costs, or field trips) on top of tuition, so read the full fees page for your course rather than assuming the headline figure is everything.',
+      },
+      {
+        headingEn: 'Whole-course pricing and annual changes',
+        bodyEn:
+          'Most undergraduate degrees publish a yearly tuition figure, and universities may state how the fee can change in later years of the same course (for example, whether it is fixed for the duration or reviewed annually). Always read how the fee applies across the full length of the course, not just year one.\n\nBecause fees are reviewed each academic year, a figure from an older prospectus or a third-party site can be out of date. The authoritative number is the one on the university\'s official fees page for your specific course and entry year.',
+      },
+      {
+        headingEn: 'How to confirm the right figure',
+        bodyEn:
+          'To get the correct tuition for you, find your exact course on the university\'s website, select your entry year, and check whether the listed fee is the home or international rate. Verify your fee status with the university if there is any doubt, and note any additional course costs listed alongside tuition.\n\nFor official, neutral guidance on how UK undergraduate fees and finance work in general, UCAS is a reliable starting point — but the binding number always comes from the university itself.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between home and international tuition fees?',
+        answerEn:
+          'Home fees apply to students who meet UK residency and status conditions under official fee-status rules; international (overseas) fees apply to everyone else and are usually higher. Your category is decided by a fee-status assessment, so confirm it with the university if unsure.',
+      },
+      {
+        questionEn: 'Why does medicine cost more than other UK degrees?',
+        answerEn:
+          'Clinical degrees such as medicine and dentistry require laboratory and clinical training, which makes them more expensive to deliver and places their international tuition at the top band. Check the exact figure for your programme and entry year on the university\'s fees page.',
+      },
+      {
+        questionEn: 'Do UK tuition fees stay the same for all years of a course?',
+        answerEn:
+          'Not always — universities set their own policy, and some fix the fee for the course duration while others review it annually. Read how the fee applies across the full course on the official fees page before you commit.',
+      },
+      {
+        questionEn: 'Where do I find the exact tuition for my course?',
+        answerEn:
+          'On the university\'s own website: search for your specific course, select your entry year, and confirm whether the figure shown is the home or international rate. For general guidance on how UK fees and finance work, UCAS is a reliable neutral source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'ucat'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-studying-in-the-uk-for-international-students', 'how-to-fund-your-studies-in-the-uk-and-ireland', 'budgeting-and-living-costs-for-uk-students', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — undergraduate tuition fees and student loans', url: 'https://www.ucas.com/money-and-student-life/money/student-finance/undergraduate-tuition-fees-and-student-loans' },
+      { label: 'GOV.UK — student finance and fees overview', url: 'https://www.gov.uk/student-finance' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['tuition fees at uk universities', 'uk university tuition explained', 'home vs international tuition fees uk', 'uk medicine tuition fees', 'uk university fees by course', 'uk tuition fees international students'],
+    tags: ['uk-ireland-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Fee categories', value: 'Home fee vs international (overseas) fee' },
+      { label: 'Decided by', value: 'Official fee-status assessment rules' },
+      { label: 'Highest band', value: 'Clinical degrees (medicine, dentistry, veterinary)' },
+      { label: 'Undergraduate vs postgraduate', value: 'Priced separately' },
+      { label: 'Authoritative figure', value: 'University official fees page (your course + year)' },
+    ],
+  },
+  {
+    slug: 'how-to-fund-your-studies-in-the-uk-and-ireland',
+    category: 'scholarships',
+    region: 'uk-ireland',
+    titleEn: 'How to Fund Your Studies in the UK and Ireland',
+    descriptionEn:
+      'The main ways students fund a UK or Ireland degree — savings, scholarships, family support, and education loans — with neutral, official guidance and a clear note that this is information, not financial advice.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Funding is usually a mix, not one source',
+        bodyEn:
+          'Most international students do not pay for a UK or Ireland degree from a single source. A realistic plan usually combines personal or family savings, one or more scholarships, and sometimes an education loan, with any permitted part-time earnings as a supplement rather than a main plan.\n\nStart by knowing your total target — tuition plus living costs plus visa and travel — from the cost guides, then work out how each source can contribute. This section is general information, not financial advice; for borrowing decisions, consult a qualified financial adviser.',
+      },
+      {
+        headingEn: 'Scholarships and bursaries',
+        bodyEn:
+          'Scholarships can come from governments, universities, or external organisations, and may be full or partial. Well-known government-funded routes include Chevening (UK) and the Commonwealth Scholarships for eligible countries; many UK and Irish universities also run their own international scholarships and bursaries.\n\nEligibility is set by each scheme and is based on academic and other published criteria. Amounts, deadlines, and conditions change every cycle, so read the official scheme page and apply early. Never pay anyone who promises a \'guaranteed\' scholarship — legitimate awards are decided on merit and published criteria, not bought.',
+        bullets: [
+          'Government routes — e.g. Chevening (chevening.org), Commonwealth Scholarships (cscuk.fcdo.gov.uk)',
+          'University scholarships — listed on each institution\'s official scholarships page',
+          'External/subject-specific awards — verify the awarding body is genuine',
+          'Apply early; confirm amounts and deadlines on the official source each cycle',
+        ],
+      },
+      {
+        headingEn: 'Education loans',
+        bodyEn:
+          'Many students fund part of their costs with an education loan from a bank or recognised lender in their home country, repaid after graduation. Loan products differ in interest rates, collateral requirements, repayment terms, and which costs they cover, and these vary by lender and country.\n\nThis guide does not recommend any product and does not state rates — it is information, not financial advice. Compare official terms from regulated lenders, read the full repayment conditions, and consult a qualified financial adviser before borrowing. Note that UK government student loans and Irish state grants are generally aimed at home/eligible students, not international applicants — check each scheme\'s eligibility rather than assuming you qualify.',
+      },
+      {
+        headingEn: 'Part-time work while studying',
+        bodyEn:
+          'Permitted part-time work can help with living costs, but it should support a budget, not fund a degree. In the UK, the Student visa allows a limited number of working hours during term time for eligible courses, with the exact limit and conditions set on GOV.UK; in Ireland, eligible non-EU students may work within official limits set by the immigration authorities.\n\nThese rules are official immigration facts and change from time to time. This is general information, not immigration advice — verify the current work conditions on GOV.UK (UK) and irishimmigration.ie (Ireland) before relying on any earnings, and never assume guaranteed income.',
+      },
+      {
+        headingEn: 'Building and protecting your funding plan',
+        bodyEn:
+          'Put your plan in writing: list each source, the amount it will contribute, and when the money is available, then check it covers tuition and living costs for the full course, not just year one. Keep a contingency for exchange-rate movement and unexpected costs.\n\nProtect yourself from scams: official scholarships and visas are never \'guaranteed\' for a fee, and no legitimate adviser can promise an award, a place, or a visa. If an offer sounds too good to be true or asks for payment to secure funding, treat it as a red flag and verify everything against official sources.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do most international students fund a UK or Ireland degree?',
+        answerEn:
+          'Usually through a mix: personal or family savings, scholarships or bursaries, and sometimes an education loan, with any permitted part-time work as a supplement. Start from your total target cost and plan how each source contributes.',
+      },
+      {
+        questionEn: 'Which scholarships are available for UK and Ireland study?',
+        answerEn:
+          'Options include government-funded routes such as Chevening and the Commonwealth Scholarships (for eligible countries), plus university and external awards. Eligibility, amounts, and deadlines are set by each scheme and change every cycle — check the official page and apply early.',
+      },
+      {
+        questionEn: 'Should I take an education loan to study abroad?',
+        answerEn:
+          'That is a personal financial decision. This guide is information, not financial advice: compare official terms from regulated lenders, read the full repayment conditions, and consult a qualified financial adviser before borrowing. We do not recommend products or state rates.',
+      },
+      {
+        questionEn: 'Can I rely on part-time work to pay my fees?',
+        answerEn:
+          'No — permitted work should support living costs, not fund a degree, and earnings are not guaranteed. Work-hour limits are official immigration rules set on GOV.UK (UK) and irishimmigration.ie (Ireland) and can change; verify the current conditions before relying on any income.',
+      },
+      {
+        questionEn: 'How do I avoid scholarship and funding scams?',
+        answerEn:
+          'Never pay for a \'guaranteed\' scholarship, place, or visa — legitimate awards are decided on published merit criteria, not bought. Apply only through official scheme pages and treat any request for payment to \'secure\' funding as a warning sign.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-studying-in-the-uk-for-international-students', 'cost-of-studying-in-ireland-for-international-students', 'tuition-fees-at-uk-universities-explained', 'budgeting-and-living-costs-for-uk-students', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'Chevening — official scholarships (UK government)', url: 'https://www.chevening.org/' },
+      { label: 'Commonwealth Scholarships — CSC UK (FCDO)', url: 'https://cscuk.fcdo.gov.uk/' },
+      { label: 'GOV.UK — Student visa (work conditions)', url: 'https://www.gov.uk/student-visa/work' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['how to fund studies in uk and ireland', 'scholarships to study in uk', 'chevening scholarship', 'education loan study abroad uk', 'commonwealth scholarship', 'funding study in ireland'],
+    tags: ['uk-ireland-tuition-scholarships'],
+    keyFacts: [
+      { label: 'Typical funding mix', value: 'Savings + scholarships + (sometimes) education loan' },
+      { label: 'Government scholarship routes', value: 'Chevening; Commonwealth Scholarships (eligible countries)' },
+      { label: 'Loans', value: 'Factual only — not financial advice; consult a qualified adviser' },
+      { label: 'Part-time work', value: 'Supplement only; hours set by official immigration rules' },
+      { label: 'Scam caution', value: 'Never pay for a \'guaranteed\' award, place, or visa' },
+    ],
+  },
+  {
+    slug: 'budgeting-and-living-costs-for-uk-students',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Budgeting and Living Costs for UK Students',
+    descriptionEn:
+      'A practical guide to budgeting as a student in the UK — the main living-cost categories, why London differs, and how to build a realistic monthly plan using official figures.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What living costs actually include',
+        bodyEn:
+          'Living costs are everything you spend outside tuition: accommodation, food and groceries, transport, study materials, mobile and internet, and personal spending. Knowing the categories first makes a budget far easier than trying to estimate one big number.\n\nAll amounts vary by city and lifestyle and are quoted in pounds sterling (GBP). Use university and official guidance for your specific location rather than a single national average, and treat any figure as indicative until you confirm it.',
+        bullets: [
+          'Accommodation (usually the largest item)',
+          'Food and groceries',
+          'Transport (bus, train, or cycling)',
+          'Course materials, books, and printing',
+          'Mobile, internet, and utilities (if not included in rent)',
+          'Personal and social spending',
+        ],
+      },
+      {
+        headingEn: 'Rent and the London difference',
+        bodyEn:
+          'Accommodation is normally the biggest part of a student budget, whether university halls or private renting. It is also the main reason living in London generally costs more than living in most other UK cities — a difference reflected in the UK government\'s higher maintenance requirement for Student visa applicants studying in London.\n\nWhen comparing options, check what each rent includes (some halls bundle utilities and internet, private lets often do not) so you compare like with like. Confirm current accommodation costs on the university\'s own housing pages.',
+      },
+      {
+        headingEn: 'Everyday spending: food and transport',
+        bodyEn:
+          'After rent, food and transport are usually the next largest categories. Cooking at home is generally cheaper than eating out, and many students cut transport costs with a railcard or student travel pass and by choosing accommodation within walking or cycling distance of campus.\n\nThese are practical budgeting choices, not income promises — actual spending depends on your habits and city. Build your figures from your university\'s cost-of-living guidance and adjust to your own lifestyle.',
+      },
+      {
+        headingEn: 'Building a monthly budget',
+        bodyEn:
+          'A simple, reliable method is to list your fixed monthly costs (rent, phone, any subscriptions) first, add a realistic figure for variable costs (food, transport, social spending), and compare the total against your funding for the month. Reviewing it every month keeps it accurate as prices and habits change.\n\nMany universities publish a sample monthly student budget for their city — a useful starting template. Keep a small buffer for one-off costs (a deposit, a flight home, course materials) and for currency movement if you fund from abroad.',
+      },
+      {
+        headingEn: 'Saving sensibly without overstretching',
+        bodyEn:
+          'Common ways students manage costs include choosing halls or shared housing, using student discounts, cooking in batches, buying second-hand course materials, and limiting non-essential spending in the first weeks while you settle in. None of these are guarantees of a particular budget — they are choices that can help.\n\nAvoid financial-stress traps: do not rely on uncertain part-time earnings to cover essential costs, and verify any work-hour limits as official immigration facts on GOV.UK before counting on them. If money worries arise, most universities have a student support or advice service.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What are the main living costs for a student in the UK?',
+        answerEn:
+          'Accommodation (usually the largest), food and groceries, transport, course materials, mobile and internet, and personal spending. Build your budget by category using your university\'s cost-of-living guidance for its city.',
+      },
+      {
+        questionEn: 'How much higher are living costs in London?',
+        answerEn:
+          'London generally costs more than most other UK cities, mainly because of rent — reflected in the UK government\'s higher maintenance requirement for Student visa applicants studying in London. Check current amounts on GOV.UK and the university\'s housing pages.',
+      },
+      {
+        questionEn: 'How do I make a realistic student budget?',
+        answerEn:
+          'List fixed monthly costs first, add a realistic estimate for variable costs like food and transport, and compare the total to your monthly funding. Many universities publish a sample monthly budget for their city you can adapt, and you should keep a small buffer for one-off costs.',
+      },
+      {
+        questionEn: 'Can part-time work cover my living costs?',
+        answerEn:
+          'It can help, but earnings are not guaranteed and should not cover essentials you depend on. Student visa work-hour limits are official immigration rules set on GOV.UK and can change — verify the current conditions before relying on any income.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-studying-in-the-uk-for-international-students', 'tuition-fees-at-uk-universities-explained', 'how-to-fund-your-studies-in-the-uk-and-ireland', 'cost-of-studying-in-ireland-for-international-students', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'GOV.UK — Student visa (money you need)', url: 'https://www.gov.uk/student-visa/money' },
+      { label: 'UCAS — student budgeting and money', url: 'https://www.ucas.com/money-and-student-life/money/managing-money' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['budgeting and living costs for uk students', 'uk student budget', 'student living costs uk', 'cost of living for students uk', 'how to budget as a student uk', 'uk student accommodation costs'],
+    tags: ['uk-ireland-tuition-scholarships', 'uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Largest cost category', value: 'Accommodation (rent)' },
+      { label: 'Currency', value: 'Pounds sterling (GBP)' },
+      { label: 'London', value: 'Generally higher living costs (higher visa maintenance figure)' },
+      { label: 'Budget method', value: 'Fixed costs + variable costs vs monthly funding' },
+      { label: 'Confirm figures on', value: 'University housing pages + GOV.UK' },
+    ],
+  },
+  {
+    slug: 'uk-degree-types-and-classifications-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'UK Degree Types and Classifications Explained',
+    descriptionEn:
+      'Make sense of UK degrees — BA, BSc, BEng, MA, MSc and more — plus how honours classifications (First, 2:1, 2:2, Third) and the credit and level system actually work.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Bachelor\'s degrees: BA, BSc, BEng and others',
+        bodyEn:
+          'A UK undergraduate degree is most often a Bachelor of Arts (BA), Bachelor of Science (BSc), Bachelor of Engineering (BEng) or Bachelor of Laws (LLB), and the letters signal the broad field rather than the quality of the course. The choice between, say, a BA and a BSc in a subject usually reflects how the curriculum is weighted — for example more essay-based or more quantitative — and different universities can label closely related courses differently.\n\nMost bachelor\'s degrees in England, Wales and Northern Ireland are studied as "honours" degrees, written as "(Hons)" after the title, which means they include the assessed final-year work that leads to a classification.',
+        bullets: [
+          'BA — Bachelor of Arts (often humanities, social sciences, arts)',
+          'BSc — Bachelor of Science (often science, maths, some social sciences)',
+          'BEng / MEng — engineering (MEng is an integrated longer route)',
+          'LLB — Bachelor of Laws; MBChB/MBBS — medicine',
+        ],
+      },
+      {
+        headingEn: 'How long a UK bachelor\'s degree takes',
+        bodyEn:
+          'A standard full-time honours bachelor\'s degree usually takes three years in England, Wales and Northern Ireland, and commonly four years in Scotland, where the first year is often broader before you specialise. Some courses run longer by design — integrated master\'s degrees such as the MEng or MSci typically add a year, and degrees with a placement or study-abroad year add another year too.\n\nExact course lengths, structures and any placement options are set by each university and can differ even between similar subjects, so confirm the duration on the official course page before you apply.',
+      },
+      {
+        headingEn: 'Master\'s and doctoral degrees',
+        bodyEn:
+          'At postgraduate level the common taught awards are the Master of Arts (MA), Master of Science (MSc) and specialist titles such as the MBA, and many UK taught master\'s programmes run for one year full time. Research-focused postgraduate study leads to a Master of Research (MRes) or, at the highest level, a doctorate — most often the PhD (also written DPhil at some universities).\n\nEntry requirements, length and whether a programme is "taught" or "research" vary by university and subject, so check the official programme page for the specifics.',
+      },
+      {
+        headingEn: 'Honours classifications: First, 2:1, 2:2, Third',
+        bodyEn:
+          'UK honours degrees are awarded in classes that summarise your overall performance, and these classes are broadly standard across universities. The bands, from highest to lowest, are a First-Class degree (a "First"), an Upper Second-Class degree (a "2:1", said "two-one"), a Lower Second-Class degree (a "2:2", said "two-two") and a Third-Class degree (a "Third").\n\nMany employers and postgraduate courses ask for a 2:1 or above as a typical entry benchmark, though requirements differ. How a classification is calculated — which years and modules count, and the exact mark boundaries — is set by each university\'s regulations, so check those for any course you are considering.',
+        bullets: [
+          'First-Class Honours — the highest classification',
+          'Upper Second-Class (2:1) — a common entry benchmark for many roles',
+          'Lower Second-Class (2:2)',
+          'Third-Class Honours',
+        ],
+      },
+      {
+        headingEn: 'Credits and levels: how courses are measured',
+        bodyEn:
+          'UK degrees are built from modules that carry credits, and a typical full-time year of undergraduate study is measured in credits set out in national frameworks. Courses are also described by a "level" — for example honours undergraduate study and master\'s study sit at different levels in the relevant qualifications framework — which helps employers and other universities understand where a qualification fits.\n\nYou do not need to master the credit arithmetic to choose a course, but it is useful to know that credits are how progression and the final award are tracked. The precise credit totals and level descriptors are defined officially, so use the framework and the university\'s own pages for exact detail.',
+      },
+      {
+        headingEn: 'How this maps to your application',
+        bodyEn:
+          'When you compare courses, look past the BA/BSc label to the actual modules, the length, whether it is an honours or integrated route, and whether a placement year is built in. For entry, UK universities publish the qualifications and grades they expect, and these are confirmed on each course page rather than fixed across the whole sector.\n\nBecause entry requirements, course structures and classification rules differ by university and change between years, always verify the details on the official university course page before applying.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between a BA and a BSc?',
+        answerEn:
+          'Both are bachelor\'s degrees; the letters indicate the broad field and how the course is weighted (for example more essay-based for a BA or more quantitative for a BSc) rather than which is "better". The same subject can be offered as either at different universities, so compare the actual modules on each course page.',
+      },
+      {
+        questionEn: 'What does "(Hons)" mean after a degree?',
+        answerEn:
+          'It means the degree is an honours degree, which includes the assessed work — usually in the final year — that leads to a classification such as a First or a 2:1. Most full-time UK bachelor\'s degrees are honours degrees.',
+      },
+      {
+        questionEn: 'Is a 2:1 a good degree classification?',
+        answerEn:
+          'A 2:1 (Upper Second-Class Honours) is a widely recognised classification and is a common minimum benchmark for many graduate jobs and postgraduate courses, though exact requirements differ. Always check the specific entry requirement for the role or programme you are targeting.',
+      },
+      {
+        questionEn: 'How is a degree classification calculated?',
+        answerEn:
+          'Each university sets its own regulations for which years and modules count and the exact mark boundaries for each class, so the calculation can differ between institutions. Check the official regulations for the specific university and course.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['undergraduate-vs-postgraduate-study-in-the-uk', 'one-year-masters-in-the-uk-explained', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'GOV.UK — What qualification levels mean', url: 'https://www.gov.uk/what-different-qualification-levels-mean' },
+      { label: 'UCAS — Undergraduate: getting started', url: 'https://www.ucas.com/applying/applying-to-university/ucas-undergraduate-getting-started' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk degree types explained', 'uk degree classifications', 'first 2:1 2:2 third', 'ba vs bsc uk', 'uk honours degree', 'study in uk'],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'Common bachelor titles', value: 'BA, BSc, BEng, LLB and others' },
+      { label: 'Honours classes', value: 'First, 2:1, 2:2, Third' },
+      { label: 'Typical bachelor length', value: '3 years (England/Wales/NI), often 4 (Scotland)' },
+      { label: 'Verify on', value: 'GOV.UK + each official university course page' },
+    ],
+  },
+  {
+    slug: 'undergraduate-vs-postgraduate-study-in-the-uk',
+    category: 'comparison',
+    region: 'uk-ireland',
+    titleEn: 'Undergraduate vs Postgraduate Study in the UK',
+    descriptionEn:
+      'A clear comparison of undergraduate and postgraduate study in the UK — entry requirements, course length, how you apply (UCAS vs direct), and how the two levels connect.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What each level means',
+        bodyEn:
+          'Undergraduate study is your first degree — typically a bachelor\'s such as a BA, BSc or BEng — usually taken after school or college qualifications. Postgraduate study comes after a bachelor\'s degree and includes taught master\'s degrees (such as an MA or MSc), research master\'s, and doctorates such as the PhD.\n\nIn short, you complete an undergraduate degree first, and postgraduate study builds on it with greater depth or a research focus.',
+      },
+      {
+        headingEn: 'Entry requirements',
+        bodyEn:
+          'For undergraduate entry, UK universities look at school-leaving qualifications — such as A-levels, the International Baccalaureate or recognised equivalents — and may set subject-specific grades. For postgraduate entry, the main requirement is usually a relevant bachelor\'s degree, often at a particular classification such as a 2:1 or above, and some courses ask for relevant experience or a portfolio.\n\nInternational applicants typically also need to meet an English language requirement at both levels. Exact qualifications, grades and English requirements are set per course, so confirm them on the official course page.',
+      },
+      {
+        headingEn: 'Course length and structure',
+        bodyEn:
+          'A full-time undergraduate honours degree usually takes three years in England, Wales and Northern Ireland (commonly four in Scotland), while many UK taught master\'s degrees run for one year full time. Undergraduate degrees build broad foundations across several modules; postgraduate taught degrees are more specialised and often end with a dissertation or major project.\n\nResearch postgraduate degrees such as the PhD are longer again and centre on an original research project rather than taught modules. Always check the specific duration and structure on the official programme page.',
+      },
+      {
+        headingEn: 'How you apply: UCAS vs direct',
+        bodyEn:
+          'Most full-time undergraduate courses in the UK are applied for through UCAS, a centralised application service that lets you apply to several universities with one application. Postgraduate courses are usually applied for differently — often directly to each university through its own application system, although some postgraduate routes use UCAS or other centralised services.\n\nBecause application routes and deadlines vary by level, course and university, check how to apply on the UCAS site and on each university\'s official admissions pages.',
+        bullets: [
+          'Undergraduate — usually via UCAS (one application to several courses)',
+          'Postgraduate taught/research — usually direct to each university',
+          'Deadlines differ by course — confirm on the official source',
+        ],
+      },
+      {
+        headingEn: 'Visa and practical differences for international students',
+        bodyEn:
+          'International students at both levels usually study on the UK Student visa, which requires an offer and sponsorship from a licensed institution. Some conditions can differ by level — for example study length affects the visa period — and immigration rules change, so the official source is the place to confirm them.\n\nThis is general information, not immigration advice. Check the current rules on the official UK government source before making plans, and verify any fees or requirements there too.',
+      },
+      {
+        headingEn: 'Which level is right for you',
+        bodyEn:
+          'If you have finished school and want your first degree, undergraduate study is the starting point; if you already hold a bachelor\'s degree and want to specialise, change direction or move into research, postgraduate study is the next step. Neither level is universally "better" — they serve different stages and goals.\n\nUse the official course pages to compare entry requirements, length and structure, and verify the current details before you apply.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I apply through UCAS for a master\'s in the UK?',
+        answerEn:
+          'Most taught and research postgraduate courses are applied for directly through each university\'s own system, while undergraduate courses generally go through UCAS. Some postgraduate routes do use UCAS or other services, so check how to apply on the specific course page.',
+      },
+      {
+        questionEn: 'Can I do a master\'s without a bachelor\'s degree?',
+        answerEn:
+          'Postgraduate master\'s entry usually requires a relevant bachelor\'s degree, often at a specified classification, though a few courses consider substantial relevant experience. Confirm the exact entry requirements on the official programme page.',
+      },
+      {
+        questionEn: 'Is a UK master\'s shorter than an undergraduate degree?',
+        answerEn:
+          'Often, yes — many UK taught master\'s degrees run for one year full time, while a full-time undergraduate degree usually takes three years (commonly four in Scotland). Always verify the duration on the official course page.',
+      },
+      {
+        questionEn: 'Do I need a different visa for postgraduate study?',
+        answerEn:
+          'International students at both levels typically use the UK Student visa, with conditions such as the visa period depending on your course. This is general information, not immigration advice — verify the current rules on the official UK government source.',
+      },
+    ],
+    relatedExamSlugs: ['a-levels', 'international-baccalaureate', 'ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-degree-types-and-classifications-explained', 'one-year-masters-in-the-uk-explained', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'UCAS — Undergraduate and postgraduate study', url: 'https://www.ucas.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['undergraduate vs postgraduate uk', 'difference undergraduate postgraduate', 'ucas vs direct application', 'study masters in uk', 'uk postgraduate entry requirements', 'study in uk'],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'Undergraduate route', value: 'Usually applied via UCAS' },
+      { label: 'Postgraduate route', value: 'Usually applied direct to each university' },
+      { label: 'Typical lengths', value: 'UG ~3 yrs (4 in Scotland); many taught PG ~1 yr' },
+      { label: 'Verify on', value: 'UCAS + official university course pages' },
+    ],
+  },
+  {
+    slug: 'one-year-masters-in-the-uk-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'One-Year Master\'s in the UK Explained',
+    descriptionEn:
+      'How the UK taught one-year master\'s works — its structure, intensity and dissertation stage — and how it compares neutrally with longer two-year models elsewhere.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What a one-year UK master\'s is',
+        bodyEn:
+          'Many taught master\'s degrees in the UK — such as an MA, MSc or LLM — are designed to be completed in one year of full-time study. This is a long-standing feature of the UK system and is one reason it is a popular destination for postgraduate study.\n\nThe one-year format packs a focused, specialised programme into a single academic year, typically combining taught modules with an independent dissertation or major project. Part-time versions, which spread the same content over a longer period, are also offered for many courses.',
+      },
+      {
+        headingEn: 'How the year is usually structured',
+        bodyEn:
+          'A typical full-time taught master\'s runs across the academic year and is built from credit-bearing modules followed by a substantial individual project. The taught modules usually come first, often across two teaching periods, and the dissertation or final project is commonly completed in the later part of the year.\n\nExact module patterns, assessment methods and timelines vary by university and subject, so the official programme page is the place to see how a specific course is organised.',
+        bullets: [
+          'Taught modules across the teaching periods',
+          'A dissertation or major project, often later in the year',
+          'Assessment by coursework, exams, projects or a mix (varies by course)',
+        ],
+      },
+      {
+        headingEn: 'Intensity: what to expect',
+        bodyEn:
+          'Because a full master\'s is delivered in a single year, the pace can be demanding, with modules, assessments and the dissertation following closely together. Independent study and time management matter a great deal, since there is limited slack in the calendar.\n\nMany students value the efficiency and momentum of the format, while others prefer a longer programme that spreads the workload — it comes down to how you like to study. Looking at the official course structure helps you judge the rhythm before you commit.',
+      },
+      {
+        headingEn: 'How it compares with two-year models',
+        bodyEn:
+          'In some countries, a master\'s is commonly structured over two years, which can allow more time for coursework, internships or a longer research phase. The UK one-year model is more compressed and typically finishes sooner, which can mean less time away from work and lower total living costs over the programme.\n\nNeither model is universally better — they suit different goals and study styles. If you plan to use the qualification in another country or profession, check how a one-year master\'s is recognised there, and verify the specifics on official sources.',
+      },
+      {
+        headingEn: 'Entry, fees and the Student visa',
+        bodyEn:
+          'Entry to a UK master\'s usually requires a relevant bachelor\'s degree, often at a specified classification, and international applicants typically need to meet an English language requirement. International students normally study on the UK Student visa, which requires sponsorship from a licensed institution; because a one-year course is short, the visa period and conditions reflect that.\n\nFees, entry requirements and visa rules change and differ by course, so this is general information, not immigration or financial advice — confirm everything on the official university and UK government sources before you apply.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Why are UK master\'s degrees only one year?',
+        answerEn:
+          'The one-year full-time taught master\'s is a long-standing feature of the UK system, delivering a focused, specialised programme within a single academic year. Part-time options that spread the same content over longer are also widely available; check the format on the official course page.',
+      },
+      {
+        questionEn: 'Does a one-year master\'s include a dissertation?',
+        answerEn:
+          'Many taught master\'s degrees combine taught modules with an independent dissertation or major project, often completed in the later part of the year. The exact structure varies by university and subject, so confirm it on the official programme page.',
+      },
+      {
+        questionEn: 'Is a one-year UK master\'s recognised abroad?',
+        answerEn:
+          'Recognition depends on the country, employer or professional body, so if you plan to use the qualification elsewhere it is worth checking how a one-year master\'s is treated there. Verify recognition on the relevant official source for that country or profession.',
+      },
+      {
+        questionEn: 'What do I need to apply for a UK master\'s?',
+        answerEn:
+          'Entry usually requires a relevant bachelor\'s degree, often at a specified classification, and international applicants typically need to meet an English language requirement such as IELTS. Exact requirements differ by course — confirm them on the official course page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['undergraduate-vs-postgraduate-study-in-the-uk', 'uk-degree-types-and-classifications-explained', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — Postgraduate study', url: 'https://www.ucas.com/postgraduate' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['one year masters uk', 'uk taught masters explained', 'msc ma in uk one year', 'uk masters structure dissertation', 'study masters in uk', 'uk postgraduate study'],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'Typical full-time length', value: 'One academic year (taught master\'s)' },
+      { label: 'Usual structure', value: 'Taught modules + a dissertation/project' },
+      { label: 'Common awards', value: 'MA, MSc, LLM and others' },
+      { label: 'Verify on', value: 'Official university programme pages + GOV.UK' },
+    ],
+  },
+  {
+    slug: 'foundation-year-vs-international-year-one',
+    category: 'comparison',
+    region: 'uk-ireland',
+    titleEn: 'Foundation Year vs International Year One',
+    descriptionEn:
+      'Two bridging routes into UK degrees compared — a foundation (bridging) year versus International Year One, which feeds directly into the second year — and who each one suits.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why bridging routes exist',
+        bodyEn:
+          'Some students do not yet meet the direct entry requirements for a UK undergraduate degree — perhaps because their school qualifications differ from UK A-levels, or their English or subject preparation needs strengthening. Bridging routes give these students a structured way to build up to degree-level study.\n\nThe two most common bridging routes are a foundation year and International Year One, and although they sound similar they enter the degree at different points and suit different situations.',
+      },
+      {
+        headingEn: 'What a foundation year is',
+        bodyEn:
+          'A foundation year (sometimes called an international foundation programme) is a preparatory year taken before the first year of a degree. It builds academic skills, subject knowledge and English for academic purposes, so that you are ready to start Year One of the bachelor\'s degree afterwards.\n\nBecause it sits before the degree begins, a foundation year typically adds a year overall — for example a foundation year followed by a three-year degree. Entry requirements and progression rules are set by each university or pathway provider, so check those on the official source.',
+      },
+      {
+        headingEn: 'What International Year One is',
+        bodyEn:
+          'International Year One is designed to be equivalent to the first year of a degree, with extra academic and language support built in. On successful completion, you progress into the second year of the bachelor\'s degree rather than starting from Year One.\n\nBecause it replaces the first year instead of preceding it, International Year One can keep you on a similar overall timeline to direct entry — the support is integrated into the first year rather than added before it. Availability, entry criteria and which degrees it leads into vary by university, so confirm the details officially.',
+      },
+      {
+        headingEn: 'The key difference: where you enter the degree',
+        bodyEn:
+          'The simplest way to tell them apart is the entry point. A foundation year comes before Year One and prepares you to begin the degree, usually adding a year; International Year One stands in for Year One and lets you continue into Year Two.\n\nNeither is universally better — the right choice depends on your current qualifications, the support you want and the subject. The official course page is the place to confirm exactly where each route leads.',
+        bullets: [
+          'Foundation year → then start Year One (usually adds a year)',
+          'International Year One → then continue into Year Two',
+          'Both add academic and English-language support',
+        ],
+      },
+      {
+        headingEn: 'Who each route tends to suit',
+        bodyEn:
+          'A foundation year can suit students who want broader preparation — for example a bigger step up in subject knowledge, English or study skills before degree-level work — or who are still deciding on a precise pathway. International Year One can suit students who are closer to direct-entry standard but want first-year support integrated into a faster overall route.\n\nThese are general tendencies, not rules; eligibility for either route is decided by the university against your specific qualifications. Check the official requirements before choosing.',
+      },
+      {
+        headingEn: 'Cost, visa and how to confirm details',
+        bodyEn:
+          'Both routes are usually studied on the UK Student visa, and the visa period reflects the total length of the course you are enrolled on. Fees differ by university and route, so treat any figures cautiously and verify them on official sources.\n\nThis is general information, not immigration or financial advice. Because availability, entry requirements, progression rules and fees vary by university and change over time, always confirm the current details on the official university and UK government sources.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the main difference between a foundation year and International Year One?',
+        answerEn:
+          'A foundation year comes before the first year of a degree and prepares you to start Year One (usually adding a year), while International Year One is equivalent to the first year and lets you progress into Year Two. Confirm exactly where each route leads on the official course page.',
+      },
+      {
+        questionEn: 'Does a foundation year add an extra year to my degree?',
+        answerEn:
+          'Typically yes, because it is a preparatory year taken before Year One — for example a foundation year plus a three-year degree. The exact structure depends on the university and course, so verify it on the official source.',
+      },
+      {
+        questionEn: 'Which route should I choose?',
+        answerEn:
+          'It depends on your current qualifications and the support you want: a foundation year offers broader preparation, while International Year One suits students closer to direct-entry standard who want a faster overall route. Eligibility is decided by the university, so check the official requirements.',
+      },
+      {
+        questionEn: 'Do these bridging routes use the Student visa?',
+        answerEn:
+          'International students usually study both routes on the UK Student visa, with the visa period reflecting the length of the course. This is general information, not immigration advice — verify the current rules on the official UK government source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['undergraduate-vs-postgraduate-study-in-the-uk', 'sandwich-courses-and-placement-years-explained', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — Undergraduate: getting started', url: 'https://www.ucas.com/applying/applying-to-university/ucas-undergraduate-getting-started' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['foundation year vs international year one', 'uk foundation year explained', 'international year one uk', 'bridging course uk degree', 'study in uk international students', 'uk undergraduate pathway'],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'Foundation year', value: 'Before Year One; usually adds a year' },
+      { label: 'International Year One', value: 'Equivalent to Year One; leads into Year Two' },
+      { label: 'Both add', value: 'Academic and English-language support' },
+      { label: 'Verify on', value: 'Official university pages + UCAS + GOV.UK' },
+    ],
+  },
+  {
+    slug: 'sandwich-courses-and-placement-years-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Sandwich Courses and Placement Years Explained',
+    descriptionEn:
+      'What a UK sandwich course or placement year is — a year of supervised work in industry built into your degree — described neutrally, with the practicalities to verify on official sources.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What a sandwich course is',
+        bodyEn:
+          'A "sandwich course" is a UK degree that includes a substantial period of work in industry as part of the programme — the academic study is, in effect, "sandwiched" around a placement. The most common form is the "thick sandwich", where a single placement year sits between your taught years, often between the second and final year.\n\nThe placement is a planned, assessed part of the degree rather than an optional extra, and because of the added year a sandwich degree typically runs for four years where the standard version runs for three.',
+      },
+      {
+        headingEn: 'What a placement year involves',
+        bodyEn:
+          'During a placement year you spend an extended period working in a relevant organisation, applying what you have learned and gaining professional experience. Placements are usually arranged with support from the university\'s placement or careers team, though students often play an active part in finding and securing a role.\n\nHow the year is assessed, supervised and credited varies by university and course — some placements are paid by the employer, others are not — so the official course page is the place to see how a specific sandwich programme works.',
+        bullets: [
+          'An extended period of supervised work in industry',
+          'Built into the degree and usually assessed',
+          'Often supported by the university\'s placement/careers team',
+        ],
+      },
+      {
+        headingEn: 'Benefits described neutrally',
+        bodyEn:
+          'Many students choose a placement year for the chance to gain workplace experience, apply academic learning in a real setting and build professional networks before they graduate. A placement can also help you test a career direction and bring practical context back into your final year of study.\n\nThese are commonly cited reasons rather than guaranteed outcomes — a placement year does not promise a particular job, salary or result, and experiences differ by student, employer and field. Weigh the benefits against the extra year and any cost implications when you decide.',
+      },
+      {
+        headingEn: 'Things to weigh up',
+        bodyEn:
+          'A sandwich course usually adds a year to your degree, which affects your overall timeline and living costs, and finding a suitable placement can take effort and may be competitive. Fee arrangements for the placement year differ between universities, so it is important to check how that year is charged.\n\nFor international students there can also be visa considerations when a course includes a work placement. Treat any figures and rules cautiously and verify them on official sources before relying on them.',
+      },
+      {
+        headingEn: 'International students and the Student visa',
+        bodyEn:
+          'When a UK degree includes a placement year, there are specific rules about work that forms an assessed part of the course versus other employment, and these are set out by the UK government. Conditions can depend on your course and circumstances, and immigration rules change over time.\n\nThis is general information, not immigration advice. Always confirm the current rules — including anything about work placements and working hours — on the official UK government source, and verify course and fee details on the official university pages.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is a sandwich course?',
+        answerEn:
+          'It is a UK degree that includes a substantial period of work in industry — typically a placement year between the taught years — as a planned, usually assessed part of the programme. Because of the added year, a sandwich degree commonly takes four years instead of three.',
+      },
+      {
+        questionEn: 'Is the placement year paid?',
+        answerEn:
+          'It depends on the employer and the role — some placements are paid and others are not. How the placement is arranged, assessed and charged varies by university, so check the details on the official course page.',
+      },
+      {
+        questionEn: 'Does a placement year guarantee a job after graduation?',
+        answerEn:
+          'No. A placement year can help you gain experience, apply your learning and build networks, but it does not guarantee any particular job, salary or outcome, and experiences differ by student and field.',
+      },
+      {
+        questionEn: 'Can international students do a placement year on a Student visa?',
+        answerEn:
+          'There are specific UK rules about work that is an assessed part of a course versus other employment, and conditions can depend on your course and circumstances. This is general information, not immigration advice — verify the current rules on the official UK government source.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['foundation-year-vs-international-year-one', 'undergraduate-vs-postgraduate-study-in-the-uk', 'uk-degree-types-and-classifications-explained'],
+    sources: [
+      { label: 'UCAS — Undergraduate: getting started', url: 'https://www.ucas.com/applying/applying-to-university/ucas-undergraduate-getting-started' },
+      { label: 'GOV.UK — Student visa: work', url: 'https://www.gov.uk/student-visa/work' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['sandwich course uk', 'placement year explained', 'year in industry uk degree', 'uk degree with placement', 'study in uk work placement', 'uk undergraduate placement'],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'What it is', value: 'A degree with a built-in year of work in industry' },
+      { label: 'Common length', value: 'Often 4 years (vs 3 for the standard route)' },
+      { label: 'Placement pay', value: 'Varies by employer; some paid, some not' },
+      { label: 'Verify on', value: 'Official university course pages + GOV.UK' },
+    ],
+  },
+  {
+    slug: 'most-popular-courses-for-international-students-in-the-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Most Popular Courses for International Students in the UK',
+    descriptionEn:
+      'An overview of subject areas international students often choose in the UK — business, engineering and computing, health and life sciences, social sciences, and the creative fields — described neutrally. No course can guarantee a job; verify entry requirements on each official university page.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How to read "popular" — and what it does not mean',
+        bodyEn:
+          'When people talk about "popular" courses for international students in the UK, they usually mean broad subject areas that attract large numbers of applicants across many universities. Popularity is not a measure of quality, difficulty, or how good a course is for you — a smaller, less-talked-about programme can be an excellent fit, and a large popular one can be the wrong choice if it does not match your interests or goals.\n\nThis guide describes a few subject areas neutrally so you have a starting map. It does not rank them, and it makes no claim about salaries, job prospects, or future demand — those vary by person, programme, year, and the wider job market. Treat this as orientation, not a recommendation, and always check the specific course pages on each university\'s official website.',
+      },
+      {
+        headingEn: 'Business and management',
+        bodyEn:
+          'Business and management is one of the most widely offered subject areas in the UK, spanning undergraduate degrees (such as BSc/BA Business, Management, Economics, Finance, Accounting, and Marketing) and a large range of taught master\'s courses, including the MBA at the postgraduate level. Programmes differ a great deal in focus — some are quantitative and analytical, others emphasise strategy, people, or entrepreneurship.\n\nEntry requirements, course structure, any work-placement or internship options, and whether a test such as the GMAT or GRE is asked for vary by university and by course. Read each programme page carefully and confirm the current requirements on the official source before applying.',
+        bullets: [
+          'Common at both undergraduate and master\'s (incl. MBA) levels',
+          'Wide variation in focus — quantitative vs strategy/people/entrepreneurship',
+          'GMAT/GRE asked for by some programmes, not all — check each course page',
+        ],
+      },
+      {
+        headingEn: 'Engineering, computer science and data',
+        bodyEn:
+          'Engineering and computing are large subject areas in the UK, covering disciplines such as mechanical, electrical, civil, chemical, and aerospace engineering, alongside computer science, software engineering, artificial intelligence, cybersecurity, and data science. Many of these degrees are technical and laboratory- or project-based, and some are professionally accredited (see the engineering and computer science guide for what accreditation means).\n\nBecause these fields move quickly, course content, specialisms, and entry requirements differ widely between universities. Look closely at the modules, any year-in-industry or placement options, and the stated entry requirements on each official course page.',
+        bullets: [
+          'Spans the engineering disciplines plus CS, AI, cybersecurity and data science',
+          'Often technical, project- or lab-based; some courses professionally accredited',
+          'Content and entry requirements vary widely — read the official module list',
+        ],
+      },
+      {
+        headingEn: 'Health, life sciences and the highly competitive courses',
+        bodyEn:
+          'Health and life sciences cover a broad span — biomedical science, biology, pharmacy, nursing, public health, psychology, and the highly competitive medicine and dentistry courses. Several of these are vocational and lead toward regulated professions, which adds extra entry steps. Medicine and dentistry in the UK typically require the UCAT admissions test as part of the application, and many have additional requirements and interviews.\n\nEntry to the competitive health courses is demanding and admission is never guaranteed by any test score or service. For medicine, dentistry, nursing and similar regulated routes, confirm the exact requirements, registration implications, and any admissions test directly on each university\'s official page and the relevant official sources.',
+        bullets: [
+          'Ranges from biomedical/biology to nursing, pharmacy, psychology and public health',
+          'Medicine and dentistry typically require the UCAT and often interviews',
+          'Vocational/regulated routes carry extra entry steps — verify each officially',
+        ],
+      },
+      {
+        headingEn: 'Social sciences, humanities and creative fields',
+        bodyEn:
+          'The UK also has a deep range of social sciences (such as law, politics, international relations, sociology, and education), humanities (history, English, languages, philosophy), and creative and design subjects (art and design, architecture, media, film, and music). Some of these have their own admissions steps — for example, certain law courses at some universities ask for the LNAT, and creative courses often request a portfolio or audition.\n\nThese subject areas are large and varied, so the right programme depends heavily on the specific modules and how a course is taught. Use the official course pages and UCAS to compare entry requirements and structure before you decide.',
+        bullets: [
+          'Social sciences (law, politics, sociology, education), humanities, and creative/design',
+          'Some routes have extra steps — e.g. LNAT for certain law courses, portfolios/auditions',
+          'Compare modules and entry requirements via the official pages and UCAS',
+        ],
+      },
+      {
+        headingEn: 'How to choose well, not just popularly',
+        bodyEn:
+          'A popular subject is only a good choice if it fits your interests, strengths, and goals and if you meet (or can reach) the entry requirements. Rather than following numbers, look at the modules you would actually study, how the course is assessed, any placement or accreditation, and the support available for international students.\n\nFor a structured way to weigh these factors, see the companion guide on choosing a degree subject in the UK and Ireland. Whatever you choose, confirm the current entry requirements, fees, and deadlines on the official university page and UCAS — these change every cycle.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Does choosing a popular course improve my chances of admission?',
+        answerEn:
+          'No. Popularity describes how many students apply to a subject area across the UK, not your individual chances. Highly popular and competitive courses can be harder to enter, not easier. Admission depends on meeting the specific entry requirements, which you should confirm on each official course page.',
+      },
+      {
+        questionEn: 'Which course leads to the best salary or job?',
+        answerEn:
+          'We do not make salary or job-outcome claims, because outcomes vary by person, programme, year, and the job market. Choose a subject that fits your interests, strengths, and goals, and review each university\'s official information rather than relying on generalised promises.',
+      },
+      {
+        questionEn: 'Do popular UK courses require an admissions test?',
+        answerEn:
+          'It depends on the subject and university. Medicine and dentistry typically require the UCAT; some law courses ask for the LNAT; certain business master\'s ask for the GMAT or GRE; and creative courses often need a portfolio. Always check the official course page for the exact requirements for the current cycle.',
+      },
+      {
+        questionEn: 'Where should I compare courses?',
+        answerEn:
+          'Use UCAS to compare undergraduate courses and entry requirements, and read the official course pages on each university\'s website for full module lists, assessment, placements, and fees. These are the authoritative sources and are updated each cycle.',
+      },
+    ],
+    relatedExamSlugs: ['ucat', 'gmat', 'gre'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'choosing-a-degree-subject-in-the-uk-and-ireland',
+      'studying-business-and-management-in-the-uk',
+      'studying-engineering-and-computer-science-in-the-uk',
+      'how-to-study-in-uk-from-india',
+    ],
+    sources: [
+      { label: 'UCAS — search and compare courses', url: 'https://www.ucas.com/' },
+      { label: 'UCAT — official site (UK medical/dental admissions test)', url: 'https://www.ucat.ac.uk/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'most popular courses for international students in the uk',
+      'best courses to study in uk',
+      'popular degrees uk international students',
+      'study in uk for international students',
+      'uk university courses',
+      'choosing a course in the uk',
+    ],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'Compare undergraduate courses', value: 'UCAS (ucas.com)' },
+      { label: 'Medicine/dentistry admissions test', value: 'UCAT' },
+      { label: 'Some law courses', value: 'LNAT (verify per university)' },
+      { label: 'Outcome claims', value: 'None — varies by person and market' },
+      { label: 'Verify requirements', value: 'Official university course pages' },
+    ],
+  },
+  {
+    slug: 'studying-business-and-management-in-the-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Studying Business and Management in the UK',
+    descriptionEn:
+      'A neutral overview of business and management study in the UK — undergraduate degrees, taught master\'s and the MBA, when the GMAT or GRE is used, placements and accreditation. No job or salary guarantees; verify entry requirements on each official university page.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What "business and management" covers',
+        bodyEn:
+          'Business and management is an umbrella for a wide range of subjects in the UK. At undergraduate level it includes degrees such as Business, Management, Economics, Finance, Accounting, Marketing, and International Business, often as BSc or BA. At postgraduate level there are many taught master\'s (for example MSc Finance, MSc Management, MSc Marketing) and the MBA, which is typically aimed at applicants with prior work experience.\n\nProgrammes differ a great deal in emphasis. Some are quantitative and data-driven; others focus on strategy, organisations, people, or entrepreneurship. The best way to understand a specific course is to read its module list and assessment methods on the official university page.',
+      },
+      {
+        headingEn: 'Undergraduate vs master\'s vs MBA',
+        bodyEn:
+          'An undergraduate business degree is a first degree, usually entered after school-leaving qualifications. A taught master\'s is a postgraduate course usually entered after a relevant or related bachelor\'s degree, and lasts a shorter, intensive period. The MBA is a postgraduate management qualification that most schools position for candidates with several years of professional experience, though entry policies vary.\n\nWhich level suits you depends on your background and goals. Confirm the level, prerequisites, and any work-experience expectations on each official course page, as they differ between universities.',
+        bullets: [
+          'Undergraduate — first degree, entered after school-leaving qualifications',
+          'Taught master\'s — postgraduate, usually after a related bachelor\'s',
+          'MBA — postgraduate management qualification, often expects work experience',
+        ],
+      },
+      {
+        headingEn: 'When the GMAT or GRE is used',
+        bodyEn:
+          'Some UK business programmes — particularly certain MBAs and a number of quantitative master\'s — ask applicants to submit a GMAT or GRE score, while many others do not require one or will waive it under certain conditions. There is no single national rule: each school sets its own policy, and policies change from year to year.\n\nBecause of this variation, never assume a test is or is not required. Check the specific programme\'s admissions page on the official university website to see whether a GMAT or GRE score is required, recommended, optional, or not used at all for the current intake.',
+        bullets: [
+          'Some MBAs and quantitative master\'s ask for GMAT or GRE; many do not',
+          'Policies differ by school and change year to year — no single national rule',
+          'Confirm the exact requirement on each programme\'s official admissions page',
+        ],
+      },
+      {
+        headingEn: 'English language and academic entry requirements',
+        bodyEn:
+          'Like most UK courses taught in English, business programmes set an English-language requirement (commonly evidenced by tests such as IELTS, TOEFL, or PTE Academic, with the accepted tests and minimum scores set by each university). They also set academic entry requirements — school-leaving grades for undergraduate courses, and a stated class or grade of bachelor\'s degree for master\'s.\n\nThe accepted English tests, the minimum scores, and the academic thresholds all vary by university and course. Verify the current requirements on the official course page rather than relying on general figures.',
+      },
+      {
+        headingEn: 'Placements, accreditation and how to compare',
+        bodyEn:
+          'Many UK business schools offer optional work placements or a "year in industry", and some hold international accreditations from business-education bodies. These features can matter for how a course is taught and structured, but they are descriptive — they are not a promise of any particular career outcome.\n\nWhen comparing programmes, look at the modules, the balance of theory and practice, placement options, assessment style, and support for international students. Use UCAS for undergraduate comparisons and the official school pages for master\'s and MBA details.',
+        bullets: [
+          'Optional placements / year-in-industry offered by many schools',
+          'Some schools hold international business-education accreditations (descriptive, not a guarantee)',
+          'Compare modules, assessment, placements and support before deciding',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need the GMAT or GRE to study business in the UK?',
+        answerEn:
+          'Not always. Some MBAs and quantitative master\'s require a GMAT or GRE score; many programmes do not, or will waive it. There is no universal rule. Check the specific programme\'s official admissions page for the current intake to be sure.',
+      },
+      {
+        questionEn: 'What is the difference between an MBA and a master\'s in management?',
+        answerEn:
+          'An MBA is a general management qualification that most schools position for candidates with prior work experience. A master\'s in management or a specialist MSc is usually entered soon after a bachelor\'s degree and focuses on a particular area. Entry policies vary, so confirm the prerequisites on each official course page.',
+      },
+      {
+        questionEn: 'Will a UK business degree get me a high-paying job?',
+        answerEn:
+          'We do not make salary or job-outcome claims. Outcomes depend on the individual, the programme, the year, and the job market. Choose a course that fits your goals and review each university\'s official information rather than relying on promises about pay.',
+      },
+      {
+        questionEn: 'What English-language test do business courses accept?',
+        answerEn:
+          'It varies by university. Many accept tests such as IELTS, TOEFL, or PTE Academic, but the accepted tests and minimum scores are set by each institution and course. Verify the exact requirement on the official course page for the current cycle.',
+      },
+    ],
+    relatedExamSlugs: ['gmat', 'gre', 'ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'most-popular-courses-for-international-students-in-the-uk',
+      'choosing-a-degree-subject-in-the-uk-and-ireland',
+      'how-to-study-in-uk-from-india',
+    ],
+    sources: [
+      { label: 'UCAS — undergraduate course search', url: 'https://www.ucas.com/' },
+      { label: 'Discover Uni — official UK course information', url: 'https://discoveruni.gov.uk/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'studying business in the uk',
+      'business and management degree uk',
+      'mba in uk for international students',
+      'do i need gmat for uk masters',
+      'msc management uk',
+      'uk business school courses',
+    ],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'Levels', value: 'Undergraduate, taught master\'s, MBA' },
+      { label: 'GMAT/GRE', value: 'Some programmes; varies by school' },
+      { label: 'English tests', value: 'e.g. IELTS/TOEFL/PTE — set per university' },
+      { label: 'Outcome claims', value: 'None — varies by person and market' },
+      { label: 'Verify', value: 'Official university admissions pages' },
+    ],
+  },
+  {
+    slug: 'studying-engineering-and-computer-science-in-the-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Studying Engineering and Computer Science in the UK',
+    descriptionEn:
+      'A neutral overview of engineering and computer science study in the UK — the main disciplines, what professional accreditation means, integrated master\'s, placements, and entry requirements. No job or salary guarantees; verify each course on the official university page.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The main disciplines',
+        bodyEn:
+          'Engineering and computer science in the UK cover a broad set of disciplines. Engineering includes branches such as mechanical, electrical and electronic, civil, chemical, aerospace, and increasingly specialised areas. Computing includes computer science, software engineering, artificial intelligence and machine learning, cybersecurity, and data science.\n\nThese are technical subjects that often involve laboratory work, programming, and substantial projects. The exact mix of theory and practice differs by discipline and by university, so the module list on each official course page is the best guide to what you would actually study.',
+        bullets: [
+          'Engineering — mechanical, electrical/electronic, civil, chemical, aerospace and more',
+          'Computing — computer science, software engineering, AI/ML, cybersecurity, data science',
+          'Often lab-, programming- and project-based; mix varies by course',
+        ],
+      },
+      {
+        headingEn: 'What professional accreditation means',
+        bodyEn:
+          'Many UK engineering and some computing degrees are professionally accredited by the relevant professional body. Accreditation is a quality recognition: it means the degree has been assessed against a professional standard and can count toward later professional registration in that field. It is a useful, factual feature to check — but it is descriptive and does not by itself guarantee any job or outcome.\n\nWhether a particular course is accredited, and by which body, is stated on the official course page. If professional registration matters to your plans, confirm the current accreditation status directly with the university and the relevant professional body.',
+        bullets: [
+          'Accreditation = the degree is assessed against a professional standard',
+          'Can count toward later professional registration in the field',
+          'Descriptive, not a job guarantee — confirm status on the official page',
+        ],
+      },
+      {
+        headingEn: 'Bachelor\'s, integrated master\'s and placements',
+        bodyEn:
+          'UK engineering and computing are offered at several levels. A bachelor\'s degree (such as BEng or BSc) is the standard first degree; an integrated master\'s (such as MEng) combines undergraduate and master\'s study into one longer programme; and there are separate taught master\'s (MSc) entered after a relevant bachelor\'s. Many courses also offer an optional placement year or "year in industry".\n\nWhich structure suits you depends on your goals and the time you want to commit. Compare BEng vs MEng options, placement availability, and specialisms on the official course pages and via UCAS for undergraduate study.',
+        bullets: [
+          'BEng/BSc — standard first degree; MEng — integrated bachelor\'s + master\'s',
+          'MSc — separate taught master\'s after a relevant bachelor\'s',
+          'Optional placement / year-in-industry offered by many courses',
+        ],
+      },
+      {
+        headingEn: 'Entry requirements and English language',
+        bodyEn:
+          'Engineering and many computing courses set specific subject requirements — mathematics is commonly required, and physics is often required or preferred for engineering. Academic grade requirements and any required subjects are set by each university and course. Courses taught in English also set an English-language requirement, commonly evidenced by tests such as IELTS, TOEFL, or PTE Academic, with accepted tests and minimum scores set by each institution.\n\nThese requirements vary between universities and change each cycle, so verify the exact subject, grade, and English requirements on the official course page before applying.',
+        bullets: [
+          'Maths commonly required; physics often required/preferred for engineering',
+          'English evidenced by tests such as IELTS/TOEFL/PTE — set per university',
+          'Subject and grade requirements vary by course — confirm officially',
+        ],
+      },
+      {
+        headingEn: 'How to compare and choose',
+        bodyEn:
+          'Because engineering and computing fields move quickly, two courses with similar titles can differ a lot in content, specialisms, and how they are taught. Look closely at the modules, project and lab work, any accreditation, placement options, and the facilities and support for international students.\n\nFor a structured approach to weighing fit, see the guide on choosing a degree subject in the UK and Ireland. Always confirm the current modules, entry requirements, fees, and deadlines on the official university page and UCAS.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is an accredited engineering degree?',
+        answerEn:
+          'An accredited degree has been assessed against a professional standard by the relevant professional body and can count toward later professional registration. It is a quality recognition you can verify on the official course page — but it is descriptive and is not a guarantee of any job.',
+      },
+      {
+        questionEn: 'What is the difference between BEng and MEng?',
+        answerEn:
+          'A BEng is a standard bachelor\'s degree in engineering. An MEng is an integrated master\'s that combines undergraduate and master\'s study into one longer programme. Which suits you depends on your goals; compare both on the official course pages.',
+      },
+      {
+        questionEn: 'Do I need maths and physics for UK engineering?',
+        answerEn:
+          'Maths is commonly required, and physics is often required or preferred for engineering courses, but exact subject requirements are set by each university and course. Computer science usually requires maths and may have other preferences. Check the official course page for the precise requirements.',
+      },
+      {
+        questionEn: 'Is computer science part of engineering in the UK?',
+        answerEn:
+          'Computer science is often offered separately from engineering, though there is overlap with software and computer engineering. Universities organise these differently, so read each course\'s official description to understand its focus and structure.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'most-popular-courses-for-international-students-in-the-uk',
+      'choosing-a-degree-subject-in-the-uk-and-ireland',
+      'how-to-study-in-uk-from-india',
+    ],
+    sources: [
+      { label: 'UCAS — undergraduate course search', url: 'https://www.ucas.com/' },
+      { label: 'Discover Uni — official UK course information', url: 'https://discoveruni.gov.uk/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'studying engineering in the uk',
+      'computer science degree uk',
+      'beng vs meng',
+      'accredited engineering degree uk',
+      'study computing in uk international students',
+      'engineering courses uk',
+    ],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'Levels', value: 'BEng/BSc, integrated MEng, MSc' },
+      { label: 'Accreditation', value: 'By the relevant professional body (verify)' },
+      { label: 'Common requirement', value: 'Maths; physics often for engineering' },
+      { label: 'English tests', value: 'e.g. IELTS/TOEFL/PTE — set per university' },
+      { label: 'Verify', value: 'Official course pages and UCAS' },
+    ],
+  },
+  {
+    slug: 'conversion-courses-and-changing-fields-in-the-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Conversion Courses and Changing Fields in the UK',
+    descriptionEn:
+      'What conversion courses are in the UK — intensive postgraduate programmes (in fields such as law, computing and psychology) that let graduates switch into a new field. Who they suit, how they differ from ordinary master\'s, and how to verify routes on each official source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What a conversion course is',
+        bodyEn:
+          'A conversion course is a postgraduate programme designed for graduates whose first degree was in a different subject, allowing them to build the foundations of a new field in a focused period of study. The idea is to "convert" into an area you did not study at undergraduate level — for example, moving into computing, law, or psychology after a degree in something else.\n\nConversion courses are intensive because they compress the essentials of a subject into a shorter programme. They are widely offered across UK universities, and the exact title, structure, and what each one leads to vary, so the official course page is the place to confirm the details.',
+      },
+      {
+        headingEn: 'Common conversion fields',
+        bodyEn:
+          'Some of the most commonly offered conversion areas in the UK are computing (often titled something like an MSc Computer Science "with conversion" or for non-computing graduates), law (graduate routes that let non-law graduates build the academic foundations of law), and psychology (conversion courses designed to provide an accredited foundation for graduates of other subjects).\n\nThe specifics — entry requirements, what the qualification is called, and what professional steps may follow — differ by field and by university, and they change. Always confirm on the official course page and, where a profession is regulated, the relevant professional body.',
+        bullets: [
+          'Computing — MSc programmes for non-computing graduates',
+          'Law — graduate routes for non-law graduates to build the academic foundations',
+          'Psychology — conversion courses providing an accredited foundation for other graduates',
+        ],
+      },
+      {
+        headingEn: 'Who a conversion course suits',
+        bodyEn:
+          'Conversion courses are aimed at people who already hold a bachelor\'s degree (often in any subject, depending on the course) and want to move into a new field without repeating a full undergraduate degree. They can suit career-changers, graduates who discovered a new interest, or those who need a recognised foundation in a field for further study or professional steps.\n\nWhether a conversion course is right for you depends on your goals and on what the field actually requires to progress. Read the entry requirements and the stated outcomes of the specific course carefully, and check what further steps (if any) a regulated profession requires.',
+      },
+      {
+        headingEn: 'How conversion courses differ from ordinary master\'s and from professional qualification',
+        bodyEn:
+          'A standard taught master\'s usually assumes you already have a related undergraduate background and deepens it. A conversion course instead builds the foundations of a field for someone coming from a different background. Importantly, a conversion course is an academic step — it is not the same as becoming professionally qualified.\n\nIn regulated fields, an academic conversion is typically only one stage of a longer route. For example, qualifying as a lawyer, or as a registered or chartered professional in some fields, involves further assessments, training, or registration set by the relevant professional or statutory body. Confirm the full route on each official source — completing a conversion course does not by itself guarantee professional status or a job.',
+        bullets: [
+          'Ordinary master\'s — deepens a related background; conversion — builds a new one',
+          'A conversion course is an academic step, not professional qualification',
+          'Regulated fields require further stages set by the professional/statutory body',
+        ],
+      },
+      {
+        headingEn: 'How to research a conversion route',
+        bodyEn:
+          'Because titles and structures vary so much, the safest approach is to start from the field you want to enter and work backwards. Identify what that field requires, then find the conversion or graduate-entry courses that lead toward it, checking entry requirements, any accreditation, and the further steps involved.\n\nUse each university\'s official course pages for the academic details, and the relevant professional body\'s official site for any qualification route. Verify entry requirements, fees, and deadlines for the current cycle before you apply — these change every year.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is a conversion course?',
+        answerEn:
+          'It is a postgraduate course that lets graduates from a different subject build the foundations of a new field in an intensive programme — for example moving into computing, law, or psychology after a degree in something else. Titles and structures vary, so check each official course page.',
+      },
+      {
+        questionEn: 'Can I do a conversion course with any bachelor\'s degree?',
+        answerEn:
+          'Many conversion courses welcome graduates from a range of backgrounds, but entry requirements are set by each course and some expect particular skills or grades. Confirm the specific requirements on the official course page before applying.',
+      },
+      {
+        questionEn: 'Does a conversion course make me professionally qualified?',
+        answerEn:
+          'Not by itself. A conversion course is an academic step. In regulated fields such as law, professional qualification involves further assessments, training, or registration set by the relevant professional body. Verify the full route on each official source.',
+      },
+      {
+        questionEn: 'How long is a conversion course?',
+        answerEn:
+          'Durations vary by course and university, and we do not state a fixed figure here. Check the official course page for the exact length and whether full-time or part-time options are available for the current intake.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'choosing-a-degree-subject-in-the-uk-and-ireland',
+      'most-popular-courses-for-international-students-in-the-uk',
+      'how-to-study-in-uk-from-india',
+    ],
+    sources: [
+      { label: 'UCAS — postgraduate course search', url: 'https://www.ucas.com/postgraduate' },
+      { label: 'UCAS — undergraduate and conversion course search', url: 'https://www.ucas.com/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'conversion courses uk',
+      'law conversion course',
+      'computer science conversion masters',
+      'psychology conversion course uk',
+      'change career with a conversion course',
+      'changing fields postgraduate uk',
+    ],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'What it is', value: 'Postgraduate programme to switch field' },
+      { label: 'Common fields', value: 'Computing, law, psychology' },
+      { label: 'Suits', value: 'Graduates moving into a new field' },
+      { label: 'Status', value: 'Academic step, not professional qualification' },
+      { label: 'Verify', value: 'Official course + professional-body pages' },
+    ],
+  },
+  {
+    slug: 'choosing-a-degree-subject-in-the-uk-and-ireland',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Choosing a Degree Subject in the UK and Ireland',
+    descriptionEn:
+      'A neutral, practical framework for choosing what to study in the UK or Ireland — weighing interest, strengths, goals, entry requirements, and course structure. No subject is ranked "best"; verify entry requirements via UCAS, CAO and official university pages.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'There is no single "best" subject',
+        bodyEn:
+          'It is tempting to look for the "best" degree, but there is no universal best subject — only the subject that best fits you. The right choice depends on what genuinely interests you, what you are good at, what you want to do afterward, and what you can realistically gain entry to. A subject that suits one student can be a poor fit for another.\n\nThis guide offers a practical framework rather than a ranking. It does not say any subject is better than another, and it makes no claims about salaries or job prospects, which vary by person, programme, year, and the wider market. Use it to think clearly, then verify the specifics on the official sources.',
+      },
+      {
+        headingEn: 'Start with interest and strengths',
+        bodyEn:
+          'A degree is a sustained commitment, so genuine interest matters — you are more likely to stay motivated and engage deeply with a subject you find interesting. Alongside interest, consider your strengths: the subjects and skills you tend to do well in, and the kinds of work (essays, problem-solving, lab work, design, fieldwork) you enjoy.\n\nLook at the actual modules of a course rather than just its title, because two courses with the same name can feel very different. Reading module lists on official university pages is one of the most useful things you can do at this stage.',
+        bullets: [
+          'Interest sustains motivation over a multi-year commitment',
+          'Strengths — the subjects and types of work you do well and enjoy',
+          'Read the real module lists, not just course titles',
+        ],
+      },
+      {
+        headingEn: 'Connect the subject to your goals',
+        bodyEn:
+          'Think about where you want a degree to take you. Some fields lead toward regulated professions with defined routes (for example medicine, dentistry, law, engineering, or architecture), which adds extra entry steps and later qualification stages. Other subjects are broader and keep many paths open.\n\nBe realistic but open: a degree shapes options without fixing your future, and many careers draw on a range of backgrounds. Where a profession is regulated, check the official requirements early so you understand the full route — and remember that no course guarantees a particular job.',
+        bullets: [
+          'Some fields lead to regulated professions with extra steps (e.g. medicine, law, engineering)',
+          'Broader subjects keep many paths open',
+          'Check official requirements early for regulated routes — no course guarantees a job',
+        ],
+      },
+      {
+        headingEn: 'Check entry requirements honestly',
+        bodyEn:
+          'Each course sets entry requirements — school-leaving grades, any required subjects, and (for courses taught in English) an English-language requirement evidenced by tests such as IELTS, TOEFL, or PTE Academic. Some competitive courses add admissions tests: medicine and dentistry typically require the UCAT, certain law courses ask for the LNAT, and a few subjects at some universities use their own subject admissions tests. These extra tests change from time to time, so confirm them on each official source.\n\nMatch your realistic profile to a sensible range of courses. Where required subjects exist (for example maths for many engineering or computing courses), make sure you meet them. Entry requirements are set per course and per cycle, so always verify on the official course page.',
+        bullets: [
+          'Grades, required subjects and English tests are set per course',
+          'Competitive courses may add tests — UCAT (medicine/dentistry), LNAT (some law), subject tests',
+          'Admissions tests change — verify each on the official source',
+        ],
+      },
+      {
+        headingEn: 'Look at how the course is taught and structured',
+        bodyEn:
+          'Beyond the subject, courses differ in structure: how they are assessed (exams, coursework, projects), whether they offer a placement year or a year abroad, whether they are single-subject or joint honours, and how flexible the module choices are. These practical features affect your experience and how well a course fits your learning style.\n\nAlso consider the support available for international students and the resources of the department. Comparing these features across a shortlist — using official course pages, UCAS for the UK, and the CAO for undergraduate entry in Ireland — gives you a much clearer basis for a decision than a course title alone.',
+        bullets: [
+          'Assessment style, placements, joint honours and module flexibility differ',
+          'Consider support and resources for international students',
+          'Compare via official pages, UCAS (UK) and the CAO (Ireland)',
+        ],
+      },
+      {
+        headingEn: 'UK and Ireland: where to apply and verify',
+        bodyEn:
+          'In the UK, undergraduate applications are made through UCAS, which is also a good place to search and compare courses and entry requirements. In Ireland, undergraduate applications are typically made through the Central Applications Office (CAO), and Education in Ireland is a useful official starting point for international students.\n\nWhichever country you choose, treat the official university course pages and these official application bodies as the authoritative source for entry requirements, fees, and deadlines, and verify everything for the current cycle before deciding.',
+        bullets: [
+          'UK undergraduate applications — UCAS (also for searching and comparing)',
+          'Ireland undergraduate applications — the CAO; Education in Ireland for guidance',
+          'Verify requirements, fees and deadlines on official sources each cycle',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the best degree subject to study?',
+        answerEn:
+          'There is no single best subject — only the one that best fits your interests, strengths, goals, and the entry requirements you can meet. We do not rank subjects or make salary claims. Use the framework above and verify specifics on official sources.',
+      },
+      {
+        questionEn: 'How do I know if I meet a course\'s entry requirements?',
+        answerEn:
+          'Entry requirements (grades, required subjects, English tests, and any admissions tests such as the UCAT or LNAT) are set per course and per cycle. Read the official course page for the exact requirements, and check the relevant test\'s official site for current details.',
+      },
+      {
+        questionEn: 'Where do I apply for undergraduate study in the UK and Ireland?',
+        answerEn:
+          'In the UK, undergraduate applications are made through UCAS. In Ireland, they are typically made through the Central Applications Office (CAO). Both, along with official university pages, are the authoritative sources for course details and requirements.',
+      },
+      {
+        questionEn: 'Should I choose a subject based on future salary?',
+        answerEn:
+          'We do not make salary or job-outcome claims, because these vary by person, programme, year, and the job market. A subject you are genuinely interested in and able to do well in, that aligns with your goals, is a stronger basis for a multi-year commitment.',
+      },
+    ],
+    relatedExamSlugs: ['ucat', 'ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'most-popular-courses-for-international-students-in-the-uk',
+      'conversion-courses-and-changing-fields-in-the-uk',
+      'study-in-ireland-from-india',
+    ],
+    sources: [
+      { label: 'UCAS — search and compare undergraduate courses (UK)', url: 'https://www.ucas.com/' },
+      { label: 'CAO — Central Applications Office (Ireland)', url: 'https://www.cao.ie/' },
+      { label: 'Education in Ireland — official information for international students', url: 'https://www.educationinireland.com/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'how to choose a degree subject',
+      'choosing what to study uk',
+      'best course to study uk ireland',
+      'choosing a university course',
+      'ucas course choice',
+      'cao course choice ireland',
+    ],
+    tags: ['uk-ireland-courses-careers'],
+    keyFacts: [
+      { label: 'Core idea', value: 'Fit — interest, strengths, goals, entry' },
+      { label: 'UK applications', value: 'UCAS (ucas.com)' },
+      { label: 'Ireland applications', value: 'CAO (cao.ie)' },
+      { label: 'Competitive tests', value: 'UCAT (med/dental), LNAT (some law)' },
+      { label: 'Rankings/salary claims', value: 'None — varies by person' },
+    ],
+  },
+  {
+    slug: 'uk-graduate-route-visa-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'UK Graduate Route Visa Explained',
+    descriptionEn:
+      'A neutral, official overview of the UK Graduate Route — what it is, who can apply, how long it lasts, and what it allows, with every detail pointed back to GOV.UK. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the Graduate Route is',
+        bodyEn:
+          'The Graduate Route is a post-study immigration route operated by the UK government that lets eligible international students stay in the UK after they have successfully completed an eligible course at an approved higher-education provider. It is a way to remain in the country to work, look for work, or gain experience after graduating.\n\nIt is an unsponsored route, which means you do not need a job offer or an employer sponsor to apply for it. The full eligibility conditions, the current fee, and the period it grants are set by the Home Office and published on GOV.UK — verify them on the official source before you act. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'Who is eligible',
+        bodyEn:
+          'In broad terms, the Graduate Route is for people who are in the UK on a Student visa (or Tier 4) and have successfully completed an eligible course at a provider with a track record of compliance, who can be confirmed by their education provider to the Home Office. You normally must apply from inside the UK while your Student visa is still valid.\n\nThe precise list of eligible qualifications, the requirement that your provider report your successful completion, and any other conditions can change. Check the current criteria on GOV.UK and with your university\'s international student office.',
+        bullets: [
+          'You hold (or recently held) a valid UK Student visa',
+          'You have successfully completed an eligible course at an approved provider',
+          'Your provider confirms your completion to the Home Office',
+          'You apply from inside the UK — confirm the current rule on GOV.UK',
+        ],
+      },
+      {
+        headingEn: 'How long it lasts',
+        bodyEn:
+          'The Graduate Route grants a fixed period of permission to stay after your studies. It is commonly stated as two years for those who complete an undergraduate or master\'s degree, with a longer period for those who complete a relevant doctoral (PhD) qualification.\n\nBecause these durations are set by the Home Office and can be revised, treat the figures above as a general guide only and confirm the current period on GOV.UK before relying on it. The Graduate Route cannot normally be extended; many people move onto another route, such as the Skilled Worker route, if they meet its separate requirements.',
+      },
+      {
+        headingEn: 'What you can and cannot do on it',
+        bodyEn:
+          'The Graduate Route is flexible: it generally allows you to work in most jobs, work at most skill levels, be self-employed, change jobs, and look for work, without needing a sponsor. It is designed to give graduates time to find a role and gain experience in the UK.\n\nHowever, it does not lead directly to settlement (indefinite leave to remain) on its own, and there are some activities it does not permit — for example certain restrictions apply. Always read the current list of what the route allows and excludes on GOV.UK, because the conditions can change.',
+        bullets: [
+          'Work in most jobs and at most skill levels',
+          'Be self-employed or change employers freely',
+          'Does not require a job offer or sponsor',
+          'Does not by itself lead to settlement — confirm onward options on GOV.UK',
+        ],
+      },
+      {
+        headingEn: 'Costs and applying',
+        bodyEn:
+          'Applying for the Graduate Route involves an application fee and the Immigration Health Surcharge (IHS), both payable to the Home Office. The amounts are set by the government and are published on GOV.UK; do not rely on quoted figures elsewhere, as fees are updated periodically.\n\nYou apply online through the official GOV.UK service and will usually need to prove your identity and provide supporting details. Apply before your current Student visa expires. For exact fees, processing information, and the application link, use the official GOV.UK Graduate visa page and verify everything there.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do I need a job offer to apply for the Graduate Route?',
+        answerEn:
+          'No. The Graduate Route is an unsponsored route, so you do not need a job offer or an employer sponsor to apply. Confirm the current eligibility conditions on GOV.UK.',
+      },
+      {
+        questionEn: 'How long does the Graduate Route last?',
+        answerEn:
+          'It is commonly stated as two years after an undergraduate or master\'s degree, and longer for an eligible PhD. These durations are set by the Home Office and can change, so verify the current period on the official GOV.UK page.',
+      },
+      {
+        questionEn: 'Can the Graduate Route lead to staying in the UK long term?',
+        answerEn:
+          'The Graduate Route does not by itself lead to settlement. Many graduates later switch to another route, such as the Skilled Worker route, if they meet its separate requirements. Check the current rules on GOV.UK. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'When should I apply for the Graduate Route?',
+        answerEn:
+          'You normally apply from inside the UK before your Student visa expires, after your provider confirms you have successfully completed your course. Confirm the exact timing and conditions on GOV.UK.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['post-study-work-options-in-the-uk-and-ireland', 'working-while-studying-in-the-uk', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'GOV.UK — Graduate visa', url: 'https://www.gov.uk/graduate-visa' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk graduate route visa', 'graduate visa uk', 'post study work visa uk', 'stay in uk after studies', 'uk graduate visa eligibility'],
+    tags: ['work-and-stay-uk-ireland'],
+    keyFacts: [
+      { label: 'Route type', value: 'Unsponsored post-study route (no job offer needed)' },
+      { label: 'Run by', value: 'UK Home Office (apply on GOV.UK)' },
+      { label: 'Typical duration', value: '~2 years (longer for PhD) — verify current period on GOV.UK' },
+      { label: 'Costs', value: 'Application fee + Immigration Health Surcharge — see GOV.UK' },
+    ],
+  },
+  {
+    slug: 'working-while-studying-in-the-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Working While Studying in the UK',
+    descriptionEn:
+      'How part-time work alongside study works on a UK Student visa — term-time hour limits, working in holidays, and the conditions to check, with everything pointed back to GOV.UK. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Can students work in the UK?',
+        bodyEn:
+          'Many international students on a UK Student visa are permitted to work part-time alongside their studies, but the right to work and the number of hours allowed depend on the conditions attached to your individual visa. Your permission to work, and any limits, are stated on your visa or in your decision letter.\n\nThe rules are set by the UK Home Office and can change, so always confirm what your specific visa allows on GOV.UK and check the conditions printed on your own visa. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'Term-time hour limits',
+        bodyEn:
+          'During term time, students on a Student visa who are studying at degree level at a higher-education provider are commonly limited to a set number of hours of paid work per week — this is widely cited as 20 hours per week. A lower weekly limit can apply to other students, such as those on certain below-degree-level courses.\n\nThe exact weekly limit that applies to you depends on your course and your visa conditions, and the figures can be revised, so verify the current limit for your situation on GOV.UK rather than relying on a general number.',
+        bullets: [
+          'Degree-level students: commonly cited as up to 20 hours/week in term time',
+          'Some other students have a lower weekly limit',
+          'The limit that applies depends on your course and visa conditions',
+          'Verify the current limit for your case on GOV.UK',
+        ],
+      },
+      {
+        headingEn: 'Working during holidays',
+        bodyEn:
+          'Outside of term time — for example during official vacation periods — students who are permitted to work can often work full-time, beyond the term-time weekly cap, subject to their visa conditions. What counts as a vacation period is defined by your institution\'s academic calendar.\n\nBecause the precise rules and any exceptions are set by the Home Office, confirm the current position on GOV.UK and check with your university so you understand exactly when and how many hours you may work.',
+      },
+      {
+        headingEn: 'Types of work and restrictions',
+        bodyEn:
+          'A Student visa that permits work usually still places restrictions on the kind of work you can do. For example, there are typically restrictions on being self-employed, working as a professional sportsperson or entertainer in certain ways, or filling a full-time permanent vacancy, among others.\n\nThese restrictions are part of your visa conditions and can change. Read the current, complete list of what is and is not allowed on GOV.UK before you take on any job, and never work more hours than your visa permits.',
+        bullets: [
+          'Self-employment and business activity are usually restricted',
+          'Certain roles (e.g. professional sportsperson/entertainer) may be restricted',
+          'Filling a permanent full-time vacancy is generally not allowed',
+          'Always check the current restrictions on GOV.UK',
+        ],
+      },
+      {
+        headingEn: 'Why staying within the limit matters',
+        bodyEn:
+          'Working more hours than your visa allows is a breach of your visa conditions and can have serious consequences for your immigration status, so it is important to track your hours carefully and keep within whatever limit applies to you. Your university\'s international student office can help you understand your conditions.\n\nFor anything affecting your status, rely on the official GOV.UK guidance and the conditions on your own visa, and verify the current rules on the official source before acting. This is general information, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many hours can I work on a UK Student visa during term?',
+        answerEn:
+          'For students at degree level, the term-time limit is commonly cited as 20 hours per week, with a lower limit for some other students. The exact limit depends on your course and visa conditions — verify it on GOV.UK.',
+      },
+      {
+        questionEn: 'Can I work full-time during the holidays?',
+        answerEn:
+          'Students who are permitted to work can often work full-time outside term time, subject to their visa conditions and their institution\'s defined vacation periods. Confirm the current rule on GOV.UK.',
+      },
+      {
+        questionEn: 'Are there jobs I am not allowed to do?',
+        answerEn:
+          'Yes. A work-permitted Student visa usually still restricts things like self-employment, certain sportsperson or entertainer roles, and filling a permanent full-time vacancy. Read the current restrictions on GOV.UK.',
+      },
+      {
+        questionEn: 'What happens if I work more hours than allowed?',
+        answerEn:
+          'Working beyond your permitted hours breaches your visa conditions and can seriously affect your immigration status. Track your hours and keep within your limit; check your conditions with GOV.UK and your university. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-graduate-route-visa-explained', 'post-study-work-options-in-the-uk-and-ireland', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'GOV.UK — Student visa: Work', url: 'https://www.gov.uk/student-visa/work' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['working while studying in uk', 'uk student visa work hours', 'part time work uk student', '20 hours a week uk student visa', 'student jobs uk'],
+    tags: ['work-and-stay-uk-ireland'],
+    keyFacts: [
+      { label: 'Who can work', value: 'Many Student-visa holders — check your own visa conditions' },
+      { label: 'Term-time limit', value: 'Commonly cited as up to 20 hours/week for degree-level — verify on GOV.UK' },
+      { label: 'Holidays', value: 'Often full-time, subject to visa conditions — see GOV.UK' },
+      { label: 'Authority', value: 'UK Home Office (GOV.UK)' },
+    ],
+  },
+  {
+    slug: 'ireland-third-level-graduate-programme-stamp-1g',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Ireland Third Level Graduate Programme (Stamp 1G)',
+    descriptionEn:
+      'A neutral, official overview of Ireland\'s Third Level Graduate Programme — the Stamp 1G permission that lets eligible graduates stay to seek work after an eligible award, with everything pointed back to Irish Immigration. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What the programme is',
+        bodyEn:
+          'The Third Level Graduate Programme is an Irish immigration scheme that allows eligible non-EEA students who have completed a recognised award in Ireland to remain in the State for a period to seek graduate-level employment and apply for a relevant work permit or permission. While on the programme, eligible graduates are granted a Stamp 1G immigration permission.\n\nThe eligibility conditions, the qualifications that count, the duration granted, and how to register are set by the Irish authorities and published on the official Irish Immigration Service website — verify them there before you act. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'What Stamp 1G means',
+        bodyEn:
+          'Stamp 1G is the immigration stamp associated with the Third Level Graduate Programme. It permits an eligible graduate to stay in Ireland and look for employment, and it generally allows the holder to work full-time during that period while they search for a graduate role and a longer-term permission.\n\nThe precise conditions of Stamp 1G — including what work it permits — are defined by the Irish Immigration Service. Because conditions can change, confirm the current terms on irishimmigration.ie rather than relying on a general description.',
+        bullets: [
+          'Stamp 1G is granted under the Third Level Graduate Programme',
+          'It lets eligible graduates stay to seek employment',
+          'It generally permits full-time work while seeking a graduate role',
+          'Exact conditions are set by Irish Immigration — verify on the official source',
+        ],
+      },
+      {
+        headingEn: 'How long it lasts',
+        bodyEn:
+          'The programme grants a defined period of permission to stay and seek work after an eligible award, and the length can depend on the level of the qualification completed — for example, holders of a higher-level award may be granted a longer period than holders of a lower-level award.\n\nBecause these durations are set by the Irish authorities and can be revised, do not rely on a fixed number; check the current period and the level thresholds on the official Irish Immigration Service website before making plans.',
+      },
+      {
+        headingEn: 'Who is eligible',
+        bodyEn:
+          'In general terms, the programme is for non-EEA graduates who have successfully completed an eligible award at a recognised level from a recognised Irish institution and who held a valid student immigration permission (commonly Stamp 2) at the relevant time. There are conditions on the type and level of award and on applying within the required timeframe after results.\n\nThe full, current eligibility rules — including which awards qualify and the deadlines to register on Stamp 1G — are published on irishimmigration.ie. Confirm them there, as they can change.',
+        bullets: [
+          'For eligible non-EEA graduates of recognised Irish awards',
+          'Usually requires having held valid student permission (often Stamp 2)',
+          'The award must be at a recognised qualifying level',
+          'Apply within the required timeframe — check irishimmigration.ie',
+        ],
+      },
+      {
+        headingEn: 'What comes after Stamp 1G',
+        bodyEn:
+          'The Third Level Graduate Programme is intended as a bridge: it gives graduates time to find graduate-level work and then move onto a longer-term permission, such as an employment permit route that may lead to a Stamp 1 permission. Securing a relevant employment permit is a separate process with its own requirements.\n\nFor the current onward options, including employment permits administered by the Department of Enterprise, Trade and Employment, consult the official sources and verify the rules before acting. This is general information, not immigration advice — and no outcome is guaranteed.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is Stamp 1G in Ireland?',
+        answerEn:
+          'Stamp 1G is the immigration permission granted under the Third Level Graduate Programme, allowing eligible graduates to stay in Ireland to seek employment, generally with the right to work full-time during that period. Verify the current conditions on irishimmigration.ie.',
+      },
+      {
+        questionEn: 'How long does the Third Level Graduate Programme last?',
+        answerEn:
+          'It grants a defined period that can depend on the level of award completed, with higher-level awards typically attracting a longer period. The exact durations are set by the Irish authorities — check the official Irish Immigration Service website.',
+      },
+      {
+        questionEn: 'Can I work on Stamp 1G?',
+        answerEn:
+          'Stamp 1G generally permits full-time work while you look for graduate-level employment. The precise conditions are defined by Irish Immigration, so confirm the current terms on irishimmigration.ie. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'What can I do after the programme ends?',
+        answerEn:
+          'Graduates typically aim to secure a relevant employment permit and move onto a longer-term permission such as Stamp 1. That is a separate process with its own requirements — verify the current options on the official sources.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['working-while-studying-in-ireland', 'post-study-work-options-in-the-uk-and-ireland', 'study-in-ireland-from-india'],
+    sources: [
+      { label: 'Irish Immigration Service — Student Permission (Third Level Graduate Programme / Stamp 1G)', url: 'https://www.irishimmigration.ie/my-situation-has-changed-since-i-arrived-in-ireland/student-permission/' },
+      { label: 'Citizens Information — Immigration rules for non-EEA students', url: 'https://www.citizensinformation.ie/en/moving-country/moving-to-ireland/studying-in-ireland/immigration-nonEEA-students/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['ireland stamp 1g', 'third level graduate programme ireland', 'stay in ireland after studies', 'ireland post study work', 'ireland graduate visa'],
+    tags: ['work-and-stay-uk-ireland'],
+    keyFacts: [
+      { label: 'Scheme', value: 'Third Level Graduate Programme (Ireland)' },
+      { label: 'Permission', value: 'Stamp 1G — stay and seek graduate work' },
+      { label: 'Duration', value: 'Depends on award level — verify on irishimmigration.ie' },
+      { label: 'Authority', value: 'Irish Immigration Service (irishimmigration.ie)' },
+    ],
+  },
+  {
+    slug: 'working-while-studying-in-ireland',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Working While Studying in Ireland',
+    descriptionEn:
+      'How part-time work alongside study works for non-EEA students in Ireland — term and holiday hour limits, who is eligible, and the conditions to check, with everything pointed back to Irish Immigration. General information, not immigration advice.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Can students work in Ireland?',
+        bodyEn:
+          'Non-EEA students who hold a valid student immigration permission (commonly Stamp 2) and are enrolled on an eligible full-time course on the official list of approved programmes may be permitted to take up casual or part-time work in Ireland. The right to work is a condition of the relevant immigration permission, not automatic for every student.\n\nThe rules are set by the Irish Immigration Service, and they can change, so confirm whether your permission allows work and what limits apply on irishimmigration.ie. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'Hour limits during term and holidays',
+        bodyEn:
+          'Students who are permitted to work are generally limited to a set number of hours during term time and allowed more hours during defined holiday periods. The official rule is commonly cited as up to 20 hours per week during term, increasing to up to 40 hours per week during specified holiday periods.\n\nThe precise hours, the holiday periods they apply to, and any conditions are set by the Irish authorities and can be revised, so verify the current limits on irishimmigration.ie rather than relying on a general figure.',
+        bullets: [
+          'Term time: commonly cited as up to 20 hours/week',
+          'Specified holiday periods: commonly cited as up to 40 hours/week',
+          'The exact holiday dates that qualify are defined officially',
+          'Verify the current limits on irishimmigration.ie',
+        ],
+      },
+      {
+        headingEn: 'Who can work',
+        bodyEn:
+          'Permission to work typically applies to students on Stamp 2 who are studying an eligible course on the Interim List of Eligible Programmes (or its current equivalent). Students on certain other permissions — for example a short-term or language-only permission that does not confer the right to work, or Stamp 2A — may not have the right to work.\n\nBecause eligibility depends on your exact permission and course, check the conditions of your own permission and the current rules on the official Irish Immigration Service website before taking any job.',
+      },
+      {
+        headingEn: 'Things to keep in mind',
+        bodyEn:
+          'If you work in Ireland, you will normally need a Personal Public Service (PPS) number and should understand your basic employment rights and tax obligations through official Irish sources. You must also keep within whatever hour limit applies to your permission, because exceeding it breaches your immigration conditions.\n\nFor anything affecting your immigration status, rely on the official Irish Immigration Service guidance and your own permission conditions, and verify the current rules on the official source before acting. This is general information, not immigration advice.',
+        bullets: [
+          'A PPS number is usually needed to work',
+          'Understand your rights and tax via official sources',
+          'Never exceed the hours your permission allows',
+          'Check your own permission conditions and irishimmigration.ie',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How many hours can students work in Ireland?',
+        answerEn:
+          'Eligible students are commonly cited as being able to work up to 20 hours per week during term and up to 40 hours per week during specified holiday periods. The exact limits are set by Irish Immigration — verify them on irishimmigration.ie.',
+      },
+      {
+        questionEn: 'Do all students in Ireland have the right to work?',
+        answerEn:
+          'No. The right to work generally applies to students on Stamp 2 enrolled on an eligible programme; some other permissions (for example Stamp 2A) may not include it. Check your own permission conditions and the official rules.',
+      },
+      {
+        questionEn: 'Do I need anything to start working?',
+        answerEn:
+          'You will usually need a Personal Public Service (PPS) number and should understand your employment rights and tax through official Irish sources. Confirm the current requirements on the official websites.',
+      },
+      {
+        questionEn: 'What happens if I work too many hours?',
+        answerEn:
+          'Working beyond the hours your permission allows breaches your immigration conditions and can affect your status. Keep within your limit and verify the current rules on irishimmigration.ie. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['ireland-third-level-graduate-programme-stamp-1g', 'post-study-work-options-in-the-uk-and-ireland', 'study-in-ireland-from-india'],
+    sources: [
+      { label: 'Irish Immigration Service — Studying in Ireland: FAQs for students (work hours)', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/frequently-asked-questions-for-students/' },
+      { label: 'Citizens Information — Immigration rules for non-EEA students', url: 'https://www.citizensinformation.ie/en/moving-country/moving-to-ireland/studying-in-ireland/immigration-nonEEA-students/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['working while studying in ireland', 'ireland student work hours', 'stamp 2 work permission', 'part time work ireland student', '20 hours a week ireland student'],
+    tags: ['work-and-stay-uk-ireland'],
+    keyFacts: [
+      { label: 'Who can work', value: 'Eligible Stamp 2 students on approved programmes' },
+      { label: 'Term time', value: 'Commonly cited as up to 20 hours/week — verify on irishimmigration.ie' },
+      { label: 'Holiday periods', value: 'Commonly cited as up to 40 hours/week — verify on irishimmigration.ie' },
+      { label: 'Authority', value: 'Irish Immigration Service (irishimmigration.ie)' },
+    ],
+  },
+  {
+    slug: 'post-study-work-options-in-the-uk-and-ireland',
+    category: 'comparison',
+    region: 'uk-ireland',
+    titleEn: 'Post-Study Work Options in the UK and Ireland',
+    descriptionEn:
+      'A neutral side-by-side overview of staying to work after graduation in the UK (Graduate Route) and Ireland (Third Level Graduate Programme / Stamp 1G), with onward routes, all pointed back to official sources. General information, not immigration advice.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Why post-study work matters',
+        bodyEn:
+          'Many international students want to gain work experience in their study destination after graduating. Both the United Kingdom and Ireland offer official post-study routes that let eligible graduates stay for a period to work or look for work, without immediately needing an employer sponsor.\n\nThe two countries run separate schemes with separate rules. This guide gives a neutral overview of each so you can see how they compare, but every detail — eligibility, duration, fees, and conditions — must be confirmed on the official government source for that country. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'United Kingdom — the Graduate Route',
+        bodyEn:
+          'In the UK, the Graduate Route lets eligible students who have successfully completed an eligible course at an approved provider stay to work or look for work. It is unsponsored, so no job offer is required, and it generally allows work in most jobs at most skill levels.\n\nThe period is commonly stated as two years after an undergraduate or master\'s degree, and longer for an eligible PhD, but the exact duration, fees (including the Immigration Health Surcharge), and conditions are set by the Home Office. Verify the current details on the GOV.UK Graduate visa page before relying on them.',
+        bullets: [
+          'Unsponsored — no job offer needed',
+          'Generally allows work in most roles and skill levels',
+          'Commonly ~2 years (longer for PhD) — verify on GOV.UK',
+          'Apply from inside the UK before your Student visa expires',
+        ],
+      },
+      {
+        headingEn: 'Ireland — the Third Level Graduate Programme (Stamp 1G)',
+        bodyEn:
+          'In Ireland, the Third Level Graduate Programme grants eligible non-EEA graduates a Stamp 1G permission to stay and seek graduate-level employment after an eligible award, generally with the right to work full-time during that period. It is intended as a bridge toward a longer-term permission.\n\nThe length granted can depend on the level of award completed, and the eligibility rules, durations, and registration deadlines are set by the Irish authorities. Confirm the current details on the official Irish Immigration Service website.',
+        bullets: [
+          'Grants a Stamp 1G permission to stay and seek work',
+          'Generally allows full-time work while job-seeking',
+          'Duration can depend on award level — verify on irishimmigration.ie',
+          'Apply within the required timeframe after results',
+        ],
+      },
+      {
+        headingEn: 'Onward routes after the post-study period',
+        bodyEn:
+          'Neither post-study route is designed to be permanent on its own. In the UK, graduates often move onto the Skilled Worker route — a sponsored route with its own requirements — if they secure a qualifying job. In Ireland, graduates typically aim to secure a relevant employment permit administered by the Department of Enterprise, Trade and Employment and move onto a longer-term permission.\n\nEach onward route is a separate application with its own eligibility, fees, and conditions, and no particular outcome is guaranteed. Check the current requirements on the official sources before making plans.',
+      },
+      {
+        headingEn: 'How to compare them for your situation',
+        bodyEn:
+          'When weighing up the two countries, look at the official duration each route offers, what work it permits, the fees involved, and the onward routes available — using only the official government pages, because all of these can change. Your eligibility depends on your specific course, provider, and immigration permission.\n\nDo not rely on third-party summaries (including this one) for decisions; treat them as a starting point and verify everything on GOV.UK and irishimmigration.ie. This is general information, not immigration advice, and no route guarantees a job or a long-term stay.',
+        bullets: [
+          'Compare duration, permitted work, fees, and onward routes',
+          'Eligibility depends on your course, provider, and permission',
+          'UK details → GOV.UK; Ireland details → irishimmigration.ie',
+          'No route guarantees a job or settlement',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I stay to work after studying in the UK or Ireland?',
+        answerEn:
+          'Both countries offer official post-study routes — the Graduate Route in the UK and the Third Level Graduate Programme (Stamp 1G) in Ireland — for eligible graduates. The exact eligibility and duration are set by each government, so verify them on the official sources.',
+      },
+      {
+        questionEn: 'Which post-study route is longer, the UK\'s or Ireland\'s?',
+        answerEn:
+          'Durations differ and depend on your qualification, and both are set by the respective authorities and can change. Compare the current periods directly on GOV.UK (Graduate visa) and irishimmigration.ie before deciding.',
+      },
+      {
+        questionEn: 'Do these routes lead to staying long term?',
+        answerEn:
+          'Neither route is permanent on its own. In the UK many graduates move to the Skilled Worker route; in Ireland many secure an employment permit and a longer-term permission. Each is a separate application — check the official requirements.',
+      },
+      {
+        questionEn: 'Do I need a job offer for these routes?',
+        answerEn:
+          'The UK Graduate Route is unsponsored and does not require a job offer; Ireland\'s Stamp 1G lets you stay to seek work. Onward routes (such as the UK Skilled Worker route or an Irish employment permit) have their own requirements. Verify on the official sources. This is general information, not immigration advice.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-graduate-route-visa-explained', 'ireland-third-level-graduate-programme-stamp-1g', 'working-while-studying-in-the-uk'],
+    sources: [
+      { label: 'GOV.UK — Graduate visa', url: 'https://www.gov.uk/graduate-visa' },
+      { label: 'Irish Immigration Service — Student Permission (Third Level Graduate Programme / Stamp 1G)', url: 'https://www.irishimmigration.ie/my-situation-has-changed-since-i-arrived-in-ireland/student-permission/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['post study work uk and ireland', 'uk graduate route vs ireland stamp 1g', 'stay and work after graduation uk ireland', 'post study work visa', 'work in uk or ireland after studies'],
+    tags: ['work-and-stay-uk-ireland'],
+    keyFacts: [
+      { label: 'UK route', value: 'Graduate Route — unsponsored, commonly ~2 years (longer for PhD)' },
+      { label: 'Ireland route', value: 'Third Level Graduate Programme — Stamp 1G' },
+      { label: 'Onward (UK)', value: 'Often Skilled Worker route — separate requirements' },
+      { label: 'Onward (Ireland)', value: 'Employment permit → longer-term permission' },
+    ],
+  },
+  {
+    slug: 'finding-part-time-jobs-as-a-student-in-the-uk',
+    category: 'career',
+    region: 'uk-ireland',
+    titleEn: 'Finding Part-Time Jobs as a Student in the UK',
+    descriptionEn:
+      'A practical, neutral guide to finding part-time work while studying in the UK — where to look, what to prepare, and how part-time work fits within your visa conditions. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why students look for part-time work',
+        bodyEn:
+          'Many international students in the UK take on part-time work to gain experience, build confidence in a new environment, and meet people outside their course. Part-time roles can also help you understand the UK workplace, develop transferable skills, and grow a professional network early.\n\nThis guide explains where students typically look for part-time work and how to prepare. It does not promise any particular job, pay, or number of hours — those depend on the role, the employer, and your own circumstances.',
+      },
+      {
+        headingEn: 'How part-time work fits within your visa',
+        bodyEn:
+          'If you are in the UK on a Student visa, the conditions on your visa set out whether you can work and, where work is permitted, the maximum number of hours you may work during term time and outside term time. These limits, and the types of work that are and are not allowed, are defined by the UK government and can change.\n\nBefore you accept any part-time role, check your own visa conditions and the current official rules. This is general information, not immigration advice, and you should verify the work limits that apply to you on the official UK government source.',
+        bullets: [
+          'Your Student visa states whether you can work and your weekly hour limits',
+          'Term-time and outside-term-time limits can differ — verify the current rules on gov.uk',
+          'Certain types of work are not permitted on a Student visa — check the official guidance',
+          'Always confirm what your own visa permits before accepting a job',
+        ],
+      },
+      {
+        headingEn: 'Where students commonly find part-time work',
+        bodyEn:
+          'University careers services are one of the most useful starting points: most UK universities run a careers and employability service that lists part-time vacancies, runs jobs fairs, and helps with applications. Many universities also operate an internal "jobshop" advertising on-campus roles such as student ambassador, library, or events work.\n\nBeyond campus, students commonly use national job-search websites, local high-street vacancies, and their university\'s alumni and student networks. Tailoring your search to your timetable and the area you live in usually works better than applying everywhere.',
+        bullets: [
+          'Your university careers service and on-campus jobshop',
+          'University jobs fairs and employer events',
+          'Reputable national job-search websites',
+          'Local vacancies near your campus or accommodation',
+        ],
+      },
+      {
+        headingEn: 'Preparing your application',
+        bodyEn:
+          'A clear, concise CV and a short, role-specific cover letter make a strong first impression. UK employers usually value a CV that is one to two pages, easy to scan, and focused on relevant skills and experience. Many university careers services will review your CV and offer interview practice for free.\n\nWhen you start a job in the UK you will typically need a National Insurance number and bank details for payroll; your employer or university can point you to the official process. Always use official government and university channels for these steps.',
+      },
+      {
+        headingEn: 'Balancing work and study',
+        bodyEn:
+          'Your studies are the reason you are in the UK on a Student visa, so it is sensible to choose hours that do not affect your academic progress and to stay within your visa limits. A predictable, manageable schedule usually works better than long hours during busy assessment periods.\n\nIf you are unsure how part-time work fits with your course load or your visa, your university careers service and international student support team can give general guidance and direct you to official resources.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can international students work part-time in the UK?',
+        answerEn:
+          'Whether you can work, and how many hours, depends on the conditions printed on your Student visa and the current UK government rules, which can change. This is general information, not immigration advice — verify the work limits that apply to you on the official UK government source.',
+      },
+      {
+        questionEn: 'Where should I start looking for a part-time job?',
+        answerEn:
+          'Your university careers service and on-campus jobshop are good first stops, alongside university jobs fairs and reputable national job-search websites. Tailoring your search to your area and timetable usually gives better results.',
+      },
+      {
+        questionEn: 'Do I need a National Insurance number to work?',
+        answerEn:
+          'You generally need a National Insurance number to work and be paid correctly in the UK. Use the official UK government process to apply, and ask your university or employer if you are unsure of the steps.',
+      },
+      {
+        questionEn: 'Will a part-time job affect my studies?',
+        answerEn:
+          'It can if the hours are heavy during assessment periods. Choosing manageable hours within your visa limits and keeping your studies as the priority is the usual advice; your university support team can help you plan.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'uk-student-visa-guide', 'internships-and-placements-for-international-students-uk'],
+    sources: [
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'GOV.UK — Apply for a National Insurance number', url: 'https://www.gov.uk/apply-national-insurance-number' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['part time jobs for students in uk', 'student work uk', 'uk student visa work hours', 'student jobs uk', 'work while studying in uk'],
+    tags: ['work-and-stay-uk-ireland'],
+  },
+  {
+    slug: 'internships-and-placements-for-international-students-uk',
+    category: 'career',
+    region: 'uk-ireland',
+    titleEn: 'Internships and Placements for International Students in the UK',
+    descriptionEn:
+      'How internships and sandwich/placement years work in the UK, where to find them, and how work experience fits within your visa conditions. General information, not immigration advice.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Internships, placements and placement years',
+        bodyEn:
+          'Work experience in the UK comes in several forms. An internship is usually a short period of work experience, often during the summer; a placement (sometimes called an industrial placement or sandwich year) is a longer period of work that is built into certain degree courses, often lasting around a year between your second and final years.\n\nThese opportunities let you apply what you learn, build experience, and understand a UK workplace. This guide explains how they work and where to look — it does not promise any specific placement, employer, or outcome.',
+      },
+      {
+        headingEn: 'How work experience fits within your visa',
+        bodyEn:
+          'If you are on a Student visa, whether and how you can undertake a placement or internship depends on your visa conditions and the current UK government rules. A placement that is an assessed, integral part of your course is treated differently from general part-time work, and there are conditions and limits set by the UK government.\n\nBefore you commit to an internship or placement, confirm what your visa permits and the current official rules. This is general information, not immigration advice — verify the details on the official UK government source.',
+        bullets: [
+          'A placement that is an integral, assessed part of your course has its own rules',
+          'General internships count toward your permitted work hours — verify the current limits',
+          'Your sponsoring university must usually be aware of and support a course placement',
+          'Always check the official UK government guidance before you accept an offer',
+        ],
+      },
+      {
+        headingEn: 'Where to find internships and placements',
+        bodyEn:
+          'Your university careers and placements team is the single most useful resource: many UK degrees with a placement year have dedicated staff who advertise vacancies, vet employers, and help with applications. Universities also run employer events, insight days, and internship fairs throughout the year.\n\nBeyond your university, students use reputable graduate-recruitment and internship websites and employer schemes that advertise structured summer internships and placement programmes. Applying early matters, as many structured schemes open and close well before the placement begins.',
+        bullets: [
+          'Your university careers and placements team',
+          'University insight days, internship fairs and employer events',
+          'Employers\' own structured internship and placement schemes',
+          'Reputable graduate and internship recruitment websites',
+        ],
+      },
+      {
+        headingEn: 'Making a strong application',
+        bodyEn:
+          'Structured internship and placement schemes can be competitive, so a focused CV, a tailored cover letter or application form, and good interview preparation help. Many schemes use online tests and assessment centres, and your university careers service can usually help you practise these.\n\nStart preparing your applications early in the academic year, keep track of each scheme\'s deadline, and ask your placements team to review your materials before you submit them.',
+      },
+      {
+        headingEn: 'Why placements are worth considering',
+        bodyEn:
+          'A placement or internship adds real experience to your CV, helps you test career options, and lets you build professional contacts. Some students find that a placement clarifies the kind of work they want to do after graduating.\n\nWork experience does not guarantee a future job offer, but it can strengthen your profile and your understanding of a UK workplace. Treat each opportunity as a chance to learn rather than as a promise of anything specific.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can international students do internships in the UK?',
+        answerEn:
+          'It depends on your Student visa conditions and the current UK government rules. A placement that is an integral, assessed part of your course is treated differently from a general internship. This is general information, not immigration advice — verify the rules on the official UK government source.',
+      },
+      {
+        questionEn: 'What is a placement year?',
+        answerEn:
+          'A placement year (or sandwich year) is a longer period of work experience built into certain UK degree courses, often lasting around a year between the second and final years of study. Your university\'s placements team usually supports these.',
+      },
+      {
+        questionEn: 'Where can I find UK internships and placements?',
+        answerEn:
+          'Start with your university careers and placements team, then look at university internship fairs, employers\' own structured schemes, and reputable internship recruitment websites. Applying early is important, as many schemes close well in advance.',
+      },
+      {
+        questionEn: 'Does a placement count toward my work hours?',
+        answerEn:
+          'It can depend on whether the placement is an integral, assessed part of your course or a separate internship. The rules and limits are set by the UK government and can change, so check the official guidance and your own visa conditions.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['finding-part-time-jobs-as-a-student-in-the-uk', 'how-to-find-a-graduate-job-in-the-uk', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'GOV.UK — Student visa: Work', url: 'https://www.gov.uk/student-visa/work' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['internships for international students uk', 'uk placement year', 'student internships uk', 'work experience uk students', 'sandwich placement uk'],
+    tags: ['work-and-stay-uk-ireland'],
+  },
+  {
+    slug: 'how-to-find-a-graduate-job-in-the-uk',
+    category: 'career',
+    region: 'uk-ireland',
+    titleEn: 'How to Find a Graduate Job in the UK',
+    descriptionEn:
+      'A neutral, practical guide to searching for a graduate job in the UK — graduate schemes, where to look, how to apply, and how visa sponsorship fits in. General information, not immigration advice.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Starting your graduate job search',
+        bodyEn:
+          'Finding a graduate job in the UK usually combines a structured search with good preparation. Many large employers run formal "graduate schemes" — structured entry-level programmes for recent graduates — while smaller organisations advertise direct graduate or entry-level roles throughout the year.\n\nThis guide outlines how the search typically works and where to look. It does not promise any job, employer, or salary; outcomes depend on the role, the market, and your own application.',
+      },
+      {
+        headingEn: 'Graduate schemes vs direct roles',
+        bodyEn:
+          'Graduate schemes are structured programmes, often with rotations and training, and frequently open many months before the start date — sometimes around a year ahead. Direct graduate roles tend to be advertised closer to when the employer needs someone and can suit students who are searching later in the year.\n\nIt usually helps to apply to a mix of both, keep track of each employer\'s deadline, and start the bigger structured schemes early because they can close once enough applications are received.',
+        bullets: [
+          'Graduate schemes: structured, often open ~a year ahead, can be competitive',
+          'Direct roles: advertised year-round, often closer to the start date',
+          'Applying to a mix of both is a common approach',
+        ],
+      },
+      {
+        headingEn: 'Where to look',
+        bodyEn:
+          'Your university careers service is a strong starting point and often advertises graduate vacancies, runs employer presentations, and offers application support to current students and recent graduates. Beyond campus, students use reputable graduate-recruitment websites, employers\' own "careers" pages, and professional networking platforms.\n\nAttending careers fairs and employer events can also help you learn which organisations recruit in your field and what they look for. Focusing on sectors and roles that match your degree and interests usually works better than applying indiscriminately.',
+        bullets: [
+          'Your university careers service and graduate job listings',
+          'Reputable graduate-recruitment websites and employers\' careers pages',
+          'Careers fairs, employer presentations and networking platforms',
+        ],
+      },
+      {
+        headingEn: 'Preparing strong applications',
+        bodyEn:
+          'UK graduate recruitment often involves a multi-stage process: an online application or CV and cover letter, online tests, a video or telephone interview, and sometimes an assessment centre. Researching the employer, tailoring each application, and practising common formats all help.\n\nYour university careers service can usually review your CV, run mock interviews, and help you prepare for online tests and assessment centres — these services are typically free while you are a student or recent graduate.',
+      },
+      {
+        headingEn: 'How visa sponsorship fits in',
+        bodyEn:
+          'If you need permission to work in the UK after your studies, the type of permission you hold matters. Some graduates use a post-study work route after graduating, while longer-term work in many roles is through a sponsored work route, where an employer that holds a sponsor licence offers you an eligible job. The eligibility rules, salary thresholds, and lists of licensed sponsors are set by the UK government and can change.\n\nWhen you apply for jobs, it can help to understand which employers are able to sponsor and what the current rules are. This is general information, not immigration advice — verify the current requirements on the official UK government source, including the published register of licensed sponsors.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is a graduate scheme?',
+        answerEn:
+          'A graduate scheme is a structured entry-level programme run by an employer for recent graduates, often including training and rotations. These schemes frequently open many months before the start date and can be competitive.',
+      },
+      {
+        questionEn: 'When should I start applying for graduate jobs?',
+        answerEn:
+          'For structured graduate schemes, applying early in the academic year is common because they can open around a year ahead and close once enough applications arrive. Direct graduate roles are advertised throughout the year, often closer to the start date.',
+      },
+      {
+        questionEn: 'How do I know if an employer can sponsor a work visa?',
+        answerEn:
+          'The UK government publishes a register of organisations licensed to sponsor workers, and you can check whether an employer appears on it. The eligibility rules can change, so verify the current requirements on the official UK government source. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Where is the best place to find graduate vacancies?',
+        answerEn:
+          'Your university careers service is a strong starting point, alongside reputable graduate-recruitment websites, employers\' own careers pages, and careers fairs. Focusing on roles that match your degree and interests usually works best.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-skilled-worker-visa-after-graduation-overview', 'internships-and-placements-for-international-students-uk', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'GOV.UK — Skilled Worker visa', url: 'https://www.gov.uk/skilled-worker-visa' },
+      { label: 'GOV.UK — Register of licensed sponsors (workers)', url: 'https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['graduate jobs uk', 'how to find a graduate job in uk', 'uk graduate scheme', 'graduate recruitment uk', 'jobs after graduation uk'],
+    tags: ['work-and-stay-uk-ireland'],
+  },
+  {
+    slug: 'uk-skilled-worker-visa-after-graduation-overview',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'UK Skilled Worker Visa After Graduation: Overview',
+    descriptionEn:
+      'A neutral overview of the UK Skilled Worker visa for graduates — what it is, the role of a licensed sponsor and job offer, and where to verify the official rules. General information, not immigration advice.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'What the Skilled Worker visa is',
+        bodyEn:
+          'The Skilled Worker visa is a UK immigration route that allows a person to come to or stay in the UK to do an eligible job with an approved employer. It is one of the routes some international students consider for working in the UK over the longer term after they finish their studies.\n\nThis page is a high-level overview to help you understand how the route is structured. It is general information only and not immigration advice — the authoritative eligibility, fees, and requirements are on the official UK government page, which you should check before relying on anything here.',
+      },
+      {
+        headingEn: 'A job offer from a licensed sponsor',
+        bodyEn:
+          'The central feature of the Skilled Worker route is that you generally need a confirmed offer of an eligible job from a UK employer that holds a valid sponsor licence. That employer assigns you a "Certificate of Sponsorship" containing details of the role, and the job must meet the requirements the UK government sets for the route.\n\nBecause not every employer holds a sponsor licence, it can help to focus on organisations that are able to sponsor. The UK government publishes a register of licensed sponsors that you can check.',
+        bullets: [
+          'You generally need an eligible job offer from a licensed UK sponsor',
+          'The employer assigns a Certificate of Sponsorship for the role',
+          'The job and salary must meet the UK government\'s requirements for the route',
+          'A register of licensed sponsors is published on gov.uk',
+        ],
+      },
+      {
+        headingEn: 'Salary and eligibility requirements',
+        bodyEn:
+          'The Skilled Worker route has rules about the type of job (it must be on the list of eligible occupations), the salary the role must pay, and the English language ability you must demonstrate. The UK government sets and periodically updates these requirements, including the salary thresholds, and they can change.\n\nThis guide deliberately does not quote specific salary figures or thresholds, because they change and any figure here could quickly be out of date. Always verify the current salary rules, occupation lists, and other eligibility criteria on the official UK government source before acting.',
+      },
+      {
+        headingEn: 'How students often reach this route',
+        bodyEn:
+          'Some graduates apply for a Skilled Worker visa after first using a post-study work route, while others move to it directly when they receive an eligible sponsored job offer. The way you switch routes, and whether you can apply from inside the UK, depend on your circumstances and the current rules.\n\nUnderstanding the route early — and which employers can sponsor — can help you plan your job search. Your university careers service and international student support team can offer general information and point you to official resources.',
+      },
+      {
+        headingEn: 'Verify before you act',
+        bodyEn:
+          'Immigration routes and their requirements are set by the UK government and are updated from time to time. Nothing on this page is a guarantee of a visa, a job, or an outcome — the decision on any application always rests with the authorities.\n\nBefore you make any decision, read the current rules on the official UK government page for the Skilled Worker visa. This is general information, not immigration advice; if your situation is complex, consider seeking qualified, regulated immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the UK Skilled Worker visa?',
+        answerEn:
+          'It is a UK immigration route that lets a person do an eligible job with an approved, licensed sponsor in the UK. It is one route some graduates consider for longer-term work after their studies. This is general information, not immigration advice — verify the rules on gov.uk.',
+      },
+      {
+        questionEn: 'Do I need a job offer to apply?',
+        answerEn:
+          'The route generally requires a confirmed offer of an eligible job from a UK employer that holds a sponsor licence, who then assigns you a Certificate of Sponsorship. The detailed requirements are set by the UK government and can change.',
+      },
+      {
+        questionEn: 'What salary do I need for a Skilled Worker visa?',
+        answerEn:
+          'The route has salary thresholds and an eligible-occupation list set by the UK government, and these are updated from time to time. We do not quote a figure here because it can change — verify the current salary rules on the official UK government source.',
+      },
+      {
+        questionEn: 'How do I find employers that can sponsor?',
+        answerEn:
+          'The UK government publishes a register of organisations licensed to sponsor workers, which you can search to see whether an employer appears on it. Always confirm the current position on the official source.',
+      },
+      {
+        questionEn: 'Can I switch from a student route to a Skilled Worker visa?',
+        answerEn:
+          'Some graduates switch to the Skilled Worker route after their studies, sometimes via a post-study work route first, when they have an eligible sponsored job offer. Whether and how you can switch depends on your circumstances and the current rules — check gov.uk.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['how-to-find-a-graduate-job-in-the-uk', 'uk-student-visa-guide', 'staying-in-ireland-after-graduation-overview'],
+    sources: [
+      { label: 'GOV.UK — Skilled Worker visa', url: 'https://www.gov.uk/skilled-worker-visa' },
+      { label: 'GOV.UK — Register of licensed sponsors (workers)', url: 'https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk skilled worker visa', 'skilled worker visa after graduation', 'work visa uk after study', 'uk sponsored work visa', 'certificate of sponsorship uk'],
+    tags: ['work-and-stay-uk-ireland'],
+  },
+  {
+    slug: 'staying-in-ireland-after-graduation-overview',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Staying in Ireland After Graduation: Overview',
+    descriptionEn:
+      'A neutral, high-level overview of options to stay in Ireland after graduating — the Third Level Graduate Programme (Stamp 1G) and employment-permit routes — with links to the official Irish sources. General information, not immigration advice.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'Options after you graduate in Ireland',
+        bodyEn:
+          'Ireland has routes that some international graduates use to remain in the country for a period after finishing an eligible higher-education course. At a high level, two ideas come up most often: a graduate scheme that lets eligible students stay and seek work for a time, and employment-permit routes for those who secure a qualifying job.\n\nThis page gives a plain-English overview so you know where to look. It is general information only and not immigration advice — the authoritative rules are on the official Irish government sources, which you should check before relying on anything here.',
+      },
+      {
+        headingEn: 'The Third Level Graduate Programme (Stamp 1G)',
+        bodyEn:
+          'Ireland operates a Third Level Graduate Programme that allows eligible graduates of certain higher-education awards to stay in the country for a defined period to look for employment, under an immigration permission commonly referred to as Stamp 1G. The eligibility, the length of the permission, and the conditions are set by the Irish authorities and can change.\n\nThis guide does not state specific durations or conditions, because they are defined officially and can be updated. Verify the current details of the Third Level Graduate Programme and Stamp 1G on the official Irish immigration source.',
+        bullets: [
+          'A graduate route for eligible higher-education graduates to remain and seek work',
+          'The relevant immigration permission is commonly referred to as Stamp 1G',
+          'Eligibility, duration and conditions are set officially and can change',
+          'Verify the current rules on the Irish immigration source',
+        ],
+      },
+      {
+        headingEn: 'Employment permits (towards Stamp 1)',
+        bodyEn:
+          'If you secure a qualifying job in Ireland, an employment permit may be the route to continue working there, which can be associated with an immigration permission commonly referred to as Stamp 1. Ireland has different categories of employment permit, each with its own criteria, and these are administered by the relevant Irish government department.\n\nThe types of permit, the eligible occupations, and the requirements (including any salary criteria) are set officially and can change, so this guide defers all specifics to the official sources. Check the Irish government\'s employment-permits information for the current position.',
+        bullets: [
+          'Different categories of employment permit exist, each with its own criteria',
+          'A qualifying job is generally central to these routes',
+          'Permits are administered by the relevant Irish government department',
+          'Verify eligible occupations and requirements on the official source',
+        ],
+      },
+      {
+        headingEn: 'How the routes can connect',
+        bodyEn:
+          'A common pattern is that a graduate first uses the Third Level Graduate Programme to remain and search for work, and then, on securing a qualifying job, moves toward an employment-permit route. Whether and how this applies to you depends on your award, your circumstances, and the current rules.\n\nYour university\'s international office and careers service can offer general information and point you to the official Irish resources. Always confirm the specifics with the official sources before making decisions.',
+      },
+      {
+        headingEn: 'Verify before you act',
+        bodyEn:
+          'Irish immigration and employment-permit rules are set by the Irish authorities and are updated from time to time. Nothing here guarantees permission to stay, a job, or any outcome — decisions always rest with the authorities.\n\nBefore acting, read the current rules on the official Irish immigration website and the Irish government\'s employment-permits pages. This is general information, not immigration advice; for complex situations, consider qualified, regulated advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I stay in Ireland after I graduate?',
+        answerEn:
+          'Ireland has a Third Level Graduate Programme that lets eligible higher-education graduates remain for a defined period to seek work (under a permission commonly referred to as Stamp 1G), and employment-permit routes for those with a qualifying job. The rules are set officially and can change — verify on the Irish sources. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'What is Stamp 1G?',
+        answerEn:
+          'Stamp 1G is the immigration permission commonly associated with the Third Level Graduate Programme, which allows eligible graduates to stay in Ireland for a defined period to look for employment. The eligibility and duration are defined by the Irish authorities, so check the official source.',
+      },
+      {
+        questionEn: 'How do employment permits work in Ireland?',
+        answerEn:
+          'Ireland has several categories of employment permit, each with its own criteria, generally requiring a qualifying job. They are administered by the relevant Irish government department, and the requirements can change — verify the current position on the official employment-permits pages.',
+      },
+      {
+        questionEn: 'Where can I check the official rules?',
+        answerEn:
+          'Use the official Irish immigration website for the Third Level Graduate Programme and Stamp permissions, and the Irish government\'s employment-permits information for permits. Always confirm the current details there before making decisions.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-ireland-from-india', 'uk-skilled-worker-visa-after-graduation-overview', 'how-to-find-a-graduate-job-in-the-uk'],
+    sources: [
+      { label: 'Irish Immigration Service (ISD) — Studying in Ireland', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/' },
+      { label: 'Government of Ireland (DETE) — Employment permits', url: 'https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['stay in ireland after graduation', 'stamp 1g ireland', 'third level graduate programme ireland', 'ireland employment permit', 'work in ireland after study'],
+    tags: ['work-and-stay-uk-ireland'],
+  },
+  {
+    slug: 'student-accommodation-in-the-uk-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Student Accommodation in the UK Explained',
+    descriptionEn:
+      'How student housing works in the UK — university halls of residence versus private and shared housing, how to apply, deposits and contracts, and the cost factors to plan for.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The two main options: halls vs private housing',
+        bodyEn:
+          'Most international students in the UK choose between university-managed halls of residence and private rented housing. Halls are accommodation run by the university (or a partner provider) on or near campus, while private housing means renting a room, flat, or house on the open market, often shared with other students.\n\nMany first-year students start in halls because applications, contracts, and payments are handled through the university, then move into shared private housing in later years once they know the city and have friends to live with.',
+        bullets: [
+          'University halls — managed by the university, usually closest to campus',
+          'Private/shared housing — rented from a private landlord or letting agency',
+          'Purpose-built student accommodation (PBSA) — privately run blocks aimed at students',
+        ],
+      },
+      {
+        headingEn: 'University halls of residence',
+        bodyEn:
+          'Halls range from shared self-catered flats (you cook for yourself) to catered halls where some meals are included, and from shared bathrooms to en-suite or studio rooms. Rent in halls usually bundles utilities such as electricity, heating, water, and internet into one payment, which makes budgeting simpler.\n\nUniversities typically open hall applications after you accept an offer, and some give priority to first-year and international students. Because rooms are limited and demand is high, apply as early as the deadlines allow and read the licence/contract terms carefully.',
+      },
+      {
+        headingEn: 'Private and shared housing',
+        bodyEn:
+          'Private renting gives more choice over location, price, and who you live with, but you manage the process yourself — finding a property, signing a tenancy agreement (a legal contract), paying a deposit, and often setting up bills like gas, electricity, water, and broadband. A guarantor (someone who agrees to cover rent if you cannot pay) is commonly requested, and arrangements for international students vary by landlord.\n\nIn England and Wales, most deposits must by law be held in a government-approved tenancy deposit protection scheme. Use only legitimate university housing services, accredited letting agents, or verified listings, and never pay a deposit or "holding fee" for a property you have not been able to verify.',
+      },
+      {
+        headingEn: 'What it costs and how to budget',
+        bodyEn:
+          'Accommodation is usually the largest single cost of student life, and prices vary widely by city, room type, and whether bills are included — London and some other large cities tend to be at the higher end. Because rents change every year, this guide does not quote fixed figures; check the live cost on the university\'s own accommodation pages and on legitimate housing platforms.\n\nWhen you compare options, look at the total cost (rent plus bills, deposit, and contract length) rather than the headline weekly rent alone, and confirm exactly what is and is not included.',
+        bullets: [
+          'Halls rent often includes utilities and internet; private rent often does not',
+          'Budget for a deposit, the first instalment, and any agency or admin fees',
+          'Note the contract length — hall contracts may not cover the full year',
+        ],
+      },
+      {
+        headingEn: 'Practical tips before you commit',
+        bodyEn:
+          'Arrange accommodation as early as possible, especially for popular universities and cities, and have a short-term plan (such as temporary or short-stay housing) in case your permanent place is not ready when you arrive. Read every contract before signing and ask the university accommodation office if anything is unclear — they exist to help.\n\nThis guide is general information about how UK student housing works, not financial or legal advice; for tenancy rights and deposit rules, rely on official UK government guidance and your university\'s housing service.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Should international students live in halls or private housing?',
+        answerEn:
+          'Both are common and there is no single right answer. Halls are simpler to arrange and bundle bills, which many first-year and international students prefer; private shared housing offers more choice and is popular in later years. Compare total cost, location, and contract terms for your specific university.',
+      },
+      {
+        questionEn: 'How much does UK student accommodation cost?',
+        answerEn:
+          'Costs vary widely by city, room type, and whether utilities are included, with London and some large cities at the higher end. Because rents change each year, check current prices on your university\'s official accommodation pages and verify before paying anything.',
+      },
+      {
+        questionEn: 'Is my deposit protected?',
+        answerEn:
+          'In England and Wales, most assured shorthold tenancy deposits must by law be placed in a government-approved tenancy deposit protection scheme. Confirm the current rules on the official UK government source and ask your landlord or agent which scheme they use.',
+      },
+      {
+        questionEn: 'When should I apply for accommodation?',
+        answerEn:
+          'As early as the deadlines allow — usually after you accept your offer. Rooms in halls are limited and demand is high, so applying early improves your options. Check your university\'s accommodation page for its specific timeline.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-living-for-students-in-the-uk', 'opening-a-uk-bank-account-as-a-student', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'GOV.UK — Tenancy deposit protection', url: 'https://www.gov.uk/tenancy-deposit-protection' },
+      { label: 'GOV.UK — Renting: private renting guide', url: 'https://www.gov.uk/private-renting' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['student accommodation in the uk', 'university halls of residence uk', 'student housing uk', 'private student accommodation uk', 'uk student accommodation cost'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Main options', value: 'University halls vs private/shared housing' },
+      { label: 'Halls billing', value: 'Rent usually includes utilities + internet' },
+      { label: 'Deposit (England & Wales)', value: 'Held in a government-approved protection scheme' },
+      { label: 'Cost figures', value: 'Vary by city/room — verify on official sources' },
+    ],
+  },
+  {
+    slug: 'student-accommodation-in-ireland-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Student Accommodation in Ireland Explained',
+    descriptionEn:
+      'How student housing works in Ireland — on-campus residences versus private and shared rented housing, how to apply, deposits and tenancy basics, and the cost factors to plan for.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Your main housing options in Ireland',
+        bodyEn:
+          'International students in Ireland typically choose between on-campus or university-affiliated student residences and private rented housing on the open market. On-campus residences are managed by or partnered with the university, while private renting means finding a room, flat, or house yourself, often shared with other students.\n\nDemand for student housing is high in popular cities, so it is wise to research options and apply early rather than waiting until you arrive.',
+        bullets: [
+          'On-campus / university residences — managed by or affiliated with the institution',
+          'Purpose-built student accommodation (PBSA) — privately run student blocks',
+          'Private/shared housing — rented from a private landlord or letting agency',
+          'Digs / homestay — a room in a host\'s home, sometimes with meals',
+        ],
+      },
+      {
+        headingEn: 'On-campus and university residences',
+        bodyEn:
+          'University residences are usually the most convenient option for new and international students because they are close to campus and the application is handled through the institution. Rooms vary from shared self-catered apartments to en-suite or studio rooms, and rent often bundles utilities such as heating, electricity, and internet into one payment.\n\nPlaces are limited and many universities give priority to first-year or incoming international students, so check each institution\'s accommodation office for application windows and apply as early as the deadlines allow.',
+      },
+      {
+        headingEn: 'Private and shared housing',
+        bodyEn:
+          'Private renting offers more choice over location and price, but you manage the process yourself — viewing properties, signing a tenancy agreement, paying a deposit, and often arranging utility bills. Many private tenancies in Ireland are covered by residential tenancy law, and the Residential Tenancies Board (RTB) is the official body that registers tenancies and provides guidance on rights and obligations.\n\nUse only legitimate sources such as your university\'s accommodation service, reputable letting agents, or verified listings, and never transfer a deposit or "booking fee" for a property you have not been able to verify.',
+      },
+      {
+        headingEn: 'What it costs and how to budget',
+        bodyEn:
+          'Accommodation is usually the largest part of a student budget, and prices vary widely by city, room type, and whether bills are included — Dublin and some other cities tend to be at the higher end. Because rents change every year, this guide does not quote fixed figures; check current prices on your university\'s own accommodation pages and on legitimate housing platforms.\n\nCompare the total cost — rent plus utilities, deposit, and contract length — rather than the weekly or monthly rent alone, and confirm precisely what is included.',
+        bullets: [
+          'University residence rent often includes utilities; private rent often does not',
+          'Budget for a deposit and the first instalment of rent',
+          'Check the contract length and notice terms before signing',
+        ],
+      },
+      {
+        headingEn: 'Practical tips before you commit',
+        bodyEn:
+          'Start your housing search early, especially for popular cities, and have a short-term plan in case your permanent accommodation is not ready when you arrive. Read every contract carefully and ask your university\'s accommodation office for help if anything is unclear.\n\nThis guide is general information about how student housing in Ireland works, not financial or legal advice; for tenancy rights and deposit rules, rely on official Irish government and Residential Tenancies Board guidance and your university\'s housing service.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is on-campus or private housing better in Ireland?',
+        answerEn:
+          'Both are common. On-campus residences are simpler to arrange and often bundle bills, which suits many new and international students; private shared housing offers more choice and flexibility. Compare total cost, location, and contract terms for your specific university.',
+      },
+      {
+        questionEn: 'How much does student accommodation in Ireland cost?',
+        answerEn:
+          'It varies by city, room type, and whether utilities are included, with Dublin and some cities at the higher end. Because rents change each year, check current prices on your university\'s official accommodation pages and verify before paying anything.',
+      },
+      {
+        questionEn: 'Who regulates private rentals in Ireland?',
+        answerEn:
+          'The Residential Tenancies Board (RTB) is the official body that registers many residential tenancies and provides guidance on tenant and landlord rights and obligations. Confirm what applies to your tenancy on the official RTB and Irish government sources.',
+      },
+      {
+        questionEn: 'When should I apply for student accommodation in Ireland?',
+        answerEn:
+          'As early as the deadlines allow, usually once you have an offer. Places in university residences are limited and demand is high in popular cities, so applying early improves your options. Check each university\'s accommodation page for its timeline.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['student-accommodation-in-the-uk-explained', 'cost-of-living-for-students-in-the-uk', 'study-in-ireland-from-india'],
+    sources: [
+      { label: 'Citizens Information (Ireland) — Renting a home', url: 'https://www.citizensinformation.ie/en/housing/renting-a-home/' },
+      { label: 'Residential Tenancies Board (Ireland)', url: 'https://www.rtb.ie/' },
+      { label: 'Education in Ireland — Living in Ireland', url: 'https://www.educationinireland.com/en/living-in-ireland/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['student accommodation in ireland', 'on campus accommodation ireland', 'student housing ireland', 'renting in ireland student', 'dublin student accommodation'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Main options', value: 'On-campus residences vs private/shared housing' },
+      { label: 'Residence billing', value: 'Rent often includes utilities + internet' },
+      { label: 'Private tenancies', value: 'Many regulated by the Residential Tenancies Board (RTB)' },
+      { label: 'Cost figures', value: 'Vary by city/room — verify on official sources' },
+    ],
+  },
+  {
+    slug: 'cost-of-living-for-students-in-the-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Cost of Living for Students in the UK',
+    descriptionEn:
+      'A practical breakdown of the main living costs for students in the UK — rent, food, transport, and other essentials — with realistic ways to plan a budget and where to find official figures.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What "cost of living" covers',
+        bodyEn:
+          'Cost of living means your everyday spending while studying — separate from tuition fees. The main categories are accommodation, food and groceries, transport, course materials, mobile and internet, personal items, and some leisure or social spending.\n\nYour total depends heavily on where you study and your lifestyle: London and some other large cities are generally more expensive than smaller towns. Because prices change every year, this guide describes the categories and how to plan, rather than quoting fixed amounts.',
+        bullets: [
+          'Accommodation (usually the biggest cost)',
+          'Food and groceries',
+          'Transport (local travel, occasional intercity)',
+          'Course materials, mobile/internet, personal and leisure spending',
+        ],
+      },
+      {
+        headingEn: 'Accommodation and bills',
+        bodyEn:
+          'Rent is almost always the largest part of a student budget, and the figure varies widely by city, room type, and whether utilities are included. University halls often bundle electricity, heating, water, and internet into the rent, while private housing may bill these separately.\n\nWhen budgeting, always look at the total housing cost — rent plus any bills — rather than the headline rent alone. Check the current rent on your university\'s official accommodation pages.',
+      },
+      {
+        headingEn: 'Food, transport and everyday costs',
+        bodyEn:
+          'Food costs depend on whether you cook at home or eat out — self-catering and shopping at budget supermarkets is generally cheaper than eating out regularly. Transport varies by city; many students walk or cycle, while others use buses, trains, or the local network, and student discount cards can reduce travel and other costs.\n\nOther regular costs include a mobile plan, internet (if not included in rent), laundry, toiletries, and occasional course materials. Building these into a monthly plan helps avoid surprises.',
+        bullets: [
+          'Cooking at home is usually cheaper than eating out',
+          'Student travel and discount cards can lower transport and shopping costs',
+          'Account for one-off setup costs in your first month',
+        ],
+      },
+      {
+        headingEn: 'Where official figures come from',
+        bodyEn:
+          'For students who need a UK Student visa, the UK government publishes the maintenance (living-cost) amounts you must show as part of the financial requirement, with a higher figure for courses in London than elsewhere. These published amounts are a useful reference point for planning, but they are set by the government and change, so always check the current figures on the official GOV.UK Student visa pages.\n\nThis guide is general information, not financial or immigration advice — verify all visa-related money requirements on the official source before relying on them.',
+      },
+      {
+        headingEn: 'Building a realistic budget',
+        bodyEn:
+          'A simple approach is to estimate each category per month, add a buffer for unexpected costs, and track your actual spending for the first few weeks to refine it. Separate one-off costs (deposit, initial setup, arrival expenses) from recurring monthly costs so your monthly budget is accurate.\n\nMany universities publish a sample cost-of-living breakdown for their own city on their international student pages, which is one of the most reliable starting points because it reflects local prices.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How much does it cost to live as a student in the UK?',
+        answerEn:
+          'It varies widely by city and lifestyle, with London and some large cities at the higher end. Because prices change every year, use your university\'s official cost-of-living pages and the GOV.UK Student visa maintenance figures as reference points, and verify the current amounts before relying on them.',
+      },
+      {
+        questionEn: 'Is London more expensive than other UK cities?',
+        answerEn:
+          'Generally yes — living costs, especially rent, tend to be higher in London than in many smaller towns, and the UK government sets a higher visa maintenance figure for courses in London. Check current figures on the official source.',
+      },
+      {
+        questionEn: 'What is usually the biggest living cost?',
+        answerEn:
+          'Accommodation is almost always the largest single cost. When comparing places to live, look at the total of rent plus bills rather than the rent alone.',
+      },
+      {
+        questionEn: 'Where can I find reliable cost figures for my city?',
+        answerEn:
+          'Your university\'s official international student and accommodation pages usually publish a sample breakdown for its city, which reflects local prices. For visa-related living-cost requirements, use the official GOV.UK Student visa pages.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['student-accommodation-in-the-uk-explained', 'opening-a-uk-bank-account-as-a-student', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'GOV.UK — Student visa: money you need', url: 'https://www.gov.uk/student-visa/money' },
+      { label: 'British Council — Study UK: planning your finances', url: 'https://study-uk.britishcouncil.org/moving-uk/managing-money' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['cost of living for students in the uk', 'student budget uk', 'living costs uk student', 'how much does it cost to study in the uk', 'uk student living expenses'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Biggest cost', value: 'Accommodation (rent + bills)' },
+      { label: 'Most expensive area', value: 'London and some large cities tend to be higher' },
+      { label: 'Visa maintenance figure', value: 'Set by GOV.UK; higher for London — verify on official source' },
+      { label: 'Best city-specific figures', value: 'University international/accommodation pages' },
+    ],
+  },
+  {
+    slug: 'opening-a-uk-bank-account-as-a-student',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Opening a UK Bank Account as a Student',
+    descriptionEn:
+      'A neutral, practical guide to opening a bank account as an international student in the UK — the documents usually needed, the typical steps, and what to check before you choose an account.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Why a UK bank account helps',
+        bodyEn:
+          'A UK bank account makes everyday student life easier — receiving and sending money in pounds, setting up regular payments such as rent, and avoiding some foreign-transaction costs. Many students open an account soon after arriving, once they have the documents that banks ask for.\n\nThis guide explains the general process and does not recommend or endorse any particular bank; account features and requirements differ between providers, so compare options for your situation.',
+      },
+      {
+        headingEn: 'Documents you usually need',
+        bodyEn:
+          'Banks must verify your identity and address before opening an account, so they typically ask for proof of identity and proof of UK address, plus evidence that you are a student. Exact requirements vary by bank, and some now let you start the process online or through an app before you visit a branch.',
+        bullets: [
+          'Proof of identity — usually your passport (and visa/immigration document)',
+          'Proof of UK address — for example, a tenancy agreement or an official university letter',
+          'Proof of student status — such as a university enrolment or acceptance letter',
+        ],
+      },
+      {
+        headingEn: 'Typical steps to open an account',
+        bodyEn:
+          'A common path is to choose an account, gather the required documents, complete an application (online, in-app, or in a branch), and then receive your debit card and account details by post or in the app. Some universities provide a bank letter confirming your address and enrolment specifically to help students open an account — ask your international student office.\n\nProcessing times vary, so apply early in your first weeks and keep some accessible funds available until your account and card are active.',
+      },
+      {
+        headingEn: 'What to check before you choose',
+        bodyEn:
+          'Because banks differ, compare the things that matter to a student: any monthly fees, whether there are charges for international transfers, how easy it is to send money to and from your home country, branch and app availability, and the documents that specific bank accepts. Read the account terms before signing up.\n\nAlternatives such as regulated digital or app-based accounts and international money services also exist and may suit some students — review each provider\'s own terms.',
+        bullets: [
+          'Monthly fees and international transfer charges',
+          'How money is sent to/from your home country',
+          'Which documents that specific provider accepts',
+        ],
+      },
+      {
+        headingEn: 'Stay safe and get help',
+        bodyEn:
+          'Open accounts only with regulated providers, never share your card details, PIN, or online-banking passwords with anyone, and be cautious of anyone asking you to receive or move money on their behalf. Your university\'s student services and international office can point you to reliable, up-to-date guidance.\n\nThis guide is general information for newly arrived students, not financial advice; for decisions about products and money, consider speaking to your bank or a qualified adviser.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What documents do I need to open a UK student bank account?',
+        answerEn:
+          'Banks generally ask for proof of identity (usually your passport and visa document), proof of UK address (such as a tenancy agreement or an official university letter), and proof of student status (such as an enrolment letter). Exact requirements vary by bank, so check with the provider.',
+      },
+      {
+        questionEn: 'Can I open the account before I arrive in the UK?',
+        answerEn:
+          'Some banks and regulated digital providers let you begin the process online or in an app before you arrive, while others require you to be in the UK with your documents. Check each provider\'s current process directly.',
+      },
+      {
+        questionEn: 'Which bank is best for international students?',
+        answerEn:
+          'There is no single best choice — it depends on your needs. Compare fees, international transfer charges, app and branch access, and accepted documents, and read the account terms. This guide does not endorse any particular bank.',
+      },
+      {
+        questionEn: 'How long does it take to open an account?',
+        answerEn:
+          'Processing times vary by provider and how you apply. Apply early in your first weeks and keep some accessible funds available until your card and account details arrive.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['cost-of-living-for-students-in-the-uk', 'student-accommodation-in-the-uk-explained', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'British Council — Study UK: managing your money', url: 'https://study-uk.britishcouncil.org/moving-uk/managing-money' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['opening a uk bank account as a student', 'uk student bank account', 'bank account for international students uk', 'how to open a bank account in the uk', 'student bank account documents uk'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Usual documents', value: 'Passport/visa, proof of UK address, proof of student status' },
+      { label: 'How to apply', value: 'Online, in-app, or in a branch (varies by bank)' },
+      { label: 'Helpful tip', value: 'Ask your university for a bank/address letter' },
+      { label: 'Endorsement', value: 'None — compare providers and read the terms' },
+    ],
+  },
+  {
+    slug: 'healthcare-and-the-nhs-for-international-students-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Healthcare and the NHS for International Students in the UK',
+    descriptionEn:
+      'How healthcare works for international students in the UK — the Immigration Health Surcharge and NHS access, how to register with a GP, and where to find the official, up-to-date facts.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'The NHS and the Immigration Health Surcharge',
+        bodyEn:
+          'The National Health Service (NHS) is the UK\'s public healthcare system. Most international students who apply for a UK Student visa pay the Immigration Health Surcharge (IHS) as part of their visa application, and paying it gives them access to NHS healthcare on broadly the same basis as a UK resident for the duration of their visa.\n\nThe IHS amount and exactly what it covers are set by the UK government and can change, so always confirm the current details on the official GOV.UK pages. This is general information, not medical or immigration advice.',
+        bullets: [
+          'NHS = the UK\'s public healthcare system',
+          'IHS is usually paid as part of the Student visa application',
+          'Paying it provides NHS access while your visa is valid',
+        ],
+      },
+      {
+        headingEn: 'What NHS access generally includes',
+        bodyEn:
+          'With NHS access through the IHS, students can usually use core NHS services in a similar way to UK residents. Some services may still carry a charge for everyone — for example, certain prescriptions, and dental and optical care — and the rules on charges differ across England, Scotland, Wales, and Northern Ireland.\n\nBecause the details and any exemptions change, check what is covered, and any charges that apply, on the official NHS and GOV.UK sources for the nation where you will study.',
+      },
+      {
+        headingEn: 'Registering with a GP',
+        bodyEn:
+          'A GP (general practitioner) is a local family doctor and is usually your first point of contact for non-emergency health needs. After arriving, it is sensible to register with a GP surgery near where you live so you can access routine care; many universities run or partner with a practice and explain how to register during induction.\n\nTo register you generally complete the surgery\'s registration form and may be asked for identification and proof of address. Check the specific surgery\'s requirements, as these can vary.',
+      },
+      {
+        headingEn: 'Emergencies, pharmacies and urgent help',
+        bodyEn:
+          'In a life-threatening emergency in the UK, the emergency number is 999. For urgent but non-emergency health concerns in England, the NHS 111 service can give advice on what to do and where to go; arrangements for non-emergency advice vary across the UK nations. Local pharmacies can also help with minor illnesses and advice.\n\nKnowing these options before you need them — and saving them on your phone — means you can act quickly. Always follow the official NHS guidance for your situation.',
+        bullets: [
+          'Life-threatening emergency: call 999',
+          'Urgent non-emergency advice in England: NHS 111',
+          'Pharmacies can advise on minor illnesses',
+        ],
+      },
+      {
+        headingEn: 'Plan ahead and verify the details',
+        bodyEn:
+          'Before you travel, read the official NHS and GOV.UK guidance on healthcare for people coming to the UK to study so you understand the IHS, what it covers, and how to access care. Bring any essential personal medical information you may need and check the rules on bringing medicines into the UK on the official source.\n\nThis guide is general information only and is not medical or immigration advice; rely on the official NHS and UK government sources, and on qualified health professionals, for decisions about your health and visa.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do international students get NHS healthcare in the UK?',
+        answerEn:
+          'Most students who pay the Immigration Health Surcharge (IHS) as part of their Student visa application can access NHS healthcare on broadly the same basis as a UK resident while their visa is valid. Confirm the current rules and any charges on the official GOV.UK and NHS sources.',
+      },
+      {
+        questionEn: 'What is the Immigration Health Surcharge (IHS)?',
+        answerEn:
+          'The IHS is a charge usually paid as part of a UK visa application that gives access to the NHS for the duration of the visa. The amount is set by the UK government and can change, so check the current figure on the official GOV.UK pages. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'How do I register with a GP?',
+        answerEn:
+          'Register with a GP surgery near where you live, usually by completing the surgery\'s registration form and providing identification and proof of address if asked. Many universities explain how to register during induction; check the specific surgery\'s requirements.',
+      },
+      {
+        questionEn: 'What should I do in a medical emergency?',
+        answerEn:
+          'In a life-threatening emergency in the UK, call 999. For urgent but non-emergency advice in England you can use NHS 111; arrangements differ across the UK nations. Follow the official NHS guidance for your situation.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-student-visa-guide', 'cost-of-living-for-students-in-the-uk', 'opening-a-uk-bank-account-as-a-student'],
+    sources: [
+      { label: 'GOV.UK — Immigration Health Surcharge (pay for UK healthcare)', url: 'https://www.gov.uk/healthcare-immigration-application' },
+      { label: 'NHS — How to register with a GP surgery', url: 'https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/' },
+      { label: 'NHS — Moving to or visiting England (healthcare entitlement)', url: 'https://www.nhs.uk/nhs-services/visiting-or-moving-to-england/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['nhs for international students', 'healthcare for international students uk', 'immigration health surcharge', 'register with a gp uk', 'ihs nhs student'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Healthcare system', value: 'National Health Service (NHS)' },
+      { label: 'NHS access', value: 'Via the IHS, paid with the Student visa application' },
+      { label: 'First point of contact', value: 'Register with a local GP surgery' },
+      { label: 'Emergency number', value: '999 (NHS 111 for urgent non-emergency advice in England)' },
+      { label: 'Figures & rules', value: 'Set by GOV.UK/NHS — verify on the official source' },
+    ],
+  },
+  {
+    slug: 'settling-in-as-an-international-student-in-the-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Settling In as an International Student in the UK',
+    descriptionEn:
+      'A practical arrival checklist for new international students in the UK — university registration, finding a GP, opening a bank account, getting a SIM, and where to ask for help when you land.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Your first days: complete university enrolment',
+        bodyEn:
+          'The most important task after you arrive is to complete your university enrolment (often called registration or matriculation). Universities run a structured enrolment process for new students, where you confirm your details, show your documents, and become an officially registered student.\n\nMost universities also run a dedicated international student orientation or welcome week with sessions on settling in, academic expectations, and campus services. Attend these — they answer many practical questions in one place and are designed for students new to the UK.',
+        bullets: [
+          'Complete enrolment/registration with your university as soon as you arrive',
+          'Keep your passport, visa and key documents safe and accessible',
+          'Attend the international orientation / welcome week sessions',
+        ],
+      },
+      {
+        headingEn: 'Register with a doctor (GP)',
+        bodyEn:
+          'A practical early step is to register with a local doctor, known in the UK as a GP (General Practitioner). Registering means you have somewhere to go if you become unwell, rather than trying to arrange it when you are already ill.\n\nYour university normally explains how to register — many have a dedicated student health centre or a recommended local GP practice. Healthcare access for visa holders is connected to the Immigration Health Surcharge paid as part of the visa application, but the specific rules can change, so confirm the current position on the official NHS and GOV.UK sources.',
+      },
+      {
+        headingEn: 'Opening a UK bank account and getting a SIM',
+        bodyEn:
+          'Many students open a UK bank account to receive money and pay bills more easily. Banks usually ask for identification and proof that you are a student at a UK university — your university can often provide a confirmation letter for this purpose. Requirements differ between banks, so check what a specific bank needs before you apply.\n\nFor a phone, a local UK SIM or mobile plan is usually cheaper than roaming on a home-country number. Compare a few options for data and call allowances. This guidance is general and not financial advice — compare providers yourself and choose what suits your needs.',
+      },
+      {
+        headingEn: 'Get to know your campus and city',
+        bodyEn:
+          'Settling in is easier when you know where things are. Locate your department, the library, the students\' union, and the international student office on campus, and work out how to travel between your accommodation and the university.\n\nGive yourself time to adjust. Feeling unsettled in a new country is normal, and universities expect it — that is exactly why they provide welfare, academic and international support teams from day one.',
+      },
+      {
+        headingEn: 'Where to ask for help',
+        bodyEn:
+          'You do not have to figure everything out alone. UK universities have an international student support office (sometimes called international student advice) whose job is to help with practical issues such as documents, registration, and adjusting to life in the UK.\n\nIf you are unsure about anything — academic, practical, or personal — your university\'s student services and international team are the right first point of contact, and using them is completely normal.',
+        bullets: [
+          'International student support / advice office',
+          'Students\' union and student services',
+          'Your academic department or personal tutor',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What should I do first when I arrive in the UK?',
+        answerEn:
+          'Complete your university enrolment (registration), keep your documents safe, and attend the international orientation. After that, practical steps like registering with a GP, opening a bank account, and getting a local SIM are common next tasks.',
+      },
+      {
+        questionEn: 'How do I register with a doctor as a student?',
+        answerEn:
+          'Most universities explain how to register with a local GP and often have a student health centre or recommended practice. Healthcare access for visa holders is linked to the Immigration Health Surcharge — verify the current rules on the official NHS and GOV.UK sources.',
+      },
+      {
+        questionEn: 'Do I need a UK bank account?',
+        answerEn:
+          'Many students open one to manage money locally, though it is not mandatory. Banks typically ask for ID and proof of student status; requirements vary by bank, so check before applying. This is general information, not financial advice.',
+      },
+      {
+        questionEn: 'Who can I ask if I have problems settling in?',
+        answerEn:
+          'Your university\'s international student support office, student services, and your academic department are there to help with practical and personal issues. Using these services is normal and expected for new international students.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['uk-student-life-and-culture-overview', 'staying-safe-and-student-support-services-in-the-uk', 'uk-student-visa-guide'],
+    sources: [
+      { label: 'GOV.UK — Healthcare for your immigration application', url: 'https://www.gov.uk/healthcare-immigration-application' },
+      { label: 'NHS — Register with a GP surgery', url: 'https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['settling in as an international student in the uk', 'uk international student arrival checklist', 'register with a gp uk student', 'opening a uk bank account student', 'international student orientation uk', 'moving to the uk to study'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'First priority on arrival', value: 'Complete university enrolment / registration' },
+      { label: 'Healthcare access', value: 'Linked to the Immigration Health Surcharge — verify on GOV.UK / NHS' },
+      { label: 'Main help point', value: 'University international student support office' },
+    ],
+  },
+  {
+    slug: 'uk-student-life-and-culture-overview',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'UK Student Life and Culture Overview',
+    descriptionEn:
+      'A neutral, practical overview of student life in the UK — how the academic year is structured, societies and the students\' union, campus life, and what the weather and pace of study are like.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How the academic year is structured',
+        bodyEn:
+          'UK universities typically organise the academic year into teaching periods. Some use a three-term structure (often called autumn, spring and summer terms) and others use two semesters; the exact calendar is set by each university and published on its website.\n\nTeaching usually mixes lectures (larger group sessions) with smaller seminars or tutorials and, in many subjects, lab or practical sessions. Assessment varies by course and can include exams, essays, projects and presentations — check your own programme\'s structure once you enrol.',
+      },
+      {
+        headingEn: 'The students\' union, societies and clubs',
+        bodyEn:
+          'Most UK universities have a students\' union that runs services, events, and a wide range of student-led societies and sports clubs. Joining a society is one of the most common ways students meet people who share their interests, whether academic, cultural, creative or sporting.\n\nThere is usually a freshers\' fair near the start of the year where societies and clubs recruit new members. Trying a few in your first weeks is a normal and easy way to build a social circle.',
+        bullets: [
+          'Students\' union — services, events and representation',
+          'Societies and clubs for almost every interest',
+          'Freshers\' fair early in the year to sign up',
+        ],
+      },
+      {
+        headingEn: 'Independent study and academic style',
+        bodyEn:
+          'UK study places a strong emphasis on independent learning. Alongside scheduled classes, students are expected to read, research, and prepare on their own, and to engage critically with material rather than only memorising it.\n\nAcademic integrity is taken seriously across UK universities — work must be your own and sources must be properly referenced. If you are new to this style, university study-skills and academic-support services can help you adjust; using them is encouraged.',
+      },
+      {
+        headingEn: 'Daily life, food and getting around',
+        bodyEn:
+          'Campus and city life in the UK is varied: university towns and cities offer libraries, cafes, sports facilities, shops and cultural venues, and many universities have students from all over the world. Costs of everyday items vary by city and are generally higher in London, so plan your budget around your specific location rather than a single national figure.\n\nMany students use public transport or walk and cycle to get around. Specific costs and services differ by city, so check local options once you know where you will live.',
+      },
+      {
+        headingEn: 'Weather and the practical climate',
+        bodyEn:
+          'The UK has a temperate, changeable climate. Weather can shift through a single day, and rain is common across the year, so waterproof outerwear and layered clothing are practical. Winters are cooler with shorter daylight hours and summers are milder than in many warmer countries.\n\nNone of this is difficult to prepare for — most students simply pack for variable weather and adjust after they arrive.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How is the UK academic year organised?',
+        answerEn:
+          'Universities use either a three-term or a two-semester structure, with the exact calendar set by each institution. Teaching commonly mixes lectures with smaller seminars or tutorials, plus practicals in some subjects. Check your own university\'s published dates.',
+      },
+      {
+        questionEn: 'How do students make friends in the UK?',
+        answerEn:
+          'Joining societies, sports clubs and students\' union events is the most common way. A freshers\' fair near the start of the year lets you sign up to many at once — trying a few early on is a normal way to build a social circle.',
+      },
+      {
+        questionEn: 'What is the study style like?',
+        answerEn:
+          'UK study emphasises independent learning and critical thinking alongside scheduled classes, and academic integrity is taken seriously. If the style is new to you, university study-skills and academic-support services can help.',
+      },
+      {
+        questionEn: 'What is the weather like for students?',
+        answerEn:
+          'The UK has a temperate, changeable climate with frequent rain and cooler, shorter winter days. Packing layered clothing and waterproofs is practical, and most students adjust quickly after arriving.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['settling-in-as-an-international-student-in-the-uk', 'transport-and-getting-around-as-a-student-in-the-uk', 'how-to-study-in-uk-from-india'],
+    sources: [
+      { label: 'UCAS — Student life and university information', url: 'https://www.ucas.com/undergraduate/student-life' },
+      { label: 'GOV.UK — Student visa (conditions of study)', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['uk student life', 'student culture in the uk', 'uk university academic year', 'students union and societies uk', 'studying in the uk overview', 'campus life uk for international students'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Academic year', value: 'Three terms or two semesters (set by each university)' },
+      { label: 'Social life', value: 'Students\' union, societies and sports clubs' },
+      { label: 'Study style', value: 'Strong emphasis on independent learning' },
+    ],
+  },
+  {
+    slug: 'transport-and-getting-around-as-a-student-in-the-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Transport and Getting Around as a Student in the UK',
+    descriptionEn:
+      'How students travel around the UK — buses, trains, the Tube in London, walking and cycling — plus student railcards and travel discounts. Practical and neutral, with costs deferred to official sources.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Everyday travel options',
+        bodyEn:
+          'In most UK cities, students get around using a mix of local buses, trains, walking and cycling. In London there is also the Underground (the Tube), the Overground and other Transport for London services. The best option depends on your city and the distance between your accommodation and your university.\n\nMany students choose accommodation close enough to walk or cycle to campus, which keeps regular travel costs low. Work out the realistic daily journey before you commit to where you live.',
+        bullets: [
+          'Local buses and trains in most cities',
+          'The Tube, Overground and buses in London',
+          'Walking and cycling for short campus journeys',
+        ],
+      },
+      {
+        headingEn: 'Student railcards and travel discounts',
+        bodyEn:
+          'Travel discount schemes exist that can reduce the cost of train travel for eligible students and young people. A widely used example is a national railcard for eligible 16–25 year-olds (and some full-time students), which can offer a discount on many rail fares for a yearly fee.\n\nEligibility, the exact discount, and the cost are set by the scheme and can change, so check the current terms on the official railcard website before buying. Some local bus and tram operators also offer their own student tickets — check directly with the operator in your city.',
+      },
+      {
+        headingEn: 'Local travel passes and contactless payment',
+        bodyEn:
+          'Many cities offer travel passes or smartcards that can be cheaper than buying single tickets, especially if you travel often. In London, contactless bank cards and travel smartcards are widely used, with daily and weekly fare structures.\n\nBecause fares, zones and pass options vary by city and change over time, confirm the current prices and the cheapest option for your routes on the relevant local transport authority\'s official website.',
+      },
+      {
+        headingEn: 'Travelling between cities and longer trips',
+        bodyEn:
+          'For trips between UK cities, students commonly use trains or long-distance coaches. Booking train tickets in advance can often be cheaper than buying on the day, and coaches are frequently a lower-cost option for longer routes.\n\nPrices vary widely by route, time and how far ahead you book, so compare options on official rail and coach websites rather than relying on a fixed figure.',
+      },
+      {
+        headingEn: 'Budgeting realistically for transport',
+        bodyEn:
+          'Transport costs depend heavily on your city, where you live, and how often you travel, so they are best estimated as a range tailored to your situation rather than a single national number. Living within walking or cycling distance, using a railcard or local pass, and booking longer journeys early are common ways students manage these costs.\n\nThis is general information and not an endorsement of any particular operator or product — compare the official options and choose what fits your routes and budget.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is there a student discount for trains in the UK?',
+        answerEn:
+          'Travel discount schemes exist, including a national railcard for eligible 16–25 year-olds and some full-time students, which can reduce many rail fares for a yearly fee. Eligibility, discount and cost are set by the scheme and can change — check the official railcard website.',
+      },
+      {
+        questionEn: 'How do students usually get to campus?',
+        answerEn:
+          'Most use a mix of local buses, trains, walking and cycling, with the Tube and buses common in London. Many students live close enough to walk or cycle, which keeps regular travel costs low.',
+      },
+      {
+        questionEn: 'What is the cheapest way to travel between UK cities?',
+        answerEn:
+          'Trains booked in advance and long-distance coaches are common choices, and coaches are often lower-cost for longer routes. Prices vary by route and booking time, so compare official rail and coach websites rather than a fixed figure.',
+      },
+      {
+        questionEn: 'How much should I budget for transport?',
+        answerEn:
+          'It depends on your city, where you live, and how often you travel, so estimate a range for your own situation. Using a railcard or local pass and living close to campus are common ways to keep costs down. Verify current fares on official transport websites.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['settling-in-as-an-international-student-in-the-uk', 'uk-student-life-and-culture-overview', 'staying-safe-and-student-support-services-in-the-uk'],
+    sources: [
+      { label: 'National Rail — 16-25 Railcard (official retailer)', url: 'https://www.16-25railcard.co.uk/' },
+      { label: 'National Rail — official source for trains in Great Britain', url: 'https://www.nationalrail.co.uk/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['transport for students in the uk', 'uk student railcard', '16-25 railcard student discount', 'getting around uk as a student', 'student travel discounts uk', 'public transport uk students'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Common modes', value: 'Bus, train, Tube (London), walking, cycling' },
+      { label: 'Discount example', value: '16–25 / full-time student railcard (terms on official site)' },
+      { label: 'Costs', value: 'Vary by city — verify current fares on official sources' },
+    ],
+  },
+  {
+    slug: 'healthcare-and-insurance-for-international-students-in-ireland',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Healthcare and Insurance for International Students in Ireland',
+    descriptionEn:
+      'How healthcare works for international students in Ireland — why private medical insurance is typically required for non-EEA students, how to access care, and where to confirm the current official rules.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Private medical insurance is typically required',
+        bodyEn:
+          'For international students from outside the European Economic Area (EEA), Ireland generally requires that you have private medical insurance covering your time in the country. This is commonly checked when you register your permission to remain (immigration registration) after you arrive.\n\nBecause the exact requirement, what the insurance must cover, and how it is verified are set by the immigration authorities and can change, confirm the current rules on the official Irish immigration and Citizens Information sources before you arrange a policy. This is general information, not immigration or insurance advice.',
+        bullets: [
+          'Non-EEA students typically need private medical insurance',
+          'Cover is commonly checked at immigration registration',
+          'Confirm the current rule on the official source before you buy',
+        ],
+      },
+      {
+        headingEn: 'Arranging your insurance',
+        bodyEn:
+          'Many universities provide information about acceptable medical insurance, and some offer or recommend student insurance plans that are designed to meet the registration requirement. It is sensible to check what your university advises and what the immigration authority accepts before purchasing a policy.\n\nPolicies and prices differ between providers, so compare cover carefully rather than choosing on price alone. Keep proof of your insurance available, as you may need to show it during immigration registration.',
+      },
+      {
+        headingEn: 'How to access medical care',
+        bodyEn:
+          'For everyday medical needs in Ireland, the usual first point of contact is a local doctor known as a GP (General Practitioner). For non-urgent issues you would normally make an appointment with a GP, who can treat you or refer you on if needed.\n\nThe way services are charged and accessed depends on your status and your insurance cover, so check how your specific policy works and what your university health service offers. Many universities have a student health centre or can point you to a local practice.',
+      },
+      {
+        headingEn: 'Knowing what to do in an emergency',
+        bodyEn:
+          'It is worth knowing the emergency arrangements before you need them. In Ireland, the emergency services number is 112 (the Europe-wide number) or 999, which can be used for urgent, life-threatening situations.\n\nFor non-emergencies, contacting your GP or your university health service is the appropriate route. Keep your insurance details and key contact numbers somewhere easy to find.',
+        bullets: [
+          'Emergency services in Ireland: 112 or 999',
+          'Non-emergencies: contact your GP or university health service',
+          'Keep your insurance documents and contacts accessible',
+        ],
+      },
+      {
+        headingEn: 'Confirm the current official position',
+        bodyEn:
+          'Health-insurance requirements, immigration registration steps, and how healthcare is accessed can change, and the details depend on your individual circumstances. Always verify the current requirements on the official Irish government sources — Citizens Information and the Irish immigration service — and follow your university\'s guidance.\n\nThis guide explains the general picture only and is not medical, insurance, or immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do international students in Ireland need private medical insurance?',
+        answerEn:
+          'Students from outside the EEA are generally required to hold private medical insurance, which is commonly checked when registering immigration permission. The exact requirement can change, so verify it on the official Irish immigration and Citizens Information sources before arranging a policy.',
+      },
+      {
+        questionEn: 'How do I see a doctor in Ireland as a student?',
+        answerEn:
+          'The usual first point of contact is a local GP, whom you book for non-urgent needs and who can refer you on if necessary. Many universities have a student health centre or can recommend a local practice. How care is charged depends on your insurance and status.',
+      },
+      {
+        questionEn: 'What is the emergency number in Ireland?',
+        answerEn:
+          'For urgent, life-threatening situations the emergency number is 112 (the Europe-wide number) or 999. For non-emergencies, contact your GP or university health service instead.',
+      },
+      {
+        questionEn: 'Where do I confirm the current health-insurance rules?',
+        answerEn:
+          'Check the official Irish government sources — Citizens Information and the Irish immigration service — and follow your university\'s guidance, as requirements and registration steps can change. This is general information, not medical or immigration advice.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['study-in-ireland-from-india', 'settling-in-as-an-international-student-in-the-uk', 'staying-safe-and-student-support-services-in-the-uk'],
+    sources: [
+      { label: 'Citizens Information — Coming to study in Ireland (non-EEA)', url: 'https://www.citizensinformation.ie/en/moving-country/moving-to-ireland/studying-in-ireland/coming-to-study-in-ireland-from-outside-the-eea/' },
+      { label: 'Irish Immigration Service (ISD) — Coming to study in Ireland', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['healthcare for international students in ireland', 'private medical insurance ireland students', 'student health insurance ireland', 'non-eea student insurance ireland', 'see a doctor in ireland student', 'studying in ireland health cover'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Insurance', value: 'Private medical insurance typically required (non-EEA) — verify on official source' },
+      { label: 'Routine care', value: 'Local GP (General Practitioner)' },
+      { label: 'Emergency number', value: '112 or 999' },
+    ],
+  },
+  {
+    slug: 'staying-safe-and-student-support-services-in-the-uk',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Staying Safe and Student Support Services in the UK',
+    descriptionEn:
+      'Practical, neutral information on staying safe as a student in the UK — the emergency number, campus safety services, and the academic, welfare and wellbeing support universities provide.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'Know the emergency number',
+        bodyEn:
+          'In the UK, the number to call in an emergency is 999, which connects you to the police, ambulance, fire and rescue services. There is also a non-emergency police number, 101, for situations that are not urgent, and a non-emergency NHS health line, 111, for urgent but non-life-threatening health concerns.\n\nKnowing these numbers before you need them is a simple, practical step. Save them in your phone when you arrive.',
+        bullets: [
+          '999 — emergencies (police, ambulance, fire)',
+          '101 — non-emergency police',
+          '111 — NHS non-emergency health advice',
+        ],
+      },
+      {
+        headingEn: 'Campus safety and security',
+        bodyEn:
+          'UK universities typically have campus security teams and safety arrangements to support students, and many provide information for students on staying safe on and around campus. Familiarising yourself with your university\'s security contacts and any campus safety services is a sensible early step.\n\nSimple everyday habits — keeping your belongings secure, being aware of your surroundings, and knowing how to contact campus security — help you settle in confidently.',
+      },
+      {
+        headingEn: 'Academic and study support',
+        bodyEn:
+          'Beyond safety, universities provide a wide range of academic support to help you succeed. This often includes study-skills services, academic writing and referencing help, library support, and a personal tutor or academic adviser linked to your course.\n\nIf you are adjusting to a new style of study, these services are there to be used — reaching out early is normal and encouraged rather than a sign of struggling.',
+      },
+      {
+        headingEn: 'Welfare and wellbeing services',
+        bodyEn:
+          'UK universities also provide welfare and wellbeing support for students. This commonly includes student wellbeing teams, counselling or mental-health support services, and advisers who can help with practical and personal difficulties.\n\nUsing these services is confidential and routine. If you are finding things hard — academically, practically, or personally — contacting your university\'s wellbeing or student support team is the right first step.',
+        bullets: [
+          'Student wellbeing and counselling services',
+          'International student advice for practical issues',
+          'Students\' union welfare and advice services',
+        ],
+      },
+      {
+        headingEn: 'Where to turn first',
+        bodyEn:
+          'For a genuine emergency, call 999. For everything else, your university is set up to help: the international student support office handles practical and immigration-document questions, student services and wellbeing teams handle personal and welfare matters, and your academic department handles study questions.\n\nFor the most current safety guidance and service details, check your own university\'s official student support pages, as the specific services and contacts differ between universities.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What number do I call in an emergency in the UK?',
+        answerEn:
+          'Call 999 for emergencies, which connects you to police, ambulance, and fire services. For non-urgent matters there is 101 (non-emergency police) and 111 (NHS non-emergency health advice). Save these in your phone when you arrive.',
+      },
+      {
+        questionEn: 'What support do UK universities offer students?',
+        answerEn:
+          'Universities typically provide academic support (study skills, writing help, a personal tutor), welfare and wellbeing services (including counselling), and an international student advice office. Using these services is routine and encouraged.',
+      },
+      {
+        questionEn: 'Is using wellbeing or counselling services confidential?',
+        answerEn:
+          'University wellbeing and counselling services are normally confidential and are there for any student facing academic, practical, or personal difficulties. Reaching out early is normal rather than a sign of struggling.',
+      },
+      {
+        questionEn: 'Where should I go first if I have a problem?',
+        answerEn:
+          'For an emergency, call 999. Otherwise, contact your university: the international student support office for practical and document questions, student services and wellbeing teams for personal matters, and your department for study questions. Check your university\'s official pages for current details.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: ['settling-in-as-an-international-student-in-the-uk', 'uk-student-life-and-culture-overview', 'healthcare-and-insurance-for-international-students-in-ireland'],
+    sources: [
+      { label: 'GOV.UK — Contact the police (999, 101)', url: 'https://www.gov.uk/contact-police' },
+      { label: 'NHS — When to use 111', url: 'https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-use-111/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: ['staying safe as a student in the uk', 'student support services uk', 'uk emergency number 999', 'university wellbeing services uk', 'international student support uk', 'campus safety uk'],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Emergency number', value: '999 (police, ambulance, fire)' },
+      { label: 'Non-emergency lines', value: '101 (police), 111 (NHS health advice)' },
+      { label: 'Main support', value: 'University student services, wellbeing and international advice' },
+    ],
+  },
+  {
+    slug: 'english-language-tests-for-uk-and-ireland-universities',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'English Language Tests for UK and Ireland Universities',
+    descriptionEn:
+      'An overview of the English-language tests universities in the United Kingdom and Ireland commonly accept — IELTS, TOEFL iBT, PTE Academic, and the Duolingo English Test — and why the accepted tests and minimum scores vary by university and course.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Why an English test is usually required',
+        bodyEn:
+          'Most degree programmes in the United Kingdom and Ireland are taught in English, so universities normally ask international applicants to prove they can study comfortably in English. A recognised English-language test result is the standard way to do this, alongside other entry requirements such as your academic qualifications.\n\nThere is no single national pass mark. Each university — and often each course within it — sets its own list of accepted tests and its own minimum scores, so the requirement that applies to you depends on exactly where and what you plan to study.',
+      },
+      {
+        headingEn: 'The tests universities commonly accept',
+        bodyEn:
+          'Across UK and Irish universities, four tests come up most often: IELTS Academic, TOEFL iBT, PTE Academic, and the Duolingo English Test. Each is run by a different official test provider, has its own format and scoring scale, and reports an overall score plus, in most cases, separate scores for reading, writing, listening, and speaking.\n\nImportant: a test being "common" does not mean every university accepts it. Acceptance varies — many institutions accept all four, some accept only a subset, and a few programmes (for example certain clinical, teaching, or professional courses) may accept fewer options or ask for higher scores. Always check the test list on the specific university and course page.',
+        bullets: [
+          'IELTS Academic — IELTS partners (British Council, IDP, Cambridge)',
+          'TOEFL iBT — ETS',
+          'PTE Academic — Pearson',
+          'Duolingo English Test — Duolingo (acceptance is non-universal)',
+        ],
+      },
+      {
+        headingEn: 'Minimum scores vary by university and course',
+        bodyEn:
+          'Beyond which tests are accepted, the minimum overall score and the minimum per-section ("sub-score") requirements differ from university to university and from course to course. A more selective or language-heavy programme may ask for a higher overall score and higher individual section scores than a different course at the same university.\n\nBecause these thresholds change between intakes, this guide does not state specific numbers. Confirm the exact accepted tests and required scores on the official English-language requirements page for your chosen university and course before you book any test, and verify on the official source.',
+      },
+      {
+        headingEn: 'Tests for the university vs tests for a visa',
+        bodyEn:
+          'It helps to separate two different things. First, the test your university accepts for admission. Second — if you are an international student who needs a visa — whether that same test result also meets the official immigration English requirement.\n\nIn the UK, a Student visa has its own English-language rules, and for some applicants the university can assess your English directly. In Ireland, immigration permission and the university\'s own English requirement are likewise governed separately. The rules differ by country, route, and university, so check both your university\'s requirements and the official government immigration source. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'How to choose which test to take',
+        bodyEn:
+          'Start from your target universities, not the test. List the courses you want to apply to, read each one\'s English-language requirements, and pick a test that all (or most) of them accept and that fits your timeline, budget, and the test centres available to you.\n\nCheck practical details on each official test provider\'s website — test format, available dates and locations, online versus test-centre options, fees, and how long results take. Because both university requirements and test details can change, treat the official university page and the official test provider page as the authoritative sources, and verify on the official source before committing.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do all UK and Irish universities accept the same English tests?',
+        answerEn:
+          'No. The accepted tests and the required scores vary by university and by course. Many universities accept IELTS Academic, TOEFL iBT, PTE Academic, and the Duolingo English Test, but some accept only a subset. Always check the specific university and course page.',
+      },
+      {
+        questionEn: 'What minimum score do I need?',
+        answerEn:
+          'There is no universal minimum. Each university and course sets its own overall and per-section thresholds, and these can differ between programmes and intakes. Confirm the exact figure on the official English-language requirements page for your chosen course, and verify on the official source.',
+      },
+      {
+        questionEn: 'Is a test for admission the same as a test for a visa?',
+        answerEn:
+          'Not necessarily. A test your university accepts for admission may or may not meet the separate official immigration English requirement. The UK Student visa and Irish immigration have their own rules, so check both the university requirement and the official government source. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Which English test is the easiest or best?',
+        answerEn:
+          'There is no single best or easiest test — each has a different format and scoring scale, and the right choice depends on which tests your target universities accept and what suits you. Compare the official test provider pages and your university\'s accepted list before deciding.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'ielts-for-uk-and-ireland-study-and-visa',
+      'toefl-and-pte-for-uk-and-ireland-universities',
+      'duolingo-english-test-for-uk-and-ireland',
+      'english-requirements-and-exemptions-explained',
+    ],
+    sources: [
+      { label: 'IELTS — official site', url: 'https://www.ielts.org' },
+      { label: 'ETS — TOEFL official site', url: 'https://www.ets.org/toefl' },
+      { label: 'Pearson — PTE Academic official site', url: 'https://www.pearsonpte.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'english language tests for uk universities',
+      'english test for ireland university',
+      'ielts toefl pte for uk',
+      'english requirements uk universities',
+      'study in uk english test',
+      'duolingo english test uk ireland',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Commonly accepted tests', value: 'IELTS Academic, TOEFL iBT, PTE Academic, Duolingo English Test' },
+      { label: 'Who sets the requirement', value: 'Each university and course (varies)' },
+      { label: 'Minimum scores', value: 'Set per university/course — verify on the official page' },
+      { label: 'Visa English rule', value: 'Separate from admission — check the official government source' },
+    ],
+  },
+  {
+    slug: 'ielts-for-uk-and-ireland-study-and-visa',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'IELTS for UK and Ireland Study and Visa',
+    descriptionEn:
+      'How IELTS is used for study in the United Kingdom and Ireland — the difference between IELTS Academic and IELTS for UKVI, how the band scoring works, and why required bands and the accepted version vary by university and visa use.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'What IELTS is',
+        bodyEn:
+          'IELTS (the International English Language Testing System) is a widely accepted English-language test delivered by the IELTS partners — the British Council, IDP, and Cambridge. It assesses four skills: listening, reading, writing, and speaking.\n\nFor university study, applicants normally take IELTS Academic, which is designed for higher-education entry. Results are reported on a band scale, with an overall band score and a band score for each of the four skills.',
+      },
+      {
+        headingEn: 'IELTS Academic vs IELTS for UKVI',
+        bodyEn:
+          'There are two delivery routes that matter for the UK. "IELTS Academic" is the standard academic test. "IELTS for UKVI" is the same test content delivered at test centres approved for UK Visas and Immigration purposes — it is used where an applicant needs a result for certain UK immigration routes.\n\nWhich version you need depends on your situation. Some applicants can use a standard IELTS Academic result for university admission, while certain visa uses require the UKVI-approved route. Because the rules differ by route and can change, confirm exactly which version you need with your university and on the official GOV.UK guidance, and verify on the official source. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'How band scores work',
+        bodyEn:
+          'IELTS reports scores as "bands" — an overall band plus a band for listening, reading, writing, and speaking. Universities typically state both an overall band requirement and minimum bands in each skill, and a programme may require a higher band in a specific skill (for example writing or speaking) that is important for that course.\n\nThis guide does not quote specific bands because requirements vary by university, by course, and by intake. Check the official English-language requirements page for your chosen course for the exact overall and per-skill bands, and verify on the official source.',
+      },
+      {
+        headingEn: 'IELTS for Ireland',
+        bodyEn:
+          'Universities in Ireland also widely accept IELTS for admission, with each institution setting its own minimum bands per course. As in the UK, a language-heavy or selective programme may ask for higher bands than another course at the same university.\n\nFor immigration permission to study in Ireland, the university\'s English requirement and immigration rules are handled separately. Check both your Irish university\'s requirements and the official Irish immigration source, and verify on the official source.',
+      },
+      {
+        headingEn: 'Booking and validity',
+        bodyEn:
+          'Practical details — available test dates and centres, online or test-centre options where offered, fees, results timing, and how long a result stays valid — are published by the official IELTS partners. These can change, so use the official IELTS website as the authoritative source when planning.\n\nA good order of steps: confirm your target courses accept IELTS and note the bands they ask for, check whether any visa use needs the UKVI route, then book the correct test type with enough lead time before your application deadlines.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'What is the difference between IELTS Academic and IELTS for UKVI?',
+        answerEn:
+          'IELTS Academic is the standard academic test. IELTS for UKVI is the same test taken at a centre approved for UK Visas and Immigration purposes, used for certain UK immigration routes. Confirm which you need with your university and on official GOV.UK guidance. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'What IELTS band do UK and Irish universities require?',
+        answerEn:
+          'There is no single required band. Each university and course sets its own overall band and minimum per-skill bands, and these vary by programme and intake. Check the official English-language requirements page for your chosen course and verify on the official source.',
+      },
+      {
+        questionEn: 'Do I always need IELTS for UKVI for a UK Student visa?',
+        answerEn:
+          'Not always — the version you need depends on your route, and for some applicants a university can assess English directly. The rules are set by the UK government and can change, so check the official GOV.UK Student visa guidance. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Is IELTS accepted in Ireland?',
+        answerEn:
+          'IELTS is widely accepted by universities in Ireland, with each setting its own minimum bands per course. The university requirement and immigration permission are handled separately, so check both your university and the official Irish immigration source.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'english-language-tests-for-uk-and-ireland-universities',
+      'toefl-and-pte-for-uk-and-ireland-universities',
+      'english-requirements-and-exemptions-explained',
+      'uk-student-visa-guide',
+    ],
+    sources: [
+      { label: 'IELTS — official site', url: 'https://www.ielts.org' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'Irish Immigration Service', url: 'https://www.irishimmigration.ie' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'ielts for uk university',
+      'ielts academic vs ukvi',
+      'ielts for uk student visa',
+      'ielts for ireland university',
+      'ielts band requirement uk',
+      'ielts ukvi explained',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Test provider', value: 'IELTS partners — British Council, IDP, Cambridge' },
+      { label: 'For university study', value: 'IELTS Academic (four skills, band scores)' },
+      { label: 'Some UK visa uses', value: 'IELTS for UKVI — verify on GOV.UK' },
+      { label: 'Required bands', value: 'Set per university/course — verify on the official page' },
+    ],
+  },
+  {
+    slug: 'toefl-and-pte-for-uk-and-ireland-universities',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'TOEFL and PTE for UK and Ireland Universities',
+    descriptionEn:
+      'A practical guide to using TOEFL iBT (ETS) and PTE Academic (Pearson) for university applications in the United Kingdom and Ireland — what each test is, how acceptance varies by university, and why you should confirm scores on the official course page.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two widely used alternatives to IELTS',
+        bodyEn:
+          'IELTS is not the only English test UK and Irish universities accept. TOEFL iBT, run by ETS, and PTE Academic, run by Pearson, are two other tests that many universities recognise for admission.\n\nBoth assess reading, writing, listening, and speaking and report an overall score plus section scores. They differ in format and scoring scale from IELTS and from each other, so a score on one test does not translate directly to another.',
+      },
+      {
+        headingEn: 'TOEFL iBT (ETS)',
+        bodyEn:
+          'TOEFL iBT is an internet-based test of academic English delivered by ETS. It produces an overall score together with section scores, and is accepted by many universities in the UK and Ireland for admission.\n\nThe required overall and section scores vary by university and course, so this guide does not state numbers. Check the official ETS website for the current test format, dates, fees, and results timing, and confirm the score your chosen course requires on its official page — verify on the official source.',
+      },
+      {
+        headingEn: 'PTE Academic (Pearson)',
+        bodyEn:
+          'PTE Academic is a computer-based English test from Pearson that reports an overall score and section scores. It is also accepted by many UK and Irish universities for admission.\n\nAs with TOEFL, acceptance and the required scores vary by institution and course. Use the official Pearson PTE website for format, availability, and fees, and confirm the exact required score on the university course page — verify on the official source.',
+      },
+      {
+        headingEn: 'Acceptance varies — always confirm',
+        bodyEn:
+          'While both tests are widely recognised, acceptance is not universal. Some universities or specific programmes accept only certain tests, and a few professional or clinical courses may have narrower lists or higher requirements. Never assume a test is accepted because it is popular.\n\nThe reliable approach is to read the English-language requirements on the official page for each course you are applying to, see which of TOEFL iBT and PTE Academic it lists, and note the required overall and section scores before booking.',
+      },
+      {
+        headingEn: 'Tests for a visa',
+        bodyEn:
+          'If you need a UK Student visa or Irish study permission, check separately whether your TOEFL or PTE result can be used to meet the official immigration English requirement, as that is governed by the government, not the university. For some UK applicants the university can assess English directly.\n\nThe immigration rules differ by country and route and can change, so confirm on the official GOV.UK guidance for the UK, or the official Irish immigration source for Ireland, and verify on the official source. This is general information, not immigration advice.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Are TOEFL and PTE accepted in the UK and Ireland?',
+        answerEn:
+          'Many universities in the UK and Ireland accept TOEFL iBT and PTE Academic for admission, but acceptance is not universal and the required scores vary by university and course. Check the official course page for the accepted test list and required scores, and verify on the official source.',
+      },
+      {
+        questionEn: 'Can I use TOEFL or PTE for a UK Student visa?',
+        answerEn:
+          'Whether a particular result meets the official immigration English requirement depends on your route, and for some applicants the university assesses English directly. The rules are set by the UK government and can change, so check the official GOV.UK Student visa guidance. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Which is better, TOEFL or PTE?',
+        answerEn:
+          'Neither is universally better — they use different formats and scoring scales, and the right choice depends on which test your target universities accept and what suits you. Compare the official ETS and Pearson pages and your course\'s accepted list before deciding.',
+      },
+      {
+        questionEn: 'How do I find the score my course needs?',
+        answerEn:
+          'Read the official English-language requirements page for your specific university and course. It lists the accepted tests and the minimum overall and section scores, which can change between intakes — so verify on the official source before booking.',
+      },
+    ],
+    relatedExamSlugs: ['toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'english-language-tests-for-uk-and-ireland-universities',
+      'ielts-for-uk-and-ireland-study-and-visa',
+      'duolingo-english-test-for-uk-and-ireland',
+      'english-requirements-and-exemptions-explained',
+    ],
+    sources: [
+      { label: 'ETS — TOEFL official site', url: 'https://www.ets.org/toefl' },
+      { label: 'Pearson — PTE Academic official site', url: 'https://www.pearsonpte.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'toefl for uk university',
+      'pte academic for uk university',
+      'toefl ibt ireland',
+      'pte for ireland university',
+      'toefl pte accepted uk',
+      'english test alternatives ielts uk',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'TOEFL iBT', value: 'Run by ETS (four skills, overall + section scores)' },
+      { label: 'PTE Academic', value: 'Run by Pearson (computer-based, overall + section scores)' },
+      { label: 'Acceptance', value: 'Widely accepted but not universal — check each course' },
+      { label: 'Required scores', value: 'Set per university/course — verify on the official page' },
+    ],
+  },
+  {
+    slug: 'duolingo-english-test-for-uk-and-ireland',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Duolingo English Test for UK and Ireland',
+    descriptionEn:
+      'What the Duolingo English Test (DET) is, how it is taken online, and why acceptance for study in the United Kingdom and Ireland is not universal — with a clear reminder to confirm both university acceptance and any visa use on official sources.',
+    readMinutes: 6,
+    sections: [
+      {
+        headingEn: 'What the Duolingo English Test is',
+        bodyEn:
+          'The Duolingo English Test (DET) is an online, computer-adaptive English-language test taken on your own device under remote proctoring, rather than at a fixed test centre. It produces an overall score and sub-scores, and results are typically available faster than some centre-based tests.\n\nFor many students its appeal is convenience and cost. However, the test format, scoring, fees, and results timing are set by Duolingo and can change, so use the official Duolingo English Test website as the authoritative source.',
+      },
+      {
+        headingEn: 'Acceptance is not universal',
+        bodyEn:
+          'A growing number of universities in the UK and Ireland accept the Duolingo English Test for admission, but many do not, and some accept it only for certain courses or levels. This makes acceptance noticeably less universal than for IELTS, TOEFL iBT, or PTE Academic.\n\nBecause of this, you must check each university and course you are applying to. Look for the Duolingo English Test specifically in the accepted-tests list on the official English-language requirements page, and note the required score — and verify on the official source.',
+      },
+      {
+        headingEn: 'Visa use is limited — check official rules',
+        bodyEn:
+          'University admission and immigration English requirements are separate. Even where a university accepts the Duolingo English Test for admission, that does not automatically mean the result can be used to meet an official immigration English requirement.\n\nUK Student visa English rules and Irish study-permission rules are set by the respective governments and can change. If you need a visa, confirm whether the Duolingo English Test is acceptable for your route on the official GOV.UK guidance (UK) or the official Irish immigration source (Ireland), and verify on the official source. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'When the Duolingo English Test can be a good fit',
+        bodyEn:
+          'The test can suit applicants whose target universities clearly accept it and who value taking the test from home with a quicker result. The key is to confirm acceptance first, then plan around it — not to take the test and hope it is accepted.\n\nIf any of your chosen courses do not accept it, or if your visa route does not allow it, a centre-based test such as IELTS, TOEFL iBT, or PTE Academic may be the safer choice. Always let the official university and government pages decide.',
+      },
+      {
+        headingEn: 'How to confirm before you book',
+        bodyEn:
+          'Make a shortlist of the exact courses you want to apply to and open each one\'s official English-language requirements page. Confirm whether the Duolingo English Test is listed, the minimum overall and sub-scores required, and whether it can be used for any visa you need.\n\nThen check the official Duolingo English Test website for current format, fees, and results timing. Treating the official university page, the official government immigration page, and the official Duolingo page as the authoritative sources — and verifying on the official source — protects you from relying on out-of-date information.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Do UK and Irish universities accept the Duolingo English Test?',
+        answerEn:
+          'Some do and some do not — acceptance is not universal and may be limited to certain courses. Always check the official English-language requirements page for each university and course you are applying to, and verify on the official source.',
+      },
+      {
+        questionEn: 'Can I use the Duolingo English Test for a UK or Irish student visa?',
+        answerEn:
+          'Possibly not — university acceptance does not guarantee the result meets the separate official immigration English requirement. UK and Irish rules differ by route and can change, so check the official GOV.UK or Irish immigration source. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'How is the Duolingo English Test different from IELTS or TOEFL?',
+        answerEn:
+          'It is taken online with remote proctoring rather than at a test centre, is computer-adaptive, and often returns results faster. It also uses a different scoring scale, and its acceptance is less universal, so confirm your university accepts it before booking.',
+      },
+      {
+        questionEn: 'Where should I check the latest Duolingo English Test details?',
+        answerEn:
+          'Use the official Duolingo English Test website for format, fees, and results timing, the official university course page for acceptance and required scores, and the official government source for any visa use. Verify on the official source before relying on any detail.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'english-language-tests-for-uk-and-ireland-universities',
+      'ielts-for-uk-and-ireland-study-and-visa',
+      'toefl-and-pte-for-uk-and-ireland-universities',
+      'english-requirements-and-exemptions-explained',
+    ],
+    sources: [
+      { label: 'Duolingo English Test — official site', url: 'https://englishtest.duolingo.com' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'Irish Immigration Service', url: 'https://www.irishimmigration.ie' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'duolingo english test uk',
+      'duolingo english test ireland',
+      'is duolingo accepted in uk universities',
+      'duolingo english test for student visa',
+      'det for uk study',
+      'online english test for uk university',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Format', value: 'Online, computer-adaptive, remotely proctored' },
+      { label: 'Provider', value: 'Duolingo' },
+      { label: 'University acceptance', value: 'Growing but not universal — check each course' },
+      { label: 'Visa use', value: 'Limited — confirm on the official government source' },
+    ],
+  },
+  {
+    slug: 'english-requirements-and-exemptions-explained',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'English Requirements and Exemptions Explained',
+    descriptionEn:
+      'When you may not need to sit an English-language test for study in the United Kingdom or Ireland — including prior English-medium study and nationality-based exemptions — and why the authoritative rules must always be confirmed with the university and the official government source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two separate requirements',
+        bodyEn:
+          'There are two distinct English requirements to keep in mind. One is set by your university for admission to a course. The other applies only if you need a visa, and is the official immigration English requirement set by the government.\n\nAn exemption from one does not automatically apply to the other. You might be exempt from a university\'s test requirement but still need to satisfy the separate immigration rule, or vice versa. Always check both.',
+      },
+      {
+        headingEn: 'Prior study in English',
+        bodyEn:
+          'Many universities will waive their English-test requirement if you have recently completed a qualification taught and assessed in English, such as a degree from a university where English was the medium of instruction. The exact conditions — how recent it must be, the type and length of study, and what evidence is needed — are set by each university and differ between institutions.\n\nBecause these conditions vary, do not assume a waiver applies. Confirm the precise rule on the official English-language requirements page for your chosen university and course, and verify on the official source.',
+      },
+      {
+        headingEn: 'Nationality-based exemptions',
+        bodyEn:
+          'In some cases, nationals of certain countries — typically majority English-speaking countries — may be treated as meeting an English requirement without a test. For university admission, whether this applies depends on the institution\'s policy. For immigration, the UK and Ireland each set their own list of circumstances in which a test is not required.\n\nThese lists and conditions are defined by the government and by each university, and they can change. Check the official GOV.UK guidance for the UK, or the official Irish immigration source for Ireland, plus your university\'s page, and verify on the official source. This is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'Other ways a test may be waived',
+        bodyEn:
+          'Some universities recognise certain school qualifications, foundation or pre-sessional English programmes, or in some cases will assess your English directly, in place of a standalone test. For UK visa purposes, certain applicants can have their English assessed by the university rather than by taking a separate secure English test.\n\nWhat counts varies widely, so treat any waiver as something to confirm rather than assume. The university\'s admissions team and the official government guidance are the authoritative sources for whether a particular route exempts you.',
+      },
+      {
+        headingEn: 'How to confirm your situation',
+        bodyEn:
+          'The safest approach is to verify in writing before you apply. Read the official English-language requirements page for each course, and where you think an exemption applies, check the exact wording and ask the admissions team to confirm in your specific case.\n\nIf you need a visa, separately confirm whether the same exemption applies to the official immigration English requirement using the official government source. Confirming both — and verifying on the official source — avoids the costly mistake of assuming you are exempt when you are not.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can a previous English-medium degree exempt me from an English test?',
+        answerEn:
+          'Often yes for university admission — many universities waive their test requirement if you recently studied a qualification taught and assessed in English. The exact conditions and evidence vary by university, so confirm on the official course page and verify on the official source.',
+      },
+      {
+        questionEn: 'Does an admission exemption also cover the visa requirement?',
+        answerEn:
+          'Not automatically. University admission and immigration English requirements are separate, and an exemption from one may not apply to the other. Check both your university\'s rules and the official government source. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Are nationals of English-speaking countries exempt?',
+        answerEn:
+          'In some cases nationals of certain countries may be treated as meeting an English requirement without a test, but whether this applies depends on the university\'s policy and the official immigration rules, which differ and can change. Confirm on the official university and government sources.',
+      },
+      {
+        questionEn: 'How do I make sure an exemption applies to me?',
+        answerEn:
+          'Read the official English-language requirements page for your course, check the exact conditions, and ask the university\'s admissions team to confirm your specific case. For any visa, separately confirm with the official government source and verify on the official source before applying.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'english-language-tests-for-uk-and-ireland-universities',
+      'ielts-for-uk-and-ireland-study-and-visa',
+      'toefl-and-pte-for-uk-and-ireland-universities',
+      'duolingo-english-test-for-uk-and-ireland',
+    ],
+    sources: [
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'Irish Immigration Service', url: 'https://www.irishimmigration.ie' },
+      { label: 'IELTS — official site', url: 'https://www.ielts.org' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'english test exemption uk university',
+      'english requirements uk study',
+      'english medium degree exemption',
+      'do i need ielts for uk',
+      'english requirement waiver ireland',
+      'nationality english exemption uk visa',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Two requirements', value: 'University admission and (if needed) the visa rule — separate' },
+      { label: 'Common waiver', value: 'Recent English-medium study (conditions vary by university)' },
+      { label: 'Nationality exemptions', value: 'Defined by each university and the official immigration rules' },
+      { label: 'Authoritative source', value: 'University page + official government source — verify' },
+    ],
+  },
+  {
+    slug: 'is-the-uk-a-good-place-to-study-for-international-students',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Is the UK a Good Place to Study for International Students?',
+    descriptionEn:
+      'A balanced, factual look at studying in the UK as an international student — academic structure, degree length, cost, work options, and the things to weigh up before you decide.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How to think about this question',
+        bodyEn:
+          'Whether the UK is a "good" place to study depends on your goals, budget, and the subject you want to study — there is no single right answer for everyone. The aim of this guide is to set out the practical facts so you can weigh them against your own circumstances, rather than to argue that one country is better than another.\n\nUse it as a checklist of considerations: academic structure, how long a degree takes, what it is likely to cost, what work options exist while studying and afterwards, and how you would actually apply. Then compare those facts with the other destinations you are considering.',
+      },
+      {
+        headingEn: 'Academic structure and reputation',
+        bodyEn:
+          'The UK has a large, well-established higher-education sector, and several UK universities feature near the top of international ranking tables published by bodies such as QS and Times Higher Education (THE). Rankings are one input among many — they are produced by those organisations using their own methods, and they are not a guarantee of your individual experience or outcome.\n\nMore useful than a single overall rank is whether a specific university is strong in your chosen subject, how the course is structured, and what support it offers international students. Check each university\'s official course page for the module structure, teaching style, and entry requirements.',
+        bullets: [
+          'Look at subject-level strength, not just the overall rank',
+          'Read the official course page for module structure and assessment',
+          'Rankings are attributed to QS / THE and use their own methods',
+        ],
+      },
+      {
+        headingEn: 'Degree length and cost',
+        bodyEn:
+          'A notable practical feature of the UK system is that many undergraduate degrees take three years (four in Scotland or with a placement/sandwich year), and most taught master\'s degrees take about one year. A shorter degree can mean fewer years of tuition and living costs, though a more intensive schedule.\n\nTuition for international students and the cost of living vary widely by university, course, and city — London and some other cities are generally more expensive. These figures change every year, so do not rely on any single number: check the official tuition page for each course and gov.uk for visa-related funds, and verify the current amounts before you budget.',
+        bullets: [
+          'Many undergraduate degrees: three years (longer in Scotland / with a placement year)',
+          'Most taught master\'s: about one year',
+          'Tuition and living costs vary by course and city — verify on official sources',
+        ],
+      },
+      {
+        headingEn: 'Working while you study and afterwards',
+        bodyEn:
+          'International students on a Student visa can usually work a limited number of hours during term time and more during holidays, subject to the conditions printed on their visa. After graduating, the Graduate Route currently allows eligible students to stay and work, or look for work, for a set period. The exact hour limits, eligibility, and durations are set by the UK government and change from time to time.\n\nThese are official immigration rules, not career or visa advice. Always confirm the current conditions on gov.uk before making plans, and treat any third-party summary (including this one) as a starting point only.',
+      },
+      {
+        headingEn: 'Things to weigh up before deciding',
+        bodyEn:
+          'No destination is right for every student. Weigh the UK\'s features against your priorities — for example, total cost over the whole degree, the city and climate you would live in, the language of instruction, your target subject\'s strength, and your plans after graduation. It can help to compare two or three destinations side by side using the same factors.\n\nMake the decision on verified facts from official sources, not on marketing claims. No university, agent, or guide can guarantee admission, a visa, a scholarship, or a job — be cautious of anyone who promises a "guaranteed" outcome.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is studying in the UK worth it for international students?',
+        answerEn:
+          'That depends entirely on your goals, budget, and subject — there is no universal answer. The UK offers a large university sector, generally shorter degrees, and post-study work options, but tuition and living costs vary widely. Weigh the verified facts against your own circumstances and compare with other destinations before deciding.',
+      },
+      {
+        questionEn: 'Why are UK degrees often shorter?',
+        answerEn:
+          'Many UK undergraduate degrees are three years (four in Scotland or with a placement year) and most taught master\'s degrees are about one year. This is a structural feature of the system. A shorter degree can reduce total tuition and living costs but means a more intensive schedule.',
+      },
+      {
+        questionEn: 'Can I work in the UK during and after my studies?',
+        answerEn:
+          'Student visa holders can usually work a limited number of hours in term time and more in holidays, subject to their visa conditions, and the Graduate Route currently allows eligible graduates to stay and work for a set period. These rules are set by the UK government and change — verify the current conditions on gov.uk. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'How do I find the real tuition and living costs?',
+        answerEn:
+          'Check the official tuition page for your specific course on the university\'s website, and use gov.uk for the financial requirements tied to the Student visa. These figures change every academic year, so verify the current amounts on the official sources rather than relying on older estimates.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'studying-in-the-uk-vs-other-destinations',
+      'uk-vs-ireland-which-to-choose-for-study',
+      'how-to-study-in-uk-from-india',
+    ],
+    sources: [
+      { label: 'UCAS — applying to undergraduate study', url: 'https://www.ucas.com/applying' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'GOV.UK — Graduate visa (Graduate Route)', url: 'https://www.gov.uk/graduate-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'is the uk good for international students',
+      'study in uk for international students',
+      'studying in the uk pros and cons',
+      'uk degree length',
+      'cost of studying in uk',
+      'uk graduate route work',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Undergraduate length', value: 'Often 3 years (4 in Scotland / with a placement year)' },
+      { label: 'Taught master\'s length', value: 'About 1 year (varies by course)' },
+      { label: 'Tuition & living costs', value: 'Vary by course and city — verify on official sources' },
+      { label: 'Post-study work', value: 'Graduate Route (eligibility/duration set by gov.uk)' },
+    ],
+  },
+  {
+    slug: 'studying-in-the-uk-vs-other-destinations',
+    category: 'comparison',
+    region: 'uk-ireland',
+    titleEn: 'Studying in the UK vs Other Destinations',
+    descriptionEn:
+      'A neutral, factual comparison of how studying in the UK differs from other popular destinations on degree length, cost, language, and work rules — with every detail deferred to the official source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'How to compare destinations fairly',
+        bodyEn:
+          'There is no single "best" place to study — the right destination depends on your subject, budget, and plans. This guide lists the factors students most often compare so you can line the UK up against other countries on the same criteria, rather than relying on someone\'s opinion about which is better.\n\nFor every factor below, the specifics (fees, scores, durations, visa rules) change frequently and differ by country and university, so we point you to the official source and ask you to verify the current details before deciding.',
+      },
+      {
+        headingEn: 'Degree length and structure',
+        bodyEn:
+          'One of the clearest differences is how long a degree takes. In the UK, many undergraduate degrees are three years (four in Scotland or with a placement year) and most taught master\'s degrees are about one year. Some other destinations more commonly use four-year bachelor\'s degrees and two-year master\'s degrees.\n\nNeither model is universally better — a shorter degree can lower total cost and time, while a longer one may include more breadth or built-in internships. Compare the actual structure of your target course on each university\'s official page.',
+        bullets: [
+          'UK: many 3-year bachelor\'s and ~1-year taught master\'s',
+          'Some other countries: more commonly 4-year bachelor\'s / 2-year master\'s',
+          'Check each course\'s official page for its real structure',
+        ],
+      },
+      {
+        headingEn: 'Cost and funding',
+        bodyEn:
+          'Tuition for international students and living costs differ widely between countries, between universities, and even between cities within the same country. Some destinations are known for lower or no tuition at public universities for certain students, while others, including parts of the UK, can be more expensive — but the only reliable figure is the current one on the official tuition page.\n\nScholarships and financial requirements also differ by country. Do not compare destinations on a single headline number; gather each country\'s current official figures and read the financial requirements tied to its student visa.',
+      },
+      {
+        headingEn: 'Language and admissions tests',
+        bodyEn:
+          'In the UK and Ireland, courses are taught in English, and most international applicants must show English proficiency through a test such as IELTS, TOEFL, or PTE Academic (acceptance and minimum scores vary by university and course). Some other destinations teach in another language, or offer a mix of English-taught and local-language programmes.\n\nAdmissions tests also differ: the UK uses subject- or profession-specific tests for some courses (for example, the UCAT for medicine), while other countries may require different standardised tests. Always confirm which test and score each university and course requires.',
+        bullets: [
+          'UK & Ireland: English-taught; English test usually required (varies by university)',
+          'Some destinations: another language of instruction or mixed programmes',
+          'Admissions tests differ by country and course — verify each requirement',
+        ],
+      },
+      {
+        headingEn: 'Visa and work rules',
+        bodyEn:
+          'Student visa conditions — including how many hours you can work while studying and what options exist after graduating — are set by each country\'s government and are not comparable from a single rule of thumb. In the UK, the Student visa and the Graduate Route have their own conditions published on gov.uk; other destinations have their own systems and post-study work arrangements.\n\nThese are official immigration rules, not advice, and they change. For each country you are considering, read the official government immigration site and verify the current conditions before you rely on them.',
+      },
+      {
+        headingEn: 'Building your own comparison',
+        bodyEn:
+          'The fairest way to choose is to make a simple table of the factors above and fill each cell with the current official figure for each destination and course. That keeps the comparison grounded in facts rather than reputation.\n\nWhatever you decide, no destination or provider can guarantee admission, a visa, a scholarship, or a job. Treat "guaranteed outcome" claims as a warning sign and rely on official sources.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Which is better — studying in the UK or another country?',
+        answerEn:
+          'There is no universally better choice; it depends on your subject, budget, language preference, and post-study plans. Compare the UK and your other options on the same factors — degree length, cost, language, admissions tests, and visa/work rules — using each country\'s official figures, then decide what fits you best.',
+      },
+      {
+        questionEn: 'Is a UK degree shorter than degrees elsewhere?',
+        answerEn:
+          'Often, yes. Many UK undergraduate degrees are three years and most taught master\'s degrees are about one year, while some other destinations more commonly use four-year bachelor\'s and two-year master\'s degrees. Neither is universally better — check the structure of your specific target course.',
+      },
+      {
+        questionEn: 'Do I always need an English test for the UK?',
+        answerEn:
+          'Most international applicants need to show English proficiency, commonly through IELTS, TOEFL, or PTE Academic, but acceptance and minimum scores vary by university and course, and a prior English-medium degree may exempt you. Confirm the requirement on each university\'s official page and on gov.uk for visa use.',
+      },
+      {
+        questionEn: 'How do I compare work and visa rules across countries?',
+        answerEn:
+          'Read each country\'s official government immigration site for its student-visa work conditions and post-study options, because they differ and change frequently. For the UK, that is gov.uk (Student visa and Graduate Route). This is general information, not immigration advice — verify before relying on it.',
+      },
+    ],
+    relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'is-the-uk-a-good-place-to-study-for-international-students',
+      'uk-vs-ireland-which-to-choose-for-study',
+      'frequently-asked-questions-about-studying-in-the-uk-and-ireland',
+    ],
+    sources: [
+      { label: 'UCAS — applying to undergraduate study', url: 'https://www.ucas.com/applying' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'GOV.UK — Graduate visa (Graduate Route)', url: 'https://www.gov.uk/graduate-visa' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'studying in uk vs other countries',
+      'uk vs usa vs canada study',
+      'compare study abroad destinations',
+      'uk degree length vs other countries',
+      'study abroad comparison',
+      'uk student visa work rules',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'UK undergraduate length', value: 'Often 3 years (4 in Scotland / with a placement)' },
+      { label: 'Language of instruction', value: 'English (test usually required — varies)' },
+      { label: 'Cost', value: 'Varies by country, university and city — verify officially' },
+      { label: 'Visa & work rules', value: 'Set by each government — verify on official source' },
+    ],
+  },
+  {
+    slug: 'uk-vs-ireland-which-to-choose-for-study',
+    category: 'comparison',
+    region: 'uk-ireland',
+    titleEn: 'UK vs Ireland: Which to Choose for Study',
+    descriptionEn:
+      'A neutral, decide-by-your-goals comparison of studying in the UK versus Ireland — application route, degree length, cost, and visa and work rules, with all specifics deferred to the official source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Two distinct systems, one decision',
+        bodyEn:
+          'The United Kingdom and Ireland are separate countries with their own universities, application systems, and immigration rules. Both teach in English and host many international students, so the choice usually comes down to which system fits your subject, budget, and plans — not which country is "better".\n\nThis guide compares the practical differences side by side. Because fees, scores, durations, and visa rules change and differ by university, every specific is deferred to the official source with a reminder to verify the current details before you apply.',
+      },
+      {
+        headingEn: 'How you apply',
+        bodyEn:
+          'For most undergraduate courses, the UK uses UCAS as its central application service, while the Republic of Ireland uses the Central Applications Office (CAO). These are different platforms with their own deadlines, course codes, and rules.\n\nPostgraduate applications are often made directly to each university in both countries. Check whether your course goes through the central service or direct, and note each system\'s deadlines on its official site.',
+        bullets: [
+          'UK undergraduate: usually via UCAS (ucas.com)',
+          'Ireland undergraduate: usually via the CAO (cao.ie)',
+          'Postgraduate: often applied for directly to the university in both',
+        ],
+      },
+      {
+        headingEn: 'Degree length and structure',
+        bodyEn:
+          'In England, Wales, and Northern Ireland many undergraduate degrees take three years, while in Scotland they often take four; taught master\'s degrees in the UK are commonly about one year. In Ireland, many honours bachelor\'s degrees take around three to four years and master\'s degrees vary by programme.\n\nNeither structure is universally better — compare the actual length and content of your target course on each university\'s official page, since durations differ by subject and institution.',
+      },
+      {
+        headingEn: 'Cost of study',
+        bodyEn:
+          'International tuition and living costs differ by country, university, and city in both the UK and Ireland, and the only reliable figure is the current one on each university\'s official tuition page. Some cities are more expensive than others in both countries.\n\nScholarships and financial requirements also differ between the two systems. Avoid comparing them on a single headline number — gather each university\'s current official figures and read the financial requirements attached to each country\'s student permission.',
+      },
+      {
+        headingEn: 'Visa, immigration and work rules',
+        bodyEn:
+          'The two countries have entirely separate immigration systems. The UK uses the Student visa (with conditions and post-study options such as the Graduate Route on gov.uk), while Ireland uses its own study permission — non-EEA students are typically registered on a Stamp 2 while studying, with a separate Stamp 1G arrangement that can allow eligible graduates to stay and seek work for a period.\n\nWork-hour limits during study and post-study options are set by each government and change. These are official immigration rules, not advice — verify the current conditions on gov.uk for the UK and on the Irish immigration service (irishimmigration.ie) and Citizens Information for Ireland.',
+        bullets: [
+          'UK: Student visa + Graduate Route (gov.uk)',
+          'Ireland: study permission, typically Stamp 2; Stamp 1G for eligible graduates (irishimmigration.ie)',
+          'Work-hour and post-study rules differ and change — verify officially',
+        ],
+      },
+      {
+        headingEn: 'Deciding between them',
+        bodyEn:
+          'Choose by mapping each country\'s facts onto your own priorities — your subject\'s strength at specific universities, total cost over the whole degree, the application route and deadlines, and the post-study options that matter to you. A simple side-by-side table of current official figures is more useful than any general claim about which country is better.\n\nNo country or provider can guarantee admission, a visa, a scholarship, or a job. Rely on official sources, and be cautious of anyone offering a "guaranteed" place or outcome.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Is it better to study in the UK or Ireland?',
+        answerEn:
+          'Neither is universally better — they are separate systems, and the right choice depends on your subject, budget, application route, and post-study plans. Compare them on the same factors using each country\'s official figures (degree length, cost, application service, visa and work rules) and decide what fits you.',
+      },
+      {
+        questionEn: 'Do the UK and Ireland use the same application system?',
+        answerEn:
+          'No. For most undergraduate courses the UK uses UCAS, while the Republic of Ireland uses the Central Applications Office (CAO). They have different deadlines and rules. Postgraduate applications are often made directly to each university in both countries. Check each system\'s official site.',
+      },
+      {
+        questionEn: 'How do the immigration rules differ between the UK and Ireland?',
+        answerEn:
+          'They are entirely separate. The UK uses the Student visa with options such as the Graduate Route, while Ireland uses its own study permission (typically Stamp 2) with a separate Stamp 1G arrangement for eligible graduates. Work and post-study rules differ and change — verify on gov.uk and irishimmigration.ie. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Are degrees shorter in the UK or in Ireland?',
+        answerEn:
+          'Durations vary by subject and university in both countries. Many UK undergraduate degrees are three years (four in Scotland) with ~1-year taught master\'s, while Irish honours bachelor\'s degrees commonly take around three to four years. Compare the actual length of your specific target course on each university\'s official page.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: ['trinity-college-dublin', 'university-college-dublin'],
+    relatedGuideSlugs: [
+      'studying-in-the-uk-vs-other-destinations',
+      'is-the-uk-a-good-place-to-study-for-international-students',
+      'study-in-ireland-from-india',
+    ],
+    sources: [
+      { label: 'UCAS — applying to undergraduate study', url: 'https://www.ucas.com/applying' },
+      { label: 'CAO — Central Applications Office (Ireland)', url: 'https://www.cao.ie' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'Irish Immigration Service — coming to study', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'uk vs ireland for study',
+      'study in uk or ireland',
+      'ireland vs uk international students',
+      'ucas vs cao',
+      'ireland stamp 1g vs uk graduate route',
+      'best country uk or ireland to study',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'Undergraduate application', value: 'UK via UCAS; Ireland via the CAO' },
+      { label: 'Degree length', value: 'Varies by subject — verify each course officially' },
+      { label: 'UK post-study', value: 'Graduate Route (gov.uk)' },
+      { label: 'Ireland post-study', value: 'Stamp 1G for eligible graduates (irishimmigration.ie)' },
+    ],
+  },
+  {
+    slug: 'after-graduation-options-in-the-uk-and-ireland',
+    category: 'career',
+    region: 'uk-ireland',
+    titleEn: 'After-Graduation Options in the UK and Ireland',
+    descriptionEn:
+      'An overview of what international students can do after graduating in the UK or Ireland — further study, post-study work routes such as the Graduate Route and Stamp 1G, or returning home — with all rules deferred to the official source.',
+    readMinutes: 7,
+    sections: [
+      {
+        headingEn: 'Planning ahead, not at the last minute',
+        bodyEn:
+          'Your options after graduating depend on your goals and on the immigration rules of the country you studied in, so it helps to think about them well before your final term. The main paths are usually: continue to further study, stay and work under a post-study route, or return to your home country.\n\nThis guide gives a neutral overview of each path. The immigration rules below are official facts that change from time to time — this is general information, not immigration advice, so always confirm the current conditions on the official government source before acting.',
+      },
+      {
+        headingEn: 'Continuing to further study',
+        bodyEn:
+          'Many graduates move on to a further qualification — for example, from a bachelor\'s to a master\'s, or from a master\'s to a research degree such as a PhD. Both the UK and Ireland host postgraduate and research programmes, and applications are often made directly to each university.\n\nIf you plan to keep studying, check the entry requirements, deadlines, and any new visa or permission you would need for the next course on the university\'s official page and the relevant government site, since a different course can mean a different permission.',
+      },
+      {
+        headingEn: 'Post-study work in the UK',
+        bodyEn:
+          'In the UK, the Graduate Route currently allows eligible students who have completed an eligible course to stay and work, or look for work, for a set period after graduating, without needing a job offer first. Graduates may also move into a work route such as the Skilled Worker visa if they meet its separate conditions, which generally include a job with an approved sponsor.\n\nEligibility, durations, and the requirements for each route are set by the UK government and change. Read the current rules for the Graduate Route and the Skilled Worker visa on gov.uk and verify them before making plans.',
+        bullets: [
+          'Graduate Route: stay and work for a set period (no job offer needed) — eligibility on gov.uk',
+          'Skilled Worker visa: a separate route, generally needs an approved sponsor and job',
+          'Conditions and durations are set by gov.uk and change — verify',
+        ],
+      },
+      {
+        headingEn: 'Post-study work in Ireland',
+        bodyEn:
+          'In Ireland, eligible graduates from certain programmes may apply to remain under the Third Level Graduate Programme, registered on a Stamp 1G, which can allow them to stay and seek employment for a defined period. From there, moving into longer-term work typically involves a separate employment permit with its own conditions.\n\nThe eligibility, length, and requirements of these arrangements are set by the Irish authorities and change. Confirm the current rules on the Irish immigration service (irishimmigration.ie) and Citizens Information before you rely on them.',
+        bullets: [
+          'Third Level Graduate Programme: Stamp 1G to stay and seek work for a defined period',
+          'Longer-term work: typically a separate employment permit (enterprise.gov.ie)',
+          'Eligibility and durations are set by the Irish authorities — verify officially',
+        ],
+      },
+      {
+        headingEn: 'Returning home or moving elsewhere',
+        bodyEn:
+          'Returning to your home country after graduating is a common and valid choice — a UK or Irish qualification can be used wherever you go next. If you plan to have your degree recognised for further study or professional registration back home, check your home country\'s official recognition or licensing body for what it requires.\n\nWhatever you choose, base the decision on verified official information. No university, agent, or guide can guarantee a visa, a job, or permanent residence — treat any "guaranteed" claim as a warning sign.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'Can I stay and work after graduating in the UK?',
+        answerEn:
+          'The Graduate Route currently allows eligible graduates of eligible courses to stay and work, or look for work, for a set period without a job offer, and you may later move to a route such as the Skilled Worker visa if you meet its conditions. These rules are set by the UK government and change — verify on gov.uk. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'What are the work options after graduating in Ireland?',
+        answerEn:
+          'Eligible graduates of certain programmes may apply to stay under the Third Level Graduate Programme on a Stamp 1G to seek work for a defined period, and longer-term work usually involves a separate employment permit. Eligibility and durations are set by the Irish authorities — confirm on irishimmigration.ie and Citizens Information. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Do I need a new visa to continue to a master\'s or PhD?',
+        answerEn:
+          'Continuing to a further course can require a different permission, so check the requirements for your next programme on the university\'s official page and the relevant government immigration site. Entry requirements and any new visa or permission, along with deadlines, should be confirmed on the official sources before you apply.',
+      },
+      {
+        questionEn: 'Is it fine to go back home after graduating?',
+        answerEn:
+          'Yes — returning home is a common and valid choice, and a UK or Irish qualification travels with you. If you need the degree recognised for further study or professional registration at home, check your home country\'s official recognition or licensing body for its requirements.',
+      },
+    ],
+    relatedExamSlugs: [],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'is-the-uk-a-good-place-to-study-for-international-students',
+      'frequently-asked-questions-about-studying-in-the-uk-and-ireland',
+      'uk-student-visa-guide',
+    ],
+    sources: [
+      { label: 'GOV.UK — Graduate visa (Graduate Route)', url: 'https://www.gov.uk/graduate-visa' },
+      { label: 'GOV.UK — Skilled Worker visa', url: 'https://www.gov.uk/skilled-worker-visa' },
+      { label: 'Irish Immigration Service — graduate stay back', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/' },
+      { label: 'Citizens Information — studying in Ireland', url: 'https://www.citizensinformation.ie/en/moving-country/moving-to-ireland/studying-in-ireland/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'work in uk after graduation',
+      'uk graduate route visa',
+      'after graduation options uk ireland',
+      'stamp 1g ireland graduate',
+      'post study work uk ireland',
+      'skilled worker visa uk graduate',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'UK post-study work', value: 'Graduate Route (eligibility/duration on gov.uk)' },
+      { label: 'UK longer-term work', value: 'Skilled Worker visa (separate conditions)' },
+      { label: 'Ireland post-study work', value: 'Stamp 1G, Third Level Graduate Programme' },
+      { label: 'Rules', value: 'Set by each government and change — verify officially' },
+    ],
+  },
+  {
+    slug: 'frequently-asked-questions-about-studying-in-the-uk-and-ireland',
+    category: 'study-abroad',
+    region: 'uk-ireland',
+    titleEn: 'Frequently Asked Questions About Studying in the UK and Ireland',
+    descriptionEn:
+      'Clear, neutral answers to the most common questions about studying in the UK and Ireland — how to apply, visas and permissions, cost, English requirements, and working while you study.',
+    readMinutes: 8,
+    sections: [
+      {
+        headingEn: 'How this FAQ works',
+        bodyEn:
+          'This page gathers the questions international students most often ask about the UK and Ireland and answers them in plain terms. It is a starting point, not a substitute for each university\'s official pages or the government immigration sites.\n\nThroughout, specific figures — fees, scores, deadlines, work-hour limits, and durations — are deferred to the official source, because they change every year and differ by university and course. Always verify the current details before you rely on them.',
+      },
+      {
+        headingEn: 'Applying to university',
+        bodyEn:
+          'For most undergraduate courses, the UK uses UCAS and the Republic of Ireland uses the Central Applications Office (CAO); these are separate systems with their own deadlines and rules. Postgraduate applications are often made directly to each university in both countries.\n\nEntry requirements vary by course and university, so check each official course page for the exact grades, subjects, and documents needed, and note the application deadlines, which differ between UCAS, the CAO, and individual universities.',
+        bullets: [
+          'UK undergraduate: usually via UCAS (ucas.com)',
+          'Ireland undergraduate: usually via the CAO (cao.ie)',
+          'Postgraduate: often direct to the university; check each course page',
+        ],
+      },
+      {
+        headingEn: 'Visas and permissions',
+        bodyEn:
+          'The UK and Ireland have separate immigration systems. To study in the UK, most international students need a Student visa, which involves a Confirmation of Acceptance for Studies (CAS) from a licensed sponsor, an application fee, and the Immigration Health Surcharge — the exact amounts and steps are on gov.uk. In Ireland, non-EEA students apply for study permission and are typically registered on a Stamp 2.\n\nThese are official immigration rules, not advice, and they change. Confirm the current requirements on gov.uk for the UK and on the Irish immigration service (irishimmigration.ie) for Ireland before you apply.',
+        bullets: [
+          'UK: Student visa, CAS from a licensed sponsor, fee + Immigration Health Surcharge (gov.uk)',
+          'Ireland: study permission, typically Stamp 2 (irishimmigration.ie)',
+          'Amounts and steps change — verify on the official government source',
+        ],
+      },
+      {
+        headingEn: 'Cost and English requirements',
+        bodyEn:
+          'International tuition and living costs vary widely by university, course, and city in both countries, and some cities are more expensive than others. The only reliable figures are the current ones on each university\'s official tuition page and, for visa-related funds, the government site.\n\nMost international applicants must show English proficiency, commonly through IELTS, TOEFL, or PTE Academic, but acceptance and minimum scores vary by university and course, and a prior English-medium degree may exempt you. Confirm the accepted tests and scores on each university\'s official page and on gov.uk for any visa use.',
+      },
+      {
+        headingEn: 'Working while you study',
+        bodyEn:
+          'Students in both countries can usually work a limited number of hours during term time and more during holidays, but the exact limits and conditions are set by each government and printed on, or tied to, your visa or permission. In the UK these conditions are on gov.uk; in Ireland they are set out by the immigration service and Citizens Information.\n\nBecause work-hour rules change, do not rely on a figure from an older source. Check the current rule on the official site, and remember this is general information, not immigration advice.',
+      },
+      {
+        headingEn: 'A note on guarantees and scams',
+        bodyEn:
+          'No university, agent, or service can guarantee admission, a visa, a scholarship, or a job, and you should never pay anyone who promises a "guaranteed" place or outcome. Use official application services and the universities\' own pages.\n\nIf any claim sounds too good to be true, check it against the official source. Keeping decisions grounded in verified, official information is the best protection.',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How do I apply to universities in the UK and Ireland?',
+        answerEn:
+          'Most undergraduate courses use UCAS in the UK and the Central Applications Office (CAO) in Ireland; these are separate systems with their own deadlines. Postgraduate applications are often made directly to each university. Check each official course page for entry requirements and deadlines.',
+      },
+      {
+        questionEn: 'What visa or permission do I need?',
+        answerEn:
+          'For the UK, most international students need a Student visa (involving a CAS from a licensed sponsor, an application fee, and the Immigration Health Surcharge). For Ireland, non-EEA students apply for study permission and are typically registered on a Stamp 2. Amounts and steps change — verify on gov.uk and irishimmigration.ie. This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'Do I need IELTS to study in the UK or Ireland?',
+        answerEn:
+          'Most international applicants must show English proficiency, and IELTS is widely accepted, but TOEFL and PTE Academic are also commonly accepted and a prior English-medium degree may exempt you. Acceptance and minimum scores vary by university and course, so confirm the requirement on each university\'s official page and on gov.uk for visa use.',
+      },
+      {
+        questionEn: 'Can I work while studying in the UK or Ireland?',
+        answerEn:
+          'Students in both countries can usually work a limited number of hours in term time and more in holidays, but the exact limits are set by each government and tied to your visa or permission. Check the current rule on gov.uk (UK) or the Irish immigration service and Citizens Information (Ireland). This is general information, not immigration advice.',
+      },
+      {
+        questionEn: 'How much does it cost to study in the UK or Ireland?',
+        answerEn:
+          'Tuition and living costs vary widely by university, course, and city, so there is no single figure. Use each university\'s official tuition page and the government site for any visa-related funds, and verify the current amounts every academic year before budgeting.',
+      },
+    ],
+    relatedExamSlugs: ['ielts'],
+    relatedCollegeSlugs: [],
+    relatedGuideSlugs: [
+      'is-the-uk-a-good-place-to-study-for-international-students',
+      'uk-vs-ireland-which-to-choose-for-study',
+      'after-graduation-options-in-the-uk-and-ireland',
+    ],
+    sources: [
+      { label: 'UCAS — applying to undergraduate study', url: 'https://www.ucas.com/applying' },
+      { label: 'CAO — Central Applications Office (Ireland)', url: 'https://www.cao.ie' },
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'Irish Immigration Service — coming to study', url: 'https://www.irishimmigration.ie/coming-to-study-in-ireland/' },
+    ],
+    lastVerified: '2026-06-14',
+    keywords: [
+      'studying in uk and ireland faq',
+      'study in uk for international students',
+      'uk student visa faq',
+      'ucas application',
+      'english requirements uk ireland',
+      'working while studying uk ireland',
+    ],
+    tags: ['uk-ireland-student-life'],
+    keyFacts: [
+      { label: 'UK undergraduate application', value: 'UCAS (ucas.com)' },
+      { label: 'Ireland undergraduate application', value: 'CAO (cao.ie)' },
+      { label: 'UK study permission', value: 'Student visa + CAS (gov.uk)' },
+      { label: 'English test', value: 'IELTS / TOEFL / PTE — acceptance varies; verify' },
+    ],
+  },
 ];
 
 export const getGuideBySlug = (slug: string): Guide | undefined =>

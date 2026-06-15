@@ -1,10 +1,12 @@
 // Single source of truth for the site's freshness signals.
 //
 // GlobalStudyBoard intentionally does NOT advertise a company "established" /
-// "founded" year on its utility, listing, or content pages (it adds no SEO
+// "founded" / "launched" year ANYWHERE on the site — not on utility, listing or
+// content pages, not in the header/footer, and not on /about (it adds no SEO
 // value and can bias a new site's perceived authority). Instead we surface
 // *freshness*: the admissions cycle the content targets, plus a "last updated"
-// date on each page. The site's origin story lives only on /about, as a mission.
+// date on each page. The /about page may carry the mission/origin story, but
+// must NOT state a founding/establishment/launch year.
 //
 // Per-content units (guides, and some exams) keep their own truthful
 // `lastVerified` date and should display that. Pages without a per-unit date

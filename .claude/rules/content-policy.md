@@ -130,12 +130,16 @@ number or rule.** Lower tiers may only add neutral colour, never override Tier 1
   (`ADMISSIONS_CYCLE`). Keep these dates honest — **never back-date or fabricate a
   "last updated" date you did not actually review** (that would breach Rule A).
   When the catalogue is broadly re-reviewed, bump `SITE_REVIEWED`.
-- **No site "established / founded" year on utility, listing, or content pages, or
-  in the global header/footer (BINDING).** A launch year adds no SEO value and can
-  bias a new site's perceived authority — present *freshness* instead ("Updated for
-  the <cycle> admissions cycle"). The site's origin story may appear **only on
-  `/about`**, framed as a mission. This does **not** restrict stating a
-  *university's* real founding year, which is legitimate factual content.
+- **No site "established / founded / launched" year ANYWHERE on the site —
+  including `/about` (BINDING).** A launch year adds no SEO value and can bias a new
+  site's perceived authority — present *freshness* instead ("Updated for the
+  <cycle> admissions cycle"). This covers utility, listing and content pages, the
+  global header/footer, page copy, **and `/about`** (eyebrows, lede, body), as well
+  as metadata/OpenGraph descriptions and structured data (no `foundingDate` for the
+  site). `/about` may still carry the mission/origin story, but it must **not** state
+  a founding/establishment/launch year (e.g. "Established 2026", "We started in
+  2026", "We launched in 2026"). This does **not** restrict stating a *university's*
+  real founding year, which is legitimate factual content.
 
 ---
 

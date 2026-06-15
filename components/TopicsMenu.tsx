@@ -18,6 +18,7 @@ const GROUP_ORDER: TopicGroup[] = [
   'study-in-europe',
   'study-in-middle-east',
   'study-in-russia-cis',
+  'study-in-uk-ireland',
   'prep-funding',
 ];
 

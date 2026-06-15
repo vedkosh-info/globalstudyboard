@@ -8,7 +8,7 @@ import { SITE_REVIEWED } from '@/lib/site-meta';
 export const metadata: Metadata = {
   title: 'About GlobalStudyBoard — How We Source & Verify Information',
   description:
-    'GlobalStudyBoard is an independent study-abroad and entrance-exam guide established in 2026. Learn who we are, where our information comes from, and how we verify every detail against official sources.',
+    'GlobalStudyBoard is an independent study-abroad and entrance-exam guide. Learn who we are, where our information comes from, and how we verify every detail against official sources.',
   keywords: [
     'about GlobalStudyBoard',
     'how GlobalStudyBoard verifies information',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.globalstudyboard.com/about',
     title: 'About GlobalStudyBoard — How We Source & Verify Information',
     description:
-      'An independent study-abroad and entrance-exam guide, established 2026. See where our information comes from and how we keep it accurate.',
+      'An independent study-abroad and entrance-exam guide. See where our information comes from and how we keep it accurate.',
     images: ['/opengraph-image'],
   },
 };
@@ -55,14 +55,14 @@ export default function AboutPage() {
     <div className="max-w-3xl mx-auto space-y-12">
       <header>
         <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3">
-          Established 2026 · Independent
+          Independent · Verified against official sources
         </p>
         <h1 className="font-display text-4xl md:text-5xl font-bold tracking-editorial leading-[1.08] text-ink mb-5">
           About GlobalStudyBoard
         </h1>
         <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
           GlobalStudyBoard is an independent guide to universities, entrance exams and scholarships
-          worldwide. We started in 2026 with one goal: pull the scattered, hard-to-compare facts of
+          worldwide. We built it with one goal: to pull the scattered, hard-to-compare facts of
           global admissions into one clear place — and make every claim checkable against its
           official source.
         </p>
@@ -75,7 +75,7 @@ export default function AboutPage() {
           We&rsquo;re new — so don&rsquo;t take our word for it
         </h2>
         <p className="text-stone-700 leading-relaxed m-0">
-          We launched in 2026, and trust is earned, not assumed. That&rsquo;s exactly why we build
+          We&rsquo;re a new resource, and trust is earned, not assumed. That&rsquo;s exactly why we build
           for verification first: instead of asking you to believe us, we point you to the primary
           source behind every fact — the exam board, the university, the official notification.
           Use us to orient and compare; confirm the final details on the official website before you
