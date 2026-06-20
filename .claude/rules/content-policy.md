@@ -588,3 +588,19 @@ region-aware **and** keep heavy catalogues OFF the client bundle — pass compac
 server-computed projections as props (as `HomeSpotlight`/`Footer` do for exams).
 Region personalization is **NOT** i18n — the site stays English-only (§1, §15).
 
+### 16.6 Region-scoped section pages (the navigable spine)
+Beyond the hub (`/regions/[region]`), every destination has server-rendered
+**category pages** at `/regions/[region]/[category]` (universities, exams, guides,
+scholarships), defined once in `lib/region-nav.ts` (the taxonomy single-source-of-
+truth) and statically generated for every region × category. They are the
+region-first navigation spine: the primary nav (`RegionNav` + `MobileMenu`) and the
+detail-page breadcrumb category crumb point to them via `regionCategoryPath()`, the
+hub previews each category and links through, and each carries a self-referential
+canonical + `CollectionPage`/`ItemList` JSON-LD (no hreflang). Individual content
+(a college/exam/guide) keeps exactly ONE canonical URL (`/colleges/…`, `/exams/…`,
+`/guides/…`) — the region category pages are curated region-filtered *collections*
+of it (via `matchesRegion`), never duplicated prose, and the global listings
+(`/colleges`, `/exams`, `/guides`) remain the "all destinations" view. To add a
+category, edit `lib/region-nav.ts` only; never read the region cookie in these
+server routes (keeps them static).
+

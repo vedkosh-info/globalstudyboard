@@ -9,6 +9,7 @@ import { REGIONS } from '@/lib/regions';
 import { GUIDES } from '@/lib/guides';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
+import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
@@ -428,6 +429,8 @@ export default async function CollegeDetailPage({ params }: Props) {
           Ask GSB AI →
         </Link>
       </section>
+
+      <RegionExplore region={college.region} />
 
       {/* Quick links — popular topics & guides */}
       <PageQuickLinks currentPath={`/colleges/${college.slug}`} />

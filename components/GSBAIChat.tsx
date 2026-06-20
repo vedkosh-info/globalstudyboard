@@ -18,9 +18,9 @@ const EXAMPLE_QUESTIONS = [
   'How do I prepare for the GRE in three months?',
 ];
 
-export default function GSBAIChat() {
+export default function GSBAIChat({ initialPrompt }: { initialPrompt?: string }) {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState(initialPrompt ?? '');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);

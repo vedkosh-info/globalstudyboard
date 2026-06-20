@@ -12,6 +12,7 @@ import { howToLd, isHowToGuide } from '@/lib/structured-data';
 import KeyFacts from '@/components/KeyFacts';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
+import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
 import LastUpdated from '@/components/LastUpdated';
 import { formatReviewed } from '@/lib/site-meta';
@@ -351,6 +352,8 @@ export default async function GuideDetailPage({ params }: Props) {
           Ask GSB AI →
         </Link>
       </section>
+
+      <RegionExplore region={guide.region} />
 
       {/* Quick links — popular topics & guides */}
       <PageQuickLinks currentPath={`/guides/${guide.slug}`} />

@@ -61,7 +61,7 @@ const regionMeta = (slug: string) => REGIONS.find((r) => r.slug === slug);
 
 const RELATED = [
   { label: 'All study guides', href: '/guides', note: 'Exams, admissions, careers & study abroad' },
-  { label: 'Study by region', href: '/regions', note: 'Costs, intakes and visas by destination' },
+  { label: 'Destinations', href: '/regions', note: 'Costs, intakes and visas by destination' },
   { label: 'Entrance exams', href: '/exams', note: 'The tests that gate admission' },
   { label: 'Ask GSB AI', href: '/gsb-ai', note: 'Get pointed to the right programme' },
 ];

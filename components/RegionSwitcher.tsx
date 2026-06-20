@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { ChevronDown, Check, Globe2 } from 'lucide-react';
 import { REGIONS_ALPHABETICAL, getRegionBySlug, type RegionSlug } from '@/lib/regions';
@@ -66,14 +67,11 @@ export default function RegionSwitcher() {
       </button>
 
       {open && (
-        <div
-          role="listbox"
-          aria-label="Choose your study destination"
-          className="absolute right-0 z-50 mt-2 max-h-[70vh] w-64 overflow-y-auto rounded-2xl border border-stone-200 bg-white p-1.5 shadow-xl"
-        >
-          <p className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-400">
+        <div className="absolute right-0 z-50 mt-2 max-h-[70vh] w-64 overflow-y-auto rounded-2xl border border-stone-200 bg-white p-1.5 shadow-xl">
+          <p className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-500">
             I want to study in…
           </p>
+          <div role="listbox" aria-label="Choose your study destination">
           {REGIONS_ALPHABETICAL.map((r) => {
             const selected = r.slug === effectiveRegion;
             return (
@@ -99,6 +97,16 @@ export default function RegionSwitcher() {
               </button>
             );
           })}
+          </div>
+          <div className="mt-1 border-t border-stone-200 pt-1">
+            <Link
+              href="/regions"
+              onClick={() => setOpen(false)}
+              className="block rounded-xl px-3 py-2 text-sm font-semibold text-forest-700 no-underline transition-colors hover:bg-stone-50"
+            >
+              Browse all destinations →
+            </Link>
+          </div>
         </div>
       )}
     </div>

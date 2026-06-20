@@ -51,7 +51,7 @@ export default function TopicsMenu() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-haspopup="true"
-        className="inline-flex items-center gap-1 text-sm font-medium text-stone-700 hover:text-forest-700 px-3 py-2 rounded-md hover:bg-forest-50 transition-colors"
+        className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-stone-700 hover:text-forest-700 px-3 py-2 rounded-md hover:bg-forest-50 transition-colors"
       >
         Topics
         <ChevronDown

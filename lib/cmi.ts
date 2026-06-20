@@ -15,6 +15,7 @@ import { GUIDES } from './guides';
 import { REGIONS, type RegionSlug } from './regions';
 import { TOPICS, TOPIC_SLUGS, getTopicBySlug } from './topics';
 import { guidesForTopic } from './topic-guides';
+import { isRegionCategory, categoryLabel, regionCategoryPath } from './region-nav';
 
 export type ContentType = 'college' | 'exam' | 'region' | 'guide';
 
@@ -328,7 +329,7 @@ export interface Crumb {
 const GROUP_LABELS: Record<string, string> = {
   colleges: 'Universities',
   exams: 'Exams',
-  regions: 'Study by Region',
+  regions: 'Destinations',
   guides: 'Guides',
   topics: 'Topics',
   scholarships: 'Scholarships',
@@ -354,50 +355,89 @@ export function breadcrumbsFor(barePath: string): Crumb[] {
   const home: Crumb = { label: 'Home', href: '/' };
   const [group, child] = segments;
 
-  // College detail → Home > Universities > {Region} > {College}
+  // The destination crumb — region-first IA: Home › {Destination} › {Category} › {Item}.
+  // The region is the unit's OWN region (from the slug lookup), so the trail is
+  // correct in the server-rendered HTML and never depends on the visitor's cookie.
+  const regionCrumb = (slug: RegionSlug): Crumb => ({
+    label: regionName(slug),
+    href: `/regions/${slug}`,
+  });
+
+  // College detail → Home > {Region} > Universities > {College}
   if (group === 'colleges' && child) {
     const college = COLLEGES.find((c) => c.slug === child);
     if (college) {
       return [
         home,
-        { label: 'Universities', href: '/colleges' },
-        { label: regionName(college.region), href: `/regions/${college.region}` },
+        regionCrumb(college.region),
+        {
+          label: categoryLabel('universities', college.region),
+          href: regionCategoryPath(college.region, 'universities'),
+        },
         { label: college.nameEn },
       ];
     }
   }
 
-  // Exam detail → Home > Exams > {Exam}
+  // Exam detail → Home > [{Region} >] Exams > {Exam}  (region omitted for worldwide exams)
   if (group === 'exams' && child) {
     const exam = ENTRANCE_EXAMS.find((e) => e.slug === child);
     if (exam) {
-      return [home, { label: 'Exams', href: '/exams' }, { label: exam.shortName }];
+      const trail: Crumb[] = [home];
+      if (exam.region !== 'global') {
+        trail.push(regionCrumb(exam.region));
+        trail.push({
+          label: categoryLabel('exams', exam.region),
+          href: regionCategoryPath(exam.region, 'exams'),
+        });
+      } else {
+        trail.push({ label: 'Exams', href: '/exams' });
+      }
+      trail.push({ label: exam.shortName });
+      return trail;
     }
   }
 
-  // Guide detail → Home > Guides > {Guide}
+  // Guide detail → Home > {Region} > Guides > {Guide}
   if (group === 'guides' && child) {
     const guide = GUIDES.find((g) => g.slug === child);
     if (guide) {
-      return [home, { label: 'Guides', href: '/guides' }, { label: guide.titleEn }];
+      return [
+        home,
+        regionCrumb(guide.region),
+        { label: 'Guides', href: regionCategoryPath(guide.region, 'guides') },
+        { label: guide.titleEn },
+      ];
     }
   }
 
-  // Topic hub → Home > Topics > {Topic}
+  // Topic hub → Home > [{Region} >] Topics > {Topic}  (region only for destination-gated hubs)
   if (group === 'topics' && child) {
     const topic = getTopicBySlug(child);
     if (topic) {
-      return [home, { label: 'Topics', href: '/topics' }, { label: topic.label }];
+      const trail: Crumb[] = [home];
+      if (topic.region) trail.push(regionCrumb(topic.region));
+      trail.push({ label: 'Topics', href: '/topics' }, { label: topic.title });
+      return trail;
     }
   }
 
-  // Region detail → Home > Study by Region > {Region}
+  // Region category → Home > {Region} > {Category}  (region-first, like detail pages)
+  // Region hub      → Home > Destinations > {Region}
   if (group === 'regions' && child) {
     const region = REGIONS.find((r) => r.slug === child);
     if (region) {
+      const sub = segments[2];
+      if (sub && isRegionCategory(sub)) {
+        return [
+          home,
+          { label: region.displayName, href: `/regions/${region.slug}` },
+          { label: categoryLabel(sub, region.slug) },
+        ];
+      }
       return [
         home,
-        { label: 'Study by Region', href: '/regions' },
+        { label: 'Destinations', href: '/regions' },
         { label: region.displayName },
       ];
     }

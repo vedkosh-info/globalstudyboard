@@ -42,7 +42,7 @@ export default function RegionsIndexPage() {
     <div className="space-y-10">
       <header className="max-w-3xl">
         <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3">
-          Browse by region
+          Destinations
         </p>
         <h1 className="font-display text-4xl md:text-5xl font-bold tracking-editorial text-ink mb-4">
           Every region, equal depth.

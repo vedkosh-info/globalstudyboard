@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Sparkles, ChevronRight } from 'lucide-react';
 import GSBAIChat from '@/components/GSBAIChat';
+import { getRegionBySlug } from '@/lib/regions';
 
 const BASE_METADATA: Metadata = {
   title: 'Ask GSB AI — Free University Admission AI Assistant',
@@ -57,7 +58,18 @@ const TOPICS = [
   { label: 'Visas & Work', examples: 'F-1, Tier 4, post-study work permits' },
 ];
 
-export default function GSBAIPage() {
+export default async function GSBAIPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; region?: string }>;
+}) {
+  const { q, region } = await searchParams;
+  const regionName = region ? getRegionBySlug(region)?.displayName : undefined;
+  const initialPrompt = q?.trim()
+    ? q.trim()
+    : regionName
+      ? `I'm planning to study in ${regionName}. Where should I start?`
+      : '';
   return (
     <div className="max-w-3xl mx-auto space-y-8">
 
@@ -74,7 +86,7 @@ export default function GSBAIPage() {
         </p>
       </div>
 
-      <GSBAIChat />
+      <GSBAIChat initialPrompt={initialPrompt} />
 
       <section>
         <h2 className="text-xs font-semibold text-stone-500 uppercase tracking-[0.18em] mb-4">

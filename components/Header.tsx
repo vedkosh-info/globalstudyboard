@@ -1,15 +1,8 @@
 import Link from 'next/link';
 import MobileMenu from '@/components/MobileMenu';
 import RegionSwitcher from '@/components/RegionSwitcher';
+import RegionNav from '@/components/RegionNav';
 import TopicsMenu from '@/components/TopicsMenu';
-
-const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'Universities', href: '/regions' },
-  { label: 'Exams', href: '/exams' },
-  { label: 'Scholarships', href: '/scholarships' },
-  { label: 'Guides', href: '/guides' },
-];
 
 export default function Header() {
   return (
@@ -25,20 +18,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-stone-700 hover:text-forest-700 px-3 py-2 rounded-md hover:bg-forest-50 transition-colors no-underline"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden lg:flex items-center gap-1">
+            <RegionNav />
             <TopicsMenu />
             <Link
               href="/gsb-ai"
-              className="ml-2 inline-flex h-9 items-center text-sm font-semibold bg-forest-700 hover:bg-forest-800 text-cream-50 px-4 rounded-full transition-colors no-underline"
+              className="ml-2 inline-flex h-9 items-center whitespace-nowrap text-sm font-semibold bg-forest-700 hover:bg-forest-800 text-cream-50 px-4 rounded-full transition-colors no-underline"
             >
               Ask GSB AI
             </Link>
@@ -47,7 +32,7 @@ export default function Header() {
             </div>
           </nav>
 
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <RegionSwitcher />
             <MobileMenu />
           </div>

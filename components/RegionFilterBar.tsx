@@ -1,6 +1,6 @@
 'use client';
 
-import { Globe2, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 
 interface Props {
@@ -17,40 +17,34 @@ interface Props {
   onToggle: () => void;
 }
 
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
 /**
- * The control that tells the student which destination a listing is filtered to
- * and lets them flip between "this region only" and "all regions". Shared by the
- * Universities / Exams / Guides views so the affordance is identical everywhere.
+ * The region heading + filter for a listing: it states, prominently, which
+ * destination the list is tuned to and lets the student flip between "this
+ * destination" and "all destinations". Shared by the Universities / Exams /
+ * Guides views so the affordance reads identically everywhere.
  */
 export default function RegionFilterBar({ regionSlug, shown, total, noun, showAll, onToggle }: Props) {
   const r = getRegionBySlug(regionSlug);
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-forest-200/70 bg-forest-50/50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
-      <p className="m-0 flex items-center gap-2 text-sm text-stone-700">
-        {showAll ? (
-          <>
-            <Globe2 className="h-4 w-4 shrink-0 text-forest-700" aria-hidden="true" />
-            <span>
-              Showing <strong className="font-semibold text-ink">all {total} {noun}</strong> across
-              every destination.
-            </span>
-          </>
-        ) : (
-          <>
-            <span aria-hidden="true" className="text-base leading-none">
-              {r?.flag}
-            </span>
-            <span>
-              Showing{' '}
-              <strong className="font-semibold text-ink">
-                {noun} for {r?.displayName}
-              </strong>
-              <span className="text-stone-500"> · {shown} of {total}</span>
-            </span>
-          </>
-        )}
-      </p>
+    <div className="flex flex-col gap-3 rounded-2xl border border-forest-200/70 bg-forest-50/60 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex min-w-0 items-center gap-3">
+        <span aria-hidden="true" className="shrink-0 text-2xl leading-none">
+          {showAll ? '🌐' : r?.flag}
+        </span>
+        <div className="min-w-0">
+          <p className="m-0 font-display text-lg font-bold leading-snug tracking-editorial text-ink">
+            {showAll ? `All ${noun} worldwide` : `${capitalize(noun)} for ${r?.displayName}`}
+          </p>
+          <p aria-live="polite" className="m-0 text-xs text-stone-600">
+            {showAll
+              ? `Showing all ${total} ${noun} across every destination.`
+              : `${shown} of ${total} ${noun} · tuned to your destination — change it from the bar above.`}
+          </p>
+        </div>
+      </div>
       <button
         type="button"
         onClick={onToggle}

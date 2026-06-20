@@ -12,6 +12,8 @@ import {
 } from '@/lib/regions';
 import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
+import { GUIDES } from '@/lib/guides';
+import { REGION_CATEGORIES, categoryLabel, categoryNoun, regionCategoryPath } from '@/lib/region-nav';
 import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
 import LastUpdated from '@/components/LastUpdated';
@@ -66,6 +68,13 @@ export default async function RegionHubPage({ params }: Props) {
 
   const universities = COLLEGES.filter((c) => matchesRegion(r.slug, c.region, c.regions));
   const examsForRegion = ENTRANCE_EXAMS.filter((e) => matchesRegion(r.slug, e.region, e.regions));
+  const guidesForRegion = GUIDES.filter((g) => matchesRegion(r.slug, g.region, g.regions));
+  const categoryCount: Record<string, number> = {
+    universities: universities.length,
+    exams: examsForRegion.length,
+    guides: guidesForRegion.length,
+    scholarships: guidesForRegion.filter((g) => g.category === 'scholarships').length,
+  };
 
   return (
     <div className="-mx-4 md:-mx-0">
@@ -119,6 +128,29 @@ export default async function RegionHubPage({ params }: Props) {
           />
         </section>
 
+        {/* Explore sections — region-scoped category pages */}
+        <section>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {REGION_CATEGORIES.map((cat) => (
+              <Link
+                key={cat}
+                href={regionCategoryPath(r.slug, cat)}
+                className="group flex items-center justify-between gap-2 rounded-2xl border border-stone-200 bg-white p-4 no-underline transition-colors hover:border-forest-300"
+              >
+                <span className="min-w-0">
+                  <span className="block font-display text-base font-bold text-ink group-hover:text-forest-700">
+                    {categoryLabel(cat, r.slug)}
+                  </span>
+                  <span className="text-xs text-stone-500">
+                    {categoryCount[cat]} {categoryNoun(cat, r.slug)}
+                  </span>
+                </span>
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-stone-400 transition-colors group-hover:text-forest-700" />
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Universities */}
         {universities.length > 0 && (
           <section>
@@ -131,9 +163,18 @@ export default async function RegionHubPage({ params }: Props) {
                   {universities.length} institution{universities.length === 1 ? '' : 's'} we cover in {r.displayName}.
                 </p>
               </div>
+              {universities.length > 6 && (
+                <Link
+                  href={regionCategoryPath(r.slug, 'universities')}
+                  className="hidden shrink-0 items-center gap-1 text-sm font-medium text-forest-700 no-underline hover:text-forest-800 sm:inline-flex"
+                >
+                  See all {universities.length}
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              )}
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {universities.map((c) => (
+              {universities.slice(0, 6).map((c) => (
                 <article
                   key={c.id}
                   className="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col"
@@ -190,16 +231,27 @@ export default async function RegionHubPage({ params }: Props) {
         {/* Exams */}
         {examsForRegion.length > 0 && (
           <section>
-            <div className="mb-7">
-              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
-                Entrance exams
-              </h2>
-              <p className="text-stone-600 text-sm">
-                Standardised tests used by universities in {r.displayName}.
-              </p>
+            <div className="flex items-end justify-between mb-7">
+              <div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
+                  Entrance exams
+                </h2>
+                <p className="text-stone-600 text-sm">
+                  Standardised tests used by universities in {r.displayName}.
+                </p>
+              </div>
+              {examsForRegion.length > 6 && (
+                <Link
+                  href={regionCategoryPath(r.slug, 'exams')}
+                  className="hidden shrink-0 items-center gap-1 text-sm font-medium text-forest-700 no-underline hover:text-forest-800 sm:inline-flex"
+                >
+                  See all {examsForRegion.length}
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              )}
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {examsForRegion.map((exam) => (
+              {examsForRegion.slice(0, 6).map((exam) => (
                 <Link
                   key={exam.id}
                   href={`/exams/${exam.slug}`}

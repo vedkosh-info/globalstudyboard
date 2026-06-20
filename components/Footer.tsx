@@ -102,8 +102,8 @@ export default function Footer({
             </p>
           </div>
 
-          <FooterCol heading="Browse by Region" links={REGION_LINKS.slice(0, 4)} />
-          <FooterCol heading="More Regions" links={REGION_LINKS.slice(4)} />
+          <FooterCol heading="Destinations" links={REGION_LINKS.slice(0, 4)} />
+          <FooterCol heading="More Destinations" links={REGION_LINKS.slice(4)} />
 
           {regionExamLinks.length > 0 && (
             <FooterCol

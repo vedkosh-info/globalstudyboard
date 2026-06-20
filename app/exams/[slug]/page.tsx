@@ -9,6 +9,7 @@ import { REGIONS } from '@/lib/regions';
 import { GUIDES } from '@/lib/guides';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
+import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED, formatReviewed } from '@/lib/site-meta';
@@ -330,6 +331,8 @@ export default async function ExamDetailPage({ params }: Props) {
           Ask GSB AI →
         </Link>
       </section>
+
+      {exam.region !== 'global' && <RegionExplore region={exam.region} />}
 
       {/* Quick links — popular topics & guides */}
       <PageQuickLinks currentPath={`/exams/${exam.slug}`} />

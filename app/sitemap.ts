@@ -4,6 +4,7 @@ import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { COLLEGES } from '@/lib/colleges';
 import { GUIDES } from '@/lib/guides';
 import { TOPICS } from '@/lib/topics';
+import { REGION_CATEGORIES, regionCategoryPath } from '@/lib/region-nav';
 
 // Statically pre-generated at build time — never re-run on each request.
 export const dynamic = 'force-static';
@@ -34,6 +35,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     })),
+    // Region-scoped section pages (region × category).
+    ...REGIONS.flatMap((r) =>
+      REGION_CATEGORIES.map((cat) => ({
+        url: `${BASE}${regionCategoryPath(r.slug, cat)}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.85,
+      })),
+    ),
     ...ENTRANCE_EXAMS.map((e) => ({
       url: `${BASE}/exams/${e.slug}`,
       lastModified: now,
