@@ -9,6 +9,7 @@ import { REGIONS } from '@/lib/regions';
 import { GUIDES } from '@/lib/guides';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
+import PageRegion from '@/components/PageRegion';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
@@ -163,6 +164,7 @@ export default async function CollegeDetailPage({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto space-y-10">
+      <PageRegion slug={college.region} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

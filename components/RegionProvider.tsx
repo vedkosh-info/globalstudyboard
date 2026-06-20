@@ -18,19 +18,34 @@ interface RegionContextValue {
   /** The student's chosen destination for this session, or null if not yet picked. */
   region: RegionSlug | null;
   /**
-   * The region the whole site is tuned to right now — the explicit choice if one
-   * exists, otherwise the default (India). Always a real region, so listing
-   * pages and the header can personalise without a null check.
+   * The destination of the page currently being viewed, when that page belongs to
+   * a single destination (a country guide, a college, a region hub). Lets a visitor
+   * who lands deep from search see the whole site skinned to that destination
+   * before they have explicitly chosen one. Null on destination-neutral pages.
+   */
+  pageRegion: RegionSlug | null;
+  /**
+   * The region the whole site is tuned to right now: the explicit choice if one
+   * exists, otherwise the destination of the current page, otherwise the default
+   * (India). Always a real region, so every surface personalises without a null check.
    */
   effectiveRegion: RegionSlug;
-  /** Persist a destination choice for the session (also records the prompt as resolved). */
+  /** Persist a destination choice for the session (resolves the prompt + closes the picker). */
   setRegion: (slug: RegionSlug) => void;
   /** Forget the chosen destination. */
   clearRegion: () => void;
-  /** True once the first-visit picker has been resolved this session (picked or skipped). */
+  /** Record the destination of the current page (provisional skin; never persisted). */
+  setPageRegion: (slug: RegionSlug | null) => void;
+  /** True once the destination picker has been resolved this session (picked or skipped). */
   promptedThisSession: boolean;
-  /** Record that the first-visit picker has been shown + resolved for this session. */
+  /** Record that the picker has been shown + resolved for this session (also closes it). */
   markPrompted: () => void;
+  /** Whether the destination picker should be open right now. */
+  pickerOpen: boolean;
+  /** Force the destination picker open (e.g. from the "change destination" control). */
+  openPicker: () => void;
+  /** Close the picker without recording a skip (used right after a choice). */
+  closePicker: () => void;
   /** True once the client has read any stored preference (avoids SSR flash). */
   ready: boolean;
 }
@@ -62,27 +77,36 @@ function expireCookie(name: string) {
 
 export function RegionProvider({ children }: { children: ReactNode }) {
   const [region, setRegionState] = useState<RegionSlug | null>(null);
+  const [pageRegion, setPageRegionState] = useState<RegionSlug | null>(null);
   const [promptedThisSession, setPrompted] = useState(false);
+  const [pickerOpen, setPickerOpen] = useState(false);
   const [ready, setReady] = useState(false);
 
-  // Hydrate from the session cookie on first client render.
+  // Hydrate from the session cookie on first client render, then decide whether
+  // the once-per-session destination picker should auto-open.
   useEffect(() => {
     const stored = readCookie(REGION_KEY);
-    if (isRegionSlug(stored)) setRegionState(stored);
-    if (readCookie(PROMPTED_KEY) === '1') setPrompted(true);
+    const hasRegion = isRegionSlug(stored);
+    if (hasRegion) setRegionState(stored);
+    const alreadyPrompted = readCookie(PROMPTED_KEY) === '1';
+    if (alreadyPrompted) setPrompted(true);
+    // First page of a fresh session, no destination chosen yet → invite a choice.
+    if (!hasRegion && !alreadyPrompted) setPickerOpen(true);
     setReady(true);
   }, []);
 
   const markPrompted = useCallback(() => {
     setPrompted(true);
+    setPickerOpen(false);
     writeSessionCookie(PROMPTED_KEY, '1');
   }, []);
 
   const setRegion = useCallback((slug: RegionSlug) => {
     setRegionState(slug);
     writeSessionCookie(REGION_KEY, slug);
-    // Choosing a destination also resolves the first-visit prompt.
+    // Choosing a destination also resolves the prompt + closes the picker.
     setPrompted(true);
+    setPickerOpen(false);
     writeSessionCookie(PROMPTED_KEY, '1');
   }, []);
 
@@ -91,17 +115,41 @@ export function RegionProvider({ children }: { children: ReactNode }) {
     expireCookie(REGION_KEY);
   }, []);
 
+  const setPageRegion = useCallback((slug: RegionSlug | null) => {
+    setPageRegionState(slug);
+  }, []);
+
+  const openPicker = useCallback(() => setPickerOpen(true), []);
+  const closePicker = useCallback(() => setPickerOpen(false), []);
+
   const value = useMemo<RegionContextValue>(
     () => ({
       region,
-      effectiveRegion: region ?? DEFAULT_REGION,
+      pageRegion,
+      effectiveRegion: region ?? pageRegion ?? DEFAULT_REGION,
       setRegion,
       clearRegion,
+      setPageRegion,
       promptedThisSession,
       markPrompted,
+      pickerOpen,
+      openPicker,
+      closePicker,
       ready,
     }),
-    [region, setRegion, clearRegion, promptedThisSession, markPrompted, ready]
+    [
+      region,
+      pageRegion,
+      setRegion,
+      clearRegion,
+      setPageRegion,
+      promptedThisSession,
+      markPrompted,
+      pickerOpen,
+      openPicker,
+      closePicker,
+      ready,
+    ]
   );
 
   return <RegionContext.Provider value={value}>{children}</RegionContext.Provider>;

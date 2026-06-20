@@ -13,6 +13,7 @@ import {
 import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import RegionRail from '@/components/RegionRail';
+import PageRegion from '@/components/PageRegion';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
@@ -68,6 +69,7 @@ export default async function RegionHubPage({ params }: Props) {
 
   return (
     <div className="-mx-4 md:-mx-0">
+      <PageRegion slug={r.slug as RegionSlug} />
       <RegionRail activeSlug={r.slug as RegionSlug} sticky />
 
       <div className="mx-auto max-w-7xl px-4 md:px-0 space-y-14 mt-10">

@@ -3093,6 +3093,9 @@ export const GUIDES: Guide[] = [
     slug: 'how-to-write-statement-of-purpose',
     category: 'admissions',
     region: 'india',
+    // Destination-neutral process guide — also surfaced for destinations that lack
+    // their own SOP guide (independently verified non-redundant, 2026-06-19).
+    regions: ['india', 'russia', 'middle-east'],
     titleEn: 'How to Write a Statement of Purpose (SOP)',
     descriptionEn:
       'A practical guide to writing a strong, original statement of purpose or personal statement — what it covers, how to structure it, and what to avoid, with no guarantees.',
@@ -3156,6 +3159,9 @@ export const GUIDES: Guide[] = [
     slug: 'letter-of-recommendation-guide',
     category: 'admissions',
     region: 'india',
+    // Destination-neutral process guide — also surfaced for destinations that lack
+    // their own LOR guide (independently verified non-redundant, 2026-06-19).
+    regions: ['india', 'australia-nz', 'russia', 'middle-east'],
     titleEn: 'Letter of Recommendation: A Student\'s Guide',
     descriptionEn:
       'How letters of recommendation work, who to ask, and how to help your recommender — ethically and effectively — with no shortcuts and no guarantees.',

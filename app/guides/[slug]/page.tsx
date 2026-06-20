@@ -12,6 +12,7 @@ import { howToLd, isHowToGuide } from '@/lib/structured-data';
 import KeyFacts from '@/components/KeyFacts';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
+import PageRegion from '@/components/PageRegion';
 import LastUpdated from '@/components/LastUpdated';
 import { formatReviewed } from '@/lib/site-meta';
 
@@ -130,6 +131,7 @@ export default async function GuideDetailPage({ params }: Props) {
 
   return (
     <article className="max-w-3xl mx-auto space-y-10">
+      <PageRegion slug={guide.region} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}

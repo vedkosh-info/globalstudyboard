@@ -14,7 +14,8 @@ import {
   X,
 } from 'lucide-react';
 
-import { CONTENT_INDEX, type ContentType } from '@/lib/cmi';
+import { CONTENT_INDEX, type ContentType, type ContentUnit } from '@/lib/cmi';
+import { useRegion } from '@/components/RegionProvider';
 
 const MAX_RESULTS = 8;
 
@@ -35,6 +36,7 @@ function TypeIcon({ type }: { type: ContentType }) {
 
 export default function SiteSearch() {
   const router = useRouter();
+  const { effectiveRegion } = useRegion();
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(-1);
@@ -45,11 +47,18 @@ export default function SiteSearch() {
     const q = query.trim().toLowerCase();
     if (q.length < 2) return [];
     const terms = q.split(/\s+/);
-    return CONTENT_INDEX.filter((u) => terms.every((t) => u.keywords.includes(t))).slice(
-      0,
-      MAX_RESULTS,
-    );
-  }, [query]);
+    const matched = CONTENT_INDEX.filter((u) => terms.every((t) => u.keywords.includes(t)));
+    // Surface the visitor's destination first, then worldwide content, then the
+    // rest — so search feels tuned to the chosen region without ever hiding other
+    // regions' results.
+    const rank = (u: ContentUnit) =>
+      u.region === effectiveRegion ? 0 : u.region === 'global' || u.region === null ? 1 : 2;
+    return matched
+      .map((u, i) => ({ u, i }))
+      .sort((a, b) => rank(a.u) - rank(b.u) || a.i - b.i)
+      .slice(0, MAX_RESULTS)
+      .map(({ u }) => u);
+  }, [query, effectiveRegion]);
 
   const askAi = useCallback(() => {
     const q = query.trim();

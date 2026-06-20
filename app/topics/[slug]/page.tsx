@@ -9,6 +9,7 @@ import { resolveDisplayRegions } from '@/lib/regions';
 import { getExamBySlug } from '@/lib/admission-guides';
 import { itemListLd } from '@/lib/structured-data';
 import GuidesView, { type GuideCard } from '@/components/GuidesView';
+import PageRegion from '@/components/PageRegion';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
@@ -100,6 +101,7 @@ export default async function TopicHubPage({ params }: Props) {
 
   return (
     <div className="space-y-12">
+      {topic.region && <PageRegion slug={topic.region} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJson }} />
 
       <header className="max-w-3xl">

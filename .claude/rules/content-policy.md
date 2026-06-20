@@ -527,3 +527,64 @@ to read — never to crowd it, decorate over it, or compete with it.
   desktop and mobile. A change is not done until it both verifies correct and
   looks/reads premium on all viewports.
 
+---
+
+## 16. Region-First Personalization (BINDING — the site's organizing principle)
+GlobalStudyBoard is **personalised by study destination ("region")** end to end.
+Every page behaves as if tuned to the visitor's chosen destination; region is the
+site's primary organizing axis. (Adopted June 2026.)
+
+### 16.1 One axis — study destination only
+- "Region" means **where the student wants to study** (the destination), **never**
+  the student's home country. There is exactly ONE personalization axis. Do **not**
+  add a "where are you from" axis — there is no home-country-specific content to
+  serve it, and it would double onboarding friction.
+- The canonical region set + helpers live in `lib/regions.ts` (`RegionSlug`,
+  `DEFAULT_REGION = 'india'`, `resolveDisplayRegions`, `matchesRegion`,
+  `REGION_TAGLINES`). Never re-implement region logic per component.
+
+### 16.2 The region engine (client-only; SSG-safe)
+- Region is held in `components/RegionProvider.tsx` as a **session cookie**
+  `gsb_region` (per-session by owner decision — a fresh browser session re-prompts).
+  Read it **only client-side**. NEVER read the region cookie in a server component
+  or `middleware.ts` — `cookies()` would force dynamic rendering and break the static
+  build.
+- `effectiveRegion = chosen region ?? current page's own region ?? DEFAULT_REGION`.
+  Every personalised surface reads `effectiveRegion`; it is always a real region.
+- Destination-specific pages render the invisible `<PageRegion slug={...}>` marker
+  (`components/PageRegion.tsx`) so a visitor landing deep from search sees the whole
+  site skin to that page's destination (and the picker pre-selects it).
+
+### 16.3 Always region-first, NEVER region-blocked (SEO-critical)
+- The destination picker (`components/DestinationPicker.tsx`) auto-opens once per
+  session on the first page and is re-openable from the always-on
+  `components/RegionContextBar.tsx`.
+- **Content ALWAYS renders behind the picker.** NEVER gate or hide content behind a
+  region wall — crawlers and direct-link visitors must always receive the content
+  (protects SEO + avoids Google's intrusive-interstitial penalty). Region filtering
+  on listings is **visual/client-side only** (cards toggle a `hidden` class; the full
+  set stays in the crawlable server HTML).
+- The picker is a focus-trapped, dismissible dialog (focus moves in on open, restores
+  on close; Escape / backdrop / "just exploring" all dismiss). Region changes are
+  announced to screen readers via `aria-live`.
+
+### 16.4 Three content scopes (use `regions[]`; never duplicate)
+- **Single-region** (default): one `region`. The overwhelming majority. Each
+  destination's guides are authored self-contained; a destination-SPECIFIC guide
+  (visa, cost, "study in X", application platform) must **never** be cross-tagged to
+  another region — that would be factually wrong.
+- **Multi-region subset**: a genuinely destination-NEUTRAL guide (e.g. statement of
+  purpose, letter of recommendation) may set `regions: [...]` to also surface under
+  destinations that lack their own equivalent — **only** after independent QA
+  confirms it is accurate there AND non-redundant. Verified examples:
+  `how-to-write-statement-of-purpose`, `letter-of-recommendation-guide`.
+- **Global**: worldwide tests use `region: 'global'` (shown under every destination)
+  — the existing shared layer (IELTS, TOEFL, GRE, GMAT, etc.).
+
+### 16.5 Every shared surface is region-aware
+Home (`HomeSpotlight`), `Footer`, `SiteSearch`, `TopicsMenu`, region hubs and the
+listing Views all react to `effectiveRegion`. When adding a shared surface, make it
+region-aware **and** keep heavy catalogues OFF the client bundle — pass compact
+server-computed projections as props (as `HomeSpotlight`/`Footer` do for exams).
+Region personalization is **NOT** i18n — the site stays English-only (§1, §15).
+

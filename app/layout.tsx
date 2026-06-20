@@ -7,12 +7,16 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { RegionProvider } from '@/components/RegionProvider';
+import RegionContextBar from '@/components/RegionContextBar';
+import RegionAnnouncer from '@/components/RegionAnnouncer';
 import DestinationPicker from '@/components/DestinationPicker';
 import SiteSearch from '@/components/SiteSearch';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 import RecentPages from '@/components/RecentPages';
 import GoogleSourceFab from '@/components/GoogleSourceFab';
+import { REGIONS } from '@/lib/regions';
+import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 
 const sans = Inter({
   subsets: ['latin'],
@@ -137,6 +141,28 @@ const websiteJsonLd = JSON.stringify({
   ],
 });
 
+/**
+ * Compact slug→short-name map for every test referenced by a region's
+ * `keyExamSlugs`, computed once at build time so the region-aware footer can
+ * label its links without shipping the full exam catalogue to the browser.
+ */
+const FOOTER_EXAM_LABELS: Record<string, string> = (() => {
+  const slugs = Array.from(new Set(REGIONS.flatMap((r) => r.keyExamSlugs)));
+  const map: Record<string, string> = {};
+  for (const slug of slugs) {
+    const exam = ENTRANCE_EXAMS.find((e) => e.slug === slug);
+    if (exam) map[slug] = exam.shortName;
+  }
+  return map;
+})();
+
+/**
+ * Copyright year computed once at build time so the prerendered static HTML and
+ * the client agree (avoids a year-boundary hydration mismatch from a client-side
+ * new Date()).
+ */
+const COPYRIGHT_YEAR = new Date().getFullYear();
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -148,6 +174,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: websiteJsonLd }} />
         <RegionProvider>
           <Header />
+          <RegionContextBar />
           <main className="mx-auto w-full max-w-7xl px-4 py-8 md:py-12">
             <div className="mb-6 space-y-3">
               <SiteSearch />
@@ -155,8 +182,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             {children}
           </main>
-          <Footer />
+          <Footer examLabels={FOOTER_EXAM_LABELS} year={COPYRIGHT_YEAR} />
           <DestinationPicker />
+          <RegionAnnouncer />
           <RecentPages />
           <ScrollToTopButton />
           <GoogleSourceFab />
