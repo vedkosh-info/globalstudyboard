@@ -84,8 +84,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `${categoryNoun(category, r.slug)} for international students ${r.displayName}`,
     ],
     alternates: { canonical: url },
-    openGraph: { type: 'website', url, title: m.title, description: m.description, images: ['/opengraph-image'] },
-    twitter: { card: 'summary_large_image', title: m.title, description: m.description, images: ['/opengraph-image'] },
+    openGraph: { type: 'website', url, title: m.title, description: m.description },
+    twitter: { card: 'summary_large_image', title: m.title, description: m.description },
   };
 }
 

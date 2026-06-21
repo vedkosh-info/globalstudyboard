@@ -51,13 +51,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://www.globalstudyboard.com/regions/${r.slug}`,
       title: `Study in ${r.displayName} — Universities, Exams & Scholarships`,
       description: desc,
-      images: ['/opengraph-image'],
+      // og:image comes from the per-region opengraph-image.tsx route convention.
     },
     twitter: {
       card: 'summary_large_image',
       title: `Study in ${r.displayName} — Universities, Exams & Scholarships`,
       description: desc,
-      images: ['/opengraph-image'],
+      // twitter:image comes from the per-region twitter-image.tsx route convention.
     },
   };
 }
@@ -107,7 +107,11 @@ export default async function RegionHubPage({ params }: Props) {
       : []),
     {
       q: `Can you work while studying in ${r.displayName}?`,
-      a: r.worksWhileStudying,
+      // Work/visa rules are policy facts (Rule D / §5): keep the verify-nudge.
+      // Skip if the source string already carries one (Europe, Russia) — no doubles.
+      a: /verify/i.test(r.worksWhileStudying)
+        ? r.worksWhileStudying
+        : `${r.worksWhileStudying} Work rules can change — verify on the official source before relying on them.`,
     },
   ];
   const faqLd = {
