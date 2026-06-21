@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowUpRight, Calendar, DollarSign, GraduationCap, Globe2, Briefcase } from 'lucide-react';
+import { ArrowUpRight, Calendar, DollarSign, GraduationCap, Briefcase } from 'lucide-react';
 
 import {
   REGIONS_ALPHABETICAL,
@@ -13,6 +13,7 @@ import {
 import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { GUIDES } from '@/lib/guides';
+import { topicsForRegion } from '@/lib/topics';
 import { REGION_CATEGORIES, categoryLabel, categoryNoun, regionCategoryPath } from '@/lib/region-nav';
 import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
@@ -75,6 +76,50 @@ export default async function RegionHubPage({ params }: Props) {
     guides: guidesForRegion.length,
     scholarships: guidesForRegion.filter((g) => g.category === 'scholarships').length,
   };
+  const regionTopics = topicsForRegion(r.slug);
+
+  // Real Q&A from pre-audited region data (lib/regions.ts) — backs the visible FAQ
+  // section AND the FAQPage JSON-LD; every answer keeps the verify-on-official nudge.
+  const faqItems: { q: string; a: string }[] = [
+    {
+      q: `How do you apply to universities in ${r.displayName}?`,
+      a: `Most applicants apply via ${r.primaryApplicationPlatform}. Confirm current requirements on the official university or application-platform website before applying.`,
+    },
+    {
+      q: `When are the main intakes in ${r.displayName}?`,
+      a: `The main intake${r.intakes.length > 1 ? 's are' : ' is'} ${r.intakes.join(', ')}. Application deadlines vary by university — always verify on the official source.`,
+    },
+    ...(r.averageTuitionRangeUsd
+      ? [
+          {
+            q: `How much does it cost to study in ${r.displayName}?`,
+            a: `Undergraduate tuition is roughly $${r.averageTuitionRangeUsd.undergrad[0].toLocaleString()}–$${r.averageTuitionRangeUsd.undergrad[1].toLocaleString()} per year (USD). Fees change every academic year — verify on the official university website.`,
+          },
+        ]
+      : []),
+    ...(r.visaName
+      ? [
+          {
+            q: `What student visa do you need for ${r.displayName}?`,
+            a: `${r.visaName}. Immigration rules change frequently — verify on the official government source before applying.`,
+          },
+        ]
+      : []),
+    {
+      q: `Can you work while studying in ${r.displayName}?`,
+      a: r.worksWhileStudying,
+    },
+  ];
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `https://www.globalstudyboard.com/regions/${r.slug}#faq`,
+    mainEntity: faqItems.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
 
   return (
     <div className="-mx-4 md:-mx-0">
@@ -82,6 +127,7 @@ export default async function RegionHubPage({ params }: Props) {
       <RegionRail activeSlug={r.slug as RegionSlug} sticky />
 
       <div className="mx-auto max-w-7xl px-4 md:px-0 space-y-14 mt-10">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
         {/* Hero */}
         <header className="max-w-4xl">
@@ -277,18 +323,54 @@ export default async function RegionHubPage({ params }: Props) {
           </section>
         )}
 
-        {/* Visa & work info */}
-        <section className="bg-white border border-stone-200 rounded-2xl p-6 md:p-8">
-          <div className="flex items-start gap-4">
-            <Globe2 className="w-6 h-6 text-forest-700 shrink-0 mt-1" />
-            <div>
-              <h2 className="font-display text-2xl font-bold tracking-editorial text-ink mb-3">
-                Working while studying
+        {/* Explore by topic — fold the region's topic hubs into the region-first IA */}
+        {regionTopics.length > 0 && (
+          <section>
+            <div className="mb-5">
+              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
+                Explore {r.displayName} by topic
               </h2>
-              <p className="text-stone-700 text-base leading-relaxed m-0">
-                {r.worksWhileStudying}
+              <p className="text-stone-600 text-sm">
+                Curated guide hubs for studying in {r.displayName}.
               </p>
             </div>
+            <div className="flex flex-wrap gap-2">
+              {regionTopics.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={`/topics/${t.slug}`}
+                  className="inline-flex items-center rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-sm font-medium text-stone-700 no-underline transition-colors hover:border-forest-300 hover:text-forest-700"
+                >
+                  {t.label}
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Common questions — visible Q&A backing the FAQPage JSON-LD */}
+        <section>
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-6">
+            Common questions about {r.displayName}
+          </h2>
+          <div className="space-y-3">
+            {faqItems.map((f) => (
+              <details
+                key={f.q}
+                className="group rounded-2xl border border-stone-200 bg-white p-5 open:border-forest-300"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-display text-lg font-bold text-ink">
+                  {f.q}
+                  <span
+                    aria-hidden="true"
+                    className="shrink-0 text-2xl leading-none text-stone-400 transition-transform group-open:rotate-45"
+                  >
+                    +
+                  </span>
+                </summary>
+                <p className="m-0 mt-3 text-base leading-relaxed text-stone-700">{f.a}</p>
+              </details>
+            ))}
           </div>
         </section>
 

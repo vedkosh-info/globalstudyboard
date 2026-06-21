@@ -86,7 +86,7 @@ export default async function GSBAIPage({
         </p>
       </div>
 
-      <GSBAIChat initialPrompt={initialPrompt} />
+      <GSBAIChat initialPrompt={initialPrompt} region={region} />
 
       <section>
         <h2 className="text-xs font-semibold text-stone-500 uppercase tracking-[0.18em] mb-4">

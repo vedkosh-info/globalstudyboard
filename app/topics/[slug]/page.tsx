@@ -10,6 +10,7 @@ import { getExamBySlug } from '@/lib/admission-guides';
 import { itemListLd } from '@/lib/structured-data';
 import GuidesView, { type GuideCard } from '@/components/GuidesView';
 import PageRegion from '@/components/PageRegion';
+import RegionExplore from '@/components/RegionExplore';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
@@ -150,6 +151,8 @@ export default async function TopicHubPage({ params }: Props) {
       )}
 
       <GuidesView items={items} categories={categories} />
+
+      {topic.region && <RegionExplore region={topic.region} />}
 
       {/* CTA */}
       <section className="bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-10 py-8">

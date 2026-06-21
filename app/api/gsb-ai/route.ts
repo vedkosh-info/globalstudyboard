@@ -1,5 +1,6 @@
 import { google } from '@ai-sdk/google';
 import { streamText } from 'ai';
+import { getRegionBySlug } from '@/lib/regions';
 
 export const maxDuration = 25;
 
@@ -69,7 +70,7 @@ export async function POST(req: Request) {
     rateMap.set(ip, { count: 1, resetAt: now + 60_000 });
   }
 
-  let body: { messages?: unknown };
+  let body: { messages?: unknown; region?: unknown };
   try {
     body = await req.json();
   } catch {
@@ -90,10 +91,19 @@ export async function POST(req: Request) {
     .filter((m) => m.role === 'user' || m.role === 'assistant')
     .slice(-6);
 
+  // Region-aware: scope the assistant to the visitor's chosen destination. Only a
+  // KNOWN region slug is accepted (mapped to its canonical name) — no user free
+  // text is ever injected into the system prompt.
+  const regionName =
+    typeof body.region === 'string' ? getRegionBySlug(body.region)?.displayName : undefined;
+  const system = regionName
+    ? `${SYSTEM_PROMPT}\n\nThe student is currently exploring study options in ${regionName}. Prioritise guidance relevant to ${regionName} unless they ask about another destination.`
+    : SYSTEM_PROMPT;
+
   try {
     const result = streamText({
       model: google('gemini-flash-latest'),
-      system: SYSTEM_PROMPT,
+      system,
       messages,
       maxOutputTokens: 650,
       temperature: 0.4,

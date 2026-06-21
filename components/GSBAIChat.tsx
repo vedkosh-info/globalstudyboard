@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef, useEffect, FormEvent } from 'react';
 import { Send, RotateCcw, Bot, Sparkles } from 'lucide-react';
+import { useRegion } from '@/components/RegionProvider';
 
 type Role = 'user' | 'assistant';
 interface Message {
@@ -18,13 +19,20 @@ const EXAMPLE_QUESTIONS = [
   'How do I prepare for the GRE in three months?',
 ];
 
-export default function GSBAIChat({ initialPrompt }: { initialPrompt?: string }) {
+export default function GSBAIChat({
+  initialPrompt,
+  region,
+}: {
+  initialPrompt?: string;
+  region?: string;
+}) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState(initialPrompt ?? '');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const { effectiveRegion } = useRegion();
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -53,6 +61,7 @@ export default function GSBAIChat({ initialPrompt }: { initialPrompt?: string })
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: context.map(({ role, content }) => ({ role, content })),
+          region: region ?? effectiveRegion,
         }),
         signal: abortRef.current.signal,
       });

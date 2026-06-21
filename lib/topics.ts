@@ -2695,6 +2695,16 @@ export const getTopicBySlug = (slug: string): Topic | undefined => TOPIC_BY_SLUG
 export const getTopicsByGroup = (group: TopicGroup): Topic[] =>
   TOPICS.filter((t) => t.group === group);
 
+/**
+ * Topic hubs that belong to a destination's region-first IA: a destination's own
+ * region-tagged hubs (the `study-in-X` groups) for the seven abroad regions, or
+ * the cross-cutting (region-less) hubs for India (domestic). Used to surface
+ * topics on the region hub so the topic layer is reachable from the region-first
+ * navigation, not only the Topics mega-menu.
+ */
+export const topicsForRegion = (region: RegionSlug): Topic[] =>
+  region === 'india' ? TOPICS.filter((t) => !t.region) : TOPICS.filter((t) => t.region === region);
+
 // guidesForTopic() + topicsForGuide() live in ./topic-guides — they depend on the
 // heavy GUIDES data array and are kept out of this module so Client Components can
 // import the lightweight TOPICS array + labels here without bundling GUIDES into
