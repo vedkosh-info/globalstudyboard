@@ -5,6 +5,7 @@ import { ArrowUpRight, ShieldCheck, ExternalLink } from 'lucide-react';
 import { GUIDES } from '@/lib/guides';
 import { REGIONS } from '@/lib/regions';
 import LastUpdated from '@/components/LastUpdated';
+import RegionFlag from '@/components/RegionFlag';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
@@ -111,8 +112,8 @@ export default function ScholarshipsIndexPage() {
               >
                 <div className="flex items-center gap-2 mb-2">
                   {meta && (
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-                      <span aria-hidden="true" className="mr-1">{meta.flag}</span>
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
+                      <RegionFlag slug={guide.region} className="h-3.5" />
                       {meta.displayName}
                     </span>
                   )}

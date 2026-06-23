@@ -90,6 +90,12 @@ blocks the unit until fixed and re-audited.
 - [ ] Slug is **unique within its type** and **stable** (no silent slug change;
       any change has a redirect plan).
 - [ ] No near-duplicate prose republished under a different slug.
+- [ ] **Anti-duplication pre-flight done (§11.1a)** — ran `npm run dup:check` and
+      a manual semantic search of the catalogue; this unit is NOT a minor-tweak
+      copy of an existing page (no country/exam-name swap with ≥~50% shared body).
+      Overlapping topics were **clubbed into one canonical unit**; a destination
+      parallel was kept only because its body is genuinely destination-specific
+      (< ~0.35 full-body token overlap with any sibling). Result logged.
 - [ ] `npm run cmi:validate` passes with 0 errors (or the equivalent manual
       check is performed and logged until tooling exists).
 - [ ] **Relationships declared + rendered** (college ↔ region ↔ exams ↔

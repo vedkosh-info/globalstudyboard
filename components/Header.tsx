@@ -8,11 +8,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-cream-100 border-b border-stone-200 backdrop-blur supports-[backdrop-filter]:bg-cream-100/85">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="relative flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-between h-20">
 
-          {/* Wordmark */}
-          <Link href="/" className="flex items-baseline gap-2 no-underline shrink-0">
-            <span className="font-display text-xl sm:text-2xl md:text-[26px] font-bold tracking-editorial text-forest-700">
+          {/* Wordmark — large, prominent brand on every page */}
+          <Link href="/" className="flex items-baseline gap-2 no-underline shrink-0" aria-label="GlobalStudyBoard home">
+            <span className="font-display text-2xl sm:text-3xl xl:text-[34px] font-bold tracking-editorial text-forest-700 leading-none">
               GlobalStudyBoard
             </span>
           </Link>

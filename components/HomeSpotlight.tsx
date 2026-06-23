@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { getRegionBySlug, matchesRegion } from '@/lib/regions';
 import { COLLEGES } from '@/lib/colleges';
 import { useRegion } from '@/components/RegionProvider';
+import RegionFlag from '@/components/RegionFlag';
 
 /** Compact exam summary passed from the server so the full exam catalogue never
  * ships to the browser (keeps the home First-Load JS small). */
@@ -69,9 +70,7 @@ export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<str
                 className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 hover:shadow-sm transition-all group flex flex-col"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <span aria-hidden="true" className="text-lg">
-                    {r.flag}
-                  </span>
+                  <RegionFlag slug={r.slug} className="h-4" />
                   <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 truncate">
                     {college.city}
                     {college.state ? `, ${college.state}` : ''}

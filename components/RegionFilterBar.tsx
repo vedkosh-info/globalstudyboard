@@ -2,6 +2,7 @@
 
 import { MapPin } from 'lucide-react';
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
+import RegionFlag from '@/components/RegionFlag';
 
 interface Props {
   /** The region the list is currently tuned to. */
@@ -31,9 +32,11 @@ export default function RegionFilterBar({ regionSlug, shown, total, noun, showAl
   return (
     <div className="flex flex-col gap-3 rounded-2xl border border-forest-200/70 bg-forest-50/60 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex min-w-0 items-center gap-3">
-        <span aria-hidden="true" className="shrink-0 text-2xl leading-none">
-          {showAll ? '🌐' : r?.flag}
-        </span>
+        {showAll ? (
+          <span aria-hidden="true" className="shrink-0 text-2xl leading-none">🌐</span>
+        ) : (
+          <RegionFlag slug={regionSlug} className="h-6" />
+        )}
         <div className="min-w-0">
           <p className="m-0 font-display text-lg font-bold leading-snug tracking-editorial text-ink">
             {showAll ? `All ${noun} worldwide` : `${capitalize(noun)} for ${r?.displayName}`}

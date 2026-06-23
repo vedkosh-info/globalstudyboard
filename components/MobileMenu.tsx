@@ -61,7 +61,7 @@ export default function MobileMenu() {
       {open && (
         <div
           id="mobile-menu-panel"
-          className="absolute top-16 left-0 right-0 bg-cream-100 z-50 border-t border-stone-200 shadow-lg"
+          className="absolute top-20 left-0 right-0 bg-cream-100 z-50 border-t border-stone-200 shadow-lg"
         >
           <nav className="flex flex-col px-4 py-3 gap-0.5" aria-label="Mobile">
             {links.map((link) => (

@@ -5,6 +5,7 @@ import { ArrowUpRight, Check, MapPin } from 'lucide-react';
 
 import { REGIONS_ALPHABETICAL, REGION_TAGLINES, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
+import RegionFlag from '@/components/RegionFlag';
 
 /**
  * The single destination browser on the Home page. Choosing a region tunes the
@@ -54,9 +55,7 @@ export default function HomeRegionGrid() {
               }`}
             >
               <div className="mb-2 flex items-center justify-between">
-                <span aria-hidden="true" className="text-3xl leading-none">
-                  {r.flag}
-                </span>
+                <RegionFlag slug={r.slug} className="h-7" />
                 {selected ? (
                   <span className="inline-flex items-center gap-1 rounded-full bg-forest-700 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-cream-50">
                     <Check className="h-3 w-3" /> Tuned

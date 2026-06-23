@@ -10,6 +10,7 @@ import {
   type RegionSlug,
 } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
+import RegionFlag from '@/components/RegionFlag';
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
@@ -119,7 +120,7 @@ export default function DestinationPicker() {
   return (
     <div
       onClick={markPrompted}
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-ink/55 backdrop-blur-sm"
+      className="fixed inset-0 z-[1500] flex items-center justify-center p-4 bg-ink/55 backdrop-blur-sm"
     >
       <div
         ref={panelRef}
@@ -134,7 +135,7 @@ export default function DestinationPicker() {
         {/* Decorative top band */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-forest-50 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-forest-50 to-forest-50/0"
         />
 
         <div className="relative p-6 sm:p-8">
@@ -147,8 +148,8 @@ export default function DestinationPicker() {
             <X className="w-5 h-5" />
           </button>
 
-          <p className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.22em] uppercase text-forest-700 mb-3">
-            <Compass className="w-4 h-4" />
+          <p className="flex items-center gap-2 pr-10 text-[11px] font-semibold tracking-[0.22em] uppercase text-forest-700 mb-3">
+            <Compass className="w-4 h-4 shrink-0" />
             {suggested ? 'Confirm your destination' : 'Welcome to GlobalStudyBoard'}
           </p>
           <h2
@@ -169,9 +170,7 @@ export default function DestinationPicker() {
               className="mb-5 flex w-full items-center justify-between gap-3 rounded-2xl border-2 border-forest-300 bg-white p-4 text-left shadow-sm transition-all hover:border-forest-500 hover:shadow-md"
             >
               <span className="flex items-center gap-3 min-w-0">
-                <span aria-hidden="true" className="text-2xl leading-none">
-                  {suggested.flag}
-                </span>
+                <RegionFlag slug={suggested.slug} className="h-6" />
                 <span className="min-w-0">
                   <span className="block font-display text-base font-bold text-ink">
                     Continue with {suggested.displayName}
@@ -200,9 +199,7 @@ export default function DestinationPicker() {
               >
                 <div className="flex items-center justify-between mb-1.5">
                   <span className="flex items-center gap-2 min-w-0">
-                    <span aria-hidden="true" className="text-2xl leading-none">
-                      {r.flag}
-                    </span>
+                    <RegionFlag slug={r.slug} className="h-6" />
                     <span className="font-display text-base font-bold text-ink group-hover:text-forest-700 transition-colors truncate">
                       {r.displayName}
                     </span>

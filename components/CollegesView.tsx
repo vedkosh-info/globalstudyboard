@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
 import RegionFilterBar from '@/components/RegionFilterBar';
+import RegionFlag from '@/components/RegionFlag';
 
 export interface CollegeCard {
   id: string;
@@ -29,10 +30,8 @@ function CollegeLink({ c, hidden }: { c: CollegeCard; hidden: boolean }) {
       className={`bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col${hidden ? ' hidden' : ''}`}
     >
       {meta && (
-        <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-2">
-          <span aria-hidden="true" className="mr-1">
-            {meta.flag}
-          </span>
+        <span className="mb-2 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
+          <RegionFlag slug={c.region} className="h-3.5" />
           {meta.displayName}
         </span>
       )}

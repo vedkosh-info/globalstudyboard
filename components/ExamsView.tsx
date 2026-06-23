@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
 import RegionFilterBar from '@/components/RegionFilterBar';
+import RegionFlag from '@/components/RegionFlag';
 
 export interface ExamCard {
   id: string;
@@ -44,10 +45,12 @@ function ExamLink({ e, hidden }: { e: ExamCard; hidden: boolean }) {
       </div>
       <p className="text-stone-600 text-sm leading-relaxed line-clamp-2 mb-3">{e.fullName}</p>
       <div className="mt-auto pt-3 text-xs text-stone-500 flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="font-medium text-stone-600">
-          <span aria-hidden="true" className="mr-1">
-            {region.flag}
-          </span>
+        <span className="inline-flex items-center gap-1 font-medium text-stone-600">
+          {e.region === 'global' ? (
+            <span aria-hidden="true">🌐</span>
+          ) : (
+            <RegionFlag slug={e.region} className="h-3.5" />
+          )}
           {region.name}
         </span>
         <span>· {e.frequency.split('(')[0].trim()}</span>

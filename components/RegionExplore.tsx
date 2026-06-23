@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { REGION_CATEGORIES, categoryLabel, regionCategoryPath } from '@/lib/region-nav';
+import RegionFlag from '@/components/RegionFlag';
 
 /**
  * "Continue exploring {Region}" strip for content detail pages. It uses the
@@ -19,9 +20,7 @@ export default function RegionExplore({ region }: { region: RegionSlug }) {
   return (
     <section className="rounded-2xl border border-forest-200/70 bg-forest-50/60 p-6">
       <p className="m-0 mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-700">
-        <span aria-hidden="true" className="text-base leading-none">
-          {r.flag}
-        </span>
+        <RegionFlag slug={r.slug} className="h-4" />
         Studying in {r.displayName}
       </p>
       <h2 className="font-display text-xl sm:text-2xl font-bold tracking-editorial text-ink mb-2">

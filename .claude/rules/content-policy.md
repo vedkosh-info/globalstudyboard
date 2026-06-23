@@ -286,6 +286,37 @@ new content is added, and BEFORE anything ships.**
 - No near-duplicate prose: do not republish the same description/section under a
   different slug to chase keywords. One source of truth, cross-linked.
 
+#### 11.1a Anti-duplication pre-flight — MANDATORY before adding ANY content (BINDING)
+Adding pages that merely re-tweak an existing one is a hard prohibition, not a
+style preference. **No new unit ships until this pre-flight passes:**
+1. **Search first, write second.** Before authoring, search the existing
+   catalogue (`lib/guides.ts`, `lib/colleges.ts`, `lib/admission-guides.ts`,
+   `lib/regions.ts`) for the same topic by normalized title + slug stem +
+   concept (region/filler words stripped). Run **`npm run dup:check`** and read
+   its output — it flags duplicate slugs, identical titles, same-concept clusters
+   (cross-region AND within-region), and high body-similarity pairs.
+2. **Club / merge by default.** If the topic already exists, **update or expand
+   the existing unit** — do not add a second page. If two planned units overlap,
+   **combine them into one** richer canonical unit. A single strong page always
+   beats two thin near-identical ones.
+3. **Minor-tweak copies are forbidden.** Never create a page that is another page
+   with a country name, exam name, or a few words swapped and ≥~50% of the body
+   shared. That is duplication, harms SEO (keyword cannibalisation / thin
+   content), and is blocked.
+4. **Destination-specific parallels are allowed ONLY when genuinely different.**
+   A per-destination guide (visa, cost, "study in X", apply-to-X, scholarships
+   for X) may exist alongside another region's equivalent **only because its body
+   carries destination-specific facts** (different government rules, fees,
+   providers, deadlines). It must be **substantially original** (target < ~0.35
+   full-body token overlap with any sibling), not a templated swap. If the topic
+   is destination-NEUTRAL and identical everywhere (e.g. a worldwide test's
+   format, generic "how to choose a major"), make it **one** canonical unit
+   (`region: 'global'` or a multi-region `regions: [...]` per §16.4) — never one
+   copy per region.
+5. **Log the check.** The independent QA pass records in the audit log that the
+   dup:check + manual semantic review were run and what was found (0 new dupes,
+   or the club/merge decision taken). **Block on any unresolved duplicate.**
+
 ### 11.2 CMI is the single source of truth
 - The content data files (`lib/colleges.ts`, `lib/admission-guides.ts`,
   `lib/regions.ts`, future `lib/scholarships.ts`, guides) are the inputs; the CMI

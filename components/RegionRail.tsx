@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { REGIONS_ALPHABETICAL, type RegionSlug } from '@/lib/regions';
+import RegionFlag from '@/components/RegionFlag';
 
 interface Props {
   activeSlug?: RegionSlug;
@@ -11,7 +12,7 @@ export default function RegionRail({ activeSlug, sticky = false }: Props) {
     <nav
       aria-label="Regions"
       className={`${
-        sticky ? 'sticky top-16 z-30 bg-cream-100/95 backdrop-blur border-y border-stone-200' : ''
+        sticky ? 'sticky top-20 z-30 bg-cream-100/95 backdrop-blur border-y border-stone-200' : ''
       }`}
     >
       <div className="mx-auto max-w-7xl px-4">
@@ -29,9 +30,7 @@ export default function RegionRail({ activeSlug, sticky = false }: Props) {
                     : 'bg-white text-stone-700 border-stone-200 hover:border-forest-300 hover:text-forest-700'
                 }`}
               >
-                <span aria-hidden="true" className="text-base leading-none">
-                  {r.flag}
-                </span>
+                <RegionFlag slug={r.slug} className="h-4" />
                 <span className="font-medium">{r.displayName}</span>
               </Link>
             );

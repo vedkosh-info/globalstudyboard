@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { REGIONS_ALPHABETICAL } from '@/lib/regions';
 import { COLLEGES } from '@/lib/colleges';
 import LastUpdated from '@/components/LastUpdated';
+import RegionFlag from '@/components/RegionFlag';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
@@ -73,7 +74,7 @@ export default function RegionsIndexPage() {
             >
               <div className="flex items-start justify-between gap-4 mb-3">
                 <div className="flex items-center gap-3">
-                  <span aria-hidden="true" className="text-3xl leading-none">{r.flag}</span>
+                  <RegionFlag slug={r.slug} className="h-7" />
                   <h2 className="font-display text-2xl font-bold text-ink group-hover:text-forest-700 transition-colors leading-tight m-0">
                     {r.displayName}
                   </h2>

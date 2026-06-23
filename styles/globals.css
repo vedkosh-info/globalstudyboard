@@ -21,8 +21,11 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Avoid the grey tap-flash on iOS Safari (we provide our own focus/hover states). */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow-x: hidden;
 }
 
@@ -34,9 +37,18 @@ body {
   font-feature-settings: 'ss01', 'cv11';
   line-height: 1.6;
   min-height: 100vh;
+  min-height: 100dvh; /* iOS/Android dynamic viewport — falls back to 100vh */
   overflow-x: hidden;
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+/* Full-height fixed panels (e.g. the recent-pages drawer). On iOS Safari plain
+   100vh runs under the toolbar and clips the bottom; dvh tracks the visible
+   viewport. The 100vh line is the fallback for browsers without dvh. */
+.gsb-full-vh {
+  height: 100vh;
+  height: 100dvh;
 }
 
 :lang(hi) body {
@@ -106,146 +118,102 @@ hr {
   color: var(--color-forest);
 }
 
-/* ─── Floating Action Buttons (Quick Links) ─────────────────────────────── */
+/* ─── Quick-actions Dock (single expandable FAB) ────────────────────────── */
 
-.gsb-fab {
+.gsb-dock {
   position: fixed;
-  right: 20px;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+@media (min-width: 769px) {
+  .gsb-dock {
+    right: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.gsb-dock-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* Primary toggle — one clear, filled round button */
+.gsb-dock-toggle {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1.5px solid #c7d2fe;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #1B3A6B;
+  border: 1.5px solid #1B3A6B;
+  background: #1B3A6B;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 1200;
-  opacity: 0.75;
-  box-shadow: 0 4px 14px rgba(27, 58, 107, 0.12);
-  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(27, 58, 107, 0.26);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
-.gsb-fab:hover {
-  opacity: 1;
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(27, 58, 107, 0.18);
+.gsb-dock-toggle:hover {
+  background: #152e55;
+  transform: scale(1.06);
+  box-shadow: 0 8px 22px rgba(27, 58, 107, 0.32);
 }
 
-/* Scroll-to-top — bottom slot */
-.gsb-fab--scroll {
-  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
-}
-
-.gsb-fab--scroll.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.8);
-}
-
-.gsb-fab--scroll.is-visible {
-  opacity: 0.75;
-  pointer-events: auto;
-}
-
-/* Recent history — middle slot */
-.gsb-fab--history {
-  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
-}
-
-/* Google FAB — top slot (wrapper positions it) */
-.gsb-fab-google-row {
-  position: fixed;
-  right: 20px;
-  bottom: calc(140px + env(safe-area-inset-bottom, 0px));
-  display: flex;
+/* Expanded action items — labelled pills that never sit over content unopened */
+.gsb-dock-item {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  z-index: 1200;
-  flex-direction: row-reverse;
-}
-
-.gsb-fab--google {
-  position: static;
-  flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.92);
-  border-color: #c7d2fe;
-}
-
-/* Google toast bubble */
-.gsb-fab-google-toast {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: #1B3A6B;
-  color: #fff;
+  height: 44px;
+  padding: 0 18px;
   border-radius: 999px;
-  text-decoration: none;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid #c7d2fe;
+  color: #1B3A6B;
   font-size: 0.8125rem;
   font-weight: 600;
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(27, 58, 107, 0.22);
-  animation: gsb-toast-in 0.22s ease-out both;
-  line-height: 1.2;
-}
-
-.gsb-fab-google-toast:hover {
-  background: #152e55;
   text-decoration: none;
-  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(27, 58, 107, 0.14);
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  animation: gsb-dock-in 0.16s ease-out both;
 }
 
-.gsb-fab-toast-brand {
-  color: #C9A227;
-  font-weight: 700;
-}
-
-.gsb-fab-toast-plus {
-  font-weight: 700;
-  font-size: 1rem;
-  color: #C9A227;
-}
-
-.gsb-fab-g {
-  font-size: 1.125rem;
-  font-weight: 800;
-  font-family: var(--font-display, Fraunces, serif);
+.gsb-dock-item:hover {
+  background: #fff;
+  border-color: #1B3A6B;
   color: #1B3A6B;
+  transform: translateX(-2px);
+  text-decoration: none;
+}
+
+.gsb-dock-g {
+  font-family: var(--font-display, Fraunces, serif);
+  font-weight: 800;
+  font-size: 1rem;
   line-height: 1;
+  color: #1B3A6B;
 }
 
-@keyframes gsb-toast-in {
-  from { opacity: 0; transform: translateX(8px) scale(0.95); }
-  to   { opacity: 1; transform: translateX(0) scale(1); }
+@keyframes gsb-dock-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .gsb-fab {
-    width: 44px;
-    height: 44px;
-    right: 16px;
-  }
-  .gsb-fab--scroll  { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
-  .gsb-fab--history { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
-  .gsb-fab-google-row {
-    right: 16px;
-    bottom: calc(128px + env(safe-area-inset-bottom, 0px));
-  }
-  .gsb-fab-google-toast {
-    font-size: 0.75rem;
-    padding: 8px 13px;
-  }
-}
-
-/* Hide FABs and interactive chrome on print */
+/* Hide interactive chrome on print */
 @media print {
-  .gsb-fab,
-  .gsb-fab-google-row,
+  .gsb-dock,
   .no-print { display: none !important; }
 }
 

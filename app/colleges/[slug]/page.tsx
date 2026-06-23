@@ -11,6 +11,7 @@ import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
 import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
+import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
@@ -188,7 +189,7 @@ export default async function CollegeDetailPage({ params }: Props) {
               href={`/regions/${region.slug}`}
               className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 hover:text-forest-700 no-underline"
             >
-              {region.flag} {region.displayName}
+              <RegionFlag slug={region.slug} className="mr-1.5 h-3.5" />{region.displayName}
             </Link>
           )}
           <span className="text-stone-300">·</span>
@@ -270,7 +271,7 @@ export default async function CollegeDetailPage({ params }: Props) {
                 href={`/regions/${region.slug}`}
                 className="text-forest-700 text-base font-medium no-underline hover:text-forest-800"
               >
-                {region.flag} {region.displayName} →
+                <RegionFlag slug={region.slug} className="mr-1.5 h-4" />{region.displayName} →
               </Link>
             </div>
           )}

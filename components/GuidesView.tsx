@@ -7,6 +7,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
 import RegionFilterBar from '@/components/RegionFilterBar';
+import RegionFlag from '@/components/RegionFlag';
 
 export interface GuideCard {
   slug: string;
@@ -30,10 +31,8 @@ function GuideLink({ g, hidden }: { g: GuideCard; hidden: boolean }) {
     >
       <div className="flex items-center gap-2 mb-2">
         {meta && (
-          <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-            <span aria-hidden="true" className="mr-1">
-              {meta.flag}
-            </span>
+          <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
+            <RegionFlag slug={g.region} className="h-3.5" />
             {meta.displayName}
           </span>
         )}

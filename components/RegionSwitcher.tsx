@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { ChevronDown, Check, Globe2 } from 'lucide-react';
 import { REGIONS_ALPHABETICAL, getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
+import RegionFlag from '@/components/RegionFlag';
 
 /**
  * The site-wide study-destination dropdown that lives in the header menu bar on
@@ -85,9 +86,7 @@ export default function RegionSwitcher() {
                   selected ? 'bg-forest-50 text-forest-800' : 'text-stone-700 hover:bg-stone-50'
                 }`}
               >
-                <span aria-hidden="true" className="text-lg leading-none">
-                  {r.flag}
-                </span>
+                <RegionFlag slug={r.slug} className="h-4" />
                 <span className="flex-1 font-medium">{r.displayName}</span>
                 {selected && (
                   <span className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-forest-600">

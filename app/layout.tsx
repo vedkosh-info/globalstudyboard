@@ -12,9 +12,8 @@ import RegionAnnouncer from '@/components/RegionAnnouncer';
 import DestinationPicker from '@/components/DestinationPicker';
 import SiteSearch from '@/components/SiteSearch';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import ScrollToTopButton from '@/components/ScrollToTopButton';
+import FabDock from '@/components/FabDock';
 import RecentPages from '@/components/RecentPages';
-import GoogleSourceFab from '@/components/GoogleSourceFab';
 import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 
@@ -36,6 +35,10 @@ export const viewport: Viewport = {
   themeColor: '#14532D',
   width: 'device-width',
   initialScale: 1,
+  // Extend under the notch / Dynamic Island and home indicator on iPhone so the
+  // page fills the screen edge-to-edge; the `env(safe-area-inset-*)` padding in
+  // globals.css then keeps the floating buttons clear of the home indicator.
+  viewportFit: 'cover',
 };
 
 export const metadata: Metadata = {
@@ -186,8 +189,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <DestinationPicker />
           <RegionAnnouncer />
           <RecentPages />
-          <ScrollToTopButton />
-          <GoogleSourceFab />
+          <FabDock />
         </RegionProvider>
         <Analytics />
         <SpeedInsights />

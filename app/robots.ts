@@ -7,7 +7,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/gsb-ai?*'],
+      // Block infinite query-param URLs (search + AI). The base pages are
+      // crawlable; only their ?q= variants are excluded to save crawl budget.
+      disallow: ['/api/', '/gsb-ai?*', '/search', '/search?*'],
     },
     sitemap: 'https://www.globalstudyboard.com/sitemap.xml',
   };

@@ -1,13 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { REGIONS, REGIONS_ALPHABETICAL, getRegionBySlug } from '@/lib/regions';
+import { REGIONS, REGIONS_ALPHABETICAL, getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { ADMISSIONS_CYCLE } from '@/lib/site-meta';
 import { useRegion } from '@/components/RegionProvider';
+import RegionFlag from '@/components/RegionFlag';
 
 const REGION_LINKS = REGIONS_ALPHABETICAL.map((r) => ({
-  label: `${r.flag} ${r.displayName}`,
+  label: r.displayName,
   href: `/regions/${r.slug}`,
+  slug: r.slug,
 }));
 
 const SITE_LINKS = [
@@ -23,7 +25,7 @@ function FooterCol({
   links,
 }: {
   heading: string;
-  links: { label: string; href: string }[];
+  links: { label: string; href: string; slug?: RegionSlug }[];
 }) {
   return (
     <div>
@@ -35,8 +37,9 @@ function FooterCol({
           <li key={`${link.href}-${link.label}`}>
             <Link
               href={link.href}
-              className="text-cream-50/60 text-sm hover:text-terracotta-300 no-underline transition-colors"
+              className="inline-flex items-center gap-2 text-cream-50/60 text-sm hover:text-terracotta-300 no-underline transition-colors"
             >
+              {link.slug && <RegionFlag slug={link.slug} className="h-3" />}
               {link.label}
             </Link>
           </li>

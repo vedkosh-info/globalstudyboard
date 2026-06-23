@@ -6,6 +6,7 @@ import { Sparkles, ArrowUpRight, GraduationCap, Calendar, Wallet, Plane } from '
 import { REGION_TAGLINES, getRegionBySlug } from '@/lib/regions';
 import { COLLEGES } from '@/lib/colleges';
 import { useRegion } from '@/components/RegionProvider';
+import RegionFlag from '@/components/RegionFlag';
 
 function Backdrop() {
   return (
@@ -44,9 +45,7 @@ export default function HomeHero() {
       <Backdrop />
       <div className="relative max-w-4xl">
         <p className="text-xs font-semibold tracking-[0.22em] uppercase text-forest-700 mb-4 flex items-center gap-2">
-          <span aria-hidden="true" className="text-lg leading-none">
-            {r.flag}
-          </span>
+          <RegionFlag slug={r.slug} className="h-4" />
           Your destination · {r.displayName}
         </p>
         <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-editorial text-ink mb-5">

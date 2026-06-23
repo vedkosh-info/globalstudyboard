@@ -3,6 +3,7 @@
 import { Globe2 } from 'lucide-react';
 import { getRegionBySlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
+import RegionFlag from '@/components/RegionFlag';
 
 /**
  * The slim, always-present strip under the header that tells the visitor which
@@ -30,9 +31,7 @@ export default function RegionContextBar() {
         <p className="m-0 flex min-w-0 items-center gap-2 text-sm text-stone-600">
           <Globe2 className="h-4 w-4 shrink-0 text-forest-600" aria-hidden="true" />
           <span className="hidden sm:inline">{label}:</span>
-          <span aria-hidden="true" className="text-base leading-none">
-            {r.flag}
-          </span>
+          <RegionFlag slug={r.slug} className="h-4" />
           <strong className="truncate font-semibold text-forest-800">{r.displayName}</strong>
         </p>
         <button

@@ -80,6 +80,13 @@ export default function RecentPages() {
   // Close on navigation
   useEffect(() => { setIsOpen(false); }, [pathname]);
 
+  // Open when the quick-actions dock asks for it.
+  useEffect(() => {
+    const open = () => setIsOpen(true);
+    document.addEventListener('gsb:openRecent', open as EventListener);
+    return () => document.removeEventListener('gsb:openRecent', open as EventListener);
+  }, []);
+
   const handleClear = () => {
     clearHistory();
     setCleared(true);
@@ -91,17 +98,6 @@ export default function RecentPages() {
 
   return (
     <>
-      {/* Toggle FAB */}
-      <button
-        type="button"
-        onClick={() => setIsOpen((p) => !p)}
-        aria-label="Recent activity"
-        aria-expanded={isOpen}
-        className="gsb-fab gsb-fab--history"
-      >
-        <Clock size={20} />
-      </button>
-
       {/* Backdrop */}
       {isOpen && (
         <div
@@ -116,11 +112,11 @@ export default function RecentPages() {
         role="dialog"
         aria-label="Recently visited pages"
         onClick={(e) => e.stopPropagation()}
+        className="gsb-full-vh"
         style={{
           position: 'fixed',
           right: 0,
           top: 0,
-          height: '100vh',
           width: '18rem',
           zIndex: 1400,
           display: 'flex',

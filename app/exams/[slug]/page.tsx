@@ -11,6 +11,7 @@ import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
 import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
+import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED, formatReviewed } from '@/lib/site-meta';
 
@@ -129,8 +130,8 @@ export default async function ExamDetailPage({ params }: Props) {
         </Link>
         <div className="flex items-center gap-2 mb-3">
           {region && (
-            <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-              {region.flag} {region.displayName}
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
+              <RegionFlag slug={region.slug} className="h-3.5" />{region.displayName}
             </span>
           )}
           <span className="text-stone-300">·</span>
@@ -242,7 +243,7 @@ export default async function ExamDetailPage({ params }: Props) {
                   className="bg-white border border-stone-200 rounded-xl p-4 no-underline hover:border-forest-300 transition-colors group"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <span aria-hidden="true">{collegeRegion?.flag}</span>
+                    {collegeRegion && <RegionFlag slug={collegeRegion.slug} className="h-3.5" />}
                     <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
                       {collegeRegion?.displayName}
                     </span>
