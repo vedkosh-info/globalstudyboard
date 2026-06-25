@@ -5,6 +5,7 @@ import { COLLEGES } from '@/lib/colleges';
 import { GUIDES } from '@/lib/guides';
 import { TOPICS } from '@/lib/topics';
 import { REGION_CATEGORIES, regionCategoryPath } from '@/lib/region-nav';
+import { multiHubTracks } from '@/lib/tracks';
 
 // Statically pre-generated at build time — never re-run on each request.
 export const dynamic = 'force-static';
@@ -14,7 +15,7 @@ const BASE = 'https://www.globalstudyboard.com';
 export default function sitemap(): MetadataRoute.Sitemap {
   // Fixed to the last known content-update date so the sitemap is stable
   // between deployments and CDN-cacheable. Update when site structure changes.
-  const now = '2026-06-14';
+  const now = '2026-06-23';
   return [
     { url: BASE,                  lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE}/regions`,     lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
@@ -44,6 +45,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.85,
       })),
     ),
+    // Multi-hub track landing pages (e.g. /regions/india/track/foreign-nri-admission).
+    // Single-hub tracks have no page (dynamicParams=false 404s them; trackHref sends
+    // them straight to /topics/{slug}, already sitemapped via TOPICS).
+    ...multiHubTracks().map((t) => ({
+      url: `${BASE}/regions/${t.region}/track/${t.slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
     ...ENTRANCE_EXAMS.map((e) => ({
       url: `${BASE}/exams/${e.slug}`,
       lastModified: now,

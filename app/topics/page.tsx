@@ -44,7 +44,6 @@ export default function TopicsIndexPage() {
     label: t.label,
     title: t.title,
     description: t.description,
-    group: t.group,
     region: t.region ?? null,
     count: guidesForTopic(t.slug).length,
   }));

@@ -567,9 +567,12 @@ site's primary organizing axis. (Adopted June 2026.)
 
 ### 16.1 One axis — study destination only
 - "Region" means **where the student wants to study** (the destination), **never**
-  the student's home country. There is exactly ONE personalization axis. Do **not**
-  add a "where are you from" axis — there is no home-country-specific content to
-  serve it, and it would double onboarding friction.
+  the student's home country. The **primary** personalization axis is destination.
+  A **second, binary axis** — Domestic vs International *status relative to the
+  destination* — was added (owner decision, June 2026): a single low-friction toggle
+  with a smart default, **not** a "where are you from" / home-country selector (which
+  remains forbidden — it has no content to serve and would double onboarding
+  friction). See **§16.7**.
 - The canonical region set + helpers live in `lib/regions.ts` (`RegionSlug`,
   `DEFAULT_REGION = 'india'`, `resolveDisplayRegions`, `matchesRegion`,
   `REGION_TAGLINES`). Never re-implement region logic per component.
@@ -634,4 +637,40 @@ of it (via `matchesRegion`), never duplicated prose, and the global listings
 (`/colleges`, `/exams`, `/guides`) remain the "all destinations" view. To add a
 category, edit `lib/region-nav.ts` only; never read the region cookie in these
 server routes (keeps them static).
+
+### 16.7 Audience-status axis — Domestic vs International (BINDING)
+A **second personalization axis**, orthogonal to destination: every visitor is a
+**domestic** student (a citizen/resident of the destination they're viewing) or an
+**international** student. Most content is **`common`** (shown to both); only a
+focused set of blocks — admission route, fees, and student-visa — is
+audience-specific. (Owner decision, June 2026.)
+- **One binary toggle, smart default, NO popup.** `Audience = 'common' | 'domestic'
+  | 'international'` (`lib/audience.ts`). The toggle lives in the context bar; there
+  is **no** identity prompt/modal. The default is **per the page's own region**:
+  India → `domestic`, every other destination → `international`
+  (`defaultAudienceFor(region)`).
+- **Client-only + SSG-safe, exactly like the region engine (§16.2–§16.3).** Held in
+  `AudienceProvider` as the session cookie `gsb_audience` (the explicit choice only;
+  null = use the page default). **NEVER** read it in a server component. Every block
+  renders into the server HTML; `AudienceGate` hides a non-matching block with a
+  `hidden` class — content is **never** server-gated (crawler-safe, no intrusive
+  interstitial). A block's active audience = `chosenAudience ?? pageDefault`, where
+  `pageDefault` is computed by the server page from its region — so the static HTML
+  bakes the correct default and there is **no hydration flash**.
+- **Same slug, one canonical unit (no duplication, §11.1).** The toggle never
+  changes the URL, the canonical, or creates a second page. Tag blocks with
+  `audience` (`GuideSection.audience`, `GuideFaq.audience`, `Guide.audience`, or an
+  `<AudienceGate>` in a page) — never fork the page.
+- **Structured data matches the DEFAULT view.** Article/FAQPage/HowTo JSON-LD
+  includes only `common` + the page-default audience (`isAudienceVisible(audience,
+  pageDefault)`), so it never advertises content a default visitor cannot see.
+- **All content rules still apply (§2–§14).** Audience blocks are Tier-1 sourced,
+  neutral, no fabricated fees/cutoffs (defer to official + verify-nudge), no
+  guarantees. India: domestic = citizen route (JEE/JoSAA/NEET/CUET); international =
+  foreign-national/NRI/OCI route (DASA, supernumerary/international quotas, student
+  visa for India) — all deferred to official.
+- **India-first; abroad is the LIGHT form.** India serves both audiences with real
+  content. Abroad regions are international-by-default; their domestic view = common
+  info + a pointer to the official home-student/finance source (no deep domestic
+  layer — strong incumbents, out of focus).
 

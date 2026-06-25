@@ -9,6 +9,8 @@ import Footer from '@/components/Footer';
 import { RegionProvider } from '@/components/RegionProvider';
 import RegionContextBar from '@/components/RegionContextBar';
 import RegionAnnouncer from '@/components/RegionAnnouncer';
+import { AudienceProvider } from '@/components/AudienceProvider';
+import AudienceAnnouncer from '@/components/AudienceAnnouncer';
 import DestinationPicker from '@/components/DestinationPicker';
 import SiteSearch from '@/components/SiteSearch';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -176,6 +178,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: websiteJsonLd }} />
         <RegionProvider>
+          <AudienceProvider>
           <Header />
           <RegionContextBar />
           <main className="mx-auto w-full max-w-7xl px-4 py-8 md:py-12">
@@ -188,8 +191,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer examLabels={FOOTER_EXAM_LABELS} year={COPYRIGHT_YEAR} />
           <DestinationPicker />
           <RegionAnnouncer />
+          <AudienceAnnouncer />
           <RecentPages />
           <FabDock />
+          </AudienceProvider>
         </RegionProvider>
         <Analytics />
         <SpeedInsights />

@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
-import { TOPIC_GROUP_LABELS, type TopicGroup } from '@/lib/topics';
 import type { RegionSlug } from '@/lib/regions';
 import { getRegionBySlug } from '@/lib/regions';
+import { tracksForRegion, trackForTopic } from '@/lib/tracks';
 import { useRegion } from '@/components/RegionProvider';
 
 export interface TopicCard {
@@ -13,56 +13,44 @@ export interface TopicCard {
   label: string;
   title: string;
   description: string;
-  group: TopicGroup;
-  /** Region this hub is gated to, or null for always-shown (India/global) hubs. */
+  /** Region this hub is gated to, or null for India/domestic hubs. */
   region: RegionSlug | null;
   count: number;
 }
 
-const GROUP_ORDER: TopicGroup[] = [
-  'exams',
-  'fields',
-  'after-12th',
-  'study-abroad',
-  'study-in-usa',
-  'study-in-canada',
-  'study-in-australia-nz',
-  'study-in-europe',
-  'study-in-middle-east',
-  'study-in-russia-cis',
-  'study-in-uk-ireland',
-  'prep-funding',
-];
-
 /**
- * Client-side renderer for the /topics index. Region-gated hubs (e.g. the USA
- * `study-in-usa` group) appear ONLY when their region is the effective
- * selection; region-less hubs are always shown. Mirrors the guide-card
- * region filtering in GuidesView so the two surfaces behave identically.
+ * Client-side renderer for the /topics index — the region-first Track spine.
+ * Shows ONLY the effective destination's tracks; each hub appears once, under
+ * its primary track (so cross-listed hubs like JEE are not repeated). Switching
+ * destination re-tunes the whole index.
  */
 export default function TopicsIndex({ topics }: { topics: TopicCard[] }) {
   const { effectiveRegion } = useRegion();
-  const visible = topics.filter((t) => !t.region || t.region === effectiveRegion);
+  const cardBySlug = new Map(topics.map((t) => [t.slug, t]));
+  const tracks = tracksForRegion(effectiveRegion);
   const regionName = getRegionBySlug(effectiveRegion)?.displayName ?? '';
 
   return (
     <div className="space-y-14">
-      {GROUP_ORDER.map((group) => {
-        const inGroup = visible.filter((t) => t.group === group);
-        if (inGroup.length === 0) return null;
-        const isRegionGroup = inGroup.some((t) => t.region);
+      <p className="text-stone-500 text-sm -mt-6">
+        Showing tracks for <span className="font-semibold text-stone-700">{regionName}</span>. Switch
+        your destination above to explore another region.
+      </p>
+
+      {tracks.map((track) => {
+        // Each hub renders once, under the track that is its primary home.
+        const cards = track.topicSlugs
+          .filter((slug) => trackForTopic(slug)?.slug === track.slug)
+          .map((slug) => cardBySlug.get(slug))
+          .filter((c): c is TopicCard => Boolean(c));
+        if (cards.length === 0) return null;
         return (
-          <section key={group}>
+          <section key={track.slug}>
             <div className="section-rule mb-5">
-              <span>{TOPIC_GROUP_LABELS[group]}</span>
+              <span>{track.label}</span>
             </div>
-            {isRegionGroup && regionName ? (
-              <p className="text-stone-500 text-sm -mt-3 mb-5">
-                Hubs for students heading to {regionName}. Switch your destination above to see other regions.
-              </p>
-            ) : null}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {inGroup.map((t) => (
+              {cards.map((t) => (
                 <Link
                   key={t.slug}
                   href={`/topics/${t.slug}`}

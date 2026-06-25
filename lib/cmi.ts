@@ -15,7 +15,8 @@ import { GUIDES } from './guides';
 import { REGIONS, type RegionSlug } from './regions';
 import { TOPICS, TOPIC_SLUGS, getTopicBySlug } from './topics';
 import { guidesForTopic } from './topic-guides';
-import { isRegionCategory, categoryLabel, regionCategoryPath } from './region-nav';
+import { isRegionCategory, categoryLabel, regionCategoryPath, REGION_CATEGORIES } from './region-nav';
+import { tracksForRegion, getTrack } from './tracks';
 
 export type ContentType = 'college' | 'exam' | 'region' | 'guide';
 
@@ -114,7 +115,7 @@ export const CONTENT_INDEX: ContentUnit[] = buildContentIndex();
 export interface CmiReport {
   errors: string[];
   warnings: string[];
-  counts: { colleges: number; exams: number; regions: number; guides: number; topics: number; total: number };
+  counts: { colleges: number; exams: number; regions: number; guides: number; topics: number; tracks: number; total: number };
 }
 
 const norm = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -304,6 +305,48 @@ export function validateContent(): CmiReport {
     if (n > 1) errors.push(`Topic slug "${slug}" is used ${n} times — slugs must be unique.`);
   }
 
+  // — Tracks (region-shaped hub groups): refs resolve, unique + non-colliding
+  //   slugs per region, region matches, and every topic hub is reachable from
+  //   at least one track (no orphan hub hidden from the region navigation) —
+  const regionCategorySet = new Set<string>(REGION_CATEGORIES);
+  const topicsInSomeTrack = new Set<string>();
+  let trackCount = 0;
+  for (const r of REGIONS) {
+    const trackSlugs = new Map<string, number>();
+    for (const track of tracksForRegion(r.slug)) {
+      trackCount += 1;
+      trackSlugs.set(track.slug, (trackSlugs.get(track.slug) ?? 0) + 1);
+      if (track.region !== r.slug) {
+        errors.push(`Track "${track.slug}" claims region "${track.region}" but is listed under "${r.slug}".`);
+      }
+      if (regionCategorySet.has(track.slug)) {
+        errors.push(`Track slug "${track.slug}" (${r.slug}) collides with a region category — choose a distinct slug.`);
+      }
+      if (track.topicSlugs.length === 0) {
+        errors.push(`Track "${track.slug}" (${r.slug}) lists no topic hubs.`);
+      }
+      for (const ts of track.topicSlugs) {
+        if (!TOPIC_SLUGS.has(ts)) {
+          errors.push(`Track "${track.slug}" (${r.slug}) references topic hub "${ts}", which does not exist.`);
+        } else {
+          topicsInSomeTrack.add(ts);
+        }
+      }
+    }
+    for (const [slug, n] of trackSlugs) {
+      if (n > 1) {
+        errors.push(`Track slug "${slug}" is used ${n} times in region "${r.slug}" — track slugs must be unique per region.`);
+      }
+    }
+  }
+  for (const t of TOPICS) {
+    if (!topicsInSomeTrack.has(t.slug)) {
+      errors.push(
+        `Topic hub "${t.slug}" is not in any track — add it to a track in lib/tracks.ts so it is reachable from the region navigation.`,
+      );
+    }
+  }
+
   return {
     errors,
     warnings,
@@ -313,6 +356,7 @@ export function validateContent(): CmiReport {
       regions: REGIONS.length,
       guides: GUIDES.length,
       topics: TOPICS.length,
+      tracks: trackCount,
       total: CONTENT_INDEX.length,
     },
   };
@@ -428,6 +472,16 @@ export function breadcrumbsFor(barePath: string): Crumb[] {
     const region = REGIONS.find((r) => r.slug === child);
     if (region) {
       const sub = segments[2];
+      if (sub === 'track' && segments[3]) {
+        const track = getTrack(region.slug, segments[3]);
+        if (track) {
+          return [
+            home,
+            { label: region.displayName, href: `/regions/${region.slug}` },
+            { label: track.label },
+          ];
+        }
+      }
       if (sub && isRegionCategory(sub)) {
         return [
           home,

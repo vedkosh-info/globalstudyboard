@@ -75,6 +75,1435 @@ export interface Topic {
 }
 
 export const TOPICS: Topic[] = [
+{
+  "slug": "ucas-application-in-depth-uk",
+  "label": "UCAS Application In Depth",
+  "title": "The UCAS Application In Depth",
+  "description": "The UCAS undergraduate application in depth — the personal statement, references and predicted grades, UCAS Extra, deferred entry, offers and Confirmation/results day.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "ucas-personal-statement-three-questions-format-explained",
+    "ucas-firm-and-insurance-choice-strategy",
+    "ucas-extra-and-extra-choices-explained",
+    "contextual-and-unconditional-offers-explained",
+    "ucas-confirmation-and-results-day-explained"
+  ],
+  "examSlugs": [
+    "a-levels",
+    "international-baccalaureate"
+  ],
+  "keywords": [
+    "ucas application in depth",
+    "ucas personal statement three questions format explained",
+    "ucas firm and insurance choice strategy",
+    "ucas extra and extra choices explained"
+  ]
+},
+{
+  "slug": "uk-entry-routes-and-qualifications",
+  "label": "Entry Routes & Qualifications",
+  "title": "UK Entry Routes & Qualifications",
+  "description": "How A-Levels, BTEC and T-Levels, the IB, Scottish Highers, Access to HE and foundation routes enter UK and Irish universities — and how entry requirements map across them.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "uk-a-levels-entry-requirements-explained",
+    "btec-and-t-levels-for-uk-university-entry",
+    "international-baccalaureate-for-uk-and-ireland-universities",
+    "scottish-highers-and-advanced-highers-for-university-entry",
+    "access-to-he-and-mature-student-entry-routes-uk-ireland"
+  ],
+  "examSlugs": [
+    "a-levels",
+    "international-baccalaureate"
+  ],
+  "keywords": [
+    "entry routes & qualifications",
+    "uk a levels entry requirements explained",
+    "btec and t levels for uk university entry",
+    "international baccalaureate for uk and ireland universities"
+  ]
+},
+{
+  "slug": "ireland-cao-and-leaving-cert-in-depth",
+  "label": "Ireland: CAO & Leaving Cert",
+  "title": "Ireland: CAO & Leaving Cert In Depth",
+  "description": "Applying to Irish universities — how CAO points work, the Leaving Certificate, the HPAT for medicine, the QQI/FET route and mature/international applicants.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "how-cao-points-are-calculated-leaving-cert",
+    "qqi-fet-route-to-irish-universities-explained",
+    "mature-applicant-route-to-irish-universities",
+    "eu-vs-non-eu-applicants-to-irish-universities"
+  ],
+  "examSlugs": [
+    "international-baccalaureate"
+  ],
+  "keywords": [
+    "ireland: cao & leaving cert",
+    "how cao points are calculated leaving cert",
+    "hpat for medicine in ireland explained",
+    "qqi fet route to irish universities explained"
+  ]
+},
+{
+  "slug": "oxbridge-and-the-collegiate-system",
+  "label": "Oxbridge & the Collegiate System",
+  "title": "Oxbridge & the Collegiate System",
+  "description": "How Oxford and Cambridge work — the collegiate system, choosing or being pooled to a college, the tutorial/supervision model, and the admissions-test and interview landscape.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "oxbridge-collegiate-system-explained",
+    "how-to-choose-an-oxbridge-college",
+    "open-application-vs-college-choice-oxbridge",
+    "oxbridge-tutorial-and-supervision-system-explained",
+    "oxbridge-admissions-tests-and-interviews-landscape"
+  ],
+  "examSlugs": [
+    "a-levels"
+  ],
+  "keywords": [
+    "oxbridge & the collegiate system",
+    "oxbridge collegiate system explained",
+    "how to choose an oxbridge college",
+    "open application vs college choice oxbridge"
+  ]
+},
+{
+  "slug": "russell-group-universities-in-depth",
+  "label": "Russell Group In Depth",
+  "title": "Russell Group Universities In Depth",
+  "description": "Choosing among Russell Group universities by subject strength and setting — collegiate, civic and campus universities, and strong options beyond London and Oxbridge.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "collegiate-vs-civic-vs-campus-universities-uk",
+    "how-to-choose-a-russell-group-university-by-subject-strength",
+    "research-intensity-and-the-ref-for-uk-university-choice",
+    "northern-powerhouse-russell-group-universities-explained",
+    "russell-group-vs-non-russell-group-universities-uk"
+  ],
+  "examSlugs": [
+    "a-levels"
+  ],
+  "keywords": [
+    "russell group in depth",
+    "collegiate vs civic vs campus universities uk",
+    "how to choose a russell group university by subject strength",
+    "research intensity and the ref for uk university choice"
+  ]
+},
+{
+  "slug": "uk-university-groups-and-league-tables",
+  "label": "University Groups & League Tables",
+  "title": "UK University Groups & League Tables",
+  "description": "Making sense of UK university groupings and rankings — Russell Group, Mission Group and post-92, and how the UK league tables are built and what they measure.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "uk-university-mission-groups-explained",
+    "pre-92-vs-post-92-universities-uk-explained",
+    "how-uk-university-league-tables-are-compiled",
+    "uk-league-tables-vs-global-rankings-explained",
+    "what-uk-university-rankings-do-not-measure"
+  ],
+  "examSlugs": [
+    "a-levels"
+  ],
+  "keywords": [
+    "university groups & league tables",
+    "uk university mission groups explained",
+    "pre 92 vs post 92 universities uk explained",
+    "how uk university league tables are compiled"
+  ]
+},
+{
+  "slug": "scotland-wales-northern-ireland-study",
+  "label": "Scotland, Wales & NI",
+  "title": "Studying in Scotland, Wales & Northern Ireland",
+  "description": "The UK’s devolved systems — Scotland’s four-year degrees, Welsh universities and Northern Ireland — and how fees and funding differ by nation.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "why-scottish-degrees-take-four-years-explained",
+    "studying-in-wales-universities-and-the-welsh-medium",
+    "studying-in-northern-ireland-universities-guide",
+    "how-uk-tuition-fees-and-funding-differ-by-nation",
+    "saas-student-funding-in-scotland-explained"
+  ],
+  "examSlugs": [
+    "a-levels"
+  ],
+  "keywords": [
+    "scotland, wales & ni",
+    "why scottish degrees take four years explained",
+    "studying in wales universities and the welsh medium",
+    "studying in northern ireland universities guide"
+  ]
+},
+{
+  "slug": "studying-economics-and-finance-uk-ireland",
+  "label": "Economics & Finance Degrees",
+  "title": "Economics & Finance Degrees (UK & Ireland)",
+  "description": "Studying economics, finance and accounting in the UK and Ireland — degree structures, joint honours, and professional accreditation like ICAEW and ACCA.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "studying-economics-in-the-uk-and-ireland",
+    "ppe-and-economics-joint-honours-degrees-explained",
+    "studying-accounting-and-finance-in-the-uk-and-ireland",
+    "professional-accounting-accreditation-icaew-acca-cima-explained",
+    "finance-careers-and-degrees-banking-and-fintech-uk-ireland"
+  ],
+  "examSlugs": [
+    "a-levels"
+  ],
+  "keywords": [
+    "economics & finance degrees",
+    "studying economics in the uk and ireland",
+    "ppe and economics joint honours degrees explained",
+    "studying accounting and finance in the uk and ireland"
+  ]
+},
+{
+  "slug": "studying-psychology-uk-ireland",
+  "label": "Psychology Degrees",
+  "title": "Psychology Degrees (UK & Ireland)",
+  "description": "Studying psychology in the UK and Ireland — BPS/PSI accreditation, conversion courses, applied vs research routes and careers.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "studying-psychology-in-the-uk-and-ireland-bps-psi-accreditation",
+    "graduate-basis-for-chartered-membership-gbc-explained",
+    "psychology-conversion-courses-in-the-uk-and-ireland",
+    "applied-vs-research-psychology-degree-routes-uk-ireland",
+    "psychology-career-pathways-uk-ireland-clinical-educational-and-beyond"
+  ],
+  "examSlugs": [
+    "a-levels"
+  ],
+  "keywords": [
+    "psychology degrees",
+    "studying psychology in the uk and ireland bps psi accreditation",
+    "graduate basis for chartered membership gbc explained",
+    "psychology conversion courses in the uk and ireland"
+  ]
+},
+{
+  "slug": "studying-natural-and-life-sciences-uk-ireland",
+  "label": "Natural & Life Sciences",
+  "title": "Natural & Life Sciences Degrees (UK & Ireland)",
+  "description": "Studying biology, biomedical sciences, chemistry, physics and natural sciences in the UK and Ireland — including integrated masters and placements.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "studying-biological-and-biomedical-sciences-in-the-uk-and-ireland",
+    "integrated-masters-msci-and-mphys-science-degrees-explained",
+    "natural-sciences-degrees-in-the-uk-and-ireland-explained",
+    "science-degrees-with-a-year-in-industry-or-research-placement",
+    "choosing-and-applying-for-physics-and-chemistry-degrees-uk-ireland"
+  ],
+  "examSlugs": [
+    "a-levels"
+  ],
+  "keywords": [
+    "natural & life sciences",
+    "studying biological and biomedical sciences in the uk and ireland",
+    "integrated masters msci and mphys science degrees explained",
+    "natural sciences degrees in the uk and ireland explained"
+  ]
+},
+{
+  "slug": "studying-humanities-and-social-sciences-uk-ireland",
+  "label": "Humanities & Social Sciences",
+  "title": "Humanities & Social Sciences (UK & Ireland)",
+  "description": "Studying history, English, politics, sociology, philosophy and joint degrees like PPE in the UK and Ireland — what they involve and where they lead.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "studying-humanities-and-social-sciences-in-the-uk-and-ireland",
+    "joint-honours-and-combined-degrees-in-the-uk-explained",
+    "studying-ppe-philosophy-politics-economics-in-the-uk",
+    "studying-history-and-english-literature-in-the-uk-and-ireland",
+    "where-humanities-degrees-lead-careers-after-arts-and-social-sciences-uk"
+  ],
+  "examSlugs": [
+    "a-levels"
+  ],
+  "keywords": [
+    "humanities & social sciences",
+    "studying humanities and social sciences in the uk and ireland",
+    "joint honours and combined degrees in the uk explained",
+    "studying ppe philosophy politics economics in the uk"
+  ]
+},
+{
+  "slug": "studying-art-design-and-architecture-uk-ireland",
+  "label": "Art, Design & Architecture",
+  "title": "Art, Design & Architecture (UK & Ireland)",
+  "description": "Studying art, design and architecture in the UK and Ireland — the art foundation, portfolio degrees, architecture (RIBA/ARB) and the conservatoire route.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "art-foundation-diploma-uk-explained",
+    "building-an-art-and-design-portfolio-for-uk-applications",
+    "how-to-study-architecture-in-the-uk-riba-arb-part-1",
+    "ucas-conservatoires-music-and-drama-route-explained",
+    "top-uk-and-ireland-art-design-and-architecture-schools-for-international-students"
+  ],
+  "examSlugs": [
+    "a-levels"
+  ],
+  "keywords": [
+    "art, design & architecture",
+    "art foundation diploma uk explained",
+    "building an art and design portfolio for uk applications",
+    "how to study architecture in the uk riba arb part 1"
+  ]
+},
+{
+  "slug": "uk-ireland-admissions-tests-in-depth",
+  "label": "Admissions Tests In Depth",
+  "title": "UK & Ireland Admissions Tests In Depth",
+  "description": "The UK and Ireland university admissions tests — UCAT, TMUA and ESAT, STEP, MAT and PAT, the LNAT and the HPAT — what each assesses and how to prepare.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "tmua-and-esat-admissions-tests-explained",
+    "step-maths-exam-guide-for-uk-universities",
+    "pat-physics-aptitude-test-guide-for-oxford",
+    "hpat-exam-guide-for-irish-medicine",
+    "how-to-prepare-for-uk-and-ireland-admissions-tests"
+  ],
+  "examSlugs": [
+    "ucat"
+  ],
+  "keywords": [
+    "admissions tests in depth",
+    "tmua and esat admissions tests explained",
+    "step maths exam guide for uk universities",
+    "pat physics aptitude test guide for oxford"
+  ]
+},
+{
+  "slug": "healthcare-degrees-beyond-medicine-uk-ireland",
+  "label": "Healthcare Degrees Beyond Medicine",
+  "title": "Healthcare Degrees Beyond Medicine (UK & Ireland)",
+  "description": "Nursing and midwifery, pharmacy, physiotherapy, allied health and optometry in the UK and Ireland — including the regulators and registration.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "how-to-study-nursing-and-midwifery-in-the-uk-and-ireland",
+    "how-to-study-pharmacy-in-the-uk-and-ireland",
+    "how-to-study-physiotherapy-in-the-uk-and-ireland",
+    "allied-health-professions-degrees-in-the-uk-and-ireland-explained",
+    "healthcare-regulators-and-registration-for-international-graduates-uk-ireland"
+  ],
+  "examSlugs": [
+    "ucat"
+  ],
+  "keywords": [
+    "healthcare degrees beyond medicine",
+    "how to study nursing and midwifery in the uk and ireland",
+    "how to study pharmacy in the uk and ireland",
+    "how to study physiotherapy in the uk and ireland"
+  ]
+},
+{
+  "slug": "uk-ireland-tuition-and-funding-in-depth",
+  "label": "Tuition & Funding In Depth",
+  "title": "UK & Ireland Tuition & Funding In Depth",
+  "description": "How home vs international fee status is decided, what Student Finance covers for eligible students, university bursaries and postgraduate loans. Not financial advice.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "uk-home-vs-international-fee-status-explained",
+    "uk-student-finance-loans-explained-tuition-and-maintenance",
+    "ireland-free-fees-initiative-and-susi-grants-explained",
+    "university-bursaries-hardship-and-access-funds-uk-ireland",
+    "postgraduate-loans-and-funding-uk-and-ireland-explained"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "tuition & funding in depth",
+    "uk home vs international fee status explained",
+    "uk student finance loans explained tuition and maintenance",
+    "ireland free fees initiative and susi grants explained"
+  ]
+},
+{
+  "slug": "uk-student-visa-process-in-depth",
+  "label": "Student Visa Process In Depth",
+  "title": "UK Student Visa Process In Depth",
+  "description": "The UK Student visa process — the eVisa, ATAS, points-based requirements and credibility, biometrics, and the Short-term study route. Not immigration advice.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "uk-evisa-and-share-code-for-students-explained",
+    "atas-clearance-for-uk-student-visas-explained",
+    "uk-student-visa-points-and-credibility-requirements",
+    "uk-student-visa-biometrics-and-decision-process",
+    "short-term-study-and-visitor-routes-for-short-courses-uk"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "student visa process in depth",
+    "uk evisa and share code for students explained",
+    "atas clearance for uk student visas explained",
+    "uk student visa points and credibility requirements"
+  ]
+},
+{
+  "slug": "uk-graduate-and-work-visa-routes-in-depth",
+  "label": "Graduate & Work Visa Routes",
+  "title": "UK & Ireland Graduate & Work Visa Routes",
+  "description": "Staying to work — the Graduate Route, the Skilled Worker route and sponsorship, Global Talent and High Potential Individual, and Ireland’s Stamp 1G. Not immigration advice.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "switching-from-graduate-route-to-skilled-worker-visa-uk",
+    "uk-skilled-worker-sponsorship-and-finding-a-licensed-sponsor",
+    "uk-global-talent-and-high-potential-individual-visa-routes",
+    "ireland-stamp-1g-to-employment-permit-and-stamp-1-pathway",
+    "uk-and-ireland-path-to-settlement-after-work-visas"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "graduate & work visa routes",
+    "switching from graduate route to skilled worker visa uk",
+    "uk skilled worker sponsorship and finding a licensed sponsor",
+    "uk global talent and high potential individual visa routes"
+  ]
+},
+{
+  "slug": "graduate-careers-and-employability-uk-ireland",
+  "label": "Graduate Careers & Employability",
+  "title": "Graduate Careers & Employability (UK & Ireland)",
+  "description": "Building employability — placement years and internships, professional accreditation, careers services and graduate schemes in the UK and Ireland.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "placement-years-and-internships-in-the-uk-and-ireland",
+    "professional-accreditation-for-uk-and-ireland-degrees",
+    "using-university-careers-services-in-the-uk-and-ireland",
+    "uk-and-ireland-graduate-schemes-explained",
+    "building-employability-skills-while-studying-in-the-uk-and-ireland"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "graduate careers & employability",
+    "placement years and internships in the uk and ireland",
+    "professional accreditation for uk and ireland degrees",
+    "using university careers services in the uk and ireland"
+  ]
+},
+{
+  "slug": "settling-into-uk-ireland-student-life",
+  "label": "Settling In: Practicalities",
+  "title": "Settling Into UK & Ireland Student Life",
+  "description": "Settling in — the BRP/eVisa, registering with a GP and TB tests, council-tax exemption, bank accounts, SIM and transport, and term dates.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "collecting-your-brp-or-activating-your-uk-evisa",
+    "registering-with-a-gp-and-tb-test-requirements-uk-ireland",
+    "council-tax-exemption-for-students-in-the-uk",
+    "opening-a-student-bank-account-and-getting-a-uk-or-irish-sim",
+    "student-transport-cards-and-term-dates-in-the-uk-and-ireland"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "settling in: practicalities",
+    "collecting your brp or activating your uk evisa",
+    "registering with a gp and tb test requirements uk ireland",
+    "council tax exemption for students in the uk"
+  ]
+},
+{
+  "slug": "postgraduate-and-research-study-uk-ireland",
+  "label": "Postgraduate & Research Study",
+  "title": "Postgraduate & Research Study (UK & Ireland)",
+  "description": "Taught vs research masters, the one-year masters and MRes, PhD funding and studentships, and postgraduate loans in the UK and Ireland.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "taught-vs-research-masters-in-the-uk-and-ireland",
+    "mres-and-one-year-masters-formats-explained",
+    "how-to-fund-a-phd-in-the-uk-and-ireland",
+    "how-to-find-a-phd-supervisor-and-write-a-research-proposal",
+    "postgraduate-masters-loans-for-uk-and-ireland-study"
+  ],
+  "examSlugs": [
+    "gre",
+    "gmat"
+  ],
+  "keywords": [
+    "postgraduate & research study",
+    "taught vs research masters in the uk and ireland",
+    "mres and one year masters formats explained",
+    "how to fund a phd in the uk and ireland"
+  ]
+},
+{
+  "slug": "ivy-and-elite-admissions-deep-dive",
+  "label": "Elite Admissions Deep-Dive",
+  "title": "Elite & Ivy Admissions, In Depth",
+  "description": "How highly selective US admissions really work — holistic review, institutional priorities, hooks and demonstrated interest — beyond the basics, with official sources.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "how-elite-colleges-shape-a-class",
+    "admissions-hooks-explained",
+    "demonstrated-interest-at-elite-schools",
+    "what-moves-the-needle-elite-admissions",
+    "how-holistic-review-is-scored"
+  ],
+  "examSlugs": [
+    "sat",
+    "act",
+    "ap-exams"
+  ],
+  "keywords": [
+    "elite admissions deep-dive",
+    "how elite colleges shape a class",
+    "admissions hooks explained",
+    "demonstrated interest at elite schools"
+  ]
+},
+{
+  "slug": "public-universities-and-systems-usa",
+  "label": "Public Universities & Systems",
+  "title": "US Public Universities & State Systems",
+  "description": "The US public-university landscape — the UC system, state flagships, in-state vs out-of-state tuition and honors colleges — and how to weigh public vs private.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "university-of-california-system-and-application-guide",
+    "state-flagship-universities-explained",
+    "in-state-vs-out-of-state-admission-and-tuition",
+    "honors-colleges-at-public-universities-guide",
+    "public-vs-private-university-value-comparison"
+  ],
+  "examSlugs": [
+    "sat",
+    "act"
+  ],
+  "keywords": [
+    "public universities & systems",
+    "university of california system and application guide",
+    "state flagship universities explained",
+    "in state vs out of state admission and tuition"
+  ]
+},
+{
+  "slug": "choosing-and-comparing-us-colleges",
+  "label": "Choosing & Comparing Colleges",
+  "title": "Choosing & Comparing US Colleges",
+  "description": "How to choose and compare US colleges beyond rankings — fit, visits, outcomes data and building a balanced list — with neutral, official-source guidance.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "college-fit-how-to-define-it",
+    "campus-visits-and-virtual-tours-guide",
+    "what-college-rankings-do-and-dont-measure",
+    "college-location-size-and-setting-guide",
+    "retention-graduation-and-outcomes-data-guide"
+  ],
+  "examSlugs": [
+    "sat",
+    "act"
+  ],
+  "keywords": [
+    "choosing & comparing colleges",
+    "college fit how to define it",
+    "campus visits and virtual tours guide",
+    "what college rankings do and dont measure"
+  ]
+},
+{
+  "slug": "stem-majors-deep-dive-usa",
+  "label": "STEM Majors Deep-Dive",
+  "title": "US STEM Majors, In Depth",
+  "description": "Specific US STEM majors — physics, biology, chemistry, mathematics, statistics, neuroscience and environmental science — what each studies and where it leads.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "physics-and-astronomy-major-guide-usa",
+    "biology-major-guide-usa",
+    "chemistry-major-guide-usa",
+    "mathematics-and-statistics-majors-usa",
+    "neuroscience-and-environmental-science-majors-usa"
+  ],
+  "examSlugs": [
+    "sat",
+    "act",
+    "ap-exams"
+  ],
+  "keywords": [
+    "stem majors deep-dive",
+    "physics and astronomy major guide usa",
+    "biology major guide usa",
+    "chemistry major guide usa"
+  ]
+},
+{
+  "slug": "engineering-disciplines-usa",
+  "label": "Engineering Disciplines",
+  "title": "US Engineering Disciplines",
+  "description": "The specific US engineering disciplines — mechanical, electrical, civil, chemical, aerospace, biomedical and industrial — what sets each apart, plus ABET accreditation.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "abet-accreditation-explained",
+    "biomedical-engineering-major-usa",
+    "industrial-and-systems-engineering-major-usa",
+    "how-to-choose-an-engineering-discipline",
+    "engineering-licensure-fe-and-pe-exams-explained"
+  ],
+  "examSlugs": [
+    "sat",
+    "act"
+  ],
+  "keywords": [
+    "engineering disciplines",
+    "abet accreditation explained",
+    "biomedical engineering major usa",
+    "industrial and systems engineering major usa"
+  ]
+},
+{
+  "slug": "business-and-economics-majors-usa",
+  "label": "Business & Economics Majors",
+  "title": "US Business & Economics Majors",
+  "description": "Specific US business and economics majors — accounting, marketing, management, economics and entrepreneurship — and the undergraduate business-school route.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "accounting-major-guide-usa",
+    "economics-vs-business-major-which-to-choose",
+    "marketing-major-guide-usa",
+    "supply-chain-and-operations-management-major-usa",
+    "how-to-get-into-undergraduate-business-school-usa"
+  ],
+  "examSlugs": [
+    "sat",
+    "act"
+  ],
+  "keywords": [
+    "business & economics majors",
+    "accounting major guide usa",
+    "economics vs business major which to choose",
+    "marketing major guide usa"
+  ]
+},
+{
+  "slug": "humanities-and-social-science-majors-usa",
+  "label": "Humanities & Social Sciences",
+  "title": "US Humanities & Social-Science Majors",
+  "description": "US humanities and social-science majors — psychology, political science, sociology, history, English and communications — what they study and career directions.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "psychology-major-guide-usa",
+    "political-science-and-international-relations-majors-usa",
+    "history-and-philosophy-majors-career-value-usa",
+    "english-and-communications-majors-usa",
+    "sociology-and-the-social-sciences-major-guide-usa"
+  ],
+  "examSlugs": [
+    "sat",
+    "act"
+  ],
+  "keywords": [
+    "humanities & social sciences",
+    "psychology major guide usa",
+    "political science and international relations majors usa",
+    "history and philosophy majors career value usa"
+  ]
+},
+{
+  "slug": "health-profession-majors-usa",
+  "label": "Health-Profession Majors",
+  "title": "US Health-Profession Majors",
+  "description": "US health-profession and pre-professional majors — public health, kinesiology, nutrition and the pre-dental, pre-pharmacy and pre-vet tracks — described factually.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "public-health-major-guide-usa",
+    "kinesiology-and-exercise-science-major-usa",
+    "nutrition-and-dietetics-major-usa",
+    "pre-dental-track-explained-usa",
+    "pre-pharmacy-and-pre-vet-tracks-usa"
+  ],
+  "examSlugs": [
+    "sat",
+    "act",
+    "mcat"
+  ],
+  "keywords": [
+    "health-profession majors",
+    "public health major guide usa",
+    "kinesiology and exercise science major usa",
+    "nutrition and dietetics major usa"
+  ]
+},
+{
+  "slug": "arts-architecture-design-majors-usa",
+  "label": "Arts, Architecture & Design Majors",
+  "title": "US Arts, Architecture & Design Majors",
+  "description": "US arts and design majors and how their admission differs — architecture, design, film, music, theater and fine arts — including portfolios and auditions.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "art-and-design-portfolio-for-us-colleges",
+    "applying-to-us-architecture-programs-barch-vs-bs",
+    "music-and-theater-auditions-for-us-colleges",
+    "film-and-media-arts-majors-admission-usa",
+    "bfa-vs-ba-in-arts-which-degree-to-choose"
+  ],
+  "examSlugs": [
+    "sat",
+    "act"
+  ],
+  "keywords": [
+    "arts, architecture & design majors",
+    "art and design portfolio for us colleges",
+    "applying to us architecture programs barch vs bs",
+    "music and theater auditions for us colleges"
+  ]
+},
+{
+  "slug": "application-components-deep-dive-usa",
+  "label": "Application Components Deep-Dive",
+  "title": "US Application Components, In Depth",
+  "description": "The pieces of a US application in depth — the activities list, additional-information section, portfolios, interviews and strong recommendations.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "activities-list-strategy-common-app",
+    "additional-information-section-explained",
+    "portfolios-and-auditions-for-us-colleges",
+    "college-admissions-interview-guide",
+    "how-to-ask-for-strong-recommendation-letters"
+  ],
+  "examSlugs": [
+    "sat",
+    "act"
+  ],
+  "keywords": [
+    "application components deep-dive",
+    "activities list strategy common app",
+    "additional information section explained",
+    "portfolios and auditions for us colleges"
+  ]
+},
+{
+  "slug": "college-essay-mastery-usa",
+  "label": "College Essay Mastery",
+  "title": "Mastering the US College Essay",
+  "description": "Going deeper on the US college essay — brainstorming, structuring the personal statement, voice and revision, the diversity essay and common mistakes.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "how-to-brainstorm-college-essay-topics",
+    "how-to-structure-a-personal-statement",
+    "developing-voice-and-revising-college-essays",
+    "writing-the-diversity-and-identity-essay",
+    "common-college-essay-mistakes-to-avoid"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "college essay mastery",
+    "how to brainstorm college essay topics",
+    "how to structure a personal statement",
+    "developing voice and revising college essays"
+  ]
+},
+{
+  "slug": "admissions-strategy-and-positioning-usa",
+  "label": "Admissions Strategy & Positioning",
+  "title": "US Admissions Strategy & Positioning",
+  "description": "Strategy across the whole US application — spike vs well-rounded, narrative, school-list strategy by selectivity, Early Decision and fee waivers.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "spike-vs-well-rounded-applicant",
+    "building-a-coherent-application-narrative",
+    "balancing-your-college-list-by-selectivity",
+    "when-early-decision-is-worth-it",
+    "college-application-fee-waivers-explained"
+  ],
+  "examSlugs": [
+    "sat",
+    "act"
+  ],
+  "keywords": [
+    "admissions strategy & positioning",
+    "spike vs well rounded applicant",
+    "building a coherent application narrative",
+    "balancing your college list by selectivity"
+  ]
+},
+{
+  "slug": "ap-ib-and-college-credit-usa",
+  "label": "AP, IB & College Credit",
+  "title": "AP, IB & US College Credit",
+  "description": "Earning and using US college credit — choosing AP courses by subject, AP score requirements, IB credit, CLEP exams and how credit transfers.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "ap-courses-by-subject-which-to-take",
+    "how-ap-score-requirements-vary-by-college",
+    "ib-diploma-college-credit-in-usa",
+    "clep-exams-for-college-credit-explained",
+    "how-college-credit-transfers-between-schools"
+  ],
+  "examSlugs": [
+    "ap-exams",
+    "international-baccalaureate"
+  ],
+  "keywords": [
+    "ap, ib & college credit",
+    "ap courses by subject which to take",
+    "how ap score requirements vary by college",
+    "ib diploma college credit in usa"
+  ]
+},
+{
+  "slug": "test-prep-and-test-day-deep-dive-usa",
+  "label": "Test Prep & Test Day",
+  "title": "SAT/ACT Prep & Test Day, In Depth",
+  "description": "Deeper SAT/ACT prep and logistics — the digital SAT section by section, ACT strategies, score choice, retaking, accommodations and test-day readiness.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "digital-sat-section-by-section-strategy",
+    "act-section-strategies-and-pacing",
+    "sat-act-score-choice-and-which-scores-to-send",
+    "should-you-retake-the-sat-or-act",
+    "sat-act-testing-accommodations-explained"
+  ],
+  "examSlugs": [
+    "sat",
+    "act"
+  ],
+  "keywords": [
+    "test prep & test day",
+    "digital sat section by section strategy",
+    "act section strategies and pacing",
+    "sat act score choice and which scores to send"
+  ]
+},
+{
+  "slug": "scholarships-deep-dive-usa",
+  "label": "Scholarships Deep-Dive",
+  "title": "US Scholarships, In Depth",
+  "description": "Specific US scholarship types and how to win them — state, departmental, ROTC, employer and external awards — with scam-avoidance and secular criteria only.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "state-scholarships-and-grants-usa",
+    "departmental-and-merit-scholarships-from-colleges",
+    "rotc-and-military-scholarships-explained",
+    "external-and-private-scholarship-databases",
+    "how-to-avoid-scholarship-scams"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "scholarships deep-dive",
+    "state scholarships and grants usa",
+    "departmental and merit scholarships from colleges",
+    "rotc and military scholarships explained"
+  ]
+},
+{
+  "slug": "financing-strategies-and-loans-usa",
+  "label": "Financing Strategies & Loans",
+  "title": "Paying for College: Strategies & Loans",
+  "description": "Strategies and tools for paying for US college — 529 plans, aid appeals, federal vs private loans and repayment — factual, not financial advice.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "529-college-savings-plans-explained",
+    "how-to-appeal-a-financial-aid-offer",
+    "student-loan-repayment-plans-explained",
+    "plus-loans-and-private-student-loans-explained",
+    "budgeting-for-college-as-a-student"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "financing strategies & loans",
+    "529 college savings plans explained",
+    "how to appeal a financial aid offer",
+    "student loan repayment plans explained"
+  ]
+},
+{
+  "slug": "graduate-programs-by-field-usa",
+  "label": "Graduate Programs by Field",
+  "title": "US Graduate Programs by Field",
+  "description": "US graduate admissions by field — MS in engineering and CS, MPH, MFA, MEd, MSW, MPP and MS finance — how each programme’s admissions and funding differ.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "ms-engineering-cs-admissions-funding-usa",
+    "mph-admissions-and-funding-usa",
+    "mfa-admissions-portfolio-funding-usa",
+    "med-msw-mpp-admissions-funding-usa",
+    "ms-finance-vs-mba-admissions-funding-usa"
+  ],
+  "examSlugs": [
+    "gre",
+    "gmat"
+  ],
+  "keywords": [
+    "graduate programs by field",
+    "ms engineering cs admissions funding usa",
+    "mph admissions and funding usa",
+    "mfa admissions portfolio funding usa"
+  ]
+},
+{
+  "slug": "professional-school-admissions-usa",
+  "label": "Professional School Admissions",
+  "title": "US Professional-School Admissions",
+  "description": "US professional-school admissions in depth — medical (MCAT/AMCAS), law (LSAT/LSAC), and dental, pharmacy, veterinary, optometry and PA routes.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "mcat-and-amcas-medical-school-application-guide",
+    "lsat-and-lsac-cas-law-school-application-guide",
+    "dental-and-pharmacy-school-admissions-usa",
+    "veterinary-and-optometry-school-admissions-usa",
+    "physician-assistant-school-admissions-usa"
+  ],
+  "examSlugs": [
+    "mcat",
+    "lsat",
+    "gre"
+  ],
+  "keywords": [
+    "professional school admissions",
+    "mcat and amcas medical school application guide",
+    "lsat and lsac cas law school application guide",
+    "dental and pharmacy school admissions usa"
+  ]
+},
+{
+  "slug": "international-student-life-and-work-usa",
+  "label": "International Student Life & Work",
+  "title": "International Student Life & Work in the USA",
+  "description": "Practicalities for international students in the US — maintaining F-1 status and SEVIS, work rules, travel, taxes and banking — neutral facts, not immigration advice.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "maintaining-f1-status-and-sevis-rules",
+    "off-campus-work-authorization-for-f1-students",
+    "f1-travel-and-reentry-to-the-usa",
+    "taxes-for-international-students-in-usa",
+    "settling-in-as-an-international-student-usa"
+  ],
+  "examSlugs": [
+    "toefl",
+    "ielts",
+    "duolingo-english-test"
+  ],
+  "keywords": [
+    "international student life & work",
+    "maintaining f1 status and sevis rules",
+    "off campus work authorization for f1 students",
+    "f1 travel and reentry to the usa"
+  ]
+},
+{
+  "slug": "campus-life-and-student-support-usa",
+  "label": "Campus Life & Student Support",
+  "title": "US Campus Life & Student Support",
+  "description": "US campus life and support systems — housing, clubs, mental-health and career services, study abroad, safety, disability and first-generation support.",
+  "group": "study-in-usa",
+  "region": "usa",
+  "guideSlugs": [
+    "greek-life-fraternities-sororities-explained",
+    "campus-mental-health-and-wellness-resources",
+    "college-career-services-and-internships",
+    "study-abroad-programs-during-us-college",
+    "campus-safety-and-disability-support-services"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "campus life & student support",
+    "greek life fraternities sororities explained",
+    "campus mental health and wellness resources",
+    "college career services and internships"
+  ]
+},
+{
+  "slug": "foreign-nri-admission-routes",
+  "label": "Foreign & NRI Admission Routes",
+  "title": "Foreign & NRI Admission Routes to Indian Colleges",
+  "description": "How foreign nationals, NRIs and OCI/PIO students get into Indian colleges — the DASA scheme, NRI and supernumerary seats, and the engineering, medical and university routes — each deferred to its official source.",
+  "group": "fields",
+  "guideSlugs": [
+    "how-foreign-nationals-apply-to-indian-colleges",
+    "dasa-scheme-for-foreign-and-nri-students",
+    "nri-quota-and-supernumerary-seats-explained",
+    "oci-and-pio-students-studying-in-india",
+    "engineering-admission-in-india-for-foreign-students",
+    "mbbs-in-india-for-foreign-and-nri-students",
+    "university-admission-in-india-for-foreign-students"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "foreign & nri admission routes",
+    "foreign students india",
+    "nri oci admission india"
+  ]
+},
+{
+  "slug": "studying-in-india-as-an-international-student",
+  "label": "Studying in India as an International Student",
+  "title": "Studying in India as an International Student",
+  "description": "The practical side for foreign students in India — the Indian student visa, fees, ICCR and Study in India scholarships, and FRRO registration — neutral, official-source facts.",
+  "group": "fields",
+  "guideSlugs": [
+    "student-visa-for-studying-in-india",
+    "fees-for-international-students-in-india",
+    "scholarships-for-international-students-in-india",
+    "study-in-india-programme-explained",
+    "living-in-india-as-an-international-student"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "studying in india as an international student",
+    "foreign students india",
+    "nri oci admission india"
+  ]
+},
+{
+  "slug": "medical-pg-and-specialisation",
+  "label": "Medical PG & Specialisation",
+  "title": "Medical PG & Specialisation in India",
+  "description": "Postgraduate medicine after MBBS — NEET-PG, MD/MS and DNB, super-specialities, and the licensing exams — with official regulator sources.",
+  "group": "fields",
+  "guideSlugs": [
+    "md-vs-ms-which-specialisation-to-choose",
+    "how-to-become-a-medical-specialist-in-india",
+    "neet-ss-and-super-specialty-courses",
+    "fmge-and-next-licensing-exam-guide",
+    "dnb-vs-md-ms-explained"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "medical pg & specialisation",
+    "md vs ms which specialisation to choose",
+    "how to become a medical specialist in india",
+    "neet ss and super specialty courses"
+  ]
+},
+{
+  "slug": "ayush-and-alternative-medicine",
+  "label": "AYUSH & Alternative Medicine",
+  "title": "AYUSH & Alternative Medicine Courses",
+  "description": "Secular, regulated AYUSH degree courses after NEET — homeopathy, Unani, naturopathy and Ayurveda — plus veterinary science, with official sources.",
+  "group": "fields",
+  "guideSlugs": [
+    "bhms-homeopathy-course-guide",
+    "bums-unani-medicine-course-guide",
+    "bnys-naturopathy-and-yoga-course-guide",
+    "ayush-courses-and-careers",
+    "how-to-become-a-veterinary-doctor"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "ayush & alternative medicine",
+    "bhms homeopathy course guide",
+    "bums unani medicine course guide",
+    "bnys naturopathy and yoga course guide"
+  ]
+},
+{
+  "slug": "allied-and-paramedical-health",
+  "label": "Allied & Paramedical Health",
+  "title": "Allied & Paramedical Health Courses",
+  "description": "Allied-health and paramedical degrees — occupational therapy, optometry, lab technology, imaging and nutrition — and how to qualify, from official sources.",
+  "group": "fields",
+  "guideSlugs": [
+    "occupational-therapy-course-guide",
+    "optometry-course-and-career-guide",
+    "medical-lab-technology-course-guide",
+    "radiology-and-imaging-technology-courses",
+    "nutrition-and-dietetics-course-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "allied & paramedical health",
+    "occupational therapy course guide",
+    "optometry course and career guide",
+    "medical lab technology course guide"
+  ]
+},
+{
+  "slug": "emerging-tech-careers",
+  "label": "Emerging Tech Careers",
+  "title": "Emerging Tech Careers",
+  "description": "Fast-evolving technology careers — cloud, DevOps, blockchain, data engineering and IoT — and the skills and routes into each, framed neutrally.",
+  "group": "fields",
+  "guideSlugs": [
+    "cloud-computing-career-guide",
+    "devops-engineer-career-guide",
+    "blockchain-developer-career-guide",
+    "how-to-become-a-data-engineer",
+    "iot-and-embedded-systems-career-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "emerging tech careers",
+    "cloud computing career guide",
+    "devops engineer career guide",
+    "blockchain developer career guide"
+  ]
+},
+{
+  "slug": "more-engineering-branches",
+  "label": "More Engineering Branches",
+  "title": "More Engineering Branches",
+  "description": "Beyond the core branches — robotics & mechatronics, instrumentation, mining, petroleum and environmental engineering — what each involves and where it leads.",
+  "group": "fields",
+  "guideSlugs": [
+    "robotics-and-mechatronics-engineering",
+    "instrumentation-engineering-overview",
+    "mining-engineering-career-scope",
+    "petroleum-engineering-overview",
+    "environmental-engineering-career-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "more engineering branches",
+    "robotics and mechatronics engineering",
+    "instrumentation engineering overview",
+    "mining engineering career scope"
+  ]
+},
+{
+  "slug": "finance-professional-qualifications",
+  "label": "Finance & Professional Qualifications",
+  "title": "Finance & Professional Qualifications",
+  "description": "Professional finance routes — actuary, FRM, ACCA, CMA and financial analyst — their structure and official bodies, with no income guarantees.",
+  "group": "fields",
+  "guideSlugs": [
+    "how-to-become-an-actuary-in-india",
+    "frm-financial-risk-manager-guide",
+    "acca-guide-for-indian-students",
+    "cma-cost-and-management-accountancy-guide",
+    "how-to-become-a-financial-analyst"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "finance & professional qualifications",
+    "how to become an actuary in india",
+    "frm financial risk manager guide",
+    "acca guide for indian students"
+  ]
+},
+{
+  "slug": "mba-specialisations-and-schools",
+  "label": "MBA Specialisations & B-Schools",
+  "title": "MBA Specialisations & B-Schools",
+  "description": "Choosing an MBA specialisation — finance, marketing, analytics, HR — and the MBA-vs-PGDM question, described neutrally with official context.",
+  "group": "fields",
+  "guideSlugs": [
+    "mba-in-finance-specialisation",
+    "mba-in-marketing-specialisation",
+    "mba-in-business-analytics",
+    "mba-in-human-resources",
+    "mba-vs-pgdm-which-is-better"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "mba specialisations & b-schools",
+    "mba in finance specialisation",
+    "mba in marketing specialisation",
+    "mba in business analytics"
+  ]
+},
+{
+  "slug": "law-entrance-preparation",
+  "label": "Law Entrance Preparation",
+  "title": "Law Entrance Preparation",
+  "description": "Preparing for law entrances — CLAT and AILET strategy, 5-year vs 3-year LLB, integrated-degree variants, and the AIBE — from official sources.",
+  "group": "fields",
+  "guideSlugs": [
+    "how-to-prepare-for-clat",
+    "how-to-prepare-for-ailet",
+    "5-year-vs-3-year-llb-which-to-choose",
+    "ba-llb-vs-bba-llb-which-to-choose",
+    "aibe-all-india-bar-exam-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "law entrance preparation",
+    "how to prepare for clat",
+    "how to prepare for ailet",
+    "5 year vs 3 year llb which to choose"
+  ]
+},
+{
+  "slug": "law-careers-and-specialisations",
+  "label": "Law Careers & Specialisations",
+  "title": "Law Careers & Specialisations",
+  "description": "Where a law degree leads — corporate law, IP law, litigation and the LLM — described neutrally, with official regulator sources.",
+  "group": "fields",
+  "guideSlugs": [
+    "corporate-law-career-guide",
+    "how-to-become-a-corporate-lawyer",
+    "intellectual-property-law-career",
+    "llm-in-india-guide",
+    "litigation-vs-corporate-law-which-to-choose"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "law careers & specialisations",
+    "corporate law career guide",
+    "how to become a corporate lawyer",
+    "intellectual property law career"
+  ]
+},
+{
+  "slug": "design-fields-and-entrances",
+  "label": "Design Fields & Entrances",
+  "title": "Design Fields & Entrances",
+  "description": "Design career fields — fashion, interior, graphic and product design — plus how to build a portfolio, with official entrance-exam sources.",
+  "group": "fields",
+  "guideSlugs": [
+    "fashion-design-course-and-career",
+    "interior-design-course-and-career",
+    "graphic-design-career-guide",
+    "product-design-career-guide",
+    "how-to-build-a-design-portfolio"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "design fields & entrances",
+    "fashion design course and career",
+    "interior design course and career",
+    "graphic design career guide"
+  ]
+},
+{
+  "slug": "media-and-communication-careers",
+  "label": "Media & Communication Careers",
+  "title": "Media & Communication Careers",
+  "description": "Careers in media — journalism, film-making, advertising & PR, content writing and broadcast production — and the courses behind them, neutrally framed.",
+  "group": "fields",
+  "guideSlugs": [
+    "how-to-become-a-journalist-in-india",
+    "film-making-and-cinematography-courses",
+    "advertising-and-public-relations-careers",
+    "content-writing-career-guide",
+    "radio-and-tv-production-courses"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "media & communication careers",
+    "how to become a journalist in india",
+    "film making and cinematography courses",
+    "advertising and public relations careers"
+  ]
+},
+{
+  "slug": "humanities-and-social-sciences",
+  "label": "Humanities & Social Sciences",
+  "title": "Humanities & Social Sciences",
+  "description": "Where humanities degrees lead — economics, political science, sociology, history and English literature — courses and careers, described neutrally.",
+  "group": "fields",
+  "guideSlugs": [
+    "economics-honours-courses-and-careers",
+    "political-science-courses-and-careers",
+    "sociology-courses-and-careers",
+    "history-courses-and-careers",
+    "english-literature-courses-and-careers"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "humanities & social sciences",
+    "economics honours courses and careers",
+    "political science courses and careers",
+    "sociology courses and careers"
+  ]
+},
+{
+  "slug": "research-and-phd-pathways",
+  "label": "Research & PhD Pathways",
+  "title": "Research & PhD Pathways",
+  "description": "The route into research — how a PhD works in India, admissions, preparing for UGC-NET and CSIR-NET, and research fellowships, from official sources.",
+  "group": "fields",
+  "guideSlugs": [
+    "how-to-do-a-phd-in-india",
+    "phd-admission-process-in-india",
+    "how-to-prepare-for-ugc-net",
+    "how-to-prepare-for-csir-net",
+    "research-fellowships-in-india"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "research & phd pathways",
+    "how to do a phd in india",
+    "phd admission process in india",
+    "how to prepare for ugc net"
+  ]
+},
+{
+  "slug": "civil-services-and-government-careers",
+  "label": "Civil Services & Government Careers",
+  "title": "Civil Services & Government Careers",
+  "description": "Routes into government service — IFS, IRS, IFoS, bank PO and ISRO/DRDO scientist — strictly neutral, with official commission and recruiter sources.",
+  "group": "fields",
+  "guideSlugs": [
+    "how-to-become-an-ifs-officer-foreign-service",
+    "how-to-become-an-irs-officer",
+    "how-to-become-a-bank-po",
+    "how-to-become-a-forest-officer-ifos",
+    "how-to-become-an-isro-drdo-scientist"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "civil services & government careers",
+    "how to become an ifs officer foreign service",
+    "how to become an irs officer",
+    "how to become a bank po"
+  ]
+},
+{
+  "slug": "modern-and-creative-careers",
+  "label": "Modern & Creative Careers",
+  "title": "Modern & Creative Careers",
+  "description": "Newer career paths — data analyst, content creator, entrepreneur, chef and photographer — the skills and realistic routes, with no income guarantees.",
+  "group": "fields",
+  "guideSlugs": [
+    "how-to-become-a-data-analyst",
+    "how-to-become-a-content-creator",
+    "how-to-become-an-entrepreneur",
+    "how-to-become-a-chef-in-india",
+    "how-to-become-a-photographer"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "modern & creative careers",
+    "how to become a data analyst",
+    "how to become a content creator",
+    "how to become an entrepreneur"
+  ]
+},
+{
+  "slug": "more-pathways-after-12th",
+  "label": "More Pathways After 12th",
+  "title": "More Pathways After 12th",
+  "description": "Wider options after Class 12 — courses without maths, PCMB pathways, short-term and integrated courses, and distance learning, described neutrally.",
+  "group": "after-12th",
+  "guideSlugs": [
+    "courses-after-12th-without-maths",
+    "best-courses-after-12th-pcmb",
+    "short-term-job-oriented-courses-after-12th",
+    "integrated-and-dual-degree-courses-after-12th",
+    "distance-and-open-learning-after-12th"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "more pathways after 12th",
+    "courses after 12th without maths",
+    "best courses after 12th pcmb",
+    "short term job oriented courses after 12th"
+  ]
+},
+{
+  "slug": "mba-and-management-entrances",
+  "label": "MBA & Management Entrances",
+  "title": "MBA & Management Entrance Exams",
+  "description": "Beyond CAT — XAT, SNAP, NMAT and CMAT, and how to prepare for MBA entrances — structure and eligibility deferred to each official source.",
+  "group": "exams",
+  "guideSlugs": [
+    "xat-exam-guide",
+    "snap-exam-guide",
+    "nmat-exam-guide",
+    "cmat-exam-guide",
+    "how-to-prepare-for-mba-entrance-exams"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "mba & management entrances",
+    "xat exam guide",
+    "snap exam guide",
+    "nmat exam guide"
+  ]
+},
+{
+  "slug": "design-and-aptitude-entrances",
+  "label": "Design & Aptitude Entrances",
+  "title": "Design & Aptitude Entrance Exams",
+  "description": "Design and aptitude entrances — UCEED, CEED and NID DAT — plus the B.Des route and how to prepare, with official exam-board sources.",
+  "group": "exams",
+  "guideSlugs": [
+    "uceed-exam-guide",
+    "ceed-exam-guide",
+    "nid-dat-exam-guide",
+    "bdes-bachelor-of-design-course-guide",
+    "how-to-prepare-for-design-entrance-exams"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "design & aptitude entrances",
+    "uceed exam guide",
+    "ceed exam guide",
+    "nid dat exam guide"
+  ]
+},
+{
+  "slug": "indian-scholarships-in-depth",
+  "label": "Indian Scholarships in Depth",
+  "title": "Indian Scholarships in Depth",
+  "description": "How Indian scholarships work — the National Scholarship Portal, merit-cum-means, girl-student, corporate and sports scholarships — secular criteria only.",
+  "group": "prep-funding",
+  "guideSlugs": [
+    "how-to-apply-on-national-scholarship-portal",
+    "merit-cum-means-scholarships-guide",
+    "scholarships-for-girl-students-in-india",
+    "corporate-and-private-scholarships-in-india",
+    "sports-scholarships-in-india"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "indian scholarships in depth",
+    "how to apply on national scholarship portal",
+    "merit cum means scholarships guide",
+    "scholarships for girl students in india"
+  ]
+},
+{
+  "slug": "education-loans-and-funding",
+  "label": "Education Loans & Funding",
+  "title": "Education Loans & Funding",
+  "description": "Funding higher education in India — education loans, collateral-free options, interest-subsidy schemes and how to decide — factual, not financial advice.",
+  "group": "prep-funding",
+  "guideSlugs": [
+    "education-loan-without-collateral-guide",
+    "how-to-apply-for-an-education-loan",
+    "education-loan-interest-subsidy-schemes",
+    "education-loan-vs-self-funding",
+    "how-to-fund-higher-education-in-india"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "education loans & funding",
+    "education loan without collateral guide",
+    "how to apply for an education loan",
+    "education loan interest subsidy schemes"
+  ]
+},
   // ───────────────────────────── Exams ─────────────────────────────
   {
     slug: 'jee',
@@ -2695,15 +4124,8 @@ export const getTopicBySlug = (slug: string): Topic | undefined => TOPIC_BY_SLUG
 export const getTopicsByGroup = (group: TopicGroup): Topic[] =>
   TOPICS.filter((t) => t.group === group);
 
-/**
- * Topic hubs that belong to a destination's region-first IA: a destination's own
- * region-tagged hubs (the `study-in-X` groups) for the seven abroad regions, or
- * the cross-cutting (region-less) hubs for India (domestic). Used to surface
- * topics on the region hub so the topic layer is reachable from the region-first
- * navigation, not only the Topics mega-menu.
- */
-export const topicsForRegion = (region: RegionSlug): Topic[] =>
-  region === 'india' ? TOPICS.filter((t) => !t.region) : TOPICS.filter((t) => t.region === region);
+// Region → tracks → hubs grouping lives in ./tracks (region-first navigation
+// backbone). Topic hubs no longer carry their own per-region nav helper here.
 
 // guidesForTopic() + topicsForGuide() live in ./topic-guides — they depend on the
 // heavy GUIDES data array and are kept out of this module so Client Components can

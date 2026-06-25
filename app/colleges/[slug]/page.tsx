@@ -13,6 +13,8 @@ import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
+import AudienceGate from '@/components/AudienceGate';
+import { defaultAudienceFor } from '@/lib/audience';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
 interface Props {
@@ -275,6 +277,42 @@ export default async function CollegeDetailPage({ params }: Props) {
               </Link>
             </div>
           )}
+        </section>
+      )}
+
+      {/* How to apply — domestic vs international (India pilot) */}
+      {college.region === 'india' && (
+        <section className="grid grid-cols-1 gap-4">
+          <AudienceGate audience="domestic" pageDefault={defaultAudienceFor(college.region)}>
+            <div className="bg-white border border-stone-200 rounded-2xl p-5">
+              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-forest-700 mb-2">
+                Domestic applicants · Indian citizens
+              </p>
+              <p className="text-stone-700 text-base leading-relaxed m-0">
+                Apply through the entrance tests this institution accepts
+                {college.admissionExams.length > 0 ? ` (${college.admissionExams.join(', ')})` : ''} and
+                the relevant centralised or institute-level counselling — for many engineering institutes
+                that is JoSAA or CSAB. Confirm the current route, eligibility, category provisions and
+                fees on the official website.
+              </p>
+            </div>
+          </AudienceGate>
+          <AudienceGate audience="international" pageDefault={defaultAudienceFor(college.region)}>
+            <div className="bg-white border border-stone-200 rounded-2xl p-5">
+              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-forest-700 mb-2">
+                International applicants · foreign nationals, NRI / OCI
+              </p>
+              <p className="text-stone-700 text-base leading-relaxed m-0">
+                Foreign nationals, PIO/OCI and NRI applicants usually apply through a separate
+                foreign-national, NRI or supernumerary channel that varies by institute — for some
+                centrally funded technical institutes this is the DASA (Direct Admission of Students
+                Abroad) scheme, while others run their own international-admissions office — with
+                different eligibility, seats and fees, and a student visa to study in India. The exact
+                route changes each year; verify it on the official institute and Government of India
+                sources before applying.
+              </p>
+            </div>
+          </AudienceGate>
         </section>
       )}
 

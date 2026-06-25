@@ -14,10 +14,13 @@ import {
 } from '@/lib/region-nav';
 import { COLLEGES, type College } from '@/lib/colleges';
 import { ENTRANCE_EXAMS, type EntranceExam } from '@/lib/admission-guides';
-import { GUIDES, GUIDE_CATEGORY_LABELS, type Guide, type GuideCategory } from '@/lib/guides';
+import { GUIDES, type Guide } from '@/lib/guides';
+import { topicsForGuide } from '@/lib/topic-guides';
+import { tracksForRegion, trackForTopic } from '@/lib/tracks';
 import { itemListLd } from '@/lib/structured-data';
 import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
+import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
@@ -33,15 +36,6 @@ export function generateStaticParams() {
     REGION_CATEGORIES.map((category) => ({ region, category })),
   );
 }
-
-const GUIDE_CATEGORY_ORDER: GuideCategory[] = [
-  'exam-prep',
-  'admissions',
-  'comparison',
-  'career',
-  'study-abroad',
-  'scholarships',
-];
 
 function metaFor(category: RegionCategory, name: string, isIndia: boolean) {
   switch (category) {
@@ -144,12 +138,37 @@ export default async function RegionCategoryPage({ params }: Props) {
   };
   const listLd = itemListLd({ name: m.title, items: itemListItems });
 
-  // Guides grouped by sub-category (only known categories with content), in order.
-  const guideGroups = GUIDE_CATEGORY_ORDER.map((key) => ({
-    key,
-    label: GUIDE_CATEGORY_LABELS[key],
-    items: guides.filter((g) => g.category === key),
-  })).filter((grp) => grp.items.length > 0);
+  // Guides grouped by TRACK — the region's spine — de-duplicated to each guide's
+  // primary track; anything not tagged to a track falls into a trailing group.
+  const guideGroups: { key: string; label: string; items: Guide[] }[] =
+    category !== 'guides'
+      ? []
+      : (() => {
+          const regionTracks = tracksForRegion(slug);
+          const trackKeys = new Set(regionTracks.map((t) => t.slug));
+          const buckets = new Map<string, Guide[]>();
+          const leftover: Guide[] = [];
+          for (const g of guides) {
+            let placed = false;
+            for (const topic of topicsForGuide(g)) {
+              const tr = trackForTopic(topic.slug);
+              if (tr && tr.region === slug && trackKeys.has(tr.slug)) {
+                if (!buckets.has(tr.slug)) buckets.set(tr.slug, []);
+                buckets.get(tr.slug)!.push(g);
+                placed = true;
+                break;
+              }
+            }
+            if (!placed) leftover.push(g);
+          }
+          const groups = regionTracks
+            .map((t) => ({ key: t.slug, label: t.label, items: buckets.get(t.slug) ?? [] }))
+            .filter((grp) => grp.items.length > 0);
+          if (leftover.length > 0) {
+            groups.push({ key: '_more', label: `More ${r.displayName} guides`, items: leftover });
+          }
+          return groups;
+        })();
 
   const chip =
     'inline-flex items-center rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-sm font-medium text-stone-700 no-underline transition-colors hover:border-forest-300 hover:text-forest-700';
@@ -168,9 +187,7 @@ export default async function RegionCategoryPage({ params }: Props) {
         {/* Hero */}
         <header className="max-w-3xl">
           <p className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
-            <span aria-hidden="true" className="text-base leading-none">
-              {r.flag}
-            </span>
+            <RegionFlag slug={r.slug} className="h-4" />
             <Link
               href={`/regions/${slug}`}
               className="text-forest-700 no-underline hover:text-forest-800"
@@ -217,7 +234,7 @@ export default async function RegionCategoryPage({ params }: Props) {
         {category === 'universities' && (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {universities.map((c) => (
-              <UniCard key={c.id} c={c} flag={r.flag} />
+              <UniCard key={c.id} c={c} />
             ))}
           </div>
         )}
@@ -301,7 +318,7 @@ export default async function RegionCategoryPage({ params }: Props) {
   );
 }
 
-function UniCard({ c, flag }: { c: College; flag: string }) {
+function UniCard({ c }: { c: College }) {
   return (
     <article className="flex flex-col rounded-2xl border border-stone-200 bg-white p-5">
       <div className="mb-2 flex items-start justify-between gap-3">
@@ -317,10 +334,8 @@ function UniCard({ c, flag }: { c: College; flag: string }) {
           <span className="mt-1 shrink-0 text-[11px] font-semibold text-stone-500">QS #{c.ranking.qs}</span>
         )}
       </div>
-      <p className="mb-3 text-xs text-stone-500">
-        <span aria-hidden="true" className="mr-1">
-          {flag}
-        </span>
+      <p className="mb-3 inline-flex items-center gap-1.5 text-xs text-stone-500">
+        <RegionFlag slug={c.region} className="h-3" />
         {c.city}
         {c.state ? `, ${c.state}` : ''} · Est. {c.established}
       </p>

@@ -16,6 +16,8 @@ import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
+import AudienceGate from '@/components/AudienceGate';
+import { defaultAudienceFor, isAudienceVisible } from '@/lib/audience';
 import { formatReviewed } from '@/lib/site-meta';
 
 interface Props {
@@ -106,12 +108,17 @@ export default async function GuideDetailPage({ params }: Props) {
     mainEntityOfPage: `https://www.globalstudyboard.com/guides/${guide.slug}`,
   };
 
+  // The audience baked into the static HTML (India = domestic, else international).
+  // Structured data matches this default view so it never advertises content a
+  // default visitor cannot see.
+  const pageDefault = defaultAudienceFor(guide.region);
+  const visibleFaqs = guide.faqs.filter((f) => isAudienceVisible(f.audience, pageDefault));
   const faqLd =
-    guide.faqs.length > 0
+    visibleFaqs.length > 0
       ? {
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
-          mainEntity: guide.faqs.map((f) => ({
+          mainEntity: visibleFaqs.map((f) => ({
             '@type': 'Question',
             name: f.questionEn,
             acceptedAnswer: { '@type': 'Answer', text: f.answerEn },
@@ -124,10 +131,12 @@ export default async function GuideDetailPage({ params }: Props) {
         name: guide.titleEn,
         description: guide.descriptionEn,
         url: `https://www.globalstudyboard.com/guides/${guide.slug}`,
-        steps: guide.sections.map((s) => ({
-          name: s.headingEn,
-          text: paragraphs(s.bodyEn).join(' '),
-        })),
+        steps: guide.sections
+          .filter((s) => isAudienceVisible(s.audience, pageDefault))
+          .map((s) => ({
+            name: s.headingEn,
+            text: paragraphs(s.bodyEn).join(' '),
+          })),
       })
     : null;
 
@@ -175,6 +184,14 @@ export default async function GuideDetailPage({ params }: Props) {
           <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
             <Clock className="w-3.5 h-3.5" /> {guide.readMinutes} min read
           </span>
+          {guide.audience === 'international' && (
+            <>
+              <span className="text-stone-300">·</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-700">
+                For international students
+              </span>
+            </>
+          )}
         </div>
         <h1 className="font-display text-4xl md:text-5xl font-bold tracking-editorial leading-[1.08] text-ink mb-3">
           {guide.titleEn}
@@ -189,25 +206,27 @@ export default async function GuideDetailPage({ params }: Props) {
       {guide.keyFacts && guide.keyFacts.length > 0 && <KeyFacts rows={guide.keyFacts} />}
 
       {/* Sections */}
-      <div className="space-y-8">
+      <div className="flex flex-col gap-8">
         {guide.sections.map((section, i) => (
-          <section key={i}>
-            <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-3">
-              {section.headingEn}
-            </h2>
-            {paragraphs(section.bodyEn).map((p, j) => (
-              <p key={j} className="text-stone-800 text-base leading-relaxed mb-3">
-                {p}
-              </p>
-            ))}
-            {section.bullets && section.bullets.length > 0 && (
-              <ul className="list-disc pl-5 space-y-1.5 text-stone-800 text-base leading-relaxed">
-                {section.bullets.map((b, k) => (
-                  <li key={k}>{b}</li>
-                ))}
-              </ul>
-            )}
-          </section>
+          <AudienceGate key={i} audience={section.audience} pageDefault={pageDefault}>
+            <section>
+              <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-3">
+                {section.headingEn}
+              </h2>
+              {paragraphs(section.bodyEn).map((p, j) => (
+                <p key={j} className="text-stone-800 text-base leading-relaxed mb-3">
+                  {p}
+                </p>
+              ))}
+              {section.bullets && section.bullets.length > 0 && (
+                <ul className="list-disc pl-5 space-y-1.5 text-stone-800 text-base leading-relaxed">
+                  {section.bullets.map((b, k) => (
+                    <li key={k}>{b}</li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          </AudienceGate>
         ))}
       </div>
 
@@ -217,12 +236,14 @@ export default async function GuideDetailPage({ params }: Props) {
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-5">
             Frequently asked questions
           </h2>
-          <div className="space-y-4">
+          <div className="flex flex-col gap-4">
             {guide.faqs.map((f, i) => (
-              <div key={i} className="bg-cream-50 border border-stone-200 rounded-2xl p-5">
-                <h3 className="font-semibold text-ink text-base mb-2 m-0">{f.questionEn}</h3>
-                <p className="text-stone-700 text-base leading-relaxed m-0">{f.answerEn}</p>
-              </div>
+              <AudienceGate key={i} audience={f.audience} pageDefault={pageDefault}>
+                <div className="bg-cream-50 border border-stone-200 rounded-2xl p-5">
+                  <h3 className="font-semibold text-ink text-base mb-2 m-0">{f.questionEn}</h3>
+                  <p className="text-stone-700 text-base leading-relaxed m-0">{f.answerEn}</p>
+                </div>
+              </AudienceGate>
             ))}
           </div>
         </section>

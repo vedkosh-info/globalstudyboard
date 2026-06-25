@@ -13,10 +13,13 @@ import {
 import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { GUIDES } from '@/lib/guides';
-import { topicsForRegion } from '@/lib/topics';
+import { tracksForRegion, trackHref, isMultiHubTrack, topicsForTrack } from '@/lib/tracks';
+import AudienceGate from '@/components/AudienceGate';
+import { defaultAudienceFor, isAudienceVisible, type Audience } from '@/lib/audience';
 import { REGION_CATEGORIES, categoryLabel, categoryNoun, regionCategoryPath } from '@/lib/region-nav';
 import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
+import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
@@ -76,11 +79,12 @@ export default async function RegionHubPage({ params }: Props) {
     guides: guidesForRegion.length,
     scholarships: guidesForRegion.filter((g) => g.category === 'scholarships').length,
   };
-  const regionTopics = topicsForRegion(r.slug);
+  const tracks = tracksForRegion(r.slug);
+  const pageDefault = defaultAudienceFor(r.slug);
 
   // Real Q&A from pre-audited region data (lib/regions.ts) — backs the visible FAQ
   // section AND the FAQPage JSON-LD; every answer keeps the verify-on-official nudge.
-  const faqItems: { q: string; a: string }[] = [
+  const faqItems: { q: string; a: string; audience?: Audience }[] = [
     {
       q: `How do you apply to universities in ${r.displayName}?`,
       a: `Most applicants apply via ${r.primaryApplicationPlatform}. Confirm current requirements on the official university or application-platform website before applying.`,
@@ -102,6 +106,8 @@ export default async function RegionHubPage({ params }: Props) {
           {
             q: `What student visa do you need for ${r.displayName}?`,
             a: `${r.visaName}. Immigration rules change frequently — verify on the official government source before applying.`,
+            // Student visa is an international-applicant concern — hidden for home students.
+            audience: 'international' as const,
           },
         ]
       : []),
@@ -118,7 +124,7 @@ export default async function RegionHubPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     '@id': `https://www.globalstudyboard.com/regions/${r.slug}#faq`,
-    mainEntity: faqItems.map((f) => ({
+    mainEntity: faqItems.filter((f) => isAudienceVisible(f.audience, pageDefault)).map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -136,7 +142,7 @@ export default async function RegionHubPage({ params }: Props) {
         {/* Hero */}
         <header className="max-w-4xl">
           <div className="flex items-center gap-3 mb-4">
-            <span aria-hidden="true" className="text-5xl leading-none">{r.flag}</span>
+            <RegionFlag slug={r.slug} className="h-10" />
             <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500">
               {r.countries.length === 1 ? 'Region guide' : `${r.countries.length} countries`}
             </p>
@@ -177,6 +183,77 @@ export default async function RegionHubPage({ params }: Props) {
             value={r.visaName ?? 'N/A'}
           />
         </section>
+
+        {/* How admission works for you — domestic vs international (India pilot) */}
+        {r.slug === 'india' && (
+          <section>
+            <div className="mb-5">
+              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
+                How admission works for you
+              </h2>
+              <p className="text-stone-600 text-sm">
+                Switch the <strong>Domestic / International</strong> toggle at the top of the page. Your
+                route, eligibility and fees differ — always verify on the official source.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-4">
+              <AudienceGate audience="domestic" pageDefault={pageDefault}>
+                <div className="rounded-2xl border border-stone-200 bg-white p-5">
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-700">
+                    Domestic students · Indian citizens
+                  </p>
+                  <p className="m-0 text-sm leading-relaxed text-stone-700">
+                    Indian citizens apply through the entrance exams each institution accepts — for most
+                    engineering institutes that is JEE Main (and JEE Advanced for the IITs) followed by
+                    centralised counselling such as JoSAA or CSAB; medicine runs through NEET and MCC or
+                    state counselling; many universities now use CUET. Confirm the exact route,
+                    eligibility, category provisions and fees on the official institute or counselling
+                    website each year.
+                  </p>
+                </div>
+              </AudienceGate>
+              <AudienceGate audience="international" pageDefault={pageDefault}>
+                <div className="rounded-2xl border border-stone-200 bg-white p-5">
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-700">
+                    International students · foreign nationals, NRI / OCI
+                  </p>
+                  <p className="m-0 text-sm leading-relaxed text-stone-700">
+                    Foreign nationals, PIO/OCI and many NRI applicants apply through a separate channel
+                    with its own eligibility, seats and fees. For many centrally-funded technical
+                    institutes (NITs, IIITs, SPAs and other CFTIs) this is the DASA (Direct Admission of
+                    Students Abroad) scheme; some institutes offer supernumerary or international quotas,
+                    and a student visa is required to study in India. Schemes, seat numbers and fees are
+                    set afresh each year — verify on the official institute, DASA and Government of India
+                    sources before applying.
+                  </p>
+                </div>
+              </AudienceGate>
+            </div>
+          </section>
+        )}
+
+        {/* Home-student pointer — abroad LIGHT form (shows when a domestic student toggles on a non-India region) */}
+        {r.slug !== 'india' && (
+          <AudienceGate audience="domestic" pageDefault={pageDefault}>
+            <section className="rounded-2xl border border-forest-200/70 bg-forest-50/60 p-5">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-700">
+                Home student of {r.displayName}?
+              </p>
+              <p className="m-0 text-sm leading-relaxed text-stone-700">
+                GlobalStudyBoard is built for international students applying to {r.displayName}. If you
+                are a citizen or resident, you usually apply as a domestic student — tuition is typically
+                lower, you may qualify for home-student finance, and you do not need a student visa. We
+                don&rsquo;t cover the domestic home-student route in depth; for fees, funding and the
+                home-student application process, use the official {r.displayName} government and
+                university sources
+                {r.primaryApplicationPlatform
+                  ? ` (for example ${r.primaryApplicationPlatform.split('/')[0].split('(')[0].trim()})`
+                  : ''}
+                .
+              </p>
+            </section>
+          </AudienceGate>
+        )}
 
         {/* Explore sections — region-scoped category pages */}
         <section>
@@ -327,27 +404,40 @@ export default async function RegionHubPage({ params }: Props) {
           </section>
         )}
 
-        {/* Explore by topic — fold the region's topic hubs into the region-first IA */}
-        {regionTopics.length > 0 && (
+        {/* Explore by track — the region-shaped spine (region → track → hub → guide) */}
+        {tracks.length > 0 && (
           <section>
-            <div className="mb-5">
+            <div className="mb-7">
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
-                Explore {r.displayName} by topic
+                Explore {r.displayName} by track
               </h2>
               <p className="text-stone-600 text-sm">
-                Curated guide hubs for studying in {r.displayName}.
+                {tracks.length} curated tracks — pick a path, then go deep hub by hub.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {regionTopics.map((t) => (
-                <Link
-                  key={t.slug}
-                  href={`/topics/${t.slug}`}
-                  className="inline-flex items-center rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-sm font-medium text-stone-700 no-underline transition-colors hover:border-forest-300 hover:text-forest-700"
-                >
-                  {t.label}
-                </Link>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {tracks.map((t) => {
+                const hubs = topicsForTrack(t);
+                const preview = hubs.slice(0, 4).map((h) => h.label).join(' · ');
+                return (
+                  <Link
+                    key={t.slug}
+                    href={trackHref(t)}
+                    className="group flex flex-col rounded-2xl border border-stone-200 bg-white p-5 no-underline transition-colors hover:border-forest-300"
+                  >
+                    <h3 className="font-display text-lg font-bold text-ink leading-snug mb-1 group-hover:text-forest-700 m-0">
+                      {t.label}
+                    </h3>
+                    <p className="text-stone-600 text-sm leading-relaxed m-0 mt-1 flex-1 line-clamp-2">
+                      {preview}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
+                      {isMultiHubTrack(t) ? `${hubs.length} topic hubs` : 'Explore'}
+                      <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </section>
         )}
@@ -357,23 +447,22 @@ export default async function RegionHubPage({ params }: Props) {
           <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-6">
             Common questions about {r.displayName}
           </h2>
-          <div className="space-y-3">
+          <div className="flex flex-col gap-3">
             {faqItems.map((f) => (
-              <details
-                key={f.q}
-                className="group rounded-2xl border border-stone-200 bg-white p-5 open:border-forest-300"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-display text-lg font-bold text-ink">
-                  {f.q}
-                  <span
-                    aria-hidden="true"
-                    className="shrink-0 text-2xl leading-none text-stone-400 transition-transform group-open:rotate-45"
-                  >
-                    +
-                  </span>
-                </summary>
-                <p className="m-0 mt-3 text-base leading-relaxed text-stone-700">{f.a}</p>
-              </details>
+              <AudienceGate key={f.q} audience={f.audience} pageDefault={pageDefault}>
+                <details className="group rounded-2xl border border-stone-200 bg-white p-5 open:border-forest-300">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-display text-lg font-bold text-ink">
+                    {f.q}
+                    <span
+                      aria-hidden="true"
+                      className="shrink-0 text-2xl leading-none text-stone-400 transition-transform group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="m-0 mt-3 text-base leading-relaxed text-stone-700">{f.a}</p>
+                </details>
+              </AudienceGate>
             ))}
           </div>
         </section>
@@ -431,7 +520,7 @@ export default async function RegionHubPage({ params }: Props) {
                 href={`/regions/${other.slug}`}
                 className="bg-white border border-stone-200 hover:border-forest-300 hover:text-forest-700 text-stone-700 text-sm px-3.5 py-1.5 rounded-full no-underline transition-colors inline-flex items-center gap-2"
               >
-                <span aria-hidden="true">{other.flag}</span>
+                <RegionFlag slug={other.slug} className="h-3.5" />
                 {other.displayName}
               </Link>
             ))}
