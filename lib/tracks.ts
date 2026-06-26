@@ -293,6 +293,316 @@ export const UK_IRELAND_TRACKS: Track[] = [
   },
 ];
 
+// ───────────────────────────── Canada (explicit, Phase 2) ───────────────────
+// Eight journey tracks anchored by the existing Canada hubs + their Phase-2
+// sub-hubs. The remaining four abroad regions stay 1:1-derived until their Phase 2.
+export const CANADA_TRACKS: Track[] = [
+  {
+    slug: 'canada-admissions', region: 'canada', label: 'Admissions',
+    title: 'Canadian University Admissions',
+    description:
+      'Applying to Canadian universities — how admissions work and the application components in depth, and how your grades and qualifications are recognised across provinces.',
+    topicSlugs: ['canada-admissions', 'canadian-application-components-in-depth', 'grades-and-credential-recognition-canada'],
+  },
+  {
+    slug: 'canada-tests-grades', region: 'canada', label: 'Tests & Grades',
+    title: 'Tests, English & French for Canada',
+    description:
+      'The English and French tests and grade requirements for studying in Canada — IELTS, TOEFL, PTE and Duolingo for admission and the study permit, and how scores are used.',
+    topicSlugs: ['canada-tests-grades', 'english-and-french-tests-for-canada-in-depth'],
+  },
+  {
+    slug: 'study-permit-canada', region: 'canada', label: 'Study Permit',
+    title: 'Canada Study Permit',
+    description:
+      'The Canada study permit — the PAL, proof of funds and documents, and the application process in depth. Neutral official facts deferred to IRCC, not immigration advice.',
+    topicSlugs: ['study-permit-canada', 'canada-study-permit-process-in-depth'],
+  },
+  {
+    slug: 'canada-tuition-funding', region: 'canada', label: 'Tuition & Funding',
+    title: 'Cost, Tuition & Funding (Canada)',
+    description:
+      'Paying for study in Canada — tuition and living costs, scholarships and funding in depth, and how to manage money, the GIC and proof of funds. Facts, not financial advice.',
+    topicSlugs: ['canada-tuition-funding', 'canadian-scholarships-and-funding-in-depth', 'paying-for-canada-and-managing-money'],
+  },
+  {
+    slug: 'canada-universities', region: 'canada', label: 'Universities',
+    title: 'Universities & Provinces in Canada',
+    description:
+      'Choosing where to study in Canada — the U15 and top schools, and the universities of Ontario (OUAC), Western Canada (BC and Alberta), Quebec and the CEGEP system, and the Atlantic and Prairie provinces.',
+    topicSlugs: ['canada-universities', 'ontario-universities-and-ouac-in-depth', 'western-canada-universities-bc-and-alberta', 'quebec-universities-and-the-cegep-system', 'atlantic-and-prairie-universities-canada'],
+  },
+  {
+    slug: 'canada-majors-careers', region: 'canada', label: 'Majors & Careers',
+    title: 'Programs & Careers in Canada',
+    description:
+      'Choosing a programme in Canada — college diploma programmes, the sciences, arts and social sciences, trades and applied fields, co-operative education, and graduate study.',
+    topicSlugs: ['canada-majors-careers', 'canadian-college-diploma-programs-in-depth', 'studying-sciences-in-canada', 'studying-arts-humanities-and-social-sciences-canada', 'studying-trades-and-applied-fields-canada', 'co-op-and-experiential-learning-canada-in-depth', 'graduate-study-in-canada-in-depth'],
+  },
+  {
+    slug: 'work-and-stay-canada', region: 'canada', label: 'Work & Stay',
+    title: 'Working & Staying in Canada',
+    description:
+      'Working during and after study in Canada — the Post-Graduation Work Permit in depth, and the pathways to permanent residence for graduates. Deferred to IRCC, not immigration advice.',
+    topicSlugs: ['work-and-stay-canada', 'pgwp-eligibility-and-rules-in-depth', 'pathways-to-permanent-residence-for-students-canada'],
+  },
+  {
+    slug: 'canada-student-life', region: 'canada', label: 'Student Life',
+    title: 'Student Life in Canada',
+    description:
+      'Living as a student in Canada — settling in, provincial health cover, housing and money, and campus and community life, from clubs and support services to finding community.',
+    topicSlugs: ['canada-student-life', 'settling-and-living-in-canada-in-depth', 'canadian-campus-and-community-life-in-depth'],
+  },
+];
+
+// ───────────────────────────── Europe (explicit, Phase 2) ───────────────────
+// Eight journey tracks anchored by the existing Europe hubs + their Phase-2
+// sub-hubs (multi-country). The remaining three abroad regions stay 1:1-derived.
+export const EUROPE_TRACKS: Track[] = [
+  {
+    slug: 'europe-admissions', region: 'europe', label: 'Admissions',
+    title: 'Studying in Europe: Admissions',
+    description:
+      'Applying to European universities — how admissions and documents work, the ECTS credit system and degree recognition, and Erasmus exchange and joint degrees across countries.',
+    topicSlugs: ['europe-admissions', 'ects-credits-and-degree-recognition-europe', 'erasmus-and-joint-degrees-in-depth'],
+  },
+  {
+    slug: 'europe-student-visas', region: 'europe', label: 'Student Visas',
+    title: 'Student Visas for Europe',
+    description:
+      'Student visas and residence permits for Europe — national and Schengen routes, funds and insurance, and the visa process in depth by country. Neutral official facts, not immigration advice.',
+    topicSlugs: ['europe-student-visas', 'europe-student-visa-process-in-depth'],
+  },
+  {
+    slug: 'europe-universities', region: 'europe', label: 'Universities',
+    title: 'European Universities & Country Systems',
+    description:
+      'Choosing where to study in Europe — top universities, and how admissions work country by country: Germany (APS, NC, FH vs Uni), France (grandes écoles, Parcoursup), the Netherlands (Studielink, WO vs HBO), Italy (Universitaly, IMAT) and the Nordics.',
+    topicSlugs: ['europe-universities', 'germany-admissions-systems-in-depth', 'france-admissions-pathways-in-depth', 'netherlands-admissions-in-depth', 'italy-admissions-in-depth', 'nordics-admissions-in-depth'],
+  },
+  {
+    slug: 'europe-courses-careers', region: 'europe', label: 'Courses & Careers',
+    title: 'Courses & Careers in Europe',
+    description:
+      'Choosing a programme in Europe — engineering, the natural sciences and maths, social sciences and humanities, medicine and health degrees, and PhD and research funding.',
+    topicSlugs: ['europe-courses-careers', 'studying-engineering-in-europe-in-depth', 'studying-natural-sciences-and-maths-in-europe', 'studying-social-sciences-and-humanities-in-europe', 'medicine-and-health-degrees-in-europe-in-depth', 'phd-and-research-funding-in-europe-in-depth'],
+  },
+  {
+    slug: 'europe-tuition-scholarships', region: 'europe', label: 'Tuition & Scholarships',
+    title: 'Tuition, Funding & Scholarships (Europe)',
+    description:
+      'Paying for study in Europe — tuition and free-tuition options, country scholarships in depth, and proving your funds via blocked accounts and proof-of-funds requirements. Facts, not financial advice.',
+    topicSlugs: ['europe-tuition-scholarships', 'country-scholarships-in-europe-in-depth', 'blocked-accounts-and-proof-of-funds-europe'],
+  },
+  {
+    slug: 'work-and-stay-europe', region: 'europe', label: 'Work & Stay',
+    title: 'Working & Staying in Europe',
+    description:
+      'Working during and after study in Europe — the EU Blue Card and national work permits, post-study work routes, and the pathways to permanent residence and citizenship. Deferred to each country, not immigration advice.',
+    topicSlugs: ['work-and-stay-europe', 'eu-blue-card-and-work-permits-in-depth', 'staying-in-europe-pr-and-citizenship-pathways'],
+  },
+  {
+    slug: 'europe-language-tests', region: 'europe', label: 'Language & Tests',
+    title: 'Languages & Tests for Europe',
+    description:
+      'The languages and tests for studying in Europe — German tests and requirements, and learning French, Italian, Spanish or Dutch for study and daily life.',
+    topicSlugs: ['europe-language-tests', 'learning-european-languages-for-study-and-life'],
+  },
+  {
+    slug: 'europe-student-life', region: 'europe', label: 'Student Life',
+    title: 'Student Life in Europe',
+    description:
+      'Living as a student in Europe — housing, insurance, banking and travel, the first steps of residence registration after you arrive, and student life and culture across very different countries.',
+    topicSlugs: ['europe-student-life', 'settling-in-europe-residence-registration-in-depth', 'student-life-and-culture-across-europe'],
+  },
+];
+
+// ─────────────────────── Australia & New Zealand (explicit, Phase 2) ─────────
+// Eight journey tracks anchored by the existing ANZ hubs + their Phase-2 sub-hubs.
+// The remaining two abroad regions stay 1:1-derived until their Phase 2.
+export const ANZ_TRACKS: Track[] = [
+  {
+    slug: 'anz-admissions', region: 'australia-nz', label: 'Admissions',
+    title: 'Australia & New Zealand Admissions',
+    description:
+      'Applying to Australian and New Zealand universities — application strategy and offers, how qualifications are recognised and the pathways in, and New Zealand admissions in depth.',
+    topicSlugs: ['anz-admissions', 'application-strategy-and-offers-anz', 'qualification-recognition-and-pathways-anz', 'new-zealand-admissions-in-depth'],
+  },
+  {
+    slug: 'anz-student-visas', region: 'australia-nz', label: 'Student Visas',
+    title: 'Australia & New Zealand Student Visas',
+    description:
+      'Student visas for Australia and New Zealand — the Australian subclass 500 in depth (Genuine Student, CoE, evidence) and the New Zealand student visa. Neutral official facts, not immigration advice.',
+    topicSlugs: ['anz-student-visas', 'australia-student-visa-subclass-500-in-depth', 'new-zealand-student-visa-in-depth'],
+  },
+  {
+    slug: 'anz-universities', region: 'australia-nz', label: 'Universities',
+    title: 'Australian & New Zealand Universities',
+    description:
+      'Choosing a university in Australia or New Zealand — the Group of Eight and beyond, and New Zealand’s eight universities in depth.',
+    topicSlugs: ['anz-universities', 'australian-universities-beyond-the-go8', 'new-zealand-universities-in-depth'],
+  },
+  {
+    slug: 'anz-courses-careers', region: 'australia-nz', label: 'Courses & Careers',
+    title: 'Courses & Careers in Australia & New Zealand',
+    description:
+      'Choosing a programme in Australia or New Zealand — the sciences, arts and social sciences, health and medical professions, agriculture and the environment, and law and business professions.',
+    topicSlugs: ['anz-courses-careers', 'studying-sciences-in-australia-and-new-zealand', 'studying-arts-humanities-and-social-sciences-anz', 'health-and-medical-professions-anz-in-depth', 'agriculture-environment-and-marine-studies-anz', 'law-and-business-professions-anz'],
+  },
+  {
+    slug: 'anz-tuition-scholarships', region: 'australia-nz', label: 'Tuition & Scholarships',
+    title: 'Tuition, Costs & Scholarships (ANZ)',
+    description:
+      'Paying for study in Australia and New Zealand — tuition and living costs, scholarships and funding in depth, and budgeting and money management. Facts, not financial advice.',
+    topicSlugs: ['anz-tuition-scholarships', 'scholarships-and-funding-anz-in-depth', 'budgeting-and-money-management-anz'],
+  },
+  {
+    slug: 'work-and-stay-anz', region: 'australia-nz', label: 'Work & Stay',
+    title: 'Working & Staying On (Australia & NZ)',
+    description:
+      'Working during and after study in Australia and New Zealand — the subclass 485 graduate visa, skilled migration and PR pathways, and building graduate careers and employability. Deferred to official, not immigration advice.',
+    topicSlugs: ['work-and-stay-anz', 'temporary-graduate-visa-485-in-depth', 'skilled-migration-and-pr-pathways-anz-in-depth', 'graduate-careers-and-employability-anz'],
+  },
+  {
+    slug: 'anz-english-tests', region: 'australia-nz', label: 'English Tests',
+    title: 'English Tests for Australia & New Zealand',
+    description:
+      'The English tests for Australia and New Zealand — the accepted tests and scores, and the key difference between what is accepted for admission and for the student visa.',
+    topicSlugs: ['anz-english-tests', 'english-tests-for-admission-vs-visa-anz'],
+  },
+  {
+    slug: 'anz-student-life', region: 'australia-nz', label: 'Student Life',
+    title: 'Student Life in Australia & New Zealand',
+    description:
+      'Living as a student in Australia and New Zealand — housing, banking and the cities, the practicalities of arriving and settling in, and student life, culture and support.',
+    topicSlugs: ['anz-student-life', 'arriving-and-settling-in-anz-in-depth', 'student-life-culture-and-support-anz'],
+  },
+];
+
+// ─────────────────────── Middle East (Gulf) (explicit, Phase 2) ──────────────
+// Eight journey tracks anchored by the existing Gulf hubs + their Phase-2 sub-hubs.
+// Russia & CIS is the last region that stays 1:1-derived until its Phase 2.
+export const MIDDLE_EAST_TRACKS: Track[] = [
+  {
+    slug: 'middle-east-admissions', region: 'middle-east', label: 'Admissions',
+    title: 'Gulf University Admissions',
+    description:
+      'Applying to universities in the Gulf — how the UAE and Saudi higher-education systems and recognition work, and certificate attestation and equivalency across the GCC.',
+    topicSlugs: ['middle-east-admissions', 'uae-higher-education-system-and-recognition', 'saudi-higher-education-system-and-recognition', 'credential-attestation-and-equivalency-gulf-in-depth'],
+  },
+  {
+    slug: 'middle-east-universities', region: 'middle-east', label: 'Universities',
+    title: 'Universities in the Gulf',
+    description:
+      'Choosing a university in the Gulf — the top universities and the UAE’s national and private universities in depth, and how to choose between the GCC countries.',
+    topicSlugs: ['middle-east-universities', 'uae-national-and-private-universities-in-depth', 'choosing-a-gulf-country-for-study'],
+  },
+  {
+    slug: 'middle-east-branch-campuses', region: 'middle-east', label: 'Branch Campuses',
+    title: 'International Branch Campuses in the Gulf',
+    description:
+      'The international branch campuses in the Gulf — how to judge their accreditation and quality, and the Dubai academic free-zones (Academic City and Knowledge Park).',
+    topicSlugs: ['middle-east-branch-campuses', 'branch-campus-accreditation-and-quality-gulf', 'dubai-academic-clusters-and-free-zones-explained'],
+  },
+  {
+    slug: 'middle-east-scholarships', region: 'middle-east', label: 'Scholarships & Money',
+    title: 'Scholarships, Funding & Money (Gulf)',
+    description:
+      'Funding study in the Gulf — scholarships across the GCC, funded graduate awards and assistantships at research universities, and managing money and banking. Facts, not financial advice.',
+    topicSlugs: ['middle-east-scholarships', 'funded-graduate-scholarships-and-assistantships-gulf', 'managing-money-and-banking-for-students-gulf'],
+  },
+  {
+    slug: 'middle-east-student-visas', region: 'middle-east', label: 'Student Visas',
+    title: 'Student Visas & Residency (Gulf)',
+    description:
+      'Student visas and residency for the Gulf — the GCC student-visa routes, working and staying after study, and the UAE Golden Visa and long-term residency. Neutral official facts, not immigration advice.',
+    topicSlugs: ['middle-east-student-visas', 'gulf-work-and-residency-after-study-in-depth', 'uae-golden-visa-and-long-term-residency-explained'],
+  },
+  {
+    slug: 'middle-east-courses-careers', region: 'middle-east', label: 'Courses & Careers',
+    title: 'Courses & Careers in the Gulf',
+    description:
+      'Choosing a programme in the Gulf — the sciences, architecture and the creative arts, aviation and logistics, hospitality and tourism, finance and fintech, and graduate careers and employability.',
+    topicSlugs: ['middle-east-courses-careers', 'sciences-and-mathematics-degrees-in-the-gulf', 'architecture-design-and-creative-arts-in-the-gulf', 'aviation-aerospace-and-logistics-in-the-gulf', 'hospitality-tourism-and-events-in-the-gulf', 'finance-banking-and-fintech-in-the-gulf', 'graduate-careers-and-employability-in-the-gulf'],
+  },
+  {
+    slug: 'middle-east-tests-english', region: 'middle-east', label: 'Tests & English',
+    title: 'Entrance & English Tests (Gulf)',
+    description:
+      'The tests for Gulf universities — the SAT, EmSAT, IELTS and TOEFL, and how school qualifications and entrance or placement tests are recognised.',
+    topicSlugs: ['middle-east-tests-english', 'school-qualifications-and-entrance-tests-gulf'],
+  },
+  {
+    slug: 'middle-east-student-life', region: 'middle-east', label: 'Student Life',
+    title: 'Student Life in the Gulf',
+    description:
+      'Living as a student in the Gulf — costs, housing, health cover and budgeting, a practical city-by-city guide, and adjusting and student wellbeing.',
+    topicSlugs: ['middle-east-student-life', 'living-in-gulf-cities-a-practical-guide', 'cultural-adjustment-and-student-wellbeing-gulf'],
+  },
+];
+
+// ─────────────────────── Russia & CIS (explicit, Phase 2) — final region ─────
+// Eight journey tracks anchored by the existing Russia & CIS hubs + their Phase-2
+// sub-hubs. With this, ALL eight destinations now have explicit, two-level tracks.
+export const RUSSIA_CIS_TRACKS: Track[] = [
+  {
+    slug: 'russia-cis-admissions', region: 'russia', label: 'Admissions',
+    title: 'Russia & CIS Admissions',
+    description:
+      'Applying to universities in Russia and the CIS — the Russian higher-education system and degrees, how admission works across the CIS countries, and the preparatory faculty (podfak).',
+    topicSlugs: ['russia-cis-admissions', 'russian-higher-education-system-and-degrees-explained', 'cis-admissions-and-application-systems-in-depth', 'preparatory-faculty-and-russian-foundation-year-in-depth'],
+  },
+  {
+    slug: 'russia-cis-universities', region: 'russia', label: 'Universities',
+    title: 'Universities in Russia & the CIS',
+    description:
+      'Choosing a university in Russia or the CIS — Russian universities by field and type, the leading CIS universities by country, and how to verify and compare them.',
+    topicSlugs: ['russia-cis-universities', 'russian-universities-by-field-and-type-in-depth', 'cis-universities-by-country-in-depth', 'how-to-verify-and-compare-russia-cis-universities'],
+  },
+  {
+    slug: 'russia-cis-mbbs', region: 'russia', label: 'MBBS',
+    title: 'MBBS in Russia & the CIS for Indian Students',
+    description:
+      'MBBS in Russia and the CIS for Indian students — the India-side licensing path (NEET, NMC, FMGE/NExT, internship and registration) and how to verify and choose a medical university. Deferred to the NMC/NEET; no guarantees.',
+    topicSlugs: ['russia-cis-mbbs', 'mbbs-abroad-india-licensing-fmge-next-in-depth', 'verifying-and-choosing-an-mbbs-university-abroad-india-side'],
+  },
+  {
+    slug: 'russia-cis-courses-careers', region: 'russia', label: 'Courses & Careers',
+    title: 'Courses & Careers in Russia & the CIS',
+    description:
+      'Choosing a programme in Russia or the CIS — the sciences and mathematics, the arts, humanities and social sciences, the creative and performing arts, IT, engineering and energy, and graduate and research study.',
+    topicSlugs: ['russia-cis-courses-careers', 'studying-sciences-and-mathematics-in-russia-cis', 'studying-arts-humanities-and-social-sciences-russia-cis', 'creative-arts-music-and-performing-arts-russia-cis', 'it-engineering-and-energy-specialisations-russia-cis', 'graduate-and-research-study-aspirantura-russia-cis'],
+  },
+  {
+    slug: 'russia-cis-scholarships', region: 'russia', label: 'Scholarships & Costs',
+    title: 'Scholarships & Costs (Russia & CIS)',
+    description:
+      'Funding study in Russia and the CIS — the Russian Government Scholarship and the Open Doors olympiad in depth, and budgeting and student costs. Facts, not financial advice.',
+    topicSlugs: ['russia-cis-scholarships', 'russian-government-scholarship-and-open-doors-in-depth', 'budgeting-and-student-costs-in-russia-cis-in-depth'],
+  },
+  {
+    slug: 'russia-cis-student-visas', region: 'russia', label: 'Student Visas',
+    title: 'Student Visas for Russia & the CIS',
+    description:
+      'Student visas for Russia and the CIS — the Russian student visa, invitation letter and migration registration, and the CIS student visas and residence permits. Neutral official facts, not immigration advice.',
+    topicSlugs: ['russia-cis-student-visas', 'russia-student-visa-invitation-and-migration-in-depth', 'cis-student-visas-and-residence-permits-in-depth'],
+  },
+  {
+    slug: 'russia-cis-language-tests', region: 'russia', label: 'Language & Tests',
+    title: 'Language Tests for Russia & the CIS',
+    description:
+      'The languages and tests for studying in Russia and the CIS — Russian, the TORFL and IELTS/TOEFL — and how to learn Russian and reach the level your programme needs.',
+    topicSlugs: ['russia-cis-language-tests', 'learning-russian-and-the-torfl-in-depth'],
+  },
+  {
+    slug: 'russia-cis-student-life', region: 'russia', label: 'Student Life',
+    title: 'Student Life in Russia & the CIS',
+    description:
+      'Living as a student in Russia and the CIS — cost, housing, climate and healthcare, a practical city-by-city guide, and adjusting and student wellbeing.',
+    topicSlugs: ['russia-cis-student-life', 'living-in-russian-and-cis-cities-a-practical-guide', 'adjusting-and-student-wellbeing-russia-cis'],
+  },
+];
+
 // ───────────────────────────── Abroad (derived) ─────────────────────────────
 // Each abroad region's existing region-tagged hubs ARE its tracks (1:1) for now.
 // They reuse the hub's own label/title/description and gain real sub-hubs in
@@ -313,6 +623,11 @@ export function tracksForRegion(region: RegionSlug): Track[] {
   if (region === 'india') return INDIA_TRACKS;
   if (region === 'usa') return USA_TRACKS;
   if (region === 'uk-ireland') return UK_IRELAND_TRACKS;
+  if (region === 'canada') return CANADA_TRACKS;
+  if (region === 'europe') return EUROPE_TRACKS;
+  if (region === 'australia-nz') return ANZ_TRACKS;
+  if (region === 'middle-east') return MIDDLE_EAST_TRACKS;
+  if (region === 'russia') return RUSSIA_CIS_TRACKS;
   return deriveRegionTracks(region);
 }
 

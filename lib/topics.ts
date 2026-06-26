@@ -76,6 +76,2289 @@ export interface Topic {
 
 export const TOPICS: Topic[] = [
 {
+  "slug": "russian-higher-education-system-and-degrees-explained",
+  "label": "Russian Higher-Ed System",
+  "title": "Russian Higher-Education System & Degrees",
+  "description": "The Russian higher-education system — bachelor, specialist, master and aspirantura levels, state vs private universities, the official admission portal, and accreditation.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "russian-higher-education-degree-levels-explained",
+    "specialist-degree-vs-bachelor-and-master-russia-cis",
+    "state-vs-private-universities-in-russia-cis",
+    "rossotrudnichestvo-admission-portal-explained-russia",
+    "state-accreditation-and-diploma-recognition-russia-cis"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "russian higher-ed system",
+    "russian higher education degree levels explained",
+    "specialist degree vs bachelor and master russia cis",
+    "state vs private universities in russia cis"
+  ]
+},
+{
+  "slug": "cis-admissions-and-application-systems-in-depth",
+  "label": "CIS Admissions Systems",
+  "title": "CIS Admissions & Application Systems",
+  "description": "How admission works across the CIS — Kazakhstan, Kyrgyzstan, Uzbekistan and Armenia — application routes, intakes and documents, country by country.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "kazakhstan-unt-and-direct-admission-routes-explained",
+    "uzbekistan-admission-system-and-branch-campus-applications",
+    "armenia-university-admission-intakes-and-credential-evaluation",
+    "cis-admission-document-checklist-and-timelines-compared",
+    "government-quotas-and-direct-admission-in-cis-countries"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "cis admissions systems",
+    "kazakhstan unt and direct admission routes explained",
+    "uzbekistan admission system and branch campus applications",
+    "armenia university admission intakes and credential evaluation"
+  ]
+},
+{
+  "slug": "preparatory-faculty-and-russian-foundation-year-in-depth",
+  "label": "Preparatory Faculty In Depth",
+  "title": "Preparatory Faculty (Podfak) In Depth",
+  "description": "The preparatory faculty and foundation year in Russia and the CIS — Russian language plus subject basics, its length, who needs it and how to choose.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "what-the-preparatory-faculty-teaches-russia-cis",
+    "who-needs-a-preparatory-year-before-a-russia-cis-degree",
+    "preparatory-faculty-streams-medical-engineering-economics-humanities",
+    "how-to-choose-a-preparatory-faculty-in-russia-cis",
+    "preparatory-faculty-length-completion-and-progression-russia-cis"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "preparatory faculty in depth",
+    "what the preparatory faculty teaches russia cis",
+    "who needs a preparatory year before a russia cis degree",
+    "preparatory faculty streams medical engineering economics humanities"
+  ]
+},
+{
+  "slug": "russian-universities-by-field-and-type-in-depth",
+  "label": "Russian Universities by Field",
+  "title": "Russian Universities by Field & Type",
+  "description": "Russian universities by field and type — federal and national-research universities and the leading universities for engineering, IT, the sciences and medicine.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "federal-and-national-research-universities-russia-explained",
+    "russian-universities-for-engineering-and-it-by-field",
+    "russian-universities-for-natural-and-applied-sciences",
+    "types-of-medical-universities-in-russia-cis-india-side-view",
+    "reading-official-recognition-and-accreditation-russia-cis"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "russian universities by field",
+    "federal and national research universities russia explained",
+    "russian universities for engineering and it by field",
+    "russian universities for natural and applied sciences"
+  ]
+},
+{
+  "slug": "cis-universities-by-country-in-depth",
+  "label": "CIS Universities In Depth",
+  "title": "CIS Universities by Country In Depth",
+  "description": "The leading universities of the CIS — Kazakhstan, Kyrgyzstan, Uzbekistan and Armenia — their strengths and how to choose.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "nazarbayev-university-kazakhstan-in-depth",
+    "al-farabi-kaznu-vs-nazarbayev-which-kazakh-university",
+    "yerevan-state-medical-university-armenia-in-depth",
+    "leading-universities-in-uzbekistan-and-kyrgyzstan-compared",
+    "how-cis-universities-differ-in-academic-strengths"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "cis universities in depth",
+    "nazarbayev university kazakhstan in depth",
+    "al farabi kaznu vs nazarbayev which kazakh university",
+    "yerevan state medical university armenia in depth"
+  ]
+},
+{
+  "slug": "how-to-verify-and-compare-russia-cis-universities",
+  "label": "Verify & Compare Universities",
+  "title": "Verify & Compare Universities",
+  "description": "How to verify and compare Russia/CIS universities — state accreditation and recognition, official registers and the WHO directory for medical schools, and comparing by programme, language and cost.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "how-to-check-state-accreditation-russia-cis-universities",
+    "verify-medical-university-who-world-directory-russia-cis",
+    "compare-universities-programme-language-cost-russia-cis",
+    "official-registers-and-databases-russia-cis-universities",
+    "red-flags-when-verifying-a-russia-cis-university"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "verify & compare universities",
+    "how to check state accreditation russia cis universities",
+    "verify medical university who world directory russia cis",
+    "compare universities programme language cost russia cis"
+  ]
+},
+{
+  "slug": "mbbs-abroad-india-licensing-fmge-next-in-depth",
+  "label": "MBBS: India Licensing In Depth",
+  "title": "MBBS Abroad: India Licensing In Depth",
+  "description": "The India-side path for an MBBS done abroad — NEET, NMC guidelines, the FMGE/NExT screening, the internship and State Medical Council registration to practise in India. Deferred to NMC/NEET/NBEMS.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "neet-requirement-for-mbbs-abroad-explained",
+    "nmc-eligibility-certificate-and-guidelines-for-mbbs-abroad",
+    "next-replacing-fmge-what-mbbs-abroad-students-should-know",
+    "compulsory-internship-rules-after-mbbs-abroad-in-india",
+    "state-medical-council-registration-after-mbbs-abroad"
+  ],
+  "examSlugs": [
+    "neet-ug"
+  ],
+  "keywords": [
+    "mbbs: india licensing in depth",
+    "neet requirement for mbbs abroad explained",
+    "nmc eligibility certificate and guidelines for mbbs abroad",
+    "next replacing fmge what mbbs abroad students should know"
+  ]
+},
+{
+  "slug": "verifying-and-choosing-an-mbbs-university-abroad-india-side",
+  "label": "Choosing an MBBS University",
+  "title": "Choosing an MBBS University Abroad",
+  "description": "How an Indian student verifies and chooses a medical university abroad — the NMC framework and eligibility, official directories, a checklist, and avoiding agent and guaranteed-seat scams. India-side.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "nmc-recognised-medical-college-list-russia-cis-how-to-check",
+    "questions-to-ask-before-choosing-an-mbbs-university-russia-cis",
+    "red-flags-and-guaranteed-seat-scams-mbbs-russia-cis",
+    "working-with-or-without-an-agent-for-mbbs-russia-cis",
+    "matching-an-mbbs-university-to-your-neet-and-nmc-eligibility-russia-cis"
+  ],
+  "examSlugs": [
+    "neet-ug"
+  ],
+  "keywords": [
+    "choosing an mbbs university",
+    "nmc recognised medical college list russia cis how to check",
+    "questions to ask before choosing an mbbs university russia cis",
+    "red flags and guaranteed seat scams mbbs russia cis"
+  ]
+},
+{
+  "slug": "studying-sciences-and-mathematics-in-russia-cis",
+  "label": "Sciences & Mathematics",
+  "title": "Sciences & Mathematics (Russia & CIS)",
+  "description": "Studying physics, chemistry, biology and mathematics in Russia and the CIS — a regional academic strength — what these degrees cover and where they lead.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "studying-physics-in-russia-and-cis",
+    "studying-mathematics-in-russia-and-cis",
+    "studying-chemistry-in-russia-and-cis",
+    "studying-biology-and-life-sciences-in-russia-and-cis",
+    "degree-structure-and-research-in-russia-cis-sciences"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "sciences & mathematics",
+    "studying physics in russia and cis",
+    "studying mathematics in russia and cis",
+    "studying chemistry in russia and cis"
+  ]
+},
+{
+  "slug": "studying-arts-humanities-and-social-sciences-russia-cis",
+  "label": "Arts & Social Sciences",
+  "title": "Arts, Humanities & Social Sciences",
+  "description": "Studying psychology, economics, linguistics, history and the social sciences in Russia and the CIS — degree structures and directions.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "studying-psychology-in-russia-and-cis-degree-structure",
+    "economics-and-finance-degrees-in-russia-and-cis",
+    "linguistics-and-language-studies-degrees-in-russia-cis",
+    "studying-history-and-humanities-in-russia-and-cis",
+    "social-sciences-degrees-in-russia-and-cis-sociology-political-science"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "arts & social sciences",
+    "studying psychology in russia and cis degree structure",
+    "economics and finance degrees in russia and cis",
+    "linguistics and language studies degrees in russia cis"
+  ]
+},
+{
+  "slug": "creative-arts-music-and-performing-arts-russia-cis",
+  "label": "Creative & Performing Arts",
+  "title": "Creative & Performing Arts (Russia & CIS)",
+  "description": "Studying music and conservatoire study, ballet and dance, theatre and fine arts in Russia and the CIS — including auditions and portfolios.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "studying-music-and-conservatoire-in-russia-cis",
+    "ballet-and-dance-training-in-russia-cis",
+    "theatre-and-drama-schools-in-russia-cis",
+    "fine-and-applied-arts-portfolio-russia-cis",
+    "creative-arts-auditions-and-portfolios-russia-cis"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "creative & performing arts",
+    "studying music and conservatoire in russia cis",
+    "ballet and dance training in russia cis",
+    "theatre and drama schools in russia cis"
+  ]
+},
+{
+  "slug": "it-engineering-and-energy-specialisations-russia-cis",
+  "label": "IT, Engineering & Energy",
+  "title": "IT, Engineering & Energy (Russia & CIS)",
+  "description": "Civilian IT, engineering and energy specialisations in Russia and the CIS — software and data, civil and chemical engineering, and energy, petroleum and geology.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "software-and-data-science-degrees-in-russia-cis",
+    "petroleum-and-geology-degrees-in-russia-and-kazakhstan",
+    "energy-and-power-engineering-degrees-in-russia-cis",
+    "civil-engineering-and-architecture-degrees-in-russia-cis",
+    "chemical-and-materials-engineering-degrees-in-russia-cis"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "it, engineering & energy",
+    "software and data science degrees in russia cis",
+    "petroleum and geology degrees in russia and kazakhstan",
+    "energy and power engineering degrees in russia cis"
+  ]
+},
+{
+  "slug": "graduate-and-research-study-aspirantura-russia-cis",
+  "label": "Graduate & Research Study",
+  "title": "Graduate & Research Study (Aspirantura)",
+  "description": "Graduate and research study in Russia and the CIS — the master’s and the aspirantura (PhD route and Candidate of Sciences), research admission and supervision, and funding.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "aspirantura-phd-route-in-russia-cis-explained",
+    "how-research-supervision-and-scientific-advisor-works-russia-cis",
+    "how-to-write-a-research-proposal-for-aspirantura-russia-cis",
+    "funding-and-stipends-for-graduate-and-research-study-russia-cis",
+    "academic-publishing-and-dissertation-defence-russia-cis"
+  ],
+  "examSlugs": [
+    "gre",
+    "gmat"
+  ],
+  "keywords": [
+    "graduate & research study",
+    "aspirantura phd route in russia cis explained",
+    "how research supervision and scientific advisor works russia cis",
+    "how to write a research proposal for aspirantura russia cis"
+  ]
+},
+{
+  "slug": "russian-government-scholarship-and-open-doors-in-depth",
+  "label": "Govt Scholarship & Open Doors",
+  "title": "Govt Scholarship & Open Doors In Depth",
+  "description": "The Russian Government Scholarship (quota) and the Open Doors olympiad — the official application via the Rossotrudnichestvo portal, the stages and selection. Deferred to official.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "rossotrudnichestvo-portal-step-by-step-quota-application",
+    "russian-government-quota-selection-stages-explained",
+    "open-doors-olympiad-for-postgraduate-places-in-russia",
+    "choosing-quota-or-open-doors-route-to-funded-study-russia",
+    "russian-government-scholarship-quota-application-mistakes-to-avoid"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "govt scholarship & open doors",
+    "rossotrudnichestvo portal step by step quota application",
+    "russian government quota selection stages explained",
+    "open doors olympiad for postgraduate places in russia"
+  ]
+},
+{
+  "slug": "budgeting-and-student-costs-in-russia-cis-in-depth",
+  "label": "Budgeting & Student Costs",
+  "title": "Budgeting & Student Costs (Russia & CIS)",
+  "description": "Budgeting and student costs in Russia and the CIS — tuition ranges (deferred to each university), accommodation, food and transport by city, and planning a monthly budget. Not financial advice.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "monthly-student-budget-template-russia-cis",
+    "student-living-costs-by-city-russia-cis",
+    "what-to-budget-for-before-arriving-russia-cis",
+    "dormitory-vs-private-rental-cost-russia-cis",
+    "how-to-estimate-total-cost-of-a-degree-russia-cis"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "budgeting & student costs",
+    "monthly student budget template russia cis",
+    "student living costs by city russia cis",
+    "what to budget for before arriving russia cis"
+  ]
+},
+{
+  "slug": "russia-student-visa-invitation-and-migration-in-depth",
+  "label": "Russia Visa & Migration",
+  "title": "Russia Student Visa, Invitation & Migration",
+  "description": "The Russian student visa, invitation letter and migration registration — how the invitation is issued, the consular application, arrival registration and extension. Not immigration advice.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "russia-official-invitation-letter-process-explained",
+    "russia-student-visa-consulate-application-step-by-step",
+    "migration-registration-after-arrival-russia",
+    "converting-single-entry-to-multi-entry-student-visa-russia",
+    "cis-invitation-and-migration-registration-kazakhstan-kyrgyzstan-uzbekistan-armenia"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "russia visa & migration",
+    "russia official invitation letter process explained",
+    "russia student visa consulate application step by step",
+    "migration registration and the 7 day rule russia"
+  ]
+},
+{
+  "slug": "cis-student-visas-and-residence-permits-in-depth",
+  "label": "CIS Visas & Residence",
+  "title": "CIS Student Visas & Residence In Depth",
+  "description": "Student visas and residence for the CIS — Kazakhstan, Kyrgyzstan, Uzbekistan and Armenia — the entry, registration and residence steps by country. Not immigration advice.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "residence-permit-after-arrival-kazakhstan-kyrgyzstan-uzbekistan-armenia",
+    "address-registration-rules-for-students-in-cis-countries",
+    "student-visa-invitation-and-entry-permission-for-cis-countries",
+    "visa-free-vs-visa-required-entry-for-cis-student-destinations",
+    "extending-and-renewing-your-student-residence-in-cis-countries"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "cis visas & residence",
+    "residence permit after arrival kazakhstan kyrgyzstan uzbekistan armenia",
+    "address registration rules for students in cis countries",
+    "student visa invitation and entry permission for cis countries"
+  ]
+},
+{
+  "slug": "learning-russian-and-the-torfl-in-depth",
+  "label": "Learning Russian & TORFL",
+  "title": "Learning Russian & the TORFL In Depth",
+  "description": "Learning Russian and the TORFL test — the proficiency levels, what level programmes need, the preparatory-faculty Russian course, and practical ways to learn and certify.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "torfl-levels-explained-a1-to-c2",
+    "what-torfl-level-do-you-need-for-russian-taught-programmes",
+    "how-the-preparatory-faculty-russian-course-works",
+    "how-to-prepare-for-and-register-for-the-torfl-exam",
+    "ways-to-learn-russian-before-arriving-in-russia-cis"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "learning russian & torfl",
+    "torfl levels explained a1 to c2",
+    "what torfl level do you need for russian taught programmes",
+    "how the preparatory faculty russian course works"
+  ]
+},
+{
+  "slug": "living-in-russian-and-cis-cities-a-practical-guide",
+  "label": "Living in Cities",
+  "title": "Living in Russia & CIS Cities",
+  "description": "A city-by-city guide to student life in Russia and the CIS — Moscow, St Petersburg, Kazan, Almaty, Tashkent, Bishkek and Yerevan — getting around, climate and costs.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "student-guide-to-living-in-moscow",
+    "student-guide-to-living-in-saint-petersburg",
+    "student-life-in-kazan-and-regional-russian-cities",
+    "student-guide-to-living-in-almaty-and-tashkent",
+    "student-guide-to-living-in-bishkek-and-yerevan"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "living in cities",
+    "student guide to living in moscow",
+    "student guide to living in saint petersburg",
+    "student life in kazan and regional russian cities"
+  ]
+},
+{
+  "slug": "adjusting-and-student-wellbeing-russia-cis",
+  "label": "Adjusting & Wellbeing",
+  "title": "Adjusting & Wellbeing (Russia & CIS)",
+  "description": "Settling in and student wellbeing in Russia and the CIS — adjusting to a new country and a cold climate, support services, staying healthy, and building community.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "adjusting-to-a-cold-climate-in-russia-cis",
+    "university-student-support-services-russia-cis",
+    "using-your-student-health-insurance-in-russia-cis",
+    "eating-well-on-a-student-budget-in-russia-cis",
+    "making-friends-and-building-community-russia-cis"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "adjusting & wellbeing",
+    "adjusting to a cold climate in russia cis",
+    "university student support services russia cis",
+    "using your student health insurance in russia cis"
+  ]
+},
+{
+  "slug": "uae-higher-education-system-and-recognition",
+  "label": "UAE Higher-Ed System",
+  "title": "UAE Higher-Education System & Recognition",
+  "description": "The UAE higher-education system — federal and private universities, CAA/MOHESR accreditation, and how to check a university and programme are recognised.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "uae-higher-education-system-explained",
+    "uae-university-accreditation-caa-mohesr-explained",
+    "how-to-check-a-gulf-university-is-officially-recognised",
+    "free-zone-and-licensed-branch-institutions-in-the-uae-explained",
+    "higher-education-regulators-across-the-gcc-compared"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "uae higher-ed system",
+    "uae higher education system explained",
+    "uae university accreditation caa mohesr explained",
+    "how to check a gulf university is officially recognised"
+  ]
+},
+{
+  "slug": "saudi-higher-education-system-and-recognition",
+  "label": "Saudi Higher-Ed System",
+  "title": "Saudi Higher-Education System & Recognition",
+  "description": "The Saudi Arabian higher-education system — public and private universities, the Ministry of Education and ETEC, the official international-student platform, and recognition.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "saudi-higher-education-system-explained",
+    "role-of-the-saudi-ministry-of-education-in-universities",
+    "etec-accreditation-and-quality-assurance-in-saudi-arabia",
+    "studyinsaudi-official-international-student-platform-explained",
+    "degree-recognition-and-equivalency-in-saudi-arabia"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "saudi higher-ed system",
+    "saudi higher education system explained",
+    "role of the saudi ministry of education in universities",
+    "etec accreditation and quality assurance in saudi arabia"
+  ]
+},
+{
+  "slug": "credential-attestation-and-equivalency-gulf-in-depth",
+  "label": "Attestation & Equivalency",
+  "title": "Attestation & Equivalency (Gulf) In Depth",
+  "description": "Certificate attestation and equivalency for Gulf study — the attestation chain by country, equivalency of certificates, and getting a Gulf degree recognised elsewhere.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "document-attestation-chain-for-gulf-study-step-by-step",
+    "gcc-embassy-attestation-requirements-by-country",
+    "school-certificate-equivalency-for-gulf-universities",
+    "degree-equivalency-and-recognition-in-the-gulf",
+    "getting-a-gulf-degree-recognised-in-other-countries"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "attestation & equivalency",
+    "document attestation chain for gulf study step by step",
+    "gcc embassy attestation requirements by country",
+    "school certificate equivalency for gulf universities"
+  ]
+},
+{
+  "slug": "uae-national-and-private-universities-in-depth",
+  "label": "UAE Universities In Depth",
+  "title": "UAE National & Private Universities In Depth",
+  "description": "UAE national and private universities beyond the most-ranked — UAE University, Zayed, Sharjah, Ajman and others — and how to choose.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "uae-national-vs-private-universities-explained",
+    "uae-university-zayed-and-sharjah-strengths-compared",
+    "affordable-universities-in-the-uae-beyond-the-top-ranked",
+    "how-uae-universities-are-licensed-and-accredited",
+    "choosing-a-uae-university-by-emirate-and-campus-setting"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "uae universities in depth",
+    "uae national vs private universities explained",
+    "uae university zayed and sharjah strengths compared",
+    "affordable universities in the uae beyond the top ranked"
+  ]
+},
+{
+  "slug": "choosing-a-gulf-country-for-study",
+  "label": "Choosing a Gulf Country",
+  "title": "Choosing a Gulf Country to Study In",
+  "description": "Comparing the UAE, Saudi Arabia, Qatar, Oman, Bahrain and Kuwait on programmes, cost, language, the visa route and student life — neutrally, decide by your goals.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "how-to-choose-a-gulf-country-to-study-in",
+    "language-of-instruction-across-gulf-countries-compared",
+    "cost-of-study-compared-across-gulf-countries",
+    "student-visa-routes-compared-across-gulf-countries",
+    "which-gulf-country-fits-your-study-goals"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "choosing a gulf country",
+    "how to choose a gulf country to study in",
+    "language of instruction across gulf countries compared",
+    "cost of study compared across gulf countries"
+  ]
+},
+{
+  "slug": "branch-campus-accreditation-and-quality-gulf",
+  "label": "Branch-Campus Accreditation",
+  "title": "Branch-Campus Accreditation & Quality",
+  "description": "How to judge a Gulf branch campus — verifying home and host accreditation, what \"same degree as home campus\" means, and the questions to ask.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "how-to-verify-branch-campus-accreditation-in-the-gulf",
+    "host-country-quality-regulators-for-gulf-branch-campuses",
+    "does-a-gulf-branch-campus-give-the-same-degree-as-the-home-campus",
+    "comparing-faculty-and-facilities-at-gulf-branch-campuses",
+    "questions-to-ask-before-enrolling-in-a-gulf-branch-campus"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "branch-campus accreditation",
+    "how to verify branch campus accreditation in the gulf",
+    "host country quality regulators for gulf branch campuses",
+    "does a gulf branch campus give the same degree as the home campus"
+  ]
+},
+{
+  "slug": "dubai-academic-clusters-and-free-zones-explained",
+  "label": "Dubai Academic Free-Zones",
+  "title": "Dubai Academic Free-Zones Explained",
+  "description": "The Dubai academic free-zones — Dubai International Academic City and Knowledge Park — how the model works for branch campuses and what it means for students.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "how-academic-free-zones-work-in-dubai",
+    "dubai-international-academic-city-explained-for-students",
+    "dubai-knowledge-park-explained-for-students",
+    "free-zone-vs-mainland-universities-in-the-gulf",
+    "degree-accreditation-and-licensing-in-dubai-free-zones"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "dubai academic free-zones",
+    "how academic free zones work in dubai",
+    "dubai international academic city explained for students",
+    "dubai knowledge park explained for students"
+  ]
+},
+{
+  "slug": "funded-graduate-scholarships-and-assistantships-gulf",
+  "label": "Funded Graduate Awards",
+  "title": "Funded Graduate Awards (Gulf)",
+  "description": "Funded graduate study in the Gulf — full PhD and master’s funding, stipends and assistantships at research universities, and how funded admission works. Secular criteria only.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "funded-phd-positions-at-gulf-research-universities",
+    "research-and-teaching-assistantships-in-the-gulf",
+    "phd-and-masters-stipends-in-the-gulf-explained",
+    "how-to-secure-research-funding-for-graduate-study-in-the-gulf",
+    "finding-funded-graduate-supervisors-and-labs-in-the-gulf"
+  ],
+  "examSlugs": [
+    "gre",
+    "gmat"
+  ],
+  "keywords": [
+    "funded graduate awards",
+    "funded phd positions at gulf research universities",
+    "research and teaching assistantships in the gulf",
+    "phd and masters stipends in the gulf explained"
+  ]
+},
+{
+  "slug": "managing-money-and-banking-for-students-gulf",
+  "label": "Money & Banking (Gulf)",
+  "title": "Money & Banking for Students (Gulf)",
+  "description": "Managing money in the Gulf — budgeting by city, student bank accounts, currency and remittances, and what part-time work can contribute. Not financial advice.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "cost-of-living-by-gulf-city-for-students",
+    "using-a-student-bank-account-and-cards-in-the-gulf",
+    "sending-money-home-from-the-gulf-remittances-guide",
+    "currency-and-exchange-rates-for-gulf-students",
+    "how-much-part-time-work-can-cover-for-gulf-students"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "money & banking (gulf)",
+    "cost of living by gulf city for students",
+    "using a student bank account and cards in the gulf",
+    "sending money home from the gulf remittances guide"
+  ]
+},
+{
+  "slug": "gulf-work-and-residency-after-study-in-depth",
+  "label": "Work & Residency After Study",
+  "title": "Work & Residency After Study (Gulf)",
+  "description": "Working and staying in the Gulf after study — converting to a work or job-seeking route, employer sponsorship and freelance permits, by country. Not immigration advice.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "converting-a-gulf-student-visa-to-a-work-permit",
+    "employer-sponsorship-and-work-visas-in-the-gulf-explained",
+    "uae-job-seeker-and-self-sponsored-residency-visas-for-graduates",
+    "freelance-and-remote-work-permits-in-the-gulf",
+    "gulf-graduate-residency-rules-by-country-uae-saudi-qatar-oman-bahrain-kuwait"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "work & residency after study",
+    "converting a gulf student visa to a work permit",
+    "employer sponsorship and work visas in the gulf explained",
+    "uae job seeker and self sponsored residency visas for graduates"
+  ]
+},
+{
+  "slug": "uae-golden-visa-and-long-term-residency-explained",
+  "label": "UAE Golden Visa In Depth",
+  "title": "UAE Golden Visa & Long-Term Residency",
+  "description": "The UAE Golden Visa and long-term residency for outstanding students and graduates — the categories and criteria, deferred to the UAE government. Not immigration advice.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "uae-golden-visa-outstanding-students-category-explained",
+    "uae-golden-visa-for-top-graduates-and-academic-excellence",
+    "how-to-apply-for-the-uae-golden-visa-as-a-student",
+    "sponsoring-family-on-a-uae-golden-visa-as-a-graduate",
+    "long-term-residency-routes-for-graduates-across-the-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "uae golden visa in depth",
+    "uae golden visa outstanding students category explained",
+    "uae golden visa for top graduates and academic excellence",
+    "how to apply for the uae golden visa as a student"
+  ]
+},
+{
+  "slug": "sciences-and-mathematics-degrees-in-the-gulf",
+  "label": "Sciences & Maths (Gulf)",
+  "title": "Sciences & Mathematics Degrees (Gulf)",
+  "description": "Studying biology, chemistry, physics, mathematics and environmental science in the Gulf — what these degrees cover, research options and directions.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "studying-biology-and-life-sciences-in-the-gulf",
+    "chemistry-and-materials-science-degrees-in-the-gulf",
+    "studying-physics-and-astronomy-in-the-gulf",
+    "mathematics-statistics-and-data-science-degrees-in-the-gulf",
+    "environmental-and-marine-science-studies-in-the-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "sciences & maths (gulf)",
+    "studying biology and life sciences in the gulf",
+    "chemistry and materials science degrees in the gulf",
+    "studying physics and astronomy in the gulf"
+  ]
+},
+{
+  "slug": "architecture-design-and-creative-arts-in-the-gulf",
+  "label": "Architecture, Design & Arts",
+  "title": "Architecture, Design & Creative Arts (Gulf)",
+  "description": "Studying architecture, design and the creative arts in the Gulf — architecture, interior and graphic design and fine arts — including portfolios.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "studying-architecture-in-the-gulf",
+    "portfolio-requirements-for-gulf-design-and-arts-programs",
+    "interior-design-courses-in-the-gulf",
+    "graphic-and-visual-communication-design-in-the-gulf",
+    "fine-and-applied-arts-degrees-in-the-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "architecture, design & arts",
+    "studying architecture in the gulf",
+    "portfolio requirements for gulf design and arts programs",
+    "interior design courses in the gulf"
+  ]
+},
+{
+  "slug": "aviation-aerospace-and-logistics-in-the-gulf",
+  "label": "Aviation & Logistics",
+  "title": "Aviation, Aerospace & Logistics (Gulf)",
+  "description": "Studying aviation, aerospace and logistics in the Gulf — aviation and airport management, aerospace engineering and supply-chain and logistics.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "aviation-and-airport-management-studies-in-the-gulf",
+    "aerospace-engineering-programs-in-the-gulf",
+    "logistics-and-supply-chain-management-studies-in-the-gulf",
+    "aviation-degree-vs-pilot-training-in-the-gulf",
+    "maritime-and-ports-studies-in-the-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "aviation & logistics",
+    "aviation and airport management studies in the gulf",
+    "aerospace engineering programs in the gulf",
+    "logistics and supply chain management studies in the gulf"
+  ]
+},
+{
+  "slug": "hospitality-tourism-and-events-in-the-gulf",
+  "label": "Hospitality & Tourism",
+  "title": "Hospitality, Tourism & Events (Gulf)",
+  "description": "Studying hospitality, tourism and event management in the Gulf — degree and diploma routes, internships, and where these careers lead.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "hospitality-and-tourism-degrees-in-the-gulf",
+    "diploma-and-vocational-hospitality-courses-in-the-gulf",
+    "internships-and-placements-in-gulf-hospitality-and-tourism",
+    "event-management-and-mice-studies-in-the-gulf",
+    "careers-after-studying-hospitality-and-tourism-in-the-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "hospitality & tourism",
+    "hospitality and tourism degrees in the gulf",
+    "diploma and vocational hospitality courses in the gulf",
+    "internships and placements in gulf hospitality and tourism"
+  ]
+},
+{
+  "slug": "finance-banking-and-fintech-in-the-gulf",
+  "label": "Finance & Fintech",
+  "title": "Finance, Banking & Fintech (Gulf)",
+  "description": "Studying finance, banking and fintech in the Gulf — finance and accounting degrees and banking/financial-technology specialisations — what they cover and where they lead.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "finance-and-accounting-degrees-in-the-gulf",
+    "fintech-and-financial-technology-studies-in-the-gulf",
+    "islamic-finance-as-an-academic-specialisation-in-the-gulf",
+    "banking-and-investment-specialisations-in-the-gulf",
+    "professional-finance-certifications-alongside-a-gulf-degree"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "finance & fintech",
+    "finance and accounting degrees in the gulf",
+    "fintech and financial technology studies in the gulf",
+    "islamic finance as an academic specialisation in the gulf"
+  ]
+},
+{
+  "slug": "graduate-careers-and-employability-in-the-gulf",
+  "label": "Graduate Careers (Gulf)",
+  "title": "Graduate Careers & Employability (Gulf)",
+  "description": "Building employability after study in the Gulf — internships and co-ops, career services, professional licensing for regulated fields, and the graduate job search.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "how-to-build-your-cv-and-graduate-job-search-in-the-gulf",
+    "professional-licensing-and-registration-for-regulated-careers-in-the-gulf",
+    "how-to-use-university-career-services-in-the-gulf",
+    "finding-internships-and-co-ops-while-studying-in-the-gulf",
+    "graduate-employability-skills-employers-look-for-in-the-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "graduate careers (gulf)",
+    "how to build your cv and graduate job search in the gulf",
+    "professional licensing and registration for regulated careers in the gulf",
+    "how to use university career services in the gulf"
+  ]
+},
+{
+  "slug": "school-qualifications-and-entrance-tests-gulf",
+  "label": "School Quals & Entrance Tests",
+  "title": "School Qualifications & Entrance Tests (Gulf)",
+  "description": "How school qualifications and entrance tests work for Gulf universities — recognition of school certificates and the IB/A-Levels, the EmSAT by subject, and placement tests.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "will-my-school-board-be-recognized-by-gulf-universities",
+    "emsat-subject-tests-explained-by-subject-area",
+    "high-school-gpa-and-percentage-thresholds-for-gulf-universities",
+    "country-specific-entrance-and-placement-tests-in-the-gulf",
+    "ib-and-a-levels-for-gulf-university-admission"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "school quals & entrance tests",
+    "will my school board be recognized by gulf universities",
+    "emsat subject tests explained by subject area",
+    "high school gpa and percentage thresholds for gulf universities"
+  ]
+},
+{
+  "slug": "living-in-gulf-cities-a-practical-guide",
+  "label": "Living in Gulf Cities",
+  "title": "Living in Gulf Cities: A Practical Guide",
+  "description": "A city-by-city guide to student life in the Gulf — Dubai, Abu Dhabi, Sharjah, Doha, Riyadh, Jeddah, Muscat, Manama and Kuwait City — getting around, climate and costs.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "choosing-which-gulf-city-to-study-in",
+    "living-as-a-student-in-dubai-neighbourhoods-and-daily-life",
+    "finding-student-neighbourhoods-near-gulf-campuses",
+    "climate-and-seasonal-living-in-gulf-student-cities",
+    "daily-student-costs-across-gulf-cities-compared"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "living in gulf cities",
+    "choosing which gulf city to study in",
+    "living as a student in dubai neighbourhoods and daily life",
+    "finding student neighbourhoods near gulf campuses"
+  ]
+},
+{
+  "slug": "cultural-adjustment-and-student-wellbeing-gulf",
+  "label": "Adjusting & Wellbeing",
+  "title": "Adjusting & Wellbeing (Gulf)",
+  "description": "Settling in and student wellbeing in the Gulf — adjusting to a new country, university support and wellbeing services, staying healthy in the climate, and practical tips.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "coping-with-culture-shock-in-the-gulf",
+    "university-counselling-and-wellbeing-services-in-the-gulf",
+    "staying-healthy-in-the-gulf-heat-as-a-student",
+    "food-dining-and-daily-life-for-students-in-the-gulf",
+    "local-etiquette-and-everyday-customs-in-the-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "adjusting & wellbeing",
+    "coping with culture shock in the gulf",
+    "university counselling and wellbeing services in the gulf",
+    "staying healthy in the gulf heat as a student"
+  ]
+},
+{
+  "slug": "application-strategy-and-offers-anz",
+  "label": "Application Strategy & Offers",
+  "title": "Application Strategy & Offers (ANZ)",
+  "description": "Strategy across Australian and NZ applications — shortlisting courses, applying to several universities, conditional and packaged offers, and accepting, deferring or declining.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "how-to-shortlist-universities-and-courses-australia-new-zealand",
+    "how-many-universities-to-apply-to-australia-new-zealand",
+    "conditional-vs-unconditional-offers-australia-new-zealand",
+    "packaged-offers-and-pathway-programs-australia-new-zealand",
+    "accepting-deferring-or-declining-an-offer-australia-new-zealand"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "application strategy & offers",
+    "how to shortlist universities and courses australia new zealand",
+    "how many universities to apply to australia new zealand",
+    "conditional vs unconditional offers australia new zealand"
+  ]
+},
+{
+  "slug": "qualification-recognition-and-pathways-anz",
+  "label": "Qualifications & Pathways",
+  "title": "Qualifications & Pathways (ANZ)",
+  "description": "How qualifications are recognised and the pathways into Australian and NZ universities — the AQF and NZQF, foundation and diploma pathways, and credit transfer.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "aqf-australian-qualifications-framework-explained",
+    "nzqf-new-zealand-qualifications-framework-explained",
+    "foundation-and-pathway-programs-australia-new-zealand",
+    "diploma-to-degree-pathways-australia-new-zealand",
+    "recognition-of-indian-qualifications-and-credit-transfer-australia-nz"
+  ],
+  "examSlugs": [
+    "international-baccalaureate"
+  ],
+  "keywords": [
+    "qualifications & pathways",
+    "aqf australian qualifications framework explained",
+    "nzqf new zealand qualifications framework explained",
+    "foundation and pathway programs australia new zealand"
+  ]
+},
+{
+  "slug": "new-zealand-admissions-in-depth",
+  "label": "New Zealand: Admissions",
+  "title": "New Zealand: Admissions In Depth",
+  "description": "How admission to New Zealand universities works — the NZQF, NCEA equivalence, direct application, and intakes and timelines.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "international-qualification-equivalence-for-new-zealand-universities",
+    "direct-application-to-new-zealand-universities-explained",
+    "conditional-vs-unconditional-offers-new-zealand-universities",
+    "new-zealand-university-intakes-and-application-timelines"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "new zealand: admissions",
+    "international qualification equivalence for new zealand universities",
+    "direct application to new zealand universities explained",
+    "conditional vs unconditional offers new zealand universities"
+  ]
+},
+{
+  "slug": "australian-universities-beyond-the-go8",
+  "label": "Beyond the Go8",
+  "title": "Australian Universities Beyond the Go8",
+  "description": "Australian universities beyond the Group of Eight — the Australian Technology Network and other strong universities, and how the ranking systems differ.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "australian-technology-network-atn-universities-guide",
+    "choosing-an-australian-university-by-subject-strength-not-overall-rank",
+    "how-university-ranking-systems-differ-australia-new-zealand",
+    "strong-non-go8-universities-in-australia-by-city",
+    "beyond-top-ranked-new-zealand-universities-comparing-all-eight"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "beyond the go8",
+    "australian technology network atn universities guide",
+    "choosing an australian university by subject strength not overall rank",
+    "how university ranking systems differ australia new zealand"
+  ]
+},
+{
+  "slug": "new-zealand-universities-in-depth",
+  "label": "New Zealand Universities",
+  "title": "New Zealand Universities In Depth",
+  "description": "New Zealand’s eight universities — beyond Auckland and Otago: Victoria Wellington, Canterbury, Massey, Waikato, AUT and Lincoln — and how to choose.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "victoria-university-of-wellington-and-canterbury-guide",
+    "massey-and-lincoln-universities-new-zealand-guide",
+    "aut-and-university-of-waikato-guide",
+    "choosing-among-new-zealands-eight-universities-by-strength",
+    "beyond-go8-and-auckland-otago-hidden-strengths-australia-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "new zealand universities",
+    "victoria university of wellington and canterbury guide",
+    "massey and lincoln universities new zealand guide",
+    "aut and university of waikato guide"
+  ]
+},
+{
+  "slug": "studying-sciences-in-australia-and-new-zealand",
+  "label": "Sciences in Australia & NZ",
+  "title": "Sciences in Australia & New Zealand",
+  "description": "Studying biology, chemistry, physics, mathematics and environmental science in Australia and NZ — what they cover, honours years and research options.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "science-degrees-in-australia-and-new-zealand-overview",
+    "honours-year-in-australian-and-new-zealand-science-degrees",
+    "environmental-and-earth-science-degrees-in-australia-and-new-zealand",
+    "physics-chemistry-and-mathematics-degrees-in-australia-and-new-zealand",
+    "research-pathways-and-phd-in-science-australia-and-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "sciences in australia & nz",
+    "science degrees in australia and new zealand overview",
+    "honours year in australian and new zealand science degrees",
+    "environmental and earth science degrees in australia and new zealand"
+  ]
+},
+{
+  "slug": "studying-arts-humanities-and-social-sciences-anz",
+  "label": "Arts & Social Sciences (ANZ)",
+  "title": "Arts, Humanities & Social Sciences (ANZ)",
+  "description": "Studying psychology, education, social work, communications and the humanities in Australia and NZ — degree structures and careers.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "psychology-degrees-in-australia-and-new-zealand-guide",
+    "teaching-and-education-degrees-in-australia-and-new-zealand",
+    "social-work-degrees-in-australia-and-new-zealand-guide",
+    "media-and-communications-courses-in-australia-and-new-zealand",
+    "humanities-and-social-sciences-degrees-in-australia-and-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "arts & social sciences (anz)",
+    "psychology degrees in australia and new zealand guide",
+    "teaching and education degrees in australia and new zealand",
+    "social work degrees in australia and new zealand guide"
+  ]
+},
+{
+  "slug": "health-and-medical-professions-anz-in-depth",
+  "label": "Health & Medical Professions",
+  "title": "Health & Medical Professions (ANZ)",
+  "description": "Health and medical professions in Australia and NZ — entry to medicine (the GAMSAT and UCAT ANZ), dentistry, pharmacy, allied health, and AHPRA registration.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "how-to-study-medicine-in-australia-and-new-zealand",
+    "studying-dentistry-in-australia-and-new-zealand",
+    "studying-pharmacy-in-australia-and-new-zealand",
+    "physiotherapy-and-allied-health-courses-in-australia-and-new-zealand",
+    "ahpra-registration-and-practising-as-a-health-professional-in-australia-nz"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "health & medical professions",
+    "how to study medicine in australia and new zealand",
+    "studying dentistry in australia and new zealand",
+    "studying pharmacy in australia and new zealand"
+  ]
+},
+{
+  "slug": "agriculture-environment-and-marine-studies-anz",
+  "label": "Agriculture, Environment & Marine",
+  "title": "Agriculture, Environment & Marine (ANZ)",
+  "description": "Studying agriculture, environmental science, marine and veterinary sciences in Australia and NZ — a regional strength — and where these degrees lead.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "agricultural-science-degrees-in-australia-and-new-zealand",
+    "environmental-science-and-sustainability-courses-australia-new-zealand",
+    "marine-science-and-oceanography-degrees-australia-new-zealand",
+    "veterinary-science-degrees-in-australia-and-new-zealand-for-international-students",
+    "forestry-fisheries-and-natural-resource-careers-australia-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "agriculture, environment & marine",
+    "agricultural science degrees in australia and new zealand",
+    "environmental science and sustainability courses australia new zealand",
+    "marine science and oceanography degrees australia new zealand"
+  ]
+},
+{
+  "slug": "law-and-business-professions-anz",
+  "label": "Law & Business Professions",
+  "title": "Law & Business Professions (ANZ)",
+  "description": "Studying law and business professions in Australia and NZ — the LLB and JD and admission to practice, and accounting and finance with CPA Australia and CA ANZ.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "llb-vs-jd-in-australia-and-new-zealand",
+    "admission-to-legal-practice-in-australia-and-new-zealand",
+    "cpa-australia-vs-ca-anz-accountancy-pathways",
+    "accredited-accounting-degrees-in-australia-and-new-zealand",
+    "law-degree-recognition-for-international-students-australia-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "law & business professions",
+    "llb vs jd in australia and new zealand",
+    "admission to legal practice in australia and new zealand",
+    "cpa australia vs ca anz accountancy pathways"
+  ]
+},
+{
+  "slug": "australia-student-visa-subclass-500-in-depth",
+  "label": "Subclass 500 In Depth",
+  "title": "Subclass 500 Student Visa In Depth",
+  "description": "The Australian subclass 500 student visa — the Genuine Student responses, the CoE, ImmiAccount lodgement, evidence and visa conditions. Not immigration advice.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "subclass-500-coe-and-confirmation-of-enrolment-explained",
+    "writing-genuine-student-gs-responses-for-subclass-500",
+    "lodging-the-subclass-500-in-immiaccount-step-by-step",
+    "subclass-500-supporting-evidence-types-explained",
+    "subclass-500-visa-conditions-after-grant-explained"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "subclass 500 in depth",
+    "subclass 500 coe and confirmation of enrolment explained",
+    "writing genuine student gs responses for subclass 500",
+    "lodging the subclass 500 in immiaccount step by step"
+  ]
+},
+{
+  "slug": "new-zealand-student-visa-in-depth",
+  "label": "NZ Student Visa In Depth",
+  "title": "NZ Student Visa In Depth",
+  "description": "The New Zealand student visa — the Immigration NZ application, conditions, work rights during study, and the pathway student visa. Not immigration advice.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "new-zealand-student-visa-conditions-explained",
+    "new-zealand-student-visa-online-application-immionline-walkthrough",
+    "new-zealand-pathway-student-visa-explained",
+    "new-zealand-student-visa-work-rights-allowance-explained",
+    "new-zealand-student-visa-extension-and-variation-of-conditions"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "nz student visa in depth",
+    "new zealand student visa conditions explained",
+    "new zealand student visa online application immionline walkthrough",
+    "new zealand pathway student visa explained"
+  ]
+},
+{
+  "slug": "scholarships-and-funding-anz-in-depth",
+  "label": "Scholarships & Funding In Depth",
+  "title": "Scholarships & Funding (ANZ) In Depth",
+  "description": "Scholarships and funding for Australia and NZ — beyond Australia Awards and Destination Australia: university and NZ government scholarships, and how to apply.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "university-merit-and-equity-scholarships-australia",
+    "new-zealand-government-scholarships-for-international-students",
+    "new-zealand-university-scholarships-guide",
+    "how-to-find-and-apply-for-scholarships-australia-new-zealand",
+    "postgraduate-research-funding-australia-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "scholarships & funding in depth",
+    "university merit and equity scholarships australia",
+    "new zealand government scholarships for international students",
+    "new zealand university scholarships guide"
+  ]
+},
+{
+  "slug": "budgeting-and-money-management-anz",
+  "label": "Budgeting & Money (ANZ)",
+  "title": "Budgeting & Money (ANZ)",
+  "description": "Managing money as a student in Australia and NZ — budgeting by city, part-time earnings, accounts and superannuation, and the tax file/IRD number. Not financial advice.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "monthly-student-budget-by-city-australia-and-new-zealand",
+    "how-far-part-time-work-stretches-student-budget-australia-nz",
+    "superannuation-for-international-students-in-australia-explained",
+    "ird-number-and-student-tax-in-new-zealand-guide",
+    "currency-exchange-and-sending-money-to-australia-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "budgeting & money (anz)",
+    "monthly student budget by city australia and new zealand",
+    "how far part time work stretches student budget australia nz",
+    "superannuation for international students in australia explained"
+  ]
+},
+{
+  "slug": "temporary-graduate-visa-485-in-depth",
+  "label": "Subclass 485 In Depth",
+  "title": "Subclass 485 Graduate Visa In Depth",
+  "description": "The Australian Temporary Graduate visa (485) — the post-higher-education and post-vocational streams, eligibility, duration by qualification and recent changes. Not immigration advice.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "subclass-485-post-higher-education-work-stream-guide",
+    "subclass-485-post-vocational-education-work-stream-guide",
+    "subclass-485-visa-duration-by-qualification-explained",
+    "subclass-485-recent-changes-and-age-english-requirements",
+    "australia-485-vs-new-zealand-post-study-work-eligibility-compared"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "subclass 485 in depth",
+    "subclass 485 post higher education work stream guide",
+    "subclass 485 post vocational education work stream guide",
+    "subclass 485 visa duration by qualification explained"
+  ]
+},
+{
+  "slug": "skilled-migration-and-pr-pathways-anz-in-depth",
+  "label": "Skilled Migration & PR In Depth",
+  "title": "Skilled Migration & PR (ANZ) In Depth",
+  "description": "Skilled migration and PR in Australia and NZ — the points test and EOI, occupation lists, state/regional nomination, and NZ’s Skilled Migrant Category and Green List. Not immigration advice.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "skillselect-eoi-expression-of-interest-australia-guide",
+    "australia-points-test-breakdown-skilled-migration",
+    "skills-assessment-for-australian-skilled-migration-guide",
+    "australia-skilled-occupation-lists-mltssl-stsol-rol-explained",
+    "state-and-regional-nomination-for-skilled-migration-australia-nz"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "skilled migration & pr in depth",
+    "skillselect eoi expression of interest australia guide",
+    "australia points test breakdown skilled migration",
+    "skills assessment for australian skilled migration guide"
+  ]
+},
+{
+  "slug": "graduate-careers-and-employability-anz",
+  "label": "Graduate Careers & Employability",
+  "title": "Graduate Careers & Employability (ANZ)",
+  "description": "Finding work in Australia and NZ — Australian-style CVs, professional accreditation (Engineers Australia, CPA, AHPRA), internships, networking and graduate programs.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "australian-style-cv-and-job-application-guide",
+    "professional-accreditation-for-graduates-australia-new-zealand",
+    "internships-and-work-placements-australia-new-zealand",
+    "professional-networking-for-students-australia-new-zealand",
+    "graduate-programs-and-employer-schemes-australia-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "graduate careers & employability",
+    "australian style cv and job application guide",
+    "professional accreditation for graduates australia new zealand",
+    "internships and work placements australia new zealand"
+  ]
+},
+{
+  "slug": "english-tests-for-admission-vs-visa-anz",
+  "label": "English: Admission vs Visa",
+  "title": "English: Admission vs Visa (ANZ)",
+  "description": "Which English tests Australia and NZ accept for admission vs the student visa — the nuance that some tests (e.g. Duolingo) may be accepted for admission but not the visa.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "english-test-admission-vs-visa-australia-new-zealand",
+    "duolingo-english-test-accepted-australia-nz-visa",
+    "english-score-requirements-admission-vs-visa-australia-nz",
+    "approved-english-tests-list-subclass-500-and-nz-student-visa",
+    "english-test-exemptions-and-waivers-admission-vs-visa-australia-nz"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl",
+    "pte-academic"
+  ],
+  "keywords": [
+    "english: admission vs visa",
+    "english test admission vs visa australia new zealand",
+    "duolingo english test accepted australia nz visa",
+    "english score requirements admission vs visa australia nz"
+  ]
+},
+{
+  "slug": "arriving-and-settling-in-anz-in-depth",
+  "label": "Arriving & Settling In",
+  "title": "Arriving & Settling In (ANZ)",
+  "description": "Arriving and settling into Australia or NZ — the arrival checklist, using your health cover, transport cards, finding housing, a SIM and banking, by city.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "first-week-arrival-checklist-australia-new-zealand",
+    "how-to-use-your-oshc-and-health-cover-australia-new-zealand",
+    "transport-cards-opal-myki-at-hop-explained-australia-nz",
+    "getting-a-sim-and-mobile-plan-australia-new-zealand-students",
+    "finding-housing-after-you-arrive-australia-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "arriving & settling in",
+    "first week arrival checklist australia new zealand",
+    "how to use your oshc and health cover australia new zealand",
+    "transport cards opal myki at hop explained australia nz"
+  ]
+},
+{
+  "slug": "student-life-culture-and-support-anz",
+  "label": "Student Life, Culture & Support",
+  "title": "Student Life, Culture & Support (ANZ)",
+  "description": "Student life and support in Australia and NZ — campus culture and clubs, wellbeing and international-student support, Indigenous and Māori support, safety and working culture.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "campus-culture-and-student-clubs-australia-new-zealand",
+    "international-student-support-and-wellbeing-services-australia-nz",
+    "indigenous-and-maori-student-support-australia-new-zealand",
+    "staying-safe-as-a-student-in-australia-and-new-zealand",
+    "adjusting-to-life-and-workplace-culture-in-australia-and-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "student life, culture & support",
+    "campus culture and student clubs australia new zealand",
+    "international student support and wellbeing services australia nz",
+    "indigenous and maori student support australia new zealand"
+  ]
+},
+{
+  "slug": "france-admissions-pathways-in-depth",
+  "label": "France: Admissions Pathways",
+  "title": "France: Admissions Pathways In Depth",
+  "description": "French higher-education routes — universities vs grandes écoles and CPGE, Parcoursup vs Études en France, the DAP, and the licence-master-doctorat structure.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "france-universities-vs-grandes-ecoles-explained",
+    "cpge-preparatory-classes-and-grandes-ecoles-entrance",
+    "parcoursup-vs-etudes-en-france-which-applies-to-you",
+    "dap-application-for-first-year-bachelor-in-france",
+    "licence-master-doctorat-french-degree-system-explained"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "france: admissions pathways",
+    "france universities vs grandes ecoles explained",
+    "cpge preparatory classes and grandes ecoles entrance",
+    "parcoursup vs etudes en france which applies to you"
+  ]
+},
+{
+  "slug": "netherlands-admissions-in-depth",
+  "label": "Netherlands: Admissions",
+  "title": "Netherlands: Admissions In Depth",
+  "description": "Dutch admissions — Studielink, the numerus fixus selection, research universities (WO) vs universities of applied sciences (HBO), and university colleges.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "studielink-application-process-netherlands-explained",
+    "numerus-fixus-selection-procedure-netherlands",
+    "wo-vs-hbo-dutch-universities-difference",
+    "university-colleges-liberal-arts-netherlands-guide",
+    "matching-and-study-choice-check-netherlands"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl"
+  ],
+  "keywords": [
+    "netherlands: admissions",
+    "studielink application process netherlands explained",
+    "numerus fixus selection procedure netherlands",
+    "wo vs hbo dutch universities difference"
+  ]
+},
+{
+  "slug": "italy-admissions-in-depth",
+  "label": "Italy: Admissions",
+  "title": "Italy: Admissions In Depth",
+  "description": "Italian admissions for international students — Universitaly pre-enrolment, the Declaration of Value and CIMEA, the IMAT for medicine, and the embassy timeline.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "universitaly-pre-enrolment-guide-for-international-students",
+    "declaration-of-value-and-cimea-credential-recognition-italy",
+    "imat-exam-guide-for-english-taught-medicine-in-italy",
+    "italy-university-application-timeline-via-embassy",
+    "italian-university-admission-requirements-for-international-students"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "italy: admissions",
+    "universitaly pre enrolment guide for international students",
+    "declaration of value and cimea credential recognition italy",
+    "imat exam guide for english taught medicine in italy"
+  ]
+},
+{
+  "slug": "ects-credits-and-degree-recognition-europe",
+  "label": "ECTS & Degree Recognition",
+  "title": "ECTS & Degree Recognition in Europe",
+  "description": "European credits and recognition — the ECTS system, the Diploma Supplement, ENIC-NARIC recognition, and how credits transfer between programmes.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "ects-credit-system-explained-for-international-students",
+    "diploma-supplement-explained-what-it-is-and-why-it-matters",
+    "enic-naric-credential-recognition-explained",
+    "how-to-transfer-ects-credits-between-european-universities",
+    "how-european-degree-recognition-works-in-india-for-returning-students"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "ects & degree recognition",
+    "ects credit system explained for international students",
+    "diploma supplement explained what it is and why it matters",
+    "enic naric credential recognition explained"
+  ]
+},
+{
+  "slug": "erasmus-and-joint-degrees-in-depth",
+  "label": "Erasmus & Joint Degrees",
+  "title": "Erasmus & Joint Degrees In Depth",
+  "description": "European mobility and multi-country degrees — Erasmus+ exchange, Erasmus Mundus Joint Master Degrees (the degree structure), and double/joint degrees.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "erasmus-plus-exchange-during-your-degree-explained",
+    "erasmus-mundus-joint-master-degree-structure-explained",
+    "double-degree-vs-joint-degree-in-europe-explained",
+    "how-to-apply-to-erasmus-mundus-joint-masters-as-an-international-student",
+    "visa-and-mobility-logistics-for-multi-country-erasmus-degrees"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "erasmus & joint degrees",
+    "erasmus plus exchange during your degree explained",
+    "erasmus mundus joint master degree structure explained",
+    "double degree vs joint degree in europe explained"
+  ]
+},
+{
+  "slug": "studying-engineering-in-europe-in-depth",
+  "label": "Engineering in Europe",
+  "title": "Engineering in Europe In Depth",
+  "description": "The European engineering landscape — Germany’s TU9, the French engineering grandes écoles, leading schools like TU Delft and ETH, and integrated MSc routes.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "germany-tu9-universities-for-engineering-explained",
+    "french-engineering-grandes-ecoles-admission-explained",
+    "diplom-ingenieur-vs-bachelor-master-engineering-europe",
+    "how-to-apply-to-eth-and-tu-delft-engineering-compared",
+    "english-taught-engineering-masters-in-germany-explained"
+  ],
+  "examSlugs": [
+    "testas"
+  ],
+  "keywords": [
+    "engineering in europe",
+    "germany tu9 universities for engineering explained",
+    "french engineering grandes ecoles admission explained",
+    "diplom ingenieur vs bachelor master engineering europe"
+  ]
+},
+{
+  "slug": "studying-social-sciences-and-humanities-in-europe",
+  "label": "Social Sciences & Humanities",
+  "title": "Social Sciences & Humanities in Europe",
+  "description": "Studying economics, politics and IR, psychology and history in Europe — English-taught programmes and the liberal-arts/university-college model.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "study-economics-in-europe-in-english",
+    "political-science-and-international-relations-in-europe",
+    "european-liberal-arts-and-university-colleges-explained",
+    "study-psychology-in-europe-in-english",
+    "study-history-and-humanities-in-europe"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "social sciences & humanities",
+    "study economics in europe in english",
+    "political science and international relations in europe",
+    "european liberal arts and university colleges explained"
+  ]
+},
+{
+  "slug": "medicine-and-health-degrees-in-europe-in-depth",
+  "label": "Medicine & Health in Europe",
+  "title": "Medicine & Health Degrees in Europe",
+  "description": "English-taught medicine and health degrees in Europe — the country routes (e.g. the IMAT in Italy), dentistry and pharmacy, and recognition to practise back home.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "english-taught-medicine-country-routes-europe-compared",
+    "recognition-to-practise-medicine-back-home-after-europe",
+    "studying-dentistry-in-europe-for-international-students",
+    "studying-pharmacy-in-europe-for-international-students"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "medicine & health in europe",
+    "imat italy medicine entrance exam guide",
+    "english taught medicine country routes europe compared",
+    "recognition to practise medicine back home after europe"
+  ]
+},
+{
+  "slug": "phd-and-research-funding-in-europe-in-depth",
+  "label": "PhD & Research Funding",
+  "title": "PhD & Research Funding in Europe",
+  "description": "Doctoral study and research funding in Europe — structured vs employee PhDs, Marie Skłodowska-Curie Actions and ERC positions, and finding funded vacancies.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "structured-vs-individual-phd-models-in-europe-explained",
+    "employee-phd-positions-in-germany-and-nordics-explained",
+    "marie-sklodowska-curie-actions-phd-fellowships-explained",
+    "erc-funded-phd-and-research-positions-in-europe",
+    "how-to-find-funded-phd-vacancies-in-europe"
+  ],
+  "examSlugs": [
+    "gre"
+  ],
+  "keywords": [
+    "phd & research funding",
+    "structured vs individual phd models in europe explained",
+    "employee phd positions in germany and nordics explained",
+    "marie sklodowska curie actions phd fellowships explained"
+  ]
+},
+{
+  "slug": "country-scholarships-in-europe-in-depth",
+  "label": "Country Scholarships In Depth",
+  "title": "Country Scholarships in Europe In Depth",
+  "description": "Government and university scholarships across Europe — beyond DAAD and Erasmus: Italian, Spanish, Dutch, Swiss and Austrian awards. Secular criteria only.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "italian-government-scholarships-and-university-funding-guide",
+    "spanish-government-and-university-scholarships-guide",
+    "dutch-scholarships-beyond-holland-scholarship-guide",
+    "swiss-government-excellence-scholarships-guide",
+    "austrian-government-and-oead-scholarships-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "country scholarships in depth",
+    "italian government scholarships and university funding guide",
+    "spanish government and university scholarships guide",
+    "dutch scholarships beyond holland scholarship guide"
+  ]
+},
+{
+  "slug": "blocked-accounts-and-proof-of-funds-europe",
+  "label": "Blocked Accounts & Proof of Funds",
+  "title": "Blocked Accounts & Proof of Funds",
+  "description": "Proving you can fund study across Europe — the German blocked account and its alternatives, and how proof-of-funds requirements differ by country. Amounts deferred to official.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "proof-of-funds-for-european-student-visas-by-country",
+    "german-blocked-account-providers-compared",
+    "alternatives-to-a-blocked-account-for-germany",
+    "blocked-account-requirements-france-netherlands-austria",
+    "how-to-show-proof-of-funds-with-an-education-loan-or-sponsor-for-europe"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "blocked accounts & proof of funds",
+    "proof of funds for european student visas by country",
+    "german blocked account providers compared",
+    "alternatives to a blocked account for germany"
+  ]
+},
+{
+  "slug": "europe-student-visa-process-in-depth",
+  "label": "Student Visa Process In Depth",
+  "title": "Europe Student Visa Process In Depth",
+  "description": "The European student visa/residence-permit process — national long-stay (type D) vs Schengen, the embassy/document process, and converting to a residence permit. Not immigration advice.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "national-type-d-visa-vs-schengen-short-stay-for-students",
+    "student-visa-embassy-appointment-and-document-checklist-europe",
+    "converting-student-visa-into-residence-permit-after-arrival-europe",
+    "germany-national-visa-to-aufenthaltstitel-residence-permit-process",
+    "france-vls-ts-validation-and-residence-permit-process"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "student visa process in depth",
+    "national type d visa vs schengen short stay for students",
+    "student visa embassy appointment and document checklist europe",
+    "converting student visa into residence permit after arrival europe"
+  ]
+},
+{
+  "slug": "eu-blue-card-and-work-permits-in-depth",
+  "label": "EU Blue Card & Work Permits",
+  "title": "EU Blue Card & Work Permits In Depth",
+  "description": "Working in Europe after study — the EU Blue Card (employment-based, not a study permit) and national work permits, salary thresholds and switching by country. Not immigration advice.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "eu-blue-card-salary-thresholds-by-country",
+    "switching-from-student-permit-to-work-permit-in-europe",
+    "germany-eu-blue-card-vs-national-work-permit",
+    "netherlands-highly-skilled-migrant-vs-eu-blue-card",
+    "eu-blue-card-intra-eu-mobility-and-job-changes"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "eu blue card & work permits",
+    "eu blue card salary thresholds by country",
+    "switching from student permit to work permit in europe",
+    "germany eu blue card vs national work permit"
+  ]
+},
+{
+  "slug": "staying-in-europe-pr-and-citizenship-pathways",
+  "label": "PR & Citizenship Pathways",
+  "title": "PR & Citizenship Pathways in Europe",
+  "description": "Long-term settlement in Europe — how PR and naturalisation timelines differ by country and the EU long-term residence permit. Deferred to each country; not immigration advice.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "naturalisation-and-citizenship-timelines-in-europe-by-country",
+    "dual-citizenship-rules-in-european-countries-explained",
+    "citizenship-and-integration-test-requirements-in-europe",
+    "counting-student-years-toward-pr-and-citizenship-in-europe",
+    "eu-long-term-residence-vs-national-permanent-residence-in-europe"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "pr & citizenship pathways",
+    "naturalisation and citizenship timelines in europe by country",
+    "dual citizenship rules in european countries explained",
+    "citizenship and integration test requirements in europe"
+  ]
+},
+{
+  "slug": "learning-european-languages-for-study-and-life",
+  "label": "European Languages for Study & Life",
+  "title": "European Languages for Study & Life",
+  "description": "Learning French, Italian, Spanish, Dutch or German for study and daily life — which programmes need the local language, language schools, integration courses and CEFR levels.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "learn-french-italian-spanish-dutch-for-study-in-europe",
+    "english-taught-vs-local-language-programmes-in-europe",
+    "cefr-levels-explained-for-studying-in-europe",
+    "university-language-integration-courses-in-europe",
+    "language-tests-for-french-italian-spanish-dutch-universities"
+  ],
+  "examSlugs": [
+    "testdaf"
+  ],
+  "keywords": [
+    "european languages for study & life",
+    "learn french italian spanish dutch for study in europe",
+    "english taught vs local language programmes in europe",
+    "cefr levels explained for studying in europe"
+  ]
+},
+{
+  "slug": "settling-in-europe-residence-registration-in-depth",
+  "label": "Residence Registration & Settling",
+  "title": "Residence Registration & Settling In",
+  "description": "First steps after arriving in Europe — registering your address (e.g. the German Anmeldung), the BSN/codice fiscale/NIE, collecting a residence permit and opening a bank account, by country.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "germany-anmeldung-address-registration-explained",
+    "netherlands-bsn-and-gemeente-registration-guide",
+    "spain-nie-and-tie-residence-card-guide",
+    "italy-codice-fiscale-and-permesso-di-soggiorno-guide",
+    "collecting-your-residence-permit-card-in-europe-by-country"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "residence registration & settling",
+    "germany anmeldung address registration explained",
+    "netherlands bsn and gemeente registration guide",
+    "spain nie and tie residence card guide"
+  ]
+},
+{
+  "slug": "student-life-and-culture-across-europe",
+  "label": "Student Life & Culture",
+  "title": "Student Life & Culture Across Europe",
+  "description": "Student life and culture across Europe — the semester structure and exam culture, student associations, transport and Schengen travel, and adapting across countries.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "semester-structure-and-exam-culture-in-europe",
+    "student-associations-mensa-and-campus-life-in-europe",
+    "getting-around-europe-student-transport-passes-and-bikes",
+    "adjusting-to-life-in-a-new-european-country-culture-shock",
+    "germany-anmeldung-and-student-registration-formalities"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "student life & culture",
+    "semester structure and exam culture in europe",
+    "student associations mensa and campus life in europe",
+    "getting around europe student transport passes and bikes"
+  ]
+},
+{
+  "slug": "germany-admissions-systems-in-depth",
+  "label": "Germany: Admissions Systems",
+  "title": "Germany: Admissions Systems In Depth",
+  "description": "How German admissions work — the APS, Hochschulstart and the numerus clausus, FH vs Universität, admission rounds, and Studienkolleg routes.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "aps-certificate-germany-guide-for-indian-students",
+    "numerus-clausus-and-hochschulstart-germany-explained",
+    "fachhochschule-vs-universitaet-germany",
+    "germany-winter-vs-summer-intake-admission-timeline",
+    "studienkolleg-admission-and-feststellungspruefung-explained"
+  ],
+  "examSlugs": [
+    "testdaf",
+    "testas"
+  ],
+  "keywords": [
+    "germany: admissions systems",
+    "aps certificate germany guide for indian students",
+    "numerus clausus and hochschulstart germany explained",
+    "fachhochschule vs universitaet germany"
+  ]
+},
+{
+  "slug": "nordics-admissions-in-depth",
+  "label": "Nordics: Admissions",
+  "title": "Nordics: Admissions In Depth",
+  "description": "Admissions across the Nordics — universityadmissions.se and the Danish, Norwegian and Finnish portals, merit-based selection, and free vs fee-paying status.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "universityadmissions-se-sweden-application-portal-explained",
+    "denmark-university-application-portal-and-admission-explained",
+    "norway-university-admission-and-application-portal-explained",
+    "finland-university-application-portal-studyinfo-explained",
+    "nordic-admissions-ranking-and-merit-selection-explained"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl"
+  ],
+  "keywords": [
+    "nordics: admissions",
+    "universityadmissions se sweden application portal explained",
+    "denmark university application portal and admission explained",
+    "norway university admission and application portal explained"
+  ]
+},
+{
+  "slug": "studying-natural-sciences-and-maths-in-europe",
+  "label": "Sciences & Maths in Europe",
+  "title": "Sciences & Maths in Europe",
+  "description": "Studying physics, chemistry, biology and mathematics in Europe — English-taught options and research-led bachelor and master routes.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "physics-and-maths-bachelors-in-europe-in-english",
+    "studying-chemistry-and-biology-in-the-netherlands",
+    "research-masters-in-natural-sciences-in-germany",
+    "pure-vs-applied-mathematics-degrees-in-europe",
+    "science-bachelors-in-the-nordic-countries-in-english"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "sciences & maths in europe",
+    "physics and maths bachelors in europe in english",
+    "studying chemistry and biology in the netherlands",
+    "research masters in natural sciences in germany"
+  ]
+},
+{
+  "slug": "ontario-universities-and-ouac-in-depth",
+  "label": "Ontario Universities & OUAC",
+  "title": "Ontario Universities & OUAC In Depth",
+  "description": "Studying in Ontario — OUAC 101 vs 105, the major Ontario universities and how they differ, and the supplementary applications some programs require.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "ouac-101-vs-105-which-application-to-use",
+    "comparing-major-ontario-universities",
+    "ontario-supplementary-applications-and-assessments",
+    "how-to-fill-the-ouac-application-step-by-step",
+    "ontario-university-program-choice-strategy"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl"
+  ],
+  "keywords": [
+    "ontario universities & ouac",
+    "ouac 101 vs 105 which application to use",
+    "comparing major ontario universities",
+    "ontario supplementary applications and assessments"
+  ]
+},
+{
+  "slug": "western-canada-universities-bc-and-alberta",
+  "label": "Western Canada Universities",
+  "title": "Western Canada Universities (BC & Alberta)",
+  "description": "Studying in British Columbia and Alberta — UBC, SFU and UVic via EducationPlannerBC, and Alberta and Calgary via ApplyAlberta.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "educationplannerbc-application-guide",
+    "applyalberta-application-guide",
+    "western-canada-university-application-deadlines",
+    "ubc-sfu-uvic-which-bc-university",
+    "alberta-vs-calgary-university-strengths"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl"
+  ],
+  "keywords": [
+    "western canada universities",
+    "educationplannerbc application guide",
+    "applyalberta application guide",
+    "western canada university application deadlines"
+  ]
+},
+{
+  "slug": "quebec-universities-and-the-cegep-system",
+  "label": "Quebec Universities & CEGEP",
+  "title": "Quebec Universities & the CEGEP System",
+  "description": "Studying in Quebec — McGill, Concordia, Montréal and Laval, the CEGEP system, English vs French study, and the CAQ alongside the study permit.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "quebec-acceptance-certificate-caq-guide",
+    "cegep-system-in-quebec-explained-for-international-students",
+    "english-vs-french-universities-in-quebec",
+    "french-language-requirements-for-studying-in-quebec",
+    "quebec-tuition-tiers-for-international-and-out-of-province-students"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl"
+  ],
+  "keywords": [
+    "quebec universities & cegep",
+    "quebec acceptance certificate caq guide",
+    "cegep system in quebec explained for international students",
+    "english vs french universities in quebec"
+  ]
+},
+{
+  "slug": "atlantic-and-prairie-universities-canada",
+  "label": "Atlantic & Prairie Universities",
+  "title": "Atlantic & Prairie Universities",
+  "description": "Studying in Canada’s Atlantic and Prairie provinces — Dalhousie, Memorial, UNB, Manitoba and Saskatchewan — often lower-cost, with their own routes and strengths.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "atlantic-canada-universities-guide",
+    "prairie-universities-canada-manitoba-saskatchewan",
+    "low-cost-canadian-universities-atlantic-prairies",
+    "memorial-university-newfoundland-international-guide",
+    "atlantic-prairie-provinces-pnp-stay-after-study"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl"
+  ],
+  "keywords": [
+    "atlantic & prairie universities",
+    "atlantic canada universities guide",
+    "prairie universities canada manitoba saskatchewan",
+    "low cost canadian universities atlantic prairies"
+  ]
+},
+{
+  "slug": "canadian-college-diploma-programs-in-depth",
+  "label": "College Diploma Programs",
+  "title": "Canadian College Diploma Programs",
+  "description": "The Canadian college (applied) route — diplomas, advanced diplomas and post-graduate certificates, the practical fields they cover, and how they differ from degrees.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "canadian-college-credentials-explained",
+    "post-graduate-certificate-programs-in-canada",
+    "applied-fields-at-canadian-colleges",
+    "how-canadian-college-diplomas-are-taught-and-assessed",
+    "choosing-a-program-at-a-canadian-college"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "college diploma programs",
+    "canadian college credentials explained",
+    "post graduate certificate programs in canada",
+    "applied fields at canadian colleges"
+  ]
+},
+{
+  "slug": "studying-sciences-in-canada",
+  "label": "Science Degrees in Canada",
+  "title": "Science Degrees in Canada",
+  "description": "Studying biology, chemistry, physics, mathematics, biotechnology and environmental science in Canada — what they cover, co-op options and directions.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "biology-and-life-sciences-degrees-in-canada",
+    "chemistry-degrees-in-canada-for-international-students",
+    "physics-and-mathematics-degrees-in-canada",
+    "biotechnology-degrees-in-canada",
+    "environmental-science-degrees-in-canada"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl"
+  ],
+  "keywords": [
+    "science degrees in canada",
+    "biology and life sciences degrees in canada",
+    "chemistry degrees in canada for international students",
+    "physics and mathematics degrees in canada"
+  ]
+},
+{
+  "slug": "studying-arts-humanities-and-social-sciences-canada",
+  "label": "Arts & Social Sciences",
+  "title": "Arts, Humanities & Social Sciences in Canada",
+  "description": "Studying psychology, economics, political science, communications and sociology in Canada — degree structures, joint majors and careers.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "arts-and-social-science-degrees-in-canada-explained",
+    "studying-psychology-in-canada",
+    "studying-economics-in-canada",
+    "political-science-and-international-relations-in-canada",
+    "communications-and-sociology-degrees-in-canada"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl"
+  ],
+  "keywords": [
+    "arts & social sciences",
+    "arts and social science degrees in canada explained",
+    "studying psychology in canada",
+    "studying economics in canada"
+  ]
+},
+{
+  "slug": "studying-trades-and-applied-fields-canada",
+  "label": "Trades & Applied Fields",
+  "title": "Trades & Applied Fields in Canada",
+  "description": "Applied and vocational fields in Canada — trades and apprenticeships, hospitality, aviation, agriculture and design/animation — mostly via colleges.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "skilled-trades-and-apprenticeships-in-canada",
+    "hospitality-and-tourism-management-in-canada",
+    "aviation-and-pilot-training-in-canada",
+    "agriculture-and-agri-food-programs-in-canada",
+    "animation-game-design-and-vfx-programs-in-canada"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "trades & applied fields",
+    "skilled trades and apprenticeships in canada",
+    "hospitality and tourism management in canada",
+    "aviation and pilot training in canada"
+  ]
+},
+{
+  "slug": "co-op-and-experiential-learning-canada-in-depth",
+  "label": "Co-op & Experiential Learning",
+  "title": "Co-op & Experiential Learning In Depth",
+  "description": "Co-operative education in Canada — the Waterloo model, the co-op work permit, internships and capstones, and which schools are known for it.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "waterloo-co-op-model-explained",
+    "how-co-op-terms-and-the-co-op-work-permit-work-together",
+    "co-op-vs-internship-vs-capstone-in-canada",
+    "best-canadian-universities-and-programs-for-co-op",
+    "how-to-succeed-in-a-co-op-job-search-in-canada"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "co-op & experiential learning",
+    "waterloo co op model explained",
+    "how co op terms and the co op work permit work together",
+    "co op vs internship vs capstone in canada"
+  ]
+},
+{
+  "slug": "canadian-application-components-in-depth",
+  "label": "Application Components In Depth",
+  "title": "Canadian Application Components In Depth",
+  "description": "The components of a Canadian application — supplementary applications and video/written assessments, references, the personal profile, and program portfolios.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "canadian-supplementary-applications-explained",
+    "video-and-written-assessments-canada-toronto-waterloo",
+    "personal-profile-for-canadian-applications",
+    "references-for-canadian-university-applications",
+    "portfolios-and-auditions-for-canadian-programs"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl"
+  ],
+  "keywords": [
+    "application components in depth",
+    "canadian supplementary applications explained",
+    "video and written assessments canada toronto waterloo",
+    "personal profile for canadian applications"
+  ]
+},
+{
+  "slug": "grades-and-credential-recognition-canada",
+  "label": "Grades & Credential Recognition",
+  "title": "Grades & Credential Recognition (Canada)",
+  "description": "How grades and qualifications are recognised for Canadian admission — provincial GPA mapping, IB/A-Level recognition, prerequisites, and WES/IQAS/ICES evaluation.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "provincial-grade-to-gpa-mapping-canada",
+    "ib-and-a-levels-recognition-for-canadian-universities",
+    "prerequisite-courses-for-canadian-university-admission",
+    "credential-evaluation-wes-vs-iqas-vs-ices-canada",
+    "getting-foreign-school-systems-recognised-in-canada"
+  ],
+  "examSlugs": [
+    "ielts",
+    "international-baccalaureate"
+  ],
+  "keywords": [
+    "grades & credential recognition",
+    "provincial grade to gpa mapping canada",
+    "ib and a levels recognition for canadian universities",
+    "prerequisite courses for canadian university admission"
+  ]
+},
+{
+  "slug": "canada-study-permit-process-in-depth",
+  "label": "Study Permit Process In Depth",
+  "title": "Canada Study Permit Process In Depth",
+  "description": "The Canada study permit application in depth — the IRCC account, study permit conditions, changing school or programme, and refusal nuances. Not immigration advice.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "ircc-secure-account-and-study-permit-application-portal",
+    "what-happened-to-the-student-direct-stream-sds",
+    "study-permit-conditions-you-must-follow-in-canada",
+    "changing-your-school-or-program-on-a-canada-study-permit",
+    "study-permit-extension-and-restoration-of-status-canada"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "study permit process in depth",
+    "ircc secure account and study permit application portal",
+    "what happened to the student direct stream sds",
+    "study permit conditions you must follow in canada"
+  ]
+},
+{
+  "slug": "pgwp-eligibility-and-rules-in-depth",
+  "label": "PGWP Eligibility & Rules",
+  "title": "PGWP Eligibility & Rules In Depth",
+  "description": "Post-Graduation Work Permit eligibility — eligible institutions and programmes, field-of-study and language requirements, length and timing. Deferred to IRCC; not immigration advice.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "pgwp-eligible-institutions-and-programs-canada",
+    "pgwp-field-of-study-requirements-canada",
+    "pgwp-language-test-requirements-canada",
+    "pgwp-permit-length-rules-canada",
+    "when-to-apply-for-pgwp-timing-and-deadlines-canada"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "pgwp eligibility & rules",
+    "pgwp eligible institutions and programs canada",
+    "pgwp field of study requirements canada",
+    "pgwp language test requirements canada"
+  ]
+},
+{
+  "slug": "pathways-to-permanent-residence-for-students-canada",
+  "label": "Pathways to PR for Students",
+  "title": "Pathways to PR for Students (Canada)",
+  "description": "PR pathways for graduates — Express Entry and the CRS, Provincial Nominee streams, the Canadian Experience Class and Quebec routes. Deferred to IRCC; not immigration advice.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "crs-score-for-international-graduates-canada",
+    "provincial-nominee-streams-for-graduates-by-province",
+    "canadian-experience-class-for-recent-graduates",
+    "quebec-immigration-pathways-for-graduates",
+    "french-language-advantage-for-pr-in-canada"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "pathways to pr for students",
+    "crs score for international graduates canada",
+    "provincial nominee streams for graduates by province",
+    "canadian experience class for recent graduates"
+  ]
+},
+{
+  "slug": "canadian-scholarships-and-funding-in-depth",
+  "label": "Scholarships & Funding In Depth",
+  "title": "Canadian Scholarships & Funding In Depth",
+  "description": "Scholarships and funding for Canada — automatic entrance scholarships, university and external awards, and graduate funding (TA/RA). Secular criteria only.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "automatic-entrance-scholarships-canadian-universities",
+    "graduate-funding-in-canada-ta-ra-and-scholarships",
+    "how-to-find-scholarships-for-canada",
+    "how-to-write-a-winning-scholarship-application-canada",
+    "external-and-third-party-scholarships-for-canada"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "scholarships & funding in depth",
+    "automatic entrance scholarships canadian universities",
+    "graduate funding in canada ta ra and scholarships",
+    "how to find scholarships for canada"
+  ]
+},
+{
+  "slug": "paying-for-canada-and-managing-money",
+  "label": "Paying & Managing Money",
+  "title": "Paying for Canada & Managing Money",
+  "description": "Paying for study and managing money in Canada — the GIC and proof of funds, paying tuition, budgeting by city, and what part-time work can contribute. Not financial advice.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "gic-explained-how-it-works-in-canada",
+    "paying-tuition-and-money-transfers-to-canada",
+    "student-budget-by-city-in-canada",
+    "what-part-time-work-can-cover-in-canada",
+    "managing-money-banking-credit-taxes-canada"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "paying & managing money",
+    "gic explained how it works in canada",
+    "paying tuition and money transfers to canada",
+    "student budget by city in canada"
+  ]
+},
+{
+  "slug": "graduate-study-in-canada-in-depth",
+  "label": "Graduate Study In Depth",
+  "title": "Graduate Study in Canada In Depth",
+  "description": "Graduate study in Canada — course vs thesis masters, PhD admission and funding (TA/RA, Mitacs), finding a supervisor, and how grad applications differ.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "course-based-vs-thesis-masters-in-canada",
+    "phd-admission-and-funding-in-canada",
+    "how-to-find-and-contact-a-supervisor-in-canada",
+    "funding-a-graduate-degree-ta-ra-and-mitacs-canada",
+    "graduate-vs-undergraduate-applications-canada"
+  ],
+  "examSlugs": [
+    "gre",
+    "gmat"
+  ],
+  "keywords": [
+    "graduate study in depth",
+    "course based vs thesis masters in canada",
+    "phd admission and funding in canada",
+    "how to find and contact a supervisor in canada"
+  ]
+},
+{
+  "slug": "english-and-french-tests-for-canada-in-depth",
+  "label": "English & French Tests In Depth",
+  "title": "English & French Tests for Canada In Depth",
+  "description": "English and French tests for Canada — IELTS, TOEFL, PTE and Duolingo for admission, study-permit requirements since the SDS ended, and where CELPIP/TEF fit.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "choosing-an-english-test-for-canada",
+    "english-test-scores-for-canadian-universities",
+    "language-tests-for-the-canada-study-permit",
+    "french-tests-for-canada-tef-vs-tcf",
+    "celpip-and-tef-for-canadian-immigration"
+  ],
+  "examSlugs": [
+    "ielts",
+    "toefl",
+    "duolingo-english-test",
+    "pte-academic"
+  ],
+  "keywords": [
+    "english & french tests in depth",
+    "choosing an english test for canada",
+    "english test scores for canadian universities",
+    "language tests for the canada study permit"
+  ]
+},
+{
+  "slug": "settling-and-living-in-canada-in-depth",
+  "label": "Settling & Living In Depth",
+  "title": "Settling & Living in Canada In Depth",
+  "description": "Settling into Canada — provincial health coverage (OHIP, MSP), winter prep, housing and tenant rights, banking and credit, transit, and the SIN and taxes.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "provincial-health-coverage-for-students-in-canada",
+    "preparing-for-canadian-winter-as-a-student",
+    "housing-types-and-tenant-rights-in-canada",
+    "building-credit-and-banking-in-canada-for-students",
+    "sin-and-basic-taxes-for-students-in-canada"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "settling & living in depth",
+    "provincial health coverage for students in canada",
+    "preparing for canadian winter as a student",
+    "housing types and tenant rights in canada"
+  ]
+},
+{
+  "slug": "canadian-campus-and-community-life-in-depth",
+  "label": "Campus & Community Life",
+  "title": "Canadian Campus & Community Life",
+  "description": "Campus and community life in Canada — clubs and student unions, international-student services, mental-health support, equity and Indigenous support, and finding community.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "student-clubs-and-unions-canada",
+    "international-student-services-and-orientation-canada",
+    "mental-health-and-wellness-support-canada-universities",
+    "equity-diversity-and-indigenous-support-canada-campuses",
+    "campus-jobs-and-finding-community-canada"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "campus & community life",
+    "student clubs and unions canada",
+    "international student services and orientation canada",
+    "mental health and wellness support canada universities"
+  ]
+},
+{
   "slug": "ucas-application-in-depth-uk",
   "label": "UCAS Application In Depth",
   "title": "The UCAS Application In Depth",
