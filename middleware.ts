@@ -22,8 +22,19 @@ export function middleware(request: NextRequest) {
     "'self'",
     "'unsafe-inline'",
     'https://www.googletagmanager.com',
-    'https://pagead2.googlesyndication.com',
+    // Google AdSense / Auto ads — loader + the supporting scripts it pulls into
+    // the top frame. Google does NOT publish a stable allowlist (they officially
+    // support only a nonce/'strict-dynamic' policy, which a statically-prerendered
+    // site cannot use — see the note above), so we allow the well-known Google
+    // ad-serving domains. Ad *creatives* load INSIDE the ad iframe under its own
+    // origin, not this CSP, so the rotating creative domains don't need listing.
+    'https://*.googlesyndication.com',
+    'https://partner.googleadservices.com',
+    'https://adservice.google.com',
+    'https://www.googletagservices.com',
     'https://googleads.g.doubleclick.net',
+    'https://*.adtrafficquality.google',
+    'https://fundingchoicesmessages.google.com',
     'https://va.vercel-scripts.com',
     'https://vitals.vercel-insights.com',
     "'wasm-unsafe-eval'",
@@ -37,8 +48,8 @@ export function middleware(request: NextRequest) {
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "img-src 'self' data: https: blob:",
     "font-src 'self' data: https://fonts.gstatic.com",
-    "connect-src 'self' https://www.googletagmanager.com https://vitals.vercel-insights.com",
-    "frame-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net",
+    "connect-src 'self' https://www.googletagmanager.com https://vitals.vercel-insights.com https://*.googlesyndication.com https://googleads.g.doubleclick.net https://*.g.doubleclick.net https://adservice.google.com https://*.adtrafficquality.google https://www.google.com https://csi.gstatic.com",
+    "frame-src 'self' https://*.googlesyndication.com https://googleads.g.doubleclick.net https://www.google.com https://*.adtrafficquality.google https://fundingchoicesmessages.google.com",
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",

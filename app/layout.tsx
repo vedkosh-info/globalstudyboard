@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { Inter, Fraunces } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -18,6 +19,7 @@ import FabDock from '@/components/FabDock';
 import RecentPages from '@/components/RecentPages';
 import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
+import { ADSENSE_CLIENT_ID, ADSENSE_SCRIPT_SRC } from '@/lib/adsense';
 
 const sans = Inter({
   subsets: ['latin'],
@@ -101,6 +103,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.globalstudyboard.com',
     types: { 'application/rss+xml': 'https://www.globalstudyboard.com/feed.xml' },
   },
+  // Google AdSense site-ownership verification (server-rendered meta tag).
+  other: { 'google-adsense-account': ADSENSE_CLIENT_ID },
 };
 
 const websiteJsonLd = JSON.stringify({
@@ -196,6 +200,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FabDock />
           </AudienceProvider>
         </RegionProvider>
+        {/*
+          Google AdSense loader for "full page" Auto ads. The single loader on
+          every page is all the code Auto ads needs — ad placement is controlled
+          from the AdSense dashboard (Ads → Auto ads). Loads after the page is
+          interactive so it never blocks content render.
+        */}
+        <Script
+          id="google-adsense"
+          async
+          src={ADSENSE_SCRIPT_SRC}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Analytics />
         <SpeedInsights />
       </body>

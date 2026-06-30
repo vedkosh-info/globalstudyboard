@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = '3 June 2026';
+const LAST_UPDATED = '27 June 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -64,21 +64,43 @@ export default function PrivacyPage() {
       <Section title="Cookies, analytics &amp; advertising">
         <p>
           We use privacy-respecting analytics (Vercel Analytics and Speed Insights) to measure
-          traffic and performance. We may also display advertising via Google AdSense, which can use
-          cookies to show relevant ads and measure their performance.
+          traffic and performance in aggregate.
         </p>
         <p>
-          You can control or disable cookies in your browser settings, and you can manage Google&rsquo;s
-          ad personalisation at{' '}
+          We also display advertising through <strong>Google AdSense</strong>. Third-party vendors,
+          including Google, use cookies to serve ads based on a user&rsquo;s prior visits to this and
+          other websites. Google&rsquo;s use of advertising cookies enables it and its partners to
+          show ads based on your visits to this site and/or other sites on the internet.
+        </p>
+        <p>
+          You can opt out of personalised advertising in{' '}
           <a
             href="https://adssettings.google.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-forest-700 hover:text-forest-800 underline"
           >
-            adssettings.google.com
+            Google Ad Settings
           </a>
-          .
+          , read how Google uses information from sites that use its services at{' '}
+          <a
+            href="https://policies.google.com/technologies/partner-sites"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-forest-700 hover:text-forest-800 underline"
+          >
+            policies.google.com/technologies/partner-sites
+          </a>
+          , and opt out of personalised ads from many vendors at{' '}
+          <a
+            href="https://www.aboutads.info"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-forest-700 hover:text-forest-800 underline"
+          >
+            aboutads.info
+          </a>
+          . You can also control or disable cookies in your browser settings.
         </p>
       </Section>
 
