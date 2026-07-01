@@ -11,7 +11,9 @@
     "typecheck": "tsc --noEmit",
     "cmi:validate": "tsx scripts/cmi.ts",
     "cmi:build": "tsx scripts/cmi.ts --build",
-    "dup:check": "tsx scripts/dupcheck.ts"
+    "dup:check": "tsx scripts/dupcheck.ts",
+    "dup:check:strict": "tsx scripts/dupcheck.ts --strict",
+    "find-home": "tsx scripts/find-home.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.79",

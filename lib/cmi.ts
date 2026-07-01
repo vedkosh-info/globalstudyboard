@@ -17,6 +17,7 @@ import { TOPICS, TOPIC_SLUGS, getTopicBySlug } from './topics';
 import { guidesForTopic } from './topic-guides';
 import { isRegionCategory, categoryLabel, regionCategoryPath, REGION_CATEGORIES } from './region-nav';
 import { tracksForRegion, getTrack } from './tracks';
+import { sectionAnchors, RESERVED_GUIDE_ANCHORS } from './section-anchors';
 
 export type ContentType = 'college' | 'exam' | 'region' | 'guide';
 
@@ -35,6 +36,13 @@ export interface ContentUnit {
   region: RegionSlug | 'global' | null;
   /** Lowercased searchable text blob. */
   keywords: string;
+  /**
+   * Ordered sections (guides only) so search can match a query to a specific
+   * section and deep-link to its #anchor. Each is `{ h: heading, a: anchor }`
+   * where `a` is the RESOLVED anchor (id-aware, deduped) — the exact same string
+   * the page renders as the section's DOM `id`, so the deep-link never dangles.
+   */
+  sections?: { h: string; a: string }[];
 }
 
 const REGION_SLUGS = new Set<string>(REGIONS.map((r) => r.slug));
@@ -99,9 +107,24 @@ export function buildContentIndex(): ContentUnit[] {
     subtitle: g.descriptionEn,
     url: `/guides/${g.slug}`,
     region: g.region,
-    keywords: [g.titleEn, g.descriptionEn, regionName(g.region), ...g.keywords]
+    // Page-level match text: title + lede + region + tags + FAQ questions +
+    // key-fact labels/values (so an FAQ-phrased or key-fact query surfaces the
+    // guide). Section headings live in `sections` for section-level deep-linking.
+    keywords: [
+      g.titleEn,
+      g.descriptionEn,
+      regionName(g.region),
+      ...g.keywords,
+      ...g.faqs.map((f) => f.questionEn),
+      ...(g.keyFacts ?? []).flatMap((k) => [k.label, k.value]),
+    ]
       .join(' ')
       .toLowerCase(),
+    // Resolved (id-aware, deduped) anchors — identical to the page's DOM ids.
+    sections: (() => {
+      const anchors = sectionAnchors(g.sections, RESERVED_GUIDE_ANCHORS);
+      return g.sections.map((s, i) => ({ h: s.headingEn, a: anchors[i] }));
+    })(),
   }));
 
   return [...regions, ...exams, ...guides, ...colleges];
@@ -239,6 +262,20 @@ export function validateContent(): CmiReport {
     if (!g.titleEn) errors.push(`Guide "${g.slug}" is missing titleEn.`);
     if (!g.descriptionEn) errors.push(`Guide "${g.titleEn}" is missing descriptionEn.`);
     if (g.sections.length === 0) errors.push(`Guide "${g.titleEn}" has no sections.`);
+    // Authored section ids (optional) must be unique within a guide so #anchors
+    // don't collide. Derived anchors (from headings) are auto-deduped elsewhere.
+    const sectionIds = new Map<string, number>();
+    for (const s of g.sections) {
+      if (s.id && s.id.trim()) {
+        const id = s.id.trim();
+        sectionIds.set(id, (sectionIds.get(id) ?? 0) + 1);
+      }
+    }
+    for (const [id, n] of sectionIds) {
+      if (n > 1) {
+        errors.push(`Guide "${g.titleEn}" has duplicate section id "${id}" — section ids must be unique within a guide.`);
+      }
+    }
     if (!REGION_SLUGS.has(g.region)) {
       errors.push(`Guide "${g.titleEn}" has unknown region "${g.region}".`);
     }

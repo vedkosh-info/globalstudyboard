@@ -32,6 +32,13 @@ export interface GuideSection {
   bullets?: string[];
   /** Audience this section serves (default `common` — shown to everyone). */
   audience?: Audience;
+  /**
+   * Optional stable anchor id (kebab-case) for deep-linking to this section
+   * (`/guides/<slug>#<id>`). When absent the anchor is derived from the heading
+   * via `sectionAnchors()` in lib/section-anchors.ts. Set this only when you want
+   * a durable anchor that survives a heading edit; keep it unique within a guide.
+   */
+  id?: string;
 }
 
 export interface GuideFaq {

@@ -292,13 +292,20 @@ style preference. **No new unit ships until this pre-flight passes:**
 1. **Search first, write second.** Before authoring, search the existing
    catalogue (`lib/guides.ts`, `lib/colleges.ts`, `lib/admission-guides.ts`,
    `lib/regions.ts`) for the same topic by normalized title + slug stem +
-   concept (region/filler words stripped). Run **`npm run dup:check`** and read
-   its output — it flags duplicate slugs, identical titles, same-concept clusters
-   (cross-region AND within-region), and high body-similarity pairs.
+   concept (region/filler words stripped). **Run `npm run find-home "<proposed
+   title>"` FIRST** — it names the closest existing guides and lists each one's
+   section headings, so you can see whether your material belongs inside an
+   existing page/section. Then run **`npm run dup:check`** and read its output —
+   it flags: `[1]` duplicate slugs, `[2]` identical titles, `[3]/[3b]` same-concept
+   clusters (cross-region AND within-region), `[4]` high **description** similarity,
+   `[5]` high **FULL-BODY** similarity (title + every section's prose + FAQs — the
+   real minor-tweak signal, with the §11.1a(4) 0.35 same-region / 0.5 cross-region
+   thresholds enforced in code), and `[6]` same-entity college/exam name variants.
 2. **Club / merge by default.** If the topic already exists, **update or expand
-   the existing unit** — do not add a second page. If two planned units overlap,
-   **combine them into one** richer canonical unit. A single strong page always
-   beats two thin near-identical ones.
+   the existing unit / add a section to it** — do not add a second page. If two
+   planned units overlap, **combine them into one** richer canonical unit. A single
+   strong page always beats two thin near-identical ones. `find-home` exists to make
+   this the path of least resistance: extend the page it points you to.
 3. **Minor-tweak copies are forbidden.** Never create a page that is another page
    with a country name, exam name, or a few words swapped and ≥~50% of the body
    shared. That is duplication, harms SEO (keyword cannibalisation / thin
@@ -314,8 +321,13 @@ style preference. **No new unit ships until this pre-flight passes:**
    (`region: 'global'` or a multi-region `regions: [...]` per §16.4) — never one
    copy per region.
 5. **Log the check.** The independent QA pass records in the audit log that the
-   dup:check + manual semantic review were run and what was found (0 new dupes,
-   or the club/merge decision taken). **Block on any unresolved duplicate.**
+   `find-home` + `dup:check` + manual semantic review were run and what was found
+   (0 new dupes, or the club/merge decision taken). **Block on any unresolved
+   duplicate.** Before shipping, **`npm run dup:check:strict` MUST exit 0** — it
+   fails on any duplicate slug, identical title, or same-region full-body
+   near-duplicate. A genuinely-distinct destination parallel that trips `[5]` is
+   recorded (reviewed, with a reason) in **`lib/dup-resolutions.json`** so the gate
+   stays green; a real duplicate is merged, never allow-listed to silence it.
 
 ### 11.2 CMI is the single source of truth
 - The content data files (`lib/colleges.ts`, `lib/admission-guides.ts`,
@@ -420,6 +432,27 @@ enforce globally via the root layout so new routes inherit them automatically).
 - Every unit is in `sitemap.ts`, has clean slug URLs, and is reachable by
   **internal links** (no orphan pages) — relationships from §11.3 satisfy this.
 - Original, useful copy (no keyword-stuffing/duplication — §11.1, Rule B).
+
+### 13.1a Section-level SEO & searchability (BINDING)
+Long guides are indexed and discoverable **at the section level**, not just the
+page level, so a specific question can rank and be jumped-to directly.
+- **Stable section anchors.** Every guide section heading and FAQ renders a stable,
+  unique `id` (deep-linkable `/guides/<slug>#<anchor>`), derived once via
+  `sectionAnchors()` / `faqAnchor()` in `lib/section-anchors.ts` — the render, the
+  "On this page" ToC, the JSON-LD and the site search all use the SAME anchors.
+  Add a section's own `id` only for a durable anchor that must survive a heading
+  edit; keep it unique within the guide (CMI enforces this).
+- **Table of contents.** Guides with ≥3 sections render `components/OnThisPage.tsx`
+  (jump links + scrollspy, audience-synced, `prefers-reduced-motion` respected).
+- **Section-level structured data.** The Article emits `hasPart` (`WebPageElement`
+  per section with a `#anchor` `@id`); `how-to-*` guides emit `HowToStep`s with the
+  section `url`; FAQ items carry a `#anchor` `@id`. All are filtered to the page's
+  default audience so schema never advertises hidden content.
+- **Section-aware search.** The CMI indexes section headings, FAQ questions and
+  key-facts; `components/SearchClient.tsx` matches a query to a specific section and
+  **deep-links the result to that section's `#anchor`**. Keep heavy indexes off the
+  global bundle (only `/search` ships the full index; anchors are recomputed
+  client-side from headings, never shipped).
 
 ### 13.2 Google Ads / AdSense readiness (privacy-first)
 - The site is **built ads-ready** (slots reserved, `public/ads.txt` present) but

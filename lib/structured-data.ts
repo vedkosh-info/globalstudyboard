@@ -12,12 +12,15 @@
 export interface JsonLdStep {
   name: string;
   text: string;
+  /** Optional deep-link fragment to the section this step maps to (…/guides/slug#anchor). */
+  url?: string;
 }
 
 /**
  * HowTo rich result for process / "how to" guides. Steps are derived from the
  * guide's sections (heading → step name, prose → step text). Only emit on guides
- * that genuinely describe an ordered process (see `isHowToGuide`).
+ * that genuinely describe an ordered process (see `isHowToGuide`). When a step
+ * carries a section `url`, it is emitted so Google can deep-link the step.
  */
 export function howToLd(opts: {
   name: string;
@@ -37,8 +40,32 @@ export function howToLd(opts: {
       position: i + 1,
       name: s.name,
       text: s.text,
+      ...(s.url ? { url: s.url } : {}),
     })),
   };
+}
+
+export interface JsonLdPart {
+  name: string;
+  /** Deep-link fragment URL for this section (…/guides/slug#anchor). */
+  url: string;
+}
+
+/**
+ * `hasPart` fragments for an Article/WebPage so search engines can understand a
+ * page's sections as distinct, deep-linkable parts (WebPageElement + @id). This
+ * is what lets a section like "Eligibility" surface and be jumped-to directly.
+ * Emitted for informational guides regardless of whether they are HowTo.
+ */
+export function pageHasParts(pageUrl: string, parts: JsonLdPart[]) {
+  return parts.map((p, i) => ({
+    '@type': 'WebPageElement',
+    '@id': p.url,
+    name: p.name,
+    url: p.url,
+    isPartOf: { '@id': `${pageUrl}#article` },
+    position: i + 1,
+  }));
 }
 
 /** ItemList for hub / list pages so the curated set can surface as a list. */

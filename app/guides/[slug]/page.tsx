@@ -8,8 +8,10 @@ import { getExamBySlug } from '@/lib/admission-guides';
 import { getCollegeBySlug } from '@/lib/colleges';
 import { REGIONS } from '@/lib/regions';
 import { topicsForGuide } from '@/lib/topic-guides';
-import { howToLd, isHowToGuide } from '@/lib/structured-data';
+import { howToLd, isHowToGuide, pageHasParts } from '@/lib/structured-data';
+import { sectionAnchors, faqAnchor, RESERVED_GUIDE_ANCHORS } from '@/lib/section-anchors';
 import KeyFacts from '@/components/KeyFacts';
+import OnThisPage, { type TocItem } from '@/components/OnThisPage';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
 import RegionExplore from '@/components/RegionExplore';
@@ -79,14 +81,42 @@ export default async function GuideDetailPage({ params }: Props) {
     .filter((g): g is NonNullable<typeof g> => Boolean(g));
   const topics = topicsForGuide(guide);
 
+  const pageUrl = `https://www.globalstudyboard.com/guides/${guide.slug}`;
+
+  // Stable, unique #anchors for every section (index-aligned to guide.sections).
+  // Reserved set matches the CMI so search deep-links equal the DOM ids (parity).
+  const anchors = sectionAnchors(guide.sections, RESERVED_GUIDE_ANCHORS);
+
+  // The audience baked into the static HTML (India = domestic, else international).
+  // Structured data matches this default view so it never advertises content a
+  // default visitor cannot see.
+  const pageDefault = defaultAudienceFor(guide.region);
+
+  // Sections visible in the default view, paired with their anchor — drives the
+  // HowTo steps and `hasPart` so the schema matches what a default visitor reads.
+  const visibleSections = guide.sections
+    .map((s, i) => ({ section: s, anchor: anchors[i] }))
+    .filter(({ section }) => isAudienceVisible(section.audience, pageDefault));
+
+  // "On this page" entries — every section (audience-tagged so the ToC toggles in
+  // sync) plus an FAQ jump when present.
+  const tocItems: TocItem[] = [
+    ...guide.sections.map((s, i) => ({
+      label: s.headingEn,
+      anchor: anchors[i],
+      audience: s.audience,
+    })),
+    ...(guide.faqs.length > 0 ? [{ label: 'FAQs', anchor: 'faqs' }] : []),
+  ];
+
   const articleLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    '@id': `https://www.globalstudyboard.com/guides/${guide.slug}#article`,
+    '@id': `${pageUrl}#article`,
     headline: guide.titleEn,
     description: guide.descriptionEn,
     inLanguage: 'en',
-    url: `https://www.globalstudyboard.com/guides/${guide.slug}`,
+    url: pageUrl,
     datePublished: guide.lastVerified,
     dateModified: guide.lastVerified,
     image: ['https://www.globalstudyboard.com/opengraph-image'],
@@ -105,13 +135,21 @@ export default async function GuideDetailPage({ params }: Props) {
         url: 'https://www.globalstudyboard.com/icon.svg',
       },
     },
-    mainEntityOfPage: `https://www.globalstudyboard.com/guides/${guide.slug}`,
+    mainEntityOfPage: pageUrl,
+    // Deep-linkable sections so search engines understand the page's parts.
+    ...(visibleSections.length > 0
+      ? {
+          hasPart: pageHasParts(
+            pageUrl,
+            visibleSections.map(({ section, anchor }) => ({
+              name: section.headingEn,
+              url: `${pageUrl}#${anchor}`,
+            })),
+          ),
+        }
+      : {}),
   };
 
-  // The audience baked into the static HTML (India = domestic, else international).
-  // Structured data matches this default view so it never advertises content a
-  // default visitor cannot see.
-  const pageDefault = defaultAudienceFor(guide.region);
   const visibleFaqs = guide.faqs.filter((f) => isAudienceVisible(f.audience, pageDefault));
   const faqLd =
     visibleFaqs.length > 0
@@ -120,23 +158,25 @@ export default async function GuideDetailPage({ params }: Props) {
           '@type': 'FAQPage',
           mainEntity: visibleFaqs.map((f) => ({
             '@type': 'Question',
+            '@id': `${pageUrl}#${faqAnchor(f.questionEn)}`,
             name: f.questionEn,
             acceptedAnswer: { '@type': 'Answer', text: f.answerEn },
           })),
         }
       : null;
 
-  const howToLdData = isHowToGuide(guide.slug, guide.sections.length)
+  // Guard on the VISIBLE section count too, so a how-to whose steps are all
+  // audience-hidden in the default view never emits an empty (invalid) HowTo.
+  const howToLdData = isHowToGuide(guide.slug, guide.sections.length) && visibleSections.length >= 2
     ? howToLd({
         name: guide.titleEn,
         description: guide.descriptionEn,
-        url: `https://www.globalstudyboard.com/guides/${guide.slug}`,
-        steps: guide.sections
-          .filter((s) => isAudienceVisible(s.audience, pageDefault))
-          .map((s) => ({
-            name: s.headingEn,
-            text: paragraphs(s.bodyEn).join(' '),
-          })),
+        url: pageUrl,
+        steps: visibleSections.map(({ section, anchor }) => ({
+          name: section.headingEn,
+          text: paragraphs(section.bodyEn).join(' '),
+          url: `${pageUrl}#${anchor}`,
+        })),
       })
     : null;
 
@@ -205,11 +245,14 @@ export default async function GuideDetailPage({ params }: Props) {
       {/* Key facts (exam/process guides) */}
       {guide.keyFacts && guide.keyFacts.length > 0 && <KeyFacts rows={guide.keyFacts} />}
 
+      {/* On this page — jump links to each deep-linkable section */}
+      <OnThisPage items={tocItems} pageDefault={pageDefault} />
+
       {/* Sections */}
       <div className="flex flex-col gap-8">
         {guide.sections.map((section, i) => (
           <AudienceGate key={i} audience={section.audience} pageDefault={pageDefault}>
-            <section>
+            <section id={anchors[i]} className="scroll-mt-24">
               <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-3">
                 {section.headingEn}
               </h2>
@@ -232,14 +275,17 @@ export default async function GuideDetailPage({ params }: Props) {
 
       {/* FAQs */}
       {guide.faqs.length > 0 && (
-        <section>
+        <section id="faqs" className="scroll-mt-24">
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-5">
             Frequently asked questions
           </h2>
           <div className="flex flex-col gap-4">
             {guide.faqs.map((f, i) => (
               <AudienceGate key={i} audience={f.audience} pageDefault={pageDefault}>
-                <div className="bg-cream-50 border border-stone-200 rounded-2xl p-5">
+                <div
+                  id={faqAnchor(f.questionEn)}
+                  className="bg-cream-50 border border-stone-200 rounded-2xl p-5 scroll-mt-24"
+                >
                   <h3 className="font-semibold text-ink text-base mb-2 m-0">{f.questionEn}</h3>
                   <p className="text-stone-700 text-base leading-relaxed m-0">{f.answerEn}</p>
                 </div>

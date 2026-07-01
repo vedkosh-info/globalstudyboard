@@ -93,9 +93,15 @@ blocks the unit until fixed and re-audited.
 - [ ] **Anti-duplication pre-flight done (§11.1a)** — ran `npm run dup:check` and
       a manual semantic search of the catalogue; this unit is NOT a minor-tweak
       copy of an existing page (no country/exam-name swap with ≥~50% shared body).
-      Overlapping topics were **clubbed into one canonical unit**; a destination
-      parallel was kept only because its body is genuinely destination-specific
-      (< ~0.35 full-body token overlap with any sibling). Result logged.
+      Overlapping topics were **clubbed into one canonical unit / added to an
+      existing section**; a destination parallel was kept only because its body is
+      genuinely destination-specific (< ~0.35 full-body token overlap with any
+      sibling — `dup:check [5]`). Ran `npm run find-home "<title>"` first to check
+      for an existing home. Result logged.
+- [ ] **Strict dup gate green** — `npm run dup:check:strict` exits 0 (no duplicate
+      slug, identical title, or same-region full-body near-duplicate). A genuinely
+      distinct parallel that trips `[5]` is recorded with a reason in
+      `lib/dup-resolutions.json`; a real duplicate is merged, never allow-listed.
 - [ ] `npm run cmi:validate` passes with 0 errors (or the equivalent manual
       check is performed and logged until tooling exists).
 - [ ] **Relationships declared + rendered** (college ↔ region ↔ exams ↔
@@ -116,6 +122,12 @@ blocks the unit until fixed and re-audited.
 
 ## K. SEO & Monetization (Rule §13 — BINDING)
 - [ ] Self-referential canonical set — **NO hreflang / language alternates** (single-language English); appropriate structured data present.
+- [ ] **Section-level SEO (guides, §13.1a)** — section headings + FAQs render stable,
+      unique `#anchor` ids (deep-linkable); a ≥3-section guide shows the "On this
+      page" ToC; Article emits `hasPart`, `how-to-*` emit `HowToStep` urls, FAQ items
+      carry `#anchor` `@id`s — all filtered to the page-default audience. Section
+      headings/FAQs/key-facts are searchable and search results deep-link to the
+      matched section.
 - [ ] Unit is in `sitemap.ts` and reachable by internal links (no orphans).
 - [ ] No ads render unless the account is approved; `public/ads.txt` intact; no
       new tracker without updating `/privacy`; ads never obscure/crowd content.

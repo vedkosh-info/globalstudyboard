@@ -19,6 +19,13 @@ import { useRegion } from '@/components/RegionProvider';
 import { getRegionBySlug } from '@/lib/regions';
 import RegionFlag from '@/components/RegionFlag';
 
+/** A search hit — the unit plus the best URL to open (deep-linked to a section
+ *  when the query matched a specific section heading). */
+interface Hit {
+  unit: ContentUnit;
+  href: string;
+}
+
 const TYPE_LABEL: Record<ContentType, string> = {
   college: 'University',
   exam: 'Exam',
@@ -95,17 +102,39 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
 
   // Region-scoped results: ONLY the chosen destination's content (plus worldwide
   // tests, which belong to every destination). Other regions are never shown.
+  // A hit matches page-level (title/lede/tags/FAQs/key-facts) OR at section level
+  // (a section heading contains every term) — the latter deep-links to that
+  // section's #anchor so the reader lands exactly where the answer is.
   const grouped = useMemo(() => {
-    if (q.length < 2) return [] as { type: ContentType; items: ContentUnit[] }[];
+    if (q.length < 2) return [] as { type: ContentType; items: Hit[] }[];
     const terms = q.split(/\s+/);
-    const matched = index.filter(
-      (u) =>
-        (u.region === effectiveRegion || u.region === 'global' || u.region === null) &&
-        terms.every((t) => u.keywords.includes(t)),
-    );
+    const inRegion = (u: ContentUnit) =>
+      u.region === effectiveRegion || u.region === 'global' || u.region === null;
+
+    const hits: Hit[] = [];
+    for (const u of index) {
+      if (!inRegion(u)) continue;
+      const pageMatch = terms.every((t) => u.keywords.includes(t));
+
+      // Section-level: the first section whose heading contains every term. The
+      // anchor is the RESOLVED one shipped by the CMI (identical to the DOM id),
+      // so the deep-link always lands.
+      let anchor: string | undefined;
+      if (u.sections && u.sections.length > 0) {
+        const sec = u.sections.find((s) => {
+          const hl = s.h.toLowerCase();
+          return terms.every((t) => hl.includes(t));
+        });
+        if (sec) anchor = sec.a;
+      }
+
+      if (!pageMatch && anchor === undefined) continue;
+      hits.push({ unit: u, href: anchor ? `${u.url}#${anchor}` : u.url });
+    }
+
     return TYPE_ORDER.map((type) => ({
       type,
-      items: matched.filter((u) => u.type === type).slice(0, MAX_PER_GROUP),
+      items: hits.filter((h) => h.unit.type === type).slice(0, MAX_PER_GROUP),
     })).filter((g) => g.items.length > 0);
   }, [q, effectiveRegion, index]);
 
@@ -215,10 +244,10 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
                     </span>
                   </h2>
                   <ul className="m-0 grid list-none grid-cols-1 gap-2 p-0 sm:grid-cols-2">
-                    {g.items.map((u) => (
+                    {g.items.map(({ unit: u, href }) => (
                       <li key={`${u.type}-${u.slug}`} className="m-0">
                         <Link
-                          href={u.url}
+                          href={href}
                           className="flex h-full items-start gap-3 rounded-xl border border-stone-200 bg-white px-4 py-3 no-underline transition-colors hover:border-forest-300 hover:bg-forest-50"
                         >
                           <TypeIcon type={u.type} className="mt-0.5" />
