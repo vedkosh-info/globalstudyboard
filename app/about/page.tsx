@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ShieldCheck, BookOpenCheck, RefreshCw, Globe2, AlertTriangle } from 'lucide-react';
 import { REGIONS } from '@/lib/regions';
 import LastUpdated from '@/components/LastUpdated';
+import SiteStats from '@/components/SiteStats';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
@@ -68,6 +69,9 @@ export default function AboutPage() {
         </p>
         <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
+
+      {/* Live catalogue KPIs (driven by lib/site-stats.ts — never hard-coded) */}
+      <SiteStats />
 
       {/* Honest "we're new" note */}
       <section className="bg-cream-50 border border-stone-200 rounded-2xl p-6">
