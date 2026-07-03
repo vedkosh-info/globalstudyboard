@@ -382,5 +382,23 @@
     "b": "it-and-computer-science-studies-in-russia",
     "sim": 0.55,
     "reason": "PRE-EXISTING baseline (russia, body 0.55) — templated abroad per-university/country skeleton. Differentiate or merge (owner triage); remove this entry to re-block. Re-flags if edited worse (drift/ceiling)."
+  },
+  {
+    "a": "state-police-constable-recruitment-guide",
+    "b": "state-police-sub-inspector-exam-guide",
+    "sim": 0.56,
+    "reason": "REVIEWED distinct (India Phase-3, 2026-07-01): state police Constable (entry rank, ~Class 10/12 eligibility, written + PET/PST) vs Sub-Inspector (supervisory OFFICER rank, ~graduate eligibility, higher/often two-stage selection). Different rank, eligibility and role; both stay generic across states and defer specifics to each state's official notification. Residual overlap is the generic state-police-recruitment skeleton. Re-flags if edited worse."
+  },
+  {
+    "a": "rbi-assistant-exam-guide",
+    "b": "sbi-clerk-exam-guide",
+    "sim": 0.6,
+    "reason": "REVIEWED distinct (India Phase-3, 2026-07-01): SBI Clerk (State Bank of India — a commercial public-sector BANK; branch customer-service role) vs RBI Assistant (Reserve Bank of India — the CENTRAL BANK / regulator; RBI-office role). Different employer, purpose and role; each guide carries a dedicated 'don't confuse them' contrast section. Residual overlap is the mandated clerical-banking-exam skeleton (Prelims+Mains+language + defer-to-official language). Re-flags if edited worse."
+  },
+  {
+    "a": "indian-coast-guard-navik-yantrik-guide",
+    "b": "indian-navy-agniveer-ssr-mr-guide",
+    "sim": 0.58,
+    "reason": "REVIEWED distinct (India Phase-3, 2026-07-01): different armed forces — Indian Navy sailor entry (SSR/MR) UNDER THE AGNIPATH scheme vs the Indian COAST GUARD's own (non-Agnipath) Navik/Yantrik recruitment. Different service, role and eligibility; each guide foregrounds the distinction in a dedicated section. Residual overlap is the mandated recruitment-guide skeleton (defer-to-official / no-guarantee / stages boilerplate shared by every government-exam guide). Re-flags if edited toward a verbatim copy."
   }
 ]

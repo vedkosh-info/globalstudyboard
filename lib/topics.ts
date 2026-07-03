@@ -75,6 +75,623 @@ export interface Topic {
 }
 
 export const TOPICS: Topic[] = [
+/* ==CAP3_HUBS_START== */
+{
+  "slug": "professional-licensing-in-canada",
+  "label": "Professional Licensing in Canada",
+  "title": "Professional Licensing for Internationally-Trained Practitioners (Canada)",
+  "description": "How internationally-educated professionals get licensed to practise in Canada — nurses (NNAS + provincial college), international medical graduates (MCC/NAC-OSCE/CaRMS), pharmacists (PEBC), engineers (P.Eng), accountants (CPA) and lawyers (NCA), plus teacher certification.",
+  "intro": "Holding a degree from abroad is not the same as being licensed to practise in Canada. For regulated professions, an internationally-trained practitioner usually has to have their credentials assessed and meet a provincial regulator's requirements. These guides explain each field's licensing route.\n\nRegulators, exams and fees are set by each body and province and change; confirm the current requirements on the official regulator's website. This is general information, not immigration or professional-registration advice.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "internationally-educated-nurses-licensing-canada",
+    "international-medical-graduate-licensing-canada",
+    "internationally-trained-pharmacists-licensing-canada",
+    "p-eng-licensing-for-internationally-trained-engineers-canada",
+    "cpa-canada-for-internationally-trained-accountants",
+    "teacher-certification-in-canada-for-internationally-trained-teachers",
+    "nca-assessment-for-internationally-trained-lawyers-canada"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "internationally educated nurses canada",
+    "img licensing canada",
+    "pebc pharmacist",
+    "p.eng canada",
+    "cpa internationally trained",
+    "nca lawyers canada",
+    "teacher certification canada"
+  ]
+},
+{
+  "slug": "more-canadian-universities-in-depth",
+  "label": "More Canadian Universities",
+  "title": "More Canadian Universities: In-Depth Admission Guides",
+  "description": "Dedicated international-student admission guides for major Canadian universities with heavy international intake — McMaster, Windsor, York, University of Alberta, Toronto Metropolitan (TMU), Simon Fraser (SFU) and Calgary — covering entry, English, portals and intakes.",
+  "intro": "Several of Canada's largest destinations for international students did not yet have a dedicated admission guide. These give each one a full walkthrough — entry requirements, English options, the application route (OUAC, EducationPlannerBC, ApplyAlberta or direct) and intakes.\n\nEntry grades, fees and dates are set by each university and change every year; confirm the current details on the official university website.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "mcmaster-university-admission-guide",
+    "university-of-windsor-admission-guide",
+    "york-university-admission-guide",
+    "university-of-alberta-admission-guide",
+    "toronto-metropolitan-university-admission-guide",
+    "simon-fraser-university-admission-guide",
+    "university-of-calgary-admission-guide"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "mcmaster admission",
+    "university of windsor international",
+    "york university admission",
+    "university of alberta admission",
+    "tmu admission",
+    "sfu admission",
+    "university of calgary admission"
+  ]
+},
+{
+  "slug": "professional-program-applications-canada",
+  "label": "Professional-Program Applications",
+  "title": "Professional-Program Application Systems (Canada)",
+  "description": "The centralized application services and admission tests for Canadian professional programs — OMSAS (medicine), OLSAS (law), ORPAS (rehabilitation sciences) and the CASPer situational-judgement test.",
+  "intro": "Canada's professional schools often admit through centralized Ontario application services rather than a university's general portal, and some require a situational-judgement test. These guides explain how OMSAS, OLSAS, ORPAS and CASPer work.\n\nDeadlines, fees and requirements change each cycle; confirm the current details on the official OUAC/service and school websites.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "omsas-ontario-medical-school-application-explained",
+    "casper-situational-judgement-test-for-canada",
+    "olsas-ontario-law-school-application-explained",
+    "orpas-ontario-rehabilitation-sciences-application-explained"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "omsas medical school ontario",
+    "olsas law school",
+    "orpas rehabilitation",
+    "casper test canada",
+    "professional program application canada"
+  ]
+},
+{
+  "slug": "more-immigration-pathways-canada",
+  "label": "More Immigration Pathways",
+  "title": "More Immigration & Work Pathways (Canada)",
+  "description": "Further Canadian immigration and work routes for students and graduates — the spousal/partner open work permit, category-based Express Entry draws, International Experience Canada (working holiday), the Atlantic Immigration Program, the Rural Community Immigration Pilot and dual intent.",
+  "intro": "Beyond the main study-permit-to-PR route, several other Canadian pathways matter to students and graduates. These guides explain the spousal open work permit, category-based Express Entry, the working-holiday route, regional graduate programs and the concept of dual intent — as neutral official facts.\n\nImmigration rules change frequently and are decided by IRCC and the provinces; this is general information, not immigration advice. Always verify current rules on canada.ca and consider a regulated immigration consultant for your case.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "spousal-open-work-permit-for-students-canada",
+    "category-based-express-entry-draws-explained",
+    "international-experience-canada-working-holiday-for-indians",
+    "dual-intent-for-canada-study-permit-explained",
+    "atlantic-immigration-program-for-graduates",
+    "rural-community-immigration-pilot-for-graduates"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "spousal open work permit canada",
+    "category based express entry",
+    "international experience canada",
+    "atlantic immigration program",
+    "rural community immigration pilot",
+    "dual intent study permit"
+  ]
+},
+{
+  "slug": "more-programs-and-disciplines-canada",
+  "label": "More Programs & Disciplines",
+  "title": "More Programs & Disciplines to Study in Canada",
+  "description": "Study-and-career guides for further Canadian program areas — dentistry, pharmacy, accounting (toward the CPA), architecture, becoming a teacher, and actuarial science — what you study and where each leads.",
+  "intro": "Alongside the big fields, several professional and specialised programs draw strong international demand in Canada, each with its own entry route and, often, a licensing body. These guides explain what you study and where it leads.\n\nProgram structures, entry requirements and licensing rules are set by universities and regulators and change; confirm the current details on the official sources.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "study-dentistry-in-canada",
+    "study-pharmacy-in-canada",
+    "study-accounting-in-canada-and-cpa-path",
+    "study-architecture-in-canada",
+    "become-a-teacher-in-canada",
+    "study-actuarial-science-in-canada"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "study dentistry canada",
+    "study pharmacy canada",
+    "accounting cpa canada",
+    "study architecture canada",
+    "become a teacher canada",
+    "actuarial science canada"
+  ]
+},
+{
+  "slug": "application-and-funding-essentials-canada",
+  "label": "Application & Funding Essentials",
+  "title": "Application & Funding Essentials (Canada)",
+  "description": "The practical essentials of applying and paying — applying with academic backlogs or a study gap, using an education agent, sending money from India (LRS and TCS), the Lester B. Pearson scholarship, Tri-Council research funding, and writing a Canadian-style resume.",
+  "intro": "Getting the practical details right — how backlogs or a study gap are read, how you send money, what funding exists, and how a Canadian resume should look — removes a lot of avoidable stress. These guides cover those application-and-funding essentials for Canada.\n\nUniversity, funding and tax rules change; confirm the current specifics on the official sources, and treat money guidance as general information, not financial advice.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "applying-to-canada-with-academic-backlogs",
+    "applying-to-canada-with-a-study-gap",
+    "using-an-education-agent-for-canada",
+    "sending-education-money-to-canada-from-india-lrs-and-tcs",
+    "lester-b-pearson-international-scholarship-explained",
+    "tri-council-funding-eligibility-for-international-students-canada",
+    "canadian-resume-and-cover-letter-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "applying to canada with backlogs",
+    "study gap canada",
+    "education agent canada",
+    "lrs tcs sending money canada",
+    "lester b pearson scholarship",
+    "tri-council funding",
+    "canadian resume"
+  ]
+},
+{
+  "slug": "settling-in-and-daily-life-canada",
+  "label": "Settling In & Daily Life",
+  "title": "Settling In & Daily Life (Canada)",
+  "description": "Day-to-day essentials for students settling into Canada — getting or converting a driving licence, seeing a doctor, and filing a tax return to claim tuition credits.",
+  "intro": "The everyday practicalities — driving, seeing a doctor, and taxes — are easy to overlook until you need them. These guides cover settling-in essentials for international students in Canada.\n\nRules and services differ by province and change; confirm current details on the official provincial sources.",
+  "group": "study-in-canada",
+  "region": "canada",
+  "guideSlugs": [
+    "driving-and-converting-a-licence-in-canada-for-students",
+    "how-to-see-a-doctor-in-canada-as-a-student",
+    "filing-a-tax-return-and-tuition-credits-in-canada"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "driving licence canada international student",
+    "see a doctor canada student",
+    "tax return tuition credits canada t2202"
+  ]
+},
+/* ==CAP3_HUBS_END== */
+/* ==ANZP3_HUBS_START== */
+{
+  "slug": "australian-universities-in-depth-anz",
+  "label": "More Australian Universities",
+  "title": "Major Australian Universities: In-Depth Admission Guides",
+  "description": "Dedicated international-student admission guides for high-enrolment Australian universities beyond the Group of Eight — RMIT, Deakin, UTS, Curtin, Macquarie, Griffith and Wollongong — covering entry, English, pathways and intakes.",
+  "intro": "Some of the most popular Australian universities for international students sit outside the Group of Eight. These guides give each one a dedicated walkthrough — entry requirements, English options, college/pathway routes and intakes — so you can compare them properly.\n\nEntry scores, fees and intake dates are set by each university and change every year; always confirm the current details on the official university website.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "rmit-university-admission-guide",
+    "deakin-university-admission-guide",
+    "uts-university-of-technology-sydney-admission-guide",
+    "curtin-university-admission-guide",
+    "macquarie-university-admission-guide",
+    "griffith-university-admission-guide",
+    "university-of-wollongong-admission-guide"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "rmit admission",
+    "deakin university international",
+    "uts sydney admission",
+    "curtin university",
+    "macquarie university",
+    "griffith university",
+    "university of wollongong"
+  ]
+},
+{
+  "slug": "skills-assessment-and-registration-anz",
+  "label": "Skills Assessment & Registration",
+  "title": "Skills Assessment & Professional Registration (Australia & NZ)",
+  "description": "The assessing authorities that gate skilled migration and professional practice in Australia and New Zealand — ACS (IT), AMC (doctors), ANMAC (nurses), VETASSESS, AITSL (teachers), and the NZ nursing, teaching and engineering bodies.",
+  "intro": "To work in a regulated profession — or claim points for skilled migration — your qualifications usually have to be assessed by the right authority. These guides explain who assesses each field in Australia and New Zealand, what the process involves, and how it differs from studying or registering.\n\nEligibility, fees and processing times are set by each authority and change; verify the current requirements on the official assessing-body website. This is general information, not migration advice.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "acs-skills-assessment-for-it-professionals-australia",
+    "amc-assessment-for-international-medical-graduates-australia",
+    "anmac-skills-assessment-for-nurses-and-midwives-australia",
+    "vetassess-skills-assessment-australia",
+    "aitsl-skills-assessment-for-teachers-australia",
+    "nursing-council-nz-registration-for-internationally-qualified-nurses",
+    "teaching-council-nz-registration-for-overseas-teachers",
+    "chartered-professional-engineer-cpeng-new-zealand-overseas"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "acs skills assessment",
+    "amc international medical graduates",
+    "anmac nurses",
+    "vetassess",
+    "aitsl teachers",
+    "nursing council nz",
+    "skills assessment for pr"
+  ]
+},
+{
+  "slug": "allied-health-and-professional-degrees-anz",
+  "label": "Allied Health & Professional Degrees",
+  "title": "Allied Health & Professional Degrees (Australia & NZ)",
+  "description": "Study-and-registration guides for regulated allied-health and professional degrees in Australia and New Zealand — midwifery, paramedicine, occupational therapy, speech pathology, medical imaging, optometry, dietetics, architecture, construction management and hospitality.",
+  "intro": "Beyond medicine and nursing, a range of regulated allied-health and professional degrees lead to in-demand careers in Australia and New Zealand — each with its own entry route and, often, its own registration body. These guides explain what you study and where each leads.\n\nCourse structures, entry requirements and registration rules are set by universities and the relevant boards and change over time; confirm the current details on the official sources.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "midwifery-degrees-in-australia-and-new-zealand",
+    "paramedicine-degrees-in-australia-and-new-zealand",
+    "occupational-therapy-degrees-in-australia-and-new-zealand",
+    "speech-pathology-degrees-in-australia-and-new-zealand",
+    "medical-imaging-and-radiography-degrees-in-australia-and-new-zealand",
+    "optometry-degrees-in-australia-and-new-zealand",
+    "dietetics-and-nutrition-degrees-in-australia-and-new-zealand",
+    "architecture-degrees-in-australia-and-new-zealand",
+    "construction-management-and-quantity-surveying-degrees-in-australia-and-new-zealand",
+    "hospitality-and-tourism-courses-in-australia-and-new-zealand"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "midwifery australia",
+    "paramedicine degree",
+    "occupational therapy anz",
+    "speech pathology",
+    "medical imaging radiography",
+    "optometry",
+    "dietetics nutrition",
+    "architecture degree australia"
+  ]
+},
+{
+  "slug": "visas-refusals-and-skilled-migration-anz",
+  "label": "Visa Issues & Skilled Migration",
+  "title": "Visa Refusals, Reviews & Skilled Migration (Australia)",
+  "description": "The harder visa topics for Australia — a student-visa refusal and ART merits review, the health and character requirements, bridging visas, and the regional skilled routes (subclass 494 and the permanent subclass 191).",
+  "intro": "Some visa situations cause the most anxiety precisely because they are the least explained. These guides cover what happens if a student visa is refused and how merits review works, the health and character requirements, bridging visas, and the regional employer-sponsored and permanent skilled routes.\n\nImmigration rules change frequently and every case is decided on its facts — these are neutral, general explanations, not immigration advice. Always verify the current rules on the official Australian Government source and consider a registered migration agent for your own case.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "australia-student-visa-refusal-and-art-review-explained",
+    "australia-visa-health-and-character-requirements-explained",
+    "bridging-visas-in-australia-explained",
+    "subclass-494-skilled-employer-sponsored-regional-visa-guide",
+    "subclass-191-permanent-residence-skilled-regional-visa-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "australia student visa refusal",
+    "art review visa",
+    "health character requirement",
+    "bridging visa",
+    "subclass 494",
+    "subclass 191 permanent residence"
+  ]
+},
+{
+  "slug": "more-study-cities-anz",
+  "label": "More Study Cities",
+  "title": "More Cities to Study In (Australia & New Zealand)",
+  "description": "Student guides to more study destinations in Australia and New Zealand — Adelaide, Canberra, Wellington and Christchurch — covering universities, cost of living, transport and student life.",
+  "intro": "Beyond the biggest cities, several other capitals and student hubs in Australia and New Zealand offer strong universities and, often, a lower cost of living. These guides introduce Adelaide, Canberra, Wellington and Christchurch for international students.\n\nCosts and services change; treat figures as a guide and confirm current details locally.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "studying-in-adelaide-student-guide",
+    "studying-in-canberra-student-guide",
+    "studying-in-wellington-student-guide",
+    "studying-in-christchurch-student-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "studying in adelaide",
+    "studying in canberra",
+    "studying in wellington",
+    "studying in christchurch",
+    "best cities to study australia new zealand"
+  ]
+},
+{
+  "slug": "application-and-money-logistics-anz",
+  "label": "Application & Money Logistics",
+  "title": "Application & Money Logistics (Australia & NZ)",
+  "description": "The practical mechanics of applying and paying — converting Indian percentage/CGPA to GPA, applying with backlogs or a study gap, using an education agent, tuition instalments and refunds, the cost of bringing dependants, PhD stipends, the NZ study-to-residence pathway and NZQA qualification assessment.",
+  "intro": "Getting the mechanics right — how your marks are read, how you pay, and how funded study or a residence pathway works — removes a lot of avoidable stress. These guides cover the practical application-and-money details for Australia and New Zealand.\n\nUniversity, fee and immigration rules change each year; confirm the current specifics on the official sources before acting.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "percentage-to-gpa-conversion-for-australia-new-zealand-admission",
+    "applying-with-backlogs-or-a-study-gap-australia-new-zealand",
+    "using-an-education-agent-for-australia-and-new-zealand",
+    "tuition-fee-payment-instalments-and-refunds-australia-new-zealand",
+    "cost-of-bringing-dependants-to-australia-and-new-zealand",
+    "phd-stipends-and-research-scholarships-australia-new-zealand",
+    "study-to-residence-pathway-new-zealand",
+    "nzqa-international-qualification-assessment-iqa-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "percentage to gpa australia",
+    "applying with backlogs",
+    "education agent australia new zealand",
+    "tuition fee refund",
+    "phd stipend australia",
+    "nz study to residence",
+    "nzqa iqa"
+  ]
+},
+{
+  "slug": "working-and-living-practical-anz",
+  "label": "Working & Living Practicals",
+  "title": "Working & Living Practicals (Australia & NZ)",
+  "description": "Day-to-day working and living essentials for international students in Australia and New Zealand — employer-sponsored work visas (482/186/AEWV), pay and workplace rights, finding a job on Seek and Indeed, converting a driving licence, renting rights and bond, and seeing a doctor.",
+  "intro": "The parts of student life that guides often skip — your rights at work, how to find a job, driving, renting and seeing a doctor — matter just as much as admission. These guides cover the working and living practicals for Australia and New Zealand.\n\nRules and services differ by state/region and change; confirm the current details on the official sources.",
+  "group": "study-in-australia-nz",
+  "region": "australia-nz",
+  "guideSlugs": [
+    "employer-sponsorship-work-visa-australia-new-zealand",
+    "pay-and-workplace-rights-international-students-australia-new-zealand",
+    "how-to-find-a-job-australia-new-zealand-seek-indeed-job-boards",
+    "driving-licence-for-international-students-australia-new-zealand",
+    "renting-rights-bond-and-tenancy-australia-new-zealand",
+    "seeing-a-doctor-as-a-student-australia-new-zealand"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "employer sponsorship australia 482 186",
+    "aewv new zealand",
+    "pay workplace rights students",
+    "find a job seek indeed",
+    "driving licence international student",
+    "renting rights bond"
+  ]
+},
+/* ==ANZP3_HUBS_END== */
+/* ==P3_HUBS_START== */
+{
+  "slug": "counselling-and-seat-allotment",
+  "label": "Counselling & Seat Allotment",
+  "title": "Admission Counselling & Seat Allotment in India",
+  "description": "How admission counselling and seat allotment work in India — JoSAA and CSAB, the major state engineering and medical counselling processes, choice-filling, freeze/float/slide, spot and mop-up rounds, and how to read the seat matrix.",
+  "intro": "After an entrance exam comes the part that actually decides your seat: counselling. These guides explain how India's centralised and state counselling processes work — registration, choice-filling and locking, seat allotment rounds, the freeze/float/slide options, and reporting or withdrawing a seat.\n\nExact dates, fees, seat counts and cut-offs are set by each authority and change every cycle, so we describe the process and point you to the official portal to confirm the current specifics.",
+  "group": "exams",
+  "guideSlugs": [
+    "freeze-float-slide-counselling-explained",
+    "how-to-fill-choices-in-engineering-counselling",
+    "csab-special-rounds-explained",
+    "seat-acceptance-reporting-and-withdrawal-explained",
+    "spot-round-and-mop-up-round-explained",
+    "seat-matrix-opening-closing-ranks-explained",
+    "domicile-and-state-quota-eligibility-explained",
+    "management-quota-vs-counselling-seats-explained",
+    "state-quota-vs-aiq-neet-counselling-explained",
+    "keam-allotment-process-explained",
+    "tnea-counselling-process-explained",
+    "mht-cet-cap-rounds-and-seat-allotment",
+    "kea-kcet-counselling-process-explained",
+    "eapcet-web-counselling-process-explained",
+    "comedk-uget-counselling-process-explained",
+    "wbjee-counselling-process-explained",
+    "uptac-aktu-counselling-process-explained",
+    "jac-delhi-counselling-process-explained",
+    "acpc-gujarat-counselling-process-explained",
+    "jeecup-counselling-process-explained"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "college counselling india",
+    "seat allotment",
+    "choice filling",
+    "freeze float slide",
+    "state engineering counselling",
+    "mop-up round"
+  ]
+},
+{
+  "slug": "staff-selection-and-railway-exams",
+  "label": "SSC & Railway Exams",
+  "title": "Staff Selection & Railway Recruitment Exams",
+  "description": "Structure, eligibility and stages of India's high-volume staff-selection and railway exams — SSC (JE, Stenographer), the RRB exams (NTPC, Group D, ALP, JE), and recruitment for bodies like FCI, EPFO and ESIC.",
+  "intro": "Staff-selection and railway exams recruit lakhs of candidates into clerical, technical and group-level government posts every year. These guides explain how each exam is structured, who can apply and the stages involved — neutral, official facts only.\n\nVacancy counts, age limits, pay and cut-offs are set by each conducting body and change every cycle, so always confirm them on the official notification. We do not state salary figures — check the official notification for the current pay level.",
+  "group": "exams",
+  "guideSlugs": [
+    "rrb-ntpc-exam-guide",
+    "rrb-group-d-exam-guide",
+    "rrb-alp-exam-guide",
+    "rrb-je-exam-guide",
+    "ssc-je-exam-guide",
+    "ssc-stenographer-exam-guide",
+    "fci-recruitment-exam-guide",
+    "epfo-recruitment-exam-guide",
+    "esic-recruitment-exam-guide",
+    "dsssb-recruitment-exam-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "ssc exams",
+    "railway recruitment rrb",
+    "rrb ntpc group d",
+    "ssc je",
+    "government job exams india"
+  ]
+},
+{
+  "slug": "banking-and-insurance-exams",
+  "label": "Banking & Insurance Exams",
+  "title": "Banking, Insurance & Financial-Sector Exams",
+  "description": "How India’s banking, insurance and financial-regulator recruitment exams work — SBI and IBPS (clerk, RRB, specialist officer), RBI, NABARD, SEBI and LIC — their stages, eligibility and official conducting bodies.",
+  "intro": "Public-sector banks, insurers and financial regulators recruit through structured, multi-stage exams each year. These guides describe the stages and eligibility for the major banking and insurance exams — neutral, official facts only, with no pay figures (check the official notification).\n\nVacancies, age limits and cut-offs change every cycle; always confirm them on the official conducting body’s website.",
+  "group": "exams",
+  "guideSlugs": [
+    "sbi-clerk-exam-guide",
+    "ibps-rrb-exam-guide",
+    "ibps-so-specialist-officer-exam-guide",
+    "rbi-assistant-exam-guide",
+    "nabard-grade-a-b-exam-guide",
+    "sebi-grade-a-exam-guide",
+    "lic-aao-ado-exam-guide",
+    "general-insurance-ao-exams-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "bank exams india",
+    "ibps sbi rbi",
+    "nabard sebi",
+    "insurance exams lic",
+    "financial sector jobs"
+  ]
+},
+{
+  "slug": "defence-and-police-recruitment",
+  "label": "Defence & Police Recruitment",
+  "title": "Defence, Paramilitary & Police Recruitment",
+  "description": "Official recruitment routes into India’s armed forces, coast guard and police — the Agnipath/Agniveer scheme across Army, Navy and Air Force, the Coast Guard, Territorial Army, CAPF constable (SSC GD), SSC CPO and state police constable and sub-inspector exams.",
+  "intro": "Recruitment into the armed forces, paramilitary and state police runs through structured schemes and exams. These guides explain the official eligibility, stages and physical/medical requirements — described neutrally, with no politics or commentary.\n\nAge limits, physical standards, vacancies and selection details are set by each recruiting authority and change every cycle; always confirm them on the official recruitment website.",
+  "group": "exams",
+  "guideSlugs": [
+    "agnipath-agniveer-scheme-recruitment-guide",
+    "indian-army-agniveer-cee-exam-guide",
+    "indian-navy-agniveer-ssr-mr-guide",
+    "indian-air-force-agniveervayu-guide",
+    "indian-coast-guard-navik-yantrik-guide",
+    "territorial-army-officer-exam-guide",
+    "ssc-gd-constable-exam-guide",
+    "ssc-cpo-exam-guide",
+    "ib-acio-exam-guide",
+    "afcat-vs-nda-vs-cds-which-to-choose",
+    "state-police-constable-recruitment-guide",
+    "state-police-sub-inspector-exam-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "agnipath agniveer",
+    "indian army navy air force recruitment",
+    "coast guard",
+    "ssc gd constable",
+    "police si constable exam"
+  ]
+},
+{
+  "slug": "science-and-research-entrances",
+  "label": "Science & Research Entrances",
+  "title": "Science & Research Entrance Exams (IISER, NEST, ISI, CMI)",
+  "description": "Undergraduate entrances into India’s research institutes — the IISER Aptitude Test (IAT), NEST for NISER and UM-DAE CEBS, ISI admission for B.Stat/B.Math, and the CMI entrance — for students aiming at research-focused BS/BS-MS degrees.",
+  "intro": "For students set on a research career, a handful of institutes admit through their own science-and-mathematics aptitude tests rather than the mainstream engineering or medical routes. These guides explain what each entrance covers and who can apply.\n\nExact syllabus weightage, dates and fees are set by each institute and change every cycle — always confirm them on the official institute website.",
+  "group": "exams",
+  "guideSlugs": [
+    "iiser-aptitude-test-iat-exam-guide",
+    "nest-exam-guide",
+    "isi-admission-bstat-bmath-guide",
+    "cmi-entrance-exam-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "iiser iat",
+    "nest exam",
+    "isi bstat bmath",
+    "cmi entrance",
+    "research institute admission india"
+  ]
+},
+{
+  "slug": "university-specific-admissions",
+  "label": "University-Specific Admissions",
+  "title": "University & Institute-Specific Admissions",
+  "description": "Admission routes that run through a university’s own entrance test or process — GGSIPU (IPU CET), NMIMS (NPAT), Symbiosis (SET), Christ University, JNU, and Odisha’s OJEE — including eligibility and how each process works.",
+  "intro": "Several universities admit through their own entrance test or a dedicated process rather than a common national exam. These guides explain each institution’s route, eligibility and stages — neutral, official facts only.\n\nProgrammes, dates and fees are set by each university and change every cycle; confirm the current details on the official university website.",
+  "group": "exams",
+  "guideSlugs": [
+    "ipu-cet-exam-guide",
+    "npat-exam-guide-nmims",
+    "symbiosis-entrance-test-set-ug-guide",
+    "christ-university-entrance-admission-guide",
+    "how-to-get-admission-in-jnu",
+    "ojee-exam-and-counselling-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "ipu cet",
+    "npat nmims",
+    "symbiosis set",
+    "christ university admission",
+    "jnu admission",
+    "ojee odisha"
+  ]
+},
+{
+  "slug": "college-quality-and-recognition",
+  "label": "College Quality & Recognition",
+  "title": "College Quality, Rankings & Recognition",
+  "description": "How to judge whether a college or university is genuine and good — NIRF rankings, NAAC and NBA accreditation, UGC/AICTE recognition, how to spot a fake or unrecognised university, and how to weigh placements and fees.",
+  "intro": "Before you accept a seat, it pays to check that a college is genuine, recognised and worth the fee. These guides explain the official quality and recognition frameworks in India — what NIRF, NAAC, NBA, UGC and AICTE actually mean — and how to verify a university and evaluate its claims for yourself.\n\nWe describe the official parameters and how to check them; we never publish fabricated rankings. Always verify a specific institution’s current status on the official UGC, AICTE or ranking-body website.",
+  "group": "after-12th",
+  "guideSlugs": [
+    "nirf-rankings-explained",
+    "naac-accreditation-and-grades-explained",
+    "nba-accreditation-for-engineering-explained",
+    "how-to-check-if-a-university-is-ugc-recognised",
+    "aicte-approval-explained-how-to-check",
+    "how-to-spot-a-fake-university-in-india",
+    "autonomous-vs-affiliated-college",
+    "university-vs-deemed-vs-institute-of-national-importance",
+    "institute-of-eminence-scheme-explained",
+    "statutory-councils-for-professional-courses-explained",
+    "how-to-evaluate-college-placements",
+    "how-to-judge-if-a-college-is-worth-the-fees"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "nirf rankings",
+    "naac grade",
+    "nba accreditation",
+    "ugc recognised university",
+    "fake university check",
+    "aicte approval"
+  ]
+},
+{
+  "slug": "admission-essentials-and-documents",
+  "label": "Admission Essentials & Documents",
+  "title": "Admission Essentials, Documents & Systems",
+  "description": "The practical side of Indian admissions — how reservation works (SC/ST/OBC-NCL/EWS/PwD), the certificates and documents you need, NEP 2020 and the four-year UG degree, the Academic Bank of Credits, NIOS, and compartment/improvement exams.",
+  "intro": "Beyond exams and counselling, admissions run on paperwork and rules: reservation categories, the certificates that prove them, and newer systems like the four-year UG degree and the Academic Bank of Credits. These guides explain each one in plain English — what it is, who it applies to, and what to prepare.\n\nCertificate formats, authorities and rules vary by state and board and change over time, so we describe the essentials and point you to the official source to confirm the current requirement.",
+  "group": "after-12th",
+  "guideSlugs": [
+    "how-reservation-works-in-indian-admissions",
+    "reservation-certificates-for-admissions",
+    "documents-required-for-college-admission",
+    "pwd-disability-certificate-for-admissions",
+    "migration-vs-transfer-certificate-explained",
+    "nep-2020-and-four-year-ug-explained",
+    "academic-bank-of-credits-explained",
+    "nios-open-schooling-explained",
+    "compartment-exam-explained",
+    "improvement-exam-explained",
+    "gap-year-certificate-explained",
+    "how-to-choose-class-11-subjects"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "reservation categories india",
+    "ews obc ncl certificate",
+    "nep 2020 four year ug",
+    "academic bank of credits",
+    "nios",
+    "compartment improvement exam"
+  ]
+},
+/* ==P3_HUBS_END== */
 {
   "slug": "russian-higher-education-system-and-degrees-explained",
   "label": "Russian Higher-Ed System",

@@ -54,18 +54,7 @@ export const INDIA_TRACKS: Track[] = [
     title: 'Entrance Exams in India',
     description:
       'Every major Indian entrance exam in one place — JEE, NEET, CUET, the state engineering CETs, GATE, government-recruitment exams and specialised postgraduate tests — with eligibility, pattern and preparation, each linked to its official source.',
-    topicSlugs: [
-      'jee',
-      'neet',
-      'cuet',
-      'engineering-entrance-exams',
-      'gate',
-      'government-exams',
-      'specialized-exams',
-      'exam-preparation',
-      'mba-and-management-entrances',
-      'design-and-aptitude-entrances',
-    ],
+    topicSlugs: ['jee', 'neet', 'cuet', 'engineering-entrance-exams', 'gate', 'government-exams', 'specialized-exams', 'exam-preparation', 'mba-and-management-entrances', 'design-and-aptitude-entrances', 'counselling-and-seat-allotment', 'staff-selection-and-railway-exams', 'banking-and-insurance-exams', 'defence-and-police-recruitment', 'science-and-research-entrances', 'university-specific-admissions'],
   },
   {
     slug: 'engineering-tech',
@@ -128,7 +117,7 @@ export const INDIA_TRACKS: Track[] = [
     title: 'Careers & Professions in India',
     description:
       'Step-by-step, official-source guides to entering specific professions — pilot, merchant navy, IAS and IPS officer, software engineer, scientist, architect, pharmacist, judge and cabin crew.',
-    topicSlugs: ['career-paths', 'civil-services-and-government-careers', 'modern-and-creative-careers'],
+    topicSlugs: ['career-paths', 'civil-services-and-government-careers', 'modern-and-creative-careers', 'staff-selection-and-railway-exams', 'banking-and-insurance-exams', 'defence-and-police-recruitment'],
   },
   {
     slug: 'after-school',
@@ -137,7 +126,7 @@ export const INDIA_TRACKS: Track[] = [
     title: 'After 10th & 12th: Streams, Boards & Courses',
     description:
       'The school-stage decisions that shape everything after — choosing a stream after Class 10, comparing boards, board-exam preparation, and the courses and careers open after Class 12.',
-    topicSlugs: ['courses-after-12th', 'school-and-boards', 'more-pathways-after-12th'],
+    topicSlugs: ['courses-after-12th', 'school-and-boards', 'more-pathways-after-12th', 'college-quality-and-recognition', 'admission-essentials-and-documents'],
   },
   {
     slug: 'study-abroad-india',
@@ -302,7 +291,7 @@ export const CANADA_TRACKS: Track[] = [
     title: 'Canadian University Admissions',
     description:
       'Applying to Canadian universities — how admissions work and the application components in depth, and how your grades and qualifications are recognised across provinces.',
-    topicSlugs: ['canada-admissions', 'canadian-application-components-in-depth', 'grades-and-credential-recognition-canada'],
+    topicSlugs: ['canada-admissions', 'canadian-application-components-in-depth', 'grades-and-credential-recognition-canada', 'professional-program-applications-canada', 'application-and-funding-essentials-canada'],
   },
   {
     slug: 'canada-tests-grades', region: 'canada', label: 'Tests & Grades',
@@ -330,28 +319,28 @@ export const CANADA_TRACKS: Track[] = [
     title: 'Universities & Provinces in Canada',
     description:
       'Choosing where to study in Canada — the U15 and top schools, and the universities of Ontario (OUAC), Western Canada (BC and Alberta), Quebec and the CEGEP system, and the Atlantic and Prairie provinces.',
-    topicSlugs: ['canada-universities', 'ontario-universities-and-ouac-in-depth', 'western-canada-universities-bc-and-alberta', 'quebec-universities-and-the-cegep-system', 'atlantic-and-prairie-universities-canada'],
+    topicSlugs: ['canada-universities', 'ontario-universities-and-ouac-in-depth', 'western-canada-universities-bc-and-alberta', 'quebec-universities-and-the-cegep-system', 'atlantic-and-prairie-universities-canada', 'more-canadian-universities-in-depth'],
   },
   {
     slug: 'canada-majors-careers', region: 'canada', label: 'Majors & Careers',
     title: 'Programs & Careers in Canada',
     description:
       'Choosing a programme in Canada — college diploma programmes, the sciences, arts and social sciences, trades and applied fields, co-operative education, and graduate study.',
-    topicSlugs: ['canada-majors-careers', 'canadian-college-diploma-programs-in-depth', 'studying-sciences-in-canada', 'studying-arts-humanities-and-social-sciences-canada', 'studying-trades-and-applied-fields-canada', 'co-op-and-experiential-learning-canada-in-depth', 'graduate-study-in-canada-in-depth'],
+    topicSlugs: ['canada-majors-careers', 'canadian-college-diploma-programs-in-depth', 'studying-sciences-in-canada', 'studying-arts-humanities-and-social-sciences-canada', 'studying-trades-and-applied-fields-canada', 'co-op-and-experiential-learning-canada-in-depth', 'graduate-study-in-canada-in-depth', 'more-programs-and-disciplines-canada'],
   },
   {
     slug: 'work-and-stay-canada', region: 'canada', label: 'Work & Stay',
     title: 'Working & Staying in Canada',
     description:
       'Working during and after study in Canada — the Post-Graduation Work Permit in depth, and the pathways to permanent residence for graduates. Deferred to IRCC, not immigration advice.',
-    topicSlugs: ['work-and-stay-canada', 'pgwp-eligibility-and-rules-in-depth', 'pathways-to-permanent-residence-for-students-canada'],
+    topicSlugs: ['work-and-stay-canada', 'pgwp-eligibility-and-rules-in-depth', 'pathways-to-permanent-residence-for-students-canada', 'professional-licensing-in-canada', 'more-immigration-pathways-canada'],
   },
   {
     slug: 'canada-student-life', region: 'canada', label: 'Student Life',
     title: 'Student Life in Canada',
     description:
       'Living as a student in Canada — settling in, provincial health cover, housing and money, and campus and community life, from clubs and support services to finding community.',
-    topicSlugs: ['canada-student-life', 'settling-and-living-in-canada-in-depth', 'canadian-campus-and-community-life-in-depth'],
+    topicSlugs: ['canada-student-life', 'settling-and-living-in-canada-in-depth', 'canadian-campus-and-community-life-in-depth', 'settling-in-and-daily-life-canada'],
   },
 ];
 
@@ -426,28 +415,28 @@ export const ANZ_TRACKS: Track[] = [
     title: 'Australia & New Zealand Admissions',
     description:
       'Applying to Australian and New Zealand universities — application strategy and offers, how qualifications are recognised and the pathways in, and New Zealand admissions in depth.',
-    topicSlugs: ['anz-admissions', 'application-strategy-and-offers-anz', 'qualification-recognition-and-pathways-anz', 'new-zealand-admissions-in-depth'],
+    topicSlugs: ['anz-admissions', 'application-strategy-and-offers-anz', 'qualification-recognition-and-pathways-anz', 'new-zealand-admissions-in-depth', 'application-and-money-logistics-anz'],
   },
   {
     slug: 'anz-student-visas', region: 'australia-nz', label: 'Student Visas',
     title: 'Australia & New Zealand Student Visas',
     description:
       'Student visas for Australia and New Zealand — the Australian subclass 500 in depth (Genuine Student, CoE, evidence) and the New Zealand student visa. Neutral official facts, not immigration advice.',
-    topicSlugs: ['anz-student-visas', 'australia-student-visa-subclass-500-in-depth', 'new-zealand-student-visa-in-depth'],
+    topicSlugs: ['anz-student-visas', 'australia-student-visa-subclass-500-in-depth', 'new-zealand-student-visa-in-depth', 'visas-refusals-and-skilled-migration-anz'],
   },
   {
     slug: 'anz-universities', region: 'australia-nz', label: 'Universities',
     title: 'Australian & New Zealand Universities',
     description:
       'Choosing a university in Australia or New Zealand — the Group of Eight and beyond, and New Zealand’s eight universities in depth.',
-    topicSlugs: ['anz-universities', 'australian-universities-beyond-the-go8', 'new-zealand-universities-in-depth'],
+    topicSlugs: ['anz-universities', 'australian-universities-beyond-the-go8', 'new-zealand-universities-in-depth', 'australian-universities-in-depth-anz'],
   },
   {
     slug: 'anz-courses-careers', region: 'australia-nz', label: 'Courses & Careers',
     title: 'Courses & Careers in Australia & New Zealand',
     description:
       'Choosing a programme in Australia or New Zealand — the sciences, arts and social sciences, health and medical professions, agriculture and the environment, and law and business professions.',
-    topicSlugs: ['anz-courses-careers', 'studying-sciences-in-australia-and-new-zealand', 'studying-arts-humanities-and-social-sciences-anz', 'health-and-medical-professions-anz-in-depth', 'agriculture-environment-and-marine-studies-anz', 'law-and-business-professions-anz'],
+    topicSlugs: ['anz-courses-careers', 'studying-sciences-in-australia-and-new-zealand', 'studying-arts-humanities-and-social-sciences-anz', 'health-and-medical-professions-anz-in-depth', 'agriculture-environment-and-marine-studies-anz', 'law-and-business-professions-anz', 'allied-health-and-professional-degrees-anz'],
   },
   {
     slug: 'anz-tuition-scholarships', region: 'australia-nz', label: 'Tuition & Scholarships',
@@ -461,7 +450,7 @@ export const ANZ_TRACKS: Track[] = [
     title: 'Working & Staying On (Australia & NZ)',
     description:
       'Working during and after study in Australia and New Zealand — the subclass 485 graduate visa, skilled migration and PR pathways, and building graduate careers and employability. Deferred to official, not immigration advice.',
-    topicSlugs: ['work-and-stay-anz', 'temporary-graduate-visa-485-in-depth', 'skilled-migration-and-pr-pathways-anz-in-depth', 'graduate-careers-and-employability-anz'],
+    topicSlugs: ['work-and-stay-anz', 'temporary-graduate-visa-485-in-depth', 'skilled-migration-and-pr-pathways-anz-in-depth', 'graduate-careers-and-employability-anz', 'skills-assessment-and-registration-anz', 'working-and-living-practical-anz'],
   },
   {
     slug: 'anz-english-tests', region: 'australia-nz', label: 'English Tests',
@@ -475,7 +464,7 @@ export const ANZ_TRACKS: Track[] = [
     title: 'Student Life in Australia & New Zealand',
     description:
       'Living as a student in Australia and New Zealand — housing, banking and the cities, the practicalities of arriving and settling in, and student life, culture and support.',
-    topicSlugs: ['anz-student-life', 'arriving-and-settling-in-anz-in-depth', 'student-life-culture-and-support-anz'],
+    topicSlugs: ['anz-student-life', 'arriving-and-settling-in-anz-in-depth', 'student-life-culture-and-support-anz', 'more-study-cities-anz'],
   },
 ];
 
