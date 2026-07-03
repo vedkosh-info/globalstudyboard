@@ -420,6 +420,7 @@ const GROUP_LABELS: Record<string, string> = {
   privacy: 'Privacy',
   terms: 'Terms',
   disclaimer: 'Disclaimer',
+  cookies: 'Cookies',
 };
 
 const titleCase = (seg: string): string =>

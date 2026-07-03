@@ -17,6 +17,15 @@
 /** Admissions cycle the site currently targets (shown in the global footer). */
 export const ADMISSIONS_CYCLE = '2026–2027';
 
+/**
+ * The site's official contact address — single source of truth. Used by the
+ * contact page, the About CTA, the correction/copyright channel and the
+ * Organization structured data, so the address can never drift out of sync
+ * across surfaces. A branded, domain-based address (not a personal inbox) is
+ * the professional, trust-building choice for the public site.
+ */
+export const CONTACT_EMAIL = 'contact@globalstudyboard.com';
+
 /** Month the catalogue was last broadly reviewed (ISO 'YYYY-MM'). */
 export const SITE_REVIEWED = '2026-06';
 

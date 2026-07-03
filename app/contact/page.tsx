@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Mail, MessageCircleQuestion, FileWarning } from 'lucide-react';
+import { CONTACT_EMAIL } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'Contact GlobalStudyBoard',
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const EMAIL = 'bcode8.labs@gmail.com';
+const EMAIL = CONTACT_EMAIL;
 
 const REASONS = [
   {
@@ -74,6 +75,21 @@ export default function ContactPage() {
             <p className="text-stone-700 text-sm leading-relaxed m-0">{r.body}</p>
           </div>
         ))}
+      </section>
+
+      <section className="border border-stone-200 rounded-2xl p-6">
+        <h2 className="font-semibold text-ink text-base mb-2">Corrections &amp; copyright</h2>
+        <p className="text-stone-700 text-sm leading-relaxed m-0">
+          Spotted an error, or believe something on GlobalStudyBoard infringes your copyright or
+          trademark? Email us at{' '}
+          <a
+            href={`mailto:${EMAIL}`}
+            className="text-forest-700 hover:text-forest-800 underline font-medium"
+          >
+            {EMAIL}
+          </a>
+          . We review every report and correct or remove content where appropriate.
+        </p>
       </section>
 
       <p className="text-stone-500 text-sm leading-relaxed">

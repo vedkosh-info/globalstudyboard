@@ -194,7 +194,7 @@ Audit is **independent of** the author: never self-certify in the same pass.
 ## 8. Corrections & Takedown
 - If any fact is found wrong or any prohibited content slips through, **correct
   or remove it immediately**, then log the correction in the audit log.
-- Provide the contact email (`bcode8.labs@gmail.com`) for correction requests.
+- Provide the contact email (`contact@globalstudyboard.com`) for correction requests.
 
 ---
 
@@ -239,7 +239,7 @@ analytics, the GSB-AI feature, and any future form or integration.
 - **No third-party trackers** beyond what privacy policy + `middleware.ts` CSP
   already permit; never add a tracker without updating the privacy policy.
 - **Contact form / email** collects only what is needed to reply
-  (`bcode8.labs@gmail.com`); state purpose and retention in the privacy policy.
+  (`contact@globalstudyboard.com`); state purpose and retention in the privacy policy.
 - Keep `/privacy` page accurate and current; if data practices change, update it
   **before** shipping the change.
 - Never commit secrets, API keys, or personal data to the repo.

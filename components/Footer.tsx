@@ -18,6 +18,7 @@ const SITE_LINKS = [
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy', href: '/privacy' },
   { label: 'Terms', href: '/terms' },
+  { label: 'Disclaimer', href: '/disclaimer' },
 ];
 
 function FooterCol({
@@ -73,7 +74,7 @@ export default function Footer({
 
   const studyLinks = r
     ? [
-        { label: `${r.displayName} universities`, href: `/regions/${r.slug}` },
+        { label: `${r.displayName} universities`, href: `/regions/${r.slug}/universities` },
         { label: 'Entrance exams', href: '/exams' },
         { label: 'Admission guides', href: '/guides' },
         { label: 'Scholarships', href: '/scholarships' },
@@ -142,6 +143,7 @@ export default function Footer({
               { label: 'Privacy', href: '/privacy' },
               { label: 'Terms', href: '/terms' },
               { label: 'Disclaimer', href: '/disclaimer' },
+              { label: 'Cookies', href: '/cookies' },
               { label: 'Contact', href: '/contact' },
             ].map((link) => (
               <Link

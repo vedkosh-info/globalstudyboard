@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { CONTACT_EMAIL } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — GlobalStudyBoard',
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = '27 June 2026';
+const LAST_UPDATED = '3 July 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -102,6 +103,16 @@ export default function PrivacyPage() {
           </a>
           . You can also control or disable cookies in your browser settings.
         </p>
+        <p>
+          Cookie-consent requirements vary by region — for example, the EEA and the UK require
+          consent for non-essential cookies. You can accept or refuse non-essential cookies using
+          your browser settings and the opt-outs above. For a fuller breakdown of the cookies we use
+          and how to manage them, see our{' '}
+          <Link href="/cookies" className="text-forest-700 hover:text-forest-800 underline">
+            Cookie Policy
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section title="The GSB AI assistant">
@@ -118,7 +129,15 @@ export default function PrivacyPage() {
           <li>To measure traffic and performance in aggregate.</li>
           <li>To show advertising that helps keep the site free.</li>
         </ul>
-        <p>We do not sell your personal information.</p>
+        <p>
+          We do not sell your personal information for money. Some privacy laws (such as
+          California&rsquo;s CCPA/CPRA) treat the use of advertising cookies for personalised ads as a
+          &ldquo;sale&rdquo; or &ldquo;share&rdquo; — you can limit this through the choices in our{' '}
+          <Link href="/cookies" className="text-forest-700 hover:text-forest-800 underline">
+            Cookie Policy
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section title="Third-party links">
@@ -135,21 +154,36 @@ export default function PrivacyPage() {
         </p>
       </Section>
 
-      <Section title="Your choices">
+      <Section title="Your rights &amp; choices">
         <p>
-          You can browse without providing personal details, control cookies through your browser,
-          and contact us to ask about any information you&rsquo;ve sent us.
+          You can browse without providing personal details and control or disable cookies through
+          your browser. For any information you have sent us (for example, an email), you can ask us
+          to confirm what we hold, correct it, or delete it — just contact us using the details
+          below and we&rsquo;ll respond within a reasonable time. We may need to verify your identity,
+          and we may keep information where the law requires. Depending on where you live,
+          data-protection laws such as the GDPR (UK/EU), CCPA (California) and India&rsquo;s DPDP Act
+          may give you additional rights; wherever practical, we extend the same choices to all our
+          users.
         </p>
       </Section>
 
-      <Section title="Changes &amp; contact">
+      <Section title="Who we are &amp; how to contact us">
         <p>
-          We may update this policy as the site evolves; the date above reflects the latest revision.
-          Questions? Reach us via the{' '}
+          GlobalStudyBoard is an independent educational guide, operated from India, and is the
+          party responsible for (the data controller of) the information described in this policy.
+          For any privacy question, or to exercise a data right, email us at{' '}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="text-forest-700 hover:text-forest-800 underline"
+          >
+            {CONTACT_EMAIL}
+          </a>{' '}
+          or use the{' '}
           <Link href="/contact" className="text-forest-700 hover:text-forest-800 underline">
             contact page
           </Link>
-          .
+          . We may update this policy as the site evolves; the date above reflects the latest
+          revision.
         </p>
       </Section>
     </div>

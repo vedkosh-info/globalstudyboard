@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = '3 June 2026';
+const LAST_UPDATED = '3 July 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (

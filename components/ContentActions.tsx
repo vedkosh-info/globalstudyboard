@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ThumbsUp, ThumbsDown, Share2, Printer, Check } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { CONTACT_EMAIL } from '@/lib/site-meta';
 
 interface ContentActionsProps {
   title: string;
@@ -198,8 +199,8 @@ export default function ContentActions({ title }: ContentActionsProps) {
                 fontFamily: 'var(--font-sans, Inter, system-ui, sans-serif)',
               }}>
                 Reports help us improve accuracy. You can also email{' '}
-                <a href="mailto:bcode8.labs@gmail.com" style={{ color: '#14532D', fontWeight: 600 }}>
-                  bcode8.labs@gmail.com
+                <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: '#14532D', fontWeight: 600 }}>
+                  {CONTACT_EMAIL}
                 </a>
               </p>
             </>

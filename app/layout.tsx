@@ -20,6 +20,7 @@ import RecentPages from '@/components/RecentPages';
 import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { ADSENSE_CLIENT_ID, ADSENSE_SCRIPT_SRC } from '@/lib/adsense';
+import { CONTACT_EMAIL } from '@/lib/site-meta';
 
 const sans = Inter({
   subsets: ['latin'],
@@ -122,11 +123,11 @@ const websiteJsonLd = JSON.stringify({
         contentUrl: 'https://www.globalstudyboard.com/icon.svg',
       },
       description: 'Free guide to universities, entrance exams, and scholarships worldwide.',
-      email: 'bcode8.labs@gmail.com',
+      email: CONTACT_EMAIL,
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer support',
-        email: 'bcode8.labs@gmail.com',
+        email: CONTACT_EMAIL,
         availableLanguage: 'English',
       },
     },

@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/privacy`,     lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE}/terms`,       lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE}/disclaimer`,  lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${BASE}/cookies`,     lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
     ...REGIONS.map((r) => ({
       url: `${BASE}/regions/${r.slug}`,
       lastModified: now,

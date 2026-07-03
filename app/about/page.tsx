@@ -4,7 +4,7 @@ import { ShieldCheck, BookOpenCheck, RefreshCw, Globe2, AlertTriangle } from 'lu
 import { REGIONS } from '@/lib/regions';
 import LastUpdated from '@/components/LastUpdated';
 import SiteStats from '@/components/SiteStats';
-import { SITE_REVIEWED } from '@/lib/site-meta';
+import { SITE_REVIEWED, CONTACT_EMAIL } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'About GlobalStudyBoard — How We Source & Verify Information',
@@ -136,6 +136,16 @@ export default function AboutPage() {
         >
           Contact us →
         </Link>
+        <p className="text-cream-50/85 text-sm mt-4 mb-0">
+          Or email us directly at{' '}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="text-cream-50 underline underline-offset-2 hover:text-cream-100 font-medium focus-visible:outline-cream-50"
+          >
+            {CONTACT_EMAIL}
+          </a>
+          .
+        </p>
       </section>
     </div>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { CONTACT_EMAIL } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
   title: 'Terms of Use — GlobalStudyBoard',
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = '3 June 2026';
+const LAST_UPDATED = '3 July 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -93,9 +94,22 @@ export default function TermsPage() {
 
       <Section title="Intellectual property">
         <p>
-          The GlobalStudyBoard name, design and original written content are ours. Names of exams,
-          universities and organisations belong to their respective owners and are used for
-          identification and reference only.
+          The GlobalStudyBoard name, design and original written content are ours. Names, trademarks
+          and logos of exams, universities and organisations belong to their respective owners and
+          are used here for identification and reference only — their use does not imply any
+          affiliation with or endorsement by those owners.
+        </p>
+        <p>
+          If you believe any content on GlobalStudyBoard infringes your copyright or trademark,
+          email us at{' '}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="text-forest-700 hover:text-forest-800 underline"
+          >
+            {CONTACT_EMAIL}
+          </a>{' '}
+          with details of the material and your rights, and we will review it and, where
+          appropriate, correct or remove it promptly.
         </p>
       </Section>
 
@@ -103,6 +117,15 @@ export default function TermsPage() {
         <p>
           To the fullest extent permitted by law, GlobalStudyBoard is not liable for any loss arising
           from reliance on information provided here. Your use of the site is at your own risk.
+        </p>
+      </Section>
+
+      <Section title="Governing law">
+        <p>
+          These terms are governed by the laws of India, without regard to conflict-of-law
+          principles. Any dispute relating to these terms or your use of the site is subject to the
+          jurisdiction of the courts of India. If any provision of these terms is found to be
+          unenforceable, the remaining provisions continue in full effect.
         </p>
       </Section>
 
