@@ -75,6 +75,689 @@ export interface Topic {
 }
 
 export const TOPICS: Topic[] = [
+/* ==RUP3_HUBS_START== */
+{
+  "slug": "russia-cis-medical-and-dental-deeper",
+  "label": "MBBS & Dental Deeper",
+  "title": "MBBS & Dental in Russia & the CIS: Recognition, NEET & FMGE",
+  "description": "Deeper medical-study questions for Indian students in Russia & the CIS — whether a Russia/CIS MBBS is recognised in India (NEET, NMC, FMGE/NExT), what to do if you do not clear the screening exam, the truth about \"MBBS without NEET\", and BDS/dental studies.",
+  "intro": "For Indian students, the questions that decide a Russia/CIS medical journey are India-side ones: NEET is mandatory, and to practise in India you must meet NMC rules and clear the screening exam. These guides answer the recognition, screening and dental questions together.\n\nThese are process-level guides, not admission or medical advice; no agent can promise a seat 'without NEET'. Verify NEET/NMC/FMGE rules on the official NMC, NTA and NBEMS sources.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "russia-cis-mbbs-recognition-in-india-nmc-neet-fmge-next",
+    "mbbs-in-russia-cis-without-neet-what-to-know",
+    "what-if-you-dont-clear-fmge-next-reattempts-and-options",
+    "bds-dental-studies-in-russia-cis-for-indian-students"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "russia cis mbbs recognised in india",
+    "mbbs without neet russia",
+    "fmge next reattempt",
+    "bds dental russia cis",
+    "neet nmc fmge"
+  ]
+},
+{
+  "slug": "more-russia-cis-universities",
+  "label": "More Russia & CIS Universities",
+  "title": "More Russia & CIS Universities: Admission Guides",
+  "description": "Dedicated admission guides for major Russian universities beyond the Moscow STEM flagships — RUDN (Peoples\\u2019 Friendship University), Kazan Federal University, Saint Petersburg State University and Bauman Moscow State Technical University.",
+  "intro": "Several of Russia's most-searched universities for international students did not yet have a dedicated admission guide. These give each a full walkthrough — entry, language tracks, the preparatory-faculty pipeline and how to apply.\n\nEntry requirements, intakes and fees are set by each university and change; confirm current details on the official university website and the official Rossotrudnichestvo portal (education-in-russia.com).",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "how-to-get-admission-in-rudn-university",
+    "how-to-get-admission-in-kazan-federal-university",
+    "how-to-get-admission-in-saint-petersburg-state-university",
+    "how-to-get-admission-in-bauman-moscow-state-technical-university"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "rudn university admission",
+    "kazan federal university",
+    "saint petersburg state university",
+    "bauman moscow state technical"
+  ]
+},
+{
+  "slug": "russia-cis-fields-and-careers-more",
+  "label": "More Fields & Careers",
+  "title": "More Fields & Careers in Russia & the CIS",
+  "description": "Study-and-career guides for further Russia/CIS fields — pharmacy, aviation & aerospace engineering, and nursing — including how each is recognised for practice in India.",
+  "intro": "Beyond medicine and the STEM flagships, several fields draw international demand in Russia and the CIS. These guides explain what you study and how the qualification is recognised for practice back in India.\n\nProgramme structures and recognition rules are set by universities and regulators and change; confirm current details on the official sources. Practising a regulated profession in India needs the relevant Indian licence.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "studying-pharmacy-in-russia-cis-degrees-and-practice",
+    "aviation-aerospace-engineering-studies-in-russia-cis",
+    "nursing-degrees-in-russia-cis-study-routes-and-recognition"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "pharmacy russia cis",
+    "aviation aerospace engineering russia",
+    "nursing degree russia cis"
+  ]
+},
+{
+  "slug": "india-to-russia-cis-recognition-and-admission",
+  "label": "India ↔ Russia/CIS: Recognition & Admission",
+  "title": "India ↔ Russia/CIS: Degree Recognition, Apostille & Admission Routes",
+  "description": "The India-side and admission mechanics for Russia & the CIS — whether a NON-medical Russia/CIS degree is recognised in India via AIU equivalence, getting Indian documents apostilled by the MEA, how Russia recognises a foreign qualification, and the direct/contract self-funded admission route.",
+  "intro": "Alongside MBBS, students face document and recognition questions: validating a non-medical degree in India, apostilling documents, and understanding the self-funded admission route. These guides answer them as neutral, official facts.\n\nProcedures are set by the authorities and change; confirm current requirements on the official AIU, MEA and university/Rossotrudnichestvo (education-in-russia.com) sources.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "russia-cis-degree-recognition-in-india-aiu-equivalence-non-medical",
+    "apostille-indian-documents-mea-for-russia-cis-application",
+    "credential-recognition-of-foreign-qualifications-for-russia",
+    "direct-contract-self-funded-admission-russia-explained"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "russia cis degree recognition india aiu",
+    "apostille indian documents mea russia",
+    "credential recognition russia",
+    "direct contract self funded admission russia"
+  ]
+},
+{
+  "slug": "russia-cis-language-in-depth",
+  "label": "Russian Language In Depth",
+  "title": "Russian Language for Study In Depth",
+  "description": "The Russian-language questions that matter — the TORFL certificate versus a university\\u2019s own internal Russian exam, and why English-taught MBBS students still learn Russian for clinical years.",
+  "intro": "Language shapes both admission and daily study in Russia and the CIS. These guides explain when a TORFL certificate is needed versus a university\\u2019s internal exam, and the real role of Russian on English-taught medical programmes.\n\nAccepted tests and levels are set by each university and change; confirm the requirement for your programme on the official source.",
+  "group": "study-in-russia-cis",
+  "region": "russia",
+  "guideSlugs": [
+    "torfl-certificate-vs-university-internal-russian-exam",
+    "clinical-year-russian-for-english-taught-mbbs-russia-cis"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "torfl vs internal russian exam",
+    "clinical year russian mbbs",
+    "russian language for study"
+  ]
+},
+/* ==RUP3_HUBS_END== */
+/* ==MEP3_HUBS_START== */
+{
+  "slug": "gulf-professional-licensing",
+  "label": "Gulf Professional Licensing",
+  "title": "Professional Licensing to Practise in the Gulf",
+  "description": "How internationally-trained professionals get licensed to practise in the Gulf — the DataFlow primary-source verification and Prometric licensing exams, and the per-profession routes for nurses, doctors, pharmacists, engineers and teachers, plus which UAE health authority (DHA, DOH or MOHAP) licenses you.",
+  "intro": "Working in a regulated profession in the Gulf usually needs a licence from the relevant authority, which is different from studying. Almost every route runs through DataFlow verification and, for healthcare, a Prometric exam. These guides explain each step and profession.\n\nRegulators, exams and fees are set by each country/authority and change; confirm current requirements on the official regulator's website. This is general information, not professional-licensing or immigration advice.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "dataflow-verification-for-gulf-licensing-explained",
+    "prometric-licensing-exams-for-healthcare-professionals-in-the-gulf",
+    "internationally-trained-nurses-licensing-gulf",
+    "internationally-trained-doctors-licensing-gulf",
+    "internationally-trained-pharmacists-licensing-gulf",
+    "internationally-trained-engineers-registration-gulf",
+    "dha-vs-doh-vs-mohap-which-uae-health-authority-licenses-you",
+    "internationally-trained-teachers-licensing-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "dataflow verification gulf",
+    "prometric exam gulf",
+    "nurse licence dubai dha",
+    "doctor licence scfhs",
+    "pharmacist licence gulf",
+    "engineer registration uae",
+    "dha doh mohap"
+  ]
+},
+{
+  "slug": "more-gulf-branch-campuses",
+  "label": "More Gulf Branch Campuses",
+  "title": "More International Branch Campuses in the Gulf: Admission Guides",
+  "description": "Dedicated admission guides for major international branch campuses and universities in the Gulf — BITS Pilani Dubai, Manipal Dubai, Heriot-Watt Dubai, Birmingham Dubai, Wollongong Dubai, Sharjah, Amity Dubai, Middlesex Dubai and Ajman — covering entry, tests, intakes and fees.",
+  "intro": "Many international universities run full campuses in the Gulf, and each has its own admission process. These guides give a full walkthrough for the most-searched campuses — entry requirements, any tests, intakes and how to apply.\n\nEntry requirements, fees and intakes are set by each campus and change; confirm the current details on the official university website.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "how-to-get-admission-in-bits-pilani-dubai",
+    "how-to-get-admission-in-manipal-dubai",
+    "how-to-get-admission-in-heriot-watt-dubai",
+    "how-to-get-admission-in-university-of-birmingham-dubai",
+    "how-to-get-admission-in-university-of-wollongong-dubai",
+    "how-to-get-admission-in-university-of-sharjah",
+    "how-to-get-admission-in-amity-dubai",
+    "how-to-get-admission-in-middlesex-dubai",
+    "how-to-get-admission-in-ajman-university"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "bits pilani dubai admission",
+    "manipal dubai",
+    "heriot-watt dubai",
+    "birmingham dubai",
+    "wollongong dubai",
+    "university of sharjah",
+    "amity dubai",
+    "middlesex dubai",
+    "ajman university"
+  ]
+},
+{
+  "slug": "gulf-tests-and-practical-life",
+  "label": "Gulf Tests & Practical Life",
+  "title": "Gulf Admission Tests & Practical Life",
+  "description": "Gulf admission tests and daily-life essentials — the Saudi Qiyas (GAT/Tahsili) and STEP English tests used by Saudi universities, and how to convert or use a driving licence in the Gulf.",
+  "intro": "Some Gulf universities use national placement tests, and everyday tasks like driving need attention too. These guides explain the main Saudi admission tests and the practical driving-licence basics.\n\nTest formats, scores and rules differ by country and change; confirm the current requirement on the official source.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "saudi-qiyas-gat-and-tahsili-tests-explained",
+    "step-english-test-for-saudi-universities-explained",
+    "converting-your-driving-licence-in-the-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "saudi qiyas gat tahsili",
+    "step english test saudi",
+    "driving licence gulf conversion"
+  ]
+},
+{
+  "slug": "india-to-gulf-and-back",
+  "label": "India ↔ Gulf: Documents & Routes",
+  "title": "India ↔ Gulf: Equivalency, Attestation, Quotas & Exams",
+  "description": "The India-side bridge for Gulf study — the UAE MOHESR equivalency certificate for an Indian degree, attesting Indian certificates for the Gulf (MEA/HRD/SDM), the CIWG (Children of Indian Workers in the Gulf) DASA quota back to Indian engineering colleges, writing NEET/JEE/CUET from the Gulf, and transferring from an Indian university.",
+  "intro": "Indian students in and heading to the Gulf face a specific set of document and exam questions — getting a degree equivalency, attesting certificates, using the NRI/CIWG routes back to India, and sitting Indian entrance exams from Gulf centres. These guides answer them.\n\nProcedures and fees are set by the authorities and change; confirm current requirements on the official MOHESR, MEA and exam-body sources. Neutral, official facts only.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "uae-equivalency-mohesr-for-an-indian-degree",
+    "gulf-ciwg-quota-returning-to-indian-engineering-colleges-via-dasa",
+    "writing-neet-jee-cuet-from-the-gulf-centres-and-nri-routes",
+    "transferring-from-an-indian-university-to-a-gulf-university",
+    "attesting-indian-certificates-for-the-gulf-hrd-sdm-mea"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "uae mohesr equivalency indian degree",
+    "attestation indian certificates gulf mea hrd",
+    "ciwg dasa quota",
+    "writing neet jee cuet from gulf",
+    "transfer indian university to gulf"
+  ]
+},
+{
+  "slug": "gulf-student-visas-in-depth",
+  "label": "Gulf Student Visas In Depth",
+  "title": "Gulf Student Visas & Residency In Depth",
+  "description": "The Gulf student residence process step by step — the entry-permit-to-residence-visa flow, the medical fitness test, national ID cards, renewing a student residence visa, and what to do after a visa refusal.",
+  "intro": "A Gulf student visa is a multi-step residency process handled largely by the university and the authorities. These guides explain each step — the medical test, the ID card, renewals and refusals — as neutral official facts.\n\nImmigration rules differ by country and change; this is general information, not immigration advice. Verify current rules on the official government source.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "national-id-cards-for-students-in-the-gulf",
+    "medical-fitness-test-for-a-gulf-student-visa",
+    "entry-permit-to-residence-visa-steps-in-the-gulf",
+    "renewing-a-student-residence-visa-in-the-gulf",
+    "gulf-student-visa-refusal-reasons-and-next-steps"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "gulf student residence visa steps",
+    "medical fitness test gulf visa",
+    "emirates id student",
+    "renew student visa gulf",
+    "gulf student visa refusal"
+  ]
+},
+{
+  "slug": "gulf-degrees-and-fields",
+  "label": "Gulf Degrees & Fields",
+  "title": "Degrees & Fields of Study in the Gulf",
+  "description": "Study-and-career guides for fields in the Gulf — nursing and allied health, law, cybersecurity and psychology — and how a degree earned at a Gulf university is recognised back in India.",
+  "intro": "Beyond the flagship subjects, several fields draw strong demand in the Gulf, and a common question is whether a Gulf degree is recognised in India. These guides explain what you study and where each leads.\n\nProgramme structures, accreditation and recognition rules are set by universities and authorities and change; confirm current details on the official sources.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "getting-a-gulf-degree-recognised-in-india",
+    "nursing-and-allied-health-degrees-in-the-gulf",
+    "law-degrees-in-the-gulf",
+    "cybersecurity-degrees-in-the-gulf",
+    "psychology-degrees-in-the-gulf"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "nursing allied health gulf",
+    "law degree gulf",
+    "cybersecurity degree gulf",
+    "psychology degree gulf",
+    "gulf degree recognised in india"
+  ]
+},
+{
+  "slug": "gulf-scholarships-and-fees-in-depth",
+  "label": "Gulf Scholarships & Fees In Depth",
+  "title": "Gulf Scholarships, Fees & Waivers In Depth",
+  "description": "The money mechanics of studying in the Gulf — how to pay tuition (instalments and refunds), how tuition waivers and scholarship renewal work, and how to write a strong scholarship application for Gulf universities.",
+  "intro": "The practical side of paying for Gulf study — instalment plans, refunds, keeping a waiver, and writing a competitive scholarship application. These guides cover the fee and funding mechanics.\n\nFees, waiver terms and deadlines are set by each university and change; no award is guaranteed and none is ever bought. Verify current terms on the official university source; money guidance is general information, not financial advice.",
+  "group": "study-in-middle-east",
+  "region": "middle-east",
+  "guideSlugs": [
+    "how-to-pay-tuition-in-the-gulf-installments-and-refunds",
+    "how-tuition-waivers-and-scholarship-renewal-work-in-the-gulf",
+    "how-to-write-a-scholarship-application-for-gulf-universities"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "pay tuition gulf installments refund",
+    "tuition waiver renewal gulf",
+    "write scholarship application gulf"
+  ]
+},
+/* ==MEP3_HUBS_END== */
+/* ==EUP3_HUBS_START== */
+{
+  "slug": "mbbs-and-medicine-in-europe",
+  "label": "MBBS & Medicine in Europe",
+  "title": "MBBS & Medicine in Europe for Indian Students",
+  "description": "Studying medicine (MBBS) in Europe for Indian students — country routes (Poland, Hungary, Georgia, Romania, Bulgaria), the NEET requirement, NMC rules and the FMGE/NExT exam to practise back in India, plus costs and recognition.",
+  "intro": "Europe is a major destination for Indian students who want to study medicine, but the rules that matter most are India's: NEET is mandatory, and to practise in India you must meet NMC guidelines and clear the screening exam. These guides explain each country's admission route and the India-side rules together.\n\nThese are process-level guides, not admission or immigration advice, and no agent can promise a seat 'without NEET'. Verify NEET/NMC requirements on the official NMC and NTA sources, and each university on its official site.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "mbbs-in-europe-for-indian-students-neet-and-nmc-rules",
+    "mbbs-in-georgia-for-indian-students",
+    "mbbs-in-poland-for-indian-students",
+    "mbbs-in-hungary-for-indian-students",
+    "mbbs-in-europe-without-neet-what-to-know",
+    "european-mbbs-recognition-in-india-nmc-neet-fmge-next",
+    "mbbs-in-romania-and-bulgaria-for-indian-students",
+    "cost-of-mbbs-in-europe-for-indian-students"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "mbbs in europe for indian students",
+    "mbbs in georgia",
+    "mbbs in poland hungary",
+    "neet nmc mbbs europe",
+    "fmge next",
+    "european mbbs recognition india"
+  ]
+},
+{
+  "slug": "professional-recognition-in-europe",
+  "label": "Professional Recognition in Europe",
+  "title": "Getting a Foreign Qualification Recognised to Work in Europe",
+  "description": "How internationally-trained professionals get their qualifications recognised to work in Europe — the German medical Approbation, nurse recognition (Anerkennung), the anabin and ZAB/Zeugnisbewertung degree checks, and the EU system for recognising regulated professions.",
+  "intro": "Working in a regulated profession in Europe usually needs your foreign qualification recognised, which is different from studying and different from a simple degree evaluation. These guides explain the main recognition routes, using Germany (the largest market) as the worked example plus the EU-wide system.\n\nRecognition bodies, tests and fees are set by each country/authority and change; confirm the current requirements on the official source. This is general information, not professional-recognition or immigration advice.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "approbation-germany-medical-licence-recognition-for-foreign-doctors",
+    "nurse-qualification-recognition-germany-for-foreign-nurses",
+    "anabin-database-check-your-degree-recognition-germany",
+    "eu-recognition-of-regulated-professions-explained",
+    "do-you-need-degree-recognition-to-work-in-europe-regulated-vs-non-regulated",
+    "zeugnisbewertung-zab-statement-of-comparability-germany"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "approbation germany doctor",
+    "nurse recognition anerkennung germany",
+    "anabin database",
+    "zeugnisbewertung zab",
+    "eu regulated professions recognition"
+  ]
+},
+{
+  "slug": "more-european-universities",
+  "label": "More European Universities",
+  "title": "More European Universities: In-Depth Admission Guides",
+  "description": "Dedicated international-student admission guides for major European universities — Politecnico di Milano, RWTH Aachen, TU Wien, Erasmus University Rotterdam and the University of Bologna — covering entry, language, application portals and intakes.",
+  "intro": "Several of Europe's most-searched universities did not yet have a dedicated admission guide. These give each a full walkthrough — entry requirements, language options, the application route and intakes.\n\nEntry requirements, fees and dates are set by each university and change; confirm the current details on the official university website.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "how-to-get-admission-in-politecnico-di-milano",
+    "how-to-get-admission-in-rwth-aachen-university",
+    "how-to-get-admission-in-tu-wien",
+    "how-to-get-admission-in-erasmus-university-rotterdam",
+    "how-to-get-admission-in-university-of-bologna"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "politecnico di milano admission",
+    "rwth aachen admission",
+    "tu wien admission",
+    "erasmus rotterdam",
+    "university of bologna"
+  ]
+},
+{
+  "slug": "germany-routes-and-europe-work-visas",
+  "label": "Germany Routes & Europe Work Visas",
+  "title": "Germany Vocational Routes & European Work Visas",
+  "description": "Beyond a university degree — Germany's Ausbildung (paid dual vocational training) and Chancenkarte (Opportunity Card points-based job-seeker route), France's Passeport Talent, and family-reunification rules for students across Europe.",
+  "intro": "Europe offers routes beyond a standard degree, and students often need to understand work and family rules too. These guides explain Germany's vocational and opportunity-card routes, France's talent visa and family reunification — as neutral official facts.\n\nImmigration rules change frequently and are decided by each country's authorities; this is general information, not immigration advice. Verify current rules on the official government source.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "ausbildung-vocational-training-germany-for-international-students",
+    "germany-chancenkarte-opportunity-card-points-system-explained",
+    "france-passeport-talent-categories-explained",
+    "family-reunification-for-students-in-europe-by-country"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "ausbildung germany",
+    "chancenkarte opportunity card",
+    "france passeport talent",
+    "family reunification students europe"
+  ]
+},
+{
+  "slug": "more-european-study-countries",
+  "label": "More European Study Countries",
+  "title": "More European Study Countries: Poland, Hungary, Czechia, Portugal & Austria",
+  "description": "Complete country guides for rising European study destinations — Poland, Hungary, the Czech Republic, Portugal and Austria — covering universities, admission, English-taught options, costs and the student visa/permit route, plus the Poland student visa in depth.",
+  "intro": "Several European countries have become major destinations for international students but were not yet covered in depth. These complete guides explain how studying in each works — universities, admission, language, cost and the residence/visa route.\n\nRules, fees and intakes differ by country and change; confirm the current details on each country's official government and university sources.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "how-to-study-in-poland-complete-guide",
+    "how-to-study-in-hungary-complete-guide",
+    "how-to-study-in-czech-republic-complete-guide",
+    "how-to-study-in-portugal-complete-guide",
+    "how-to-study-in-austria-complete-guide",
+    "poland-student-visa-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "study in poland",
+    "study in hungary",
+    "study in czech republic",
+    "study in portugal",
+    "study in austria",
+    "poland student visa"
+  ]
+},
+{
+  "slug": "europe-scholarships-in-depth",
+  "label": "Europe Scholarships in Depth",
+  "title": "Major Europe Scholarships & How Tuition-Free Study Works",
+  "description": "In-depth guides to high-search Europe scholarships and funding — Stipendium Hungaricum (with its India quota), Poland's NAWA/Banach, the Swedish Institute Scholarships (SISGP), Invest Your Talent in Italy — and how tuition-free public universities work by country.",
+  "intro": "Europe funds many international students through government scholarships and, in several countries, low or no tuition at public universities. These guides explain the major schemes and how tuition-free study actually works.\n\nAmounts, eligibility and deadlines are set by each scheme and change; no award is guaranteed and none is ever bought. Verify current terms on the official scholarship and government sources; secular criteria only.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "stipendium-hungaricum-scholarship-guide",
+    "nawa-and-banach-scholarships-for-poland-guide",
+    "how-tuition-free-public-universities-work-in-europe-by-country",
+    "swedish-institute-scholarships-global-professionals-sisgp-guide",
+    "invest-your-talent-in-italy-scholarship-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "stipendium hungaricum india",
+    "nawa banach poland",
+    "swedish institute scholarship sisgp",
+    "invest your talent italy",
+    "tuition free universities europe"
+  ]
+},
+{
+  "slug": "europe-languages-and-english-taught",
+  "label": "Europe Languages & English-Taught Study",
+  "title": "European Languages, Tests & English-Taught Study",
+  "description": "How language works when studying in Europe — finding English-taught bachelor's and master's programmes, English-proficiency waivers, how much German you really need, and the main Spanish (DELE/SIELE) and Italian (CILS/CELI/PLIDA) certificates compared.",
+  "intro": "You can study much of Europe in English, but language still shapes admission, work and daily life. These guides explain how to find English-taught programmes, when you can skip IELTS/TOEFL, and the main national language certificates.\n\nAccepted tests, levels and waivers are set by each university and change; confirm the requirement for your specific programme on the official source.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "how-to-find-english-taught-programmes-in-europe",
+    "english-proficiency-waivers-without-ielts-toefl-europe",
+    "how-much-german-do-you-need-for-study-and-work-germany",
+    "dele-vs-siele-spanish-test-explained",
+    "cils-celi-plida-italian-certificates-compared"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "english taught programmes europe",
+    "study europe without ielts",
+    "how much german do you need",
+    "dele vs siele",
+    "cils celi plida italian"
+  ]
+},
+{
+  "slug": "applying-and-living-in-europe",
+  "label": "Applying & Living in Europe",
+  "title": "Applying to & Living in Europe: Grades, Documents & Daily Life",
+  "description": "The practical layer of applying to and living in Europe — converting an Indian CGPA to the German grade scale (Modified Bavarian Formula), applying with backlogs or a study gap, apostille/attestation of Indian documents, student income tax and mini-jobs, and converting a driving licence.",
+  "intro": "Some of the most-searched practical questions about Europe are about grades, paperwork and daily life. These guides explain how your Indian marks convert, how backlogs are read, how to get documents attested, and the tax/driving basics — across the main European countries.\n\nRules and formulas differ by country and university and change; confirm the current details on the official sources. Money and tax guidance is general information, not financial or tax advice.",
+  "group": "study-in-europe",
+  "region": "europe",
+  "guideSlugs": [
+    "convert-indian-cgpa-to-german-grade-bavarian-formula",
+    "applying-to-europe-with-backlogs-or-study-gap",
+    "apostille-and-attestation-of-indian-documents-for-europe",
+    "student-income-tax-and-mini-jobs-in-europe-by-country",
+    "converting-driving-licence-in-europe-by-country"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "convert indian cgpa german grade",
+    "bavarian formula",
+    "backlogs study gap europe",
+    "apostille attestation india europe",
+    "student tax mini job germany",
+    "driving licence europe"
+  ]
+},
+/* ==EUP3_HUBS_END== */
+/* ==UKIEP3_HUBS_START== */
+{
+  "slug": "professional-licensing-uk-ireland",
+  "label": "Professional Licensing (UK & Ireland)",
+  "title": "Professional Licensing for Internationally-Trained Practitioners (UK & Ireland)",
+  "description": "How internationally-trained professionals get registered to practise in the UK and Ireland — doctors (GMC/PLAB), nurses (NMC/OSCE), dentists (GDC/ORE), pharmacists (GPhC/OSPAP), teachers (QTS), chartered accountants (ACCA/ICAEW) and engineers (CEng/IEng).",
+  "intro": "A degree earned abroad is not the same as a licence to practise in the UK or Ireland. For regulated professions you usually have to register with the relevant regulator and, often, pass a competency assessment. These guides explain each field's registration route.\n\nRegulators, exams and fees are set by each body and change; confirm the current requirements on the official regulator's website. This is general information, not professional-registration or immigration advice.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "gmc-registration-for-international-doctors-plab-and-pgq-routes",
+    "nmc-registration-for-internationally-trained-nurses-cbt-and-osce",
+    "gdc-registration-for-overseas-dentists-overseas-registration-exam-ore",
+    "gphc-registration-for-overseas-pharmacists-ospap-route",
+    "qualified-teacher-status-qts-for-overseas-trained-teachers",
+    "how-indian-cas-qualify-with-acca-and-icaew-exemptions-and-mou-routes",
+    "how-overseas-engineers-become-chartered-ceng-ieng-uk"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "gmc registration plab",
+    "nmc cbt osce nurse uk",
+    "gdc ore dentist",
+    "gphc ospap pharmacist",
+    "qts overseas teacher",
+    "acca icaew indian ca",
+    "ceng ieng engineer uk"
+  ]
+},
+{
+  "slug": "more-uk-ireland-universities",
+  "label": "More UK & Ireland Universities",
+  "title": "More UK & Ireland Universities: In-Depth Admission Guides",
+  "description": "Dedicated international-student admission guides for major UK and Irish universities with strong international intake — Southampton, Queen Mary University of London, Nottingham, Coventry, Strathclyde, Dublin City University, Limerick and Aberdeen — covering entry, English, UCAS/CAO/direct and intakes.",
+  "intro": "Several popular UK and Irish universities did not yet have a dedicated admission guide. These give each a full walkthrough — entry requirements, English options, the application route (UCAS, CAO or direct) and intakes.\n\nEntry grades, fees and dates are set by each university and change every year; confirm the current details on the official university website.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "how-to-get-admission-in-university-of-southampton",
+    "how-to-get-admission-in-queen-mary-university-of-london",
+    "how-to-get-admission-in-university-of-nottingham",
+    "how-to-get-admission-in-coventry-university",
+    "how-to-get-admission-in-university-of-strathclyde",
+    "how-to-get-admission-in-dublin-city-university",
+    "how-to-get-admission-in-university-of-limerick",
+    "how-to-get-admission-in-university-of-aberdeen"
+  ],
+  "examSlugs": [
+    "ielts"
+  ],
+  "keywords": [
+    "southampton admission",
+    "queen mary london admission",
+    "nottingham admission",
+    "coventry university admission",
+    "strathclyde admission",
+    "dublin city university dcu",
+    "university of limerick",
+    "aberdeen admission"
+  ]
+},
+{
+  "slug": "more-disciplines-and-professions-uk-ireland",
+  "label": "More Disciplines & Professions",
+  "title": "More Disciplines & Professions (UK & Ireland)",
+  "description": "Study-and-career guides for further UK & Ireland fields — qualifying as a solicitor (SQE), optometry, actuary (IFoA), airline pilot (CAA/ATPL), physician associate, data science & AI, chartered surveyor (RICS APC) and veterinary medicine in Ireland.",
+  "intro": "Beyond the big subjects, several professional routes draw strong international demand in the UK and Ireland, each with its own study path and professional body. These guides explain what you study and where each leads.\n\nProgramme structures, entry requirements and professional-body rules change; confirm the current details on the official sources. Where a route leads to a regulated profession, we distinguish studying from qualifying to practise.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "sqe-route-to-qualify-as-a-solicitor-uk",
+    "how-to-study-optometry-in-the-uk-and-ireland",
+    "how-to-become-an-actuary-uk-ireland-ifoa-route",
+    "how-to-become-a-pilot-uk-ireland-caa-atpl",
+    "how-to-become-a-physician-associate-uk",
+    "how-to-study-data-science-and-ai-in-the-uk-and-ireland",
+    "how-to-become-a-chartered-surveyor-rics-apc-uk-ireland",
+    "how-to-study-veterinary-medicine-in-ireland"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "sqe solicitor route",
+    "study optometry uk",
+    "actuary ifoa uk",
+    "become a pilot uk atpl",
+    "physician associate uk",
+    "data science ai uk ireland",
+    "rics chartered surveyor",
+    "veterinary medicine ireland"
+  ]
+},
+{
+  "slug": "uk-ireland-scholarships-in-depth",
+  "label": "UK & Ireland Scholarships in Depth",
+  "title": "Major UK & Ireland Scholarships in Depth",
+  "description": "In-depth guides to prestige and India-relevant UK & Ireland scholarships — Felix, Rhodes, Gates Cambridge, Clarendon (Oxford), Cambridge Trust, Inlaks Shivdasani, the Government of Ireland International Education Scholarship and Reach Oxford.",
+  "intro": "A handful of named scholarships fund a large share of international and Indian students at UK and Irish universities. These guides explain each one's eligibility and how the nomination or application works — with secular criteria only.\n\nAmounts, eligibility and deadlines are set by each scholarship body and change every cycle; no award is guaranteed and none is ever bought. Verify current terms on the official scholarship website.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "felix-scholarship-guide",
+    "rhodes-scholarship-guide",
+    "gates-cambridge-scholarship-guide",
+    "clarendon-scholarship-oxford-guide",
+    "cambridge-trust-scholarships-guide",
+    "inlaks-shivdasani-scholarship-guide",
+    "government-of-ireland-international-education-scholarship-guide",
+    "reach-oxford-scholarship-guide"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "felix scholarship",
+    "rhodes scholarship oxford",
+    "gates cambridge scholarship",
+    "clarendon scholarship",
+    "cambridge trust",
+    "inlaks shivdasani",
+    "government of ireland scholarship",
+    "reach oxford scholarship"
+  ]
+},
+{
+  "slug": "applying-to-uk-ireland-in-depth",
+  "label": "Applying to UK & Ireland In Depth",
+  "title": "Applying to UK & Ireland: In-Depth (India-Specific & Mechanics)",
+  "description": "The application questions that trip Indian students up for UK & Ireland — the three-year bachelor\\u2019s / 15-vs-16-years question, converting an Indian percentage or CGPA to a UK 2:1 or Irish honours, applying with backlogs or a study gap, pre-master\\u2019s and bridging routes, UK ENIC statements, deferred entry and CAO offer rounds.",
+  "intro": "Some of the most-searched UK and Ireland admission questions are specific to Indian applicants — how a three-year degree is read, how a percentage maps to a UK 2:1, and how backlogs or a study gap are treated. These guides answer them, alongside the UCAS/CAO mechanics that decide your place.\n\nEntry requirements and how a university reads your qualifications are set by each institution and change; confirm the current position on the official university and UCAS/CAO sources.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "indian-three-year-bachelors-for-uk-ireland-masters-entry",
+    "indian-percentage-cgpa-to-uk-2-1-and-irish-honours",
+    "applying-with-backlogs-or-a-study-gap-uk-ireland",
+    "pre-masters-and-bridging-programmes-uk-ireland",
+    "uk-enic-statement-of-comparability-for-indian-degrees",
+    "deferred-entry-and-gap-year-ucas-cao-explained",
+    "cao-offers-rounds-and-accepting-a-place-explained"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "indian 3 year degree uk masters",
+    "percentage cgpa to uk 2:1",
+    "backlogs study gap uk ireland",
+    "pre-masters bridging uk",
+    "uk enic statement of comparability",
+    "deferred entry ucas",
+    "cao offer rounds ireland"
+  ]
+},
+{
+  "slug": "visas-refusals-and-extensions-uk-ireland",
+  "label": "Visas: Refusals & Extensions",
+  "title": "UK & Ireland Student Visas: Refusals, Appeals & Extensions",
+  "description": "The visa situations students most worry about — UK visa refusal and administrative review, Ireland student-visa refusal and appeal, and extending a UK student visa inside the UK for academic progression.",
+  "intro": "Beyond the initial application, students often need to understand what happens if a visa is refused, or how to extend a visa to continue studying. These guides explain the official UK and Irish processes as neutral facts.\n\nImmigration rules change frequently and are decided by the UK Home Office and Irish immigration authorities; this is general information, not immigration advice. Always verify current rules on the official GOV.UK / Irish immigration sources and consider a qualified adviser for your case.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "uk-visa-refusal-and-administrative-review-explained",
+    "ireland-student-visa-refusal-and-appeal-process",
+    "extending-a-uk-student-visa-inside-the-uk-academic-progression"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "uk visa refusal administrative review",
+    "ireland student visa refusal appeal",
+    "extend uk student visa",
+    "academic progression visa uk",
+    "student visa refusal"
+  ]
+},
+{
+  "slug": "student-practical-life-uk-ireland",
+  "label": "Student Practical Life & Money",
+  "title": "Student Practical Life & Money (UK & Ireland)",
+  "description": "Day-to-day essentials for students in the UK & Ireland — converting a foreign driving licence, National Insurance & student tax, getting a PPS number in Ireland, tenancy-deposit protection and renters\\u2019 rights, NHS dental/optician/prescription costs, paying tuition and living costs, and cost of living in Dublin, Cork and Galway.",
+  "intro": "The practical side of student life — driving, tax, deposits, healthcare costs and paying your fees — is easy to overlook until you need it. These guides cover the settling-in and money essentials for the UK and Ireland.\n\nRules, rates and costs differ between the UK and Ireland and change over time; confirm current details on the official sources, and treat money guidance as general information, not financial advice.",
+  "group": "study-in-uk-ireland",
+  "region": "uk-ireland",
+  "guideSlugs": [
+    "converting-a-foreign-driving-licence-in-the-uk-and-ireland",
+    "national-insurance-number-and-student-tax-in-the-uk-explained",
+    "how-to-get-a-pps-number-in-ireland-as-a-student",
+    "tenancy-deposit-protection-and-renters-rights-for-students-in-the-uk",
+    "nhs-dental-optician-and-prescription-costs-for-students-in-the-uk",
+    "paying-uk-ireland-tuition-and-living-costs-transfer-methods",
+    "cost-of-living-for-students-in-dublin-cork-and-galway"
+  ],
+  "examSlugs": [],
+  "keywords": [
+    "convert driving licence uk ireland",
+    "national insurance number student",
+    "pps number ireland student",
+    "tenancy deposit protection uk",
+    "nhs dental optician student costs",
+    "paying uk tuition transfer",
+    "cost of living dublin cork galway"
+  ]
+},
+/* ==UKIEP3_HUBS_END== */
 /* ==CAP3_HUBS_START== */
 {
   "slug": "professional-licensing-in-canada",

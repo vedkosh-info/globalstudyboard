@@ -229,21 +229,21 @@ export const UK_IRELAND_TRACKS: Track[] = [
     title: 'UK & Ireland Admissions: UCAS & CAO',
     description:
       'Applying to UK and Irish universities — the UCAS application and personal statement, the entry routes and qualifications that get you in, and Ireland’s CAO and Leaving Certificate.',
-    topicSlugs: ['uk-ireland-admissions', 'ucas-application-in-depth-uk', 'uk-entry-routes-and-qualifications', 'ireland-cao-and-leaving-cert-in-depth'],
+    topicSlugs: ['uk-ireland-admissions', 'ucas-application-in-depth-uk', 'uk-entry-routes-and-qualifications', 'ireland-cao-and-leaving-cert-in-depth', 'applying-to-uk-ireland-in-depth'],
   },
   {
     slug: 'uk-ireland-universities', region: 'uk-ireland', label: 'Universities',
     title: 'UK & Ireland Universities',
     description:
       'Choosing a UK or Irish university — Oxbridge and the collegiate system, the Russell Group in depth, how university groups and league tables work, and studying across Scotland, Wales and Northern Ireland.',
-    topicSlugs: ['uk-ireland-universities', 'oxbridge-and-the-collegiate-system', 'russell-group-universities-in-depth', 'uk-university-groups-and-league-tables', 'scotland-wales-northern-ireland-study'],
+    topicSlugs: ['uk-ireland-universities', 'oxbridge-and-the-collegiate-system', 'russell-group-universities-in-depth', 'uk-university-groups-and-league-tables', 'scotland-wales-northern-ireland-study', 'more-uk-ireland-universities'],
   },
   {
     slug: 'uk-ireland-courses-careers', region: 'uk-ireland', label: 'Courses & Careers',
     title: 'Courses & Careers in the UK & Ireland',
     description:
       'Choosing a degree subject in the UK and Ireland — economics and finance, psychology, the natural and life sciences, humanities and social sciences, art, design and architecture, and postgraduate and research study.',
-    topicSlugs: ['uk-ireland-courses-careers', 'studying-economics-and-finance-uk-ireland', 'studying-psychology-uk-ireland', 'studying-natural-and-life-sciences-uk-ireland', 'studying-humanities-and-social-sciences-uk-ireland', 'studying-art-design-and-architecture-uk-ireland', 'postgraduate-and-research-study-uk-ireland'],
+    topicSlugs: ['uk-ireland-courses-careers', 'studying-economics-and-finance-uk-ireland', 'studying-psychology-uk-ireland', 'studying-natural-and-life-sciences-uk-ireland', 'studying-humanities-and-social-sciences-uk-ireland', 'studying-art-design-and-architecture-uk-ireland', 'postgraduate-and-research-study-uk-ireland', 'more-disciplines-and-professions-uk-ireland'],
   },
   {
     slug: 'uk-ireland-medicine-competitive', region: 'uk-ireland', label: 'Medicine & Competitive',
@@ -257,28 +257,28 @@ export const UK_IRELAND_TRACKS: Track[] = [
     title: 'Tuition, Funding & Scholarships (UK & Ireland)',
     description:
       'Paying for a UK or Irish degree — tuition and fee status, scholarships and funding for international students, and how Student Finance, bursaries and postgraduate loans work. Facts, not financial advice.',
-    topicSlugs: ['uk-ireland-tuition-scholarships', 'uk-ireland-tuition-and-funding-in-depth'],
+    topicSlugs: ['uk-ireland-tuition-scholarships', 'uk-ireland-tuition-and-funding-in-depth', 'uk-ireland-scholarships-in-depth'],
   },
   {
     slug: 'uk-ireland-student-visas', region: 'uk-ireland', label: 'Student Visas',
     title: 'UK & Ireland Student Visas',
     description:
       'Student visas for the UK and Ireland — the routes, CAS, the Immigration Health Surcharge and documents, and the UK Student visa process in depth. Neutral official facts, not immigration advice.',
-    topicSlugs: ['uk-ireland-student-visas', 'uk-student-visa-process-in-depth'],
+    topicSlugs: ['uk-ireland-student-visas', 'uk-student-visa-process-in-depth', 'visas-refusals-and-extensions-uk-ireland'],
   },
   {
     slug: 'work-and-stay-uk-ireland', region: 'uk-ireland', label: 'Work & Stay',
     title: 'Working & Staying On (UK & Ireland)',
     description:
       'Working during and after study in the UK and Ireland — the Graduate Route and Stamp 1G, the Skilled Worker and other work-visa routes, and building employability and graduate careers.',
-    topicSlugs: ['work-and-stay-uk-ireland', 'uk-graduate-and-work-visa-routes-in-depth', 'graduate-careers-and-employability-uk-ireland'],
+    topicSlugs: ['work-and-stay-uk-ireland', 'uk-graduate-and-work-visa-routes-in-depth', 'graduate-careers-and-employability-uk-ireland', 'professional-licensing-uk-ireland'],
   },
   {
     slug: 'uk-ireland-student-life', region: 'uk-ireland', label: 'Student Life',
     title: 'Student Life in the UK & Ireland',
     description:
       'Living and settling in as a student in the UK and Ireland — accommodation, healthcare and the practicalities of settling in, from the BRP/eVisa and GP registration to council tax, banking and transport.',
-    topicSlugs: ['uk-ireland-student-life', 'settling-into-uk-ireland-student-life'],
+    topicSlugs: ['uk-ireland-student-life', 'settling-into-uk-ireland-student-life', 'student-practical-life-uk-ireland'],
   },
 ];
 
@@ -353,7 +353,7 @@ export const EUROPE_TRACKS: Track[] = [
     title: 'Studying in Europe: Admissions',
     description:
       'Applying to European universities — how admissions and documents work, the ECTS credit system and degree recognition, and Erasmus exchange and joint degrees across countries.',
-    topicSlugs: ['europe-admissions', 'ects-credits-and-degree-recognition-europe', 'erasmus-and-joint-degrees-in-depth'],
+    topicSlugs: ['europe-admissions', 'ects-credits-and-degree-recognition-europe', 'erasmus-and-joint-degrees-in-depth', 'applying-and-living-in-europe'],
   },
   {
     slug: 'europe-student-visas', region: 'europe', label: 'Student Visas',
@@ -367,35 +367,35 @@ export const EUROPE_TRACKS: Track[] = [
     title: 'European Universities & Country Systems',
     description:
       'Choosing where to study in Europe — top universities, and how admissions work country by country: Germany (APS, NC, FH vs Uni), France (grandes écoles, Parcoursup), the Netherlands (Studielink, WO vs HBO), Italy (Universitaly, IMAT) and the Nordics.',
-    topicSlugs: ['europe-universities', 'germany-admissions-systems-in-depth', 'france-admissions-pathways-in-depth', 'netherlands-admissions-in-depth', 'italy-admissions-in-depth', 'nordics-admissions-in-depth'],
+    topicSlugs: ['europe-universities', 'germany-admissions-systems-in-depth', 'france-admissions-pathways-in-depth', 'netherlands-admissions-in-depth', 'italy-admissions-in-depth', 'nordics-admissions-in-depth', 'more-european-universities', 'more-european-study-countries'],
   },
   {
     slug: 'europe-courses-careers', region: 'europe', label: 'Courses & Careers',
     title: 'Courses & Careers in Europe',
     description:
       'Choosing a programme in Europe — engineering, the natural sciences and maths, social sciences and humanities, medicine and health degrees, and PhD and research funding.',
-    topicSlugs: ['europe-courses-careers', 'studying-engineering-in-europe-in-depth', 'studying-natural-sciences-and-maths-in-europe', 'studying-social-sciences-and-humanities-in-europe', 'medicine-and-health-degrees-in-europe-in-depth', 'phd-and-research-funding-in-europe-in-depth'],
+    topicSlugs: ['europe-courses-careers', 'studying-engineering-in-europe-in-depth', 'studying-natural-sciences-and-maths-in-europe', 'studying-social-sciences-and-humanities-in-europe', 'medicine-and-health-degrees-in-europe-in-depth', 'phd-and-research-funding-in-europe-in-depth', 'mbbs-and-medicine-in-europe'],
   },
   {
     slug: 'europe-tuition-scholarships', region: 'europe', label: 'Tuition & Scholarships',
     title: 'Tuition, Funding & Scholarships (Europe)',
     description:
       'Paying for study in Europe — tuition and free-tuition options, country scholarships in depth, and proving your funds via blocked accounts and proof-of-funds requirements. Facts, not financial advice.',
-    topicSlugs: ['europe-tuition-scholarships', 'country-scholarships-in-europe-in-depth', 'blocked-accounts-and-proof-of-funds-europe'],
+    topicSlugs: ['europe-tuition-scholarships', 'country-scholarships-in-europe-in-depth', 'blocked-accounts-and-proof-of-funds-europe', 'europe-scholarships-in-depth'],
   },
   {
     slug: 'work-and-stay-europe', region: 'europe', label: 'Work & Stay',
     title: 'Working & Staying in Europe',
     description:
       'Working during and after study in Europe — the EU Blue Card and national work permits, post-study work routes, and the pathways to permanent residence and citizenship. Deferred to each country, not immigration advice.',
-    topicSlugs: ['work-and-stay-europe', 'eu-blue-card-and-work-permits-in-depth', 'staying-in-europe-pr-and-citizenship-pathways'],
+    topicSlugs: ['work-and-stay-europe', 'eu-blue-card-and-work-permits-in-depth', 'staying-in-europe-pr-and-citizenship-pathways', 'professional-recognition-in-europe', 'germany-routes-and-europe-work-visas'],
   },
   {
     slug: 'europe-language-tests', region: 'europe', label: 'Language & Tests',
     title: 'Languages & Tests for Europe',
     description:
       'The languages and tests for studying in Europe — German tests and requirements, and learning French, Italian, Spanish or Dutch for study and daily life.',
-    topicSlugs: ['europe-language-tests', 'learning-european-languages-for-study-and-life'],
+    topicSlugs: ['europe-language-tests', 'learning-european-languages-for-study-and-life', 'europe-languages-and-english-taught'],
   },
   {
     slug: 'europe-student-life', region: 'europe', label: 'Student Life',
@@ -477,7 +477,7 @@ export const MIDDLE_EAST_TRACKS: Track[] = [
     title: 'Gulf University Admissions',
     description:
       'Applying to universities in the Gulf — how the UAE and Saudi higher-education systems and recognition work, and certificate attestation and equivalency across the GCC.',
-    topicSlugs: ['middle-east-admissions', 'uae-higher-education-system-and-recognition', 'saudi-higher-education-system-and-recognition', 'credential-attestation-and-equivalency-gulf-in-depth'],
+    topicSlugs: ['middle-east-admissions', 'uae-higher-education-system-and-recognition', 'saudi-higher-education-system-and-recognition', 'credential-attestation-and-equivalency-gulf-in-depth', 'india-to-gulf-and-back'],
   },
   {
     slug: 'middle-east-universities', region: 'middle-east', label: 'Universities',
@@ -491,35 +491,35 @@ export const MIDDLE_EAST_TRACKS: Track[] = [
     title: 'International Branch Campuses in the Gulf',
     description:
       'The international branch campuses in the Gulf — how to judge their accreditation and quality, and the Dubai academic free-zones (Academic City and Knowledge Park).',
-    topicSlugs: ['middle-east-branch-campuses', 'branch-campus-accreditation-and-quality-gulf', 'dubai-academic-clusters-and-free-zones-explained'],
+    topicSlugs: ['middle-east-branch-campuses', 'branch-campus-accreditation-and-quality-gulf', 'dubai-academic-clusters-and-free-zones-explained', 'more-gulf-branch-campuses'],
   },
   {
     slug: 'middle-east-scholarships', region: 'middle-east', label: 'Scholarships & Money',
     title: 'Scholarships, Funding & Money (Gulf)',
     description:
       'Funding study in the Gulf — scholarships across the GCC, funded graduate awards and assistantships at research universities, and managing money and banking. Facts, not financial advice.',
-    topicSlugs: ['middle-east-scholarships', 'funded-graduate-scholarships-and-assistantships-gulf', 'managing-money-and-banking-for-students-gulf'],
+    topicSlugs: ['middle-east-scholarships', 'funded-graduate-scholarships-and-assistantships-gulf', 'managing-money-and-banking-for-students-gulf', 'gulf-scholarships-and-fees-in-depth'],
   },
   {
     slug: 'middle-east-student-visas', region: 'middle-east', label: 'Student Visas',
     title: 'Student Visas & Residency (Gulf)',
     description:
       'Student visas and residency for the Gulf — the GCC student-visa routes, working and staying after study, and the UAE Golden Visa and long-term residency. Neutral official facts, not immigration advice.',
-    topicSlugs: ['middle-east-student-visas', 'gulf-work-and-residency-after-study-in-depth', 'uae-golden-visa-and-long-term-residency-explained'],
+    topicSlugs: ['middle-east-student-visas', 'gulf-work-and-residency-after-study-in-depth', 'uae-golden-visa-and-long-term-residency-explained', 'gulf-student-visas-in-depth'],
   },
   {
     slug: 'middle-east-courses-careers', region: 'middle-east', label: 'Courses & Careers',
     title: 'Courses & Careers in the Gulf',
     description:
       'Choosing a programme in the Gulf — the sciences, architecture and the creative arts, aviation and logistics, hospitality and tourism, finance and fintech, and graduate careers and employability.',
-    topicSlugs: ['middle-east-courses-careers', 'sciences-and-mathematics-degrees-in-the-gulf', 'architecture-design-and-creative-arts-in-the-gulf', 'aviation-aerospace-and-logistics-in-the-gulf', 'hospitality-tourism-and-events-in-the-gulf', 'finance-banking-and-fintech-in-the-gulf', 'graduate-careers-and-employability-in-the-gulf'],
+    topicSlugs: ['middle-east-courses-careers', 'sciences-and-mathematics-degrees-in-the-gulf', 'architecture-design-and-creative-arts-in-the-gulf', 'aviation-aerospace-and-logistics-in-the-gulf', 'hospitality-tourism-and-events-in-the-gulf', 'finance-banking-and-fintech-in-the-gulf', 'graduate-careers-and-employability-in-the-gulf', 'gulf-professional-licensing', 'gulf-degrees-and-fields'],
   },
   {
     slug: 'middle-east-tests-english', region: 'middle-east', label: 'Tests & English',
     title: 'Entrance & English Tests (Gulf)',
     description:
       'The tests for Gulf universities — the SAT, EmSAT, IELTS and TOEFL, and how school qualifications and entrance or placement tests are recognised.',
-    topicSlugs: ['middle-east-tests-english', 'school-qualifications-and-entrance-tests-gulf'],
+    topicSlugs: ['middle-east-tests-english', 'school-qualifications-and-entrance-tests-gulf', 'gulf-tests-and-practical-life'],
   },
   {
     slug: 'middle-east-student-life', region: 'middle-east', label: 'Student Life',
@@ -539,28 +539,28 @@ export const RUSSIA_CIS_TRACKS: Track[] = [
     title: 'Russia & CIS Admissions',
     description:
       'Applying to universities in Russia and the CIS — the Russian higher-education system and degrees, how admission works across the CIS countries, and the preparatory faculty (podfak).',
-    topicSlugs: ['russia-cis-admissions', 'russian-higher-education-system-and-degrees-explained', 'cis-admissions-and-application-systems-in-depth', 'preparatory-faculty-and-russian-foundation-year-in-depth'],
+    topicSlugs: ['russia-cis-admissions', 'russian-higher-education-system-and-degrees-explained', 'cis-admissions-and-application-systems-in-depth', 'preparatory-faculty-and-russian-foundation-year-in-depth', 'india-to-russia-cis-recognition-and-admission'],
   },
   {
     slug: 'russia-cis-universities', region: 'russia', label: 'Universities',
     title: 'Universities in Russia & the CIS',
     description:
       'Choosing a university in Russia or the CIS — Russian universities by field and type, the leading CIS universities by country, and how to verify and compare them.',
-    topicSlugs: ['russia-cis-universities', 'russian-universities-by-field-and-type-in-depth', 'cis-universities-by-country-in-depth', 'how-to-verify-and-compare-russia-cis-universities'],
+    topicSlugs: ['russia-cis-universities', 'russian-universities-by-field-and-type-in-depth', 'cis-universities-by-country-in-depth', 'how-to-verify-and-compare-russia-cis-universities', 'more-russia-cis-universities'],
   },
   {
     slug: 'russia-cis-mbbs', region: 'russia', label: 'MBBS',
     title: 'MBBS in Russia & the CIS for Indian Students',
     description:
       'MBBS in Russia and the CIS for Indian students — the India-side licensing path (NEET, NMC, FMGE/NExT, internship and registration) and how to verify and choose a medical university. Deferred to the NMC/NEET; no guarantees.',
-    topicSlugs: ['russia-cis-mbbs', 'mbbs-abroad-india-licensing-fmge-next-in-depth', 'verifying-and-choosing-an-mbbs-university-abroad-india-side'],
+    topicSlugs: ['russia-cis-mbbs', 'mbbs-abroad-india-licensing-fmge-next-in-depth', 'verifying-and-choosing-an-mbbs-university-abroad-india-side', 'russia-cis-medical-and-dental-deeper'],
   },
   {
     slug: 'russia-cis-courses-careers', region: 'russia', label: 'Courses & Careers',
     title: 'Courses & Careers in Russia & the CIS',
     description:
       'Choosing a programme in Russia or the CIS — the sciences and mathematics, the arts, humanities and social sciences, the creative and performing arts, IT, engineering and energy, and graduate and research study.',
-    topicSlugs: ['russia-cis-courses-careers', 'studying-sciences-and-mathematics-in-russia-cis', 'studying-arts-humanities-and-social-sciences-russia-cis', 'creative-arts-music-and-performing-arts-russia-cis', 'it-engineering-and-energy-specialisations-russia-cis', 'graduate-and-research-study-aspirantura-russia-cis'],
+    topicSlugs: ['russia-cis-courses-careers', 'studying-sciences-and-mathematics-in-russia-cis', 'studying-arts-humanities-and-social-sciences-russia-cis', 'creative-arts-music-and-performing-arts-russia-cis', 'it-engineering-and-energy-specialisations-russia-cis', 'graduate-and-research-study-aspirantura-russia-cis', 'russia-cis-fields-and-careers-more'],
   },
   {
     slug: 'russia-cis-scholarships', region: 'russia', label: 'Scholarships & Costs',
@@ -581,7 +581,7 @@ export const RUSSIA_CIS_TRACKS: Track[] = [
     title: 'Language Tests for Russia & the CIS',
     description:
       'The languages and tests for studying in Russia and the CIS — Russian, the TORFL and IELTS/TOEFL — and how to learn Russian and reach the level your programme needs.',
-    topicSlugs: ['russia-cis-language-tests', 'learning-russian-and-the-torfl-in-depth'],
+    topicSlugs: ['russia-cis-language-tests', 'learning-russian-and-the-torfl-in-depth', 'russia-cis-language-in-depth'],
   },
   {
     slug: 'russia-cis-student-life', region: 'russia', label: 'Student Life',
