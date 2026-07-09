@@ -13,7 +13,9 @@ import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
-import { SITE_REVIEWED, formatReviewed } from '@/lib/site-meta';
+import BreadcrumbsView from '@/components/BreadcrumbsView';
+import { breadcrumbsFor } from '@/lib/cmi';
+import { SITE_REVIEWED, formatReviewed, metaDescription } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -27,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const exam = getExamBySlug(slug);
   if (!exam) return { title: 'Exam not found' };
-  const desc = exam.descriptionEn.slice(0, 155);
+  const desc = metaDescription(exam.descriptionEn);
   return {
     title: `${exam.shortName} — ${exam.fullName}`,
     description: desc,
@@ -73,24 +75,10 @@ export default async function ExamDetailPage({ params }: Props) {
   // Guides that cover this exam — adds rich content + cross-links for indexing.
   const relatedGuides = GUIDES.filter((g) => g.relatedExamSlugs.includes(exam.slug)).slice(0, 3);
 
-  // FAQPage schema — structured Q&A gives Google rich-snippet candidates.
-  const faqItems: { '@type': string; name: string; acceptedAnswer: { '@type': string; text: string } }[] = [
-    { '@type': 'Question', name: `What is ${exam.shortName}?`, acceptedAnswer: { '@type': 'Answer', text: exam.descriptionEn } },
-    { '@type': 'Question', name: `Who conducts ${exam.shortName}?`, acceptedAnswer: { '@type': 'Answer', text: `${exam.shortName} is conducted by ${exam.conductingBody}. Confirm current details on the official website.` } },
-    { '@type': 'Question', name: `What is the eligibility for ${exam.shortName}?`, acceptedAnswer: { '@type': 'Answer', text: exam.eligibility } },
-    { '@type': 'Question', name: `How long is the ${exam.shortName} exam?`, acceptedAnswer: { '@type': 'Answer', text: exam.duration } },
-    { '@type': 'Question', name: `How often is ${exam.shortName} held?`, acceptedAnswer: { '@type': 'Answer', text: exam.frequency } },
-  ];
-  if (exam.costUsd) {
-    faqItems.push({ '@type': 'Question', name: `What is the ${exam.shortName} registration fee?`, acceptedAnswer: { '@type': 'Answer', text: `${exam.costUsd}. Confirm the current fee on the official website.` } });
-  }
-  relatedGuides.slice(0, 1).forEach((g) =>
-    g.faqs.slice(0, 3).forEach((faq) =>
-      faqItems.push({ '@type': 'Question', name: faq.questionEn, acceptedAnswer: { '@type': 'Answer', text: faq.answerEn } }),
-    ),
-  );
-  const faqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems };
-
+  // NOTE: no FAQPage JSON-LD here. Google requires the marked-up Q&A to be
+  // VISIBLE on the page, and this template renders no FAQ section; FAQ rich
+  // results are also restricted to authoritative gov/health sites. The
+  // EducationalTest markup below is the correct, sufficient schema for an exam.
   const examLd = {
     '@context': 'https://schema.org',
     '@type': 'EducationalTest',
@@ -111,14 +99,11 @@ export default async function ExamDetailPage({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto space-y-10">
+      <BreadcrumbsView crumbs={breadcrumbsFor(`/exams/${exam.slug}`)} />
       {exam.region !== 'global' && <PageRegion slug={exam.region} />}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(examLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
       <header>

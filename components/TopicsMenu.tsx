@@ -4,18 +4,29 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
-import { tracksForRegion, trackHref, isMultiHubTrack, topicsForTrack } from '@/lib/tracks';
 import { getRegionBySlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
+
+/** One track entry in the mega-menu — a compact, server-computed projection. */
+export interface MenuTrack {
+  label: string;
+  href: string;
+  preview: string | null;
+}
+/** Per-region track projection, keyed by region slug. Built once at build time. */
+export type TopicsMenuData = Record<string, MenuTrack[]>;
 
 /**
  * Desktop "Topics" mega-menu — the region-first Track spine. Shows ONLY the
  * effective destination's tracks (India's domestic tracks, or an abroad region's
  * journey tracks), so India-domestic hubs no longer leak into other regions.
- * Each track links to its landing page (multi-hub) or straight to its hub
- * (single-hub) via trackHref().
+ *
+ * The tracks are passed in as a compact `menu` projection (labels + hrefs +
+ * preview strings) computed server-side in the root layout — mirroring the
+ * FOOTER_EXAM_LABELS pattern — so the full `lib/tracks` + `lib/topics` catalogue
+ * (≈0.35 MB) NEVER ships to the browser on every page.
  */
-export default function TopicsMenu() {
+export default function TopicsMenu({ menu }: { menu: TopicsMenuData }) {
   const [open, setOpen] = useState(false);
   const { effectiveRegion } = useRegion();
   const ref = useRef<HTMLDivElement>(null);
@@ -36,7 +47,7 @@ export default function TopicsMenu() {
     };
   }, [open]);
 
-  const tracks = tracksForRegion(effectiveRegion);
+  const tracks = menu[effectiveRegion] ?? [];
   const regionName = getRegionBySlug(effectiveRegion)?.displayName ?? '';
 
   return (
@@ -61,30 +72,22 @@ export default function TopicsMenu() {
             Explore {regionName} by track
           </p>
           <ul className="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
-            {tracks.map((t) => {
-              const preview = isMultiHubTrack(t)
-                ? topicsForTrack(t)
-                    .slice(0, 3)
-                    .map((h) => h.label)
-                    .join(' · ')
-                : null;
-              return (
-                <li key={t.slug}>
-                  <Link
-                    href={trackHref(t)}
-                    onClick={() => setOpen(false)}
-                    className="group block rounded-lg px-2 py-1.5 no-underline hover:bg-forest-50"
-                  >
-                    <span className="block text-sm font-medium text-stone-800 group-hover:text-forest-700">
-                      {t.label}
-                    </span>
-                    {preview && (
-                      <span className="block truncate text-[11px] text-stone-500">{preview}</span>
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
+            {tracks.map((t) => (
+              <li key={t.href}>
+                <Link
+                  href={t.href}
+                  onClick={() => setOpen(false)}
+                  className="group block rounded-lg px-2 py-1.5 no-underline hover:bg-forest-50"
+                >
+                  <span className="block text-sm font-medium text-stone-800 group-hover:text-forest-700">
+                    {t.label}
+                  </span>
+                  {t.preview && (
+                    <span className="block truncate text-[11px] text-stone-500">{t.preview}</span>
+                  )}
+                </Link>
+              </li>
+            ))}
           </ul>
           <div className="border-t border-stone-200 pt-3 mt-3">
             <Link

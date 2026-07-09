@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { AlertTriangle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer — GlobalStudyBoard',
+  title: 'Disclaimer',
   description:
     'Important disclaimer: information on GlobalStudyBoard is for guidance only. Always verify fees, deadlines, rankings and eligibility with the official university or examination website.',
   alternates: { canonical: 'https://www.globalstudyboard.com/disclaimer' },

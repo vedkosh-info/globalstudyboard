@@ -12,7 +12,9 @@ import GuidesView, { type GuideCard } from '@/components/GuidesView';
 import PageRegion from '@/components/PageRegion';
 import RegionExplore from '@/components/RegionExplore';
 import LastUpdated from '@/components/LastUpdated';
-import { SITE_REVIEWED } from '@/lib/site-meta';
+import BreadcrumbsView from '@/components/BreadcrumbsView';
+import { breadcrumbsFor } from '@/lib/cmi';
+import { SITE_REVIEWED, metaDescription } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -26,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const topic = getTopicBySlug(slug);
   if (!topic) return { title: 'Topic not found' };
-  const desc = topic.description.slice(0, 155);
+  const desc = metaDescription(topic.description);
   const url = `https://www.globalstudyboard.com/topics/${topic.slug}`;
   return {
     title: topic.title,
@@ -102,6 +104,7 @@ export default async function TopicHubPage({ params }: Props) {
 
   return (
     <div className="space-y-12">
+      <BreadcrumbsView crumbs={breadcrumbsFor(`/topics/${topic.slug}`)} />
       {topic.region && <PageRegion slug={topic.region} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJson }} />
 

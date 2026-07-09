@@ -40,6 +40,22 @@ const MONTHS = [
  * it is not a recognised ISO date (never throws). Avoids `new Date()` so the
  * label is timezone-stable.
  */
+
+/**
+ * Truncate a description for the meta/OpenGraph/Twitter `description` on a WORD
+ * boundary (never mid-word) and append a single ellipsis ONLY when the text was
+ * actually shortened. Search snippets are ~150–160 chars, so `max` defaults to
+ * 160; a raw `.slice(0, 160)` produces broken partial words like "…admit car"
+ * which read as low quality in the SERP. Never throws.
+ */
+export function metaDescription(text: string, max = 160): string {
+  const t = (text ?? '').trim().replace(/\s+/g, ' ');
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${(lastSpace > 40 ? cut.slice(0, lastSpace) : cut).replace(/[\s,.;:—-]+$/, '')}…`;
+}
+
 export function formatReviewed(input: string): { display: string; iso: string } {
   const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(input.trim());
   if (!m) return { display: input, iso: input };

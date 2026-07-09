@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
-  title: 'Terms of Use — GlobalStudyBoard',
+  title: 'Terms of Use',
   description:
     'The terms governing your use of GlobalStudyBoard, including the accuracy disclaimer, acceptable use, and limitation of liability.',
   alternates: { canonical: 'https://www.globalstudyboard.com/terms' },

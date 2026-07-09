@@ -13,9 +13,12 @@ export const dynamic = 'force-static';
 const BASE = 'https://www.globalstudyboard.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Fixed to the last known content-update date so the sitemap is stable
-  // between deployments and CDN-cacheable. Update when site structure changes.
-  const now = '2026-06-23';
+  // Site-wide "last significant update" date for URLs that have no per-unit date.
+  // Google only trusts <lastmod> when it is verifiably accurate, so keep this
+  // honest: BUMP IT TO THE DEPLOY DATE on every release (never let it predate a
+  // real content/structure change). Guides carry their own truthful lastVerified;
+  // exams use theirs when stamped, otherwise this date.
+  const now = '2026-07-09';
   return [
     { url: BASE,                  lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE}/regions`,     lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
@@ -57,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...ENTRANCE_EXAMS.map((e) => ({
       url: `${BASE}/exams/${e.slug}`,
-      lastModified: now,
+      lastModified: e.lastVerified ?? now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),

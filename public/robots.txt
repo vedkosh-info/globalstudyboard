@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /gsb-ai?*
-Allow: /gsb-ai
-
-Sitemap: https://www.globalstudyboard.com/sitemap.xml

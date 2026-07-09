@@ -3,7 +3,7 @@ import { Mail, MessageCircleQuestion, FileWarning } from 'lucide-react';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
-  title: 'Contact GlobalStudyBoard',
+  title: 'Contact',
   description:
     'Get in touch with GlobalStudyBoard — report an out-of-date detail, suggest a correction, or ask about our coverage. We verify reports against official sources.',
   alternates: { canonical: 'https://www.globalstudyboard.com/contact' },

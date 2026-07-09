@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — GlobalStudyBoard',
+  title: 'Privacy Policy',
   description:
     'How GlobalStudyBoard handles your data: what we collect, how analytics and advertising cookies are used, and your choices.',
   alternates: { canonical: 'https://www.globalstudyboard.com/privacy' },

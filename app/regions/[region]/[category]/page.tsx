@@ -22,6 +22,8 @@ import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
+import BreadcrumbsView from '@/components/BreadcrumbsView';
+import { breadcrumbsFor } from '@/lib/cmi';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
 const BASE = 'https://www.globalstudyboard.com';
@@ -179,6 +181,10 @@ export default async function RegionCategoryPage({ params }: Props) {
     <div className="-mx-4 md:-mx-0">
       <PageRegion slug={slug as RegionSlug} />
       <RegionRail activeSlug={slug as RegionSlug} sticky />
+
+      <div className="mx-auto max-w-7xl px-4 md:px-0 mt-6">
+        <BreadcrumbsView crumbs={breadcrumbsFor(`/regions/${slug}/${category}`)} className="mb-0" />
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 md:px-0 space-y-10 mt-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionLd) }} />

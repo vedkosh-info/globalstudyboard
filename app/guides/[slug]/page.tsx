@@ -19,8 +19,10 @@ import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
 import AudienceGate from '@/components/AudienceGate';
+import BreadcrumbsView from '@/components/BreadcrumbsView';
 import { defaultAudienceFor, isAudienceVisible } from '@/lib/audience';
-import { formatReviewed } from '@/lib/site-meta';
+import { breadcrumbsFor } from '@/lib/cmi';
+import { formatReviewed, metaDescription } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
   if (!guide) return { title: 'Guide not found' };
-  const desc = guide.descriptionEn.slice(0, 155);
+  const desc = metaDescription(guide.descriptionEn);
   return {
     title: guide.titleEn,
     description: desc,
@@ -182,6 +184,7 @@ export default async function GuideDetailPage({ params }: Props) {
 
   return (
     <article className="max-w-3xl mx-auto space-y-10">
+      <BreadcrumbsView crumbs={breadcrumbsFor(`/guides/${guide.slug}`)} />
       <PageRegion slug={guide.region} />
       <script
         type="application/ld+json"

@@ -14,8 +14,10 @@ import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
 import AudienceGate from '@/components/AudienceGate';
+import BreadcrumbsView from '@/components/BreadcrumbsView';
 import { defaultAudienceFor } from '@/lib/audience';
-import { SITE_REVIEWED } from '@/lib/site-meta';
+import { breadcrumbsFor } from '@/lib/cmi';
+import { SITE_REVIEWED, metaDescription } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -74,7 +76,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!college) return { title: 'University not found' };
 
   const place = `${college.city}${college.state ? `, ${college.state}` : ''}`;
-  const desc = college.descriptionEn.slice(0, 155);
+  const desc = metaDescription(college.descriptionEn);
   const canonical = `https://www.globalstudyboard.com/colleges/${college.slug}`;
 
   return {
@@ -122,21 +124,10 @@ export default async function CollegeDetailPage({ params }: Props) {
   // Guides covering this university — adds rich content + cross-links for indexing.
   const relatedGuides = GUIDES.filter((g) => g.relatedCollegeSlugs.includes(college.slug)).slice(0, 3);
 
-  // FAQPage schema — structured Q&A gives Google rich-snippet candidates.
-  const collegeFaqItems: { '@type': string; name: string; acceptedAnswer: { '@type': string; text: string } }[] = [
-    { '@type': 'Question', name: `What is ${college.nameEn}?`, acceptedAnswer: { '@type': 'Answer', text: college.descriptionEn } },
-    { '@type': 'Question', name: `Where is ${college.nameEn} located?`, acceptedAnswer: { '@type': 'Answer', text: `${college.nameEn} is located in ${place}.` } },
-    { '@type': 'Question', name: `When was ${college.nameEn} established?`, acceptedAnswer: { '@type': 'Answer', text: `${college.nameEn} was established in ${college.established}.` } },
-    { '@type': 'Question', name: `What programs does ${college.nameEn} offer?`, acceptedAnswer: { '@type': 'Answer', text: `${college.nameEn} offers ${college.programLevels.map((l) => LEVEL_LABELS[l] ?? l).join(', ')} programs. Popular fields include ${college.courses.slice(0, 5).join(', ')}. Confirm the current program list on the official university website.` } },
-  ];
-  if (college.applicationPlatform) {
-    collegeFaqItems.push({ '@type': 'Question', name: `How do I apply to ${college.nameEn}?`, acceptedAnswer: { '@type': 'Answer', text: `${college.applicationPlatform}. Verify the current application process on the official university website.` } });
-  }
-  if (college.admissionExams.length > 0) {
-    collegeFaqItems.push({ '@type': 'Question', name: `What entrance exams does ${college.nameEn} require?`, acceptedAnswer: { '@type': 'Answer', text: `${college.nameEn} typically requires: ${college.admissionExams.join(', ')}. Confirm current requirements on the official website.` } });
-  }
-  const collegeFaqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: collegeFaqItems };
-
+  // NOTE: no FAQPage JSON-LD here. Google requires the marked-up Q&A to be
+  // VISIBLE on the page, and this template renders no FAQ section; FAQ rich
+  // results are also restricted to authoritative gov/health sites. The
+  // CollegeOrUniversity markup below is the correct, sufficient schema.
   const rankings: { body: string; rank: number; url: string }[] = [];
   if (college.ranking?.qs) {
     rankings.push({ body: 'QS World University Rankings', rank: college.ranking.qs, url: 'https://www.topuniversities.com/world-university-rankings' });
@@ -168,14 +159,11 @@ export default async function CollegeDetailPage({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto space-y-10">
+      <BreadcrumbsView crumbs={breadcrumbsFor(`/colleges/${college.slug}`)} />
       <PageRegion slug={college.region} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collegeFaqLd) }}
       />
 
       <header>

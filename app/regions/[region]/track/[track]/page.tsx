@@ -17,6 +17,8 @@ import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
+import BreadcrumbsView from '@/components/BreadcrumbsView';
+import { breadcrumbsFor } from '@/lib/cmi';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
 const BASE = 'https://www.globalstudyboard.com';
@@ -49,8 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ...topicsForTrack(t).map((h) => h.label),
     ],
     alternates: { canonical: url },
-    openGraph: { type: 'website', url, title: t.title, description: t.description },
-    twitter: { card: 'summary_large_image', title: t.title, description: t.description },
+    openGraph: { type: 'website', url, title: t.title, description: t.description, images: ['/opengraph-image'] },
+    twitter: { card: 'summary_large_image', title: t.title, description: t.description, images: ['/opengraph-image'] },
   };
 }
 
@@ -88,6 +90,10 @@ export default async function TrackPage({ params }: Props) {
     <div className="-mx-4 md:-mx-0">
       <PageRegion slug={r.slug as RegionSlug} />
       <RegionRail activeSlug={r.slug as RegionSlug} sticky />
+
+      <div className="mx-auto max-w-7xl px-4 md:px-0 mt-6">
+        <BreadcrumbsView crumbs={breadcrumbsFor(`/regions/${r.slug}/track/${t.slug}`)} className="mb-0" />
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 md:px-0 space-y-10 mt-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionLd) }} />

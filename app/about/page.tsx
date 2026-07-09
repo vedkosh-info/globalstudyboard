@@ -7,7 +7,7 @@ import SiteStats from '@/components/SiteStats';
 import { SITE_REVIEWED, CONTACT_EMAIL } from '@/lib/site-meta';
 
 export const metadata: Metadata = {
-  title: 'About GlobalStudyBoard — How We Source & Verify Information',
+  title: 'About — How We Source & Verify Information',
   description:
     'GlobalStudyBoard is an independent study-abroad and entrance-exam guide. Learn who we are, where our information comes from, and how we verify every detail against official sources.',
   keywords: [

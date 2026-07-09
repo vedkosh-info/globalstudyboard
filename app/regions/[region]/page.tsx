@@ -21,7 +21,9 @@ import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
-import { SITE_REVIEWED } from '@/lib/site-meta';
+import BreadcrumbsView from '@/components/BreadcrumbsView';
+import { breadcrumbsFor } from '@/lib/cmi';
+import { SITE_REVIEWED, metaDescription } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ region: string }>;
@@ -35,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { region } = await params;
   const r = getRegionBySlug(region);
   if (!r) return { title: 'Region not found' };
-  const desc = `${r.educationSystemSummary.slice(0, 155)}…`;
+  const desc = metaDescription(r.educationSystemSummary);
   return {
     title: `Study in ${r.displayName} — Universities, Exams & Scholarships`,
     description: desc,
@@ -135,6 +137,10 @@ export default async function RegionHubPage({ params }: Props) {
     <div className="-mx-4 md:-mx-0">
       <PageRegion slug={r.slug as RegionSlug} />
       <RegionRail activeSlug={r.slug as RegionSlug} sticky />
+
+      <div className="mx-auto max-w-7xl px-4 md:px-0 mt-6">
+        <BreadcrumbsView crumbs={breadcrumbsFor(`/regions/${r.slug}`)} className="mb-0" />
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 md:px-0 space-y-14 mt-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />

@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import Header from '@/components/Header';
+import type { TopicsMenuData } from '@/components/TopicsMenu';
 import Footer from '@/components/Footer';
 import { RegionProvider } from '@/components/RegionProvider';
 import RegionContextBar from '@/components/RegionContextBar';
@@ -19,6 +20,7 @@ import FabDock from '@/components/FabDock';
 import RecentPages from '@/components/RecentPages';
 import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
+import { tracksForRegion, trackHref, isMultiHubTrack, topicsForTrack } from '@/lib/tracks';
 import { ADSENSE_CLIENT_ID, ADSENSE_SCRIPT_SRC } from '@/lib/adsense';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 
@@ -167,6 +169,29 @@ const FOOTER_EXAM_LABELS: Record<string, string> = (() => {
 })();
 
 /**
+ * Compact per-region track projection for the desktop "Topics" mega-menu,
+ * computed once at build time so the region-aware header can render its menu
+ * without shipping the full `lib/tracks` + `lib/topics` catalogue (≈0.35 MB) to
+ * the browser on every page. Mirrors FOOTER_EXAM_LABELS above.
+ */
+const TOPICS_MENU: TopicsMenuData = (() => {
+  const out: TopicsMenuData = {};
+  for (const region of REGIONS) {
+    out[region.slug] = tracksForRegion(region.slug).map((t) => ({
+      label: t.label,
+      href: trackHref(t),
+      preview: isMultiHubTrack(t)
+        ? topicsForTrack(t)
+            .slice(0, 3)
+            .map((h) => h.label)
+            .join(' · ')
+        : null,
+    }));
+  }
+  return out;
+})();
+
+/**
  * Copyright year computed once at build time so the prerendered static HTML and
  * the client agree (avoids a year-boundary hydration mismatch from a client-side
  * new Date()).
@@ -184,7 +209,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: websiteJsonLd }} />
         <RegionProvider>
           <AudienceProvider>
-          <Header />
+          <Header topicsMenu={TOPICS_MENU} />
           <RegionContextBar />
           <main className="mx-auto w-full max-w-7xl px-4 py-8 md:py-12">
             <div className="mb-6 space-y-3">
