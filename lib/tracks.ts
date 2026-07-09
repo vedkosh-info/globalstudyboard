@@ -167,56 +167,56 @@ export const USA_TRACKS: Track[] = [
     title: 'US College Admissions',
     description:
       'How US college admissions work end to end — the application and its components, the essays, recommendations and overall strategy — from first steps to a strong, coherent application.',
-    topicSlugs: ['us-admissions', 'application-components-deep-dive-usa', 'college-essay-mastery-usa', 'admissions-strategy-and-positioning-usa'],
+    topicSlugs: ['us-admissions', 'application-components-deep-dive-usa', 'college-essay-mastery-usa', 'admissions-strategy-and-positioning-usa', 'us-undergrad-admissions-strategy'],
   },
   {
     slug: 'sat-act-testing', region: 'usa', label: 'Tests & Credit',
     title: 'SAT, ACT & College Credit',
     description:
       'US college testing and credit — the digital SAT and the ACT, how to prepare and test smart, and earning college credit through AP, IB and CLEP.',
-    topicSlugs: ['sat-act-testing', 'test-prep-and-test-day-deep-dive-usa', 'ap-ib-and-college-credit-usa'],
+    topicSlugs: ['sat-act-testing', 'test-prep-and-test-day-deep-dive-usa', 'ap-ib-and-college-credit-usa', 'us-standardized-tests-deep-dive'],
   },
   {
     slug: 'us-universities', region: 'usa', label: 'Universities',
     title: 'US Universities & Getting In',
     description:
       'The US university landscape and how to get in — types and state systems, public and private, elite and Ivy admissions, and how to choose and compare colleges by fit.',
-    topicSlugs: ['us-universities', 'ivy-and-elite-admissions-deep-dive', 'public-universities-and-systems-usa', 'choosing-and-comparing-us-colleges'],
+    topicSlugs: ['us-universities', 'ivy-and-elite-admissions-deep-dive', 'public-universities-and-systems-usa', 'choosing-and-comparing-us-colleges', 'us-public-university-admissions', 'us-private-and-tech-university-admissions', 'us-state-university-systems', 'us-transfer-and-community-college'],
   },
   {
     slug: 'us-majors-careers', region: 'usa', label: 'Majors & Careers',
     title: 'US College Majors & Careers',
     description:
       'Choosing a US college major — STEM and engineering, business and economics, humanities and social sciences, the health professions and the arts — what each studies and where it can lead.',
-    topicSlugs: ['us-majors-careers', 'stem-majors-deep-dive-usa', 'engineering-disciplines-usa', 'business-and-economics-majors-usa', 'humanities-and-social-science-majors-usa', 'health-profession-majors-usa', 'arts-architecture-design-majors-usa'],
+    topicSlugs: ['us-majors-careers', 'stem-majors-deep-dive-usa', 'engineering-disciplines-usa', 'business-and-economics-majors-usa', 'humanities-and-social-science-majors-usa', 'health-profession-majors-usa', 'arts-architecture-design-majors-usa', 'us-majors-and-careers-deep-dive'],
   },
   {
     slug: 'financial-aid-usa', region: 'usa', label: 'Financial Aid',
     title: 'Paying for College & Financial Aid (USA)',
     description:
       'Paying for a US degree — financial aid and the FAFSA, scholarships of every kind, and financing strategies and loans — with facts and official sources, not financial advice.',
-    topicSlugs: ['financial-aid-usa', 'scholarships-deep-dive-usa', 'financing-strategies-and-loans-usa'],
+    topicSlugs: ['financial-aid-usa', 'scholarships-deep-dive-usa', 'financing-strategies-and-loans-usa', 'us-financial-aid-deep-dive'],
   },
   {
     slug: 'us-grad-school', region: 'usa', label: 'Graduate School',
     title: 'US Graduate & Professional School',
     description:
       'US graduate and professional school — MS, PhD and funding, graduate programmes by field, and admission to medical, law, dental and other professional schools.',
-    topicSlugs: ['us-grad-school', 'graduate-programs-by-field-usa', 'professional-school-admissions-usa'],
+    topicSlugs: ['us-grad-school', 'graduate-programs-by-field-usa', 'professional-school-admissions-usa', 'us-professional-licensing', 'us-graduate-admissions-by-field'],
   },
   {
     slug: 'international-students-usa', region: 'usa', label: 'International Students',
     title: 'International Students in the USA',
     description:
       'Studying in the US as an international student — applying, the F-1 visa and OPT, and the practicalities of student life, on- and off-campus work, travel and money.',
-    topicSlugs: ['international-students-usa', 'international-student-life-and-work-usa'],
+    topicSlugs: ['international-students-usa', 'international-student-life-and-work-usa', 'us-work-visas-and-opt', 'applying-to-us-from-india'],
   },
   {
     slug: 'us-college-life', region: 'usa', label: 'College Life',
     title: 'US College Life & Practicalities',
     description:
       'Life at a US college — housing and campus life and support, transfer routes, and the practical systems (GPA and credits, health cover, city costs) that shape your four years.',
-    topicSlugs: ['us-college-life', 'campus-life-and-student-support-usa'],
+    topicSlugs: ['us-college-life', 'campus-life-and-student-support-usa', 'us-student-life-and-logistics'],
   },
 ];
 

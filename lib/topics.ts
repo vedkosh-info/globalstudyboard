@@ -75,6 +75,298 @@ export interface Topic {
 }
 
 export const TOPICS: Topic[] = [
+/* ==USAP3_HUBS_START== */
+{
+  "slug": "us-professional-licensing",
+  "label": "US Professional Licensing",
+  "title": "US Professional Licensing for Internationally-Trained Graduates",
+  "description": "How internationally-trained doctors, nurses, lawyers, accountants, engineers, pharmacists and dentists get licensed to practise in the USA — exams, credential evaluation and state boards.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "usmle-ecfmg-certification-for-international-medical-graduates",
+    "us-residency-match-nrmp-for-international-medical-graduates",
+    "nclex-cgfns-licensing-for-foreign-trained-nurses-usa",
+    "visa-work-authorization-for-licensed-professionals-usa",
+    "cpa-usa-for-internationally-trained-accountants",
+    "us-bar-exam-for-foreign-trained-lawyers",
+    "fpgee-naplex-licensing-for-foreign-pharmacy-graduates-usa",
+    "pe-licensure-for-foreign-trained-engineers-usa",
+    "credential-evaluation-for-us-professional-licensing",
+    "usmle-step-sequence-explained-for-img",
+    "foreign-trained-dentists-licensing-usa-advanced-standing"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-work-visas-and-opt",
+  "label": "US Work Visas & OPT",
+  "title": "US Work Authorization: OPT, STEM OPT, CPT and H-1B",
+  "description": "Post-study work on an F-1 visa — OPT, the STEM OPT extension, CPT, the H-1B lottery and cap-gap, changing status, and staying in status. Neutral official facts, not immigration advice.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "h1b-visa-lottery-and-cap-explained",
+    "cap-gap-extension-explained",
+    "changing-status-from-f1-to-h1b",
+    "day-1-cpt-risks-explained",
+    "h1b-alternatives-for-f1-graduates",
+    "opt-unemployment-days-limit-explained",
+    "f1-60-day-grace-period-explained",
+    "f1-sevis-transfer-between-schools",
+    "f1-reinstatement-after-falling-out-of-status",
+    "how-to-apply-for-opt-step-by-step",
+    "i983-training-plan-stem-opt-explained"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "applying-to-us-from-india",
+  "label": "Applying from India",
+  "title": "Applying to US Universities from India",
+  "description": "The India-specific side of a US application — credential evaluation, GPA conversion, transcripts, backlogs, the F-1 visa interview at Indian consulates, the DS-160, SEVIS fee, and education loans from India.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "can-international-students-get-fafsa-federal-aid",
+    "international-student-loans-without-us-cosigner",
+    "convert-indian-percentage-cgpa-to-us-gpa",
+    "three-year-indian-bachelors-for-us-masters",
+    "ds-160-form-for-f1-student-visa",
+    "education-loans-for-usa-from-india",
+    "wes-credential-evaluation-for-indian-students",
+    "f1-visa-interview-at-us-consulates-in-india",
+    "221g-administrative-processing-f1-visa",
+    "applying-to-us-universities-with-backlogs-from-india",
+    "sending-indian-transcripts-to-us-universities",
+    "fall-vs-spring-intake-for-us-universities-from-india",
+    "sevis-i-901-fee-payment-guide",
+    "us-student-visa-timeline-from-india",
+    "wes-vs-ece-credential-evaluation-comparison"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-student-life-and-logistics",
+  "label": "US Student Life & Logistics",
+  "title": "US Student Life & Practical Logistics for International Students",
+  "description": "Settling in as an international student in the USA — SSN/ITIN, a bank account, building credit, US taxes, a driver’s licence, a phone plan, a US-style resume, networking and on-campus jobs.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "how-to-apply-for-ssn-f1-student",
+    "how-to-open-us-bank-account-international-student",
+    "building-us-credit-score-international-student",
+    "how-to-get-itin-international-student-w7",
+    "how-to-file-us-taxes-f1-student-step-by-step",
+    "how-to-write-us-resume-international-student",
+    "how-to-get-us-drivers-license-international-student",
+    "how-to-find-on-campus-job-f1-work-study",
+    "linkedin-networking-career-fair-international-students-usa",
+    "us-phone-plan-and-sim-for-international-students"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-public-university-admissions",
+  "label": "Big Public Universities",
+  "title": "How to Get Into Big US Public Universities",
+  "description": "Admission walkthroughs for the largest, most-searched US public universities — each with its own application system, direct-to-major admission and published criteria.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "how-to-get-into-ut-dallas",
+    "how-to-get-into-purdue-university",
+    "how-to-get-into-arizona-state-university",
+    "how-to-get-into-uiuc",
+    "how-to-get-into-ut-austin",
+    "how-to-get-into-university-of-michigan",
+    "how-to-get-into-university-of-washington",
+    "how-to-get-into-stony-brook-university",
+    "how-to-get-into-university-at-buffalo",
+    "how-to-get-into-texas-am-university",
+    "how-to-get-into-penn-state",
+    "how-to-get-into-rutgers-university",
+    "how-to-get-into-university-of-maryland",
+    "how-to-get-into-san-jose-state-university",
+    "how-to-get-into-a-uc-campus",
+    "how-to-get-into-ohio-state-university",
+    "how-to-get-into-university-of-wisconsin-madison",
+    "how-to-get-into-university-of-minnesota",
+    "how-to-get-into-university-of-florida",
+    "how-to-get-into-indiana-university-bloomington"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-private-and-tech-university-admissions",
+  "label": "Private & Tech Universities",
+  "title": "How to Get Into Popular US Private & Tech Universities",
+  "description": "Admission guides for popular private and technology-focused US universities with heavy international intake — school-specific applications, supplements, portfolios and co-op models.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "how-to-get-into-nyu",
+    "how-to-get-into-usc",
+    "how-to-get-into-northeastern-university",
+    "how-to-get-into-boston-university",
+    "how-to-get-into-stevens-institute-of-technology",
+    "how-to-get-into-njit"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-state-university-systems",
+  "label": "US State University Systems",
+  "title": "US Public University Systems & Residency",
+  "description": "How the big US public-university systems work — Cal State, SUNY, CUNY, ApplyTexas, the Florida system — plus in-state residency, tuition and regional tuition-exchange programs.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "california-state-university-system-and-cal-state-apply",
+    "wue-and-regional-tuition-exchange-programs-explained",
+    "applytexas-and-texas-automatic-admission-explained",
+    "suny-system-and-application-explained",
+    "how-to-establish-state-residency-for-tuition",
+    "florida-state-university-system-and-bright-futures",
+    "cuny-system-and-application-explained"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-transfer-and-community-college",
+  "label": "Transfer & Community College",
+  "title": "US Transfer & Community-College Pathways",
+  "description": "The community-college-to-university route, articulation agreements, the UC Transfer Admission Guarantee, transfer essays, transfer financial aid, and how to decide if transferring is worth it.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "uc-transfer-admission-guarantee-tag-explained",
+    "transferring-from-indian-university-to-us",
+    "how-to-write-the-transfer-essay",
+    "financial-aid-for-transfer-students-explained",
+    "articulation-agreements-and-assist-explained",
+    "2-plus-2-transfer-programs-explained",
+    "is-transferring-worth-it-how-to-decide",
+    "community-college-for-international-students-f1",
+    "us-transfer-application-timeline",
+    "transferring-into-selective-universities-usa",
+    "guaranteed-transfer-pathway-programs-state-universities",
+    "reverse-transfer-explained"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-graduate-admissions-by-field",
+  "label": "Grad Admissions by Field",
+  "title": "US Graduate Admissions by Field",
+  "description": "Field-specific US master’s and PhD admissions — MS in CS, Data Science, Business Analytics, the MEng vs MS choice, MBA rounds, the graduate SOP, the academic CV, GRE waivers and emailing professors.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "emailing-professors-before-grad-school-usa",
+    "graduate-statement-of-purpose-usa",
+    "ms-in-computer-science-usa-admissions",
+    "ms-data-science-analytics-usa-admissions",
+    "meng-vs-ms-usa-which-to-choose",
+    "thesis-vs-non-thesis-masters-usa",
+    "ms-business-analytics-msba-usa-admissions",
+    "academic-cv-resume-for-us-grad-applications",
+    "gre-waiver-trends-us-grad-programs",
+    "mba-application-rounds-r1-r2-strategy-usa",
+    "ms-in-management-mim-pre-experience-usa",
+    "mpp-vs-mpa-us-public-policy-masters"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-financial-aid-deep-dive",
+  "label": "Financial Aid Deep Dive",
+  "title": "US Financial Aid & Funding for International Students",
+  "description": "Funding a US degree as an international student — FAFSA reality, need-blind vs meet-full-need, merit aid, assistantships, fully-funded programs, loans with and without a US cosigner, and reading an aid letter.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "fully-funded-masters-programs-usa",
+    "need-blind-for-international-students-usa",
+    "full-ride-scholarships-for-international-students-usa",
+    "fulbright-foreign-student-program-for-international-students",
+    "meet-full-need-colleges-for-international-students",
+    "merit-aid-strategy-for-international-students",
+    "graduate-assistantships-and-tuition-waivers-international",
+    "how-colleges-calculate-financial-need",
+    "how-to-read-a-financial-aid-award-letter",
+    "us-student-loans-with-cosigner-for-international-students",
+    "student-aid-index-sai-explained",
+    "financial-aid-at-us-public-universities-for-international-students",
+    "fellowships-and-grants-for-international-grad-students",
+    "external-scholarship-strategy-for-international-students"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-undergrad-admissions-strategy",
+  "label": "Undergrad Admission Strategy",
+  "title": "US Undergraduate Admission Strategy & Routes",
+  "description": "Undergraduate routes and strategy beyond the basics — QuestBridge, Posse, direct-admit majors, 3+2 engineering, NCAA recruiting, self-reported scores, mid-year reports, and disclosure questions.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "questbridge-national-college-match-explained",
+    "direct-admit-and-selective-major-admission-explained",
+    "posse-scholarship-and-nomination-process-explained",
+    "3-2-dual-degree-engineering-programs-explained",
+    "ncaa-eligibility-and-athlete-recruiting-process",
+    "self-reported-scores-and-srar-explained",
+    "senior-year-grades-and-mid-year-report-explained",
+    "applying-to-us-colleges-as-a-homeschooled-student",
+    "disclosing-disciplinary-records-on-college-applications",
+    "ferpa-recommendation-waiver-explained",
+    "guaranteed-and-dual-admission-programs-explained",
+    "course-rigor-and-school-context-in-admissions"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-standardized-tests-deep-dive",
+  "label": "More US Admission Tests",
+  "title": "More US Standardized & Admission Tests",
+  "description": "The US admission tests beyond the SAT/ACT/GRE basics — the MCAT, DAT, OAT, TOEFL, Duolingo, GRE Subject tests, choosing an English test, and sending official scores.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "mcat-test-structure-and-scoring-explained",
+    "how-to-prepare-for-the-mcat",
+    "how-to-send-official-test-scores-to-us-universities",
+    "dat-test-structure-and-scoring-explained",
+    "toefl-ibt-test-structure-and-scoring-explained",
+    "toefl-vs-ielts-vs-duolingo-for-us-universities",
+    "duolingo-english-test-for-us-universities",
+    "oat-test-structure-and-scoring-explained",
+    "gre-subject-tests-explained"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+{
+  "slug": "us-majors-and-careers-deep-dive",
+  "label": "More US Majors & Careers",
+  "title": "More US Undergraduate Majors & Career Paths",
+  "description": "US undergraduate majors with a distinct accreditation or licensure path — actuarial science, cybersecurity, aerospace, architecture, game design, journalism, hospitality and criminal justice.",
+  "group": "study-in-usa",
+  "guideSlugs": [
+    "cybersecurity-major-guide-usa",
+    "actuarial-science-major-guide-usa",
+    "aerospace-engineering-major-guide-usa",
+    "architecture-major-guide-usa",
+    "game-design-and-development-major-guide-usa",
+    "journalism-and-mass-communication-major-guide-usa",
+    "hospitality-management-major-guide-usa",
+    "criminal-justice-and-criminology-major-guide-usa"
+  ],
+  "examSlugs": [],
+  "keywords": []
+},
+/* ==USAP3_HUBS_END== */
 /* ==RUP3_HUBS_START== */
 {
   "slug": "russia-cis-medical-and-dental-deeper",
