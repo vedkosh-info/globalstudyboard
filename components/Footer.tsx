@@ -136,7 +136,7 @@ export default function Footer({
         {/* Bottom bar */}
         <div className="border-t border-cream-50/10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-cream-50/60 text-xs">
-            &copy; {year} GlobalStudyBoard. All rights reserved.
+            &copy; {year} 🔱 ParvatiPatiMahadev 🚩
           </p>
           <nav className="flex items-center gap-4 flex-wrap justify-center" aria-label="Legal">
             {[

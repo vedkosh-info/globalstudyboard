@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react';
-import { US, CA, GB, EU, AU, RU, AE, IN } from 'country-flag-icons/react/3x2';
+import { US, CA, GB, EU, AU, RU, AE, IN, JP } from 'country-flag-icons/react/3x2';
 import type { RegionSlug } from '@/lib/regions';
 
 /**
@@ -20,6 +20,7 @@ const FLAG_BY_REGION: Record<RegionSlug, FlagComponent> = {
   russia: RU,
   'middle-east': AE,
   india: IN,
+  'east-southeast-asia': JP,
 };
 
 export default function RegionFlag({

@@ -6,7 +6,8 @@ export type RegionSlug =
   | 'australia-nz'
   | 'russia'
   | 'middle-east'
-  | 'india';
+  | 'india'
+  | 'east-southeast-asia';
 
 export interface Region {
   slug: RegionSlug;
@@ -218,6 +219,43 @@ export const REGIONS: Region[] = [
     visaName: 'N/A (domestic) / Student Visa for international applicants',
     worksWhileStudying: 'On-campus only at most institutions; internships standard in summer.',
   },
+  {
+    slug: 'east-southeast-asia',
+    displayName: 'East & Southeast Asia',
+    flag: '🇯🇵',
+    countries: [
+      'Japan',
+      'Singapore',
+      'South Korea',
+      'Malaysia',
+      'Hong Kong',
+      'Taiwan',
+      'China',
+      'Philippines',
+      'Thailand',
+    ],
+    currency: { code: 'USD', symbol: '$' },
+    primaryApplicationPlatform:
+      'Direct via each university (no single regional platform; Japan via university portals/JASSO, Hong Kong undergraduate via JUPAS for local students)',
+    educationSystemSummary:
+      "A fast-growing, high-quality study region led by globally top-ranked universities in Singapore, Japan, Hong Kong and South Korea. Bachelor's degrees run three to four years, master's one to two, and PhDs three to five. English-taught programs are widely available in Singapore, Hong Kong and Malaysia and are expanding fast in Japan (MEXT/SGU), South Korea, Taiwan and mainland China. Most international applicants apply directly to each university; government scholarships (Japan MEXT, Korea GKS, Taiwan MOE/ICDF, China CSC, and Singapore awards) are a major draw. Malaysia hosts branch campuses of UK and Australian universities, and China and the Philippines are common, NEET-and-NMC-governed routes for Indian students seeking medicine abroad.",
+    keyExamSlugs: ['ielts', 'toefl', 'gre', 'gmat'],
+    popularQueries: [
+      'how-to-study-in-japan-from-india',
+      'mext-scholarship-guide-for-indian-students',
+      'how-to-study-in-singapore-from-india',
+      'gks-korean-government-scholarship-guide',
+      'english-taught-degrees-in-east-and-southeast-asia',
+      'mbbs-in-china-and-philippines-for-indian-students',
+    ],
+    intakes: [
+      'Varies by country — Japan: April & Sept/Oct; Singapore & Malaysia: Aug/Sept; South Korea & China: March & Sept',
+    ],
+    averageTuitionRangeUsd: { undergrad: [3000, 40000], grad: [3000, 45000] },
+    visaName: 'Student visa / pass (varies by country)',
+    worksWhileStudying:
+      'Varies by country — many allow limited part-time work during term (for example Japan up to 28 hrs/week with permission; Singapore restricted); verify current rules on the official source before relying on them.',
+  },
 ];
 
 export const getRegionBySlug = (slug: string): Region | undefined =>
@@ -288,6 +326,7 @@ export const PRIMARY_REGION_SLUGS: RegionSlug[] = [
   'canada',
   'australia-nz',
   'europe',
+  'east-southeast-asia',
 ];
 
 /** Short, second-person tagline used across the personalised UI. */
@@ -300,4 +339,5 @@ export const REGION_TAGLINES: Record<RegionSlug, string> = {
   'australia-nz': 'Go8 universities and generous post-study work visas.',
   russia: 'Affordable English-medium degrees and the Open Doors quota.',
   'middle-east': 'American-style campuses and big merit scholarships.',
+  'east-southeast-asia': 'NUS, Tokyo, KAIST & HKU — English-taught degrees and big government scholarships.',
 };

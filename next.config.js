@@ -37,6 +37,16 @@ const nextConfig = {
       { source: '/en', destination: '/', permanent: true },
       { source: '/hi/:path*', destination: '/:path*', permanent: true },
       { source: '/en/:path*', destination: '/:path*', permanent: true },
+      // Legacy /colleges/abroad/* links from the first release (now 404 in GSC).
+      // The site is region-first — map each old destination to its region hub.
+      { source: '/colleges/abroad/usa', destination: '/regions/usa', permanent: true },
+      { source: '/colleges/abroad/uk', destination: '/regions/uk-ireland', permanent: true },
+      { source: '/colleges/abroad/canada', destination: '/regions/canada', permanent: true },
+      { source: '/colleges/abroad/australia', destination: '/regions/australia-nz', permanent: true },
+      { source: '/colleges/abroad/germany', destination: '/regions/europe', permanent: true },
+      // Base + any other old abroad path → the destinations index.
+      { source: '/colleges/abroad', destination: '/regions', permanent: true },
+      { source: '/colleges/abroad/:slug*', destination: '/regions', permanent: true },
     ];
   },
   async headers() {

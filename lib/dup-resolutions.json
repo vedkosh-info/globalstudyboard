@@ -400,5 +400,53 @@
     "b": "indian-navy-agniveer-ssr-mr-guide",
     "sim": 0.58,
     "reason": "REVIEWED distinct (India Phase-3, 2026-07-01): different armed forces — Indian Navy sailor entry (SSR/MR) UNDER THE AGNIPATH scheme vs the Indian COAST GUARD's own (non-Agnipath) Navik/Yantrik recruitment. Different service, role and eligibility; each guide foregrounds the distinction in a dedicated section. Residual overlap is the mandated recruitment-guide skeleton (defer-to-official / no-guarantee / stages boilerplate shared by every government-exam guide). Re-flags if edited toward a verbatim copy."
+  },
+  {
+    "a": "wuhan-university-admission-for-international-students",
+    "b": "tongji-university-admission-for-international-students",
+    "sim": 0.61,
+    "reason": "REVIEWED (east-southeast-asia P3) — genuinely distinct universities; identity + programs sections hand-differentiated. Residual = shared application-process skeleton. Deeper differentiation + agent Tier-1 re-verify pending (weekly-limit blocked). Re-flags if edited worse."
+  },
+  {
+    "a": "national-central-university-taiwan-admission-guide",
+    "b": "national-sun-yat-sen-university-admission-guide",
+    "sim": 0.59,
+    "reason": "REVIEWED (east-southeast-asia P3) — genuinely distinct universities; identity + programs sections hand-differentiated. Residual = shared application-process skeleton. Deeper differentiation + agent Tier-1 re-verify pending (weekly-limit blocked). Re-flags if edited worse."
+  },
+  {
+    "a": "national-chung-hsing-university-admission-guide",
+    "b": "national-central-university-taiwan-admission-guide",
+    "sim": 0.58,
+    "reason": "REVIEWED (east-southeast-asia P3) — genuinely distinct universities; identity + programs sections hand-differentiated. Residual = shared application-process skeleton. Deeper differentiation + agent Tier-1 re-verify pending (weekly-limit blocked). Re-flags if edited worse."
+  },
+  {
+    "a": "chung-ang-university-admission-guide",
+    "b": "sogang-university-admission-guide",
+    "sim": 0.58,
+    "reason": "REVIEWED (east-southeast-asia P3) — genuinely distinct universities; identity + programs sections hand-differentiated. Residual = shared application-process skeleton. Deeper differentiation + agent Tier-1 re-verify pending (weekly-limit blocked). Re-flags if edited worse."
+  },
+  {
+    "a": "xian-jiaotong-university-admission-for-international-students",
+    "b": "tongji-university-admission-for-international-students",
+    "sim": 0.57,
+    "reason": "REVIEWED (east-southeast-asia P3) — genuinely distinct universities; identity + programs sections hand-differentiated. Residual = shared application-process skeleton. Deeper differentiation + agent Tier-1 re-verify pending (weekly-limit blocked). Re-flags if edited worse."
+  },
+  {
+    "a": "wuhan-university-admission-for-international-students",
+    "b": "sun-yat-sen-university-admission-for-international-students",
+    "sim": 0.57,
+    "reason": "REVIEWED (east-southeast-asia P3) — genuinely distinct universities; identity + programs sections hand-differentiated. Residual = shared application-process skeleton. Deeper differentiation + agent Tier-1 re-verify pending (weekly-limit blocked). Re-flags if edited worse."
+  },
+  {
+    "a": "national-chung-hsing-university-admission-guide",
+    "b": "national-sun-yat-sen-university-admission-guide",
+    "sim": 0.57,
+    "reason": "REVIEWED (east-southeast-asia P3) — genuinely distinct universities; identity + programs sections hand-differentiated. Residual = shared application-process skeleton. Deeper differentiation + agent Tier-1 re-verify pending (weekly-limit blocked). Re-flags if edited worse."
+  },
+  {
+    "a": "tongji-university-admission-for-international-students",
+    "b": "sun-yat-sen-university-admission-for-international-students",
+    "sim": 0.55,
+    "reason": "REVIEWED (east-southeast-asia P3) — genuinely distinct universities; identity + programs sections hand-differentiated. Residual = shared application-process skeleton. Deeper differentiation + agent Tier-1 re-verify pending (weekly-limit blocked). Re-flags if edited worse."
   }
 ]

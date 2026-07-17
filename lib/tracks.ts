@@ -592,6 +592,88 @@ export const RUSSIA_CIS_TRACKS: Track[] = [
   },
 ];
 
+// ─────────────── East & Southeast Asia (explicit, Phase 2) — 9th region ──────
+// Eleven journey/country tracks over the region's 68 hubs (8 + 20 P2 + 20 P3 + 20 P4).
+export const EAST_SOUTHEAST_ASIA_TRACKS: Track[] = [
+  {
+    slug: 'asia-admissions', region: 'east-southeast-asia', label: 'Admissions & Planning',
+    title: 'Applying to Study in East & Southeast Asia',
+    description:
+      'How to apply across Asia — application systems, documents and credential recognition, intakes and deadlines, the language and English tests, where English-taught degrees exist, and choosing your destination.',
+    topicSlugs: ["east-southeast-asia-admissions","asian-language-and-english-tests-in-depth","asia-application-practicalities-and-documents","asia-intakes-deadlines-and-application-planning","asia-english-taught-degrees-by-country","choosing-and-comparing-asian-destinations","asia-which-destination-for-your-field"],
+  },
+  {
+    slug: 'asia-universities', region: 'east-southeast-asia', label: 'Universities',
+    title: 'Universities in East & Southeast Asia',
+    description:
+      'The region’s leading universities and how to weigh a subject against a destination.',
+    topicSlugs: ["east-southeast-asia-universities","fields-and-subjects-across-asia"],
+  },
+  {
+    slug: 'asia-stem-health', region: 'east-southeast-asia', label: 'STEM & Health',
+    title: 'STEM, Engineering & Health Studies in Asia',
+    description:
+      'Studying the sciences, engineering and the health professions across Asia — from computing and emerging tech to medicine, dentistry, nursing and the agricultural and marine sciences.',
+    topicSlugs: ["asia-engineering-disciplines-in-depth","asia-computing-ai-and-data-in-depth","asia-emerging-tech-and-engineering-specialisations","asia-medicine-dentistry-and-health-sciences","asia-dentistry-veterinary-and-pharmacy","asia-nursing-and-allied-health-by-country","asia-agriculture-environment-and-marine"],
+  },
+  {
+    slug: 'asia-business-arts', region: 'east-southeast-asia', label: 'Business, Arts & Social Sciences',
+    title: 'Business, Arts & Social Sciences in Asia',
+    description:
+      'Studying business and finance, the creative fields, the social sciences and law, hospitality, maritime and logistics across Asia — plus postgraduate and research study.',
+    topicSlugs: ["asia-business-finance-and-management-in-depth","asia-arts-design-media-and-architecture","asia-social-sciences-humanities-and-law","asia-hospitality-tourism-and-culinary","asia-maritime-aviation-and-logistics","asia-postgraduate-research-and-phd"],
+  },
+  {
+    slug: 'asia-japan', region: 'east-southeast-asia', label: 'Study in Japan',
+    title: 'Study in Japan',
+    description:
+      'Studying in Japan end to end — the universities, fields of study, MEXT and other scholarships, and student life, work and cities.',
+    topicSlugs: ["study-in-japan","japan-universities-in-depth","japan-more-universities-and-programs","japan-even-more-universities","japan-fields-and-careers","japan-professional-and-creative-fields","japan-scholarships-and-funding-in-depth","japan-student-life-work-and-cities"],
+  },
+  {
+    slug: 'asia-singapore', region: 'east-southeast-asia', label: 'Study in Singapore',
+    title: 'Study in Singapore',
+    description:
+      'Studying in Singapore — the universities and pathways, fields of study and postgraduate routes, and scholarships, costs and working while and after you study.',
+    topicSlugs: ["study-in-singapore","singapore-universities-and-pathways-in-depth","singapore-fields-and-careers","singapore-postgrad-and-professional-fields","singapore-scholarships-costs-and-work"],
+  },
+  {
+    slug: 'asia-south-korea', region: 'east-southeast-asia', label: 'Study in South Korea',
+    title: 'Study in South Korea',
+    description:
+      'Studying in South Korea — the universities, fields of study, and GKS and other funding, the D-2 and D-10 visas and student life.',
+    topicSlugs: ["study-in-south-korea","korea-universities-in-depth","korea-more-universities","korea-even-more-universities","korea-fields-and-careers","korea-professional-and-creative-fields","korea-scholarships-visas-and-life"],
+  },
+  {
+    slug: 'asia-hong-kong-taiwan', region: 'east-southeast-asia', label: 'Hong Kong & Taiwan',
+    title: 'Study in Hong Kong & Taiwan',
+    description:
+      'Studying in Hong Kong and Taiwan — the universities and admission routes, fields of study, scholarships, and the practicalities in each.',
+    topicSlugs: ["study-in-hong-kong-and-taiwan","hong-kong-universities-and-admission-in-depth","hong-kong-fields-and-student-life-in-depth","taiwan-universities-and-scholarships-in-depth","taiwan-more-universities-and-programs","taiwan-fields-programs-and-life-in-depth"],
+  },
+  {
+    slug: 'asia-malaysia-sea', region: 'east-southeast-asia', label: 'Malaysia & SE Asia',
+    title: 'Study in Malaysia & Southeast Asia',
+    description:
+      'Affordable study across Southeast Asia — Malaysia’s universities, branch campuses and pathways, and studying in Thailand and the Philippines.',
+    topicSlugs: ["study-in-malaysia-and-southeast-asia","malaysia-universities-and-branch-campuses-in-depth","malaysia-more-universities-and-colleges","malaysia-fields-pathways-and-life-in-depth","thailand-and-philippines-study-in-depth","more-southeast-asia-universities","philippines-universities-nursing-and-life","thailand-universities-programs-and-life"],
+  },
+  {
+    slug: 'asia-china-mbbs', region: 'east-southeast-asia', label: 'China & MBBS',
+    title: 'Study in China & MBBS in Asia',
+    description:
+      'Studying in mainland China — universities, fields and the Chinese language, the CSC scholarship and HSK — plus the India-side NEET and NMC rules for pursuing MBBS in China or the Philippines.',
+    topicSlugs: ["study-in-china-and-mbbs-in-asia","china-universities-and-scholarships-in-depth","china-more-universities","china-even-more-universities","china-fields-and-language-in-depth","mbbs-in-china-and-asia-in-depth"],
+  },
+  {
+    slug: 'asia-work-costs', region: 'east-southeast-asia', label: 'Work, Costs & Living',
+    title: 'Working, Costs & Living in Asia',
+    description:
+      'The money and living side of studying in Asia — costs and budgeting, scholarships and funding, student cities, health, safety and wellbeing, post-study work and bringing your qualification back to India.',
+    topicSlugs: ["working-staying-and-costs-across-asia","asia-affordable-study-and-budgeting","asia-more-scholarships-and-corporate-funding","asia-student-cities-living-guides","asia-health-safety-and-wellbeing","asia-after-graduation-and-back-to-india"],
+  },
+]
+
 // ───────────────────────────── Abroad (derived) ─────────────────────────────
 // Each abroad region's existing region-tagged hubs ARE its tracks (1:1) for now.
 // They reuse the hub's own label/title/description and gain real sub-hubs in
@@ -617,6 +699,7 @@ export function tracksForRegion(region: RegionSlug): Track[] {
   if (region === 'australia-nz') return ANZ_TRACKS;
   if (region === 'middle-east') return MIDDLE_EAST_TRACKS;
   if (region === 'russia') return RUSSIA_CIS_TRACKS;
+  if (region === 'east-southeast-asia') return EAST_SOUTHEAST_ASIA_TRACKS;
   return deriveRegionTracks(region);
 }
 
