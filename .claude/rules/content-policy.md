@@ -236,7 +236,7 @@ analytics, the GSB-AI feature, and any future form or integration.
   IPs, emails, or identifiers with personal content.
 - **GSB-AI** (`app/api/gsb-ai/route.ts`): do not store user prompts tied to an
   identity; do not request PII; never echo back or persist personal/health data.
-- **No third-party trackers** beyond what privacy policy + `middleware.ts` CSP
+- **No third-party trackers** beyond what privacy policy + `next.config.js` CSP
   already permit; never add a tracker without updating the privacy policy.
 - **Contact form / email** collects only what is needed to reply
   (`contact@globalstudyboard.com`); state purpose and retention in the privacy policy.
@@ -614,7 +614,7 @@ site's primary organizing axis. (Adopted June 2026.)
 - Region is held in `components/RegionProvider.tsx` as a **session cookie**
   `gsb_region` (per-session by owner decision — a fresh browser session re-prompts).
   Read it **only client-side**. NEVER read the region cookie in a server component
-  or `middleware.ts` — `cookies()` would force dynamic rendering and break the static
+  or middleware — `cookies()` would force dynamic rendering and break the static
   build.
 - `effectiveRegion = chosen region ?? current page's own region ?? DEFAULT_REGION`.
   Every personalised surface reads `effectiveRegion`; it is always a real region.

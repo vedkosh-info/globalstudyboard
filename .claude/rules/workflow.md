@@ -8,7 +8,7 @@ globs: "**/*.{ts,tsx,js,jsx}"
 ## Code Quality
 - Run `npm run lint && npm run typecheck` after making code changes
 - Run `npm test` if test files exist for modified components
-- Never modify `middleware.ts` security headers without explicit approval
+- Never modify the security headers or CSP in `next.config.js` `headers()` without explicit approval
 
 ## Where to Apply Code Changes (BINDING)
 - **ALWAYS edit files in the root repo** at `/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/` — this is what the dev server (port 5000) serves and what gets committed.

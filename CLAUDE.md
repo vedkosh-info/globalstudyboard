@@ -39,13 +39,12 @@ lib/              → Data files and utilities
   colleges.ts     → College data (types + data array + helpers)
   admission-guides.ts → Entrance exam data
 styles/           → globals.css (base styles, no preflight)
-middleware.ts     → CSP + security headers (+ legacy /hi,/en → bare 301 redirects)
 public/           → Static assets
 ```
 
 ## URL Architecture (English only — BINDING)
 - **Single language: English.** Every page lives at a bare URL (`/`, `/colleges/...`, `/exams/...`, `/guides/...`) rendered directly from `app/...`. There is NO locale segment, NO `/hi`, NO `/en`, NO hreflang, NO language switcher, and NO locale cookie.
-- Legacy locale URLs are retired: `middleware.ts` 301-redirects any `/hi/*` or `/en/*` to the bare path.
+- Legacy locale URLs are retired: `next.config.js` `redirects()` 308-redirects any `/hi/*` or `/en/*` to the bare path.
 - **Do NOT reintroduce any language-specific architecture (i18n, `[lang]`, hreflang, locale cookies) — now or in future.** If page-level translation is ever wanted, do it per-page or rely on the browser's built-in translation; never add a locale routing layer.
 
 ## Content Data Pattern
@@ -89,7 +88,7 @@ public/           → Static assets
 - Tailwind CSS only — no inline styles, no CSS modules
 - Functional components + hooks only
 - Never hardcode English strings as page content — use data from `lib/` files
-- Never modify `middleware.ts` security headers without explicit approval
+- Never modify the security headers or CSP in `next.config.js` `headers()` without explicit approval
 
 ## Color Palette (Tailwind)
 - `brand-600` (#1B3A6B) — primary navy, headers, CTAs
@@ -99,7 +98,6 @@ public/           → Static assets
 ## Important Files
 - `app/layout.tsx` — Root layout, fonts, metadata, Analytics
 - `app/page.tsx` — Home page (college categories, featured exams, top colleges)
-- `middleware.ts` — CSP nonce + security headers (+ legacy /hi,/en → bare 301 redirects)
 - `lib/colleges.ts` — College data and types
 - `lib/admission-guides.ts` — Entrance exam data and types
 - `components/Header.tsx` — Site navigation
