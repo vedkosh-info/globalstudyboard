@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bcode8labs.globalstudyboard",
+      "sha256_cert_fingerprints": [
+        "96:16:12:89:A5:16:72:2C:0E:F0:B1:E5:B3:1B:D5:66:13:99:59:16:99:D3:84:24:A0:2A:50:39:84:2F:C8:AD"
+      ]
+    }
+  }
+]

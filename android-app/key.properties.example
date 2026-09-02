@@ -1,0 +1,7 @@
+# Copy to `key.properties` (gitignored) and fill in with the real upload-key
+# secrets. Google Play App Signing holds the actual release key; this is only
+# the UPLOAD key, which Play lets you reset if it is ever lost.
+storePassword=YOUR_STORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=globalstudyboard
+storeFile=/absolute/path/to/gsb-upload-keystore.jks

@@ -6,3 +6,12 @@ node_modules
 .env.local
 .env*.local
 *.tsbuildinfo
+
+# Android (TWA) wrapper — built by Gradle, never by Vercel.
+android-app
+gradle
+gradlew
+gradlew.bat
+build.gradle
+settings.gradle
+gradle.properties

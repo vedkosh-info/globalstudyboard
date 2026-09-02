@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect, FormEvent } from 'react';
 import { Send, RotateCcw, Bot, Sparkles } from 'lucide-react';
 import { useRegion } from '@/components/RegionProvider';
+import ReportAIResponse from '@/components/ReportAIResponse';
 
 type Role = 'user' | 'assistant';
 interface Message {
@@ -167,6 +168,11 @@ export default function GSBAIChat({
                     </span>
                   ) : null)}
                 </div>
+                {/* Play's Generative AI policy requires an in-app way to report
+                    AI output. Only offered once an answer has finished streaming. */}
+                {msg.role === 'assistant' && msg.content && !isLoading && (
+                  <ReportAIResponse answer={msg.content} />
+                )}
               </div>
             </div>
           ))

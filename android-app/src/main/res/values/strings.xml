@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!--
+    Digital Asset Links statement. Declares that this app is allowed to handle
+    all URLs on www.globalstudyboard.com. The other half of the handshake is the
+    file served at https://www.globalstudyboard.com/.well-known/assetlinks.json,
+    which must list BOTH this app's upload certificate and the Play App Signing
+    certificate. If the two sides do not match, Chrome shows its address bar on
+    top of the app instead of running it full-screen.
+  -->
+  <string name="assetStatements">
+    [{
+        \"relation\": [\"delegate_permission/common.handle_all_urls\"],
+        \"target\": {
+            \"namespace\": \"web\",
+            \"site\": \"https://www.globalstudyboard.com\"
+        }
+    }]
+  </string>
+</resources>

@@ -1,0 +1,3 @@
+// The Android (Trusted Web Activity) wrapper for globalstudyboard.com.
+// The Next.js site is the product; this module only ships it to Google Play.
+include ':android-app'

@@ -31,3 +31,24 @@ next-env.d.ts
 
 # Vercel
 .vercel
+
+# Image pipeline — source PNGs from Gemini are LOCAL ONLY.
+# Only the optimised .avif/.webp variants ship, so the repo stays light.
+image-pipeline/raw/
+public/images/**/*.png
+
+# Bake-off scratch output — never ships.
+image-pipeline/bakeoff/
+
+# Local API keys for the image pipeline — NEVER commit.
+image-pipeline/.env
+
+# Android (Trusted Web Activity) wrapper
+.gradle/
+android-app/build/
+build/
+local.properties
+# Signing secrets — the upload keystore and its passwords NEVER go in the repo.
+*.jks
+*.keystore
+android-app/key.properties

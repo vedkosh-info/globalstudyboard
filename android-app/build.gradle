@@ -1,0 +1,184 @@
+/*
+ * Trusted Web Activity wrapper for https://www.globalstudyboard.com
+ *
+ * ⚠ HAND-MAINTAINED — do NOT run `bubblewrap init/update/build` against this repo.
+ * bubblewrap's DELETE_PROJECT_FILE_LIST includes 'app/', and its rmdir is recursive:
+ * it would DELETE the Next.js App Router source (app/layout.tsx, app/guides, app/api…).
+ * It would also revert hand-edits that twa-manifest.json cannot express:
+ *   • targetSdkVersion 36
+ *   • signingConfigs.release + the key.properties loader
+ *   • minifyEnabled false (see note on the release buildType below)
+ *
+ * Build with:  ./gradlew :android-app:bundleRelease      (from the repo ROOT)
+ * Output:      android-app/build/outputs/bundle/release/android-app-release.aab
+ */
+
+import groovy.xml.MarkupBuilder
+
+plugins {
+    id 'com.android.application'
+}
+
+def twaManifest = [
+    applicationId: 'com.bcode8labs.globalstudyboard',
+    hostName: 'www.globalstudyboard.com',
+    launchUrl: '/',
+    name: 'GlobalStudyBoard',
+    launcherName: 'GlobalStudyBoard',
+    // Status bar. Matches the theme_color already declared in the site's web
+    // manifest, so the TWA and the Chrome-installed PWA look identical.
+    themeColor: '#14532D',
+    themeColorDark: '#14532D',
+    // Nav bar + splash use the site's cream surface so the splash dissolves
+    // seamlessly into the loaded page (the site is light-only; no dark theme).
+    navigationColor: '#FFF8E7',
+    navigationColorDark: '#FFF8E7',
+    navigationDividerColor: '#FFF8E7',
+    navigationDividerColorDark: '#FFF8E7',
+    backgroundColor: '#FFF8E7',
+    // The site has no service worker and no web push, so there is nothing to
+    // delegate. Keeping this false also keeps POST_NOTIFICATIONS off the
+    // manifest — no permission we cannot justify on the Play data form.
+    enableNotifications: false,
+    // Long-press the launcher icon to jump straight into a section.
+    shortcuts: [
+        [name: 'Universities', short_name: 'Universities',
+         url: 'https://www.globalstudyboard.com/colleges',      icon: 'shortcut_universities'],
+        [name: 'Entrance exams', short_name: 'Exams',
+         url: 'https://www.globalstudyboard.com/exams',         icon: 'shortcut_exams'],
+        [name: 'Guides', short_name: 'Guides',
+         url: 'https://www.globalstudyboard.com/guides',        icon: 'shortcut_guides'],
+        [name: 'Scholarships', short_name: 'Scholarships',
+         url: 'https://www.globalstudyboard.com/scholarships',  icon: 'shortcut_scholarships'],
+    ],
+    splashScreenFadeOutDuration: 300,
+    generatorApp: 'bubblewrap-cli',
+    fallbackType: 'customtabs',
+    enableSiteSettingsShortcut: 'true',
+    orientation: 'default',
+]
+
+def keystorePropertiesFile = rootProject.file("android-app/key.properties")
+def keystoreProperties = new Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    compileSdkVersion 36
+    namespace "com.bcode8labs.globalstudyboard"
+
+    signingConfigs {
+        release {
+            if (keystorePropertiesFile.exists()) {
+                storeFile file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+            }
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.bcode8labs.globalstudyboard"
+        minSdkVersion 21
+        targetSdkVersion 36
+        versionCode 1
+        versionName "1.0.0"
+
+        resValue "string", "appName", twaManifest.name
+        resValue "string", "launcherName", twaManifest.launcherName
+
+        def launchUrl = "https://" + twaManifest.hostName + twaManifest.launchUrl
+        resValue "string", "launchUrl", launchUrl
+
+        resValue "string", "webManifestUrl", 'https://www.globalstudyboard.com/manifest.webmanifest'
+
+        resValue "string", "hostName", twaManifest.hostName
+
+        resValue "color", "colorPrimary", twaManifest.themeColor
+        resValue "color", "colorPrimaryDark", twaManifest.themeColorDark
+        resValue "color", "navigationColor", twaManifest.navigationColor
+        resValue "color", "navigationColorDark", twaManifest.navigationColorDark
+        resValue "color", "navigationDividerColor", twaManifest.navigationDividerColor
+        resValue "color", "navigationDividerColorDark", twaManifest.navigationDividerColorDark
+        resValue "color", "backgroundColor", twaManifest.backgroundColor
+
+        resValue "string", "providerAuthority", twaManifest.applicationId + '.fileprovider'
+        resValue "bool", "enableNotification", twaManifest.enableNotifications.toString()
+
+        twaManifest.shortcuts.eachWithIndex { shortcut, index ->
+            resValue "string", "shortcut_name_$index", "$shortcut.name"
+            resValue "string", "shortcut_short_name_$index", "$shortcut.short_name"
+        }
+
+        resValue "integer", "splashScreenFadeOutDuration", twaManifest.splashScreenFadeOutDuration.toString()
+        resValue "string", "generatorApp", twaManifest.generatorApp
+        resValue "string", "fallbackType", twaManifest.fallbackType
+        resValue "bool", "enableSiteSettingsShortcut", twaManifest.enableSiteSettingsShortcut
+        resValue "string", "orientation", twaManifest.orientation
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            // A TWA is ~50 lines of glue over androidbrowserhelper. R8 would
+            // save a trivial amount of space while adding a real class of
+            // runtime-only failure (stripped Chrome-callback classes surface
+            // as a crash on device, never at build time). Not worth it here.
+            minifyEnabled false
+            debuggable false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+}
+
+task generateShorcutsFile {
+    assert twaManifest.shortcuts.size() < 5, "You can have at most 4 shortcuts."
+    twaManifest.shortcuts.eachWithIndex { s, i ->
+        assert s.name != null, 'Missing `name` in shortcut #' + i
+        assert s.short_name != null, 'Missing `short_name` in shortcut #' + i
+        assert s.url != null, 'Missing `url` in shortcut #' + i
+        assert s.icon != null, 'Missing `icon` in shortcut #' + i
+    }
+
+    def shortcutsFile = new File("$projectDir/src/main/res/xml", "shortcuts.xml")
+
+    def xmlWriter = new StringWriter()
+    def xmlMarkup = new MarkupBuilder(new IndentPrinter(xmlWriter, "    ", true))
+
+    xmlMarkup
+        .'shortcuts'('xmlns:android': 'http://schemas.android.com/apk/res/android') {
+            twaManifest.shortcuts.eachWithIndex { s, i ->
+                'shortcut'(
+                        'android:shortcutId': 'shortcut' + i,
+                        'android:enabled': 'true',
+                        'android:icon': '@drawable/' + s.icon,
+                        'android:shortcutShortLabel': '@string/shortcut_short_name_' + i,
+                        'android:shortcutLongLabel': '@string/shortcut_name_' + i) {
+                    'intent'(
+                            'android:action': 'android.intent.action.MAIN',
+                            'android:targetPackage': twaManifest.applicationId,
+                            'android:targetClass': twaManifest.applicationId + '.LauncherActivity',
+                            'android:data': s.url)
+                    'categories'('android:name': 'android.intent.category.LAUNCHER')
+                }
+            }
+        }
+    shortcutsFile.text = xmlWriter.toString() + '\n'
+}
+
+preBuild.dependsOn(generateShorcutsFile)
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.6.2'
+}
