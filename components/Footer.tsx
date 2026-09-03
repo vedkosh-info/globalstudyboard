@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { Smartphone } from 'lucide-react';
 import { REGIONS, REGIONS_ALPHABETICAL, getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { ADMISSIONS_CYCLE } from '@/lib/site-meta';
 import { useRegion } from '@/components/RegionProvider';
 import RegionFlag from '@/components/RegionFlag';
+import GetAppButton from '@/components/GetAppButton';
 
 const REGION_LINKS = REGIONS_ALPHABETICAL.map((r) => ({
   label: r.displayName,
@@ -104,6 +106,13 @@ export default function Footer({
               Updated for the {ADMISSIONS_CYCLE} admissions cycle · Independent · Every fact linked to
               its official source.
             </p>
+
+            {/* Android app. In closed beta this opens the tester-invite dialog;
+                once the Play listing is public it becomes a plain store link. */}
+            <GetAppButton className="mt-5 inline-flex items-center gap-2 rounded-full border border-cream-50/25 bg-forest-800/60 px-4 py-2 text-xs font-semibold text-cream-50/90 transition-colors hover:border-cream-50/40 hover:bg-forest-800">
+              <Smartphone className="h-3.5 w-3.5" aria-hidden="true" />
+              Get the Android app
+            </GetAppButton>
           </div>
 
           <FooterCol heading="Destinations" links={REGION_LINKS.slice(0, 4)} />

@@ -18,6 +18,7 @@ import SiteSearch from '@/components/SiteSearch';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FabDock from '@/components/FabDock';
 import RecentPages from '@/components/RecentPages';
+import TesterInviteModal from '@/components/TesterInviteModal';
 import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { tracksForRegion, trackHref, isMultiHubTrack, topicsForTrack } from '@/lib/tracks';
@@ -223,6 +224,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <RegionAnnouncer />
           <AudienceAnnouncer />
           <RecentPages />
+          <TesterInviteModal />
           <FabDock />
           </AudienceProvider>
         </RegionProvider>

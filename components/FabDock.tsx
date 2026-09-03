@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { Sparkles, X, ChevronUp, Clock } from 'lucide-react';
+import { Sparkles, X, ChevronUp, Clock, Smartphone } from 'lucide-react';
+import GetAppButton from '@/components/GetAppButton';
 
 const GOOGLE_URL = 'https://www.google.com/preferences/source?q=globalstudyboard.com';
 const SCROLL_SHOW = 300;
@@ -85,6 +86,13 @@ export default function FabDock() {
           <button type="button" role="menuitem" className="gsb-dock-item" onClick={openRecent}>
             <Clock size={18} aria-hidden="true" /> Recent pages
           </button>
+          <GetAppButton
+            role="menuitem"
+            className="gsb-dock-item"
+            onNavigate={() => setOpen(false)}
+          >
+            <Smartphone size={18} aria-hidden="true" /> Get the Android app
+          </GetAppButton>
           <a
             role="menuitem"
             href={GOOGLE_URL}

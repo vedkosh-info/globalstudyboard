@@ -26,8 +26,10 @@ export default function RegionContextBar() {
       ? 'Showing content for'
       : 'Showing by default';
 
+  // The `data-gsb-context-bar` hook exists so a modal can make this bar inert:
+  // it renders between <header> and <main>, so a header/main/footer sweep misses it.
   return (
-    <div className="border-b border-forest-100 bg-forest-50/60">
+    <div data-gsb-context-bar className="border-b border-forest-100 bg-forest-50/60">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
         <p className="m-0 flex min-w-0 items-center gap-2 text-sm text-stone-600">
           <Globe2 className="h-4 w-4 shrink-0 text-forest-600" aria-hidden="true" />

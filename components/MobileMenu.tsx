@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { REGION_CATEGORIES, categoryLabel, regionCategoryPath } from '@/lib/region-nav';
 import { useRegion } from '@/components/RegionProvider';
+import GetAppButton from '@/components/GetAppButton';
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -78,6 +79,14 @@ export default function MobileMenu() {
                 {link.label}
               </Link>
             ))}
+            {/* Android app — a button, not a link: while the app is in closed
+                beta this opens the tester-invite dialog (see GetAppButton). */}
+            <GetAppButton
+              onNavigate={() => setOpen(false)}
+              className="text-left text-stone-700 hover:text-forest-700 hover:bg-stone-50 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
+            >
+              Get the Android app
+            </GetAppButton>
           </nav>
         </div>
       )}

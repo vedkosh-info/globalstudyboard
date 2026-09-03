@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = '3 July 2026';
+const LAST_UPDATED = '3 September 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -59,7 +59,46 @@ export default function PrivacyPage() {
             viewed, approximate region, device and browser type, used in aggregate to understand
             what&rsquo;s useful.
           </li>
+          <li>
+            <strong>Your email address, only if you ask to test the Android app</strong> — see the
+            section below. Nothing else on the site asks you for personal details.
+          </li>
         </ul>
+      </Section>
+
+      <Section title="Android beta-tester sign-up">
+        <p>
+          The GlobalStudyBoard Android app is in a closed beta on Google Play. Google Play can only
+          send an invitation to a specific Google account, so if you use the &ldquo;Get the Android
+          app&rdquo; button we ask for one thing: the email address of that account.
+        </p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <strong>What we store</strong> — your email address, plus the page you were on, the study
+            destination you had selected, and the date. Nothing else, and no name or account.
+          </li>
+          <li>
+            <strong>Why</strong> — solely to add you to the tester list in the Google Play Console so
+            that Google Play can email you the invitation.
+          </li>
+          <li>
+            <strong>Where</strong> — a private Google Sheet that only we can open. We do not sell,
+            rent, share or publish it, and we do not use it for marketing or newsletters.
+          </li>
+          <li>
+            <strong>How long we keep it</strong> — only while the beta needs it. We delete the list
+            once the app is publicly available on Google Play, and we remove any individual address
+            sooner on request.
+          </li>
+          <li>
+            <strong>Removal</strong> — email us at any time and we will delete your address from the
+            sheet and from the Play tester list.
+          </li>
+        </ul>
+        <p>
+          Adding you as a tester also means Google receives that email address as part of running
+          Google Play; Google&rsquo;s own privacy policy governs what it does with it.
+        </p>
       </Section>
 
       <Section title="Cookies, analytics &amp; advertising">
