@@ -12,7 +12,7 @@ import { useRegion } from '@/components/RegionProvider';
  */
 export default function AudienceToggle() {
   const { chosenAudience, setAudience } = useAudience();
-  const { pageRegion, effectiveRegion } = useRegion();
+  const { pageRegion, effectiveRegion, ready } = useRegion();
   const pageDefault = defaultAudienceFor(pageRegion ?? effectiveRegion);
   const active = chosenAudience ?? pageDefault;
 
@@ -23,7 +23,13 @@ export default function AudienceToggle() {
       className="flex shrink-0 items-center rounded-full border border-forest-200 bg-white p-0.5"
     >
       {AUDIENCE_CHOICES.map((a) => {
-        const on = a === active;
+        // Until the client has read the stored preference, `pageRegion` is still
+        // null and `effectiveRegion` falls back to India — which would bake
+        // aria-pressed="true" on 'Domestic' into the static HTML of every one of
+        // the eight non-India destinations, contradicting the international
+        // content and JSON-LD the same page ships. Claim nothing until we know.
+        // The buttons still render (same size), so there is no layout shift.
+        const on = ready && a === active;
         return (
           <button
             key={a}

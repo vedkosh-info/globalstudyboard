@@ -36,12 +36,12 @@ function FooterCol({
       <h3 className="text-cream-50/80 font-semibold text-xs mb-4 uppercase tracking-[0.16em]">
         {heading}
       </h3>
-      <ul className="space-y-2.5 list-none p-0 m-0">
+      <ul className="space-y-0.5 list-none p-0 m-0">
         {links.map((link) => (
           <li key={`${link.href}-${link.label}`}>
             <Link
               href={link.href}
-              className="inline-flex items-center gap-2 text-cream-50/60 text-sm hover:text-terracotta-300 no-underline transition-colors"
+              className="inline-flex items-center gap-2 py-1 text-cream-50/60 text-sm hover:text-terracotta-300 no-underline transition-colors"
             >
               {link.slug && <RegionFlag slug={link.slug} className="h-3" />}
               {link.label}

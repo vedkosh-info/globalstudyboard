@@ -13,15 +13,18 @@ import type { AudienceChoice } from '@/lib/audience';
 
 const AUDIENCE_KEY = 'gsb_audience';
 
+/** A year — see the same constant in RegionProvider. */
+const REMEMBER_SECONDS = 60 * 60 * 24 * 365;
+
 interface AudienceContextValue {
   /**
-   * The student's EXPLICIT choice for this session, or null if they haven't
+   * The student's EXPLICIT choice, remembered on this device, or null if they haven't
    * toggled. When null, each page falls back to its own default (domestic for
    * India, international elsewhere) — computed at the block via `pageDefault`,
    * so the static HTML is correct and there is no hydration flash.
    */
   chosenAudience: AudienceChoice | null;
-  /** Persist a domestic/international choice for the session. */
+  /** Remember a domestic/international choice on this device (one year). */
   setAudience: (a: AudienceChoice) => void;
   /** True once the client has read any stored preference (avoids SSR mismatch). */
   ready: boolean;
@@ -51,9 +54,10 @@ export function AudienceProvider({ children }: { children: ReactNode }) {
 
   const setAudience = useCallback((a: AudienceChoice) => {
     setChosen(a);
-    // Session cookie (no max-age) — shared across tabs/navigations, cleared when
-    // the browser session ends, mirroring the region engine.
-    document.cookie = `${AUDIENCE_KEY}=${encodeURIComponent(a)}; path=/; SameSite=Lax`;
+    // Remembered on the device for a year, mirroring the region engine: a
+    // deliberate preference should survive closing the browser, so a returning
+    // student is not silently put back on the other audience's content.
+    document.cookie = `${AUDIENCE_KEY}=${encodeURIComponent(a)}; path=/; max-age=${REMEMBER_SECONDS}; SameSite=Lax`;
   }, []);
 
   const value = useMemo<AudienceContextValue>(

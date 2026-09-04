@@ -19,6 +19,48 @@
   box-sizing: border-box;
 }
 
+/* ---------------------------------------------------------------------------
+   Border + form-control reset.
+
+   Tailwind's preflight is disabled (see tailwind.config.js), and preflight is
+   what normally ships `border-style: solid`. Without it the CSS initial value
+   `border-style: none` applies, and a `border-style: none` element computes
+   EVERY border-width to 0 — so every `border`, `border-b`, `border-stone-200`
+   in this codebase (329 of them) silently rendered nothing: no header rule, no
+   card hairlines, no input outlines. Text inputs looked bordered only because
+   they still had their operating-system border.
+
+   For the same reason a <button> kept its OS chrome: a grey `buttonface`
+   background and a 2px `outset` bevel. Any button that did not set its own
+   `bg-*` (a menu row, an icon button) rendered as a grey OS box, and the ones
+   that did set a background still drew the bevel.
+
+   This is preflight's border/button reset and nothing else — the Editorial Ivy
+   base styles below stay in charge of typography, lists and links.
+   --------------------------------------------------------------------------- */
+/* Wrapped in `@layer base` so Tailwind emits it with `@tailwind base` — i.e.
+   BEFORE the utilities. Unlayered, `[type='button'] { background-color:
+   transparent }` (0,1,0) is emitted after `.bg-forest-700` (0,1,0) and wins the
+   tie, blanking every filled button on the site. */
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--color-border);
+  }
+
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;

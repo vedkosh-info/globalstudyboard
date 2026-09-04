@@ -47,7 +47,11 @@ export default function MobileMenu() {
   }, [open]);
 
   return (
-    <div ref={ref} className="lg:hidden">
+    /* shrink-0: the header row can overflow (long destination name + the
+       212px wordmark), and whatever is shrinkable absorbs it. This button is
+       the ONLY route to site navigation below lg, so it must never be the one
+       that gives — the destination pill truncates instead (it is built to). */
+    <div ref={ref} className="shrink-0 lg:hidden">
       <button
         ref={btnRef}
         onClick={() => setOpen(!open)}

@@ -29,7 +29,7 @@ export default function HomeHero() {
   if (!r) return null;
 
   // Personalised hero for the current destination (India by default until the
-  // student picks another from the header or the first-visit picker).
+  // student picks another from the header destination control).
   const topUniversity = [...COLLEGES.filter((c) => c.region === r.slug)].sort(
     (a, b) => (a.ranking?.qs ?? 9999) - (b.ranking?.qs ?? 9999)
   )[0];
@@ -126,7 +126,11 @@ function Fact({ icon, label, value }: { icon: React.ReactNode; label: string; va
           {label}
         </span>
       </div>
-      <p className="text-sm font-semibold text-ink leading-snug line-clamp-2">{value}</p>
+      {/* No line-clamp: a key fact that ends in "…" is worse than a card an extra
+          line taller — India's student-visa value ("N/A (domestic) / Student Visa
+          for international applicants") was cut mid-phrase on the default view.
+          Grid items stretch to the tallest in the row, so the row stays even. */}
+      <p className="text-sm font-semibold text-ink leading-snug">{value}</p>
     </div>
   );
 }

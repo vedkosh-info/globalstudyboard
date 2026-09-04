@@ -48,6 +48,16 @@ function getPageTitle(): string {
   return title || 'Page';
 }
 
+/**
+ * Applied to the recent-pages drawer while it is closed. `inert` removes it from
+ * the tab order AND the accessibility tree; `aria-hidden` covers browsers without
+ * `inert`. It must be `inert={true}` — React 18 treats `inert` as a boolean
+ * attribute and silently drops `inert=""` as false — and React 18's typings don't
+ * declare it, hence the cast.
+ */
+const CLOSED_TO_ASSISTIVE_TECH = { inert: true, 'aria-hidden': true } as unknown as
+  React.HTMLAttributes<HTMLDivElement>;
+
 export default function RecentPages() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -107,10 +117,17 @@ export default function RecentPages() {
         />
       )}
 
-      {/* Drawer */}
+      {/*
+        Drawer. When closed it stays mounted just off-screen (that is what makes the
+        slide animate), so it MUST be taken out of the tab order and the a11y tree:
+        `pointer-events: none` alone stopped the mouse but left six links and buttons
+        tabbable inside an invisible panel, and screen readers still announced a
+        dialog that was not on screen.
+      */}
       <div
         role="dialog"
         aria-label="Recently visited pages"
+        {...(isOpen ? {} : CLOSED_TO_ASSISTIVE_TECH)}
         onClick={(e) => e.stopPropagation()}
         className="gsb-full-vh"
         style={{

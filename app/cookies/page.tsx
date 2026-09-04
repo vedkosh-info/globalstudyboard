@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = '3 July 2026';
+const LAST_UPDATED = '4 September 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -31,7 +31,7 @@ const COOKIE_TYPES = [
   {
     name: 'Strictly necessary',
     purpose:
-      'Let the site load, remember your chosen study destination and audience view for the session, and keep the site secure. The site does not work properly without these, so they are not optional.',
+      'Let the site load and keep it secure, and remember the study destination and audience view you choose, on this device (kept for up to a year, or until you clear your browser data). We do not write the preference cookies until you actually make a choice — until then the site simply shows its default view. They store only that choice, never an identifier, and are never used for tracking or advertising.',
     consent: 'Always on',
   },
   {

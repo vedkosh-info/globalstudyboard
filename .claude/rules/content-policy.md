@@ -18,6 +18,19 @@ silently. These rules outrank convenience, speed, or design preferences.
 GlobalStudyBoard is an **educational guidance resource** for students choosing
 universities, entrance exams, scholarships, and study destinations worldwide.
 
+**It is a GLOBAL resource, not a regional one (BINDING, owner directive September
+2026).** Its audience is students **worldwide**, across all nine destinations we
+cover — India, USA, UK & Ireland, Canada, Europe, Australia & New Zealand, the
+Middle East, Russia & CIS, and East & Southeast Asia. India is one destination
+among them (and, today, the default view a visitor gets before choosing — see
+§16.3), never the site's subject. The **site's own voice is global**: never write
+site-level copy, metadata, `/about`, home framing or an AI system prompt that
+positions GlobalStudyBoard as "for Indian students". Destination- and
+audience-specific *content* is written for its own reader — that is what the §16
+personalisation axes exist for — but shared UI, shared copy and new features treat
+the nine destinations as peers and are checked on an abroad destination as well as
+on India before they are called done.
+
 The site is **English only** — a single-language resource with NO multilingual or
 locale-specific architecture (no `/hi`, no `[lang]` segment, no hreflang, no i18n),
 now or in future. Content is written in clear English for an international audience.
@@ -611,29 +624,42 @@ site's primary organizing axis. (Adopted June 2026.)
   `REGION_TAGLINES`). Never re-implement region logic per component.
 
 ### 16.2 The region engine (client-only; SSG-safe)
-- Region is held in `components/RegionProvider.tsx` as a **session cookie**
-  `gsb_region` (per-session by owner decision — a fresh browser session re-prompts).
-  Read it **only client-side**. NEVER read the region cookie in a server component
-  or middleware — `cookies()` would force dynamic rendering and break the static
-  build.
+- Region is held in `components/RegionProvider.tsx` as a **remembered cookie**
+  `gsb_region`, written with `max-age` of one year (owner decision, September 2026 —
+  it replaces the original session cookie, which forgot the choice when the browser
+  closed and therefore had to re-ask on every visit). **What the student selects is
+  used and kept**; nothing is written until they select. Read it **only
+  client-side**. NEVER read the region cookie in a server component or middleware —
+  `cookies()` would force dynamic rendering and break the static build.
 - `effectiveRegion = chosen region ?? current page's own region ?? DEFAULT_REGION`.
   Every personalised surface reads `effectiveRegion`; it is always a real region.
 - Destination-specific pages render the invisible `<PageRegion slug={...}>` marker
   (`components/PageRegion.tsx`) so a visitor landing deep from search sees the whole
-  site skin to that page's destination (and the picker pre-selects it).
+  site skin to that page's destination.
 
-### 16.3 Always region-first, NEVER region-blocked (SEO-critical)
-- The destination picker (`components/DestinationPicker.tsx`) auto-opens once per
-  session on the first page and is re-openable from the always-on
-  `components/RegionContextBar.tsx`.
-- **Content ALWAYS renders behind the picker.** NEVER gate or hide content behind a
-  region wall — crawlers and direct-link visitors must always receive the content
-  (protects SEO + avoids Google's intrusive-interstitial penalty). Region filtering
-  on listings is **visual/client-side only** (cards toggle a `hidden` class; the full
-  set stays in the crawlable server HTML).
-- The picker is a focus-trapped, dismissible dialog (focus moves in on open, restores
-  on close; Escape / backdrop / "just exploring" all dismiss). Region changes are
-  announced to screen readers via `aria-live`.
+### 16.3 Default shown, never asked; ONE control (SEO-critical)
+- **A destination is always already shown — the site never asks before it serves.**
+  India (`DEFAULT_REGION`) is the default view for a visitor who has chosen nothing;
+  a destination-specific page shows its own. There is **no** welcome modal and no
+  onboarding interstitial (owner decision, September 2026 — the once-per-session
+  `DestinationPicker` dialog was removed). NEVER gate or hide content behind a region
+  wall: crawlers and direct-link visitors must always receive the content (protects
+  SEO + avoids Google's intrusive-interstitial penalty). Region filtering on listings
+  is **visual/client-side only** (cards toggle a `hidden` class; the full set stays in
+  the crawlable server HTML).
+- **Exactly ONE control changes the destination** — `components/RegionSwitcher.tsx`
+  in the (sticky) header, so it is reachable at any scroll position. It used to be
+  offered three ways at once — that control, a "Change destination" button in the
+  context bar, and the modal — in three different shapes. Do not add a second one:
+  the page chrome shows the destination once and changes it in one place.
+- **One list of values.** Both the control's panel and any future surface that offers
+  the choice render `components/DestinationMenu.tsx` — same order
+  (`REGIONS_ALPHABETICAL`), same flags, same selected state. The home page's
+  `HomeRegionGrid` is the *browsing* surface (a content section, not chrome) and
+  reads the same source.
+- The panel is keyboard-complete (opens onto the destination in use; Up/Down/Home/End
+  rove; Escape closes and returns focus to the trigger). Region changes are announced
+  to screen readers via `aria-live` (`RegionAnnouncer`).
 
 ### 16.4 Three content scopes (use `regions[]`; never duplicate)
 - **Single-region** (default): one `region`. The overwhelming majority. Each
@@ -683,7 +709,8 @@ audience-specific. (Owner decision, June 2026.)
   India → `domestic`, every other destination → `international`
   (`defaultAudienceFor(region)`).
 - **Client-only + SSG-safe, exactly like the region engine (§16.2–§16.3).** Held in
-  `AudienceProvider` as the session cookie `gsb_audience` (the explicit choice only;
+  `AudienceProvider` as the remembered cookie `gsb_audience`, `max-age` one year, so
+  a deliberate choice survives closing the browser (the explicit choice only;
   null = use the page default). **NEVER** read it in a server component. Every block
   renders into the server HTML; `AudienceGate` hides a non-matching block with a
   `hidden` class — content is **never** server-gated (crawler-safe, no intrusive

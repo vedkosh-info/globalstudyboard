@@ -1,9 +1,14 @@
 # GlobalStudyBoard — Project Context for Claude Code
 
 ## What is GlobalStudyBoard?
-A comprehensive, English-language college admission guide and query platform covering universities and entrance exams worldwide, with a strong India focus. Provides college profiles, step-by-step admission guides, entrance exam breakdowns, and study-abroad resources for students from school to postgraduate level.
+A comprehensive, English-language college admission guide and query platform covering universities and entrance exams worldwide. Provides college profiles, step-by-step admission guides, entrance exam breakdowns, and study-abroad resources for students from school to postgraduate level.
 
-**Primary audiences:** Indian students targeting IITs/NITs/IIMs/AIIMS/NLUs, and students seeking study-abroad guidance for USA, UK, Canada, Australia, Germany.
+**GlobalStudyBoard is for GLOBAL users — it is NOT an India site (BINDING, owner directive September 2026).** It serves students **worldwide**, in and to every destination we cover: India, the USA, the UK & Ireland, Canada, Europe, Australia & New Zealand, the Middle East, Russia & CIS, and East & Southeast Asia. India is **one destination among nine** — currently `DEFAULT_REGION`, i.e. the view a visitor sees before they pick — never the subject of the site. Apply this to every future task:
+- Never write site-level copy, metadata, headings, `/about`, home-page framing or an AI prompt that positions GSB as "for Indian students". Destination- or audience-specific *content* is of course written for its own reader (that is what §16 personalisation is for); the **site's own voice is global**.
+- Build every feature for all nine destinations, not for India with the rest bolted on. Region-tag content honestly (§16.4) and check a change on an abroad destination as well as India before calling it done.
+- The nine destinations are peers. Do not give India extra chrome, extra nav, or a privileged position in shared UI.
+
+**Audiences:** students choosing a university anywhere — including Indian students targeting IITs/NITs/IIMs/AIIMS/NLUs, students moving between any of the nine destinations, and domestic students within each destination (see the audience axis, `content-policy.md` §16.7).
 
 ## Content Policy (BINDING)
 - **Read `.claude/rules/content-policy.md` (Content Constitution) BEFORE writing or editing ANY content.** It is the highest-priority content authority. Also: `.claude/rules/content-qa-checklist.md` (independent QA) and `.claude/rules/content-audit-log.md` (sign-off log).

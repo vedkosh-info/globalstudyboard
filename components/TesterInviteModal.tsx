@@ -20,7 +20,7 @@ import { OPEN_TESTER_INVITE_EVENT } from '@/lib/tester-invite';
  * trigger anywhere is two lines (see `lib/tester-invite.ts`).
  *
  * Accessibility: a real focus-trapped dialog, matching the treatment in
- * `components/DestinationPicker.tsx` — body scroll is locked, the background is
+ * the rest of the site — body scroll is locked, the background is
  * made `inert` so neither Tab nor screen-reader browse mode can reach behind it,
  * Tab/Shift+Tab cycle inside the panel, and focus is restored on close.
  */
@@ -249,7 +249,7 @@ export default function TesterInviteModal() {
               id="tester-invite-title"
               className="font-display text-lg leading-tight text-forest-800"
             >
-              {status === 'done' ? 'Request received' : 'Get the Android app'}
+              {status === 'done' ? 'You’re on the list' : 'Early access to the app'}
             </h2>
           </div>
           <button
@@ -265,14 +265,13 @@ export default function TesterInviteModal() {
         {status === 'done' ? (
           <div ref={successRef} tabIndex={-1} className="mt-4 focus:outline-none">
             <p className="text-sm text-stone-800 leading-relaxed">
-              Thanks — we&apos;ve got your email. We add testers to the Play Console in batches, so
-              your invite is not instant.
+              Thank you — your request for early access is in. Here is what happens next:
             </p>
             <ol className="mt-3 space-y-2 list-none p-0 m-0">
               {[
-                'We add your address to the tester list in Google Play.',
-                'Google Play emails you an invitation with a join link.',
-                'Open that link on your Android phone, tap “Become a tester”, then install.',
+                'We review requests and approve them in small batches.',
+                'Once your request is approved, you’ll get an email with instructions to install — within 24 hours.',
+                'Open that email on your Android phone, tap “Become a tester”, then install.',
               ].map((step) => (
                 <li key={step} className="flex gap-2 text-sm text-stone-700 leading-relaxed">
                   <Check className="h-4 w-4 mt-0.5 shrink-0 text-forest-600" aria-hidden="true" />
@@ -281,9 +280,9 @@ export default function TesterInviteModal() {
               ))}
             </ol>
             <p className="mt-3 text-xs text-stone-600 leading-relaxed">
-              The invite goes to the address you gave us, so use the Google account you are signed
-              in with on the phone you want the app on. Everything on the app is also on this site —
-              nothing is behind the app.
+              Your invitation only works for the address you gave us, so open it on the phone that is
+              signed in to that Google account. Every guide is on this site too — the app is for
+              reading it comfortably on your phone.
             </p>
             <button
               type="button"
@@ -295,9 +294,23 @@ export default function TesterInviteModal() {
           </div>
         ) : (
           <form onSubmit={onSubmit} className="mt-1">
-            <p className="text-sm text-stone-700 leading-relaxed">
-              The GlobalStudyBoard app is in a closed beta on Google Play. To join, share the Google
-              account email you use on your Android phone and we&apos;ll send you an invite.
+            {/*
+              Sells the ACCESS as exclusive — which is true, places are genuinely limited — and
+              deliberately does NOT claim exclusive or premium FEATURES. The app is a wrapper around
+              this same site and has none, and inventing them would be a misleading claim of exactly
+              the kind Play rejected this app for.
+            */}
+            <p className="text-sm text-stone-800 leading-relaxed">
+              We&apos;re testing the GlobalStudyBoard Android app with a limited, invite-only group
+              before we open to everyone.
+            </p>
+            <p className="mt-2 text-sm text-stone-700 leading-relaxed">
+              If you&apos;d like an exclusive early-access preview, share the Google account email
+              you&apos;re signed in with on your Android phone.
+            </p>
+            <p className="mt-2 text-sm text-stone-700 leading-relaxed">
+              Once your request is approved, you&apos;ll get an email with instructions to install —
+              within 24 hours.
             </p>
 
             {/* Honeypot — bots fill hidden fields; the server drops those rows. */}
@@ -379,7 +392,7 @@ export default function TesterInviteModal() {
                 disabled={status === 'submitting' || !valid}
                 className="flex-1 rounded-xl bg-forest-700 text-cream-50 text-sm font-medium py-2.5 hover:bg-forest-800 disabled:bg-stone-200 disabled:text-stone-500 disabled:cursor-not-allowed"
               >
-                {status === 'submitting' ? 'Sending…' : 'Request invite'}
+                {status === 'submitting' ? 'Sending…' : 'Request early access'}
               </button>
             </div>
           </form>

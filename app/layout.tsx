@@ -13,7 +13,6 @@ import RegionContextBar from '@/components/RegionContextBar';
 import RegionAnnouncer from '@/components/RegionAnnouncer';
 import { AudienceProvider } from '@/components/AudienceProvider';
 import AudienceAnnouncer from '@/components/AudienceAnnouncer';
-import DestinationPicker from '@/components/DestinationPicker';
 import SiteSearch from '@/components/SiteSearch';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FabDock from '@/components/FabDock';
@@ -220,7 +219,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
           <Footer examLabels={FOOTER_EXAM_LABELS} year={COPYRIGHT_YEAR} />
-          <DestinationPicker />
           <RegionAnnouncer />
           <AudienceAnnouncer />
           <RecentPages />

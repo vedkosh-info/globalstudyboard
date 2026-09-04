@@ -12,41 +12,40 @@ import {
 import { REGION_SLUGS, DEFAULT_REGION, type RegionSlug } from '@/lib/regions';
 
 const REGION_KEY = 'gsb_region';
-const PROMPTED_KEY = 'gsb_region_prompted';
+
+/**
+ * A year. The destination is a preference the visitor set deliberately, so it is
+ * remembered on the device until they change it or clear their browser data —
+ * a returning student should not have to re-pick every time. (It replaces the
+ * old session cookie, which forgot the choice the moment the browser closed and
+ * so had to re-prompt on every visit.) The value is a region slug: no personal
+ * data, no identifier, first-party only. Described in /cookies.
+ */
+const REMEMBER_SECONDS = 60 * 60 * 24 * 365;
 
 interface RegionContextValue {
-  /** The student's chosen destination for this session, or null if not yet picked. */
+  /** The student's chosen destination, remembered on this device, or null if never set. */
   region: RegionSlug | null;
   /**
    * The destination of the page currently being viewed, when that page belongs to
    * a single destination (a country guide, a college, a region hub). Lets a visitor
    * who lands deep from search see the whole site skinned to that destination
-   * before they have explicitly chosen one. Null on destination-neutral pages.
+   * before they have ever chosen one. Null on destination-neutral pages.
    */
   pageRegion: RegionSlug | null;
   /**
-   * The region the whole site is tuned to right now: the explicit choice if one
-   * exists, otherwise the destination of the current page, otherwise the default
+   * The region the whole site is tuned to right now: the remembered choice if there
+   * is one, otherwise the destination of the current page, otherwise the default
    * (India). Always a real region, so every surface personalises without a null check.
    */
   effectiveRegion: RegionSlug;
-  /** Persist a destination choice for the session (resolves the prompt + closes the picker). */
+  /** Remember a destination choice on this device. */
   setRegion: (slug: RegionSlug) => void;
-  /** Forget the chosen destination. */
+  /** Forget the remembered destination (back to the India default). */
   clearRegion: () => void;
   /** Record the destination of the current page (provisional skin; never persisted). */
   setPageRegion: (slug: RegionSlug | null) => void;
-  /** True once the destination picker has been resolved this session (picked or skipped). */
-  promptedThisSession: boolean;
-  /** Record that the picker has been shown + resolved for this session (also closes it). */
-  markPrompted: () => void;
-  /** Whether the destination picker should be open right now. */
-  pickerOpen: boolean;
-  /** Force the destination picker open (e.g. from the "change destination" control). */
-  openPicker: () => void;
-  /** Close the picker without recording a skip (used right after a choice). */
-  closePicker: () => void;
-  /** True once the client has read any stored preference (avoids SSR flash). */
+  /** True once the client has read any stored preference (avoids an SSR flash). */
   ready: boolean;
 }
 
@@ -62,52 +61,38 @@ function readCookie(name: string): string | null {
   return match ? decodeURIComponent(match[1]) : null;
 }
 
-/**
- * Session cookie (no max-age) — cleared when the browser session ends, so a
- * fresh session re-prompts for a destination, while staying shared across tabs
- * and page navigations within the same session.
- */
-function writeSessionCookie(name: string, value: string) {
-  document.cookie = `${name}=${encodeURIComponent(value)}; path=/; SameSite=Lax`;
+function writeCookie(name: string, value: string) {
+  document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=${REMEMBER_SECONDS}; SameSite=Lax`;
 }
 
 function expireCookie(name: string) {
   document.cookie = `${name}=; path=/; max-age=0; SameSite=Lax`;
 }
 
+/**
+ * The destination engine.
+ *
+ * The site always SHOWS a destination — India by default — and never asks the
+ * visitor to choose before they can read anything. Choosing is a one-tap action
+ * in the header control whenever they want it, and the choice is then remembered
+ * on the device, so the next visit opens where they left off.
+ */
 export function RegionProvider({ children }: { children: ReactNode }) {
   const [region, setRegionState] = useState<RegionSlug | null>(null);
   const [pageRegion, setPageRegionState] = useState<RegionSlug | null>(null);
-  const [promptedThisSession, setPrompted] = useState(false);
-  const [pickerOpen, setPickerOpen] = useState(false);
   const [ready, setReady] = useState(false);
 
-  // Hydrate from the session cookie on first client render, then decide whether
-  // the once-per-session destination picker should auto-open.
+  // Hydrate the remembered choice on first client render. Reading it here (not on
+  // the server) is what keeps every page statically renderable.
   useEffect(() => {
     const stored = readCookie(REGION_KEY);
-    const hasRegion = isRegionSlug(stored);
-    if (hasRegion) setRegionState(stored);
-    const alreadyPrompted = readCookie(PROMPTED_KEY) === '1';
-    if (alreadyPrompted) setPrompted(true);
-    // First page of a fresh session, no destination chosen yet → invite a choice.
-    if (!hasRegion && !alreadyPrompted) setPickerOpen(true);
+    if (isRegionSlug(stored)) setRegionState(stored);
     setReady(true);
-  }, []);
-
-  const markPrompted = useCallback(() => {
-    setPrompted(true);
-    setPickerOpen(false);
-    writeSessionCookie(PROMPTED_KEY, '1');
   }, []);
 
   const setRegion = useCallback((slug: RegionSlug) => {
     setRegionState(slug);
-    writeSessionCookie(REGION_KEY, slug);
-    // Choosing a destination also resolves the prompt + closes the picker.
-    setPrompted(true);
-    setPickerOpen(false);
-    writeSessionCookie(PROMPTED_KEY, '1');
+    writeCookie(REGION_KEY, slug);
   }, []);
 
   const clearRegion = useCallback(() => {
@@ -119,9 +104,6 @@ export function RegionProvider({ children }: { children: ReactNode }) {
     setPageRegionState(slug);
   }, []);
 
-  const openPicker = useCallback(() => setPickerOpen(true), []);
-  const closePicker = useCallback(() => setPickerOpen(false), []);
-
   const value = useMemo<RegionContextValue>(
     () => ({
       region,
@@ -130,26 +112,9 @@ export function RegionProvider({ children }: { children: ReactNode }) {
       setRegion,
       clearRegion,
       setPageRegion,
-      promptedThisSession,
-      markPrompted,
-      pickerOpen,
-      openPicker,
-      closePicker,
       ready,
     }),
-    [
-      region,
-      pageRegion,
-      setRegion,
-      clearRegion,
-      setPageRegion,
-      promptedThisSession,
-      markPrompted,
-      pickerOpen,
-      openPicker,
-      closePicker,
-      ready,
-    ]
+    [region, pageRegion, setRegion, clearRegion, setPageRegion, ready],
   );
 
   return <RegionContext.Provider value={value}>{children}</RegionContext.Provider>;
