@@ -17,9 +17,16 @@ export default function GetAppButton({
   children,
   role,
   onNavigate,
+  ariaLabel,
 }: {
   className?: string;
   children: React.ReactNode;
+  /**
+   * Accessible name, for hosts that shorten the VISIBLE label on small screens.
+   * Keep the visible text a substring of this (WCAG 2.5.3 Label in Name), so
+   * voice-control users can still say what they see.
+   */
+  ariaLabel?: string;
   /** e.g. "menuitem" when the host renders a menu. */
   role?: string;
   /** Let the host close itself (menu / dock) when the control is used. */
@@ -34,6 +41,7 @@ export default function GetAppButton({
         target="_blank"
         rel="noopener noreferrer"
         className={className}
+        aria-label={ariaLabel}
         onClick={onNavigate}
       >
         {children}
@@ -47,6 +55,7 @@ export default function GetAppButton({
       data-get-app-trigger
       role={role}
       className={className}
+      aria-label={ariaLabel}
       aria-haspopup="dialog"
       onClick={() => {
         onNavigate?.();
