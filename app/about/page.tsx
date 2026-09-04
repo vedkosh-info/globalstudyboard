@@ -47,7 +47,7 @@ const PRINCIPLES = [
   {
     icon: <Globe2 className="w-5 h-5" />,
     title: 'Independent and global',
-    body: `We are not affiliated with any university, exam board or consultancy, and we don\u2019t sell admissions. Coverage spans ${REGIONS.length} regions so you can compare systems side by side.`,
+    body: `We are not affiliated with any government, government agency, university, exam board or consultancy, and we don\u2019t sell admissions. Coverage spans ${REGIONS.length} regions so you can compare systems side by side.`,
   },
 ];
 

@@ -21,6 +21,7 @@ const SITE_LINKS = [
   { label: 'Privacy', href: '/privacy' },
   { label: 'Terms', href: '/terms' },
   { label: 'Disclaimer', href: '/disclaimer' },
+  { label: 'Sources', href: '/sources' },
 ];
 
 function FooterCol({
@@ -102,9 +103,21 @@ export default function Footer({
               Independent, student-first guidance for {REGIONS.length} study destinations — pick yours
               and the whole site tunes to it.
             </p>
+            {/*
+              "Every fact linked to its official source" is the same class of claim that got the
+              Android app rejected under Play's Misleading Claims policy when the store listing
+              made it without listing the sources. It now links to /sources, the generated index
+              of every official source cited, so the claim is verifiable rather than assertive.
+            */}
             <p className="text-cream-50/50 text-[11px] leading-relaxed mt-4 font-medium tracking-wide">
-              Updated for the {ADMISSIONS_CYCLE} admissions cycle · Independent · Every fact linked to
-              its official source.
+              Updated for the {ADMISSIONS_CYCLE} admissions cycle · Independent ·{' '}
+              <Link
+                href="/sources"
+                className="text-cream-50/70 underline underline-offset-2 hover:text-cream-50/90"
+              >
+                Every fact linked to its official source
+              </Link>
+              .
             </p>
 
             {/* Android app. In closed beta this opens the tester-invite dialog;

@@ -244,3 +244,13 @@ hr {
   height: 1px;
   background: var(--color-border);
 }
+
+/* /sources lists ~1,800 external links; one utility keeps that markup small. */
+.gsb-src {
+  color: #14532D;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.gsb-src:hover {
+  color: #0F3F23;
+}
