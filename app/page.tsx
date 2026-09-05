@@ -87,7 +87,7 @@ export default function HomePage() {
             One reference, every region.<br />No country-of-origin bias.
           </h2>
           <p className="text-cream-50/85 text-base md:text-lg leading-relaxed mb-6">
-            Most college guides start from where their authors live. We start from where <em>you</em> want to go. Every region — the United States, the United Kingdom, continental Europe, Canada, Australia, the Middle East, Russia, and India — gets the same depth of coverage, the same plain-language tone, and the same insistence on linking to the official source.
+            Most college guides start from where their authors live. We start from where <em>you</em> want to go. Every region — the United States, the United Kingdom and Ireland, continental Europe, Canada, Australia and New Zealand, East and Southeast Asia, the Middle East, Russia and the CIS, and India — gets the same depth of coverage, the same plain-language tone, and the same insistence on linking to the official source.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link

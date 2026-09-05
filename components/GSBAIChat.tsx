@@ -122,7 +122,7 @@ export default function GSBAIChat({
               setMessages([]);
               setError(null);
             }}
-            className="text-cream-50/70 hover:text-cream-50 text-xs flex items-center gap-1.5 transition-colors"
+            className="text-cream-50/70 hover:text-cream-50 text-xs flex items-center gap-1.5 py-1 transition-colors"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             New chat

@@ -111,6 +111,8 @@ export const REGIONS: Region[] = [
       'Austria',
       'Poland',
       'Czechia',
+      'Hungary',
+      'Portugal',
     ],
     currency: { code: 'EUR', symbol: '€' },
     primaryApplicationPlatform: 'Uni-Assist (DE) / Campus France / Studielink (NL) / direct',
@@ -155,9 +157,13 @@ export const REGIONS: Region[] = [
     slug: 'russia',
     displayName: 'Russia & CIS',
     flag: '🇷🇺',
-    countries: ['Russia', 'Kazakhstan'],
+    countries: ['Russia', 'Kazakhstan', 'Uzbekistan', 'Armenia', 'Kyrgyzstan'],
     currency: { code: 'RUB', symbol: '₽' },
-    primaryApplicationPlatform: 'Direct via university / Russia.Study portal',
+    // NOT russia.study — that is a private consultancy (UniBase), not an official
+    // portal, and the site's own guide corpus was corrected off it. The official
+    // route is the Rossotrudnichestvo state-admission portal; named generically
+    // here so no commercial brand is presented as the official platform.
+    primaryApplicationPlatform: 'Direct via university / official government admission portal',
     educationSystemSummary:
       'Four-year bachelor\'s, two-year master\'s, three-to-four-year aspirantura (PhD-equivalent). Specialist degrees (5-6 years, integrated) common in medicine and engineering. The Russian government offers a quota scholarship (Open Doors) for international students. English-medium programs available at top universities like HSE, MIPT, ITMO, and Skoltech.',
     keyExamSlugs: ['ielts', 'toefl'],
@@ -178,7 +184,7 @@ export const REGIONS: Region[] = [
     slug: 'middle-east',
     displayName: 'Middle East',
     flag: '🇦🇪',
-    countries: ['United Arab Emirates', 'Qatar', 'Saudi Arabia', 'Oman', 'Bahrain', 'Israel'],
+    countries: ['United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Oman', 'Bahrain', 'Kuwait'],
     currency: { code: 'USD', symbol: '$' },
     primaryApplicationPlatform: 'Direct via university',
     educationSystemSummary:

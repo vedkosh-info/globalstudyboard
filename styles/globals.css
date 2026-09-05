@@ -25,10 +25,12 @@
    Tailwind's preflight is disabled (see tailwind.config.js), and preflight is
    what normally ships `border-style: solid`. Without it the CSS initial value
    `border-style: none` applies, and a `border-style: none` element computes
-   EVERY border-width to 0 — so every `border`, `border-b`, `border-stone-200`
-   in this codebase (329 of them) silently rendered nothing: no header rule, no
+   EVERY border-width to 0 — so `border`, `border-b`, `border-2` and friends
+   (152 of them across 42 files) silently rendered nothing: no header rule, no
    card hairlines, no input outlines. Text inputs looked bordered only because
-   they still had their operating-system border.
+   they still had their operating-system border. The exception was the handful of
+   elements that also set an explicit style utility (`border-dashed`, 5 uses):
+   those supply their own border-style, so they drew normally all along.
 
    For the same reason a <button> kept its OS chrome: a grey `buttonface`
    background and a 2px `outset` bevel. Any button that did not set its own

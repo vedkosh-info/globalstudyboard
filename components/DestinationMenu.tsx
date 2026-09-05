@@ -66,11 +66,11 @@ export default function DestinationMenu({
                    listbox whose options are buttons is invalid ARIA. */
                 aria-current={selected ? 'true' : undefined}
                 onClick={() => onChoose(r.slug)}
-                className={`flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left transition-colors motion-safe:duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 ${
+                className={`flex w-full items-start gap-3 rounded-xl px-3 py-2 text-left transition-colors motion-safe:duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 ${
                   selected ? 'bg-forest-50' : 'hover:bg-stone-50'
                 }`}
               >
-                <RegionFlag slug={r.slug} className="h-5" />
+                <RegionFlag slug={r.slug} className="mt-0.5 h-5 shrink-0" />
                 <span className="min-w-0 flex-1">
                   <span
                     className={`block truncate text-sm font-semibold ${
@@ -79,6 +79,25 @@ export default function DestinationMenu({
                   >
                     {r.displayName}
                   </span>
+                  {/*
+                    The countries the destination actually covers, in a smaller
+                    supporting line. "Europe", "Middle East", "Russia & CIS" and
+                    "East & Southeast Asia" are groupings, and their names alone do
+                    not tell a student whether their target country is included —
+                    which is the single question this menu exists to answer.
+                    Shown only when the name does not already enumerate them: a
+                    two-country region is spelled out in its own title ("United
+                    Kingdom & Ireland", "Australia & New Zealand"), so repeating it
+                    would be noise. Every country is listed, deliberately — a
+                    clipped list ("Germany · France · +13") cannot answer "is my
+                    country in here?", which is the whole point. Europe is the
+                    longest at four lines; the panel scrolls.
+                  */}
+                  {r.countries.length > 2 && (
+                    <span className="mt-0.5 block text-[11px] leading-snug text-stone-500">
+                      {r.countries.join(' · ')}
+                    </span>
+                  )}
                 </span>
                 {selected &&
                   (region ? (

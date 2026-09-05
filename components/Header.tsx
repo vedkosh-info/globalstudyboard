@@ -11,14 +11,23 @@ export default function Header({ topicsMenu }: { topicsMenu: TopicsMenuData }) {
         <div className="relative flex items-center justify-between gap-2 h-20">
 
           {/*
-            Wordmark — large, prominent brand on every page. It steps DOWN at lg
-            and back up at xl on purpose: at exactly 1024px the row is
-            wordmark + nav with nothing to spare, so a 30px wordmark squeezed the
-            destination control until its name truncated to "In…". Measure against
-            1024px before growing any of these three.
+            Wordmark — prominent brand, sized so the header row still fits a phone.
+            Below sm it is text-lg (~160px), and that size is load-bearing twice
+            over. (a) The row is wordmark (shrink-0) + pill + menu (shrink-0), so it
+            cannot compress: at 320px a 24px wordmark needed 337px and pushed the
+            menu button 1px past the viewport, where `overflow-x: hidden` hid the
+            evidence. (b) It is what buys the destination name room to appear on a
+            phone at all — measured on the live site, the widest name renders 80px at
+            390px and 112px at 412px with a 160px wordmark, versus 32px and 56px with
+            a 213px one, i.e. unreadable. It steps up at sm and down again at lg
+            (back up at xl): at exactly 1024px the row is wordmark + nav with nothing
+            to spare, so a 30px wordmark squeezed the destination control until its
+            name truncated to "In…". Measure against 320px, 390px and 1024px — at the
+            menu button's on-screen RIGHT EDGE, not its width — before growing any of
+            these four.
           */}
           <Link href="/" className="flex items-baseline gap-2 no-underline shrink-0" aria-label="GlobalStudyBoard home">
-            <span className="font-display text-2xl sm:text-3xl lg:text-[26px] xl:text-[34px] font-bold tracking-editorial text-forest-700 leading-none">
+            <span className="font-display text-lg sm:text-3xl lg:text-[26px] xl:text-[34px] font-bold tracking-editorial text-forest-700 leading-none">
               GlobalStudyBoard
             </span>
           </Link>

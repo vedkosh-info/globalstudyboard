@@ -5,8 +5,9 @@ import { useAudience } from '@/components/AudienceProvider';
 import { useRegion } from '@/components/RegionProvider';
 
 /**
- * Compact "Domestic / International" status toggle. A global, session-level
- * preference: when unset, each page uses its own default (domestic for India,
+ * Compact "Domestic / International" status toggle. A global preference,
+ * remembered on the device for a year once chosen; when unset, each page uses
+ * its own default (domestic for India,
  * international elsewhere). No popup — it just sits in the context bar and quietly
  * re-skins the audience-specific blocks on pages that have them.
  */

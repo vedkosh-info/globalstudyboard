@@ -159,6 +159,19 @@ export default async function RegionHubPage({ params }: Props) {
           <p className="editorial-lede text-stone-700 text-lg leading-relaxed">
             {r.educationSystemSummary}
           </p>
+          {/*
+            The countries this destination actually covers, named in full. The
+            eyebrow above says "N countries" but never said WHICH, and for a
+            grouping like Europe or the Middle East that is the first thing a
+            student needs to know. The destination menu shows a clipped preview;
+            this is the complete list it defers to.
+          */}
+          {r.countries.length > 1 && (
+            <p className="mt-4 text-sm leading-relaxed text-stone-600">
+              <span className="font-semibold text-stone-700">Covers:</span>{' '}
+              {r.countries.join(' · ')}
+            </p>
+          )}
           <LastUpdated date={SITE_REVIEWED} className="mt-4" />
         </header>
 

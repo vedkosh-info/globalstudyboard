@@ -219,9 +219,10 @@ export default function TesterInviteModal() {
 
   return (
     <div
-      // Above the quick-actions dock (z-1200) and the full-height layer
-      // (z-1400); the destination picker sits at z-1500 and can never be open
-      // at the same time, since this dialog only opens on a deliberate click.
+      // Above the quick-actions dock (z-1300) and the recent-pages drawer
+      // (z-1400); the report-AI dialog (z-1600) is the only layer above, and the
+      // two never open together. (The destination picker that used to sit at
+      // z-1500 no longer exists — no z-1500 layer remains in the codebase.)
       className="fixed inset-0 z-[1550] flex items-end sm:items-center justify-center bg-stone-900/50 p-0 sm:p-4"
       onMouseDown={(e) => {
         pressStartedOnBackdrop.current = e.target === e.currentTarget;

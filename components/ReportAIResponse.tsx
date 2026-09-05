@@ -68,7 +68,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
         ref={openerRef}
         type="button"
         onClick={() => setOpen(true)}
-        className="mt-2 inline-flex items-center gap-1 text-[11px] text-stone-600 hover:text-terracotta-600 underline underline-offset-2"
+        className="mt-2 inline-flex items-center gap-1 py-1.5 text-[11px] text-stone-600 hover:text-terracotta-600 underline underline-offset-2"
         aria-haspopup="dialog"
       >
         <Flag className="h-3 w-3" aria-hidden="true" />
