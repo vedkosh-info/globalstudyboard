@@ -112,7 +112,11 @@ export default function RegionSwitcher() {
            focus to it; the name is kept so existing checks keep resolving.) */
         data-region-picker-trigger
         onClick={() => (open ? close(true) : setOpen(true))}
-        aria-haspopup="true"
+        /* No aria-haspopup: its only values name a menu/listbox/tree/grid/dialog,
+           and this popup is none of those — it is a plain group of buttons. Saying
+           "true" (ARIA-equivalent to "menu") makes a screen reader promise menu
+           semantics this control does not implement. aria-expanded + aria-controls
+           is the complete, accurate disclosure pattern. */
         aria-expanded={open}
         aria-controls={open ? panelId : undefined}
         aria-label={`Study destination: ${active?.displayName ?? 'not set'}. Change destination`}
@@ -120,23 +124,37 @@ export default function RegionSwitcher() {
       >
         <RegionFlag slug={effectiveRegion} className="h-4" />
         {/*
-          The name appears from 640px (sm) up. It is NOT shown below that, and the flag
-          is doing the work there: measured on a 375px phone, wordmark (213px) +
-          named pill (139px) + menu button (32px) needs 400px of a 343px row, and
-          the menu button was pushed clean off the screen — unreachable, with
-          `overflow-x: hidden` hiding the evidence. The old control showed a
-          featureless globe at every width, which is what made a phone visitor
-          unable to tell which destination they were on; a flag answers that in the
-          same space. Full name is always in the accessible name and in the panel.
-          Above 640px the name is capped per breakpoint so a long one ("United
-          Kingdom & Ireland", ~172px) truncates by design rather than squeezing the
-          nav beside it. It was briefly revealed from 460px, which overflowed the
-          row (wordmark 212px + named pill 186px + menu 32px > the 428px available)
-          and — because this button was shrink-0 and MobileMenu was not — collapsed
-          the hamburger to a 13px sliver for the 7 destinations with long names.
-          Measure against the LONGEST name at 640px before lowering this again.
+          The name is revealed in STEPS, each measured, because the row is a
+          fixed-width problem: wordmark (213px, shrink-0) + gap 8 + pill + gap 8 +
+          menu (32px, shrink-0) must fit vw - 32 (px-4 both sides). `shrink-0` keeps
+          the menu 32px WIDE but does not keep it on screen — if the row overflows,
+          the menu is pushed past the right edge and this site hides horizontal
+          overflow, so it silently disappears while still reporting 32px. That is
+          how a 460px reveal shipped with the hamburger off-screen. The max-width
+          caps below are therefore load-bearing, not cosmetic: they are what keeps
+          the row inside the viewport. ALWAYS verify by reading the menu button's
+          on-screen RIGHT EDGE, never its width.
+
+          Required viewport = 213 + 8 + (74 + cap) + 8 + 32 + 32. Measured on the
+          root dev server against the longest name ("United Kingdom & Ireland",
+          171px at 600 14px Inter) and confirmed at every band boundary:
+
+            < 480px   name hidden, flag identifies the destination   (pill 68)
+            480px     max-w-6rem     pill 170, needs 463 -> 17px spare
+            520px     max-w-8.5rem   pill 210, needs 503 -> 17px spare
+            xl        max-w-12rem    full 171px name fits
+
+          Uncapped the name wants 171px (pill 245), which needs a 538px viewport —
+          so removing a cap breaks the row, it does not merely widen the pill.
+          480px is also the lowest step that keeps every destination distinguishable:
+          a 4rem cap renders BOTH "United States" and "United Kingdom & Ireland" as
+          "United…" (the two only diverge from a 71px cap up). Do not lower the 6rem
+          step either — it clears "United States" (91.01px) by about 5px, and below
+          that the name truncates for a destination that currently reads in full.
+          Re-measure against the longest name, at the menu's right edge, before
+          lowering any of these.
         */}
-        <span className="hidden min-w-0 truncate sm:inline sm:max-w-[8.5rem] xl:max-w-[12rem]">
+        <span className="hidden min-w-0 truncate min-[480px]:inline min-[480px]:max-w-[6rem] min-[520px]:max-w-[8.5rem] xl:max-w-[12rem]">
           {active?.displayName ?? 'Choose destination'}
         </span>
         <ChevronDown
