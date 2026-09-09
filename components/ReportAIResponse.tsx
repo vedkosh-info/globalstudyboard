@@ -77,8 +77,10 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
 
       {open && (
         <div
-          // Above the floating action dock (z-1200) and the full-height layer
-          // (z-1400); the destination picker sits at z-1500.
+          // Top of the stack: above the quick-actions dock (z-1200), the
+          // recent-pages backdrop/panel (z-1300/z-1400) and the tester-invite
+          // dialog (z-1550). (The destination picker that used to sit at z-1500
+          // is deleted; no z-1500 layer remains in the codebase.)
           className="fixed inset-0 z-[1600] flex items-end sm:items-center justify-center bg-stone-900/50 p-0 sm:p-4"
           onClick={close}
         >

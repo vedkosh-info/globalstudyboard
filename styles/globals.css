@@ -26,7 +26,9 @@
    what normally ships `border-style: solid`. Without it the CSS initial value
    `border-style: none` applies, and a `border-style: none` element computes
    EVERY border-width to 0 — so `border`, `border-b`, `border-2` and friends
-   (152 of them across 42 files) silently rendered nothing: no header rule, no
+   (123 of them across 42 files — counting border-WIDTH utility tokens inside
+   className strings: `border`, `border-{t,r,b,l,x,y}`, `border-{0,2,4,8}`;
+   NOT colour utilities like `border-stone-200`) silently rendered nothing: no header rule, no
    card hairlines, no input outlines. Text inputs looked bordered only because
    they still had their operating-system border. The exception was the handful of
    elements that also set an explicit style utility (`border-dashed`, 5 uses):

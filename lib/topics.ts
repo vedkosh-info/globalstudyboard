@@ -7606,7 +7606,7 @@ export const TOPICS: Topic[] = [
     description:
       'Funding routes for international students across Russia and key CIS countries — the Russian Government Scholarship (quota), the Open Doors olympiad, and university and national scholarships — with secular eligibility and official sources.',
     intro:
-      'Looking to study in Russia or a CIS country on funding? This hub gathers neutral, official-facts guides to the main routes — the Russian Government Scholarship (the government quota via the Russia.Study portal), the Open Doors international olympiad for master\'s and PhD applicants, and scholarships or fee waivers offered by universities and national schemes across Kazakhstan, Kyrgyzstan, Uzbekistan, and Armenia. Eligibility is secular and merit-based, no route is guaranteed, and every amount and deadline should be verified on the official source before you act.',
+      'Looking to study in Russia or a CIS country on funding? This hub gathers neutral, official-facts guides to the main routes — the Russian Government Scholarship (the government quota, applied for on the official government admission portal), the Open Doors international olympiad for master\'s and PhD applicants, and scholarships or fee waivers offered by universities and national schemes across Kazakhstan, Kyrgyzstan, Uzbekistan, and Armenia. Eligibility is secular and merit-based, no route is guaranteed, and every amount and deadline should be verified on the official source before you act.',
     group: 'study-in-russia-cis',
     region: 'russia',
     guideSlugs: [

@@ -153,6 +153,33 @@ export default function Footer({
             deadlines, rankings, and eligibility requirements change every academic year. Always
             verify all details with the official university or examination website before applying.
           </p>
+          {/*
+            Non-affiliation notice — GLOBAL on purpose, do not move to a sub-page.
+            Google Play rejected the Android app twice under the Misleading Claims
+            policy. Its required remedy had two halves: (1) a clear official source
+            for all government information — satisfied by /sources, generated from
+            the corpus, plus per-guide `sources`; and (2) "an easy-to-see disclaimer
+            stating that the app doesn't represent a government entity". Half (2)
+            existed only on /about, /disclaimer, /terms and /sources — pages a
+            reviewer has to go looking for — so the home screen and all ~2,900 guide
+            pages, including the visa guides that explain government rules and cite
+            gov.uk / travel.state.gov, carried no such statement. It lives here, in
+            the footer the root layout renders, so every page carries it.
+            The paragraph above is the separately-protected site disclaimer: its
+            wording must not change without the owner's approval (CLAUDE.md).
+          */}
+          <p className="mt-3 pt-3 border-t border-cream-50/10 text-cream-50/70 text-xs leading-relaxed text-center max-w-3xl mx-auto">
+            <strong className="text-cream-50/90 font-semibold">
+              GlobalStudyBoard is an independent publisher and does not represent a government
+              entity.
+            </strong>{' '}
+            It is not affiliated with, endorsed by, or acting on behalf of any government,
+            government agency, university, examination board or scholarship provider. See the{' '}
+            <Link href="/sources" className="text-cream-50/90 underline underline-offset-2">
+              official sources we cite
+            </Link>
+            .
+          </p>
         </div>
 
         {/* Bottom bar */}

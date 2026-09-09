@@ -11,7 +11,7 @@ import { SITE_REVIEWED } from '@/lib/site-meta';
 export const metadata: Metadata = {
   title: 'Study Abroad by Region — USA, UK, Europe, Canada, Australia & More',
   description:
-    'Compare university systems across 8 regions. Top universities, key entrance exams, scholarships, visa requirements and application platforms for every study destination.',
+    'Compare university systems across 9 study destinations. Top universities, key entrance exams, scholarships, visa requirements and application platforms for every study destination.',
   keywords: [
     'study abroad by region',
     'university guides worldwide',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.globalstudyboard.com/regions',
     title: 'Study Abroad by Region — USA, UK, Europe, Canada, Australia & More',
-    description: 'Compare university systems, entrance exams, scholarships and visa options across 8 global study destinations.',
+    description: 'Compare university systems, entrance exams, scholarships and visa options across 9 global study destinations.',
     images: ['/opengraph-image'],
   },
   twitter: {
@@ -87,7 +87,7 @@ export default function RegionsIndexPage() {
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-stone-500">
                 <span><strong className="text-stone-700 font-semibold">{universityCount}</strong> universities</span>
                 <span><strong className="text-stone-700 font-semibold">{r.keyExamSlugs.length}</strong> key exams</span>
-                <span>Apply via <strong className="text-stone-700 font-semibold">{r.primaryApplicationPlatform.split(' /')[0].split('(')[0].trim()}</strong></span>
+                <span>Apply via <strong className="text-stone-700 font-semibold">{r.primaryApplicationPlatform}</strong></span>
               </div>
             </Link>
           );

@@ -37,7 +37,12 @@ export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<str
     .filter((e): e is ExamLite => Boolean(e))
     .slice(0, 6);
 
-  const applyVia = r.primaryApplicationPlatform.split('/')[0].split('(')[0].trim();
+  /* Show the platform in full. Truncating at the first "/" or "(" turned
+  "OUAC (Ontario) or direct via university portal" into "OUAC" — an Ontario
+  body presented as Canada's national platform — "UCAS (UK) / CAO (Ireland)"
+  into "UCAS", dropping Ireland entirely, and India's exam-specific list into
+  "JoSAA", which covers engineering only. */
+  const applyVia = r.primaryApplicationPlatform;
 
   return (
     <>
@@ -70,7 +75,12 @@ export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<str
                 className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 hover:shadow-sm transition-all group flex flex-col"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <RegionFlag slug={r.slug} className="h-4" />
+                  {/* Only for single-country regions. The flag is the REGION's lead
+                      flag, so beside a city it asserted the wrong country: Japan's
+                      flag next to Singapore, the EU's next to Munich. Now that each
+                      region openly lists the countries it covers, that read as an
+                      error rather than a decoration. */}
+                  {r.countries.length === 1 && <RegionFlag slug={r.slug} className="h-4" />}
                   <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 truncate">
                     {college.city}
                     {college.state ? `, ${college.state}` : ''}

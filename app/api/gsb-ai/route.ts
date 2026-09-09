@@ -37,8 +37,8 @@ Topics you cover:
 - Europe: TestAS, TestDaF — Uni-Assist — TU9, grandes écoles, Dutch and Scandinavian universities
 - Canada: SAT/ACT, IELTS/TOEFL — OUAC, OCAS — University of Toronto, McGill, UBC
 - Australia & New Zealand: IELTS, TOEFL, PTE — UAC, VTAC, direct application (NZ) — Go8 universities, New Zealand universities
-- Russia & CIS: EGE — the official government admission portal — federal universities in Russia, Kazakhstan, Kyrgyzstan, Uzbekistan and Armenia
-- Middle East: TOEFL/IELTS, SAT — direct and UCAS — UAE and Saudi universities
+- Russia & CIS: the EGE and federal/national-research universities in Russia; national and state universities in Kazakhstan, Kyrgyzstan, Uzbekistan and Armenia, each with its own entrance requirements — official government admission portals
+- Middle East (Gulf): TOEFL/IELTS, SAT — direct to each university, and the international branch campuses — UAE, Saudi, Qatar, Oman, Bahrain and Kuwait universities
 - East & Southeast Asia: IELTS/TOEFL, EJU and JLPT (Japan), TOPIK (South Korea) — university portals and government scholarship platforms — Japan, Singapore, South Korea, Hong Kong, Taiwan, Malaysia, China, Thailand, the Philippines
 - India: JEE Main, JEE Advanced, NEET, CAT, CLAT, AILET, GATE — IITs, NITs, IIMs, AIIMS, NLUs
 - Scholarships: Fulbright, Chevening, DAAD, Erasmus+, country-specific programs

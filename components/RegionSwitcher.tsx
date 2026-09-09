@@ -173,7 +173,39 @@ export default function RegionSwitcher() {
              never wired up. */
           role="group"
           aria-labelledby={panelLabelId}
-          className="absolute right-0 z-50 mt-2 max-h-[min(78vh,32rem)] w-[16.5rem] overflow-y-auto overscroll-contain rounded-2xl border border-stone-200 bg-white p-1.5 shadow-xl"
+          /* 42rem, not 32rem: the country lines added ~200px of content (Europe alone
+             is 114px), so the list grew to ~625px and a 32rem cap hid the last two
+             destinations — the United States, our largest, was never visible without
+             scrolling. dvh rather than vh so the panel stays clear of the iOS Safari
+             toolbar. It still scrolls on short/landscape viewports, so the container
+             keeps a stable scrollbar gutter rather than relying on an overlay
+             scrollbar that is invisible at rest on touch devices. */
+          className="absolute right-0 z-50 mt-2 max-h-[min(80dvh,42rem)] w-[16.5rem] overflow-y-auto overscroll-contain rounded-2xl border border-stone-200 bg-white p-1.5 shadow-xl"
+          /*
+            Pure-CSS scroll shadows (the background-attachment local/scroll pair).
+            On a tall screen the list fits and NOTHING is drawn. On a short or
+            landscape one it scrolls, and a soft shadow appears at whichever edge
+            has more content behind it. This is the only cue available: touch
+            platforms use overlay scrollbars that are invisible at rest, so before
+            this a visitor at 375x667 saw seven of nine destinations with no hint
+            that the United States existed below the fold.
+          */
+          style={{
+            // NB: set the individual background-image properties, never the
+            // `background` shorthand — the shorthand resets background-color and
+            // silently wipes the `bg-white` class, leaving the panel transparent
+            // over the page behind it.
+            backgroundImage: [
+              'linear-gradient(#fff 30%, rgba(255,255,255,0))',
+              'linear-gradient(rgba(255,255,255,0), #fff 70%)',
+              'radial-gradient(farthest-side at 50% 0, rgba(28,25,23,0.16), rgba(28,25,23,0))',
+              'radial-gradient(farthest-side at 50% 100%, rgba(28,25,23,0.16), rgba(28,25,23,0))',
+            ].join(', '),
+            backgroundPosition: 'center top, center bottom, center top, center bottom',
+            backgroundSize: '100% 24px, 100% 24px, 100% 10px, 100% 10px',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'local, local, scroll, scroll',
+          }}
         >
           <DestinationMenu
             onChoose={choose}

@@ -60,7 +60,7 @@ export default function HomeHero() {
 
         {/* Quick facts for the chosen region */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
-          <Fact icon={<GraduationCap className="w-4 h-4" />} label="Apply via" value={r.primaryApplicationPlatform.split('/')[0].split('(')[0].trim()} />
+          <Fact icon={<GraduationCap className="w-4 h-4" />} label="Apply via" value={r.primaryApplicationPlatform} />
           <Fact icon={<Calendar className="w-4 h-4" />} label="Main intake" value={r.intakes[0]} />
           <Fact icon={<Wallet className="w-4 h-4" />} label="Tuition" value={tuition} />
           <Fact icon={<Plane className="w-4 h-4" />} label="Student visa" value={r.visaName ?? 'N/A'} />

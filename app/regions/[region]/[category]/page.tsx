@@ -341,7 +341,11 @@ function UniCard({ c }: { c: College }) {
         )}
       </div>
       <p className="mb-3 inline-flex items-center gap-1.5 text-xs text-stone-500">
-        <RegionFlag slug={c.region} className="h-3" />
+        {/* See HomeSpotlight: the region flag beside a city named the wrong
+            country for every multi-country region. */}
+        {(getRegionBySlug(c.region)?.countries.length ?? 0) === 1 && (
+          <RegionFlag slug={c.region} className="h-3" />
+        )}
         {c.city}
         {c.state ? `, ${c.state}` : ''} · Est. {c.established}
       </p>

@@ -74,6 +74,22 @@ export default async function RegionHubPage({ params }: Props) {
 
   const universities = COLLEGES.filter((c) => matchesRegion(r.slug, c.region, c.regions));
   const examsForRegion = ENTRANCE_EXAMS.filter((e) => matchesRegion(r.slug, e.region, e.regions));
+  /*
+    Lead with the exams this destination actually declares. ENTRANCE_EXAMS is in
+    catalogue order, so an unordered slice(0, 6) returned whatever sits at the top
+    of the array — GRE, GMAT, IB, IELTS, TOEFL, Duolingo — on EVERY hub. India, under
+    a heading reading "Standardised tests used by universities in India", showed not
+    one of JEE Main, JEE Advanced, NEET UG, CAT, CLAT or GATE, the exams its own
+    keyExamSlugs names and that 427 of its guides are built around. Same bug buried
+    SAT on Canada and PTE on ANZ/UK.
+  */
+  const keyExams = r.keyExamSlugs
+    .map((slug) => examsForRegion.find((e) => e.slug === slug))
+    .filter((e): e is (typeof examsForRegion)[number] => Boolean(e));
+  const examPreview = [
+    ...keyExams,
+    ...examsForRegion.filter((e) => !r.keyExamSlugs.includes(e.slug)),
+  ];
   const guidesForRegion = GUIDES.filter((g) => matchesRegion(r.slug, g.region, g.regions));
   const categoryCount: Record<string, number> = {
     universities: universities.length,
@@ -397,7 +413,7 @@ export default async function RegionHubPage({ params }: Props) {
               )}
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {examsForRegion.slice(0, 6).map((exam) => (
+              {examPreview.slice(0, 6).map((exam) => (
                 <Link
                   key={exam.id}
                   href={`/exams/${exam.slug}`}

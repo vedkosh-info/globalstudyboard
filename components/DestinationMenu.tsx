@@ -94,7 +94,7 @@ export default function DestinationMenu({
                     longest at four lines; the panel scrolls.
                   */}
                   {r.countries.length > 2 && (
-                    <span className="mt-0.5 block text-[11px] leading-snug text-stone-500">
+                    <span className="mt-0.5 block text-[11px] leading-snug text-stone-600">
                       {r.countries.join(' · ')}
                     </span>
                   )}

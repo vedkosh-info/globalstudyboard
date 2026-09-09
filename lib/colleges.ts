@@ -1314,7 +1314,9 @@ export const COLLEGES: College[] = [
     established: 1755,
     ranking: { qs: 87 },
     admissionExams: ['Russian language test (TORFL) / IELTS / TOEFL for English-taught'],
-    applicationPlatform: 'Direct via MSU / Russia.Study',
+    // NOT Russia.Study — that is a private consultancy (UniBase), not an official
+    // portal. Same correction as lib/regions.ts; see the 2026-06-14 audit-log row.
+    applicationPlatform: 'Direct via MSU / official government admission portal',
     programLevels: ['bachelors', 'masters', 'phd'],
     englishTaught: true,
     websiteUrl: 'https://www.msu.ru',
