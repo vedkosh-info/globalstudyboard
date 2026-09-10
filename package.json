@@ -2,7 +2,7 @@
   "name": "globalstudyboard",
   "version": "0.1.0",
   "private": true,
-  "description": "GlobalStudyBoard — World college admission guide and query platform",
+  "description": "GlobalStudyBoard \u2014 World college admission guide and query platform",
   "scripts": {
     "dev": "next dev -p ${PORT:-5000}",
     "build": "next build",
@@ -13,7 +13,8 @@
     "cmi:build": "tsx scripts/cmi.ts --build",
     "dup:check": "tsx scripts/dupcheck.ts",
     "dup:check:strict": "tsx scripts/dupcheck.ts --strict",
-    "find-home": "tsx scripts/find-home.ts"
+    "find-home": "tsx scripts/find-home.ts",
+    "links:check": "tsx scripts/linkcheck.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.79",

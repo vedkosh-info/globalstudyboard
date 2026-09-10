@@ -773,7 +773,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     totalMarks: 'See the official notification',
     eligibility:
       'Passed or appearing in Class 12 (science) with the required subjects (PCM for engineering); admission through the Admission Committee for Professional Courses (ACPC).',
-    websiteUrl: 'https://gujcet.gseb.org',
+    websiteUrl: 'https://www.gsebeservice.com/',
     descriptionEn:
       'GUJCET is the Gujarat state entrance test conducted by the Gujarat Secondary and Higher Secondary Education Board (GSEB) for admission to engineering and pharmacy undergraduate courses in Gujarat. It is an offline, OMR-based test across Physics, Chemistry and Mathematics (or Biology), based on the Gujarat Class 12 syllabus. Admission and counselling are handled by the Admission Committee for Professional Courses (ACPC), which may combine GUJCET, board marks and JEE Main as defined each year. Pattern, marking and dates are set by GSEB each year.',
     collegesAccepting: [],
@@ -1262,12 +1262,12 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     duration: 'See the official notification',
     totalMarks: 'See the official notification',
     eligibility: 'Class 12 pass or appearing — see the official information bulletin',
-    websiteUrl: 'https://nchmjee.nta.nic.in',
+    websiteUrl: 'https://nchm.gov.in/',
     descriptionEn:
       'NCHM JEE is the national entrance test for admission to the B.Sc in Hospitality and Hotel Administration (B.Sc HHA) at Institutes of Hotel Management (IHMs) affiliated with the National Council for Hotel Management and Catering Technology (NCHMCT) under the Ministry of Tourism. It is conducted by NTA as a computer-based test.',
     collegesAccepting: [],
     sources: [
-      { label: 'NTA — NCHM JEE official portal', url: 'https://nchmjee.nta.nic.in' },
+      { label: 'NTA — NCHM JEE official portal', url: 'https://nchm.gov.in/' },
       { label: 'NTA — NCHM JEE exam page', url: 'https://exams.nta.nic.in/nchm-jee/' },
     ],
     lastVerified: '2026-06-06',
