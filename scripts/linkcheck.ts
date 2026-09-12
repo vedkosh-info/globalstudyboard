@@ -13,12 +13,21 @@
  *
  * Exit code is 1 if any link is CONFIRMED dead, so it can gate a release.
  *
- * What counts as dead is deliberately narrow, because official government sites
- * are aggressive with bots and geo-blocks: 403, 429 and 412 are anti-bot, and a
- * timeout from one machine proves nothing. Only two things count:
- *   - the server answered 404/410 (it exists and says the page does not), or
- *   - the hostname does not resolve on BOTH public resolvers (8.8.8.8, 1.1.1.1).
- * That rule is what separated 9 genuinely-rotted links from 32 false alarms.
+ * What counts as DEAD is deliberately narrow, because official government sites
+ * are aggressive with bots and geo-blocks. Dead means a failure that is
+ * deterministic — every visitor, from anywhere, in any browser, hits it:
+ *   - the server answered 404/410 (it exists and says the page does not);
+ *   - the hostname resolves on NEITHER public resolver (8.8.8.8, 1.1.1.1);
+ *   - the TLS certificate is expired, untrusted, or the handshake fails
+ *     (a browser shows a full-page security error — worse than a 404);
+ *   - the link is plain http:// (browsers now warn, and Play reviewers did).
+ *
+ * UNREACHABLE is everything else that failed from this machine — connection
+ * refused, timeouts, 403/429/412 anti-bot. It proves nothing on its own (the UAE
+ * ministry is unreachable from here and fine on public DNS), so it is REPORTED
+ * for a human to check in a real browser but does not fail the run. Pass
+ * --strict to make it fail too. A second Play rejection came from a host that
+ * refused connections from three vantage points, so do read that list.
  */
 import { GUIDES } from '../lib/guides';
 import { ENTRANCE_EXAMS } from '../lib/admission-guides';
@@ -71,19 +80,41 @@ async function resolves(host: string): Promise<boolean> {
   return false;
 }
 
-async function check(url: string): Promise<{ url: string; status: string; dead: boolean }> {
+type Verdict = { url: string; status: string; dead: boolean; unreachable: boolean };
+
+/*
+ * TLS failures a BROWSER shows as a full-page error. Deliberately excludes
+ * UNABLE_TO_VERIFY_LEAF_SIGNATURE / UNABLE_TO_GET_ISSUER_CERT_LOCALLY: those
+ * usually mean the server omits an intermediate certificate, which Chrome and
+ * Safari fetch on the fly and Node does not — nmc.org.in (414 citations) trips
+ * them in Node yet verifies cleanly against the OS trust store. Those land in
+ * the unreachable list instead.
+ */
+const TLS_CODES = new Set([
+  'CERT_HAS_EXPIRED', 'SELF_SIGNED_CERT_IN_CHAIN', 'DEPTH_ZERO_SELF_SIGNED_CERT',
+  'ERR_TLS_CERT_ALTNAME_INVALID', 'EPROTO', 'ERR_SSL_WRONG_VERSION_NUMBER', 'ERR_SSL_PROTOCOL_ERROR',
+]);
+
+async function check(url: string): Promise<Verdict> {
   const host = (() => { try { return new URL(url).hostname; } catch { return ''; } })();
+  if (url.startsWith('http://')) {
+    return { url, status: 'plain-http', dead: true, unreachable: false };
+  }
   try {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), 25_000);
     const res = await fetch(url, { redirect: 'follow', headers: { 'User-Agent': UA }, signal: ctrl.signal });
     clearTimeout(t);
     // 404/410: the server exists and says this page does not. That is real rot.
-    return { url, status: String(res.status), dead: res.status === 404 || res.status === 410 };
-  } catch {
-    // Network failure proves nothing on its own — only a name that resolves nowhere does.
+    return { url, status: String(res.status), dead: res.status === 404 || res.status === 410, unreachable: false };
+  } catch (err) {
+    const cause = (err as { cause?: { code?: string } }).cause;
+    const code = cause?.code ?? (err as { name?: string }).name ?? 'ERR';
+    if (TLS_CODES.has(code)) return { url, status: `tls:${code}`, dead: true, unreachable: false };
+    // Other network failure proves nothing on its own — only a name that resolves nowhere does.
     const ok = host ? await resolves(host) : false;
-    return { url, status: ok ? 'unreachable-from-here' : 'NXDOMAIN', dead: !ok };
+    if (!ok) return { url, status: 'NXDOMAIN', dead: true, unreachable: false };
+    return { url, status: `unreachable:${code}`, dead: false, unreachable: true };
   }
 }
 
@@ -96,7 +127,9 @@ async function main() {
   });
   console.log(`Checking ${urls.length} source URLs${govOnly ? ' (government/statutory only)' : ''}…\n`);
 
-  const dead: { url: string; status: string }[] = [];
+  const strict = process.argv.includes('--strict');
+  const dead: Verdict[] = [];
+  const unreachable: Verdict[] = [];
   const CONCURRENCY = 24;
   let i = 0;
   await Promise.all(
@@ -106,18 +139,25 @@ async function main() {
         const r = await check(url);
         if (r.dead) {
           dead.push(r);
-          console.log(`  DEAD  ${r.status.padEnd(22)} ${r.url}\n        cited by ${all.get(r.url)}`);
+          console.log(`  DEAD  ${r.status.padEnd(28)} ${r.url}\n        cited by ${all.get(r.url)}`);
+        } else if (r.unreachable) {
+          unreachable.push(r);
         }
       }
     }),
   );
 
-  console.log(`\n${dead.length === 0 ? '✔' : '✖'} ${dead.length} confirmed dead of ${urls.length} checked.`);
-  if (dead.length) {
-    console.log('\nOnly 404/410 responses and names that resolve on NEITHER public resolver are');
-    console.log('reported. 403/429/412 and timeouts are anti-bot or geo-blocking, not rot.');
-    process.exit(1);
+  if (unreachable.length) {
+    console.log(`\nUNREACHABLE from this machine (${unreachable.length}) — check these in a real browser;`);
+    console.log('connection-refused from several places is how the second Play rejection happened:');
+    for (const r of unreachable.sort((a, b) => a.url.localeCompare(b.url))) {
+      console.log(`  ${r.status.padEnd(34)} ${r.url}`);
+    }
   }
+
+  const failing = strict ? dead.length + unreachable.length : dead.length;
+  console.log(`\n${failing === 0 ? '✔' : '✖'} ${dead.length} confirmed dead, ${unreachable.length} unreachable-from-here, of ${urls.length} checked${strict ? ' (--strict: both fail)' : ''}.`);
+  if (failing) process.exit(1);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

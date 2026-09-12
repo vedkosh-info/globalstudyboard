@@ -500,6 +500,30 @@ export default async function RegionHubPage({ params }: Props) {
               </AudienceGate>
             ))}
           </div>
+          {/*
+            The official sources behind the visa and work-rule facts above. The
+            FAQ used to say "verify on the official source" without linking one —
+            government information with no source, which is exactly what Play's
+            Misleading Claims policy rejects. Rendered as a visible list, not a
+            footnote, so a reviewer or student can reach the authority in one tap.
+          */}
+          <p className="mt-6 mb-2 text-xs font-semibold uppercase tracking-wide text-stone-600">
+            Official sources for the visa and work rules above
+          </p>
+          <ul className="m-0 flex list-none flex-wrap gap-x-5 gap-y-1.5 p-0">
+            {r.sources.map((src) => (
+              <li key={src.url} className="text-sm">
+                <a
+                  href={src.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-forest-700 underline underline-offset-2 hover:text-forest-800"
+                >
+                  {src.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* Popular queries */}

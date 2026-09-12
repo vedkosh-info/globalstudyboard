@@ -23,6 +23,16 @@ export interface Region {
   averageTuitionRangeUsd: { undergrad: [number, number]; grad: [number, number] } | null;
   visaName: string | null;
   worksWhileStudying: string;
+  /**
+   * Official sources for the government facts this record states (visa name,
+   * work rules). Rendered on the region hub next to those facts. Google Play's
+   * Misleading Claims policy requires a "clear, official, valid and functional
+   * source" for all government information; the hub stated these facts with a
+   * text nudge to "verify on the official source" but linked nothing.
+   * Verified live 2026-09-12; each is a durable root or long-lived section,
+   * never a per-cycle page.
+   */
+  sources: { label: string; url: string }[];
 }
 
 export const REGIONS: Region[] = [
@@ -47,6 +57,10 @@ export const REGIONS: Region[] = [
     averageTuitionRangeUsd: { undergrad: [11000, 65000], grad: [25000, 75000] },
     visaName: 'F-1 Student Visa',
     worksWhileStudying: 'Up to 20 hrs/week on-campus during term; full-time on breaks. OPT after graduation.',
+    sources: [
+      { label: 'Study in the States — U.S. Department of Homeland Security', url: 'https://studyinthestates.dhs.gov/' },
+      { label: 'U.S. Department of State — student visas', url: 'https://travel.state.gov/content/travel/en/us-visas/study.html' },
+    ],
   },
   {
     slug: 'canada',
@@ -68,6 +82,10 @@ export const REGIONS: Region[] = [
     averageTuitionRangeUsd: { undergrad: [12000, 35000], grad: [10000, 45000] },
     visaName: 'Study Permit',
     worksWhileStudying: 'Up to 24 hrs/week off-campus during term; full-time on breaks. PGWP up to 3 years after graduation.',
+    sources: [
+      { label: 'EduCanada — Government of Canada', url: 'https://www.educanada.ca/' },
+      { label: 'IRCC — study in Canada (Government of Canada)', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html' },
+    ],
   },
   {
     slug: 'uk-ireland',
@@ -91,6 +109,10 @@ export const REGIONS: Region[] = [
     averageTuitionRangeUsd: { undergrad: [12000, 45000], grad: [15000, 55000] },
     visaName: 'Student Visa (UK) / Stamp 2 (Ireland)',
     worksWhileStudying: 'UK: 20 hrs/week during term, full-time on breaks. Graduate Route: 2 years stay after degree.',
+    sources: [
+      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
+      { label: 'Irish Immigration Service', url: 'https://www.irishimmigration.ie/' },
+    ],
   },
   {
     slug: 'europe',
@@ -134,6 +156,10 @@ export const REGIONS: Region[] = [
     averageTuitionRangeUsd: { undergrad: [0, 25000], grad: [0, 30000] },
     visaName: 'National Student Visa (Schengen long-stay)',
     worksWhileStudying: 'Typically 20 hrs/week or up to 140 full (280 half) days per year — varies by country; verify on the official source. Post-study work visas: Germany 18 months, Netherlands 1 year, France 1-2 years.',
+    sources: [
+      { label: 'EU Immigration Portal — European Commission', url: 'https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal_en' },
+      { label: 'European Education Area — European Commission', url: 'https://education.ec.europa.eu/' },
+    ],
   },
   {
     slug: 'australia-nz',
@@ -155,6 +181,10 @@ export const REGIONS: Region[] = [
     averageTuitionRangeUsd: { undergrad: [20000, 45000], grad: [22000, 50000] },
     visaName: 'Subclass 500 (AU) / Fee-Paying Student Visa (NZ)',
     worksWhileStudying: 'Australia: 48 hrs per fortnight during term. Post-study work visa 2-6 years depending on degree.',
+    sources: [
+      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
+      { label: 'Immigration New Zealand — study visas', url: 'https://www.immigration.govt.nz/study/study-visas/' },
+    ],
   },
   {
     slug: 'russia',
@@ -182,6 +212,10 @@ export const REGIONS: Region[] = [
     averageTuitionRangeUsd: { undergrad: [3000, 12000], grad: [3500, 14000] },
     visaName: 'Russian Student Visa (type O)',
     worksWhileStudying: 'Full-time students at state-accredited universities may work without a separate work permit; verify current rules on the official source.',
+    sources: [
+      { label: 'Official Russian Government admission portal', url: 'https://education-in-russia.com/' },
+      { label: 'Government of Kazakhstan', url: 'https://www.gov.kz/' },
+    ],
   },
   {
     slug: 'middle-east',
@@ -205,6 +239,10 @@ export const REGIONS: Region[] = [
     averageTuitionRangeUsd: { undergrad: [0, 65000], grad: [0, 60000] },
     visaName: 'Student Residence Visa',
     worksWhileStudying: 'Generally restricted; some universities permit on-campus work.',
+    sources: [
+      { label: 'UAE Ministry of Higher Education and Scientific Research', url: 'https://www.mohesr.gov.ae/' },
+      { label: 'Study in Saudi — Saudi Ministry of Education', url: 'https://www.studyinsaudi.sa/' },
+    ],
   },
   {
     slug: 'india',
@@ -227,6 +265,10 @@ export const REGIONS: Region[] = [
     averageTuitionRangeUsd: { undergrad: [500, 8000], grad: [600, 12000] },
     visaName: 'N/A (domestic) / Student Visa for international applicants',
     worksWhileStudying: 'On-campus only at most institutions; internships standard in summer.',
+    sources: [
+      { label: 'Study in India — Ministry of Education', url: 'https://www.studyinindia.gov.in/' },
+      { label: 'Indian Visa Online — Government of India', url: 'https://indianvisaonline.gov.in/' },
+    ],
   },
   {
     slug: 'east-southeast-asia',
@@ -264,6 +306,11 @@ export const REGIONS: Region[] = [
     visaName: 'Student visa / pass (varies by country)',
     worksWhileStudying:
       'Varies by country — many allow limited part-time work during term (for example Japan up to 28 hrs/week with permission; Singapore restricted); verify current rules on the official source before relying on them.',
+    sources: [
+      { label: 'Study in Japan — Government of Japan', url: 'https://www.studyinjapan.go.jp/en/' },
+      { label: 'Study in Korea — Government of Korea', url: 'https://www.studyinkorea.go.kr/en/main.do' },
+      { label: 'Immigration & Checkpoints Authority, Singapore', url: 'https://www.ica.gov.sg/' },
+    ],
   },
 ];
 

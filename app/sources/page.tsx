@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Landmark, ShieldAlert } from 'lucide-react';
 import { GUIDES } from '@/lib/guides';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
+import { COLLEGES } from '@/lib/colleges';
 import { REGIONS, type RegionSlug } from '@/lib/regions';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
@@ -110,6 +111,20 @@ function collect(): { byRegion: Map<RegionSlug, Entry[]>; exams: Entry[]; totals
     for (const s of guide.sources) add(bucket, s.label, s.url);
   }
 
+  /*
+    Universities' own official sites. These were missing from the first version
+    of this page, which collected only guide and exam sources — so the page
+    claimed to list "every official source we cite" while 41 of the 118 university
+    profiles linked an official site that appeared nowhere on it. An adversarial
+    review of the Play listing caught the false completeness claim.
+  */
+  for (const college of COLLEGES) {
+    if (!college.websiteUrl) continue;
+    const slug = college.region as RegionSlug;
+    if (!byRegion.has(slug)) byRegion.set(slug, new Map());
+    add(byRegion.get(slug)!, `${college.nameEn} — official website`, college.websiteUrl);
+  }
+
   const examBucket = new Map<string, Entry>();
   for (const exam of ENTRANCE_EXAMS) {
     for (const s of exam.sources ?? []) add(examBucket, s.label, s.url);
@@ -160,7 +175,7 @@ function SourceList({ entries }: { entries: Entry[] }) {
       {other.length > 0 && (
         <div className="mt-4">
           <h3 className="text-xs font-semibold uppercase tracking-wide text-stone-600 m-0">
-            Universities, exam boards and other official sources ({other.length})
+            Universities, exam boards, ranking bodies and other cited sources ({other.length})
           </h3>
           <Hosts entries={other} />
         </div>

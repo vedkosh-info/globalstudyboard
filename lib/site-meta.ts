@@ -27,7 +27,11 @@ export const ADMISSIONS_CYCLE = '2026–2027';
 export const CONTACT_EMAIL = 'contact@globalstudyboard.com';
 
 /** Month the catalogue was last broadly reviewed (ISO 'YYYY-MM'). */
-export const SITE_REVIEWED = '2026-06';
+// 2026-09: every one of the ~3,770 source URLs across guides, exams, colleges
+// and regions was liveness-checked and 59 dead ones replaced with verified
+// official pages (see scripts/linkcheck.ts and the audit log) — a genuine
+// catalogue-wide re-review, which is the bar this date is meant to reflect.
+export const SITE_REVIEWED = '2026-09';
 
 const MONTHS = [
   'January', 'February', 'March', 'April', 'May', 'June',

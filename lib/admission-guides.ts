@@ -1051,12 +1051,12 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     totalMarks: 'See the official notification',
     eligibility:
       'Varies by branch: Flying Branch broadly requires Physics and Mathematics at 10+2 with a minimum marks norm; Ground Duty branches require relevant degrees. Age limits are set officially each cycle. Confirm in the official AFCAT notification.',
-    websiteUrl: 'https://careerairforce.gov.in',
+    websiteUrl: 'https://indianairforce.nic.in/career/',
     descriptionEn:
       'AFCAT is conducted by the Indian Air Force twice a year to recruit commissioned officers into the Flying Branch, Ground Duty (Technical), and Ground Duty (Non-Technical) branches. Candidates who qualify the computer-based test appear for the Air Force Selection Board (AFSB). Eligibility, pattern, vacancies and dates are set in the official IAF notification each cycle.',
     collegesAccepting: [],
     sources: [
-      { label: 'Indian Air Force — careerairforce.gov.in (official)', url: 'https://careerairforce.gov.in' },
+      { label: 'Indian Air Force — official website (careers)', url: 'https://indianairforce.nic.in/career/' },
       { label: 'AFCAT portal — afcat.cdac.in (official)', url: 'https://afcat.cdac.in/AFCAT/' },
     ],
     lastVerified: '2026-06-06',
