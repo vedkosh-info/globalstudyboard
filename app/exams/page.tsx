@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { resolveDisplayRegions } from '@/lib/regions';
 import ExamsView, { type ExamCard } from '@/components/ExamsView';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
-export const metadata: Metadata = {
-  title: 'All Entrance Exams — SAT, ACT, GRE, IELTS, A-Levels & More',
+export const metadata: Metadata = pageMetadata({
+  title: 'All Entrance Exams \u2014 SAT, ACT, GRE, IELTS, A-Levels & More',
   description:
-    'Compare every university entrance exam worldwide: SAT, ACT, AP, GRE, GMAT, MCAT, LSAT, A-Levels, IB, TestAS, IELTS, TOEFL, Duolingo, PTE, JEE, NEET and CAT — with costs, formats and official links.',
+    'Compare every university entrance exam worldwide: SAT, ACT, AP, GRE, GMAT, MCAT, LSAT, A-Levels, IB, TestAS, IELTS, TOEFL, Duolingo, PTE, JEE, NEET and CAT \u2014 with costs, formats and official links.',
+  path: '/exams',
   keywords: [
     'SAT exam guide',
     'ACT vs SAT',
@@ -23,21 +25,7 @@ export const metadata: Metadata = {
     'LSAT MCAT',
     'standardised tests worldwide',
   ],
-  alternates: { canonical: 'https://www.globalstudyboard.com/exams' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/exams',
-    title: 'All Entrance Exams — SAT, ACT, GRE, IELTS, A-Levels & More',
-    description: 'Compare every university entrance exam worldwide — formats, costs, frequency and official sources.',
-    images: ['/opengraph-image'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'All Entrance Exams — GlobalStudyBoard',
-    description: 'SAT, ACT, GRE, GMAT, IELTS, TOEFL, A-Levels, IB, JEE, NEET, CAT — all compared in one place.',
-    images: ['/opengraph-image'],
-  },
-};
+});
 
 export default function ExamsIndexPage() {
   const itemListJsonLd = JSON.stringify({
@@ -83,7 +71,7 @@ export default function ExamsIndexPage() {
         <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
-      <ExamsView items={items} />
+      <ExamsView items={items} unfilteredByDefault />
     </div>
   );
 }

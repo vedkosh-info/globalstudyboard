@@ -1,20 +1,14 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import { Mail, MessageCircleQuestion, FileWarning } from 'lucide-react';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 
-export const metadata: Metadata = {
-  title: 'Contact',
+export const metadata: Metadata = pageMetadata({
+  title: 'Contact GlobalStudyBoard — Corrections, Questions & Coverage',
   description:
-    'Get in touch with GlobalStudyBoard — report an out-of-date detail, suggest a correction, or ask about our coverage. We verify reports against official sources.',
-  alternates: { canonical: 'https://www.globalstudyboard.com/contact' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/contact',
-    title: 'Contact GlobalStudyBoard',
-    description: 'Report a correction, suggest coverage, or ask a question.',
-    images: ['/opengraph-image'],
-  },
-};
+    'Get in touch with GlobalStudyBoard \u2014 report an out-of-date detail, suggest a correction, or ask about our coverage. We verify reports against official sources.',
+  path: '/contact',
+});
 
 const EMAIL = CONTACT_EMAIL;
 

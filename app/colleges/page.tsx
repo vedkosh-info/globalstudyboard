@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import { COLLEGES } from '@/lib/colleges';
-import { resolveDisplayRegions } from '@/lib/regions';
+import { REGION_SLUGS, resolveDisplayRegions } from '@/lib/regions';
 import CollegesView, { type CollegeCard } from '@/components/CollegesView';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
-export const metadata: Metadata = {
-  title: 'Universities Worldwide — Profiles, Admissions & Courses',
+export const metadata: Metadata = pageMetadata({
+  title: 'Universities Worldwide: Profiles, Rankings & How to Apply',
   description:
-    'Browse university profiles across the USA, UK, Europe, Canada, Australia, the Middle East and India — with location, degree levels, admission tests and official links for each institution.',
+    'Browse 118 university profiles across the USA, UK & Ireland, Canada, Europe, Australia & NZ, East & Southeast Asia, the Middle East, Russia & CIS and India \u2014 location, degree levels, admission tests and official links for each institution.',
+  path: '/colleges',
   keywords: [
     'university profiles',
     'best universities worldwide',
@@ -18,22 +20,7 @@ export const metadata: Metadata = {
     'IIT IIM AIIMS NLU',
     'university admissions guide',
   ],
-  alternates: { canonical: 'https://www.globalstudyboard.com/colleges' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/colleges',
-    title: 'Universities Worldwide — GlobalStudyBoard',
-    description:
-      'University profiles across the USA, UK, Europe, Canada, Australia, the Middle East and India.',
-    images: ['/opengraph-image'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Universities Worldwide — GlobalStudyBoard',
-    description: 'Profiles, admissions and courses for top universities across every study destination.',
-    images: ['/opengraph-image'],
-  },
-};
+});
 
 export default function CollegesIndexPage() {
   const itemListJsonLd = JSON.stringify({
@@ -51,7 +38,14 @@ export default function CollegesIndexPage() {
       url: `https://www.globalstudyboard.com/colleges/${c.slug}`,
     })),
   });
-  const items: CollegeCard[] = COLLEGES.map((c) => ({
+  // Destination order (the nav's order), QS rank within a destination — the raw
+  // catalogue order put the newest batch (Asia) first on a "worldwide" page.
+  const ordered = [...COLLEGES].sort(
+    (a, b) =>
+      REGION_SLUGS.indexOf(a.region) - REGION_SLUGS.indexOf(b.region) ||
+      (a.ranking?.qs ?? 9999) - (b.ranking?.qs ?? 9999),
+  );
+  const items: CollegeCard[] = ordered.map((c) => ({
     id: c.id,
     slug: c.slug,
     nameEn: c.nameEn,
@@ -80,7 +74,7 @@ export default function CollegesIndexPage() {
         <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
-      <CollegesView items={items} />
+      <CollegesView items={items} unfilteredByDefault />
     </div>
   );
 }

@@ -14,9 +14,17 @@ function esc(s: string): string {
     .replace(/'/g, '&apos;');
 }
 
+/** RSS is for recent items; the sitemap index carries the full catalogue. */
+const FEED_ITEMS = 200;
+
 export function GET(): Response {
   // Newest-verified first; guides are the article-like content worth syndicating.
-  const guides = [...GUIDES].sort((a, b) => b.lastVerified.localeCompare(a.lastVerified));
+  // Capped: the feed used to list all 2,701 guides (1.7 MB) — bloated for a
+  // reader and redundant with /sitemap.xml, which already lists every guide.
+  const guides = [...GUIDES]
+    .sort((a, b) => b.lastVerified.localeCompare(a.lastVerified))
+    .slice(0, FEED_ITEMS);
+  const lastBuildDate = guides[0] ? new Date(guides[0].lastVerified).toUTCString() : new Date().toUTCString();
 
   const items = guides
     .map(
@@ -39,6 +47,7 @@ export function GET(): Response {
     <atom:link href="${BASE}/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides on universities, entrance exams, scholarships, and studying abroad — worldwide.</description>
     <language>en</language>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
 ${items}
   </channel>
 </rss>`;

@@ -68,16 +68,33 @@ function collect(): Map<string, string> {
   return out;
 }
 
-async function resolves(host: string): Promise<boolean> {
+/*
+ * 'yes'      — an A/AAAA record on at least one public resolver;
+ * 'nxdomain' — BOTH resolvers answer NXDOMAIN/NODATA (the name really is gone);
+ * 'servfail' — a resolver could not validate the answer (typically a DNSSEC
+ *              failure on the publisher's side, or an authoritative outage).
+ * A SERVFAIL proves nothing about the page: on 16 Sep 2026 Google and
+ * Cloudflare both answered SERVFAIL for www.parcoursup.gouv.fr while Quad9
+ * (and Google with checking disabled) resolved it and the site served pages.
+ * Only 'nxdomain' is treated as rot; 'servfail' goes to the unreachable list.
+ */
+async function resolves(host: string): Promise<'yes' | 'nxdomain' | 'servfail'> {
+  let sawServfail = false;
   for (const server of [['8.8.8.8'], ['1.1.1.1']]) {
     try {
       const r = new dns.Resolver();
       r.setServers(server);
-      const a = await r.resolve4(host).catch(() => r.resolve6(host));
-      if (a && a.length) return true;
-    } catch { /* try next resolver */ }
+      const a = await r.resolve4(host).catch((e4: { code?: string }) => {
+        if (e4?.code === 'ESERVFAIL') sawServfail = true;
+        return r.resolve6(host);
+      });
+      if (a && a.length) return 'yes';
+    } catch (e) {
+      if ((e as { code?: string })?.code === 'ESERVFAIL') sawServfail = true;
+      /* try next resolver */
+    }
   }
-  return false;
+  return sawServfail ? 'servfail' : 'nxdomain';
 }
 
 type Verdict = { url: string; status: string; dead: boolean; unreachable: boolean };
@@ -112,8 +129,9 @@ async function check(url: string): Promise<Verdict> {
     const code = cause?.code ?? (err as { name?: string }).name ?? 'ERR';
     if (TLS_CODES.has(code)) return { url, status: `tls:${code}`, dead: true, unreachable: false };
     // Other network failure proves nothing on its own — only a name that resolves nowhere does.
-    const ok = host ? await resolves(host) : false;
-    if (!ok) return { url, status: 'NXDOMAIN', dead: true, unreachable: false };
+    const dnsState = host ? await resolves(host) : 'nxdomain';
+    if (dnsState === 'nxdomain') return { url, status: 'NXDOMAIN', dead: true, unreachable: false };
+    if (dnsState === 'servfail') return { url, status: `unreachable:DNS_SERVFAIL(${code})`, dead: false, unreachable: true };
     return { url, status: `unreachable:${code}`, dead: false, unreachable: true };
   }
 }

@@ -18,6 +18,22 @@
 export const ADMISSIONS_CYCLE = '2026–2027';
 
 /**
+ * The site's one-sentence description, naming ALL nine destinations so that no
+ * site-level snippet, social card or manifest can quietly omit a destination
+ * again (three were missing from the previous copy). ≤160 chars.
+ */
+export const SITE_DESCRIPTION =
+  'Official-source guides to universities, exams, scholarships and student visas: USA, UK & Ireland, Canada, Europe, Australia & NZ, Asia, the Gulf, Russia, India.';
+
+/**
+ * The nine destinations on one line, for surfaces with no room for a sentence
+ * (the site social card, the web-app manifest). Same rule as SITE_DESCRIPTION:
+ * every destination named, none left to "and more".
+ */
+export const DESTINATION_LINE =
+  'USA · UK & Ireland · Canada · Europe · Australia & NZ · East & SE Asia · Middle East · Russia & CIS · India';
+
+/**
  * The site's official contact address — single source of truth. Used by the
  * contact page, the About CTA, the correction/copyright channel and the
  * Organization structured data, so the address can never drift out of sync
@@ -32,6 +48,29 @@ export const CONTACT_EMAIL = 'contact@globalstudyboard.com';
 // official pages (see scripts/linkcheck.ts and the audit log) — a genuine
 // catalogue-wide re-review, which is the bar this date is meant to reflect.
 export const SITE_REVIEWED = '2026-09';
+
+/**
+ * Sitemap <lastmod> for every URL that has no per-unit date (home, listings,
+ * region hubs / category / track pages, colleges, topic hubs, static pages).
+ * BUMP THIS TO THE DEPLOY DATE in the same commit as ANY change that alters
+ * those pages (template, chrome, metadata or data). Google only trusts lastmod
+ * when it verifiably tracks real changes; a frozen date (it sat at 2026-07-09
+ * through eight later deploys) makes Google stop believing it. Guides and
+ * stamped exams keep their own truthful `lastVerified`.
+ */
+export const SITE_LASTMOD = '2026-09-16';
+
+/**
+ * The publisher logo for Organization / Article structured data. Google's
+ * Organization guidelines want a logo of at least 112×112 px; the 64×64 SVG
+ * glyph used before was below that floor. This is the 512×512 PNG that also
+ * backs the PWA manifest.
+ */
+export const ORG_LOGO = {
+  url: 'https://www.globalstudyboard.com/icons/icon-512.png',
+  width: 512,
+  height: 512,
+};
 
 const MONTHS = [
   'January', 'February', 'March', 'April', 'May', 'June',

@@ -115,6 +115,16 @@ const nextConfig = {
       // Base + any other old abroad path → the destinations index.
       { source: '/colleges/abroad', destination: '/regions', permanent: true },
       { source: '/colleges/abroad/:slug*', destination: '/regions', permanent: true },
+      // Legacy /colleges/india/* links from the first release — still live 404s in
+      // Search Console (its "Not found" validation kept failing on them). Each
+      // maps to the page that now holds that content; anything else under the
+      // prefix lands on India's university listing.
+      { source: '/colleges/india', destination: '/regions/india/universities', permanent: true },
+      { source: '/colleges/india/iits', destination: '/guides/list-of-all-iits-in-india', permanent: true },
+      { source: '/colleges/india/iims', destination: '/guides/top-iims-in-india-list', permanent: true },
+      { source: '/colleges/india/nlus', destination: '/guides/list-of-national-law-universities', permanent: true },
+      { source: '/colleges/india/aiims', destination: '/colleges/aiims-delhi', permanent: true },
+      { source: '/colleges/india/:slug*', destination: '/regions/india/universities', permanent: true },
     ];
   },
   async headers() {
@@ -138,6 +148,16 @@ const nextConfig = {
           { key: 'Content-Security-Policy', value: CSP },
           { key: 'Cross-Origin-Opener-Policy', value: 'same-origin-allow-popups' },
         ],
+      },
+      // Static image library (public/images). Immutable + 1 year: filenames are
+      // evergreen and an image is never edited in place (re-generate = new file), so
+      // repeat views and guide-to-guide navigation never re-validate the LCP hero.
+      // `images.minimumCacheTTL` above only governs the /_next/image optimizer, which
+      // <ContentImage> deliberately bypasses. This block is cache-only — it does not
+      // touch the security headers/CSP above.
+      {
+        source: '/images/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
     ];
   },

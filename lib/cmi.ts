@@ -421,6 +421,8 @@ const GROUP_LABELS: Record<string, string> = {
   terms: 'Terms',
   disclaimer: 'Disclaimer',
   cookies: 'Cookies',
+  sources: 'Sources',
+  'editorial-policy': 'Editorial policy',
 };
 
 const titleCase = (seg: string): string =>
@@ -513,10 +515,13 @@ export function breadcrumbsFor(barePath: string): Crumb[] {
       if (sub === 'track' && segments[3]) {
         const track = getTrack(region.slug, segments[3]);
         if (track) {
+          // The last crumb is the track's own title (= its H1), so the
+          // BreadcrumbList is distinct from the sibling category page's
+          // ("Home › United States › Universities") instead of identical to it.
           return [
             home,
             { label: region.displayName, href: `/regions/${region.slug}` },
-            { label: track.label },
+            { label: track.title },
           ];
         }
       }

@@ -1,0 +1,42 @@
+[
+  {
+    "n": 30,
+    "key": "common/fields/mechanical-engineering-cad",
+    "reason": "R3: pencil rendered as a coiled rope. Pencil removed.",
+    "scene": "A mechanical-engineering workstation seen from slightly above: a large monitor showing only a thin, soft, out-of-focus grey wireframe of a simple L-bracket with no interface, menus or text; on the desk a plain machined aluminium block and a single plain steel spur gear with clean, evenly spaced teeth, under cool north daylight from a window. A faint oil smudge on the aluminium, a light scratch on the desk. Shallow depth of field on the gear. Nothing else on the desk — no pencils, pens, rulers, calipers, gauges or any instrument with graduations; no numbers, no text, no logos anywhere; every object rigid and straight.",
+    "alt": "An engineering workstation with a monitor showing a soft grey wireframe of a bracket, a plain steel gear and a machined aluminium block on the desk."
+  },
+  {
+    "n": 74,
+    "key": "common/journey/night-study-setup",
+    "reason": "R3: pseudo-handwriting on the notepad; render look. Notepad removed; documentary cues added.",
+    "scene": "A late-night desk under a single warm brass lamp, photographed handheld on 35mm film: one open hardback textbook with completely blank cream pages catching the lamplight, two plain wooden pencils, and a ceramic mug of tea with a thin curl of steam. Everything beyond the lamp’s pool falls into soft real darkness; a window behind shows only deep blue night. Honest film grain in the shadows, a pencil shaving on the desk, a small chip on the mug rim, the lamp’s brass dulled and fingerprinted rather than polished. No notepad, no paper with marks, no laptop, no keyboard, no phone, no screens, no lettering anywhere.",
+    "alt": "A late-night desk lit by a single brass lamp: an open textbook with blank pages, two pencils and a steaming mug against a dark window."
+  },
+  {
+    "n": 88,
+    "key": "site/hero/autumn-campus-path",
+    "reason": "R3: bench backs half the seat length. Benches removed.",
+    "scene": "A quiet tree-lined campus path in autumn after rain, photographed at eye level: wet dark paving scattered with fallen orange and yellow leaves, a shallow puddle mirroring the maples and a soft grey sky, plain black lamp posts receding along the path, and stone academic buildings blurred in the distance. Overcast, even light; a muddy boot print in the paving, one leaf stuck to the wet stone. The path is completely empty — no benches, no seats, no plaques, no signs, no bins, no people or figures anywhere along its length.",
+    "alt": "An empty tree-lined campus path in autumn after rain, wet paving scattered with fallen leaves and a puddle mirroring the maples."
+  },
+  {
+    "n": 61,
+    "key": "common/exams/online-proctored-setup",
+    "reason": "R3: a keyboard re-entered the frame with legible legends. Composition changed so the desk surface is not in frame.",
+    "scene": "A tidy home study corner photographed straight-on at chest height, framed so that only the upper half of the desk is visible: a single switched-off monitor with a blank dark screen on a plain wall-mounted arm, a small plain webcam clipped to its top edge, a bare pale wall behind, and a narrow shelf above with a closed notebook and a small plant. The bottom edge of the frame cuts across the monitor’s lower bezel — the desk surface, and anything on it, is entirely out of frame. Daylight from a window on the right, a soft reflection of the window in the dark screen, a faint dust film on the monitor’s top edge. No keyboard, no laptop, no desk surface visible, no logos, no screen content, no text.",
+    "alt": "A switched-off monitor on a wall arm with a small webcam on top, a bare wall behind and a shelf with a closed notebook above."
+  },
+  {
+    "n": 59,
+    "key": "common/exams/mock-test-timer",
+    "reason": "R3: baked-in black film-scan frame + halftone overlay.",
+    "promptFix": "DELETE the phrase \"Real film grain, gentle vignette.\" from the scene prompt (it caused the frame). ADD at the start: \"FULL-BLEED, edge-to-edge photograph — scene content must fill the entire 16:9 frame right to every edge and corner. Absolutely no border, frame, black edge, rounded corners, film-scan mask, vignette band, halftone, dot-screen or grain overlay.\" REPLACE the clock/paper description with: \"a small round analogue desk clock standing upright on a visible fold-out metal stand (or two small feet), white face with plain bar indices only, no numerals, no brand; beside it a closed plain white unruled paper exam booklet (no grid, no lines, no print) squared to the desk edge, and one sharpened pencil.\" ADD: \"Clean natural DSLR look — no floating dust motes, no CG sheen, the cup ring slightly irregular and faint.\" Keep the existing SAFETY block."
+  },
+  {
+    "n": 27,
+    "key": "regions/east-southeast-asia/futuristic-study-commons",
+    "reason": "R3: three ~15px exit-sign pictograms and a door label. Pixel salvage attempted and abandoned; regenerating.",
+    "promptFix": "Negative prompt additions: 'no exit signs, no emergency signage, no illuminated green signs, no wall or door signage, no plaques, no stickers or labels on doors, no notice boards; walls and door leaves plain and unmarked'. Positive prompt addition: 'signage-free interior, unmarked plain walls above every doorway'."
+  }
+]

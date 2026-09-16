@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { getRegionBySlug, matchesRegion } from '@/lib/regions';
-import { COLLEGES } from '@/lib/colleges';
+import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
 import RegionFlag from '@/components/RegionFlag';
 
@@ -17,20 +16,35 @@ export interface ExamLite {
   frequency: string;
 }
 
+/** Compact university card, projected on the server — the 118-record college
+ * catalogue (every description included) used to ship in this client chunk. */
+export interface CollegeLite {
+  slug: string;
+  nameEn: string;
+  city: string;
+  state?: string;
+  established: number;
+  qsRank?: number;
+}
+
 /**
  * The region-tuned heart of the home page: top universities and key tests for
  * the destination the visitor is currently exploring (their chosen region, or
  * the region of the page they arrived on, or India by default). Re-renders
  * instantly when the destination changes via the picker or header switcher.
  */
-export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<string, ExamLite> }) {
+export default function HomeSpotlight({
+  examsBySlug,
+  universitiesByRegion,
+}: {
+  examsBySlug: Record<string, ExamLite>;
+  universitiesByRegion: Record<RegionSlug, CollegeLite[]>;
+}) {
   const { effectiveRegion } = useRegion();
   const r = getRegionBySlug(effectiveRegion);
   if (!r) return null;
 
-  const universities = [...COLLEGES.filter((c) => matchesRegion(r.slug, c.region, c.regions))]
-    .sort((a, b) => (a.ranking?.qs ?? 9999) - (b.ranking?.qs ?? 9999))
-    .slice(0, 4);
+  const universities = universitiesByRegion[r.slug] ?? [];
 
   const exams = r.keyExamSlugs
     .map((s) => examsBySlug[s])
@@ -52,7 +66,7 @@ export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<str
           <div className="flex items-end justify-between mb-7">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
-                Top universities in {r.displayName}
+                Top universities in {r.proseName}
               </h2>
               <p className="text-stone-600 text-sm">
                 The most-searched institutions for your destination — open any for programs, fees and
@@ -60,17 +74,17 @@ export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<str
               </p>
             </div>
             <Link
-              href={`/regions/${r.slug}`}
+              href={`/regions/${r.slug}/universities`}
               className="hidden sm:inline-flex items-center gap-1 text-sm text-forest-700 hover:text-forest-800 font-medium no-underline shrink-0"
             >
-              All {r.displayName} universities <ArrowUpRight className="w-4 h-4" />
+              All universities in {r.proseName} <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {universities.map((college) => (
               <Link
-                key={college.id}
+                key={college.slug}
                 href={`/colleges/${college.slug}`}
                 className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 hover:shadow-sm transition-all group flex flex-col"
               >
@@ -90,8 +104,8 @@ export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<str
                   {college.nameEn}
                 </h3>
                 <p className="text-stone-500 text-xs mb-3">Est. {college.established}</p>
-                {college.ranking?.qs && (
-                  <p className="text-xs text-stone-500 mt-auto">QS World Ranking #{college.ranking.qs}</p>
+                {college.qsRank && (
+                  <p className="text-xs text-stone-500 mt-auto">QS World Ranking #{college.qsRank}</p>
                 )}
               </Link>
             ))}
@@ -105,17 +119,17 @@ export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<str
           <div className="flex items-end justify-between mb-7">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
-                Key tests for {r.displayName}
+                Key tests for {r.proseName}
               </h2>
               <p className="text-stone-600 text-sm">
-                The entrance and admissions tests that matter for studying in {r.displayName}.
+                The entrance and admissions tests that matter for studying in {r.proseName}.
               </p>
             </div>
             <Link
-              href="/exams"
+              href={`/regions/${r.slug}/exams`}
               className="hidden sm:inline-flex items-center gap-1 text-sm text-forest-700 hover:text-forest-800 font-medium no-underline shrink-0"
             >
-              All exams <ArrowUpRight className="w-4 h-4" />
+              All exams for {r.proseName} <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -146,7 +160,7 @@ export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<str
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
             <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-2">
-              Planning to study in {r.displayName}?
+              Planning to study in {r.proseName}?
             </h2>
             <p className="text-stone-600 text-sm leading-relaxed">
               Apply via {applyVia} · main intake {r.intakes[0]} ·{' '}
@@ -162,10 +176,10 @@ export default function HomeSpotlight({ examsBySlug }: { examsBySlug: Record<str
               The {r.displayName} playbook <ArrowUpRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/guides"
+              href={`/regions/${r.slug}/guides`}
               className="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-stone-800 font-semibold px-6 py-3 rounded-full no-underline transition-colors border border-stone-300"
             >
-              {r.displayName} guides
+              Guides for {r.proseName}
             </Link>
           </div>
         </div>

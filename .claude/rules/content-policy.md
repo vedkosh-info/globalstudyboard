@@ -385,12 +385,27 @@ non-duplicated source of truth.
   - Single-region → leave `regions` unset (it shows under its `region` only).
   Region matching is centralised in `resolveDisplayRegions()` / `matchesRegion()`
   in `lib/regions.ts` — never re-implement it per page.
-- **Show only the relevant region by default.** Listing pages (Universities,
-  Exams, Guides) display the selected destination's content only, with a
-  "Show all regions" escape. The default destination is **India**
-  (`DEFAULT_REGION`) until the student picks another. Common / cross-region
-  content appears **inside each region it is relevant to** — there is NO separate
-  "worldwide" bucket in the filtered view.
+- **Show only the relevant region by default — on destination-scoped pages.**
+  Region-scoped pages (`/regions/{r}/…`, topic hubs, and every content page's
+  related blocks) show the selected destination's content only — a topic hub is
+  filtered to its OWN destination (its identity), not to the visitor's remembered
+  choice. The GLOBAL listings are the exception (September 2026 SEO audit):
+  `/colleges` and `/exams` promise "worldwide" in their `<title>`, so they render
+  every destination (destination order) with a "Filter to {destination}" control
+  instead of hiding 108/118 universities behind the India default; `/guides` is a
+  destination-grouped DIRECTORY (each destination's tracks + newest guides,
+  linking to `/regions/{r}/guides`), not a card grid — one document of 2,701
+  cards was 8.6 MB. The default destination is **India** (`DEFAULT_REGION`) until
+  the student picks another. Common / cross-region content appears **inside each
+  region it is relevant to** — there is NO separate "worldwide" bucket in the
+  filtered view.
+- **The page's own destination is baked into the server HTML (BINDING).** A
+  listing view receives `pageRegion` from its server page (`GuidesView`,
+  `CollegesView`, `ExamsView` via `useListingRegion`), and `/regions/{slug}/…`
+  URLs resolve their region from the pathname during SSR. Never rely on the
+  client-side `<PageRegion>` effect for what a crawler sees: before this rule,
+  305 abroad hubs prerendered as the India view — every card `hidden`, "0 of N
+  guides", "No guides are tagged to this destination yet".
 - **Tag deliberately.** If a unit is genuinely common but a single home is
   needed, tag it on purpose; never leave a region claim implicit or accidental.
 - **Review on every change (existing AND new).** Before adding or editing ANY
@@ -458,9 +473,11 @@ page level, so a specific question can rank and be jumped-to directly.
 - **Table of contents.** Guides with ≥3 sections render `components/OnThisPage.tsx`
   (jump links + scrollspy, audience-synced, `prefers-reduced-motion` respected).
 - **Section-level structured data.** The Article emits `hasPart` (`WebPageElement`
-  per section with a `#anchor` `@id`); `how-to-*` guides emit `HowToStep`s with the
-  section `url`; FAQ items carry a `#anchor` `@id`. All are filtered to the page's
-  default audience so schema never advertises hidden content.
+  per section with a `#anchor` `@id`); FAQ items carry a `#anchor` `@id`. All are
+  filtered to the page's default audience so schema never advertises hidden
+  content. HowTo markup is **not** emitted (Google removed the How-to rich
+  result in September 2023; it only duplicated section prose), and the exam page's
+  node is an `Article` — `EducationalTest` is not a schema.org type.
 - **Section-aware search.** The CMI indexes section headings, FAQ questions and
   key-facts; `components/SearchClient.tsx` matches a query to a specific section and
   **deep-links the result to that section's `#anchor`**. Keep heavy indexes off the
@@ -661,6 +678,17 @@ site's primary organizing axis. (Adopted June 2026.)
   rove; Escape closes and returns focus to the trigger). Region changes are announced
   to screen readers via `aria-live` (`RegionAnnouncer`).
 
+- **Chrome is destination-neutral in the prerendered HTML until the destination
+  is known (September 2026).** The header nav, mobile menu and the footer's two
+  tuned columns link to the global sections (`/colleges`, `/exams`, `/guides`,
+  `/scholarships`, worldwide tests) in the static HTML of any page whose URL does
+  not name a destination, and re-point to `/regions/{slug}/…` once the client has
+  read the preference (`chromeCategoryPath()` in `lib/region-nav.ts`). Labels are
+  unchanged, so nothing flickers. Before this, India's section pages and exams
+  were baked into the nav and footer of all ~3,480 pages — Harvard's included.
+  `/regions/{slug}/…` URLs are the exception: their region is read from the
+  pathname at SSR time, so they prerender tuned.
+
 ### 16.4 Three content scopes (use `regions[]`; never duplicate)
 - **Single-region** (default): one `region`. The overwhelming majority. Each
   destination's guides are authored self-contained; a destination-SPECIFIC guide
@@ -692,8 +720,8 @@ hub previews each category and links through, and each carries a self-referentia
 canonical + `CollectionPage`/`ItemList` JSON-LD (no hreflang). Individual content
 (a college/exam/guide) keeps exactly ONE canonical URL (`/colleges/…`, `/exams/…`,
 `/guides/…`) — the region category pages are curated region-filtered *collections*
-of it (via `matchesRegion`), never duplicated prose, and the global listings
-(`/colleges`, `/exams`, `/guides`) remain the "all destinations" view. To add a
+of it (via `matchesRegion`), never duplicated prose; `/colleges` and `/exams`
+remain the "all destinations" view and `/guides` is the destination directory. To add a
 category, edit `lib/region-nav.ts` only; never read the region cookie in these
 server routes (keeps them static).
 

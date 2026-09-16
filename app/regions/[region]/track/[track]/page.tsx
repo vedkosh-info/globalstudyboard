@@ -19,7 +19,9 @@ import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
 import BreadcrumbsView from '@/components/BreadcrumbsView';
 import { breadcrumbsFor } from '@/lib/cmi';
+import { pageMetadata, regionOgImage } from '@/lib/seo';
 import { SITE_REVIEWED } from '@/lib/site-meta';
+import { gsbAiHref } from '@/lib/gsb-ai-links';
 
 const BASE = 'https://www.globalstudyboard.com';
 
@@ -40,20 +42,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { region, track } = await params;
   const r = getRegionBySlug(region);
   const t = r ? getTrack(r.slug, track) : undefined;
-  if (!r || !t) return { title: 'Not found' };
-  const url = `${BASE}/regions/${r.slug}/track/${t.slug}`;
-  return {
-    title: `${t.title} — Guides & Hubs`,
+  if (!r || !t) return { title: 'Not found', robots: { index: false, follow: false } };
+  // Title names the hubs the track holds ("US College Admissions: Common App,
+  // Essays, Early Decision") instead of the internal "— Guides & Hubs" suffix.
+  // Name the hubs the track holds — but only labels that add information: a
+  // label that repeats the track title ("Student Life in Canada: Student Life in
+  // Canada") or carries its own colon is skipped. With no distinct label that
+  // fits ~70 chars, fall back to the explicit "— Guides & Hubs" form, which can
+  // never coincide with a hub's own title.
+  const norm = (x: string) => x.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const titleNorm = norm(t.title);
+  const hubLabels = topicsForTrack(t)
+    .map((h) => h.label)
+    .filter((l) => !l.includes(':'))
+    .filter((l) => {
+      const n = norm(l);
+      return n !== titleNorm && !titleNorm.includes(n) && !n.includes(titleNorm);
+    });
+  let title = `${t.title} — Guides & Hubs`;
+  for (let n = Math.min(3, hubLabels.length); n >= 1; n--) {
+    const candidate = `${t.title}: ${hubLabels.slice(0, n).join(', ')}`;
+    if (candidate.length <= 70) {
+      title = candidate;
+      break;
+    }
+  }
+  return pageMetadata({
+    title,
     description: t.description,
-    keywords: [
-      t.label,
-      `${t.label} ${r.displayName}`,
-      ...topicsForTrack(t).map((h) => h.label),
-    ],
-    alternates: { canonical: url },
-    openGraph: { type: 'website', url, title: t.title, description: t.description, images: ['/opengraph-image'] },
-    twitter: { card: 'summary_large_image', title: t.title, description: t.description, images: ['/opengraph-image'] },
-  };
+    path: `/regions/${r.slug}/track/${t.slug}`,
+    image: regionOgImage(r.slug),
+    keywords: [t.label, `${t.label} ${r.proseName}`, ...topicsForTrack(t).map((h) => h.label)],
+  });
 }
 
 export default async function TrackPage({ params }: Props) {
@@ -138,7 +158,7 @@ export default async function TrackPage({ params }: Props) {
 
         <p className="text-sm text-stone-500">
           {hubs.length} topic hub{hubs.length === 1 ? '' : 's'} · {totalGuides} guide
-          {totalGuides === 1 ? '' : 's'} in {r.displayName}.
+          {totalGuides === 1 ? '' : 's'} in {r.proseName}.
         </p>
 
         {/* Topic-hub cards */}
@@ -165,13 +185,13 @@ export default async function TrackPage({ params }: Props) {
         </div>
 
         {/* CTA */}
-        <section className="rounded-3xl bg-forest-700 px-6 py-10 text-cream-50 sm:px-12">
+        <section className="on-dark rounded-3xl bg-forest-700 px-6 py-10 text-cream-50 sm:px-12">
           <div className="max-w-2xl">
             <h2 className="mb-3 font-display text-2xl font-bold tracking-editorial md:text-3xl">
-              Exploring {t.label.toLowerCase()} in {r.displayName}?
+              Exploring {t.label.toLowerCase()} in {r.proseName}?
             </h2>
             <p className="m-0 mb-5 text-cream-50/85">
-              See the full {r.displayName} overview, or ask GSB AI for tailored guidance on your path.
+              See the full overview for {r.proseName}, or ask GSB AI for tailored guidance on your path.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
@@ -181,10 +201,10 @@ export default async function TrackPage({ params }: Props) {
                 {r.displayName} overview
               </Link>
               <Link
-                href={`/gsb-ai?region=${r.slug}`}
+                href={gsbAiHref({ region: r.slug })}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-cream-50/30 bg-transparent px-6 py-3 font-semibold text-cream-50 no-underline transition-colors hover:bg-cream-50/10"
               >
-                Ask GSB AI about {r.displayName}
+                Ask GSB AI about {r.proseName}
               </Link>
             </div>
           </div>

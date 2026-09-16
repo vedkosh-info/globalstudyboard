@@ -448,5 +448,17 @@
     "b": "sun-yat-sen-university-admission-for-international-students",
     "sim": 0.55,
     "reason": "REVIEWED (east-southeast-asia P3) — genuinely distinct universities; identity + programs sections hand-differentiated. Residual = shared application-process skeleton. Deeper differentiation + agent Tier-1 re-verify pending (weekly-limit blocked). Re-flags if edited worse."
+  },
+  {
+    "a": "mbbs-in-uzbekistan-for-indian-students",
+    "b": "mbbs-abroad-application-process-for-indian-students",
+    "sim": 0.55,
+    "reason": "Reviewed 2026-09-15 (russia, body 0.55 — sat at 0.54 until the editorial-process description prefixes were stripped site-wide). Distinct query intent: one country's MBBS route (Uzbekistan universities, fees structure, NMC recognition) vs the generic India-side application process across countries. KEEP; residual overlap is the mandated India-side NEET/NMC/FMGE framing every MBBS-abroad guide must carry. Re-flags if edited worse."
+  },
+  {
+    "a": "pte-academic-for-australia-and-new-zealand-guide",
+    "b": "toefl-for-australia-and-new-zealand",
+    "sim": 0.55,
+    "reason": "Reviewed 2026-09-15 (australia-nz, body 0.55 — sat at 0.54 until the editorial-process description prefixes were stripped site-wide). Distinct query intent: two different tests (PTE Academic vs TOEFL iBT) with different owners, formats and visa-acceptance rules for the same destination. KEEP; residual overlap is the shared AU/NZ admission-vs-visa English-evidence framing. Re-flags if edited worse."
   }
 ]

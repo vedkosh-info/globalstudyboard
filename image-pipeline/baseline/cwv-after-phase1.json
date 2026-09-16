@@ -1,0 +1,39 @@
+{
+  "capturedAt": "2026-09-15",
+  "images": 100,
+  "method": "Lighthouse 12 desktop preset, next start on localhost, median of 3 runs per page after one warm-up request. (A first single-run capture on 12 Sep showed guide LCP 3.98s — a cold-start artefact; superseded by this record.)",
+  "pages": {
+    "home": {
+      "url": "/",
+      "perfScore": 98,
+      "lcpMs": 1153,
+      "cls": 0,
+      "tbtMs": 0,
+      "runs": 3
+    },
+    "guide": {
+      "url": "/guides/how-to-get-into-iit",
+      "perfScore": 98,
+      "lcpMs": 1116,
+      "cls": 0,
+      "tbtMs": 0,
+      "runs": 3
+    },
+    "college": {
+      "url": "/colleges/iit-bombay",
+      "perfScore": 98,
+      "lcpMs": 1152,
+      "cls": 0,
+      "tbtMs": 0,
+      "runs": 3
+    },
+    "region": {
+      "url": "/regions/usa",
+      "perfScore": 97,
+      "lcpMs": 1233,
+      "cls": 0.001,
+      "tbtMs": 0,
+      "runs": 3
+    }
+  }
+}

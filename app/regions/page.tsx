@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -8,10 +9,11 @@ import LastUpdated from '@/components/LastUpdated';
 import RegionFlag from '@/components/RegionFlag';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
-export const metadata: Metadata = {
-  title: 'Study Abroad by Region — USA, UK, Europe, Canada, Australia & More',
+export const metadata: Metadata = pageMetadata({
+  title: 'Study Destinations: USA, UK, Canada, Europe, Australia, Asia, the Gulf, Russia & India',
   description:
     'Compare university systems across 9 study destinations. Top universities, key entrance exams, scholarships, visa requirements and application platforms for every study destination.',
+  path: '/regions',
   keywords: [
     'study abroad by region',
     'university guides worldwide',
@@ -22,21 +24,7 @@ export const metadata: Metadata = {
     'study in Australia guide',
     'international student guide',
   ],
-  alternates: { canonical: 'https://www.globalstudyboard.com/regions' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/regions',
-    title: 'Study Abroad by Region — USA, UK, Europe, Canada, Australia & More',
-    description: 'Compare university systems, entrance exams, scholarships and visa options across 9 global study destinations.',
-    images: ['/opengraph-image'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Study Abroad by Region — GlobalStudyBoard',
-    description: 'Compare universities, exams and scholarships across USA, UK, Europe, Canada, Australia and more.',
-    images: ['/opengraph-image'],
-  },
-};
+});
 
 export default function RegionsIndexPage() {
   return (

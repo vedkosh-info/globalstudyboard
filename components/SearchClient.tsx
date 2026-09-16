@@ -18,6 +18,7 @@ import type { ContentType, ContentUnit } from '@/lib/cmi';
 import { useRegion } from '@/components/RegionProvider';
 import { getRegionBySlug } from '@/lib/regions';
 import RegionFlag from '@/components/RegionFlag';
+import { gsbAiHref } from '@/lib/gsb-ai-links';
 
 /** A search hit — the unit plus the best URL to open (deep-linked to a section
  *  when the query matched a specific section heading). */
@@ -140,7 +141,7 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
 
   const totalCount = grouped.reduce((n, g) => n + g.items.length, 0);
 
-  const aiHref = q ? `/gsb-ai?q=${encodeURIComponent(query.trim())}` : '/gsb-ai';
+  const aiHref = q ? gsbAiHref({ q: query.trim() }) : '/gsb-ai';
 
   function submit() {
     if (query.trim()) setForced(true);
@@ -148,11 +149,10 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
   }
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <div>
+      {/* The page's <h1> is rendered by app/search/page.tsx outside the Suspense
+          boundary; this header carries only the destination-aware lede. */}
       <header className="mb-6">
-        <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-editorial text-ink mb-2">
-          Search
-        </h1>
         <p className="m-0 text-stone-600">
           Universities, exams, guides and scholarships
           {region && (

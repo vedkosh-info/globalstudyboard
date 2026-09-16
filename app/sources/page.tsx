@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { Landmark, ShieldAlert } from 'lucide-react';
 import { GUIDES } from '@/lib/guides';
@@ -30,20 +31,12 @@ import { SITE_REVIEWED } from '@/lib/site-meta';
  * reach the browser bundle (see the layout-chunk regression this repo has had).
  */
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Official sources we cite',
   description:
     'The complete list of official government, university and examination-board sources cited across GlobalStudyBoard, grouped by study destination. GlobalStudyBoard is an independent publisher and is not a government service.',
-  alternates: { canonical: 'https://www.globalstudyboard.com/sources' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/sources',
-    title: 'Official sources we cite — GlobalStudyBoard',
-    description:
-      'Every official government, university and exam-board source cited across GlobalStudyBoard, grouped by destination.',
-    images: ['/opengraph-image'],
-  },
-};
+  path: '/sources',
+});
 
 /**
  * Hosts operated by a government, an inter-governmental body, or a statutory

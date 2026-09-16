@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { ShieldCheck, BookOpenCheck, RefreshCw, Globe2, AlertTriangle } from 'lucide-react';
 import { REGIONS } from '@/lib/regions';
@@ -6,10 +7,11 @@ import LastUpdated from '@/components/LastUpdated';
 import SiteStats from '@/components/SiteStats';
 import { SITE_REVIEWED, CONTACT_EMAIL } from '@/lib/site-meta';
 
-export const metadata: Metadata = {
-  title: 'About — How We Source & Verify Information',
+export const metadata: Metadata = pageMetadata({
+  title: 'About \u2014 How We Source & Verify Information',
   description:
     'GlobalStudyBoard is an independent study-abroad and entrance-exam guide. Learn who we are, where our information comes from, and how we verify every detail against official sources.',
+  path: '/about',
   keywords: [
     'about GlobalStudyBoard',
     'how GlobalStudyBoard verifies information',
@@ -17,16 +19,7 @@ export const metadata: Metadata = {
     'entrance exam information sources',
     'independent college admission guide',
   ],
-  alternates: { canonical: 'https://www.globalstudyboard.com/about' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/about',
-    title: 'About GlobalStudyBoard — How We Source & Verify Information',
-    description:
-      'An independent study-abroad and entrance-exam guide. See where our information comes from and how we keep it accurate.',
-    images: ['/opengraph-image'],
-  },
-};
+});
 
 const PRINCIPLES = [
   {
@@ -73,17 +66,30 @@ export default function AboutPage() {
       {/* Live catalogue KPIs (driven by lib/site-stats.ts — never hard-coded) */}
       <SiteStats />
 
-      {/* Honest "we're new" note */}
+      {/* Who runs it, and how to check us */}
       <section className="bg-cream-50 border border-stone-200 rounded-2xl p-6">
         <h2 className="font-display text-xl font-bold tracking-editorial text-ink mb-2">
-          We&rsquo;re new — so don&rsquo;t take our word for it
+          Who runs GlobalStudyBoard — and how to check us
         </h2>
         <p className="text-stone-700 leading-relaxed m-0">
-          We&rsquo;re a new resource, and trust is earned, not assumed. That&rsquo;s exactly why we build
-          for verification first: instead of asking you to believe us, we point you to the primary
-          source behind every fact — the exam board, the university, the official notification.
-          Use us to orient and compare; confirm the final details on the official website before you
-          act on them.
+          GlobalStudyBoard is written and maintained by an independent editorial team and is not
+          affiliated with any government, university, examination board or admissions agent. Trust
+          is earned, not assumed, so we build for verification first: every page names the official
+          source behind its facts, every guide shows when it was last verified, and our{' '}
+          <Link href="/editorial-policy" className="text-forest-700 underline underline-offset-2">
+            editorial policy
+          </Link>{' '}
+          sets out the research, separate verification pass and correction process each page goes
+          through. The complete index of{' '}
+          <Link href="/sources" className="text-forest-700 underline underline-offset-2">
+            official sources we cite
+          </Link>{' '}
+          is public. Use us to orient and compare; confirm the final details on the official website
+          before you act on them (see our{' '}
+          <Link href="/disclaimer" className="text-forest-700 underline underline-offset-2">
+            disclaimer
+          </Link>
+          ).
         </p>
       </section>
 
@@ -122,7 +128,7 @@ export default function AboutPage() {
       </section>
 
       {/* Contact / next steps */}
-      <section className="bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-10 py-8">
+      <section className="on-dark bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-10 py-8">
         <h2 className="font-display text-2xl font-bold tracking-editorial mb-2">
           Spotted something out of date?
         </h2>

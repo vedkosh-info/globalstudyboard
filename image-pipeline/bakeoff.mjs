@@ -110,15 +110,18 @@ const adapters = [
   },
   {
     id: 'gptimage2',
-    label: 'OpenAI — GPT Image 2',
-    note: 'gpt-image-2 · 2048x1152',
+    label: 'OpenAI — GPT Image 2.5 Sunburst',
+    note: 'gpt-image-2.5-sunburst · 2048x1152 · high',
     env: 'OPENAI_API_KEY',
     pkg: 'openai',
     async run(prompt) {
       const { default: OpenAI } = await import('openai');
       const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
       const r = await client.images.generate({
-        model: process.env.OPENAI_IMAGE_MODEL || 'gpt-image-2',
+        // GPT Image 2.5 shipped 8 Sep 2026 (two API models). Sunburst = the heavier
+        // premium variant; Flare = faster default. We bake off against Sunburst because
+        // the whole brief is maximum realism. Override with OPENAI_IMAGE_MODEL.
+        model: process.env.OPENAI_IMAGE_MODEL || 'gpt-image-2.5-sunburst',
         prompt,
         // 1536x1024 is 3:2, NOT 16:9 — using it would have handed OpenAI a different
         // crop from the other two and invalidated the comparison. 2048x1152 is true 16:9
@@ -169,7 +172,7 @@ let spend = 0;
 // gemini: $0.134 flat at 1K/2K. flux2pro: metered per MP — 2048x1152 = 2.25MP, rounded
 // up to 3 => ~$0.06. gptimage2: token-billed ($30/1M image output tokens); ~$0.19 at this
 // size/quality is an estimate, so treat the printed total as approximate.
-const PRICE = { gemini: 0.134, flux2pro: 0.06, gptimage2: 0.19 };
+const PRICE = { gemini: 0.134, flux2pro: 0.06, gptimage2: 0.12 };
 
 for (const img of images) {
   for (const a of live) {

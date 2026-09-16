@@ -1,0 +1,94 @@
+{
+  "totals": {
+    "graded": 7,
+    "pass": 1,
+    "notes": 1,
+    "priorDefectGone": 7,
+    "flaggedByReviewers": 5,
+    "confirmedReroll": 5,
+    "rescuedOnVerify": 0
+  },
+  "reroll": [
+    {
+      "n": 30,
+      "key": "common/fields/mechanical-engineering-cad",
+      "checks": "A ok (gear and machined block are convincing; only a small odd translucent oil-drop blob on the block); B ok; C FAIL — monitor shows blurred screen UI: a dark taskbar with four coloured app-icon blobs at bottom-left (native ≈ x910–1242, y745–807) and a blurred vertical toolbar strip at the screen's right edge (native ≈ x2697–2752, y0–124); D/E/F ok; G FAIL-minor — alt says 'soft grey wireframe' but the screen shows a shaded solid grey model, not a wireframe; H ok (full-bleed, corners clean, subject centred).",
+      "reason": "C FAIL confirmed (absolute rule). Cropped the reviewer's coordinates at native resolution: bottom-left of the monitor (≈x910–1242, y745–807) shows a dark horizontal bar with four evenly spaced coloured blobs (green, red, blue, orange) — unmistakably an OS taskbar with pinned app icons, blur notwithstanding. The right screen edge (≈x2697–2752, y0–124) shows a fainter vertical stack of coloured tiles (blue/tan/blue) — a blurred sidebar/toolbar strip; weaker alone but the same defect. G confirmed minor: the on-screen bracket is a solid shaded-grey render, not a wireframe as the alt claims. All other checks pass: A — gear and machined block are photographically convincing; the glossy oil/coolant smear on the block sits slightly 'on top' of the surface but is a NOTE at normal viewing size, not an AI tell; B — no people/hands/reflections; D/E/F — no religion, flags, maps, insignia, or identifiable place; H — full-bleed, all four corners clean, no vignette/frame, subject centred for 16:9. Verdict RE_ROLL because screen UI is an absolute fail. Practical note: both offending areas are in deep bokeh, so the reviewer's pixel-salvage (clone the plain bezel over the icon row, paint the right strip into flat light-grey canvas, fix alt to 'a soft grey shaded 3D model of a bracket') would be near-invisible and is a valid cheaper alternative to regenerating.",
+      "promptFix": "The monitor screen is a single flat, pale-grey blank canvas that fills the entire display edge to edge, showing ONLY one soft-grey shaded 3D bracket model floating in the centre. Absolutely no taskbar, dock, menu bar, title bar, toolbar, sidebar, icons, coloured squares, buttons, tabs, cursor, or window chrome anywhere on the screen — including the bottom edge and the right edge. The machined block is clean and dry with no oil, liquid, or smear on it. (Then set alt to: 'a soft grey shaded 3D model of a bracket on a plain screen'.)"
+    },
+    {
+      "n": 59,
+      "key": "common/exams/mock-test-timer",
+      "checks": "A note (mild archviz feel: volumetric light rays, floating dust motes, immaculate paper and coffee ring — plausible as a warm styled photo, not a hard fail); B ok; C FAIL — a ~25×20px engraved letter-like maker's mark on the brass bezel at ~1 o'clock (native ≈ x1235–1260, y305–330), reads as a two-glyph brand engraving; paper is blank, pencil plain, no numerals on the dial; D/E/F ok; G ok (bar indices, closed paper, pencil, wood desk, morning light all present); H ok — full-bleed, no film-scan frame, no halftone (pixel-level autocorrelation shows only fine model grain, no periodic overlay), corners clean.",
+      "reason": "C FAIL confirmed on direct inspection. At native ≈ x1230–1256, y311–327 (inner brass bezel, ~1 o'clock) there is a distinct two-glyph engraved mark, lighter than the brushed-brass ground, with clear vertical strokes plus a diagonal — it reads as a stylised 'B/Я' followed by a 'K/V'-type glyph, i.e. a pseudo-readable maker's mark. It is not brushing texture or a specular highlight, and it remains visible as a discrete mark in a ~590px-wide crop of the clock face (hero-crop scale). Rule C is absolute ('letter-like squiggles that read as text also fail') and the R3 precedent (#27, ~15px pictograms) already failed marks of this size, so consistency requires RE_ROLL. Everything else is clean: dial carries bar indices only (no numerals), paper blank, pencil plain, no people/reflections (B ok), no religious/flag/crest/map content (D/E ok), no identifiable real place (F ok), alt honest (G ok), full-bleed with clean corners and no frame/vignette/halftone (H ok). The faint smudge on the bezel at ~6 o'clock is a wear ghost, not glyph-like. Realism (A): mild archviz signature (volumetric rays, dust motes, immaculate paper + coffee ring) but plausible as a styled photo at normal size — NOTE only, not confirmed as a fail. The reviewer's pixel-salvage suggestion is sound: the mark sits on a smooth brushed-brass gradient, so a clone-stamp from the adjacent rim would be invisible and is cheaper than regenerating.",
+      "promptFix": "Cheapest fix: pixel-salvage — clone the adjacent plain brushed-brass rim over the mark at native (1230–1256, 311–327); it sits on a smooth gradient so the patch will be invisible (same practice as the #76 sky retouch). If regenerating instead, append: \"completely plain unbranded brass bezel — no engraving, no maker's mark, no logo, no text or numerals anywhere on the clock; simple bar hour indices only; natural window light without visible light rays or floating dust particles.\""
+    },
+    {
+      "n": 61,
+      "key": "common/exams/online-proctored-setup",
+      "checks": "A ok (monitor arm, shelf, plant and window reflection in the off screen are convincing); B ok; C FAIL — the webcam carries a legible 'logi' wordmark plus a sub-text line and is a recognisable real product design (Logitech C920 lookalike), native ≈ (1545,552); bottom edge shows only a laptop-lid rim and a blurred pen cup — no keycaps/legends; D/E ok; F ok; G note (alt omits the potted plant on the shelf; 'wall arm' plausible); H ok (full-bleed, corners clean, monitor centred with calm wall space).",
+      "reason": "Reviewer is right. C FAIL confirmed on inspection: at native ~(1545,552) (4x crop of the webcam) the front face carries a clearly legible 'logi' wordmark with a second sub-text line directly beneath it, on a body that is a near-exact copy of the Logitech C920 trade dress (pill body, faceted lens surround, perforated side mic grilles, folding clip). That is a real brand mark plus a recognisable real branded product — an absolute C failure regardless of how small it renders at hero size, and the C920 silhouette alone would still be a brand-identity problem even if the letters were scrubbed. Everything else checks out: A — monitor arm, shelf, plant and window-pane reflection in the off screen are convincing, nothing reads AI at normal size; B — no people (the screen reflection is window mullions, not a figure); bottom edge shows only a laptop-lid rim with a tiny camera dot and a blurred pen cup, no keycaps/legends; D/E/F clean; H — pixel means at all four edges are continuous with the inset rows (no border band, vignette or frame), monitor is centred with calm wall space, full-bleed. G is a minor note only: alt omits the potted plant on the shelf. Sole blocker is the branded webcam.",
+      "promptFix": "Replace the webcam with: 'a small generic unbranded matte-black webcam clipped to the top bezel — a plain smooth rounded-rectangle body with one round lens, no speaker/mic grilles, no faceted or textured panels, absolutely no logo, wordmark, letters, numbers, badges or markings of any kind; must not resemble any real commercial webcam model (not Logitech). Keep the desk surface, keyboard and any laptop entirely out of frame.' Also either add 'a small potted plant on the shelf' to the alt or remove the plant from the scene so the alt stays honest."
+    },
+    {
+      "n": 76,
+      "key": "common/journey/choosing-destination-globe",
+      "checks": "H (border rule): FAIL — a 13–16 px pure-black strip (RGB ≈ 0/6/1, std ≈ 1) runs the FULL height of the right edge with a ~7 px ramp, constant width regardless of the scene behind it (adjacent wall is 39/30/10) = baked-in film-scan/border edge; left/top/bottom edges are clean. H (retouch): PASS — upper-right sky retouch is invisible: 48-px block grain std is uniform 2.3–3.5 across the whole sky (only the contrail edge rises), no rectangle or grain mismatch even under a 0.5–99.5% contrast stretch; sole trace is a ~1/255 horizontal luminance step at y≈565 (imperceptible). A: pass — genuinely film-like (chair, pebbled notebook + elastic + ribbon, two-tone cup, jade plant, sash lifts, blind cord all plausible). B: pass. C: pass (no text on notebook/cup/latches). D: pass. E: pass (no flags/maps). F: pass (generic room). G: pass — alt matches (tall window, closed notebook, cup, single contrail in pale sky; the chair/plant are unmentioned but harmless).",
+      "reason": "Reviewer is correct on H (border rule) and I confirm it independently. Measured on the 2752x1536 PNG: columns 2739–2751 (13 px) are near-black (mean ≈ 0.4/6/1.3 RGB, per-column std ≈ 1) for the FULL 1536-px height, preceded by an ~8-px ramp (cols 2731–2738) from the adjacent wall (≈ 39/30/10). Two tests prove it is a baked-in edge and not a real dark object in the room: (1) the strip is grain-free (high-pass std 0.75) while the adjacent wall carries film grain (3.0) and the image centre 7.9; (2) the wall's luminance tracks a real lighting gradient top→bottom (33→39→15) but the strip stays flat at ~4 at every sampled row, i.e. it is scene-independent. Left edge (≈95/88/76, textured), top rows and bottom rows are clean — only the right edge is affected. At normal viewing size the strip is visible as a hard black line on the right edge and would appear as a border on any 16:9 hero crop, so the absolute full-bleed rule is violated. All other checks pass on visual inspection: A — reads as a genuine film photograph (chair, pebbled notebook with elastic and ribbon, two-tone cup, jade plant, sash latches, blind cord, contrail all plausible; no melt/duplication); B — no people/reflections; C — no text, logos, or letter-like marks (notebook, cup, latches blank); D — no religion; E — no flags/maps/government imagery, nothing derelict; F — generic room, no named place; G — alt matches (tall window, closed notebook, cup, single contrail in a pale sky); H retouch — the upper-right sky retouch is invisible, no rectangle, seam, or grain mismatch. Note: because everything else passes, the cheapest remedy is the reviewer's pixel salvage (crop ~24 px off the right edge — band plus ramp — and rescale/re-letterbox to 2752x1536, then re-run a column-luminance profile to confirm the last 30 columns match the wall's mean/std); regenerate only if the pipeline forbids crops.",
+      "promptFix": "Full-bleed photograph filling the entire frame edge to edge — no border, no frame, no film-scan edge, no dark edge band or strip along any side, no vignette, no letterboxing; the scene continues naturally to all four edges of the image."
+    },
+    {
+      "n": 88,
+      "key": "site/hero/autumn-campus-path",
+      "checks": "A: FAIL at hero size — a single crisp muddy sneaker print (forefoot + heel, full tread) sits dead-centre on the rain-washed paving with no approaching or departing prints; physically implausible (one mud print, none before/after, unsmeared on wet stone) and reads as an AI narrative insert. Rest of A is strong: paving joints converge correctly, leaf litter/lamp posts/Gothic gatehouse plausible, puddle reflection geometrically consistent (lamp head and tower reflect at the right x-positions near the far edge). B: pass — no figures; midground strip and blurred building bases swept, no distant silhouettes (the print is a trace, not a person). C: pass — no text/crests on the blurred buildings, tread has no brand mark. D: pass. E: pass (no flags; gloomy but not derelict). F: pass — generic collegiate Gothic, not an identifiable named campus. G: NOTE — alt says 'empty … path' and omits the print, which is the dominant foreground detail after the maple leaf. H: FAIL-adjacent — corners/edges full-bleed (no band), but the print lands exactly in the lower-centre title zone of a site hero, so it is not calm under a headline.",
+      "reason": "Confirmed on my own inspection. A single crisp, mud-saturated sneaker print (forefoot + heel, concentric-ridge tread, toe pointing up the path) sits at ~54% across / ~69% down (orig px ≈ 1400–1580 × 1000–1110) — dead in the lower-centre title zone of a site hero. A 1400px-wide crop of the whole paved strip shows no other print at all: no second stride ~70 cm further up (still in sharp focus), no other foot, no fading sequence, no smear on rain-washed stone that is still pooling water. That is physically implausible (mud transfers over several diminishing prints) and reads as the classic gen-AI 'meaningful lone detail' insert; at 1200px hero size it is still the most salient dark shape in the frame, so it fails A at normal viewing size, not just under zoom. H: the print is exactly where a headline would sit, so the hero is not calm behind a title (corners/edges themselves are clean full-bleed — 2px edge-band luminance 77.9→76.2→73.1→70.5 with stdev ~76, no frame/vignette). G: alt says 'empty … path', contradicted by the print. Everything else genuinely passes: B (no figures in gatehouse, right-facade, left-midground, far-path or lawn zooms), C (no text/crests on the blurred facades, no brand mark in the tread), D, E (no flags/arms, gloomy not derelict), F (generic collegiate Gothic, not an identifiable campus); puddle reflection is geometrically consistent (lamp head and tower reflect at the correct x, pole reaches the puddle edge); paving joints converge correctly. The reviewer's verdict stands; the image is otherwise strong, so the preferred fix is the pixel salvage (same class as #76) rather than a full regeneration.",
+      "promptFix": "Preferred: pixel salvage — clone the adjacent wet flagstone (carry the joint line through and keep the fine dark grit specks and sheen) over the print at orig px ≈ 1400–1580 × 1000–1110; then the existing 'empty path' alt is truthful and the image is PASS. If regenerating instead: keep the prompt, add to the positive 'pristine rain-washed flagstones with only fallen leaves on the path' and to the negatives 'no footprints, no shoe prints, no boot prints, no tracks, no mud marks, no tyre marks, untouched wet paving'."
+    }
+  ],
+  "rescued": [],
+  "notes": [
+    {
+      "n": 74,
+      "key": "common/journey/night-study-setup",
+      "checks": "A: NOTE — three ridge-crisp fingerprint whorls on the brass shade are the known generator 'fingerprint' artifact (plausible on brass at hero size, but recognisable on close look); mug carries two rim chips + a hairline crack and greasy smudges — the 'documentary grubbiness' is slightly overdone; surfaces still a touch CG-smooth but grain/lighting now read photographic. B: pass (no figures/hands/reflections). C: pass (blank pages, unmarked pencils, plain mug; blurred sill object is an unreadable box). D: pass. E: pass (chipped mug = lived-in, not derelict). F: pass. G: pass — alt matches (brass lamp, open book with blank pages, two pencils, steaming mug, dark window). H: pass — all four corners/edges full-bleed (no band, vignette or frame); book centred low, calm dark upper-right for a title.",
+      "reason": "Usable: the R3 defects are gone, but the lamp-shade fingerprint whorls are the same generator artifact class that was retouched out of #76 and the mug is doubly chipped/cracked — grubby cues slightly overdone (A)."
+    }
+  ],
+  "graded": [
+    {
+      "n": 27,
+      "verdict": "PASS",
+      "reason": "Clean regeneration — the R3 exit pictograms and door label are gone and nothing new crept in."
+    },
+    {
+      "n": 30,
+      "verdict": "RE_ROLL",
+      "reason": "C: blurred taskbar/app-icon row + right-edge toolbar strip on the monitor = screen UI (absolute rule), plus alt says 'wireframe' for a shaded model."
+    },
+    {
+      "n": 59,
+      "verdict": "RE_ROLL",
+      "reason": "C: engraved letter-like maker's mark on the clock bezel — same scale as the ~15px pictograms that failed #27 in R3."
+    },
+    {
+      "n": 61,
+      "verdict": "RE_ROLL",
+      "reason": "C: brand wordmark and pseudo-text on the webcam, and it is a copy of a real branded product."
+    },
+    {
+      "n": 74,
+      "verdict": "PASS_WITH_NOTE",
+      "reason": "Usable: the R3 defects are gone, but the lamp-shade fingerprint whorls are the same generator artifact class that was retouched out of #76 and the mug is doubly chipped/cracked — grubby cues slightly "
+    },
+    {
+      "n": 76,
+      "verdict": "RE_ROLL",
+      "reason": "Baked-in black film-scan edge along the entire right side violates the absolute full-bleed rule (H); everything else, including the fingerprint retouch, passes."
+    },
+    {
+      "n": 88,
+      "verdict": "RE_ROLL",
+      "reason": "Lone, trail-less muddy shoe print dead-centre of a site hero: implausible physics, an AI storytelling tell, sits under the title zone and contradicts the 'empty path' alt (A/H/G)."
+    }
+  ]
+}

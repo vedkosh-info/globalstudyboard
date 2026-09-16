@@ -1,20 +1,14 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Privacy Policy',
   description:
     'How GlobalStudyBoard handles your data: what we collect, how analytics and advertising cookies are used, and your choices.',
-  alternates: { canonical: 'https://www.globalstudyboard.com/privacy' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/privacy',
-    title: 'Privacy Policy — GlobalStudyBoard',
-    description: 'What we collect, how analytics and advertising work, and your choices.',
-    images: ['/opengraph-image'],
-  },
-};
+  path: '/privacy',
+});
 
 const LAST_UPDATED = '3 September 2026';
 

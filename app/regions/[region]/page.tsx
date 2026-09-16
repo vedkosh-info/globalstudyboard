@@ -5,14 +5,17 @@ import { ArrowUpRight, Calendar, DollarSign, GraduationCap, Briefcase } from 'lu
 
 import {
   REGIONS_ALPHABETICAL,
+  REGION_TAGLINES,
   getRegionBySlug,
   matchesRegion,
   REGION_SLUGS,
   type RegionSlug,
 } from '@/lib/regions';
+import { pageMetadata, regionOgImage } from '@/lib/seo';
 import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
-import { GUIDES } from '@/lib/guides';
+import { GUIDES, getGuideBySlug } from '@/lib/guides';
+import { gsbAiHref } from '@/lib/gsb-ai-links';
 import { tracksForRegion, trackHref, isMultiHubTrack, topicsForTrack } from '@/lib/tracks';
 import AudienceGate from '@/components/AudienceGate';
 import { defaultAudienceFor, isAudienceVisible, type Audience } from '@/lib/audience';
@@ -21,9 +24,11 @@ import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
+import ContentImage from '@/components/ContentImage';
+import { regionImage } from '@/lib/images';
 import BreadcrumbsView from '@/components/BreadcrumbsView';
 import { breadcrumbsFor } from '@/lib/cmi';
-import { SITE_REVIEWED, metaDescription } from '@/lib/site-meta';
+import { SITE_REVIEWED } from '@/lib/site-meta';
 
 interface Props {
   params: Promise<{ region: string }>;
@@ -36,35 +41,25 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { region } = await params;
   const r = getRegionBySlug(region);
-  if (!r) return { title: 'Region not found' };
-  const desc = metaDescription(r.educationSystemSummary);
-  return {
-    title: `Study in ${r.displayName} — Universities, Exams & Scholarships`,
-    description: desc,
+  if (!r) return { title: 'Region not found', robots: { index: false, follow: false } };
+  const universities = COLLEGES.filter((c) => matchesRegion(r.slug, c.region, c.regions)).length;
+  return pageMetadata({
+    title: `Study in ${r.proseName}: Universities, Exams, Scholarships & Visas`,
+    // Built from verified fields, not the degree-structure blurb that used to be
+    // truncated into this snippet on the nine most-linked pages of the site.
+    description: `Study in ${r.proseName}: ${universities} university profiles, the entrance tests they accept, scholarships and official student-visa facts for international students — apply via ${r.primaryApplicationPlatform}. ${REGION_TAGLINES[r.slug]}`,
+    path: `/regions/${r.slug}`,
+    image: regionOgImage(r.slug),
     keywords: [
-      `study in ${r.displayName}`,
-      `${r.displayName} universities`,
-      `${r.displayName} student visa`,
-      `${r.displayName} scholarships`,
-      `apply to ${r.displayName} university`,
+      `study in ${r.proseName}`,
+      `universities in ${r.proseName}`,
+      `${r.shortName} student visa`,
+      `scholarships in ${r.proseName}`,
+      `apply to university in ${r.proseName}`,
       r.primaryApplicationPlatform.split('/')[0].split('(')[0].trim(),
       ...r.keyExamSlugs.map((s) => s.toUpperCase()),
     ],
-    alternates: { canonical: `https://www.globalstudyboard.com/regions/${r.slug}` },
-    openGraph: {
-      type: 'website',
-      url: `https://www.globalstudyboard.com/regions/${r.slug}`,
-      title: `Study in ${r.displayName} — Universities, Exams & Scholarships`,
-      description: desc,
-      // og:image comes from the per-region opengraph-image.tsx route convention.
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `Study in ${r.displayName} — Universities, Exams & Scholarships`,
-      description: desc,
-      // twitter:image comes from the per-region twitter-image.tsx route convention.
-    },
-  };
+  });
 }
 
 export default async function RegionHubPage({ params }: Props) {
@@ -104,17 +99,17 @@ export default async function RegionHubPage({ params }: Props) {
   // section AND the FAQPage JSON-LD; every answer keeps the verify-on-official nudge.
   const faqItems: { q: string; a: string; audience?: Audience }[] = [
     {
-      q: `How do you apply to universities in ${r.displayName}?`,
+      q: `How do you apply to universities in ${r.proseName}?`,
       a: `Most applicants apply via ${r.primaryApplicationPlatform}. Confirm current requirements on the official university or application-platform website before applying.`,
     },
     {
-      q: `When are the main intakes in ${r.displayName}?`,
+      q: `When are the main intakes in ${r.proseName}?`,
       a: `The main intake${r.intakes.length > 1 ? 's are' : ' is'} ${r.intakes.join(', ')}. Application deadlines vary by university — always verify on the official source.`,
     },
     ...(r.averageTuitionRangeUsd
       ? [
           {
-            q: `How much does it cost to study in ${r.displayName}?`,
+            q: `How much does it cost to study in ${r.proseName}?`,
             a: `Undergraduate tuition is roughly $${r.averageTuitionRangeUsd.undergrad[0].toLocaleString()}–$${r.averageTuitionRangeUsd.undergrad[1].toLocaleString()} per year (USD). Fees change every academic year — verify on the official university website.`,
           },
         ]
@@ -122,7 +117,7 @@ export default async function RegionHubPage({ params }: Props) {
     ...(r.visaName
       ? [
           {
-            q: `What student visa do you need for ${r.displayName}?`,
+            q: `What student visa do you need for ${r.proseName}?`,
             a: `${r.visaName}. Immigration rules change frequently — verify on the official government source before applying.`,
             // Student visa is an international-applicant concern — hidden for home students.
             audience: 'international' as const,
@@ -130,7 +125,7 @@ export default async function RegionHubPage({ params }: Props) {
         ]
       : []),
     {
-      q: `Can you work while studying in ${r.displayName}?`,
+      q: `Can you work while studying in ${r.proseName}?`,
       // Work/visa rules are policy facts (Rule D / §5): keep the verify-nudge.
       // Skip if the source string already carries one (Europe, Russia) — no doubles.
       a: /verify/i.test(r.worksWhileStudying)
@@ -166,18 +161,20 @@ export default async function RegionHubPage({ params }: Props) {
           <div className="flex items-center gap-3 mb-4">
             <RegionFlag slug={r.slug} className="h-10" />
             <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500">
-              {r.countries.length === 1 ? 'Region guide' : `${r.countries.length} countries`}
+              {r.countries.length === 1 ? 'Region guide' : `${r.countries.length} countries & territories`}
             </p>
           </div>
           <h1 className="font-display text-4xl md:text-6xl font-bold tracking-editorial leading-[1.05] text-ink mb-5">
-            Study in {r.displayName}
+            Study in {r.proseName}
           </h1>
           <p className="editorial-lede text-stone-700 text-lg leading-relaxed">
             {r.educationSystemSummary}
           </p>
           {/*
-            The countries this destination actually covers, named in full. The
-            eyebrow above says "N countries" but never said WHICH, and for a
+            The places this destination actually covers, named in full. The
+            eyebrow above says "N countries & territories" — the neutral phrasing
+            ranking bodies use, because the list includes Hong Kong and Taiwan and
+            §4.D forbids asserting a political status — but never said WHICH, and for a
             grouping like Europe or the Middle East that is the first thing a
             student needs to know. The destination menu shows a clipped preview;
             this is the complete list it defers to.
@@ -189,6 +186,9 @@ export default async function RegionHubPage({ params }: Props) {
             </p>
           )}
           <LastUpdated date={SITE_REVIEWED} className="mt-4" />
+
+          {/* Destination atmosphere — an archetype, never a named campus. LCP for this page. */}
+          <ContentImage asset={regionImage(r.slug)} variant="hero" priority className="mt-8" />
         </header>
 
         {/* Key facts */}
@@ -272,10 +272,10 @@ export default async function RegionHubPage({ params }: Props) {
           <AudienceGate audience="domestic" pageDefault={pageDefault}>
             <section className="rounded-2xl border border-forest-200/70 bg-forest-50/60 p-5">
               <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-700">
-                Home student of {r.displayName}?
+                Home student of {r.proseName}?
               </p>
               <p className="m-0 text-sm leading-relaxed text-stone-700">
-                GlobalStudyBoard is built for international students applying to {r.displayName}. If you
+                GlobalStudyBoard is built for international students applying to {r.proseName}. If you
                 are a citizen or resident, you usually apply as a domestic student — tuition is typically
                 lower, you may qualify for home-student finance, and you do not need a student visa. We
                 don&rsquo;t cover the domestic home-student route in depth; for fees, funding and the
@@ -322,7 +322,7 @@ export default async function RegionHubPage({ params }: Props) {
                   Top universities
                 </h2>
                 <p className="text-stone-600 text-sm">
-                  {universities.length} institution{universities.length === 1 ? '' : 's'} we cover in {r.displayName}.
+                  {universities.length} institution{universities.length === 1 ? '' : 's'} we cover in {r.proseName}.
                 </p>
               </div>
               {universities.length > 6 && (
@@ -399,7 +399,7 @@ export default async function RegionHubPage({ params }: Props) {
                   Entrance exams
                 </h2>
                 <p className="text-stone-600 text-sm">
-                  Standardised tests used by universities in {r.displayName}.
+                  Standardised tests used by universities in {r.proseName}.
                 </p>
               </div>
               {examsForRegion.length > 6 && (
@@ -444,7 +444,7 @@ export default async function RegionHubPage({ params }: Props) {
           <section>
             <div className="mb-7">
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
-                Explore {r.displayName} by track
+                Explore {r.proseName} by track
               </h2>
               <p className="text-stone-600 text-sm">
                 {tracks.length} curated tracks — pick a path, then go deep hub by hub.
@@ -480,7 +480,7 @@ export default async function RegionHubPage({ params }: Props) {
         {/* Common questions — visible Q&A backing the FAQPage JSON-LD */}
         <section>
           <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-6">
-            Common questions about {r.displayName}
+            Common questions about {r.proseName}
           </h2>
           <div className="flex flex-col gap-3">
             {faqItems.map((f) => (
@@ -526,40 +526,49 @@ export default async function RegionHubPage({ params }: Props) {
           </ul>
         </section>
 
-        {/* Popular queries */}
+        {/* Popular questions — each resolves to the guide that answers it when
+            one exists (a real, crawlable link with the guide's own title), and
+            only falls back to a GSB AI prefill when no guide covers it. */}
         {r.popularQueries.length > 0 && (
           <section>
             <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-4">
               Questions students ask
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {r.popularQueries.map((q) => (
-                <Link
-                  key={q}
-                  href={`/gsb-ai?q=${encodeURIComponent(q)}`}
-                  className="bg-cream-50 border border-stone-200 hover:border-terracotta-300 rounded-xl p-4 no-underline transition-colors group flex items-center justify-between gap-3"
-                >
-                  <span className="text-stone-700 text-sm group-hover:text-forest-700 transition-colors">
-                    {q.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())}
-                  </span>
-                  <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-forest-700 transition-colors shrink-0" />
-                </Link>
-              ))}
+              {r.popularQueries.map((q) => {
+                const g = getGuideBySlug(q);
+                const href = g ? `/guides/${g.slug}` : gsbAiHref({ q: q.replace(/-/g, ' ') });
+                const label = g
+                  ? g.titleEn
+                  : q.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+                return (
+                  <Link
+                    key={q}
+                    href={href}
+                    className="bg-cream-50 border border-stone-200 hover:border-terracotta-300 rounded-xl p-4 no-underline transition-colors group flex items-center justify-between gap-3"
+                  >
+                    <span className="text-stone-700 text-sm group-hover:text-forest-700 transition-colors">
+                      {label}
+                    </span>
+                    <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-forest-700 transition-colors shrink-0" />
+                  </Link>
+                );
+              })}
             </div>
           </section>
         )}
 
         {/* CTA */}
-        <section className="bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-12 py-10">
+        <section className="on-dark bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-12 py-10">
           <div className="max-w-2xl">
             <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial mb-3">
-              Got a specific question about {r.displayName}?
+              Got a specific question about {r.proseName}?
             </h2>
             <p className="text-cream-50/85 mb-5 m-0">
               Ask GSB AI for tailored guidance on applications, scholarships, visa, or course choice.
             </p>
             <Link
-              href={`/gsb-ai?region=${r.slug}`}
+              href={gsbAiHref({ region: r.slug })}
               className="inline-flex items-center justify-center bg-cream-50 hover:bg-cream-100 text-forest-900 font-semibold px-6 py-3 rounded-full no-underline transition-colors"
             >
               Ask GSB AI →

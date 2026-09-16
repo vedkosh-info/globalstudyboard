@@ -1,11 +1,11 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
-import { useRegion } from '@/components/RegionProvider';
+import { useListingRegion } from '@/components/useListingRegion';
 import RegionFilterBar from '@/components/RegionFilterBar';
 import RegionFlag from '@/components/RegionFlag';
 
@@ -56,27 +56,31 @@ interface Props {
   items: GuideCard[];
   /** Ordered topic categories (key + label), supplied by the server page. */
   categories: { key: string; label: string }[];
+  /** The page's own destination — bakes the correct filter into the server HTML. */
+  pageRegion?: RegionSlug;
+  /** Global listing: show every destination until the student filters. */
+  unfilteredByDefault?: boolean;
 }
 
-export default function GuidesView({ items, categories }: Props) {
-  const { effectiveRegion } = useRegion();
-  const [showAll, setShowAll] = useState(false);
+export default function GuidesView({ items, categories, pageRegion, unfilteredByDefault }: Props) {
+  const { filterRegion, showAll, toggle } = useListingRegion({ pageRegion, unfilteredByDefault });
 
-  const isVisible = (g: GuideCard) => showAll || g.regions.includes(effectiveRegion);
+  const isVisible = (g: GuideCard) => showAll || g.regions.includes(filterRegion);
   const shown = useMemo(
-    () => items.filter((g) => showAll || g.regions.includes(effectiveRegion)).length,
-    [items, effectiveRegion, showAll],
+    () => items.filter((g) => showAll || g.regions.includes(filterRegion)).length,
+    [items, filterRegion, showAll],
   );
 
   return (
     <div className="space-y-8">
       <RegionFilterBar
-        regionSlug={effectiveRegion}
+        regionSlug={filterRegion}
         shown={shown}
         total={items.length}
         noun="guides"
         showAll={showAll}
-        onToggle={() => setShowAll((v) => !v)}
+        onToggle={toggle}
+        locked={Boolean(pageRegion)}
       />
 
       {/* All guides are always rendered (crawlable in the server HTML), grouped by

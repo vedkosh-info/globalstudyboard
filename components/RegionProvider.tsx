@@ -9,6 +9,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { useSelectedLayoutSegments } from 'next/navigation';
 import { REGION_SLUGS, DEFAULT_REGION, type RegionSlug } from '@/lib/regions';
 
 const REGION_KEY = 'gsb_region';
@@ -55,6 +56,22 @@ function isRegionSlug(value: string | null | undefined): value is RegionSlug {
   return !!value && (REGION_SLUGS as readonly string[]).includes(value);
 }
 
+/**
+ * The destination a route declares in its own segments (/regions/{slug}/…).
+ * Known synchronously — on the server and on the first client render alike — so
+ * the region-scoped hub, category and track pages (123 of them) prerender their
+ * chrome already tuned to their destination instead of to the India default.
+ * Content pages (a guide, a college) declare theirs via <PageRegion> instead.
+ *
+ * Read from the router TREE (useSelectedLayoutSegments), not the URL: the static
+ * 404 page is prerendered at /_not-found but served at any missing URL, so a
+ * pathname-based read differed between server and client and forced a full
+ * client re-render on every 404. The tree is identical on both sides.
+ */
+function regionFromSegments(segments: string[]): RegionSlug | null {
+  return segments[0] === 'regions' && isRegionSlug(segments[1]) ? segments[1] : null;
+}
+
 function readCookie(name: string): string | null {
   if (typeof document === 'undefined') return null;
   const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
@@ -78,9 +95,13 @@ function expireCookie(name: string) {
  * on the device, so the next visit opens where they left off.
  */
 export function RegionProvider({ children }: { children: ReactNode }) {
+  const segments = useSelectedLayoutSegments();
   const [region, setRegionState] = useState<RegionSlug | null>(null);
-  const [pageRegion, setPageRegionState] = useState<RegionSlug | null>(null);
+  const [declaredPageRegion, setPageRegionState] = useState<RegionSlug | null>(null);
   const [ready, setReady] = useState(false);
+  // A page's own destination: declared by <PageRegion> (content pages) or read
+  // off the URL (/regions/{slug}/…), the latter being available at SSR time.
+  const pageRegion = declaredPageRegion ?? regionFromSegments(segments);
 
   // Hydrate the remembered choice on first client render. Reading it here (not on
   // the server) is what keeps every page statically renderable.

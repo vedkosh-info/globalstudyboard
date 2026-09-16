@@ -1,0 +1,45 @@
+{
+  "capturedAt": "2026-09-12",
+  "commit": "4a6857f",
+  "images": 0,
+  "method": "Lighthouse 13.4.1 · --preset=desktop · headless Chrome · next start on localhost (fresh production build)",
+  "purpose": "Zero-image \"before\". After images ship: CLS must stay 0.000 (explicit width/height); LCP on guide/college/region must stay ≤ 2.5s with the hero as the LCP element.",
+  "pages": {
+    "home": {
+      "url": "/",
+      "perfScore": 76,
+      "lcpMs": 3027,
+      "cls": 0,
+      "tbtMs": 0,
+      "speedIndexMs": 2026,
+      "lcpElement": ""
+    },
+    "guide": {
+      "url": "/guides/how-to-get-into-iit",
+      "perfScore": 98,
+      "lcpMs": 1115,
+      "cls": 0,
+      "tbtMs": 0,
+      "speedIndexMs": 683,
+      "lcpElement": ""
+    },
+    "college": {
+      "url": "/colleges/iit-bombay",
+      "perfScore": 97,
+      "lcpMs": 1176,
+      "cls": 0,
+      "tbtMs": 0,
+      "speedIndexMs": 835,
+      "lcpElement": ""
+    },
+    "region": {
+      "url": "/regions/usa",
+      "perfScore": 98,
+      "lcpMs": 1158,
+      "cls": 0.001,
+      "tbtMs": 0,
+      "speedIndexMs": 667,
+      "lcpElement": ""
+    }
+  }
+}

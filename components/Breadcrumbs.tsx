@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { useSelectedLayoutSegments } from 'next/navigation';
 
 import BreadcrumbsView from './BreadcrumbsView';
 
@@ -31,19 +31,24 @@ const GROUP_LABELS: Record<string, string> = {
   terms: 'Terms',
   disclaimer: 'Disclaimer',
   cookies: 'Cookies',
+  sources: 'Sources',
+  'editorial-policy': 'Editorial policy',
 };
 
 const titleCase = (seg: string): string =>
   seg.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
 
 export default function Breadcrumbs() {
-  const pathname = usePathname() ?? '/';
-  const segments = pathname.split('/').filter(Boolean);
+  // Router-tree segments, not the URL: the static 404 page is prerendered at
+  // /_not-found and served at any missing URL, so reading the pathname produced
+  // a "_not Found" crumb on the server and a different one on the client.
+  const segments = useSelectedLayoutSegments();
 
   // Home (0 segments) shows no breadcrumb. Multi-segment detail/region pages
   // render their own server-side — skip here to avoid a double trail and to keep
-  // the content catalogue out of the client bundle.
-  if (segments.length !== 1) return null;
+  // the content catalogue out of the client bundle. The not-found boundary
+  // (segment "/_not-found") gets no trail either.
+  if (segments.length !== 1 || segments[0].startsWith('/_')) return null;
 
   const seg = segments[0];
   return (

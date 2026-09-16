@@ -1,12 +1,23 @@
 import type { Metadata } from 'next';
 import { Sparkles, ChevronRight } from 'lucide-react';
 import GSBAIChat from '@/components/GSBAIChat';
-import { getRegionBySlug } from '@/lib/regions';
+import { pageMetadata } from '@/lib/seo';
 
-const BASE_METADATA: Metadata = {
+/**
+ * Static page. It used to read `searchParams` (for `?q=` / `?region=` prefills),
+ * which made /gsb-ai the only per-request-rendered HTML route on the site
+ * (`cache-control: private, no-store`) and minted ~3,300 distinct robots-blocked
+ * URLs from the "Ask GSB AI" links on every content page. Prefills now travel in
+ * the URL FRAGMENT (`/gsb-ai#q=…`, `/gsb-ai#region=…`): a fragment is not a
+ * separate URL to a crawler, so every page links to the one canonical /gsb-ai,
+ * the page is prerendered and CDN-cached, and GSBAIChat reads the fragment (and
+ * any legacy `?q=` query) on the client.
+ */
+export const metadata: Metadata = pageMetadata({
   title: 'Ask GSB AI — Free University Admission AI Assistant',
   description:
     'Get instant answers about university admissions, entrance exams, scholarships, student visas and study abroad from GSB AI. Free AI-powered guide for every country.',
+  path: '/gsb-ai',
   keywords: [
     'university admission AI assistant',
     'college admission chatbot',
@@ -18,36 +29,7 @@ const BASE_METADATA: Metadata = {
     'scholarship finder AI',
     'free university guide',
   ],
-  alternates: { canonical: 'https://www.globalstudyboard.com/gsb-ai' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/gsb-ai',
-    title: 'Ask GSB AI — Free University Admission AI Assistant',
-    description: 'Instant answers about university admissions, entrance exams, scholarships and study abroad — powered by AI, free to use.',
-    images: ['/opengraph-image'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Ask GSB AI — Free University Admission AI Assistant',
-    description: 'Instant answers about university admissions, entrance exams, scholarships and study abroad.',
-    images: ['/opengraph-image'],
-  },
-};
-
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams: Promise<{ q?: string }>;
-}): Promise<Metadata> {
-  const { q } = await searchParams;
-  if (q) {
-    return {
-      ...BASE_METADATA,
-      robots: { index: false, follow: false },
-    };
-  }
-  return BASE_METADATA;
-}
+});
 
 const TOPICS = [
   { label: 'Entrance Exams', examples: 'SAT, ACT, GRE, GMAT, A-Levels, IELTS, TOEFL' },
@@ -58,18 +40,7 @@ const TOPICS = [
   { label: 'Visas & Work', examples: 'F-1, Tier 4, post-study work permits' },
 ];
 
-export default async function GSBAIPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ q?: string; region?: string }>;
-}) {
-  const { q, region } = await searchParams;
-  const regionName = region ? getRegionBySlug(region)?.displayName : undefined;
-  const initialPrompt = q?.trim()
-    ? q.trim()
-    : regionName
-      ? `I'm planning to study in ${regionName}. Where should I start?`
-      : '';
+export default function GSBAIPage() {
   return (
     <div className="max-w-3xl mx-auto space-y-8">
 
@@ -86,7 +57,7 @@ export default async function GSBAIPage({
         </p>
       </div>
 
-      <GSBAIChat initialPrompt={initialPrompt} region={region} />
+      <GSBAIChat />
 
       <section>
         <h2 className="text-xs font-semibold text-stone-500 uppercase tracking-[0.18em] mb-4">

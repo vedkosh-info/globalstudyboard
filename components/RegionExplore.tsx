@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { REGION_CATEGORIES, categoryLabel, regionCategoryPath } from '@/lib/region-nav';
 import RegionFlag from '@/components/RegionFlag';
+import { gsbAiHref } from '@/lib/gsb-ai-links';
 
 /**
  * "Continue exploring {Region}" strip for content detail pages. It uses the
@@ -21,13 +22,13 @@ export default function RegionExplore({ region }: { region: RegionSlug }) {
     <section className="rounded-2xl border border-forest-200/70 bg-forest-50/60 p-6">
       <p className="m-0 mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-700">
         <RegionFlag slug={r.slug} className="h-4" />
-        Studying in {r.displayName}
+        Studying in {r.proseName}
       </p>
       <h2 className="font-display text-xl sm:text-2xl font-bold tracking-editorial text-ink mb-2">
-        Continue exploring {r.displayName}
+        Continue exploring {r.proseName}
       </h2>
       <p className="text-stone-600 text-sm leading-relaxed mb-4 max-w-2xl">
-        Universities, entrance tests, costs and visa facts for {r.displayName} — all in one place,
+        Universities, entrance tests, costs and visa facts for {r.proseName} — all in one place,
         each linked to its official source.
       </p>
       <div className="mb-4 flex flex-wrap gap-2">
@@ -35,6 +36,7 @@ export default function RegionExplore({ region }: { region: RegionSlug }) {
           <Link
             key={cat}
             href={regionCategoryPath(r.slug, cat)}
+            prefetch={false}
             className="inline-flex items-center rounded-full border border-forest-300 bg-white px-3 py-1.5 text-sm font-medium text-forest-700 no-underline transition-colors hover:border-forest-400 hover:bg-forest-50"
           >
             {categoryLabel(cat, r.slug)}
@@ -44,16 +46,17 @@ export default function RegionExplore({ region }: { region: RegionSlug }) {
       <div className="flex flex-wrap gap-3">
         <Link
           href={`/regions/${r.slug}`}
+          prefetch={false}
           className="inline-flex items-center gap-2 rounded-full bg-forest-700 px-5 py-2.5 text-sm font-semibold text-cream-50 no-underline transition-colors hover:bg-forest-800"
         >
-          Explore {r.displayName}
+          Explore {r.proseName}
           <ArrowUpRight className="h-4 w-4" />
         </Link>
         <Link
-          href={`/gsb-ai?region=${r.slug}`}
+          href={gsbAiHref({ region: r.slug })}
           className="inline-flex items-center gap-2 rounded-full border border-forest-300 bg-white px-5 py-2.5 text-sm font-semibold text-forest-700 no-underline transition-colors hover:border-forest-400 hover:bg-forest-50"
         >
-          Ask GSB AI about {r.displayName}
+          Ask GSB AI about {r.proseName}
         </Link>
       </div>
     </section>

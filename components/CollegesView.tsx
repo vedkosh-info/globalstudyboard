@@ -1,10 +1,10 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import Link from 'next/link';
 
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
-import { useRegion } from '@/components/RegionProvider';
+import { useListingRegion } from '@/components/useListingRegion';
 import RegionFilterBar from '@/components/RegionFilterBar';
 import RegionFlag from '@/components/RegionFlag';
 
@@ -47,26 +47,35 @@ function CollegeLink({ c, hidden }: { c: CollegeCard; hidden: boolean }) {
   );
 }
 
-export default function CollegesView({ items }: { items: CollegeCard[] }) {
-  const { effectiveRegion } = useRegion();
-  const [showAll, setShowAll] = useState(false);
+export default function CollegesView({
+  items,
+  pageRegion,
+  unfilteredByDefault,
+}: {
+  items: CollegeCard[];
+  /** The page's own destination — bakes the correct filter into the server HTML. */
+  pageRegion?: RegionSlug;
+  /** Global listing: show every destination until the student filters. */
+  unfilteredByDefault?: boolean;
+}) {
+  const { filterRegion, showAll, toggle } = useListingRegion({ pageRegion, unfilteredByDefault });
 
   // Every card is always rendered (so the full set is in the server HTML and
   // crawlable); non-matching cards are hidden with `hidden` until "Show all".
   const shown = useMemo(
-    () => items.filter((c) => c.regions.includes(effectiveRegion)).length,
-    [items, effectiveRegion],
+    () => items.filter((c) => c.regions.includes(filterRegion)).length,
+    [items, filterRegion],
   );
 
   return (
     <div className="space-y-8">
       <RegionFilterBar
-        regionSlug={effectiveRegion}
+        regionSlug={filterRegion}
         shown={shown}
         total={items.length}
         noun="universities"
         showAll={showAll}
-        onToggle={() => setShowAll((v) => !v)}
+        onToggle={toggle}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -74,7 +83,7 @@ export default function CollegesView({ items }: { items: CollegeCard[] }) {
           <CollegeLink
             key={c.id}
             c={c}
-            hidden={!showAll && !c.regions.includes(effectiveRegion)}
+            hidden={!showAll && !c.regions.includes(filterRegion)}
           />
         ))}
       </div>

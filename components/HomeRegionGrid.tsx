@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { ArrowUpRight, Check, MapPin } from 'lucide-react';
 
 import { REGIONS_ALPHABETICAL, REGION_TAGLINES, type RegionSlug } from '@/lib/regions';
@@ -11,14 +11,16 @@ import RegionFlag from '@/components/RegionFlag';
  * The single destination browser on the Home page. Choosing a region tunes the
  * whole site to it and takes the student to that region's hub. Regions are
  * listed alphabetically (see REGIONS_ALPHABETICAL).
+ *
+ * Each card is a real <Link> to the region hub (it used to be a <button> with a
+ * router.push — nine destinations with no crawlable href on the home page); the
+ * tune-on-click behaviour is preserved in onClick.
  */
 export default function HomeRegionGrid() {
   const { region, effectiveRegion, setRegion } = useRegion();
-  const router = useRouter();
 
   const choose = (slug: RegionSlug) => {
     setRegion(slug);
-    router.push(`/regions/${slug}`);
   };
 
   return (
@@ -43,12 +45,12 @@ export default function HomeRegionGrid() {
         {REGIONS_ALPHABETICAL.map((r) => {
           const selected = r.slug === effectiveRegion;
           return (
-            <button
+            <Link
               key={r.slug}
-              type="button"
+              href={`/regions/${r.slug}`}
               onClick={() => choose(r.slug)}
-              aria-pressed={selected}
-              className={`group relative flex flex-col text-left rounded-2xl border p-5 transition-all hover:-translate-y-0.5 hover:shadow-md ${
+              aria-current={selected ? 'true' : undefined}
+              className={`group relative flex flex-col text-left rounded-2xl border p-5 no-underline transition-all hover:-translate-y-0.5 hover:shadow-md ${
                 selected
                   ? 'border-forest-400 bg-forest-50 ring-1 ring-forest-300'
                   : 'border-stone-200 bg-white hover:border-forest-300'
@@ -70,7 +72,7 @@ export default function HomeRegionGrid() {
               <p className="mt-1 mb-0 text-sm leading-relaxed text-stone-600">
                 {REGION_TAGLINES[r.slug]}
               </p>
-            </button>
+            </Link>
           );
         })}
       </div>

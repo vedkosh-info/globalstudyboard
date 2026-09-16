@@ -1,20 +1,14 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Terms of Use',
   description:
     'The terms governing your use of GlobalStudyBoard, including the accuracy disclaimer, acceptable use, and limitation of liability.',
-  alternates: { canonical: 'https://www.globalstudyboard.com/terms' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/terms',
-    title: 'Terms of Use — GlobalStudyBoard',
-    description: 'The terms that govern your use of GlobalStudyBoard.',
-    images: ['/opengraph-image'],
-  },
-};
+  path: '/terms',
+});
 
 const LAST_UPDATED = '3 July 2026';
 

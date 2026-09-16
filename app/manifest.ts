@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { SITE_DESCRIPTION } from '@/lib/site-meta';
 
 /**
  * Web app manifest.
@@ -18,8 +19,7 @@ export default function manifest(): MetadataRoute.Manifest {
     id: '/',
     name: 'GlobalStudyBoard — Universities, Exams & Scholarships',
     short_name: 'GlobalStudyBoard',
-    description:
-      'Free guide to universities, entrance exams, and scholarships worldwide — USA, UK, Europe, Canada, Australia, India and more.',
+    description: SITE_DESCRIPTION,
     start_url: '/',
     scope: '/',
     display: 'standalone',
@@ -37,7 +37,6 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/png',
         purpose: 'maskable',
       },
-      { src: '/icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
     ],
     shortcuts: [
       { name: 'Universities', short_name: 'Universities', url: '/colleges' },

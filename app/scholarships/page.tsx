@@ -1,17 +1,19 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { ArrowUpRight, ShieldCheck, ExternalLink } from 'lucide-react';
 
 import { GUIDES } from '@/lib/guides';
-import { REGIONS } from '@/lib/regions';
+import { REGIONS_ALPHABETICAL } from '@/lib/regions';
 import LastUpdated from '@/components/LastUpdated';
 import RegionFlag from '@/components/RegionFlag';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
-export const metadata: Metadata = {
-  title: 'Scholarships & Funding — Official Programmes for Students',
+export const metadata: Metadata = pageMetadata({
+  title: 'Scholarships by Study Destination: Official Programmes & How to Apply',
   description:
-    'Find official scholarships and funding for your studies — government portals (NSP, INSPIRE), and international programmes (Fulbright, DAAD). Eligibility, how to apply, and official links. Always verify on the official source.',
+    'Official scholarship and funding programmes for students heading to the USA, UK & Ireland, Canada, Europe, Australia & NZ, Asia, the Gulf, Russia and India \u2014 eligibility, official links and how to apply.',
+  path: '/scholarships',
   keywords: [
     'scholarships for students',
     'scholarships for Indian students abroad',
@@ -22,43 +24,22 @@ export const metadata: Metadata = {
     'study abroad funding',
     'government scholarships',
   ],
-  alternates: { canonical: 'https://www.globalstudyboard.com/scholarships' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/scholarships',
-    title: 'Scholarships & Funding — Official Programmes for Students',
-    description:
-      'Official scholarship and funding programmes — government portals and international awards. Eligibility, how to apply, and official links.',
-    images: ['/opengraph-image'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Scholarships & Funding — GlobalStudyBoard',
-    description: 'Official scholarship and funding programmes for students — eligibility, how to apply, and official links.',
-    images: ['/opengraph-image'],
-  },
-};
+});
 
-// Surface the scholarship-category guides we already cover. A sensible reading
-// order: the overview first, then portals, then named international awards.
-const SCHOLARSHIP_ORDER = [
-  'scholarships-for-indian-students-abroad',
-  'national-scholarship-portal-guide',
-  'inspire-scholarship-guide',
-  'fulbright-scholarship-for-indians',
-  'daad-scholarship-for-indians',
-];
-
-const SCHOLARSHIP_GUIDES = (() => {
-  const inCategory = GUIDES.filter((g) => g.category === 'scholarships');
-  const rank = (slug: string) => {
-    const i = SCHOLARSHIP_ORDER.indexOf(slug);
-    return i === -1 ? SCHOLARSHIP_ORDER.length : i;
-  };
-  return [...inCategory].sort((a, b) => rank(a.slug) - rank(b.slug));
-})();
-
-const regionMeta = (slug: string) => REGIONS.find((r) => r.slug === slug);
+// Scholarship guides grouped BY DESTINATION, destinations in the site's
+// alphabetical order, so the page reads the same for every visitor and no
+// destination's awards are buried (Rhodes sat at card 70 and Chevening at 204
+// of a 208-card wall pinned behind five India-audience guides). Within a
+// destination: overviews/portals first (slug contains "scholarship" + "guide"
+// or "portal"), then named awards, newest-verified first.
+const SCHOLARSHIP_GUIDES = GUIDES.filter((g) => g.category === 'scholarships');
+const SCHOLARSHIP_SECTIONS = REGIONS_ALPHABETICAL.map((r) => ({
+  region: r,
+  guides: SCHOLARSHIP_GUIDES.filter((g) => g.region === r.slug).sort((a, b) => {
+    const overview = (g: typeof a) => (/overview|portal|scholarships-(for|in)-/.test(g.slug) ? 0 : 1);
+    return overview(a) - overview(b) || b.lastVerified.localeCompare(a.lastVerified);
+  }),
+})).filter((s) => s.guides.length > 0);
 
 const RELATED = [
   { label: 'All study guides', href: '/guides', note: 'Exams, admissions, careers & study abroad' },
@@ -97,34 +78,43 @@ export default function ScholarshipsIndexPage() {
         </p>
       </div>
 
-      <section>
-        <div className="section-rule mb-5">
-          <span>Programmes &amp; guides</span>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {SCHOLARSHIP_GUIDES.map((guide) => {
-            const meta = regionMeta(guide.region);
-            return (
+      {/* Destination jump list */}
+      <nav aria-label="Scholarships by destination" className="flex flex-wrap gap-2">
+        {SCHOLARSHIP_SECTIONS.map((sec) => (
+          <a
+            key={sec.region.slug}
+            href={`#scholarships-${sec.region.slug}`}
+            className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-sm text-stone-700 no-underline hover:border-forest-300 hover:text-forest-700"
+          >
+            <RegionFlag slug={sec.region.slug} className="h-3.5" />
+            {sec.region.displayName}
+            <span className="text-xs text-stone-600">{sec.guides.length}</span>
+          </a>
+        ))}
+      </nav>
+
+      {SCHOLARSHIP_SECTIONS.map((sec) => (
+        <section key={sec.region.slug} id={`scholarships-${sec.region.slug}`} className="scroll-mt-28">
+          <div className="section-rule mb-5">
+            <span role="heading" aria-level={2}>
+              Scholarships for studying in {sec.region.proseName}
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {sec.guides.map((guide) => (
               <Link
                 key={guide.slug}
                 href={`/guides/${guide.slug}`}
                 className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  {meta && (
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-                      <RegionFlag slug={guide.region} className="h-3.5" />
-                      {meta.displayName}
-                    </span>
-                  )}
-                  <span className="text-stone-300">·</span>
                   <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
                     {guide.readMinutes} min read
                   </span>
                 </div>
-                <h2 className="font-display text-lg font-bold tracking-editorial text-ink leading-snug mb-2 group-hover:text-forest-700">
+                <h3 className="font-display text-lg font-bold tracking-editorial text-ink leading-snug mb-2 group-hover:text-forest-700">
                   {guide.titleEn}
-                </h2>
+                </h3>
                 <p className="text-stone-600 text-sm leading-relaxed m-0 flex-1">
                   {guide.descriptionEn}
                 </p>
@@ -132,10 +122,10 @@ export default function ScholarshipsIndexPage() {
                   Read guide <ArrowUpRight className="w-4 h-4" />
                 </span>
               </Link>
-            );
-          })}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      ))}
 
       {/* Related / Next steps */}
       <section>

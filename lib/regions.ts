@@ -12,6 +12,17 @@ export type RegionSlug =
 export interface Region {
   slug: RegionSlug;
   displayName: string;
+  /**
+   * The name as it reads inside a sentence, after a preposition — "Study in the
+   * United States", "Scholarships in the Middle East", "Universities in Russia &
+   * the CIS". `displayName` is the label form for menus, chips and breadcrumbs;
+   * every title, H1, FAQ or meta description that interpolates a region after
+   * "in" / "for" / "to" MUST use `proseName` (the article-less "in United States"
+   * read as broken English across ~130 pages).
+   */
+  proseName: string;
+  /** Compact form for tight titles — "USA", "UK & Ireland". */
+  shortName: string;
   flag: string;
   countries: string[];
   currency: { code: string; symbol: string };
@@ -39,6 +50,8 @@ export const REGIONS: Region[] = [
   {
     slug: 'usa',
     displayName: 'United States',
+    proseName: 'the United States',
+    shortName: 'USA',
     flag: '🇺🇸',
     countries: ['United States'],
     currency: { code: 'USD', symbol: '$' },
@@ -46,12 +59,14 @@ export const REGIONS: Region[] = [
     educationSystemSummary:
       'Four-year bachelor\'s programs with a flexible major/minor system, two-year master\'s programs, and PhDs that combine coursework and research. Liberal arts colleges focus on undergraduate breadth; research universities emphasize graduate work. Most applicants apply via the Common App or Coalition App to multiple schools at once.',
     keyExamSlugs: ['sat', 'act', 'gre', 'gmat', 'toefl', 'duolingo-english-test'],
+    // Real guide slugs — rendered as links to the guides that answer them (a
+    // question with no guide falls back to a GSB AI prefill).
     popularQueries: [
-      'how-to-apply-to-us-universities',
-      'sat-vs-act',
-      'common-app-essay-prompts',
-      'f1-visa-interview',
-      'need-blind-universities-international-students',
+      'how-to-apply-to-us-universities-as-an-international-student',
+      'sat-vs-act-which-to-take',
+      'how-to-write-the-common-app-essay',
+      'f1-visa-interview-preparation',
+      'need-blind-for-international-students-usa',
     ],
     intakes: ['Fall (Aug/Sep)', 'Spring (Jan)'],
     averageTuitionRangeUsd: { undergrad: [11000, 65000], grad: [25000, 75000] },
@@ -65,6 +80,8 @@ export const REGIONS: Region[] = [
   {
     slug: 'canada',
     displayName: 'Canada',
+    proseName: 'Canada',
+    shortName: 'Canada',
     flag: '🇨🇦',
     countries: ['Canada'],
     currency: { code: 'CAD', symbol: 'C$' },
@@ -73,10 +90,10 @@ export const REGIONS: Region[] = [
       'Three- or four-year bachelor\'s programs, one- or two-year master\'s, three-to-five-year PhDs. Public universities dominate; the Group of Canadian Research Universities (U15) sets the research benchmark. Ontario applicants use OUAC; other provinces apply directly to each institution.',
     keyExamSlugs: ['sat', 'gre', 'gmat', 'ielts', 'toefl', 'duolingo-english-test'],
     popularQueries: [
-      'study-in-canada-without-ielts',
-      'post-graduation-work-permit-canada',
-      'cost-of-living-canada-students',
-      'best-co-op-universities-canada',
+      'post-graduation-work-permit-pgwp-explained',
+      'cost-of-living-in-canada-for-students',
+      'best-canadian-universities-and-programs-for-co-op',
+      'ielts-for-canada-requirements',
     ],
     intakes: ['Fall (Sep)', 'Winter (Jan)', 'Summer (May)'],
     averageTuitionRangeUsd: { undergrad: [12000, 35000], grad: [10000, 45000] },
@@ -90,6 +107,8 @@ export const REGIONS: Region[] = [
   {
     slug: 'uk-ireland',
     displayName: 'United Kingdom & Ireland',
+    proseName: 'the UK & Ireland',
+    shortName: 'UK & Ireland',
     flag: '🇬🇧',
     countries: ['United Kingdom', 'Ireland'],
     currency: { code: 'GBP', symbol: '£' },
@@ -117,6 +136,8 @@ export const REGIONS: Region[] = [
   {
     slug: 'europe',
     displayName: 'Europe',
+    proseName: 'Europe',
+    shortName: 'Europe',
     flag: '🇪🇺',
     countries: [
       'Germany',
@@ -164,6 +185,8 @@ export const REGIONS: Region[] = [
   {
     slug: 'australia-nz',
     displayName: 'Australia & New Zealand',
+    proseName: 'Australia & New Zealand',
+    shortName: 'Australia & NZ',
     flag: '🇦🇺',
     countries: ['Australia', 'New Zealand'],
     currency: { code: 'AUD', symbol: 'A$' },
@@ -189,6 +212,8 @@ export const REGIONS: Region[] = [
   {
     slug: 'russia',
     displayName: 'Russia & CIS',
+    proseName: 'Russia & the CIS',
+    shortName: 'Russia & CIS',
     flag: '🇷🇺',
     countries: ['Russia', 'Kazakhstan', 'Uzbekistan', 'Armenia', 'Kyrgyzstan'],
     currency: { code: 'RUB', symbol: '₽' },
@@ -220,6 +245,8 @@ export const REGIONS: Region[] = [
   {
     slug: 'middle-east',
     displayName: 'Middle East',
+    proseName: 'the Middle East',
+    shortName: 'Middle East',
     flag: '🇦🇪',
     countries: ['United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Oman', 'Bahrain', 'Kuwait'],
     currency: { code: 'USD', symbol: '$' },
@@ -247,6 +274,8 @@ export const REGIONS: Region[] = [
   {
     slug: 'india',
     displayName: 'India',
+    proseName: 'India',
+    shortName: 'India',
     flag: '🇮🇳',
     countries: ['India'],
     currency: { code: 'INR', symbol: '₹' },
@@ -255,11 +284,12 @@ export const REGIONS: Region[] = [
       'Centralized entrance exams gate admission to top public institutions: JEE (engineering — IITs, NITs, IIITs), NEET (medicine — AIIMS, government colleges), CAT (MBA — IIMs), CLAT (law — NLUs). Bachelor\'s programs run three years (arts/sciences/commerce) or four years (engineering, B.Tech). The IITs, IIMs, AIIMS, NLUs, and IISc are India\'s elite institutions. Private universities (Ashoka, Manipal, BITS) admit via their own entrance tests.',
     keyExamSlugs: ['jee-main', 'jee-advanced', 'neet-ug', 'cat', 'clat', 'gate'],
     popularQueries: [
-      'jee-vs-neet-which-easier',
-      'iit-bombay-vs-iit-delhi-cse',
-      'cat-percentile-for-iim-call',
-      'study-mbbs-abroad-from-india',
-      'best-private-engineering-colleges-india',
+      'how-to-get-into-iit',
+      'drop-year-for-jee-neet-worth-it',
+      'iit-vs-nit-which-is-better',
+      'cat-percentile-vs-marks-explained',
+      'mbbs-abroad-from-india-guide',
+      'how-to-choose-engineering-college',
     ],
     intakes: ['July/August'],
     averageTuitionRangeUsd: { undergrad: [500, 8000], grad: [600, 12000] },
@@ -273,6 +303,8 @@ export const REGIONS: Region[] = [
   {
     slug: 'east-southeast-asia',
     displayName: 'East & Southeast Asia',
+    proseName: 'East & Southeast Asia',
+    shortName: 'East & SE Asia',
     flag: '🇯🇵',
     countries: [
       'Japan',

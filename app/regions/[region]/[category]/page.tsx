@@ -16,7 +16,7 @@ import { COLLEGES, type College } from '@/lib/colleges';
 import { ENTRANCE_EXAMS, type EntranceExam } from '@/lib/admission-guides';
 import { GUIDES, type Guide } from '@/lib/guides';
 import { topicsForGuide } from '@/lib/topic-guides';
-import { tracksForRegion, trackForTopic } from '@/lib/tracks';
+import { tracksForRegion, trackForTopic, trackHref } from '@/lib/tracks';
 import { itemListLd } from '@/lib/structured-data';
 import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
@@ -25,6 +25,8 @@ import LastUpdated from '@/components/LastUpdated';
 import BreadcrumbsView from '@/components/BreadcrumbsView';
 import { breadcrumbsFor } from '@/lib/cmi';
 import { SITE_REVIEWED } from '@/lib/site-meta';
+import { pageMetadata, regionOgImage, CYCLE_SHORT } from '@/lib/seo';
+import { gsbAiHref } from '@/lib/gsb-ai-links';
 
 const BASE = 'https://www.globalstudyboard.com';
 
@@ -39,26 +41,33 @@ export function generateStaticParams() {
   );
 }
 
+/**
+ * Titles use the region's prose name ("in the United States", not "in United
+ * States") and, for exams, the admissions cycle — every exam record carries a
+ * verified date or falls back to the site review date. H1 = title.
+ */
 function metaFor(category: RegionCategory, name: string, isIndia: boolean) {
   switch (category) {
     case 'universities':
       return {
-        title: `${isIndia ? 'Colleges' : 'Universities'} in ${name} — Profiles & How to Apply`,
+        title: `${isIndia ? 'Colleges' : 'Universities'} in ${name}: Profiles, Rankings & How to Apply`,
         description: `Explore ${isIndia ? 'colleges' : 'universities'} in ${name}: profiles, rankings where available, the entrance tests they accept, and how to apply — each linked to its official source.`,
       };
     case 'exams':
       return {
-        title: `Entrance Tests & Exams for Studying in ${name}`,
-        description: `The standardized tests and entrance exams used by universities in ${name} — what they assess, eligibility, and official registration links. Free and verified.`,
+        title: `Entrance Exams for Studying in ${name} (${CYCLE_SHORT})`,
+        description: `The standardised tests and entrance exams used by universities in ${name} — what they assess, eligibility, and official registration links. Free and verified.`,
       };
     case 'guides':
       return {
-        title: `${name} Study Guides — Admissions, Visas, Costs & Careers`,
+        title: `Guides to Studying in ${name}: Admissions, Visas, Costs & Careers`,
         description: `Plain-language, official-source guides for studying in ${name}: admissions, applications, student visas, costs, scholarships and careers.`,
       };
     case 'scholarships':
       return {
-        title: `Scholarships for Studying in ${name}`,
+        title: isIndia
+          ? `Scholarships & Funding for Students in ${name}`
+          : `Scholarships & Funding for Studying in ${name}`,
         description: `Scholarships and funding routes for ${name}: who they are for, official links, and how to apply. Always verify amounts and deadlines on the official source.`,
       };
   }
@@ -67,22 +76,20 @@ function metaFor(category: RegionCategory, name: string, isIndia: boolean) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { region, category } = await params;
   const r = getRegionBySlug(region);
-  if (!r || !isRegionCategory(category)) return { title: 'Not found' };
-  const m = metaFor(category, r.displayName, r.slug === 'india');
-  const url = `${BASE}/regions/${r.slug}/${category}`;
-  return {
+  if (!r || !isRegionCategory(category)) return { title: 'Not found', robots: { index: false, follow: false } };
+  const m = metaFor(category, r.proseName, r.slug === 'india');
+  return pageMetadata({
     title: m.title,
     description: m.description,
+    path: `/regions/${r.slug}/${category}`,
+    image: regionOgImage(r.slug),
     keywords: [
-      `${categoryLabel(category, r.slug)} ${r.displayName}`,
-      `study in ${r.displayName}`,
-      `${r.displayName} ${categoryNoun(category, r.slug)}`,
-      `${categoryNoun(category, r.slug)} for international students ${r.displayName}`,
+      `${categoryLabel(category, r.slug)} ${r.proseName}`,
+      `study in ${r.proseName}`,
+      `${r.shortName} ${categoryNoun(category, r.slug)}`,
+      `${categoryNoun(category, r.slug)} for international students ${r.proseName}`,
     ],
-    alternates: { canonical: url },
-    openGraph: { type: 'website', url, title: m.title, description: m.description },
-    twitter: { card: 'summary_large_image', title: m.title, description: m.description },
-  };
+  });
 }
 
 export default async function RegionCategoryPage({ params }: Props) {
@@ -93,7 +100,7 @@ export default async function RegionCategoryPage({ params }: Props) {
   const slug = r.slug;
   const label = categoryLabel(category, slug);
   const noun = categoryNoun(category, slug);
-  const m = metaFor(category, r.displayName, slug === 'india');
+  const m = metaFor(category, r.proseName, slug === 'india');
 
   const universities =
     category === 'universities'
@@ -142,7 +149,7 @@ export default async function RegionCategoryPage({ params }: Props) {
 
   // Guides grouped by TRACK — the region's spine — de-duplicated to each guide's
   // primary track; anything not tagged to a track falls into a trailing group.
-  const guideGroups: { key: string; label: string; items: Guide[] }[] =
+  const guideGroups: { key: string; label: string; href?: string; items: Guide[] }[] =
     category !== 'guides'
       ? []
       : (() => {
@@ -163,11 +170,11 @@ export default async function RegionCategoryPage({ params }: Props) {
             }
             if (!placed) leftover.push(g);
           }
-          const groups = regionTracks
-            .map((t) => ({ key: t.slug, label: t.label, items: buckets.get(t.slug) ?? [] }))
+          const groups: { key: string; label: string; href?: string; items: Guide[] }[] = regionTracks
+            .map((t) => ({ key: t.slug, label: t.label, href: trackHref(t), items: buckets.get(t.slug) ?? [] }))
             .filter((grp) => grp.items.length > 0);
           if (leftover.length > 0) {
-            groups.push({ key: '_more', label: `More ${r.displayName} guides`, items: leftover });
+            groups.push({ key: '_more', label: `More guides for ${r.proseName}`, items: leftover });
           }
           return groups;
         })();
@@ -204,9 +211,7 @@ export default async function RegionCategoryPage({ params }: Props) {
             {label}
           </p>
           <h1 className="mb-4 font-display text-4xl font-bold tracking-editorial text-ink md:text-5xl">
-            {category === 'scholarships'
-              ? `Scholarships for studying in ${r.displayName}`
-              : `${label} in ${r.displayName}`}
+            {m.title}
           </h1>
           <p className="text-lg leading-relaxed text-stone-700">{m.description}</p>
           <LastUpdated date={SITE_REVIEWED} className="mt-5" />
@@ -233,7 +238,7 @@ export default async function RegionCategoryPage({ params }: Props) {
         </nav>
 
         <p className="text-sm text-stone-500">
-          {count} {noun} for {r.displayName}.
+          {count} {noun} for {r.proseName}.
         </p>
 
         {/* Universities */}
@@ -258,9 +263,18 @@ export default async function RegionCategoryPage({ params }: Props) {
         {category === 'guides' && (
           <div className="space-y-12">
             {guideGroups.map((grp) => (
-              <section key={grp.key}>
+              <section key={grp.key} aria-label={grp.label}>
+                {/* The track label is a real heading (page outline) AND a link up to
+                    the track landing page — the Track layer was only ever linked
+                    downward from hubs, never upward from these listings. */}
                 <div className="section-rule mb-5">
-                  <span>{grp.label}</span>
+                  {grp.href ? (
+                    <Link href={grp.href} className="no-underline hover:text-forest-700">
+                      <span role="heading" aria-level={2}>{grp.label}</span>
+                    </Link>
+                  ) : (
+                    <span role="heading" aria-level={2}>{grp.label}</span>
+                  )}
                 </div>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {grp.items.map((g) => (
@@ -284,7 +298,7 @@ export default async function RegionCategoryPage({ params }: Props) {
         {count === 0 && (
           <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-8 text-center">
             <p className="m-0 text-stone-600">
-              We don&rsquo;t cover {noun} for {r.displayName} yet.{' '}
+              We don&rsquo;t cover {noun} for {r.proseName} yet.{' '}
               <Link href={`/regions/${slug}`} className="font-semibold text-forest-700">
                 Back to the {r.displayName} overview
               </Link>
@@ -294,10 +308,10 @@ export default async function RegionCategoryPage({ params }: Props) {
         )}
 
         {/* CTA */}
-        <section className="rounded-3xl bg-forest-700 px-6 py-10 text-cream-50 sm:px-12">
+        <section className="on-dark rounded-3xl bg-forest-700 px-6 py-10 text-cream-50 sm:px-12">
           <div className="max-w-2xl">
             <h2 className="mb-3 font-display text-2xl font-bold tracking-editorial md:text-3xl">
-              Planning your application to {r.displayName}?
+              Planning your application to {r.proseName}?
             </h2>
             <p className="m-0 mb-5 text-cream-50/85">
               See the full {r.displayName} overview — application platform, intakes, costs and visa
@@ -311,10 +325,10 @@ export default async function RegionCategoryPage({ params }: Props) {
                 {r.displayName} overview
               </Link>
               <Link
-                href={`/gsb-ai?region=${slug}`}
+                href={gsbAiHref({ region: slug })}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-cream-50/30 bg-transparent px-6 py-3 font-semibold text-cream-50 no-underline transition-colors hover:bg-cream-50/10"
               >
-                Ask GSB AI about {r.displayName}
+                Ask GSB AI about {r.proseName}
               </Link>
             </div>
           </div>
@@ -394,9 +408,9 @@ function GuideCard({ g }: { g: Guide }) {
         <Clock className="h-3.5 w-3.5" aria-hidden="true" />
         {g.readMinutes} min read
       </span>
-      <h2 className="mb-2 font-display text-lg font-bold leading-snug tracking-editorial text-ink group-hover:text-forest-700">
+      <h3 className="mb-2 font-display text-lg font-bold leading-snug tracking-editorial text-ink group-hover:text-forest-700">
         {g.titleEn}
-      </h2>
+      </h3>
       <p className="m-0 flex-1 text-sm leading-relaxed text-stone-600">{g.descriptionEn}</p>
       <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
         Read guide <ArrowUpRight className="h-4 w-4" />

@@ -1,10 +1,10 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import Link from 'next/link';
 
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
-import { useRegion } from '@/components/RegionProvider';
+import { useListingRegion } from '@/components/useListingRegion';
 import RegionFilterBar from '@/components/RegionFilterBar';
 import RegionFlag from '@/components/RegionFlag';
 
@@ -60,29 +60,38 @@ function ExamLink({ e, hidden }: { e: ExamCard; hidden: boolean }) {
   );
 }
 
-export default function ExamsView({ items }: { items: ExamCard[] }) {
-  const { effectiveRegion } = useRegion();
-  const [showAll, setShowAll] = useState(false);
+export default function ExamsView({
+  items,
+  pageRegion,
+  unfilteredByDefault,
+}: {
+  items: ExamCard[];
+  /** The page's own destination — bakes the correct filter into the server HTML. */
+  pageRegion?: RegionSlug;
+  /** Global listing: show every destination until the student filters. */
+  unfilteredByDefault?: boolean;
+}) {
+  const { filterRegion, showAll, toggle } = useListingRegion({ pageRegion, unfilteredByDefault });
 
   const shown = useMemo(
-    () => items.filter((e) => e.regions.includes(effectiveRegion)).length,
-    [items, effectiveRegion],
+    () => items.filter((e) => e.regions.includes(filterRegion)).length,
+    [items, filterRegion],
   );
 
   return (
     <div className="space-y-8">
       <RegionFilterBar
-        regionSlug={effectiveRegion}
+        regionSlug={filterRegion}
         shown={shown}
         total={items.length}
         noun="exams"
         showAll={showAll}
-        onToggle={() => setShowAll((v) => !v)}
+        onToggle={toggle}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((e) => (
-          <ExamLink key={e.id} e={e} hidden={!showAll && !e.regions.includes(effectiveRegion)} />
+          <ExamLink key={e.id} e={e} hidden={!showAll && !e.regions.includes(filterRegion)} />
         ))}
       </div>
 

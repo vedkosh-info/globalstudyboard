@@ -1,51 +1,61 @@
 import type { Metadata } from 'next';
 
 import { TOPICS } from '@/lib/topics';
+import { REGIONS_ALPHABETICAL } from '@/lib/regions';
+import { tracksForRegion, trackForTopic, trackHref } from '@/lib/tracks';
 import { guidesForTopic } from '@/lib/topic-guides';
 import { itemListLd } from '@/lib/structured-data';
-import TopicsIndex, { type TopicCard } from '@/components/TopicsIndex';
+import { pageMetadata } from '@/lib/seo';
+import TopicsIndex, { type RegionSection, type TopicCard } from '@/components/TopicsIndex';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
-export const metadata: Metadata = {
-  title: 'Topics — Explore Exams, Courses & Careers by Theme',
+export const metadata: Metadata = pageMetadata({
+  title: 'Topics — Exams, Admissions, Courses & Careers by Destination',
   description:
-    'Browse GlobalStudyBoard by topic — JEE, NEET, MBA, government exams, US admissions, study abroad, scholarships and more. Curated hubs linking every related guide and exam.',
+    'Browse every GlobalStudyBoard hub by study destination — entrance exams, university admissions, scholarships, visas, courses and careers for the USA, UK, Canada, Europe, Australia, Asia, the Gulf, Russia and India.',
+  path: '/topics',
   keywords: [
     'study topics',
-    'jee neet guides',
-    'government exams india',
-    'courses after 12th',
-    'mba cat guides',
-    'us college admissions',
-    'study abroad from india',
+    'university admissions hubs',
+    'entrance exam guides',
+    'study abroad topics',
+    'scholarships by country',
+    'student visa guides',
+    'courses and careers',
   ],
-  alternates: { canonical: 'https://www.globalstudyboard.com/topics' },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.globalstudyboard.com/topics',
-    title: 'Topics — Explore Exams, Courses & Careers by Theme',
-    description:
-      'Curated hubs that gather every guide and exam on a theme — JEE, NEET, MBA, government exams, US admissions, study abroad and more.',
-    images: ['/opengraph-image'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Topics — GlobalStudyBoard',
-    description: 'Curated hubs linking every guide and exam on a theme.',
-    images: ['/opengraph-image'],
-  },
-};
+});
 
 export default function TopicsIndexPage() {
-  // Serializable cards for the client renderer (guide counts computed once here).
-  const cards: TopicCard[] = TOPICS.map((t) => ({
-    slug: t.slug,
-    label: t.label,
-    title: t.title,
-    description: t.description,
-    region: t.region ?? null,
-    count: guidesForTopic(t.slug).length,
+  // Serialisable cards (guide counts computed once, on the server).
+  const cardBySlug = new Map<string, TopicCard>(
+    TOPICS.map((t) => [
+      t.slug,
+      {
+        slug: t.slug,
+        label: t.label,
+        title: t.title,
+        description: t.description,
+        count: guidesForTopic(t.slug).length,
+      },
+    ]),
+  );
+
+  // Every destination's Track spine, fully resolved here so lib/tracks + lib/topics
+  // never reach the client. Each hub renders once, under its primary track.
+  const sections: RegionSection[] = REGIONS_ALPHABETICAL.map((r) => ({
+    region: r.slug,
+    tracks: tracksForRegion(r.slug)
+      .map((track) => ({
+        slug: track.slug,
+        label: track.label,
+        href: trackHref(track),
+        cards: track.topicSlugs
+          .filter((slug) => trackForTopic(slug)?.slug === track.slug)
+          .map((slug) => cardBySlug.get(slug))
+          .filter((c): c is TopicCard => Boolean(c)),
+      }))
+      .filter((t) => t.cards.length > 0),
   }));
 
   const itemListJson = JSON.stringify(
@@ -67,17 +77,17 @@ export default function TopicsIndexPage() {
           Topics
         </p>
         <h1 className="font-display text-4xl md:text-5xl font-bold tracking-editorial text-ink mb-4">
-          Explore by topic.
+          Explore by topic, destination by destination.
         </h1>
         <p className="text-stone-700 text-lg leading-relaxed">
-          Curated hubs that gather every guide and exam on a theme — from JEE, NEET and MBA to
-          government exams, careers, US admissions and studying abroad — so you can go deep on
-          exactly what you need.
+          Curated hubs that gather every guide and exam on a theme — entrance exams, admissions,
+          scholarships, visas, courses and careers — for each of the nine destinations we cover.
+          Your destination opens first; every other one is a tap away.
         </p>
         <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
 
-      <TopicsIndex topics={cards} />
+      <TopicsIndex sections={sections} />
     </div>
   );
 }

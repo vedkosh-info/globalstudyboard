@@ -54,6 +54,7 @@ export default function BreadcrumbsView({
               {crumb.href && !isLast ? (
                 <Link
                   href={crumb.href}
+                  prefetch={false}
                   className="rounded transition-colors hover:text-forest-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500"
                 >
                   {crumb.label}

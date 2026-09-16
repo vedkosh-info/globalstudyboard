@@ -122,6 +122,30 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-weight: 700; }
 
+/*
+  Headings inside a dark panel inherit the panel's light text. The global
+  `color: var(--color-fg)` above (near-black) was overriding the panel colour on
+  the <h2> of every "Ask GSB AI" call-to-action — 2.17:1 dark-on-dark contrast
+  on all ~2,900 content pages, Lighthouse's only accessibility failure site-wide.
+  A dark panel opts in EXPLICITLY with `.on-dark` (a broad `.text-cream-50 h2`
+  selector would also outrank a colour utility set on the heading itself, e.g.
+  the footer's `text-cream-50/80` column headings).
+*/
+.on-dark :where(h1, h2, h3, h4, h5, h6) {
+  color: inherit;
+}
+
+/*
+  Inside the installed Android app (Trusted Web Activity) or any installed PWA
+  the site IS the app, so a "Get the Android app" prompt is noise. Hidden by
+  display-mode with no JS and no SSR change (the server HTML still renders it).
+*/
+@media (display-mode: standalone), (display-mode: minimal-ui), (display-mode: fullscreen) {
+  [data-get-app-trigger] {
+    display: none !important;
+  }
+}
+
 p {
   margin: 0 0 1em;
 }

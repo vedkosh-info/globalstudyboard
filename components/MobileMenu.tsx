@@ -2,24 +2,26 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { REGION_CATEGORIES, categoryLabel, regionCategoryPath } from '@/lib/region-nav';
+import { REGION_CATEGORIES, chromeCategoryLabel, chromeCategoryPath } from '@/lib/region-nav';
 import { useRegion } from '@/components/RegionProvider';
 import GetAppButton from '@/components/GetAppButton';
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
-  const { effectiveRegion } = useRegion();
+  const { effectiveRegion, pageRegion, ready } = useRegion();
   const ref = useRef<HTMLDivElement>(null);
   const btnRef = useRef<HTMLButtonElement>(null);
 
   // Region-scoped category links, like the desktop nav, so the menu re-tunes to
-  // the chosen destination.
+  // the chosen destination (destination-neutral in the server HTML — see
+  // chromeCategoryPath).
+  const tunedIsKnown = ready || pageRegion !== null;
   const links = [
     { label: 'Home', href: '/' },
     { label: 'Destinations', href: '/regions' },
     ...REGION_CATEGORIES.map((cat) => ({
-      label: categoryLabel(cat, effectiveRegion),
-      href: regionCategoryPath(effectiveRegion, cat),
+      label: chromeCategoryLabel(cat, effectiveRegion, tunedIsKnown),
+      href: chromeCategoryPath(cat, effectiveRegion, tunedIsKnown),
     })),
     { label: 'Topics', href: '/topics' },
     { label: 'Ask GSB AI', href: '/gsb-ai', highlight: true },

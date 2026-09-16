@@ -16,6 +16,12 @@ interface Props {
   /** Whether the unfiltered (all-regions) view is active. */
   showAll: boolean;
   onToggle: () => void;
+  /**
+   * The list belongs to one destination (a topic hub): the filter is the hub's
+   * own region, not the visitor's remembered choice, so the copy must not tell
+   * them to "change it from the bar above".
+   */
+  locked?: boolean;
 }
 
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -26,7 +32,7 @@ const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
  * destination" and "all destinations". Shared by the Universities / Exams /
  * Guides views so the affordance reads identically everywhere.
  */
-export default function RegionFilterBar({ regionSlug, shown, total, noun, showAll, onToggle }: Props) {
+export default function RegionFilterBar({ regionSlug, shown, total, noun, showAll, onToggle, locked }: Props) {
   const r = getRegionBySlug(regionSlug);
 
   return (
@@ -39,12 +45,18 @@ export default function RegionFilterBar({ regionSlug, shown, total, noun, showAl
         )}
         <div className="min-w-0">
           <p className="m-0 font-display text-lg font-bold leading-snug tracking-editorial text-ink">
-            {showAll ? `All ${noun} worldwide` : `${capitalize(noun)} for ${r?.displayName}`}
+            {showAll
+              ? locked
+                ? `${capitalize(noun)} in this hub from every destination`
+                : `All ${noun} worldwide`
+              : `${capitalize(noun)} for ${r?.displayName}`}
           </p>
           <p aria-live="polite" className="m-0 text-xs text-stone-600">
             {showAll
-              ? `Showing all ${total} ${noun} across every destination.`
-              : `${shown} of ${total} ${noun} · tuned to your destination — change it from the bar above.`}
+              ? `Showing all ${total} ${noun}${locked ? ' in this hub' : ' across every destination'}.`
+              : locked
+                ? `${shown} of ${total} ${noun} in this hub are for ${r?.proseName ?? r?.displayName}.`
+                : `${shown} of ${total} ${noun} · tuned to your destination — change it from the bar above.`}
           </p>
         </div>
       </div>
@@ -55,8 +67,11 @@ export default function RegionFilterBar({ regionSlug, shown, total, noun, showAl
       >
         {showAll ? (
           <>
-            <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Filter to {r?.displayName}
+            <MapPin className="h-3.5 w-3.5" aria-hidden="true" />{' '}
+            {locked ? `Back to ${r?.displayName}` : `Filter to ${r?.displayName}`}
           </>
+        ) : locked ? (
+          'Show every destination'
         ) : (
           'Show all regions'
         )}

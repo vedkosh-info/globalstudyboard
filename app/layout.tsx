@@ -22,7 +22,8 @@ import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { tracksForRegion, trackHref, isMultiHubTrack, topicsForTrack } from '@/lib/tracks';
 import { ADSENSE_CLIENT_ID, ADSENSE_SCRIPT_SRC } from '@/lib/adsense';
-import { CONTACT_EMAIL } from '@/lib/site-meta';
+import { CONTACT_EMAIL, ORG_LOGO, SITE_DESCRIPTION } from '@/lib/site-meta';
+import { ROOT_OG_IMAGE, SITE_NAME, SITE_URL } from '@/lib/seo';
 
 const sans = Inter({
   subsets: ['latin'],
@@ -34,7 +35,10 @@ const display = Fraunces({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
-  axes: ['opsz', 'SOFT'],
+  // `opsz` only. The `SOFT` axis was loaded but never set anywhere in CSS, and
+  // it made the preloaded display font 120 KB instead of 67 KB on every page —
+  // the largest first-party bytes in the LCP window.
+  axes: ['opsz'],
 });
 
 
@@ -48,68 +52,74 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
+/**
+ * Root metadata. Deliberately NO `alternates.canonical` here: `alternates` is
+ * replaced (not merged) per segment, so a root canonical was inherited verbatim
+ * by every page that did not set its own — the 404 page and any new route
+ * declared the HOME page as its canonical. Every page sets canonical + the RSS
+ * alternate through `pageMetadata()` / `alternatesFor()` in lib/seo.ts.
+ */
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.globalstudyboard.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'GlobalStudyBoard — Universities, Exams & Scholarships Worldwide',
+    default: 'University Admissions, Entrance Exams & Study Abroad Guide | GlobalStudyBoard',
     template: '%s · GlobalStudyBoard',
   },
-  description:
-    'Free guide to universities, entrance exams, and scholarships worldwide — USA, UK, Europe, Canada, Australia, India and more. Compare SAT, GRE, IELTS, A-Levels, UCAS, Common App.',
+  description: SITE_DESCRIPTION,
   keywords: [
     'study abroad',
     'university admissions guide',
-    'SAT ACT preparation',
-    'common application help',
-    'UCAS application guide',
+    'international students',
+    'entrance exams',
+    'scholarships for international students',
+    'student visa guide',
     'study in USA',
     'study in UK',
-    'study in Europe',
     'study in Canada',
+    'study in Europe',
     'study in Australia',
-    'entrance exams comparison',
-    'college guide international students',
-    'student visa guide',
-    'graduate school abroad',
-    'international scholarships',
-    'GRE GMAT preparation',
+    'study in Japan',
+    'study in Singapore',
+    'study in the Middle East',
+    'study in India',
+    'SAT ACT GRE GMAT IELTS TOEFL',
   ],
-  authors: [{ name: 'GlobalStudyBoard' }],
+  authors: [{ name: SITE_NAME }],
   openGraph: {
     type: 'website',
-    siteName: 'GlobalStudyBoard',
+    siteName: SITE_NAME,
     locale: 'en_US',
-    title: 'GlobalStudyBoard — Universities, Exams & Scholarships Worldwide',
-    description:
-      'Free guide to universities, entrance exams, and scholarships worldwide. Compare SAT, GRE, IELTS, A-Levels and more. Ask GSB AI for personalised guidance.',
-    url: 'https://www.globalstudyboard.com',
-    images: ['/opengraph-image'],
+    title: 'University Admissions, Entrance Exams & Study Abroad Guide',
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    images: [ROOT_OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GlobalStudyBoard — Universities, Exams & Scholarships Worldwide',
-    description: 'Free guide to universities, entrance exams, and scholarships worldwide. Compare SAT, GRE, IELTS, A-Levels and more.',
-    images: ['/opengraph-image'],
+    title: 'University Admissions, Entrance Exams & Study Abroad Guide',
+    description: SITE_DESCRIPTION,
+    images: [ROOT_OG_IMAGE],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
-    },
-  },
-  alternates: {
-    canonical: 'https://www.globalstudyboard.com',
-    types: { 'application/rss+xml': 'https://www.globalstudyboard.com/feed.xml' },
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
   },
   // Google AdSense site-ownership verification (server-rendered meta tag).
   other: { 'google-adsense-account': ADSENSE_CLIENT_ID },
 };
 
+/**
+ * Site-wide Organization + WebSite graph. WebSite is what Google's site-name
+ * system reads (name + url); the SearchAction it used to carry was dropped —
+ * the sitelinks search box was retired by Google in November 2024 and the
+ * template pointed at the robots-blocked /gsb-ai?q= pattern. The logo is the
+ * 512×512 PNG (Google's Organization guidance wants ≥112×112; the old 64×64
+ * SVG glyph was below that floor). `publishingPrinciples` links the editorial
+ * policy every Article on the site inherits via `publisher: {@id}`.
+ */
 const websiteJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -121,11 +131,15 @@ const websiteJsonLd = JSON.stringify({
       logo: {
         '@type': 'ImageObject',
         '@id': 'https://www.globalstudyboard.com/#logo',
-        url: 'https://www.globalstudyboard.com/icon.svg',
-        contentUrl: 'https://www.globalstudyboard.com/icon.svg',
+        url: ORG_LOGO.url,
+        contentUrl: ORG_LOGO.url,
+        width: ORG_LOGO.width,
+        height: ORG_LOGO.height,
       },
-      description: 'Free guide to universities, entrance exams, and scholarships worldwide.',
+      description:
+        'Independent, official-source guides to universities, entrance exams, scholarships and student visas across nine study destinations.',
       email: CONTACT_EMAIL,
+      publishingPrinciples: 'https://www.globalstudyboard.com/editorial-policy',
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer support',
@@ -139,16 +153,9 @@ const websiteJsonLd = JSON.stringify({
       name: 'GlobalStudyBoard',
       url: 'https://www.globalstudyboard.com',
       inLanguage: 'en',
-      description: 'Free guide to universities, entrance exams, and scholarships worldwide.',
+      description:
+        'Independent, official-source guides to universities, entrance exams, scholarships and student visas across nine study destinations.',
       publisher: { '@id': 'https://www.globalstudyboard.com/#organization' },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: 'https://www.globalstudyboard.com/gsb-ai?q={search_term_string}',
-        },
-        'query-input': 'required name=search_term_string',
-      },
     },
   ],
 });
@@ -229,15 +236,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/*
           Google AdSense loader for "full page" Auto ads. The single loader on
           every page is all the code Auto ads needs — ad placement is controlled
-          from the AdSense dashboard (Ads → Auto ads). Loads after the page is
-          interactive so it never blocks content render.
+          from the AdSense dashboard (Ads → Auto ads).
+          `lazyOnload`, not `afterInteractive`: in the App Router the latter
+          emits <link rel="preload" as="script"> in <head>, so the 58 KB loader
+          (and the ~225 KB ad chain behind it) downloaded at High priority next
+          to the CSS and fonts on every page and pushed Time-to-Interactive to
+          ~5 s. lazyOnload defers it until the window load event — content and
+          Core Web Vitals first, ads after.
         */}
         <Script
           id="google-adsense"
           async
           src={ADSENSE_SCRIPT_SRC}
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Analytics />
         <SpeedInsights />

@@ -3,6 +3,18 @@ import { useState, useRef, useEffect, FormEvent } from 'react';
 import { Send, RotateCcw, Bot, Sparkles } from 'lucide-react';
 import { useRegion } from '@/components/RegionProvider';
 import ReportAIResponse from '@/components/ReportAIResponse';
+import { getRegionBySlug, REGION_SLUGS, type RegionSlug } from '@/lib/regions';
+
+/** Parse a prefill from the fragment (`#q=…` / `#region=…`) or a legacy `?q=` / `?region=` query. */
+function readPrefill(): { q?: string; region?: RegionSlug } {
+  if (typeof window === 'undefined') return {};
+  const fromHash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+  const fromQuery = new URLSearchParams(window.location.search);
+  const q = (fromHash.get('q') ?? fromQuery.get('q') ?? '').trim();
+  const regionRaw = fromHash.get('region') ?? fromQuery.get('region') ?? '';
+  const region = (REGION_SLUGS as readonly string[]).includes(regionRaw) ? (regionRaw as RegionSlug) : undefined;
+  return { ...(q ? { q } : {}), ...(region ? { region } : {}) };
+}
 
 type Role = 'user' | 'assistant';
 interface Message {
@@ -20,15 +32,12 @@ const EXAMPLE_QUESTIONS = [
   'How do I prepare for the GRE in three months?',
 ];
 
-export default function GSBAIChat({
-  initialPrompt,
-  region,
-}: {
-  initialPrompt?: string;
-  region?: string;
-}) {
+export default function GSBAIChat() {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState(initialPrompt ?? '');
+  const [input, setInput] = useState('');
+  // A destination named in the link that opened the chat (`#region=`) — it wins
+  // over the site-wide effective region for this conversation only.
+  const [region, setRegionOverride] = useState<RegionSlug | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -38,6 +47,22 @@ export default function GSBAIChat({
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Prefill from the URL fragment (or a legacy query) on mount and whenever the
+  // fragment changes while the page stays mounted (a hash link clicked on /gsb-ai
+  // itself does not remount the route).
+  useEffect(() => {
+    const apply = () => {
+      const { q, region: r } = readPrefill();
+      if (r) setRegionOverride(r);
+      const regionName = r ? getRegionBySlug(r)?.proseName : undefined;
+      if (q) setInput(q);
+      else if (regionName) setInput(`I'm planning to study in ${regionName}. Where should I start?`);
+    };
+    apply();
+    window.addEventListener('hashchange', apply);
+    return () => window.removeEventListener('hashchange', apply);
+  }, []);
 
   const sendMessage = async (text: string) => {
     if (!text.trim() || isLoading) return;

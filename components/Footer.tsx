@@ -17,12 +17,16 @@ const REGION_LINKS = REGIONS_ALPHABETICAL.map((r) => ({
 const SITE_LINKS = [
   { label: 'Ask GSB AI', href: '/gsb-ai' },
   { label: 'About', href: '/about' },
+  { label: 'Editorial policy', href: '/editorial-policy' },
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy', href: '/privacy' },
   { label: 'Terms', href: '/terms' },
   { label: 'Disclaimer', href: '/disclaimer' },
   { label: 'Sources', href: '/sources' },
 ];
+
+/** Worldwide admissions tests — the footer's neutral "Tests" column. */
+const NEUTRAL_TEST_SLUGS = ['ielts', 'toefl', 'sat', 'gre', 'gmat'];
 
 function FooterCol({
   heading,
@@ -67,23 +71,36 @@ export default function Footer({
   examLabels: Record<string, string>;
   year: number;
 }) {
-  const { effectiveRegion } = useRegion();
-  const r = getRegionBySlug(effectiveRegion);
+  const { effectiveRegion, pageRegion, ready } = useRegion();
+  // The remembered destination is only known on the client. Until then (and in
+  // the prerendered HTML of every page whose URL does not name a destination)
+  // the two tuned columns are destination-NEUTRAL — the worldwide tests and the
+  // global sections — instead of baking India's exams and section pages into the
+  // footer of Harvard's page. Region-scoped URLs (/regions/{slug}/…) are known at
+  // SSR time and render tuned from the start.
+  const tunedIsKnown = ready || pageRegion !== null;
+  const r = tunedIsKnown ? getRegionBySlug(effectiveRegion) : undefined;
 
-  const regionExamLinks = (r?.keyExamSlugs ?? []).slice(0, 5).map((slug) => ({
+  const regionExamLinks = (r ? r.keyExamSlugs : NEUTRAL_TEST_SLUGS).slice(0, 5).map((slug) => ({
     label: examLabels[slug] ?? slug.toUpperCase(),
     href: `/exams/${slug}`,
   }));
 
   const studyLinks = r
     ? [
-        { label: `${r.displayName} universities`, href: `/regions/${r.slug}/universities` },
+        { label: `Universities in ${r.proseName}`, href: `/regions/${r.slug}/universities` },
+        { label: 'Entrance exams', href: `/regions/${r.slug}/exams` },
+        { label: 'Admission guides', href: `/regions/${r.slug}/guides` },
+        { label: 'Scholarships', href: `/regions/${r.slug}/scholarships` },
+        { label: 'Visa & costs', href: `/regions/${r.slug}` },
+      ]
+    : [
+        { label: 'Universities worldwide', href: '/colleges' },
         { label: 'Entrance exams', href: '/exams' },
         { label: 'Admission guides', href: '/guides' },
         { label: 'Scholarships', href: '/scholarships' },
-        { label: 'Visa & costs', href: `/regions/${r.slug}` },
-      ]
-    : [];
+        { label: 'All destinations', href: '/regions' },
+      ];
 
   return (
     <footer className="bg-forest-900 text-cream-50 mt-24">
@@ -133,13 +150,13 @@ export default function Footer({
 
           {regionExamLinks.length > 0 && (
             <FooterCol
-              heading={r ? `${r.displayName} Tests` : 'Tests'}
+              heading="Admissions Tests"
               links={[...regionExamLinks, { label: 'All exams', href: '/exams' }]}
             />
           )}
 
           {studyLinks.length > 0 && (
-            <FooterCol heading={r ? `Study in ${r.displayName}` : 'Study'} links={studyLinks} />
+            <FooterCol heading="Study by Destination" links={studyLinks} />
           )}
 
           <FooterCol heading="Site" links={SITE_LINKS} />

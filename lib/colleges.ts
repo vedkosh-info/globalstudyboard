@@ -57,6 +57,47 @@ export type CollegeCountry =
 
 export type ProgramLevel = 'bachelors' | 'masters' | 'phd' | 'professional';
 
+/** Human label + ISO 3166-1 alpha-2 code for each country a college can sit in. */
+export const COLLEGE_COUNTRY_INFO: Record<CollegeCountry, { label: string; iso: string }> = {
+  usa: { label: 'USA', iso: 'US' },
+  canada: { label: 'Canada', iso: 'CA' },
+  uk: { label: 'UK', iso: 'GB' },
+  ireland: { label: 'Ireland', iso: 'IE' },
+  germany: { label: 'Germany', iso: 'DE' },
+  france: { label: 'France', iso: 'FR' },
+  netherlands: { label: 'Netherlands', iso: 'NL' },
+  switzerland: { label: 'Switzerland', iso: 'CH' },
+  sweden: { label: 'Sweden', iso: 'SE' },
+  denmark: { label: 'Denmark', iso: 'DK' },
+  italy: { label: 'Italy', iso: 'IT' },
+  spain: { label: 'Spain', iso: 'ES' },
+  belgium: { label: 'Belgium', iso: 'BE' },
+  australia: { label: 'Australia', iso: 'AU' },
+  'new-zealand': { label: 'New Zealand', iso: 'NZ' },
+  russia: { label: 'Russia', iso: 'RU' },
+  kazakhstan: { label: 'Kazakhstan', iso: 'KZ' },
+  kyrgyzstan: { label: 'Kyrgyzstan', iso: 'KG' },
+  uzbekistan: { label: 'Uzbekistan', iso: 'UZ' },
+  armenia: { label: 'Armenia', iso: 'AM' },
+  uae: { label: 'UAE', iso: 'AE' },
+  qatar: { label: 'Qatar', iso: 'QA' },
+  'saudi-arabia': { label: 'Saudi Arabia', iso: 'SA' },
+  oman: { label: 'Oman', iso: 'OM' },
+  bahrain: { label: 'Bahrain', iso: 'BH' },
+  kuwait: { label: 'Kuwait', iso: 'KW' },
+  israel: { label: 'Israel', iso: 'IL' },
+  singapore: { label: 'Singapore', iso: 'SG' },
+  'hong-kong': { label: 'Hong Kong', iso: 'HK' },
+  japan: { label: 'Japan', iso: 'JP' },
+  'south-korea': { label: 'South Korea', iso: 'KR' },
+  malaysia: { label: 'Malaysia', iso: 'MY' },
+  taiwan: { label: 'Taiwan', iso: 'TW' },
+  china: { label: 'China', iso: 'CN' },
+  philippines: { label: 'Philippines', iso: 'PH' },
+  thailand: { label: 'Thailand', iso: 'TH' },
+  india: { label: 'India', iso: 'IN' },
+};
+
 export interface College {
   id: string;
   slug: string;

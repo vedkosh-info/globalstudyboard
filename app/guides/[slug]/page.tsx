@@ -7,10 +7,13 @@ import { GUIDES, getGuideBySlug, GUIDE_CATEGORY_LABELS } from '@/lib/guides';
 import { getExamBySlug } from '@/lib/admission-guides';
 import { getCollegeBySlug } from '@/lib/colleges';
 import { REGIONS } from '@/lib/regions';
-import { topicsForGuide } from '@/lib/topic-guides';
-import { howToLd, isHowToGuide, pageHasParts } from '@/lib/structured-data';
+import { topicsForGuide, guidesForTopic } from '@/lib/topic-guides';
+import { trackForTopic, trackHref } from '@/lib/tracks';
+import { pageHasParts } from '@/lib/structured-data';
 import { sectionAnchors, faqAnchor, RESERVED_GUIDE_ANCHORS } from '@/lib/section-anchors';
 import KeyFacts from '@/components/KeyFacts';
+import ContentImage from '@/components/ContentImage';
+import { guideImage } from '@/lib/images';
 import OnThisPage, { type TocItem } from '@/components/OnThisPage';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
@@ -22,7 +25,9 @@ import AudienceGate from '@/components/AudienceGate';
 import BreadcrumbsView from '@/components/BreadcrumbsView';
 import { defaultAudienceFor, isAudienceVisible } from '@/lib/audience';
 import { breadcrumbsFor } from '@/lib/cmi';
-import { formatReviewed, metaDescription } from '@/lib/site-meta';
+import { formatReviewed } from '@/lib/site-meta';
+import { pageMetadata, ogImageFor, absoluteImageUrl, EDITORIAL_TEAM_LD, PUBLISHER_LD } from '@/lib/seo';
+import { gsbAiHref } from '@/lib/gsb-ai-links';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -35,29 +40,19 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
-  if (!guide) return { title: 'Guide not found' };
-  const desc = metaDescription(guide.descriptionEn);
-  return {
+  if (!guide) return { title: 'Guide not found', robots: { index: false, follow: false } };
+  return pageMetadata({
     title: guide.titleEn,
-    description: desc,
+    description: guide.descriptionEn,
+    path: `/guides/${guide.slug}`,
+    type: 'article',
+    image: ogImageFor(guide.region),
     keywords: guide.keywords,
-    alternates: { canonical: `https://www.globalstudyboard.com/guides/${guide.slug}` },
-    openGraph: {
-      type: 'article',
-      url: `https://www.globalstudyboard.com/guides/${guide.slug}`,
-      title: guide.titleEn,
-      description: desc,
-      images: ['/opengraph-image'],
-      publishedTime: guide.lastVerified,
-      modifiedTime: guide.lastVerified,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: guide.titleEn,
-      description: desc,
-      images: ['/opengraph-image'],
-    },
-  };
+    // The only date a guide carries is its verification date. It is emitted as
+    // the modification date ONLY — publishing it as `published_time` too would
+    // move the "published" date forward on every re-verification.
+    modifiedTime: guide.lastVerified,
+  });
 }
 
 /** Split prose into paragraphs on blank lines. */
@@ -83,6 +78,19 @@ export default async function GuideDetailPage({ params }: Props) {
     .filter((g): g is NonNullable<typeof g> => Boolean(g));
   const topics = topicsForGuide(guide);
 
+  // Same-hub neighbours: previous/next in the primary hub's order plus a few
+  // siblings, so every guide has inbound links from its peers (286 guides had
+  // none from any other guide) and readers can move through a hub in sequence.
+  const primaryHub = topics[0];
+  const hubGuides = primaryHub ? guidesForTopic(primaryHub.slug) : [];
+  const hubIndex = hubGuides.findIndex((g) => g.slug === guide.slug);
+  const prevInHub = hubIndex > 0 ? hubGuides[hubIndex - 1] : null;
+  const nextInHub = hubIndex >= 0 && hubIndex < hubGuides.length - 1 ? hubGuides[hubIndex + 1] : null;
+  const hubSiblings = hubGuides
+    .filter((g) => g.slug !== guide.slug && g.slug !== prevInHub?.slug && g.slug !== nextInHub?.slug)
+    .slice(0, 6);
+  const hubTrack = primaryHub ? trackForTopic(primaryHub.slug) : undefined;
+
   const pageUrl = `https://www.globalstudyboard.com/guides/${guide.slug}`;
 
   // Stable, unique #anchors for every section (index-aligned to guide.sections).
@@ -102,15 +110,30 @@ export default async function GuideDetailPage({ params }: Props) {
 
   // "On this page" entries — every section (audience-tagged so the ToC toggles in
   // sync) plus an FAQ jump when present.
+  // Render order: sections hidden in the DEFAULT view (e.g. an India guide's
+  // "Foreign nationals & NRI applicants" block) go LAST, so the definitional
+  // answer a default reader — and a crawler — came for is not preceded by ~120
+  // words of hidden boilerplate. Stable sort: everything else keeps data order,
+  // and each section keeps its original anchor (ids, hasPart and deep links are
+  // unchanged). The ToC is built from the same ordered list so it matches the DOM.
+  const orderedSections = guide.sections
+    .map((section, i) => ({ section, anchor: anchors[i], index: i }))
+    .sort((a, b) => {
+      const ha = isAudienceVisible(a.section.audience, pageDefault) ? 0 : 1;
+      const hb = isAudienceVisible(b.section.audience, pageDefault) ? 0 : 1;
+      return ha - hb || a.index - b.index;
+    });
+
   const tocItems: TocItem[] = [
-    ...guide.sections.map((s, i) => ({
-      label: s.headingEn,
-      anchor: anchors[i],
-      audience: s.audience,
+    ...orderedSections.map(({ section, anchor }) => ({
+      label: section.headingEn,
+      anchor,
+      audience: section.audience,
     })),
     ...(guide.faqs.length > 0 ? [{ label: 'FAQs', anchor: 'faqs' }] : []),
   ];
 
+  const ogImage = ogImageFor(guide.region);
   const articleLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -119,24 +142,14 @@ export default async function GuideDetailPage({ params }: Props) {
     description: guide.descriptionEn,
     inLanguage: 'en',
     url: pageUrl,
-    datePublished: guide.lastVerified,
+    // `lastVerified` is a re-verification date, not a first-publication date, so
+    // it is emitted as dateModified only (Google accepts dateModified alone; a
+    // fabricated datePublished that moves forward on every review is worse than
+    // none).
     dateModified: guide.lastVerified,
-    image: ['https://www.globalstudyboard.com/opengraph-image'],
-    author: {
-      '@type': 'Organization',
-      '@id': 'https://www.globalstudyboard.com/#organization',
-      name: 'GlobalStudyBoard',
-      url: 'https://www.globalstudyboard.com',
-    },
-    publisher: {
-      '@type': 'Organization',
-      '@id': 'https://www.globalstudyboard.com/#organization',
-      name: 'GlobalStudyBoard',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.globalstudyboard.com/icon.svg',
-      },
-    },
+    image: [absoluteImageUrl(ogImage)],
+    author: EDITORIAL_TEAM_LD,
+    publisher: PUBLISHER_LD,
     mainEntityOfPage: pageUrl,
     // Deep-linkable sections so search engines understand the page's parts.
     ...(visibleSections.length > 0
@@ -167,20 +180,10 @@ export default async function GuideDetailPage({ params }: Props) {
         }
       : null;
 
-  // Guard on the VISIBLE section count too, so a how-to whose steps are all
-  // audience-hidden in the default view never emits an empty (invalid) HowTo.
-  const howToLdData = isHowToGuide(guide.slug, guide.sections.length) && visibleSections.length >= 2
-    ? howToLd({
-        name: guide.titleEn,
-        description: guide.descriptionEn,
-        url: pageUrl,
-        steps: visibleSections.map(({ section, anchor }) => ({
-          name: section.headingEn,
-          text: paragraphs(section.bodyEn).join(' '),
-          url: `${pageUrl}#${anchor}`,
-        })),
-      })
-    : null;
+  // HowTo markup is deliberately NOT emitted: Google removed the How-to rich
+  // result in September 2023, and the block duplicated every section's prose in
+  // the HTML (~3 KB per page × 343 guides) for nothing. Section deep-links stay
+  // available through Article.hasPart above.
 
   return (
     <article className="max-w-3xl mx-auto space-y-10">
@@ -196,16 +199,11 @@ export default async function GuideDetailPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
         />
       )}
-      {howToLdData && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLdData) }}
-        />
-      )}
 
       <header>
         <Link
           href="/guides"
+          prefetch={false}
           className="text-sm text-stone-500 hover:text-forest-700 no-underline inline-flex items-center gap-1 mb-4"
         >
           ← All guides
@@ -242,8 +240,32 @@ export default async function GuideDetailPage({ params }: Props) {
         <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
           {guide.descriptionEn}
         </p>
-        <LastUpdated date={guide.lastVerified} className="mt-4" />
+        {/* Visible editorial responsibility — who stands behind the page and how
+            it was checked. No named persons are invented; the team and process are
+            described on /editorial-policy. */}
+        <p className="mt-4 text-sm text-stone-600">
+          By the{' '}
+          <Link href="/editorial-policy" className="text-forest-700 underline underline-offset-2">
+            GlobalStudyBoard editorial team
+          </Link>
+          {guide.sources.length > 0 && (
+            <>
+              {' '}
+              · Verified against {guide.sources.length} cited source
+              {guide.sources.length === 1 ? '' : 's'}
+            </>
+          )}
+        </p>
+        <LastUpdated date={guide.lastVerified} className="mt-2" />
       </header>
+
+      {/* Hero image — resolves to null (renders nothing) until the image library exists.
+          This is the page's LCP candidate, so it is the ONE image that gets priority. */}
+      <ContentImage
+        asset={guideImage({ slug: guide.slug, category: guide.category, region: guide.region })}
+        variant="hero"
+        priority
+      />
 
       {/* Key facts (exam/process guides) */}
       {guide.keyFacts && guide.keyFacts.length > 0 && <KeyFacts rows={guide.keyFacts} />}
@@ -253,9 +275,9 @@ export default async function GuideDetailPage({ params }: Props) {
 
       {/* Sections */}
       <div className="flex flex-col gap-8">
-        {guide.sections.map((section, i) => (
-          <AudienceGate key={i} audience={section.audience} pageDefault={pageDefault}>
-            <section id={anchors[i]} className="scroll-mt-24">
+        {orderedSections.map(({ section, anchor, index }) => (
+          <AudienceGate key={index} audience={section.audience} pageDefault={pageDefault}>
+            <section id={anchor} className="scroll-mt-24">
               <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-3">
                 {section.headingEn}
               </h2>
@@ -410,14 +432,90 @@ export default async function GuideDetailPage({ params }: Props) {
         </section>
       )}
 
+      {/* More in this hub — previous / next + siblings */}
+      {primaryHub && hubGuides.length > 1 && (
+        <section aria-labelledby="more-in-hub-heading">
+          <div className="mb-4 flex flex-wrap items-end justify-between gap-2">
+            <h2
+              id="more-in-hub-heading"
+              className="m-0 font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink"
+            >
+              More in {primaryHub.label}
+            </h2>
+            <span className="text-sm text-stone-500">
+              <Link href={`/topics/${primaryHub.slug}`} className="text-forest-700 underline underline-offset-2">
+                All {hubGuides.length} guides
+              </Link>
+              {hubTrack && (
+                <>
+                  {' '}
+                  ·{' '}
+                  <Link href={trackHref(hubTrack)} className="text-forest-700 underline underline-offset-2">
+                    {hubTrack.label} track
+                  </Link>
+                </>
+              )}
+            </span>
+          </div>
+
+          {(prevInHub || nextInHub) && (
+            <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {prevInHub && (
+                <Link
+                  href={`/guides/${prevInHub.slug}`}
+                  rel="prev"
+                  className="bg-white border border-stone-200 rounded-xl p-4 no-underline hover:border-forest-300 transition-colors group"
+                >
+                  <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+                    ← Previous
+                  </span>
+                  <span className="font-medium text-stone-800 text-sm group-hover:text-forest-700">
+                    {prevInHub.titleEn}
+                  </span>
+                </Link>
+              )}
+              {nextInHub && (
+                <Link
+                  href={`/guides/${nextInHub.slug}`}
+                  rel="next"
+                  className="bg-white border border-stone-200 rounded-xl p-4 no-underline hover:border-forest-300 transition-colors group sm:text-right"
+                >
+                  <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+                    Next →
+                  </span>
+                  <span className="font-medium text-stone-800 text-sm group-hover:text-forest-700">
+                    {nextInHub.titleEn}
+                  </span>
+                </Link>
+              )}
+            </div>
+          )}
+
+          {hubSiblings.length > 0 && (
+            <ul className="m-0 list-none p-0 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+              {hubSiblings.map((g) => (
+                <li key={g.slug}>
+                  <Link
+                    href={`/guides/${g.slug}`}
+                    className="text-sm text-stone-700 no-underline hover:text-forest-700"
+                  >
+                    {g.titleEn}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+
       {/* CTA */}
-      <section className="bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-10 py-8">
+      <section className="on-dark bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-10 py-8">
         <h2 className="font-display text-2xl font-bold tracking-editorial mb-2">
           Still have questions?
         </h2>
         <p className="text-cream-50/85 mb-5">Ask GSB AI for guidance tailored to your situation.</p>
         <Link
-          href={`/gsb-ai?q=${encodeURIComponent(guide.titleEn)}`}
+          href={gsbAiHref({ q: guide.titleEn })}
           className="inline-flex items-center justify-center bg-cream-50 hover:bg-cream-100 text-forest-900 font-semibold px-6 py-3 rounded-full no-underline transition-colors"
         >
           Ask GSB AI →
@@ -427,7 +525,11 @@ export default async function GuideDetailPage({ params }: Props) {
       <RegionExplore region={guide.region} />
 
       {/* Quick links — popular topics & guides */}
-      <PageQuickLinks currentPath={`/guides/${guide.slug}`} />
+      <PageQuickLinks
+        currentPath={`/guides/${guide.slug}`}
+        region={guide.region}
+        hubSlugs={topics.map((t) => t.slug)}
+      />
     </article>
   );
 }
