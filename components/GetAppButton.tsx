@@ -33,12 +33,11 @@ export default function GetAppButton({
   onNavigate?: () => void;
 }) {
   // The hook attribute is `data-gsb-android-cta` (used by the standalone-mode
-  // CSS rule and the dialog's focus restore). It used to be
-  // `data-get-app-trigger`, and a common ad-blocker cosmetic filter hides ANY
-  // element carrying that attribute name — verified 19 Sep 2026 in the owner's
-  // Chrome: the live pill computed display:none while a fresh button with only
-  // that attribute was hidden too and one with only the text was not. Keep the
-  // name project-specific and free of "get-app" / "app-banner" tokens.
+  // CSS rule in globals.css and the dialog's focus restore). It was renamed from
+  // `data-get-app-trigger` on 19 Sep 2026 while chasing a "pill missing in the
+  // owner's Chrome" report; the real cause turned out to be that CSS rule
+  // listing `(display-mode: fullscreen)`, which a macOS full-screen browser
+  // window also matches — fixed there. The rename stays (harmless).
   if (ANDROID_APP_IS_PUBLIC) {
     return (
       <a
