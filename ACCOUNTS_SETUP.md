@@ -131,6 +131,13 @@ login; an alias cannot sign in on its own):
 To switch Google off again: remove/`false` that variable + redeploy — the button disappears
 (an enabled button with a disabled provider would show visitors raw JSON, so never the reverse).
 
+Verified live 19 Sep 2026: /login → "Continue with Google" → Google's sign-in page loads with no
+provider error. Cosmetic note: Google's screen says "to continue to
+xrfcxocqqshfilseojau.supabase.co" rather than "GlobalStudyBoard" — Google shows the app NAME only
+after brand verification (Verification Center → submit; needs the logo + the same privacy/terms
+URLs), and the Supabase host can be replaced by a custom auth domain (Supabase paid add-on, e.g.
+`auth.globalstudyboard.com`). Neither affects whether sign-in works.
+
 ## 2. Bootstrap the owner account (once, after Gate D)
 1. Sign in on the live site with **contact@globalstudyboard.com** (e-mail code).
 2. Supabase → Authentication → Users: exactly ONE row for that address; note its UUID.
