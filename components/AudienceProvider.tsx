@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { AudienceChoice } from '@/lib/audience';
+import { announceAudienceChanged } from '@/lib/preference-events';
 
 const AUDIENCE_KEY = 'gsb_audience';
 
@@ -58,6 +59,8 @@ export function AudienceProvider({ children }: { children: ReactNode }) {
     // deliberate preference should survive closing the browser, so a returning
     // student is not silently put back on the other audience's content.
     document.cookie = `${AUDIENCE_KEY}=${encodeURIComponent(a)}; path=/; max-age=${REMEMBER_SECONDS}; SameSite=Lax`;
+    // Lets a signed-in account remember the choice too (see lib/preference-events).
+    announceAudienceChanged(a);
   }, []);
 
   const value = useMemo<AudienceContextValue>(

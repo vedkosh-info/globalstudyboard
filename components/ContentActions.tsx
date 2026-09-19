@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { ThumbsUp, ThumbsDown, Share2, Printer, Check } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
+import { FEEDBACK_RETURN, FEEDBACK_RETURN_SCOPE, openFeedback } from '@/lib/feedback';
 
 interface ContentActionsProps {
   title: string;
@@ -12,35 +13,28 @@ interface ContentActionsProps {
 export default function ContentActions({ title }: ContentActionsProps) {
   const pathname = usePathname();
   const likeKey = `gsb_like_${pathname}`;
-  const countKey = `gsb_likecount_${pathname}`;
 
   const [isLiked, setIsLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(0);
   const [showReport, setShowReport] = useState(false);
-  const [reportSubmitted, setReportSubmitted] = useState(false);
   const [shareConfirm, setShareConfirm] = useState(false);
 
   useEffect(() => {
     try {
       if (localStorage.getItem(likeKey) === '1') setIsLiked(true);
-      const n = parseInt(localStorage.getItem(countKey) ?? '0', 10);
-      if (!isNaN(n) && n > 0) setLikeCount(n);
     } catch { /* private mode or storage unavailable */ }
-  }, [likeKey, countKey]);
+  }, [likeKey]);
 
+  // A personal bookmark-style mark kept on this device only. (It used to also
+  // render a "1" pill styled like a community counter, backed by nothing but
+  // the visitor's own localStorage — a placebo, removed September 2026.)
   const handleLike = useCallback(() => {
     const next = !isLiked;
     setIsLiked(next);
-    setLikeCount((prev) => {
-      const n = next ? prev + 1 : Math.max(0, prev - 1);
-      try { localStorage.setItem(countKey, String(n)); } catch { /* ignore */ }
-      return n;
-    });
     try {
       if (next) localStorage.setItem(likeKey, '1');
       else localStorage.removeItem(likeKey);
     } catch { /* ignore */ }
-  }, [isLiked, likeKey, countKey]);
+  }, [isLiked, likeKey]);
 
   const handleShare = useCallback(async () => {
     try {
@@ -66,18 +60,21 @@ export default function ContentActions({ title }: ContentActionsProps) {
     window.print();
   }, []);
 
+  // `nowrap` + a wrapping row: at 375px the four labels used to break
+  // mid-word ("Helpf/ul", "Sha/re", "Pri/nt") because the row could not wrap.
   const btnBase: React.CSSProperties = {
     display: 'flex', alignItems: 'center', gap: '6px',
-    padding: '8px 14px', borderRadius: '999px', border: 'none',
-    cursor: 'pointer', transition: 'all 0.18s',
+    padding: '8px 12px', borderRadius: '999px', border: 'none',
+    cursor: 'pointer', transition: 'all 0.18s', whiteSpace: 'nowrap',
     fontSize: '0.8125rem', fontWeight: 600,
     fontFamily: 'var(--font-sans, Inter, system-ui, sans-serif)',
   };
 
   return (
-    <div className="no-print">
+    <div className="no-print" {...{ [FEEDBACK_RETURN_SCOPE]: '' }}>
       <div style={{
         display: 'flex',
+        flexWrap: 'wrap',
         alignItems: 'center',
         gap: '2px',
         paddingTop: '20px',
@@ -95,24 +92,20 @@ export default function ContentActions({ title }: ContentActionsProps) {
           }}
         >
           <ThumbsUp size={17} strokeWidth={1.75} fill={isLiked ? 'currentColor' : 'none'} />
-          <span>Helpful</span>
-          {likeCount > 0 && (
-            <span style={{
-              background: isLiked ? '#14532D' : '#e7e5e4',
-              color: isLiked ? '#fff' : '#57534e',
-              fontSize: '0.6875rem', fontWeight: 700,
-              padding: '1px 7px', borderRadius: '999px', lineHeight: '1.6',
-            }}>
-              {likeCount}
-            </span>
-          )}
+          <span>{isLiked ? 'Marked helpful' : 'Helpful'}</span>
         </button>
 
-        {/* Report issue */}
+        {/* Report issue — the reason chips below open the site-wide feedback
+            dialog on its "Report an issue" tab with the reason + page title
+            filled in. (Until September 2026 a chip only flipped a local
+            "Thanks — we'll review this page" state and sent NOTHING — a placebo
+            of exactly the misleading-claim kind Google Play rejected this app
+            for. Every report now reaches the team; see /api/feedback.) */}
         <button
-          onClick={() => { setShowReport((r) => !r); setReportSubmitted(false); }}
+          onClick={() => setShowReport((r) => !r)}
           title="Report an issue with this page"
           aria-expanded={showReport}
+          {...{ [FEEDBACK_RETURN]: '' }}
           style={{
             ...btnBase,
             background: showReport ? 'rgba(194,65,12,0.08)' : 'transparent',
@@ -120,10 +113,12 @@ export default function ContentActions({ title }: ContentActionsProps) {
           }}
         >
           <ThumbsDown size={17} strokeWidth={1.75} />
-          <span>Report issue</span>
+          <span>Report an issue</span>
         </button>
 
-        <div style={{ flex: 1 }} />
+        {/* Spacer only where all four pills fit on one row; below 480px the
+            row wraps and the pills simply flow left-to-right. */}
+        <div className="hidden min-[480px]:block" style={{ flex: 1 }} />
 
         {/* Share */}
         <button
@@ -150,61 +145,52 @@ export default function ContentActions({ title }: ContentActionsProps) {
         </button>
       </div>
 
-      {/* Report panel */}
+      {/* Report panel — pick a reason, then describe it in the feedback dialog */}
       {showReport && (
         <div style={{
           marginTop: '12px',
-          background: reportSubmitted ? '#f0fdf4' : '#fff7f4',
-          border: `1px solid ${reportSubmitted ? '#bbf7d0' : '#fdddd4'}`,
+          background: '#fff7f4',
+          border: '1px solid #fdddd4',
           borderRadius: '14px',
           padding: '16px 20px',
         }}>
-          {reportSubmitted ? (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Check size={16} color="#14532D" strokeWidth={2.5} />
-              <p style={{
-                margin: 0, fontSize: '0.875rem', fontWeight: 600, color: '#14532D',
-                fontFamily: 'var(--font-sans, Inter, system-ui, sans-serif)',
-              }}>
-                Thanks — we&apos;ll review this page and correct any issues.
-              </p>
-            </div>
-          ) : (
-            <>
-              <p style={{
-                margin: '0 0 12px', fontSize: '0.8125rem', fontWeight: 700, color: '#7c2d12',
-                fontFamily: 'var(--font-sans, Inter, system-ui, sans-serif)',
-              }}>
-                What&apos;s the issue?
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '10px' }}>
-                {['Inaccurate information', 'Outdated details', 'Missing information', 'Broken link', 'Other'].map((reason) => (
-                  <button
-                    key={reason}
-                    onClick={() => setReportSubmitted(true)}
-                    style={{
-                      padding: '6px 14px', borderRadius: '999px',
-                      border: '1px solid #fdddd4', background: '#fff',
-                      color: '#7c2d12', fontSize: '0.75rem', fontWeight: 600,
-                      cursor: 'pointer',
-                      fontFamily: 'var(--font-sans, Inter, system-ui, sans-serif)',
-                    }}
-                  >
-                    {reason}
-                  </button>
-                ))}
-              </div>
-              <p style={{
-                margin: 0, fontSize: '0.6875rem', color: '#a8a29e',
-                fontFamily: 'var(--font-sans, Inter, system-ui, sans-serif)',
-              }}>
-                Reports help us improve accuracy. You can also email{' '}
-                <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: '#14532D', fontWeight: 600 }}>
-                  {CONTACT_EMAIL}
-                </a>
-              </p>
-            </>
-          )}
+          <p style={{
+            margin: '0 0 12px', fontSize: '0.8125rem', fontWeight: 700, color: '#7c2d12',
+            fontFamily: 'var(--font-sans, Inter, system-ui, sans-serif)',
+          }}>
+            What&apos;s the issue? Pick one and tell us more.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '10px' }}>
+            {['Inaccurate information', 'Outdated details', 'Missing information', 'Broken link', 'Other'].map((reason) => (
+              <button
+                key={reason}
+                type="button"
+                aria-haspopup="dialog"
+                onClick={() => {
+                  setShowReport(false);
+                  openFeedback('issue', { title: `${reason} — ${title}` });
+                }}
+                style={{
+                  padding: '6px 14px', borderRadius: '999px',
+                  border: '1px solid #fdddd4', background: '#fff',
+                  color: '#7c2d12', fontSize: '0.75rem', fontWeight: 600,
+                  cursor: 'pointer',
+                  fontFamily: 'var(--font-sans, Inter, system-ui, sans-serif)',
+                }}
+              >
+                {reason}
+              </button>
+            ))}
+          </div>
+          <p style={{
+            margin: 0, fontSize: '0.6875rem', color: '#78716c',
+            fontFamily: 'var(--font-sans, Inter, system-ui, sans-serif)',
+          }}>
+            Reports go straight to the team and help us keep every page accurate. You can also email{' '}
+            <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: '#14532D', fontWeight: 600 }}>
+              {CONTACT_EMAIL}
+            </a>
+          </p>
         </div>
       )}
     </div>

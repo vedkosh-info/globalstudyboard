@@ -44,13 +44,42 @@ const scriptSrcParts = [
 // 'unsafe-eval' or React never boots locally. headers() runs in dev too.
 if (isDev) scriptSrcParts.push("'unsafe-eval'");
 
+// Accounts (Supabase Auth). The browser client talks to the project's own
+// origin only (auth + PostgREST over HTTPS, no realtime), so `connect-src` gains
+// exactly that origin — derived from NEXT_PUBLIC_SUPABASE_URL at config load,
+// which on Vercel is present at build time. With the env unset nothing is
+// appended and the header is byte-identical to before. Google Sign-In is a
+// full-page redirect (never an iframe or popup), so frame-src is untouched.
+const supabaseOrigin = (() => {
+  try {
+    return process.env.NEXT_PUBLIC_SUPABASE_URL ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).origin : '';
+  } catch {
+    return '';
+  }
+})();
+const connectSrcParts = [
+  "'self'",
+  'https://www.googletagmanager.com',
+  'https://vitals.vercel-insights.com',
+  'https://*.googlesyndication.com',
+  'https://googleads.g.doubleclick.net',
+  'https://*.g.doubleclick.net',
+  'https://adservice.google.com',
+  'https://*.adtrafficquality.google',
+  'https://adtrafficquality.google',
+  'https://fundingchoicesmessages.google.com',
+  'https://www.google.com',
+  'https://csi.gstatic.com',
+];
+if (supabaseOrigin) connectSrcParts.push(supabaseOrigin);
+
 const cspDirectives = [
   "default-src 'self'",
   `script-src ${scriptSrcParts.join(' ')}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: https: blob:",
   "font-src 'self' data: https://fonts.gstatic.com",
-  "connect-src 'self' https://www.googletagmanager.com https://vitals.vercel-insights.com https://*.googlesyndication.com https://googleads.g.doubleclick.net https://*.g.doubleclick.net https://adservice.google.com https://*.adtrafficquality.google https://adtrafficquality.google https://fundingchoicesmessages.google.com https://www.google.com https://csi.gstatic.com",
+  `connect-src ${connectSrcParts.join(' ')}`,
   "frame-src 'self' https://*.googlesyndication.com https://googleads.g.doubleclick.net https://www.google.com https://*.adtrafficquality.google https://adtrafficquality.google https://fundingchoicesmessages.google.com",
   "object-src 'none'",
   "base-uri 'self'",

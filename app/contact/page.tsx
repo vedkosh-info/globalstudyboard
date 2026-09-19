@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 import { Mail, MessageCircleQuestion, FileWarning } from 'lucide-react';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
+import ContactFeedbackActions from '@/components/ContactFeedbackActions';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Contact GlobalStudyBoard — Corrections, Questions & Coverage',
@@ -45,6 +46,19 @@ export default function ContactPage() {
           welcome — accuracy is the whole point.
         </p>
       </header>
+
+      <section className="bg-cream-50 border border-stone-200 rounded-2xl p-6">
+        <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-2">
+          Quickest way
+        </p>
+        <h2 className="font-semibold text-ink text-base mb-2">Send it from this page</h2>
+        <p className="text-stone-700 text-sm leading-relaxed mb-4">
+          Spotted something wrong, or have an idea? Use the form — paste the link of the page you
+          mean, attach a screenshot or PDF if it helps, and it reaches us directly. No email
+          client, no account needed.
+        </p>
+        <ContactFeedbackActions />
+      </section>
 
       <section className="bg-cream-50 border border-stone-200 rounded-2xl p-6 text-center">
         <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-2">

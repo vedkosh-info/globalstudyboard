@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { X, Smartphone, Check } from 'lucide-react';
 import { useRegion } from '@/components/RegionProvider';
 import { OPEN_TESTER_INVITE_EVENT } from '@/lib/tester-invite';
+import { lockBodyScroll, unlockBodyScroll } from '@/lib/scroll-lock';
 
 /**
  * Android beta-tester sign-up.
@@ -95,14 +96,14 @@ export default function TesterInviteModal() {
     });
   }, [pathname]);
 
-  // Lock body scroll while the dialog is open.
+  // Lock body scroll while the dialog is open. Not `body.style.overflow =
+  // 'hidden'`: that idiom is inert on this site (html has overflow-x:hidden, so
+  // body's overflow never reaches the viewport — measured Sept 2026), see
+  // lib/scroll-lock.ts.
   useEffect(() => {
     if (!open) return;
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = previous;
-    };
+    lockBodyScroll();
+    return () => unlockBodyScroll();
   }, [open]);
 
   // Make the background inert on open; lift it and restore focus on close.
@@ -119,7 +120,9 @@ export default function TesterInviteModal() {
         return;
       }
       const opener = openerRef.current;
-      if (opener instanceof HTMLElement && opener.isConnected) {
+      // Safari does not focus a button on click, so the captured opener can be
+      // <body>; that is not a restore target — use the fallback instead.
+      if (opener instanceof HTMLElement && opener.isConnected && opener !== document.body) {
         opener.focus();
         return;
       }
@@ -221,9 +224,11 @@ export default function TesterInviteModal() {
     <div
       // Layer stack, verified against the source: quick-actions dock z-1200
       // (.gsb-dock, styles/globals.css), recent-pages backdrop z-1300 and panel
-      // z-1400 (RecentPages.tsx), this dialog z-1550, report-AI dialog z-1600 —
-      // the only layer above, and the two never open together. (The destination
-      // picker that used to sit at z-1500 is deleted; no z-1500 layer remains.)
+      // z-1400 (RecentPages.tsx), this dialog z-1550, sign-in sheet z-1575
+      // (components/auth/SignInSheet.tsx), report-AI dialog z-1600 — the top
+      // layer. None of the three dialogs can open over another (each makes the
+      // others' triggers inert). (The destination picker that used to sit at
+      // z-1500 is deleted; no z-1500 layer remains.)
       className="fixed inset-0 z-[1550] flex items-end sm:items-center justify-center bg-stone-900/50 p-0 sm:p-4"
       onMouseDown={(e) => {
         pressStartedOnBackdrop.current = e.target === e.currentTarget;
@@ -349,7 +354,7 @@ export default function TesterInviteModal() {
                 className={`mt-1.5 w-full rounded-xl border bg-white px-3 py-2.5 font-sans text-sm text-stone-800 placeholder:text-stone-500 focus:outline-none ${
                   showError
                     ? 'border-red-400 focus:border-red-500'
-                    : 'border-stone-300 focus:border-forest-600'
+                    : 'border-stone-450 focus:border-forest-600'
                 }`}
               />
             </label>

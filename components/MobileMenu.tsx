@@ -5,10 +5,16 @@ import { Menu, X } from 'lucide-react';
 import { REGION_CATEGORIES, chromeCategoryLabel, chromeCategoryPath } from '@/lib/region-nav';
 import { useRegion } from '@/components/RegionProvider';
 import GetAppButton from '@/components/GetAppButton';
+import SignInButton from '@/components/auth/SignInButton';
+import { useAuth } from '@/components/auth/AuthProvider';
+import { isAuthConfigured } from '@/lib/supabase/config';
+import FeedbackButton from '@/components/FeedbackButton';
+import { FEEDBACK_RETURN, FEEDBACK_RETURN_SCOPE } from '@/lib/feedback';
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const { effectiveRegion, pageRegion, ready } = useRegion();
+  const { hasSession } = useAuth();
   const ref = useRef<HTMLDivElement>(null);
   const btnRef = useRef<HTMLButtonElement>(null);
 
@@ -53,9 +59,10 @@ export default function MobileMenu() {
        212px wordmark), and whatever is shrinkable absorbs it. This button is
        the ONLY route to site navigation below lg, so it must never be the one
        that gives — the destination pill truncates instead (it is built to). */
-    <div ref={ref} className="shrink-0 lg:hidden">
+    <div ref={ref} className="shrink-0 lg:hidden" {...{ [FEEDBACK_RETURN_SCOPE]: '' }}>
       <button
         ref={btnRef}
+        {...{ [FEEDBACK_RETURN]: '' }}
         onClick={() => setOpen(!open)}
         aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
@@ -85,6 +92,26 @@ export default function MobileMenu() {
                 {link.label}
               </Link>
             ))}
+            {/* Account — a link once signed in, otherwise the shared sign-in
+                trigger (opens the sheet; the menu closes itself first). Absent
+                entirely while accounts are unconfigured. */}
+            {isAuthConfigured() &&
+              (hasSession ? (
+                <Link
+                  href="/account"
+                  onClick={() => setOpen(false)}
+                  className="text-stone-700 hover:text-forest-700 hover:bg-stone-50 px-3 py-2.5 rounded-lg text-sm font-medium no-underline transition-colors"
+                >
+                  My account
+                </Link>
+              ) : (
+                <SignInButton
+                  onNavigate={() => setOpen(false)}
+                  className="text-left text-stone-700 hover:text-forest-700 hover:bg-stone-50 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
+                >
+                  Sign in
+                </SignInButton>
+              ))}
             {/* Android app — a button, not a link: while the app is in closed
                 beta this opens the tester-invite dialog (see GetAppButton). */}
             <GetAppButton
@@ -93,6 +120,14 @@ export default function MobileMenu() {
             >
               Get the Android app
             </GetAppButton>
+            {/* Feedback quick link — opens the global feedback dialog (the
+                suggestion / issue tab is the first control inside it). */}
+            <FeedbackButton
+              onNavigate={() => setOpen(false)}
+              className="text-left bg-transparent text-stone-700 hover:text-forest-700 hover:bg-stone-50 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
+            >
+              Share feedback
+            </FeedbackButton>
           </nav>
         </div>
       )}

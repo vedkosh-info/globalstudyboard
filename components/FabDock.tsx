@@ -2,8 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { Sparkles, X, ChevronUp, Clock, Smartphone } from 'lucide-react';
+import { Sparkles, X, ChevronUp, Clock, Smartphone, MessageSquarePlus, Bug } from 'lucide-react';
 import GetAppButton from '@/components/GetAppButton';
+import FeedbackButton from '@/components/FeedbackButton';
+import { FEEDBACK_RETURN, FEEDBACK_RETURN_SCOPE } from '@/lib/feedback';
 
 const GOOGLE_URL = 'https://www.google.com/preferences/source?q=globalstudyboard.com';
 const SCROLL_SHOW = 300;
@@ -13,7 +15,9 @@ const SCROLL_SHOW = 300;
  * buttons that used to stack down the right edge and overlap content on phones.
  * Collapsed, it is ONE button in the corner. Expanded, it reveals labelled
  * actions: back-to-top (when scrolled), recent pages (opens the drawer via a
- * custom event), and the Google preferred-source link.
+ * custom event), the feedback / issue-report quick links (open the global
+ * feedback dialog on the matching tab), the Android app, and the Google
+ * preferred-source link.
  */
 export default function FabDock() {
   const pathname = usePathname();
@@ -75,7 +79,7 @@ export default function FabDock() {
   }, []);
 
   return (
-    <div ref={ref} className="gsb-dock no-print">
+    <div ref={ref} className="gsb-dock no-print" {...{ [FEEDBACK_RETURN_SCOPE]: '' }}>
       {open && (
         <div className="gsb-dock-actions" role="menu" aria-label="Quick actions">
           {scrolled && (
@@ -86,6 +90,23 @@ export default function FabDock() {
           <button type="button" role="menuitem" className="gsb-dock-item" onClick={openRecent}>
             <Clock size={18} aria-hidden="true" /> Recent pages
           </button>
+          {/* Feedback quick links — each opens the global dialog on its own tab. */}
+          <FeedbackButton
+            kind="suggestion"
+            role="menuitem"
+            className="gsb-dock-item"
+            onNavigate={() => setOpen(false)}
+          >
+            <MessageSquarePlus size={18} aria-hidden="true" /> Share feedback
+          </FeedbackButton>
+          <FeedbackButton
+            kind="issue"
+            role="menuitem"
+            className="gsb-dock-item"
+            onNavigate={() => setOpen(false)}
+          >
+            <Bug size={18} aria-hidden="true" /> Report an issue
+          </FeedbackButton>
           <GetAppButton
             role="menuitem"
             className="gsb-dock-item"
@@ -113,6 +134,7 @@ export default function FabDock() {
         aria-label={open ? 'Close quick actions' : 'Open quick actions'}
         aria-expanded={open}
         aria-haspopup="menu"
+        {...{ [FEEDBACK_RETURN]: '' }}
       >
         {open ? <X size={22} aria-hidden="true" /> : <Sparkles size={20} aria-hidden="true" />}
       </button>

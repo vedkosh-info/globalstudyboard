@@ -33,6 +33,10 @@ const GROUP_LABELS: Record<string, string> = {
   cookies: 'Cookies',
   sources: 'Sources',
   'editorial-policy': 'Editorial policy',
+  account: 'Your account',
+  login: 'Sign in',
+  'delete-account': 'Delete your account',
+  admin: 'Admin',
 };
 
 const titleCase = (seg: string): string =>

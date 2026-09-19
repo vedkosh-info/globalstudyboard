@@ -11,6 +11,7 @@ import {
 } from 'react';
 import { useSelectedLayoutSegments } from 'next/navigation';
 import { REGION_SLUGS, DEFAULT_REGION, type RegionSlug } from '@/lib/regions';
+import { announceRegionChanged } from '@/lib/preference-events';
 
 const REGION_KEY = 'gsb_region';
 
@@ -114,11 +115,14 @@ export function RegionProvider({ children }: { children: ReactNode }) {
   const setRegion = useCallback((slug: RegionSlug) => {
     setRegionState(slug);
     writeCookie(REGION_KEY, slug);
+    // Lets a signed-in account remember the choice too (see lib/preference-events).
+    announceRegionChanged(slug);
   }, []);
 
   const clearRegion = useCallback(() => {
     setRegionState(null);
     expireCookie(REGION_KEY);
+    announceRegionChanged(null);
   }, []);
 
   const setPageRegion = useCallback((slug: RegionSlug | null) => {

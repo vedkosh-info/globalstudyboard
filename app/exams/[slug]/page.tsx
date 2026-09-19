@@ -13,6 +13,7 @@ import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
+import SaveButton from '@/components/SaveButton';
 import ContentImage from '@/components/ContentImage';
 import { examImage } from '@/lib/images';
 import BreadcrumbsView from '@/components/BreadcrumbsView';
@@ -159,7 +160,11 @@ export default async function ExamDetailPage({ params }: Props) {
         {exam.descriptionEn}
       </p>
 
-      <LastUpdated date={exam.lastVerified ?? SITE_REVIEWED} />
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <LastUpdated date={exam.lastVerified ?? SITE_REVIEWED} />
+        {/* Shortlist — renders nothing until accounts are configured. */}
+        <SaveButton kind="exam" slug={exam.slug} title={`${exam.shortName} — ${exam.fullName}`} region={exam.region} />
+      </div>
 
       {/* Exam-concept archetype (empty hall, test desk, prep books…) — LCP for this page. */}
       <ContentImage

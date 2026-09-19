@@ -241,6 +241,11 @@ analytics, the GSB-AI feature, and any future form or integration.
 - **CCPA/CPRA** — California consumer privacy rights.
 - **COPPA / age-appropriate design** — our audience includes minors (school
   students); collect **no** personal data from children and keep content safe.
+  **Accounts are 18+** (self-attested at sign-in; matches the Play Console
+  target-audience declaration and keeps India DPDP §9 parental consent out of
+  scope). Under-18 visitors read every page without an account; the account is
+  the only feature that collects personal data, and its consent step is the
+  only age check we can perform. See §17.
 - **India DPDP Act** — applies to our India audience; same minimization rules.
 - When in doubt, apply the **strictest** applicable standard.
 
@@ -645,7 +650,9 @@ site's primary organizing axis. (Adopted June 2026.)
   `gsb_region`, written with `max-age` of one year (owner decision, September 2026 —
   it replaces the original session cookie, which forgot the choice when the browser
   closed and therefore had to re-ask on every visit). **What the student selects is
-  used and kept**; nothing is written until they select. Read it **only
+  used and kept**; nothing is written until they select — with one exception:
+  a device with no choice adopts a signed-in account's remembered destination
+  at sign-in (§17), which is the student's own earlier selection. Read it **only
   client-side**. NEVER read the region cookie in a server component or middleware —
   `cookies()` would force dynamic rendering and break the static build.
 - `effectiveRegion = chosen region ?? current page's own region ?? DEFAULT_REGION`.
@@ -762,3 +769,47 @@ audience-specific. (Owner decision, June 2026.)
   info + a pointer to the official home-student/finance source (no deep domestic
   layer — strong incumbents, out of focus).
 
+---
+
+## 17. Accounts — Login & User Management (BINDING, September 2026)
+An OPTIONAL, free account (Supabase Auth, project `globalstudyboard` — never
+VedKosh's) exists for saved pages and cross-device preferences. Every page stays
+readable without one. Rules:
+- **Passwordless only.** E-mail one-time code/link and (flag-gated) Google. There
+  is no password UI, and the database + API refuse any password-authenticated
+  session (`session_is_passwordless()` in every RLS policy; `getClaims()` `amr`
+  check in every account/admin route; the Custom Access Token hook refuses to
+  mint one). This closes the pre-registration attack on passwordless sites.
+- **Dormant until configured.** With the two public env vars unset nothing
+  renders and the account routes answer 503; the CSP is byte-identical. Ship
+  the code dormant; flip the env only after the release gates in
+  `ACCOUNTS_SETUP.md` (custom SMTP + `{{ .Token }}` template, Play Console
+  Data-safety re-declaration + deletion URL, AdSense page exclusions).
+- **Static build stays 100%.** Pages are static shells; only route handlers
+  read cookies. The chrome decides "Sign in" vs "Account" from cookie PRESENCE
+  (`hasAuthCookie()`, keyed to THIS project's ref) — zero Supabase code in the
+  layout chunk; the SDK loads lazily (sheet, /account, /admin, Save button).
+- **One control per preference (§16.3) still holds:** no destination/audience
+  picker on /account. The header control and the toggle write through to the
+  profile when signed in; a device with no choice adopts the saved one at sign-in.
+- **Consent is server-stamped and versioned** (`consent_version` = the date of
+  the latest Terms-or-Privacy revision, `CONSENT_VERSION` in `lib/consent.ts`;
+  stamps set by trigger only when a consent-gated door sends it; the version
+  can only move forward and can never be a future date — a DB CHECK refuses
+  one; re-acceptance step on /account when the version moves).
+- **Data minimisation (§9.1):** e-mail (auth.users only), display name (typed,
+  or seeded from the Google account name), destination, audience, saved pages
+  (title snapshot + destination + saved-at time), consent stamps, and — only
+  while a suspended account exists — the owner's moderation note. Google
+  sign-in additionally leaves Google's identity claims (picture URL, account
+  id) inside the auth record; nothing else is asked for — no DOB, gender,
+  nationality, phone or photo. `/privacy`, `/cookies`, `/terms` and
+  `/delete-account` describe exactly this; change them in the same commit as
+  any data change (§9.4). Retention is enforced by a scheduled purge
+  (migration 0002), not by whoever happens to open the console.
+- **Owner console** (`/admin`): ADMIN_EMAILS allowlist over the same session,
+  passwordless + 24 h step-up for mutations, lookup by POST, no admin-on-admin
+  actions, e-mail-scrubbed 12-month audit trail, ban/unban/delete only.
+- **Every account surface is noindex** (`/login`, `/account` crawlable-noindex;
+  `/admin`, `/auth/`, `/api/` robots-blocked); `/delete-account` is public and in
+  the sitemap (Google Play User Data policy).

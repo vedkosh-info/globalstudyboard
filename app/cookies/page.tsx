@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   path: '/cookies',
 });
 
-const LAST_UPDATED = '4 September 2026';
+const LAST_UPDATED = '19 September 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -25,8 +25,14 @@ const COOKIE_TYPES = [
   {
     name: 'Strictly necessary',
     purpose:
-      'Let the site load and keep it secure, and remember the study destination and audience view you choose, on this device (kept for up to a year, or until you clear your browser data). We do not write the preference cookies until you actually make a choice — until then the site simply shows its default view. They store only that choice, never an identifier, and are never used for tracking or advertising.',
+      'Let the site load and keep it secure, and remember the study destination and audience view you choose, on this device (kept for up to a year, or until you clear your browser data). We do not write the preference cookies until you actually make a choice — or until you sign in to an account that has a saved choice, in which case we restore it — until then the site simply shows its default view. They store only that choice, never an identifier, and are never used for tracking or advertising. If you start writing feedback, the unsent text is kept in your browser\u2019s local storage so you can finish later; it is cleared when you send or discard it, or after seven days.',
     consent: 'Always on',
+  },
+  {
+    name: 'Sign-in session (only if you sign in)',
+    purpose:
+      'Set only when you sign in to an optional account. A first-party cookie (named sb-…-auth-token, plus a short-lived sb-…-code-verifier while a sign-in is in progress) holds your session token so you stay signed in on this device; it is what identifies you to your own account and nothing else. While you start a sign-in, a first-party gsb_consent cookie records for up to 15 minutes that you ticked the consent box — it holds only the date of the Terms you accepted, no identifier — and is cleared when the sign-in completes. None of these is used for tracking or advertising, and the session cookie is removed when you sign out, delete your account, or after long inactivity.',
+    consent: 'Always on once you sign in',
   },
   {
     name: 'Analytics',

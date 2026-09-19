@@ -13,6 +13,7 @@ import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
+import SaveButton from '@/components/SaveButton';
 import ContentImage from '@/components/ContentImage';
 import { collegeImage } from '@/lib/images';
 import AudienceGate from '@/components/AudienceGate';
@@ -240,7 +241,11 @@ export default async function CollegeDetailPage({ params }: Props) {
         {college.descriptionEn}
       </p>
 
-      <LastUpdated date={SITE_REVIEWED} />
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <LastUpdated date={SITE_REVIEWED} />
+        {/* Shortlist — renders nothing until accounts are configured. */}
+        <SaveButton kind="college" slug={college.slug} title={college.nameEn} region={college.region} />
+      </div>
 
       {/* Representative campus archetype for this destination — NEVER a depiction of this
           institution (there is no code path that could select one). Renders nothing until

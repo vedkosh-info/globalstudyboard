@@ -77,6 +77,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/*
+  Modal scroll lock (lib/scroll-lock.ts). `body { overflow: hidden }` is inert here
+  because <html> has a non-visible overflow-x, which stops body's overflow from
+  propagating to the viewport — so overlays fix the body in place instead and
+  restore the scroll offset on release.
+*/
+body.gsb-scroll-lock {
+  position: fixed;
+  inset-inline: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
 /* Honour reduced-motion — no animated scroll for those who ask for less motion. */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -283,6 +296,18 @@ hr {
   font-size: 1rem;
   line-height: 1;
   color: #1B3A6B;
+}
+
+/* Sign-in sheet entrance (motion-safe only; the component adds motion-reduce:animate-none). */
+@keyframes gsb-sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes gsb-dock-in {

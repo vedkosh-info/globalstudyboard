@@ -72,6 +72,9 @@ const STATIC_PATHS = [
   '/terms',
   '/disclaimer',
   '/cookies',
+  // Public, logged-out account-deletion page (Google Play User Data policy).
+  // /account, /login, /auth/* and /admin are noindex/blocked and NEVER listed.
+  '/delete-account',
 ];
 
 export function sitemapEntries(id: SitemapId): MetadataRoute.Sitemap {

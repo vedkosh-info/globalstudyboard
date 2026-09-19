@@ -43,6 +43,18 @@
         "5051"
       ],
       "port": 5051
+    },
+    {
+      "name": "gsb-feedback-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 5052,
+      "env": {
+        "PORT": "5052"
+      }
     }
   ]
 }

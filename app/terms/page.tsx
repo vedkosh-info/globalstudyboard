@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   path: '/terms',
 });
 
-const LAST_UPDATED = '3 July 2026';
+const LAST_UPDATED = '18 September 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -68,6 +68,39 @@ export default function TermsPage() {
           <li>Do not scrape, republish or resell our content at scale without permission.</li>
           <li>Do not attempt to disrupt, attack, or gain unauthorised access to the site.</li>
           <li>Do not use the site or GSB AI to facilitate academic dishonesty.</li>
+          <li>Do not create accounts automatically, in bulk, or on behalf of someone else.</li>
+        </ul>
+      </Section>
+
+      <Section title="Your account">
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            An account is optional and free. You must be 18 or older to create one, and you may hold
+            only one.
+          </li>
+          <li>
+            Sign-in is passwordless: keep the e-mail account (or Google account) you use to sign in
+            secure, and tell us if you think someone else has used your account.
+          </li>
+          <li>
+            We may suspend or close an account that is used to attack, abuse or misuse the site, or
+            that breaks these terms.
+          </li>
+          <li>
+            You can delete your account at any time from{' '}
+            <Link href="/account" className="text-forest-700 hover:text-forest-800 underline">
+              Your account
+            </Link>{' '}
+            or as described on the{' '}
+            <Link href="/delete-account" className="text-forest-700 hover:text-forest-800 underline">
+              Delete your account
+            </Link>{' '}
+            page. How we handle account data is set out in our{' '}
+            <Link href="/privacy" className="text-forest-700 hover:text-forest-800 underline">
+              Privacy Policy
+            </Link>
+            .
+          </li>
         </ul>
       </Section>
 

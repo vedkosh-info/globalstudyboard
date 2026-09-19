@@ -21,6 +21,7 @@ import RegionExplore from '@/components/RegionExplore';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
+import SaveButton from '@/components/SaveButton';
 import AudienceGate from '@/components/AudienceGate';
 import BreadcrumbsView from '@/components/BreadcrumbsView';
 import { defaultAudienceFor, isAudienceVisible } from '@/lib/audience';
@@ -256,7 +257,11 @@ export default async function GuideDetailPage({ params }: Props) {
             </>
           )}
         </p>
-        <LastUpdated date={guide.lastVerified} className="mt-2" />
+        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <LastUpdated date={guide.lastVerified} />
+          {/* Shortlist — renders nothing until accounts are configured. */}
+          <SaveButton kind="guide" slug={guide.slug} title={guide.titleEn} region={guide.region} />
+        </div>
       </header>
 
       {/* Hero image — resolves to null (renders nothing) until the image library exists.

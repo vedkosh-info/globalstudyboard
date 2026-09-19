@@ -174,7 +174,7 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
           submit();
         }}
         role="search"
-        className="flex items-stretch overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm transition-shadow focus-within:border-forest-400 focus-within:shadow-md focus-within:ring-2 focus-within:ring-forest-500/25"
+        className="flex items-stretch overflow-hidden rounded-2xl border border-stone-450 bg-white shadow-sm transition-shadow focus-within:border-forest-400 focus-within:shadow-md focus-within:ring-2 focus-within:ring-forest-500/25"
       >
         <span className="flex items-center pl-4 text-stone-400">
           <Search className="h-5 w-5" aria-hidden="true" />

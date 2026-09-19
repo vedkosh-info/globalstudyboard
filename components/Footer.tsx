@@ -7,6 +7,7 @@ import { ADMISSIONS_CYCLE } from '@/lib/site-meta';
 import { useRegion } from '@/components/RegionProvider';
 import RegionFlag from '@/components/RegionFlag';
 import GetAppButton from '@/components/GetAppButton';
+import FeedbackButton from '@/components/FeedbackButton';
 
 const REGION_LINKS = REGIONS_ALPHABETICAL.map((r) => ({
   label: r.displayName,
@@ -31,9 +32,12 @@ const NEUTRAL_TEST_SLUGS = ['ielts', 'toefl', 'sat', 'gre', 'gmat'];
 function FooterCol({
   heading,
   links,
+  children,
 }: {
   heading: string;
   links: { label: string; href: string; slug?: RegionSlug }[];
+  /** Extra list items (e.g. buttons that open a dialog rather than navigate). */
+  children?: React.ReactNode;
 }) {
   return (
     <div>
@@ -52,10 +56,15 @@ function FooterCol({
             </Link>
           </li>
         ))}
+        {children}
       </ul>
     </div>
   );
 }
+
+/** Footer link look, for the two feedback buttons in the "Site" column. */
+const FOOTER_BUTTON_CLS =
+  'inline-flex items-center gap-2 px-0 py-1 bg-transparent text-left text-cream-50/60 text-sm hover:text-terracotta-300 transition-colors';
 
 /**
  * Site footer. The disclaimer + region directory are constant; the "Tests" and
@@ -159,7 +168,20 @@ export default function Footer({
             <FooterCol heading="Study by Destination" links={studyLinks} />
           )}
 
-          <FooterCol heading="Site" links={SITE_LINKS} />
+          <FooterCol heading="Site" links={SITE_LINKS}>
+            {/* Feedback quick links — buttons, not links: they open the global
+                feedback dialog on the matching tab (see FeedbackButton). */}
+            <li>
+              <FeedbackButton kind="suggestion" className={FOOTER_BUTTON_CLS}>
+                Share feedback
+              </FeedbackButton>
+            </li>
+            <li>
+              <FeedbackButton kind="issue" className={FOOTER_BUTTON_CLS}>
+                Report an issue
+              </FeedbackButton>
+            </li>
+          </FooterCol>
         </div>
 
         {/* Disclaimer */}
@@ -210,6 +232,9 @@ export default function Footer({
               { label: 'Terms', href: '/terms' },
               { label: 'Disclaimer', href: '/disclaimer' },
               { label: 'Cookies', href: '/cookies' },
+              // Public account-deletion page — Google Play's User Data policy
+              // requires it to be reachable without the app or a sign-in.
+              { label: 'Delete account', href: '/delete-account' },
               { label: 'Contact', href: '/contact' },
             ].map((link) => (
               <Link

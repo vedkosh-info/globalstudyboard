@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
 import { Inter, Fraunces } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -18,10 +17,14 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FabDock from '@/components/FabDock';
 import RecentPages from '@/components/RecentPages';
 import TesterInviteModal from '@/components/TesterInviteModal';
+import { AuthProvider } from '@/components/auth/AuthProvider';
+import SignInHost from '@/components/auth/SignInHost';
+import FeedbackHost from '@/components/FeedbackHost';
 import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { tracksForRegion, trackHref, isMultiHubTrack, topicsForTrack } from '@/lib/tracks';
-import { ADSENSE_CLIENT_ID, ADSENSE_SCRIPT_SRC } from '@/lib/adsense';
+import { ADSENSE_CLIENT_ID } from '@/lib/adsense';
+import AdsLoader from '@/components/AdsLoader';
 import { CONTACT_EMAIL, ORG_LOGO, SITE_DESCRIPTION } from '@/lib/site-meta';
 import { ROOT_OG_IMAGE, SITE_NAME, SITE_URL } from '@/lib/seo';
 
@@ -216,6 +219,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: websiteJsonLd }} />
         <RegionProvider>
           <AudienceProvider>
+          <AuthProvider>
           <Header topicsMenu={TOPICS_MENU} />
           <RegionContextBar />
           <main className="mx-auto w-full max-w-7xl px-4 py-8 md:py-12">
@@ -230,27 +234,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AudienceAnnouncer />
           <RecentPages />
           <TesterInviteModal />
+          {/* Sign-in sheet host: a flat sibling (never inside <header>, which the
+              dialogs make inert); loads its chunk on first open only. */}
+          <SignInHost />
+          <FeedbackHost />
           <FabDock />
+          </AuthProvider>
           </AudienceProvider>
         </RegionProvider>
-        {/*
-          Google AdSense loader for "full page" Auto ads. The single loader on
-          every page is all the code Auto ads needs — ad placement is controlled
-          from the AdSense dashboard (Ads → Auto ads).
-          `lazyOnload`, not `afterInteractive`: in the App Router the latter
-          emits <link rel="preload" as="script"> in <head>, so the 58 KB loader
-          (and the ~225 KB ad chain behind it) downloaded at High priority next
-          to the CSS and fonts on every page and pushed Time-to-Interactive to
-          ~5 s. lazyOnload defers it until the window load event — content and
-          Core Web Vitals first, ads after.
-        */}
-        <Script
-          id="google-adsense"
-          async
-          src={ADSENSE_SCRIPT_SRC}
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
+        {/* Google AdSense Auto-ads loader — see components/AdsLoader.tsx for why
+            it is a client component (no ads on the account surfaces) and lazyOnload. */}
+        <AdsLoader />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -97,7 +97,7 @@ export default function SiteSearch() {
       }}
       role="search"
       aria-busy={busy}
-      className="flex w-full items-stretch overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm transition-shadow focus-within:border-forest-400 focus-within:shadow-md focus-within:ring-2 focus-within:ring-forest-500/25"
+      className="flex w-full items-stretch overflow-hidden rounded-2xl border border-stone-450 bg-white shadow-sm transition-shadow focus-within:border-forest-400 focus-within:shadow-md focus-within:ring-2 focus-within:ring-forest-500/25"
     >
       <span
         className={`flex items-center pl-4 transition-colors ${

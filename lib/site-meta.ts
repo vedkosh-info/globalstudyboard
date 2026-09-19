@@ -58,7 +58,7 @@ export const SITE_REVIEWED = '2026-09';
  * through eight later deploys) makes Google stop believing it. Guides and
  * stamped exams keep their own truthful `lastVerified`.
  */
-export const SITE_LASTMOD = '2026-09-16';
+export const SITE_LASTMOD = '2026-09-19';
 
 /**
  * The publisher logo for Organization / Article structured data. Google's

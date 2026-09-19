@@ -2,7 +2,7 @@
   "name": "globalstudyboard",
   "version": "0.1.0",
   "private": true,
-  "description": "GlobalStudyBoard \u2014 World college admission guide and query platform",
+  "description": "GlobalStudyBoard — World college admission guide and query platform",
   "scripts": {
     "dev": "next dev -p ${PORT:-5000}",
     "prebuild": "tsx scripts/check-images.ts",
@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.79",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.116.0",
     "@vercel/analytics": "^1.6.1",
     "@vercel/speed-insights": "^1.3.1",
     "ai": "^6.0.191",

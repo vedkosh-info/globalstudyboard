@@ -53,6 +53,14 @@ module.exports = {
           200: '#E7E5E4',
           300: '#D6D3D1',
           400: '#A8A29E',
+          // Form-field boundary: the lightest warm grey that reaches the WCAG
+          // 1.4.11 3:1 non-text contrast on EVERY surface a field sits on
+          // (white 3.28, cream-50 3.22, cream-100 3.10, stone-50 3.14). stone-300
+          // measured 1.5:1 and stone-400 2.5:1 — an independent review flagged the
+          // 1.5:1 boundary on the account forms, and the site's search + feedback
+          // fields shared it. Use for input/textarea/select borders; buttons and
+          // decorative rules keep stone-300 (their text identifies them).
+          450: '#938D88',
           500: '#78716C',
           600: '#57534E', // primary mute
           700: '#44403C',

@@ -4,7 +4,11 @@
 
     No runtime permissions are declared. The app has no camera, location,
     contacts or notification access: it renders the website inside Chrome's
-    Trusted Web Activity, and the site itself collects no personal data.
+    Trusted Web Activity. The site offers an OPTIONAL account (e-mail or Google
+    sign-in, saved pages, remembered preferences) — the Play Console Data-safety
+    form and the public deletion URL (https://www.globalstudyboard.com/delete-account)
+    must reflect that. Sign-in works unchanged inside the TWA: Chrome's cookie
+    jar is shared and the Google OAuth redirect returns via the verified app link.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bcode8labs.globalstudyboard">

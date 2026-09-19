@@ -3,10 +3,13 @@
 import { Smartphone } from 'lucide-react';
 import AudienceToggle from '@/components/AudienceToggle';
 import GetAppButton from '@/components/GetAppButton';
+import AccountControl from '@/components/auth/AccountControl';
 
 /**
- * The slim strip under the header. It carries the two site-wide controls that do
- * NOT belong in the header: the domestic/international student toggle, and the
+ * The slim strip under the header. It carries the site-wide controls that do NOT
+ * belong in the header: the domestic/international student toggle, the account
+ * control (Sign in / Account — the header row is measured full at 1024px, so the
+ * account control lives here, see components/auth/AccountControl.tsx), and the
  * "get the Android app" link the owner wants reachable from the top of every page.
  *
  * It deliberately no longer shows the study destination or a "Change destination"
@@ -15,11 +18,14 @@ import GetAppButton from '@/components/GetAppButton';
  * — the header control (`RegionSwitcher`), which is sticky and therefore reachable
  * at any scroll position, unlike this bar.
  *
- * Layout: ONE flex row at every width — the two controls are short enough that
- * even the longest rendering fits a 320px phone, so the bar is a fixed ~38px on
- * every viewport instead of flipping between one and two rows. Rendered once, with
- * no `order` utilities, so DOM order is visual order and tab order can never
- * disagree with the screen (WCAG 2.4.3 / 1.3.2).
+ * Layout: ONE flex row at every width. Measured budget (inner width = vw − 32):
+ * 320px has 288px; the toggle cluster is 173px + 12px gap, the App pill 70px with
+ * its "App" text and ~40px icon-only, the account pill ~40px icon-only below `sm`
+ * and ~86px with text from `sm`. So below 360px the App pill drops its text
+ * (173 + 12 + 40 + 8 + 40 = 273 ≤ 288) and from 360px "App" returns
+ * (173 + 12 + 70 + 8 + 40 = 303 ≤ 328). Rendered once, with no `order` utilities,
+ * so DOM order is visual order and tab order can never disagree with the screen
+ * (WCAG 2.4.3 / 1.3.2). Re-measure at 320/360/640 before widening anything here.
  *
  * It renders server-side too (no `ready` gate): nothing in it depends on the
  * stored region, so there is no wrong-value flash to avoid — and rendering it in
@@ -50,14 +56,18 @@ export default function RegionContextBar() {
           menu and dock triggers use (WCAG 3.2.4 Consistent Identification) — and it
           discloses the platform before an iOS visitor taps it.
         */}
-        <GetAppButton
-          ariaLabel="Get the Android app"
-          className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-forest-300 bg-white px-3 py-1 text-xs font-semibold text-forest-700 transition-colors hover:border-forest-400 hover:bg-forest-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-1"
-        >
-          <Smartphone className="h-3.5 w-3.5" aria-hidden="true" />
-          <span className="sm:hidden">App</span>
-          <span className="hidden sm:inline">Get the Android app</span>
-        </GetAppButton>
+        <div className="flex shrink-0 items-center gap-2">
+          {/* Sign in / Account. Renders nothing until accounts are configured. */}
+          <AccountControl />
+          <GetAppButton
+            ariaLabel="Get the Android app"
+            className="inline-flex h-7 shrink-0 items-center gap-1.5 rounded-full border border-forest-300 bg-white px-2 text-xs font-semibold text-forest-700 transition-colors hover:border-forest-400 hover:bg-forest-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-1 sm:px-3"
+          >
+            <Smartphone className="h-3.5 w-3.5" aria-hidden="true" />
+            <span className="hidden min-[360px]:inline sm:hidden">App</span>
+            <span className="hidden sm:inline">Get the Android app</span>
+          </GetAppButton>
+        </div>
       </div>
     </div>
   );

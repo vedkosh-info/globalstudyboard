@@ -83,6 +83,17 @@ public/           → Static assets
 - Content disclaimer required in footer on every content page
 - **Freshness, not founding year (BINDING — see `content-policy.md` §5).** Every page shows a "Last updated" date via `components/LastUpdated.tsx` — content pages pass the unit's own `lastVerified`; listings/region/college/static pages pass `SITE_REVIEWED` from `lib/site-meta.ts`. The footer shows `ADMISSIONS_CYCLE`. Never display a site "established/founded/launched" year **anywhere** — not on utility/listing/content pages, not in the global header/footer, and **not on `/about`** (including its eyebrow/lede/body, metadata/OG descriptions, or a site `foundingDate`); `/about` may keep the mission/origin story but without a year. A *university's* real founding year is fine. Never fake/back-date a "last updated" date.
 
+## Accounts — Login & User Management (BINDING — constitution §17)
+- Supabase Auth on the SEPARATE project `globalstudyboard` (ref `xrfcxocqqshfilseojau`, Mumbai). Passwordless only (e-mail code/link + flag-gated Google); password sessions are refused by RLS, the API routes and an Auth hook. Dormant until `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` are set; see `.env.example` and the owner runbook `ACCOUNTS_SETUP.md`.
+- Code map: `lib/supabase/{config,client,server,profile,profile-sync,session-guard}.ts`, `lib/auth-events.ts` (SDK-free bus), `lib/consent.ts`, `components/auth/*`, `components/SaveButton.tsx`, `app/{login,account,admin,delete-account}`, `app/auth/callback`, `app/api/{account,admin}/*`, `supabase/migrations/0001_accounts.sql` + `0002_retention_cron.sql` (pg_cron purge + consent-date CHECK), `scripts/auth-qa.mjs` (inbox-free QA).
+- Bundle guard applies: nothing mounted in the layout may import `@supabase/*` statically (the SDK is `import()`ed); the chrome reads cookie presence only. Never read the session cookie in a page/layout. No second destination/audience picker anywhere (§16.3) — /account only reports; the header control and toggle write through.
+- All owner-facing setup and communications for GSB use **contact@globalstudyboard.com** (admin allowlist, SMTP sender, OAuth consent screen, Play Console).
+
+## Project Account & Communications (BINDING — owner directive, September 2026)
+- **Every GlobalStudyBoard communication, integration and third-party setup uses the project's own account: `contact@globalstudyboard.com`** (= `CONTACT_EMAIL` in `lib/site-meta.ts`). Google Sheets / Apps Script deployments, Drive folders, mail recipients, Play/AdSense/Search Console contacts, any new service — all under this account, never a personal address and never a VedKosh/TasteYatra one.
+- The feedback backend (`scripts/apps-script/feedback-webapp.gs`, env `FEEDBACK_SCRIPT_URL`) emails `contact@globalstudyboard.com` and MUST be deployed from that account (owner steps in the `.gs` header; as of 18 Sep 2026 the owner has not yet deployed it — `FEEDBACK_SCRIPT_URL` is unset in Vercel, so `/api/feedback` answers 503 and the dialog tells the visitor to email instead). The Android tester-invite sheet predates this rule — migrate it to the project account when it is next touched.
+- Visitor-facing copy that names an address for corrections, removals or follow-ups uses `CONTACT_EMAIL`, never a literal.
+
 ## Git Workflow (BINDING)
 - **Root repo always on `main`** — single-branch workflow
 - **ALWAYS edit files in root repo** at `/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/`
