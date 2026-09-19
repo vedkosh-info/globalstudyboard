@@ -121,7 +121,8 @@ export default function PrivacyPage() {
               Vercel
             </a>
             , whose servers handle your sign-in, data-download and deletion requests on the way
-            to Supabase. Sign-in e-mails are sent through our transactional e-mail provider,{' '}
+            to Supabase. Sign-in e-mails are currently sent by Supabase&rsquo;s own e-mail service;
+            we are moving them to{' '}
             <a
               href="https://resend.com/legal/privacy-policy"
               target="_blank"
@@ -130,9 +131,10 @@ export default function PrivacyPage() {
             >
               Resend
             </a>
-            , which sees only the address it delivers to and the code or link in the message. Each
-            of your records is only ever readable by you (row-level security) and, for support, by
-            us.
+            , a transactional e-mail provider, and will update this sentence when that happens.
+            Whichever sends the e-mail sees only the address it delivers to and the code or link
+            in the message. Each of your records is only ever readable by you (row-level security)
+            and, for support, by us.
           </li>
           <li>
             <strong>Cookies</strong> — signing in sets a first-party session cookie on your device
@@ -150,20 +152,24 @@ export default function PrivacyPage() {
             records each sign-in (the e-mail address, IP address and browser) in its own security
             logs, and each active session (removed when you sign out or it expires). Those logs are held by the
             provider under its retention policy — a matter of days, not months — and we cannot
-            lengthen or shorten it. Sign-in requests are rate limited by address and by IP; those
-            counters live in memory for minutes and are never stored.
+            lengthen or shorten it. Sign-in requests are rate limited in two places: our own servers limit
+            requests per network address with counters that live in memory for minutes and are
+            never stored, and our sign-in provider limits how often an address can be e-mailed,
+            recording the time it last e-mailed you as part of your sign-in record (deleted with
+            the account).
           </li>
           <li>
             <strong>International transfers</strong> — your account data is stored in India
-            (Supabase, Mumbai) and passes through Vercel&rsquo;s and Resend&rsquo;s systems, which
-            may process it in the United States. If you use the site from the EEA, the UK or
+            (Supabase, Mumbai) and passes through Vercel&rsquo;s systems — and, once we move
+            sign-in e-mail to Resend, Resend&rsquo;s — which may process it in the United States. If you use the site from the EEA, the UK or
             another jurisdiction with transfer rules, those transfers take place under each
             provider&rsquo;s data-processing agreement and standard contractual clauses.
           </li>
           <li>
             <strong>How long we keep it</strong> — for as long as your account exists. Delete the
             account and everything above is erased immediately; there is no deactivated state and
-            no recovery period. If we ever had to suspend an account, we keep the action, its time
+            no recovery period. If we ever had to suspend an account — or deleted one by e-mail at its
+            owner&rsquo;s request — we keep the action, its time
             and an internal account identifier — the note explaining it (which you can see in your
             data download while the account exists) is deleted with the account, and never your
             e-mail address — for up to 12 months for safety and dispute purposes; a scheduled job

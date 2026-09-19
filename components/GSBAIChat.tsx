@@ -240,7 +240,7 @@ export default function GSBAIChat() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about universities, exams, study abroad..."
-          className="flex-1 bg-cream-50 border border-stone-200 rounded-xl px-4 py-2.5 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-forest-400 focus:bg-white transition-colors"
+          className="flex-1 bg-cream-50 border border-stone-450 rounded-xl px-4 py-2.5 text-base sm:text-sm text-stone-800 placeholder-stone-500 focus:outline-none focus:border-forest-600 focus:bg-white transition-colors"
           maxLength={1500}
           disabled={isLoading}
           autoComplete="off"

@@ -72,3 +72,13 @@ export async function POST(request: NextRequest) {
   }
   return NextResponse.json({ ok: true }, { headers: NO_STORE });
 }
+
+// Framework-generated 405s for the other methods carried `cache-control: public`
+// (live IQA, 19 Sep); answer them explicitly with the same no-store headers as
+// every other response from this route.
+const methodNotAllowed = () => NextResponse.json({ error: 'Method not allowed.' }, { status: 405, headers: { ...NO_STORE, Allow: 'POST' } });
+export const GET = methodNotAllowed;
+export const HEAD = methodNotAllowed;
+export const PUT = methodNotAllowed;
+export const PATCH = methodNotAllowed;
+export const DELETE = methodNotAllowed;

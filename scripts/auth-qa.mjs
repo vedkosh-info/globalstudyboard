@@ -10,9 +10,16 @@
  *   node scripts/auth-qa.mjs show     <email>   # id / confirmed / last sign-in / banned_until / profile
  *   node scripts/auth-qa.mjs delete   <email>   # remove the throwaway (cascades profile + saved pages)
  *
- * Only ever run it against throwaway addresses on the site's own domain
- * (e.g. gsb-qa-1@globalstudyboard.com). Never commit output; it prints a
- * credential (the code) by design.
+ * THE ADDRESS MUST BE A REAL MAILBOX (BINDING, 19 Sep 2026). The sign-in form's
+ * "send" step e-mails the address through Supabase's mailer; a made-up
+ * throwaway such as gsb-qa-1@globalstudyboard.com does not exist in Google
+ * Workspace, so every test send hard-bounced, and Supabase warned twice in one
+ * day that the project's sending privileges were "at risk due to bounce backs".
+ * Use a mailbox you own with a plus-tag instead — e.g.
+ * vedkosh.info+gsbqa1@gmail.com or contact+qa1@globalstudyboard.com — which
+ * delivers (or is quietly dropped) without bouncing. The `create` command
+ * refuses invented addresses on the site's own domain for that reason.
+ * Never commit output; it prints a credential (the code) by design.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -35,6 +42,16 @@ if (!url || !secret) {
 const admin = createClient(url, secret, { auth: { persistSession: false, autoRefreshToken: false } });
 
 const [cmd, email] = process.argv.slice(2);
+
+// Bounce guard: only a real mailbox may be used (see the header). On the
+// site's own domain, only contact@ (optionally plus-tagged) exists.
+if (cmd === 'create' && email && /@globalstudyboard\.com$/i.test(email) && !/^contact(\+[^@]+)?@globalstudyboard\.com$/i.test(email)) {
+  console.error(
+    `refusing ${email}: that mailbox does not exist, so the sign-in e-mail would bounce and Supabase counts it against the project.\n` +
+      'Use a real mailbox with a plus-tag, e.g. contact+qa1@globalstudyboard.com or vedkosh.info+gsbqa1@gmail.com.',
+  );
+  process.exit(2);
+}
 if (!cmd || !email || !/^[^\s@]+@globalstudyboard\.com$/i.test(email)) {
   console.error('usage: node scripts/auth-qa.mjs <create|otp|show|delete> <throwaway@globalstudyboard.com>');
   process.exit(1);

@@ -68,6 +68,10 @@ export default function RecentPages() {
   // Record visit on each navigation
   useEffect(() => {
     if (!pathname || pathname === '/') return;
+    // Account surfaces are per-person and noindex; recording them would make
+    // the drawer prefetch /login, /account and /admin on every later page
+    // (live IQA, 19 Sep) and show "Your account" to whoever uses the device next.
+    if (/^\/(login|account|admin|auth)(\/|$)/.test(pathname)) return;
     const title = getPageTitle();
     if (title) addToHistory(pathname, title);
   }, [pathname, addToHistory]);

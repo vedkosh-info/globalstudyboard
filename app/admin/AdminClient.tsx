@@ -22,7 +22,7 @@ type Gate = 'checking' | 'signed-out' | 'forbidden' | 'unconfigured' | 'ok';
 
 const CARD = 'rounded-2xl border border-stone-200 bg-white p-5 shadow-sm';
 const INPUT =
-  'w-full rounded-xl border border-stone-450 bg-white px-3 py-2.5 font-sans text-sm text-stone-800 placeholder:text-stone-500 focus:border-forest-600 focus:outline-none';
+  'w-full rounded-xl border border-stone-450 bg-white px-3 py-2.5 font-sans text-base sm:text-sm text-stone-800 placeholder:text-stone-500 focus:border-forest-600 focus:outline-none';
 const BTN = 'rounded-xl bg-forest-700 px-4 py-2.5 text-sm font-medium text-cream-50 hover:bg-forest-800 disabled:cursor-not-allowed disabled:bg-stone-200 disabled:text-stone-500';
 const SMALL = 'rounded-lg border border-stone-300 px-3 py-1.5 text-xs font-semibold text-stone-700 hover:bg-stone-100 disabled:cursor-not-allowed disabled:opacity-60';
 const DANGER = 'rounded-lg border border-red-300 px-3 py-1.5 text-xs font-semibold text-red-700 hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-60';

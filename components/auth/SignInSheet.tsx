@@ -83,16 +83,24 @@ export default function SignInSheet({
     };
   }, [opener, closedByNavigation]);
 
-  // Escape closes; focus enters the dialog immediately (the form moves it to
-  // its e-mail field when its chunk mounts).
+  // Escape closes.
   useEffect(() => {
     const onKey = (e: globalThis.KeyboardEvent) => {
       if (e.key === 'Escape') onClose('dismissed');
     };
     document.addEventListener('keydown', onKey);
-    panelRef.current?.focus();
     return () => document.removeEventListener('keydown', onKey);
   }, [onClose]);
+
+  // Focus enters the dialog on open — but only if the form has not already
+  // taken it. On the FIRST open the form's chunk arrives later and moves focus
+  // to the e-mail field itself; on every later open the cached chunk mounts in
+  // the same commit, child effects run before this one, and focusing the panel
+  // here would steal focus straight back from the field (live IQA, 19 Sep).
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (panel && !panel.contains(document.activeElement)) panel.focus();
+  }, []);
 
   const onPanelKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key !== 'Tab') return;

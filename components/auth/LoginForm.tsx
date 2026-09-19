@@ -47,9 +47,9 @@ import { safeNextPath } from '@/lib/security/safe-next';
 const EMAIL_RE = /^[^\s@]{1,64}@[^\s@.]+(\.[^\s@.]+)+$/;
 
 const INPUT =
-  'mt-1.5 w-full rounded-xl border bg-white px-3 py-2.5 font-sans text-sm text-stone-800 placeholder:text-stone-500 focus:outline-none';
+  'mt-1.5 w-full rounded-xl border bg-white px-3 py-2.5 font-sans text-base sm:text-sm text-stone-800 placeholder:text-stone-500 focus:outline-none';
 const INPUT_OK = 'border-stone-450 focus:border-forest-600';
-const INPUT_ERR = 'border-red-400 focus:border-red-500';
+const INPUT_ERR = 'border-red-500 focus:border-red-600';
 const LABEL = 'block text-xs font-semibold text-stone-700 uppercase tracking-wide';
 const PRIMARY =
   'mt-4 w-full rounded-xl bg-forest-700 text-cream-50 text-sm font-medium py-2.5 hover:bg-forest-800 disabled:bg-stone-200 disabled:text-stone-500 disabled:cursor-not-allowed';
@@ -179,9 +179,12 @@ export default function LoginForm({ variant, next, onSuccess, resumeIntent, head
     );
   }
 
-  // The page shell owns the <h1> ("Sign in"); the step heading is an h2 in both
-  // variants (the sheet's accessible name is its own sr-only h2 in the frame).
-  const Heading = 'h2' as const;
+  // The page shell owns the <h1> ("Sign in"), so on /login the step heading is
+  // an h2. In the sheet the frame already provides an sr-only h2 as the dialog's
+  // accessible name; a second h2 with the same text read as a duplicate heading
+  // to screen readers (live IQA, 19 Sep), so there the step heading is a
+  // paragraph that still takes focus on the "sent" step.
+  const Heading = (variant === 'modal' ? 'p' : 'h2') as 'p' | 'h2';
   const callbackUrl = () =>
     `${window.location.origin}/auth/callback${next ? `?next=${encodeURIComponent(next)}` : ''}`;
 
@@ -453,8 +456,10 @@ export default function LoginForm({ variant, next, onSuccess, resumeIntent, head
           ) : (
             <>
               <p className="text-sm text-stone-800 leading-relaxed">
-                Open the e-mail <strong>on this device</strong> and tap <strong>Sign in</strong> — it brings you
-                straight back here, signed in. The link works once and expires in 15 minutes.
+                Open the e-mail <strong>in this same browser</strong> and tap its link — <strong>Sign in</strong>, or{' '}
+                <strong>Confirm email address</strong> the very first time — and it brings you straight back here,
+                signed in. The link works once, expires in 15 minutes, and only works in the browser that asked
+                for it (a different app or phone will not sign you in).
               </p>
               <p className="mt-2 text-xs text-stone-600 leading-relaxed">
                 Can&rsquo;t see it? Check your spam or promotions folder. Only the newest e-mail works.

@@ -170,7 +170,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
                     placeholder="What was wrong, and what should it say?"
                     // font-sans is explicit: Tailwind preflight is disabled, so a
                     // textarea would otherwise fall back to the UA monospace font.
-                    className="mt-1.5 w-full rounded-xl border border-stone-450 bg-white px-3 py-2 font-sans text-sm text-stone-800 placeholder:text-stone-500 focus:border-forest-600 focus:outline-none"
+                    className="mt-1.5 w-full rounded-xl border border-stone-450 bg-white px-3 py-2 font-sans text-base sm:text-sm text-stone-800 placeholder:text-stone-500 focus:border-forest-600 focus:outline-none"
                   />
                 </label>
 

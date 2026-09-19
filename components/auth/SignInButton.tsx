@@ -16,14 +16,17 @@ import { openSignIn, type SignInIntent } from '@/lib/auth-events';
 export default function SignInButton({
   className,
   children,
-  ariaLabel = 'Sign in',
+  ariaLabel,
+  title,
   role,
   intent = 'account',
   onNavigate,
 }: {
   className?: string;
   children: React.ReactNode;
+  /** Only when the visible label is shortened/hidden; must still contain the visible text (WCAG 2.5.3). */
   ariaLabel?: string;
+  title?: string;
   role?: string;
   intent?: SignInIntent;
   /** Let the host close itself (menu) when the control is used. */
@@ -36,6 +39,7 @@ export default function SignInButton({
       role={role}
       className={className}
       aria-label={ariaLabel}
+      title={title}
       aria-haspopup="dialog"
       onClick={() => {
         onNavigate?.();

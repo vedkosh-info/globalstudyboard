@@ -70,7 +70,7 @@ const isTabId = (v: string | null): v is TabId => v === 'personal' || v === 'sav
 const CARD = 'rounded-2xl border border-stone-200 bg-white p-5 shadow-sm sm:p-6';
 const H2 = 'font-display text-xl font-bold tracking-editorial text-forest-800';
 const INPUT =
-  'mt-1.5 w-full rounded-xl border border-stone-450 bg-white px-3 py-2.5 font-sans text-sm text-stone-800 placeholder:text-stone-500 focus:border-forest-600 focus:outline-none';
+  'mt-1.5 w-full rounded-xl border border-stone-450 bg-white px-3 py-2.5 font-sans text-base sm:text-sm text-stone-800 placeholder:text-stone-500 focus:border-forest-600 focus:outline-none';
 const PRIMARY =
   'rounded-xl bg-forest-700 px-4 py-2.5 text-sm font-medium text-cream-50 hover:bg-forest-800 disabled:cursor-not-allowed disabled:bg-stone-200 disabled:text-stone-500';
 const SECONDARY =
@@ -582,18 +582,20 @@ export default function AccountClient() {
                 <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Studying as</dt>
                 <dd className="mt-0.5 text-sm text-stone-800">{rememberedAudience ?? 'Not set — using each page’s default'}</dd>
               </div>
-              <p className="text-xs text-stone-600 leading-relaxed sm:col-span-2 m-0">
-                Change these with the destination control in the header and the toggle under it. Your account saves
-                the choice whenever you change it while signed in, and a device with no choice adopts the saved one
-                when you sign in there.
-              </p>
             </dl>
+            <p className="mt-2 text-xs text-stone-600 leading-relaxed m-0">
+              Change these with the destination control in the header and the toggle under it. Your account saves
+              the choice whenever you change it while signed in, and a device with no choice adopts the saved one
+              when you sign in there.
+            </p>
 
             <dl className="mt-4 grid gap-3 border-t border-stone-200 pt-4 sm:grid-cols-2">
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Terms accepted</dt>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Terms &amp; Privacy accepted</dt>
                 <dd className="mt-0.5 text-sm text-stone-800">
-                  {profile?.consent_tos_at ? `${formatDate(profile.consent_tos_at)} (version ${profile.consent_version})` : '—'}
+                  {profile?.consent_tos_at
+                    ? `${formatDate(profile.consent_tos_at)} (documents as revised on ${formatDate(profile.consent_version)})`
+                    : '—'}
                 </dd>
               </div>
               <div>

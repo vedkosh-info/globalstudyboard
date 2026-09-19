@@ -122,10 +122,14 @@ export default function AccountControl() {
   if (!isAuthConfigured()) return null;
 
   if (!ready || !hasSession) {
+    // The word shows from 360px (the same threshold as the App pill's "App"):
+    // measured on the live site at 320px the two clusters need 290px of the
+    // 288px available with it shown, so only the very smallest phones get the
+    // icon alone — with the accessible name + tooltip intact.
     return (
-      <SignInButton className={PILL}>
+      <SignInButton className={PILL} ariaLabel="Sign in" title="Sign in">
         <LogIn className="h-3.5 w-3.5" aria-hidden="true" />
-        <span className="hidden sm:inline">Sign in</span>
+        <span className="hidden min-[360px]:inline">Sign in</span>
       </SignInButton>
     );
   }

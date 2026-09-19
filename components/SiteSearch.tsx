@@ -125,7 +125,7 @@ export default function SiteSearch() {
         placeholder="Search universities, exams, guides…"
         aria-label="Search GlobalStudyBoard"
         autoComplete="off"
-        className="min-w-0 flex-1 appearance-none border-0 bg-transparent py-3 pl-3 pr-2 text-sm text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-0 sm:text-base"
+        className="min-w-0 flex-1 appearance-none border-0 bg-transparent py-3 pl-3 pr-2 text-base text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-0"
       />
       {query && (
         <button

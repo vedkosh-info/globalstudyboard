@@ -52,7 +52,7 @@ export default function DeleteAccountPage() {
               Your account
             </Link>{' '}
             (in the app: tap the <strong>account icon</strong> — a person symbol in the bar just below
-            the site name — then <strong>Your account</strong>).
+            the site name — then <strong>My account</strong>).
           </li>
           <li>
             Open the <strong>Data &amp; account</strong> tab and choose <strong>Delete account</strong>.
@@ -95,8 +95,8 @@ export default function DeleteAccountPage() {
             <strong>Only the provider&rsquo;s short-lived security logs.</strong> Our sign-in provider keeps its
             own technical logs of sign-ins (the address that signed in, from which IP address and browser — not
             what you did) for a matter of days under its retention policy; we cannot delete them early. If your
-            account was ever suspended, the fact and time of that action and an internal
-            account identifier — never the note behind it, never your e-mail address — are kept for up
+            account was ever suspended — or we deleted it by e-mail at your request — the fact and time of
+            that action and an internal account identifier — never the note behind it, never your e-mail address — are kept for up
             to 12 months for safety and dispute purposes, then removed automatically.
           </li>
           <li>

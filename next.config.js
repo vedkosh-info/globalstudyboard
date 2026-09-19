@@ -128,6 +128,16 @@ const nextConfig = {
         destination: 'https://www.globalstudyboard.com/:path*',
         permanent: true,
       },
+      // The production *.vercel.app alias served the full site as a duplicate
+      // origin; a sign-in started there would send a redirect URL Supabase
+      // does not allow-list (live IQA, 19 Sep 2026). Preview deployments keep
+      // their own hashed hosts and are unaffected.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'globalstudyboard.vercel.app' }],
+        destination: 'https://www.globalstudyboard.com/:path*',
+        permanent: true,
+      },
       // Legacy locale prefixes retired (single-language English site).
       // Handled here at routing level.
       { source: '/hi', destination: '/', permanent: true },

@@ -78,11 +78,15 @@ export function requireAuth(req: SignInRequest = {}): Promise<SignInVerdict> {
 }
 
 // ── OAuth resume stash ──────────────────────────────────────────────────────
-// A Google sign-in is a full-page redirect, which discards in-memory state. A
+// A redirect sign-in (Google, or the e-mail link) discards in-memory state. A
 // caller that wants to finish its action when the visitor lands back here (e.g.
 // "save this guide") stashes an intent scoped to THIS path with a short TTL, and
 // the page consumes it exactly once. Path-scoping matters: without it, a sign-in
 // started on one page could trigger another page's stashed action.
+// localStorage, NOT localStorage: mail clients open the e-mailed link in a NEW
+// tab, and localStorage is per tab — the landing tab found no stash and the
+// promised save silently never happened (live IQA, 19 Sep 2026). localStorage is
+// shared across tabs; the one-shot removal keeps it single-use.
 
 const RESUME_KEY = 'gsb-auth-resume-v1';
 const RESUME_TTL_MS = 10 * 60_000;
@@ -99,7 +103,7 @@ export function stashResumeIntent(intent: SignInIntent, path: string): void {
     // returns to), while takeResumeIntent compares against location.pathname —
     // a stash carrying "?tab=1" would never match (independent review).
     const stash: ResumeStash = { intent, path: path.split(/[?#]/)[0] || '/', ts: Date.now() };
-    sessionStorage.setItem(RESUME_KEY, JSON.stringify(stash));
+    localStorage.setItem(RESUME_KEY, JSON.stringify(stash));
   } catch {
     /* storage unavailable — the visitor simply repeats the action */
   }
@@ -108,7 +112,7 @@ export function stashResumeIntent(intent: SignInIntent, path: string): void {
 /** Drop a stash that will never be consumed (the sign-in completed in place). */
 export function clearResumeIntent(): void {
   try {
-    sessionStorage.removeItem(RESUME_KEY);
+    localStorage.removeItem(RESUME_KEY);
   } catch {
     /* ignore */
   }
@@ -117,9 +121,9 @@ export function clearResumeIntent(): void {
 /** One-shot: returns true only if a fresh stash for `intent` exists for the current path. */
 export function takeResumeIntent(intent: SignInIntent): boolean {
   try {
-    const raw = sessionStorage.getItem(RESUME_KEY);
+    const raw = localStorage.getItem(RESUME_KEY);
     if (!raw) return false;
-    sessionStorage.removeItem(RESUME_KEY);
+    localStorage.removeItem(RESUME_KEY);
     const stash = JSON.parse(raw) as Partial<ResumeStash>;
     return (
       stash.intent === intent &&
@@ -144,7 +148,7 @@ const PENDING_TTL_MS = 10 * 60_000;
 
 export function markSignInPending(): void {
   try {
-    sessionStorage.setItem(PENDING_KEY, String(Date.now()));
+    localStorage.setItem(PENDING_KEY, String(Date.now()));
   } catch {
     /* ignore */
   }
@@ -153,7 +157,7 @@ export function markSignInPending(): void {
 /** Drop the marker when the sign-in completed in place (code door). */
 export function clearSignInPending(): void {
   try {
-    sessionStorage.removeItem(PENDING_KEY);
+    localStorage.removeItem(PENDING_KEY);
   } catch {
     /* ignore */
   }
@@ -162,9 +166,9 @@ export function clearSignInPending(): void {
 /** One-shot: true if a redirect sign-in started here less than 10 minutes ago. */
 export function takeSignInPending(): boolean {
   try {
-    const raw = sessionStorage.getItem(PENDING_KEY);
+    const raw = localStorage.getItem(PENDING_KEY);
     if (!raw) return false;
-    sessionStorage.removeItem(PENDING_KEY);
+    localStorage.removeItem(PENDING_KEY);
     const ts = Number(raw);
     return Number.isFinite(ts) && Date.now() - ts < PENDING_TTL_MS;
   } catch {

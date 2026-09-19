@@ -34,11 +34,16 @@ SMTP sender, OAuth consent screen, Play Console). Never the VedKosh addresses.
 | Dashboard config (done) | Site URL `https://www.globalstudyboard.com`; redirect URLs `…/auth/callback` (+ `**` wildcards) for www, `localhost:5000`, `localhost:5050`; e-mail OTP length **6**, expiry **900 s**; access-token (JWT) expiry **900 s**; Custom Access Token hook → `public.custom_access_token_hook` (refuses password sessions) **enabled** |
 | Schema (applied 18 Sep) | `supabase/migrations/0001_accounts.sql` — `profiles`, `saved_items`, `admin_actions`, RLS + guards; verified with `to_regclass`/`to_regprocedure`. `0002_retention_cron.sql` — daily `pg_cron` purge of moderation records older than 12 months (`gsb-purge-admin-actions`, verified active in `cron.job`) + a CHECK that `consent_version` is never a future date |
 | Env (local, gitignored) | `.env.local` in root + worktree: URL, publishable key, secret key, `ADMIN_EMAILS=contact@globalstudyboard.com`, `NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=false`, `NEXT_PUBLIC_EMAIL_OTP_CODE=false` — see `.env.example` |
-| Inbox-free QA | `node scripts/auth-qa.mjs create|otp|show|delete <throwaway@globalstudyboard.com>` |
+| Inbox-free QA | `node scripts/auth-qa.mjs create|otp|show|delete <a REAL mailbox you own, plus-tagged — e.g. contact+qa1@globalstudyboard.com>`. **Never an invented address**: the form's send step e-mails it, a non-existent mailbox bounces, and Supabase warned on 19 Sep 2026 that bounce-backs put the project's sending privileges at risk (the script now refuses such addresses). |
 
 ## 1. Release gates — do these BEFORE setting the Vercel env vars
 
-### Gate A — custom SMTP + one-time-code template (required for real users)
+### Gate A — custom SMTP + one-time-code template (required for real users — NOW URGENT)
+**19 Sep 2026: Supabase e-mailed twice ("Email Sending Privileges … at risk due to Bounce
+Backs")** — the bounces were the QA throwaway addresses, which are now banned (see the QA row
+above), but the warning means the built-in mailer can be restricted at any time, and accounts
+are already live. Custom SMTP takes the project off the shared mailer entirely: do this gate
+first.
 Supabase's built-in mailer sends **~2 e-mails per hour** and its template can only be
 edited once custom SMTP exists. Until then the e-mail carries a **link** that only works on
 the same device/browser that asked for it (PKCE) — fine for testing, not for the public.
@@ -55,10 +60,11 @@ the same device/browser that asked for it (PKCE) — fine for testing, not for t
 5. Set `NEXT_PUBLIC_EMAIL_OTP_CODE=true` in Vercel (Production) with the other vars in Gate D.
    Never before step 3 — the form's copy would promise a code the e-mail does not contain.
 6. DMARC on `globalstudyboard.com`: start `v=DMARC1; p=none; rua=mailto:contact@globalstudyboard.com`.
-7. **`/privacy` names Resend as the e-mail processor and the United States as a transfer
-   destination** (section "Your account → Where and who processes it" + "International
-   transfers"). If you choose a different SMTP provider, change those two sentences in the SAME
-   deploy (constitution §9.4) — a legal page that names the wrong processor is a false statement.
+7. **`/privacy` currently says sign-in e-mail is sent by Supabase's own service and that we are
+   moving it to Resend** (section "Your account → Where and who processes it" + "International
+   transfers"). The moment custom SMTP goes live, change those two sentences to name Resend as
+   the sender, in the SAME deploy (constitution §9.4) — and if you choose a different provider,
+   name that one instead. A legal page that names the wrong processor is a false statement.
 
 ### Gate B — Google Play (the Android app renders the live site)
 The moment accounts are live on the web, the Play app "allows account creation". In Play
