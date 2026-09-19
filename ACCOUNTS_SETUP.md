@@ -19,7 +19,7 @@ do on your behalf, by design.
 | B — Play Console | **owner** | The console is blocked behind a *new Play Console Terms of Service* screen for the developer account — accept it, then do the Data-safety / deletion-URL / app-access steps below. |
 | C — AdSense exclusions | **blocked by AdSense** | globalstudyboard.com is still "Needs attention — Low value content" (10 Jul 2026), so it is absent from Ads → By site and page exclusions cannot be set yet. The code already skips the four routes, so nothing is exposed; add the exclusions once the site is approved. |
 | D — Vercel env | **done — accounts are ON (owner decision, 19 Sep 2026, ahead of Gate A)** | All six variables are set in Production + Development (Preview deliberately unset). The owner chose to switch the feature on before custom SMTP exists so it can be validated on the live site. **Until Gate A is done, sign-in e-mails come from Supabase's built-in mailer, capped at about 2 per hour project-wide** — the third visitor in an hour sees "Please wait a moment before asking for another e-mail" and must retry later. Complete Gate A soon; then flip `NEXT_PUBLIC_EMAIL_OTP_CODE=true` and redeploy. |
-| E — Google Sign-In | **owner** | Google Cloud is signed in as vedkosh.info@gmail.com (bcode8 labs); the consent screen's support e-mail can only be an address that account owns, so the screen must be created while signed in as contact@globalstudyboard.com. |
+| E — Google Sign-In | **done 19 Sep 2026** | Project `globalstudyboard-gsb` + published consent screen + web client created under contact@vedkosh.com (owner of the contact@globalstudyboard.com alias); provider enabled in Supabase; flag on in Vercel. See Gate E below. |
 
 Everything account-related for GSB uses **contact@globalstudyboard.com** (admin identity,
 SMTP sender, OAuth consent screen, Play Console). Never the VedKosh addresses.
@@ -92,7 +92,7 @@ NEXT_PUBLIC_SUPABASE_URL=https://xrfcxocqqshfilseojau.supabase.co      # set 19 
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_zlsn99QaKkrwGJ2X_EwMDA_4QLZwsSQ   # set 19 Sep 2026
 SUPABASE_SECRET_KEY=<set 19 Sep 2026, Production + Development>
 ADMIN_EMAILS=contact@globalstudyboard.com                                # set 19 Sep 2026
-NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=false                                    # set 19 Sep 2026; 'true' only after Gate E
+NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=true                                     # set 19 Sep 2026 (Gate E done)
 NEXT_PUBLIC_EMAIL_OTP_CODE=false                                         # set 19 Sep 2026; 'true' only after Gate A step 3
 ```
 To switch accounts OFF again in an emergency: `npx vercel env rm NEXT_PUBLIC_SUPABASE_URL production` (and `development`) + redeploy — every account surface returns to its dormant state (no sign-in control, routes answer 503) and the CSP drops the Supabase origin. After Gate A: `npx vercel env rm NEXT_PUBLIC_EMAIL_OTP_CODE production && printf '%s' 'true' | npx vercel env add NEXT_PUBLIC_EMAIL_OTP_CODE production` (and `development`), then redeploy.
@@ -111,19 +111,25 @@ store under the plan's retention). If a future dashboard setting turns database 
 on, add a purge for that table to migration 0002 first, or `/privacy`'s "days, not months" stops
 being true.
 
-### Gate E — Google Sign-In (optional, recommended: VedKosh lost ~39 % of sign-ups to e-mail friction)
-1. Google Cloud Console (the bcode8 labs project or a GSB project) → APIs & Services → OAuth
-   consent screen: External; app name `GlobalStudyBoard`; support e-mail
-   **contact@globalstudyboard.com**; authorised domain `globalstudyboard.com`; developer contact
-   contact@globalstudyboard.com → Publish.
-2. Credentials → Create OAuth client ID → Web application: JavaScript origin
-   `https://www.globalstudyboard.com`; **authorised redirect URI**
-   `https://xrfcxocqqshfilseojau.supabase.co/auth/v1/callback` (Supabase's, not ours).
-3. Supabase → Authentication → Sign In / Providers → Google → enable → paste Client ID + Secret.
-4. Only then set `NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=true` and redeploy. (Before that the button is
-   hidden on purpose: an enabled button with a disabled provider shows visitors raw JSON.)
-5. Test: sign in with Google, confirm Auth → Users shows provider `google`, confirm a Google
-   account with the SAME e-mail as an existing e-mail account links instead of duplicating.
+### Gate E — Google Sign-In — DONE 19 Sep 2026 (same redirect flow as VedKosh)
+The code was already complete and flag-gated: `LoginForm` renders "Continue with Google" and
+calls `supabase.auth.signInWithOAuth({ provider: 'google', redirectTo: <origin>/auth/callback?next=… })`
+— identical to VedKosh. No CSP change was needed (a full-page redirect to Google, nothing embedded).
+
+What exists now (created under **contact@vedkosh.com**, the Workspace account that owns the
+`contact@globalstudyboard.com` alias — the Google side has no separate contact@globalstudyboard.com
+login; an alias cannot sign in on its own):
+
+| Item | Value |
+|---|---|
+| Google Cloud project | **globalstudyboard** — ID `globalstudyboard-gsb`, number `80120558635`, org `vedkosh.com` |
+| Consent screen (Google Auth Platform) | app name `GlobalStudyBoard`; audience **External**, publishing status **In production** (basic scopes only → no Google verification needed, no 100-user cap); support e-mail `contact@vedkosh.com` (the dropdown offers only the account's primary address or a Google Group — to show contact@globalstudyboard.com, create a Google Group of that name in the Workspace admin console and pick it); developer contact `contact@globalstudyboard.com`; authorised domain `globalstudyboard.com`; home `https://www.globalstudyboard.com`, privacy `/privacy`, terms `/terms` |
+| OAuth client | **GlobalStudyBoard web** (Web application) — Client ID `80120558635-joomd27tk0974vc2977075ahd7dpa4p8.apps.googleusercontent.com`; JavaScript origin `https://www.globalstudyboard.com`; redirect URI `https://xrfcxocqqshfilseojau.supabase.co/auth/v1/callback` (Supabase's, not ours). The client secret lives only in Supabase (pasted by the owner) and in Google Cloud → Clients; it is nowhere in this repo. |
+| Supabase | Authentication → Sign In / Providers → Google **Enabled**, Client ID + secret set, nonce checks ON, users-without-e-mail OFF |
+| Vercel | `NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=true` (Production + Development), set 19 Sep 2026 |
+
+To switch Google off again: remove/`false` that variable + redeploy — the button disappears
+(an enabled button with a disabled provider would show visitors raw JSON, so never the reverse).
 
 ## 2. Bootstrap the owner account (once, after Gate D)
 1. Sign in on the live site with **contact@globalstudyboard.com** (e-mail code).
