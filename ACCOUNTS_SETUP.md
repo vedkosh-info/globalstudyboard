@@ -1,10 +1,10 @@
 # GlobalStudyBoard — Accounts (login + user management): owner runbook
 
-**Status (19 Sep 2026):** code complete, independently reviewed (63-agent adversarial QA, 57
-fixes) and verified end-to-end locally; Supabase project provisioned and configured; Vercel
-holds every account variable EXCEPT the two that switch the feature on (see Gate D). **NOT
-enabled in production.** Release gates are listed in order — each one is a policy or
-reliability requirement, not a nicety.
+**Status (19 Sep 2026, later):** code complete, independently reviewed (63-agent adversarial
+QA, 57 fixes), verified end-to-end locally and on the live site; Supabase project provisioned
+and configured; **accounts are LIVE in production (owner decision) in e-mail-LINK mode on the
+built-in mailer** — Gate A (custom SMTP) is the one gate that now affects real visitors. Release
+gates are listed in order — each one is a policy or reliability requirement, not a nicety.
 
 **Where each gate stands (19 Sep 2026) and why the rest is yours:** every remaining step is
 either an *account you must own* (Resend, Google Cloud, Supabase ownership — GSB services must
@@ -18,7 +18,7 @@ do on your behalf, by design.
 | A — SMTP + code template | **owner** | Resend account under contact@globalstudyboard.com (none exists — resend.com showed no session), add domain, publish the DNS records at GoDaddy (the domain's nameservers are `ns01/ns02.domaincontrol.com`; the existing Google Workspace SPF on the root stays — Resend uses its own `send.` subdomain), create API key, paste into Supabase SMTP, edit the template, then raise "emails per hour" (the field is disabled until SMTP exists). |
 | B — Play Console | **owner** | The console is blocked behind a *new Play Console Terms of Service* screen for the developer account — accept it, then do the Data-safety / deletion-URL / app-access steps below. |
 | C — AdSense exclusions | **blocked by AdSense** | globalstudyboard.com is still "Needs attention — Low value content" (10 Jul 2026), so it is absent from Ads → By site and page exclusions cannot be set yet. The code already skips the four routes, so nothing is exposed; add the exclusions once the site is approved. |
-| D — Vercel env | **done except the switch** | `ADMIN_EMAILS`, `NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=false`, `NEXT_PUBLIC_EMAIL_OTP_CODE=false`, `SUPABASE_SECRET_KEY` are set in Production + Development (Preview deliberately unset). **`NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` are deliberately NOT set** — adding those two + redeploying is the single action that turns accounts on; do it only after Gate A. |
+| D — Vercel env | **done — accounts are ON (owner decision, 19 Sep 2026, ahead of Gate A)** | All six variables are set in Production + Development (Preview deliberately unset). The owner chose to switch the feature on before custom SMTP exists so it can be validated on the live site. **Until Gate A is done, sign-in e-mails come from Supabase's built-in mailer, capped at about 2 per hour project-wide** — the third visitor in an hour sees "Please wait a moment before asking for another e-mail" and must retry later. Complete Gate A soon; then flip `NEXT_PUBLIC_EMAIL_OTP_CODE=true` and redeploy. |
 | E — Google Sign-In | **owner** | Google Cloud is signed in as vedkosh.info@gmail.com (bcode8 labs); the consent screen's support e-mail can only be an address that account owns, so the screen must be created while signed in as contact@globalstudyboard.com. |
 
 Everything account-related for GSB uses **contact@globalstudyboard.com** (admin identity,
@@ -82,14 +82,14 @@ Mirror it: AdSense → Ads → By site → www.globalstudyboard.com → Page exc
 ### Gate D — Vercel environment (Production + Development only, NEVER Preview)
 Preview builds would otherwise reach production data with a working delete endpoint.
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://xrfcxocqqshfilseojau.supabase.co      # NOT SET YET — the switch
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_zlsn99QaKkrwGJ2X_EwMDA_4QLZwsSQ   # NOT SET YET — the switch
+NEXT_PUBLIC_SUPABASE_URL=https://xrfcxocqqshfilseojau.supabase.co      # set 19 Sep 2026 (accounts ON)
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_zlsn99QaKkrwGJ2X_EwMDA_4QLZwsSQ   # set 19 Sep 2026
 SUPABASE_SECRET_KEY=<set 19 Sep 2026, Production + Development>
 ADMIN_EMAILS=contact@globalstudyboard.com                                # set 19 Sep 2026
 NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=false                                    # set 19 Sep 2026; 'true' only after Gate E
 NEXT_PUBLIC_EMAIL_OTP_CODE=false                                         # set 19 Sep 2026; 'true' only after Gate A step 3
 ```
-To switch accounts on (after Gate A): `printf '%s' 'https://xrfcxocqqshfilseojau.supabase.co' | npx vercel env add NEXT_PUBLIC_SUPABASE_URL production` (and `development`), the same for the publishable key, flip `NEXT_PUBLIC_EMAIL_OTP_CODE` to `true`, then redeploy.
+To switch accounts OFF again in an emergency: `npx vercel env rm NEXT_PUBLIC_SUPABASE_URL production` (and `development`) + redeploy — every account surface returns to its dormant state (no sign-in control, routes answer 503) and the CSP drops the Supabase origin. After Gate A: `npx vercel env rm NEXT_PUBLIC_EMAIL_OTP_CODE production && printf '%s' 'true' | npx vercel env add NEXT_PUBLIC_EMAIL_OTP_CODE production` (and `development`), then redeploy.
 `NEXT_PUBLIC_*` values are inlined at build time — **redeploy** after setting them. The CSP
 gains `https://xrfcxocqqshfilseojau.supabase.co` in `connect-src` automatically at build.
 

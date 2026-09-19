@@ -154,7 +154,7 @@ h1 { font-weight: 700; }
   display-mode with no JS and no SSR change (the server HTML still renders it).
 */
 @media (display-mode: standalone), (display-mode: minimal-ui), (display-mode: fullscreen) {
-  [data-get-app-trigger] {
+  [data-gsb-android-cta] {
     display: none !important;
   }
 }

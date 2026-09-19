@@ -130,7 +130,7 @@ export default function TesterInviteModal() {
       // they close, so the captured opener is gone by now. Fall back to a
       // trigger that still exists rather than dropping focus on <body>.
       const fallback =
-        document.querySelector<HTMLElement>('[data-get-app-trigger]') ??
+        document.querySelector<HTMLElement>('[data-gsb-android-cta]') ??
         document.querySelector<HTMLElement>('header a, header button');
       fallback?.focus();
     };

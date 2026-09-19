@@ -32,10 +32,17 @@ export default function GetAppButton({
   /** Let the host close itself (menu / dock) when the control is used. */
   onNavigate?: () => void;
 }) {
+  // The hook attribute is `data-gsb-android-cta` (used by the standalone-mode
+  // CSS rule and the dialog's focus restore). It used to be
+  // `data-get-app-trigger`, and a common ad-blocker cosmetic filter hides ANY
+  // element carrying that attribute name — verified 19 Sep 2026 in the owner's
+  // Chrome: the live pill computed display:none while a fresh button with only
+  // that attribute was hidden too and one with only the text was not. Keep the
+  // name project-specific and free of "get-app" / "app-banner" tokens.
   if (ANDROID_APP_IS_PUBLIC) {
     return (
       <a
-        data-get-app-trigger
+        data-gsb-android-cta
         role={role}
         href={ANDROID_APP_URL}
         target="_blank"
@@ -52,7 +59,7 @@ export default function GetAppButton({
   return (
     <button
       type="button"
-      data-get-app-trigger
+      data-gsb-android-cta
       role={role}
       className={className}
       aria-label={ariaLabel}
