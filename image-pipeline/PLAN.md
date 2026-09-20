@@ -88,14 +88,15 @@ imageFor(unit) =  explicit override
    **derived from disk**, never hand-edited; a broken path is impossible.
 3. ✅ `components/ContentImage.tsx` — `<picture>` AVIF→WebP, registry-driven `srcSet`
    widths, explicit dims (CLS 0), lazy/`priority` (+ `<head>` preload for the LCP hero),
-   and the **mandatory visible label** linking to `/disclaimer#ai-generated-images`.
-   A grid may suppress per-image captions only by naming its shared caption's DOM id.
+   and the **mandatory visible on-image label** (top-right pill) linking to
+   `/disclaimer#ai-generated-images`; it cannot be suppressed (the `sharedLabelId`
+   escape hatch was removed 20 Sep 2026 — it had no call sites).
 4. ✅ **Owner decision 12 Sep: AI archetypes everywhere — no real photographs.** The
    `kind:'photo'` path was removed entirely (it would have needed licence allowlists,
    CC BY-SA attribution, JPEG ingestion and subject-privacy review that did not exist).
    College pages use `collegeImage()` — region + slug rotation only, **no code path can
    select an image that "matches" a real campus** — rendered with `representative`, whose
-   label reads *"AI-generated image — not a photograph of this institution"*.
+   label reads *"AI-generated · not this institution"* (wording since 20 Sep 2026).
 5. ✅ `scripts/check-images.ts` runs as **`prebuild`** on every build: registry ⇄ disk ⇄
    manifest consistency, and a **Rule A guard** that fails the build if any alt or filename
    names a real institution (0 false positives across the 100 prompts; blocks Bombay/
@@ -264,17 +265,29 @@ the set still reads as one photographer's work.
      images), the source claim de-absolutised to match the `Accuracy & sources` hedge two
      sections above, and `LAST_UPDATED` bumped — shipping a new section under a stale date
      is the same honesty failure §5 forbids in the other direction.
-4. **OPEN OBLIGATION — a disclaimer line alone is not sufficient.** Consumer/advertising
+4. **MET (20 Sep 2026) — a disclaimer line alone is not sufficient.** Consumer/advertising
    law across our audience regimes turns on the impression created *on the page where it
-   is created*, not on a link in the footer. Before any image ships, `ContentImage` must
-   render a small persistent **"AI-generated image"** label on image-bearing surfaces.
-   This is a Phase 0 acceptance criterion, not a nice-to-have.
-   *Deliberate scope decision, logged:* cite no statute (EU AI Act Art. 50, MeitY
-   synthetic-media rules). Our images contain no real people or places, so they are not
-   deepfakes in that sense, and naming laws we have not had reviewed would overclaim.
-   Revisit only if the site ever depicts real people or real named places.
+   is created*, not on a link in the footer. `ContentImage` renders a small persistent
+   label **on** every image — a top-right pill reading *"AI-generated · not a photo"*
+   (*"AI-generated · not this institution"* on college pages) that links to
+   `/disclaimer#ai-generated-images`. Words always visible, no popup, no client JS. A
+   16-agent review (18 Sep 2026; audit-log row 2026-09-20) rejected an icon-only cue and
+   the owner's "for representation only" wording (Indian-newsroom idiom that implies a
+   real stock photo); the owner chose the visible pill on 20 Sep 2026.
+   *Deliberate scope decision, still standing:* cite no statute on the page (EU AI Act
+   Art. 50, MeitY synthetic-media rules). *Rationale corrected 20 Sep 2026:* the earlier
+   line "our images are not deepfakes in that sense" is NOT safe to rely on — Art. 50
+   applies since 2 Aug 2026, and the Commission's FAQ treats content as resembling
+   something "existing" if it exists, can plausibly exist or could have plausibly existed
+   — a criterion a photoreal generic campus could plausibly meet (the FAQ's other two
+   criteria, high resemblance and a false appearance of authenticity, are the point of the
+   hyper-realism doctrine). Whether our images are deep fakes in law is undecided and we
+   do not assert it either way; we simply treat the visible on-image label as required,
+   not optional, and keep the no-statute wording because naming laws we have not had
+   reviewed would overclaim. Revisit with a real legal review if it ever matters.
 5. **All three decisions approved 22 Aug 2026** — ~360 cap, bake-off, disclosure.
-   Remaining blocker: `GEMINI_API_KEY` is not set, so no image has been generated yet.
+   *(Historical: the `GEMINI_API_KEY` blocker cleared on 12 Sep; Phase 1 generated 100
+   images on 15 Sep 2026 — see §7. The "~360" cap was later withdrawn in favour of ~140.)*
 
 ---
 

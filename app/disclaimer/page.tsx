@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   path: '/disclaimer',
 });
 
-const LAST_UPDATED = '16 September 2026';
+const LAST_UPDATED = '20 September 2026';
 
 function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
@@ -80,7 +80,7 @@ export default function DisclaimerPage() {
           None of them is one. No image shows a real university, campus, building or city. On a
           page about a particular university, the picture is a representative scene for that study
           destination &mdash; a generic campus, study space, cityscape or landscape &mdash; not that
-          campus, and carries no logo or signage; the caption under it says so. We design and
+          campus, and carries no logo or signage; the label on the image marks it as AI-generated and links here. We design and
           review these images to avoid portraying real people. Treat them as decoration, not
           information &mdash; the facts come from the official sources we cite and link.
         </p>
