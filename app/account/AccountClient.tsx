@@ -3,9 +3,10 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
-import type { SupabaseClient, User } from '@supabase/supabase-js';
-import { Bookmark, CheckCircle2, Download, LogOut, Settings2, Trash2, UserRound, X } from 'lucide-react';
+import { isAuthRetryableFetchError, type SupabaseClient, type User } from '@supabase/supabase-js';
+import { Bookmark, CheckCircle2, Download, LogOut, RotateCw, Settings2, Trash2, UserRound, X } from 'lucide-react';
 import SignInButton from '@/components/auth/SignInButton';
+import { signOutThisDevice } from '@/components/auth/AccountControl';
 import AccountTabs, { tabButtonId, tabPanelId, type AccountTab } from '@/app/account/AccountTabs';
 import { useRegion } from '@/components/RegionProvider';
 import { useAudience } from '@/components/AudienceProvider';
@@ -20,7 +21,8 @@ import {
   type ProfileRow,
 } from '@/lib/supabase/profile';
 import { CONSENT_VERSION, consentNeedsRefresh } from '@/lib/consent';
-import { announceAuthChanged } from '@/lib/auth-events';
+import { OFFLINE_TITLE, announceAuthChanged } from '@/lib/auth-events';
+import { checkToolSession } from '@/lib/tools-shared';
 import { getRegionBySlug } from '@/lib/regions';
 import { SAVED_KIND_LABEL, savedItemHref, type SavedItemRow } from '@/lib/saved-items';
 import LastUpdated from '@/components/LastUpdated';
@@ -50,6 +52,13 @@ import { SITE_REVIEWED } from '@/lib/site-meta';
  * pre-hydration nulls, and using them would have let the profile overwrite a
  * choice the device already held).
  *
+ * Offline is not signed out (follow-up review SH-06): `getUser()` answers
+ * `user: null` for a network failure exactly as for a dead session, so the
+ * page used to show "You're not signed in" to a signed-in student on a flaky
+ * connection. The check now follows the tools' rule (lib/tools-shared): only a
+ * definite answer from the auth server signs the device out; a connection
+ * problem gets its own card with "Try again", and the device stays signed in.
+ *
  * Deliberately NO destination or audience picker here: the site has exactly one
  * control for each (the header pill and the context-bar toggle, content-policy
  * §16.3). A signed-in visitor's choices are mirrored into the profile as they
@@ -57,7 +66,9 @@ import { SITE_REVIEWED } from '@/lib/site-meta';
  * what the account remembers.
  */
 
-type Status = 'loading' | 'signed-out' | 'ready' | 'deleted';
+type Status = 'loading' | 'signed-out' | 'offline' | 'ready' | 'deleted';
+/** What a `load` found: the page's view after it (an already-loaded account keeps its view when offline). */
+type LoadResult = 'ready' | 'signed-out' | 'offline';
 type TabId = 'personal' | 'saved' | 'data';
 
 const TABS: AccountTab[] = [
@@ -78,13 +89,23 @@ const SECONDARY =
 const DANGER =
   'inline-flex items-center gap-2 rounded-xl border border-red-300 px-4 py-2.5 text-sm font-medium text-red-700 hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-60';
 
+/**
+ * A bare calendar date ('2026-09-29', e.g. the consent version) is a date, not
+ * an instant: `new Date()` reads it as UTC midnight, which is the previous day
+ * anywhere west of Greenwich. Format those in UTC; full timestamps in the
+ * visitor's own time zone.
+ */
 function formatDate(iso: string | null | undefined): string {
   if (!iso) return '—';
-  try {
-    return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-  } catch {
-    return '—';
-  }
+  const bareDate = /^\d{4}-\d{2}-\d{2}$/.test(iso);
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '—';
+  return d.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    ...(bareDate ? { timeZone: 'UTC' } : {}),
+  });
 }
 
 export default function AccountClient() {
@@ -113,6 +134,18 @@ export default function AccountClient() {
   const [exporting, setExporting] = useState(false);
   const [exportMsg, setExportMsg] = useState('');
   const [signingOutAll, setSigningOutAll] = useState(false);
+  /** One sign-out at a time across the sign-out buttons (a ref: state lags a double click). */
+  const signOutBusy = useRef(false);
+  /** Why "Sign out everywhere" did not finish — the student is still signed in, so it stays beside the buttons. */
+  const [signOutMsg, setSignOutMsg] = useState('');
+  /** What this page's own sign-out did, told on the signed-out view it lands on. */
+  const [signedOutNote, setSignedOutNote] = useState<{ text: string; tone: 'done' | 'ended' } | null>(null);
+  const [retrying, setRetrying] = useState(false);
+  const [retryMsg, setRetryMsg] = useState('');
+  const retryBusy = useRef(false);
+  /** The heading of whichever view is on screen — where focus goes when the offline card is replaced. */
+  const viewHeadingRef = useRef<HTMLHeadingElement>(null);
+  const prevStatus = useRef<Status>('loading');
   const deleteInputRef = useRef<HTMLInputElement>(null);
   const savedHeadingRef = useRef<HTMLHeadingElement>(null);
   const dataHeadingRef = useRef<HTMLHeadingElement>(null);
@@ -148,18 +181,38 @@ export default function AccountClient() {
   };
 
   const load = useCallback(
-    async (client: SupabaseClient) => {
-      const {
-        data: { user: u },
-      } = await client.auth.getUser();
-      if (!u) {
+    async (client: SupabaseClient): Promise<LoadResult> => {
+      // Nothing stored on this device: signed out, without asking the server.
+      // (checkToolSession reaches the same answer, but its local sign-out also
+      // deletes the verifier of an e-mailed sign-in link the visitor may still
+      // be waiting for — reloading this page would then break that link.)
+      let stored = true;
+      try {
+        const { data, error } = await client.auth.getSession();
+        stored = Boolean(data.session) || Boolean(error);
+      } catch {
+        /* unknown: let the server check below decide */
+      }
+      const check = stored ? await checkToolSession({ noteEnded: false }) : null;
+      if (check?.kind === 'offline') {
+        // The auth server could not be reached: the device is still signed in.
+        // An account already on screen stays; otherwise say what happened.
+        if (loadedFor.current) return 'ready';
+        setStatus('offline');
+        return 'offline';
+      }
+      if (check?.kind !== 'ok') {
+        // No session, or the server said it is gone (the check has already
+        // signed this device out and told the chrome).
         loadedFor.current = null;
         setStatus('signed-out');
-        return;
+        return 'signed-out';
       }
-      if (loadedFor.current === u.id) return;
+      const u = check.user;
+      if (loadedFor.current === u.id) return 'ready';
       loadedFor.current = u.id;
       setUser(u);
+      setSignedOutNote(null);
       setStatus('ready');
       try {
         // Retries the bootstrap for accounts created through a redirect door.
@@ -193,6 +246,7 @@ export default function AccountClient() {
         .range(0, 499);
       if (error) setSavedFailed(true);
       else setSaved((data ?? []) as SavedItemRow[]);
+      return 'ready';
     },
     // Device preferences are read through `prefs` (a ref) at call time; the
     // setters are stable. Later preference changes flow through the
@@ -228,6 +282,48 @@ export default function AccountClient() {
     if (status === 'deleted') deletedHeadingRef.current?.focus();
   }, [status]);
 
+  // "Sign out everywhere" swapped the account for the signed-out view: the
+  // button that had focus is gone, so land on the new heading, which carries
+  // what happened as its description.
+  useEffect(() => {
+    if (status === 'signed-out' && signedOutNote) viewHeadingRef.current?.focus();
+  }, [status, signedOutNote]);
+
+  // The offline card was replaced (a retry, the browser coming back online, or
+  // supabase-js re-checking on refocus): its "Try again" button had focus and
+  // is gone, so land on the new view's heading instead of <body> — unless the
+  // visitor has already moved focus somewhere else.
+  useEffect(() => {
+    const was = prevStatus.current;
+    prevStatus.current = status;
+    if (was !== 'offline' || status === 'offline') return;
+    if (document.activeElement && document.activeElement !== document.body) return;
+    viewHeadingRef.current?.focus();
+  }, [status]);
+
+  const retryLoad = useCallback(async () => {
+    if (!supabase || retryBusy.current) return;
+    retryBusy.current = true;
+    setRetrying(true);
+    setRetryMsg('');
+    try {
+      if ((await load(supabase)) === 'offline') {
+        setRetryMsg('Still no connection to the server. Check your connection and try again.');
+      }
+    } finally {
+      retryBusy.current = false;
+      setRetrying(false);
+    }
+  }, [supabase, load]);
+
+  // Try again by itself as soon as the browser reports it is back online.
+  useEffect(() => {
+    if (status !== 'offline') return;
+    const onOnline = () => void retryLoad();
+    window.addEventListener('online', onOnline);
+    return () => window.removeEventListener('online', onOnline);
+  }, [status, retryLoad]);
+
   if (!supabase) {
     return (
       <div className={CARD}>
@@ -242,8 +338,8 @@ export default function AccountClient() {
     return (
       <div className="space-y-4" role="status" aria-busy="true">
         <span className="sr-only">Loading your account…</span>
-        <div className="h-28 animate-pulse rounded-2xl bg-stone-200" aria-hidden="true" />
-        <div className="h-40 animate-pulse rounded-2xl bg-stone-200" aria-hidden="true" />
+        <div className="h-28 rounded-2xl bg-stone-200 motion-safe:animate-pulse" aria-hidden="true" />
+        <div className="h-40 rounded-2xl bg-stone-200 motion-safe:animate-pulse" aria-hidden="true" />
       </div>
     );
   }
@@ -271,10 +367,60 @@ export default function AccountClient() {
     );
   }
 
+  if (status === 'offline') {
+    return (
+      <div className={CARD}>
+        {/* Only the explanation is the alert: the button's "Trying again…" and
+            the retry outcome below must not re-announce the whole card. */}
+        <div role="alert">
+          <h2 ref={viewHeadingRef} tabIndex={-1} className={`${H2} outline-none`}>
+            {OFFLINE_TITLE}
+          </h2>
+          <p className="mt-2 text-sm text-stone-700 leading-relaxed">
+            Check your connection and try again. You are still signed in on this device, and nothing was lost.
+          </p>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {/* Not `disabled` while retrying (Chrome drops focus from a disabled
+              button): aria-busy + the guard in retryLoad instead. */}
+          <button type="button" onClick={() => void retryLoad()} aria-busy={retrying || undefined} className={`${PRIMARY} inline-flex items-center gap-2`}>
+            <RotateCw className={`h-4 w-4 ${retrying ? 'motion-safe:animate-spin' : ''}`} aria-hidden="true" />
+            {retrying ? 'Trying again…' : 'Try again'}
+          </button>
+          <Link href="/" className={SECONDARY}>
+            Back to home
+          </Link>
+        </div>
+        <p role="status" aria-live="polite" className="mt-2 min-h-[1rem] text-xs font-medium text-stone-700 m-0">
+          {retryMsg}
+        </p>
+      </div>
+    );
+  }
+
   if (status === 'signed-out' || !user) {
     return (
       <div className={CARD}>
-        <h2 className={H2}>You&rsquo;re not signed in</h2>
+        <h2
+          ref={viewHeadingRef}
+          tabIndex={-1}
+          aria-describedby={signedOutNote ? 'acct-signed-out-note' : undefined}
+          className={`${H2} outline-none`}
+        >
+          You&rsquo;re not signed in
+        </h2>
+        {signedOutNote && (
+          <p
+            id="acct-signed-out-note"
+            className={`mb-0 mt-2 rounded-xl border px-3 py-2 text-sm leading-relaxed ${
+              signedOutNote.tone === 'done'
+                ? 'border-forest-200 bg-forest-50 font-medium text-forest-800'
+                : 'border-terracotta-200 bg-terracotta-50 text-stone-800'
+            }`}
+          >
+            {signedOutNote.text}
+          </p>
+        )}
         <p className="mt-2 text-sm text-stone-700 leading-relaxed">
           Sign in to see your saved pages and account settings. An account is optional — every guide is free
           to read without one.
@@ -346,20 +492,90 @@ export default function AccountClient() {
     }
   };
 
-  // "Sign out" = this device only (scope 'local'), matching the page copy; the
-  // separate "everywhere" control revokes every session on every device (the
-  // SDK default), which is the right tool after a lost phone — the review found
-  // the single button doing the global one while the copy promised the local.
-  const signOut = async (scope: 'local' | 'global' = 'local') => {
-    if (scope === 'global') setSigningOutAll(true);
-    else setSigningOut(true);
-    try {
-      await supabase.auth.signOut({ scope });
-    } catch {
-      /* cookies are cleared client-side regardless */
-    }
+  // "Sign out" = this device only, matching the page copy (the review found the
+  // single button once doing the global sign-out while the copy promised the
+  // local one). signOutThisDevice clears the cookie itself when the SDK returns
+  // an error instead of removing the session (review SA-1).
+  const signOut = async () => {
+    if (signOutBusy.current) return;
+    signOutBusy.current = true;
+    setSigningOut(true);
+    await signOutThisDevice(async () => supabase);
     announceAuthChanged();
     window.location.href = '/';
+  };
+
+  // The page shows the signed-out view itself (no navigation), so the note can
+  // say what happened. The SDK's SIGNED_OUT event does the same when it fires;
+  // a sign-out that ended by expiring the cookie emits none.
+  const showSignedOut = (note: { text: string; tone: 'done' | 'ended' }) => {
+    loadedFor.current = null;
+    setUser(null);
+    setProfile(null);
+    setSaved(null);
+    setSignedOutNote(note);
+    setStatus('signed-out');
+  };
+
+  // "Sign out everywhere" — the tool after a lost phone — may only say it
+  // worked once the server confirmed it. When the revocation could not reach
+  // the server (offline, a 5xx), auth-js still ends THIS device's session and
+  // returns the error without throwing, and the page used to go home exactly
+  // as on success while the other devices stayed signed in (review SA-2). So:
+  //   1. check with the auth server that this session is live (a dead one
+  //      cannot revoke anything, and auth-js reports a 401 as success);
+  //   2. end the OTHER sessions — scope 'others' keeps this one on any
+  //      failure, so the student is still signed in here and can try again;
+  //   3. only then sign this device out, and say so.
+  const signOutEverywhere = async () => {
+    if (signOutBusy.current) return;
+    signOutBusy.current = true;
+    setSigningOutAll(true);
+    setSignOutMsg('');
+    const failed = (msg: string) => {
+      signOutBusy.current = false;
+      setSigningOutAll(false);
+      setSignOutMsg(msg);
+    };
+    const check = await checkToolSession({ noteEnded: false });
+    if (check.kind === 'signed-out') {
+      // The check has already signed this device out and told the chrome.
+      signOutBusy.current = false;
+      setSigningOutAll(false);
+      showSignedOut({
+        tone: 'ended',
+        text: 'Your session on this device had already ended, so we could not sign your other devices out from here. Sign in again, then use “Sign out everywhere”.',
+      });
+      return;
+    }
+    if (check.kind !== 'ok') {
+      // Nothing was sent, so nothing was revoked.
+      failed(
+        'We could not reach the server, so your other devices are still signed in. Check your connection and try again — you are still signed in here.',
+      );
+      return;
+    }
+    const { error } = await supabase.auth.signOut({ scope: 'others' }).catch((e: unknown) => ({ error: e }));
+    if (error) {
+      // Not "still signed in" here: a request that was sent but whose answer
+      // never arrived may have ended them after all.
+      failed(
+        isAuthRetryableFetchError(error) && error.status === 0
+          ? 'The connection dropped before the server confirmed, so your other devices may still be signed in. Check your connection and try again — you are still signed in here.'
+          : 'We could not confirm that your other devices were signed out, so they may still be signed in. Please try again — you are still signed in here.',
+      );
+      return;
+    }
+    await signOutThisDevice(async () => supabase);
+    announceAuthChanged();
+    signOutBusy.current = false;
+    setSigningOutAll(false);
+    // "Within 15 minutes": the access-token (JWT) expiry is 900 s
+    // (ACCOUNTS_SETUP.md, "Dashboard config") — change this if that changes.
+    showSignedOut({
+      tone: 'done',
+      text: 'You are signed out on every device and browser. A device that is open right now can keep working until its current access expires, within 15 minutes.',
+    });
   };
 
   // Fetch first, then hand the browser a blob: a plain download link would
@@ -412,11 +628,9 @@ export default function AccountClient() {
         // read minted a stray URL variant).
         setStatus('deleted');
         loadedFor.current = null;
-        try {
-          await supabase.auth.signOut({ scope: 'local' });
-        } catch {
-          /* ignore */
-        }
+        // The delete response already expired the session cookies; this is
+        // the same certain sign-out as the buttons, for consistency.
+        await signOutThisDevice(async () => supabase);
         announceAuthChanged();
         return;
       }
@@ -453,7 +667,7 @@ export default function AccountClient() {
             <UserRound className="h-5 w-5" aria-hidden="true" />
           </span>
           <div className="min-w-0">
-            <h2 id="acct-identity" className={H2}>
+            <h2 id="acct-identity" ref={viewHeadingRef} tabIndex={-1} className={`${H2} outline-none`}>
               {profile?.display_name ? profile.display_name : 'My account'}
             </h2>
             <p className="mt-1 flex flex-wrap items-center gap-2 text-sm text-stone-700 m-0">
@@ -476,11 +690,11 @@ export default function AccountClient() {
       {needsConsent ? (
         <form onSubmit={onAcceptConsent} className={`${CARD} border-terracotta-200`} aria-labelledby="acct-consent">
           <h2 id="acct-consent" className={H2}>
-            {profile?.consent_version ? 'Our terms have been updated' : 'One thing before you continue'}
+            {profile?.consent_version ? 'Our Terms or Privacy Policy have been updated' : 'One thing before you continue'}
           </h2>
           <p className="mt-2 text-sm text-stone-700 leading-relaxed">
             {profile?.consent_version
-              ? 'The Terms of Use and Privacy Policy were revised since you last accepted them. Please read and accept the current versions to keep using your account.'
+              ? 'Our Terms of Use or Privacy Policy changed since you last accepted them. Please read and accept the current versions to keep using your account.'
               : 'We have no record of you accepting our terms for this account — it may have been created without the usual sign-in step. Please confirm before continuing.'}
           </p>
           <label className="mt-4 flex items-start gap-2 text-sm text-stone-800 leading-relaxed">
@@ -512,8 +726,8 @@ export default function AccountClient() {
             <button type="submit" aria-busy={consentBusy || undefined} className={PRIMARY}>
               {consentBusy ? 'Saving…' : 'Accept and continue'}
             </button>
-            <button type="button" onClick={() => void signOut('local')} className={SECONDARY}>
-              Sign out instead
+            <button type="button" onClick={() => void signOut()} className={SECONDARY}>
+              {signingOut ? 'Signing out…' : 'Sign out instead'}
             </button>
           </div>
         </form>
@@ -624,11 +838,19 @@ export default function AccountClient() {
             {savedFailed ? (
               <p className="mt-3 text-sm text-red-700">We couldn&rsquo;t load your saved pages. Reload to try again.</p>
             ) : saved === null ? (
-              <div className="mt-3 h-16 animate-pulse rounded-xl bg-stone-200" />
+              <div className="mt-3 h-16 rounded-xl bg-stone-200 motion-safe:animate-pulse" />
             ) : saved.length === 0 ? (
               <p className="mt-3 text-sm text-stone-700 leading-relaxed">
                 Nothing saved yet. Use <strong>Save</strong> on any guide, university or exam page to build your
-                shortlist here.
+                shortlist here. Planning applications? Open the{' '}
+                <Link href="/tools/application-planner" className="text-forest-700 underline hover:text-forest-800">
+                  Application Planner
+                </Link>{' '}
+                or the{' '}
+                <Link href="/tools/cost-planner" className="text-forest-700 underline hover:text-forest-800">
+                  Cost &amp; Funding Planner
+                </Link>
+                .
               </p>
             ) : (
               <ul className="mt-3 divide-y divide-stone-200 list-none p-0 m-0">
@@ -681,17 +903,26 @@ export default function AccountClient() {
               <button type="button" onClick={() => void exportData()} disabled={exporting} className={SECONDARY}>
                 <Download className="h-4 w-4" aria-hidden="true" /> {exporting ? 'Preparing…' : 'Download my data'}
               </button>
-              <button type="button" onClick={() => void signOut('local')} disabled={signingOut || signingOutAll} className={SECONDARY}>
+              {/* aria-disabled + the latch in the handlers, not `disabled`:
+                  Chrome drops focus to <body> from a focused button that
+                  becomes disabled, and "Sign out everywhere" can fail and
+                  keep the student here. */}
+              <button
+                type="button"
+                onClick={() => void signOut()}
+                aria-disabled={signingOut || signingOutAll || undefined}
+                className={`${SECONDARY} aria-disabled:cursor-not-allowed aria-disabled:opacity-60`}
+              >
                 <LogOut className="h-4 w-4" aria-hidden="true" /> {signingOut ? 'Signing out…' : 'Sign out'}
               </button>
               <button
                 type="button"
-                onClick={() => void signOut('global')}
-                disabled={signingOut || signingOutAll}
-                className={SECONDARY}
+                onClick={() => void signOutEverywhere()}
+                aria-disabled={signingOut || signingOutAll || undefined}
+                className={`${SECONDARY} aria-disabled:cursor-not-allowed aria-disabled:opacity-60`}
                 title="Ends your session on every device and browser you are signed in on"
               >
-                <LogOut className="h-4 w-4" aria-hidden="true" /> {signingOutAll ? 'Signing out…' : 'Sign out everywhere'}
+                <LogOut className="h-4 w-4" aria-hidden="true" /> {signingOutAll ? 'Signing out everywhere…' : 'Sign out everywhere'}
               </button>
               {!deleteOpen && (
                 <button type="button" onClick={() => setDeleteOpen(true)} className={DANGER}>
@@ -701,6 +932,9 @@ export default function AccountClient() {
             </div>
             <p role="status" aria-live="polite" className="mt-2 min-h-[1rem] text-xs text-stone-700 m-0">
               {exportMsg}
+            </p>
+            <p role="alert" className="mb-0 mt-1 text-xs font-medium leading-relaxed text-red-700">
+              {signOutMsg}
             </p>
 
             {deleteOpen && (

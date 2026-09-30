@@ -82,6 +82,43 @@ export const AUTH_COOKIE_RE = SUPABASE_PROJECT_REF
   ? new RegExp(`(?:^|;\\s*)sb-${SUPABASE_PROJECT_REF}-auth-token(?:\\.\\d+)?=`)
   : /$^/;
 
+/**
+ * Client-side only: expire every cookie of THIS project's sign-in storage on
+ * this device — the session and its `.0`, `.1`… chunks, plus every
+ * `sb-<ref>-auth-token-…` companion: the sign-in (PKCE) verifiers, their
+ * per-sign-in slots and the index of pending ones (auth-js 2.116 names them
+ * `-code-verifier`, `-flow-<id>-code-verifier` and `-flows-code-verifier`).
+ * By prefix, not by the SDK's index: a slot whose index entry was lost to two
+ * sign-ins started at once escapes the SDK's own clean-up and would otherwise
+ * stay for the cookie's 400 days. The SDK's sign-out removes the verifiers it
+ * knows of anyway (auth-js `_removeSession`), a sign-in pending in another tab
+ * included, so this takes nothing a sign-out would have kept.
+ *
+ * Two callers: every sign-out on this site (signOutThisDevice, after the SDK
+ * call, always) and the tools' forced sign-out (lib/tools-shared
+ * checkToolSession), which runs it for the case the SDK can leave behind — the
+ * auth server has already said the session is gone (401 / refresh token
+ * revoked) but signOut({ scope: 'local' }) ran inside the SDK's refresh
+ * cooldown and did not clear storage; without this the device keeps a dead
+ * cookie and the chrome keeps saying "signed in". Wherever it runs, it now
+ * leaves none of this project's sign-in cookies behind (it used to leave the
+ * verifiers on the forced path).
+ */
+export function clearLocalAuthCookies(): void {
+  if (typeof document === 'undefined' || !SUPABASE_PROJECT_REF) return;
+  const base = `sb-${SUPABASE_PROJECT_REF}-auth-token`;
+  try {
+    for (const part of document.cookie.split(';')) {
+      const name = part.split('=')[0].trim();
+      if (name === base || name.startsWith(`${base}.`) || name.startsWith(`${base}-`)) {
+        document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
+      }
+    }
+  } catch {
+    // Cookies blocked: nothing stored to clear.
+  }
+}
+
 /** Client-side only: is a session cookie for THIS project present on this device? */
 export function hasAuthCookie(): boolean {
   if (typeof document === 'undefined') return false;

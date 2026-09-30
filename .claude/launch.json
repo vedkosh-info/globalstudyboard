@@ -55,6 +55,21 @@
       "env": {
         "PORT": "5052"
       }
+    },
+    {
+      "name": "gsb-mock-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 5056,
+      "env": {
+        "PORT": "5056",
+        "NEXT_PUBLIC_SUPABASE_URL": "http://localhost:54321",
+        "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "mock-publishable-key",
+        "NEXT_PUBLIC_EMAIL_OTP_CODE": "true"
+      }
     }
   ]
 }

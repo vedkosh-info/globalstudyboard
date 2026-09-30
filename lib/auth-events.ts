@@ -22,12 +22,74 @@ export const OPEN_SIGN_IN_EVENT = 'gsb:open-sign-in';
 /** Dispatched after a sign-in or sign-out completes so the chrome re-reads the cookie. */
 export const AUTH_CHANGED_EVENT = 'gsb:auth-changed';
 
-export type SignInIntent = 'account' | 'save' | 'admin';
+/**
+ * Set when a signed-in tool discovers mid-use that the session has ended (the
+ * auth server answered 401 / no session). The tool is then swapped for its
+ * sign-in card by the gate — the card reads this once to explain why, instead
+ * of the student's form silently vanishing (independent review, 24 Sep 2026).
+ * Module state: shared by every chunk on the page, cleared on read.
+ */
+let toolSessionEnded = false;
+export function noteToolSessionEnded(): void {
+  toolSessionEnded = true;
+}
+export function consumeToolSessionEnded(): boolean {
+  const v = toolSessionEnded;
+  toolSessionEnded = false;
+  return v;
+}
+
+// ── Session-state messages ──────────────────────────────────────────────────
+// One wording everywhere a save can fail for a reason that is not the
+// student's input: the four tools, their reports and the page buttons (Save,
+// Add to planner, Add to compare). Kept here, SDK-free, so a page button can
+// still say it when the lazily loaded SDK chunk itself could not be fetched.
+// lib/tools-shared re-exports them for the tools.
+
+/** The auth server said the session is gone — the device has been signed out. */
+export const SESSION_ENDED = 'Your session ended — sign in again to continue.';
+/** The auth server could not be reached — the session and everything saved are untouched. */
+export const CONNECTION_LOST = 'We could not reach the server — check your connection and try again. Nothing was lost.';
+/** Title + text for a tool or report whose FIRST read could not reach the server. */
+export const OFFLINE_TITLE = 'We could not reach the server';
+export const OFFLINE_ON_LOAD = 'Check your connection and reload the page. You are still signed in, and nothing you saved before has changed.';
+
+/** 'plan' = the college-page Add-to-planner button; 'compare' = its Add-to-compare peer; 'tools' = a /tools/* sign-in card. */
+export type SignInIntent = 'account' | 'save' | 'admin' | 'plan' | 'compare' | 'tools';
 
 export interface SignInRequest {
   intent?: SignInIntent;
   /** Same-origin path Google OAuth should return to (re-validated server-side). */
   next?: string;
+}
+
+/**
+ * The part of the current URL's fragment that may ride through a redirect
+ * sign-in (Google, or the e-mailed link opened in a new tab), or ''.
+ *
+ * A fragment never reaches the server and a redirect door starts a fresh
+ * navigation, so without this the exam page's "Record your X score" link
+ * (`/tools/test-score-tracker#exam=<slug>`) landed back on the tracker with no
+ * test chosen, although the sheet promises the tool "opens right here"
+ * (independent review, C6). The same goes for `#region=<slug>`, the
+ * destination a destination page (a region hub, a university profile, an exam
+ * page) hands to a tool (components/tools/useDestinationHint): without it, a
+ * visitor who arrived from the USA hub and signed in through a redirect door
+ * landed on the India view (review, CRIT2-2).
+ *
+ * ALLOW-LISTED, never passed through: only `#exam=<slug>`, `#region=<slug>`
+ * or the two joined by `&` (either order, each at most once), every value in
+ * the catalogue's slug shape (lowercase words joined by single hyphens). Any
+ * other fragment is dropped, so no arbitrary text is carried into `next` or
+ * back onto the page. The tools still check each slug against their own list
+ * (the tracker's catalogue, REGION_SLUGS) before using it.
+ */
+const FRAGMENT_SLUG = '[a-z0-9]+(?:-[a-z0-9]+)*';
+const RESUMABLE_FRAGMENT = new RegExp(
+  `^#(?:exam=${FRAGMENT_SLUG}(?:&region=${FRAGMENT_SLUG})?|region=${FRAGMENT_SLUG}(?:&exam=${FRAGMENT_SLUG})?)$`,
+);
+export function resumableFragment(hash: string): string {
+  return hash.length <= 120 && RESUMABLE_FRAGMENT.test(hash) ? hash : '';
 }
 
 export type SignInVerdict = 'ok' | 'dismissed';
@@ -83,13 +145,20 @@ export function requireAuth(req: SignInRequest = {}): Promise<SignInVerdict> {
 // "save this guide") stashes an intent scoped to THIS path with a short TTL, and
 // the page consumes it exactly once. Path-scoping matters: without it, a sign-in
 // started on one page could trigger another page's stashed action.
-// localStorage, NOT localStorage: mail clients open the e-mailed link in a NEW
-// tab, and localStorage is per tab — the landing tab found no stash and the
+// localStorage, NOT sessionStorage: mail clients open the e-mailed link in a NEW
+// tab, and sessionStorage is per tab — the landing tab found no stash and the
 // promised save silently never happened (live IQA, 19 Sep 2026). localStorage is
 // shared across tabs; the one-shot removal keeps it single-use.
 
 const RESUME_KEY = 'gsb-auth-resume-v1';
-const RESUME_TTL_MS = 10 * 60_000;
+// How long a redirect sign-in may take and still finish the action. It must
+// outlast the e-mailed link itself — Supabase's OTP/link expiry is 900 s
+// (ACCOUNTS_SETUP.md, "Dashboard config") — plus time for the mail to arrive,
+// or the sheet's "it is saved to your account" promise would silently fail for
+// a link opened 10–15 minutes after sending (review, 29 Sep 2026). Both the
+// stash and the pending marker use it; raise it if the link expiry is raised.
+const SIGN_IN_REDIRECT_TTL_MS = 20 * 60_000;
+const RESUME_TTL_MS = SIGN_IN_REDIRECT_TTL_MS;
 
 interface ResumeStash {
   intent: SignInIntent;
@@ -118,19 +187,32 @@ export function clearResumeIntent(): void {
   }
 }
 
-/** One-shot: returns true only if a fresh stash for `intent` exists for the current path. */
+/**
+ * One-shot for the MATCHING caller: true only if a fresh stash for `intent`
+ * exists for the current path, and only then is it removed. A fresh stash for
+ * another intent or page is left for its own button: on a university profile
+ * Save, Add to planner and Add to compare run this in sibling order, and
+ * Save's check used to consume the planner's or comparison's note, so that
+ * add never happened (review G10-SK-1). A stale or unreadable stash is removed
+ * by whichever caller reads it. /cookies describes exactly this.
+ */
 export function takeResumeIntent(intent: SignInIntent): boolean {
   try {
     const raw = localStorage.getItem(RESUME_KEY);
     if (!raw) return false;
+    let stash: Partial<ResumeStash> | null = null;
+    try {
+      stash = JSON.parse(raw) as Partial<ResumeStash> | null;
+    } catch {
+      stash = null;
+    }
+    if (!stash || typeof stash !== 'object' || typeof stash.ts !== 'number' || !(Date.now() - stash.ts < RESUME_TTL_MS)) {
+      localStorage.removeItem(RESUME_KEY);
+      return false;
+    }
+    if (stash.intent !== intent || stash.path !== window.location.pathname) return false;
     localStorage.removeItem(RESUME_KEY);
-    const stash = JSON.parse(raw) as Partial<ResumeStash>;
-    return (
-      stash.intent === intent &&
-      stash.path === window.location.pathname &&
-      typeof stash.ts === 'number' &&
-      Date.now() - stash.ts < RESUME_TTL_MS
-    );
+    return true;
   } catch {
     return false;
   }
@@ -144,7 +226,7 @@ export function takeResumeIntent(intent: SignInIntent): boolean {
 // announce the sign-in.
 
 const PENDING_KEY = 'gsb-auth-pending';
-const PENDING_TTL_MS = 10 * 60_000;
+const PENDING_TTL_MS = SIGN_IN_REDIRECT_TTL_MS;
 
 export function markSignInPending(): void {
   try {
@@ -163,7 +245,7 @@ export function clearSignInPending(): void {
   }
 }
 
-/** One-shot: true if a redirect sign-in started here less than 10 minutes ago. */
+/** One-shot: true if a redirect sign-in started here within SIGN_IN_REDIRECT_TTL_MS. */
 export function takeSignInPending(): boolean {
   try {
     const raw = localStorage.getItem(PENDING_KEY);

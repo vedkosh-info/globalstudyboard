@@ -30,7 +30,7 @@ export default function CollegesIndexPage() {
     name: 'Universities Worldwide — GlobalStudyBoard',
     description: 'University profiles across the USA, UK, Europe, Canada, Australia, the Middle East and India.',
     numberOfItems: COLLEGES.length,
-    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListOrder: 'https://schema.org/ItemListUnordered',
     itemListElement: COLLEGES.map((c, i) => ({
       '@type': 'ListItem',
       position: i + 1,

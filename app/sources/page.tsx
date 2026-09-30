@@ -5,6 +5,9 @@ import { Landmark, ShieldAlert } from 'lucide-react';
 import { GUIDES } from '@/lib/guides';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { COLLEGES } from '@/lib/colleges';
+import { EXAM_VALIDITY } from '@/lib/test-validity';
+import { DESTINATION_BUDGETS } from '@/lib/cost-planner';
+import { collegeRankings } from '@/lib/college-labels';
 import { REGIONS, type RegionSlug } from '@/lib/regions';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
@@ -111,17 +114,41 @@ function collect(): { byRegion: Map<RegionSlug, Entry[]>; exams: Entry[]; totals
     profiles linked an official site that appeared nowhere on it. An adversarial
     review of the Play listing caught the false completeness claim.
   */
-  for (const college of COLLEGES) {
-    if (!college.websiteUrl) continue;
-    const slug = college.region as RegionSlug;
+  const bucketFor = (slug: RegionSlug) => {
     if (!byRegion.has(slug)) byRegion.set(slug, new Map());
-    add(byRegion.get(slug)!, `${college.nameEn} — official website`, college.websiteUrl);
+    return byRegion.get(slug)!;
+  };
+
+  for (const college of COLLEGES) {
+    const bucket = bucketFor(college.region as RegionSlug);
+    if (college.websiteUrl) add(bucket, `${college.nameEn} — official website`, college.websiteUrl);
+    // The ranking bodies a profile attributes its rankings to (QS, THE, NIRF…).
+    for (const r of collegeRankings(college)) add(bucket, `${r.body} — rankings`, r.url);
+  }
+
+  // Each destination page's own official sources (visa, application platform —
+  // rendered under its FAQ), and the Cost & Funding Planner's per-line official
+  // pages and visa financial-rule sources. A host cited only here would
+  // otherwise be missing from an index that promises to be complete.
+  for (const r of REGIONS) {
+    for (const s of r.sources) add(bucketFor(r.slug), s.label, s.url);
+  }
+  for (const [slug, b] of Object.entries(DESTINATION_BUDGETS) as Array<[RegionSlug, (typeof DESTINATION_BUDGETS)[RegionSlug]]>) {
+    for (const c of [...b.costs, ...b.funding]) if (c.source) add(bucketFor(slug), c.source.label, c.source.url);
+    for (const s of b.fundsRule.sources) add(bucketFor(slug), s.label, s.url);
   }
 
   const examBucket = new Map<string, Entry>();
   for (const exam of ENTRANCE_EXAMS) {
     for (const s of exam.sources ?? []) add(examBucket, s.label, s.url);
     if (exam.websiteUrl) add(examBucket, `${exam.shortName} — official website`, exam.websiteUrl);
+  }
+  // The Test Score Tracker's validity rules cite their own official pages and
+  // bulletins (several on hosts no guide or exam record cites) — the page
+  // promises every source, so they are collected here too.
+  for (const v of Object.values(EXAM_VALIDITY)) {
+    add(examBucket, v.source.label, v.source.url);
+    if (v.also) add(examBucket, v.also.label, v.also.url);
   }
 
   const sortEntries = (m: Map<string, Entry>) =>
@@ -202,11 +229,12 @@ export default function SourcesPage() {
           Official sources we cite
         </h1>
         <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
-          Every guide on GlobalStudyBoard names the official source behind its facts, and links to
-          it on the page itself. This is the complete index of those sources —{' '}
+          Our guides, exam pages and university profiles name the official source behind their facts and link to it on
+          the page itself, and each destination page links the official sources for the visa and work rules it states.
+          This page indexes all of those sources, and the official pages our tools link to —{' '}
           <strong>{totals.hosts.toLocaleString()}</strong> official websites, of which{' '}
           <strong>{totals.gov.toLocaleString()}</strong> are government bodies, regulators or statutory authorities. It is
-          generated from the published guides, so it is always complete and current.
+          generated from those pages and tools each time the site is built, so it lists every source they cite.
         </p>
       </header>
 
@@ -257,8 +285,8 @@ export default function SourcesPage() {
               {region.displayName}
             </h2>
             <p className="text-stone-700 leading-relaxed m-0">
-              {entries.length.toLocaleString()} official sources cited in{' '}
-              {region.displayName} guides
+              {entries.length.toLocaleString()} official sources cited on{' '}
+              {region.displayName} pages
               {govCount > 0 && <> — {govCount.toLocaleString()} government or regulator</>}.{' '}
               <Link
                 href={`/regions/${region.slug}`}

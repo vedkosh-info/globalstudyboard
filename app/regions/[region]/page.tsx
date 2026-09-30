@@ -29,6 +29,9 @@ import { regionImage } from '@/lib/images';
 import BreadcrumbsView from '@/components/BreadcrumbsView';
 import { breadcrumbsFor } from '@/lib/cmi';
 import { SITE_REVIEWED } from '@/lib/site-meta';
+import { TOOLS, toolHref } from '@/lib/tools';
+import ToolLink from '@/components/tools/ToolLink';
+import { DESTINATION_BUDGETS } from '@/lib/cost-planner';
 
 interface Props {
   params: Promise<{ region: string }>;
@@ -521,6 +524,63 @@ export default async function RegionHubPage({ params }: Props) {
                 >
                   {src.label}
                 </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Tools for this destination — every account-only tool re-tunes to the
+            chosen destination (constitution §18); a real, crawlable entrance from
+            every hub, with this destination's own cost lines named. The copy
+            claims only what the tools do: they record the student's own entries
+            (which link nowhere), and link a source for what WE add only where we
+            have one — of a destination's 13 suggested cost and funding lines, one
+            to three carry an official page and six to nine carry no link at all
+            (independent review, 29 Sep 2026).
+            Each card hands THIS hub's destination to the tool (`#region=`, see
+            toolHref), so a visitor who has not chosen one opens "Budget for the
+            United States" on the United States, not on the India default (CRIT2-2).
+            ToolLink, not next/link: Next scrolls a fragment navigation to the
+            page's first element, which hid the header (G8-SK-5). The eyebrow is
+            stone-600 — stone-500 on this tint measured 4.45:1 (G8-SK-7).
+            The heading is audience-neutral (§16.7): India's hub defaults to
+            domestic students, for whom there is no "move". Cost-line labels are
+            shown exactly as written — lowercasing them broke SEVIS, UK, NZ, ID. */}
+        <section aria-labelledby="region-tools-heading" className="rounded-3xl border border-forest-200/70 bg-forest-50/60 p-6 sm:p-8">
+          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-600 mb-2">Free tools</p>
+          <h2 id="region-tools-heading" className="font-display text-2xl font-bold tracking-editorial text-ink m-0">
+            Plan your studies in {r.proseName}
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-stone-700">
+            Each tool opens on the destination you have chosen in the header or, if you have not chosen one, on{' '}
+            {r.proseName}, and needs only a free account. The tools keep what you enter, so confirm your own dates and
+            figures on the official site. Where a tool adds something of ours — a validity rule, a university&rsquo;s
+            details, a cost line — it links the official page or our guide wherever we have one.
+          </p>
+          <ul className="mt-5 grid list-none gap-4 p-0 m-0 sm:grid-cols-2 lg:grid-cols-4">
+            {TOOLS.map((tool) => (
+              <li key={tool.slug}>
+                <ToolLink
+                  href={toolHref(tool.slug, r.slug)}
+                  className="block h-full rounded-2xl border border-stone-200 bg-white p-5 no-underline transition-colors hover:border-forest-300"
+                >
+                  <span className="block font-display text-lg font-bold tracking-editorial text-ink">{tool.name}</span>
+                  <span className="mt-1 block text-sm leading-relaxed text-stone-700">
+                    {tool.slug === 'cost-planner'
+                      ? `Budget for ${r.proseName}, starting from suggested lines: ${DESTINATION_BUDGETS[r.slug].costs
+                          .slice(0, 4)
+                          .map((c) => c.label)
+                          .join(' · ')} · and more. The official page or our guide is linked where we have one.`
+                      : tool.slug === 'test-score-tracker'
+                        ? `Record your test scores as received and see any validity rule each test body publishes. Then see which tests named by your shortlist in ${r.proseName} still have no score — for every test the tracker records.`
+                        : tool.slug === 'compare-universities'
+                        ? `Put up to four universities in ${r.proseName} side by side — our verified facts, then your own criteria, weights and scores.`
+                        : `Shortlist universities in ${r.proseName}, then track every deadline, document and test date in one place.`}
+                  </span>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
+                    Open the tool <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  </span>
+                </ToolLink>
               </li>
             ))}
           </ul>

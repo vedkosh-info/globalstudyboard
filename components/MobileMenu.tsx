@@ -30,6 +30,7 @@ export default function MobileMenu() {
       href: chromeCategoryPath(cat, effectiveRegion, tunedIsKnown),
     })),
     { label: 'Topics', href: '/topics' },
+    { label: 'Tools', href: '/tools' },
     { label: 'Ask GSB AI', href: '/gsb-ai', highlight: true },
   ];
 

@@ -3,8 +3,9 @@ import { formatReviewed } from '@/lib/site-meta';
 
 /**
  * Subtle "Last updated <date>" freshness signal for content and listing pages.
- * Renders a semantic <time> for SEO. Pass a content unit's own `lastVerified`
- * where one exists; otherwise pass SITE_REVIEWED from `lib/site-meta`.
+ * Renders a semantic <time> for SEO. Pass a content unit's own date where one
+ * exists — `guideModified()` / `examModified()`, i.e. its `lastVerified` or a
+ * later `contentUpdated` — otherwise pass SITE_REVIEWED from `lib/site-meta`.
  */
 export default function LastUpdated({
   date,

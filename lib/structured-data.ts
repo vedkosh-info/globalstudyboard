@@ -49,7 +49,7 @@ export function itemListLd(opts: {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: opts.name,
-    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListOrder: 'https://schema.org/ItemListUnordered',
     numberOfItems: opts.items.length,
     itemListElement: opts.items.map((it, i) => ({
       '@type': 'ListItem',

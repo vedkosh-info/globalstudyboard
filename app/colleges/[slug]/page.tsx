@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowUpRight, MapPin, CalendarDays, GraduationCap, Globe2 } from 'lucide-react';
 
 import { COLLEGES, COLLEGE_COUNTRY_INFO, getCollegeBySlug } from '@/lib/colleges';
+import { TYPE_LABELS, LEVEL_LABELS, RANKING_NUDGE, collegeRankings } from '@/lib/college-labels';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { REGIONS } from '@/lib/regions';
 import { rankGuidesForCollege } from '@/lib/related-guides';
@@ -14,6 +15,8 @@ import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
 import LastUpdated from '@/components/LastUpdated';
 import SaveButton from '@/components/SaveButton';
+import AddToPlannerButton from '@/components/AddToPlannerButton';
+import AddToCompareButton from '@/components/AddToCompareButton';
 import ContentImage from '@/components/ContentImage';
 import { collegeImage } from '@/lib/images';
 import AudienceGate from '@/components/AudienceGate';
@@ -28,31 +31,19 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-const TYPE_LABELS: Record<string, string> = {
-  'research-university': 'Research university',
-  'liberal-arts': 'Liberal arts college',
-  'institute-of-technology': 'Institute of technology',
-  'business-school': 'Business school',
-  'medical-school': 'Medical school',
-  'law-school': 'Law school',
-  'public-university': 'Public university',
-  'private-university': 'Private university',
-  iit: 'Indian Institute of Technology (IIT)',
-  nit: 'National Institute of Technology (NIT)',
-  iim: 'Indian Institute of Management (IIM)',
-  aiims: 'All India Institute of Medical Sciences (AIIMS)',
-  nlu: 'National Law University (NLU)',
-  iisc: 'Indian Institute of Science (IISc)',
-};
-
-const LEVEL_LABELS: Record<string, string> = {
-  bachelors: "Bachelor's",
-  masters: "Master's",
-  phd: 'PhD',
-  professional: 'Professional',
-};
-
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+/**
+ * True when a recorded admission-test name says more than the covered exam it
+ * links to — "Duolingo (undergraduate)", "UCAT (Medicine)", "IELTS / TOEFL",
+ * "A-Levels / IB". `findExam` matches by prefix, and the card otherwise shows only
+ * the exam's own names, so the level, subject or second test in the record was
+ * silently dropped. "TOEFL" (→ "TOEFL iBT") and an exact full name add nothing.
+ */
+function recordAddsDetail(name: string, exam: { shortName: string; fullName: string; slug: string }) {
+  const target = norm(name);
+  return !norm(exam.shortName).startsWith(target) && target !== norm(exam.fullName) && target !== norm(exam.slug);
+}
 
 /** Map a free-text admission-exam name to a known exam record, when we cover it. */
 function findExam(name: string) {
@@ -166,16 +157,8 @@ export default async function CollegeDetailPage({ params }: Props) {
   // VISIBLE on the page, and this template renders no FAQ section; FAQ rich
   // results are also restricted to authoritative gov/health sites. The
   // CollegeOrUniversity markup below is the correct, sufficient schema.
-  const rankings: { body: string; rank: number; url: string }[] = [];
-  if (college.ranking?.qs) {
-    rankings.push({ body: 'QS World University Rankings', rank: college.ranking.qs, url: 'https://www.topuniversities.com/world-university-rankings' });
-  }
-  if (college.ranking?.the) {
-    rankings.push({ body: 'Times Higher Education (THE)', rank: college.ranking.the, url: 'https://www.timeshighereducation.com/world-university-rankings' });
-  }
-  if (college.ranking?.nirf) {
-    rankings.push({ body: 'NIRF (India)', rank: college.ranking.nirf, url: 'https://www.nirfindia.org/Rankings' });
-  }
+  // Attributed to the issuing body — the same rows the Compare tool renders.
+  const rankings = collegeRankings(college);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -245,6 +228,8 @@ export default async function CollegeDetailPage({ params }: Props) {
         <LastUpdated date={SITE_REVIEWED} />
         {/* Shortlist — renders nothing until accounts are configured. */}
         <SaveButton kind="college" slug={college.slug} title={college.nameEn} region={college.region} />
+        <AddToPlannerButton slug={college.slug} name={college.nameEn} region={college.region} url={college.websiteUrl} />
+        <AddToCompareButton slug={college.slug} name={college.nameEn} region={college.region} url={college.websiteUrl} />
       </div>
 
       {/* Representative campus archetype for this destination — NEVER a depiction of this
@@ -315,8 +300,7 @@ export default async function CollegeDetailPage({ params }: Props) {
             ))}
           </div>
           <p className="text-stone-500 text-xs leading-relaxed mt-4 mb-0">
-            Rankings are published annually by their respective organisations and change every year.
-            Confirm the current-year position on the official ranking website before relying on it.
+            {RANKING_NUDGE}
           </p>
         </section>
       )}
@@ -400,6 +384,12 @@ export default async function CollegeDetailPage({ params }: Props) {
                     {exam.shortName}
                     <span className="ml-2 text-xs font-sans font-medium text-stone-500">{exam.fullName}</span>
                   </p>
+                  {recordAddsDetail(name, exam) && (
+                    <p className="text-stone-800 text-sm font-medium m-0 mt-1">
+                      <span className="text-stone-600 font-normal">Listed for this university: </span>
+                      {name}
+                    </p>
+                  )}
                   <p className="text-stone-600 text-sm m-0 mt-1">
                     {exam.conductingBody} · {exam.frequency}
                   </p>
@@ -414,6 +404,18 @@ export default async function CollegeDetailPage({ params }: Props) {
               ),
             )}
           </div>
+          <p className="mt-3 text-sm leading-relaxed text-stone-600">
+            Requirements change from one intake to the next — confirm the current ones on{' '}
+            {college.websiteUrl ? (
+              <a href={college.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-forest-700 underline underline-offset-2 hover:text-forest-800">
+                {college.nameEn}&rsquo;s official site
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            ) : (
+              <>{college.nameEn}&rsquo;s official site</>
+            )}{' '}
+            before you apply.
+          </p>
         </section>
       )}
 

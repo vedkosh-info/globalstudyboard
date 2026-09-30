@@ -15,7 +15,10 @@ export interface ExamCard {
   fullName: string;
   domain: string;
   frequency: string;
-  costUsd?: string;
+  /** The record's whole fee statement, only when it is short enough to print on a card. */
+  fee?: string;
+  /** The record has a fee statement too long for a card — the card points to the exam page. */
+  feeOnPage?: boolean;
   /** Primary home region, or 'global' for a test accepted everywhere. */
   region: RegionSlug | 'global';
   /** Every region this exam displays under (resolved server-side). */
@@ -54,7 +57,7 @@ function ExamLink({ e, hidden }: { e: ExamCard; hidden: boolean }) {
           {region.name}
         </span>
         <span>· {e.frequency.split('(')[0].trim()}</span>
-        {e.costUsd && <span>· {e.costUsd}</span>}
+        {e.fee ? <span>· {e.fee}</span> : e.feeOnPage && <span>· Fees on the exam page</span>}
       </div>
     </Link>
   );

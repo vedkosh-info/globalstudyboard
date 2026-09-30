@@ -13,7 +13,7 @@ import { CONTACT_EMAIL } from '@/lib/site-meta';
  * the sitemap, and states exactly what deletion removes, what (if anything) is
  * retained, and for how long. The Play Console "Data deletion" field points here.
  */
-const LAST_UPDATED = '19 September 2026';
+const LAST_UPDATED = '24 September 2026';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Delete your account',
@@ -84,6 +84,10 @@ export default function DeleteAccountPage() {
           <li>Your sign-in (e-mail address and, if you used it, the link to your Google account).</li>
           <li>Your display name and your remembered study destination and audience view.</li>
           <li>Every page you saved.</li>
+          <li>Your Application Planner — every university, deadline, checklist item and note in it.</li>
+          <li>Your Cost &amp; Funding Planner — every budget, cost line, funding line and note in it.</li>
+          <li>Your university comparisons — every comparison, criterion, weight, score and note in them.</li>
+          <li>Your Test Score Tracker — every recorded attempt, its section scores and note.</li>
           <li>The record of when you accepted our Terms and read the Privacy Policy.</li>
         </ul>
         <p>All of this is removed at once; there is no “deactivated” state and no recovery period.</p>

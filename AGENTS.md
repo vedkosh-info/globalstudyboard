@@ -1,0 +1,111 @@
+# GlobalStudyBoard — Project Context for Codex
+
+## What is GlobalStudyBoard?
+A comprehensive, English-language college admission guide and query platform covering universities and entrance exams worldwide. Provides college profiles, step-by-step admission guides, entrance exam breakdowns, and study-abroad resources for students from school to postgraduate level.
+
+**GlobalStudyBoard is for GLOBAL users — it is NOT an India site (BINDING, owner directive September 2026).** It serves students **worldwide**, in and to every destination we cover: India, the USA, the UK & Ireland, Canada, Europe, Australia & New Zealand, the Middle East, Russia & CIS, and East & Southeast Asia. India is **one destination among nine** — currently `DEFAULT_REGION`, i.e. the view a visitor sees before they pick — never the subject of the site. Apply this to every future task:
+- Never write site-level copy, metadata, headings, `/about`, home-page framing or an AI prompt that positions GSB as "for Indian students". Destination- or audience-specific *content* is of course written for its own reader (that is what §16 personalisation is for); the **site's own voice is global**.
+- Build every feature for all nine destinations, not for India with the rest bolted on. Region-tag content honestly (§16.4) and check a change on an abroad destination as well as India before calling it done.
+- The nine destinations are peers. Do not give India extra chrome, extra nav, or a privileged position in shared UI.
+
+**Audiences:** students choosing a university anywhere — including Indian students targeting IITs/NITs/IIMs/AIIMS/NLUs, students moving between any of the nine destinations, and domestic students within each destination (see the audience axis, `content-policy.md` §16.7).
+
+## Content Policy (BINDING)
+- **Read `.Codex/rules/content-policy.md` (Content Constitution) BEFORE writing or editing ANY content.** It is the highest-priority content authority. Also: `.Codex/rules/content-qa-checklist.md` (independent QA) and `.Codex/rules/content-audit-log.md` (sign-off log).
+- **No content ships without an independent QA pass** (separate from authoring) logged in the audit log.
+- All information must be accurate and verifiable — cite official **Tier-1** sources only (official university site, official exam board, official `.gov`)
+- No fabricated rankings, cutoffs, fees, or admission statistics
+- **Zero religious content** (no Islam, Christianity, Sikhism, Hinduism, etc.) beyond a neutral official faith-affiliation fact; **no politics, no government criticism, no geopolitics** — visa/policy stated as neutral fact only with a verify-on-official-source nudge; **no hate/stereotypes** by religion, race, ethnicity, caste, gender, etc.
+- **Site-wide disclaimer required on EVERY page — current AND future.** The exact wording below must be visible on all pages. It is rendered globally via the `Footer` component in the root layout (`app/layout.tsx`), so every existing and future route inherits it automatically. NEVER remove `Footer` from the root layout, and NEVER change this wording without explicit user approval:
+  > Disclaimer: Information provided on GlobalStudyBoard is for guidance only. Tuition fees, application deadlines, rankings, and eligibility requirements change every academic year. Always verify all details with the official university or examination website before applying.
+- Any new page MUST live under the shared root layout so it inherits the footer disclaimer. If a page is ever rendered outside that layout, add the disclaimer to it explicitly.
+- A dedicated `/disclaimer` page must exist and be linked in the footer.
+- No content that facilitates academic dishonesty or plagiarism
+- Respectful of all religions, castes, regions — no discriminatory content
+- Content should be inclusive of all genders and backgrounds
+
+## Tech Stack
+- **Framework:** Next.js 15 (App Router) with TypeScript (strict)
+- **Styling:** Tailwind CSS (preflight disabled — `styles/globals.css` provides base styles)
+- **Deployment:** Vercel (auto-deploy from `main` branch)
+- **Language:** **English only** — single-language site, no i18n/locale routing. All URLs are bare (e.g. `/guides/...`); there are no `/hi` or `/en` prefixes, no `[lang]` segment, and no hreflang. This is permanent — do not add language-specific architecture.
+
+## Build & Run Commands
+- `npm run dev` — Start dev server on **port 5000**
+- `npm run build` — Production build
+- `npm run lint` — ESLint
+- `npm run typecheck` — TypeScript check (`tsc --noEmit`)
+
+## Project Structure
+```
+app/              → Next.js App Router pages (flat — bare English URLs, no [lang] segment)
+components/       → Reusable React components (Header, Footer, etc.)
+lib/              → Data files and utilities
+  colleges.ts     → College data (types + data array + helpers)
+  admission-guides.ts → Entrance exam data
+styles/           → globals.css (base styles, no preflight)
+public/           → Static assets
+```
+
+## URL Architecture (English only — BINDING)
+- **Single language: English.** Every page lives at a bare URL (`/`, `/colleges/...`, `/exams/...`, `/guides/...`) rendered directly from `app/...`. There is NO locale segment, NO `/hi`, NO `/en`, NO hreflang, NO language switcher, and NO locale cookie.
+- Legacy locale URLs are retired: `next.config.js` `redirects()` 308-redirects any `/hi/*` or `/en/*` to the bare path.
+- **Do NOT reintroduce any language-specific architecture (i18n, `[lang]`, hreflang, locale cookies) — now or in future.** If page-level translation is ever wanted, do it per-page or rely on the browser's built-in translation; never add a locale routing layer.
+
+## Content Data Pattern
+- College profiles in `lib/colleges.ts` — `College` interface, `COLLEGES` array, helper functions
+- Entrance exam guides in `lib/admission-guides.ts` — `EntranceExam` interface, `ENTRANCE_EXAMS` array
+- Content is **English only**. Data fields keep an `*En` suffix for now (e.g. `titleEn`, `descriptionEn`) — only the English fields are authored and rendered. Legacy `*Hi` fields in older records are unused (safe to remove); do NOT add new non-English fields.
+- Always run `npm run lint && npm run typecheck` after any data change
+
+## Content Architecture, CMI & UX (BINDING — constitution §11–§13)
+- **No duplicate content.** Before adding any unit (college/exam/scholarship/region/guide), search existing data by normalized name + region + type; if it exists, UPDATE it — never create a second record. One canonical unit, one stable slug. **Merge-first tooling:** run `npm run find-home "<title>"` FIRST (it names the closest existing guides + their sections, so you extend a page instead of duplicating it), then `npm run dup:check` (now flags full-body `[5]` similarity + name-variants `[6]`, not just descriptions). Before shipping, `npm run dup:check:strict` must exit 0; reviewed destination parallels are sim-stamped in `lib/dup-resolutions.json` (a baselined pair re-flags if edited toward a verbatim copy). See constitution §11.1a.
+- **Region-personalised, one canonical unit (constitution §11.4).** Every unit carries a primary `region` + optional `regions: RegionSlug[]` = all destinations it should display under. Listing pages show the selected region **only** (default `DEFAULT_REGION` = India) with a "Show all regions" escape; common content surfaces inside each relevant region (no separate "worldwide" bucket), never duplicated. Match regions via `resolveDisplayRegions()`/`matchesRegion()` in `lib/regions.ts`. Region pickers use `REGIONS_ALPHABETICAL`. New/edited units must have their region set reviewed (Tier-1-supportable) in the QA pass.
+- **CMI (Content Master Index)** is the single source of truth that indexes + validates all content and feeds search, breadcrumbs, related-content blocks, and the sitemap. Run `npm run cmi:validate` (0 errors) before adding/shipping content once tooling exists; until then do the same checks manually and log them.
+- **Relationships for continuity:** every unit links to its related units (college ↔ region ↔ exams ↔ scholarships ↔ guides); links must resolve to real units; every page ends with a "Related / Next steps" block.
+- **Breadcrumbs + search on every page**, mounted globally in the root layout (like the footer) so new routes inherit them. Breadcrumb emits `BreadcrumbList` JSON-LD; search hands complex queries to GSB AI.
+- **Premium UI + content readability = supreme priority (constitution §15).** A beautiful, modern, premium UI and highly readable English content rendering are first-class — co-equal with accuracy, above decoration/monetization; content is the hero. Readable measure (~60–75ch), generous line-height, clear Fraunces+Inter hierarchy, ≥16px body, WCAG AA+ contrast, no walls of text; consistent design tokens (no one-offs); fully responsive + accessible. Verify **desktop, tablet AND mobile** every change. (Readability is for the single English language — NOT a multi-language mandate; English-only stands.)
+- **Always review existing pages too + review continuously (constitution §7.5–§7.6, §15.4).** Whenever you make ANY change (content, component, layout, style, data), re-review the existing/affected pages it touches — not just the new unit — and keep reviewing as you go, not only as a final gate. A shared layout/component/token/data change is a change to every page that uses it.
+- **SEO + ads-ready:** self-referential canonical + structured data + sitemap + internal links on every page (**no hreflang — single language**); AdSense-ready but no ads until approved and `/privacy` updated; content always outranks monetization.
+
+## Multi-Jurisdiction Legal Compliance (BINDING — constitution §14)
+- **Legal compliance is NOT USA-only.** The laws of **each destination** we cover (USA, UK & Ireland, Canada, Europe, Australia & New Zealand, India, and any new region) apply to the content about it, plus the laws protecting our audience there. Enforce for ALL existing content and EVERY new unit, in every language, on every page.
+- Before adding/changing ANY unit, the independent QA pass must: (1) identify the jurisdiction(s) it touches (destination + audience country); (2) check it against those jurisdictions' applicable laws — privacy, consumer/advertising, copyright/IP, visa/immigration, education-record, accessibility, defamation — applying the **strictest** standard on overlap; (3) confirm facts-and-guidance-only framing (no legal/immigration/medical/financial advice), Tier-1 sourcing, and the visa/policy verify-nudge; (4) log the jurisdiction(s) reviewed in the audit log. **Block on any fail.**
+- New destination: confirm all law areas are covered before publishing; if a rule can't be met for some content, withhold it and flag it. Law changes → correct/remove immediately and log; keep `/privacy`, `/terms`, `/disclaimer` current. **We are not lawyers** — if a legal question exceeds these rules, STOP and flag it.
+
+## SEO & URL Conventions
+- Use slugs (e.g. `/colleges/iit-bombay`, `/exams/jee-main`) — no numeric IDs
+- Every page must have `generateMetadata()` with title, description, and a self-referential canonical (no hreflang — single-language English site) — **built through `pageMetadata()` in `lib/seo.ts` (BINDING, September 2026).** Next merges metadata per key, so a hand-assembled block silently drops the RSS alternate, `og:site_name`/`og:locale`, or (worse) inherits the home page's canonical. The helper also applies the title rule: raw titles over 52 chars render `{ absolute }` (no brand suffix) so the query-bearing text survives the SERP width. Region names in titles/H1s/FAQs use `region.proseName` ("in the United States"), never `displayName` ("in United States").
+- **Sitemap (BINDING).** `/sitemap.xml` is a sitemap INDEX (`app/sitemap.xml/route.ts`) over per-section files (`app/sitemap.ts` + `lib/sitemap-entries.ts`). Every non-guide URL's `<lastmod>` is `SITE_LASTMOD` in `lib/site-meta.ts` — **bump it to the deploy date in the same commit as any change that alters those pages**; guides keep their own `lastVerified`. Google only trusts lastmod while it keeps matching reality.
+- **Links to GSB AI use `gsbAiHref()` (`lib/gsb-ai-links.ts`)** — a fragment prefill (`/gsb-ai#q=…`), never `?q=`: every page must link the single canonical `/gsb-ai` (the query form minted ~3,300 robots-blocked URLs).
+- `generateStaticParams()` required for all `[slug]` routes
+- **Section-level SEO (BINDING — see `content-policy.md` §13.1a).** Guide sections + FAQs render stable, unique `#anchor` ids (deep-linkable) via `lib/section-anchors.ts`; ≥3-section guides show the `OnThisPage` ToC; the Article emits `hasPart`/`WebPageElement`, FAQ items carry `#anchor` `@id`s (HowTo is no longer emitted — Google removed the rich result in 2023) (all filtered to the page-default audience); the CMI indexes section headings/FAQs/key-facts and search deep-links a hit to the matched section (`ContentUnit.sections` ships the resolved anchor, identical to the DOM id).
+- Content disclaimer required in footer on every content page
+- **Freshness, not founding year (BINDING — see `content-policy.md` §5).** Every page shows a "Last updated" date via `components/LastUpdated.tsx` — content pages pass the unit's own `lastVerified`; listings/region/college/static pages pass `SITE_REVIEWED` from `lib/site-meta.ts`. The footer shows `ADMISSIONS_CYCLE`. Never display a site "established/founded/launched" year **anywhere** — not on utility/listing/content pages, not in the global header/footer, and **not on `/about`** (including its eyebrow/lede/body, metadata/OG descriptions, or a site `foundingDate`); `/about` may keep the mission/origin story but without a year. A *university's* real founding year is fine. Never fake/back-date a "last updated" date.
+
+## Git Workflow (BINDING)
+- **Root repo always on `main`** — single-branch workflow
+- **ALWAYS edit files in root repo** at `/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/`
+- **No auto-commit/push** — commit/push only when user explicitly says "commit", "push", "deploy", or "release"
+- Vercel auto-deploys from `main` on push
+- Dev server is on **port 5000** — does not conflict with VedKosh (3000) or TasteYatra (4000)
+
+## Code Style Rules
+- TypeScript strict mode, no `any`
+- Tailwind CSS only — no inline styles, no CSS modules
+- Functional components + hooks only
+- Never hardcode English strings as page content — use data from `lib/` files
+- Never modify the security headers or CSP in `next.config.js` `headers()` without explicit approval
+
+## Color Palette (Tailwind)
+- `brand-600` (#1B3A6B) — primary navy, headers, CTAs
+- `gold-500` (#C9A227) — accent, highlights, logo
+- `slate-*` — neutral text and backgrounds
+
+## Important Files
+- `app/layout.tsx` — Root layout, fonts, metadata, Analytics
+- `app/page.tsx` — Home page (college categories, featured exams, top colleges)
+- `lib/colleges.ts` — College data and types
+- `lib/admission-guides.ts` — Entrance exam data and types
+- `components/Header.tsx` — Site navigation
+- `components/Footer.tsx` — Site footer with disclaimer

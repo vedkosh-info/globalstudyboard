@@ -144,6 +144,23 @@ export interface CmiReport {
 const norm = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 
 /**
+ * Why a `contentUpdated` stamp (guide or exam) is unusable, or null if it is a
+ * real day that has already begun. Date.parse cannot tell: V8 rolls an
+ * impossible day over ('2026-09-31' → 1 October) instead of returning NaN, so
+ * the string must survive a round trip. A future stamp would print a "Last
+ * updated" date that has not happened (§5). "Today" is taken at UTC+14, the
+ * earliest time zone, so a stamp made today anywhere passes wherever this runs.
+ */
+const contentUpdatedProblem = (d: string): string | null => {
+  const t = new Date(`${d}T00:00:00Z`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d) || Number.isNaN(t.getTime()) || t.toISOString().slice(0, 10) !== d) {
+    return 'is not a real calendar date';
+  }
+  const latestToday = new Date(Date.now() + 14 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  return d > latestToday ? 'is in the future' : null;
+};
+
+/**
  * Validate the whole catalogue. Errors block shipping; warnings are advisory.
  * Enforces: unique slugs/ids, no duplicate entities, referential integrity,
  * required fields, and bilingual-fallback presence.
@@ -214,6 +231,16 @@ export function validateContent(): CmiReport {
 
     if (!e.slug) errors.push(`Exam "${e.shortName}" is missing a slug.`);
     if (!e.descriptionEn) errors.push(`Exam "${e.shortName}" is missing descriptionEn.`);
+    // Same rule as guides: contentUpdated marks a content change WITHOUT
+    // re-verification, so it needs a real verification date to follow, must be a
+    // real calendar date that is not in the future, and must come after
+    // lastVerified (else it says nothing).
+    if (e.contentUpdated !== undefined) {
+      const problem = contentUpdatedProblem(e.contentUpdated);
+      if (problem) errors.push(`Exam "${e.slug}": contentUpdated (${e.contentUpdated}) ${problem}.`);
+      else if (!e.lastVerified) errors.push(`Exam "${e.slug}" has contentUpdated but no lastVerified — verify it and stamp lastVerified instead.`);
+      else if (e.contentUpdated <= e.lastVerified) errors.push(`Exam "${e.slug}": contentUpdated (${e.contentUpdated}) is not after lastVerified (${e.lastVerified}) — drop it.`);
+    }
     if (e.region !== 'global' && !REGION_SLUGS.has(e.region)) {
       errors.push(`Exam "${e.shortName}" has unknown region "${e.region}".`);
     }
@@ -262,6 +289,14 @@ export function validateContent(): CmiReport {
     if (!g.titleEn) errors.push(`Guide "${g.slug}" is missing titleEn.`);
     if (!g.descriptionEn) errors.push(`Guide "${g.titleEn}" is missing descriptionEn.`);
     if (g.sections.length === 0) errors.push(`Guide "${g.titleEn}" has no sections.`);
+    // contentUpdated marks a content change WITHOUT re-verification; it must be a
+    // real calendar date that is not in the future, and one after the
+    // verification date (else it says nothing).
+    if (g.contentUpdated !== undefined) {
+      const problem = contentUpdatedProblem(g.contentUpdated);
+      if (problem) errors.push(`Guide "${g.slug}": contentUpdated (${g.contentUpdated}) ${problem}.`);
+      else if (g.contentUpdated <= g.lastVerified) errors.push(`Guide "${g.slug}": contentUpdated (${g.contentUpdated}) is not after lastVerified (${g.lastVerified}) — drop it.`);
+    }
     // Authored section ids (optional) must be unique within a guide so #anchors
     // don't collide. Derived anchors (from headings) are auto-deduped elsewhere.
     const sectionIds = new Map<string, number>();

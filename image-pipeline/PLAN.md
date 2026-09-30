@@ -88,9 +88,9 @@ imageFor(unit) =  explicit override
    **derived from disk**, never hand-edited; a broken path is impossible.
 3. ✅ `components/ContentImage.tsx` — `<picture>` AVIF→WebP, registry-driven `srcSet`
    widths, explicit dims (CLS 0), lazy/`priority` (+ `<head>` preload for the LCP hero),
-   and the **mandatory visible on-image label** (top-right pill) linking to
-   `/disclaimer#ai-generated-images`; it cannot be suppressed (the `sharedLabelId`
-   escape hatch was removed 20 Sep 2026 — it had no call sites).
+   and the **mandatory on-image disclosure** (top-right (i), expanding to the label on
+   click since the 22 Sep 2026 owner override) linking to `/disclaimer#ai-generated-images`;
+   it cannot be suppressed (the `sharedLabelId` escape hatch was removed 20 Sep 2026).
 4. ✅ **Owner decision 12 Sep: AI archetypes everywhere — no real photographs.** The
    `kind:'photo'` path was removed entirely (it would have needed licence allowlists,
    CC BY-SA attribution, JPEG ingestion and subject-privacy review that did not exist).
@@ -265,15 +265,20 @@ the set still reads as one photographer's work.
      images), the source claim de-absolutised to match the `Accuracy & sources` hedge two
      sections above, and `LAST_UPDATED` bumped — shipping a new section under a stale date
      is the same honesty failure §5 forbids in the other direction.
-4. **MET (20 Sep 2026) — a disclaimer line alone is not sufficient.** Consumer/advertising
-   law across our audience regimes turns on the impression created *on the page where it
-   is created*, not on a link in the footer. `ContentImage` renders a small persistent
-   label **on** every image — a top-right pill reading *"AI-generated · not a photo"*
-   (*"AI-generated · not this institution"* on college pages) that links to
-   `/disclaimer#ai-generated-images`. Words always visible, no popup, no client JS. A
-   16-agent review (18 Sep 2026; audit-log row 2026-09-20) rejected an icon-only cue and
-   the owner's "for representation only" wording (Indian-newsroom idiom that implies a
-   real stock photo); the owner chose the visible pill on 20 Sep 2026.
+4. **OWNER OVERRIDE (22 Sep 2026) — the label is collapsed to an (i) by default.**
+   Consumer/advertising law across our audience regimes turns on the impression created
+   *on the page where it is created*, not on a link in the footer, and the 18 Sep 2026
+   16-agent review therefore recommended the words stay visible at rest (it rejected an
+   icon-only cue and the "for representation only" wording — Indian-newsroom idiom that
+   implies a real stock photo). The owner shipped the always-visible pill on 20 Sep
+   (`7421b23`), then on 22 Sep explicitly directed, after the risk was restated, that only
+   the circular (i) show by default and the words *"AI-generated · not a photo"*
+   (*"AI-generated · not this institution"* on college pages) appear on click, linked to
+   `/disclaimer#ai-generated-images`. Logged as an owner override in the audit log (like
+   the 9 Jul 2026 footer exception), not as a compliance pass. Mitigations kept: the
+   words remain in the server HTML and in the (i) button's accessible name, so crawlers
+   and screen readers still receive the disclosure without a click; the (i) is a 32px
+   dark-glass control with ≥9:1 contrast over any hero.
    *Deliberate scope decision, still standing:* cite no statute on the page (EU AI Act
    Art. 50, MeitY synthetic-media rules). *Rationale corrected 20 Sep 2026:* the earlier
    line "our images are not deepfakes in that sense" is NOT safe to rely on — Art. 50

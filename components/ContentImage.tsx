@@ -1,5 +1,5 @@
 import { preload } from 'react-dom';
-import { Info } from 'lucide-react';
+import AiImageBadge from '@/components/AiImageBadge';
 import type { ImageAsset } from '@/lib/images';
 
 // The ONE way images render on GlobalStudyBoard. Server component — never add
@@ -20,13 +20,15 @@ import type { ImageAsset } from '@/lib/images';
 //   disclosure must be perceivable — e.g. a visible label — "upon first exposure at the
 //   latest". Every image is an AI archetype (owner decision 12 Sep 2026 — no real
 //   photographs), so the label always says so. Owner decision 20 Sep 2026: wording
-//   "AI-generated · not a photo", no popup, the text itself linked to the image policy,
-//   Back must work. The pill form and top-right placement follow the 18 Sep 16-agent
-//   review, which rejected an icon-only cue: a bare (i) reads as "credit", so the page
-//   would still give the impression of a real photograph to everyone who never clicks.
-//   Words always visible, no client JavaScript. The pill is a plain <a> (full
-//   navigation), so the browser Back button returns to this page with its scroll
-//   position, exactly as before.
+//   "AI-generated · not a photo", the text itself linked to the image policy, Back
+//   must work. Owner decision 22 Sep 2026 (an EXPLICIT OVERRIDE, logged in the audit
+//   log — the 18 Sep review had recommended the words stay visible at rest): only
+//   the circular (i) shows by default; a click reveals the words beside it in the
+//   same pill, and the revealed text is a plain <a> (full navigation, so Back returns
+//   here with scroll intact). The words are still in the server HTML and in the
+//   button's accessible name, so crawlers and screen readers get the disclosure
+//   without a click. Rendered by the tiny client island AiImageBadge, which receives
+//   ONLY strings — the registry never reaches the client bundle.
 
 interface Props {
   /** From imageFor(); null renders nothing (never a placeholder). */
@@ -103,39 +105,19 @@ export default function ContentImage({
           className={`w-full h-auto bg-cream-100 border border-stone-200 ${hero ? 'rounded-2xl' : 'rounded-xl'}`}
         />
       </picture>
-      {/*
-        The disclosure, overlaid top-right INSIDE the figure (12px inset clears the
-        rounded corner). Cream text on ink/75 composites to ≥9:1 against ANY pixel behind
-        it, including a pure-white sky (WCAG 1.4.3, AAA), so the control is identified by
-        its text and 1.4.11 needs no boundary contrast; the 1px cream ring is a cosmetic
-        edge, not the contrast mechanism. A light pill was measured at ~1:1 against skies
-        — never use one here. text-xs (12px) is the site's floor for load-bearing
-        disclosures (footer disclaimer, LastUpdated); never smaller — this label is a
-        legal statement. The global terracotta focus ring is invisible over warm photos,
-        so this link carries its own cream outline + dark halo.
-      */}
+      {/* The disclosure, top-right INSIDE the figure (12px inset clears the rounded
+          corner); collapsed to the (i) at rest — see AiImageBadge for the behaviour
+          and the contrast/print notes. The figcaption keeps the image ↔ caption
+          semantics; the visible middle dot is decorative, the spoken form uses a comma. */}
       <figcaption
         className={`absolute z-10 max-w-[calc(100%-1.5rem)] ${hero ? 'top-3 right-3' : 'top-2 right-2'}`}
       >
-        <a
+        <AiImageBadge
+          label={`AI-generated \u00b7 ${negation}`}
+          spokenLabel={`AI-generated, ${negation}`}
           href={DISCLAIMER_ANCHOR}
-          // print: Chromium's PDF compositor drops any element carrying backdrop-filter —
-          // the whole pill, text included — so the blur is switched off for print and the
-          // dark fill is forced to print (economy mode would otherwise leave cream-on-white).
-          className={`inline-flex items-center rounded-full bg-ink/75 font-semibold text-cream-50 no-underline ring-1 ring-cream-50/40 shadow-sm backdrop-blur-sm hover:bg-ink/90 hover:no-underline hover:text-cream-50 motion-safe:transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream-50 focus-visible:outline-offset-2 focus-visible:shadow-[0_0_0_5px_rgba(10,10,10,0.6)] print:backdrop-blur-none print:bg-ink print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact] ${
-            hero ? 'h-8 gap-1.5 px-2.5 text-xs' : 'h-7 gap-1 px-2 text-xs'
-          }`}
-        >
-          {/* Screen readers hear "AI-generated, not a photo" (the middle dot is decorative). */}
-          <span>
-            AI-generated
-            <span aria-hidden="true"> · </span>
-            <span className="sr-only">, </span>
-            {negation}
-          </span>
-          <Info aria-hidden="true" className="h-3.5 w-3.5 shrink-0" strokeWidth={2.25} />
-          <span className="sr-only"> — read how we use AI images</span>
-        </a>
+          variant={variant}
+        />
       </figcaption>
     </figure>
   );

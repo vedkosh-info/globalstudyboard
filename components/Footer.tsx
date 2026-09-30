@@ -17,6 +17,7 @@ const REGION_LINKS = REGIONS_ALPHABETICAL.map((r) => ({
 
 const SITE_LINKS = [
   { label: 'Ask GSB AI', href: '/gsb-ai' },
+  { label: 'Tools', href: '/tools' },
   { label: 'About', href: '/about' },
   { label: 'Editorial policy', href: '/editorial-policy' },
   { label: 'Contact', href: '/contact' },

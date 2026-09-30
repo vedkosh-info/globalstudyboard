@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { OPEN_SIGN_IN_EVENT, registerSignInHost, settleSignIn, type SignInRequest, type SignInVerdict } from '@/lib/auth-events';
+import { OPEN_SIGN_IN_EVENT, registerSignInHost, resumableFragment, settleSignIn, type SignInRequest, type SignInVerdict } from '@/lib/auth-events';
 import { isAuthConfigured } from '@/lib/supabase/config';
 import SignInSheet from '@/components/auth/SignInSheet';
 
@@ -28,7 +28,11 @@ export default function SignInHost() {
   const open = useCallback((req: SignInRequest) => {
     openerRef.current = document.activeElement;
     closedByNavigation.current = false;
-    setRequest({ ...req, next: req.next ?? window.location.pathname + window.location.search });
+    // The return path keeps an allow-listed fragment (a tool's `#exam=<slug>`):
+    // a redirect door cannot carry the fragment itself, and the callback's
+    // safeNextPath restores it on the final redirect.
+    const here = window.location.pathname + window.location.search + resumableFragment(window.location.hash);
+    setRequest({ ...req, next: req.next ?? here });
   }, []);
 
   const close = useCallback((verdict: SignInVerdict) => {

@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   path: '/privacy',
 });
 
-const LAST_UPDATED = '19 September 2026';
+const LAST_UPDATED = '30 September 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -55,8 +55,8 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong>Your account, only if you choose to create one</strong> — an optional, free
-            account that remembers your study destination and saved pages. What it stores is set
-            out in the &ldquo;Your account&rdquo; section below.
+            account that remembers your study destination, your saved pages and anything you enter
+            into our tools. What it stores is set out in the &ldquo;Your account&rdquo; section below.
           </li>
           <li>
             <strong>Your email address, only if you ask to test the Android app</strong> — see the
@@ -82,10 +82,31 @@ export default function PrivacyPage() {
             if you sign in with Google, the name on your Google account until you change it); the
             study destination and the domestic/international view you last chose; the pages you
             save (each page&rsquo;s title, address, study destination and the time you saved it);
+            everything you enter into the Application Planner (the universities and programmes you
+            add, their status, your own safe/target/reach estimate, the deadlines, documents and
+            test dates you record, and your private notes — please do not record sensitive personal
+            details in notes); everything you enter into the Cost &amp; Funding Planner (each
+            budget&rsquo;s name, destination, currency, programme length and intake, every cost and
+            funding line with its amount, period and note, and your private notes — again, please
+            do not record bank or card details); everything you enter into Compare Universities (each
+            comparison&rsquo;s name, destination and notes, the universities you put in it, the
+            criteria you name and the weight you give each, the scores you give each university,
+            and any note you add — please keep personal details out of them);
+            everything you enter into the Test Score Tracker (the test, the score exactly as you
+            received it, any section scores, the date you sat the test — a sitting you have only
+            booked belongs in the Application Planner instead — and your private note; please keep
+            registration numbers, dates of birth and ID numbers out of it); for every entry in these
+            four tools, when you first saved it and when you last changed it;
             the date and time you accepted our Terms and read this policy; and, only if we ever had
             to suspend your account, a short note explaining why (see &ldquo;How long we keep
             it&rdquo;). We never ask for a password, your date of birth, your nationality, a phone
             number or a photo.
+          </li>
+          <li>
+            <strong>Reports and PDFs</strong> — each tool can lay your own entries out as a printable
+            report and save them as a PDF. Both are built in your own browser, from data your browser
+            already holds; nothing is sent to us to make them, they never include your e-mail address,
+            and your private notes go in only while you tick the box for that report.
           </li>
           <li>
             <strong>Google Sign-In</strong> — if you use it, Google shares your Google account
@@ -96,9 +117,9 @@ export default function PrivacyPage() {
             side.
           </li>
           <li>
-            <strong>Why</strong> — solely to run your account: to sign you in, keep your saved pages
-            and preferences across devices, and answer your requests. We do not use your account
-            for marketing, and we never sell or share it.
+            <strong>Why</strong> — solely to run your account: to sign you in, keep your saved pages,
+            planner, budgets, comparisons, test scores and preferences across devices, and answer
+            your requests. We do not use your account for marketing, and we never sell or share it.
           </li>
           <li>
             <strong>Where and who processes it</strong> — your account data is held for us by{' '}
@@ -150,9 +171,14 @@ export default function PrivacyPage() {
           <li>
             <strong>Security logs</strong> — to protect accounts, our authentication provider
             records each sign-in (the e-mail address, IP address and browser) in its own security
-            logs, and each active session (removed when you sign out or it expires). Those logs are held by the
-            provider under its retention policy — a matter of days, not months — and we cannot
-            lengthen or shorten it. Sign-in requests are rate limited in two places: our own servers limit
+            logs. Those logs are held by the provider under its retention policy — a matter of days,
+            not months — and we cannot lengthen or shorten it. The provider also keeps a record of
+            each active session until you sign out while connected, use &ldquo;Sign out
+            everywhere&rdquo;, or your account is deleted; sessions have no fixed expiry. A sign-out
+            that cannot reach the provider (for example, while you are offline) still removes the
+            session from this device, but the provider keeps that record until you use &ldquo;Sign
+            out everywhere&rdquo; or your account is deleted. Sign-in requests are rate limited in
+            two places: our own servers limit
             requests per network address with counters that live in memory for minutes and are
             never stored, and our sign-in provider limits how often an address can be e-mailed,
             recording the time it last e-mailed you as part of your sign-in record (deleted with

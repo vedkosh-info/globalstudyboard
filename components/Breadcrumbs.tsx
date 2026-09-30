@@ -24,6 +24,7 @@ const GROUP_LABELS: Record<string, string> = {
   topics: 'Topics',
   scholarships: 'Scholarships',
   'gsb-ai': 'Ask GSB AI',
+  tools: 'Tools',
   search: 'Search',
   about: 'About',
   contact: 'Contact',

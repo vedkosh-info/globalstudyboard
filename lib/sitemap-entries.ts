@@ -1,8 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { REGIONS, REGION_SLUGS, matchesRegion, type RegionSlug } from '@/lib/regions';
-import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
+import { ENTRANCE_EXAMS, examModified } from '@/lib/admission-guides';
 import { COLLEGES } from '@/lib/colleges';
-import { GUIDES } from '@/lib/guides';
+import { GUIDES, guideModified } from '@/lib/guides';
 import { TOPICS } from '@/lib/topics';
 import { guidesForTopic } from '@/lib/topic-guides';
 import { REGION_CATEGORIES, regionCategoryPath } from '@/lib/region-nav';
@@ -16,10 +16,12 @@ import { SITE_LASTMOD } from '@/lib/site-meta';
 // `app/sitemap.xml/route.ts` emits the index that points at them.
 //
 // <lastmod> honesty (Google only uses lastmod while it keeps matching reality):
-//   • guides / exams — the unit's own lastVerified (its content-verification
-//     date, the same value the page shows as dateModified); an unstamped exam
-//     falls back to SITE_LASTMOD;
-//   • hubs / region pages — the newest member guide's lastVerified or
+//   • guides / exams — the later of the unit's own lastVerified (its
+//     content-verification date) and its `contentUpdated` — a content change
+//     without re-verification (guideModified / examModified) — the same value
+//     the page shows as dateModified; an unstamped exam falls back to
+//     SITE_LASTMOD;
+//   • hubs / region pages — the newest member guide's modified date or
 //     SITE_LASTMOD, whichever is later (the page changes when either does);
 //   • listings, colleges, static pages — SITE_LASTMOD, bumped on every deploy
 //     that changes them (see lib/site-meta.ts).
@@ -51,7 +53,7 @@ function newestGuideDate(slugs: readonly string[] | undefined, fallback: string)
   if (!slugs || slugs.length === 0) return fallback;
   return slugs.reduce((acc, s) => {
     const g = GUIDES.find((x) => x.slug === s);
-    return g ? later(acc, g.lastVerified) : acc;
+    return g ? later(acc, guideModified(g)) : acc;
   }, fallback);
 }
 
@@ -64,6 +66,11 @@ const STATIC_PATHS = [
   '/topics',
   '/scholarships',
   '/gsb-ai',
+  '/tools',
+  '/tools/application-planner',
+  '/tools/cost-planner',
+  '/tools/compare-universities',
+  '/tools/test-score-tracker',
   '/about',
   '/editorial-policy',
   '/sources',
@@ -85,7 +92,7 @@ export function sitemapEntries(id: SitemapId): MetadataRoute.Sitemap {
     case 'destinations':
       return REGIONS.flatMap((r) => {
         const regionGuides = GUIDES.filter((g) => matchesRegion(r.slug, g.region, g.regions));
-        const newest = regionGuides.reduce((acc, g) => later(acc, g.lastVerified), SITE_LASTMOD);
+        const newest = regionGuides.reduce((acc, g) => later(acc, guideModified(g)), SITE_LASTMOD);
         return [
           { url: `${BASE}/regions/${r.slug}`, lastModified: newest },
           ...REGION_CATEGORIES.map((cat) => ({
@@ -107,7 +114,7 @@ export function sitemapEntries(id: SitemapId): MetadataRoute.Sitemap {
     case 'exams':
       return ENTRANCE_EXAMS.map((e) => ({
         url: `${BASE}/exams/${e.slug}`,
-        lastModified: e.lastVerified ?? SITE_LASTMOD,
+        lastModified: examModified(e) ?? SITE_LASTMOD,
       }));
 
     case 'topics':
@@ -123,7 +130,7 @@ export function sitemapEntries(id: SitemapId): MetadataRoute.Sitemap {
       const region = id.replace(/^guides-/, '') as RegionSlug;
       return GUIDES.filter((g) => g.region === region).map((g) => ({
         url: `${BASE}/guides/${g.slug}`,
-        lastModified: g.lastVerified,
+        lastModified: guideModified(g),
       }));
     }
   }

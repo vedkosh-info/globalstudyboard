@@ -5,6 +5,7 @@ import { useEffect, useId, useRef, type KeyboardEvent } from 'react';
 import { X } from 'lucide-react';
 import { lockBodyScroll, unlockBodyScroll } from '@/lib/scroll-lock';
 import type { SignInRequest, SignInVerdict } from '@/lib/auth-events';
+import { emailDeliversCode } from '@/lib/supabase/config';
 
 /**
  * The contextual sign-in dialog FRAME — rendered synchronously by SignInHost the
@@ -56,6 +57,12 @@ export default function SignInSheet({
   const headingId = useId();
   const panelRef = useRef<HTMLDivElement>(null);
   const pressStartedOnBackdrop = useRef(false);
+  // What happens after sign-in, worded to be true for EVERY door: the code
+  // door never leaves this page, Google comes back to it in this tab, and an
+  // e-mailed link lands on it too — but usually in a new tab, wherever the
+  // mail app opens links (critic C6: "the tool opens right here" was not true
+  // for that door). The resume stash and `next` make the action happen there.
+  const newTabNote = emailDeliversCode() ? '' : ' (an e-mailed sign-in link may open it in a new tab)';
 
   // Scroll lock + inert background for the lifetime of the sheet; restore focus
   // on unmount unless a navigation closed it.
@@ -171,7 +178,22 @@ export default function SignInSheet({
           />
           {request.intent === 'save' && (
             <p className="mt-4 text-xs text-stone-600 leading-relaxed">
-              Your page stays right here — it will be saved as soon as you sign in.
+              Signing in brings you back to this page{newTabNote}, and it is saved to your account.
+            </p>
+          )}
+          {request.intent === 'compare' && (
+            <p className="mt-4 text-xs text-stone-600 leading-relaxed">
+              Signing in brings you back to this page{newTabNote}, and the university is added to your comparison.
+            </p>
+          )}
+          {request.intent === 'plan' && (
+            <p className="mt-4 text-xs text-stone-600 leading-relaxed">
+              Signing in brings you back to this page{newTabNote}, and the university is added to your planner.
+            </p>
+          )}
+          {request.intent === 'tools' && (
+            <p className="mt-4 text-xs text-stone-600 leading-relaxed">
+              Signing in brings you back to this tool{newTabNote}, ready to use.
             </p>
           )}
         </div>

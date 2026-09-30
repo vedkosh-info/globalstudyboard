@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Clock } from 'lucide-react';
 
-import { GUIDES, getGuideBySlug, GUIDE_CATEGORY_LABELS } from '@/lib/guides';
+import { GUIDES, getGuideBySlug, GUIDE_CATEGORY_LABELS, guideModified } from '@/lib/guides';
 import { getExamBySlug } from '@/lib/admission-guides';
 import { getCollegeBySlug } from '@/lib/colleges';
 import { REGIONS } from '@/lib/regions';
@@ -49,10 +49,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     type: 'article',
     image: ogImageFor(guide.region),
     keywords: guide.keywords,
-    // The only date a guide carries is its verification date. It is emitted as
-    // the modification date ONLY — publishing it as `published_time` too would
-    // move the "published" date forward on every re-verification.
-    modifiedTime: guide.lastVerified,
+    // A guide's modification date is guideModified(): its verification date,
+    // or a later contentUpdated. It is emitted as the modification date ONLY —
+    // publishing it as `published_time` too would move the "published" date
+    // forward on every change.
+    modifiedTime: guideModified(guide),
   });
 }
 
@@ -143,11 +144,11 @@ export default async function GuideDetailPage({ params }: Props) {
     description: guide.descriptionEn,
     inLanguage: 'en',
     url: pageUrl,
-    // `lastVerified` is a re-verification date, not a first-publication date, so
-    // it is emitted as dateModified only (Google accepts dateModified alone; a
-    // fabricated datePublished that moves forward on every review is worse than
-    // none).
-    dateModified: guide.lastVerified,
+    // A guide's modification date — guideModified(): its verification date, or a
+    // later contentUpdated — is not a first-publication date, so it is emitted as
+    // dateModified only (Google accepts dateModified alone; a fabricated
+    // datePublished that moves forward on every change is worse than none).
+    dateModified: guideModified(guide),
     image: [absoluteImageUrl(ogImage)],
     author: EDITORIAL_TEAM_LD,
     publisher: PUBLISHER_LD,
@@ -258,7 +259,7 @@ export default async function GuideDetailPage({ params }: Props) {
           )}
         </p>
         <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <LastUpdated date={guide.lastVerified} />
+          <LastUpdated date={guideModified(guide)} />
           {/* Shortlist — renders nothing until accounts are configured. */}
           <SaveButton kind="guide" slug={guide.slug} title={guide.titleEn} region={guide.region} />
         </div>
@@ -356,6 +357,12 @@ export default async function GuideDetailPage({ params }: Props) {
         )}
         <p className="text-stone-500 text-xs leading-relaxed m-0">
           Last verified: {formatReviewed(guide.lastVerified).display}.
+          {/* A later content change (a correction or a repaired source) is dated
+              separately, so the verification date is never read as covering it
+              — the same line the exam page prints. */}
+          {guideModified(guide) !== guide.lastVerified && (
+            <> Content updated {formatReviewed(guideModified(guide)).display}, without a full re-check.</>
+          )}
         </p>
       </section>
 

@@ -136,7 +136,14 @@ number or rule.** Lower tiers may only add neutral colour, never override Tier 1
 - **"Verify on the official site"** nudge on visa/policy/fee blocks.
 - A standalone `/disclaimer` page, linked in the footer.
 - **Freshness signal on every page (BINDING).** Every page shows when it was last
-  updated. Content pages display the unit's own truthful `lastVerified` date;
+  updated. Content pages display the unit's own truthful `lastVerified` date —
+  or, for a guide or exam record whose content changed WITHOUT a full
+  re-verification (a dead source repaired, a sentence corrected), its later
+  `contentUpdated` date (`guideModified()` / `examModified()`; the same date feeds
+  the sitemap `<lastmod>` and `dateModified`), while its "Last verified" line
+  keeps `lastVerified` (never bump `lastVerified` for a partial edit — guide and
+  exam pages both print "Content updated <date>, without a full re-check."
+  beside it, so the verification date is never read as covering the change);
   listing, region, college and static pages display the site review date
   (`SITE_REVIEWED` in `lib/site-meta.ts`, rendered via `components/LastUpdated.tsx`).
   The global footer states the admissions cycle the content targets
@@ -792,6 +799,21 @@ readable without one. Rules:
 - **One control per preference (§16.3) still holds:** no destination/audience
   picker on /account. The header control and the toggle write through to the
   profile when signed in; a device with no choice adopts the saved one at sign-in.
+- **Sign-out is certain, and "everywhere" is only claimed when confirmed.**
+  "Sign out" leaves this device with no session cookie whatever the network
+  does (auth-js returns an error without removing the session when an expired
+  token cannot be refreshed; `signOutThisDevice()` expires the session and
+  every `sb-<ref>-auth-token-*` sign-in verifier itself after every sign-out,
+  and offline it does not ask the SDK at all) — /cookies promises the cookie
+  "is removed when you sign out" and that a sign-out removes all the
+  verifiers. A sign-out that cannot reach the auth server forgets this device
+  but leaves the provider's session record, which only "Sign out everywhere"
+  or deletion can then end (this device no longer holds that session, so a
+  later sign-out here cannot); /privacy must not say otherwise. "Sign
+  out everywhere" ends the OTHER
+  sessions first (`scope: 'others'`, which keeps this one on any failure), and
+  says it worked only after the auth server confirmed; otherwise the student
+  stays signed in here with a message to try again.
 - **Consent is server-stamped and versioned** (`consent_version` = the date of
   the latest Terms-or-Privacy revision, `CONSENT_VERSION` in `lib/consent.ts`;
   stamps set by trigger only when a consent-gated door sends it; the version
@@ -813,3 +835,152 @@ readable without one. Rules:
 - **Every account surface is noindex** (`/login`, `/account` crawlable-noindex;
   `/admin`, `/auth/`, `/api/` robots-blocked); `/delete-account` is public and in
   the sitemap (Google Play User Data policy).
+
+---
+
+## 18. Tools — account-only interactive tools (BINDING, September 2026)
+Interactive tools are the site's second product surface after content (the
+owner's monetisation direction: a free account today, a paid tier later). Rules:
+- **URL + registry.** Every tool lives at `/tools/<slug>`; `/tools` is the
+  public index. One entry per tool in `lib/tools.ts`; adding a tool never adds
+  a second navigation mechanism (the index, the footer "Tools" link, the mobile
+  menu and the account popover are the entrances).
+- **Signed-in only, crawler-safe.** The tool page is a static, indexable shell
+  (name, what it does, privacy note, sign-in card). The interactive part renders
+  only for a signed-in visitor — decided in the browser from cookie PRESENCE
+  (§17), never by a server cookie read — and its chunk (with the Supabase SDK)
+  loads only then; a chunk that cannot be fetched shows a reload card, never a
+  crashed page. RLS is the enforcement; the gate is the on-ramp.
+- **Student-authored data only (Rule A, §4.5, §5).** A tool records what the
+  student enters. It never asserts a deadline, fee, cut-off or admission outcome,
+  never predicts admission odds, and pairs every deadline, task or validity date
+  it shows with the "confirm on the official site" nudge and a link to that site
+  wherever one is known (our profile's official URL, the one the student added,
+  or the test body's own page for a validity rule).
+- **Privacy (§9) in the same change.** Each per-user table: cascades from
+  `auth.users`, RLS own-row + passwordless guard, a per-user cap, included in the
+  `/api/account/export` download, described on `/privacy` and `/delete-account`
+  before it ships. The cap guard refuses another account's row, a password
+  session and a signed-out request BEFORE it counts (so a cap error never
+  answers a question about someone else's data) and serialises the count with
+  a transaction-scoped advisory lock; the signed-out `anon` role has no
+  INSERT/UPDATE on the table. Free-text fields ask the student not to record
+  sensitive personal details. No new cookie or localStorage without a
+  `/cookies` update.
+- **Bundle guard.** Client tool code never imports the content catalogue; the
+  server page passes compact projections. The global layout chunk is unchanged
+  by a tool. `scripts/check-tools.ts` enforces this for every module a
+  `'use client'` file can reach, following imports transitively (value imports
+  only — `import type` ships nothing).
+- **Region in context (owner directive, September 2026).** Every tool is
+  driven by the destination chosen in the header (`effectiveRegion`): it opens
+  on that destination, suggests that destination's structure (categories,
+  currency, official sources, exams) and re-tunes in place when the header
+  control changes. Entries for other destinations are counted, never mixed in,
+  and a tool never adds a second destination control (§16.3). A link into a
+  tool from a destination page (a region hub's tool cards, a university
+  profile's planner and Compare links) carries that destination as a
+  `#region=<slug>` fragment (`toolHref(slug, region)`; `scoreTrackerHref(exam,
+  region)` adds it beside `#exam=` for a destination's own test, never for a
+  `'global'` one) — never a query string, so each tool keeps one canonical
+  URL — which the tool applies as the page's own destination, exactly as
+  `<PageRegion>` does on a guide. The hand-off rule: that destination decides
+  only while the visitor has no remembered choice — it is never written to the
+  destination cookie and never overrides the visitor's own choice; it stays in
+  the address bar as a fragment (inert for search), so a reload, Back/Forward
+  and a redirect sign-in keep it; and it is carried to the tool's report and
+  back, or on to another tool. A same-tab link carrying such a fragment is
+  rendered with `components/tools/ToolLink`, never plain `next/link` (Next
+  would scroll the site header — and the destination control — out of view).
+- **Money is never asserted, never converted.** A tool that handles amounts
+  keeps one currency per record (the student's choice, ISO 4217), computes in
+  integer minor units, shows the arithmetic and nothing more interpretive —
+  never a threshold, an exchange rate, or a verdict that funding "is enough"
+  for any visa rule — and carries the not-financial-advice line beside its
+  totals.
+- **Guarded links.** A tool's per-destination structure may link to our guides
+  by slug and to official sources by URL only through data that
+  `scripts/check-tools.ts` (prebuild) validates: every guide slug must exist,
+  every source must be https, a cost-line or funds-rule source must be the
+  specific page it is cited for — never a site's front page (link nothing
+  rather than a homepage) — and no hint may state a figure.
+- **Reports and PDFs (September 2026).** Every tool offers a printable
+  report at `/tools/<slug>/report` (noindex, account-only, `?budget=`/`?set=`
+  or the destination's most recent record) and a one-tap PDF. ONE document
+  model (`lib/reports/model.ts`; a pure builder per tool) feeds the on-page
+  HTML, the print stylesheet and the PDF drawn in the browser by jsPDF
+  (`lib/reports/pdf.ts`, lazy chunk, OFL font subsets under
+  `public/fonts/report/` so every currency symbol prints). Nothing leaves the
+  device; the file never carries the e-mail address; private notes join only
+  while the student ticks the box for that report; every page prints
+  `SITE_DISCLAIMER` + `NON_AFFILIATION_NOTICE` (guarded against drift from the
+  Footer by `check-tools`) and a "prepared by the account holder … not an
+  official record" line; the paper size follows the destination (Letter for
+  USA/Canada, A4 elsewhere) and can be changed per report.
+- **First tool:** the Application Planner (`/tools/application-planner`,
+  migration 0003) — shortlist, status, deadlines/checklist/test dates, private
+  notes, CSV download; "Add to planner" on every university profile. It shows
+  one destination at a time — the header's: that destination's applications
+  and the items tied to them, plus the general items tied to no university
+  (a test date), which belong to no destination and so appear under every
+  one. Its CSV and report follow the same rule (`inDestination()` in
+  `lib/planner.ts`); the other destinations' applications are counted ("You
+  also have …"), never mixed in, and the whole plan is in the account data
+  download. Its test picker offers the header destination's tests first (the
+  same order as the Test Score Tracker's), and every test date links its test
+  body's official site, where the date must be confirmed.
+- **Second tool:** the Cost & Funding Planner (`/tools/cost-planner`, migration
+  0004) — per-destination cost and funding lines (with an official page or
+  our guide linked on a line only where we have one — an official page on a
+  line does not always state the figure, and many lines carry neither, so no
+  copy may promise that every line is linked or that a linked page publishes
+  the amount; the student-visa financial rule is linked country by country,
+  each page shown as what it was found to say — it states the requirement or
+  names a proof of funds, it only asks about the applicant's financial
+  support, or it lists no financial document — and a country with no page is
+  shown as not covered here, never implied by a homepage), one currency per
+  budget, per-year × programme length plus one-off totals, private notes, CSV
+  download; all tools are linked from every region hub.
+- **Third tool:** Compare Universities (`/tools/compare-universities`, migration
+  0005) — up to four universities of the chosen destination side by side: OUR
+  verified facts (rankings attributed to their bodies with the verify nudge,
+  location, admission tests, platform, levels, language, courses, official
+  site) kept visibly apart from the STUDENT'S own criteria, weights (1–5) and
+  scores (1–5). The site computes the student's weighted result, prints the
+  arithmetic in full, never fills a blank with a zero, and names "your top pick
+  — by your own weights" only when two or more universities are scored. It
+  never ranks, scores or recommends a university, and no shipped default
+  criterion may carry an admission-odds meaning (`scripts/check-tools.ts`
+  enforces this). "Add to compare" sits beside "Add to planner" on every
+  university profile.
+- **Fourth tool:** the Test Score Tracker (`/tools/test-score-tracker`,
+  migration 0006) — every attempt the student records, kept as its own row
+  (the score exactly as the test body reported it — stored as that text only,
+  never a derived numeric copy — up to six section scores, the date the
+  student sat the test, a private note). A booked sitting is not a score: the
+  form stops at the student's local today and points booked sittings to the
+  Application Planner (the database allows one day of time-zone slack), and a
+  future-dated row is shown as dated after today (confirm the date; no
+  validity period is shown until it has passed) and never displaces an attempt
+  already sat as the most recent. Each test's attempts are shown with the
+  OFFICIAL validity rule its test body publishes, once per test
+  (`lib/test-validity.ts`: a closed set of kinds, a Tier-1 source and a
+  verified date per exam). A computed "on or about" date, under each attempt,
+  is printed ONLY for the two dated kinds: where
+  the body states a fixed period from the test date (`months` — "valid
+  until" / "Expired", or the body's own word, "reportable") and where the body
+  only RECOMMENDS a maximum age (`recommended-months`, IELTS — the same date
+  worded as a recommendation, flagged in the `advisory` tone once past it,
+  never "valid until" or "Expired"; each university decides). Every other
+  kind is the rule in words plus the verify nudge, never a fabricated
+  countdown; where no official page states a rule, the tool says it found
+  none. A presence-only readiness view lists, for each university in the
+  planner shortlist for the chosen destination, the admission requirements its
+  profile names and, for each test the tracker records, whether a score is on
+  record; anything else (a test the tracker does not record) is shown as the
+  profile words it, to confirm on the university's own page. The tool never
+  computes a best or combined score, converts one test's scale into another's,
+  or says whether a score meets a requirement; `scripts/check-tools.ts` fails
+  the build if a catalogue exam lacks a well-formed validity entry or the 0006
+  `exam_slug` CHECK drifts from the catalogue. "Record your score" links from
+  every exam page.

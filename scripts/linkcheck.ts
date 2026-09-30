@@ -23,7 +23,8 @@
  *   - the link is plain http:// (browsers now warn, and Play reviewers did).
  *
  * UNREACHABLE is everything else that failed from this machine — connection
- * refused, timeouts, 403/429/412 anti-bot. It proves nothing on its own (the UAE
+ * refused, timeouts, 403/429/412 anti-bot and other 4xx/5xx, and a 200 that is
+ * a bot-challenge page rather than the page itself. It proves nothing on its own (the UAE
  * ministry is unreachable from here and fine on public DNS), so it is REPORTED
  * for a human to check in a real browser but does not fail the run. Pass
  * --strict to make it fail too. A second Play rejection came from a host that
@@ -33,6 +34,9 @@ import { GUIDES } from '../lib/guides';
 import { ENTRANCE_EXAMS } from '../lib/admission-guides';
 import { COLLEGES } from '../lib/colleges';
 import { REGIONS } from '../lib/regions';
+import { EXAM_VALIDITY } from '../lib/test-validity';
+import { DESTINATION_BUDGETS } from '../lib/cost-planner';
+import { collegeRankings } from '../lib/college-labels';
 import { promises as dns } from 'node:dns';
 
 const UA =
@@ -65,6 +69,21 @@ function collect(): Map<string, string> {
   walk(ENTRANCE_EXAMS as readonly Sourced[], 'exam');
   walk(COLLEGES as readonly Sourced[], 'college');
   walk(REGIONS as readonly Sourced[], 'region');
+  // The Test Score Tracker's validity rules cite official pages too — rot there
+  // would put a dead "Source:" link under every recorded score (review CA-02).
+  for (const [slug, v] of Object.entries(EXAM_VALIDITY)) {
+    add(v.source.url, `validity:${slug}`);
+    if (v.also) add(v.also.url, `validity:${slug}`);
+  }
+  // The Cost & Funding Planner shows each line's "Official source" and the visa
+  // funds-rule sources; profiles and Compare link each ranking body's own page.
+  // Neither lives in a `sources` array, so neither was checked before (review LEG-7:
+  // indianvisaonline.gov.in was cited by the planner and checked nowhere).
+  for (const [slug, b] of Object.entries(DESTINATION_BUDGETS)) {
+    for (const c of [...b.costs, ...b.funding]) add(c.source?.url, `cost-planner:${slug}`);
+    for (const s of b.fundsRule.sources) add(s.url, `cost-planner:${slug}`);
+  }
+  for (const c of COLLEGES) for (const r of collegeRankings(c)) add(r.url, `ranking:${c.slug}`);
   return out;
 }
 
@@ -112,6 +131,47 @@ const TLS_CODES = new Set([
   'ERR_TLS_CERT_ALTNAME_INVALID', 'EPROTO', 'ERR_SSL_WRONG_VERSION_NUMBER', 'ERR_SSL_PROTOCOL_ERROR',
 ]);
 
+/*
+ * Bot walls that answer HTTP 200. AAMC's Fastly "Client Challenge", Cloudflare's
+ * "Just a moment…" / "Attention Required!" / "Performing security verification",
+ * Akamai's "Access Denied" and Imperva's ~200-byte Incapsula stub (no title at
+ * all — mba.com) are all served with a 200, so a status-only check called the
+ * page behind them healthy. That is how the MCAT websiteUrl shipped as a 404 on
+ * 26 Sep 2026: curl saw 200 + "Client Challenge", a browser saw "Page not found"
+ * (review C4). Behind a wall the page may be fine or dead — only a browser can
+ * tell — so these go to the unreachable list, never to healthy.
+ */
+const CHALLENGE_TITLE = /^\s*(client challenge|just a moment|attention required|access denied|performing security verification)\b/i;
+const CHALLENGE_BODY = /_Incapsula_Resource/;
+
+/** The first `max` bytes of an HTML body — enough for <title> or a challenge stub. Other types are not read. */
+async function htmlHead(res: Response, max = 65_536): Promise<string> {
+  if (!res.body) return '';
+  if (!/text\/html/i.test(res.headers.get('content-type') ?? '')) {
+    await res.body.cancel().catch(() => {});
+    return '';
+  }
+  const reader = res.body.getReader();
+  const parts: Uint8Array[] = [];
+  let size = 0;
+  while (size < max) {
+    const { done, value } = await reader.read();
+    if (done || !value) break;
+    parts.push(value);
+    size += value.byteLength;
+  }
+  await reader.cancel().catch(() => {});
+  return new TextDecoder().decode(Buffer.concat(parts));
+}
+
+/** The challenge a 200 response actually is, or null for a real page. */
+function challengeOf(html: string): string | null {
+  const title = /<title[^>]*>([^<]*)/i.exec(html)?.[1]?.trim() ?? '';
+  if (CHALLENGE_TITLE.test(title)) return title;
+  if (CHALLENGE_BODY.test(html)) return 'Incapsula';
+  return null;
+}
+
 async function check(url: string): Promise<Verdict> {
   const host = (() => { try { return new URL(url).hostname; } catch { return ''; } })();
   if (url.startsWith('http://')) {
@@ -121,9 +181,23 @@ async function check(url: string): Promise<Verdict> {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), 25_000);
     const res = await fetch(url, { redirect: 'follow', headers: { 'User-Agent': UA }, signal: ctrl.signal });
-    clearTimeout(t);
     // 404/410: the server exists and says this page does not. That is real rot.
-    return { url, status: String(res.status), dead: res.status === 404 || res.status === 410, unreachable: false };
+    if (res.status === 404 || res.status === 410) {
+      clearTimeout(t);
+      await res.body?.cancel().catch(() => {});
+      return { url, status: String(res.status), dead: true, unreachable: false };
+    }
+    // Any other 4xx/5xx is what the header promises to report rather than pass:
+    // anti-bot 403/429/412, or a server fault as seen from this machine.
+    if (res.status >= 400) {
+      clearTimeout(t);
+      await res.body?.cancel().catch(() => {});
+      return { url, status: `unreachable:HTTP_${res.status}`, dead: false, unreachable: true };
+    }
+    const wall = challengeOf(await htmlHead(res));
+    clearTimeout(t);
+    if (wall) return { url, status: `unreachable:challenge(${wall.slice(0, 40)})`, dead: false, unreachable: true };
+    return { url, status: String(res.status), dead: false, unreachable: false };
   } catch (err) {
     const cause = (err as { cause?: { code?: string } }).cause;
     const code = cause?.code ?? (err as { name?: string }).name ?? 'ERR';

@@ -185,11 +185,16 @@ export default function GSBAIChat() {
                 )}
                 <div className="whitespace-pre-wrap">
                   {msg.content || (isLoading ? (
+                    // motion-safe: the dots bounce (translateY) and the word
+                    // pulses only for visitors who have not asked for less
+                    // motion; otherwise "Typing..." simply sits still (§15.3).
+                    // The stagger stays inline: the `animation` shorthand the
+                    // utility sets would reset a class-level delay to 0.
                     <span className="text-stone-500 flex gap-0.5 items-center">
-                      <span className="animate-pulse">Typing</span>
-                      <span className="animate-bounce" style={{ animationDelay: '0ms' }}>.</span>
-                      <span className="animate-bounce" style={{ animationDelay: '150ms' }}>.</span>
-                      <span className="animate-bounce" style={{ animationDelay: '300ms' }}>.</span>
+                      <span className="motion-safe:animate-pulse">Typing</span>
+                      <span className="motion-safe:animate-bounce" style={{ animationDelay: '0ms' }}>.</span>
+                      <span className="motion-safe:animate-bounce" style={{ animationDelay: '150ms' }}>.</span>
+                      <span className="motion-safe:animate-bounce" style={{ animationDelay: '300ms' }}>.</span>
                     </span>
                   ) : null)}
                 </div>
