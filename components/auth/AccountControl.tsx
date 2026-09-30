@@ -7,6 +7,9 @@ import { Award, Bookmark, ChevronDown, ClipboardList, Coins, Columns3, LogIn, Lo
 import SignInButton from '@/components/auth/SignInButton';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { announceAuthChanged } from '@/lib/auth-events';
+import ToolLink from '@/components/tools/ToolLink';
+import { useRegion } from '@/components/RegionProvider';
+import { toolPageHref } from '@/lib/tool-hint';
 import { clearLocalAuthCookies, hasAuthCookie, isAuthConfigured } from '@/lib/supabase/config';
 
 /**
@@ -14,12 +17,15 @@ import { clearLocalAuthCookies, hasAuthCookie, isAuthConfigured } from '@/lib/su
  * sign-in state (the mobile menu row and the /account page are secondary
  * entrances, not duplicates of this control).
  *
- * Placement is measured, not chosen: the header row is exactly full at 1024px
- * (and at 390/430px), so a control there would truncate the destination name
- * or push the menu button off screen (see the width tables in Header.tsx /
- * RegionSwitcher.tsx). The context bar has 33px spare at 320px and ≥88px from
- * 375px up, so: icon-only below `sm` (~40px), text from `sm` (~86px), and the
- * App pill drops its "App" text below 360px so both fit a 320px phone.
+ * Placement is measured, not chosen. The header row is full at 1024px (and at
+ * 390/430px): the nav already carries "Tools" and the destination name
+ * truncates there, so a control there would push the menu button off screen
+ * or cut the destination name further (see Header.tsx / RegionSwitcher.tsx).
+ * The account control lives in the context bar, whose width budget is
+ * measured in ONE place — the table in RegionContextBar.tsx (re-measure at
+ * 320/360/410/640/680px, signed in and out). Signed out: 32px icon-only below
+ * 410px, "Sign in" (~77–85px) from 410px. Signed in: 32px icon-only below
+ * `sm` (chevron hidden too); "Account" and the chevron (~115px) from `sm`.
  *
  * Signed out → the shared SignInButton. Signed in → a small popover (same
  * pattern as RegionSwitcher: aria-expanded + aria-controls, NO aria-haspopup,
@@ -97,6 +103,9 @@ export async function signOutThisDevice(getClient: () => Promise<SupabaseClient 
 
 export default function AccountControl() {
   const { hasSession, ready } = useAuth();
+  // The popover's tool links carry the page's destination (#region=), like
+  // every other Tools entrance (§18).
+  const { pageRegion } = useRegion();
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
   const [signingOut, setSigningOut] = useState(false);
@@ -221,17 +230,18 @@ export default function AccountControl() {
   if (!isAuthConfigured()) return null;
 
   if (!ready || !hasSession) {
-    // The word shows from 360px (the same threshold as the App pill's "App"):
-    // measured on the live site at 320px the two clusters need 290px of the
-    // 288px available with it shown, so only the very smallest phones get the
-    // icon alone — with the accessible name + tooltip intact.
+    // Icon-only below 410px, with the accessible name + tooltip intact: on phones
+    // the strip also carries the labelled Tools pill (owner directive, 30 Sep
+    // 2026). Measured signed out: with the word (77px) the row needs 369px of
+    // inner width, so it fits from a 402px viewport; 410px leaves headroom for
+    // fallback fonts. The signed-in Account pill stays icon-only below sm.
     // `contents`: the wrapper adds no box (the measured widths above hold); it
     // only lets focus find this pill after the menu closed on an ended session.
     return (
       <span ref={signInRef} className="contents">
         <SignInButton className={PILL} ariaLabel="Sign in" title="Sign in">
           <LogIn className="h-3.5 w-3.5" aria-hidden="true" />
-          <span className="hidden min-[360px]:inline">Sign in</span>
+          <span className="hidden min-[410px]:inline">Sign in</span>
         </SignInButton>
       </span>
     );
@@ -247,11 +257,12 @@ export default function AccountControl() {
         aria-expanded={open}
         aria-controls={open ? panelId : undefined}
         aria-label="Your account"
+        title="Your account"
         className={PILL}
       >
         <UserRound className="h-3.5 w-3.5" aria-hidden="true" />
         <span className="hidden sm:inline">Account</span>
-        <ChevronDown className={`h-3.5 w-3.5 text-stone-500 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+        <ChevronDown className={`hidden h-3.5 w-3.5 text-stone-500 transition-transform sm:inline ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>
 
       {open && (
@@ -275,18 +286,18 @@ export default function AccountControl() {
           <Link href="/account?tab=saved" data-account-option className={OPTION} onClick={() => setOpen(false)}>
             <Bookmark className="h-4 w-4 text-forest-700" aria-hidden="true" /> Saved pages
           </Link>
-          <Link href="/tools/application-planner" data-account-option className={OPTION} onClick={() => setOpen(false)}>
+          <ToolLink href={toolPageHref('application-planner', pageRegion)} data-account-option className={OPTION} onClick={() => setOpen(false)}>
             <ClipboardList className="h-4 w-4 text-forest-700" aria-hidden="true" /> Application planner
-          </Link>
-          <Link href="/tools/cost-planner" data-account-option className={OPTION} onClick={() => setOpen(false)}>
+          </ToolLink>
+          <ToolLink href={toolPageHref('cost-planner', pageRegion)} data-account-option className={OPTION} onClick={() => setOpen(false)}>
             <Coins className="h-4 w-4 text-forest-700" aria-hidden="true" /> Cost &amp; funding planner
-          </Link>
-          <Link href="/tools/compare-universities" data-account-option className={OPTION} onClick={() => setOpen(false)}>
+          </ToolLink>
+          <ToolLink href={toolPageHref('compare-universities', pageRegion)} data-account-option className={OPTION} onClick={() => setOpen(false)}>
             <Columns3 className="h-4 w-4 text-forest-700" aria-hidden="true" /> Compare universities
-          </Link>
-          <Link href="/tools/test-score-tracker" data-account-option className={OPTION} onClick={() => setOpen(false)}>
+          </ToolLink>
+          <ToolLink href={toolPageHref('test-score-tracker', pageRegion)} data-account-option className={OPTION} onClick={() => setOpen(false)}>
             <Award className="h-4 w-4 text-forest-700" aria-hidden="true" /> Test score tracker
-          </Link>
+          </ToolLink>
           {/* aria-disabled + the guard in signOut, not `disabled`: Chrome drops
               focus to <body> from a focused button that becomes disabled, and
               a sign-out whose token refresh cannot reach the auth server can

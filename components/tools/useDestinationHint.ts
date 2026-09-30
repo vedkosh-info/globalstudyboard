@@ -5,6 +5,7 @@ import { useRegion } from '@/components/RegionProvider';
 import { resumableFragment } from '@/lib/auth-events';
 import { REGION_SLUGS, type RegionSlug } from '@/lib/regions';
 import { REGION_HINT_KEY, TOOLS } from '@/lib/tools';
+import { carryHandOff, drainHandOff, takeHandOff } from '@/components/tools/hand-off';
 
 /**
  * The destination a DESTINATION page hands to a tool (review, CRIT2-2).
@@ -55,9 +56,15 @@ function regionIn(fragment: string): RegionSlug | null {
 
 const hintInHash = (): RegionSlug | null => regionIn(window.location.hash.slice(1));
 
-/** `/tools/<slug>` or `/tools/<slug>/report` for a tool in the registry — the paths that mount a gate. */
+/**
+ * `/tools/<slug>` or `/tools/<slug>/report` for a tool in the registry, and the
+ * `/tools` index itself — the paths that mount this hook (the index mounts it
+ * so the site-wide Tools links can hand a destination page's destination on to
+ * the tool opened from there).
+ */
 const TOOL_PATH = /^\/tools\/([a-z0-9]+(?:-[a-z0-9]+)*)(?:\/report)?\/?$/;
 function isToolPath(pathname: string): boolean {
+  if (pathname === '/tools' || pathname === '/tools/') return true;
   const slug = TOOL_PATH.exec(pathname)?.[1];
   return slug !== undefined && TOOLS.some((t) => t.slug === slug);
 }
@@ -104,38 +111,15 @@ function restoreFragment(fragment: string): void {
  *   has that id — the site header and the destination control ended up above
  *   the viewport (G8-SK-5).
  *
- * Every gate mount takes it (or discards it); the ToolLink that set one
- * releases it if its page is left for somewhere else; app/tools/error.tsx
- * settles it; and it expires after a minute, so a navigation abandoned on a
- * loading screen is never picked up by a later, unrelated visit.
+ * Every gate mount takes it (or discards it); any navigation that lands on a
+ * page other than its tool or the page it was clicked on releases it (the
+ * chrome's pathname effect, hand-off `notePath` — the header, strip, dock and
+ * menu Tools links cannot release it themselves), as does the unmount of the
+ * ToolLink that set it; app/tools/error.tsx settles it; and it expires after a
+ * minute, so a navigation abandoned on a loading screen is never picked up by
+ * a later, unrelated visit.
  */
-export interface ToolHandOff {
-  to: string;
-  fragment: string;
-  at: number;
-  /** The page a ToolLink was clicked on (null for a carry). */
-  from: string | null;
-}
-
-const HAND_OFF_TTL_MS = 60_000;
-let pending: ToolHandOff | null = null;
-
-/** Hand `fragment` to the gate that mounts at `to` (ToolLink). */
-export function handOffToTool(to: string, fragment: string): ToolHandOff {
-  pending = { to, fragment, at: Date.now(), from: window.location.pathname };
-  return pending;
-}
-
-/**
- * ToolLink's cleanup: drop `handOff` once the visitor has gone somewhere that
- * is neither its tool nor the page it was clicked on (a later click
- * superseded it). A link that unmounts while its page is still showing keeps
- * it — the navigation may still be on its way.
- */
-export function releaseHandOff(handOff: ToolHandOff): void {
-  const here = window.location.pathname;
-  if (pending === handOff && here !== handOff.to && here !== handOff.from) pending = null;
-}
+export { handOffToTool, releaseHandOff, type ToolHandOff } from '@/components/tools/hand-off';
 
 /**
  * The /tools error boundary: the gate a hand-off was waiting for is gone. Park
@@ -144,8 +128,8 @@ export function releaseHandOff(handOff: ToolHandOff): void {
  * through another page never picks it up.
  */
 export function settleHandOffs(): void {
-  if (pending && pending.to === window.location.pathname) restoreFragment(pending.fragment);
-  pending = null;
+  const p = drainHandOff();
+  if (p && p.to === window.location.pathname) restoreFragment(p.fragment);
 }
 
 export function useDestinationHint(): boolean {
@@ -153,8 +137,7 @@ export function useDestinationHint(): boolean {
   const [settled, setSettled] = useState(false);
 
   useEffect(() => {
-    const handed = pending && pending.to === window.location.pathname && Date.now() - pending.at < HAND_OFF_TTL_MS ? pending.fragment : null;
-    pending = null;
+    const handed = takeHandOff(window.location.pathname);
     if (handed) restoreFragment(handed);
 
     let held: RegionSlug | null = null;
@@ -181,7 +164,7 @@ export function useDestinationHint(): boolean {
       if (!held) return;
       setPageRegion(null);
       const to = window.location.pathname;
-      if (isToolPath(to)) pending = { to, fragment: `${REGION_HINT_KEY}=${held}`, at: Date.now(), from: null };
+      if (isToolPath(to)) carryHandOff(to, `${REGION_HINT_KEY}=${held}`);
     };
   }, [setPageRegion]);
 

@@ -21,7 +21,7 @@ export default function RegionNav() {
         <Link
           key={cat}
           href={chromeCategoryPath(cat, effectiveRegion, tunedIsKnown)}
-          className="whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium xl:px-3 text-stone-700 no-underline transition-colors hover:bg-forest-50 hover:text-forest-700"
+          className="whitespace-nowrap rounded-md px-2 py-2 text-sm font-medium xl:px-3 text-stone-700 no-underline transition-colors hover:bg-forest-50 hover:text-forest-700"
         >
           {chromeCategoryLabel(cat, effectiveRegion, tunedIsKnown)}
         </Link>

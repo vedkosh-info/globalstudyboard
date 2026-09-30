@@ -843,8 +843,25 @@ Interactive tools are the site's second product surface after content (the
 owner's monetisation direction: a free account today, a paid tier later). Rules:
 - **URL + registry.** Every tool lives at `/tools/<slug>`; `/tools` is the
   public index. One entry per tool in `lib/tools.ts`; adding a tool never adds
-  a second navigation mechanism (the index, the footer "Tools" link, the mobile
-  menu and the account popover are the entrances).
+  a second navigation mechanism. **The index is reachable from every page at
+  every width (owner directive, 30 September 2026):** a "Tools" link in the
+  header nav from `lg`, a labelled Tools pill in the strip under the header
+  below `lg`, the mobile menu, the quick-actions dock (fixed, so reachable at
+  any scroll position) and the footer; the account popover links each tool
+  directly. Each of the five index entrances is a `ToolsEntranceLink` /
+  `toolsIndexHref()` link and each popover link a `toolPageHref()` link
+  (`lib/tool-hint.ts`), all rendered through `ToolLink`: every one carries the
+  page's own destination as `#region=` — and the index hands it on to the tool
+  picked next (the index cards carry it too, so a new tab keeps it) — and none
+  imports the registry into the layout chunk. The site header is genuinely
+  sticky on any viewport at least 30rem tall (`overflow-x: clip` on html/body;
+  `hidden` made body a scroll container and silently broke `position: sticky`
+  until 30 Sep 2026), so there its Tools link stays on screen at any scroll;
+  on a shorter viewport (a landscape phone, 400% zoom) the header scrolls away
+  and the fixed dock is the always-reachable entrance. `scroll-padding-top`
+  (globals.css) keeps focus and #anchors from landing under the pinned header. Re-measure the header at 1024px
+  and the strip at 320/360/410/640/680px (signed in and out) before adding
+  anything to either row.
 - **Signed-in only, crawler-safe.** The tool page is a static, indexable shell
   (name, what it does, privacy note, sign-in card). The interactive part renders
   only for a signed-in visitor — decided in the browser from cookie PRESENCE

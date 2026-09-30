@@ -1,6 +1,7 @@
 /**
- * Event dispatched by every "Get the Android app" trigger (footer, mobile menu,
- * quick-actions dock) to open the global <TesterInviteModal/>.
+ * Event dispatched by every "Get the Android app" trigger (the strip under the
+ * header, footer, mobile menu, quick-actions dock) to open the global
+ * <TesterInviteModal/>.
  *
  * Kept in `lib` rather than in either component so the triggers and the modal
  * share one source of truth without importing each other — and so a trigger

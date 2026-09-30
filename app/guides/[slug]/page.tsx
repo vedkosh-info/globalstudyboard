@@ -283,7 +283,7 @@ export default async function GuideDetailPage({ params }: Props) {
       <div className="flex flex-col gap-8">
         {orderedSections.map(({ section, anchor, index }) => (
           <AudienceGate key={index} audience={section.audience} pageDefault={pageDefault}>
-            <section id={anchor} className="scroll-mt-24">
+            <section id={anchor} className="scroll-mt-2">
               <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-3">
                 {section.headingEn}
               </h2>
@@ -306,7 +306,7 @@ export default async function GuideDetailPage({ params }: Props) {
 
       {/* FAQs */}
       {guide.faqs.length > 0 && (
-        <section id="faqs" className="scroll-mt-24">
+        <section id="faqs" className="scroll-mt-2">
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-5">
             Frequently asked questions
           </h2>
@@ -315,7 +315,7 @@ export default async function GuideDetailPage({ params }: Props) {
               <AudienceGate key={i} audience={f.audience} pageDefault={pageDefault}>
                 <div
                   id={faqAnchor(f.questionEn)}
-                  className="bg-cream-50 border border-stone-200 rounded-2xl p-5 scroll-mt-24"
+                  className="bg-cream-50 border border-stone-200 rounded-2xl p-5 scroll-mt-2"
                 >
                   <h3 className="font-semibold text-ink text-base mb-2 m-0">{f.questionEn}</h3>
                   <p className="text-stone-700 text-base leading-relaxed m-0">{f.answerEn}</p>

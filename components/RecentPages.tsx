@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Clock, BookOpen, GraduationCap, Map, Award, Globe, Home, Menu, X, Trash2 } from 'lucide-react';
@@ -62,6 +62,12 @@ export default function RecentPages() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [, setTick] = useState(0);
+  // Focus: into the drawer when it opens, back to the control that opened it
+  // (the dock toggle, which hands itself focus first) when it closes — unless a
+  // navigation closed it, where restoring would yank the new page's viewport.
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const returnRef = useRef<HTMLElement | null>(null);
+  const closedByNavigation = useRef(false);
   const [cleared, setCleared] = useState(false);
   const { history, addToHistory, clearHistory } = useHistory();
 
@@ -92,11 +98,34 @@ export default function RecentPages() {
   }, [isOpen]);
 
   // Close on navigation
-  useEffect(() => { setIsOpen(false); }, [pathname]);
+  useEffect(() => {
+    setIsOpen((wasOpen) => {
+      if (wasOpen) closedByNavigation.current = true;
+      return false;
+    });
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    closeRef.current?.focus({ preventScroll: true });
+    return () => {
+      if (closedByNavigation.current) {
+        closedByNavigation.current = false;
+        return;
+      }
+      const back = returnRef.current;
+      if (back && back.isConnected && back.getClientRects().length > 0) back.focus({ preventScroll: true });
+    };
+  }, [isOpen]);
 
   // Open when the quick-actions dock asks for it.
   useEffect(() => {
-    const open = () => setIsOpen(true);
+    const open = () => {
+      const opener = document.activeElement;
+      returnRef.current = opener instanceof HTMLElement && opener !== document.body ? opener : null;
+      closedByNavigation.current = false;
+      setIsOpen(true);
+    };
     document.addEventListener('gsb:openRecent', open as EventListener);
     return () => document.removeEventListener('gsb:openRecent', open as EventListener);
   }, []);
@@ -156,6 +185,7 @@ export default function RecentPages() {
             Recent Activity
           </h3>
           <button
+            ref={closeRef}
             type="button"
             onClick={() => setIsOpen(false)}
             aria-label="Close"

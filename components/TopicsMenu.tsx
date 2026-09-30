@@ -56,17 +56,17 @@ export default function TopicsMenu({ menu }: { menu: TopicsMenuData }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-stone-700 hover:text-forest-700 px-2.5 xl:px-3 py-2 rounded-md hover:bg-forest-50 transition-colors"
+        className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-stone-700 hover:text-forest-700 px-2 xl:px-3 py-2 rounded-md hover:bg-forest-50 transition-colors"
       >
         Topics
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`}
           aria-hidden="true"
         />
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 w-[min(92vw,640px)] bg-cream-50 border border-stone-200 rounded-2xl shadow-xl p-5 z-50">
+        <div className="absolute right-0 top-full mt-1 max-h-[calc(100dvh-5.5rem)] w-[min(92vw,640px)] overflow-y-auto overscroll-contain bg-cream-50 border border-stone-200 rounded-2xl shadow-xl p-5 z-50">
           <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-3 m-0">
             Explore {regionName} by track
           </p>

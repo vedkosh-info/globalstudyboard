@@ -4,8 +4,8 @@ import { ANDROID_APP_IS_PUBLIC, ANDROID_APP_URL } from '@/lib/app-links';
 import { openTesterInvite } from '@/lib/tester-invite';
 
 /**
- * The single "Get the Android app" trigger, used by the footer, the mobile menu
- * and the quick-actions dock.
+ * The single "Get the Android app" trigger, used by the strip under the header
+ * (RegionContextBar), the footer, the mobile menu and the quick-actions dock.
  *
  * While the app is in closed beta it opens <TesterInviteModal/> to collect a
  * tester's Google-account email. The day `ANDROID_APP_IS_PUBLIC` flips to true
@@ -15,9 +15,9 @@ import { openTesterInvite } from '@/lib/tester-invite';
 export default function GetAppButton({
   className,
   children,
-  role,
   onNavigate,
   ariaLabel,
+  title,
 }: {
   className?: string;
   children: React.ReactNode;
@@ -27,8 +27,8 @@ export default function GetAppButton({
    * voice-control users can still say what they see.
    */
   ariaLabel?: string;
-  /** e.g. "menuitem" when the host renders a menu. */
-  role?: string;
+  /** Hover tooltip, for hosts that show the pill icon-only; keep it equal to ariaLabel. */
+  title?: string;
   /** Let the host close itself (menu / dock) when the control is used. */
   onNavigate?: () => void;
 }) {
@@ -42,12 +42,12 @@ export default function GetAppButton({
     return (
       <a
         data-gsb-android-cta
-        role={role}
         href={ANDROID_APP_URL}
         target="_blank"
         rel="noopener noreferrer"
         className={className}
         aria-label={ariaLabel}
+        title={title}
         onClick={onNavigate}
       >
         {children}
@@ -59,9 +59,9 @@ export default function GetAppButton({
     <button
       type="button"
       data-gsb-android-cta
-      role={role}
       className={className}
       aria-label={ariaLabel}
+      title={title}
       aria-haspopup="dialog"
       onClick={() => {
         onNavigate?.();

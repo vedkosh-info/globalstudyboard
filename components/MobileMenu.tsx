@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import ToolLink from '@/components/tools/ToolLink';
+import { toolsIndexHref } from '@/lib/tool-hint';
 import { Menu, X } from 'lucide-react';
 import { REGION_CATEGORIES, chromeCategoryLabel, chromeCategoryPath } from '@/lib/region-nav';
 import { useRegion } from '@/components/RegionProvider';
@@ -30,7 +32,8 @@ export default function MobileMenu() {
       href: chromeCategoryPath(cat, effectiveRegion, tunedIsKnown),
     })),
     { label: 'Topics', href: '/topics' },
-    { label: 'Tools', href: '/tools' },
+    // Carries the page's destination (#region=) like every other Tools entrance.
+    { label: 'Tools', href: toolsIndexHref(pageRegion) },
     { label: 'Ask GSB AI', href: '/gsb-ai', highlight: true },
   ];
 
@@ -55,9 +58,14 @@ export default function MobileMenu() {
     };
   }, [open]);
 
+  const closeKeepingFocus = () => {
+    btnRef.current?.focus();
+    setOpen(false);
+  };
+
   return (
     /* shrink-0: the header row can overflow (long destination name + the
-       212px wordmark), and whatever is shrinkable absorbs it. This button is
+       wordmark, sized in Header.tsx), and whatever is shrinkable absorbs it. This button is
        the ONLY route to site navigation below lg, so it must never be the one
        that gives — the destination pill truncates instead (it is built to). */
     <div ref={ref} className="shrink-0 lg:hidden" {...{ [FEEDBACK_RETURN_SCOPE]: '' }}>
@@ -76,11 +84,11 @@ export default function MobileMenu() {
       {open && (
         <div
           id="mobile-menu-panel"
-          className="absolute top-20 left-0 right-0 bg-cream-100 z-50 border-t border-stone-200 shadow-lg"
+          className="absolute top-20 left-0 right-0 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain bg-cream-100 z-50 border-t border-stone-200 shadow-lg"
         >
           <nav className="flex flex-col px-4 py-3 gap-0.5" aria-label="Mobile">
             {links.map((link) => (
-              <Link
+              <ToolLink
                 key={`${link.href}-${link.label}`}
                 href={link.href}
                 onClick={() => setOpen(false)}
@@ -91,7 +99,7 @@ export default function MobileMenu() {
                 }
               >
                 {link.label}
-              </Link>
+              </ToolLink>
             ))}
             {/* Account — a link once signed in, otherwise the shared sign-in
                 trigger (opens the sheet; the menu closes itself first). Absent
@@ -115,8 +123,12 @@ export default function MobileMenu() {
               ))}
             {/* Android app — a button, not a link: while the app is in closed
                 beta this opens the tester-invite dialog (see GetAppButton). */}
+            {/* Both dialog triggers hand focus to the menu button BEFORE the
+                dialog opens: the menu (and the focused item) is about to unmount,
+                and Safari/Firefox on macOS never focus a clicked button, so the
+                dialog would otherwise record <body> as its opener. */}
             <GetAppButton
-              onNavigate={() => setOpen(false)}
+              onNavigate={closeKeepingFocus}
               className="text-left text-stone-700 hover:text-forest-700 hover:bg-stone-50 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
             >
               Get the Android app
@@ -124,7 +136,7 @@ export default function MobileMenu() {
             {/* Feedback quick link — opens the global feedback dialog (the
                 suggestion / issue tab is the first control inside it). */}
             <FeedbackButton
-              onNavigate={() => setOpen(false)}
+              onNavigate={closeKeepingFocus}
               className="text-left bg-transparent text-stone-700 hover:text-forest-700 hover:bg-stone-50 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
             >
               Share feedback

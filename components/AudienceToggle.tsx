@@ -39,8 +39,8 @@ export default function AudienceToggle() {
             aria-pressed={on}
             className={
               on
-                ? 'rounded-full bg-forest-700 px-2.5 py-1 text-xs font-semibold text-cream-50 transition-colors'
-                : 'rounded-full px-2.5 py-1 text-xs font-medium text-stone-600 transition-colors hover:text-forest-700'
+                ? 'rounded-full bg-forest-700 px-2 py-1 text-xs font-semibold text-cream-50 transition-colors sm:px-2.5'
+                : 'rounded-full px-2 py-1 text-xs font-medium text-stone-600 transition-colors hover:text-forest-700 sm:px-2.5'
             }
           >
             {AUDIENCE_LABEL[a]}

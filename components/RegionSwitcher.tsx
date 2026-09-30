@@ -103,7 +103,9 @@ export default function RegionSwitcher() {
   };
 
   return (
-    <div ref={ref} className="relative">
+    // min-w-0: in the header's right cluster this is the one item built to give way (its name truncates), so it must be allowed to shrink.
+    // max-w-full on the button: a <button> sizes to its content, not to this slot, so without it the pill overflowed the header row by 12px at 1024px with the longest name instead of truncating (30 Sep 2026).
+    <div ref={ref} className="relative min-w-0">
       <button
         ref={btnRef}
         type="button"
@@ -120,7 +122,7 @@ export default function RegionSwitcher() {
         aria-expanded={open}
         aria-controls={open ? panelId : undefined}
         aria-label={`Study destination: ${active?.displayName ?? 'not set'}. Change destination`}
-        className="flex h-9 min-w-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-forest-300 bg-white px-2.5 text-sm font-semibold text-forest-800 shadow-sm transition-colors hover:border-forest-400 hover:bg-forest-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-1 sm:px-3"
+        className="flex h-9 min-w-0 max-w-full items-center gap-1.5 whitespace-nowrap rounded-full border border-forest-300 bg-white px-2.5 text-sm font-semibold text-forest-800 shadow-sm transition-colors hover:border-forest-400 hover:bg-forest-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-1 sm:px-3"
       >
         <RegionFlag slug={effectiveRegion} className="h-4" />
         {/*
@@ -180,7 +182,7 @@ export default function RegionSwitcher() {
              toolbar. It still scrolls on short/landscape viewports, so the container
              keeps a stable scrollbar gutter rather than relying on an overlay
              scrollbar that is invisible at rest on touch devices. */
-          className="absolute right-0 z-50 mt-2 max-h-[min(80dvh,42rem)] w-[16.5rem] overflow-y-auto overscroll-contain rounded-2xl border border-stone-200 bg-white p-1.5 shadow-xl"
+          className="absolute right-0 z-50 mt-2 max-h-[min(calc(100dvh-5.5rem),42rem)] w-[16.5rem] overflow-y-auto overscroll-contain rounded-2xl border border-stone-200 bg-white p-1.5 shadow-xl"
           /*
             Pure-CSS scroll shadows (the background-attachment local/scroll pair).
             On a tall screen the list fits and NOTHING is drawn. On a short or

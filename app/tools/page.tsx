@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Award, CalendarCheck2, ClipboardList, Coins, Columns3, Lock, ShieldCheck, type LucideIcon } from 'lucide-react';
-import { TOOLS, TOOLS_INDEX_DESCRIPTION_MAX, toolHref, toolsIndexDescription } from '@/lib/tools';
+import { TOOLS, TOOLS_INDEX_DESCRIPTION_MAX, toolsIndexDescription } from '@/lib/tools';
 import { pageMetadata } from '@/lib/seo';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 import LastUpdated from '@/components/LastUpdated';
 import FeedbackButton from '@/components/FeedbackButton';
+import ToolsIndexHint from '@/app/tools/ToolsIndexHint';
+import ToolIndexLink from '@/app/tools/ToolIndexLink';
 
 /**
  * /tools — the public index of the site's interactive tools. Static and
@@ -47,6 +49,8 @@ const HOW = [
 export default function ToolsPage() {
   return (
     <div className="mx-auto max-w-5xl">
+      {/* A destination handed over by the site-wide Tools links skins this index and carries on to the tool opened next. */}
+      <ToolsIndexHint />
       <header className="mb-8 max-w-2xl">
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-forest-700">Tools</p>
         <h1 className="font-display text-4xl font-bold tracking-editorial text-ink sm:text-5xl">Tools for your applications</h1>
@@ -71,9 +75,9 @@ export default function ToolsPage() {
                 </span>
               </div>
               <h2 className="mt-4 font-display text-2xl font-bold tracking-editorial text-ink">
-                <Link href={toolHref(tool.slug)} className="no-underline hover:underline">
+                <ToolIndexLink slug={tool.slug} className="no-underline hover:underline">
                   {tool.name}
-                </Link>
+                </ToolIndexLink>
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-stone-700">{tool.tagline}</p>
               <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-stone-700">
@@ -82,13 +86,13 @@ export default function ToolsPage() {
                 ))}
               </ul>
               <div className="mt-auto pt-5">
-                <Link
-                  href={toolHref(tool.slug)}
+                <ToolIndexLink
+                  slug={tool.slug}
                   className="inline-flex h-10 items-center gap-2 rounded-full bg-forest-700 px-4 text-sm font-semibold text-cream-50 no-underline transition-colors hover:bg-forest-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-2"
                 >
                   {/* The tool's name as written — lowercasing it read "Open the compare universities" (review, CRIT2-6). */}
                   Open {tool.name} <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
+                </ToolIndexLink>
               </div>
             </article>
           </li>

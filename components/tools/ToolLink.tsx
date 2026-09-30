@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, type ComponentProps } from 'react';
 import { resumableFragment } from '@/lib/auth-events';
-import { handOffToTool, releaseHandOff, type ToolHandOff } from '@/components/tools/useDestinationHint';
+import { handOffToTool, releaseHandOff, type ToolHandOff } from '@/components/tools/hand-off';
 
 /**
  * A link into a tool that carries a fragment (`toolHref(slug, region)`,
@@ -48,9 +48,20 @@ export default function ToolLink({ href, ...rest }: ToolLinkProps) {
       href={href}
       {...rest}
       onNavigate={(event) => {
-        // Already on the tool: let the fragment land (the gate listens for hashchange).
-        if (window.location.pathname === path) return;
         event.preventDefault();
+        // Already on this tool (or the index): never hand a fragment navigation
+        // to Next — it would scroll the page's first element under the header
+        // (G8-SK-5 again, reached from the chrome's Tools links on /tools).
+        // Write the fragment in place and tell the gate, which listens for
+        // hashchange; then go to the top, as a link to the current page does.
+        if (window.location.pathname === path) {
+          if (window.location.hash !== `#${fragment}`) {
+            window.history.replaceState(window.history.state, '', path + window.location.search + `#${fragment}`);
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+          }
+          window.scrollTo({ top: 0 });
+          return;
+        }
         handOff.current = handOffToTool(path, fragment);
         router.push(path);
       }}

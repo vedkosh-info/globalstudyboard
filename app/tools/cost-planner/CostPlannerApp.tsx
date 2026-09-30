@@ -1010,7 +1010,9 @@ function PlanView({
         />
       </div>
 
-      <aside className="space-y-4 lg:sticky lg:top-24" aria-labelledby="budget-summary-heading">
+      {/* Sticky, and never taller than the window (as in the planner): a taller sticky column keeps
+          its lower part — the settings — out of reach until the end of the list. */}
+      <aside className="space-y-4 lg:sticky lg:top-24 lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto" aria-labelledby="budget-summary-heading">
         <div className={CARD}>
           <h2 id="budget-summary-heading" className="font-display text-xl font-bold tracking-editorial text-ink m-0">
             Whole programme

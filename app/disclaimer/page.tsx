@@ -14,7 +14,7 @@ const LAST_UPDATED = '22 September 2026';
 
 function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="space-y-3 scroll-mt-24">
+    <section id={id} className="space-y-3 scroll-mt-2">
       <h2 className="font-display text-2xl font-bold tracking-editorial text-ink">{title}</h2>
       <div className="space-y-3 text-stone-700 leading-relaxed">{children}</div>
     </section>

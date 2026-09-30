@@ -14,8 +14,11 @@
 
 import type { RegionSlug } from '@/lib/regions';
 
-/** The fragment key a destination page uses to hand its destination to a tool (`#region=<slug>`). */
-export const REGION_HINT_KEY = 'region';
+// The destination hand-off key (`#region=<slug>`) and the /tools index link live
+// in lib/tool-hint.ts, which carries no registry data, so the site chrome (header,
+// strip, dock) can link to /tools without pulling this list into the layout chunk.
+import { REGION_HINT_KEY, toolPageHref } from '@/lib/tool-hint';
+export { REGION_HINT_KEY, toolsIndexHref } from '@/lib/tool-hint';
 
 export interface ToolDef {
   slug: string;
@@ -112,8 +115,7 @@ export const TOOLS: ToolDef[] = [
  * next/link: Next scrolls a same-tab fragment navigation to the page's first
  * element, above which the site header disappears (review G8-SK-5).
  */
-export const toolHref = (slug: string, region?: RegionSlug | null): string =>
-  region ? `/tools/${slug}#${REGION_HINT_KEY}=${region}` : `/tools/${slug}`;
+export const toolHref = (slug: string, region?: RegionSlug | null): string => toolPageHref(slug, region);
 
 /**
  * The /tools index meta description, built from the registry so a new tool is

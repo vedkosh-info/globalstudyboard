@@ -2,7 +2,8 @@
  * Body scroll lock for modal overlays (sign-in sheet, tester-invite dialog).
  *
  * Why not `body { overflow: hidden }`: globals.css gives <html> a non-visible
- * `overflow-x` (hidden), and per CSS overflow propagation that stops <body>'s
+ * `overflow-x` (clip, with a `hidden` fallback), and per CSS overflow
+ * propagation that stops <body>'s
  * overflow from reaching the viewport — so the classic idiom never locked
  * anything here (measured on production, Sept 2026: with the tester-invite
  * dialog open and `body.style.overflow === 'hidden'`, a wheel event still
@@ -12,8 +13,13 @@
  * inset-inline: 0` — the page leaves the scroll flow, so there is nothing left
  * to scroll. `top: -scrollY` keeps the same pixels painted behind the overlay,
  * and a padding-right equal to the vanished scrollbar prevents a desktop layout
- * shift. Deliberately NOT overflow-based: an overflow-y on html/body would kill
- * the header's position:sticky site-wide.
+ * shift. Deliberately NOT overflow-based: a non-visible overflow on <body>
+ * makes body the scroll container of the header's position:sticky, so the
+ * header stops pinning — as `overflow-x: hidden` did site-wide until
+ * 30 Sep 2026 (it computes overflow-y to auto; globals.css now uses `clip`),
+ * and as the lock's own `overflow: hidden` did while a dialog was open (removed
+ * the same day). With the body fixed and no overflow, the header stays pinned
+ * behind the overlay.
  *
  * Ref-counted so stacked lockers compose: the scroll position is captured by
  * the first lock and restored only when the last locker releases.

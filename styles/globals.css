@@ -88,22 +88,52 @@ html {
   -moz-osx-font-smoothing: grayscale;
   /* Avoid the grey tap-flash on iOS Safari (we provide our own focus/hover states). */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /*
+    Clip sideways overflow WITHOUT making a scroll container. `hidden` alone
+    also computes overflow-y to auto, which made <body> the scroll container of
+    the header's `position: sticky` — a container that never scrolls — so the
+    "sticky" header scrolled away with the page on every page since the first
+    release (found 30 Sep 2026). `clip` clips the same overflow and leaves
+    sticky working; browsers without `clip` (Safari < 16) keep the `hidden`
+    fallback. Same pair on <body>.
+  */
   overflow-x: hidden;
+  overflow-x: clip;
   /* Smooth glide when jumping to a section #anchor (ToC / deep links). */
   scroll-behavior: smooth;
 }
 
 /*
+  The pinned header (Header.tsx: sticky only on viewports >= 30rem tall) covers
+  the top 81px, so anything scrolled into view — a keyboard-focused control
+  (WCAG 2.4.11 Focus Not Obscured), a #section anchor, a ToC jump — must stop
+  below it. Section anchors therefore carry only a small scroll-mt-2 of their
+  own (scroll-margin adds to this). Region pages also pin the RegionRail under
+  it (>= 40rem tall), ~60px more.
+*/
+@media (min-height: 30rem) {
+  html {
+    scroll-padding-top: 6rem;
+  }
+}
+@media (min-height: 40rem) {
+  html:has([data-gsb-sticky-rail]) {
+    scroll-padding-top: 10rem;
+  }
+}
+
+/*
   Modal scroll lock (lib/scroll-lock.ts). `body { overflow: hidden }` is inert here
-  because <html> has a non-visible overflow-x, which stops body's overflow from
+  because <html> has a non-visible overflow-x (clip), which stops body's overflow from
   propagating to the viewport — so overlays fix the body in place instead and
-  restore the scroll offset on release.
+  restore the scroll offset on release. No overflow here: a fixed body already
+  leaves nothing to scroll, and `overflow: hidden` would make body the pinned
+  header's scroll container — the header jumped off-screen behind every dialog.
 */
 body.gsb-scroll-lock {
   position: fixed;
   inset-inline: 0;
   width: 100%;
-  overflow: hidden;
 }
 
 /* Honour reduced-motion — no animated scroll for those who ask for less motion. */
@@ -151,7 +181,8 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   min-height: 100dvh; /* iOS/Android dynamic viewport — falls back to 100vh */
-  overflow-x: hidden;
+  overflow-x: hidden; /* fallback for browsers without `clip` — see html above */
+  overflow-x: clip;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -286,6 +317,28 @@ hr {
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
+  /* The dock is fixed, so an action above the viewport could never be scrolled
+     into view (a phone in landscape, or 400% zoom). Cap the list at the viewport
+     − bottom offset (16) − toggle (48) − gap (10) − top clearance (16) and let
+     it scroll inside itself; the padding + negative margin keep the pills'
+     shadow and hover nudge from being clipped by the scroll box. */
+  max-height: calc(100vh - 90px - env(safe-area-inset-bottom, 0px));
+  max-height: calc(100dvh - 90px - env(safe-area-inset-bottom, 0px));
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px 6px 8px 12px;
+  margin: -4px -6px -8px -12px;
+}
+/* A column flex container with a max-height would otherwise squash the 44px pills. */
+.gsb-dock-actions > * {
+  flex-shrink: 0;
+}
+@media (min-width: 769px) {
+  .gsb-dock-actions {
+    max-height: calc(100vh - 94px - env(safe-area-inset-bottom, 0px));
+    max-height: calc(100dvh - 94px - env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* Primary toggle — one clear, filled round button */

@@ -8,6 +8,8 @@ import { useRegion } from '@/components/RegionProvider';
 import RegionFlag from '@/components/RegionFlag';
 import GetAppButton from '@/components/GetAppButton';
 import FeedbackButton from '@/components/FeedbackButton';
+import ToolLink from '@/components/tools/ToolLink';
+import { toolsIndexHref } from '@/lib/tool-hint';
 
 const REGION_LINKS = REGIONS_ALPHABETICAL.map((r) => ({
   label: r.displayName,
@@ -48,13 +50,15 @@ function FooterCol({
       <ul className="space-y-0.5 list-none p-0 m-0">
         {links.map((link) => (
           <li key={`${link.href}-${link.label}`}>
-            <Link
+            {/* ToolLink = next/link unless the href carries a tool fragment (the
+                Tools link's #region=), which it hands over without scrolling. */}
+            <ToolLink
               href={link.href}
               className="inline-flex items-center gap-2 py-1 text-cream-50/60 text-sm hover:text-terracotta-300 no-underline transition-colors"
             >
               {link.slug && <RegionFlag slug={link.slug} className="h-3" />}
               {link.label}
-            </Link>
+            </ToolLink>
           </li>
         ))}
         {children}
@@ -169,7 +173,7 @@ export default function Footer({
             <FooterCol heading="Study by Destination" links={studyLinks} />
           )}
 
-          <FooterCol heading="Site" links={SITE_LINKS}>
+          <FooterCol heading="Site" links={SITE_LINKS.map((l) => (l.href === '/tools' ? { ...l, href: toolsIndexHref(pageRegion) } : l))}>
             {/* Feedback quick links — buttons, not links: they open the global
                 feedback dialog on the matching tab (see FeedbackButton). */}
             <li>

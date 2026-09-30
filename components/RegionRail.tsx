@@ -11,8 +11,13 @@ export default function RegionRail({ activeSlug, sticky = false }: Props) {
   return (
     <nav
       aria-label="Regions"
+      // Pinned under the header only on viewports at least 40rem tall — with the
+      // header it takes ~140px, too much of a landscape phone. The data hook lets
+      // globals.css deepen scroll-padding-top on these pages so focus and
+      // #anchors land below both bars.
+      data-gsb-sticky-rail={sticky ? '' : undefined}
       className={`${
-        sticky ? 'sticky top-20 z-30 bg-cream-100/95 backdrop-blur border-y border-stone-200' : ''
+        sticky ? 'relative z-30 [@media(min-height:40rem)]:sticky top-20 bg-cream-100/95 backdrop-blur border-y border-stone-200' : ''
       }`}
     >
       <div className="mx-auto max-w-7xl px-4">

@@ -17,7 +17,6 @@ export default function FeedbackButton({
   prefill,
   className,
   children,
-  role,
   onNavigate,
 }: {
   /**
@@ -29,8 +28,6 @@ export default function FeedbackButton({
   prefill?: FeedbackPrefill;
   className?: string;
   children: React.ReactNode;
-  /** e.g. "menuitem" when the host renders a menu. */
-  role?: string;
   /** Let the host close itself (menu / dock) when the control is used. */
   onNavigate?: () => void;
 }) {
@@ -38,7 +35,6 @@ export default function FeedbackButton({
     <button
       type="button"
       {...{ [FEEDBACK_TRIGGER]: '' }}
-      role={role}
       className={className}
       aria-haspopup="dialog"
       onClick={() => {

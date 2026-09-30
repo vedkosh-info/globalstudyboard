@@ -24,7 +24,7 @@ export default function HomeRegionGrid() {
   };
 
   return (
-    <section id="destinations" className="scroll-mt-28">
+    <section id="destinations" className="scroll-mt-2">
       <div className="mb-7 flex items-end justify-between gap-4">
         <div>
           <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">

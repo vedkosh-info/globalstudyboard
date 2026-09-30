@@ -5,9 +5,10 @@ import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { COLLEGES } from '@/lib/colleges';
 import { GUIDES } from '@/lib/guides';
 import { REGIONS, matchesRegion, type RegionSlug } from '@/lib/regions';
-import { SITE_DESCRIPTION } from '@/lib/site-meta';
+import { SITE_DESCRIPTION, SITE_REVIEWED } from '@/lib/site-meta';
 import { pageMetadata } from '@/lib/seo';
 import HomeHero, { type HomeHeroData } from '@/components/HomeHero';
+import LastUpdated from '@/components/LastUpdated';
 import ContentImage from '@/components/ContentImage';
 import { homeImage } from '@/lib/images';
 import HomeRegionGrid from '@/components/HomeRegionGrid';
@@ -118,17 +119,20 @@ export default function HomePage() {
   return (
     <div className="space-y-16 md:space-y-20">
 
-      <HomeHero
-        data={HOME_HERO_DATA}
-        visual={
-          <ContentImage
-            asset={homeImage()}
-            variant="hero"
-            priority
-            sizes="(min-width: 1024px) 26rem, (min-width: 640px) 90vw, 100vw"
-          />
-        }
-      />
+      <div className="space-y-4">
+        <HomeHero
+          data={HOME_HERO_DATA}
+          visual={
+            <ContentImage
+              asset={homeImage()}
+              variant="hero"
+              priority
+              sizes="(min-width: 1024px) 26rem, (min-width: 640px) 90vw, 100vw"
+            />
+          }
+        />
+        <LastUpdated date={SITE_REVIEWED} />
+      </div>
 
       <HomeRegionGrid />
 

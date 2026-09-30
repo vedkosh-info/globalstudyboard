@@ -107,7 +107,7 @@ export default function GuidesIndexPage() {
 
       <div className="space-y-16">
         {sections.map((s) => (
-          <section key={s.region.slug} id={`guides-${s.region.slug}`} className="scroll-mt-28">
+          <section key={s.region.slug} id={`guides-${s.region.slug}`} className="scroll-mt-2">
             <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
               <div>
                 <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">

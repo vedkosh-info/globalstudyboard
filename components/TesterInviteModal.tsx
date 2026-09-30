@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { X, Smartphone, Check } from 'lucide-react';
 import { useRegion } from '@/components/RegionProvider';
 import { OPEN_TESTER_INVITE_EVENT } from '@/lib/tester-invite';
+import { FEEDBACK_RETURN, FEEDBACK_RETURN_SCOPE } from '@/lib/feedback';
 import { lockBodyScroll, unlockBodyScroll } from '@/lib/scroll-lock';
 
 /**
@@ -59,6 +60,7 @@ export default function TesterInviteModal() {
   const panelRef = useRef<HTMLDivElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
   const openerRef = useRef<Element | null>(null);
+  const fallbackRef = useRef<HTMLElement | null>(null);
   // A route change closes the dialog too. Restoring focus then would yank the
   // viewport back to whichever trigger opened it (the footer button persists
   // across routes), so navigation-driven closes must not restore focus.
@@ -72,10 +74,19 @@ export default function TesterInviteModal() {
   const valid = EMAIL_RE.test(value) && value.length <= 254;
   const showError = touched && email.trim().length > 0 && !valid;
 
-  // Any trigger (footer, mobile menu, quick-actions dock) opens it by event.
+  // Any trigger (the strip under the header, footer, mobile menu, quick-actions
+  // dock) opens it by event.
   useEffect(() => {
     const onOpen = () => {
-      openerRef.current = document.activeElement;
+      const opener = document.activeElement;
+      openerRef.current = opener;
+      // The dock and the mobile menu unmount their trigger when they close, so
+      // remember their persistent toggle now, while the trigger is still in the
+      // DOM (the same FEEDBACK_RETURN markers FeedbackHost uses).
+      fallbackRef.current =
+        opener
+          ?.closest<HTMLElement>(`[${FEEDBACK_RETURN_SCOPE}]`)
+          ?.querySelector<HTMLElement>(`[${FEEDBACK_RETURN}]`) ?? null;
       closedByNavigation.current = false;
       setEmail('');
       setTouched(false);
@@ -97,7 +108,7 @@ export default function TesterInviteModal() {
   }, [pathname]);
 
   // Lock body scroll while the dialog is open. Not `body.style.overflow =
-  // 'hidden'`: that idiom is inert on this site (html has overflow-x:hidden, so
+  // 'hidden'`: that idiom is inert on this site (html has a non-visible overflow-x, so
   // body's overflow never reaches the viewport — measured Sept 2026), see
   // lib/scroll-lock.ts.
   useEffect(() => {
@@ -127,12 +138,23 @@ export default function TesterInviteModal() {
         return;
       }
       // The mobile menu and the quick-actions dock unmount their trigger when
-      // they close, so the captured opener is gone by now. Fall back to a
-      // trigger that still exists rather than dropping focus on <body>.
+      // they close, so the captured opener is gone by now: return to that
+      // host's own toggle (captured on open), which is where the student was.
+      const host = fallbackRef.current;
+      if (host && host.isConnected && host.getClientRects().length > 0) {
+        host.focus();
+        return;
+      }
+      // Last resort (e.g. Safari reported <body> as the opener): the first
+      // VISIBLE trigger — below 360px the context bar's App pill is
+      // display:none, and focusing a hidden element drops focus on <body>.
+      const visible = (el: Element): el is HTMLElement => el instanceof HTMLElement && el.getClientRects().length > 0;
       const fallback =
-        document.querySelector<HTMLElement>('[data-gsb-android-cta]') ??
+        Array.from(document.querySelectorAll('[data-gsb-android-cta]')).find(visible) ??
         document.querySelector<HTMLElement>('header a, header button');
-      fallback?.focus();
+      // preventScroll: the strip and footer pills are not pinned, and landing
+      // there must not throw the visitor to the top or bottom of the page.
+      fallback?.focus({ preventScroll: true });
     };
   }, [open]);
 

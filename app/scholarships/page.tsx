@@ -94,7 +94,7 @@ export default function ScholarshipsIndexPage() {
       </nav>
 
       {SCHOLARSHIP_SECTIONS.map((sec) => (
-        <section key={sec.region.slug} id={`scholarships-${sec.region.slug}`} className="scroll-mt-28">
+        <section key={sec.region.slug} id={`scholarships-${sec.region.slug}`} className="scroll-mt-2">
           <div className="section-rule mb-5">
             <span role="heading" aria-level={2}>
               Scholarships for studying in {sec.region.proseName}
