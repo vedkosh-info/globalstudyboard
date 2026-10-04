@@ -331,8 +331,8 @@ const NOT_APPLICABLE_CAVEAT = 'A university may still set its own limit on how l
  * tool's rule box (printed once per test) and for validityStatus() (which the
  * report and the CSV print on every row). null for the dated kinds: each
  * attempt carries its own "on or about" date instead. For `unstated`, the
- * nudge beside a "no published rule" note (validityStatus words that case as
- * one sentence of its own).
+ * nudge beside a "no published rule" note. validityStatus prints that note
+ * (the SAT and ACT five-year caution lives there) and then this nudge.
  */
 export function validityNudge(v: ExamValidity): string | null {
   switch (v.kind) {
@@ -419,7 +419,10 @@ export function validityStatus(v: ExamValidity | undefined, testDate: string, to
       return { text: `${v.note} ${validityNudge(v)}`, tone: 'info', until: null };
     case 'unstated':
     default:
-      return { text: `We found no validity rule published by ${bodyInSentence(v)} for this result — confirm on the official site before relying on an older one.`, tone: 'info', until: null };
+      // The note is the rule we found — for SAT and ACT it is the body's own
+      // five-year caution. The PDF, the CSV and this sentence must carry it;
+      // a generic "no rule" line was dropping it.
+      return { text: `${v.note} ${validityNudge(v)}`, tone: 'info', until: null };
   }
 }
 

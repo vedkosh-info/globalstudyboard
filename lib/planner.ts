@@ -183,9 +183,13 @@ export interface CollegeOption {
   slug: string;
   name: string;
   region: RegionSlug;
+  /** Destination country name (`countries` in lib/regions.ts), or null when the profile's country is not on that list. */
+  country: string | null;
   /** "City, Country" for the search result line. */
   place: string;
   url: string | null;
+  /** Course areas already on the profile. The planner offers them; the student can still type their own. */
+  courses?: string[];
 }
 
 export interface ExamOption {

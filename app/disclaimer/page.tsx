@@ -6,7 +6,7 @@ import { AlertTriangle } from 'lucide-react';
 export const metadata: Metadata = pageMetadata({
   title: 'Disclaimer',
   description:
-    'Important disclaimer: information on GlobalStudyBoard is for guidance only. Always verify fees, deadlines, rankings and eligibility with the official university or examination website.',
+    'Important disclaimer: information on GlobalStudyBoard is for guidance only. Always verify fees, deadlines, rankings and eligibility with the official university, the examination website, or the official representative of that country.',
   path: '/disclaimer',
 });
 
@@ -43,8 +43,8 @@ export default function DisclaimerPage() {
           <p className="text-stone-800 leading-relaxed m-0">
             <strong>Information provided on GlobalStudyBoard is for guidance only.</strong> Tuition
             fees, application deadlines, rankings, exam patterns and eligibility requirements change
-            every academic year. Always verify all details with the official university or
-            examination website before applying.
+            every academic year. Always verify all details with the official university, the
+            examination website, or the official representative of that country before applying.
           </p>
         </div>
       </div>

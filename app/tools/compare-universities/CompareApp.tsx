@@ -2,13 +2,16 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEvent } from 'react';
 import Link from 'next/link';
-import { ArrowDownWideNarrow, ChevronDown, ChevronLeft, ChevronRight, Download, ExternalLink, FileText, Plus, RotateCw, Search, Trash2, X } from 'lucide-react';
-import { reportHref } from '@/lib/tools';
+import { ArrowDownWideNarrow, ChevronDown, ChevronLeft, ChevronRight, Download, ExternalLink, Plus, RotateCw, Search, Trash2, X } from 'lucide-react';
+import ReportView from '@/components/tools/ReportView';
+import { buildCompareReport } from '@/lib/reports/compare-report';
+import { defaultPaperFor, type Paper } from '@/lib/reports/model';
 import type { User } from '@supabase/supabase-js';
 import { getSupabaseBrowserClient } from '@/lib/supabase/client';
 import { checkToolSession, CONNECTION_LOST, explainLoadFailure, isUnansweredWrite, SESSION_ENDED, sessionMessage, TIMED_OUT, withDeadline, type ToolSession, type WriteOutcome } from '@/lib/tools-shared';
 import { ToolLoadError, ToolOffline, ToolSetup, ToolSkeleton, ToolSessionEnded } from '@/components/tools/ToolStates';
 import { useRegion } from '@/components/RegionProvider';
+import CountrySelect from '@/components/tools/CountrySelect';
 import RegionFlag from '@/components/RegionFlag';
 import AddToPlannerButton from '@/components/AddToPlannerButton';
 import { REGIONS_ALPHABETICAL, getRegionBySlug, type Region, type RegionSlug } from '@/lib/regions';
@@ -215,7 +218,7 @@ const regionOf = (slug: RegionSlug): Region => getRegionBySlug(slug) ?? REGIONS_
 
 // ── Component ────────────────────────────────────────────────────────────────
 export default function CompareApp() {
-  const { effectiveRegion } = useRegion();
+  const { effectiveRegion, country } = useRegion();
   const region = regionOf(effectiveRegion);
   const [load, setLoad] = useState<LoadState>('loading');
   const [sets, setSets] = useState<CompareSet[]>([]);
@@ -239,9 +242,14 @@ export default function CompareApp() {
   // destination is never shown locked by the old form's save, and the old
   // save's answer never unlocks the new form's (see createSet).
   const [createSaving, setCreateSaving] = useState(false);
+  /** A one-click start under the prepared name. Must not flip `creating` — that would retire the save. */
+  const [quickBusy, setQuickBusy] = useState(false);
+  const quickLock = useRef(false);
   /** Identity of the new-comparison form on screen — bumped whenever it opens or closes. */
   const createFormToken = useRef(0);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [includeNotes, setIncludeNotes] = useState(false);
+  const [paperChoice, setPaperChoice] = useState<Paper | null>(null);
   const newBtnRef = useRef<HTMLButtonElement>(null);
   const setHeadingRef = useRef<HTMLHeadingElement>(null);
   const pendingFocus = useRef<string | null>(null);
@@ -406,6 +414,20 @@ export default function CompareApp() {
   // downloads its CSV during an outage, the same way its report renders.
   const needsFacts = setEntries_.some((e) => Boolean(e.college_slug));
   const csvFacts = facts ?? (needsFacts ? null : NO_FACTS);
+  const compareNotes = Boolean(set && (set.notes?.trim() || setEntries_.some((e) => Boolean(e.note?.trim()))));
+  const compareDoc = useMemo(
+    () => (set && csvFacts ? buildCompareReport({ set, entries, criteria, scores, facts: csvFacts, includeNotes: includeNotes && compareNotes }) : null),
+    [set, csvFacts, entries, criteria, scores, includeNotes, compareNotes],
+  );
+  // A bookmarked /report?set= link lands here. Apply it once per destination so a later save does not jump back to it.
+  const setQueryFor = useRef<string | null>(null);
+  useEffect(() => {
+    if (load !== 'ready') return;
+    if (setQueryFor.current === effectiveRegion) return;
+    setQueryFor.current = effectiveRegion;
+    const id = new URLSearchParams(window.location.search).get('set');
+    if (id && sets.some((x) => x.id === id && x.region === effectiveRegion)) setSelectedId(id);
+  }, [load, sets, effectiveRegion]);
   const otherRegions = useMemo(() => {
     const counts = new Map<RegionSlug, number>();
     for (const x of sets) if (x.region !== effectiveRegion) counts.set(x.region, (counts.get(x.region) ?? 0) + 1);
@@ -977,7 +999,19 @@ export default function CompareApp() {
   };
 
   // The header toggle would close the new-comparison form: it waits while that form saves.
-  const createLocked = creating && createSaving;
+  const createLocked = (creating && createSaving) || quickBusy;
+  const startWithDefaults = async () => {
+    if (quickLock.current || createSaving || quickBusy) return;
+    quickLock.current = true;
+    setQuickBusy(true);
+    try {
+      const why = await createSet(defaultSetLabel(country ?? region.displayName, sets));
+      if (why) setNotice({ tone: 'error', text: why });
+    } finally {
+      quickLock.current = false;
+      setQuickBusy(false);
+    }
+  };
 
   // ── Render ──────────────────────────────────────────────────────────────
   if (load === 'loading') return <ToolSkeleton label="Loading your comparisons…" />;
@@ -993,17 +1027,16 @@ export default function CompareApp() {
           <p className="m-0 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-stone-600">
             <RegionFlag slug={effectiveRegion} className="h-3.5" /> Comparisons for {region.proseName}
           </p>
-          <p className="m-0 mt-1 text-sm leading-relaxed text-stone-700">
-            Tuned to the destination chosen in the header — change it there to compare universities elsewhere.
-            {otherRegions.length > 0 && <> You also have {otherRegions.map(({ region: r, n }) => `${n} for ${r.proseName}`).join(', ')}.</>}
-          </p>
+          <CountrySelect region={region} />
+          {otherRegions.length > 0 && (
+            <p className="m-0 mt-1 text-sm text-stone-700">
+              You also have {otherRegions.map(({ region: r, n }) => `${n} for ${r.proseName}`).join(', ')}.
+            </p>
+          )}
         </div>
         <div className="flex shrink-0 flex-wrap items-center gap-2">
           {set && (
             <>
-              <Link href={`${reportHref('compare-universities')}?set=${encodeURIComponent(set.id)}`} className={`${BTN_SECONDARY} no-underline`}>
-                <FileText className="h-4 w-4" aria-hidden="true" /> Report &amp; PDF
-              </Link>
               <button type="button" onClick={downloadCsv} className={BTN_SECONDARY} disabled={setEntries_.length === 0 || !csvFacts}>
                 <Download className="h-4 w-4" aria-hidden="true" /> Download CSV
               </button>
@@ -1047,7 +1080,7 @@ export default function CompareApp() {
               : setEntries_.length === 0
                 ? 'Your comparison is below and still works, and you can add a university yourself. The search of our profiles needs the list — try again, or reload the page.'
                 : needsFacts
-                  ? 'Your comparison, criteria and scores are below and still work. Each university’s facts, the search of our profiles and Download CSV need the list — try again, or reload the page.'
+                  ? 'Your comparison, criteria and scores are below and still work. Each university’s facts, the search, the CSV and the PDF need the list — try again, or reload the page.'
                   : 'Your comparison, criteria and scores are below and still work, and so does Download CSV. The search of our profiles needs the list — try again, or reload the page.'}{' '}
             You are still signed in, and nothing you saved has changed.
           </p>
@@ -1064,9 +1097,10 @@ export default function CompareApp() {
 
       {creating && (
         <NewSetForm
+          key={country ?? 'all'}
           id="compare-new-panel"
           region={region}
-          defaultLabel={defaultSetLabel(region.displayName, sets)}
+          defaultLabel={defaultSetLabel(country ?? region.displayName, sets)}
           onCancel={() => {
             setCreating(false);
             newBtnRef.current?.focus();
@@ -1099,24 +1133,28 @@ export default function CompareApp() {
       )}
 
       {!set ? (
-        <div className={`${CARD} text-center`}>
-          <h2 className="font-display text-xl font-bold tracking-editorial text-ink">No comparison for {region.proseName} yet</h2>
-          <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-stone-700">
-            Put up to {COMPARE_LIMITS.entriesPerSet} universities side by side — our verified facts on top, your own criteria,
-            weights and scores underneath. You decide what matters; we assert nothing.
-          </p>
-          {!creating && (
-            // The heading above names the destination; "for {shortName}" read as broken English ("for Middle East").
-            <button type="button" onClick={() => setCreating(true)} className={`${BTN_PRIMARY} mt-4`}>
-              <Plus className="h-4 w-4" aria-hidden="true" /> Start a comparison
-            </button>
-          )}
-        </div>
+        !creating && (
+          <div className={`${CARD} text-center`}>
+            <h2 className="font-display text-xl font-bold tracking-editorial text-ink">Start a comparison for {country ?? region.proseName}</h2>
+            <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-stone-700">
+              Named “{defaultSetLabel(country ?? region.displayName, sets)}”. It starts with six criteria you can rename or remove. Up to {COMPARE_LIMITS.entriesPerSet} universities.
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-2">
+              <button type="button" onClick={() => void startWithDefaults()} className={BTN_PRIMARY} disabled={quickBusy} aria-busy={quickBusy || undefined}>
+                <Plus className="h-4 w-4" aria-hidden="true" /> {quickBusy ? 'Starting…' : 'Start'}
+              </button>
+              <button type="button" onClick={() => setCreating(true)} className={BTN_SECONDARY} disabled={quickBusy}>
+                Name it first
+              </button>
+            </div>
+          </div>
+        )
       ) : (
         <SetView
           key={set.id}
           set={set}
           region={region}
+          country={country}
           criteria={setCriteriaList}
           entries={setEntries_}
           scores={scores}
@@ -1133,6 +1171,18 @@ export default function CompareApp() {
           onDeleteEntry={(id) => void deleteEntry(id).then(report)}
           onScore={(e, c, v) => void setScore(e, c, v).then(report)}
           onClearScore={(e, c) => void clearScore(e, c).then(report)}
+        />
+      )}
+
+      {compareDoc && set && (
+        <ReportView
+          compact
+          doc={compareDoc}
+          includeNotes={includeNotes}
+          onIncludeNotes={setIncludeNotes}
+          notesAvailable={compareNotes}
+          paper={paperChoice ?? defaultPaperFor(set.region)}
+          onPaper={setPaperChoice}
         />
       )}
     </div>
@@ -1247,6 +1297,7 @@ const FACT_ROWS = 10;
 function SetView({
   set,
   region,
+  country,
   criteria,
   entries,
   scores,
@@ -1266,6 +1317,8 @@ function SetView({
 }: {
   set: CompareSet;
   region: Region;
+  /** Optional country. The profile list offers that country only. */
+  country: string | null;
   criteria: CompareCriterion[];
   entries: CompareEntry[];
   scores: CompareScore[];
@@ -1369,6 +1422,7 @@ function SetView({
           <AddEntryForm
             id={`${uid}-add`}
             region={region}
+            country={country}
             facts={facts}
             catalogue={catalogue}
             existingSlugs={new Set(entries.map((e) => e.college_slug).filter((x): x is string => Boolean(x)))}
@@ -2176,6 +2230,7 @@ function AddCriterionForm({ disabled, onSubmit }: { disabled: boolean; onSubmit:
 function AddEntryForm({
   id,
   region,
+  country,
   facts,
   catalogue,
   existingSlugs,
@@ -2185,6 +2240,7 @@ function AddEntryForm({
 }: {
   id: string;
   region: Region;
+  country: string | null;
   facts: Map<string, CompareFacts> | null;
   catalogue: CatalogueStatus;
   existingSlugs: Set<string>;
@@ -2210,7 +2266,10 @@ function AddEntryForm({
   }, [autoFocus, mode]);
 
   // This destination's profiles only (region in context).
-  const pool = useMemo(() => (facts ? [...facts.values()].filter((f) => f.region === region.slug) : null), [facts, region.slug]);
+  const pool = useMemo(
+    () => (facts ? [...facts.values()].filter((f) => f.region === region.slug && (!country || f.country === country)) : null),
+    [facts, region.slug, country],
+  );
   const results = useMemo(() => {
     if (!pool) return [];
     const q = query.trim().toLowerCase();
@@ -2305,7 +2364,7 @@ function AddEntryForm({
       {mode === 'catalogue' ? (
         <div className="mt-3">
           <label htmlFor={`${uid}-q`} className={LABEL}>
-            Search universities in {region.proseName}
+            Search universities in {country ?? region.proseName}
           </label>
           <div className="relative">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-stone-500" aria-hidden="true" />
@@ -2313,7 +2372,9 @@ function AddEntryForm({
           </div>
           <p id={`${uid}-qhelp`} className="mt-1 text-xs text-stone-600">
             {pool
-              ? `${results.length} of ${pool.length} profiles shown — pick one to add it.`
+              ? pool.length === 0
+                ? `No profiles for ${country ?? region.proseName} yet. Add your own.`
+                : `${results.length} of ${pool.length} profiles shown — pick one to add it.`
               : catalogue.down
                 ? // A failed list is said so — never "0 of 0", which would read as no profiles for this destination.
                   'Our university profiles could not be loaded, so there is nothing to search yet.'

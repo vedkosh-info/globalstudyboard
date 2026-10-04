@@ -195,7 +195,8 @@ export default function Footer({
             <strong className="text-cream-50/90 font-semibold">Disclaimer: </strong>
             Information provided on GlobalStudyBoard is for guidance only. Tuition fees, application
             deadlines, rankings, and eligibility requirements change every academic year. Always
-            verify all details with the official university or examination website before applying.
+            verify all details with the official university, the examination website, or the
+            official representative of that country before applying.
           </p>
           {/*
             Non-affiliation notice — GLOBAL on purpose, do not move to a sub-page.

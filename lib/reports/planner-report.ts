@@ -123,7 +123,7 @@ export function buildPlannerReport(input: PlannerReportInput): ReportDocument {
     ],
     rows: linked.map((t) => [dueCell(t, today), nameOf.get(t.application_id ?? '') ?? DASH, t.done ? cell(t.title, { muted: true }) : t.title, TASK_KIND_LABEL[t.kind], t.done ? 'Yes' : 'No']),
     empty: 'No checklist items yet.',
-    footnote: 'Confirm every deadline and requirement on the official university or examination website before relying on it — they change every year.',
+    footnote: 'Confirm every deadline and requirement with the official university, the examination website, or the official representative of that country before relying on it — they change every year.',
   });
 
   const exams = input.exams ?? [];

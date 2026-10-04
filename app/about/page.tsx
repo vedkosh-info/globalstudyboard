@@ -121,7 +121,8 @@ export default function AboutPage() {
               We are not an official examination body, a university, or a paid admissions agent.
               Nothing here is legal, financial or immigration advice. Fees, deadlines, rankings and
               eligibility change every academic year — always confirm the current details on the
-              official university or examination website before applying.
+              official university, the examination website, or the official representative of that
+              country before applying.
             </p>
           </div>
         </div>

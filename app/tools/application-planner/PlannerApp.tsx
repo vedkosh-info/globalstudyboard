@@ -2,13 +2,16 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEvent } from 'react';
 import Link from 'next/link';
-import { CalendarDays, Check, ChevronDown, Download, ExternalLink, FileText, Plus, RotateCw, Search, Trash2, X } from 'lucide-react';
-import { reportHref } from '@/lib/tools';
+import { CalendarDays, Check, ChevronDown, Download, ExternalLink, Plus, RotateCw, Search, Trash2, X } from 'lucide-react';
+import ReportView from '@/components/tools/ReportView';
+import { buildPlannerReport } from '@/lib/reports/planner-report';
+import { defaultPaperFor, type Paper } from '@/lib/reports/model';
 import type { User } from '@supabase/supabase-js';
 import { getSupabaseBrowserClient } from '@/lib/supabase/client';
 import { checkToolSession, CONNECTION_LOST, explainLoadFailure, isUnansweredWrite, SESSION_ENDED, sessionMessage, TIMED_OUT, withDeadline, type ToolSession, type WriteOutcome } from '@/lib/tools-shared';
 import { ToolLoadError, ToolOffline, ToolSetup, ToolSkeleton, ToolSessionEnded } from '@/components/tools/ToolStates';
 import { useRegion } from '@/components/RegionProvider';
+import CountrySelect from '@/components/tools/CountrySelect';
 import RegionFlag from '@/components/RegionFlag';
 import { REGIONS_ALPHABETICAL, getRegionBySlug, type Region, type RegionSlug } from '@/lib/regions';
 import {
@@ -240,7 +243,7 @@ interface ListStatus {
 }
 
 export default function PlannerApp() {
-  const { effectiveRegion } = useRegion();
+  const { effectiveRegion, country } = useRegion();
   const region = regionOf(effectiveRegion);
   /** The destination on screen, for async callbacks whose answer may land after the header changed it. */
   const regionRef = useRef(effectiveRegion);
@@ -402,6 +405,15 @@ export default function PlannerApp() {
     setAddSaving(false);
   }, [effectiveRegion]);
 
+  // First visit with nothing saved: open the add form, so the search box is the first step.
+  // Later destination changes do not pop the form open again.
+  const offeredAdd = useRef(false);
+  useEffect(() => {
+    if (load !== 'ready' || offeredAdd.current) return;
+    offeredAdd.current = true;
+    if (!apps.some((a) => a.region === effectiveRegion)) setAdding(true);
+  }, [load, apps, effectiveRegion]);
+
   // Focus the card added last (after its heading has mounted).
   useEffect(() => {
     const id = pendingFocus.current;
@@ -417,6 +429,13 @@ export default function PlannerApp() {
   // counts, the totals, the timeline, the CSV and the report — is this scope.
   const scope = useMemo(() => inDestination(apps, tasks, effectiveRegion), [apps, tasks, effectiveRegion]);
   const regionApps = scope.apps;
+  const [includeNotes, setIncludeNotes] = useState(false);
+  const [paperChoice, setPaperChoice] = useState<Paper | null>(null);
+  const plannerNotes = useMemo(() => regionApps.some((a) => Boolean(a.notes?.trim())), [regionApps]);
+  const plannerDoc = useMemo(
+    () => buildPlannerReport({ region: effectiveRegion, apps, tasks, includeNotes: includeNotes && plannerNotes, exams: catalogue?.exams ?? [] }),
+    [effectiveRegion, apps, tasks, includeNotes, plannerNotes, catalogue],
+  );
   /** Other destinations' applications: counted, never mixed in. */
   const otherRegions = useMemo(() => {
     const counts = new Map<RegionSlug, number>();
@@ -425,8 +444,8 @@ export default function PlannerApp() {
   }, [apps, effectiveRegion]);
   /** Our profiles for this destination, once the list has loaded. */
   const regionProfiles = useMemo(
-    () => (catalogue ? catalogue.colleges.filter((c) => c.region === effectiveRegion).length : null),
-    [catalogue, effectiveRegion],
+    () => (catalogue ? catalogue.colleges.filter((c) => c.region === effectiveRegion && (!country || c.country === country)).length : null),
+    [catalogue, effectiveRegion, country],
   );
   const list: ListStatus = {
     phase: catalogueState === 'ready' ? 'ready' : catalogueFailures > 0 ? 'failed' : 'loading',
@@ -791,12 +810,13 @@ export default function PlannerApp() {
   if (load === 'error') return <ToolLoadError what="planner" />;
 
   // What the empty state offers to search — only what the loaded list really holds.
+  const profileWhere = country ?? region.proseName;
   const searchOffer =
     regionProfiles === null
       ? 'search our university profiles or add your own'
       : regionProfiles === 0
-        ? `type its name under “Add your own” (we have no university profiles for ${region.proseName} yet)`
-        : `search our ${regionProfiles} ${regionProfiles === 1 ? 'profile' : 'profiles'} for ${region.proseName} or add your own`;
+        ? `type its name under “Add your own” (we have no university profiles for ${profileWhere} yet)`
+        : `search our ${regionProfiles} ${regionProfiles === 1 ? 'profile' : 'profiles'} for ${profileWhere} or add your own`;
   const anythingSaved = apps.length > 0 || tasks.length > 0;
 
   return (
@@ -808,29 +828,21 @@ export default function PlannerApp() {
             <p className="m-0 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-stone-600">
               <RegionFlag slug={effectiveRegion} className="h-3.5" /> Applications for {region.proseName}
             </p>
-            <p className="m-0 mt-1 text-sm leading-relaxed text-stone-700">
-              Tuned to the destination chosen in the header — change it there to plan for another destination.
-              {otherRegions.length > 0 && (
-                <>
-                  {' '}
-                  You also have{' '}
-                  {joinList(
-                    otherRegions.map(({ region: r, n }, i) =>
-                      i === 0 ? `${n} ${n === 1 ? 'application' : 'applications'} for ${r.proseName}` : `${n} for ${r.proseName}`,
-                    ),
-                  )}
-                  .
-                </>
-              )}
-            </p>
+            <CountrySelect region={region} />
+            {otherRegions.length > 0 && (
+              <p className="m-0 mt-1 text-sm text-stone-700">
+                You also have{' '}
+                {joinList(
+                  otherRegions.map(({ region: r, n }, i) =>
+                    i === 0 ? `${n} ${n === 1 ? 'application' : 'applications'} for ${r.proseName}` : `${n} for ${r.proseName}`,
+                  ),
+                )}
+                .
+              </p>
+            )}
           </div>
           <div className="flex shrink-0 flex-col gap-2 sm:items-end">
             <div className="flex flex-wrap items-center gap-2 sm:justify-end">
-              {regionApps.length > 0 && (
-                <Link href={reportHref('application-planner')} className={`${BTN_SECONDARY} no-underline`}>
-                  <FileText className="h-4 w-4" aria-hidden="true" /> Report &amp; PDF
-                </Link>
-              )}
               <button
                 type="button"
                 onClick={downloadCsv}
@@ -856,8 +868,7 @@ export default function PlannerApp() {
             </div>
             {anythingSaved && (
               <p id="planner-scope-hint" className="m-0 max-w-xs text-xs leading-relaxed text-stone-600 sm:text-right">
-                The CSV and the report cover {region.proseName} and your test dates. Your whole plan, every destination, is in the data
-                download on your{' '}
+                This file covers {region.proseName} and your test dates. Every destination is in the data download on your{' '}
                 <Link href="/account?tab=data" className="text-forest-700 underline hover:text-forest-800">
                   account page
                 </Link>
@@ -866,20 +877,22 @@ export default function PlannerApp() {
             )}
           </div>
         </div>
-        <dl className="m-0 grid grid-cols-3 gap-4 border-t border-stone-200 pt-4">
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Applications</dt>
-            <dd className="m-0 font-display text-2xl font-bold text-ink">{regionApps.length}</dd>
-          </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Due in 30 days</dt>
-            <dd className="m-0 font-display text-2xl font-bold text-ink">{soonCount}</dd>
-          </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Overdue</dt>
-            <dd className={`m-0 font-display text-2xl font-bold ${overdueCount ? 'text-red-700' : 'text-ink'}`}>{overdueCount}</dd>
-          </div>
-        </dl>
+        {(regionApps.length > 0 || scope.general.length > 0) && (
+          <dl className="m-0 grid grid-cols-3 gap-4 border-t border-stone-200 pt-4">
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Applications</dt>
+              <dd className="m-0 font-display text-2xl font-bold text-ink">{regionApps.length}</dd>
+            </div>
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Due in 30 days</dt>
+              <dd className="m-0 font-display text-2xl font-bold text-ink">{soonCount}</dd>
+            </div>
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Overdue</dt>
+              <dd className={`m-0 font-display text-2xl font-bold ${overdueCount ? 'text-red-700' : 'text-ink'}`}>{overdueCount}</dd>
+            </div>
+          </dl>
+        )}
       </div>
 
       <p role="status" aria-live="polite" className="sr-only">
@@ -891,10 +904,12 @@ export default function PlannerApp() {
 
       {adding && (
         <AddApplicationPanel
+          key={region.slug}
           id="planner-add-panel"
           colleges={catalogue?.colleges ?? null}
           list={list}
           region={region}
+          country={country}
           onCancel={() => {
             setAdding(false);
             addBtnRef.current?.focus();
@@ -906,7 +921,7 @@ export default function PlannerApp() {
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
         {/* Applications — this destination's only */}
         <section aria-labelledby="planner-apps-heading" className="min-w-0 space-y-4">
-          <h2 id="planner-apps-heading" className="font-display text-2xl font-bold tracking-editorial text-ink m-0">
+          <h2 id="planner-apps-heading" className={`font-display text-2xl font-bold tracking-editorial text-ink m-0 ${regionApps.length > 0 ? '' : 'sr-only'}`}>
             Your applications
           </h2>
 
@@ -935,19 +950,17 @@ export default function PlannerApp() {
           )}
 
           {regionApps.length === 0 ? (
-            <div className={`${CARD} text-center`}>
-              <h3 className="font-display text-xl font-bold tracking-editorial text-ink">No applications for {region.proseName} yet</h3>
-              <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-stone-700">
-                {apps.length === 0 ? 'Add your first university' : 'Add a university'} — {searchOffer} — then enter the deadlines that matter
-                to you.
-                {otherRegions.length > 0 && ' Your applications for other destinations are counted above.'}
-              </p>
-              {!adding && (
+            adding ? null : (
+              <div className={`${CARD} text-center`}>
+                <h3 className="font-display text-xl font-bold tracking-editorial text-ink">No applications for {region.proseName} yet</h3>
+                <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-stone-700">
+                  {searchOffer}. Then enter the deadlines that matter to you.
+                </p>
                 <button type="button" onClick={() => setAdding(true)} className={`${BTN_PRIMARY} mt-4`}>
-                  <Plus className="h-4 w-4" aria-hidden="true" /> {apps.length === 0 ? 'Add your first university' : 'Add a university'}
+                  <Plus className="h-4 w-4" aria-hidden="true" /> Add a university
                 </button>
-              )}
-            </div>
+              </div>
+            )
           ) : visible.length === 0 ? (
             <p className="text-sm text-stone-700">No applications match this filter.</p>
           ) : (
@@ -1046,6 +1059,18 @@ export default function PlannerApp() {
           />
         </aside>
       </div>
+
+      {(regionApps.length > 0 || scope.general.length > 0) && (
+        <ReportView
+          compact
+          doc={plannerDoc}
+          includeNotes={includeNotes}
+          onIncludeNotes={setIncludeNotes}
+          notesAvailable={plannerNotes}
+          paper={paperChoice ?? defaultPaperFor(effectiveRegion)}
+          onPaper={setPaperChoice}
+        />
+      )}
     </div>
   );
 }
@@ -1056,6 +1081,7 @@ function AddApplicationPanel({
   colleges,
   list,
   region,
+  country,
   onCancel,
   onSubmit,
 }: {
@@ -1065,6 +1091,8 @@ function AddApplicationPanel({
   list: ListStatus;
   /** The destination on screen — every university added here goes to it (no second destination control, §18). */
   region: Region;
+  /** Optional country inside that destination. Profiles offered are that country's only. */
+  country: string | null;
   onCancel: () => void;
   /** Resolves to null when it saved, or the reason it did not (shown here, beside the form). */
   onSubmit: (input: Omit<PlannerApplication, 'id' | 'created_at' | 'updated_at'>, withChecklist: boolean) => Promise<WriteOutcome>;
@@ -1076,7 +1104,7 @@ function AddApplicationPanel({
   const [name, setName] = useState('');
   const [url, setUrl] = useState('');
   const [program, setProgram] = useState('');
-  const [intake, setIntake] = useState('');
+  const [intake, setIntake] = useState(region.intakes[0] ?? '');
   const [priority, setPriority] = useState<'' | Priority>('');
   const [checklist, setChecklist] = useState(true);
   const [error, setError] = useState('');
@@ -1106,6 +1134,12 @@ function AddApplicationPanel({
     (firstRef.current ?? retryRef.current)?.focus();
   }, [mode]);
 
+  // One course area on the profile is the programme. Several stay as choices — guessing one would be wrong.
+  useEffect(() => {
+    const only = picked?.courses?.length === 1 ? picked.courses[0] : '';
+    if (only) setProgram((cur) => (cur.trim() ? cur : only));
+  }, [picked]);
+
   // The search box is swapped for the retry when the list fails (and back when
   // it loads): if that swap took the student's focus with it, put it on the
   // replacement — never leave it on the page body.
@@ -1120,41 +1154,45 @@ function AddApplicationPanel({
   }, [phase, mode]);
 
   /** How many of our profiles are for this destination (null until the list loads). */
-  const regionCount = useMemo(() => (colleges ? colleges.filter((c) => c.region === region.slug).length : null), [colleges, region.slug]);
+  const inCountry = useCallback((c: CollegeOption) => c.region === region.slug && (!country || c.country === country), [region.slug, country]);
+  const regionCount = useMemo(() => (colleges ? colleges.filter(inCountry).length : null), [colleges, inCountry]);
 
   // The search offers THIS destination's profiles (§18); matches for other
   // destinations are counted in the help line, never offered here — adding one
   // would put it under a destination the planner is not showing.
   const search = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (q.length < 2 || picked || !colleges) return { results: [] as CollegeOption[], here: 0, elsewhere: 0 };
+    if (q.length < 2 || picked || !colleges) return { results: [] as CollegeOption[], here: 0, elsewhere: 0, otherCountry: 0 };
     const tokens = q.split(/\s+/);
     const hits = colleges.filter((c) => {
       const hay = `${c.name} ${c.place}`.toLowerCase();
       return tokens.every((t) => hay.includes(t));
     });
-    const mine = hits.filter((c) => c.region === region.slug);
-    return { results: mine.slice(0, 8), here: mine.length, elsewhere: hits.length - mine.length };
-  }, [query, colleges, picked, region.slug]);
+    const mine = hits.filter(inCountry);
+    const otherDest = hits.filter((c) => c.region !== region.slug).length;
+    return { results: mine.slice(0, 8), here: mine.length, elsewhere: otherDest, otherCountry: hits.length - mine.length - otherDest };
+  }, [query, colleges, picked, region.slug, inCountry]);
   const results = search.results;
   /** A city this destination's profiles really have, for the placeholder (a fixed "e.g. Toronto" would find nothing elsewhere). */
-  const example = useMemo(() => colleges?.find((c) => c.region === region.slug)?.place.split(',')[0] ?? null, [colleges, region.slug]);
+  const where = country ?? region.proseName;
+  const example = useMemo(() => colleges?.find(inCountry)?.place.split(',')[0] ?? null, [colleges, inCountry]);
 
   const searchHelp = (() => {
     if (!colleges) return 'Loading the university list…';
-    if (regionCount === 0) return `We have no university profiles for ${region.proseName} yet — add it under “Add your own”.`;
+    if (regionCount === 0) return `We have no university profiles for ${where} yet — add it under “Add your own”.`;
     if (query.trim().length < 2) return 'Type at least two letters.';
-    const { here, elsewhere } = search;
+    const { here, elsewhere, otherCountry } = search;
     const mine =
       here === 0
-        ? `No match in ${region.proseName}`
+        ? `No match in ${where}`
         : here > results.length
-          ? `${here} matches in ${region.proseName} — showing the first ${results.length}; keep typing to narrow them`
-          : `${here} ${here === 1 ? 'match' : 'matches'} in ${region.proseName}`;
+          ? `${here} matches in ${where} — showing the first ${results.length}; keep typing to narrow them`
+          : `${here} ${here === 1 ? 'match' : 'matches'} in ${where}`;
+    const another = otherCountry ? `; ${otherCountry} in another country here — choose that country above` : '';
     const other = elsewhere
       ? `; ${elsewhere} in other destinations — to add ${elsewhere === 1 ? 'it' : 'one'}, change the destination in the header`
       : '';
-    return `${mine}${other}.`;
+    return `${mine}${another}${other}.`;
   })();
 
   const submit = async (e: FormEvent) => {
@@ -1227,9 +1265,9 @@ function AddApplicationPanel({
           <h2 id={`${uid}-h`} className="font-display text-xl font-bold tracking-editorial text-ink m-0">
             Add a university
           </h2>
-          <p id={`${uid}-dest`} className="m-0 mt-1 text-sm leading-relaxed text-stone-700">
+          <p id={`${uid}-dest`} className="m-0 mt-1 text-sm text-stone-700">
             <RegionFlag slug={region.slug} className="mr-1.5 h-3.5" />
-            To your plan for {region.proseName}. To add one elsewhere, change the destination in the header.
+            {country ?? region.proseName}
           </p>
         </div>
         <button type="button" onClick={cancel} className={CLOSE_X} aria-label="Close the add form" aria-disabled={busy || undefined}>
@@ -1359,13 +1397,41 @@ function AddApplicationPanel({
           <label htmlFor={`${uid}-program`} className={LABEL}>
             Programme <span className="font-normal normal-case tracking-normal text-stone-500">(optional)</span>
           </label>
-          <input id={`${uid}-program`} value={program} onChange={(e) => setProgram(e.target.value)} maxLength={LIMITS.program} placeholder="e.g. MSc Computer Science" className={INPUT} />
+          <input
+            id={`${uid}-program`}
+            value={program}
+            onChange={(e) => setProgram(e.target.value)}
+            maxLength={LIMITS.program}
+            placeholder={(picked?.courses?.length ?? 0) > 0 ? 'Choose or type your own' : 'e.g. MSc Computer Science'}
+            list={(picked?.courses?.length ?? 0) > 0 ? `${uid}-courses` : undefined}
+            className={INPUT}
+          />
+          {(picked?.courses?.length ?? 0) > 0 && (
+            <datalist id={`${uid}-courses`}>
+              {picked!.courses!.map((c) => (
+                <option key={c} value={c} />
+              ))}
+            </datalist>
+          )}
         </div>
         <div>
           <label htmlFor={`${uid}-intake`} className={LABEL}>
             Intake <span className="font-normal normal-case tracking-normal text-stone-500">(optional)</span>
           </label>
-          <input id={`${uid}-intake`} value={intake} onChange={(e) => setIntake(e.target.value)} maxLength={LIMITS.intake} placeholder="e.g. Fall 2027" className={INPUT} />
+          <input
+            id={`${uid}-intake`}
+            value={intake}
+            onChange={(e) => setIntake(e.target.value)}
+            maxLength={LIMITS.intake}
+            placeholder="Type a year if you know it"
+            list={`${uid}-intakes`}
+            className={INPUT}
+          />
+          <datalist id={`${uid}-intakes`}>
+            {region.intakes.map((i) => (
+              <option key={i} value={i} />
+            ))}
+          </datalist>
         </div>
         <div>
           <label htmlFor={`${uid}-priority`} className={LABEL}>
@@ -1386,8 +1452,7 @@ function AddApplicationPanel({
       <label className="flex items-start gap-2 text-sm text-stone-700">
         <input type="checkbox" checked={checklist} onChange={(e) => setChecklist(e.target.checked)} className="mt-1 h-4 w-4 accent-forest-700" />
         <span>
-          Start with a common document checklist ({STARTER_CHECKLIST.length} items you can edit). Confirm the real list with the
-          university.
+          Add a starter checklist ({STARTER_CHECKLIST.length} items, editable). Confirm the real list with the university.
         </span>
       </label>
 

@@ -1,6 +1,7 @@
 import { COLLEGES, COLLEGE_COUNTRY_INFO } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import type { CollegeOption, ExamOption } from '@/lib/planner';
+import { REGION_COUNTRY_NAME } from '@/lib/study-country';
 
 /**
  * The compact university / exam pickers for the Application Planner —
@@ -14,8 +15,10 @@ export function plannerCatalogue(): { colleges: CollegeOption[]; exams: ExamOpti
     slug: c.slug,
     name: c.nameEn,
     region: c.region,
+    country: REGION_COUNTRY_NAME[c.country],
     place: `${c.city}, ${COLLEGE_COUNTRY_INFO[c.country].label}`,
     url: c.websiteUrl ?? null,
+    courses: c.courses,
   })).sort((a, b) => a.name.localeCompare(b.name));
   const exams: ExamOption[] = ENTRANCE_EXAMS.map((e) => ({
     slug: e.slug,

@@ -2,13 +2,17 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEvent } from 'react';
 import Link from 'next/link';
-import { Check, ChevronDown, Download, ExternalLink, FileText, Pencil, Plus, Trash2, X } from 'lucide-react';
-import { reportHref } from '@/lib/tools';
+import { Check, ChevronDown, Download, ExternalLink, Pencil, Plus, Trash2, X } from 'lucide-react';
+import ReportView from '@/components/tools/ReportView';
+import { buildBudgetReport } from '@/lib/reports/budget-report';
+import { defaultPaperFor, type Paper } from '@/lib/reports/model';
 import type { User } from '@supabase/supabase-js';
 import { getSupabaseBrowserClient } from '@/lib/supabase/client';
 import { checkToolSession, CONNECTION_LOST, explainLoadFailure, isUnansweredWrite, SESSION_ENDED, sessionMessage, TIMED_OUT, withDeadline, type ToolSession, type WriteOutcome } from '@/lib/tools-shared';
 import { ToolLoadError, ToolOffline, ToolSetup, ToolSkeleton, ToolSessionEnded } from '@/components/tools/ToolStates';
 import { useRegion } from '@/components/RegionProvider';
+import CountrySelect from '@/components/tools/CountrySelect';
+import { currencyForCountry } from '@/lib/study-country';
 import { useAudience } from '@/components/AudienceProvider';
 import { defaultAudienceFor } from '@/lib/audience';
 import RegionFlag from '@/components/RegionFlag';
@@ -30,7 +34,6 @@ import {
   fundsCoverage,
   isKnownCurrency,
   joinCountries,
-  labelInProse,
   parseAmount,
   planTotals,
   type BudgetItem,
@@ -202,15 +205,31 @@ function costsOffered(def: (typeof DESTINATION_BUDGETS)[RegionSlug], domestic: b
   return domestic ? def.costs.filter((c) => c.key !== 'visa') : def.costs;
 }
 
-function defaultLabel(region: Region, existing: BudgetPlan[]): string {
-  const base = `${region.displayName} budget`;
+/** The band already published on the region page. A hint beside the box — never stored as the student's fee. Hidden once a country is chosen: the band is the whole destination, not that country. */
+function tuitionBandHint(region: Region, country: string | null): string | null {
+  if (country) return null;
+  const band = region.averageTuitionRangeUsd;
+  if (!band) return null;
+  const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+  return `Published range, US dollars, not your fee: bachelor’s ${usd(band.undergrad[0])}–${usd(band.undergrad[1])}/year · master’s ${usd(band.grad[0])}–${usd(band.grad[1])}/year.`;
+}
+
+function defaultLabel(region: Region, existing: BudgetPlan[], country: string | null): string {
+  const base = `${country ?? region.displayName} budget`;
   const n = existing.filter((p) => p.region === region.slug).length;
   return n === 0 ? base : `${base} ${n + 1}`;
 }
 
+/** Currency for a new budget: the country's, when we can store it, otherwise the destination's. */
+function budgetCurrency(region: Region, country: string | null): string {
+  const picked = country ? currencyForCountry(country) : null;
+  if (picked && isKnownCurrency(picked)) return picked;
+  return isKnownCurrency(region.currency.code) ? region.currency.code : 'USD';
+}
+
 // ── Component ────────────────────────────────────────────────────────────────
 export default function CostPlannerApp() {
-  const { effectiveRegion } = useRegion();
+  const { effectiveRegion, country } = useRegion();
   const { chosenAudience } = useAudience();
   const region = regionOf(effectiveRegion);
   // §16.7: a domestic student of the destination needs no student-visa lines
@@ -229,9 +248,14 @@ export default function CostPlannerApp() {
   // shown locked by the old form's save, and the old save's answer never unlocks
   // the new form's (see createPlan).
   const [createSaving, setCreateSaving] = useState(false);
+  /** A one-click start, with the destination's own currency, first intake and 1 year. Not the form, so it must not flip `creating` (that would retire the save). */
+  const [quickBusy, setQuickBusy] = useState(false);
+  const quickLock = useRef(false);
   /** Identity of the new-budget form on screen — bumped whenever it opens or closes. */
   const createFormToken = useRef(0);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [includeNotes, setIncludeNotes] = useState(false);
+  const [paperChoice, setPaperChoice] = useState<Paper | null>(null);
   const newBtnRef = useRef<HTMLButtonElement>(null);
   const planHeadingRef = useRef<HTMLHeadingElement>(null);
   const pendingFocus = useRef<string | null>(null);
@@ -329,6 +353,22 @@ export default function CostPlannerApp() {
   const regionPlans = useMemo(() => plans.filter((p) => p.region === effectiveRegion), [plans, effectiveRegion]);
   const plan = regionPlans.find((p) => p.id === selectedId) ?? regionPlans[0] ?? null;
   const planItems = useMemo(() => (plan ? items.filter((it) => it.plan_id === plan.id) : []), [items, plan]);
+  const budgetNotes = Boolean(plan && (plan.notes?.trim() || planItems.some((it) => Boolean(it.note?.trim()))));
+  const budgetDoc = useMemo(
+    () => (plan ? buildBudgetReport({ plan, items: planItems, includeNotes: includeNotes && budgetNotes, domestic, country }) : null),
+    [plan, planItems, includeNotes, budgetNotes, domestic, country],
+  );
+
+  // A bookmarked /report?budget= link lands here. Apply it once per destination.
+  // Repeating it on every save put the student back on the bookmarked budget after they created or edited another.
+  const budgetQueryFor = useRef<string | null>(null);
+  useEffect(() => {
+    if (load !== 'ready') return;
+    if (budgetQueryFor.current === effectiveRegion) return;
+    budgetQueryFor.current = effectiveRegion;
+    const id = new URLSearchParams(window.location.search).get('budget');
+    if (id && plans.some((p) => p.id === id && p.region === effectiveRegion)) setSelectedId(id);
+  }, [load, plans, effectiveRegion]);
   const otherRegions = useMemo(() => {
     const counts = new Map<RegionSlug, number>();
     for (const p of plans) if (p.region !== effectiveRegion) counts.set(p.region, (counts.get(p.region) ?? 0) + 1);
@@ -652,7 +692,24 @@ export default function CostPlannerApp() {
   };
 
   // The header toggle would close the new-budget form: it waits while that form saves.
-  const createLocked = creating && createSaving;
+  const createLocked = (creating && createSaving) || quickBusy;
+  const startWithDefaults = async () => {
+    if (quickLock.current || createSaving || quickBusy) return;
+    quickLock.current = true;
+    setQuickBusy(true);
+    try {
+      const why = await createPlan({
+        label: defaultLabel(region, plans, country),
+        currency_code: budgetCurrency(region, country),
+        years: 1,
+        intake: cleanText(region.intakes[0] ?? '', BUDGET_LIMITS.intake) || null,
+      });
+      if (why) setNotice({ tone: 'error', text: why });
+    } finally {
+      quickLock.current = false;
+      setQuickBusy(false);
+    }
+  };
 
   // ── Render ──────────────────────────────────────────────────────────────
   if (load === 'loading') return <ToolSkeleton label="Loading your budget…" />;
@@ -671,22 +728,16 @@ export default function CostPlannerApp() {
           <p className="m-0 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-stone-600">
             <RegionFlag slug={effectiveRegion} className="h-3.5" /> Budgets for {region.proseName}
           </p>
-          <p className="m-0 mt-1 text-sm leading-relaxed text-stone-700">
-            Tuned to the destination chosen in the header — change it there to budget for another destination.
-            {otherRegions.length > 0 && (
-              <>
-                {' '}
-                You also have {otherRegions.map(({ region: r, n }) => `${n} for ${r.proseName}`).join(', ')}.
-              </>
-            )}
-          </p>
+          <CountrySelect region={region} />
+          {otherRegions.length > 0 && (
+            <p className="m-0 mt-1 text-sm text-stone-700">
+              You also have {otherRegions.map(({ region: r, n }) => `${n} for ${r.proseName}`).join(', ')}.
+            </p>
+          )}
         </div>
         <div className="flex shrink-0 flex-wrap items-center gap-2">
           {plan && (
             <>
-              <Link href={`${reportHref('cost-planner')}?budget=${encodeURIComponent(plan.id)}`} className={`${BTN_SECONDARY} no-underline`}>
-                <FileText className="h-4 w-4" aria-hidden="true" /> Report &amp; PDF
-              </Link>
               <button type="button" onClick={downloadCsv} className={BTN_SECONDARY} disabled={planItems.length === 0}>
                 <Download className="h-4 w-4" aria-hidden="true" /> Download CSV
               </button>
@@ -717,9 +768,12 @@ export default function CostPlannerApp() {
 
       {creating && (
         <NewPlanForm
+          key={country ?? 'all'}
           id="budget-new-panel"
           region={region}
-          defaultLabel={defaultLabel(region, plans)}
+          placeName={country ?? region.proseName}
+          defaultCurrency={budgetCurrency(region, country)}
+          defaultLabel={defaultLabel(region, plans, country)}
           onCancel={() => {
             setCreating(false);
             newBtnRef.current?.focus();
@@ -751,29 +805,31 @@ export default function CostPlannerApp() {
       )}
 
       {!plan ? (
-        <div className={`${CARD} text-center`}>
-          <h2 className="font-display text-xl font-bold tracking-editorial text-ink">No budget for {region.proseName} yet</h2>
-          <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-stone-700">
-            {/* Semicolons, because labels carry their own commas ("Housing, food & transport");
-                labelInProse keeps proper names and acronyms (SEVIS, the Immigration Health Surcharge) capitalised.
-                The same list the add form offers (costsOffered): no visa line for a domestic student (§16.7). */}
-            Start one and we&rsquo;ll suggest the lines this destination has —{' '}
-            {[...costsOffered(def, domestic).slice(0, 4).map((c) => labelInProse(c)), 'and more'].join('; ')} — with an official page or one of our
-            guides linked where we have one. You enter every amount.
-          </p>
-          {!creating && (
-            // The heading above names the destination; "for {shortName}" read as broken English ("for Middle East").
-            <button type="button" onClick={() => setCreating(true)} className={`${BTN_PRIMARY} mt-4`}>
-              <Plus className="h-4 w-4" aria-hidden="true" /> Start a budget
-            </button>
-          )}
-        </div>
+        !creating && (
+          <div className={`${CARD} text-center`}>
+            <h2 className="font-display text-xl font-bold tracking-editorial text-ink">Start a budget for {country ?? region.proseName}</h2>
+            <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-stone-700">
+              {budgetCurrency(region, country)}
+              {region.intakes[0] ? ` · ${region.intakes[0]}` : ''} · 1 year. Lines stay blank until you type an amount.
+              {country && !currencyForCountry(country) ? ` ${country}: amounts stay in ${budgetCurrency(region, country)}.` : ''}
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-2">
+              <button type="button" onClick={() => void startWithDefaults()} className={BTN_PRIMARY} disabled={quickBusy} aria-busy={quickBusy || undefined}>
+                <Plus className="h-4 w-4" aria-hidden="true" /> {quickBusy ? 'Starting…' : 'Start'}
+              </button>
+              <button type="button" onClick={() => setCreating(true)} className={BTN_SECONDARY} disabled={quickBusy}>
+                Change currency or length
+              </button>
+            </div>
+          </div>
+        )
       ) : (
         <PlanView
           key={plan.id}
           plan={plan}
           items={planItems}
           region={region}
+          country={country}
           def={def}
           domestic={domestic}
           headingRef={planHeadingRef}
@@ -784,6 +840,18 @@ export default function CostPlannerApp() {
           onDeleteItem={(id) => void deleteItem(id).then(report)}
         />
       )}
+
+      {plan && budgetDoc && (
+        <ReportView
+          compact
+          doc={budgetDoc}
+          includeNotes={includeNotes}
+          onIncludeNotes={setIncludeNotes}
+          notesAvailable={budgetNotes}
+          paper={paperChoice ?? defaultPaperFor(plan.region)}
+          onPaper={setPaperChoice}
+        />
+      )}
     </div>
   );
 }
@@ -792,12 +860,16 @@ export default function CostPlannerApp() {
 function NewPlanForm({
   id,
   region,
+  placeName,
+  defaultCurrency,
   defaultLabel: initialLabel,
   onCancel,
   onSubmit,
 }: {
   id: string;
   region: Region;
+  placeName: string;
+  defaultCurrency: string;
   defaultLabel: string;
   onCancel: () => void;
   /** Resolves to null when it saved, or the reason it did not (shown in the form). */
@@ -805,9 +877,9 @@ function NewPlanForm({
 }) {
   const uid = useId();
   const [label, setLabel] = useState(initialLabel);
-  const [currency, setCurrency] = useState(isKnownCurrency(region.currency.code) ? region.currency.code : 'USD');
+  const [currency, setCurrency] = useState(defaultCurrency);
   const [years, setYears] = useState(1);
-  const [intake, setIntake] = useState('');
+  const [intake, setIntake] = useState(region.intakes[0] ?? '');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const busyRef = useRef(false);
@@ -863,7 +935,7 @@ function NewPlanForm({
     <form id={id} onSubmit={(e) => void submit(e)} className={`${CARD} space-y-4`} aria-labelledby={`${uid}-h`}>
       <div className="flex items-start justify-between gap-3">
         <h2 id={`${uid}-h`} className="font-display text-xl font-bold tracking-editorial text-ink m-0">
-          New budget for {region.proseName}
+          New budget for {placeName}
         </h2>
         <button type="button" onClick={cancel} className={CLOSE_X} aria-label="Close the new-budget form" aria-disabled={busy || undefined}>
           <X className="h-4 w-4" aria-hidden="true" />
@@ -938,6 +1010,7 @@ function PlanView({
   plan,
   items,
   region,
+  country,
   def,
   domestic,
   headingRef,
@@ -950,6 +1023,8 @@ function PlanView({
   plan: BudgetPlan;
   items: BudgetItem[];
   region: Region;
+  /** Country chosen in the tool, or null for the whole destination. */
+  country: string | null;
   def: (typeof DESTINATION_BUDGETS)[RegionSlug];
   /** §16.7: a domestic student of this destination — no visa suggestions, no visa financial rule. */
   domestic: boolean;
@@ -984,10 +1059,11 @@ function PlanView({
         <BudgetColumn
           kind="cost"
           title="Costs"
-          intro="What studying will cost — per year or one-off. Take each figure from the official page or your offer letter."
+          intro="Type the amount you know. Leave a line blank if you don’t have it yet."
           items={costs}
           plan={plan}
           region={region}
+          country={country}
           categories={costsOffered(def, domestic)}
           subtotal={{ perYear: t.costPerYear, once: t.costOnce, total: t.costTotal }}
           onAdd={onAddItem}
@@ -998,10 +1074,11 @@ function PlanView({
         <BudgetColumn
           kind="funding"
           title="Funding"
-          intro="What you have or expect — savings, family, scholarships, loans. Count only what is confirmed, or say so in the note."
+          intro="Type what you have or expect. Leave the rest blank."
           items={funding}
           plan={plan}
           region={region}
+          country={country}
           categories={def.funding}
           subtotal={{ perYear: t.fundingPerYear, once: t.fundingOnce, total: t.fundingTotal }}
           onAdd={onAddItem}
@@ -1018,39 +1095,41 @@ function PlanView({
             Whole programme
           </h2>
           <p className="m-0 mt-1 text-xs text-stone-600">
-            One-off lines plus per-year lines × {yearsLabel}, in {cur}.
+            {items.length === 0 ? 'Blank lines are not counted.' : `One-off lines plus per-year lines × ${yearsLabel}, in ${cur}.`}
           </p>
-          <dl className="m-0 mt-4 space-y-3">
-            <div className="flex items-baseline justify-between gap-3">
-              <dt className="text-sm font-medium text-stone-700">Costs</dt>
-              <dd className="m-0 font-display text-xl font-bold text-ink">{money(t.costTotal)}</dd>
-            </div>
-            <div className="flex items-baseline justify-between gap-3">
-              <dt className="text-sm font-medium text-stone-700">Funding</dt>
-              <dd className="m-0 font-display text-xl font-bold text-ink">{money(t.fundingTotal)}</dd>
-            </div>
-            <div className="flex items-baseline justify-between gap-3 border-t border-stone-200 pt-3">
-              <dt className="text-sm font-semibold text-ink">
-                {t.difference < 0 ? 'Still to arrange' : t.difference === 0 ? 'Costs and funding are equal' : 'Funding exceeds costs by'}
-              </dt>
-              <dd className={`m-0 font-display text-2xl font-bold ${t.difference < 0 ? 'text-terracotta-700' : 'text-forest-800'}`}>
-                {money(Math.abs(t.difference))}
-              </dd>
-            </div>
-          </dl>
-          {(t.costPerYear > 0 || t.fundingPerYear > 0) && (
-            <p className="m-0 mt-3 text-xs text-stone-600">
-              Per year: {money(t.costPerYear)} costs · {money(t.fundingPerYear)} funding.
-            </p>
+          {items.length === 0 ? (
+            <p className="m-0 mt-4 text-sm leading-relaxed text-stone-700">No amounts entered yet. Type a figure on a line.</p>
+          ) : (
+            <>
+              <dl className="m-0 mt-4 space-y-3">
+                <div className="flex items-baseline justify-between gap-3">
+                  <dt className="text-sm font-medium text-stone-700">Costs</dt>
+                  <dd className="m-0 font-display text-xl font-bold text-ink">{money(t.costTotal)}</dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-3">
+                  <dt className="text-sm font-medium text-stone-700">Funding</dt>
+                  <dd className="m-0 font-display text-xl font-bold text-ink">{money(t.fundingTotal)}</dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-3 border-t border-stone-200 pt-3">
+                  <dt className="text-sm font-semibold text-ink">
+                    {t.difference < 0 ? 'Still to arrange' : t.difference === 0 ? 'Costs and funding are equal' : 'Funding exceeds costs by'}
+                  </dt>
+                  <dd className={`m-0 font-display text-2xl font-bold ${t.difference < 0 ? 'text-terracotta-700' : 'text-forest-800'}`}>
+                    {money(Math.abs(t.difference))}
+                  </dd>
+                </div>
+              </dl>
+              {(t.costPerYear > 0 || t.fundingPerYear > 0) && (
+                <p className="m-0 mt-3 text-xs text-stone-600">
+                  Per year: {money(t.costPerYear)} costs · {money(t.fundingPerYear)} funding.
+                </p>
+              )}
+            </>
           )}
-          <p className="m-0 mt-4 text-xs leading-relaxed text-stone-600">
-            Your own budget, built from the numbers you enter — we don&rsquo;t set, verify or estimate any of them. A budget
-            that adds up is not the same as meeting the official financial rule for a student visa; this is a planning
-            worksheet, not financial advice.
-          </p>
+          <p className="m-0 mt-4 text-xs leading-relaxed text-stone-600">Your figures only. They do not say a visa funds rule is met.</p>
         </div>
 
-        {!domestic && <FundsRuleCard region={region} rule={def.fundsRule} />}
+        {!domestic && <FundsRuleCard region={region} country={country} rule={def.fundsRule} />}
 
         <PlanSettings plan={plan} region={region} onPatch={onPatchPlan} onDelete={onDeletePlan} />
       </aside>
@@ -1067,13 +1146,28 @@ function PlanView({
  * financial document, each say so in their own words; every other country of
  * the destination is named as not covered — never implied by a homepage.
  */
-function FundsRuleCard({ region, rule }: { region: Region; rule: FundsRule }) {
-  const cov = fundsCoverage(rule, region.countries);
-  const many = region.countries.length > 1;
+function FundsRuleCard({ region, country, rule }: { region: Region; country: string | null; rule: FundsRule }) {
+  const countries = country ? [country] : region.countries;
+  const cov = fundsCoverage(rule, countries);
+  const many = countries.length > 1;
   const who = (country: string) => (many ? `${country}: the` : 'The');
+  // A short list stays open. A long country-by-country list starts closed so the budget itself is the page.
+  const brief = cov.notCovered.length === 0 && cov.published.length + cov.asked.length + cov.noneListed.length <= 2;
+  const [open, setOpen] = useState(brief);
   return (
     <div className={CARD}>
-      <h3 className="text-sm font-semibold text-ink m-0">Student-visa financial requirement</h3>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="flex w-full items-center justify-between gap-2 text-left text-sm font-semibold text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 rounded-lg"
+      >
+        Student-visa funds rule
+        <ChevronDown className={`h-4 w-4 shrink-0 text-stone-500 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+      </button>
+      {!open && <p className="m-0 mt-1 text-xs leading-relaxed text-stone-600">Your figures do not say the rule is met.</p>}
+      {open && (
+        <>
       <p className="m-0 mt-1 text-xs leading-relaxed text-stone-600">
         {cov.published.length > 0
           ? `Linked where an official page states the requirement or names the proof of funds the visa asks for${many ? ', country by country' : ''}. Rules and amounts change — check the current rule there before you rely on it.`
@@ -1106,7 +1200,7 @@ function FundsRuleCard({ region, rule }: { region: Region; rule: FundsRule }) {
           Not covered here: {joinCountries(cov.notCovered)}. Confirm the financial rule with the embassy or immigration authority concerned.
         </p>
       )}
-      {rule.guides.length > 0 && (
+      {!country && rule.guides.length > 0 && (
         <>
           <p className="m-0 mt-3 text-xs font-semibold uppercase tracking-wide text-stone-600">Our guides</p>
           <ul className="m-0 mt-1 list-none space-y-1 p-0 text-sm">
@@ -1118,6 +1212,8 @@ function FundsRuleCard({ region, rule }: { region: Region; rule: FundsRule }) {
               </li>
             ))}
           </ul>
+        </>
+      )}
         </>
       )}
     </div>
@@ -1148,6 +1244,7 @@ function BudgetColumn({
   items,
   plan,
   region,
+  country,
   categories,
   subtotal,
   onAdd,
@@ -1160,6 +1257,7 @@ function BudgetColumn({
   items: BudgetItem[];
   plan: BudgetPlan;
   region: Region;
+  country: string | null;
   categories: CategoryDef[];
   subtotal: { perYear: number; once: number; total: number };
   onAdd: (input: Omit<BudgetItem, 'id' | 'created_at' | 'updated_at'>) => Promise<WriteOutcome>;
@@ -1167,14 +1265,15 @@ function BudgetColumn({
   onDelete: (id: string) => void;
 }) {
   const uid = useId();
-  // An empty column opens its add form by itself (a fresh budget should invite
-  // entry); a form the visitor opened is the only one that takes focus.
-  const [adding, setAdding] = useState(items.length === 0);
+  // Suggested lines are already on the page. This form is only for a line the student names.
+  const [adding, setAdding] = useState(false);
   const [userOpened, setUserOpened] = useState(false);
   const addBtnRef = useRef<HTMLButtonElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const wasAdding = useRef(false);
   const cur = plan.currency_code;
+  const taken = new Set(items.map((it) => it.category));
+  const waiting = categories.filter((c) => !taken.has(c.key));
   // The add form and the add button replace each other: return focus to the
   // button only once it has re-mounted (never synchronously, which lands on <body>).
   useEffect(() => {
@@ -1194,12 +1293,14 @@ function BudgetColumn({
           <p className="m-0 mt-1 max-w-xl text-xs leading-relaxed text-stone-600">{intro}</p>
         </div>
         {/* Full-width and left-aligned when it wraps under the intro on a phone; right-aligned beside it from sm up. */}
-        <p className="m-0 w-full text-left text-sm text-stone-700 sm:w-auto sm:text-right">
-          <span className="block font-display text-lg font-bold text-ink">{formatMoney(subtotal.total, cur)}</span>
-          <span className="block text-xs text-stone-600">
-            {formatMoney(subtotal.perYear, cur)} per year · {formatMoney(subtotal.once, cur)} one-off
-          </span>
-        </p>
+        {items.length > 0 && (
+          <p className="m-0 w-full text-left text-sm text-stone-700 sm:w-auto sm:text-right">
+            <span className="block font-display text-lg font-bold text-ink">{formatMoney(subtotal.total, cur)}</span>
+            <span className="block text-xs text-stone-600">
+              {formatMoney(subtotal.perYear, cur)} per year · {formatMoney(subtotal.once, cur)} one-off
+            </span>
+          </p>
+        )}
       </div>
 
       {items.length > 0 && (
@@ -1211,12 +1312,21 @@ function BudgetColumn({
               plan={plan}
               region={region}
               category={categoryFor(plan.region, kind, it.category)}
+              country={country}
               onPatch={(patch) => onPatch(it.id, patch)}
               onDelete={() => {
                 onDelete(it.id);
                 focusAfterRemove();
               }}
             />
+          ))}
+        </ul>
+      )}
+
+      {waiting.length > 0 && (
+        <ul className="m-0 list-none divide-y divide-stone-200 p-0">
+          {waiting.map((c) => (
+            <OpenLine key={c.key} category={c} plan={plan} region={region} country={country} kind={kind} onAdd={onAdd} />
           ))}
         </ul>
       )}
@@ -1228,7 +1338,7 @@ function BudgetColumn({
           plan={plan}
           region={region}
           categories={categories}
-          existingKeys={new Set(items.map((it) => it.category))}
+          existingKeys={taken}
           autoFocus={userOpened}
           onSubmit={onAdd}
           onClose={() => {
@@ -1248,7 +1358,7 @@ function BudgetColumn({
           aria-expanded={false}
           aria-controls={`${uid}-add`}
         >
-          <Plus className="h-4 w-4" aria-hidden="true" /> Add a {kind === 'cost' ? 'cost' : 'funding'} line
+          <Plus className="h-4 w-4" aria-hidden="true" /> Add a line of your own
         </button>
       )}
     </section>
@@ -1286,12 +1396,133 @@ function CategoryLinks({ category, region, forWork }: { category: CategoryDef; r
   );
 }
 
+// ── A suggested line, waiting for an amount ──────────────────────────────────
+function OpenLine({
+  category,
+  plan,
+  region,
+  country,
+  kind,
+  onAdd,
+}: {
+  category: CategoryDef;
+  plan: BudgetPlan;
+  region: Region;
+  country: string | null;
+  kind: BudgetKind;
+  onAdd: (input: Omit<BudgetItem, 'id' | 'created_at' | 'updated_at'>) => Promise<WriteOutcome>;
+}) {
+  const uid = useId();
+  const [amount, setAmount] = useState('');
+  const [period, setPeriod] = useState<BudgetPeriod>(category.defaultPeriod);
+  const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false);
+  const busyRef = useRef(false);
+  const periodRef = useRef<HTMLSelectElement>(null);
+  const band = category.key === 'tuition' ? tuitionBandHint(region, country) : null;
+
+  const commit = async (nextPeriod: BudgetPeriod) => {
+    if (busyRef.current) return;
+    const typed = amount.trim();
+    if (!typed) {
+      setError('');
+      return;
+    }
+    const value = parseAmount(typed, currencyDecimals(plan.currency_code));
+    if (value === null) {
+      setError(amountError(plan.currency_code));
+      return;
+    }
+    setError('');
+    busyRef.current = true;
+    setBusy(true);
+    try {
+      const why = await onAdd({ plan_id: plan.id, kind, category: category.key, label: category.label, amount: value, period: nextPeriod, note: null });
+      if (why) setError(why);
+    } finally {
+      busyRef.current = false;
+      setBusy(false);
+    }
+  };
+
+  return (
+    <li className="py-3">
+      <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_9.5rem_8.5rem] sm:items-end">
+        <div className="min-w-0">
+          <label htmlFor={`${uid}-a`} className="text-sm font-semibold text-ink">
+            {category.label}
+          </label>
+          {band && (
+            <p id={`${uid}-band`} className="m-0 mt-0.5 text-xs leading-relaxed text-stone-600">
+              {band}
+            </p>
+          )}
+          {category.key === 'work' && <p className="m-0 mt-0.5 text-xs leading-relaxed text-stone-600">{category.hint}</p>}
+          {category.source && (
+            <p className="m-0 mt-0.5 text-xs">
+              <a href={category.source.url} target="_blank" rel="noopener noreferrer" className={LINK}>
+                {category.source.label} <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </a>
+            </p>
+          )}
+        </div>
+        <div>
+          <label htmlFor={`${uid}-p`} className="sr-only">
+            Period for {category.label}
+          </label>
+          <select
+            ref={periodRef}
+            id={`${uid}-p`}
+            value={period}
+            onChange={(e) => {
+              const next = e.target.value as BudgetPeriod;
+              setPeriod(next);
+              if (amount.trim()) void commit(next);
+            }}
+            onBlur={() => void commit(period)}
+            className={INPUT}
+          >
+            <option value="year">Per year</option>
+            <option value="once">One-off</option>
+          </select>
+        </div>
+        <div>
+          <input
+            id={`${uid}-a`}
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            onBlur={(e) => {
+              if (e.relatedTarget === periodRef.current) return;
+              void commit(period);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                void commit(period);
+              }
+            }}
+            inputMode="decimal"
+            autoComplete="off"
+            placeholder="Amount"
+            aria-invalid={error ? true : undefined}
+            aria-describedby={band ? `${uid}-band` : undefined}
+            disabled={busy}
+            className={INPUT}
+          />
+        </div>
+      </div>
+      {error && <p className="m-0 mt-1 text-sm text-red-700">{error}</p>}
+    </li>
+  );
+}
+
 // ── One line (view + inline edit) ────────────────────────────────────────────
 function LineRow({
   item,
   plan,
   region,
   category,
+  country,
   onPatch,
   onDelete,
 }: {
@@ -1299,6 +1530,7 @@ function LineRow({
   plan: BudgetPlan;
   region: Region;
   category: CategoryDef;
+  country: string | null;
   onPatch: (patch: Partial<Pick<BudgetItem, 'label' | 'amount' | 'period' | 'note'>>) => Promise<WriteOutcome>;
   onDelete: () => void;
 }) {
@@ -1466,6 +1698,7 @@ function LineRow({
     <li className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 py-3">
       <div className="min-w-0 flex-1">
         <p className="m-0 text-sm font-semibold text-ink">{item.label}</p>
+        {category.key === 'tuition' && tuitionBandHint(region, country) && <p className="m-0 mt-0.5 text-xs leading-relaxed text-stone-600">{tuitionBandHint(region, country)}</p>}
         {item.note && <p className="m-0 mt-0.5 text-xs text-stone-700">{item.note}</p>}
         <p className="m-0 mt-0.5">
           <CategoryLinks category={category} region={region} forWork={item.category === 'work'} />

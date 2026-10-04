@@ -439,6 +439,10 @@ export default function AccountClient() {
     e.preventDefault();
     if (profileFailed || saving) return;
     const next = cleanDisplayName(name);
+    if (!next) {
+      setSaveMsg('A display name is required.');
+      return;
+    }
     setSaving(true);
     setSaveMsg('');
     try {
@@ -746,17 +750,24 @@ export default function AccountClient() {
             <h2 className={H2}>Personal details</h2>
             <form onSubmit={onSaveName} className="mt-4">
               <label htmlFor="acct-name" className="block text-xs font-semibold uppercase tracking-wide text-stone-700">
-                Display name <span className="font-normal normal-case text-stone-500">(optional)</span>
+                Display name <span className="sr-only">(required)</span>
               </label>
               <input
                 id="acct-name"
                 type="text"
                 autoComplete="name"
+                required
+                aria-required="true"
                 maxLength={DISPLAY_NAME_MAX}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 disabled={profileFailed}
                 placeholder="How should we address you?"
+                aria-invalid={
+                  !profileFailed && Boolean((profile?.display_name ?? '').trim()) && !cleanDisplayName(name)
+                    ? true
+                    : undefined
+                }
                 aria-describedby="acct-name-status"
                 className={INPUT}
               />
@@ -767,10 +778,15 @@ export default function AccountClient() {
                   </span>
                 ) : saveMsg ? (
                   <span className={saveMsg === 'Saved.' ? 'font-medium text-forest-700' : 'font-medium text-red-600'}>{saveMsg}</span>
+                ) : (profile?.display_name ?? '').trim() && !cleanDisplayName(name) ? (
+                  <span className="font-medium text-red-600">
+                    A display name is required. Seen only by you and, for support, by us — never shown to other
+                    visitors. Up to {DISPLAY_NAME_MAX} characters.
+                  </span>
                 ) : (
                   <span className="text-stone-600">
-                    Seen only by you and, for support, by us — never shown to other visitors. Up to {DISPLAY_NAME_MAX}{' '}
-                    characters.
+                    Required. Seen only by you and, for support, by us — never shown to other visitors. Up to{' '}
+                    {DISPLAY_NAME_MAX} characters.
                   </span>
                 )}
               </p>
@@ -779,7 +795,12 @@ export default function AccountClient() {
                   aria-busy + a guard in the handler instead. */}
               <button
                 type="submit"
-                disabled={profileFailed || (!saving && cleanDisplayName(name) === (profile?.display_name ?? ''))}
+                disabled={
+                  profileFailed ||
+                  !profile ||
+                  (!saving &&
+                    (!cleanDisplayName(name) || cleanDisplayName(name) === (profile.display_name ?? '')))
+                }
                 aria-busy={saving || undefined}
                 className={`${PRIMARY} mt-2`}
               >

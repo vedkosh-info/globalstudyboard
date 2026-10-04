@@ -62,9 +62,9 @@ const FEATURES = [
 ];
 
 const STEPS = [
-  'Choose your destination in the header and record a score — from the picker (tests used there come first, then everything else), or from the “Record your score” link on any exam page.',
-  'Read each test’s validity rule, summarised from the test body’s own page and linked to it — or a note where we found none. Where the body sets a fixed period from the test date, or recommends a maximum age, every attempt shows its own date, so you can see which are coming up.',
-  'Open the readiness view: every university on your shortlist for that destination, the admission requirements our profile of it lists and, among the tests the tracker records, which ones still have nothing recorded.',
+  'Pick a test used in your destination — or any other — and type the score as you received it.',
+  'The validity rule from that test body is shown with the score, and linked.',
+  'Readiness lists the tests your shortlisted universities name, and which you have not recorded.',
 ];
 
 function groupExams(): Array<{ key: string; label: string; flag: RegionSlug | null; exams: EntranceExam[] }> {

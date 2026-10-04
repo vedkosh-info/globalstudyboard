@@ -125,7 +125,7 @@ export function formatReviewed(input: string): { display: string; iso: string } 
  * Footer's text and this constant ever drift apart.
  */
 export const SITE_DISCLAIMER =
-  'Disclaimer: Information provided on GlobalStudyBoard is for guidance only. Tuition fees, application deadlines, rankings, and eligibility requirements change every academic year. Always verify all details with the official university or examination website before applying.';
+  'Disclaimer: Information provided on GlobalStudyBoard is for guidance only. Tuition fees, application deadlines, rankings, and eligibility requirements change every academic year. Always verify all details with the official university, the examination website, or the official representative of that country before applying.';
 
 /**
  * The non-affiliation notice the Footer carries on every page (the second half

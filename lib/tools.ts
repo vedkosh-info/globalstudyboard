@@ -147,7 +147,10 @@ export const toolsIndexDescription = (): string =>
 export const scoreTrackerHref = (examSlug: string, region?: RegionSlug | 'global' | null): string =>
   `/tools/test-score-tracker#exam=${encodeURIComponent(examSlug)}${region && region !== 'global' ? `&${REGION_HINT_KEY}=${region}` : ''}`;
 
-/** Every tool's printable report + one-tap PDF lives at /tools/<slug>/report (noindex, account-only). */
+/**
+ * Old report addresses. They redirect to the tool: the PDF is downloaded on
+ * the tool screen, so a student never opens a second page to get it.
+ */
 export const reportHref = (slug: string): string => `/tools/${slug}/report`;
 
 export const getToolBySlug = (slug: string): ToolDef | undefined => TOOLS.find((t) => t.slug === slug);

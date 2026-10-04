@@ -49,9 +49,9 @@ const FEATURES = [
 ];
 
 const STEPS = [
-  'Choose your destination in the header, start a comparison and add up to four universities — from our profiles or your own.',
-  'Read our verified facts side by side, each ranking attributed to its body and linked, with each profile’s official site.',
-  'Give each university a score of 1 to 5 on every criterion that matters to you, set the weights, and read your own result.',
+  'Choose the destination, then Start. Six criteria are already there. Add up to four universities.',
+  'Read the verified facts side by side. Each ranking links to its source.',
+  'Score 1 to 5 on what matters to you, set the weights, and read your own result.',
 ];
 
 export default function CompareUniversitiesPage() {

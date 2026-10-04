@@ -133,8 +133,19 @@ export async function acceptConsent(supabase: SupabaseClient, userId: string, ve
   if (error) throw new Error('consent_update_failed');
 }
 
-/** Partial update of the caller's own row (RLS update-own). */
+/**
+ * Partial update of the caller's own row (RLS update-own). A display name in
+ * the patch is required: an empty or whitespace-only value is refused, so
+ * saving account details cannot clear a name. Preference-only patches are
+ * unchanged, and a profile that has no name yet can still save those.
+ */
 export async function updateOwnProfile(supabase: SupabaseClient, userId: string, patch: ProfilePatch): Promise<void> {
-  const { error } = await supabase.from('profiles').update(patch).eq('id', userId);
+  const next: ProfilePatch = { ...patch };
+  if (next.display_name !== undefined) {
+    const cleaned = cleanDisplayName(next.display_name);
+    if (!cleaned) throw new Error('display_name_required');
+    next.display_name = cleaned;
+  }
+  const { error } = await supabase.from('profiles').update(next).eq('id', userId);
   if (error) throw new Error('profile_update_failed');
 }

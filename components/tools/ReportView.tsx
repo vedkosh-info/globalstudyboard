@@ -28,10 +28,13 @@ const BTN_SECONDARY = `${BTN} border border-forest-300 bg-white text-forest-700 
 const SELECT = 'h-10 rounded-xl border border-stone-450 bg-white px-3 text-base text-ink focus:border-forest-500 focus:outline-none focus:ring-2 focus:ring-forest-500 focus:ring-offset-1 sm:text-sm';
 const LINK = 'text-forest-700 underline underline-offset-2 hover:text-forest-800';
 
+/** Shown before Download. The PDF fonts cannot draw these scripts; Print can. */
+const PDF_SCRIPT_NOTE = 'Hindi, Chinese, Arabic and other letters become □ in the PDF. Print keeps them.';
+
 export interface ReportViewProps {
   doc: ReportDocument;
-  /** Where "Back to the tool" goes. */
-  toolHref: string;
+  /** Where "Back to the tool" goes. Omitted on the tool itself. */
+  toolHref?: string;
   includeNotes: boolean;
   onIncludeNotes: (v: boolean) => void;
   /** Whether the record has any private note at all (the checkbox is disabled otherwise). */
@@ -40,6 +43,11 @@ export interface ReportViewProps {
   onPaper: (p: Paper) => void;
   /** A record picker (which budget / comparison), rendered in the toolbar. */
   picker?: ReactNode;
+  /**
+   * On the tool screen: the buttons sit with the work, and the report markup
+   * is kept only for Print. The student does not read the same plan twice.
+   */
+  compact?: boolean;
 }
 
 function CellNode({ c, className = '' }: { c: Cell; className?: string }) {
@@ -146,7 +154,7 @@ function Section({ s, index }: { s: ReportSection; index: number }) {
   );
 }
 
-export default function ReportView({ doc, toolHref, includeNotes, onIncludeNotes, notesAvailable, paper, onPaper, picker }: ReportViewProps) {
+export default function ReportView({ doc, toolHref, includeNotes, onIncludeNotes, notesAvailable, paper, onPaper, picker, compact = false }: ReportViewProps) {
   const uid = useId();
   const [status, setStatus] = useState<{ text: string; warn?: boolean }>({ text: '' });
   const [busy, setBusy] = useState(false);
@@ -196,60 +204,62 @@ export default function ReportView({ doc, toolHref, includeNotes, onIncludeNotes
 
   return (
     <div className="space-y-5">
-      <div className={`${CARD} no-print space-y-4`}>
-        <div className="flex flex-wrap items-end gap-x-5 gap-y-3">
-          {picker}
-          <div>
-            <label htmlFor={`${uid}-paper`} className="mb-1 block text-xs font-semibold uppercase tracking-wide text-stone-600">
-              Paper size
-            </label>
-            <select id={`${uid}-paper`} value={paper} onChange={(e) => onPaper(isPaper(e.target.value) ? e.target.value : 'a4')} className={SELECT}>
-              {PAPERS.map((p) => (
-                <option key={p} value={p}>
-                  {PAPER_LABEL[p]}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex items-center gap-2 pb-2">
-            <input
-              id={`${uid}-notes`}
-              type="checkbox"
-              className="h-4 w-4 accent-forest-700"
-              checked={includeNotes}
-              disabled={!notesAvailable}
-              onChange={(e) => onIncludeNotes(e.target.checked)}
-              aria-describedby={`${uid}-notes-hint`}
-            />
-            <label htmlFor={`${uid}-notes`} className={`text-sm ${notesAvailable ? 'text-ink' : 'text-stone-500'}`}>
-              Include my private notes
-            </label>
-          </div>
-        </div>
-        <p id={`${uid}-notes-hint`} className="m-0 text-xs leading-relaxed text-stone-600">
-          {notesAvailable
-            ? 'Off by default — notes are private to you and join the report only while this is ticked.'
-            : 'This record has no private notes.'}{' '}
-          The report is built in your browser; nothing in it is sent to us and it never includes your e-mail address.
-        </p>
+      <div className={`${CARD} no-print space-y-3`}>
         <div className="flex flex-wrap items-center gap-2">
+          {picker}
           <button type="button" onClick={() => void download()} className={`${BTN_PRIMARY} ${busy ? 'cursor-wait opacity-70' : ''}`} aria-busy={busy || undefined} aria-disabled={busy || undefined}>
             <FileDown className="h-4 w-4" aria-hidden="true" /> {busy ? 'Preparing PDF…' : 'Download PDF'}
           </button>
           <button type="button" onClick={() => window.print()} className={BTN_SECONDARY}>
             <Printer className="h-4 w-4" aria-hidden="true" /> Print
           </button>
-          <Link href={toolHref} className={`${BTN_SECONDARY} no-underline`}>
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back to the tool
-          </Link>
+          <label htmlFor={`${uid}-paper`} className="sr-only">
+            Paper size
+          </label>
+          <select id={`${uid}-paper`} value={paper} onChange={(e) => onPaper(isPaper(e.target.value) ? e.target.value : 'a4')} aria-label="Paper size" className={SELECT}>
+            {PAPERS.map((p) => (
+              <option key={p} value={p}>
+                {PAPER_LABEL[p]}
+              </option>
+            ))}
+          </select>
+          {notesAvailable && (
+            <div className="flex items-center gap-2">
+              <input
+                id={`${uid}-notes`}
+                type="checkbox"
+                className="h-4 w-4 accent-forest-700"
+                checked={includeNotes}
+                onChange={(e) => onIncludeNotes(e.target.checked)}
+                aria-describedby={`${uid}-notes-hint`}
+              />
+              <label htmlFor={`${uid}-notes`} className="text-sm text-ink">
+                Include notes
+              </label>
+            </div>
+          )}
+          {toolHref && (
+            <Link href={toolHref} className={`${BTN_SECONDARY} no-underline`}>
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back to the tool
+            </Link>
+          )}
         </div>
-        <p role="status" aria-live="polite" className={`m-0 flex min-h-[1.25rem] items-start gap-2 text-sm leading-relaxed ${status.warn ? 'text-terracotta-700' : 'text-stone-700'}`}>
+        <p id={`${uid}-notes-hint`} className="m-0 text-xs leading-relaxed text-stone-600">
+          {notesAvailable && !includeNotes ? 'Notes stay out unless Include notes is ticked. ' : ''}
+          {PDF_SCRIPT_NOTE} Built in your browser.
+        </p>
+        <p role="status" aria-live="polite" className={`m-0 flex items-start gap-2 text-sm leading-relaxed ${status.text ? '' : 'sr-only'} ${status.warn ? 'text-terracotta-700' : 'text-stone-700'}`}>
           {status.warn && <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />}
           <span>{status.text}</span>
         </p>
       </div>
 
-      <article id="report" aria-labelledby="report-title" className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-10">
+      <article
+        id="report"
+        aria-labelledby="report-title"
+        aria-hidden={compact || undefined}
+        className={compact ? 'report-print-only' : 'rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-10'}
+      >
         <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-stone-200 pb-3">
           <p className="m-0 font-display text-lg font-bold text-forest-800">GlobalStudyBoard</p>
           <p className="m-0 text-xs font-semibold uppercase tracking-wide text-stone-600">Report · {doc.toolName}</p>

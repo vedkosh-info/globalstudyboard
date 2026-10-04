@@ -36,6 +36,8 @@ export interface ScoresReportInput {
    * applicants may not apply to them. Omitted = no audience line, no caveat.
    */
   domestic?: boolean;
+  /** Country chosen in the tool. Readiness is that country's profiled applications only. */
+  country?: string | null;
   includeNotes: boolean;
   now?: Date;
 }
@@ -120,7 +122,12 @@ export function buildScoresReport(input: ScoresReportInput): ReportDocument {
   });
 
   const shortlist = input.shortlist ?? 'ready';
-  const apps = shortlist === 'ready' ? input.applications.filter((a) => a.region === input.region) : [];
+  const pickedCountry = input.country && region?.countries.includes(input.country) ? input.country : null;
+  const apps =
+    shortlist === 'ready'
+      ? input.applications.filter((a) => a.region === input.region && (!pickedCountry || (Boolean(a.college_slug) && input.colleges.get(a.college_slug!)?.country === pickedCountry)))
+      : [];
+  const place = pickedCountry ?? prose;
   const rows: Cell[][] = [];
   for (const row of readiness(apps, input.colleges, input.scores, input.exams, today)) {
     if (row.lines === null) {
@@ -155,8 +162,8 @@ export function buildScoresReport(input: ScoresReportInput): ReportDocument {
   }
   sections.push({
     kind: 'table',
-    heading: `Readiness for your shortlist — ${regionName}`,
-    intro: `${readinessIntro(prose)}${input.domestic ? ` ${DOMESTIC_READINESS_CAVEAT}` : ''}`,
+    heading: `Readiness for your shortlist — ${pickedCountry ?? regionName}`,
+    intro: `${readinessIntro(place)}${input.domestic ? ` ${DOMESTIC_READINESS_CAVEAT}` : ''}`,
     columns: [
       { label: 'University', weight: 1.4 },
       { label: 'Profile’s admission requirements', weight: 2 },
@@ -169,7 +176,7 @@ export function buildScoresReport(input: ScoresReportInput): ReportDocument {
         ? 'The Application Planner is not switched on for this account yet, so there is no shortlist to check.'
         : shortlist === 'error'
           ? 'The Application Planner shortlist could not be loaded for this report. Reload the page to include it.'
-          : `The Application Planner has no applications for ${prose} yet.`,
+          : `The Application Planner has no ${pickedCountry ? 'profiled application in' : 'applications for'} ${place} yet.`,
     footnote: 'Presence only. Whether a score satisfies a programme is decided by the university, on the official requirements page — this report never says a score is enough or not enough.',
   });
 
@@ -207,7 +214,7 @@ export function buildScoresReport(input: ScoresReportInput): ReportDocument {
     region: input.region,
     regionName,
     generatedAt: now.toISOString(),
-    intro: `The test scores you recorded, each with the validity rule its test body publishes (or a note where it publishes none), and — for your Application Planner shortlist in ${prose} — which listed tests have a score on record.`,
+    intro: `The test scores you recorded, each with the validity rule its test body publishes (or a note where it publishes none), and — for your Application Planner shortlist in ${place} — which listed tests have a score on record.`,
     sections,
     sources: mergeSubjectLinks(sources),
     includesNotes: notes.length > 0,

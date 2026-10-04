@@ -53,7 +53,7 @@ export default function TermsPage() {
           guidance only</strong> and is not professional, legal, financial or immigration advice.
         </p>
         <p>
-          Always verify the current details on the official university or examination website before
+          Always verify the current details with the official university, the examination website, or the official representative of that country before
           making any decision or application. See our full{' '}
           <Link href="/disclaimer" className="text-forest-700 hover:text-forest-800 underline">
             disclaimer

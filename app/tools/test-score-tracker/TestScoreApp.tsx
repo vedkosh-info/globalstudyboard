@@ -3,16 +3,20 @@
 import { ToolLoadError, ToolOffline, ToolSessionEnded, ToolSetup, ToolSkeleton } from '@/components/tools/ToolStates';
 import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEvent } from 'react';
 import Link from 'next/link';
-import { Download, ExternalLink, FileText, Pencil, Plus, RotateCw, Trash2, X } from 'lucide-react';
+import { Download, ExternalLink, Pencil, Plus, RotateCw, Trash2, X } from 'lucide-react';
+import ReportView from '@/components/tools/ReportView';
+import { buildScoresReport } from '@/lib/reports/scores-report';
+import { defaultPaperFor, type Paper } from '@/lib/reports/model';
 import type { PostgrestError } from '@supabase/supabase-js';
 import { useRegion } from '@/components/RegionProvider';
+import CountrySelect from '@/components/tools/CountrySelect';
 import { useAudience } from '@/components/AudienceProvider';
 import { defaultAudienceFor } from '@/lib/audience';
 import RegionFlag from '@/components/RegionFlag';
 import { REGIONS_ALPHABETICAL, getRegionBySlug, type Region, type RegionSlug } from '@/lib/regions';
 import { DATE_RE, todayIso } from '@/lib/planner';
 import { getSupabaseBrowserClient } from '@/lib/supabase/client';
-import { reportHref, toolHref } from '@/lib/tools';
+import { toolHref } from '@/lib/tools';
 import { CONNECTION_LOST, SESSION_ENDED, TIMED_OUT, checkToolSession, explainLoadFailure, isSetupError, isUnansweredWrite, withDeadline } from '@/lib/tools-shared';
 import {
   DATED_KINDS,
@@ -259,7 +263,7 @@ async function explainFailure(error: Pick<PostgrestError, 'message' | 'code'> | 
 
 // ── Component ────────────────────────────────────────────────────────────────
 export default function TestScoreApp({ examNames = {} }: { examNames?: Record<string, string> }) {
-  const { effectiveRegion } = useRegion();
+  const { effectiveRegion, country } = useRegion();
   const region = regionOf(effectiveRegion);
   // §16.7: the second personalisation axis. Profiles are common content, so
   // nothing is hidden — but a domestic student is told that tests a profile
@@ -274,6 +278,8 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
   /** How many fetches of the list have failed — the alert's wording (and its re-announcement) follows this, so it never changes while a retry is still running. */
   const [catalogueFailures, setCatalogueFailures] = useState(0);
   const [plannerState, setPlannerState] = useState<PlannerState>('ready');
+  const [includeNotes, setIncludeNotes] = useState(false);
+  const [paperChoice, setPaperChoice] = useState<Paper | null>(null);
   const [scores, setScores] = useState<TestScore[]>([]);
   const [sections, setSections] = useState<TestScoreSection[]>([]);
   const [apps, setApps] = useState<ShortlistApplication[]>([]);
@@ -459,10 +465,14 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
   );
   const regionApps = useMemo(() => apps.filter((a) => a.region === effectiveRegion), [apps, effectiveRegion]);
   const otherAppsCount = apps.length - regionApps.length;
-  const shortlistSlugs = useMemo(() => shortlistExamSlugs(regionApps, collegesMap, new Set(examsMap.keys())), [regionApps, collegesMap, examsMap]);
+  const scopedApps = useMemo(() => {
+    if (!country) return regionApps;
+    return regionApps.filter((a) => Boolean(a.college_slug) && collegesMap.get(a.college_slug!)?.country === country);
+  }, [regionApps, country, collegesMap]);
+  const shortlistSlugs = useMemo(() => shortlistExamSlugs(scopedApps, collegesMap, new Set(examsMap.keys())), [scopedApps, collegesMap, examsMap]);
   const groups = useMemo(() => pickerGroups(effectiveRegion, catalogue.exams, shortlistSlugs), [effectiveRegion, catalogue, shortlistSlugs]);
   const grouped = useMemo(() => groupByExam(scores, groups.suggested.map((e) => e.slug)), [scores, groups]);
-  const readinessRows = useMemo(() => readiness(regionApps, collegesMap, scores, examsMap, today), [regionApps, collegesMap, scores, examsMap, today]);
+  const readinessRows = useMemo(() => readiness(scopedApps, collegesMap, scores, examsMap, today), [scopedApps, collegesMap, scores, examsMap, today]);
   const sectionsOf = useCallback((id: string) => sections.filter((x) => x.score_id === id).sort((a, b) => a.position - b.position), [sections]);
   /** The list as it is NOW, for a delete that finishes late (its neighbour is found in this, not in the list it started from). */
   const groupedRef = useRef(grouped);
@@ -738,6 +748,26 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
     return true;
   };
 
+  const scoreNotes = scores.some((s) => Boolean(s.note?.trim()));
+  const scoreDoc = useMemo(
+    () =>
+      catalogueReady
+        ? buildScoresReport({
+            region: effectiveRegion,
+            scores,
+            sections,
+            exams: examsMap,
+            applications: scopedApps,
+            country,
+            colleges: collegesMap,
+            shortlist: plannerState,
+            domestic: audience === 'domestic',
+            includeNotes: includeNotes && scoreNotes,
+          })
+        : null,
+    [catalogueReady, effectiveRegion, scores, sections, examsMap, scopedApps, collegesMap, plannerState, audience, includeNotes, scoreNotes, country],
+  );
+
   const downloadCsv = () => {
     if (scores.length === 0) return;
     const blob = new Blob([scoresCsv(scores, sections, csvExams, today)], { type: 'text/csv;charset=utf-8' });
@@ -772,7 +802,6 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
   if (load === 'loading' || (catalogueState === 'loading' && catalogueTry === 0)) return <ToolSkeleton label="Loading your scores…" />;
 
   const editing = form?.mode === 'edit' ? form.score : null;
-  const suggestedNames = groups.suggested.slice(0, 6).map((e) => e.shortName);
   const addOpen = form?.mode === 'add';
   const retrying = catalogueState === 'loading';
 
@@ -785,23 +814,21 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
             <p className="m-0 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-forest-700">
               <RegionFlag slug={effectiveRegion} className="h-3.5" /> Test scores · your shortlist in {region.proseName}
             </p>
+            <CountrySelect region={region} />
             <h2 className="mt-1 font-display text-2xl font-bold tracking-editorial text-ink">
-              {scores.length === 0 ? 'No scores recorded yet' : `${scores.length} ${scores.length === 1 ? 'attempt' : 'attempts'} across ${grouped.length} ${grouped.length === 1 ? 'test' : 'tests'}`}
+              {scores.length === 0 ? 'Record a score' : `${scores.length} ${scores.length === 1 ? 'attempt' : 'attempts'} across ${grouped.length} ${grouped.length === 1 ? 'test' : 'tests'}`}
             </h2>
-            <p className="mt-1 max-w-2xl text-sm leading-relaxed text-stone-700">
-              {catalogueReady ? (
-                <>
-                  Every attempt is listed, whatever the destination. Tests used in {region.proseName} come first, and the readiness view below checks
-                  your shortlist there — change the destination in the header to re-tune.
-                </>
-              ) : (
-                // Without the list there is no destination ordering and no readiness view yet — say so, not what the loaded tool does.
-                <>
-                  Every attempt is listed, whatever the destination. Once the list of tests loads, tests used in {region.proseName} come first and
-                  the readiness view below checks your shortlist there.
-                </>
-              )}
-            </p>
+            {catalogueReady ? (
+              scores.length > 0 && (
+                <p className="mt-1 max-w-2xl text-sm leading-relaxed text-stone-700">
+                  Tests used in {region.proseName} come first. Readiness below checks your shortlist there.
+                </p>
+              )
+            ) : (
+              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-stone-700">
+                Once the list of tests loads, tests used in {region.proseName} come first and readiness checks your shortlist there.
+              </p>
+            )}
           </div>
           <div className="flex flex-col gap-2 sm:items-end">
             <div className="flex flex-wrap gap-2 sm:justify-end">
@@ -828,9 +855,6 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
               >
                 <Download className="h-4 w-4" aria-hidden="true" /> Download CSV
               </button>
-              <Link href={reportHref('test-score-tracker')} className={`${BTN_SECONDARY} no-underline`}>
-                <FileText className="h-4 w-4" aria-hidden="true" /> Report &amp; PDF
-              </Link>
             </div>
             {scores.length > 0 && (
               // A spreadsheet re-reads "7.0" as the number 7 on opening; the file itself holds the text as entered.
@@ -950,11 +974,18 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
         {grouped.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-stone-300 bg-cream-50 p-6 text-sm leading-relaxed text-stone-700">
             {catalogueReady ? (
-              <p className="m-0">
-                Record a score as you received it. The tool keeps every attempt, shows the validity rule each test body publishes (or a note where
-                we found none), and lists your scores beside the tests our profiles of your shortlisted universities name.
-                {suggestedNames.length > 0 && ` Tests used in ${region.proseName} include ${suggestedNames.join(', ')}.`}
-              </p>
+              <>
+                <p className="m-0">Type the score exactly as you received it. The validity rule for that test appears with it.</p>
+                {groups.suggested.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {groups.suggested.slice(0, 6).map((e) => (
+                      <button key={e.slug} type="button" className={BTN_SECONDARY} onClick={(ev) => requestForm(addForm(e.slug), ev.currentTarget)}>
+                        {e.shortName}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </>
             ) : (
               // The Record button is hidden until the list loads: never invite an action that is not on screen.
               <p className="m-0">Recording a score needs the list of tests, which has not loaded yet — use Try again above, or reload the page.</p>
@@ -981,10 +1012,10 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
       <section aria-labelledby="readiness-heading" className="space-y-3">
         <div>
           <h2 id="readiness-heading" className="font-display text-xl font-bold tracking-editorial text-ink">
-            Readiness for your shortlist in {region.proseName}
+            Readiness for your shortlist in {country ?? region.proseName}
           </h2>
           <p className="mt-1 max-w-2xl text-sm leading-relaxed text-stone-700">
-            {readinessIntro(region.proseName)} Presence only — whether a score is enough is the university&rsquo;s
+            {readinessIntro(country ?? region.proseName)} Presence only — whether a score is enough is the university&rsquo;s
             decision, on its official requirements page.
           </p>
           {audience === 'domestic' && (
@@ -999,20 +1030,26 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
           <div className={`${CARD} text-sm leading-relaxed text-stone-700`} role="alert">
             Your shortlist could not be loaded right now. Reload the page to try again.
           </div>
-        ) : regionApps.length === 0 ? (
+        ) : scopedApps.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-stone-300 bg-cream-50 p-6 text-sm leading-relaxed text-stone-700">
-            <p className="m-0">
-              Your planner has no applications for {region.proseName} yet.{' '}
-              <Link href={toolHref('application-planner')} className={LINK}>
-                Open the Application Planner
-              </Link>{' '}
-              to shortlist universities — the tests our profile of each one names then show up here.
-            </p>
-            {otherAppsCount > 0 && (
-              <p className="m-0 mt-2">
-                You have {otherAppsCount} {otherAppsCount === 1 ? 'application' : 'applications'} for other destinations — change the destination in
-                the header to check {otherAppsCount === 1 ? 'it' : 'them'}.
-              </p>
+            {country && regionApps.length > 0 ? (
+              <p className="m-0">No profiled application in {country}. Choose All countries to see the rest of {region.proseName}.</p>
+            ) : (
+              <>
+                <p className="m-0">
+                  Your planner has no applications for {region.proseName} yet.{' '}
+                  <Link href={toolHref('application-planner')} className={LINK}>
+                    Open the Application Planner
+                  </Link>{' '}
+                  to shortlist universities — the tests our profile of each one names then show up here.
+                </p>
+                {otherAppsCount > 0 && (
+                  <p className="m-0 mt-2">
+                    You have {otherAppsCount} {otherAppsCount === 1 ? 'application' : 'applications'} for other destinations — change the destination in
+                    the header to check {otherAppsCount === 1 ? 'it' : 'them'}.
+                  </p>
+                )}
+              </>
             )}
           </div>
         ) : (
@@ -1082,6 +1119,18 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
           </>
         )}
       </section>
+
+      {scoreDoc && scores.length > 0 && (
+        <ReportView
+          compact
+          doc={scoreDoc}
+          includeNotes={includeNotes}
+          onIncludeNotes={setIncludeNotes}
+          notesAvailable={scoreNotes}
+          paper={paperChoice ?? defaultPaperFor(effectiveRegion)}
+          onPaper={setPaperChoice}
+        />
+      )}
 
       <p className="m-0 rounded-xl border border-stone-200 bg-cream-100 px-4 py-3 text-xs leading-relaxed text-stone-700">
         Scores, sections and dates are as you enter them — GlobalStudyBoard verifies none of them, computes no best or combined score, converts no

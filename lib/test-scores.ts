@@ -81,6 +81,8 @@ export interface CollegeTests {
   slug: string;
   name: string;
   region: RegionSlug;
+  /** Destination country name, or null when the profile's country is not on that destination's list. */
+  country: string | null;
   /** The profile's own free-text list of tests it names. */
   admissionExams: string[];
 }

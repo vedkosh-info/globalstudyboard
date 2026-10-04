@@ -10,10 +10,12 @@ import {
   type ReactNode,
 } from 'react';
 import { useSelectedLayoutSegments } from 'next/navigation';
-import { REGION_SLUGS, DEFAULT_REGION, type RegionSlug } from '@/lib/regions';
+import { REGION_SLUGS, DEFAULT_REGION, getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { announceRegionChanged } from '@/lib/preference-events';
 
 const REGION_KEY = 'gsb_region';
+/** Optional country inside the remembered destination. Not an account field. */
+const COUNTRY_KEY = 'gsb_country';
 
 /**
  * A year. The destination is a preference the visitor set deliberately, so it is
@@ -41,8 +43,14 @@ interface RegionContextValue {
    * (India). Always a real region, so every surface personalises without a null check.
    */
   effectiveRegion: RegionSlug;
-  /** Remember a destination choice on this device. */
+  /** Remember a destination choice on this device. A country from another destination is cleared. */
   setRegion: (slug: RegionSlug) => void;
+  /**
+   * Optional country inside the destination on screen. Null is the whole
+   * destination. A name that is not one of that destination's countries is ignored.
+   */
+  country: string | null;
+  setCountry: (name: string | null) => void;
   /** Forget the remembered destination (back to the India default). */
   clearRegion: () => void;
   /** Record the destination of the current page (provisional skin; never persisted). */
@@ -98,6 +106,7 @@ function expireCookie(name: string) {
 export function RegionProvider({ children }: { children: ReactNode }) {
   const segments = useSelectedLayoutSegments();
   const [region, setRegionState] = useState<RegionSlug | null>(null);
+  const [countryState, setCountryState] = useState<string | null>(null);
   const [declaredPageRegion, setPageRegionState] = useState<RegionSlug | null>(null);
   const [ready, setReady] = useState(false);
   // A page's own destination: declared by <PageRegion> (content pages) or read
@@ -109,12 +118,17 @@ export function RegionProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const stored = readCookie(REGION_KEY);
     if (isRegionSlug(stored)) setRegionState(stored);
+    const storedCountry = readCookie(COUNTRY_KEY);
+    if (storedCountry) setCountryState(storedCountry);
     setReady(true);
   }, []);
 
   const setRegion = useCallback((slug: RegionSlug) => {
     setRegionState(slug);
     writeCookie(REGION_KEY, slug);
+    // A country belongs to the destination it was picked in. Changing destination clears it.
+    setCountryState(null);
+    expireCookie(COUNTRY_KEY);
     // Lets a signed-in account remember the choice too (see lib/preference-events).
     announceRegionChanged(slug);
   }, []);
@@ -122,6 +136,8 @@ export function RegionProvider({ children }: { children: ReactNode }) {
   const clearRegion = useCallback(() => {
     setRegionState(null);
     expireCookie(REGION_KEY);
+    setCountryState(null);
+    expireCookie(COUNTRY_KEY);
     announceRegionChanged(null);
   }, []);
 
@@ -129,17 +145,33 @@ export function RegionProvider({ children }: { children: ReactNode }) {
     setPageRegionState(slug);
   }, []);
 
+  const effectiveRegion = region ?? pageRegion ?? DEFAULT_REGION;
+  const allowed = useMemo(() => getRegionBySlug(effectiveRegion)?.countries ?? [], [effectiveRegion]);
+  const country = countryState && allowed.includes(countryState) ? countryState : null;
+
+  const setCountry = useCallback(
+    (name: string | null) => {
+      if (name && !allowed.includes(name)) return;
+      setCountryState(name);
+      if (name) writeCookie(COUNTRY_KEY, name);
+      else expireCookie(COUNTRY_KEY);
+    },
+    [allowed],
+  );
+
   const value = useMemo<RegionContextValue>(
     () => ({
       region,
       pageRegion,
-      effectiveRegion: region ?? pageRegion ?? DEFAULT_REGION,
+      effectiveRegion,
       setRegion,
+      country,
+      setCountry,
       clearRegion,
       setPageRegion,
       ready,
     }),
-    [region, pageRegion, setRegion, clearRegion, setPageRegion, ready],
+    [region, pageRegion, effectiveRegion, setRegion, country, setCountry, clearRegion, setPageRegion, ready],
   );
 
   return <RegionContext.Provider value={value}>{children}</RegionContext.Provider>;

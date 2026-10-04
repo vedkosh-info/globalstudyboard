@@ -51,7 +51,7 @@ const FEATURES = [
 ];
 
 const STEPS = [
-  'With your destination chosen in the header, add a university — search our profiles or type your own — with the programme and intake you are aiming for.',
+  'Add a university — search our profiles or type your own. Programme and intake offer that profile’s and that destination’s choices; type your own if it is not listed.',
   'Enter the dates that matter to you: the application deadline, test dates, scholarship and visa steps.',
   'Move each application from researching to applied to accepted, and tick off documents as you gather them.',
 ];

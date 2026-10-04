@@ -1,6 +1,7 @@
 import { COLLEGES, COLLEGE_COUNTRY_INFO } from '@/lib/colleges';
 import { TYPE_LABELS, LEVEL_LABELS, collegeRankings, type AttributedRanking } from '@/lib/college-labels';
 import type { RegionSlug } from '@/lib/regions';
+import { REGION_COUNTRY_NAME } from '@/lib/study-country';
 
 /**
  * The Compare Universities tool's fact sheet per profile — server-only (it
@@ -16,6 +17,8 @@ export interface CompareFacts {
   slug: string;
   name: string;
   region: RegionSlug;
+  /** Destination country name, or null when the profile's country is not on that destination's list. */
+  country: string | null;
   /** "City, State, Country" / "City, Country". */
   place: string;
   established: number;
@@ -34,6 +37,7 @@ export function compareCatalogue(): CompareFacts[] {
     slug: c.slug,
     name: c.nameEn,
     region: c.region,
+    country: REGION_COUNTRY_NAME[c.country],
     place: [c.city, c.state, COLLEGE_COUNTRY_INFO[c.country].label].filter(Boolean).join(', '),
     established: c.established,
     type: TYPE_LABELS[c.type] ?? c.type,

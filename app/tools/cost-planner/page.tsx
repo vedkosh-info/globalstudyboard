@@ -50,9 +50,9 @@ const FEATURES = [
 ];
 
 const STEPS = [
-  'Choose your destination in the header. The planner opens with that destination’s cost lines and its currency.',
-  'Enter each cost as you find it on the official page or in your offer letter — per year or one-off — and set the length of your programme.',
-  'Add what you have or expect: savings, family contribution, scholarships, a loan. The difference updates as you type.',
+  'Choose the destination in the header, then Start. Currency, intake and 1 year are already set.',
+  'Type each amount you know. Leave the rest blank.',
+  'Download the PDF on this page. “Still to arrange” is the first line.',
 ];
 
 export default function CostPlannerPage() {

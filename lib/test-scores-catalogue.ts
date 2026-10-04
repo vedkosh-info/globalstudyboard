@@ -1,6 +1,7 @@
 import { COLLEGES } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import type { CollegeTests, ExamPick, ScoresCatalogue } from '@/lib/test-scores';
+import { REGION_COUNTRY_NAME } from '@/lib/study-country';
 
 /**
  * The compact exam picker + each university's own test list for the Test
@@ -23,6 +24,7 @@ export function scoresCatalogue(): ScoresCatalogue {
     slug: c.slug,
     name: c.nameEn,
     region: c.region,
+    country: REGION_COUNTRY_NAME[c.country],
     admissionExams: c.admissionExams,
   }));
   return { exams, colleges };
