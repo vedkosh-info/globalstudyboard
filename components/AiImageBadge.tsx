@@ -8,7 +8,7 @@ import { Info } from 'lucide-react';
  *
  * Owner decision 22 Sep 2026 (an explicit override of the 18 Sep review's
  * "words always visible" recommendation, logged in the audit log): only the ⓘ
- * shows at rest; a click/tap reveals "AI-generated · not a photo" beside it in the
+ * shows at rest; a click/tap reveals "Illustration · not a photo" beside it in the
  * same pill, and the revealed text is a plain link to the image policy (full
  * navigation, so the browser Back button returns here). A second click, Escape, or
  * a tap anywhere else collapses it again.
@@ -22,9 +22,9 @@ import { Info } from 'lucide-react';
  * mismatch), and the ⓘ button's accessible name carries the full sentence.
  */
 interface Props {
-  /** Visible label, e.g. "AI-generated · not a photo". */
+  /** Visible label, e.g. "Illustration · not a photo". */
   label: string;
-  /** Screen-reader form of the same words, e.g. "AI-generated, not a photo". */
+  /** Screen-reader form of the same words, e.g. "Illustration, not a photo". */
   spokenLabel: string;
   href: string;
   variant: 'hero' | 'card';

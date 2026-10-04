@@ -39,7 +39,7 @@ export const TOOLS: ToolDef[] = [
     name: 'Application Planner',
     tagline: 'Shortlist universities, then track every deadline, document and test date in one place.',
     description:
-      'Build your own shortlist from 118 university profiles across nine destinations — or add any university — and keep each application moving: status, your deadlines, a document checklist, test dates and private notes, synced to your account on every device.',
+      'Build your own shortlist from our university profiles across nine destinations — or add any university — and keep each application moving: status, your deadlines, a document checklist, test dates and private notes, synced to your account on every device.',
     features: [
       'Shortlist universities from our profiles, or add your own',
       'Track status from researching to accepted',

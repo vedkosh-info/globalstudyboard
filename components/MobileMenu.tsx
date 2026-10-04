@@ -34,7 +34,7 @@ export default function MobileMenu() {
     { label: 'Topics', href: '/topics' },
     // Carries the page's destination (#region=) like every other Tools entrance.
     { label: 'Tools', href: toolsIndexHref(pageRegion) },
-    { label: 'Ask GSB AI', href: '/gsb-ai', highlight: true },
+    { label: 'Ask GSB', href: '/ask', highlight: true },
   ];
 
   // Match the RegionSwitcher / TopicsMenu disclosure behaviour: close on Escape

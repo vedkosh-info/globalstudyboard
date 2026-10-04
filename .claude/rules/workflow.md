@@ -39,7 +39,7 @@ globs: "**/*.{ts,tsx,js,jsx}"
 
 ## Navigation, Search & UX (BINDING — constitution §12)
 - **Breadcrumbs on every page**, rendered globally via the root layout (like the footer) so new routes inherit them: `Home > {group} > {sub-group} > {current page}`; current page is not a link; emit `BreadcrumbList` JSON-LD. Labels come from the content registry, not hard-coded.
-- **A search box at the top of every page**, mounted globally in the layout, searching the CMI index with fast client-side matching and handing complex queries to GSB AI. Keyboard-accessible; identical on desktop + mobile.
+- **A search box at the top of every page**, mounted globally in the layout, searching the CMI index with fast client-side matching and handing complex queries to Ask GSB (`/ask`). Keyboard-accessible; identical on desktop + mobile. Do not brand that box as AI.
 - **Modern, content-first, fully responsive UI.** Test BOTH desktop and mobile (and tablet) before shipping any UI change. Accessible by default (semantic HTML, contrast, focus states, alt text, reduced-motion). Keep the consistent design language (Fraunces + Inter, forest/cream/stone, rounded cards) — no one-off styles.
 
 ## Premium UI, Readability & Always-Review (BINDING — constitution §15, §7.5–§7.6)

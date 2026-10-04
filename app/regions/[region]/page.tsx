@@ -13,6 +13,7 @@ import {
 } from '@/lib/regions';
 import { pageMetadata, regionOgImage } from '@/lib/seo';
 import { COLLEGES } from '@/lib/colleges';
+import { qsChip } from '@/lib/college-labels';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { GUIDES, getGuideBySlug } from '@/lib/guides';
 import { gsbAiHref } from '@/lib/gsb-ai-links';
@@ -353,9 +354,9 @@ export default async function RegionHubPage({ params }: Props) {
                         {c.nameEn}
                       </Link>
                     </h3>
-                    {c.ranking?.qs && (
+                    {qsChip(c.ranking) && (
                       <span className="text-[11px] font-semibold text-stone-500 shrink-0 mt-1">
-                        QS #{c.ranking.qs}
+                        {qsChip(c.ranking)}
                       </span>
                     )}
                   </div>
@@ -588,7 +589,7 @@ export default async function RegionHubPage({ params }: Props) {
 
         {/* Popular questions — each resolves to the guide that answers it when
             one exists (a real, crawlable link with the guide's own title), and
-            only falls back to a GSB AI prefill when no guide covers it. */}
+            only falls back to an Ask GSB prefill when no guide covers it. */}
         {r.popularQueries.length > 0 && (
           <section>
             <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-4">
@@ -625,13 +626,13 @@ export default async function RegionHubPage({ params }: Props) {
               Got a specific question about {r.proseName}?
             </h2>
             <p className="text-cream-50/85 mb-5 m-0">
-              Ask GSB AI for tailored guidance on applications, scholarships, visa, or course choice.
+              Ask GSB for tailored guidance on applications, scholarships, visa, or course choice.
             </p>
             <Link
               href={gsbAiHref({ region: r.slug })}
               className="inline-flex items-center justify-center bg-cream-50 hover:bg-cream-100 text-forest-900 font-semibold px-6 py-3 rounded-full no-underline transition-colors"
             >
-              Ask GSB AI →
+              Ask GSB →
             </Link>
           </div>
         </section>

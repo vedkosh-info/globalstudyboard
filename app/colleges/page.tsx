@@ -9,7 +9,7 @@ import { SITE_REVIEWED } from '@/lib/site-meta';
 export const metadata: Metadata = pageMetadata({
   title: 'Universities Worldwide: Profiles, Rankings & How to Apply',
   description:
-    'Browse 118 university profiles across the USA, UK & Ireland, Canada, Europe, Australia & NZ, East & Southeast Asia, the Middle East, Russia & CIS and India \u2014 location, degree levels, admission tests and official links for each institution.',
+    `Browse ${COLLEGES.length} university profiles across the USA, UK & Ireland, Canada, Europe, Australia & NZ, East & Southeast Asia, the Middle East, Russia & CIS and India — location, degree levels, admission tests and official links for each institution.`,
   path: '/colleges',
   keywords: [
     'university profiles',

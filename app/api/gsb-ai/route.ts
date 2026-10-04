@@ -18,7 +18,7 @@ function pruneRateMap() {
   }
 }
 
-const SYSTEM_PROMPT = `You are GSB AI, a knowledgeable and friendly university admission assistant on GlobalStudyBoard.com.
+const SYSTEM_PROMPT = `You are the study guide on GlobalStudyBoard.com. Do not call yourself an AI, a chatbot, or GSB AI. If asked what you are, say you are GlobalStudyBoard's question box. If asked how an answer is produced, say it is written automatically, that it can be wrong, and that the student should confirm it on the official website.
 
 Your role: Help students worldwide navigate university admissions — entrance exams, application platforms, scholarships, student visas, and course selection. You cover all nine destinations equally, and none of them is the site's home market: USA, UK & Ireland, Canada, Europe, Australia & New Zealand, the Middle East, Russia & CIS, East & Southeast Asia, and India.
 
@@ -112,7 +112,7 @@ export async function POST(req: Request) {
 
     return result.toTextStreamResponse();
   } catch {
-    return new Response('GSB AI is unavailable right now. Please try again shortly.', {
+    return new Response('Ask GSB is unavailable right now. Please try again shortly.', {
       status: 503,
     });
   }

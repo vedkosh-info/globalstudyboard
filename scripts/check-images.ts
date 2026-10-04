@@ -73,6 +73,8 @@ const GENERIC = new Set([
   'van', 'im', 'in', 'first', 'general', 'public', 'open', 'modern', 'autonomous', 'deemed',
   'central', 'federal', 'royal', 'imperial', 'city', 'national', 'state', 'international',
   'new', 'south', 'north', 'east', 'west', 'saint', 'st', 'higher', 'education', 'campus', 'research',
+  // English function words inside an official name ("named after"), not the institution
+  'named', 'after',
   // subject / field words — these appear in honest archetype alts ("a physics optics bench")
   'technology', 'technological', 'science', 'sciences', 'medical', 'medicine', 'management',
   'engineering', 'business', 'law', 'arts', 'art', 'design', 'music', 'commerce', 'economics',

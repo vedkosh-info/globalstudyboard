@@ -45,12 +45,42 @@ export interface AttributedRanking {
  * (constitution §3 tier 2: a ranking may be shown only as that body's own
  * figure, never as a site-authored fact) and linked to the body's own page.
  */
+function rankingBody(name: string, year?: number, tied?: boolean): string {
+  const edition = year ? ` ${year}` : '';
+  const joint = tied ? ' (joint)' : '';
+  return `${name}${edition}${joint}`;
+}
+
 export function collegeRankings(college: Pick<College, 'ranking'>): AttributedRanking[] {
+  const ranking = college.ranking;
   const out: AttributedRanking[] = [];
-  if (college.ranking?.qs) out.push({ body: 'QS World University Rankings', rank: college.ranking.qs, url: 'https://www.topuniversities.com/world-university-rankings' });
-  if (college.ranking?.the) out.push({ body: 'Times Higher Education (THE)', rank: college.ranking.the, url: 'https://www.timeshighereducation.com/world-university-rankings' });
-  if (college.ranking?.nirf) out.push({ body: 'NIRF (India)', rank: college.ranking.nirf, url: 'https://www.nirfindia.org/' });
+  if (ranking?.qs) {
+    out.push({
+      body: rankingBody('QS World University Rankings', ranking.qsYear, ranking.qsTied),
+      rank: ranking.qs,
+      url: 'https://www.topuniversities.com/world-university-rankings',
+    });
+  }
+  if (ranking?.the) {
+    out.push({
+      body: rankingBody('Times Higher Education (THE)', ranking.theYear, ranking.theTied),
+      rank: ranking.the,
+      url: 'https://www.timeshighereducation.com/world-university-rankings',
+    });
+  }
+  if (ranking?.nirf) out.push({ body: 'NIRF (India)', rank: ranking.nirf, url: 'https://www.nirfindia.org/' });
   return out;
+}
+
+/**
+ * The short QS label on a destination card. The edition year and “joint”
+ * appear only when that edition was read. A card without them stays “QS #n”.
+ */
+export function qsChip(ranking: College['ranking']): string | null {
+  if (!ranking?.qs) return null;
+  const year = ranking.qsYear ? ` ${ranking.qsYear}` : '';
+  const joint = ranking.qsTied ? ' joint' : '';
+  return `QS${year} #${ranking.qs}${joint}`;
 }
 
 /** The verify nudge that accompanies every ranking on the site (§5). */

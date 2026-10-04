@@ -4,30 +4,23 @@ import GSBAIChat from '@/components/GSBAIChat';
 import { pageMetadata } from '@/lib/seo';
 
 /**
- * Static page. It used to read `searchParams` (for `?q=` / `?region=` prefills),
- * which made /gsb-ai the only per-request-rendered HTML route on the site
- * (`cache-control: private, no-store`) and minted ~3,300 distinct robots-blocked
- * URLs from the "Ask GSB AI" links on every content page. Prefills now travel in
- * the URL FRAGMENT (`/gsb-ai#q=…`, `/gsb-ai#region=…`): a fragment is not a
- * separate URL to a crawler, so every page links to the one canonical /gsb-ai,
- * the page is prerendered and CDN-cached, and GSBAIChat reads the fragment (and
- * any legacy `?q=` query) on the client.
+ * Static page at /ask. Prefills travel in the URL fragment (`/ask#q=…`,
+ * `/ask#region=…`): a fragment is not a separate URL to a crawler, so every
+ * page links to this one canonical URL. The old /gsb-ai path 301s here.
+ * GSBAIChat reads the fragment (and any legacy `?q=` query) on the client.
+ * Query-string copies stay out of the index via robots.txt (`/ask?*`).
  */
 export const metadata: Metadata = pageMetadata({
-  title: 'Ask GSB AI — Free University Admission AI Assistant',
+  title: 'Ask GSB — Admissions, Exams and Scholarships',
   description:
-    'Get instant answers about university admissions, entrance exams, scholarships, student visas and study abroad from GSB AI. Free AI-powered guide for every country.',
-  path: '/gsb-ai',
+    'Ask about entrance exams, universities, scholarships and student visas. Answers are general guidance. Confirm every detail on the official site.',
+  path: '/ask',
   keywords: [
-    'university admission AI assistant',
-    'college admission chatbot',
-    'study abroad AI guide',
-    'SAT ACT advice',
-    'UCAS common app help',
-    'GRE GMAT tips',
-    'student visa help',
-    'scholarship finder AI',
-    'free university guide',
+    'university admissions questions',
+    'entrance exam questions',
+    'study abroad questions',
+    'scholarship questions',
+    'student visa questions',
   ],
 });
 
@@ -37,23 +30,23 @@ const TOPICS = [
   { label: 'Study Abroad', examples: 'USA, UK, Europe, Canada, Australia' },
   { label: 'Applications', examples: 'Common App, UCAS, Uni-Assist, OUAC' },
   { label: 'Scholarships', examples: 'Merit-based, need-based, country-specific' },
-  { label: 'Visas & Work', examples: 'F-1, Tier 4, post-study work permits' },
+  { label: 'Visas & Work', examples: 'F-1, Student Route, post-study work permits' },
 ];
 
-export default function GSBAIPage() {
+export default function AskPage() {
   return (
     <div className="max-w-3xl mx-auto space-y-8">
 
       <div className="text-center">
         <div className="inline-flex items-center gap-2 bg-cream-100 border border-stone-200 text-forest-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
           <Sparkles className="w-3.5 h-3.5 text-terracotta-500" />
-          AI-Powered Guide
+          Questions
         </div>
         <h1 className="font-display text-4xl md:text-5xl font-bold tracking-editorial text-ink mb-3">
-          Ask GSB AI
+          Ask GSB
         </h1>
         <p className="text-stone-600 text-base max-w-lg mx-auto leading-relaxed">
-          Your free AI university admission assistant. Ask about entrance exams, university selection, study abroad, scholarships, visas, and more.
+          Ask about entrance exams, universities, scholarships and student visas. Answers are general guidance. Confirm every detail on the official site before you apply.
         </p>
       </div>
 
@@ -61,7 +54,7 @@ export default function GSBAIPage() {
 
       <section>
         <h2 className="text-xs font-semibold text-stone-500 uppercase tracking-[0.18em] mb-4">
-          What GSB AI can help with
+          What you can ask about
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {TOPICS.map((topic) => (
@@ -80,7 +73,7 @@ export default function GSBAIPage() {
       </section>
 
       <p className="text-xs text-stone-500 text-center leading-relaxed pb-2">
-        GSB AI provides general guidance only. Information may not reflect the latest updates. Always verify deadlines, fees, and eligibility on official university and exam websites before applying.
+        Ask GSB gives general guidance only. It may not reflect the latest update. Always verify deadlines, fees and eligibility on the official university or exam website before applying.
       </p>
 
     </div>

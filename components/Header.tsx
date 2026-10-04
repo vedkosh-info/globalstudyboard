@@ -56,10 +56,10 @@ export default function Header({ topicsMenu }: { topicsMenu: TopicsMenuData }) {
                 Tools
               </ToolsEntranceLink>
               <Link
-                href="/gsb-ai"
+                href="/ask"
                 className="ml-1 inline-flex h-9 items-center whitespace-nowrap text-sm font-semibold bg-forest-700 hover:bg-forest-800 text-cream-50 px-3 rounded-full transition-colors no-underline xl:ml-2 xl:px-4"
               >
-                Ask GSB AI
+                Ask GSB
               </Link>
             </nav>
 

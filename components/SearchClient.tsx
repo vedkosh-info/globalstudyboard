@@ -141,7 +141,7 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
 
   const totalCount = grouped.reduce((n, g) => n + g.items.length, 0);
 
-  const aiHref = q ? gsbAiHref({ q: query.trim() }) : '/gsb-ai';
+  const askHref = q ? gsbAiHref({ q: query.trim() }) : '/ask';
 
   function submit() {
     if (query.trim()) setForced(true);
@@ -275,21 +275,21 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
               <span className="font-semibold">“{query.trim()}”</span>.
             </p>
             <p className="mx-auto mt-1 mb-0 max-w-md text-sm text-stone-500">
-              Try a different term, change your destination, or ask GSB AI for guidance.
+              Try a different term, change your destination, or ask GSB for guidance.
             </p>
           </div>
         )}
       </div>
 
-      {/* Ask GSB AI — always available as a fallback / deeper-help path */}
+      {/* Ask GSB — always available as a fallback / deeper-help path */}
       <Link
-        href={aiHref}
+        href={askHref}
         className="mt-8 flex items-center gap-3 rounded-2xl border border-forest-200 bg-forest-50 px-5 py-4 no-underline transition-colors hover:border-forest-300 hover:bg-forest-100"
       >
         <Sparkles className="h-5 w-5 shrink-0 text-forest-600" aria-hidden="true" />
         <span className="min-w-0 flex-1">
           <span className="block font-semibold text-forest-800">
-            Ask GSB AI{query.trim() ? `: “${query.trim()}”` : ''}
+            Ask GSB{query.trim() ? `: “${query.trim()}”` : ''}
           </span>
           <span className="block text-sm text-forest-700/80">
             Get a personalised answer for {region?.displayName ?? 'your destination'}.

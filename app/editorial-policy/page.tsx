@@ -43,8 +43,8 @@ const STEPS = [
   },
   {
     icon: <Sparkles className="h-5 w-5" />,
-    title: '5. How we use AI',
-    body: 'Drafting is AI-assisted and runs inside the process above: research is confined to official sources, and the independent verification pass applies to AI-assisted drafts exactly as it would to any other. Answers from GSB AI are labelled as AI, and our disclaimer explains how we use AI-generated images. AI never replaces the official source — it is checked against it.',
+    title: '5. Illustrations and Ask GSB',
+    body: 'Pages are checked against the official source in the pass above, whether a draft was prepared by hand or with software. Pictures are computer-generated illustrations, not photographs of a real campus. The mark on each picture says so and links to the disclaimer. Answers from Ask GSB are general guidance and can be wrong. They never replace the official source.',
   },
   {
     icon: <MailWarning className="h-5 w-5" />,

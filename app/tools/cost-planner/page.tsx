@@ -152,7 +152,7 @@ export default function CostPlannerPage() {
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-stone-700">
           The planner suggests these lines for each destination, linking an official page or our guide on a line where we have
           one. You can add any line of your own. Each official page linked under &ldquo;Student-visa financial requirement&rdquo; was
-          read on <time dateTime={checked.iso}>{checked.display}</time>.
+          read on <time dateTime={checked.iso}>{checked.display}</time>, unless the link shows a later day.
         </p>
         <div className="mt-5 space-y-3">
           {REGIONS_ALPHABETICAL.map((r) => {
@@ -161,38 +161,34 @@ export default function CostPlannerPage() {
             return (
               <details key={r.slug} className="group rounded-2xl border border-stone-200 bg-white">
                 <summary className="flex cursor-pointer list-none items-center gap-3 px-5 py-4 text-base font-semibold text-ink [&::-webkit-details-marker]:hidden">
-                  <RegionFlag slug={r.slug} className="h-4" />
-                  <span>{r.displayName}</span>
-                  <span className="ml-auto text-xs font-medium text-stone-600 group-open:hidden">Show lines</span>
-                  <span className="ml-auto hidden text-xs font-medium text-stone-600 group-open:inline">Hide</span>
+                  <RegionFlag slug={r.slug} className="h-4 shrink-0" />
+                  <span className="min-w-0 flex-1 [overflow-wrap:break-word] [word-break:normal]">{r.displayName}</span>
+                  <span className="shrink-0 text-xs font-medium text-stone-600 group-open:hidden">Show lines</span>
+                  <span className="hidden shrink-0 text-xs font-medium text-stone-600 group-open:inline">Hide</span>
                 </summary>
                 <div className="border-t border-stone-200 px-5 py-4">
                   <h3 className="text-xs font-semibold uppercase tracking-wide text-stone-600">Cost lines</h3>
                   <ul className="mt-2 grid list-none gap-x-6 gap-y-2.5 p-0 m-0 sm:grid-cols-2">
                     {d.costs.map((c) => (
-                      <li key={c.key} className="text-sm leading-relaxed">
+                      <li key={c.key} className="text-sm leading-relaxed [overflow-wrap:break-word] [word-break:normal]">
                         <span className="font-semibold text-ink">{c.label}</span>
                         <span className="text-stone-700"> — {c.hint}</span>
                         {(c.source || c.guides?.length) && (
-                          <span className="block text-xs text-stone-600">
+                          <span className="mt-0.5 flex flex-col items-start gap-1 text-xs leading-relaxed text-stone-600 [overflow-wrap:break-word] [word-break:normal]">
                             {c.source && (
                               <a
                                 href={c.source.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-forest-700 underline underline-offset-2 hover:text-forest-800"
+                                className="inline text-forest-700 underline underline-offset-2 hover:text-forest-800 [&_svg]:inline [&_svg]:align-[-0.125em]"
                               >
                                 {c.source.label} <ExternalLink className="h-3 w-3" aria-hidden="true" />
                               </a>
                             )}
-                            {c.source && c.guides?.length ? ' · ' : ''}
-                            {c.guides?.map((gl, i) => (
-                              <span key={gl.slug}>
-                                {i > 0 ? ' · ' : ''}
-                                <Link href={`/guides/${gl.slug}`} className="text-forest-700 underline underline-offset-2 hover:text-forest-800">
-                                  {gl.title}
-                                </Link>
-                              </span>
+                            {c.guides?.map((gl) => (
+                              <Link key={gl.slug} href={`/guides/${gl.slug}`} className="text-forest-700 underline underline-offset-2 hover:text-forest-800">
+                                {gl.title}
+                              </Link>
                             ))}
                           </span>
                         )}
@@ -200,7 +196,7 @@ export default function CostPlannerPage() {
                     ))}
                   </ul>
                   <h3 className="mt-4 text-xs font-semibold uppercase tracking-wide text-stone-600">Funding lines</h3>
-                  <p className="mt-1 text-sm text-stone-700">{d.funding.map((f) => f.label).join(' · ')}</p>
+                  <p className="mt-1 text-sm text-stone-700 [overflow-wrap:break-word] [word-break:normal]">{d.funding.map((f) => f.label).join(' · ')}</p>
                   <h3 className="mt-4 text-xs font-semibold uppercase tracking-wide text-stone-600">
                     Student-visa financial requirement{r.countries.length > 1 ? ', by country' : ''}
                   </h3>
@@ -262,19 +258,28 @@ export default function CostPlannerPage() {
 function FundsLinks({ sources }: { sources: FundsSource[] }) {
   return (
     <>
-      {sources.map((s, i) => (
-        <span key={s.url}>
-          {i > 0 ? ' · ' : ''}
-          <a
-            href={s.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-forest-700 underline underline-offset-2 hover:text-forest-800"
-          >
-            {s.label} <ExternalLink className="h-3 w-3" aria-hidden="true" />
-          </a>
-        </span>
-      ))}
+      {sources.map((s, i) => {
+        const read = s.readOn ? formatReviewed(s.readOn) : null;
+        return (
+          <span key={s.url}>
+            {i > 0 ? ' · ' : ''}
+            <a
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline text-forest-700 underline underline-offset-2 hover:text-forest-800 [overflow-wrap:break-word] [word-break:normal] [&_svg]:inline [&_svg]:align-[-0.125em]"
+            >
+              {s.label} <ExternalLink className="h-3 w-3" aria-hidden="true" />
+            </a>
+            {read ? (
+              <>
+                {' '}
+                (<time dateTime={read.iso}>{read.display}</time>)
+              </>
+            ) : null}
+          </span>
+        );
+      })}
     </>
   );
 }

@@ -13,6 +13,7 @@ import {
   type RegionCategory,
 } from '@/lib/region-nav';
 import { COLLEGES, type College } from '@/lib/colleges';
+import { qsChip } from '@/lib/college-labels';
 import { ENTRANCE_EXAMS, type EntranceExam } from '@/lib/admission-guides';
 import { GUIDES, type Guide } from '@/lib/guides';
 import { topicsForGuide } from '@/lib/topic-guides';
@@ -315,7 +316,7 @@ export default async function RegionCategoryPage({ params }: Props) {
             </h2>
             <p className="m-0 mb-5 text-cream-50/85">
               See the full {r.displayName} overview — application platform, intakes, costs and visa
-              facts — or ask GSB AI for tailored guidance.
+              facts — or ask GSB for tailored guidance.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
@@ -328,7 +329,7 @@ export default async function RegionCategoryPage({ params }: Props) {
                 href={gsbAiHref({ region: slug })}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-cream-50/30 bg-transparent px-6 py-3 font-semibold text-cream-50 no-underline transition-colors hover:bg-cream-50/10"
               >
-                Ask GSB AI about {r.proseName}
+                Ask GSB about {r.proseName}
               </Link>
             </div>
           </div>
@@ -350,8 +351,8 @@ function UniCard({ c }: { c: College }) {
             {c.nameEn}
           </Link>
         </h2>
-        {c.ranking?.qs && (
-          <span className="mt-1 shrink-0 text-[11px] font-semibold text-stone-500">QS #{c.ranking.qs}</span>
+        {qsChip(c.ranking) && (
+          <span className="mt-1 shrink-0 text-[11px] font-semibold text-stone-500">{qsChip(c.ranking)}</span>
         )}
       </div>
       <p className="mb-3 inline-flex items-center gap-1.5 text-xs text-stone-500">

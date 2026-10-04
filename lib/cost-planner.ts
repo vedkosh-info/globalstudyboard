@@ -181,6 +181,12 @@ export interface FundsSource extends OfficialSource {
   /** Exactly as the country is named in the destination's `countries` (lib/regions.ts). */
   country: string;
   finding: 'states' | 'asks' | 'none';
+  /**
+   * Day this page was read, when that day is later than FUNDS_RULE_CHECKED.
+   * Absent means the source was read on FUNDS_RULE_CHECKED. The tool still
+   * does not copy any amount from the page.
+   */
+  readOn?: string;
 }
 
 export interface FundsRule {
@@ -421,11 +427,11 @@ export const DESTINATION_BUDGETS: Record<RegionSlug, DestinationBudget> = {
       work: { guides: [g('part-time-work-and-budgeting-for-students-in-europe', 'Part-Time Work and Budgeting for Students in Europe')] },
     }),
     fundsRule: {
-      // Each read on the country's own official page on FUNDS_RULE_CHECKED.
-      // Not covered: Norway, Finland, Italy and Poland (their official pages
-      // refused an automated read that day), and Switzerland, Romania,
-      // Bulgaria and Georgia (no page located yet) — the copy names every
-      // country not covered and points to the embassy.
+      // Each read on the country's own official page on FUNDS_RULE_CHECKED,
+      // except a source that carries its own readOn day.
+      // Not covered: Italy, Poland and Switzerland (no page read for this
+      // list). Romania, Bulgaria and Georgia were read on 2026-10-04. The
+      // copy names every country not covered and points to the embassy.
       sources: [
         { country: 'Germany', finding: 'states', label: 'Federal Foreign Office — how to prove your financing for a student visa', url: 'https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/08-finanzierung/606696' },
         { country: 'France', finding: 'states', label: 'Service-Public.fr — student long-stay visa: resources you must justify', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F2231?lang=en' },
@@ -438,6 +444,11 @@ export const DESTINATION_BUDGETS: Record<RegionSlug, DestinationBudget> = {
         { country: 'Czechia', finding: 'states', label: 'Czech Ministry of the Interior — long-term visa for studies', url: 'https://ipc.gov.cz/en/visa-and-residence-permit-types/third-country-nationals/long-term-visa/long-term-visa-for-the-purpose-of-studies/' },
         { country: 'Hungary', finding: 'states', label: 'Hungarian Immigration Office — residence of students (in Hungarian)', url: 'https://oif.gov.hu/tajekoztatok/a-hallgato-tanulo-tartozkodasa' },
         { country: 'Portugal', finding: 'states', label: 'Portuguese Ministry of Foreign Affairs — residency visa documents (higher education students)', url: 'https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/residency' },
+        { country: 'Norway', finding: 'states', readOn: '2026-10-04', label: 'UDI — study permit for a university: money to live on, and money for tuition where a fee is charged', url: 'https://www.udi.no/en/want-to-apply/studies/studietillatelse/university-college-or-university/' },
+        { country: 'Finland', finding: 'states', readOn: '2026-10-04', label: 'Finnish Immigration Service — income requirement for students', url: 'https://migri.fi/en/income-requirement-for-students' },
+        { country: 'Romania', finding: 'states', readOn: '2026-10-04', label: 'General Inspectorate for Immigration — studies: proof of means of support', url: 'https://igi.mai.gov.ro/en/studies/' },
+        { country: 'Bulgaria', finding: 'states', readOn: '2026-10-04', label: 'Ministry of Interior, Sofia Directorate, Migration Department — prolonged residence for full-time higher-education students: proof of means of subsistence', url: 'https://mvr.bg/sdvr/административни-услуги/полезно/структури/отдел-миграция' },
+        { country: 'Georgia', finding: 'states', readOn: '2026-10-04', label: 'Public Service Development Agency — study residence permit: a document evidencing legal income', url: 'https://sda.gov.ge/en/products/migration-residence-permits/' },
       ],
       guides: [g('blocked-account-germany', 'Blocked Account for Germany, Explained'), g('germany-student-visa-financial-requirements', 'Germany Student Visa Financial Requirements')],
     },
@@ -486,10 +497,13 @@ export const DESTINATION_BUDGETS: Record<RegionSlug, DestinationBudget> = {
     funding: BASE_FUNDING,
     fundsRule: {
       // The UAE's MOHESR homepage used to stand here: it is the higher-education
-      // ministry, not the visa authority, and states no rule. Not covered: the
-      // UAE (u.ae could not be read on FUNDS_RULE_CHECKED), Qatar, Oman, Bahrain
-      // and Kuwait (not yet checked) — the copy names them and points to the embassy.
-      sources: [{ country: 'Saudi Arabia', finding: 'states', label: 'Study in Saudi (Ministry of Education) — study visa: proof of financial ability', url: 'https://studyinsaudi.sa/en/VisaOptions' }],
+      // ministry, not the visa authority, and states no rule. The u.ae study
+      // page read on 2026-10-04 states who sponsors the visa. It states no
+      // amount. Not covered: Qatar, Oman, Bahrain and Kuwait (not yet checked).
+      sources: [
+        { country: 'Saudi Arabia', finding: 'states', label: 'Study in Saudi (Ministry of Education) — study visa: proof of financial ability', url: 'https://studyinsaudi.sa/en/VisaOptions' },
+        { country: 'United Arab Emirates', finding: 'states', readOn: '2026-10-04', label: 'UAE Government — residence visa for studying: sponsorship by a resident parent or the accredited university', url: 'https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-studying-in-the-uae' },
+      ],
       guides: [g('student-visa-requirements-for-the-gulf', 'Student Visa Requirements for the Gulf'), g('budgeting-as-a-student-in-the-gulf', 'Budgeting as a Student in the Gulf')],
     },
   },

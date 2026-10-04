@@ -49,7 +49,7 @@ export default function GSBAIChat() {
   }, [messages]);
 
   // Prefill from the URL fragment (or a legacy query) on mount and whenever the
-  // fragment changes while the page stays mounted (a hash link clicked on /gsb-ai
+  // fragment changes while the page stays mounted (a hash link clicked on /ask
   // itself does not remount the route).
   useEffect(() => {
     const apply = () => {
@@ -93,7 +93,7 @@ export default function GSBAIChat() {
       });
 
       if (!res.ok) {
-        throw new Error((await res.text()) || 'GSB AI is unavailable. Please try again.');
+        throw new Error((await res.text()) || 'Ask GSB is unavailable. Please try again.');
       }
 
       const reader = res.body?.getReader();
@@ -134,9 +134,9 @@ export default function GSBAIChat() {
       <div className="bg-forest-700 text-cream-50 px-4 py-3 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-terracotta-300" />
-          <span className="font-semibold text-sm">GSB AI</span>
+          <span className="font-semibold text-sm">Ask GSB</span>
           <span className="text-cream-50/60 text-xs hidden sm:inline">
-            · University Admission Assistant
+            · Study questions
           </span>
         </div>
         {!isEmpty && (
@@ -160,7 +160,7 @@ export default function GSBAIChat() {
         {isEmpty ? (
           <div className="text-center py-10">
             <Bot className="w-10 h-10 text-forest-300 mx-auto mb-3" />
-            <p className="text-stone-700 text-sm font-medium mb-1">Ask GSB AI anything</p>
+            <p className="text-stone-700 text-sm font-medium mb-1">Ask GSB anything</p>
             <p className="text-stone-500 text-xs">
               Entrance exams · University selection · Study abroad · Scholarships
             </p>
@@ -180,7 +180,7 @@ export default function GSBAIChat() {
               >
                 {msg.role === 'assistant' && (
                   <span className="text-xs font-bold text-terracotta-600 block mb-1.5 uppercase tracking-wide">
-                    GSB AI
+                    Ask GSB
                   </span>
                 )}
                 <div className="whitespace-pre-wrap">

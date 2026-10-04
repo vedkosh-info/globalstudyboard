@@ -5,6 +5,7 @@ import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from 
 import { AlertTriangle, ArrowLeft, FileDown, Printer } from 'lucide-react';
 import TableScroller from '@/components/tools/TableScroller';
 import { PAPERS, PAPER_LABEL, PREPARED_BY, REPORT_FOOTER_LINES, formatGenerated, isPaper, type Cell, type Paper, type ReportDocument, type ReportSection } from '@/lib/reports/model';
+import { closeDownloadHold, openDownloadHold, saveBlob, webKitNeedsTab } from '@/lib/download-file';
 
 /**
  * The on-page report — the SAME ReportDocument the PDF is drawn from, rendered
@@ -25,7 +26,7 @@ const BTN =
 const BTN_PRIMARY = `${BTN} bg-forest-700 text-cream-50 hover:bg-forest-800`;
 const BTN_SECONDARY = `${BTN} border border-forest-300 bg-white text-forest-700 hover:border-forest-400 hover:bg-forest-50`;
 // The tools' field focus: a SOLID forest-500 ring (4.42:1 on white) with a 1px white offset — one look across every tool (§15.2).
-const SELECT = 'h-10 rounded-xl border border-stone-450 bg-white px-3 text-base text-ink focus:border-forest-500 focus:outline-none focus:ring-2 focus:ring-forest-500 focus:ring-offset-1 sm:text-sm';
+const SELECT = 'h-10 max-w-full rounded-xl border border-stone-450 bg-white px-3 text-base text-ink focus:border-forest-500 focus:outline-none focus:ring-2 focus:ring-forest-500 focus:ring-offset-1 sm:text-sm';
 const LINK = 'text-forest-700 underline underline-offset-2 hover:text-forest-800';
 
 /** Shown before Download. The PDF fonts cannot draw these scripts; Print can. */
@@ -171,19 +172,19 @@ export default function ReportView({ doc, toolHref, includeNotes, onIncludeNotes
     busyRef.current = true;
     setBusy(true);
     setStatus({ text: 'Preparing your PDF…' });
+    // Before the first await, so Safari and iOS still count this tap.
+    const hold = openDownloadHold();
     try {
       const { renderReportPdf } = await import('@/lib/reports/pdf');
       const result = await renderReportPdf(doc, { paper });
-      const url = URL.createObjectURL(result.blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = result.filename;
-      a.rel = 'noopener';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 60_000);
-      const done = `PDF downloaded — ${result.filename}, ${result.pages} ${result.pages === 1 ? 'page' : 'pages'}, ${Math.max(1, Math.round(result.bytes / 1024))} KB.`;
+      const openedTab = saveBlob(result.blob, result.filename, hold) === 'tab';
+      const size = `${result.filename}, ${result.pages} ${result.pages === 1 ? 'page' : 'pages'}, ${Math.max(1, Math.round(result.bytes / 1024))} KB`;
+      const blocked = webKitNeedsTab() && !hold;
+      const done = openedTab
+        ? `PDF opened in a new tab — ${size}. Use that tab’s share or download control to keep the file. This page stays as you left it.`
+        : blocked
+          ? `The browser blocked the new tab, so the PDF may not have saved — ${size}. Allow pop-ups for this site and try again, or use Print and save that as a PDF.`
+          : `PDF downloaded — ${size}.`;
       // Never a silent loss: characters the PDF's fonts cannot draw were printed as □ (lib/reports/pdf.ts `fitText`).
       setStatus(
         result.missingGlyphs
@@ -191,9 +192,10 @@ export default function ReportView({ doc, toolHref, includeNotes, onIncludeNotes
               text: `${done} Some characters — for example in your notes or in a name you typed — can’t be drawn with the PDF’s fonts and appear as □. Print uses your browser’s fonts and keeps them all; your browser can save the printout as a PDF.`,
               warn: true,
             }
-          : { text: done },
+          : { text: done, warn: blocked },
       );
     } catch (err) {
+      closeDownloadHold(hold);
       const why = err instanceof Error && /Font/.test(err.message) ? 'the fonts could not be loaded' : 'something went wrong';
       setStatus({ text: `Could not build the PDF (${why}). Use Print instead — your browser can save the printout as a PDF.`, warn: true });
     } finally {

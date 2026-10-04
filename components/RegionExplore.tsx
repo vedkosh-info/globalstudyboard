@@ -56,7 +56,7 @@ export default function RegionExplore({ region }: { region: RegionSlug }) {
           href={gsbAiHref({ region: r.slug })}
           className="inline-flex items-center gap-2 rounded-full border border-forest-300 bg-white px-5 py-2.5 text-sm font-semibold text-forest-700 no-underline transition-colors hover:border-forest-400 hover:bg-forest-50"
         >
-          Ask GSB AI about {r.proseName}
+          Ask GSB about {r.proseName}
         </Link>
       </div>
     </section>

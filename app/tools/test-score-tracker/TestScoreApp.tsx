@@ -5,6 +5,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEven
 import Link from 'next/link';
 import { Download, ExternalLink, Pencil, Plus, RotateCw, Trash2, X } from 'lucide-react';
 import ReportView from '@/components/tools/ReportView';
+import { saveBlob } from '@/lib/download-file';
 import { buildScoresReport } from '@/lib/reports/scores-report';
 import { defaultPaperFor, type Paper } from '@/lib/reports/model';
 import type { PostgrestError } from '@supabase/supabase-js';
@@ -112,7 +113,7 @@ const BTN_GHOST =
   'inline-flex h-9 items-center gap-1.5 rounded-full px-3 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-100 hover:text-forest-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-transparent disabled:hover:text-stone-700';
 const ICON_BTN =
   'inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-stone-600 transition-colors hover:bg-stone-100 hover:text-forest-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500';
-const LINK = 'inline-flex items-center gap-1 text-forest-700 underline underline-offset-2 hover:text-forest-800';
+const LINK = 'inline text-forest-700 underline underline-offset-2 hover:text-forest-800 [&_svg]:inline [&_svg]:align-[-0.125em]';
 const CHIP = 'inline-flex items-center rounded-full border border-stone-200 bg-cream-50 px-2.5 py-0.5 text-xs font-medium text-stone-800';
 const WARN_BOX = 'rounded-xl border border-terracotta-200 bg-terracotta-50 px-4 py-3 text-sm leading-relaxed text-stone-800';
 
@@ -770,15 +771,7 @@ export default function TestScoreApp({ examNames = {} }: { examNames?: Record<st
 
   const downloadCsv = () => {
     if (scores.length === 0) return;
-    const blob = new Blob([scoresCsv(scores, sections, csvExams, today)], { type: 'text/csv;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `globalstudyboard-test-scores-${today}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+    saveBlob(new Blob([scoresCsv(scores, sections, csvExams, today)], { type: 'text/csv;charset=utf-8' }), `globalstudyboard-test-scores-${today}.csv`);
     say('ok', 'Your scores were downloaded as a CSV file.');
   };
 
@@ -1170,7 +1163,7 @@ function ExamGroup({
   return (
     <article className={CARD} aria-labelledby={`group-${slug}`}>
       <div className="flex flex-wrap items-start justify-between gap-3">
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1 [overflow-wrap:break-word] [word-break:normal]">
           <h3 id={`group-${slug}`} tabIndex={-1} className="m-0 font-display text-lg font-bold tracking-editorial text-ink focus:outline-none">
             {shortName}
           </h3>
@@ -1185,7 +1178,7 @@ function ExamGroup({
       </div>
 
       {/* The rule, once per test — each attempt below carries only what is specific to it. */}
-      <p className="mt-2 rounded-xl border border-stone-100 bg-cream-50/70 px-3 py-2 text-xs leading-relaxed text-stone-700">
+      <p className="mt-2 rounded-xl border border-stone-100 bg-cream-50/70 px-3 py-2 text-xs leading-relaxed text-stone-700 [overflow-wrap:break-word] [word-break:normal]">
         <span className="font-semibold text-ink">{v ? validityKindLabel(v) : 'Validity not on file'}</span>
         {v ? (
           <>
@@ -1609,7 +1602,7 @@ function ScoreForm({
   return (
     <form id={id} onSubmit={submit} className={`${CARD} space-y-4`} aria-labelledby={`${uid}-h`} noValidate>
       <div className="flex items-start justify-between gap-3">
-        <div>
+        <div className="min-w-0 [overflow-wrap:break-word] [word-break:normal]">
           <h2 id={`${uid}-h`} className="m-0 font-display text-xl font-bold tracking-editorial text-ink">
             {initial ? 'Edit this attempt' : exam ? `Record your ${exam.shortName} score` : 'Record a score'}
           </h2>
@@ -1768,7 +1761,7 @@ function ScoreForm({
         </legend>
         {secs.length > 0 && (
           <>
-            <div className="mb-1 grid grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_2.25rem] gap-2 text-xs font-medium text-stone-600" aria-hidden="true">
+            <div className="mb-1 hidden gap-2 text-xs font-medium text-stone-600 sm:grid sm:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_2.25rem]" aria-hidden="true">
               <span>Section</span>
               <span>Score</span>
               <span />
@@ -1778,50 +1771,62 @@ function ScoreForm({
                 const err = sectionError(i);
                 const errId = err ? `${uid}-sec-err-${s.key}` : undefined;
                 return (
-                  <li key={s.key} className="grid grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_2.25rem] items-center gap-2">
-                    <label className="sr-only" htmlFor={`${uid}-sl-${s.key}`}>
-                      Section {i + 1} name
-                    </label>
-                    <input
-                      id={`${uid}-sl-${s.key}`}
-                      ref={(el) => {
-                        sectionLabelRefs.current[i] = el;
-                      }}
-                      value={s.label}
-                      onChange={(e) => {
-                        setSecs((prev) => prev.map((x, j) => (j === i ? { ...x, label: e.target.value } : x)));
-                        clearSectionError(i, 'label');
-                      }}
-                      className={INPUT}
-                      maxLength={SCORE_LIMITS.sectionLabel}
-                      placeholder="Reading"
-                      aria-invalid={err?.part === 'label' || undefined}
-                      aria-describedby={errId}
-                    />
-                    <label className="sr-only" htmlFor={`${uid}-sv-${s.key}`}>
-                      Section {i + 1} score
-                    </label>
-                    <input
-                      id={`${uid}-sv-${s.key}`}
-                      ref={(el) => {
-                        sectionValueRefs.current[i] = el;
-                      }}
-                      value={s.value}
-                      onChange={(e) => {
-                        setSecs((prev) => prev.map((x, j) => (j === i ? { ...x, value: e.target.value } : x)));
-                        clearSectionError(i, 'value');
-                      }}
-                      className={INPUT}
-                      maxLength={SCORE_LIMITS.sectionValue}
-                      placeholder="720"
-                      aria-invalid={err?.part === 'value' || undefined}
-                      aria-describedby={errId}
-                    />
-                    <button type="button" className={ICON_BTN} onClick={() => removeSection(i)} aria-label={`Remove section ${i + 1}`}>
+                  <li key={s.key} className="grid grid-cols-[minmax(0,1fr)_2.25rem] items-start gap-2 sm:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_2.25rem] sm:items-center">
+                    <div className="grid min-w-0 gap-2 sm:contents">
+                      <div className="min-w-0">
+                        <span className="mb-0.5 block text-xs font-medium text-stone-600 sm:hidden" aria-hidden="true">
+                          Section
+                        </span>
+                        <label className="sr-only" htmlFor={`${uid}-sl-${s.key}`}>
+                          Section {i + 1} name
+                        </label>
+                        <input
+                          id={`${uid}-sl-${s.key}`}
+                          ref={(el) => {
+                            sectionLabelRefs.current[i] = el;
+                          }}
+                          value={s.label}
+                          onChange={(e) => {
+                            setSecs((prev) => prev.map((x, j) => (j === i ? { ...x, label: e.target.value } : x)));
+                            clearSectionError(i, 'label');
+                          }}
+                          className={`${INPUT} min-w-0`}
+                          maxLength={SCORE_LIMITS.sectionLabel}
+                          placeholder="Reading"
+                          aria-invalid={err?.part === 'label' || undefined}
+                          aria-describedby={errId}
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <span className="mb-0.5 block text-xs font-medium text-stone-600 sm:hidden" aria-hidden="true">
+                          Score
+                        </span>
+                        <label className="sr-only" htmlFor={`${uid}-sv-${s.key}`}>
+                          Section {i + 1} score
+                        </label>
+                        <input
+                          id={`${uid}-sv-${s.key}`}
+                          ref={(el) => {
+                            sectionValueRefs.current[i] = el;
+                          }}
+                          value={s.value}
+                          onChange={(e) => {
+                            setSecs((prev) => prev.map((x, j) => (j === i ? { ...x, value: e.target.value } : x)));
+                            clearSectionError(i, 'value');
+                          }}
+                          className={`${INPUT} min-w-0`}
+                          maxLength={SCORE_LIMITS.sectionValue}
+                          placeholder="720"
+                          aria-invalid={err?.part === 'value' || undefined}
+                          aria-describedby={errId}
+                        />
+                      </div>
+                    </div>
+                    <button type="button" className={`${ICON_BTN} self-center sm:self-auto`} onClick={() => removeSection(i)} aria-label={`Remove section ${i + 1}`}>
                       <X className="h-4 w-4" aria-hidden="true" />
                     </button>
                     {err && (
-                      <p id={errId} className="col-span-3 m-0 text-sm text-red-700">
+                      <p id={errId} className="col-span-2 m-0 text-sm text-red-700 sm:col-span-3">
                         {sectionErrorText(i, err.part)}
                       </p>
                     )}

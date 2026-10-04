@@ -191,7 +191,7 @@ export default async function TrackPage({ params }: Props) {
               Exploring {t.label.toLowerCase()} in {r.proseName}?
             </h2>
             <p className="m-0 mb-5 text-cream-50/85">
-              See the full overview for {r.proseName}, or ask GSB AI for tailored guidance on your path.
+              See the full overview for {r.proseName}, or ask GSB for tailored guidance on your path.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
@@ -204,7 +204,7 @@ export default async function TrackPage({ params }: Props) {
                 href={gsbAiHref({ region: r.slug })}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-cream-50/30 bg-transparent px-6 py-3 font-semibold text-cream-50 no-underline transition-colors hover:bg-cream-50/10"
               >
-                Ask GSB AI about {r.proseName}
+                Ask GSB about {r.proseName}
               </Link>
             </div>
           </div>

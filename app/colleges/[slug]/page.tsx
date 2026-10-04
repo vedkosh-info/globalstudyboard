@@ -116,7 +116,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `${college.nameEn} ${place}`,
       ...college.courses.slice(0, 4),
     ],
-    modifiedTime: SITE_LASTMOD,
+    modifiedTime: college.lastVerified ?? SITE_LASTMOD,
   });
 }
 
@@ -225,7 +225,7 @@ export default async function CollegeDetailPage({ params }: Props) {
       </p>
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <LastUpdated date={SITE_REVIEWED} />
+        <LastUpdated date={college.lastVerified ?? SITE_REVIEWED} />
         {/* Shortlist — renders nothing until accounts are configured. */}
         <SaveButton kind="college" slug={college.slug} title={college.nameEn} region={college.region} />
         <AddToPlannerButton slug={college.slug} name={college.nameEn} region={college.region} url={college.websiteUrl} />
@@ -266,11 +266,13 @@ export default async function CollegeDetailPage({ params }: Props) {
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <FactCard icon={<MapPin className="w-5 h-5" />} label="Location" value={place} />
         <FactCard icon={<CalendarDays className="w-5 h-5" />} label="Established" value={String(college.established)} />
-        <FactCard
-          icon={<GraduationCap className="w-5 h-5" />}
-          label="Degree levels"
-          value={college.programLevels.map((l) => LEVEL_LABELS[l] ?? l).join(', ')}
-        />
+        {college.programLevels.length > 0 && (
+          <FactCard
+            icon={<GraduationCap className="w-5 h-5" />}
+            label="Degree levels"
+            value={college.programLevels.map((l) => LEVEL_LABELS[l] ?? l).join(', ')}
+          />
+        )}
         <FactCard
           icon={<Globe2 className="w-5 h-5" />}
           label="Instruction"
@@ -570,13 +572,13 @@ export default async function CollegeDetailPage({ params }: Props) {
           Thinking about {college.nameEn}?
         </h2>
         <p className="text-cream-50/85 mb-5">
-          Ask GSB AI how to build a competitive application for this university.
+          Ask GSB how to build a competitive application for this university.
         </p>
         <Link
           href={gsbAiHref({ q: `How do I apply to ${college.nameEn}?` })}
           className="inline-flex items-center justify-center bg-cream-50 hover:bg-cream-100 text-forest-900 font-semibold px-6 py-3 rounded-full no-underline transition-colors"
         >
-          Ask GSB AI →
+          Ask GSB →
         </Link>
       </section>
 

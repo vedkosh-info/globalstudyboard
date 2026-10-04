@@ -20,7 +20,7 @@ import type { ImageAsset } from '@/lib/images';
 //   disclosure must be perceivable — e.g. a visible label — "upon first exposure at the
 //   latest". Every image is an AI archetype (owner decision 12 Sep 2026 — no real
 //   photographs), so the label always says so. Owner decision 20 Sep 2026: wording
-//   "AI-generated · not a photo", the text itself linked to the image policy, Back
+//   "Illustration · not a photo", the text itself linked to the image policy, Back
 //   must work. Owner decision 22 Sep 2026 (an EXPLICIT OVERRIDE, logged in the audit
 //   log — the 18 Sep review had recommended the words stay visible at rest): only
 //   the circular (i) shows by default; a click reveals the words beside it in the
@@ -113,8 +113,8 @@ export default function ContentImage({
         className={`absolute z-10 max-w-[calc(100%-1.5rem)] ${hero ? 'top-3 right-3' : 'top-2 right-2'}`}
       >
         <AiImageBadge
-          label={`AI-generated \u00b7 ${negation}`}
-          spokenLabel={`AI-generated, ${negation}`}
+          label={`Illustration \u00b7 ${negation}`}
+          spokenLabel={`Illustration, ${negation}`}
           href={DISCLAIMER_ANCHOR}
           variant={variant}
         />

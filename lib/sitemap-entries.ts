@@ -23,8 +23,9 @@ import { SITE_LASTMOD } from '@/lib/site-meta';
 //     SITE_LASTMOD;
 //   • hubs / region pages — the newest member guide's modified date or
 //     SITE_LASTMOD, whichever is later (the page changes when either does);
-//   • listings, colleges, static pages — SITE_LASTMOD, bumped on every deploy
-//     that changes them (see lib/site-meta.ts).
+//   • listings and static pages — SITE_LASTMOD, bumped on every deploy that
+//     changes them (see lib/site-meta.ts). A college with its own lastVerified
+//     uses that day when it is later.
 // Google ignores <priority> and <changefreq>; they are not emitted.
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -65,7 +66,7 @@ const STATIC_PATHS = [
   '/guides',
   '/topics',
   '/scholarships',
-  '/gsb-ai',
+  '/ask',
   '/tools',
   '/tools/application-planner',
   '/tools/cost-planner',
@@ -109,7 +110,10 @@ export function sitemapEntries(id: SitemapId): MetadataRoute.Sitemap {
       });
 
     case 'colleges':
-      return COLLEGES.map((c) => ({ url: `${BASE}/colleges/${c.slug}`, lastModified: SITE_LASTMOD }));
+      return COLLEGES.map((c) => ({
+        url: `${BASE}/colleges/${c.slug}`,
+        lastModified: c.lastVerified && c.lastVerified > SITE_LASTMOD ? c.lastVerified : SITE_LASTMOD,
+      }));
 
     case 'exams':
       return ENTRANCE_EXAMS.map((e) => ({

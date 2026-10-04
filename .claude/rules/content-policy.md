@@ -446,7 +446,7 @@ enforce globally via the root layout so new routes inherit them automatically).
 - A search box is present at the top of every page (global, via the layout),
   searching the CMI index (universities, exams, scholarships, regions, guides)
   with fast client-side matching, and gracefully handing complex/natural-language
-  queries to GSB AI.
+  queries to Ask GSB (`/ask`).
 - Search is keyboard-accessible and works identically on desktop and mobile.
 
 ### 12.3 Modern, content-first, fully responsive UI

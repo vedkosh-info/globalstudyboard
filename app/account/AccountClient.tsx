@@ -27,6 +27,7 @@ import { getRegionBySlug } from '@/lib/regions';
 import { SAVED_KIND_LABEL, savedItemHref, type SavedItemRow } from '@/lib/saved-items';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
+import { closeDownloadHold, openDownloadHold, saveBlob } from '@/lib/download-file';
 
 /**
  * The account page body — modelled on VedKosh's /account: an identity row
@@ -587,9 +588,12 @@ export default function AccountClient() {
   const exportData = async () => {
     setExporting(true);
     setExportMsg('');
+    // Before the fetch, so Safari and iOS still count this tap.
+    const hold = openDownloadHold();
     try {
       const res = await fetch('/api/account/export', { cache: 'no-store' });
       if (!res.ok) {
+        closeDownloadHold(hold);
         const data = (await res.json().catch(() => null)) as { error?: string } | null;
         setExportMsg(
           res.status === 429
@@ -599,16 +603,14 @@ export default function AccountClient() {
         return;
       }
       const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `globalstudyboard-account-${new Date().toISOString().slice(0, 10)}.json`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 10_000);
-      setExportMsg('Your download has started.');
+      const where = saveBlob(blob, `globalstudyboard-account-${new Date().toISOString().slice(0, 10)}.json`, hold);
+      setExportMsg(
+        where === 'tab'
+          ? 'Your file opened in a new tab. Use that tab’s share or download control to keep it.'
+          : 'Your download has started.',
+      );
     } catch {
+      closeDownloadHold(hold);
       setExportMsg('Could not prepare your download. Please try again.');
     } finally {
       setExporting(false);

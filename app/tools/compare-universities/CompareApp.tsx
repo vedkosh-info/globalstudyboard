@@ -4,6 +4,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEven
 import Link from 'next/link';
 import { ArrowDownWideNarrow, ChevronDown, ChevronLeft, ChevronRight, Download, ExternalLink, Plus, RotateCw, Search, Trash2, X } from 'lucide-react';
 import ReportView from '@/components/tools/ReportView';
+import { saveBlob } from '@/lib/download-file';
 import { buildCompareReport } from '@/lib/reports/compare-report';
 import { defaultPaperFor, type Paper } from '@/lib/reports/model';
 import type { User } from '@supabase/supabase-js';
@@ -113,8 +114,8 @@ const ICON_BTN =
 /** A form's close (×) button. */
 const CLOSE_X =
   '-m-1 rounded-lg p-1 text-stone-600 hover:bg-stone-100 hover:text-forest-800 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 aria-disabled:hover:bg-transparent aria-disabled:hover:text-stone-600';
-const LINK = 'inline-flex items-center gap-1 text-forest-700 underline underline-offset-2 hover:text-forest-800';
-const TH_ROW = 'sticky left-0 z-10 bg-white text-left align-top text-sm font-semibold text-ink border-r border-stone-200 px-3 py-2.5 min-w-[11rem] max-w-[13rem]';
+const LINK = 'inline text-forest-700 underline underline-offset-2 hover:text-forest-800 [&_svg]:inline [&_svg]:align-[-0.125em]';
+const TH_ROW = 'sticky left-0 z-10 bg-white text-left align-top text-sm font-semibold text-ink border-r border-stone-200 px-3 py-2.5 min-w-[8.5rem] max-w-[11rem] sm:min-w-[11rem] sm:max-w-[13rem]';
 const TD = 'align-top px-3 py-2.5 text-sm text-stone-800 min-w-[11rem] max-w-[16rem] border-l border-stone-100';
 
 // A warning that does not stop the tool (the fact sheets did not load) — the Test Score Tracker's look.
@@ -986,15 +987,10 @@ export default function CompareApp() {
   const downloadCsv = () => {
     if (!set || !csvFacts) return;
     const setScores = scores.filter((sc) => setEntries_.some((e) => e.id === sc.entry_id));
-    const blob = new Blob([compareCsv(set, setEntries_, setCriteriaList, setScores, csvFacts)], { type: 'text/csv;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `globalstudyboard-comparison-${set.region}-${set.id.slice(0, 8)}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+    saveBlob(
+      new Blob([compareCsv(set, setEntries_, setCriteriaList, setScores, csvFacts)], { type: 'text/csv;charset=utf-8' }),
+      `globalstudyboard-comparison-${set.region}-${set.id.slice(0, 8)}.csv`,
+    );
     setNotice({ tone: 'ok', text: 'Your comparison was downloaded as a CSV file.' });
   };
 
@@ -1461,7 +1457,7 @@ function SetView({
         <>
           <div className="flex flex-wrap items-center justify-between gap-3">
             {tableScrolls && <p className="m-0 text-xs text-stone-600">Scroll sideways to see all your universities.</p>}
-            <div className="ml-auto flex items-center gap-2">
+            <div className="ml-auto flex max-w-full flex-wrap items-center justify-end gap-2">
               {/* Below two universities there is nothing to sort: unavailable, and never shown as pressed. */}
               <button
                 type="button"
@@ -1514,7 +1510,7 @@ function SetView({
                 if (e.target === e.currentTarget) setScrollerFocused(false);
               }}
               {...(scrollStop ? { tabIndex: 0, role: 'region', 'aria-label': 'Comparison table' } : {})}
-              className="overflow-x-auto rounded-2xl border border-stone-200 bg-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500"
+              className="min-w-0 max-w-full overflow-x-auto rounded-2xl border border-stone-200 bg-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 [&_:is(th,td)]:[overflow-wrap:break-word] [&_:is(th,td)]:[word-break:normal]"
             >
               <table className="w-full border-collapse text-sm">
                 <caption className="sr-only">
@@ -1804,7 +1800,7 @@ function FiveScale({
   return (
     <fieldset className="m-0 border-0 p-0">
       <legend className="sr-only">{legend}</legend>
-      <div className="flex gap-1">
+      <div className="flex max-w-full gap-0.5">
         {SCALE.map((n) => (
           <label key={n} className="relative block h-7 w-7" title={hints[n]}>
             {/* The real radio is invisible but FULL-SIZE over its chip, so the
@@ -1952,7 +1948,7 @@ function CriterionHeader({
             e.preventDefault();
             void save();
           }}
-          className="flex items-center gap-1"
+          className="min-w-0 space-y-1"
         >
           <label htmlFor={`${uid}-l`} className="sr-only">
             Criterion name
@@ -1963,7 +1959,7 @@ function CriterionHeader({
             value={label}
             onChange={(e) => setLabel(e.target.value)}
             maxLength={COMPARE_LIMITS.criterionLabel}
-            className={`${INPUT} h-8 text-sm`}
+            className={`${INPUT} h-8 min-w-0 text-sm`}
             aria-invalid={renameError ? true : undefined}
             aria-describedby={renameError ? `${uid}-err` : undefined}
             onBlur={() => void save()}
@@ -1987,7 +1983,7 @@ function CriterionHeader({
       ) : (
         <span className="block">
           <span className="block break-words font-semibold leading-snug">{criterion.label}</span>
-          <span className="mt-0.5 flex items-center">
+          <span className="mt-0.5 flex flex-wrap items-center">
             <button ref={editBtnRef} type="button" onClick={() => setEditing(true)} className="-ml-1 rounded px-1 text-[11px] font-medium text-forest-700 underline underline-offset-2 hover:text-forest-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500" aria-label={`Rename ${criterion.label}`}>
               Rename
             </button>
@@ -2064,7 +2060,7 @@ function NoteCell({ entry, onSave }: { entry: CompareEntry; onSave: (note: strin
         }}
         onBlur={() => void save()}
         maxLength={COMPARE_LIMITS.note}
-        className={`${INPUT} h-9 text-sm`}
+        className={`${INPUT} h-9 min-w-0 text-sm`}
         placeholder="e.g. strong AI lab, far from family"
       />
       {dirty ? (
@@ -2191,7 +2187,7 @@ function AddCriterionForm({ disabled, onSubmit }: { disabled: boolean; onSubmit:
 
   return (
     <form ref={formRef} onSubmit={(e) => void submit(e)} className="flex flex-wrap items-end gap-2">
-      <div className="min-w-[14rem] flex-1">
+      <div className="min-w-0 w-full flex-1 basis-full sm:basis-auto sm:min-w-[14rem]">
         <label htmlFor={`${uid}-c`} className={LABEL}>
           Add a criterion
         </label>

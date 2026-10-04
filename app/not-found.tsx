@@ -38,7 +38,8 @@ const SECTIONS = [
   { label: 'Study guides', href: '/guides' },
   { label: 'Scholarships', href: '/scholarships' },
   { label: 'Topics', href: '/topics' },
-  { label: 'Ask GSB AI', href: '/gsb-ai' },
+  { label: 'Application tools', href: '/tools' },
+  { label: 'Ask GSB', href: '/ask' },
 ];
 
 export default function NotFound() {

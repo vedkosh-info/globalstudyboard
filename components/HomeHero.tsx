@@ -14,7 +14,7 @@ import RegionFlag from '@/components/RegionFlag';
  */
 export interface HomeHeroData {
   topUniversity: { name: string; qsRank?: number } | null;
-  /** Flagship questions — a real guide link when one answers it, else a GSB AI prefill. */
+  /** Flagship questions — a real guide link when one answers it, else an Ask GSB prefill. */
   popular: { href: string; label: string; isGuide: boolean; q?: string }[];
 }
 
@@ -121,11 +121,11 @@ export default function HomeHero({
             <ArrowUpRight className="w-4 h-4" />
           </Link>
           <Link
-            href="/gsb-ai"
+            href="/ask"
             className="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-stone-800 font-semibold px-6 py-3.5 rounded-full no-underline transition-colors border border-stone-300"
           >
             <Sparkles className="w-4 h-4 text-forest-700" />
-            Ask GSB AI
+            Ask GSB
           </Link>
         </div>
 

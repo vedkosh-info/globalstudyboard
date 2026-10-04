@@ -68,7 +68,7 @@ function singularName(exam: { shortName: string }): string {
 }
 
 /**
- * The test's name in running prose ("Guides that cover the …", the GSB AI
+ * The test's name in running prose ("Guides that cover the …", the Ask GSB
  * prefill). Where the full name begins with the short one, the short one is a
  * brand clipped from it, and a sentence needs the whole name: "the Duolingo
  * English Test", never "the Duolingo" (a company and an app). Today that is
@@ -589,12 +589,12 @@ export default async function ExamDetailPage({ params }: Props) {
         <h2 className="font-display text-2xl font-bold tracking-editorial mb-2">
           Need prep advice for the {proseExamName(exam)}?
         </h2>
-        <p className="text-cream-50/85 mb-5">Ask GSB AI for a personalised study plan.</p>
+        <p className="text-cream-50/85 mb-5">Ask GSB for a personalised study plan.</p>
         <Link
           href={gsbAiHref({ q: `How do I prepare for the ${proseExamName(exam)}?` })}
           className="inline-flex items-center justify-center bg-cream-50 hover:bg-cream-100 text-forest-900 font-semibold px-6 py-3 rounded-full no-underline transition-colors"
         >
-          Ask GSB AI →
+          Ask GSB →
         </Link>
       </section>
 

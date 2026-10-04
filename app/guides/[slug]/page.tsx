@@ -525,12 +525,12 @@ export default async function GuideDetailPage({ params }: Props) {
         <h2 className="font-display text-2xl font-bold tracking-editorial mb-2">
           Still have questions?
         </h2>
-        <p className="text-cream-50/85 mb-5">Ask GSB AI for guidance tailored to your situation.</p>
+        <p className="text-cream-50/85 mb-5">Ask GSB for guidance tailored to your situation.</p>
         <Link
           href={gsbAiHref({ q: guide.titleEn })}
           className="inline-flex items-center justify-center bg-cream-50 hover:bg-cream-100 text-forest-900 font-semibold px-6 py-3 rounded-full no-underline transition-colors"
         >
-          Ask GSB AI →
+          Ask GSB →
         </Link>
       </section>
 

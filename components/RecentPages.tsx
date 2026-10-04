@@ -23,7 +23,7 @@ function pathType(path: string): string {
   if (path.startsWith('/guides')) return 'Guide';
   if (path.startsWith('/scholarships')) return 'Scholarship';
   if (path.startsWith('/regions')) return 'Region';
-  if (path.startsWith('/gsb-ai')) return 'GSB AI';
+  if (path.startsWith('/ask') || path.startsWith('/gsb-ai')) return 'Ask GSB';
   return 'Page';
 }
 

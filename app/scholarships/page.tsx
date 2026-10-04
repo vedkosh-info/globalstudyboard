@@ -45,7 +45,7 @@ const RELATED = [
   { label: 'All study guides', href: '/guides', note: 'Exams, admissions, careers & study abroad' },
   { label: 'Destinations', href: '/regions', note: 'Costs, intakes and visas by destination' },
   { label: 'Entrance exams', href: '/exams', note: 'The tests that gate admission' },
-  { label: 'Ask GSB AI', href: '/gsb-ai', note: 'Get pointed to the right programme' },
+  { label: 'Ask GSB', href: '/ask', note: 'Get pointed to the right programme' },
 ];
 
 export default function ScholarshipsIndexPage() {

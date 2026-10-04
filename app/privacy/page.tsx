@@ -46,7 +46,7 @@ export default function PrivacyPage() {
         <ul className="list-disc pl-5 space-y-2">
           <li>
             <strong>Information you choose to send</strong> — for example, if you email us or use the
-            GSB AI assistant, your message is processed to answer you.
+            Ask GSB, your message is processed to answer you.
           </li>
           <li>
             <strong>Automatically collected usage data</strong> — standard analytics such as pages
@@ -365,9 +365,9 @@ export default function PrivacyPage() {
         </p>
       </Section>
 
-      <Section title="The GSB AI assistant">
+      <Section title="Ask GSB">
         <p>
-          Questions you send to GSB AI are processed by a third-party AI provider solely to generate
+          Questions you send to Ask GSB are processed by a third-party service solely to generate
           a response. Please don&rsquo;t share sensitive personal information in your queries.
         </p>
       </Section>

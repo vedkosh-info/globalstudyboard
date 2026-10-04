@@ -156,10 +156,16 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
-              href="/gsb-ai"
+              href="/ask"
               className="inline-flex items-center justify-center bg-cream-50 hover:bg-cream-100 text-forest-900 font-semibold px-6 py-3 rounded-full no-underline transition-colors"
             >
-              Ask GSB AI
+              Ask GSB
+            </Link>
+            <Link
+              href="/tools"
+              className="inline-flex items-center justify-center bg-transparent hover:bg-cream-50/10 text-cream-50 font-semibold px-6 py-3 rounded-full no-underline transition-colors border border-cream-50/30"
+            >
+              Application tools
             </Link>
             <Link
               href="/regions"

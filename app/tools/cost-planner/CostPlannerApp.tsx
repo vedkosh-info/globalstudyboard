@@ -4,6 +4,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEven
 import Link from 'next/link';
 import { Check, ChevronDown, Download, ExternalLink, Pencil, Plus, Trash2, X } from 'lucide-react';
 import ReportView from '@/components/tools/ReportView';
+import { saveBlob } from '@/lib/download-file';
 import { buildBudgetReport } from '@/lib/reports/budget-report';
 import { defaultPaperFor, type Paper } from '@/lib/reports/model';
 import type { User } from '@supabase/supabase-js';
@@ -44,6 +45,7 @@ import {
   type FundsRule,
   type FundsSource,
 } from '@/lib/cost-planner';
+import { programmeFeesFor, type ProgrammeFee } from '@/lib/programme-fees';
 
 /**
  * The Cost & Funding Planner (signed-in view). Loaded as its own chunk by
@@ -109,10 +111,11 @@ const ICON_BTN =
 /** A form's close (×) button. */
 const CLOSE_X =
   '-m-1 rounded-lg p-1 text-stone-600 hover:bg-stone-100 hover:text-forest-800 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 aria-disabled:hover:bg-transparent aria-disabled:hover:text-stone-600';
-const CHIP = 'inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-semibold';
+const CHIP = 'inline-flex items-center whitespace-nowrap rounded-full border px-2 py-0.5 text-[11px] font-semibold';
 const CHIP_YEAR = `${CHIP} border-forest-200 bg-forest-50 text-forest-800`;
 const CHIP_ONCE = `${CHIP} border-stone-200 bg-stone-100 text-stone-700`;
-const LINK = 'inline-flex items-center gap-1 text-forest-700 underline underline-offset-2 hover:text-forest-800';
+// Inline, not inline-flex: a flex link will not wrap, and on a phone the line was cut off.
+const LINK = 'inline text-forest-700 underline underline-offset-2 hover:text-forest-800 [&_svg]:inline [&_svg]:align-[-0.125em]';
 
 type LoadState = 'loading' | 'ready' | 'setup' | 'error' | 'offline' | 'signed-out';
 
@@ -679,15 +682,7 @@ export default function CostPlannerApp() {
 
   const downloadCsv = () => {
     if (!plan) return;
-    const blob = new Blob([budgetCsv(plan, planItems)], { type: 'text/csv;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `globalstudyboard-budget-${plan.region}-${plan.id.slice(0, 8)}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+    saveBlob(new Blob([budgetCsv(plan, planItems)], { type: 'text/csv;charset=utf-8' }), `globalstudyboard-budget-${plan.region}-${plan.id.slice(0, 8)}.csv`);
     setNotice({ tone: 'ok', text: 'Your budget was downloaded as a CSV file.' });
   };
 
@@ -1323,6 +1318,8 @@ function BudgetColumn({
         </ul>
       )}
 
+      {kind === 'cost' && !taken.has('tuition') && <ProgrammeFeeAdds plan={plan} country={country} onAdd={onAdd} />}
+
       {waiting.length > 0 && (
         <ul className="m-0 list-none divide-y divide-stone-200 p-0">
           {waiting.map((c) => (
@@ -1369,30 +1366,92 @@ function CategoryLinks({ category, region, forWork }: { category: CategoryDef; r
   const workSource = forWork ? region.sources[0] : undefined;
   if (!category.source && !category.guides?.length && !workSource) return null;
   return (
-    <span className="text-xs text-stone-600">
+    <span className="mt-1 flex flex-col items-start gap-1 text-xs leading-relaxed text-stone-600 [overflow-wrap:break-word] [word-break:normal]">
       {category.source && (
         <a href={category.source.url} target="_blank" rel="noopener noreferrer" className={LINK}>
           {category.source.label} <ExternalLink className="h-3 w-3" aria-hidden="true" />
         </a>
       )}
       {workSource && (
-        <>
-          {category.source ? ' · ' : ''}
+        <span>
           Official source:{' '}
           <a href={workSource.url} target="_blank" rel="noopener noreferrer" className={LINK}>
             {workSource.label} <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </a>
-        </>
+        </span>
       )}
       {category.guides?.map((gl) => (
-        <span key={gl.slug}>
-          {' · '}
-          <Link href={`/guides/${gl.slug}`} className={LINK}>
-            {gl.title}
-          </Link>
-        </span>
+        <Link key={gl.slug} href={`/guides/${gl.slug}`} className={LINK}>
+          {gl.title}
+        </Link>
       ))}
     </span>
+  );
+}
+
+const BTN_FEE =
+  'inline-flex min-h-10 w-full items-center justify-start gap-2 whitespace-normal rounded-full border border-forest-300 bg-white px-4 py-2 text-left text-sm font-semibold text-forest-700 transition-colors hover:border-forest-400 hover:bg-forest-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto';
+
+/**
+ * One button per named programme that has one yearly figure in the budget
+ * currency. It does not run on Start, and it does not convert a currency.
+ * A second click while the first save is in flight does nothing.
+ */
+function ProgrammeFeeAdds({
+  plan,
+  country,
+  onAdd,
+}: {
+  plan: BudgetPlan;
+  country: string | null;
+  onAdd: (input: Omit<BudgetItem, 'id' | 'created_at' | 'updated_at'>) => Promise<WriteOutcome>;
+}) {
+  const fees = programmeFeesFor(country, plan.currency_code);
+  const [error, setError] = useState('');
+  const [busyId, setBusyId] = useState<string | null>(null);
+  const busyRef = useRef(false);
+  if (fees.length === 0) return null;
+
+  const add = async (fee: ProgrammeFee) => {
+    if (busyRef.current) return;
+    busyRef.current = true;
+    setBusyId(fee.sourceUrl);
+    setError('');
+    try {
+      const why = await onAdd({
+        plan_id: plan.id,
+        kind: 'cost',
+        category: 'tuition',
+        label: cleanLabel(fee.lineLabel),
+        amount: fee.amount,
+        period: 'year',
+        note: cleanText(fee.note, BUDGET_LIMITS.note) || null,
+      });
+      if (why) setError(why);
+    } finally {
+      busyRef.current = false;
+      setBusyId(null);
+    }
+  };
+
+  return (
+    <div className="space-y-2">
+      {fees.map((fee) => (
+        <div key={fee.sourceUrl}>
+          <button type="button" className={BTN_FEE} disabled={busyId !== null} onClick={() => void add(fee)}>
+            <Plus className="h-4 w-4 shrink-0" aria-hidden="true" />
+            Add {fee.programme}, {fee.year}, {fee.appliesTo}: {formatMoney(amountToCents(fee.amount), fee.currency)} per year
+          </button>
+          <p className="m-0 mt-1 text-xs leading-relaxed text-stone-600">
+            That programme only, not every programme at {fee.university}.{' '}
+            <a href={fee.sourceUrl} target="_blank" rel="noopener noreferrer" className={LINK}>
+              {fee.sourceLabel} <ExternalLink className="h-3 w-3" aria-hidden="true" />
+            </a>
+          </p>
+        </div>
+      ))}
+      {error && <p className="m-0 text-sm text-red-700">{error}</p>}
+    </div>
   );
 }
 
@@ -1448,7 +1507,7 @@ function OpenLine({
   return (
     <li className="py-3">
       <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_9.5rem_8.5rem] sm:items-end">
-        <div className="min-w-0">
+        <div className="min-w-0 [overflow-wrap:break-word] [word-break:normal]">
           <label htmlFor={`${uid}-a`} className="text-sm font-semibold text-ink">
             {category.label}
           </label>
@@ -1695,20 +1754,23 @@ function LineRow({
   }
 
   return (
-    <li className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 py-3">
-      <div className="min-w-0 flex-1">
-        <p className="m-0 text-sm font-semibold text-ink">{item.label}</p>
+    // Below sm the amount and buttons take their own row. Beside the label they
+    // left a few characters of width, so the fee hint and guide titles broke
+    // one word at a time (phone, 413px).
+    <li className="flex flex-col gap-2 py-3 sm:flex-row sm:items-start sm:justify-between sm:gap-x-4">
+      <div className="min-w-0 sm:flex-1 [overflow-wrap:break-word] [word-break:normal]">
+        <p className="m-0 text-sm font-semibold leading-snug text-ink">{item.label}</p>
         {category.key === 'tuition' && tuitionBandHint(region, country) && <p className="m-0 mt-0.5 text-xs leading-relaxed text-stone-600">{tuitionBandHint(region, country)}</p>}
-        {item.note && <p className="m-0 mt-0.5 text-xs text-stone-700">{item.note}</p>}
-        <p className="m-0 mt-0.5">
-          <CategoryLinks category={category} region={region} forWork={item.category === 'work'} />
-        </p>
+        {item.note && <p className="m-0 mt-0.5 text-xs leading-relaxed text-stone-700">{item.note}</p>}
+        <CategoryLinks category={category} region={region} forWork={item.category === 'work'} />
       </div>
-      <div className="flex items-center gap-2">
-        <span className={item.period === 'year' ? CHIP_YEAR : CHIP_ONCE}>{PERIOD_LABEL[item.period]}</span>
-        <span className="min-w-[6rem] text-right font-display text-base font-bold text-ink">{formatMoney(amountToCents(item.amount), plan.currency_code)}</span>
+      <div className="flex flex-wrap items-center justify-between gap-2 sm:shrink-0 sm:justify-end">
+        <span className="flex items-center gap-2">
+          <span className={item.period === 'year' ? CHIP_YEAR : CHIP_ONCE}>{PERIOD_LABEL[item.period]}</span>
+          <span className="font-display text-base font-bold text-ink sm:min-w-[6rem] sm:text-right">{formatMoney(amountToCents(item.amount), plan.currency_code)}</span>
+        </span>
         {confirm ? (
-          <span className="flex items-center gap-1">
+          <span className="flex flex-wrap items-center gap-1">
             <button ref={confirmBtnRef} type="button" onClick={onDelete} className={`${BTN_DANGER} h-9`}>
               Remove
             </button>
@@ -1717,14 +1779,14 @@ function LineRow({
             </button>
           </span>
         ) : (
-          <>
+          <span className="flex items-center gap-1">
             <button ref={editBtnRef} type="button" onClick={() => setEditing(true)} className={ICON_BTN} aria-label={`Edit ${item.label}`}>
               <Pencil className="h-4 w-4" aria-hidden="true" />
             </button>
             <button ref={removeBtnRef} type="button" onClick={() => setConfirm(true)} className={ICON_BTN} aria-label={`Remove ${item.label}`}>
               <Trash2 className="h-4 w-4" aria-hidden="true" />
             </button>
-          </>
+          </span>
         )}
       </div>
     </li>

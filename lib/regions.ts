@@ -60,7 +60,7 @@ export const REGIONS: Region[] = [
       'Four-year bachelor\'s programs with a flexible major/minor system, two-year master\'s programs, and PhDs that combine coursework and research. Liberal arts colleges focus on undergraduate breadth; research universities emphasize graduate work. Most applicants apply via the Common App or Coalition App to multiple schools at once.',
     keyExamSlugs: ['sat', 'act', 'gre', 'gmat', 'toefl', 'duolingo-english-test'],
     // Real guide slugs — rendered as links to the guides that answer them (a
-    // question with no guide falls back to a GSB AI prefill).
+    // question with no guide falls back to an Ask GSB prefill).
     popularQueries: [
       'how-to-apply-to-us-universities-as-an-international-student',
       'sat-vs-act-which-to-take',

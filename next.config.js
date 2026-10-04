@@ -164,6 +164,19 @@ const nextConfig = {
       { source: '/colleges/india/nlus', destination: '/guides/list-of-national-law-universities', permanent: true },
       { source: '/colleges/india/aiims', destination: '/colleges/aiims-delhi', permanent: true },
       { source: '/colleges/india/:slug*', destination: '/regions/india/universities', permanent: true },
+      // The question page moved off /gsb-ai. The clean URL stays crawlable
+      // (robots.txt blocks only /gsb-ai?*) so this 301 is visible. Query
+      // strings are preserved and then blocked as /ask?*.
+      { source: '/gsb-ai', destination: '/ask', permanent: true },
+      // Search Console's "Not found (404)" examples are stale social-card
+      // URLs. The live pages point at /opengraph-image, which returns the
+      // picture. These older paths do not. More specific track rules first.
+      { source: '/twitter-image', destination: '/opengraph-image', permanent: true },
+      { source: '/regions/:region/twitter-image', destination: '/regions/:region/opengraph-image', permanent: true },
+      { source: '/regions/:region/track/:track/opengraph-image', destination: '/regions/:region/opengraph-image', permanent: true },
+      { source: '/regions/:region/track/:track/twitter-image', destination: '/regions/:region/opengraph-image', permanent: true },
+      { source: '/regions/:region/:category/opengraph-image', destination: '/regions/:region/opengraph-image', permanent: true },
+      { source: '/regions/:region/:category/twitter-image', destination: '/regions/:region/opengraph-image', permanent: true },
     ];
   },
   async headers() {

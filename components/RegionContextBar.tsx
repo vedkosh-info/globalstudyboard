@@ -77,7 +77,7 @@ export default function RegionContextBar() {
           {/* Sign in / Account. Renders nothing until accounts are configured. */}
           <AccountControl />
           {/*
-            Get the app. An outline pill, not a filled button: "Ask GSB AI" in the
+            Get the app. An outline pill, not a filled button: "Ask GSB" in the
             header is the page's primary CTA and this must not compete with it.
             Both visible strings are substrings of the accessible name, so voice
             control still matches what is on screen (WCAG 2.5.3 Label in Name) while

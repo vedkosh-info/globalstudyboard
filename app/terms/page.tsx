@@ -67,7 +67,7 @@ export default function TermsPage() {
           <li>Use the site for lawful, personal, non-commercial research.</li>
           <li>Do not scrape, republish or resell our content at scale without permission.</li>
           <li>Do not attempt to disrupt, attack, or gain unauthorised access to the site.</li>
-          <li>Do not use the site or GSB AI to facilitate academic dishonesty.</li>
+          <li>Do not use the site or Ask GSB to facilitate academic dishonesty.</li>
           <li>Do not create accounts automatically, in bulk, or on behalf of someone else.</li>
         </ul>
       </Section>
@@ -104,9 +104,9 @@ export default function TermsPage() {
         </ul>
       </Section>
 
-      <Section title="GSB AI assistant">
+      <Section title="Ask GSB">
         <p>
-          GSB AI generates responses automatically and can be incomplete or wrong. Treat its answers
+          Ask GSB writes answers automatically and can be incomplete or wrong. Treat its answers
           as a starting point, not a final authority, and confirm important details with official
           sources.
         </p>

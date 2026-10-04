@@ -14,7 +14,7 @@ import PlannerGate from '@/app/tools/application-planner/PlannerGate';
  * account-only tool. The page describes the tool for crawlers and signed-out
  * visitors; `PlannerGate` decides in the browser (cookie presence — no server
  * cookie reads, constitution §16.2/§17) whether to load the tool chunk or show
- * the sign-in card. The 118-university and 53-exam pickers are fetched by the
+ * the sign-in card. The university and exam pickers are fetched by the
  * tool chunk from ./catalogue (static JSON) — the client never imports the
  * catalogue (bundle guard) and the public shell's payload carries none of it.
  * Like every tool (§18) it shows one destination at a time — the one chosen in
@@ -43,7 +43,7 @@ const FEATURES = [
     icon: ClipboardList,
     title: 'A shortlist for each destination',
     // The nine peers, named from the registry so the list can never drift from the site's destinations.
-    text: `Pick from 118 university profiles or add any university, for any of our nine destinations — ${REGIONS_ALPHABETICAL.map((r) => r.shortName).join(', ')}. The planner shows the one chosen in the header and counts your applications for the others.`,
+    text: `Pick from our university profiles or add any university, for any of our nine destinations — ${REGIONS_ALPHABETICAL.map((r) => r.shortName).join(', ')}. The planner shows the one chosen in the header and counts your applications for the others.`,
   },
   { icon: CalendarDays, title: 'Your deadlines on one timeline', text: 'Application, scholarship, visa and test dates you enter, sorted by what is due next, with overdue items flagged.' },
   { icon: ListChecks, title: 'A checklist per application', text: 'Start from a common document list, edit it to match the university, tick items off as you go.' },

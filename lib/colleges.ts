@@ -27,9 +27,19 @@ export type CollegeCountry =
   | 'switzerland'
   | 'sweden'
   | 'denmark'
+  | 'norway'
+  | 'finland'
+  | 'austria'
+  | 'poland'
   | 'italy'
   | 'spain'
   | 'belgium'
+  | 'czechia'
+  | 'hungary'
+  | 'portugal'
+  | 'romania'
+  | 'bulgaria'
+  | 'georgia'
   | 'australia'
   | 'new-zealand'
   | 'russia'
@@ -69,9 +79,19 @@ export const COLLEGE_COUNTRY_INFO: Record<CollegeCountry, { label: string; iso: 
   switzerland: { label: 'Switzerland', iso: 'CH' },
   sweden: { label: 'Sweden', iso: 'SE' },
   denmark: { label: 'Denmark', iso: 'DK' },
+  norway: { label: 'Norway', iso: 'NO' },
+  finland: { label: 'Finland', iso: 'FI' },
+  austria: { label: 'Austria', iso: 'AT' },
+  poland: { label: 'Poland', iso: 'PL' },
   italy: { label: 'Italy', iso: 'IT' },
   spain: { label: 'Spain', iso: 'ES' },
   belgium: { label: 'Belgium', iso: 'BE' },
+  czechia: { label: 'Czechia', iso: 'CZ' },
+  hungary: { label: 'Hungary', iso: 'HU' },
+  portugal: { label: 'Portugal', iso: 'PT' },
+  romania: { label: 'Romania', iso: 'RO' },
+  bulgaria: { label: 'Bulgaria', iso: 'BG' },
+  georgia: { label: 'Georgia', iso: 'GE' },
   australia: { label: 'Australia', iso: 'AU' },
   'new-zealand': { label: 'New Zealand', iso: 'NZ' },
   russia: { label: 'Russia', iso: 'RU' },
@@ -115,7 +135,20 @@ export interface College {
   city: string;
   state?: string;
   established: number;
-  ranking?: { nirf?: number; qs?: number; the?: number };
+  /**
+   * QS, THE, or NIRF only. A band (for example 801–1000) is not a number and
+   * stays out of this field. `qsYear` / `theYear` and the tied flags are set
+   * only when that edition was read on the publisher’s own page.
+   */
+  ranking?: {
+    nirf?: number;
+    qs?: number;
+    the?: number;
+    qsYear?: number;
+    theYear?: number;
+    qsTied?: boolean;
+    theTied?: boolean;
+  };
   admissionExams: string[];
   applicationPlatform?: string;
   programLevels: ProgramLevel[];
@@ -123,6 +156,12 @@ export interface College {
   websiteUrl?: string;
   descriptionEn: string;
   courses: string[];
+  /**
+   * Day the facts in this profile were read on the university’s own pages.
+   * Profiles without it keep the site review date. Never a fee, a rank, or a
+   * deadline that was not on those pages.
+   */
+  lastVerified?: string;
 }
 
 export const COLLEGES: College[] = [
@@ -958,7 +997,7 @@ export const COLLEGES: College[] = [
     courses: ['Business (Smurfit)', 'Engineering', 'Veterinary Medicine', 'Computer Science'],
   },
 
-  // ─────────────────────────── Europe (15) ───────────────────────────
+  // ─────────────────────────── Europe (25) ───────────────────────────
   {
     id: 'eth-zurich',
     slug: 'eth-zurich',
@@ -1244,6 +1283,200 @@ export const COLLEGES: College[] = [
       'Denmark\'s second-largest university with strong research output in life sciences, engineering, business, and humanities. Free tuition for EU/EEA students; non-EU students pay around €8,000-15,000 per year.',
     courses: ['Engineering', 'Business (Aarhus BSS)', 'Molecular Medicine', 'IT Product Development'],
   },
+  {
+    id: 'uio',
+    slug: 'university-of-oslo',
+    nameEn: 'University of Oslo',
+    type: 'research-university',
+    region: 'europe',
+    country: 'norway',
+    city: 'Oslo',
+    established: 1811,
+    ranking: { qs: 131, qsYear: 2027, qsTied: true, the: 118, theYear: 2027, theTied: true },
+    admissionExams: ['The programme page states any language test and the documents it asks for'],
+    applicationPlatform: 'Direct via the university’s international admissions page',
+    programLevels: ['bachelors', 'masters', 'phd'],
+    englishTaught: true,
+    websiteUrl: 'https://www.uio.no/english/',
+    descriptionEn:
+      'The University of Oslo is a public research university in Oslo, founded in 1811. Its facts page lists eight faculties, and it publishes master’s programmes taught entirely in English. QS World University Rankings 2027 places it joint 131st. Times Higher Education World University Rankings 2027 places it joint 118th. Its tuition table, last modified 16 September 2026, gives a separate yearly price for each programme for 2026/2027 and 2027/2028. Those prices apply to applicants with citizenship outside the EU/EEA and Switzerland, and the admission offer states the precise fee. For a single 10-credit course in 2026/2027 the same table lists 24,670–30,330 NOK at bachelor’s level and 34,000–49,170 NOK at master’s level. The master’s admissions page states that applicants outside the EU/EEA and Switzerland apply once a year: the portal opens on 15 October and the deadline is 1 December, for studies that start in August. The university’s 2025 master’s admission news reported 10,755 applicants and 5,363 offers. That count is not an admission chance for a later applicant.',
+    courses: ['Law', 'Economics', 'Dentistry', 'Pharmacy', 'Nutrition', 'Teacher education'],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'helsinki',
+    slug: 'university-of-helsinki',
+    nameEn: 'University of Helsinki',
+    type: 'research-university',
+    region: 'europe',
+    country: 'finland',
+    city: 'Helsinki',
+    established: 1640,
+    ranking: { qs: 123, qsYear: 2027, qsTied: true, the: 118, theYear: 2027, theTied: true },
+    admissionExams: ['The programme page states the language of instruction and the documents it asks for'],
+    applicationPlatform: 'Direct via the university admissions pages',
+    programLevels: ['bachelors', 'masters', 'phd'],
+    englishTaught: true,
+    websiteUrl: 'https://www.helsinki.fi/en',
+    descriptionEn:
+      'The University of Helsinki is a public research university in Helsinki, founded in 1640. The university states that it has 11 faculties on four campuses in Helsinki, and that it offers master’s programmes taught in English and bachelor’s programmes taught in English. QS World University Rankings 2027 places it joint 123rd. Times Higher Education World University Rankings 2027 places it joint 118th. Its tuition page states that fees for master’s programmes in English are 13,000, 15,000 or 18,000 EUR per academic year, depending on the programme, and that the fee for English-language bachelor’s programmes is 13,000 EUR per academic year. Joint programmes may differ. Doctoral students and exchange students are not charged that fee. The same page states a first-year tuition payment deadline of 31 August 2026. The Master’s Programme in English Studies page states a fee of 13,000 EUR per year for non-EU/EEA citizens and an application period of 5 to 19 January 2027 for studies starting in autumn 2027. Other programmes set their own dates. A university news item on the autumn 2026 international master’s round stated 3,739 applicants and that 44% were offered a place. That rate is for that round only.',
+    courses: ['Agricultural Sciences', 'Economics', 'Law', 'English Studies', 'Liberal Arts and Sciences', 'Science'],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'univie',
+    slug: 'university-of-vienna',
+    nameEn: 'University of Vienna',
+    type: 'research-university',
+    region: 'europe',
+    country: 'austria',
+    city: 'Vienna',
+    established: 1365,
+    ranking: { qs: 140, qsYear: 2027, qsTied: true, the: 95, theYear: 2027 },
+    admissionExams: ['English B2 or C1 where that English-taught programme requires it', 'German where the programme is taught in German'],
+    applicationPlatform: 'Direct via the university (studieren.univie.ac.at)',
+    programLevels: ['bachelors', 'masters', 'phd'],
+    englishTaught: true,
+    websiteUrl: 'https://www.univie.ac.at/en/',
+    descriptionEn:
+      'The University of Vienna is a public research university in Vienna, founded in 1365. Its about page lists 20 faculties and centres. It publishes master’s programmes taught entirely in English, and many other programmes are taught in German. QS World University Rankings 2027 places it joint 140th. Times Higher Education World University Rankings 2027 places it 95th. Its tuition-amount page states a Students’ Union fee of 26.20 EUR per semester. For EU/EEA and Swiss degree students the tuition on that page is 363.36 EUR per semester, 389.56 EUR with the union fee, and it is remitted during the stipulated programme length plus two tolerance semesters. For other non-EU/EEA degree students the tuition on that page is 726.72 EUR per semester, 752.92 EUR with the union fee, from the first semester, with exceptions that page lists. The master’s deadlines page gives different dates by citizenship and by whether the programme has a selection procedure. For winter semester 2026/27, programmes without a selection procedure list an application period of 22 June to 5 September 2026 for EU/EEA and Swiss citizens and 22 June to 3 August 2026 for other non-EU/EEA citizens, and an admission period of 13 July to 31 October 2026. The entrance-exam statistics page lists places and registrations by programme for 2025/26. It does not publish one admission chance for the university.',
+    courses: ['Data Science', 'Computer Science', 'Astronomy', 'Banking and Finance', 'Ecology and Ecosystems', 'Mathematics'],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'uw',
+    slug: 'university-of-warsaw',
+    nameEn: 'University of Warsaw',
+    type: 'research-university',
+    region: 'europe',
+    country: 'poland',
+    city: 'Warsaw',
+    established: 1816,
+    ranking: { qs: 289, qsYear: 2027, qsTied: true },
+    admissionExams: ['The admissions page for that programme states the documents and any test it asks for'],
+    applicationPlatform: 'University admissions (rekrutacja.uw.edu.pl)',
+    programLevels: ['bachelors', 'masters', 'phd'],
+    englishTaught: true,
+    websiteUrl: 'https://en.uw.edu.pl/',
+    descriptionEn:
+      'The University of Warsaw is a public university in Warsaw. A decree of 19 November 1816 founded it, and it opened on 14 May 1818. Its degree-programme page says it offers programmes in the humanities, the social sciences, and the exact and natural sciences, including programmes taught in English. QS World University Rankings 2027 places it joint 289th. Times Higher Education World University Rankings 2027 places it in the 801–1000 band. That band is not a single rank, so no THE number is shown here. The Welcome Point states that tuition differs by the terms of admission, the language of studies and the year of admission, and it links the university’s table of fees for studies in English in 2026/2027. This profile does not copy one programme’s price as the university fee. The admissions office states that deadlines differ by programme and are listed on each programme in IRK. Its schedule for the June–July 2026 round of full-time first-cycle and long-cycle programmes ran from 9 June to 9 July 2026, and it says English-taught programmes may use other dates. A news item using figures from 22 July 2026 reported 38,800 applicants and 76,900 paid applications for 2026/2027, with 17,300 people admitted to first-cycle and integrated master’s programmes and 4,300 to second-cycle programmes. Those counts are not an admission chance.',
+    courses: ['Humanities', 'Social sciences', 'Exact and natural sciences', 'Interdisciplinary programmes'],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'charles',
+    slug: 'charles-university',
+    nameEn: 'Charles University',
+    type: 'research-university',
+    region: 'europe',
+    country: 'czechia',
+    city: 'Prague',
+    established: 1348,
+    admissionExams: ['Each programme page states the documents and any test it asks for'],
+    applicationPlatform: 'Direct via the university',
+    programLevels: ['bachelors', 'masters'],
+    englishTaught: true,
+    websiteUrl: 'https://cuni.cz/UKEN-106.html',
+    descriptionEn:
+      'Charles University is in Prague. Its history page states that it was founded in 1348 and became the first studium generale north of the Alps and east of Paris, and that it originally had four faculties: theology, liberal arts, law, and medicine. Its tuition page, last changed 16 February 2026, states that studies in English and in other foreign languages (German, French, or Russian) carry a fee, and that those fees range from 40 EUR to 30,620 EUR per year depending on the programme. That range is not one fee for the university. The same page states that studies in Czech are free of charge unless the student exceeds the standard length of study by more than one year. Its example is General Medicine: a standard length of 6 years, with one further year before a fee is charged.',
+    courses: ['Programmes in Czech', 'Programmes in English and other foreign languages'],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'elte',
+    slug: 'eotvos-lorand-university',
+    nameEn: 'Eötvös Loránd University',
+    type: 'research-university',
+    region: 'europe',
+    country: 'hungary',
+    city: 'Budapest',
+    established: 1635,
+    admissionExams: ['English Studies MA: C1 English (TOEFL iBT 95–120 or IELTS 7.0) and an oral entrance exam, for that programme'],
+    applicationPlatform: 'apply.elte.hu',
+    programLevels: ['masters', 'phd'],
+    englishTaught: true,
+    websiteUrl: 'https://www.elte.hu/en/history',
+    descriptionEn:
+      'Eötvös Loránd University (ELTE) is in Budapest. Its history page dates the founding documents to 1635 in Nagyszombat (today Trnava). It states that the university moved to Buda in 1777 and from Buda to Pest in 1784, and that in 1950 it took its present name after the physicist Loránd Eötvös. The same page lists nine faculties: Economics, Education and Psychology, Humanities, Informatics, Law, Primary and Pre-School Education, Science, Social Sciences, and the Bárczi Gusztáv Faculty of Special Needs Education. It states that programmes are accredited by the Hungarian Accreditation Board, that course credits are transferable in the European Union, and that 33,000 students are enrolled yearly with 1,800 academic staff. The English Studies MA page states that the language of instruction is English, that the programme is a master’s degree of 4 semesters (2 years) and 120 ECTS in the Faculty of Humanities, and that the tuition fee is 3,500 EUR per semester for both EU/EEA and non-EU/EEA students. On that page, studies start on 1 September 2027 and the application deadline is 31 May 2027. The 3,500 EUR figure is that programme’s semester fee. It is not a yearly fee, and it is not the fee for every programme. The same page asks applicants to that programme for C1 English, listing TOEFL iBT 95–120 or IELTS 7.0, and an oral entrance exam.',
+    courses: ['Economics', 'Education and Psychology', 'Humanities', 'Informatics', 'Law', 'Primary and Pre-School Education', 'Science', 'Social Sciences', 'Special Needs Education'],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'ulisboa',
+    slug: 'university-of-lisbon',
+    nameEn: 'University of Lisbon',
+    type: 'research-university',
+    region: 'europe',
+    country: 'portugal',
+    city: 'Lisbon',
+    established: 2013,
+    admissionExams: ['Each programme page states the documents and any test it asks for'],
+    applicationPlatform: 'Direct via the university',
+    programLevels: ['bachelors', 'masters', 'phd'],
+    englishTaught: false,
+    websiteUrl: 'https://www.ulisboa.pt/en/info/university',
+    descriptionEn:
+      'The University of Lisbon (ULisboa) is in Lisbon. Its university page states that it is heir to a university tradition spanning over seven centuries, and that it acquired its current status in July 2013 after the merger of the former Universidade Técnica de Lisboa and Universidade de Lisboa. The same page names science, technology, arts and humanities among the areas it brings together. Its tuition page states that the fee is set each year by the General Council. For 2026/2027 it sets the fee for cycles leading to a bachelor’s degree, and to a master’s degree within an integrated master’s programme, at 697 EUR. The same page states that second-cycle master’s fees and doctorate fees vary by school, and that international-student fees are a separate General Council decision listed on each course page. The 697 EUR figure is not the international-student fee and it is not one fee for every programme.',
+    courses: ['Science', 'Technology', 'Arts', 'Humanities'],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'unibuc',
+    slug: 'university-of-bucharest',
+    nameEn: 'University of Bucharest',
+    type: 'research-university',
+    region: 'europe',
+    country: 'romania',
+    city: 'Bucharest',
+    established: 1864,
+    admissionExams: ['Each programme page states the documents and any test it asks for'],
+    applicationPlatform: 'Direct via the university',
+    programLevels: [],
+    englishTaught: false,
+    websiteUrl: 'https://unibuc.ro/despre-ub/istoric/repere-istorice/?lang=en',
+    descriptionEn:
+      'The University of Bucharest is in Bucharest. Its English history page states that on 4/16 July 1864 it was created by bringing together the Faculties of Law, Sciences and Letters. The page gives two different decree numbers for that date, so neither number is repeated here. The same page dates an earlier Academy of Saint Sava to 1694. That is not the year used here for the university. A line on the page for the year 2000 lists 19 faculties and over 30,000 students. That line is a snapshot for that year, not a current figure. The page does not state a tuition fee.',
+    courses: [],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'sofia',
+    slug: 'sofia-university',
+    nameEn: 'Sofia University St. Kliment Ohridski',
+    type: 'research-university',
+    region: 'europe',
+    country: 'bulgaria',
+    city: 'Sofia',
+    established: 1888,
+    admissionExams: ['Each programme page states the documents and any test it asks for'],
+    applicationPlatform: 'Direct via the university',
+    programLevels: ['bachelors', 'masters', 'phd'],
+    englishTaught: false,
+    websiteUrl: 'https://www.uni-sofia.bg/index.php/eng/the_university/history/academic_history',
+    descriptionEn:
+      'Sofia University St. Kliment Ohridski is in Sofia. Its academic-history page, last modified 11 December 2012, calls 1 October 1888 the birthdate of Bulgarian university education and says the provisional statute recognised one faculty, History and Philology. The same page states that in 1904 the School was transformed into a University, and that in 1905 it received the name Sofia University St. Kliment Ohridski. The university’s English site lists bachelor’s degree programmes, master’s degree programmes, and PhD students. The history page does not state a current faculty list or a current student count, and it does not state a tuition fee.',
+    courses: [],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'tsu',
+    slug: 'tbilisi-state-university',
+    nameEn: 'Ivane Javakhishvili Tbilisi State University',
+    type: 'research-university',
+    region: 'europe',
+    country: 'georgia',
+    city: 'Tbilisi',
+    established: 1918,
+    admissionExams: ['Each programme page states the documents and any test it asks for'],
+    applicationPlatform: 'Direct via the university',
+    programLevels: ['bachelors', 'masters', 'phd'],
+    englishTaught: false,
+    websiteUrl: 'https://www.tsu.ge/en/page/%E1%83%A3%E1%83%9C%E1%83%98%E1%83%95%E1%83%94%E1%83%A0%E1%83%A1%E1%83%98%E1%83%A2%E1%83%94%E1%83%A2%E1%83%98%E1%83%A1-%E1%83%A8%E1%83%94%E1%83%A1%E1%83%90%E1%83%AE%E1%83%94%E1%83%91',
+    descriptionEn:
+      'Ivane Javakhishvili Tbilisi State University is in Tbilisi. Its about page states that the first national university in the Caucasus opened in Georgia in 1918, that the university opened its doors on 26 January 1918, and that the commemoration of that opening was later set on 8 February. The same page states that in 1989 the university was renamed after Ivane Javakhishvili. It states that about 22,000 students study in seven faculties, and it names bachelor’s, master’s and doctoral programmes, plus higher vocational education and short- and long-term certification. It also states that it offers short-term courses in English. That is not a statement that its degrees are taught in English. The seven faculties linked on the page are Exact and Natural Sciences, Humanities, Social and Political Sciences, Psychology and Educational Sciences, Economics and Business, Medicine, and Law. The page does not state a tuition fee.',
+    courses: ['Exact and Natural Sciences', 'Humanities', 'Social and Political Sciences', 'Psychology and Educational Sciences', 'Economics and Business', 'Medicine', 'Law'],
+    lastVerified: '2026-10-04',
+  },
 
   // ─────────────────────────── Australia & NZ (6) ───────────────────────────
   {
@@ -1361,7 +1594,7 @@ export const COLLEGES: College[] = [
     courses: ['Medicine', 'Dentistry', 'Health Sciences', 'Marine Science'],
   },
 
-  // ─────────────────────────── Russia & CIS (9) ───────────────────────────
+  // ─────────────────────────── Russia & CIS (11) ───────────────────────────
   {
     id: 'msu',
     slug: 'lomonosov-moscow-state-university',
@@ -1494,6 +1727,44 @@ export const COLLEGES: College[] = [
     descriptionEn:
       'A comprehensive public research university in Almaty and one of the oldest and largest in Kazakhstan, offering programs across the natural sciences, IT and mathematics, humanities, economics, law and international relations. Instruction is in Kazakh, Russian and English, with a number of English-medium programs for international students.',
     courses: ['Biology and Biotechnology', 'Physics and Technology', 'Information Technology and Mathematics', 'Economics and Business', 'Law', 'International Relations'],
+  },
+  {
+    id: 'nuu',
+    slug: 'national-university-of-uzbekistan',
+    nameEn: 'National University of Uzbekistan named after Mirzo Ulugbek',
+    type: 'research-university',
+    region: 'russia',
+    country: 'uzbekistan',
+    city: 'Tashkent',
+    established: 1918,
+    admissionExams: ['Each programme page states the documents and any test it asks for'],
+    applicationPlatform: 'Direct via the university',
+    programLevels: [],
+    englishTaught: false,
+    websiteUrl: 'https://nuu.uz/en/universitet/universitet-tarixi/',
+    descriptionEn:
+      'The National University of Uzbekistan named after Mirzo Ulugbek is a state university. Its English history page states that it was founded in 1918, and that the page’s own figure for specialists trained since then is about 200,000. Its props page gives the name in that form, writes the city as Toshkent, and gives the postal address as 100174, Tashkent city, Almazar district, University street, house 4. The history page writes the district as Almazor. This profile does not copy a ranking, a bank detail, or a tuition fee from those pages.',
+    courses: [],
+    lastVerified: '2026-10-04',
+  },
+  {
+    id: 'knu',
+    slug: 'kyrgyz-national-university',
+    nameEn: 'Kyrgyz National University named after Jusup Balasagyn',
+    type: 'research-university',
+    region: 'russia',
+    country: 'kyrgyzstan',
+    city: 'Bishkek',
+    established: 1925,
+    admissionExams: ['Each programme page states the documents and any test it asks for'],
+    applicationPlatform: 'Direct via the university',
+    programLevels: [],
+    englishTaught: false,
+    websiteUrl: 'https://www.knu.kg/ky/archives/795',
+    descriptionEn:
+      'Kyrgyz National University named after Jusup Balasagyn publishes its general-information page in Kyrgyz. That page gives the full name as Жусуп Баласагын атындагы Кыргыз улуттук университети and an opening date of October 1925. It states that in October 1925 the Kyrgyz Institute of Education opened in Pishpek, that in 1927 it became the Central Pedagogical Technical School, that on 13 January 1932 a decision was taken to open the Kyrgyz State Pedagogical Institute in Pishpek, and that on 24 May 1951 the Council of Ministers created the Kyrgyz State University on that base, with a ceremonial opening on 31 August 1951. A short history on the same page states that in May 2002 the university received the name above. The page does not state a tuition fee. Fact files for 2025 and 2026 are linked there and were not read for this profile.',
+    courses: [],
+    lastVerified: '2026-10-04',
   },
   {
     id: 'sechenov',

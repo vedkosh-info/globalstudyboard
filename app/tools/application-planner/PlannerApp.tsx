@@ -4,6 +4,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEven
 import Link from 'next/link';
 import { CalendarDays, Check, ChevronDown, Download, ExternalLink, Plus, RotateCw, Search, Trash2, X } from 'lucide-react';
 import ReportView from '@/components/tools/ReportView';
+import { saveBlob } from '@/lib/download-file';
 import { buildPlannerReport } from '@/lib/reports/planner-report';
 import { defaultPaperFor, type Paper } from '@/lib/reports/model';
 import type { User } from '@supabase/supabase-js';
@@ -779,15 +780,7 @@ export default function PlannerApp() {
   // The destination on screen, like the report (the whole plan is in the account data download).
   const downloadCsv = () => {
     const csv = plannerCsv(apps, tasks, effectiveRegion, catalogue?.exams ?? []);
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `globalstudyboard-application-planner-${effectiveRegion}-${todayIso()}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+    saveBlob(new Blob([csv], { type: 'text/csv;charset=utf-8' }), `globalstudyboard-application-planner-${effectiveRegion}-${todayIso()}.csv`);
     setNotice({ tone: 'ok', text: `Your plan for ${region.proseName} was downloaded as a CSV file.` });
   };
 
@@ -878,17 +871,17 @@ export default function PlannerApp() {
           </div>
         </div>
         {(regionApps.length > 0 || scope.general.length > 0) && (
-          <dl className="m-0 grid grid-cols-3 gap-4 border-t border-stone-200 pt-4">
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Applications</dt>
+          <dl className="m-0 grid gap-3 border-t border-stone-200 pt-4 min-[480px]:grid-cols-3 min-[480px]:gap-4">
+            <div className="min-w-0">
+              <dt className="text-xs font-semibold uppercase leading-snug tracking-wide text-stone-600 [overflow-wrap:normal] [word-break:normal]">Applications</dt>
               <dd className="m-0 font-display text-2xl font-bold text-ink">{regionApps.length}</dd>
             </div>
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Due in 30 days</dt>
+            <div className="min-w-0">
+              <dt className="text-xs font-semibold uppercase leading-snug tracking-wide text-stone-600 [overflow-wrap:normal] [word-break:normal]">Due in 30 days</dt>
               <dd className="m-0 font-display text-2xl font-bold text-ink">{soonCount}</dd>
             </div>
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-stone-600">Overdue</dt>
+            <div className="min-w-0">
+              <dt className="text-xs font-semibold uppercase leading-snug tracking-wide text-stone-600 [overflow-wrap:normal] [word-break:normal]">Overdue</dt>
               <dd className={`m-0 font-display text-2xl font-bold ${overdueCount ? 'text-red-700' : 'text-ink'}`}>{overdueCount}</dd>
             </div>
           </dl>
@@ -1029,7 +1022,7 @@ export default function PlannerApp() {
                       className="mt-1 h-4 w-4 shrink-0 accent-forest-700"
                       aria-label={`Mark “${t.title}” done`}
                     />
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1 [overflow-wrap:break-word] [word-break:normal]">
                       <label htmlFor={`up-${t.id}`} className="block text-sm font-medium text-ink">
                         {t.title}
                       </label>
@@ -1631,7 +1624,7 @@ function ApplicationCard({
                 href={app.official_url}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="inline-flex items-center gap-1 text-sm font-medium text-forest-700 underline hover:text-forest-800"
+                className="inline text-sm font-medium text-forest-700 underline hover:text-forest-800 [overflow-wrap:break-word] [word-break:normal] [&_svg]:inline [&_svg]:align-[-0.125em]"
               >
                 Official site{officialHost ? ` (${officialHost})` : ''} <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                 <span className="sr-only"> (opens in a new tab)</span>
@@ -1653,7 +1646,7 @@ function ApplicationCard({
                       onChange={(e) => onToggleTask(t.id, e.target.checked)}
                       className="mt-1 h-4 w-4 shrink-0 accent-forest-700"
                     />
-                    <label htmlFor={`t-${t.id}`} className={`min-w-0 flex-1 text-sm ${t.done ? 'text-stone-500 line-through' : 'text-ink'}`}>
+                    <label htmlFor={`t-${t.id}`} className={`min-w-0 flex-1 text-sm [overflow-wrap:break-word] [word-break:normal] ${t.done ? 'text-stone-500 line-through' : 'text-ink'}`}>
                       {t.title}
                       <span className="ml-2 inline-flex items-center rounded-full border border-stone-200 bg-stone-50 px-1.5 text-[11px] font-semibold text-stone-600 no-underline">
                         {TASK_KIND_LABEL[t.kind]}
@@ -1946,7 +1939,7 @@ function TestDatesCard({
                 onChange={(e) => onToggle(t.id, e.target.checked)}
                 className="mt-1 h-4 w-4 shrink-0 accent-forest-700"
               />
-              <div className="min-w-0 flex-1">
+              <div className="min-w-0 flex-1 [overflow-wrap:break-word] [word-break:normal]">
                 <label htmlFor={`gt-${t.id}`} className={`block text-sm ${t.done ? 'text-stone-500 line-through' : 'text-ink'}`}>
                   {t.title}
                   {t.due_on && DATE_RE.test(t.due_on) && (
@@ -1963,7 +1956,7 @@ function TestDatesCard({
                       href={ex.url}
                       target="_blank"
                       rel="noopener noreferrer nofollow"
-                      className="mt-0.5 inline-flex items-center gap-1 text-xs font-medium text-forest-700 underline hover:text-forest-800"
+                      className="mt-0.5 inline text-xs font-medium text-forest-700 underline hover:text-forest-800 [&_svg]:inline [&_svg]:align-[-0.125em]"
                     >
                       {/* Named with the test: every row has one, and a list of identical "Official site" links reads as noise. */}
                       Confirm on the {ex.shortName} official site <ExternalLink className="h-3 w-3" aria-hidden="true" />
@@ -2064,7 +2057,7 @@ function TestDatesCard({
             </>
           )}
         </div>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid gap-2 sm:grid-cols-2">
           <div>
             <label htmlFor={`${uid}-w`} className={LABEL}>
               What
