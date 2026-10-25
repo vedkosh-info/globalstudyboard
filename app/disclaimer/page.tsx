@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { AlertTriangle } from 'lucide-react';
+import { IMAGE_COPY } from '@/lib/image-policy';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Disclaimer',
@@ -10,12 +11,12 @@ export const metadata: Metadata = pageMetadata({
   path: '/disclaimer',
 });
 
-const LAST_UPDATED = '22 September 2026';
+const LAST_UPDATED = IMAGE_COPY.policyUpdated;
 
-function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
+function Section({ id, legacyId, title, children }: { id?: string; legacyId?: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="space-y-3 scroll-mt-2">
-      <h2 className="font-display text-2xl font-bold tracking-editorial text-ink">{title}</h2>
+      <h2 id={legacyId} className="font-display text-2xl font-bold tracking-editorial text-ink">{title}</h2>
       <div className="space-y-3 text-stone-700 leading-relaxed">{children}</div>
     </section>
   );
@@ -74,18 +75,8 @@ export default function DisclaimerPage() {
         </p>
       </Section>
 
-      <Section id="ai-generated-images" title="Illustrations, not photographs">
-        <p>
-          Every picture on this site is a computer-generated illustration made to look like a
-          photograph. None of them is one. No picture shows a real university, campus, building or
-          city. On a page about a particular university, the picture is a representative scene for
-          that study destination &mdash; a generic campus, study space, cityscape or landscape
-          &mdash; not that campus, and carries no logo or signage. The circular “i” mark on the
-          picture reveals “Illustration · not a photo”, or “Illustration · not this institution” on
-          a university page, and links here. We design and review these pictures so they do not
-          portray real people. Treat them as decoration, not information &mdash; the facts come
-          from the official sources we cite and link.
-        </p>
+      <Section id={IMAGE_COPY.policyAnchor} legacyId="ai-generated-images" title={IMAGE_COPY.policyTitle}>
+        {IMAGE_COPY.policyParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       </Section>
 
       <Section title="Ask GSB">

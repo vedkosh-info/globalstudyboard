@@ -1,0 +1,273 @@
+{
+  "reviewedAt": "2026-10-23",
+  "scope": "Nine destination image pools: one possible campus photograph replacement per destination, retaining AI where no suitable safely reusable candidate was confirmed.",
+  "status": "Candidate research and crop verification complete; independent final integration/content QA still required.",
+  "licensePolicy": "CC0 1.0 only for ready selections; individual file license checked, never inferred from the Commons site footer. Cropping and recompression permitted.",
+  "selections": [
+    {
+      "key": "regions/india/campus-quad-golden-hour",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-regions/india-iithyderabad-original.jpg",
+      "alt": "Academic buildings, tree cover and campus roads at IIT Hyderabad in Telangana, India.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:IIT_Hyderabad_Campus,_Sanga_Reddy_District,_Telangana.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/IIT_Hyderabad_Campus%2C_Sanga_Reddy_District%2C_Telangana.jpg",
+        "author": "Rohitjahnavi",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1256024501, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "IIT Hyderabad campus, Sangareddy district, Telangana, India."
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 3312,
+        "height": 1863
+      }
+    },
+    {
+      "key": "regions/usa/collegiate-brick-autumn",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-regions/usa-princeton-original.jpg",
+      "alt": "Stone residential hall architecture at Princeton University in New Jersey, United States.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Architecture_of_Holder_and_Madison_Halls,_Princeton_University,_2007.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Architecture_of_Holder_and_Madison_Halls%2C_Princeton_University%2C_2007.jpg",
+        "author": "DimiTalen",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1062628591, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "Architecture of Holder and Madison Halls at Princeton University, Princeton, New Jersey, United States."
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 3008,
+        "height": 1692
+      }
+    },
+    {
+      "key": "regions/canada/maple-campus-autumn",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-regions/canada-laval-original.jpg",
+      "alt": "The Desjardins pavilion at Université Laval with snow in the foreground, Quebec City, Canada.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_building_at_Universite_Laval.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/University_building_at_Universite_Laval.jpg",
+        "author": "Wilfredor",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1269748958, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "Boulevard René-Lévesque facade of the Desjardins pavilion at Université Laval, Quebec City, Quebec, Canada."
+      },
+      "crop": {
+        "left": 0,
+        "top": 650,
+        "width": 8256,
+        "height": 4644
+      }
+    },
+    {
+      "key": "regions/uk-ireland/honey-stone-quad",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-regions/uk-manchester-original.jpg",
+      "alt": "Historic university buildings and a central tower on Oxford Road at the University of Manchester, England, United Kingdom.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_University_Of_Manchester_Oxford_Road.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/The_University_Of_Manchester_Oxford_Road.jpg",
+        "author": "MichaelDavidBeckwith",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1117316415, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "University of Manchester buildings on Oxford Road, Manchester, England, United Kingdom."
+      },
+      "crop": {
+        "left": 696,
+        "top": 0,
+        "width": 6800,
+        "height": 3825
+      }
+    },
+    {
+      "key": "regions/europe/continental-courtyard",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-regions/europe-amsterdam-original.jpg",
+      "alt": "Brick and reflective metal university buildings at the Roeterseiland campus in Amsterdam, the Netherlands.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Modern_architecture_of_university_buildings_at_the_campus_Roeterseiland;_free_photo_Amsterdam,_Fons_Heijnsbroek_10-2021.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Modern_architecture_of_university_buildings_at_the_campus_Roeterseiland%3B_free_photo_Amsterdam%2C_Fons_Heijnsbroek_10-2021.jpg",
+        "author": "Fons Heijnsbroek",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1264579317, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "University buildings at the Roeterseiland campus, Amsterdam, the Netherlands."
+      },
+      "crop": {
+        "left": 1920,
+        "top": 640,
+        "width": 2800,
+        "height": 1575
+      }
+    },
+    {
+      "key": "regions/australia-nz/sunny-modern-campus",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-regions/australia-melbourne-original.jpg",
+      "alt": "A historic stone university facade framed by trees at the University of Melbourne in Parkville, Australia.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Melbourne_autumn_(Unsplash).jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/University_of_Melbourne_autumn_%28Unsplash%29.jpg",
+        "author": "Fabian Mardi fabianmardi",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1031791455, and imageinfo extmetadata on 2026-10-23. The file page declares CC0 for this pre-5 June 2017 Unsplash photograph. The original publication is independently visible at https://web.archive.org/web/20170505161309/https://unsplash.com/photos/tQuEvmj83U4 (published 5 August 2016), predating the Unsplash license change.",
+        "verifiedAt": "2026-10-23",
+        "subject": "University of Melbourne, Parkville, Melbourne, Victoria, Australia."
+      },
+      "crop": {
+        "left": 226,
+        "top": 0,
+        "width": 2048,
+        "height": 1152
+      }
+    },
+    {
+      "key": "regions/east-southeast-asia/hightech-campus-blossom",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-regions/asia-tokai-original.jpg",
+      "alt": "The glass and white facade of Tokai University’s TechnoCube behind winter trees in Hiratsuka, Japan.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokai_University_Shonan_Campus_TechnoCube.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Tokai_University_Shonan_Campus_TechnoCube.jpg",
+        "author": "Mzaki",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1192072877, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "TechnoCube (Building 19), Tokai University Shonan campus, Hiratsuka, Kanagawa, Japan."
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 4080,
+        "height": 2295
+      }
+    }
+  ],
+  "destinationDecisions": {
+    "india": {
+      "decision": "replace-one-candidate-ready",
+      "imageId": "india-iithyderabad",
+      "notes": [
+        "Actual India campus; crop removes excessive forest at the right while preserving academic buildings.",
+        "No visible recognizable people, flags, logos or religious symbols in the proposed crop.",
+        "Legacy asset key describes an older AI scene; update visible alt and source caption to the true aerial/daylight subject."
+      ]
+    },
+    "usa": {
+      "decision": "replace-one-candidate-ready",
+      "imageId": "usa-princeton",
+      "notes": [
+        "Actual United States university architecture; empty frame.",
+        "The photograph was made in 2007 and does not establish current campus conditions. Do not caption it as current or as a particular admission facility.",
+        "No recognizable people, logos, text, political or religious symbols in proposed crop."
+      ]
+    },
+    "canada": {
+      "decision": "replace-one-candidate-ready",
+      "imageId": "canada-laval",
+      "notes": [
+        "Exact French description identifies the Desjardins pavilion, Quebec, Canada.",
+        "Empty modern exterior with incidental parking and traffic signs. No institutional logo or recognizable person.",
+        "Snow, not maple leaves; visible captions and alt must reflect the actual subject."
+      ]
+    },
+    "uk-ireland": {
+      "decision": "replace-one-candidate-ready",
+      "imageId": "uk-manchester",
+      "notes": [
+        "An actual UK campus example, not a depiction of all UK or Irish universities.",
+        "Empty scene; the real university name is carved above the entry and small banners occur near the path. These are incidental signage, with no prominent commercial brand or recognizable person.",
+        "Do not present this photograph as an unrelated institution."
+      ]
+    },
+    "europe": {
+      "decision": "replace-one-candidate-ready",
+      "imageId": "europe-amsterdam",
+      "notes": [
+        "The Netherlands is explicitly identified by the photographer and location metadata.",
+        "Original has people on the bridge; exact proposed crop excludes the entire occupied bridge segment.",
+        "Crop reviewed at 1400px width: no people, logos, flags or religious/political symbols."
+      ]
+    },
+    "australia-nz": {
+      "decision": "replace-one-candidate-ready",
+      "imageId": "australia-melbourne",
+      "notes": [
+        "Pre-2017 Unsplash CC0 status verified against the archived original publication, not inferred from today’s Unsplash terms.",
+        "Original contains people at ground level; proposed crop removes all of them and shows the upper facade and trees only.",
+        "The original EXIF contains a 2016 copyright string; the file-specific CC0 dedication and archived pre-license-change publication are the rights basis.",
+        "Decorative stone relief is architectural detail; no identifiable religious symbol was visible in the reviewed crop."
+      ]
+    },
+    "east-southeast-asia": {
+      "decision": "replace-one-candidate-ready",
+      "imageId": "asia-tokai",
+      "notes": [
+        "Exact photo title, creator description, and geolocation place this at Tokai University Shonan campus in Japan.",
+        "Original includes one person by the entrance and building number 19; proposed top crop removes both, keeping the academic exterior.",
+        "No recognizable people, logos, flags or religious/political symbols in proposed crop."
+      ]
+    },
+    "russia": {
+      "decision": "retain-ai",
+      "notes": [
+        "Reviewed CC0 campus candidates including Siberian State Technological University, Kyrgyz-Russian Slavic University, and other Russian campus results.",
+        "The Siberian candidate has Soviet-style decorative emblems, a statue, readable signage, and a recognizable foreground person; the Kyrgyz candidate has flags, an institutional installation/logo and low-quality haze.",
+        "Other candidates were low resolution, institutional signage, state/military campuses, religion, or otherwise weaker choices. Retaining already reviewed AI avoids forcing a replacement that fails the visual rules."
+      ],
+      "rejectedSources": [
+        "https://commons.wikimedia.org/wiki/File:Siberian_State_Technological_University,_Krasnoyarsk.jpg",
+        "https://commons.wikimedia.org/wiki/File:Kyrgyz-Russian_Slavic_University.jpg"
+      ]
+    },
+    "middle-east": {
+      "decision": "retain-ai",
+      "notes": [
+        "Reviewed a very relevant empty Texas A&M Qatar campus photo, photographer-released PD/CC0.",
+        "That dedication covers the photograph; it does not resolve the separately protected modern architecture in a jurisdiction lacking a general commercial freedom-of-panorama exception. Do not import without separate clearance.",
+        "Other searched UAE/Qatar/Oman/Bahrain/Saudi results were logos, identifiable people, non-CC0 works, low resolution, unrelated material, or similarly unresolved architectural subjects."
+      ],
+      "rejectedSources": [
+        "https://commons.wikimedia.org/wiki/File:Texas_A%26M_University_at_Qatar.jpg"
+      ],
+      "rightsIssueReference": "https://commons.wikimedia.org/wiki/Category:NoFoP-Qatar"
+    }
+  },
+  "reviewedCandidateCount": 22,
+  "ignoredResearchFolder": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-regions",
+  "notes": [
+    "Original multi-megabyte JPEGs and visual-review contact sheets are ignored research files. Import only optimized final variants.",
+    "All crop rectangles use original-image pixels and exact 16:9 ratios.",
+    "Actual campus photographs must carry their true subject and source; root agent confirmed collegeImage selects only AI, preventing another campus from appearing as the named institution.",
+    "Source captions should be neutral factual descriptions with photographer/license links and no institutional endorsement claim."
+  ],
+  "integrationReviewedAt": "2026-10-23",
+  "finalSelectedKeys": [
+    "regions/india/campus-quad-golden-hour",
+    "regions/usa/collegiate-brick-autumn",
+    "regions/canada/maple-campus-autumn",
+    "regions/uk-ireland/honey-stone-quad",
+    "regions/europe/continental-courtyard"
+  ],
+  "finalIntegrationNotes": {
+    "australia-nz": "Retained AI. Independent official-building verification identified cherub relief friezes in the photograph; rejected under Rule C despite initial visual/source approval. The original AI asset was restored.",
+    "east-southeast-asia": "Retained AI. Tokai crop is dominated by branches and exceeds the 100 KiB AVIF ceiling at 1024px / quality 40; do not degrade a high quality source further merely to force a replacement.",
+    "profiles": "Only the explicitly bound Princeton, Manchester and University of Amsterdam photos appear on their exact profiles. Other profiles use academic AI scenes, never a different campus or destination landscape."
+  }
+}

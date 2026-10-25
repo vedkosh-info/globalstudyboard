@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { IMAGE_COPY } from '@/lib/image-policy';
 import Link from 'next/link';
 import { ShieldCheck, Search, RefreshCw, Link2, Sparkles, MailWarning } from 'lucide-react';
 
@@ -43,8 +44,8 @@ const STEPS = [
   },
   {
     icon: <Sparkles className="h-5 w-5" />,
-    title: '5. Illustrations and Ask GSB',
-    body: 'Pages are checked against the official source in the pass above, whether a draft was prepared by hand or with software. Pictures are computer-generated illustrations, not photographs of a real campus. The mark on each picture says so and links to the disclaimer. Answers from Ask GSB are general guidance and can be wrong. They never replace the official source.',
+    title: IMAGE_COPY.editorialTitle,
+    body: IMAGE_COPY.editorialSummary,
   },
   {
     icon: <MailWarning className="h-5 w-5" />,

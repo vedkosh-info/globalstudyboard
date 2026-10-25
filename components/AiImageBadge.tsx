@@ -27,10 +27,12 @@ interface Props {
   /** Screen-reader form of the same words, e.g. "Illustration, not a photo". */
   spokenLabel: string;
   href: string;
+  /** Plain text from the server; does not import the policy copy into this bundle. */
+  policyLinkLabel: string;
   variant: 'hero' | 'card';
 }
 
-export default function AiImageBadge({ label, spokenLabel, href, variant }: Props) {
+export default function AiImageBadge({ label, spokenLabel, href, policyLinkLabel, variant }: Props) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -80,7 +82,7 @@ export default function AiImageBadge({ label, spokenLabel, href, variant }: Prop
         }`}
       >
         {label}
-        <span className="sr-only"> — read how we use AI images</span>
+        <span className="sr-only">{policyLinkLabel}</span>
       </a>
       <button
         ref={buttonRef}

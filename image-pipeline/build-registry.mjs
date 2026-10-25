@@ -1,110 +1,86 @@
-// image-pipeline/build-registry.mjs
-// Emits lib/images.generated.ts — the ONLY source of truth for which images the site
-// may render. It is derived from what is actually on disk, so the resolver can never
-// hand a template a broken path, and it is never edited by hand (same discipline as
-// the CMI registry). Re-run after optimize.mjs, before build. `npm run build` runs
-// scripts/check-images.ts first, which fails the build if this file is stale.
-//
-//   node image-pipeline/build-registry.mjs
-//
-// Every image is an AI-generated ARCHETYPE (owner decision 12 Sep 2026 — no real
-// photographs, no depictions of named institutions). Per image it requires all four
-// optimised variants (hero avif/webp + card -sm avif/webp), reads true pixel
-// dimensions, and takes the honest alt text from manifest.json.
-
-import { readdirSync, statSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { join, relative, extname } from 'node:path';
+// Builds the committed, server-only registry from QA-passed manifest records.
+// Logical keys stay stable; a replacement photo uses a new, immutable asset URL.
+// Run after encoding: node image-pipeline/build-registry.mjs
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import sharp from 'sharp';
 
-const ROOT = 'public/images';
 const OUT = 'lib/images.generated.ts';
 const manifest = JSON.parse(readFileSync('image-pipeline/manifest.json', 'utf8'));
-
-// alt text keyed by registry key ("common/fields/computer-science-lab")
-const altByKey = new Map(
-  manifest.images.map((i) => [i.publicUrl.replace(/^\/images\//, '').replace(/\.webp$/i, ''), i.alt])
-);
-// QA GATE: the registry may only contain images the independent QA pass marked `pass`.
-// Everything else on disk (failed, pending re-check, retired) is invisible to the site.
-const qaByKey = new Map(
-  manifest.images.map((im) => [im.publicUrl.replace(/^\/images\//, '').replace(/\.webp$/i, ''), im.qa?.status ?? 'pending'])
-);
-let gated = 0;
-
-const walk = (d) => (existsSync(d) ? readdirSync(d).flatMap((e) => {
-  const p = join(d, e);
-  return statSync(p).isDirectory() ? walk(p) : [p];
-}) : []);
-
-const heroes = walk(ROOT).filter((f) => extname(f) === '.avif' && !f.endsWith('-sm.avif'));
+const PHOTO_FIELDS = ['sourceUrl', 'originalUrl', 'author', 'license', 'licenseUrl', 'evidence', 'verifiedAt', 'subject'];
 const entries = [];
 const problems = [];
+const seen = new Set();
+let gated = 0;
 
-for (const avif of heroes.sort()) {
-  const key = relative(ROOT, avif).replace(/\.avif$/, '');
-  const base = avif.replace(/\.avif$/, '');
-  const need = { webp: `${base}.webp`, smAvif: `${base}-sm.avif`, smWebp: `${base}-sm.webp` };
-  const missing = Object.entries(need).filter(([, p]) => !existsSync(p)).map(([k]) => k);
-  if (missing.length) { problems.push(`${key}: missing ${missing.join(', ')} — run optimize.mjs`); continue; }
-
-  const qa = qaByKey.get(key);
-  if (qa !== 'pass') { gated++; continue; }   // not an error — just not shippable yet
-  const alt = altByKey.get(key);
-  if (!alt || !alt.trim()) { problems.push(`${key}: no alt text in manifest.json`); continue; }
-
-  const hero = await sharp(avif).metadata();
-  const card = await sharp(need.smAvif).metadata();
-  entries.push({
-    key,
-    src: `/images/${key}.avif`,
-    srcWebp: `/images/${key}.webp`,
-    srcSm: `/images/${key}-sm.avif`,
-    srcSmWebp: `/images/${key}-sm.webp`,
-    width: hero.width, height: hero.height,
-    widthSm: card.width, heightSm: card.height,
-    alt: alt.trim(),
-  });
+for (const im of manifest.images) {
+  const key = im.publicUrl.replace(/^\/images\//, '').replace(/\.webp$/i, '');
+  if (seen.has(key)) { problems.push(`${key}: duplicate manifest key`); continue; }
+  seen.add(key);
+  if (im.qa?.status !== 'pass') { gated++; continue; }
+  if (!/^[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(key)) { problems.push(`${key}: unsafe logical key`); continue; }
+  const base = im.optimizedBase ?? `/images/${key}`;
+  if (!/^\/images\/[a-z0-9/-]+$/.test(base)) { problems.push(`${key}: unsafe optimizedBase`); continue; }
+  const files = { src: `${base}.avif`, srcWebp: `${base}.webp`, srcSm: `${base}-sm.avif`, srcSmWebp: `${base}-sm.webp` };
+  const missing = Object.values(files).filter((p) => !existsSync(join('public', p)));
+  if (missing.length) { problems.push(`${key}: missing ${missing.join(', ')}`); continue; }
+  if (typeof im.alt !== 'string' || !im.alt.trim()) { problems.push(`${key}: missing alt`); continue; }
+  const raw = im.provenance ?? { kind: 'ai' };
+  let provenance;
+  if (raw.kind === 'ai') provenance = { kind: 'ai' };
+  else if (raw.kind === 'photo') {
+    if (PHOTO_FIELDS.some((f) => typeof raw[f] !== 'string' || !raw[f].trim())) {
+      problems.push(`${key}: incomplete photo provenance`); continue;
+    }
+    if (!['CC0-1.0', 'public-domain'].includes(raw.license)) { problems.push(`${key}: unsupported photo license`); continue; }
+    if (!/^\/images\/.*-photo-[a-f0-9]{8}$/.test(base)) { problems.push(`${key}: photo needs an immutable hashed optimizedBase`); continue; }
+    provenance = { kind: 'photo', ...Object.fromEntries(PHOTO_FIELDS.map((f) => [f, raw[f].trim()])) };
+    if (raw.institutionSlug !== undefined) provenance.institutionSlug = raw.institutionSlug;
+  } else { problems.push(`${key}: unknown provenance kind`); continue; }
+  const hero = await sharp(join('public', files.src)).metadata();
+  const card = await sharp(join('public', files.srcSm)).metadata();
+  entries.push({ key, ...files, width: hero.width, height: hero.height, widthSm: card.width, heightSm: card.height, alt: im.alt.trim(), provenance });
 }
 
+// Preserve the previous registry on any error; a partial new registry is unsafe.
 if (problems.length) {
-  console.error(`\n${problems.length} image(s) skipped:`);
-  problems.forEach((p) => console.error('  - ' + p));
-  process.exitCode = 1;
+  console.error(`build-registry: ${problems.length} problem(s):\n${problems.map((p) => `  - ${p}`).join('\n')}`);
+  process.exit(1);
 }
-
-const q = (s) => JSON.stringify(s);
-const lines = entries.map((e) =>
-  `  ${q(e.key)}: { src: ${q(e.src)}, srcWebp: ${q(e.srcWebp)}, srcSm: ${q(e.srcSm)}, srcSmWebp: ${q(e.srcSmWebp)}, width: ${e.width}, height: ${e.height}, widthSm: ${e.widthSm}, heightSm: ${e.heightSm}, alt: ${q(e.alt)} },`
-);
-
+const lines = entries.map(({ key, ...entry }) => `  ${JSON.stringify(key)}: ${JSON.stringify(entry)},`);
 writeFileSync(OUT, `// GENERATED by image-pipeline/build-registry.mjs — DO NOT EDIT BY HAND.
-// Derived from the optimised files actually present under public/images/, so every
-// entry here is guaranteed to exist on disk with all four variants. Regenerate after
-// optimize.mjs; scripts/check-images.ts fails the build if this is stale. ${entries.length} image(s).
-//
-// Every image is an AI-generated archetype. There is deliberately no field for real
-// photographs: adding one would require licence, attribution and subject-privacy
-// guards that do not exist here (owner decision 12 Sep 2026 — archetypes only).
+// ${entries.length} QA-passed images. Logical keys are stable; replacement photos have hashed URLs.
+// Server-only data: ContentImage passes only disclosure strings to its client badge.
 
+export interface AiImageProvenance { kind: 'ai'; }
+export interface PhotoImageProvenance {
+  kind: 'photo';
+  sourceUrl: string;
+  originalUrl: string;
+  author: string;
+  license: 'CC0-1.0' | 'public-domain';
+  licenseUrl: string;
+  evidence: string;
+  verifiedAt: string;
+  /** Describes the real subject; a representative photo never identifies another institution. */
+  subject: string;
+  institutionSlug?: string;
+}
+export type ImageProvenance = AiImageProvenance | PhotoImageProvenance;
 export interface RegistryEntry {
-  /** Hero AVIF (primary), nominally 1400w — see width for the true size. */
   src: string;
-  /** Hero WebP (fallback for the ~4% of browsers without AVIF). */
   srcWebp: string;
-  /** Card AVIF, nominally 560w — see widthSm for the true size. */
   srcSm: string;
-  /** Card WebP. */
   srcSmWebp: string;
   width: number;
   height: number;
   widthSm: number;
   heightSm: number;
-  /** Honest, descriptive alt — describes what is SHOWN; never names a real institution. */
   alt: string;
+  provenance: ImageProvenance;
 }
-
 export const IMAGE_REGISTRY: Readonly<Record<string, RegistryEntry>> = {
 ${lines.join('\n')}
 };
 `);
-console.log(`${OUT}: ${entries.length} image(s) registered (QA-passed)${gated ? `, ${gated} on disk but gated out (qa ≠ pass)` : ''}${problems.length ? `, ${problems.length} skipped` : ''}.`);
+console.log(`${OUT}: ${entries.length} QA-passed image(s), ${gated} manifest record(s) gated out.`);

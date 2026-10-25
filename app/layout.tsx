@@ -13,6 +13,7 @@ import RegionAnnouncer from '@/components/RegionAnnouncer';
 import { AudienceProvider } from '@/components/AudienceProvider';
 import AudienceAnnouncer from '@/components/AudienceAnnouncer';
 import SiteSearch from '@/components/SiteSearch';
+import ToolQuickLinks from '@/components/ToolQuickLinks';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FabDock from '@/components/FabDock';
 import RecentPages from '@/components/RecentPages';
@@ -224,7 +225,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <RegionContextBar />
           <main className="mx-auto w-full max-w-7xl px-4 py-8 md:py-12">
             <div className="mb-6 space-y-3">
-              <SiteSearch />
+              <div className="space-y-2">
+                <SiteSearch />
+                <ToolQuickLinks />
+              </div>
               <Breadcrumbs />
             </div>
             {children}

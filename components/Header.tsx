@@ -4,6 +4,7 @@ import RegionSwitcher from '@/components/RegionSwitcher';
 import RegionNav from '@/components/RegionNav';
 import TopicsMenu, { type TopicsMenuData } from '@/components/TopicsMenu';
 import ToolsEntranceLink from '@/components/ToolsEntranceLink';
+import NotificationCenter from '@/components/notifications/NotificationCenter';
 
 export default function Header({ topicsMenu }: { topicsMenu: TopicsMenuData }) {
   // Pinned (sticky) only on viewports at least 30rem tall — every phone held
@@ -21,7 +22,8 @@ export default function Header({ topicsMenu }: { topicsMenu: TopicsMenuData }) {
 
           {/*
             Wordmark — prominent brand, sized so the header row still fits a phone.
-            Below sm it is text-lg (~160px), and that size is load-bearing twice
+            Below 390px it is text-base, and from 390px to sm it is text-lg (~160px).
+            That size is load-bearing twice
             over. (a) The row is wordmark (shrink-0) + pill + menu (shrink-0), so it
             cannot compress: at 320px a 24px wordmark needed 337px and pushed the
             menu button 1px past the viewport, where the page's horizontal-overflow
@@ -36,12 +38,12 @@ export default function Header({ topicsMenu }: { topicsMenu: TopicsMenuData }) {
             these four.
           */}
           <Link href="/" className="flex items-baseline gap-2 no-underline shrink-0" aria-label="GlobalStudyBoard home">
-            <span className="font-display text-lg sm:text-3xl lg:text-[26px] xl:text-[34px] font-bold tracking-editorial text-forest-700 leading-none">
+            <span className="font-display text-base min-[390px]:text-lg sm:text-3xl lg:text-[26px] xl:text-[34px] font-bold tracking-editorial text-forest-700 leading-none">
               GlobalStudyBoard
             </span>
           </Link>
 
-          <div className="flex min-w-0 items-center gap-2">
+          <div className="flex min-w-0 items-center gap-1.5">
             {/* Desktop nav */}
             <nav className="hidden lg:flex shrink-0 items-center gap-0.5 xl:gap-1">
               <RegionNav />
@@ -70,6 +72,11 @@ export default function Header({ topicsMenu }: { topicsMenu: TopicsMenuData }) {
               duplicated the control for assistive tech and meant the two copies
               could drift apart. One instance, always visible, right-most.
             */}
+            {/* Bell stays left of the destination and the menu. The menu is the
+                rightmost control below lg so it cannot be pushed off screen.
+                Below 390px the wordmark steps down to text-base (the destination
+                name is already hidden there) to make room for this button. */}
+            <NotificationCenter />
             <RegionSwitcher />
             <MobileMenu />
           </div>

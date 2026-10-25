@@ -9,7 +9,7 @@
       "group": "A",
       "path": "public/images/regions/india/campus-quad-golden-hour.webp",
       "publicUrl": "/images/regions/india/campus-quad-golden-hour.webp",
-      "alt": "A modern leafy university quadrangle in a South-Asian setting, lit by warm golden-hour sun with long shadows across stone walkways.",
+      "alt": "Academic buildings, tree cover and campus roads at IIT Hyderabad in Telangana, India.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -29,8 +29,86 @@
       ],
       "qa": {
         "status": "pass",
-        "round": 3,
-        "date": "2026-09-15"
+        "date": "2026-10-23",
+        "auditor": "independent_image_qa",
+        "scope": "Independent source, CC0 evidence, exact crop, subject, privacy/IP and alt review passed; final encoded/UI checks recorded in the audit log."
+      },
+      "altCorrected": [
+        {
+          "date": "2026-10-23",
+          "previous": "A modern leafy university quadrangle in a South-Asian setting, lit by warm golden-hour sun with long shadows across stone walkways.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
+        }
+      ],
+      "optimizedBase": "/images/regions/india/campus-quad-golden-hour-photo-f5680e90",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:IIT_Hyderabad_Campus,_Sanga_Reddy_District,_Telangana.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/IIT_Hyderabad_Campus%2C_Sanga_Reddy_District%2C_Telangana.jpg",
+        "author": "Rohitjahnavi",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1256024501, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "IIT Hyderabad campus, Sangareddy district, Telangana, India."
+      },
+      "photoPreparation": {
+        "sourceSha256": "69bc039b9b14f1b3baba0652c961be9f659bc73981e7b23b8f9a67f2ec4377cf",
+        "originalWidth": 4096,
+        "originalHeight": 1864,
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 3312,
+          "height": 1863
+        },
+        "fit": "16:9 centre cover after explicit crop",
+        "recipe": {
+          "version": 1,
+          "hero": 1400,
+          "card": 560,
+          "avif": [
+            48,
+            44,
+            40
+          ],
+          "webp": [
+            76,
+            72,
+            68
+          ],
+          "effort": 6
+        },
+        "variants": [
+          {
+            "path": "public/images/regions/india/campus-quad-golden-hour-photo-f5680e90.avif",
+            "width": 1400,
+            "height": 788,
+            "quality": 40,
+            "bytes": 101690
+          },
+          {
+            "path": "public/images/regions/india/campus-quad-golden-hour-photo-f5680e90.webp",
+            "width": 1400,
+            "height": 788,
+            "quality": 68,
+            "bytes": 162922
+          },
+          {
+            "path": "public/images/regions/india/campus-quad-golden-hour-photo-f5680e90-sm.avif",
+            "width": 560,
+            "height": 315,
+            "quality": 40,
+            "bytes": 17870
+          },
+          {
+            "path": "public/images/regions/india/campus-quad-golden-hour-photo-f5680e90-sm.webp",
+            "width": 560,
+            "height": 315,
+            "quality": 68,
+            "bytes": 28678
+          }
+        ]
       }
     },
     {
@@ -84,7 +162,7 @@
       "group": "A",
       "path": "public/images/regions/usa/collegiate-brick-autumn.webp",
       "publicUrl": "/images/regions/usa/collegiate-brick-autumn.webp",
-      "alt": "A classic red-brick, ivy-covered college building framed by autumn maples in crisp afternoon light.",
+      "alt": "Stone residential hall architecture at Princeton University in New Jersey, United States.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -92,8 +170,80 @@
       "prompt": "A three-quarter angle on a classic red-brick, ivy-clad academic building, the 50mm holding natural vertical proportion without distortion. Crisp late-afternoon light rakes across the wall from one side, grazing the weathered, slightly uneven brick to raise its rough pitted texture and the mortar's variation, warming the climbing ivy toward uneven crimson-and-green; sugar maples frame the edges in mixed orange and gold. A weathered white-painted window frame shows faint peeling and a fine crack, moss softens the shaded base of the wall, and fallen leaves lie scattered unevenly across the flagstone path with a few caught in a corner. Shallow depth of field softens the framing foliage into real optical bokeh while the brick stays sharp. No crests or signage.\n\nShot on a full-frame DSLR with a 50mm prime lens at a natural aperture (f/2.8–f/4), shallow optical depth of field, authentic photographic perspective. Physically-plausible natural light — soft window daylight or warm golden-hour, with true directional falloff, gentle wraparound and accurate colour temperature. True-to-life materials with fine micro-texture: brushed paper fibres, matte wood grain, woven linen, cool stone, satin metal, real dust and subtle wear. Editorial architectural and still-life photography in the style of a premium independent design magazine: calm, refined, unhurried, understated. Fine natural film grain, full-bleed edge-to-edge frame with no border, margin, rounded corners, film-scan edge, halftone overlay or vignette of any kind, real optical bokeh, physically-accurate soft shadows and reflections, one small honest real-world imperfection. Palette: warm cream, soft stone-grey, deep forest green, muted navy, subtle gold. Absolutely photorealistic — NOT an illustration, NOT a 3D render, NOT CGI, NOT a painting, NOT digital art; no over-saturation, no plastic or waxy surfaces, no over-smoothing, no HDR halos, no fake or exaggerated bokeh, no warped or melted geometry, no duplicated objects, no watermark, no text artifacts. SAFETY: no people, faces or human figures whatsoever — the scene is completely empty of humans; no text, letters, numbers, logos, crests or signage anywhere — every object is unbranded (blank monitor bezels and screens, blank book spines and covers, blank packaging, no product names or brand marks); no replica of any real named building, campus or landmark (generic archetypes only); no religious symbols, places of worship, religious dress or scripture; no flags, political, government, military content, maps or borders; no weapons, alcohol or anything unsafe; respectful and non-stereotyping. 16:9 aspect ratio, high resolution, crisp and clean.",
       "qa": {
         "status": "pass",
-        "round": 1,
-        "date": "2026-09-15"
+        "date": "2026-10-23",
+        "auditor": "independent_image_qa",
+        "scope": "Independent source, CC0 evidence, exact crop, subject, privacy/IP and alt review passed; final encoded/UI checks recorded in the audit log."
+      },
+      "optimizedBase": "/images/regions/usa/collegiate-brick-autumn-photo-54034a1b",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Architecture_of_Holder_and_Madison_Halls,_Princeton_University,_2007.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Architecture_of_Holder_and_Madison_Halls%2C_Princeton_University%2C_2007.jpg",
+        "author": "DimiTalen",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1062628591, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "Architecture of Holder and Madison Halls at Princeton University, Princeton, New Jersey, United States.",
+        "institutionSlug": "princeton-university"
+      },
+      "photoPreparation": {
+        "sourceSha256": "a5b0237fab32390389477991fd209c4ccd5080aecb40d799c05b030cbbb15d36",
+        "originalWidth": 3008,
+        "originalHeight": 2000,
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 3008,
+          "height": 1692
+        },
+        "fit": "16:9 centre cover after explicit crop",
+        "recipe": {
+          "version": 1,
+          "hero": 1400,
+          "card": 560,
+          "avif": [
+            48,
+            44,
+            40
+          ],
+          "webp": [
+            76,
+            72,
+            68
+          ],
+          "effort": 6
+        },
+        "variants": [
+          {
+            "path": "public/images/regions/usa/collegiate-brick-autumn-photo-54034a1b.avif",
+            "width": 1400,
+            "height": 788,
+            "quality": 40,
+            "bytes": 82230
+          },
+          {
+            "path": "public/images/regions/usa/collegiate-brick-autumn-photo-54034a1b.webp",
+            "width": 1400,
+            "height": 788,
+            "quality": 68,
+            "bytes": 137548
+          },
+          {
+            "path": "public/images/regions/usa/collegiate-brick-autumn-photo-54034a1b-sm.avif",
+            "width": 560,
+            "height": 315,
+            "quality": 40,
+            "bytes": 18808
+          },
+          {
+            "path": "public/images/regions/usa/collegiate-brick-autumn-photo-54034a1b-sm.webp",
+            "width": 560,
+            "height": 315,
+            "quality": 68,
+            "bytes": 28902
+          }
+        ]
       }
     },
     {
@@ -101,7 +251,7 @@
       "group": "A",
       "path": "public/images/regions/usa/campus-green-clocktower.webp",
       "publicUrl": "/images/regions/usa/campus-green-clocktower.webp",
-      "alt": "A wide American campus lawn with tree-lined paths and a distant generic tower silhouette at golden hour.",
+      "alt": "A wide campus lawn with tree-lined paths and a distant generic tower silhouette at golden hour.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -111,14 +261,21 @@
         "status": "pass",
         "round": 1,
         "date": "2026-09-15"
-      }
+      },
+      "altCorrected": [
+        {
+          "date": "2026-10-23",
+          "previous": "A wide American campus lawn with tree-lined paths and a distant generic tower silhouette at golden hour.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
+        }
+      ]
     },
     {
       "n": 6,
       "group": "A",
       "path": "public/images/regions/usa/study-commons-interior.webp",
       "publicUrl": "/images/regions/usa/study-commons-interior.webp",
-      "alt": "A bright modern American university study commons with warm oak tables, glass walls and pendant lamps.",
+      "alt": "A bright modern university study commons with warm oak tables, glass walls and pendant lamps.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -134,14 +291,21 @@
         "status": "pass",
         "round": 2,
         "date": "2026-09-15"
-      }
+      },
+      "altCorrected": [
+        {
+          "date": "2026-10-23",
+          "previous": "A bright modern American university study commons with warm oak tables, glass walls and pendant lamps.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
+        }
+      ]
     },
     {
       "n": 7,
       "group": "A",
       "path": "public/images/regions/canada/maple-campus-autumn.webp",
       "publicUrl": "/images/regions/canada/maple-campus-autumn.webp",
-      "alt": "A rain-wet campus walkway after a shower, a large puddle mirroring the autumn maples and glass-fronted buildings under soft overcast light.",
+      "alt": "The Desjardins pavilion at Université Laval with snow in the foreground, Quebec City, Canada.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -155,8 +319,79 @@
       ],
       "qa": {
         "status": "pass",
-        "round": 1,
-        "date": "2026-09-15"
+        "date": "2026-10-23",
+        "auditor": "independent_image_qa",
+        "scope": "Independent source, CC0 evidence, exact crop, subject, privacy/IP and alt review passed; final encoded/UI checks recorded in the audit log."
+      },
+      "optimizedBase": "/images/regions/canada/maple-campus-autumn-photo-13122720",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_building_at_Universite_Laval.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/University_building_at_Universite_Laval.jpg",
+        "author": "Wilfredor",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1269748958, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "Boulevard René-Lévesque facade of the Desjardins pavilion at Université Laval, Quebec City, Quebec, Canada."
+      },
+      "photoPreparation": {
+        "sourceSha256": "a1fc58d07c5d61e67929c9fd59e5abdfda20da2725bd742c752579763a9614c0",
+        "originalWidth": 8256,
+        "originalHeight": 5504,
+        "crop": {
+          "left": 0,
+          "top": 650,
+          "width": 8256,
+          "height": 4644
+        },
+        "fit": "16:9 centre cover after explicit crop",
+        "recipe": {
+          "version": 1,
+          "hero": 1400,
+          "card": 560,
+          "avif": [
+            48,
+            44,
+            40
+          ],
+          "webp": [
+            76,
+            72,
+            68
+          ],
+          "effort": 6
+        },
+        "variants": [
+          {
+            "path": "public/images/regions/canada/maple-campus-autumn-photo-13122720.avif",
+            "width": 1400,
+            "height": 788,
+            "quality": 40,
+            "bytes": 54304
+          },
+          {
+            "path": "public/images/regions/canada/maple-campus-autumn-photo-13122720.webp",
+            "width": 1400,
+            "height": 788,
+            "quality": 68,
+            "bytes": 100440
+          },
+          {
+            "path": "public/images/regions/canada/maple-campus-autumn-photo-13122720-sm.avif",
+            "width": 560,
+            "height": 315,
+            "quality": 40,
+            "bytes": 12365
+          },
+          {
+            "path": "public/images/regions/canada/maple-campus-autumn-photo-13122720-sm.webp",
+            "width": 560,
+            "height": 315,
+            "quality": 76,
+            "bytes": 23524
+          }
+        ]
       }
     },
     {
@@ -164,7 +399,7 @@
       "group": "A",
       "path": "public/images/regions/canada/mountain-lake-landscape.webp",
       "publicUrl": "/images/regions/canada/mountain-lake-landscape.webp",
-      "alt": "A calm Canadian mountain-and-lake landscape with pine forest and snow-dusted peaks at first light.",
+      "alt": "A calm mountain lake bordered by pine forest and snow-dusted peaks at first light.",
       "abstract": false,
       "realismScore": 5,
       "aiLookRisk": "none",
@@ -174,7 +409,14 @@
         "status": "pass",
         "round": 1,
         "date": "2026-09-15"
-      }
+      },
+      "altCorrected": [
+        {
+          "date": "2026-10-23",
+          "previous": "A calm Canadian mountain-and-lake landscape with pine forest and snow-dusted peaks at first light.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
+        }
+      ]
     },
     {
       "n": 9,
@@ -212,7 +454,7 @@
       "group": "A",
       "path": "public/images/regions/uk-ireland/honey-stone-quad.webp",
       "publicUrl": "/images/regions/uk-ireland/honey-stone-quad.webp",
-      "alt": "A historic honey-coloured stone collegiate quadrangle with pointed-arch cloisters and a square lawn.",
+      "alt": "Historic university buildings and a central tower on Oxford Road at the University of Manchester, England, United Kingdom.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -220,8 +462,80 @@
       "prompt": "A gentle three-quarter view of a historic honey-coloured stone quadrangle wrapped by graceful pointed-arch cloisters around a square lawn, the arches carrying subtle irregularity from age rather than machine-perfect repetition. Soft overcast light wraps the weathered ashlar evenly, revealing patchy lichen, old tool marks, uneven staining and centuries of gentle erosion. A dark damp streak runs beneath a stone downpipe, moss creeps unevenly in the mortar joints, a lone leaf rests off-centre on the turf, and the lawn shows faint mower lines and a slightly worn edge. Shallow depth of field softens the far cloister run into gentle bokeh while the near stone holds crisp micro-texture. Timeless and still, no crests or signage.\n\nShot on a full-frame DSLR with a 50mm prime lens at a natural aperture (f/2.8–f/4), shallow optical depth of field, authentic photographic perspective. Physically-plausible natural light — soft window daylight or warm golden-hour, with true directional falloff, gentle wraparound and accurate colour temperature. True-to-life materials with fine micro-texture: brushed paper fibres, matte wood grain, woven linen, cool stone, satin metal, real dust and subtle wear. Editorial architectural and still-life photography in the style of a premium independent design magazine: calm, refined, unhurried, understated. Fine natural film grain, full-bleed edge-to-edge frame with no border, margin, rounded corners, film-scan edge, halftone overlay or vignette of any kind, real optical bokeh, physically-accurate soft shadows and reflections, one small honest real-world imperfection. Palette: warm cream, soft stone-grey, deep forest green, muted navy, subtle gold. Absolutely photorealistic — NOT an illustration, NOT a 3D render, NOT CGI, NOT a painting, NOT digital art; no over-saturation, no plastic or waxy surfaces, no over-smoothing, no HDR halos, no fake or exaggerated bokeh, no warped or melted geometry, no duplicated objects, no watermark, no text artifacts. SAFETY: no people, faces or human figures whatsoever — the scene is completely empty of humans; no text, letters, numbers, logos, crests or signage anywhere — every object is unbranded (blank monitor bezels and screens, blank book spines and covers, blank packaging, no product names or brand marks); no replica of any real named building, campus or landmark (generic archetypes only); no religious symbols, places of worship, religious dress or scripture; no flags, political, government, military content, maps or borders; no weapons, alcohol or anything unsafe; respectful and non-stereotyping. 16:9 aspect ratio, high resolution, crisp and clean.",
       "qa": {
         "status": "pass",
-        "round": 1,
-        "date": "2026-09-15"
+        "date": "2026-10-23",
+        "auditor": "independent_image_qa",
+        "scope": "Independent source, CC0 evidence, exact crop, subject, privacy/IP and alt review passed; final encoded/UI checks recorded in the audit log."
+      },
+      "optimizedBase": "/images/regions/uk-ireland/honey-stone-quad-photo-213ca61f",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_University_Of_Manchester_Oxford_Road.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/The_University_Of_Manchester_Oxford_Road.jpg",
+        "author": "MichaelDavidBeckwith",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1117316415, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "University of Manchester buildings on Oxford Road, Manchester, England, United Kingdom.",
+        "institutionSlug": "university-of-manchester"
+      },
+      "photoPreparation": {
+        "sourceSha256": "213c841a2184196984a698ca25efd49bb556f7dfb62ca7a9d7834f1fec207045",
+        "originalWidth": 8192,
+        "originalHeight": 3827,
+        "crop": {
+          "left": 696,
+          "top": 0,
+          "width": 6800,
+          "height": 3825
+        },
+        "fit": "16:9 centre cover after explicit crop",
+        "recipe": {
+          "version": 1,
+          "hero": 1400,
+          "card": 560,
+          "avif": [
+            48,
+            44,
+            40
+          ],
+          "webp": [
+            76,
+            72,
+            68
+          ],
+          "effort": 6
+        },
+        "variants": [
+          {
+            "path": "public/images/regions/uk-ireland/honey-stone-quad-photo-213ca61f.avif",
+            "width": 1400,
+            "height": 788,
+            "quality": 40,
+            "bytes": 57212
+          },
+          {
+            "path": "public/images/regions/uk-ireland/honey-stone-quad-photo-213ca61f.webp",
+            "width": 1400,
+            "height": 788,
+            "quality": 68,
+            "bytes": 100678
+          },
+          {
+            "path": "public/images/regions/uk-ireland/honey-stone-quad-photo-213ca61f-sm.avif",
+            "width": 560,
+            "height": 315,
+            "quality": 44,
+            "bytes": 13216
+          },
+          {
+            "path": "public/images/regions/uk-ireland/honey-stone-quad-photo-213ca61f-sm.webp",
+            "width": 560,
+            "height": 315,
+            "quality": 76,
+            "bytes": 20584
+          }
+        ]
       }
     },
     {
@@ -229,7 +543,7 @@
       "group": "A",
       "path": "public/images/regions/uk-ireland/green-countryside.webp",
       "publicUrl": "/images/regions/uk-ireland/green-countryside.webp",
-      "alt": "Rolling green British-Isles countryside stitched with hedgerows and dry-stone walls under a soft broken sky.",
+      "alt": "Rolling green countryside stitched with hedgerows and dry-stone walls under a soft broken sky.",
       "abstract": false,
       "realismScore": 5,
       "aiLookRisk": "none",
@@ -239,7 +553,14 @@
         "status": "pass",
         "round": 1,
         "date": "2026-09-15"
-      }
+      },
+      "altCorrected": [
+        {
+          "date": "2026-10-23",
+          "previous": "Rolling green British-Isles countryside stitched with hedgerows and dry-stone walls under a soft broken sky.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
+        }
+      ]
     },
     {
       "n": 12,
@@ -269,7 +590,7 @@
       "group": "A",
       "path": "public/images/regions/europe/continental-courtyard.webp",
       "publicUrl": "/images/regions/europe/continental-courtyard.webp",
-      "alt": "A classic continental-European university courtyard with two tiers of arched stone colonnades and a central fountain.",
+      "alt": "Brick and reflective metal university buildings at the Roeterseiland campus in Amsterdam, the Netherlands.",
       "abstract": false,
       "realismScore": 3,
       "aiLookRisk": "med",
@@ -277,8 +598,80 @@
       "prompt": "A near-symmetrical view into a classic continental university courtyard ringed by two tiers of arched stone colonnades around a simple central fountain catching pale early light, the arches carrying slight hand-built irregularity rather than machine-perfect repetition. Low morning sun rakes across one side of the arcade, deepening the shadowed vaults on that flank and warming the render to soft uneven cream while the opposite side stays cooler. Wet cobbles glisten unevenly near the fountain basin, a pigeon-worn ledge sits above one column, a thin water stain streaks down a single shaft, and the cobbles are dished and mismatched from long use. Shallow depth of field softens the far colonnade into gentle bokeh. Calm, ordered, secular, no religious structures, no signage.\n\nShot on a full-frame DSLR with a 50mm prime lens at a natural aperture (f/2.8–f/4), shallow optical depth of field, authentic photographic perspective. Physically-plausible natural light — soft window daylight or warm golden-hour, with true directional falloff, gentle wraparound and accurate colour temperature. True-to-life materials with fine micro-texture: brushed paper fibres, matte wood grain, woven linen, cool stone, satin metal, real dust and subtle wear. Editorial architectural and still-life photography in the style of a premium independent design magazine: calm, refined, unhurried, understated. Fine natural film grain, full-bleed edge-to-edge frame with no border, margin, rounded corners, film-scan edge, halftone overlay or vignette of any kind, real optical bokeh, physically-accurate soft shadows and reflections, one small honest real-world imperfection. Palette: warm cream, soft stone-grey, deep forest green, muted navy, subtle gold. Absolutely photorealistic — NOT an illustration, NOT a 3D render, NOT CGI, NOT a painting, NOT digital art; no over-saturation, no plastic or waxy surfaces, no over-smoothing, no HDR halos, no fake or exaggerated bokeh, no warped or melted geometry, no duplicated objects, no watermark, no text artifacts. SAFETY: no people, faces or human figures whatsoever — the scene is completely empty of humans; no text, letters, numbers, logos, crests or signage anywhere — every object is unbranded (blank monitor bezels and screens, blank book spines and covers, blank packaging, no product names or brand marks); no replica of any real named building, campus or landmark (generic archetypes only); no religious symbols, places of worship, religious dress or scripture; no flags, political, government, military content, maps or borders; no weapons, alcohol or anything unsafe; respectful and non-stereotyping. 16:9 aspect ratio, high resolution, crisp and clean.",
       "qa": {
         "status": "pass",
-        "round": 1,
-        "date": "2026-09-15"
+        "date": "2026-10-23",
+        "auditor": "independent_image_qa",
+        "scope": "Independent source, CC0 evidence, exact crop, subject, privacy/IP and alt review passed; final encoded/UI checks recorded in the audit log."
+      },
+      "optimizedBase": "/images/regions/europe/continental-courtyard-photo-e9af1b8e",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Modern_architecture_of_university_buildings_at_the_campus_Roeterseiland;_free_photo_Amsterdam,_Fons_Heijnsbroek_10-2021.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Modern_architecture_of_university_buildings_at_the_campus_Roeterseiland%3B_free_photo_Amsterdam%2C_Fons_Heijnsbroek_10-2021.jpg",
+        "author": "Fons Heijnsbroek",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific licensing checked via Commons original page source, revision 1264579317, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+        "verifiedAt": "2026-10-23",
+        "subject": "University buildings at the Roeterseiland campus, Amsterdam, the Netherlands.",
+        "institutionSlug": "university-of-amsterdam"
+      },
+      "photoPreparation": {
+        "sourceSha256": "34f4def4f591d07e73b6b7562638956df00fdd40532b203197a6e24fae6e750e",
+        "originalWidth": 4724,
+        "originalHeight": 3543,
+        "crop": {
+          "left": 1920,
+          "top": 640,
+          "width": 2800,
+          "height": 1575
+        },
+        "fit": "16:9 centre cover after explicit crop",
+        "recipe": {
+          "version": 1,
+          "hero": 1400,
+          "card": 560,
+          "avif": [
+            48,
+            44,
+            40
+          ],
+          "webp": [
+            76,
+            72,
+            68
+          ],
+          "effort": 6
+        },
+        "variants": [
+          {
+            "path": "public/images/regions/europe/continental-courtyard-photo-e9af1b8e.avif",
+            "width": 1400,
+            "height": 788,
+            "quality": 40,
+            "bytes": 54113
+          },
+          {
+            "path": "public/images/regions/europe/continental-courtyard-photo-e9af1b8e.webp",
+            "width": 1400,
+            "height": 788,
+            "quality": 68,
+            "bytes": 108138
+          },
+          {
+            "path": "public/images/regions/europe/continental-courtyard-photo-e9af1b8e-sm.avif",
+            "width": 560,
+            "height": 315,
+            "quality": 44,
+            "bytes": 13886
+          },
+          {
+            "path": "public/images/regions/europe/continental-courtyard-photo-e9af1b8e-sm.webp",
+            "width": 560,
+            "height": 315,
+            "quality": 76,
+            "bytes": 21758
+          }
+        ]
       }
     },
     {
@@ -342,6 +735,12 @@
         "status": "pass",
         "round": 2,
         "date": "2026-09-15"
+      },
+      "photoReview": {
+        "date": "2026-10-23",
+        "decision": "retain-ai",
+        "rejectedSource": "https://commons.wikimedia.org/wiki/File:University_of_Melbourne_autumn_(Unsplash).jpg",
+        "reason": "Independent official-building check identified cherub relief friezes in the proposed crop; excluded under content-policy Rule C. Existing AI image retained."
       }
     },
     {
@@ -349,7 +748,7 @@
       "group": "A",
       "path": "public/images/regions/australia-nz/coastal-landscape.webp",
       "publicUrl": "/images/regions/australia-nz/coastal-landscape.webp",
-      "alt": "A pristine Southern-Hemisphere coastline with turquoise water, pale sand and lush green headland cliffs.",
+      "alt": "A coastline with turquoise water, pale sand and green headland cliffs.",
       "abstract": false,
       "realismScore": 5,
       "aiLookRisk": "none",
@@ -359,7 +758,14 @@
         "status": "pass",
         "round": 1,
         "date": "2026-09-15"
-      }
+      },
+      "altCorrected": [
+        {
+          "date": "2026-10-23",
+          "previous": "A pristine Southern-Hemisphere coastline with turquoise water, pale sand and lush green headland cliffs.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
+        }
+      ]
     },
     {
       "n": 18,
@@ -509,7 +915,7 @@
       "group": "A",
       "path": "public/images/regions/east-southeast-asia/hightech-campus-blossom.webp",
       "publicUrl": "/images/regions/east-southeast-asia/hightech-campus-blossom.webp",
-      "alt": "A modern high-tech Asian campus with glass-and-concrete buildings, cherry-blossom trees and lush greenery in soft spring light.",
+      "alt": "A modern campus with glass-and-concrete buildings, cherry-blossom trees and greenery in soft spring light.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -519,14 +925,21 @@
         "status": "pass",
         "round": 1,
         "date": "2026-09-15"
-      }
+      },
+      "altCorrected": [
+        {
+          "date": "2026-10-23",
+          "previous": "A modern high-tech Asian campus with glass-and-concrete buildings, cherry-blossom trees and lush greenery in soft spring light.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
+        }
+      ]
     },
     {
       "n": 26,
       "group": "A",
       "path": "public/images/regions/east-southeast-asia/city-blue-hour.webp",
       "publicUrl": "/images/regions/east-southeast-asia/city-blue-hour.webp",
-      "alt": "A clean modern East-Asian cityscape of orderly contemporary towers glowing softly at blue hour.",
+      "alt": "A modern cityscape of contemporary towers glowing softly at blue hour.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -542,7 +955,14 @@
         "status": "pass",
         "round": 2,
         "date": "2026-09-15"
-      }
+      },
+      "altCorrected": [
+        {
+          "date": "2026-10-23",
+          "previous": "A clean modern East-Asian cityscape of orderly contemporary towers glowing softly at blue hour.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
+        }
+      ]
     },
     {
       "n": 27,
@@ -609,7 +1029,7 @@
       "group": "B",
       "path": "public/images/common/fields/computer-science-lab.webp",
       "publicUrl": "/images/common/fields/computer-science-lab.webp",
-      "alt": "A modern computer-science lab with rows of sleek dark workstations glowing softly.",
+      "alt": "Rows of desktop computers and black chairs in an empty university computer laboratory.",
       "abstract": false,
       "realismScore": 3,
       "aiLookRisk": "med",
@@ -623,8 +1043,79 @@
       ],
       "qa": {
         "status": "pass",
-        "round": 2,
-        "date": "2026-09-15"
+        "date": "2026-10-23",
+        "auditor": "independent_image_qa",
+        "scope": "Independent source, CC0 evidence, exact crop, subject, privacy/IP and alt review passed; final encoded/UI checks recorded in the audit log."
+      },
+      "optimizedBase": "/images/common/fields/computer-science-lab-photo-e4fd212c",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:De_La_Salle_University_%E2%80%93_Dasmari%C3%B1as_(DLSU%E2%80%93D)_Information_and_Communications_Technology_Center_(ICTC)_laboratory_room_203_(ICT203)_%E2%80%94_normal_view.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/De_La_Salle_University_%E2%80%93_Dasmari%C3%B1as_%28DLSU%E2%80%93D%29_Information_and_Communications_Technology_Center_%28ICTC%29_laboratory_room_203_%28ICT203%29_%E2%80%94_normal_view.jpg",
+        "author": "UndueMarmot",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+        "verifiedAt": "2026-10-23",
+        "subject": "ICTC computer laboratory, De La Salle University–Dasmariñas, Philippines"
+      },
+      "photoPreparation": {
+        "sourceSha256": "81168fa00bb76f326e2d46c65bccaec5e9ba2000b94ff84b8d97bed7be00893f",
+        "originalWidth": 4080,
+        "originalHeight": 3072,
+        "crop": {
+          "left": 1080,
+          "top": 600,
+          "width": 2800,
+          "height": 1575
+        },
+        "fit": "16:9 centre cover after explicit crop",
+        "recipe": {
+          "version": 1,
+          "hero": 1400,
+          "card": 560,
+          "avif": [
+            48,
+            44,
+            40
+          ],
+          "webp": [
+            76,
+            72,
+            68
+          ],
+          "effort": 6
+        },
+        "variants": [
+          {
+            "path": "public/images/common/fields/computer-science-lab-photo-e4fd212c.avif",
+            "width": 1400,
+            "height": 788,
+            "quality": 48,
+            "bytes": 20646
+          },
+          {
+            "path": "public/images/common/fields/computer-science-lab-photo-e4fd212c.webp",
+            "width": 1400,
+            "height": 788,
+            "quality": 76,
+            "bytes": 38764
+          },
+          {
+            "path": "public/images/common/fields/computer-science-lab-photo-e4fd212c-sm.avif",
+            "width": 560,
+            "height": 315,
+            "quality": 48,
+            "bytes": 7042
+          },
+          {
+            "path": "public/images/common/fields/computer-science-lab-photo-e4fd212c-sm.webp",
+            "width": 560,
+            "height": 315,
+            "quality": 76,
+            "bytes": 11182
+          }
+        ]
       }
     },
     {
@@ -740,7 +1231,7 @@
       "group": "B",
       "path": "public/images/common/fields/biotechnology-lab.webp",
       "publicUrl": "/images/common/fields/biotechnology-lab.webp",
-      "alt": "A clean modern biotechnology lab with glassware, pipettes and a microscope on steel benches.",
+      "alt": "Close view of a monocular microscope on a wooden laboratory bench.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -748,8 +1239,79 @@
       "prompt": "Eye-level shot along a spotless biotechnology bench, 50mm with gentle falloff into a soft background. Rows of clear glassware and beakers hold faintly tinted liquids — pale amber and green — beside slim pipettes and a matte-black microscope; all labels are blank, no text or logos. Bright clinical daylight from tall side windows passes through the glass, throwing crisp real caustic highlights onto brushed stainless steel. Real detail: a single water droplet clinging beneath a beaker rim and a faint cleaning smudge on one flask. Empty of people.\n\nShot on a full-frame DSLR with a 50mm prime lens at a natural aperture (f/2.8–f/4), shallow optical depth of field, authentic photographic perspective. Physically-plausible natural light — soft window daylight or warm golden-hour, with true directional falloff, gentle wraparound and accurate colour temperature. True-to-life materials with fine micro-texture: brushed paper fibres, matte wood grain, woven linen, cool stone, satin metal, real dust and subtle wear. Editorial architectural and still-life photography in the style of a premium independent design magazine: calm, refined, unhurried, understated. Fine natural film grain, full-bleed edge-to-edge frame with no border, margin, rounded corners, film-scan edge, halftone overlay or vignette of any kind, real optical bokeh, physically-accurate soft shadows and reflections, one small honest real-world imperfection. Palette: warm cream, soft stone-grey, deep forest green, muted navy, subtle gold. Absolutely photorealistic — NOT an illustration, NOT a 3D render, NOT CGI, NOT a painting, NOT digital art; no over-saturation, no plastic or waxy surfaces, no over-smoothing, no HDR halos, no fake or exaggerated bokeh, no warped or melted geometry, no duplicated objects, no watermark, no text artifacts. SAFETY: no people, faces or human figures whatsoever — the scene is completely empty of humans; no text, letters, numbers, logos, crests or signage anywhere — every object is unbranded (blank monitor bezels and screens, blank book spines and covers, blank packaging, no product names or brand marks); no replica of any real named building, campus or landmark (generic archetypes only); no religious symbols, places of worship, religious dress or scripture; no flags, political, government, military content, maps or borders; no weapons, alcohol or anything unsafe; respectful and non-stereotyping. 16:9 aspect ratio, high resolution, crisp and clean.",
       "qa": {
         "status": "pass",
-        "round": 1,
-        "date": "2026-09-15"
+        "date": "2026-10-23",
+        "auditor": "independent_image_qa",
+        "scope": "Independent source, CC0 evidence, exact crop, subject, privacy/IP and alt review passed; final encoded/UI checks recorded in the audit log."
+      },
+      "optimizedBase": "/images/common/fields/biotechnology-lab-photo-fd72ba7f",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Biology_microscope.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Biology_microscope.jpg",
+        "author": "J.Doniyorovich",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+        "verifiedAt": "2026-10-23",
+        "subject": "Laboratory microscope"
+      },
+      "photoPreparation": {
+        "sourceSha256": "6e1ff96202ac698db4ebb8bd0dd1a01111c4b708a7fb8007f086d327ae180022",
+        "originalWidth": 5712,
+        "originalHeight": 4284,
+        "crop": {
+          "left": 600,
+          "top": 0,
+          "width": 5100,
+          "height": 2869
+        },
+        "fit": "16:9 centre cover after explicit crop",
+        "recipe": {
+          "version": 1,
+          "hero": 1400,
+          "card": 560,
+          "avif": [
+            48,
+            44,
+            40
+          ],
+          "webp": [
+            76,
+            72,
+            68
+          ],
+          "effort": 6
+        },
+        "variants": [
+          {
+            "path": "public/images/common/fields/biotechnology-lab-photo-fd72ba7f.avif",
+            "width": 1400,
+            "height": 788,
+            "quality": 48,
+            "bytes": 35476
+          },
+          {
+            "path": "public/images/common/fields/biotechnology-lab-photo-fd72ba7f.webp",
+            "width": 1400,
+            "height": 788,
+            "quality": 76,
+            "bytes": 60620
+          },
+          {
+            "path": "public/images/common/fields/biotechnology-lab-photo-fd72ba7f-sm.avif",
+            "width": 560,
+            "height": 315,
+            "quality": 48,
+            "bytes": 10578
+          },
+          {
+            "path": "public/images/common/fields/biotechnology-lab-photo-fd72ba7f-sm.webp",
+            "width": 560,
+            "height": 315,
+            "quality": 76,
+            "bytes": 16172
+          }
+        ]
       }
     },
     {
@@ -1772,7 +2334,7 @@
       "group": "D",
       "path": "public/images/common/journey/budgeting-abroad.webp",
       "publicUrl": "/images/common/journey/budgeting-abroad.webp",
-      "alt": "A top-down flat-lay of a calculator, notebook, stacked coins and a jar for budgeting.",
+      "alt": "A top-down flat-lay of two notebooks, a pencil, stacked coins and a glass jar of coins on a pale desk.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -1788,7 +2350,14 @@
         "status": "pass",
         "round": 2,
         "date": "2026-09-15"
-      }
+      },
+      "altCorrected": [
+        {
+          "date": "2026-10-23",
+          "previous": "A top-down flat-lay of a calculator, notebook, stacked coins and a jar for budgeting.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
+        }
+      ]
     },
     {
       "n": 79,
@@ -1946,7 +2515,7 @@
       "group": "E",
       "path": "public/images/site/hero/topic-hub-desk-flatlay.webp",
       "publicUrl": "/images/site/hero/topic-hub-desk-flatlay.webp",
-      "alt": "A tidy desk flat-lay with an open notebook, reading glasses, an empty mug with a coffee-ring stain and a folded map, in soft window light.",
+      "alt": "A desk flat-lay with a closed laptop, an open notebook, reading glasses, a mug, a small plant and blank papers in soft window light.",
       "abstract": false,
       "realismScore": 4,
       "aiLookRisk": "low",
@@ -1956,6 +2525,11 @@
         {
           "date": "2026-09-15",
           "source": "independent QA round 1 (check G)"
+        },
+        {
+          "date": "2026-10-23",
+          "previous": "A tidy desk flat-lay with an open notebook, reading glasses, an empty mug with a coffee-ring stain and a folded map, in soft window light.",
+          "source": "Visual image audit; independently reviewed by independent_image_qa on 2026-10-23"
         }
       ],
       "qa": {
@@ -1976,9 +2550,9 @@
       "safetyRisk": "low",
       "prompt": "Tight, softly-blurred macro of a row of shelved book spines, camera square-on at f/2.8 so only a narrow vertical band is truly sharp and the rest melts into creamy optical bokeh. Cloth and matte-paper spines in warm cream, deep forest green, muted navy and touches of aged gold, all blank with no readable titles, letters or numbers. Warm side light glances unevenly across the woven cloth weave and slightly frayed head-caps. One spine leans out of true, another is sun-faded pale along its edge, and the spacing is irregular — small honest signs of a well-used shelf.\n\nShot on a full-frame DSLR with a 50mm prime lens at a natural aperture (f/2.8–f/4), shallow optical depth of field, authentic photographic perspective. Physically-plausible natural light — soft window daylight or warm golden-hour, with true directional falloff, gentle wraparound and accurate colour temperature. True-to-life materials with fine micro-texture: brushed paper fibres, matte wood grain, woven linen, cool stone, satin metal, real dust and subtle wear. Editorial architectural and still-life photography in the style of a premium independent design magazine: calm, refined, unhurried, understated. Fine natural film grain, full-bleed edge-to-edge frame with no border, margin, rounded corners, film-scan edge, halftone overlay or vignette of any kind, real optical bokeh, physically-accurate soft shadows and reflections, one small honest real-world imperfection. Palette: warm cream, soft stone-grey, deep forest green, muted navy, subtle gold. Absolutely photorealistic — NOT an illustration, NOT a 3D render, NOT CGI, NOT a painting, NOT digital art; no over-saturation, no plastic or waxy surfaces, no over-smoothing, no HDR halos, no fake or exaggerated bokeh, no warped or melted geometry, no duplicated objects, no watermark, no text artifacts. SAFETY: no people, faces or human figures whatsoever — the scene is completely empty of humans; no text, letters, numbers, logos, crests or signage anywhere — every object is unbranded (blank monitor bezels and screens, blank book spines and covers, blank packaging, no product names or brand marks); no replica of any real named building, campus or landmark (generic archetypes only); no religious symbols, places of worship, religious dress or scripture; no flags, political, government, military content, maps or borders; no weapons, alcohol or anything unsafe; respectful and non-stereotyping. 16:9 aspect ratio, high resolution, crisp and clean.",
       "qa": {
-        "status": "pass",
-        "round": 1,
-        "date": "2026-09-15"
+        "status": "retired",
+        "date": "2026-10-23",
+        "reason": "Unused decorative asset; no live resolver or page references this folder. Retired to avoid shipping unused bytes."
       }
     },
     {
@@ -2051,9 +2625,9 @@
       "safetyRisk": "none",
       "prompt": "Premium abstract graphic: an elegant three-dimensional constellation of glowing pinpoints linked by fine luminous filaments, floating in a deep navy-to-forest-green gradient space. Soft gold nodes glow with volumetric halos where lines meet, evoking discovery and connected knowledge, arranged organically and unevenly rather than on a regular grid. Nearer nodes sit crisp while distant ones recede into gentle depth-of-field and blur to delicate bokeh. Faint golden particles drift through the field at varying depths. Smooth realistic light falloff and clean gradients, no banding, no readable shapes, no text — refined, cinematic and calm.\n\nPremium abstract decorative graphic — cinematic, clean and modern, softly glowing with volumetric light and smooth fine gradients, gentle depth and delicate bokeh particles. On-palette only: warm cream, soft stone-grey, deep forest green, muted navy, subtle gold. High-end and tasteful, never cheap, flat or clip-arty; smooth realistic material shading, no banding, no plastic sheen, no over-saturation, no harsh neon. No text, letters, numbers, logos, flags, borders, maps, and no political or religious content or symbols. Empty of people and faces. 16:9 aspect ratio, high resolution.",
       "qa": {
-        "status": "pass",
-        "round": 1,
-        "date": "2026-09-15"
+        "status": "retired",
+        "date": "2026-10-23",
+        "reason": "Unused decorative asset; no live resolver or page references this folder. Retired to avoid shipping unused bytes."
       }
     },
     {
@@ -2168,9 +2742,9 @@
       "safetyRisk": "none",
       "prompt": "Close, near-overhead crop of a fine wooden desk surface, camera angled just off-parallel so a soft shaft of golden window light sweeps diagonally across the grain and fades unevenly. The warm timber shows honest matte open-pore texture, faint tool marks and a couple of pale overlapping rings from old cups. Only the corner of a blank notebook and the tip of a pen intrude at one edge, leaving a broad clean expanse for text overlay. Fine dust drifts in the light beam and one subtle scratch cuts across the grain for quiet realism. No text or markings on the wood.\n\nShot on a full-frame DSLR with a 50mm prime lens at a natural aperture (f/2.8–f/4), shallow optical depth of field, authentic photographic perspective. Physically-plausible natural light — soft window daylight or warm golden-hour, with true directional falloff, gentle wraparound and accurate colour temperature. True-to-life materials with fine micro-texture: brushed paper fibres, matte wood grain, woven linen, cool stone, satin metal, real dust and subtle wear. Editorial architectural and still-life photography in the style of a premium independent design magazine: calm, refined, unhurried, understated. Fine natural film grain, full-bleed edge-to-edge frame with no border, margin, rounded corners, film-scan edge, halftone overlay or vignette of any kind, real optical bokeh, physically-accurate soft shadows and reflections, one small honest real-world imperfection. Palette: warm cream, soft stone-grey, deep forest green, muted navy, subtle gold. Absolutely photorealistic — NOT an illustration, NOT a 3D render, NOT CGI, NOT a painting, NOT digital art; no over-saturation, no plastic or waxy surfaces, no over-smoothing, no HDR halos, no fake or exaggerated bokeh, no warped or melted geometry, no duplicated objects, no watermark, no text artifacts. SAFETY: no people, faces or human figures whatsoever — the scene is completely empty of humans; no text, letters, numbers, logos, crests or signage anywhere — every object is unbranded (blank monitor bezels and screens, blank book spines and covers, blank packaging, no product names or brand marks); no replica of any real named building, campus or landmark (generic archetypes only); no religious symbols, places of worship, religious dress or scripture; no flags, political, government, military content, maps or borders; no weapons, alcohol or anything unsafe; respectful and non-stereotyping. 16:9 aspect ratio, high resolution, crisp and clean.",
       "qa": {
-        "status": "pass",
-        "round": 1,
-        "date": "2026-09-15"
+        "status": "retired",
+        "date": "2026-10-23",
+        "reason": "Unused decorative asset; no live resolver or page references this folder. Retired to avoid shipping unused bytes."
       }
     },
     {
@@ -2178,7 +2752,7 @@
       "group": "E",
       "path": "public/images/site/hero/lecture-hall-empty.webp",
       "publicUrl": "/images/site/hero/lecture-hall-empty.webp",
-      "alt": "An empty tiered lecture hall seen from the front, rows of seats and desks rising toward a dark acoustic panel on the rear wall.",
+      "alt": "An empty university lecture hall with tiered seats and two projection screens.",
       "abstract": false,
       "realismScore": 3,
       "aiLookRisk": "med",
@@ -2192,8 +2766,79 @@
       ],
       "qa": {
         "status": "pass",
-        "round": 1,
-        "date": "2026-09-15"
+        "date": "2026-10-23",
+        "auditor": "independent_image_qa",
+        "scope": "Independent source, CC0 evidence, exact crop, subject, privacy/IP and alt review passed; final encoded/UI checks recorded in the audit log."
+      },
+      "optimizedBase": "/images/site/hero/lecture-hall-empty-photo-415c7a2c",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ohio_University_Lecture_Hall.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ohio_University_Lecture_Hall.jpg",
+        "author": "Garden Sprite",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+        "verifiedAt": "2026-10-23",
+        "subject": "Morton Hall lecture hall, Ohio University, USA"
+      },
+      "photoPreparation": {
+        "sourceSha256": "fa5f2559a9fe361577067d620d6d4f682b9c047089abb3d81d41168466cb18ef",
+        "originalWidth": 1280,
+        "originalHeight": 960,
+        "crop": {
+          "left": 0,
+          "top": 100,
+          "width": 1280,
+          "height": 720
+        },
+        "fit": "16:9 centre cover after explicit crop",
+        "recipe": {
+          "version": 1,
+          "hero": 1400,
+          "card": 560,
+          "avif": [
+            48,
+            44,
+            40
+          ],
+          "webp": [
+            76,
+            72,
+            68
+          ],
+          "effort": 6
+        },
+        "variants": [
+          {
+            "path": "public/images/site/hero/lecture-hall-empty-photo-415c7a2c.avif",
+            "width": 1280,
+            "height": 720,
+            "quality": 40,
+            "bytes": 59362
+          },
+          {
+            "path": "public/images/site/hero/lecture-hall-empty-photo-415c7a2c.webp",
+            "width": 1280,
+            "height": 720,
+            "quality": 68,
+            "bytes": 116874
+          },
+          {
+            "path": "public/images/site/hero/lecture-hall-empty-photo-415c7a2c-sm.avif",
+            "width": 560,
+            "height": 315,
+            "quality": 40,
+            "bytes": 15803
+          },
+          {
+            "path": "public/images/site/hero/lecture-hall-empty-photo-415c7a2c-sm.webp",
+            "width": 560,
+            "height": 315,
+            "quality": 68,
+            "bytes": 26070
+          }
+        ]
       }
     },
     {
@@ -2237,9 +2882,9 @@
         }
       ],
       "qa": {
-        "status": "pass",
-        "round": 2,
-        "date": "2026-09-15"
+        "status": "retired",
+        "date": "2026-10-23",
+        "reason": "Unused decorative asset; no live resolver or page references this folder. Retired to avoid shipping unused bytes."
       }
     },
     {

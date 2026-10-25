@@ -1,5 +1,11 @@
 # GlobalStudyBoard — Image Programme: Phased Plan
 
+> **Historical Phase-1 record.** Source choices and current operation are superseded
+> by the owner's 23 October 2026 open-photo-first instruction in
+> [README.md](./README.md) and the [current review](./IMAGE_REVIEW_2026-10-23.md).
+> The AI-only doctrine below applies to the original generation batch, not to
+> today's mixed photograph/illustration library.
+
 **Status (15 Sep 2026 — PHASE 1 CLOSED):** **93 QA-passed images registered and wired into every
 template; 7 retired; 0 pending. Production build green (3,483 pages).** Four QA rounds, 169 API
 images, ≈₹2,300 all-in, 55% yield. Local-only — not committed. See **§7**.

@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-23",
+  "scope": "Shared fields, exams, journey and generic site imagery; research-only implementation hand-off.",
+  "method": "Cached file-specific Commons imageinfo metadata, file license pages, broad visual contact sheets and a second image/crop inspection at 1280px or above for each ready item. CC0 photograph dedication only; do not label this a blanket guarantee about all third-party rights.",
+  "ready": [
+    {
+      "key": "common/fields/biotechnology-lab",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-common/original-00.jpg",
+      "alt": "Close view of a monocular microscope on a wooden laboratory bench.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Biology_microscope.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Biology_microscope.jpg",
+        "author": "J.Doniyorovich",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+        "verifiedAt": "2026-10-23",
+        "subject": "A real laboratory microscope, photographed by J.Doniyorovich on 29 May 2024. The crop concentrates on the eyepiece, objective lenses, stage and focusing mechanism."
+      },
+      "crop": {
+        "left": 600,
+        "top": 0,
+        "width": 5100,
+        "height": 2869
+      },
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Biology_microscope.jpg/960px-Biology_microscope.jpg",
+      "sha256": "6e1ff96202ac698db4ebb8bd0dd1a01111c4b708a7fb8007f086d327ae180022",
+      "issues": [
+        "This is a basic monocular optical microscope, not a claim about a named university, advanced biotechnology facility or experimental method. The wide crop deliberately excludes the instrument base."
+      ]
+    },
+    {
+      "key": "common/fields/computer-science-lab",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-common/original-04.jpg",
+      "alt": "Rows of desktop computers and black chairs in an empty university computer laboratory.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:De_La_Salle_University_%E2%80%93_Dasmari%C3%B1as_(DLSU%E2%80%93D)_Information_and_Communications_Technology_Center_(ICTC)_laboratory_room_203_(ICT203)_%E2%80%94_normal_view.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/De_La_Salle_University_%E2%80%93_Dasmari%C3%B1as_%28DLSU%E2%80%93D%29_Information_and_Communications_Technology_Center_%28ICTC%29_laboratory_room_203_%28ICT203%29_%E2%80%94_normal_view.jpg",
+        "author": "UndueMarmot",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+        "verifiedAt": "2026-10-23",
+        "subject": "A real teaching computer lab in the Information and Communications Technology Center at De La Salle University – Dasmariñas, Philippines."
+      },
+      "crop": {
+        "left": 0,
+        "top": 600,
+        "width": 4080,
+        "height": 2295
+      },
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/De_La_Salle_University_%E2%80%93_Dasmari%C3%B1as_%28DLSU%E2%80%93D%29_Information_and_Communications_Technology_Center_%28ICTC%29_laboratory_room_203_%28ICT203%29_%E2%80%94_normal_view.jpg/960px-De_La_Salle_University_%E2%80%93_Dasmari%C3%B1as_%28DLSU%E2%80%93D%29_Information_and_Communications_Technology_Center_%28ICTC%29_laboratory_room_203_%28ICT203%29_%E2%80%94_normal_view.jpg",
+      "sha256": "81168fa00bb76f326e2d46c65bccaec5e9ba2000b94ff84b8d97bed7be00893f",
+      "issues": [
+        "Keep its real institution in the provenance/credit; do not describe it as a facility of any other college. One lock screen shows only a time, with no account name or personal data."
+      ]
+    },
+    {
+      "key": "common/fields/agriculture-greenhouse",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-common/standard-1280-07.jpg",
+      "alt": "Potted plants and hanging baskets around a water trough inside a bright glass greenhouse.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Interior_view_-_Talcott_Greenhouse_-_Mount_Holyoke_College_-_DSC04499.JPG",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Interior_view_-_Talcott_Greenhouse_-_Mount_Holyoke_College_-_DSC04499.JPG",
+        "author": "Daderot",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+        "verifiedAt": "2026-10-23",
+        "subject": "Interior of the Talcott Greenhouse at Mount Holyoke College, South Hadley, Massachusetts, photographed by Daderot in December 2012."
+      },
+      "crop": {
+        "left": 0,
+        "top": 90,
+        "width": 1280,
+        "height": 720
+      },
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Interior_view_-_Talcott_Greenhouse_-_Mount_Holyoke_College_-_DSC04499.JPG/1280px-Interior_view_-_Talcott_Greenhouse_-_Mount_Holyoke_College_-_DSC04499.JPG",
+      "sha256": "246399c0df0b6a1c05922b3c4a2a3648c7d05b882f8b2128134068541b867c9c",
+      "issues": [
+        "This is a real college greenhouse, not a claim of rows of crop seedlings or a specific agricultural research experiment. Accurate alt replaces the prior AI description. Its 1280px source is a standard Commons thumbnail; avoid upscaling."
+      ]
+    },
+    {
+      "key": "site/hero/lecture-hall-empty",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-common/standard-1280-38.jpg",
+      "alt": "An empty university lecture hall with tiered seats and two projection screens.",
+      "provenance": {
+        "kind": "photo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ohio_University_Lecture_Hall.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ohio_University_Lecture_Hall.jpg",
+        "author": "Garden Sprite",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+        "verifiedAt": "2026-10-23",
+        "subject": "A real lecture hall in Morton Hall at Ohio University, photographed by Garden Sprite in June 2024."
+      },
+      "crop": {
+        "left": 0,
+        "top": 100,
+        "width": 1280,
+        "height": 720
+      },
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Ohio_University_Lecture_Hall.jpg/1280px-Ohio_University_Lecture_Hall.jpg",
+      "sha256": "fa5f2559a9fe361577067d620d6d4f682b9c047089abb3d81d41168466cb18ef",
+      "issues": [
+        "Ordinary emergency exit signs are visible. There are no institution logos, flags or identifiable people. Its 1280px source is a standard Commons thumbnail; avoid upscaling."
+      ]
+    }
+  ],
+  "alternatives": [
+    {
+      "key": "site/hero/lecture-hall-empty",
+      "source": "https://commons.wikimedia.org/wiki/File:H%C3%B6rsaal_101_LMU.jpg",
+      "localSource": "/Users/pratap88bhanu/Documents/gitprojects/globalstudyboard/image-pipeline/raw/review-2026-10-23-common/standard-1280-37.jpg",
+      "reason": "Very sharp genuine CC0 own-work photo of LMU Munich lecture hall 101, author Slashme. Not selected because visible NO SMOKING signage and a large dark out-of-focus foreground make Ohio the cleaner general hero."
+    }
+  ],
+  "rejected": [
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Laptop_and_lamp_on_table_(Unsplash).jpg",
+      "reason": "Visible Apple logo on the closed laptop and a manufacturer label on the window frame at 1280px. These cannot be removed by a useful broad crop without losing the intended study-nook subject."
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Coffee,_notebooks_and_pen_(Unsplash).jpg",
+      "reason": "At 1280px, notebook manufacturer emblems and printed marks appear; not genuinely blank stationery. Cropping away those covers loses the intended study-flatlay subject."
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Auditorium,_Windsor_Building,_Royal_Holloway_University_of_London,_Surrey_-_September_2026_-_03.jpg",
+      "reason": "At 1280px, the auditorium photo is visibly soft, grainy and unevenly exposed. The current generated image is higher quality; retain AI fallback."
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:A_lecture_hall_at_SPJIMR.jpg",
+      "reason": "Native 1280x429 panorama yields only about 763x429 after a 16:9 crop. Insufficient quality improvement over the current hero; retain AI fallback."
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Headphones_on_wood_in_black_and_white_(Unsplash).jpg",
+      "reason": "Commons has an Images from Unsplash (review needed) category. License provenance requires resolving that review before adoption; no current replacement."
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Pen_on_a_notebook_(Unsplash).jpg",
+      "reason": "Commons has an Images from Unsplash (review needed) category. License provenance requires resolving that review before adoption; no current replacement."
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:3D_Printing.jpg",
+      "reason": "The portrait image contains prominent printer branding. Cropping the branding away removes too much of the working printer."
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:3D_printed_robotic_gripper.jpg",
+      "reason": "Native 689x785 source and source description identifies bad gear teeth. It is not a sound high quality general engineering hero."
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Laboratory_Microscope.jpg",
+      "reason": "Recognizable school students appear; privacy/minor safeguards exclude it."
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Computer_Lab_(200001422).jpg",
+      "reason": "Recognizable students appear; privacy safeguards exclude it."
+    }
+  ],
+  "retentionRecommendation": "Keep the existing generated image for common exam/journey concepts unless a real source satisfies the same visual relevance, quality, privacy and provenance standards. Avoid forcing unrelated or weak photos into these slots.",
+  "scratch": "image-pipeline/raw/review-2026-10-23-common/ is ignored and contains research-only source images, thumbnails, metadata and contact sheets. Only optimized crops should enter public/images.",
+  "integrationReviewedAt": "2026-10-23",
+  "finalSelectedKeys": [
+    "common/fields/biotechnology-lab",
+    "common/fields/computer-science-lab",
+    "site/hero/lecture-hall-empty"
+  ],
+  "finalIntegrationNotes": "Greenhouse candidate rejected after optimization exceeded the hard byte cap at acceptable quality. Computer laboratory uses the tighter final 2800×1575 crop in photo-selections.json, removing the Windows wallpaper and AOC mark. Final manifest/selection records supersede the initial ready crops."
+}

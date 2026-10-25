@@ -1,0 +1,181 @@
+[
+  {
+    "key": "regions/india/campus-quad-golden-hour",
+    "localSource": "image-pipeline/raw/review-2026-10-23-regions/india-iithyderabad-original.jpg",
+    "alt": "Academic buildings, tree cover and campus roads at IIT Hyderabad in Telangana, India.",
+    "provenance": {
+      "kind": "photo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:IIT_Hyderabad_Campus,_Sanga_Reddy_District,_Telangana.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/IIT_Hyderabad_Campus%2C_Sanga_Reddy_District%2C_Telangana.jpg",
+      "author": "Rohitjahnavi",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidence": "File-specific licensing checked via Commons original page source, revision 1256024501, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+      "verifiedAt": "2026-10-23",
+      "subject": "IIT Hyderabad campus, Sangareddy district, Telangana, India."
+    },
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 3312,
+      "height": 1863
+    }
+  },
+  {
+    "key": "regions/usa/collegiate-brick-autumn",
+    "localSource": "image-pipeline/raw/review-2026-10-23-regions/usa-princeton-original.jpg",
+    "alt": "Stone residential hall architecture at Princeton University in New Jersey, United States.",
+    "provenance": {
+      "kind": "photo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Architecture_of_Holder_and_Madison_Halls,_Princeton_University,_2007.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Architecture_of_Holder_and_Madison_Halls%2C_Princeton_University%2C_2007.jpg",
+      "author": "DimiTalen",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidence": "File-specific licensing checked via Commons original page source, revision 1062628591, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+      "verifiedAt": "2026-10-23",
+      "subject": "Architecture of Holder and Madison Halls at Princeton University, Princeton, New Jersey, United States.",
+      "institutionSlug": "princeton-university"
+    },
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 3008,
+      "height": 1692
+    }
+  },
+  {
+    "key": "regions/canada/maple-campus-autumn",
+    "localSource": "image-pipeline/raw/review-2026-10-23-regions/canada-laval-original.jpg",
+    "alt": "The Desjardins pavilion at Université Laval with snow in the foreground, Quebec City, Canada.",
+    "provenance": {
+      "kind": "photo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_building_at_Universite_Laval.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/University_building_at_Universite_Laval.jpg",
+      "author": "Wilfredor",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidence": "File-specific licensing checked via Commons original page source, revision 1269748958, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+      "verifiedAt": "2026-10-23",
+      "subject": "Boulevard René-Lévesque facade of the Desjardins pavilion at Université Laval, Quebec City, Quebec, Canada."
+    },
+    "crop": {
+      "left": 0,
+      "top": 650,
+      "width": 8256,
+      "height": 4644
+    }
+  },
+  {
+    "key": "regions/uk-ireland/honey-stone-quad",
+    "localSource": "image-pipeline/raw/review-2026-10-23-regions/uk-manchester-original.jpg",
+    "alt": "Historic university buildings and a central tower on Oxford Road at the University of Manchester, England, United Kingdom.",
+    "provenance": {
+      "kind": "photo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_University_Of_Manchester_Oxford_Road.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/The_University_Of_Manchester_Oxford_Road.jpg",
+      "author": "MichaelDavidBeckwith",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidence": "File-specific licensing checked via Commons original page source, revision 1117316415, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+      "verifiedAt": "2026-10-23",
+      "subject": "University of Manchester buildings on Oxford Road, Manchester, England, United Kingdom.",
+      "institutionSlug": "university-of-manchester"
+    },
+    "crop": {
+      "left": 696,
+      "top": 0,
+      "width": 6800,
+      "height": 3825
+    }
+  },
+  {
+    "key": "regions/europe/continental-courtyard",
+    "localSource": "image-pipeline/raw/review-2026-10-23-regions/europe-amsterdam-original.jpg",
+    "alt": "Brick and reflective metal university buildings at the Roeterseiland campus in Amsterdam, the Netherlands.",
+    "provenance": {
+      "kind": "photo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Modern_architecture_of_university_buildings_at_the_campus_Roeterseiland;_free_photo_Amsterdam,_Fons_Heijnsbroek_10-2021.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Modern_architecture_of_university_buildings_at_the_campus_Roeterseiland%3B_free_photo_Amsterdam%2C_Fons_Heijnsbroek_10-2021.jpg",
+      "author": "Fons Heijnsbroek",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidence": "File-specific licensing checked via Commons original page source, revision 1264579317, and imageinfo extmetadata on 2026-10-23. The photographer marks the source as own work and explicitly applies {{self|cc-zero}}, with the CC0 1.0 dedication linked for this individual photograph.",
+      "verifiedAt": "2026-10-23",
+      "subject": "University buildings at the Roeterseiland campus, Amsterdam, the Netherlands.",
+      "institutionSlug": "university-of-amsterdam"
+    },
+    "crop": {
+      "left": 1920,
+      "top": 640,
+      "width": 2800,
+      "height": 1575
+    }
+  },
+  {
+    "key": "common/fields/biotechnology-lab",
+    "localSource": "image-pipeline/raw/review-2026-10-23-common/original-00.jpg",
+    "alt": "Close view of a monocular microscope on a wooden laboratory bench.",
+    "provenance": {
+      "kind": "photo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Biology_microscope.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Biology_microscope.jpg",
+      "author": "J.Doniyorovich",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+      "verifiedAt": "2026-10-23",
+      "subject": "Laboratory microscope"
+    },
+    "crop": {
+      "left": 600,
+      "top": 0,
+      "width": 5100,
+      "height": 2869
+    }
+  },
+  {
+    "key": "common/fields/computer-science-lab",
+    "localSource": "image-pipeline/raw/review-2026-10-23-common/original-04.jpg",
+    "alt": "Rows of desktop computers and black chairs in an empty university computer laboratory.",
+    "provenance": {
+      "kind": "photo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:De_La_Salle_University_%E2%80%93_Dasmari%C3%B1as_(DLSU%E2%80%93D)_Information_and_Communications_Technology_Center_(ICTC)_laboratory_room_203_(ICT203)_%E2%80%94_normal_view.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/De_La_Salle_University_%E2%80%93_Dasmari%C3%B1as_%28DLSU%E2%80%93D%29_Information_and_Communications_Technology_Center_%28ICTC%29_laboratory_room_203_%28ICT203%29_%E2%80%94_normal_view.jpg",
+      "author": "UndueMarmot",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+      "verifiedAt": "2026-10-23",
+      "subject": "ICTC computer laboratory, De La Salle University–Dasmariñas, Philippines"
+    },
+    "crop": {
+      "left": 1080,
+      "top": 600,
+      "width": 2800,
+      "height": 1575
+    }
+  },
+  {
+    "key": "site/hero/lecture-hall-empty",
+    "localSource": "image-pipeline/raw/review-2026-10-23-common/standard-1280-38.jpg",
+    "alt": "An empty university lecture hall with tiered seats and two projection screens.",
+    "provenance": {
+      "kind": "photo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ohio_University_Lecture_Hall.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ohio_University_Lecture_Hall.jpg",
+      "author": "Garden Sprite",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidence": "File-specific Wikimedia Commons Licensing section declares CC0 1.0 Universal Public Domain Dedication; photographer identifies this as their own work. Imageinfo extmetadata license=cc0, LicenseShortName=CC0, AttributionRequired=false, Restrictions empty. File preview and crop were visually inspected at 1280px or above; no identifiable people, religious symbols, political subjects, logos, personal data or watermarks found.",
+      "verifiedAt": "2026-10-23",
+      "subject": "Morton Hall lecture hall, Ohio University, USA"
+    },
+    "crop": {
+      "left": 0,
+      "top": 100,
+      "width": 1280,
+      "height": 720
+    }
+  }
+]

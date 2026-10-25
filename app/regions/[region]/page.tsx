@@ -191,7 +191,7 @@ export default async function RegionHubPage({ params }: Props) {
           )}
           <LastUpdated date={SITE_REVIEWED} className="mt-4" />
 
-          {/* Destination atmosphere — an archetype, never a named campus. LCP for this page. */}
+          {/* Destination atmosphere: credited local photo or labelled AI scene. LCP for this page. */}
           <ContentImage asset={regionImage(r.slug)} variant="hero" priority className="mt-8" />
         </header>
 

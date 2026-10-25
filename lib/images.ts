@@ -293,14 +293,40 @@ export function guideImage(g: { slug: string; category: GuideCategory; region: R
   return (pool ? pickFromKeys(pool, g.slug) : null) ?? imageFor({ region: g.region, seed: g.slug });
 }
 
+// Academic scenes only: a university profile should not receive a destination's
+// countryside, skyline or holiday coastline merely because it is in the same pool.
+const COLLEGE_ACADEMIC_SCENES: readonly string[] = [
+  'regions/india/campus-quad-golden-hour', 'regions/india/library-reading-room',
+  'regions/usa/collegiate-brick-autumn', 'regions/usa/campus-green-clocktower', 'regions/usa/study-commons-interior',
+  'regions/canada/maple-campus-autumn',
+  'regions/uk-ireland/honey-stone-quad', 'regions/uk-ireland/wood-panelled-library',
+  'regions/europe/continental-courtyard', 'regions/europe/modern-study-hall',
+  'regions/australia-nz/sunny-modern-campus', 'regions/australia-nz/glass-learning-centre',
+  'regions/russia/classical-building-winter', 'regions/russia/ornate-lecture-hall',
+  'regions/middle-east/desert-campus-architecture', 'regions/middle-east/bright-library-interior',
+  'regions/east-southeast-asia/hightech-campus-blossom', 'regions/east-southeast-asia/futuristic-study-commons',
+];
+const COLLEGE_NEUTRAL_SCENES: readonly string[] = [
+  'site/hero/homepage-campus-avenue-dawn', 'site/hero/golden-hour-quad', 'site/hero/campus-gateway-arch',
+];
+
 /**
  * Hero for a NAMED college page. Deliberately keyed on region + slug-seeded rotation,
- * never on the institution — there is no path by which this can select an image that
- * "matches" a real campus. Render with <ContentImage representative /> so the label
- * states plainly that it is not a photograph of that institution.
+ * uses an explicitly reviewed exact-institution photograph when one is available.
+ * Otherwise it selects only reviewed AI, never a photograph of another institution.
+ * Render with <ContentImage representative /> for the on-image disclosure.
  */
 export function collegeImage(c: { slug: string; region: RegionSlug }): ImageAsset | null {
-  return imageFor({ region: c.region, seed: c.slug });
+  const exact = KEYS.find((key) => {
+    const source = IMAGE_REGISTRY[key].provenance;
+    return source.kind === 'photo' && source.institutionSlug === c.slug &&
+      key.startsWith(`regions/${c.region}/`);
+  });
+  if (exact) return get(exact);
+  const academic = COLLEGE_ACADEMIC_SCENES.filter((key) =>
+    key.startsWith(`regions/${c.region}/`) && IMAGE_REGISTRY[key]?.provenance.kind === 'ai');
+  const neutral = COLLEGE_NEUTRAL_SCENES.filter((key) => IMAGE_REGISTRY[key]?.provenance.kind === 'ai');
+  return pickFromKeys(academic, c.slug) ?? pickFromKeys(neutral, c.slug);
 }
 
 import type { TopicGroup } from '@/lib/topics';

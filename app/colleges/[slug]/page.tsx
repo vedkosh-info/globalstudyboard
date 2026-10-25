@@ -232,9 +232,8 @@ export default async function CollegeDetailPage({ params }: Props) {
         <AddToCompareButton slug={college.slug} name={college.nameEn} region={college.region} url={college.websiteUrl} />
       </div>
 
-      {/* Representative campus archetype for this destination — NEVER a depiction of this
-          institution (there is no code path that could select one). Renders nothing until
-          the image library exists. `representative` forces the honest on-image label. */}
+      {/* An explicitly verified photo of this institution, or a labelled AI scene.
+          collegeImage never substitutes a photograph of a different university. */}
       <ContentImage
         asset={collegeImage({ slug: college.slug, region: college.region })}
         variant="hero"

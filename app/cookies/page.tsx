@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMetadata({
   path: '/cookies',
 });
 
-const LAST_UPDATED = '29 September 2026';
+const LAST_UPDATED = '25 October 2026';
 
 function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
@@ -31,7 +31,8 @@ function Section({ id, title, children }: { id?: string; title: string; children
  * items are described from what the code writes — lib/auth-events.ts (the
  * sign-in marker and resume note, written by components/auth/LoginForm and
  * read by AuthProvider and the Save / Add buttons), components/ContentActions
- * (the "Helpful" mark), hooks/useHistory (recent pages) and lib/feedback-draft;
+ * (the "Helpful" mark), hooks/useHistory (recent pages), lib/feedback-draft
+ * and lib/notifications/store (which notifications were read or dismissed);
  * change this page in the same commit as any of them (§9.4).
  *
  * The -code-verifier cookies are the SDK's own (PKCE). auth-js 2.116 writes
@@ -63,6 +64,7 @@ const COOKIE_TYPES: { name: string; purpose: string | string[]; consent: string 
       'If you start writing feedback, the unsent text is kept in your browser\u2019s local storage so you can finish later; it is cleared when you send or discard it, or after seven days.',
       'The \u201cRecent pages\u201d drawer keeps a short list of the pages you opened (address, title and when you opened them) in local storage on this device only \u2014 never the sign-in, account or admin pages \u2014 which you can clear from the drawer itself.',
       'If you mark a guide, university or exam page as \u201cHelpful\u201d, that mark \u2014 the page\u2019s address, no identifier \u2014 is kept in local storage on this device until you press the button again or clear your browser data. It is never sent to us.',
+      'The notification bell remembers which notices you have read or dismissed, in local storage on this device (gsb-notifications-v1). Each entry is a notice id and the time you read or dismissed it \u2014 no account id, and nothing in it is sent to us. A visitor sees each notice again the next day. A signed-in student sees the site note and the Android early-access note again after seven days, and does not see the account note. Entries older than 90 days are removed. Clearing your browser data shows the current notices again.',
     ],
     consent: 'Always on',
   },

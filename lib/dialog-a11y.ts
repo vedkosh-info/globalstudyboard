@@ -17,10 +17,11 @@ export const FOCUSABLE =
 /**
  * Everything that must go inert while a dialog is open. `header`/`main`/`footer`
  * are the page; the context bar sits BETWEEN header and main so a three-selector
- * sweep misses it; the quick-actions dock is a top-level sibling of the dialog
- * and would otherwise stay tabbable underneath it.
+ * sweep misses it; the notification panel is portaled to the body; the
+ * quick-actions dock is a top-level sibling of the dialog and would otherwise
+ * stay tabbable underneath it.
  */
-export const BACKGROUND = ['header', 'main', 'footer', '[data-gsb-context-bar]', '.gsb-dock'];
+export const BACKGROUND = ['header', 'main', 'footer', '[data-gsb-context-bar]', '[data-gsb-notifications]', '.gsb-dock'];
 
 /** Lock body scroll + inert the page; returns the function that undoes both. */
 export function lockBackground(): () => void {

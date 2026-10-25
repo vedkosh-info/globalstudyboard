@@ -38,10 +38,11 @@ const FOCUSABLE =
 /**
  * Everything that must go inert while the dialog is open. `header`/`main`/`footer`
  * are the page; the context bar sits BETWEEN header and main so a three-selector
- * sweep misses it; the quick-actions dock is a top-level sibling of the dialog and
- * would otherwise stay tabbable underneath it.
+ * sweep misses it; the notification panel is portaled to the body; the
+ * quick-actions dock is a top-level sibling of the dialog and would otherwise
+ * stay tabbable underneath it.
  */
-const BACKGROUND = ['header', 'main', 'footer', '[data-gsb-context-bar]', '.gsb-dock'];
+const BACKGROUND = ['header', 'main', 'footer', '[data-gsb-context-bar]', '[data-gsb-notifications]', '.gsb-dock'];
 
 type Status = 'idle' | 'submitting' | 'done' | 'error';
 

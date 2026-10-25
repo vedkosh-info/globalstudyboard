@@ -1,6 +1,7 @@
 import { preload } from 'react-dom';
 import AiImageBadge from '@/components/AiImageBadge';
 import type { ImageAsset } from '@/lib/images';
+import { IMAGE_COPY } from '@/lib/image-policy';
 
 // The ONE way images render on GlobalStudyBoard. Server component — never add
 // 'use client' (nothing here is interactive, and the registry must stay off the
@@ -13,13 +14,14 @@ import type { ImageAsset } from '@/lib/images';
 // - Lazy by default; `priority` for the single LCP hero (eager + fetchPriority=high
 //   + a <link rel=preload> in <head> so the scanner finds it before the body parses).
 // - `alt` is required by the registry and is always honest (describes what is shown).
-// - ALWAYS labelled, ON the image. Independent QA (22 Aug 2026, content-policy §14)
+// - AI images are labelled ON the image. Independent QA (22 Aug 2026, content-policy §14)
 //   ruled that a line on /disclaimer alone is not sufficient: consumer/advertising law
 //   across our audience countries turns on the impression created ON THE PAGE, and the
 //   European Commission's Art. 50 FAQ (Art. 50 applies since 2 Aug 2026) says a
 //   disclosure must be perceivable — e.g. a visible label — "upon first exposure at the
-//   latest". Every image is an AI archetype (owner decision 12 Sep 2026 — no real
-//   photographs), so the label always says so. Owner decision 20 Sep 2026: wording
+//   latest". Owner instruction 23 Oct 2026 permits reviewed open photographs;
+//   those get source/creator/license credits below the image. AI images retain
+//   the owner decision 20 Sep 2026 wording:
 //   "Illustration · not a photo", the text itself linked to the image policy, Back
 //   must work. Owner decision 22 Sep 2026 (an EXPLICIT OVERRIDE, logged in the audit
 //   log — the 18 Sep review had recommended the words stay visible at rest): only
@@ -38,8 +40,9 @@ interface Props {
   /** True for the page's LCP image only. */
   priority?: boolean;
   /**
-   * Set on pages about a NAMED real entity (a college profile). The image is an
-   * archetype, and sitting beside a real institution's name it must say so plainly.
+   * Set on pages about a NAMED real entity (a college profile). An AI archetype
+   * sitting beside a real institution's name must say so plainly; a verified
+   * photograph has its exact subject and source credited instead.
    * Constrained flag, not free text, so a caller cannot write a misleading caption.
    */
   representative?: boolean;
@@ -52,8 +55,6 @@ const SIZES = {
   hero: '(min-width: 1024px) 768px, (min-width: 640px) 90vw, 100vw',
   card: '(min-width: 1024px) 360px, (min-width: 640px) 45vw, 100vw',
 } as const;
-
-const DISCLAIMER_ANCHOR = '/disclaimer#ai-generated-images';
 
 export default function ContentImage({
   asset,
@@ -82,9 +83,8 @@ export default function ContentImage({
     preload(asset.src, { as: 'image', type: 'image/avif', imageSrcSet: avif, imageSizes: sizes, fetchPriority: 'high' });
   }
 
-  // Both wordings are unconditionally true for every image in the library. "Institution"
-  // (not "campus" / "university") is the one noun true for all 118 college records and
-  // has no "another campus of the same university" reading on multi-campus universities.
+  const photo = asset.provenance.kind === 'photo' ? asset.provenance : null;
+  // collegeImage() excludes photographs of other institutions before rendering.
   const negation = representative ? 'not this institution' : 'not a photo';
 
   return (
@@ -105,20 +105,34 @@ export default function ContentImage({
           className={`w-full h-auto bg-cream-100 border border-stone-200 ${hero ? 'rounded-2xl' : 'rounded-xl'}`}
         />
       </picture>
-      {/* The disclosure, top-right INSIDE the figure (12px inset clears the rounded
-          corner); collapsed to the (i) at rest — see AiImageBadge for the behaviour
-          and the contrast/print notes. The figcaption keeps the image ↔ caption
-          semantics; the visible middle dot is decorative, the spoken form uses a comma. */}
-      <figcaption
-        className={`absolute z-10 max-w-[calc(100%-1.5rem)] ${hero ? 'top-3 right-3' : 'top-2 right-2'}`}
-      >
-        <AiImageBadge
-          label={`Illustration \u00b7 ${negation}`}
-          spokenLabel={`Illustration, ${negation}`}
-          href={DISCLAIMER_ANCHOR}
-          variant={variant}
-        />
-      </figcaption>
+      {/* Photographs have visible credits below the image. AI disclosure stays
+          top-right inside it, collapsed to (i) per the owner's preference.
+          Both branches use figcaption to preserve image/caption semantics. */}
+      {photo ? (
+        <figcaption className="mt-2 text-xs leading-relaxed text-stone-600 break-words">
+          {IMAGE_COPY.photo}: {' '}
+          <a href={photo.sourceUrl} className="underline underline-offset-2 hover:text-forest-700">
+            {photo.subject}
+          </a>
+          {' · '}{photo.author}{' · '}
+          <a href={photo.licenseUrl} className="underline underline-offset-2 hover:text-forest-700">
+            {photo.license === 'CC0-1.0' ? IMAGE_COPY.cc0 : IMAGE_COPY.publicDomain}
+          </a>
+          {' · '}{IMAGE_COPY.cropped}
+        </figcaption>
+      ) : (
+        <figcaption
+          className={`absolute z-10 max-w-[calc(100%-1.5rem)] ${hero ? 'top-3 right-3' : 'top-2 right-2'}`}
+        >
+          <AiImageBadge
+            label={`Illustration \u00b7 ${negation}`}
+            spokenLabel={`Illustration, ${negation}`}
+            href={IMAGE_COPY.policyHref}
+            policyLinkLabel={IMAGE_COPY.policyLinkLabel}
+            variant={variant}
+          />
+        </figcaption>
+      )}
     </figure>
   );
 }
