@@ -4,6 +4,7 @@ import { Send, RotateCcw, Bot, Sparkles } from 'lucide-react';
 import { useRegion } from '@/components/RegionProvider';
 import ReportAIResponse from '@/components/ReportAIResponse';
 import { getRegionBySlug, REGION_SLUGS, type RegionSlug } from '@/lib/regions';
+import { CHAT_UI } from '@/lib/chat-ui';
 
 /** Parse a prefill from the fragment (`#q=…` / `#region=…`) or a legacy `?q=` / `?region=` query. */
 function readPrefill(): { q?: string; region?: RegionSlug } {
@@ -35,40 +36,65 @@ const EXAMPLE_QUESTIONS = [
 export default function GSBAIChat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
-  // A destination named in the link that opened the chat (`#region=`) — it wins
-  // over the site-wide effective region for this conversation only.
-  const [region, setRegionOverride] = useState<RegionSlug | undefined>(undefined);
+  const [hintReady, setHintReady] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const messagesRef = useRef<HTMLDivElement>(null);
+  const followLatestRef = useRef(true);
   const abortRef = useRef<AbortController | null>(null);
-  const { effectiveRegion } = useRegion();
+  const { effectiveRegion, region: chosenRegion, setPageRegion, ready } = useRegion();
+  const chosenRegionRef = useRef(chosenRegion);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    chosenRegionRef.current = chosenRegion;
+  }, [chosenRegion]);
+
+  useEffect(() => {
+    // Keep streaming inside the conversation. scrollIntoView also moved the
+    // document on the empty first render and pulled readers away from earlier
+    // answers. Only follow while the student is already near the bottom; an
+    // instant scroll avoids starting a new animation for every incoming chunk.
+    const panel = messagesRef.current;
+    if (panel && messages.length > 0 && followLatestRef.current) {
+      panel.scrollTo({ top: panel.scrollHeight, behavior: 'auto' });
+    }
   }, [messages]);
+
+  useEffect(() => () => abortRef.current?.abort(), []);
 
   // Prefill from the URL fragment (or a legacy query) on mount and whenever the
   // fragment changes while the page stays mounted (a hash link clicked on /ask
   // itself does not remount the route).
   useEffect(() => {
+    if (!ready) return;
     const apply = () => {
       const { q, region: r } = readPrefill();
-      if (r) setRegionOverride(r);
-      const regionName = r ? getRegionBySlug(r)?.proseName : undefined;
+      // A link's destination is provisional context, exactly like PageRegion:
+      // never a cookie and never stronger than the student's remembered choice.
+      // Read it independently of q so a paired question/destination keeps both.
+      setPageRegion(r ?? null);
+      const destination = chosenRegionRef.current ?? r;
+      const regionName = destination ? getRegionBySlug(destination)?.proseName : undefined;
       if (q) setInput(q);
       else if (regionName) setInput(`I'm planning to study in ${regionName}. Where should I start?`);
+      setHintReady(true);
     };
     apply();
     window.addEventListener('hashchange', apply);
-    return () => window.removeEventListener('hashchange', apply);
-  }, []);
+    window.addEventListener('popstate', apply);
+    return () => {
+      window.removeEventListener('hashchange', apply);
+      window.removeEventListener('popstate', apply);
+      setPageRegion(null);
+    };
+  }, [ready, setPageRegion]);
 
   const sendMessage = async (text: string) => {
-    if (!text.trim() || isLoading) return;
+    if (!text.trim() || isLoading || !hintReady) return;
 
     setInput('');
     setError(null);
+    followLatestRef.current = true;
 
     const userMsg: Message = { id: `u-${Date.now()}`, role: 'user', content: text.trim() };
     const asstId = `a-${Date.now() + 1}`;
@@ -87,7 +113,7 @@ export default function GSBAIChat() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: context.map(({ role, content }) => ({ role, content })),
-          region: region ?? effectiveRegion,
+          region: effectiveRegion,
         }),
         signal: abortRef.current.signal,
       });
@@ -135,7 +161,7 @@ export default function GSBAIChat() {
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-terracotta-300" />
           <span className="font-semibold text-sm">Ask GSB</span>
-          <span className="text-cream-50/60 text-xs hidden sm:inline">
+          <span className="text-cream-50/80 text-xs hidden sm:inline">
             · Study questions
           </span>
         </div>
@@ -144,6 +170,7 @@ export default function GSBAIChat() {
             type="button"
             onClick={() => {
               abortRef.current?.abort();
+              followLatestRef.current = true;
               setMessages([]);
               setError(null);
             }}
@@ -156,7 +183,19 @@ export default function GSBAIChat() {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 py-5 space-y-4 min-h-[340px] max-h-[420px]">
+      <div
+        ref={messagesRef}
+        role="log"
+        aria-label={CHAT_UI.conversationLabel}
+        aria-live="polite"
+        aria-relevant="additions text"
+        aria-busy={isLoading}
+        onScroll={(event) => {
+          const panel = event.currentTarget;
+          followLatestRef.current = panel.scrollHeight - panel.scrollTop - panel.clientHeight < 48;
+        }}
+        className="flex-1 overflow-y-auto px-4 py-5 space-y-4 min-h-[340px] max-h-[420px]"
+      >
         {isEmpty ? (
           <div className="text-center py-10">
             <Bot className="w-10 h-10 text-forest-300 mx-auto mb-3" />
@@ -172,7 +211,7 @@ export default function GSBAIChat() {
               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className={`max-w-[82%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                className={`max-w-[92%] rounded-2xl px-4 py-3 text-base leading-relaxed sm:max-w-[85%] ${
                   msg.role === 'user'
                     ? 'bg-forest-700 text-cream-50 rounded-br-sm'
                     : 'bg-cream-50 border border-stone-200 text-stone-800 rounded-bl-sm'
@@ -185,16 +224,8 @@ export default function GSBAIChat() {
                 )}
                 <div className="whitespace-pre-wrap">
                   {msg.content || (isLoading ? (
-                    // motion-safe: the dots bounce (translateY) and the word
-                    // pulses only for visitors who have not asked for less
-                    // motion; otherwise "Typing..." simply sits still (§15.3).
-                    // The stagger stays inline: the `animation` shorthand the
-                    // utility sets would reset a class-level delay to 0.
-                    <span className="text-stone-500 flex gap-0.5 items-center">
-                      <span className="motion-safe:animate-pulse">Typing</span>
-                      <span className="motion-safe:animate-bounce" style={{ animationDelay: '0ms' }}>.</span>
-                      <span className="motion-safe:animate-bounce" style={{ animationDelay: '150ms' }}>.</span>
-                      <span className="motion-safe:animate-bounce" style={{ animationDelay: '300ms' }}>.</span>
+                    <span className="text-stone-500 motion-safe:animate-pulse">
+                      {CHAT_UI.typing}
                     </span>
                   ) : null)}
                 </div>
@@ -209,12 +240,11 @@ export default function GSBAIChat() {
         )}
 
         {error && (
-          <p className="text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2 text-center">
+          <p role="alert" className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-3 py-2 text-center">
             {error}
           </p>
         )}
 
-        <div ref={bottomRef} />
       </div>
 
       {/* Example pills — only when empty */}
@@ -227,6 +257,7 @@ export default function GSBAIChat() {
                 key={q}
                 type="button"
                 onClick={() => void sendMessage(q)}
+                disabled={!hintReady}
                 className="text-xs bg-cream-50 border border-stone-200 text-stone-700 hover:border-forest-300 hover:text-forest-700 px-3 py-1.5 rounded-full transition-colors text-left"
               >
                 {q}
@@ -245,14 +276,16 @@ export default function GSBAIChat() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about universities, exams, study abroad..."
-          className="flex-1 bg-cream-50 border border-stone-450 rounded-xl px-4 py-2.5 text-base sm:text-sm text-stone-800 placeholder-stone-500 focus:outline-none focus:border-forest-600 focus:bg-white transition-colors"
+          aria-label={CHAT_UI.questionLabel}
+          enterKeyHint="send"
+          className="min-w-0 flex-1 bg-cream-50 border border-stone-450 rounded-xl px-4 py-2.5 text-base text-stone-800 placeholder-stone-500 focus:outline-none focus:border-forest-600 focus:bg-white transition-colors"
           maxLength={1500}
-          disabled={isLoading}
+          disabled={isLoading || !hintReady}
           autoComplete="off"
         />
         <button
           type="submit"
-          disabled={isLoading || !input.trim()}
+          disabled={isLoading || !hintReady || !input.trim()}
           aria-label="Send message"
           className="bg-forest-700 hover:bg-forest-800 disabled:bg-stone-200 disabled:cursor-not-allowed text-cream-50 disabled:text-stone-400 rounded-xl px-4 py-2.5 transition-colors"
         >

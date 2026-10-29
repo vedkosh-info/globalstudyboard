@@ -41,10 +41,10 @@ function GuideLink({ g, hidden }: { g: GuideCard; hidden: boolean }) {
           {g.readMinutes} min read
         </span>
       </div>
-      <h2 className="font-display text-lg font-bold tracking-editorial text-ink leading-snug mb-2 group-hover:text-forest-700">
+      <h2 className="font-display text-xl font-bold tracking-editorial text-ink leading-snug mb-2 group-hover:text-forest-700">
         {g.titleEn}
       </h2>
-      <p className="text-stone-600 text-sm leading-relaxed m-0 flex-1">{g.descriptionEn}</p>
+      <p className="text-stone-600 text-base leading-relaxed m-0 flex-1">{g.descriptionEn}</p>
       <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
         Read guide <ArrowUpRight className="w-4 h-4" />
       </span>

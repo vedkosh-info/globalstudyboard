@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
+import { SCHOLARSHIP_ACCOUNT_COPY } from '@/lib/scholarship-options';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Privacy Policy',
@@ -95,8 +96,9 @@ export default function PrivacyPage() {
             everything you enter into the Test Score Tracker (the test, the score exactly as you
             received it, any section scores, the date you sat the test — a sitting you have only
             booked belongs in the Application Planner instead — and your private note; please keep
-            registration numbers, dates of birth and ID numbers out of it); for every entry in these
-            four tools, when you first saved it and when you last changed it;
+            registration numbers, dates of birth and ID numbers out of it);
+            {SCHOLARSHIP_ACCOUNT_COPY.stored} For every entry in these tools, we store
+            when you first saved it and when you last changed it;
             the date and time you accepted our Terms and read this policy; and, only if we ever had
             to suspend your account, a short note explaining why (see &ldquo;How long we keep
             it&rdquo;). We never ask for a password, your date of birth, your nationality, a phone
@@ -117,9 +119,7 @@ export default function PrivacyPage() {
             side.
           </li>
           <li>
-            <strong>Why</strong> — solely to run your account: to sign you in, keep your saved pages,
-            planner, budgets, comparisons, test scores and preferences across devices, and answer
-            your requests. We do not use your account for marketing, and we never sell or share it.
+            <strong>Why</strong> — {SCHOLARSHIP_ACCOUNT_COPY.purpose}
           </li>
           <li>
             <strong>Where and who processes it</strong> — your account data is held for us by{' '}

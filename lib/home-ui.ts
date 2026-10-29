@@ -1,0 +1,27 @@
+// Destination-neutral interface copy for the home page's server/client slots.
+export const HOME_UI = {
+  eyebrow: 'Your next study destination',
+  heading: 'Universities, exams & scholarships.',
+  headingAccent: 'Plan your next step.',
+  destination: 'Exploring',
+  introduction: 'Explore university profiles, admission guides and official sources for your chosen destination.',
+  ask: 'Ask GSB',
+  featured: 'Featured university',
+  questions: 'Start with a useful guide',
+  explore: 'Explore',
+  universitiesHeading: 'Explore universities in',
+  universitiesDescription: 'Browse profiles, then check current application details on the university’s official website.',
+  testsDescription: 'Explore test guides and follow the examination body’s official links.',
+  planningDescription: 'Find application guides, funding information and personal planning tools for your destination.',
+  whyEyebrow: 'Why GlobalStudyBoard',
+  whyHeading: 'One reference, every destination.',
+  whyDescription: 'Start with where you want to study. Explore universities, exams, admissions, costs and scholarships across the United States, the UK and Ireland, Canada, Europe, Australia and New Zealand, East and Southeast Asia, the Middle East, Russia and the CIS, and India. Follow the official sources linked in our guides to check the details before you apply.',
+  tools: 'Application tools',
+  regions: 'See all destinations',
+  shortcuts: [
+    { category: 'universities', label: 'Universities', description: 'Explore profiles and application routes.' },
+    { category: 'exams', label: 'Entrance tests', description: 'Find test guides and official registration links.' },
+    { category: 'guides', label: 'Admission guides', description: 'Work through your next application step.' },
+    { category: 'scholarships', label: 'Scholarships', description: 'Explore funding guides and eligibility sources.' },
+  ],
+} as const;

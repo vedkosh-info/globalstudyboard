@@ -1,7 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Flag, X } from 'lucide-react';
+import { lockBackground, trapTab } from '@/lib/dialog-a11y';
 
 /**
  * "Report this response" control for a single GSB AI answer.
@@ -19,10 +21,22 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
 
   const dialogRef = useRef<HTMLDivElement>(null);
   const openerRef = useRef<HTMLButtonElement>(null);
+  const sendingRef = useRef(false);
+  const pressStartedOnBackdrop = useRef(false);
+
+  const close = useCallback(() => {
+    if (sendingRef.current) return;
+    setOpen(false);
+    setState('idle');
+    setDetail('');
+    setReason('inaccurate');
+  }, []);
 
   // Move focus into the dialog on open, restore it to the trigger on close.
   useEffect(() => {
     if (!open) return;
+    const unlock = lockBackground(dialogRef.current);
+    const opener = openerRef.current;
     // Land on the first radio rather than the close button, so a keyboard or
     // screen-reader user starts on the actual question.
     const first =
@@ -31,17 +45,26 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
     first?.focus();
 
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        close();
+      }
     };
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [open]);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      unlock();
+      if (opener?.isConnected) opener.focus();
+    };
+  }, [open, close]);
 
   useEffect(() => {
-    if (!open) openerRef.current?.focus();
-  }, [open]);
+    if (open && state === 'sending') dialogRef.current?.focus();
+  }, [open, state]);
 
   const submit = async () => {
+    if (sendingRef.current) return;
+    sendingRef.current = true;
     setState('sending');
     try {
       const res = await fetch('/api/report-ai', {
@@ -52,14 +75,9 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
       setState(res.ok ? 'sent' : 'error');
     } catch {
       setState('error');
+    } finally {
+      sendingRef.current = false;
     }
-  };
-
-  const close = () => {
-    setOpen(false);
-    setState('idle');
-    setDetail('');
-    setReason('inaccurate');
   };
 
   return (
@@ -75,20 +93,28 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
         Report this response
       </button>
 
-      {open && (
+      {open && createPortal(
         <div
           // Top of the stack: above the quick-actions dock (z-1200), the
           // recent-pages backdrop/panel (z-1300/z-1400), the tester-invite
           // dialog (z-1550) and the sign-in sheet (z-1575). (The destination
           // picker that used to sit at z-1500 is deleted; no z-1500 layer remains.)
           className="fixed inset-0 z-[1600] flex items-end sm:items-center justify-center bg-stone-900/50 p-0 sm:p-4"
-          onClick={close}
+          onMouseDown={(event) => {
+            pressStartedOnBackdrop.current = event.target === event.currentTarget;
+          }}
+          onClick={(event) => {
+            if (event.target === event.currentTarget && pressStartedOnBackdrop.current) close();
+            pressStartedOnBackdrop.current = false;
+          }}
         >
           <div
             ref={dialogRef}
             role="dialog"
             aria-modal="true"
             aria-labelledby="report-ai-title"
+            tabIndex={-1}
+            onKeyDown={(event) => trapTab(event, dialogRef.current)}
             onClick={(e) => e.stopPropagation()}
             className="w-full sm:max-w-md bg-cream-50 rounded-t-2xl sm:rounded-2xl border border-stone-200 shadow-xl p-5 max-h-[90vh] overflow-y-auto"
           >
@@ -99,6 +125,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
               <button
                 type="button"
                 onClick={close}
+                disabled={state === 'sending'}
                 aria-label="Close"
                 className="text-stone-600 hover:text-forest-800 p-1 -m-1"
               >
@@ -107,7 +134,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
             </div>
 
             {state === 'sent' ? (
-              <div className="mt-4">
+              <div role="status" className="mt-4">
                 <p className="text-sm text-stone-800">
                   Thanks — your report has been sent. We review reported answers and correct the
                   underlying guides where needed.
@@ -131,7 +158,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
                   helps us fix it. We don&apos;t ask for your name or email.
                 </p>
 
-                <fieldset className="mt-4">
+                <fieldset className="mt-4" disabled={state === 'sending'}>
                   <legend className="text-xs font-semibold text-stone-700 uppercase tracking-wide">
                     What&apos;s wrong with it?
                   </legend>
@@ -163,6 +190,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
                     Details (optional)
                   </span>
                   <textarea
+                    disabled={state === 'sending'}
                     value={detail}
                     onChange={(e) => setDetail(e.target.value)}
                     rows={3}
@@ -175,7 +203,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
                 </label>
 
                 {state === 'error' && (
-                  <p className="mt-3 text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                  <p role="alert" className="mt-3 text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
                     That didn&apos;t send. Please try again in a moment.
                   </p>
                 )}
@@ -184,6 +212,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
                   <button
                     type="button"
                     onClick={close}
+                    disabled={state === 'sending'}
                     className="flex-1 rounded-xl border border-stone-300 text-sm font-medium py-2.5 text-stone-700 hover:bg-stone-100"
                   >
                     Cancel
@@ -192,6 +221,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
                     type="button"
                     onClick={submit}
                     disabled={state === 'sending'}
+                    aria-busy={state === 'sending'}
                     className="flex-1 rounded-xl bg-forest-700 text-cream-50 text-sm font-medium py-2.5 hover:bg-forest-800 disabled:opacity-60"
                   >
                     {state === 'sending' ? 'Sending…' : 'Send report'}
@@ -201,7 +231,7 @@ export default function ReportAIResponse({ answer }: { answer: string }) {
             )}
           </div>
         </div>
-      )}
+      , document.body)}
     </>
   );
 }

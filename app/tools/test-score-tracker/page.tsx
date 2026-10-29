@@ -106,28 +106,29 @@ export default function TestScoreTrackerPage() {
       <header className="max-w-3xl">
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-forest-700">Tool · Free with an account</p>
         <h1 className="font-display text-4xl font-bold tracking-editorial text-ink sm:text-5xl">{tool.name}</h1>
-        <p className="mt-4 text-lg leading-relaxed text-stone-700">{tool.description}</p>
+        <p className="mt-4 text-lg leading-relaxed text-stone-700">{tool.tagline}</p>
       </header>
-
-      <section aria-labelledby="tool-features-heading" className="mt-8">
-        <h2 id="tool-features-heading" className="sr-only">
-          What it does
-        </h2>
-        <ul className="grid list-none gap-3 p-0 m-0 sm:grid-cols-2 lg:grid-cols-4">
-          {FEATURES.map(({ icon: Icon, title, text }) => (
-            <li key={title} className="rounded-2xl border border-stone-200 bg-white p-4">
-              <Icon className="h-5 w-5 text-forest-700" aria-hidden="true" />
-              <h3 className="mt-2.5 text-sm font-semibold text-ink">{title}</h3>
-              <p className="mt-1 text-xs leading-relaxed text-stone-700">{text}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
 
       <section className="mt-8" aria-label="Your test scores">
         <Suspense fallback={<ToolSkeleton label="Loading your scores…" />}>
           <TestScoreGate examNames={examNames} />
         </Suspense>
+      </section>
+
+      <section aria-labelledby="tool-features-heading" className="mt-8">
+        <h2 id="tool-features-heading" className="font-display text-2xl font-bold tracking-editorial text-ink">
+          What it does
+        </h2>
+        <p className="mt-3 max-w-3xl text-base leading-relaxed text-stone-700">{tool.description}</p>
+        <ul className="mt-4 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
+          {FEATURES.map(({ icon: Icon, title, text }) => (
+            <li key={title} className="rounded-2xl border border-stone-200 bg-white p-4">
+              <Icon className="h-5 w-5 text-forest-700" aria-hidden="true" />
+              <h3 className="mt-2.5 text-base font-semibold text-ink">{title}</h3>
+              <p className="mt-1 text-base leading-relaxed text-stone-700">{text}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mt-12 grid gap-8 lg:grid-cols-[1fr_1fr]" aria-labelledby="scores-how">

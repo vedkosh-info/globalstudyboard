@@ -8,6 +8,7 @@ import { guidesForTopic } from '@/lib/topic-guides';
 import { REGION_CATEGORIES, regionCategoryPath } from '@/lib/region-nav';
 import { multiHubTracks } from '@/lib/tracks';
 import { SITE_LASTMOD } from '@/lib/site-meta';
+import { TOOLS } from '@/lib/tools';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Sitemap entries, split into one file per section so Search Console reports
@@ -68,10 +69,7 @@ const STATIC_PATHS = [
   '/scholarships',
   '/ask',
   '/tools',
-  '/tools/application-planner',
-  '/tools/cost-planner',
-  '/tools/compare-universities',
-  '/tools/test-score-tracker',
+  ...TOOLS.map((tool) => `/tools/${tool.slug}`),
   '/about',
   '/editorial-policy',
   '/sources',

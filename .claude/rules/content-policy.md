@@ -1001,3 +1001,23 @@ owner's monetisation direction: a free account today, a paid tier later). Rules:
   the build if a catalogue exam lacks a well-formed validity entry or the 0006
   `exam_slug` CHECK drifts from the catalogue. "Record your score" links from
   every exam page.
+- **Fifth tool:** the Scholarship Tracker (`/tools/scholarship-tracker`,
+  migration 0008) — a name is the only required input; optional details stay
+  collapsed after saving. Reviewed named-programme presets add identity,
+  provider and destination only: `sourceReviewed` is not a claim about current
+  availability, eligibility, amounts, deadlines or full guide verification.
+  The student's original checklist also supplies the Application Planner;
+  never create a second editable deadline. Received, unsuccessful and
+  withdrawn applications retain history but contribute no active reminders.
+  Dates are student-entered calendar reminders with the official-source and
+  time-zone nudge. Only an explicit action on an accepted/received award may
+  add confirmed funding to an existing same-destination, same-currency budget,
+  atomically and without duplicates, conversions or payment guarantees.
+  Records use passwordless own-row RLS, deletion cascades, serialized caps,
+  retry-safe creation and explicit recovery from concurrent edits; include
+  them in account export, privacy and deletion disclosures. Browser CSV/PDF
+  downloads keep notes opt-in; the compatibility `/report` route redirects to
+  inline download controls. No AI inference, document upload or outbound
+  reminder service is required by this workflow. Add those only if student
+  evidence supports a defined need, with the applicable privacy and consent
+  changes before release.

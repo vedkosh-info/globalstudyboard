@@ -28,6 +28,7 @@ import { breadcrumbsFor } from '@/lib/cmi';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 import { pageMetadata, regionOgImage, CYCLE_SHORT } from '@/lib/seo';
 import { gsbAiHref } from '@/lib/gsb-ai-links';
+import { DIRECTORY_UI } from '@/lib/directory-ui';
 
 const BASE = 'https://www.globalstudyboard.com';
 
@@ -35,7 +36,7 @@ interface Props {
   params: Promise<{ region: string; category: string }>;
 }
 
-/** 8 regions × 4 categories = 32 statically-generated section pages. */
+/** All nine destinations × four categories = 36 static section pages. */
 export function generateStaticParams() {
   return REGION_SLUGS.flatMap((region) =>
     REGION_CATEGORIES.map((category) => ({ region, category })),
@@ -260,28 +261,39 @@ export default async function RegionCategoryPage({ params }: Props) {
           </div>
         )}
 
-        {/* Guides — grouped by sub-category */}
+        {/* A directory rather than hundreds of repeated cards: every guide link
+            remains in static HTML, grouped by its existing track, while titles
+            stay readable and the full descriptions belong on the guide pages. */}
         {category === 'guides' && (
-          <div className="space-y-12">
+          <div className="space-y-10">
+            <nav aria-label={DIRECTORY_UI.guideTrackNavigation} className="flex flex-wrap gap-2">
+              {guideGroups.map((grp) => (
+                <a key={grp.key} href={`#guide-track-${grp.key}`} className={chip}>
+                  {grp.label} <span className="text-xs text-stone-600">{grp.items.length}</span>
+                </a>
+              ))}
+            </nav>
             {guideGroups.map((grp) => (
-              <section key={grp.key} aria-label={grp.label}>
+              <section key={grp.key} id={`guide-track-${grp.key}`} aria-labelledby={`guide-track-heading-${grp.key}`} className="scroll-mt-2">
                 {/* The track label is a real heading (page outline) AND a link up to
                     the track landing page — the Track layer was only ever linked
                     downward from hubs, never upward from these listings. */}
                 <div className="section-rule mb-5">
-                  {grp.href ? (
-                    <Link href={grp.href} className="no-underline hover:text-forest-700">
-                      <span role="heading" aria-level={2}>{grp.label}</span>
-                    </Link>
-                  ) : (
-                    <span role="heading" aria-level={2}>{grp.label}</span>
-                  )}
+                  <h2 id={`guide-track-heading-${grp.key}`} className="m-0 font-sans text-[length:inherit] font-semibold leading-[inherit] tracking-[inherit] text-inherit">
+                    {grp.href ? (
+                      <Link href={grp.href} className="no-underline hover:text-forest-700">{grp.label}</Link>
+                    ) : grp.label}
+                  </h2>
                 </div>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <ul className="m-0 grid list-none grid-cols-1 gap-x-8 p-0 lg:grid-cols-2">
                   {grp.items.map((g) => (
-                    <GuideCard key={g.slug} g={g} />
+                    <li key={g.slug} className="m-0 border-b border-stone-200">
+                      <Link href={`/guides/${g.slug}`} className="block py-4 text-base font-medium leading-relaxed text-ink no-underline transition-colors hover:text-forest-700">
+                        {g.titleEn}
+                      </Link>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </section>
             ))}
           </div>
@@ -364,7 +376,7 @@ function UniCard({ c }: { c: College }) {
         {c.city}
         {c.state ? `, ${c.state}` : ''} · Est. {c.established}
       </p>
-      <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-stone-700">{c.descriptionEn}</p>
+      <p className="mb-4 line-clamp-3 text-base leading-relaxed text-stone-700">{c.descriptionEn}</p>
       <div className="mt-auto flex flex-wrap gap-1.5 border-t border-stone-100 pt-3">
         {c.admissionExams.slice(0, 3).map((e) => (
           <span
@@ -386,14 +398,14 @@ function ExamCard({ e }: { e: EntranceExam }) {
       className="group flex flex-col rounded-2xl border border-stone-200 bg-white p-5 no-underline transition-colors hover:border-forest-300"
     >
       <div className="mb-2 flex items-center justify-between">
-        <span className="font-display text-xl font-bold text-ink transition-colors group-hover:text-forest-700">
+        <h2 className="m-0 font-display text-xl font-bold text-ink transition-colors group-hover:text-forest-700">
           {e.shortName}
-        </span>
+        </h2>
         <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
           {e.domain.replace('-', ' ')}
         </span>
       </div>
-      <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-stone-600">{e.fullName}</p>
+      <p className="mb-3 line-clamp-3 text-base leading-relaxed text-stone-600">{e.fullName}</p>
       <div className="mt-auto pt-3 text-xs text-stone-500">{e.frequency.split('(')[0].trim()}</div>
     </Link>
   );
@@ -409,10 +421,10 @@ function GuideCard({ g }: { g: Guide }) {
         <Clock className="h-3.5 w-3.5" aria-hidden="true" />
         {g.readMinutes} min read
       </span>
-      <h3 className="mb-2 font-display text-lg font-bold leading-snug tracking-editorial text-ink group-hover:text-forest-700">
+      <h2 className="mb-2 font-display text-xl font-bold leading-snug tracking-editorial text-ink group-hover:text-forest-700">
         {g.titleEn}
-      </h3>
-      <p className="m-0 flex-1 text-sm leading-relaxed text-stone-600">{g.descriptionEn}</p>
+      </h2>
+      <p className="m-0 flex-1 text-base leading-relaxed text-stone-600">{g.descriptionEn}</p>
       <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
         Read guide <ArrowUpRight className="h-4 w-4" />
       </span>

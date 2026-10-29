@@ -161,7 +161,8 @@ export default async function RegionHubPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
         {/* Hero */}
-        <header className="max-w-4xl">
+        <header>
+          <div className="max-w-4xl">
           <div className="flex items-center gap-3 mb-4">
             <RegionFlag slug={r.slug} className="h-10" />
             <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500">
@@ -171,6 +172,11 @@ export default async function RegionHubPage({ params }: Props) {
           <h1 className="font-display text-4xl md:text-6xl font-bold tracking-editorial leading-[1.05] text-ink mb-5">
             Study in {r.proseName}
           </h1>
+          </div>
+
+        <ContentImage asset={regionImage(r.slug)} variant="hero" layout="section" priority className="my-6" />
+
+          <div className="max-w-4xl">
           <p className="editorial-lede text-stone-700 text-lg leading-relaxed">
             {r.educationSystemSummary}
           </p>
@@ -191,9 +197,10 @@ export default async function RegionHubPage({ params }: Props) {
           )}
           <LastUpdated date={SITE_REVIEWED} className="mt-4" />
 
-          {/* Destination atmosphere: credited local photo or labelled AI scene. LCP for this page. */}
-          <ContentImage asset={regionImage(r.slug)} variant="hero" priority className="mt-8" />
+          </div>
         </header>
+
+
 
         {/* Key facts */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -558,7 +565,7 @@ export default async function RegionHubPage({ params }: Props) {
             figures on the official site. Where a tool adds something of ours — a validity rule, a university&rsquo;s
             details, a cost line — it links the official page or our guide wherever we have one.
           </p>
-          <ul className="mt-5 grid list-none gap-4 p-0 m-0 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-5 grid list-none gap-4 p-0 m-0 sm:grid-cols-2 lg:grid-cols-3">
             {TOOLS.map((tool) => (
               <li key={tool.slug}>
                 <ToolLink
@@ -572,6 +579,8 @@ export default async function RegionHubPage({ params }: Props) {
                           .slice(0, 4)
                           .map((c) => c.label)
                           .join(' · ')} · and more. The official page or our guide is linked where we have one.`
+                      : tool.slug === 'scholarship-tracker'
+                        ? tool.tagline
                       : tool.slug === 'test-score-tracker'
                         ? `Record your test scores as received and see any validity rule each test body publishes. Then see which tests named by your shortlist in ${r.proseName} still have no score — for every test the tracker records.`
                         : tool.slug === 'compare-universities'

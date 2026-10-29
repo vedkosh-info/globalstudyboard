@@ -124,7 +124,8 @@ export default async function TopicHubPage({ params }: Props) {
       {topic.region && <PageRegion slug={topic.region} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJson }} />
 
-      <header className="max-w-3xl">
+      <header>
+        <div className="max-w-3xl">
         <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-stone-500">
           <Link
             href="/topics"
@@ -148,6 +149,17 @@ export default async function TopicHubPage({ params }: Props) {
         <h1 className="font-display text-4xl md:text-5xl font-bold tracking-editorial text-ink mb-4">
           {topic.title}
         </h1>
+        </div>
+
+      <ContentImage
+        asset={topicImage({ slug: topic.slug, group: topic.group, region: topic.region })}
+        variant="hero"
+        layout="section"
+        className="my-6"
+        priority
+      />
+
+        <div className="max-w-3xl">
         <p className="editorial-lede text-stone-800 text-lg leading-relaxed">{topic.description}</p>
         {topic.intro && (
           <div className="mt-4 space-y-3">
@@ -160,14 +172,10 @@ export default async function TopicHubPage({ params }: Props) {
         )}
         <LastUpdated date={SITE_REVIEWED} className="mt-4" />
 
-        {/* Hub atmosphere by region or concept — LCP for this page. */}
-        <ContentImage
-          asset={topicImage({ slug: topic.slug, group: topic.group, region: topic.region })}
-          variant="hero"
-          priority
-          className="mt-8"
-        />
+        </div>
       </header>
+
+
 
       {relatedExams.length > 0 && (
         <section>

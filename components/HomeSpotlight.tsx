@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
 import RegionFlag from '@/components/RegionFlag';
+import { HOME_UI } from '@/lib/home-ui';
 
 /** Compact exam summary passed from the server so the full exam catalogue never
  * ships to the browser (keeps the home First-Load JS small). */
@@ -24,7 +25,6 @@ export interface CollegeLite {
   city: string;
   state?: string;
   established: number;
-  qsRank?: number;
 }
 
 /**
@@ -51,13 +51,6 @@ export default function HomeSpotlight({
     .filter((e): e is ExamLite => Boolean(e))
     .slice(0, 6);
 
-  /* Show the platform in full. Truncating at the first "/" or "(" turned
-  "OUAC (Ontario) or direct via university portal" into "OUAC" — an Ontario
-  body presented as Canada's national platform — "UCAS (UK) / CAO (Ireland)"
-  into "UCAS", dropping Ireland entirely, and India's exam-specific list into
-  "JoSAA", which covers engineering only. */
-  const applyVia = r.primaryApplicationPlatform;
-
   return (
     <>
       {/* Top universities for the chosen destination */}
@@ -66,11 +59,10 @@ export default function HomeSpotlight({
           <div className="flex items-end justify-between mb-7">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
-                Top universities in {r.proseName}
+                {HOME_UI.universitiesHeading} {r.proseName}
               </h2>
-              <p className="text-stone-600 text-sm">
-                The most-searched institutions for your destination — open any for programs, fees and
-                how to apply.
+              <p className="text-stone-600 text-base leading-relaxed">
+                {HOME_UI.universitiesDescription}
               </p>
             </div>
             <Link
@@ -104,9 +96,6 @@ export default function HomeSpotlight({
                   {college.nameEn}
                 </h3>
                 <p className="text-stone-500 text-xs mb-3">Est. {college.established}</p>
-                {college.qsRank && (
-                  <p className="text-xs text-stone-500 mt-auto">QS World Ranking #{college.qsRank}</p>
-                )}
               </Link>
             ))}
           </div>
@@ -121,8 +110,8 @@ export default function HomeSpotlight({
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink mb-1">
                 Key tests for {r.proseName}
               </h2>
-              <p className="text-stone-600 text-sm">
-                The entrance and admissions tests that matter for studying in {r.proseName}.
+              <p className="text-stone-600 text-base leading-relaxed">
+                {HOME_UI.testsDescription}
               </p>
             </div>
             <Link
@@ -140,10 +129,10 @@ export default function HomeSpotlight({
                 href={`/exams/${exam.slug}`}
                 className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col"
               >
-                <span className="font-display text-xl font-bold text-ink group-hover:text-forest-700 transition-colors mb-2">
+                <h3 className="font-display text-xl font-bold text-ink group-hover:text-forest-700 transition-colors mb-2">
                   {exam.shortName}
-                </span>
-                <p className="text-stone-600 text-sm leading-relaxed line-clamp-3 mb-3">
+                </h3>
+                <p className="text-stone-600 text-base leading-relaxed line-clamp-3 mb-3">
                   {exam.descriptionEn}
                 </p>
                 <div className="mt-auto pt-3 text-xs text-stone-500 capitalize">
@@ -162,10 +151,8 @@ export default function HomeSpotlight({
             <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-2">
               Planning to study in {r.proseName}?
             </h2>
-            <p className="text-stone-600 text-sm leading-relaxed">
-              Apply via {applyVia} · main intake {r.intakes[0]} ·{' '}
-              {r.visaName ?? 'no student visa needed'}. Get the full step-by-step playbook for your
-              destination.
+            <p className="text-stone-600 text-base leading-relaxed">
+              {HOME_UI.planningDescription}
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">

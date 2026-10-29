@@ -135,18 +135,6 @@ const GUIDE_CATEGORY_POOL: Partial<Record<GuideCategory, readonly string[]>> = {
     'common/journey/admission-letter',
     'common/journey/application-checklist',
     'common/journey/decision-day-calendar',
-    'common/journey/night-study-setup',
-    'common/journey/orientation-auditorium',
-    'common/journey/research-thesis-desk',
-    'common/journey/graduation-still-life',
-  ],
-  'study-abroad': [
-    'common/journey/choosing-destination-globe',
-    'common/journey/study-abroad-passport',
-    'common/journey/airport-departure',
-    'common/journey/packing-suitcase',
-    'common/journey/orientation-auditorium',
-    'common/journey/student-dorm-room',
   ],
   scholarships: [
     'common/journey/scholarship-funding',
@@ -154,6 +142,16 @@ const GUIDE_CATEGORY_POOL: Partial<Record<GuideCategory, readonly string[]>> = {
     'common/journey/budgeting-abroad',
   ],
 };
+
+// A neutral study/decision scene is appropriate when a page has no more specific
+// subject. Do not hash such pages across passports, suitcases, dorms or ceremonial
+// graduation scenes: a generic degree comparison makes none of those promises.
+const NEUTRAL_STUDY_SCENES: readonly string[] = [
+  'site/hero/topic-hub-desk-flatlay',
+  'site/hero/study-flatlay-coffee',
+  'site/hero/window-desk-morning',
+  'common/journey/research-thesis-desk',
+];
 
 /** Deterministically pick one EXISTING key from an explicit list using `seed`. */
 function pickFromKeys(keys: readonly string[], seed: string | undefined): ImageAsset | null {
@@ -181,31 +179,39 @@ function tok(alts: string): RegExp {
 
 /** Field-of-study keywords → common/fields/* (order matters: specific before generic). */
 const FIELD_RULES: readonly SubjectRule[] = [
+  // Interactive media in a game-development degree is computing, not broadcast.
+  [tok('game-design|game-development|gaming'), 'computer-science-lab'],
   [tok('dental|dentist|dentistry|bds|mds|dmd|dds'), 'dental-training-lab'],
   [tok('nursing|nurse|nurses|midwifery|midwife|anm|gnm'), 'nursing-skills-lab'],
   [tok('pharmacy|pharmacist|pharmacists|pharma|pharm|pharmaceutical|gpat'), 'pharmacy-dispensary'],
   [tok('veterinary|vet|vets|bvsc|animal'), 'veterinary-science'],
-  [tok('pilot|pilots|aviation|aeronautical|aerospace|airline|cabin|crew|flying'), 'aviation-simulator'],
+  [tok('pilot|pilots|aviation|aeronautical|aerospace|airline|aircraft|cabin|crew|flying'), 'aviation-simulator'],
   [tok('maritime|marine|nautical|seafaring|seafarer|merchant|shipping|naval-architecture'), 'maritime-training'],
   [tok('culinary|hospitality|hotel|hotels|chef|catering|cookery|tourism'), 'culinary-teaching-kitchen'],
   [tok('law|laws|llb|llm|legal|lawyer|lawyers|judge|judiciary|advocate|clat|ailet|lsat|lnat|bar'), 'law-library'],
-  [tok('journalism|media|mass-communication|communication|broadcasting|film|animation|vfx|gaming|advertising'), 'media-journalism-studio'],
+  [tok('journalism|media|mass-communication|communications|broadcasting|film|cinematography|advertising'), 'media-journalism-studio'],
   [tok('psychology|psychologist|psychiatry|mental-health'), 'psychology-study-room'],
   [tok('architecture|architect|architects|b-arch|barch|nata|interior-design|urban-planning'), 'architecture-studio'],
   [tok('agriculture|agricultural|agri|farming|horticulture|forestry|agronomy|fisheries'), 'agriculture-greenhouse'],
+  [tok('food-science|food-technology'), 'research-laboratory'],
+  [tok('medical-laboratory|medical-lab-technology|bmlt|laboratory-sciences'), 'biotechnology-lab'],
   [tok('biotechnology|biotech|biology|biological|biomedical|life-sciences|genetics|microbiology|bioinformatics'), 'biotechnology-lab'],
-  [tok('data-science|data|analytics|ai|artificial-intelligence|machine-learning|ml|statistics'), 'data-science-dashboards'],
+  // The old "dashboards" asset contains decorative bokeh, not data. Actual
+  // teaching computers are a more relevant context for computing/analytics study.
+  [tok('data-science|data-engineer|data-analyst|analytics|ai|artificial-intelligence|machine-learning|ml|statistics|animation|vfx|gaming|game-design|game-development'), 'computer-science-lab'],
   [tok('company-secretary|icsi|cseet'), 'business-case-room'],
-  [tok('computer-science|computer|computing|software|cse|information-technology|coding|programming|developer|full-stack|cyber|cybersecurity|cloud|devops|web'), 'computer-science-lab'],
+  [tok('computer-science|computer|computing|software|cse|information-technology|coding|programming|developer|full-stack|cyber|cybersecurity|cloud|devops|web-development|emerging-tech|new-age-careers'), 'computer-science-lab'],
   [tok('electronics|electronic|ece|electrical|eee|vlsi|embedded|telecommunication|telecom|mechatronics|semiconductor|semiconductors|microelectronics|ic-design|chip'), 'electronics-lab'],
-  [tok('civil|structural|construction|surveying|geotechnical'), 'civil-engineering-models'],
+  [tok('civil-engineering|structural|construction|surveying|geotechnical'), 'civil-engineering-models'],
   [tok('physics|optics|astronomy|astrophysics|photonics'), 'physics-optics-lab'],
   [tok('finance|financial|accounting|accountancy|accountant|accountants|ca|cpa|cfa|cma|acca|actuarial|actuary|banking|investment|economics|commerce|bcom|b-com|audit'), 'finance-analytics-desk'],
-  [tok('mba|business|management|bba|marketing|entrepreneurship|product-management|hr|operations|supply-chain|logistics'), 'business-case-room'],
-  [tok('medical|medicine|mbbs|md|doctor|doctors|physician|surgeon|surgery|clinical|paramedical|physiotherapy|allied-health|health-sciences|health-science|healthcare|optometry|radiography|dietetics|nutrition|ayurveda|bams|bhms|homeopathy|occupational-therapy|speech'), 'medical-simulation-lab'],
-  [tok('mechanical|manufacturing|automobile|automotive|engineering|engineer|engineers|btech|b-tech|robotics|industrial|energy|mining|petroleum|metallurgy|textile'), 'engineering-makerspace'],
-  [tok('art|arts|design|fine-arts|humanities|liberal-arts|literature|history|philosophy|linguistics|sociology|anthropology|political-science|social-sciences|social-science|social-work|teaching|teacher|b-ed|music|performing-arts|fashion'), 'art-humanities-studio'],
-  [tok('research|phd|doctoral|scientist|chemistry|chemical|science|sciences|bsc|msc|laboratory|materials|geology|environmental'), 'research-laboratory'],
+  [tok('mba|business|management|bba|marketing|entrepreneurship|product-management|hr|operations|supply-chain|logistics-management|logistics-studies|logistics-degrees'), 'business-case-room'],
+  [tok('medical|medicine|mbbs|md|doctor|doctors|physician|surgeon|surgery|clinical|paramedical|paramedicine|physiotherapy|allied-health|health-sciences|health-science|healthcare|health-profession|optometry|radiography|dietetics|nutrition|ayurveda|bams|bhms|homeopathy|occupational-therapy|speech'), 'medical-simulation-lab'],
+  [tok('fashion|textile-design|art|arts|design|fine-arts|music|performing-arts'), 'art-humanities-studio'],
+  [tok('mechanical|manufacturing|automobile|automotive|engineering|engineer|engineers|btech|b-tech|robotics|industrial-engineering|energy|mining|petroleum|metallurgy|textile-engineering'), 'engineering-makerspace'],
+  [tok('humanities|liberal-arts|literature|history|philosophy|linguistics|sociology|anthropology|political-science|international-relations|social-sciences|social-science|social-work'), 'common/journey/research-thesis-desk'],
+  [tok('education|teaching|teacher|b-ed'), 'site/hero/lecture-hall-empty'],
+  [tok('scientist|chemistry|chemical|science|sciences|bsc|msc|laboratory|materials|geology|environmental'), 'research-laboratory'],
 ];
 
 /**
@@ -216,24 +222,29 @@ const FIELD_RULES: readonly SubjectRule[] = [
  * electronics; "council tax" vs finance). Checked before FIELD_RULES.
  */
 const STEP_RULES: readonly SubjectRule[] = [
-  [tok('visa|visas|permit|permits|immigration|f-1|f1|sevis|i-20'), 'student-visa-documents'],
-  [tok('scholarship|scholarships|fellowship|fellowships|bursary|bursaries|financial-aid'), 'scholarship-funding'],
+  [tok('visa|visas|permit|permits|immigration|migration|pgwp|opt|cpt|permanent-residence|permanent-residency|post-study|work-and-stay|study-to-residence|pr-pathways|citizenship|f-1|f1|sevis|i-20'), 'student-visa-documents'],
+  [tok('scholarship|scholarships|fellowship|fellowships|bursary|bursaries|financial-aid|financial-need'), 'scholarship-funding'],
   [tok('loan|loans|lending'), 'education-loan'],
-  [tok('cost|costs|tuition|fees|fee|budget|budgeting|expenses|expense|cheap|affordable|tax|taxes|bank'), 'budgeting-abroad'],
-  [tok('credential|credentials|equivalency|equivalence|attestation|apostille|nostrification|wes|naces'), 'application-checklist'],
+  [tok('fund|funding|funded|grant|grants|stipend|stipends|studentship|studentships|assistantship|assistantships'), 'scholarship-funding'],
+  [tok('cost|costs|tuition|fees|fee|budget|budgeting|expenses|expense|cheap|affordable|tax|taxes|bank|money|currency|proof-of-funds|blocked-account|blocked-accounts|building-credit|bank-account|bank-accounts|banking-for-students'), 'budgeting-abroad'],
+  [tok('credential|credentials|equivalency|equivalence|attestation|apostille|nostrification|wes|naces|documents|document|paperwork|counselling|counseling|allotment|choice-filling|management-quota|insurance|oshc|ovhc|uhip|ehic|ghic|biometrics|national-id|licensing|licensure|licence|recognition|recognized|recognised|accreditation|registration|registering'), 'application-checklist'],
   [tok('accommodation|housing|dorm|dorms|hostel|hostels|rent|renting'), 'student-dorm-room'],
+  [tok('sop|statement-of-purpose|personal-statement|essay|essays'), 'statement-of-purpose'],
+  [tok('lor|letter-of-recommendation|recommendation|recommendations|reference|references'), 'letter-of-recommendation'],
+  [tok('deadline|deadlines|timeline|timelines|intake|intakes|calendar|dates'), 'decision-day-calendar'],
+  [tok('packing|luggage|what-to-pack'), 'packing-suitcase'],
+  [tok('orientation'), 'orientation-auditorium'],
+  [tok('student-life|daily-life|practical-life|settling|wellbeing|well-being|cultural-adjustment|culture-and-support'), 'student-dorm-room'],
 ];
 
 /** Application-journey keywords → common/journey/* (checked after FIELD_RULES). */
 const JOURNEY_RULES: readonly SubjectRule[] = [
-  [tok('grant|grants|funding|aid'), 'scholarship-funding'],
+  [tok('aid'), 'scholarship-funding'],
   [tok('living'), 'budgeting-abroad'],
-  [tok('sop|statement-of-purpose|personal-statement|essay|essays'), 'statement-of-purpose'],
-  [tok('lor|letter-of-recommendation|recommendation|recommendations|reference|references'), 'letter-of-recommendation'],
   [tok('internship|internships|intern|co-op|coop|placement|placements|job|jobs|work|working|career|careers|employment'), 'internship-workspace'],
-  [tok('language|languages|ielts|toefl|pte|duolingo|english|jlpt|topik|hsk|testdaf|dsh|delf|dele'), 'language-learning'],
-  [tok('packing|luggage|arrival|arriving|departure|flight|flights|airport'), 'airport-departure'],
-  [tok('deadline|deadlines|timeline|timelines|intake|intakes|calendar|dates'), 'decision-day-calendar'],
+  [tok('language|languages|ielts|toefl|pte|duolingo|english-tests|french-tests|learning-russian|russian-language|torfl|cils|celi|plida|jlpt|topik|hsk|testdaf|dsh|delf|dele'), 'language-learning'],
+  [tok('arrival|arriving|departure|flight|flights|airport'), 'airport-departure'],
+  [tok('research|phd|doctoral|supervisor|supervision|proposal|thesis|dissertation|graduate-study|postgraduate'), 'research-thesis-desk'],
 ];
 
 function matchRule(rules: readonly SubjectRule[], slug: string): string | null {
@@ -243,14 +254,18 @@ function matchRule(rules: readonly SubjectRule[], slug: string): string | null {
 
 /** The common/journey/* image for a slug about a practical step that outranks any field, else null. */
 function stepFor(slug: string): ImageAsset | null {
+  // Counselling/support is more specific than a generic wellbeing/living scene.
+  if (tok('mental-health-support|mental-health-and-wellbeing-support').test(slug)) return get('common/fields/psychology-study-room');
   const key = matchRule(STEP_RULES, slug);
   return key ? get(`common/journey/${key}`) : null;
 }
 
 /** The common/fields/* image for a slug whose subject is a field of study, else null. */
 function fieldFor(slug: string): ImageAsset | null {
-  const key = matchRule(FIELD_RULES, slug);
-  return key ? get(`common/fields/${key}`) : null;
+  // A guide explicitly about options "beyond medicine" should not be given the
+  // medical-training picture merely because that excluded field is in its slug.
+  const key = matchRule(FIELD_RULES, slug.replace(/(?:^|-)beyond-medicine(?=-|$)/, ''));
+  return key ? get(key.includes('/') ? key : `common/fields/${key}`) : null;
 }
 
 /** The common/journey/* image for a slug about an application step, else null. */
@@ -262,15 +277,49 @@ function journeyFor(slug: string): ImageAsset | null {
 /** Language / listening tests are the ONLY exams the headphones scene may illustrate. */
 const LANGUAGE_TEST = tok('ielts|toefl|pte|duolingo|det|oet|celpip|cael|english|language|jlpt|topik|hsk|testdaf|dsh|delf|dalf|dele|siele|cils|celi|cambridge|linguaskill');
 
+const EXAM_CONTEXT = tok('exam|exams|test|tests|testing|entrance|entrances|prep|preparation|prepare|test-day|jee|neet|clat|ailet|lsat|gmat|gre|mcat|ucat|imat|hpat|gate|mat|cmat|xat|ipmat|upsc|cet|sat|act');
+const APPLICATION_CONTEXT = tok('application|applications|applying|apply|admission|admissions|counselling|counseling');
+const EXAM_RESULT_CONTEXT = tok('score|scores|result|results|cutoff|cutoffs|percentile|marks|rank|ranking');
+const EXAM_REGISTRATION_CONTEXT = tok('registration|register|form|application|applications');
+const EXAM_WRITING_CONTEXT = tok('writing|essay|essays');
+const EXAM_COMPUTER_CONTEXT = tok('computer|online|cbt');
+const CIVIL_SERVICE_CONTEXT = tok('civil-services');
+const OUTCOMES_CONTEXT = tok('outcomes-data|retention-graduation|league-tables');
+const CONNECTIVITY_CONTEXT = tok('sim|internet|connectivity|broadband');
+const COMMUTE_CONTEXT = tok('transport|commuting|commute');
+
+function applicationFor(slug: string): ImageAsset | null {
+  return APPLICATION_CONTEXT.test(slug)
+    ? pickFromKeys(GUIDE_CATEGORY_POOL.admissions ?? [], slug)
+    : null;
+}
+
+function editorialContextFor(slug: string): ImageAsset | null {
+  if (CIVIL_SERVICE_CONTEXT.test(slug)) return get('common/exams/prep-books-stack');
+  if (OUTCOMES_CONTEXT.test(slug)) return get('common/exams/score-report-abstract');
+  if (CONNECTIVITY_CONTEXT.test(slug)) return get('site/hero/window-desk-morning');
+  if (COMMUTE_CONTEXT.test(slug)) return get('site/hero/campus-bicycle-ivy');
+  return null;
+}
+
 /**
  * An exam-concept image for a slug: the headphones scene for language tests, the
  * shared pool (rotated by slug) minus the headphones scene for every other exam.
  */
 function examConceptFor(slug: string): ImageAsset | null {
   if (LANGUAGE_TEST.test(slug)) return get('common/exams/english-listening-test');
-  const pool = KEYS.filter((k) => k.startsWith('common/exams/') && k !== 'common/exams/english-listening-test');
-  if (!pool.length) return null;
-  return get(pool[hash(slug) % pool.length]);
+  if (EXAM_RESULT_CONTEXT.test(slug)) return get('common/exams/score-report-abstract');
+  if (EXAM_REGISTRATION_CONTEXT.test(slug)) return get('common/exams/registration-laptop');
+  if (EXAM_WRITING_CONTEXT.test(slug)) return get('common/exams/writing-essay-booklet');
+  if (EXAM_COMPUTER_CONTEXT.test(slug)) return get('common/exams/computer-based-test');
+  // Preparation stationery is neutral about an examination's current delivery
+  // mode. A seeded computer station or score sheet used to imply a feature the
+  // page had not asserted; those now require an explicit matching subject above.
+  return pickFromKeys([
+    'common/exams/exam-hall-empty-desks',
+    'common/exams/answer-sheet-pencil',
+    'common/exams/prep-books-stack',
+  ], slug);
 }
 
 /**
@@ -283,14 +332,17 @@ function examConceptFor(slug: string): ImageAsset | null {
  * atmosphere.
  */
 export function guideImage(g: { slug: string; category: GuideCategory; region: RegionSlug }): ImageAsset | null {
-  const subject = stepFor(g.slug) ?? fieldFor(g.slug) ?? journeyFor(g.slug);
+  const step = stepFor(g.slug);
+  if (step) return step;
+  if (g.category === 'exam-prep' && EXAM_CONTEXT.test(g.slug)) return examConceptFor(g.slug);
+  const subject = editorialContextFor(g.slug) ?? applicationFor(g.slug) ?? fieldFor(g.slug) ?? journeyFor(g.slug);
   if (subject) return subject;
   if (g.category === 'exam-prep') return examConceptFor(g.slug) ?? imageFor({ region: g.region, seed: g.slug });
   if (g.category === 'career' || g.category === 'comparison') {
-    return pickFrom('site/hero', g.slug) ?? imageFor({ region: g.region, seed: g.slug });
+    return pickFromKeys(NEUTRAL_STUDY_SCENES, g.slug);
   }
   const pool = GUIDE_CATEGORY_POOL[g.category];
-  return (pool ? pickFromKeys(pool, g.slug) : null) ?? imageFor({ region: g.region, seed: g.slug });
+  return (pool ? pickFromKeys(pool, g.slug) : null) ?? academicImage(g.region, g.slug);
 }
 
 // Academic scenes only: a university profile should not receive a destination's
@@ -310,6 +362,13 @@ const COLLEGE_NEUTRAL_SCENES: readonly string[] = [
   'site/hero/homepage-campus-avenue-dawn', 'site/hero/golden-hour-quad', 'site/hero/campus-gateway-arch',
 ];
 
+function academicImage(region: RegionSlug, seed: string): ImageAsset | null {
+  const academic = COLLEGE_ACADEMIC_SCENES.filter((key) =>
+    key.startsWith(`regions/${region}/`) && IMAGE_REGISTRY[key]?.provenance.kind === 'ai');
+  const neutral = COLLEGE_NEUTRAL_SCENES.filter((key) => IMAGE_REGISTRY[key]?.provenance.kind === 'ai');
+  return pickFromKeys(academic, seed) ?? pickFromKeys(neutral, seed);
+}
+
 /**
  * Hero for a NAMED college page. Deliberately keyed on region + slug-seeded rotation,
  * uses an explicitly reviewed exact-institution photograph when one is available.
@@ -323,17 +382,26 @@ export function collegeImage(c: { slug: string; region: RegionSlug }): ImageAsse
       key.startsWith(`regions/${c.region}/`);
   });
   if (exact) return get(exact);
-  const academic = COLLEGE_ACADEMIC_SCENES.filter((key) =>
-    key.startsWith(`regions/${c.region}/`) && IMAGE_REGISTRY[key]?.provenance.kind === 'ai');
-  const neutral = COLLEGE_NEUTRAL_SCENES.filter((key) => IMAGE_REGISTRY[key]?.provenance.kind === 'ai');
-  return pickFromKeys(academic, c.slug) ?? pickFromKeys(neutral, c.slug);
+  return academicImage(c.region, c.slug);
 }
 
 import type { TopicGroup } from '@/lib/topics';
 
-/** Hero for a destination hub: that region's own atmosphere, rotated by slug. */
+const REGION_CAMPUS: Readonly<Record<RegionSlug, string>> = {
+    india: 'regions/india/campus-quad-golden-hour',
+    usa: 'regions/usa/collegiate-brick-autumn',
+    canada: 'regions/canada/maple-campus-autumn',
+    'uk-ireland': 'regions/uk-ireland/honey-stone-quad',
+    europe: 'regions/europe/continental-courtyard',
+    'australia-nz': 'regions/australia-nz/sunny-modern-campus',
+    russia: 'regions/russia/classical-building-winter',
+    'middle-east': 'regions/middle-east/desert-campus-architecture',
+    'east-southeast-asia': 'regions/east-southeast-asia/hightech-campus-blossom',
+};
+
+/** Every destination hub leads with its own academic setting, never random scenery. */
 export function regionImage(slug: RegionSlug): ImageAsset | null {
-  return imageFor({ region: slug, seed: slug });
+  return get(REGION_CAMPUS[slug]) ?? academicImage(slug, slug);
 }
 
 /**
@@ -356,32 +424,24 @@ const TOPIC_GROUP_REGION: Partial<Record<TopicGroup, RegionSlug>> = {
   'study-in-asia': 'east-southeast-asia',
 };
 
-/** Shared-concept topic groups → the common folder that illustrates them. */
-const TOPIC_GROUP_FOLDER: Partial<Record<TopicGroup, string>> = {
-  'study-abroad': 'common/journey',
-  'prep-funding': 'common/journey',
-};
-
 /**
- * Hero for a topic hub. Hubs are landing pages, so the region-agnostic `site/hero` pool is
- * blended in: a region-gated hub draws from its region folder + site heroes; a concept hub
- * draws from its concept folder + site heroes. (Region hub pages and college pages do NOT
- * blend — they stay regionally specific.) Measured 15 Sep 2026: this takes the region-gated
- * hubs from 2–3 candidate images each to 13–14, at zero cost.
+ * Hero for a topic hub. Practical steps and examination subjects are resolved
+ * before fields, then the same journey matching used by guides. A destination
+ * fallback stays academic; unrelated luggage, scenery and graduation objects
+ * are never picked merely to create visual variety.
  */
 export function topicImage(t: { slug: string; group: TopicGroup; region?: RegionSlug }): ImageAsset | null {
   // A hub about a recognisable field of study gets that field's scene wherever it
   // sits (a region-gated "nursing in Japan" hub included); a hub whose slug names an
   // exam concept gets an exam scene that fits. Only then the pools below.
-  const subject = stepFor(t.slug) ?? fieldFor(t.slug);
+  const step = stepFor(t.slug);
+  if (step) return step;
+  if (t.group === 'exams' || EXAM_CONTEXT.test(t.slug)) return examConceptFor(t.slug);
+  const subject = editorialContextFor(t.slug) ?? applicationFor(t.slug) ?? fieldFor(t.slug) ?? journeyFor(t.slug);
   if (subject) return subject;
-  if (t.group === 'exams' && LANGUAGE_TEST.test(t.slug)) return get('common/exams/english-listening-test');
   const region = t.region ?? TOPIC_GROUP_REGION[t.group];
-  if (region) return pickFromPools([`regions/${region}`, 'site/hero'], t.slug) ?? imageFor({ seed: t.slug });
-  if (t.group === 'fields') return pickFrom('site/hero', t.slug) ?? imageFor({ seed: t.slug });
-  if (t.group === 'exams') return examConceptFor(t.slug) ?? pickFrom('site/hero', t.slug);
-  const folder = TOPIC_GROUP_FOLDER[t.group];
-  return pickFromPools(folder ? [folder, 'site/hero'] : ['site/hero'], t.slug) ?? imageFor({ seed: t.slug });
+  if (region) return academicImage(region, t.slug);
+  return pickFromKeys(NEUTRAL_STUDY_SCENES, t.slug);
 }
 
 /** The homepage hero — one fixed, region-agnostic image (the site's first impression). */

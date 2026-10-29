@@ -11,16 +11,16 @@ import { openTesterInvite } from '@/lib/tester-invite';
 import { buildFeed, relativeTime, unreadCount } from '@/lib/notifications/feed';
 import { EMPTY_STORE, loadStore, saveStore } from '@/lib/notifications/store';
 import type { FeedItem, NoticeStore } from '@/lib/notifications/types';
+import { lockBackground, trapTab, FOCUSABLE } from '@/lib/dialog-a11y';
 
 /**
  * Header bell and notification panel.
  *
- * Phone and desktop share one panel. It is positioned from the bell and kept
- * inside the screen, so a 320px phone gets a full-width sheet and a desktop
- * gets a card anchored to the bell. The page behind it is inert while it is open.
+ * Phone and desktop share one panel. CSS keeps it inside the screen: a phone
+ * gets a full-width sheet and desktop a card beside the header controls. No
+ * resize listener or first-frame coordinate correction is needed. The page
+ * behind it is inert while it is open.
  */
-
-const PAGE = ['header', 'main', 'footer', '[data-gsb-context-bar]', '.gsb-dock'];
 
 export default function NotificationCenter() {
   const { hasSession, ready: authReady } = useAuth();
@@ -32,7 +32,6 @@ export default function NotificationCenter() {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const [store, setStore] = useState<NoticeStore>(EMPTY_STORE);
-  const [box, setBox] = useState({ top: 72, left: 12, width: 320 });
 
   useEffect(() => setMounted(true), []);
   useEffect(() => {
@@ -65,7 +64,6 @@ export default function NotificationCenter() {
 
   function close() {
     setOpen(false);
-    btnRef.current?.focus();
   }
 
   useEffect(() => {
@@ -74,56 +72,28 @@ export default function NotificationCenter() {
 
   useEffect(() => {
     if (!open) return;
-    const place = () => {
-      const rect = btnRef.current?.getBoundingClientRect();
-      const width = Math.min(372, window.innerWidth - 24);
-      let left = rect ? rect.right - width : 12;
-      left = Math.max(12, Math.min(left, window.innerWidth - width - 12));
-      const top = rect ? Math.min(rect.bottom + 10, window.innerHeight - 160) : 72;
-      setBox({ top, left, width });
-    };
-    place();
-    window.addEventListener('resize', place);
-    return () => window.removeEventListener('resize', place);
-  }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    const nodes = PAGE.flatMap((sel) => Array.from(document.querySelectorAll(sel)));
-    nodes.forEach((el) => el.setAttribute('inert', ''));
     const panel = panelRef.current;
+    const opener = btnRef.current;
+    const unlock = lockBackground(panel);
+    const openedPath = window.location.pathname;
     const focusables = () =>
       Array.from(
-        panel?.querySelectorAll<HTMLElement>('button, a[href], [tabindex]:not([tabindex="-1"])') ?? [],
+        panel?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? [],
       ).filter((el) => el.getClientRects().length > 0);
     (focusables()[0] ?? panel)?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.preventDefault();
         setOpen(false);
-        btnRef.current?.focus();
         return;
       }
-      if (e.key !== 'Tab' || !panel) return;
-      const list = focusables();
-      if (list.length === 0) return;
-      const first = list[0];
-      const last = list[list.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
+      trapTab(e, panel);
     };
     document.addEventListener('keydown', onKey);
     return () => {
-      document.body.style.overflow = previous;
-      nodes.forEach((el) => el.removeAttribute('inert'));
       document.removeEventListener('keydown', onKey);
+      unlock();
+      if (window.location.pathname === openedPath && opener?.isConnected) opener.focus();
     };
   }, [open]);
 
@@ -162,8 +132,7 @@ export default function NotificationCenter() {
                 aria-modal="true"
                 aria-labelledby={titleId}
                 tabIndex={-1}
-                style={{ top: box.top, left: box.left, width: box.width }}
-                className="fixed z-[80] flex max-h-[min(32rem,calc(100dvh-5.5rem))] flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_24px_60px_-28px_rgba(28,46,36,0.55)] outline-none"
+                className="fixed inset-x-3 top-[5.625rem] z-[80] flex max-h-[min(32rem,calc(100dvh-6.375rem))] flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_24px_60px_-28px_rgba(28,46,36,0.55)] outline-none sm:inset-x-auto sm:right-[max(1rem,calc((100vw-80rem)/2+1rem))] sm:w-[23.25rem]"
               >
                 <div className="h-0.5 shrink-0 bg-forest-700" aria-hidden="true" />
                 <header className="flex items-center justify-between gap-2 border-b border-stone-100 px-3 py-2">

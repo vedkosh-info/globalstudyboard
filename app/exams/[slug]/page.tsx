@@ -353,6 +353,13 @@ export default async function ExamDetailPage({ params }: Props) {
         <p className="text-stone-700 text-xl">{exam.fullName}</p>
       </header>
 
+      <ContentImage
+        asset={examImage({ slug: exam.slug, region: exam.region === 'global' ? undefined : exam.region })}
+        variant="hero"
+        layout="profile"
+        priority
+      />
+
       <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
         {exam.descriptionEn}
       </p>
@@ -376,12 +383,7 @@ export default async function ExamDetailPage({ params }: Props) {
         </ToolLink>
       </div>
 
-      {/* Exam-concept archetype (empty hall, test desk, prep books…) — LCP for this page. */}
-      <ContentImage
-        asset={examImage({ slug: exam.slug, region: exam.region === 'global' ? undefined : exam.region })}
-        variant="hero"
-        priority
-      />
+
       {/* Long-form twin — the dedicated guide for this exam, featured above the facts */}
       {primaryGuide && (
         <Link

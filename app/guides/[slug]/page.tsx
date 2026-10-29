@@ -29,6 +29,8 @@ import { breadcrumbsFor } from '@/lib/cmi';
 import { formatReviewed } from '@/lib/site-meta';
 import { pageMetadata, ogImageFor, absoluteImageUrl, EDITORIAL_TEAM_LD, PUBLISHER_LD } from '@/lib/seo';
 import { gsbAiHref } from '@/lib/gsb-ai-links';
+import { scholarshipForGuide } from '@/lib/scholarship-catalogue';
+import TrackScholarshipLink from '@/components/TrackScholarshipLink';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -239,6 +241,14 @@ export default async function GuideDetailPage({ params }: Props) {
         <h1 className="font-display text-4xl md:text-5xl font-bold tracking-editorial leading-[1.08] text-ink mb-3">
           {guide.titleEn}
         </h1>
+
+      <ContentImage
+        asset={guideImage({ slug: guide.slug, category: guide.category, region: guide.region })}
+        variant="hero"
+        layout="guide"
+        className="my-6"
+        priority
+      />
         <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
           {guide.descriptionEn}
         </p>
@@ -263,15 +273,14 @@ export default async function GuideDetailPage({ params }: Props) {
           {/* Shortlist — renders nothing until accounts are configured. */}
           <SaveButton kind="guide" slug={guide.slug} title={guide.titleEn} region={guide.region} />
         </div>
+        {guide.category === 'scholarships' && (
+          <div className="mt-4">
+            <TrackScholarshipLink award={scholarshipForGuide(guide.slug)} region={guide.region} />
+          </div>
+        )}
       </header>
 
-      {/* Hero image — resolves to null (renders nothing) until the image library exists.
-          This is the page's LCP candidate, so it is the ONE image that gets priority. */}
-      <ContentImage
-        asset={guideImage({ slug: guide.slug, category: guide.category, region: guide.region })}
-        variant="hero"
-        priority
-      />
+
 
       {/* Key facts (exam/process guides) */}
       {guide.keyFacts && guide.keyFacts.length > 0 && <KeyFacts rows={guide.keyFacts} />}

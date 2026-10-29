@@ -1,18 +1,19 @@
 'use client';
 
+import { lockBodyScroll, unlockBodyScroll } from '@/lib/scroll-lock';
+
 /**
  * The modal-dialog treatment every in-page dialog on the site shares:
  * `lockBackground()` locks body scroll and makes the page `inert`, and
  * `trapTab()` keeps Tab / Shift+Tab cycling inside the panel.
  *
- * Extracted from TesterInviteModal (which still carries its own verbatim copy —
- * migrate it here when it is next touched) so the two feedback dialogs and any
- * future dialog cannot drift: in particular the BACKGROUND list, which must be
+ * Shared by the notification, feedback, sign-in, tester and response-report
+ * dialogs so their background behavior cannot drift. The BACKGROUND list must be
  * extended by hand whenever a new top-level chrome element is added.
  */
 
 export const FOCUSABLE =
-  'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, [tabindex]:not([tabindex="-1"])';
 
 /**
  * Everything that must go inert while a dialog is open. `header`/`main`/`footer`
@@ -21,17 +22,35 @@ export const FOCUSABLE =
  * quick-actions dock is a top-level sibling of the dialog and would otherwise
  * stay tabbable underneath it.
  */
-export const BACKGROUND = ['header', 'main', 'footer', '[data-gsb-context-bar]', '[data-gsb-notifications]', '.gsb-dock'];
+export const BACKGROUND = ['header', 'main', 'footer', '[data-gsb-context-bar]', '[data-gsb-notifications]', '[data-gsb-skip-link]', '.gsb-dock'];
+
+const inertLocks = new WeakMap<Element, { count: number; previous: string | null }>();
 
 /** Lock body scroll + inert the page; returns the function that undoes both. */
-export function lockBackground(): () => void {
-  const previous = document.body.style.overflow;
-  document.body.style.overflow = 'hidden';
-  const background = BACKGROUND.flatMap((sel) => Array.from(document.querySelectorAll(sel)));
-  background.forEach((el) => el.setAttribute('inert', ''));
+export function lockBackground(exclude?: Element | null): () => void {
+  lockBodyScroll();
+  // A portaled dialog may contain a semantic header of its own. Never inert
+  // its descendants or its outer wrapper along with the page chrome.
+  const background = Array.from(new Set(BACKGROUND.flatMap((sel) => Array.from(document.querySelectorAll(sel)))))
+    .filter((el) => !exclude || (el !== exclude && !el.contains(exclude) && !exclude.contains(el)));
+  background.forEach((el) => {
+    const existing = inertLocks.get(el);
+    if (existing) existing.count += 1;
+    else inertLocks.set(el, { count: 1, previous: el.getAttribute('inert') });
+    el.setAttribute('inert', '');
+  });
+  let released = false;
   return () => {
-    document.body.style.overflow = previous;
-    background.forEach((el) => el.removeAttribute('inert'));
+    if (released) return;
+    released = true;
+    background.forEach((el) => {
+      const lock = inertLocks.get(el);
+      if (!lock || --lock.count > 0) return;
+      if (lock.previous === null) el.removeAttribute('inert');
+      else el.setAttribute('inert', lock.previous);
+      inertLocks.delete(el);
+    });
+    unlockBodyScroll();
   };
 }
 
@@ -43,9 +62,13 @@ export function lockBackground(): () => void {
 export function trapTab(e: { key: string; shiftKey: boolean; preventDefault: () => void }, panel: HTMLElement | null): void {
   if (e.key !== 'Tab' || !panel) return;
   const items = Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
-    (el) => el.offsetParent !== null && el.tabIndex >= 0,
+    (el) => el.getClientRects().length > 0 && el.tabIndex >= 0 && !el.matches(':disabled') && !el.closest('[inert]'),
   );
-  if (items.length === 0) return;
+  if (items.length === 0) {
+    e.preventDefault();
+    panel.focus();
+    return;
+  }
   const first = items[0];
   const last = items[items.length - 1];
   const activeEl = document.activeElement;

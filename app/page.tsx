@@ -14,6 +14,7 @@ import { homeImage } from '@/lib/images';
 import HomeRegionGrid from '@/components/HomeRegionGrid';
 import HomeDestinations from '@/components/HomeDestinations';
 import HomeSpotlight, { type ExamLite, type CollegeLite } from '@/components/HomeSpotlight';
+import { HOME_UI } from '@/lib/home-ui';
 
 /**
  * Home <title> leads with the query terms, brand last: the site has no brand
@@ -88,7 +89,6 @@ const HOME_UNIVERSITIES_BY_REGION: Record<RegionSlug, CollegeLite[]> = (() => {
         city: c.city,
         state: c.state,
         established: c.established,
-        qsRank: c.ranking?.qs,
       }));
   }
   return out;
@@ -108,7 +108,7 @@ const HOME_HERO_DATA: Record<RegionSlug, HomeHeroData> = (() => {
       })
       .slice(0, 4);
     out[r.slug] = {
-      topUniversity: top ? { name: top.nameEn, qsRank: top.qsRank } : null,
+      topUniversity: top ? { slug: top.slug, name: top.nameEn } : null,
       popular,
     };
   }
@@ -126,8 +126,8 @@ export default function HomePage() {
             <ContentImage
               asset={homeImage()}
               variant="hero"
+              layout="feature"
               priority
-              sizes="(min-width: 1024px) 26rem, (min-width: 640px) 90vw, 100vw"
             />
           }
         />
@@ -146,13 +146,13 @@ export default function HomePage() {
       <section className="on-dark bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-12 py-12 md:py-16">
         <div className="max-w-3xl">
           <p className="text-xs font-semibold tracking-[0.22em] uppercase text-cream-100/70 mb-4">
-            Why GlobalStudyBoard
+            {HOME_UI.whyEyebrow}
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial leading-tight mb-5">
-            One reference, every region.<br />No country-of-origin bias.
+            {HOME_UI.whyHeading}
           </h2>
           <p className="text-cream-50/85 text-base md:text-lg leading-relaxed mb-6">
-            Most college guides start from where their authors live. We start from where <em>you</em> want to go. Every destination — the United States, the United Kingdom and Ireland, continental Europe, Canada, Australia and New Zealand, East and Southeast Asia, the Middle East, Russia and the CIS, and India — gets the same depth of coverage, the same plain-language tone, and the same insistence on linking to the official source.
+            {HOME_UI.whyDescription}
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
@@ -165,13 +165,13 @@ export default function HomePage() {
               href="/tools"
               className="inline-flex items-center justify-center bg-transparent hover:bg-cream-50/10 text-cream-50 font-semibold px-6 py-3 rounded-full no-underline transition-colors border border-cream-50/30"
             >
-              Application tools
+              {HOME_UI.tools}
             </Link>
             <Link
               href="/regions"
               className="inline-flex items-center justify-center bg-transparent hover:bg-cream-50/10 text-cream-50 font-semibold px-6 py-3 rounded-full no-underline transition-colors border border-cream-50/30"
             >
-              See all regions
+              {HOME_UI.regions}
             </Link>
           </div>
         </div>

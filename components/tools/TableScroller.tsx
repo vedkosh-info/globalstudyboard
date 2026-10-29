@@ -58,7 +58,7 @@ export default function TableScroller({ labelledBy, className = 'mt-3 rounded-sm
       )}
       <div
         ref={ref}
-        className={`${className} overflow-x-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-2 print:overflow-visible [&_:is(th,td)]:[overflow-wrap:break-word] [&_:is(th,td)]:[word-break:normal] print:[&_:is(th,td)]:[overflow-wrap:anywhere]`}
+        className={`${className} relative overflow-x-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-2 print:overflow-visible [&_:is(th,td)]:[overflow-wrap:break-word] [&_:is(th,td)]:[word-break:normal] print:[&_:is(th,td)]:[overflow-wrap:anywhere]`}
         // Only the wrapper itself counts: focus on a link inside a cell never holds the tab stop.
         onFocus={(e) => {
           if (e.target === e.currentTarget) setFocused(true);

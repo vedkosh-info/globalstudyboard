@@ -17,7 +17,8 @@
     "find-home": "tsx scripts/find-home.ts",
     "links:check": "tsx scripts/linkcheck.ts",
     "images:check": "tsx scripts/check-images.ts",
-    "tools:check": "tsx scripts/check-tools.ts"
+    "tools:check": "tsx scripts/check-tools.ts",
+    "scholarships:check": "tsx scripts/qa/scholarship-domain.spec.ts && tsx scripts/qa/tool-handoff.spec.ts && tsx scripts/scholarship-integration-qa.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.79",

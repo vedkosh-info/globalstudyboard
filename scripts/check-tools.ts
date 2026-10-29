@@ -55,6 +55,7 @@ import { DEFAULT_CRITERIA, COMPARE_LIMITS } from '../lib/compare';
 import { NON_AFFILIATION_NOTICE, SITE_DISCLAIMER } from '../lib/site-meta';
 import { DATED_KINDS, EXAM_VALIDITY } from '../lib/test-validity';
 import { ENTRANCE_EXAMS } from '../lib/admission-guides';
+import { scholarshipCatalogue } from '../lib/scholarship-catalogue';
 
 
 /** usWeightClass from a TrueType file's OS/2 table (table directory: numTables at byte 4, 16-byte records from byte 12). */
@@ -406,6 +407,7 @@ function finalState(name: string, table: string): void {
   // the nine destinations exactly.
   const EXPECTED: Record<string, { table: string; values: readonly string[] }> = {
     planner_applications_region_check: { table: 'planner_applications', values: REGION_SLUGS },
+    scholarship_entries_region_check: { table: 'scholarship_entries', values: REGION_SLUGS },
     budget_plans_region_check: { table: 'budget_plans', values: REGION_SLUGS },
     compare_sets_region_check: { table: 'compare_sets', values: REGION_SLUGS },
     profiles_preferred_region_check: { table: 'profiles', values: REGION_SLUGS },
@@ -800,7 +802,32 @@ function finalState(name: string, table: string): void {
   }
 }
 
+// Scholarship presets contain only identities linked to canonical guides. They
+// must never quietly become an unverified deadline/eligibility/award database.
+{
+  const allowedKeys = new Set(['slug', 'name', 'provider', 'region', 'officialUrl', 'guideTitle', 'sourceReviewed']);
+  const slugs = new Set<string>();
+  const identities = new Set<string>();
+  for (const award of scholarshipCatalogue().awards) {
+    const where = `scholarships.${award.slug}`;
+    if (slugs.has(award.slug)) problems.push(`${where}: duplicate canonical guide key`);
+    slugs.add(award.slug);
+    const identity = `${award.region}:${award.name.toLowerCase().replace(/[^a-z0-9]/g, '')}`;
+    if (identities.has(identity)) problems.push(`${where}: duplicate award identity`);
+    identities.add(identity);
+    if (!guideSlugs.has(award.slug)) problems.push(`${where}: guide does not exist`);
+    if (!getRegionBySlug(award.region)) problems.push(`${where}: destination does not exist`);
+    if (!award.name.trim() || !award.provider.trim()) problems.push(`${where}: missing name or provider`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(award.sourceReviewed) || Number.isNaN(Date.parse(award.sourceReviewed)) || new Date(award.sourceReviewed).toISOString().slice(0, 10) !== award.sourceReviewed) problems.push(`${where}: source identity check needs a real date`);
+    checkUrl(where, award.officialUrl);
+    const u = new URL(award.officialUrl);
+    if (u.username || u.password) problems.push(`${where}: source URL contains credentials`);
+    if (Object.keys(award).some((key) => !allowedKeys.has(key))) problems.push(`${where}: preset contains unreviewed extra fields`);
+  }
+}
+
 for (const t of TOOLS) {
+  if (!t.indexLabel.trim()) problems.push(`tools: ${t.slug} is missing its index-description subject`);
   if (!existsSync(join('app', 'tools', t.slug, 'page.tsx'))) problems.push(`tools: ${t.slug} is registered but app/tools/${t.slug}/page.tsx is missing`);
 }
 

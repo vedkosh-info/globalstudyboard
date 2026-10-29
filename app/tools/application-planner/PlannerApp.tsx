@@ -4,6 +4,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEven
 import Link from 'next/link';
 import { CalendarDays, Check, ChevronDown, Download, ExternalLink, Plus, RotateCw, Search, Trash2, X } from 'lucide-react';
 import ReportView from '@/components/tools/ReportView';
+import ScholarshipPlannerSteps from '@/components/tools/ScholarshipPlannerSteps';
 import { saveBlob } from '@/lib/download-file';
 import { buildPlannerReport } from '@/lib/reports/planner-report';
 import { defaultPaperFor, type Paper } from '@/lib/reports/model';
@@ -814,6 +815,7 @@ export default function PlannerApp() {
 
   return (
     <div className="space-y-5">
+      <ScholarshipPlannerSteps />
       {/* Destination + summary + actions */}
       <div className={`${CARD} space-y-4`}>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">

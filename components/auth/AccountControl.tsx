@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react';
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { Award, Bookmark, ChevronDown, ClipboardList, Coins, Columns3, LogIn, LogOut, UserRound } from 'lucide-react';
+import { Award, Bookmark, ChevronDown, ClipboardList, Coins, Columns3, GraduationCap, LogIn, LogOut, UserRound } from 'lucide-react';
 import SignInButton from '@/components/auth/SignInButton';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { announceAuthChanged } from '@/lib/auth-events';
@@ -37,7 +37,7 @@ import { clearLocalAuthCookies, hasAuthCookie, isAuthConfigured } from '@/lib/su
  * definite "session gone" from the auth server closes the menu and signs the
  * device out. A network blip used to look identical (`getUser()` answers
  * `user: null` either way), so on a flaky connection the menu — now the
- * entrance to all four tools — opened and shut itself on every tap
+ * entrance to the tools — opened and shut itself on every tap
  * (independent review SH-06). Offline, it now stays open with "Signed in".
  */
 
@@ -272,7 +272,7 @@ export default function AccountControl() {
           role="group"
           aria-labelledby={labelId}
           onKeyDown={onPanelKeyDown}
-          className="absolute right-0 z-50 mt-2 w-64 rounded-2xl border border-stone-200 bg-white p-1.5 shadow-xl"
+          className="absolute right-0 z-50 mt-2 max-h-[calc(100dvh-8rem)] w-64 overflow-y-auto overscroll-contain rounded-2xl border border-stone-200 bg-white p-1.5 shadow-xl"
         >
           <p id={labelId} className="px-2.5 pb-1.5 pt-1 text-[11px] font-semibold uppercase tracking-wide text-stone-600">
             Your account
@@ -297,6 +297,9 @@ export default function AccountControl() {
           </ToolLink>
           <ToolLink href={toolPageHref('test-score-tracker', pageRegion)} data-account-option className={OPTION} onClick={() => setOpen(false)}>
             <Award className="h-4 w-4 text-forest-700" aria-hidden="true" /> Test score tracker
+          </ToolLink>
+          <ToolLink href={toolPageHref('scholarship-tracker', pageRegion)} data-account-option className={OPTION} onClick={() => setOpen(false)}>
+            <GraduationCap className="h-4 w-4 text-forest-700" aria-hidden="true" /> Scholarship tracker
           </ToolLink>
           {/* aria-disabled + the guard in signOut, not `disabled`: Chrome drops
               focus to <body> from a focused button that becomes disabled, and

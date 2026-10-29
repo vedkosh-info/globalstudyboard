@@ -98,10 +98,10 @@ export default function TopicsIndex({ sections }: { sections: RegionSection[] })
                         href={`/topics/${t.slug}`}
                         className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group/card flex flex-col"
                       >
-                        <h4 className="font-display text-lg font-bold tracking-editorial text-ink leading-snug mb-2 group-hover/card:text-forest-700">
+                        <h4 className="font-display text-xl font-bold tracking-editorial text-ink leading-snug mb-2 group-hover/card:text-forest-700">
                           {t.title}
                         </h4>
-                        <p className="text-stone-600 text-sm leading-relaxed m-0 flex-1">{t.description}</p>
+                        <p className="text-stone-600 text-base leading-relaxed m-0 flex-1">{t.description}</p>
                         <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
                           {t.count} guide{t.count === 1 ? '' : 's'} <ArrowUpRight className="w-4 h-4" />
                         </span>

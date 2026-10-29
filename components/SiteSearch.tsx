@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useRef, useState, useTransition } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Loader2, Search, X } from 'lucide-react';
+import { useRegion } from '@/components/RegionProvider';
+import { searchHref } from '@/lib/search-links';
 
 /**
  * The persistent search box shown at the top of every page. It does NOT open a
@@ -28,6 +30,7 @@ const AUTO_MIN = 5;
 export default function SiteSearch() {
   const router = useRouter();
   const pathname = usePathname();
+  const { effectiveRegion } = useRegion();
   const [query, setQuery] = useState('');
   const [queued, setQueued] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -47,10 +50,10 @@ export default function SiteSearch() {
       // Inside a transition so `isPending` stays true until the results page has
       // rendered — that is what keeps the spinner honest across the navigation.
       startTransition(() => {
-        router.push(`/search?q=${encodeURIComponent(trimmed)}`);
+        router.push(searchHref(trimmed, effectiveRegion));
       });
     },
-    [router],
+    [router, effectiveRegion],
   );
 
   // As the visitor types: once past five letters, debounce-navigate to the
@@ -80,9 +83,9 @@ export default function SiteSearch() {
     }
     lastPushed.current = trimmed;
     startTransition(() => {
-      router.push(`/search?q=${encodeURIComponent(trimmed)}`);
+      router.push(searchHref(trimmed, effectiveRegion));
     });
-  }, [query, router]);
+  }, [query, router, effectiveRegion]);
 
   if (onSearchPage) return null;
 

@@ -19898,291 +19898,147 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P5: Guide[] = [
       }
     ]
   },
+
   {
-    "slug": "vegetarian-jain-and-halal-food-for-students-in-asia",
-    "category": "study-abroad",
-    "region": "east-southeast-asia",
-    "titleEn": "Vegetarian, Jain and Halal Food for Students in Asia",
-    "descriptionEn": "Finding vegetarian, Jain and halal food across Asia — the hidden non-veg ingredients to watch for, and where certification labels and Indian groceries help.",
-    "readMinutes": 8,
-    "sections": [
-      {
-        "headingEn": "Why this is worth planning before you fly",
-        "bodyEn": "Food is the practical detail that most often surprises Indian students in East and Southeast Asia, and it has an outsized effect on how settled the first months feel. It is also entirely solvable — but the solutions differ enormously by destination, and the assumption that you will simply work it out on arrival is what leads to a difficult first term.\n\nThis guide treats dietary requirements as exactly that: practical food categories. Vegetarian, vegan, Jain and halal are described here as what you can and cannot eat and how to find it, nothing more.\n\nAvailability changes constantly as cities grow more international, campuses add options and new restaurants open. Nothing here is a fixed fact about a place — verify current options locally through your university's dining or campus-life pages and your student community when you arrive."
-      },
-      {
-        "headingEn": "The hidden-ingredient problem",
-        "bodyEn": "The single most useful thing to understand is that a dish can contain no visible meat and still not be vegetarian. Across this region, animal-derived ingredients are frequently used as a base rather than as a component, which means they do not appear on the plate and are often not mentioned on the menu.\n\nThis is not anyone concealing anything. In several of these cuisines the ingredient is so fundamental that describing a dish without it would be like an Indian menu specifying that the dal contains water. Asking specifically, rather than asking whether something is vegetarian, is the technique that works.\n\nThe items below account for most of the surprises. Learning to name them in the local language — or having them written on your phone — is more useful than any other language preparation you could do.",
-        "bullets": [
-          "Dashi — a stock made from fish flakes or other seafood, foundational in Japanese cooking and present in many dishes that look entirely vegetable-based, including miso soup and many broths.",
-          "Fish sauce — a base seasoning across much of Southeast Asian cooking, including in dishes that appear vegetarian.",
-          "Shrimp paste — used as a flavour base in parts of Southeast Asia, including in vegetable and chilli preparations.",
-          "Lard and animal fat — used as a cooking fat in some regional cooking, including in items that contain no meat.",
-          "Oyster sauce — common in stir-fried vegetable dishes across the Chinese-influenced cuisines of the region.",
-          "Meat-based broths — the default base for many noodle soups even where the visible toppings are vegetables."
-        ]
-      },
-      {
-        "headingEn": "Where it is easy, and where it takes work",
-        "bodyEn": "The region divides fairly cleanly, and knowing which side your destination sits on tells you how much to plan.\n\nSingapore and Malaysia are the most straightforward. Both are long-established multicultural food cities with substantial South Asian populations, well-developed halal certification, widely available vegetarian options and easy access to Indian food and groceries. Students with dietary requirements generally report the least friction here.\n\nTaiwan is notably good for vegetarians: dedicated vegetarian restaurants and buffets are common and are conventionally signposted with the character 素, which is a useful thing to learn to recognise. Hong Kong and the larger mainland Chinese cities have growing vegetarian scenes and reasonable international options, though the hidden-ingredient issue applies and vegetarianism is not a default assumption.\n\nJapan and South Korea take the most planning. Both have expanding vegetarian and vegan scenes concentrated in the larger cities, but outside those, options thin quickly, and dashi in Japan means that many apparently vegetable dishes are not vegetarian. Thailand and the Philippines sit in between — Thailand has a strong vegetable-forward cuisine but fish sauce is pervasive, and both have good options in student and international areas.",
-        "bullets": [
-          "Most straightforward — Singapore, Malaysia: strong halal certification, easy vegetarian options, Indian food and groceries widely available.",
-          "Good for vegetarians — Taiwan: dedicated vegetarian restaurants common, signposted with 素.",
-          "Manageable with attention — Hong Kong, mainland Chinese cities, Thailand, the Philippines.",
-          "Most planning needed — Japan, South Korea: growing scenes in major cities, thinner elsewhere, hidden stocks and sauces common."
-        ]
-      },
-      {
-        "headingEn": "Halal food and certification labels",
-        "bodyEn": "Two destinations in this region operate well-established official halal certification schemes, which makes identifying certified food a matter of looking for a label rather than asking each time.\n\nIn Malaysia, halal certification is administered by JAKIM, which maintains the official Halal Malaysia portal and a certificate lookup. In Singapore, the certification scheme is administered by MUIS. Both bodies publish directories and recognise certain foreign certification bodies, and both are the authoritative source for whether a given establishment or product is currently certified.\n\nElsewhere in the region the picture is more varied. Certified outlets exist in the larger cities of Japan, South Korea, Taiwan, Hong Kong, Thailand and the Philippines, often concentrated near universities with international student populations, but coverage is far less systematic and you should not assume it. Certification status is granted and withdrawn over time, so check the certifying body's current directory rather than an older list or a third-party app."
-      },
-      {
-        "headingEn": "Jain dietary requirements: plan for self-catering",
-        "bodyEn": "Jain dietary practice — which excludes onion, garlic and root vegetables in addition to all meat, fish and eggs — is the hardest requirement to meet by eating out in most of this region, and it is honest to say so directly.\n\nOnion and garlic are foundational across nearly every cuisine here, including in dishes that are otherwise entirely plant-based. A restaurant that can cheerfully make something vegetarian will often not be able to make it without alliums, because they are in the base preparation rather than added at the end.\n\nThe realistic approach is to plan for self-catering as your primary route, with eating out as the exception rather than the default. That makes accommodation with kitchen access a genuine priority rather than a preference — worth weighing when you choose housing, because some student residences in this region have limited or shared cooking facilities. Singapore and Malaysia, with established Indian restaurant scenes, tend to offer the widest range of accommodating options; elsewhere, assume you will cook. Taiwan's vegetarian restaurants, while numerous, do not necessarily exclude alliums, so ask rather than assume."
-      },
-      {
-        "headingEn": "Groceries, cooking and campus dining",
-        "bodyEn": "Indian and South Asian groceries are available in most major student cities in this region, though the range and price vary a great deal. Singapore and Malaysia are well supplied. In Japan, Korea, Taiwan and Hong Kong, Indian grocery shops exist in the larger cities and online ordering fills gaps, generally at a premium.\n\nThe pragmatic packing decision is to bring the things that are hard to source or disproportionately expensive — particular spice blends, asafoetida, specific lentils — rather than bulk staples that travel badly and are usually available. Check your destination's customs rules on food items before packing any, as restrictions on plant products, seeds and animal-derived items are real and are enforced.\n\nOn campus, dining provision differs by institution: some universities have vegetarian counters or certified halal outlets, others have essentially none. This is a concrete question worth asking your international-student office or checking on the university's own campus-life pages before you arrive, and it is a fair question to raise on an open day or in a chat with current students.",
-        "bullets": [
-          "Bring what is genuinely hard to source, not bulk staples — and check customs rules on food items first.",
-          "Prioritise kitchen access when choosing accommodation if your requirements are strict.",
-          "Ask your international-student office what campus dining actually offers, rather than assuming.",
-          "Find the local Indian or South Asian grocery early; the student community will know it."
-        ]
-      },
-      {
-        "headingEn": "Verify locally, and expect it to change",
-        "bodyEn": "Restaurant options, certification status, campus dining provision and grocery availability all change continuously, and any specific recommendation would be out of date quickly. This guide describes the shape of each destination and the questions to ask, not a list of places to eat.\n\nFor certification, use the certifying body's current official directory — JAKIM's Halal Malaysia portal or MUIS in Singapore — rather than a third-party listing. For campus dining, use your university's own official pages. For everything else, the student community in your city is the fastest source, and your international-student office can usually point you to it.\n\nOne last practical note: ask about ingredients specifically rather than asking whether something is vegetarian. The specific question is understood; the general one frequently is not."
-      }
-    ],
-    "faqs": [
-      {
-        "questionEn": "Is it realistic to be vegetarian while studying in Japan or Korea?",
-        "answerEn": "Yes, but it takes planning rather than luck. Both have growing vegetarian and vegan scenes in their larger cities, and both thin out beyond them. The bigger issue is hidden ingredients — dashi, a fish-based stock, is foundational in Japanese cooking and present in many dishes that look entirely vegetable-based. Learn to ask about specific ingredients, and expect to cook more than you would at home."
-      },
-      {
-        "questionEn": "What is dashi and why does it matter?",
-        "answerEn": "Dashi is a stock commonly made from fish flakes or other seafood, and it is a base ingredient across Japanese cooking rather than a visible component — which means a dish can contain no meat you can see and still not be vegetarian. Miso soup and many broths typically contain it. Asking specifically about the stock, rather than asking if a dish is vegetarian, is the technique that works."
-      },
-      {
-        "questionEn": "Which destinations are easiest for halal food?",
-        "answerEn": "Malaysia and Singapore are the most straightforward, as both operate established official certification schemes — JAKIM in Malaysia and MUIS in Singapore — with published directories you can check. Certified outlets exist in the larger cities elsewhere in the region but coverage is far less systematic. Certification is granted and withdrawn over time, so check the certifying body's current official directory."
-      },
-      {
-        "questionEn": "Can I follow a Jain diet as a student in East Asia?",
-        "answerEn": "It is the hardest requirement to meet by eating out, because onion and garlic are foundational across nearly every cuisine in the region, including in otherwise plant-based dishes. Plan for self-catering as your main route and treat kitchen access as a priority when choosing accommodation. Singapore and Malaysia tend to offer the widest range of options for eating out; elsewhere, assume you will cook."
-      },
-      {
-        "questionEn": "Should I pack Indian food and spices?",
-        "answerEn": "Bring what is genuinely hard to source or disproportionately expensive — particular spice blends, asafoetida, specific lentils — rather than bulk staples, which travel badly and are usually available in the larger cities. Check your destination's customs rules on food items before packing, as restrictions on plant products, seeds and animal-derived items are real and enforced."
-      }
-    ],
-    "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [
-      "national-university-of-singapore",
-      "universiti-malaya",
-      "national-taiwan-university"
-    ],
-    "relatedGuideSlugs": [
-      "climate-seasons-and-what-to-pack-for-studying-in-asia",
-      "student-life-in-southeast-asia-malaysia-thailand-philippines",
-      "cultural-adjustment-and-daily-life-for-students-in-japan",
-      "cost-of-living-compared-across-major-asian-student-cities"
-    ],
-    "sources": [
-      {
-        "label": "Halal Malaysia Official Portal (JAKIM) — certification and directory",
-        "url": "https://www.halal.gov.my/"
-      },
-      {
-        "label": "MUIS — Singapore's official halal certification authority",
-        "url": "https://www.muis.gov.sg/halal/"
-      },
-      {
-        "label": "National University of Singapore — halal and vegetarian food options on campus",
-        "url": "https://uci.nus.edu.sg/campus-life/campus-services/retail-dining/halal-vegetarian-food-options/"
-      }
-    ],
-    "lastVerified": "2026-07-15",
-    "keywords": [
-      "vegetarian food asia students",
-      "jain food studying abroad",
-      "halal food asia students",
-      "dashi fish stock vegetarian japan",
-      "indian groceries asia student cities",
-      "halal certification jakim muis",
-      "vegetarian taiwan restaurants"
-    ],
-    "tags": [
-      "asia-health-safety-and-wellbeing"
-    ],
-    "keyFacts": [
-      {
-        "label": "Hidden ingredients",
-        "value": "Dashi, fish sauce, shrimp paste, lard, oyster sauce and meat broths appear in dishes with no visible meat"
-      },
-      {
-        "label": "Easiest destinations",
-        "value": "Singapore and Malaysia — established certification, Indian food and groceries widely available"
-      },
-      {
-        "label": "Vegetarian-friendly",
-        "value": "Taiwan — dedicated vegetarian restaurants commonly signposted with 素"
-      },
-      {
-        "label": "Halal certification",
-        "value": "JAKIM (Malaysia) and MUIS (Singapore) — check each body's current official directory"
-      },
-      {
-        "label": "Jain requirements",
-        "value": "Onion and garlic are foundational region-wide — plan for self-catering and prioritise kitchen access"
-      },
-      {
-        "label": "Availability",
-        "value": "Changes constantly — verify current options on official university dining pages and locally"
-      }
-    ]
-  },
-  {
-    "slug": "climate-seasons-and-what-to-pack-for-studying-in-asia",
-    "category": "study-abroad",
-    "region": "east-southeast-asia",
-    "titleEn": "Climate, Seasons and What to Pack for Studying in Asia",
-    "descriptionEn": "Cold winters in Japan and Korea, humid subtropics in Hong Kong and Taiwan, tropical heat and monsoon in Southeast Asia — what to pack and what to buy locally.",
-    "readMinutes": 7,
-    "sections": [
-      {
-        "headingEn": "\"Asia\" is not one climate",
-        "bodyEn": "The single most common packing mistake Indian students make is treating this region as a single destination. It is not. A student starting in Seoul in March and a student starting in Kuala Lumpur in September are preparing for almost nothing in common.\n\nThe region spans genuinely cold winters with snow, humid subtropical zones, and year-round tropical heat with a pronounced wet season. Your packing list follows from which of those you are entering, and from what month you arrive — which, given that term-start months vary across the region, is not the same question.\n\nThis guide covers climate patterns and what to wear. Responding to typhoons, earthquakes and flooding is a separate subject with its own guide. General seasonal descriptions here are exactly that — check current forecasts from your destination's national meteorological service before you travel."
-      },
-      {
-        "headingEn": "The three climate zones you might be entering",
-        "bodyEn": "Grouping the region into three broad zones is the fastest way to know what you are dealing with. Conditions vary within each — northern Japan is markedly different from southern Japan, and a hill campus is not its nearest city — so treat this as orientation rather than forecast.\n\nWhat surprises students most is not the extremes but the humidity, which changes how a given temperature feels in both directions. A humid subtropical winter with no central heating can feel colder than a drier climate several degrees lower.",
-        "bullets": [
-          "Four-season, cold winter — Japan and South Korea: distinct spring, summer, autumn and winter, hot humid summers, a rainy season in early summer, and genuinely cold winters with snow in many areas. Northern regions are considerably colder than southern ones.",
-          "Humid subtropical — Hong Kong, Taiwan and southern mainland China: hot, very humid summers, mild but sometimes damp and chilly winters, typhoon season in the warmer months.",
-          "Tropical — Singapore, Malaysia, Thailand and the Philippines: warm to hot year-round with high humidity and no cold season, with a pronounced monsoon or wet season whose timing varies by country and even by coast."
-        ]
-      },
-      {
-        "headingEn": "The indoor-heating problem nobody warns you about",
-        "bodyEn": "This is the detail that catches students out most, and it is worth more attention than the outdoor temperature.\n\nIn much of Japan, Korea, Taiwan, Hong Kong and southern mainland China, buildings are not centrally heated the way an Indian student might expect from stories about \"cold countries\". Heating is often room-by-room, or absent in corridors, bathrooms and older accommodation. In the humid subtropical zone in particular, a mild winter statistic conceals the fact that indoors can be persistently, uncomfortably cold, because buildings are designed for the summer.\n\nThe practical consequence is that indoor clothing matters. Layers you can wear at your desk, warm socks, and a blanket are what students in Hong Kong and Taipei actually reach for in January — not the heavy coat that the temperature number would suggest. Conversely, in the tropical zone the problem inverts: air-conditioning in lecture halls, libraries and malls is often aggressive, and a light layer to carry indoors is genuinely useful year-round."
-      },
-      {
-        "headingEn": "What to bring, and what to buy after you land",
-        "bodyEn": "The general principle is to arrive with enough to be comfortable for the first two weeks in the season you land in, and buy the rest locally once you know what you actually need.\n\nSerious winter clothing is the clearest case for buying locally. A coat bought in Seoul or Sapporo is designed for that winter, is sold everywhere at the point you need it, and is usually better value than an equivalent bought in India for a climate the seller has never experienced. Buying on arrival also means you buy after one week of actually feeling the weather.\n\nThe exception is fit. If you have a size — in shoes especially — that is at the edges of the local range, sourcing can be harder or more expensive in some markets, and this is worth checking before you decide to buy everything there. Formal wear for presentations or interviews is generally easy to buy locally.",
-        "bullets": [
-          "Bring — clothing for your arrival season and first fortnight, a compact umbrella, comfortable walking shoes, any specific spices or medicines that are hard to source, and all your documents.",
-          "Buy locally — the serious winter coat, boots, bedding, an electric blanket or heater if needed, and monsoon gear, all cheaper and better matched to the actual conditions.",
-          "Check before deciding — shoe and clothing sizes at the edges of the local range can be harder to source in some markets.",
-          "Do not bother with — bulk toiletries and staples, which are available everywhere and take luggage allowance you will want for other things."
-        ]
-      },
-      {
-        "headingEn": "Packing by zone",
-        "bodyEn": "Set against those three zones, the lists diverge sharply. Use your term-start month rather than a general impression of the country: arriving in Japan in April is a mild spring, arriving in September is the tail of a hot, humid summer, and both are the same course.\n\nFor the four-season zone, plan for a genuine winter and a genuinely hot summer — thermal layers, a proper coat, gloves and a hat for winter; light breathable clothing for the humid summer; and something waterproof for the early-summer rainy season. Much of this is best bought after arrival.\n\nFor the humid subtropical zone, the summer is the main event — light, breathable, quick-drying clothing, and an umbrella that handles both sun and heavy rain. Add indoor layers for winter as described above; a heavy coat is rarely the right purchase.\n\nFor the tropical zone, you will not need winter clothing at all, and the honest advice is not to bring any. Light breathable fabrics, sandals plus one pair of proper shoes, quick-drying clothing for the wet season, an umbrella or light rain jacket, and a layer for aggressive indoor air-conditioning is the whole list. Quick-drying matters more than waterproof in a climate where rain is warm and heavy."
-      },
-      {
-        "headingEn": "Term-start seasons and the wet season",
-        "bodyEn": "Two timing points shape the practical decision, and both are easy to get wrong from India.\n\nAcademic years in this region do not align. Japan's main intake begins in spring, Korea's academic year starts earlier in the calendar year than most students expect, and much of the rest of the region follows a September start — with several universities running additional intakes. Whichever applies to you determines the season you land in, and therefore what needs to be in your suitcase on day one rather than in a shop later.\n\nThe wet season is the second. Its timing varies by country and, in places like Malaysia and the Philippines, by coast and region within a country — so a general statement about \"the monsoon\" is not something to plan around. Check the pattern for your specific city with the national meteorological service, and check current forecasts close to travel. Arriving in heavy rain with one pair of canvas shoes is a solvable problem, but a needless one."
-      },
-      {
-        "headingEn": "Check the forecast, not the generalisation",
-        "bodyEn": "Everything above describes typical seasonal patterns, not what the weather will do on your arrival date. Seasonal timing shifts, conditions vary year to year, and regional variation within each country is substantial.\n\nBefore you travel, check the current forecast and the seasonal outlook for your specific city from the official national meteorological service for your destination — the Japan Meteorological Agency, the Hong Kong Observatory, Taiwan's Central Weather Administration, PAGASA in the Philippines, or the Malaysian Meteorological Department. Your university's official new-student arrival guide is the other source worth reading, because it will tell you what your particular campus and accommodation actually require.\n\nDeliberately, this guide publishes no temperature or rainfall figures. General ranges quoted from memory are precisely the thing that goes stale and misleads — the meteorological services publish current data, and that is where the numbers should come from."
-      }
-    ],
-    "faqs": [
-      {
-        "questionEn": "Should I buy a winter coat in India or after I arrive?",
-        "answerEn": "After you arrive, in almost every case. A coat bought in Seoul, Sapporo or Taipei is designed for that winter, sold everywhere at the moment you need it, and usually better value than an equivalent bought in India for a climate the seller has not experienced. Bring enough for your first fortnight and buy properly once you have felt the weather."
-      },
-      {
-        "questionEn": "Do I need winter clothing for Singapore, Malaysia or Thailand?",
-        "answerEn": "No. These are tropical destinations with no cold season, and packing winter clothing wastes luggage allowance you will want for other things. What is genuinely useful is a light layer for indoor air-conditioning, which is often aggressive in lecture halls, libraries and malls, and quick-drying clothing for the wet season."
-      },
-      {
-        "questionEn": "Why do students say Hong Kong and Taiwan feel cold when the winters are mild?",
-        "answerEn": "Because buildings in the humid subtropical zone are designed for the summer, and central heating is often limited or absent. A mild winter temperature conceals the fact that indoors can be persistently chilly and damp. The useful preparation is indoor layers, warm socks and a blanket, rather than the heavy coat the temperature alone would suggest."
-      },
-      {
-        "questionEn": "When is the monsoon or wet season?",
-        "answerEn": "It varies by country and, in Malaysia and the Philippines, by region and coast within a country — so a single answer for the region would mislead you. Check the seasonal pattern for your specific city with the national meteorological service for your destination, and check current forecasts close to your travel date rather than planning around a general expectation."
-      },
-      {
-        "questionEn": "What is genuinely worth packing from India?",
-        "answerEn": "Clothing for your arrival season and first fortnight, a compact umbrella, comfortable walking shoes, your documents, and the specific spices or medicines that are hard or expensive to source abroad — subject to your destination's customs rules on food and medicine. Skip bulk toiletries and staples, which are available everywhere and cost you luggage allowance."
-      }
-    ],
-    "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [
-      "seoul-national-university",
-      "university-of-hong-kong",
-      "national-university-of-singapore"
-    ],
-    "relatedGuideSlugs": [
-      "earthquake-typhoon-and-natural-hazard-preparedness-for-students-in-asia",
-      "vegetarian-jain-and-halal-food-for-students-in-asia",
-      "student-life-in-southeast-asia-malaysia-thailand-philippines",
-      "settling-into-japan-residence-card-city-hall-bank-and-phone"
-    ],
-    "sources": [
-      {
-        "label": "Japan Meteorological Agency — official English portal",
-        "url": "https://www.jma.go.jp/jma/en/menu.html"
-      },
-      {
-        "label": "Hong Kong Observatory — weather warnings and current conditions",
-        "url": "https://www.hko.gov.hk/en/wxinfo/dailywx/wxwarntoday.htm"
-      },
-      {
-        "label": "Central Weather Administration, Taiwan — official English site",
-        "url": "https://www.cwa.gov.tw/eng/"
-      },
-      {
-        "label": "Malaysian Meteorological Department (MET Malaysia) — official site",
-        "url": "https://www.met.gov.my/en/"
-      }
-    ],
-    "lastVerified": "2026-07-15",
-    "keywords": [
-      "what to pack studying in asia",
-      "climate asia student destinations",
-      "winter in japan korea students",
-      "tropical packing singapore malaysia",
-      "monsoon season southeast asia",
-      "indoor heating hong kong taiwan",
-      "packing list study abroad asia"
-    ],
-    "tags": [
-      "asia-health-safety-and-wellbeing"
-    ],
-    "keyFacts": [
-      {
-        "label": "Three zones",
-        "value": "Four-season cold winter (Japan, Korea); humid subtropical (Hong Kong, Taiwan, southern China); tropical (Singapore, Malaysia, Thailand, Philippines)"
-      },
-      {
-        "label": "Indoor heating",
-        "value": "Often limited or room-by-room in Japan, Korea, Taiwan, Hong Kong — indoor layers matter more than the temperature suggests"
-      },
-      {
-        "label": "Buy locally",
-        "value": "Winter coat, boots, bedding, monsoon gear — better matched to conditions and usually better value"
-      },
-      {
-        "label": "Tropical destinations",
-        "value": "No winter clothing needed; a light layer for indoor air-conditioning is more useful"
-      },
-      {
-        "label": "Term-start months",
-        "value": "Vary across the region — your arrival season depends on your intake, not the country"
-      },
-      {
-        "label": "Temperatures and wet season",
-        "value": "Vary by year and by region — check current forecasts from the national meteorological service"
-      }
-    ]
-  },
+  "slug": "climate-seasons-and-what-to-pack-for-studying-in-asia",
+  "category": "study-abroad",
+  "region": "east-southeast-asia",
+  "titleEn": "Climate, Seasons and What to Pack for Studying in Asia",
+  "descriptionEn": "Cold winters in Japan and Korea, humid subtropics in Hong Kong and Taiwan, tropical heat and monsoon in Southeast Asia — what to pack and what to buy locally.",
+  "readMinutes": 7,
+  "sections": [
+    {
+      "headingEn": "\"Asia\" is not one climate",
+      "bodyEn": "The single most common packing mistake Indian students make is treating this region as a single destination. It is not. A student starting in Seoul in March and a student starting in Kuala Lumpur in September are preparing for almost nothing in common.\n\nThe region spans genuinely cold winters with snow, humid subtropical zones, and year-round tropical heat with a pronounced wet season. Your packing list follows from which of those you are entering, and from what month you arrive — which, given that term-start months vary across the region, is not the same question.\n\nThis guide covers climate patterns and what to wear. Responding to typhoons, earthquakes and flooding is a separate subject with its own guide. General seasonal descriptions here are exactly that — check current forecasts from your destination's national meteorological service before you travel."
+    },
+    {
+      "headingEn": "The three climate zones you might be entering",
+      "bodyEn": "Grouping the region into three broad zones is the fastest way to know what you are dealing with. Conditions vary within each — northern Japan is markedly different from southern Japan, and a hill campus is not its nearest city — so treat this as orientation rather than forecast.\n\nWhat surprises students most is not the extremes but the humidity, which changes how a given temperature feels in both directions. A humid subtropical winter with no central heating can feel colder than a drier climate several degrees lower.",
+      "bullets": [
+        "Four-season, cold winter — Japan and South Korea: distinct spring, summer, autumn and winter, hot humid summers, a rainy season in early summer, and genuinely cold winters with snow in many areas. Northern regions are considerably colder than southern ones.",
+        "Humid subtropical — Hong Kong, Taiwan and southern mainland China: hot, very humid summers, mild but sometimes damp and chilly winters, typhoon season in the warmer months.",
+        "Tropical — Singapore, Malaysia, Thailand and the Philippines: warm to hot year-round with high humidity and no cold season, with a pronounced monsoon or wet season whose timing varies by country and even by coast."
+      ]
+    },
+    {
+      "headingEn": "The indoor-heating problem nobody warns you about",
+      "bodyEn": "This is the detail that catches students out most, and it is worth more attention than the outdoor temperature.\n\nIn much of Japan, Korea, Taiwan, Hong Kong and southern mainland China, buildings are not centrally heated the way an Indian student might expect from stories about \"cold countries\". Heating is often room-by-room, or absent in corridors, bathrooms and older accommodation. In the humid subtropical zone in particular, a mild winter statistic conceals the fact that indoors can be persistently, uncomfortably cold, because buildings are designed for the summer.\n\nThe practical consequence is that indoor clothing matters. Layers you can wear at your desk, warm socks, and a blanket are what students in Hong Kong and Taipei actually reach for in January — not the heavy coat that the temperature number would suggest. Conversely, in the tropical zone the problem inverts: air-conditioning in lecture halls, libraries and malls is often aggressive, and a light layer to carry indoors is genuinely useful year-round."
+    },
+    {
+      "headingEn": "What to bring, and what to buy after you land",
+      "bodyEn": "The general principle is to arrive with enough to be comfortable for the first two weeks in the season you land in, and buy the rest locally once you know what you actually need.\n\nSerious winter clothing is the clearest case for buying locally. A coat bought in Seoul or Sapporo is designed for that winter, is sold everywhere at the point you need it, and is usually better value than an equivalent bought in India for a climate the seller has never experienced. Buying on arrival also means you buy after one week of actually feeling the weather.\n\nThe exception is fit. If you have a size — in shoes especially — that is at the edges of the local range, sourcing can be harder or more expensive in some markets, and this is worth checking before you decide to buy everything there. Formal wear for presentations or interviews is generally easy to buy locally.",
+      "bullets": [
+        "Bring — clothing for your arrival season and first fortnight, a compact umbrella, comfortable walking shoes, any specific spices or medicines that are hard to source, and all your documents.",
+        "Buy locally — the serious winter coat, boots, bedding, an electric blanket or heater if needed, and monsoon gear, all cheaper and better matched to the actual conditions.",
+        "Check before deciding — shoe and clothing sizes at the edges of the local range can be harder to source in some markets.",
+        "Do not bother with — bulk toiletries and staples, which are available everywhere and take luggage allowance you will want for other things."
+      ]
+    },
+    {
+      "headingEn": "Packing by zone",
+      "bodyEn": "Set against those three zones, the lists diverge sharply. Use your term-start month rather than a general impression of the country: arriving in Japan in April is a mild spring, arriving in September is the tail of a hot, humid summer, and both are the same course.\n\nFor the four-season zone, plan for a genuine winter and a genuinely hot summer — thermal layers, a proper coat, gloves and a hat for winter; light breathable clothing for the humid summer; and something waterproof for the early-summer rainy season. Much of this is best bought after arrival.\n\nFor the humid subtropical zone, the summer is the main event — light, breathable, quick-drying clothing, and an umbrella that handles both sun and heavy rain. Add indoor layers for winter as described above; a heavy coat is rarely the right purchase.\n\nFor the tropical zone, you will not need winter clothing at all, and the honest advice is not to bring any. Light breathable fabrics, sandals plus one pair of proper shoes, quick-drying clothing for the wet season, an umbrella or light rain jacket, and a layer for aggressive indoor air-conditioning is the whole list. Quick-drying matters more than waterproof in a climate where rain is warm and heavy."
+    },
+    {
+      "headingEn": "Term-start seasons and the wet season",
+      "bodyEn": "Two timing points shape the practical decision, and both are easy to get wrong from India.\n\nAcademic years in this region do not align. Japan's main intake begins in spring, Korea's academic year starts earlier in the calendar year than most students expect, and much of the rest of the region follows a September start — with several universities running additional intakes. Whichever applies to you determines the season you land in, and therefore what needs to be in your suitcase on day one rather than in a shop later.\n\nThe wet season is the second. Its timing varies by country and, in places like Malaysia and the Philippines, by coast and region within a country — so a general statement about \"the monsoon\" is not something to plan around. Check the pattern for your specific city with the national meteorological service, and check current forecasts close to travel. Arriving in heavy rain with one pair of canvas shoes is a solvable problem, but a needless one."
+    },
+    {
+      "headingEn": "Check the forecast, not the generalisation",
+      "bodyEn": "Everything above describes typical seasonal patterns, not what the weather will do on your arrival date. Seasonal timing shifts, conditions vary year to year, and regional variation within each country is substantial.\n\nBefore you travel, check the current forecast and the seasonal outlook for your specific city from the official national meteorological service for your destination — the Japan Meteorological Agency, the Hong Kong Observatory, Taiwan's Central Weather Administration, PAGASA in the Philippines, or the Malaysian Meteorological Department. Your university's official new-student arrival guide is the other source worth reading, because it will tell you what your particular campus and accommodation actually require.\n\nDeliberately, this guide publishes no temperature or rainfall figures. General ranges quoted from memory are precisely the thing that goes stale and misleads — the meteorological services publish current data, and that is where the numbers should come from."
+    }
+  ],
+  "faqs": [
+    {
+      "questionEn": "Should I buy a winter coat in India or after I arrive?",
+      "answerEn": "After you arrive, in almost every case. A coat bought in Seoul, Sapporo or Taipei is designed for that winter, sold everywhere at the moment you need it, and usually better value than an equivalent bought in India for a climate the seller has not experienced. Bring enough for your first fortnight and buy properly once you have felt the weather."
+    },
+    {
+      "questionEn": "Do I need winter clothing for Singapore, Malaysia or Thailand?",
+      "answerEn": "No. These are tropical destinations with no cold season, and packing winter clothing wastes luggage allowance you will want for other things. What is genuinely useful is a light layer for indoor air-conditioning, which is often aggressive in lecture halls, libraries and malls, and quick-drying clothing for the wet season."
+    },
+    {
+      "questionEn": "Why do students say Hong Kong and Taiwan feel cold when the winters are mild?",
+      "answerEn": "Because buildings in the humid subtropical zone are designed for the summer, and central heating is often limited or absent. A mild winter temperature conceals the fact that indoors can be persistently chilly and damp. The useful preparation is indoor layers, warm socks and a blanket, rather than the heavy coat the temperature alone would suggest."
+    },
+    {
+      "questionEn": "When is the monsoon or wet season?",
+      "answerEn": "It varies by country and, in Malaysia and the Philippines, by region and coast within a country — so a single answer for the region would mislead you. Check the seasonal pattern for your specific city with the national meteorological service for your destination, and check current forecasts close to your travel date rather than planning around a general expectation."
+    },
+    {
+      "questionEn": "What is genuinely worth packing from India?",
+      "answerEn": "Clothing for your arrival season and first fortnight, a compact umbrella, comfortable walking shoes, your documents, and the specific spices or medicines that are hard or expensive to source abroad — subject to your destination's customs rules on food and medicine. Skip bulk toiletries and staples, which are available everywhere and cost you luggage allowance."
+    }
+  ],
+  "relatedExamSlugs": [],
+  "relatedCollegeSlugs": [
+    "seoul-national-university",
+    "university-of-hong-kong",
+    "national-university-of-singapore"
+  ],
+  "relatedGuideSlugs": [
+    "earthquake-typhoon-and-natural-hazard-preparedness-for-students-in-asia",
+    "student-life-in-southeast-asia-malaysia-thailand-philippines",
+    "settling-into-japan-residence-card-city-hall-bank-and-phone"
+  ],
+  "sources": [
+    {
+      "label": "Japan Meteorological Agency — official English portal",
+      "url": "https://www.jma.go.jp/jma/en/menu.html"
+    },
+    {
+      "label": "Hong Kong Observatory — weather warnings and current conditions",
+      "url": "https://www.hko.gov.hk/en/wxinfo/dailywx/wxwarntoday.htm"
+    },
+    {
+      "label": "Central Weather Administration, Taiwan — official English site",
+      "url": "https://www.cwa.gov.tw/eng/"
+    },
+    {
+      "label": "Malaysian Meteorological Department (MET Malaysia) — official site",
+      "url": "https://www.met.gov.my/en/"
+    }
+  ],
+  "lastVerified": "2026-07-15",
+  "keywords": [
+    "what to pack studying in asia",
+    "climate asia student destinations",
+    "winter in japan korea students",
+    "tropical packing singapore malaysia",
+    "monsoon season southeast asia",
+    "indoor heating hong kong taiwan",
+    "packing list study abroad asia"
+  ],
+  "tags": [
+    "asia-health-safety-and-wellbeing"
+  ],
+  "keyFacts": [
+    {
+      "label": "Three zones",
+      "value": "Four-season cold winter (Japan, Korea); humid subtropical (Hong Kong, Taiwan, southern China); tropical (Singapore, Malaysia, Thailand, Philippines)"
+    },
+    {
+      "label": "Indoor heating",
+      "value": "Often limited or room-by-room in Japan, Korea, Taiwan, Hong Kong — indoor layers matter more than the temperature suggests"
+    },
+    {
+      "label": "Buy locally",
+      "value": "Winter coat, boots, bedding, monsoon gear — better matched to conditions and usually better value"
+    },
+    {
+      "label": "Tropical destinations",
+      "value": "No winter clothing needed; a light layer for indoor air-conditioning is more useful"
+    },
+    {
+      "label": "Term-start months",
+      "value": "Vary across the region — your arrival season depends on your intake, not the country"
+    },
+    {
+      "label": "Temperatures and wet season",
+      "value": "Vary by year and by region — check current forecasts from the national meteorological service"
+    }
+  ],
+  "contentUpdated": "2026-10-26"
+},
   {
     "slug": "medical-check-up-and-health-screening-for-asian-student-visas",
     "category": "study-abroad",
@@ -85555,8 +85411,7 @@ const GUIDES_ME_P2: Guide[] = [
   "relatedGuideSlugs": [
     "fintech-and-financial-technology-studies-in-the-gulf",
     "banking-and-investment-specialisations-in-the-gulf",
-    "professional-finance-certifications-alongside-a-gulf-degree",
-    "islamic-finance-as-an-academic-specialisation-in-the-gulf"
+    "professional-finance-certifications-alongside-a-gulf-degree"
   ],
   "sources": [
     {
@@ -85611,7 +85466,8 @@ const GUIDES_ME_P2: Guide[] = [
       "label": "Accreditation (UAE)",
       "value": "CAA / MoHESR; KHDA in Dubai — verify on official portal"
     }
-  ]
+  ],
+  "contentUpdated": "2026-10-26"
 },
 {
   "slug": "fintech-and-financial-technology-studies-in-the-gulf",
@@ -85673,7 +85529,6 @@ const GUIDES_ME_P2: Guide[] = [
   "relatedGuideSlugs": [
     "finance-and-accounting-degrees-in-the-gulf",
     "banking-and-investment-specialisations-in-the-gulf",
-    "islamic-finance-as-an-academic-specialisation-in-the-gulf",
     "professional-finance-certifications-alongside-a-gulf-degree"
   ],
   "sources": [
@@ -85721,114 +85576,8 @@ const GUIDES_ME_P2: Guide[] = [
       "label": "Prerequisites",
       "value": "Often some programming/data — verify per programme"
     }
-  ]
-},
-{
-  "slug": "islamic-finance-as-an-academic-specialisation-in-the-gulf",
-  "category": "exam-prep",
-  "region": "middle-east",
-  "titleEn": "Islamic Finance as an Academic Specialisation in the Gulf",
-  "descriptionEn": "Islamic finance as an academic specialisation in Gulf finance degrees: what it covers, how it fits a finance programme and how to check accreditation.",
-  "readMinutes": 6,
-  "sections": [
-    {
-      "headingEn": "What this subject covers academically",
-      "bodyEn": "Islamic finance is the name of an academic specialisation offered within many finance and business programmes at Gulf universities. As a subject of study, it examines a distinct set of financial structures, contracts and governance frameworks used in a segment of the financial-services industry.\n\nThis guide treats Islamic finance strictly as a neutral academic and regulatory subject area — a body of financial knowledge and practice you can study, analyse and be assessed on, in the same way you would study conventional banking, capital markets or insurance. It is offered as a concentration, a set of modules, or a dedicated postgraduate programme depending on the university."
-    },
-    {
-      "headingEn": "Typical coursework",
-      "bodyEn": "Coursework in this specialisation focuses on the technical and regulatory mechanics of the field — how the instruments are structured, how institutions are organised, and how they are governed and reported.\n\nThe precise modules, credit hours and assessment differ by university and intake, so confirm them on the official programme page. The list below describes the kind of technical content typically covered.",
-      "bullets": [
-        "Principles and structures used in the field, and how its institutions are organised",
-        "Financial instruments and contracts specific to the field",
-        "Governance and compliance frameworks, including standard-setting bodies relevant to the industry",
-        "Accounting, auditing and reporting considerations for these institutions",
-        "Risk management and the regulatory environment in which the sector operates",
-        "Comparison with conventional finance instruments as an analytical exercise"
-      ]
-    },
-    {
-      "headingEn": "How it fits into a finance degree",
-      "bodyEn": "In most Gulf business schools, this specialisation is one option among several finance specialisations — alongside, for example, investments, banking or corporate finance. You typically complete a core finance foundation first, then take this specialisation through later-year modules or a postgraduate track.\n\nBecause it is taught as a technical and regulatory subject, it pairs naturally with conventional finance study. Many programmes present both, so graduates can analyse the structures, governance and reporting of institutions across the sector."
-    },
-    {
-      "headingEn": "Recognition and where it is offered",
-      "bodyEn": "This specialisation is available at a number of universities across the Gulf — in the UAE, Saudi Arabia, Qatar, Oman, Bahrain and Kuwait — at undergraduate and postgraduate level, and at some research centres.\n\nAs with any programme, confirm the degree is accredited by the country's official body (for example the CAA, and KHDA in Dubai, in the UAE) and check exactly what the specialisation covers. Verify accreditation and the syllabus on the official university and accreditation-body sources rather than on promotional material."
-    }
   ],
-  "faqs": [
-    {
-      "questionEn": "Is this studied as a religious subject?",
-      "answerEn": "In a finance degree it is studied as a technical and regulatory subject — financial structures, instruments, governance frameworks, accounting and risk. This guide and these programmes treat it academically. Read the official syllabus to see the exact modules covered."
-    },
-    {
-      "questionEn": "Do I need a particular background to study this specialisation?",
-      "answerEn": "Usually you complete a core finance or business foundation first, then take the specialisation in later years or at postgraduate level. Check the prerequisites on the official programme page for the specific university."
-    },
-    {
-      "questionEn": "Is it offered at undergraduate or postgraduate level?",
-      "answerEn": "Both, depending on the university — as a concentration or set of modules within a bachelor's, or as a dedicated postgraduate programme. Availability differs by institution; verify current offerings on the official university source."
-    },
-    {
-      "questionEn": "Can I combine it with conventional finance study?",
-      "answerEn": "Yes. It is commonly offered as one specialisation alongside others such as investments or banking, built on a shared finance core, so you can study both the conventional and the specialised structures. Confirm the available specialisations with the university."
-    }
-  ],
-  "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
-  "relatedGuideSlugs": [
-    "finance-and-accounting-degrees-in-the-gulf",
-    "banking-and-investment-specialisations-in-the-gulf",
-    "professional-finance-certifications-alongside-a-gulf-degree",
-    "fintech-and-financial-technology-studies-in-the-gulf"
-  ],
-  "sources": [
-    {
-      "label": "UAE Commission for Academic Accreditation (CAA)",
-      "url": "https://www.caa.ae/"
-    },
-    {
-      "label": "UAE Ministry of Higher Education and Scientific Research",
-      "url": "https://www.mohesr.gov.ae/en"
-    },
-    {
-      "label": "Study in Saudi Arabia (Saudi Ministry of Education)",
-      "url": "https://studyinsaudi.sa/en"
-    }
-  ],
-  "lastVerified": "2026-06-24",
-  "contentUpdated": "2026-09-30",
-  "keywords": [
-    "Islamic finance specialisation Gulf",
-    "Islamic finance studies UAE",
-    "Islamic banking academic subject",
-    "finance specialisation Gulf",
-    "Islamic finance curriculum",
-    "governance frameworks finance Gulf",
-    "postgraduate Islamic finance",
-    "finance concentration Gulf"
-  ],
-  "tags": [
-    "finance-banking-and-fintech-in-the-gulf"
-  ],
-  "keyFacts": [
-    {
-      "label": "Nature",
-      "value": "Neutral academic and regulatory specialisation"
-    },
-    {
-      "label": "Formats",
-      "value": "Concentration, modules, or dedicated postgraduate programme"
-    },
-    {
-      "label": "Built on",
-      "value": "A core finance foundation"
-    },
-    {
-      "label": "Accreditation",
-      "value": "Verify on the country's official body (e.g. CAA/KHDA in the UAE)"
-    }
-  ]
+  "contentUpdated": "2026-10-26"
 },
 {
   "slug": "banking-and-investment-specialisations-in-the-gulf",
@@ -85888,7 +85637,6 @@ const GUIDES_ME_P2: Guide[] = [
   "relatedGuideSlugs": [
     "finance-and-accounting-degrees-in-the-gulf",
     "fintech-and-financial-technology-studies-in-the-gulf",
-    "islamic-finance-as-an-academic-specialisation-in-the-gulf",
     "professional-finance-certifications-alongside-a-gulf-degree"
   ],
   "sources": [
@@ -85936,7 +85684,8 @@ const GUIDES_ME_P2: Guide[] = [
       "label": "Most client-facing",
       "value": "Wealth management"
     }
-  ]
+  ],
+  "contentUpdated": "2026-10-26"
 },
 {
   "slug": "professional-finance-certifications-alongside-a-gulf-degree",
@@ -86008,8 +85757,7 @@ const GUIDES_ME_P2: Guide[] = [
   "relatedGuideSlugs": [
     "finance-and-accounting-degrees-in-the-gulf",
     "banking-and-investment-specialisations-in-the-gulf",
-    "fintech-and-financial-technology-studies-in-the-gulf",
-    "islamic-finance-as-an-academic-specialisation-in-the-gulf"
+    "fintech-and-financial-technology-studies-in-the-gulf"
   ],
   "sources": [
     {
@@ -86064,7 +85812,8 @@ const GUIDES_ME_P2: Guide[] = [
       "label": "Authority on fees/exams",
       "value": "The certifying body's official website only"
     }
-  ]
+  ],
+  "contentUpdated": "2026-10-26"
 },
 {
   "slug": "how-to-build-your-cv-and-graduate-job-search-in-the-gulf",
@@ -128914,7 +128663,7 @@ const GUIDES_UKIE_P2: Guide[] = [
   "sections": [
     {
       "headingEn": "What counts as humanities and social sciences",
-      "bodyEn": "\"Humanities\" and \"social sciences\" are umbrella terms for a broad family of degree subjects that study people, ideas, societies and the past. They overlap rather than divide neatly, and most UK and Irish universities group them in faculties of arts, humanities or social sciences.\n\nThe humanities cluster typically includes history, English literature, philosophy, languages, classics, theology and the study of religion, art history and linguistics. The social sciences cluster typically includes politics and international relations, sociology, anthropology, economics, geography (human), criminology and social policy. Several subjects — such as anthropology or geography — sit across both. Check each university's own course finder, because the same subject can be housed in different faculties.",
+      "bodyEn": "\"Humanities\" and \"social sciences\" are umbrella terms for a broad family of degree subjects that study people, ideas, societies and the past. They overlap rather than divide neatly, and most UK and Irish universities group them in faculties of arts, humanities or social sciences.\n\nThe humanities cluster typically includes history, English literature, philosophy, languages, classics, art history and linguistics. The social sciences cluster typically includes politics and international relations, sociology, anthropology, economics, geography (human), criminology and social policy. Several subjects — such as anthropology or geography — sit across both. Check each university's own course finder, because the same subject can be housed in different faculties.",
       "bullets": [
         "Humanities-leaning: history, English, philosophy, languages, classics, art history",
         "Social-sciences-leaning: politics, sociology, anthropology, criminology, social policy, human geography",
@@ -129025,7 +128774,8 @@ const GUIDES_UKIE_P2: Guide[] = [
       "label": "Final-year project",
       "value": "Dissertation (independent research)"
     }
-  ]
+  ],
+  "contentUpdated": "2026-10-26"
 },
 {
   "slug": "joint-honours-and-combined-degrees-in-the-uk-explained",
@@ -287510,12 +287260,11 @@ const GUIDES_ME_P3: Guide[] = [
     },
     {
       "headingEn": "What a Gulf LLB typically covers",
-      "bodyEn": "A Gulf LLB usually builds a foundation in legal reasoning and doctrine and then covers areas relevant to the country's legal system. Because most Gulf jurisdictions operate a civil-law system (often alongside local statutory and commercial law), programmes commonly include public law, private law, commercial and business law, and legal-skills training such as moot court, clinics and externships.\n\nSome programmes also include modules on Islamic law as a bare academic subject within the local legal framework — a component of what is taught, described here only as a neutral fact about the syllabus. Exact course lists, structure, entry requirements and fees are set by each university and change; verify them on the official programme page.",
+      "bodyEn": "A Gulf LLB usually builds a foundation in legal reasoning and doctrine and then covers areas relevant to the country's legal system. Because most Gulf jurisdictions operate a civil-law system (often alongside local statutory and commercial law), programmes commonly include public law, private law, commercial and business law, and legal-skills training such as moot court, clinics and externships.\n\nExact course lists, structure, entry requirements and fees are set by each university and change; verify them on the official programme page.",
       "bullets": [
         "Foundations: legal reasoning, legal method, sources of law",
         "Core areas: public law, private law, commercial/business law",
-        "Skills: moot court, law clinics, externships (varies by university)",
-        "Local legal framework, which in some programmes includes Islamic-law modules as an academic subject"
+        "Skills: moot court, law clinics, externships (varies by university)"
       ],
       "audience": "common"
     },
@@ -287555,11 +287304,6 @@ const GUIDES_ME_P3: Guide[] = [
     {
       "questionEn": "Do Gulf law programmes teach common law or civil law?",
       "answerEn": "It varies. Most national law programmes are grounded in the civil-law tradition and the host country's own statutes, while some foreign branch-campus programmes teach international and comparative law, or a common-law-informed curriculum, in English. Neither is 'better' — choose based on where and how you want to use the degree.",
-      "audience": "common"
-    },
-    {
-      "questionEn": "Do Gulf law degrees include Islamic-law content?",
-      "answerEn": "Some programmes include Islamic law as an academic subject within the local legal framework, as part of what is taught. That is a neutral fact about the syllabus. Course content varies by university, so check the official programme page for the exact module list.",
       "audience": "common"
     },
     {
@@ -287613,7 +287357,8 @@ const GUIDES_ME_P3: Guide[] = [
   ],
   "tags": [
     "gulf-degrees-and-fields"
-  ]
+  ],
+  "contentUpdated": "2026-10-26"
 },
 {
   "slug": "cybersecurity-degrees-in-the-gulf",

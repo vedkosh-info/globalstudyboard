@@ -1878,7 +1878,7 @@ export const COLLEGES: College[] = [
     websiteUrl: 'https://www.qu.edu.qa',
     descriptionEn:
       'Qatar\'s national university with the country\'s largest student body. Most undergraduate programs in English (engineering, business, medicine, computing), with some humanities programs in Arabic.',
-    courses: ['Engineering', 'Business', 'Medicine', 'Computer Science', 'Islamic Studies'],
+    courses: ['Engineering', 'Business', 'Medicine', 'Computer Science'],
   },
   {
     id: 'technion',
@@ -1972,7 +1972,7 @@ export const COLLEGES: College[] = [
     websiteUrl: 'https://www.ksu.edu.sa',
     descriptionEn:
       'A public research university in Riyadh and the first university established in Saudi Arabia, offering bachelor\'s, master\'s, and doctoral degrees across medicine, engineering, the sciences, business, and the humanities. Arabic is the main language of instruction, with several programs — particularly in medicine, engineering, and the sciences — taught in English.',
-    courses: ['Medicine', 'Engineering', 'Computer Science', 'Business Administration', 'Natural Sciences', 'Islamic Studies'],
+    courses: ['Medicine', 'Engineering', 'Computer Science', 'Business Administration', 'Natural Sciences'],
   },
   {
     id: 'hbku',
@@ -1991,7 +1991,7 @@ export const COLLEGES: College[] = [
     websiteUrl: 'https://www.hbku.edu.qa',
     descriptionEn:
       'A research-focused university in Doha, founded in 2010 as part of Qatar Foundation\'s Education City. It offers undergraduate, master\'s, and doctoral programs — alongside executive and professional education — across science and engineering, health and life sciences, public policy, law, and economics, with instruction in English.',
-    courses: ['Computer Science and Engineering', 'Sustainable Energy', 'Genomics and Precision Medicine', 'Public Policy', 'Law', 'Islamic Studies'],
+    courses: ['Computer Science and Engineering', 'Sustainable Energy', 'Genomics and Precision Medicine', 'Public Policy', 'Law'],
   },
   {
     id: 'sultan-qaboos-university',

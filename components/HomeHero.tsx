@@ -1,183 +1,95 @@
 'use client';
 
 import Link from 'next/link';
-import { Sparkles, ArrowUpRight, GraduationCap, Calendar, Wallet, Plane } from 'lucide-react';
-
-import { REGION_TAGLINES, getRegionBySlug, type RegionSlug } from '@/lib/regions';
+import { Sparkles, ArrowUpRight, GraduationCap, BookOpen, Wallet, FileText } from 'lucide-react';
+import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { gsbAiHref } from '@/lib/gsb-ai-links';
+import { HOME_UI } from '@/lib/home-ui';
 import { useRegion } from '@/components/RegionProvider';
 import RegionFlag from '@/components/RegionFlag';
 
-/**
- * Per-destination hero data, computed on the server in app/page.tsx so the
- * college and guide catalogues never ship in the home page's client chunk.
- */
+/** Compact projections only: the full catalogues never enter the home bundle. */
 export interface HomeHeroData {
-  topUniversity: { name: string; qsRank?: number } | null;
-  /** Flagship questions — a real guide link when one answers it, else an Ask GSB prefill. */
+  topUniversity: { slug: string; name: string } | null;
   popular: { href: string; label: string; isGuide: boolean; q?: string }[];
 }
 
-function Backdrop() {
-  return (
-    <>
-      <div
-        aria-hidden="true"
-        className="absolute -top-20 -right-24 w-72 h-72 rounded-full bg-forest-200/40 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -bottom-32 -left-16 w-72 h-72 rounded-full bg-terracotta-100 blur-3xl"
-      />
-    </>
-  );
-}
+const SHORTCUT_ICONS = [GraduationCap, FileText, BookOpen, Wallet] as const;
 
-/**
- * `visual` is a server-rendered slot (e.g. <ContentImage />) passed in from app/page.tsx.
- * It stays a server component even though this file is 'use client' — React serialises
- * only the rendered output, so the image registry never reaches the browser.
- */
-export default function HomeHero({
-  data,
-  visual,
-}: {
+/** The visual is server-rendered and passed as a slot, including its provenance. */
+export default function HomeHero({ data, visual }: {
   data: Record<RegionSlug, HomeHeroData>;
   visual?: React.ReactNode;
 }) {
   const { effectiveRegion } = useRegion();
   const r = getRegionBySlug(effectiveRegion);
   if (!r) return null;
-
-  // Personalised facts for the current destination (India by default until the
-  // student picks another from the header destination control).
   const hero = data[r.slug];
-  const topUniversity = hero?.topUniversity ?? null;
+  const featured = hero?.topUniversity;
   const queries = hero?.popular ?? [];
 
-  const tuition = r.averageTuitionRangeUsd
-    ? `$${r.averageTuitionRangeUsd.undergrad[0].toLocaleString('en-US')}–$${r.averageTuitionRangeUsd.undergrad[1].toLocaleString('en-US')}/yr`
-    : '—';
-
   return (
-    <section className="relative overflow-hidden rounded-3xl bg-cream-100 border border-stone-200 px-6 sm:px-12 py-12 md:py-16">
-      <Backdrop />
-      {/*
-        Three slots. DOM order = mobile order: headline → visual → the rest, so on a
-        phone the image sits right under the lede instead of two screens down past
-        the CTAs and chips. On lg the visual is placed explicitly into column 2
-        spanning both rows, and both text slots stack in column 1.
-      */}
-      <div
-        className={
-          visual
-            ? 'relative grid gap-x-10 gap-y-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:grid-rows-[auto_1fr]'
-            : 'relative grid gap-y-8 max-w-4xl'
-        }
-      >
-        <div className="max-w-4xl lg:col-start-1 lg:row-start-1">
-        {/*
-          The H1 is destination-NEUTRAL on purpose: a crawler has no cookie, so a
-          region-tuned H1 made the crawlable home page "Your route to studying in
-          India" on a site whose voice is global. The tuned destination is the
-          eyebrow + the facts below, which re-tune on the client.
-        */}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-editorial text-ink mb-5">
-          Universities, entrance exams{' '}
-          <br />
-          <span className="text-forest-700">&amp; scholarships — for every study destination.</span>
-        </h1>
-        <p className="text-xs font-semibold tracking-[0.22em] uppercase text-forest-700 mb-3 flex items-center gap-2">
-          <RegionFlag slug={r.slug} className="h-4" />
-          Tuned to · {r.displayName}
-        </p>
-        <p className="text-stone-700 text-lg max-w-2xl leading-relaxed">
-          {REGION_TAGLINES[r.slug]} Everything below — universities, exams, costs and visas — is
-          set to {r.proseName}. Change it anytime from the top.
-        </p>
+    <section aria-labelledby="home-heading" className="overflow-hidden rounded-3xl border border-stone-200 bg-cream-100 px-4 py-7 sm:px-8 sm:py-10 lg:px-10">
+      {/* Mobile: introduction, image, actions. Desktop: balanced columns with a
+          prominent 4:3 visual aligned to the heading, never vertically centred. */}
+      <div className={visual ? 'grid items-start gap-x-8 gap-y-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr]' : 'grid max-w-4xl gap-y-6'}>
+        <div className="min-w-0 lg:col-start-1 lg:row-start-1">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-stone-600">{HOME_UI.eyebrow}</p>
+          <h1 id="home-heading" className="mb-5 font-display text-3xl font-bold leading-[1.08] tracking-editorial text-ink sm:text-5xl xl:text-6xl">
+            {HOME_UI.heading}
+            <span className="mt-1 block text-forest-700">{HOME_UI.headingAccent}</span>
+          </h1>
+          <p className="mb-3 flex items-center gap-2 text-sm font-semibold text-forest-700">
+            <RegionFlag slug={r.slug} className="h-4" />
+            {HOME_UI.destination} · {r.displayName}
+          </p>
+          <p className="m-0 max-w-xl text-base leading-relaxed text-stone-700 sm:text-lg">{HOME_UI.introduction}</p>
         </div>
 
-        {visual && (
-          <div className="w-full lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-center lg:justify-self-end">
-            {visual}
+        {visual && <div className="min-w-0 w-full lg:col-start-2 lg:row-start-1 lg:row-span-2">{visual}</div>}
+
+        <div className="min-w-0 lg:col-start-1 lg:row-start-2">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link href={`/regions/${r.slug}`} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-forest-700 px-6 py-3 font-semibold text-cream-50 no-underline transition-colors hover:bg-forest-800">
+              {HOME_UI.explore} {r.proseName}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link href="/ask" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-6 py-3 font-semibold text-stone-800 no-underline transition-colors hover:bg-stone-50">
+              <Sparkles className="h-4 w-4 text-forest-700" aria-hidden="true" />{HOME_UI.ask}
+            </Link>
           </div>
-        )}
-
-        <div className="max-w-4xl lg:col-start-1 lg:row-start-2">
-        {/* Quick facts for the chosen region */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
-          <Fact icon={<GraduationCap className="w-4 h-4" />} label="Apply via" value={r.primaryApplicationPlatform} />
-          <Fact icon={<Calendar className="w-4 h-4" />} label="Main intake" value={r.intakes[0]} />
-          <Fact icon={<Wallet className="w-4 h-4" />} label="Tuition" value={tuition} />
-          <Fact icon={<Plane className="w-4 h-4" />} label="Student visa" value={r.visaName ?? 'N/A'} />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-3 mb-9">
-          <Link
-            href={`/regions/${r.slug}`}
-            className="inline-flex items-center justify-center gap-2 bg-forest-700 hover:bg-forest-800 text-cream-50 font-semibold px-6 py-3.5 rounded-full no-underline transition-colors"
-          >
-            Explore {r.proseName}
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
-          <Link
-            href="/ask"
-            className="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-stone-800 font-semibold px-6 py-3.5 rounded-full no-underline transition-colors border border-stone-300"
-          >
-            <Sparkles className="w-4 h-4 text-forest-700" />
-            Ask GSB
-          </Link>
-        </div>
-
-        {topUniversity && (
-          <Link
-            href={`/regions/${r.slug}/universities`}
-            className="inline-flex items-center gap-2 text-sm text-stone-600 hover:text-forest-700 no-underline mb-9"
-          >
-            <span className="font-medium">Featured:</span> {topUniversity.name}
-            {topUniversity.qsRank ? ` · QS #${topUniversity.qsRank}` : ''}
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
-        )}
-
-        {queries.length > 0 && (
-          <div>
-            <p className="text-xs font-semibold tracking-[0.16em] uppercase text-stone-500 mb-3">
-              Questions students heading to {r.proseName} ask
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {queries.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.isGuide ? item.href : gsbAiHref({ q: item.q })}
-                  className="bg-white hover:bg-forest-50 hover:border-forest-300 hover:text-forest-700 text-stone-700 text-sm px-3.5 py-1.5 rounded-full no-underline transition-colors border border-stone-200"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+          {featured && (
+            <Link href={`/colleges/${featured.slug}`} className="mt-5 inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm leading-relaxed text-stone-700 no-underline hover:text-forest-700">
+              <span>{HOME_UI.featured}:</span><span className="font-semibold">{featured.name}</span><ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          )}
         </div>
       </div>
+
+      <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
+        {HOME_UI.shortcuts.map((item, index) => {
+          const Icon = SHORTCUT_ICONS[index];
+          return (
+            <Link key={item.category} href={`/regions/${r.slug}/${item.category}`} className="group rounded-2xl border border-stone-200 bg-white p-4 no-underline transition-colors hover:border-forest-400 hover:bg-forest-50">
+              <div className="mb-2 flex items-center justify-between gap-2 text-forest-700"><Icon className="h-5 w-5" aria-hidden="true" /><ArrowUpRight className="h-4 w-4" aria-hidden="true" /></div>
+              <span className="block text-base font-semibold text-ink group-hover:text-forest-800">{item.label}</span>
+              <span className="mt-1 hidden text-base leading-relaxed text-stone-600 sm:block">{item.description}</span>
+            </Link>
+          );
+        })}
+      </div>
+
+      {queries.length > 0 && (
+        <section className="mt-8 border-t border-stone-200 pt-6">
+          <h2 className="mb-4 font-display text-xl font-semibold text-ink">{HOME_UI.questions}</h2>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {queries.map((item) => (
+              <Link key={item.label} href={item.isGuide ? item.href : gsbAiHref({ q: item.q })} className="flex items-start gap-2 text-base leading-relaxed text-forest-800 underline-offset-4 hover:underline">
+                <ArrowUpRight className="mt-1 h-4 w-4 shrink-0" aria-hidden="true" />{item.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </section>
-  );
-}
-
-function Fact({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
-  return (
-    <div className="bg-white/70 border border-stone-200 rounded-xl px-3.5 py-3">
-      <div className="flex items-center gap-1.5 text-forest-700 mb-1">
-        {icon}
-        <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-          {label}
-        </span>
-      </div>
-      {/* No line-clamp: a key fact that ends in "…" is worse than a card an extra
-          line taller — India's student-visa value ("N/A (domestic) / Student Visa
-          for international applicants") was cut mid-phrase on the default view.
-          Grid items stretch to the tallest in the row, so the row stays even. */}
-      <p className="text-sm font-semibold text-ink leading-snug">{value}</p>
-    </div>
   );
 }

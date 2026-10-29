@@ -9,6 +9,7 @@ import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { COMPARE_LIMITS, DEFAULT_CRITERIA, defaultSetLabel } from '@/lib/compare';
 import { toolHref } from '@/lib/tools';
 import ToolLink from '@/components/tools/ToolLink';
+import { PROFILE_TOOL_LABELS } from '@/lib/tool-hint';
 
 /**
  * "Add to compare" on a university profile — the peer of AddToPlannerButton
@@ -238,10 +239,10 @@ export default function AddToCompareButton({
           type="button"
           onClick={() => void onClick()}
           aria-busy={busy || undefined}
-          aria-label={`Add ${name} to your university comparison`}
+          aria-label={`${PROFILE_TOOL_LABELS.compare}: ${name}`}
           className={`${PILL} border-forest-300 bg-white text-forest-700 hover:border-forest-400 hover:bg-forest-50 ${busy ? 'cursor-wait' : ''}`}
         >
-          <Columns3 className="h-3.5 w-3.5" aria-hidden="true" /> Add to compare
+          <Columns3 className="h-3.5 w-3.5" aria-hidden="true" /> {PROFILE_TOOL_LABELS.compare}
         </button>
       )}
       <span role="status" aria-live="polite" className="text-xs text-stone-600">

@@ -1,5 +1,5 @@
 /**
- * The in-memory hand-over of a `#region=` (or `#exam=`) fragment to the tool
+ * The in-memory hand-over of an allow-listed tool fragment to the tool
  * gate that mounts next — see components/tools/useDestinationHint for the full
  * contract. Kept in its own module, with no registry import, so ToolLink can be
  * used by the site chrome (the header nav, the strip under it and the dock
@@ -54,8 +54,20 @@ export function takeHandOff(pathname: string): string | null {
   return handed;
 }
 
-/** A gate being left for another tool page carries its destination to it. */
+/**
+ * A gate being left for another tool carries its destination as a fallback.
+ * Its cleanup runs after ToolLink has queued the visitor's explicit link, so
+ * it must preserve that link's record/preset and preferred destination.
+ */
 export function carryHandOff(to: string, fragment: string): void {
+  if (pending && pending.to === to && Date.now() - pending.at < HAND_OFF_TTL_MS) {
+    const explicit = new URLSearchParams(pending.fragment);
+    new URLSearchParams(fragment).forEach((value, key) => {
+      if (!explicit.has(key)) explicit.set(key, value);
+    });
+    pending.fragment = explicit.toString();
+    return;
+  }
   pending = { to, fragment, at: Date.now(), from: null };
 }
 

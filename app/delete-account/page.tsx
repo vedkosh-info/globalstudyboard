@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/seo';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
+import { SCHOLARSHIP_ACCOUNT_COPY } from '@/lib/scholarship-options';
 
 /**
  * Public account-deletion page.
@@ -88,6 +89,7 @@ export default function DeleteAccountPage() {
           <li>Your Cost &amp; Funding Planner — every budget, cost line, funding line and note in it.</li>
           <li>Your university comparisons — every comparison, criterion, weight, score and note in them.</li>
           <li>Your Test Score Tracker — every recorded attempt, its section scores and note.</li>
+          <li>{SCHOLARSHIP_ACCOUNT_COPY.deleted}</li>
           <li>The record of when you accepted our Terms and read the Privacy Policy.</li>
         </ul>
         <p>All of this is removed at once; there is no “deactivated” state and no recovery period.</p>

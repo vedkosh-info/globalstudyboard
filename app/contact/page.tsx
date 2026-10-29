@@ -3,6 +3,7 @@ import { pageMetadata } from '@/lib/seo';
 import { Mail, MessageCircleQuestion, FileWarning } from 'lucide-react';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 import ContactFeedbackActions from '@/components/ContactFeedbackActions';
+import { CONTACT_UI } from '@/lib/contact-ui';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Contact GlobalStudyBoard — Corrections, Questions & Coverage',
@@ -12,6 +13,8 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const EMAIL = CONTACT_EMAIL;
+// Build-time availability only. The secret backend URL never reaches the page.
+const FEEDBACK_AVAILABLE = Boolean(process.env.FEEDBACK_SCRIPT_URL);
 
 const REASONS = [
   {
@@ -49,15 +52,15 @@ export default function ContactPage() {
 
       <section className="bg-cream-50 border border-stone-200 rounded-2xl p-6">
         <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-2">
-          Quickest way
+          {CONTACT_UI.feedbackLabel}
         </p>
-        <h2 className="font-semibold text-ink text-base mb-2">Send it from this page</h2>
-        <p className="text-stone-700 text-sm leading-relaxed mb-4">
-          Spotted something wrong, or have an idea? Use the form — paste the link of the page you
-          mean, attach a screenshot or PDF if it helps, and it reaches us directly. No email
-          client, no account needed.
+        <h2 className="font-semibold text-ink text-lg mb-2">
+          {FEEDBACK_AVAILABLE ? CONTACT_UI.availableTitle : CONTACT_UI.unavailableTitle}
+        </h2>
+        <p className="text-stone-700 text-base leading-relaxed mb-4">
+          {FEEDBACK_AVAILABLE ? CONTACT_UI.availableBody : CONTACT_UI.unavailableBody}
         </p>
-        <ContactFeedbackActions />
+        {FEEDBACK_AVAILABLE && <ContactFeedbackActions />}
       </section>
 
       <section className="bg-cream-50 border border-stone-200 rounded-2xl p-6 text-center">
@@ -70,7 +73,7 @@ export default function ContactPage() {
         >
           {EMAIL}
         </a>
-        <p className="text-stone-600 text-sm mt-3 m-0">
+        <p className="text-stone-600 text-base mt-3 m-0">
           We aim to reply within a few business days.
         </p>
       </section>
@@ -80,14 +83,14 @@ export default function ContactPage() {
           <div key={r.title} className="bg-white border border-stone-200 rounded-2xl p-5">
             <div className="text-forest-700 mb-3">{r.icon}</div>
             <h2 className="font-semibold text-ink text-base mb-2">{r.title}</h2>
-            <p className="text-stone-700 text-sm leading-relaxed m-0">{r.body}</p>
+            <p className="text-stone-700 text-base leading-relaxed m-0">{r.body}</p>
           </div>
         ))}
       </section>
 
       <section className="border border-stone-200 rounded-2xl p-6">
         <h2 className="font-semibold text-ink text-base mb-2">Corrections &amp; copyright</h2>
-        <p className="text-stone-700 text-sm leading-relaxed m-0">
+        <p className="text-stone-700 text-base leading-relaxed m-0">
           Spotted an error, or believe something on GlobalStudyBoard infringes your copyright or
           trademark? Email us at{' '}
           <a
@@ -100,7 +103,7 @@ export default function ContactPage() {
         </p>
       </section>
 
-      <p className="text-stone-500 text-sm leading-relaxed">
+      <p className="text-stone-600 text-base leading-relaxed">
         Please note: we can&rsquo;t process applications, guarantee admission, or give individual
         legal or immigration advice. For official decisions, always contact the university or
         examination body directly.

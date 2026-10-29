@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import type { Metadata, Viewport } from 'next';
+import { CHROME_UI } from '@/lib/chrome-ui';
 import { Inter, Fraunces } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -217,13 +218,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body>
+        <a data-gsb-skip-link href="#main-content" className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-xl bg-forest-800 px-5 py-3 font-semibold text-cream-50 shadow-lg no-underline focus:translate-y-0 focus:text-cream-50">
+          {CHROME_UI.skipToContent}
+        </a>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: websiteJsonLd }} />
         <RegionProvider>
           <AudienceProvider>
           <AuthProvider>
           <Header topicsMenu={TOPICS_MENU} />
           <RegionContextBar />
-          <main className="mx-auto w-full max-w-7xl px-4 py-8 md:py-12">
+          <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-7xl px-4 py-6 focus:outline-none md:py-8">
             <div className="mb-6 space-y-3">
               <div className="space-y-2">
                 <SiteSearch />

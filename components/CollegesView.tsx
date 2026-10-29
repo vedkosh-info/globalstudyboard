@@ -35,14 +35,14 @@ function CollegeLink({ c, hidden }: { c: CollegeCard; hidden: boolean }) {
           {meta.displayName}
         </span>
       )}
-      <h2 className="font-display text-lg font-bold text-ink group-hover:text-forest-700 transition-colors leading-snug m-0 mb-1">
+      <h2 className="font-display text-xl font-bold text-ink group-hover:text-forest-700 transition-colors leading-snug m-0 mb-1">
         {c.nameEn}
       </h2>
       <p className="text-stone-500 text-xs mb-3">
         {c.city}
         {c.state ? `, ${c.state}` : ''} · Est. {c.established}
       </p>
-      <p className="text-stone-600 text-sm leading-relaxed line-clamp-2 mt-auto">{c.descriptionEn}</p>
+      <p className="text-stone-600 text-base leading-relaxed line-clamp-3 mt-auto">{c.descriptionEn}</p>
     </Link>
   );
 }

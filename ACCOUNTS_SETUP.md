@@ -1,5 +1,20 @@
 # GlobalStudyBoard — Accounts (login + user management): owner runbook
 
+**Production schema update — 29 October 2026:** migration
+`0008_scholarship_tracker.sql` was applied in the authenticated SQL Editor to
+`globalstudyboard` (`xrfcxocqqshfilseojau`). Both tables and all three RPCs resolve
+in SQL and the live REST schema. A rollback-only live test passed own-row RLS,
+anonymous-write revocation, creation/default checklist, retry preservation,
+stale-edit refusal, duplicate-safe funding, cross-account isolation and
+password-session refusal. All synthetic test data was rolled back. Existing
+0003–0006 tool tables and `save_test_score` are present. The saved-pages advisory
+lock and anonymous-write revocations from 0007 were observed; this is not a full
+reverification of every historical migration or real OTP/OAuth delivery.
+
+The September statuses below are historical, including their old PENDING labels;
+use this dated update for current observations. Real student task studies,
+assistive-technology tests and sign-in delivery remain separate checks.
+
 **Status (19 Sep 2026, later):** code complete, independently reviewed (63-agent adversarial
 QA, 57 fixes), verified end-to-end locally and on the live site; Supabase project provisioned
 and configured; **accounts are LIVE in production (owner decision) in e-mail-LINK mode on the
@@ -38,8 +53,49 @@ SMTP sender, OAuth consent screen, Play Console). Never the VedKosh addresses.
 | Schema — **0005 PENDING (owner step)** | `supabase/migrations/0005_compare_universities.sql` — `compare_sets` + `compare_criteria` + `compare_entries` + `compare_scores` for Compare Universities (`/tools/compare-universities`): RLS own-row + passwordless guard, a criterion/entry may only reference the caller's own comparison, a score may only join an entry and a criterion of the same comparison, caps 20 comparisons / 8 criteria / 4 universities / 8 scores per university (the criteria and university caps also fire when a row is moved to another comparison; the score cap keeps the 640-scores-per-account bound for a university moved between comparisons, which keeps its old scores, and never counts a cell that is already scored, so the tool's one-request upsert still re-scores a fully scored university) whose guard triggers refuse a row aimed at another account (or from a password-authenticated session, or a signed-out request) BEFORE counting and serialise the count per account / comparison / university (a transaction-scoped advisory lock), no INSERT/UPDATE for the signed-out role, the destination list as a NAMED constraint (`compare_sets_region_check`) dropped and re-added on every run, `set_updated_at` triggers, service_role grants. **Covered by the 0001–0007 PGlite run (261 checks — see the 0007 row)**, which includes the refuse-before-counting guards, the named region constraints, the per-university score cap, the signed-out refusal and the serialised counts of 0003–0005 added on 29 Sep 2026. (History: the first run, in PGlite (Postgres 18) on 23 Sep 2026 together with 0003 + 0004, passed 59 behavioural checks.) Until it is run in Supabase, a signed-in visitor sees "The comparison tool is being switched on for your account right now" and the profile-page "Add to compare" button answers "Could not add it". Run it in the SQL editor as `postgres` after 0004, then the two verify queries at its foot (seven non-null values; then every value false). |
 | Schema — **0006 PENDING (owner step)** | `supabase/migrations/0006_test_scores.sql` — `test_scores` + `test_score_sections` for the Test Score Tracker (`/tools/test-score-tracker`): RLS own-row + passwordless guard, a section may only reference the caller's own score, `exam_slug` restricted to the site's exam catalogue by a NAMED CHECK (kept in step with `lib/admission-guides.ts` by the prebuild `check-tools`), the score stored only as the text received (1–200 chars — no numeric copy), and a test date that has already been sat: a NAMED CHECK allows 1 Jan 1990 up to today + 1 day (the day of slack is for students east of UTC — the form itself stops at the visitor's local today and sends booked sittings to the Application Planner). Caps 100 scores / 6 sections per score (the section cap also fires when a section is moved to another score); both guard triggers refuse another account's row, a password-authenticated session or a signed-out request BEFORE counting and serialise the count per account / per attempt (a transaction-scoped advisory lock), so a cap error never reveals another account's count; for a caller holding only the public key that is true because the signed-out (`anon`) role has no INSERT/UPDATE on either table (the file revokes Supabase's default grant on every run), so its write is refused before any trigger runs. `set_updated_at` trigger, service_role grants, and `save_test_score(uuid, boolean, text, text, date, text, jsonb)` (SECURITY INVOKER, so RLS still applies), through which the tool saves an attempt and its sections in ONE transaction — a failed section rolls the whole save back. It is retry-safe for a new attempt: the tool mints the attempt's id when the form opens, so a retry after a lost response updates the row it already created instead of adding a duplicate; an edit of an attempt deleted meanwhile is refused as not found rather than re-created; an id belonging to another account collides and changes nothing. Safe to re-run: the exam list and the date rule are named constraints dropped and re-added (running the file again after the catalogue grows updates the list; it fails loudly, by design, if a score already on record uses an exam being removed), and a database that ran an earlier draft has its `score_numeric` column and the numeric-score signature of `save_test_score()` dropped. **Covered by the 0001–0007 PGlite run (261 checks — see the 0007 row)**, which includes the signed-out-write and serialised-count checks for this file. (History: an earlier run the same day, 29 Sep 2026, in a local Postgres 18 (PGlite) with stubbed `auth` together with 0003–0005, passed 130 behavioural checks — RLS isolation between two users, password-session refusal, every CHECK (including the future-date refusal, today and the one-day slack), both caps and cap-on-move, no cross-account cap oracle, the same-owner section guard, atomic rollback, the retry-safe create and not-found edit, no numeric copy stored, idempotent re-run.) Until it is run in Supabase, a signed-in visitor sees "The score tracker is being switched on for your account right now" and the exam-page "Record your score" link lands on that notice. Run it in the SQL editor as `postgres` after 0005, then the two verify queries at its foot (five non-null values; then every value false). |
 | Schema — **0007 PENDING (owner step)** | `supabase/migrations/0007_accounts_hardening.sql` — brings 0001's live `saved_items` and `profiles` up to the 0003–0006 posture without editing 0001: `guard_saved_items_cap()` now refuses another account's row, a password-authenticated session or a signed-out request BEFORE counting (0001's version let any caller — even one holding only the public key — read "does that account hold 500 saved pages?" off the cap error) and serialises the count per account like the 0003–0006 guards; the signed-out (`anon`) role loses INSERT/UPDATE on `saved_items` and `profiles` (Supabase's default grant — RLS refused those writes anyway, but only after the cap trigger had run; SELECT and DELETE stay, so a signed-out read still answers with an empty list); and the destination lists on `profiles.preferred_region` and `saved_items.region` (the nine destinations, plus `global` on saved pages) become NAMED constraints — `profiles_preferred_region_check`, `saved_items_region_check`, the names Postgres gave 0001's inline CHECKs, so they are replaced, not duplicated — dropped and re-added on every run, so a new destination goes live on a re-run. Nullability unchanged; no new table, column or data. Executed in PGlite on 29 Sep 2026 after 0001–0006 with 0001's real `amr`-reading `session_is_passwordless()`, and re-run on 30 Sep 2026 against the unchanged files: **261 behavioural checks passed** across 0001–0007 (including the same refusal below and at another account's 500-page cap, the password-session refusal, the own-account cap, every destination accepted and a 10th refused on both columns, NULL still allowed, idempotent re-run, and a removal in use failing loudly with the old list intact; and, added the same day, on all 11 capped tables: a signed-out insert refused with the same "permission denied" one row below the cap and at it — and by the guard itself if the grant is ever restored — while a service-role or SQL-editor write still reaches the cap; each guard taking the advisory lock on exactly its own scope's key and holding it until commit, and a many-row statement still stopped whole at a per-account and a per-budget cap (the lock is re-entrant); compare_scores' 8-per-university cap, which never counts a re-score; every file's footer verify queries run as written). PGlite has one backend and cannot run two transactions at once, so the run proves the locks are taken, on the right keys, for the right span — that two concurrent requests cannot both pass a cap rests on PostgreSQL's advisory locks and READ COMMITTED snapshots (Supabase's default isolation), not on a test. Run it in the SQL editor as `postgres` after 0006, as one script (the editor's single transaction rolls a failed re-add back), then the verify queries at its foot (the anon query: both false). **Re-run it after any re-run of 0001**, which re-creates its own, weaker guard. |
+| Schema — **0008 APPLIED — 29 Oct 2026** | `supabase/migrations/0008_scholarship_tracker.sql` — `scholarship_entries` + `scholarship_tasks`, passwordless own-row RLS, account-deletion cascades, anonymous-write revocation, serialized caps (100 scholarships, 20 tasks per scholarship, 1,000 tasks per account), retry-safe save functions with stale-edit checks, and atomic confirmed-funding transfer into the student's existing same-destination, same-currency budget. Local database harness: 74 checks passed over migrations 0001–0008. Live SQL/REST schema and rollback-only access/save checks passed on 29 Oct 2026 (see dated update above); real sign-in delivery remains separate. See the rollout checklist below. |
 | Env (local, gitignored) | `.env.local` in root + worktree: URL, publishable key, secret key, `ADMIN_EMAILS=contact@globalstudyboard.com`, `NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=false`, `NEXT_PUBLIC_EMAIL_OTP_CODE=false` — see `.env.example` |
 | Inbox-free QA | `node scripts/auth-qa.mjs create|otp|show|delete <a REAL mailbox you own, plus-tagged — e.g. contact+qa1@globalstudyboard.com>`. **Never an invented address**: the form's send step e-mails it, a non-existent mailbox bounces, and Supabase warned on 19 Sep 2026 that bounce-backs put the project's sending privileges at risk (the script now refuses such addresses). |
+
+### Scholarship Tracker — 0008 rollout checklist
+
+1. With deployment authorised for this turn, confirm the selected repository is
+   GlobalStudyBoard and the Supabase project is **`globalstudyboard`, ref
+   `xrfcxocqqshfilseojau`**. Use the project's own account,
+   **contact@globalstudyboard.com**. Do not use another project's database or
+   copy credentials into a document, command output or commit.
+2. Inspect the live schema before applying anything. Migrations **0001–0007**
+   are prerequisites; the historical pending rows above must be checked against
+   the actual project. Apply any missing migrations in numeric order using the
+   procedure in `supabase/migrations/README.md`. Re-run 0007 after any re-run of
+   0001, which restores its older cap guard.
+3. Run the complete `0008_scholarship_tracker.sql` in the SQL Editor as
+   `postgres`, with no partial text selection. Run its footer verification
+   queries: both tables and all three save/transfer functions must resolve
+   (five non-null values), and the anonymous insert/update checks must both be
+   false. Confirm own-row passwordless policies and grants in the live schema.
+4. Before pushing the website, require a full passing production build and the
+   independent QA sign-off. Include account export, privacy and deletion copy
+   in the same release as the tool. Set `SITE_LASTMOD` to the actual deploy date
+   only at that release. Consolidate only GSB's authorised changes according to
+   the repository's deploy rules.
+5. With a controlled GSB test account and a real mailbox you own, verify the
+   configured sign-in method, sign-out, save/edit/reload, checklist dates,
+   Planner-to-tracker record links, destination switching, and CSV/PDF download.
+   Use a second controlled account to confirm isolation. Check full account
+   export and deletion using disposable test records, and verify that the
+   confirmed-funding action adds exactly one line to a matching test budget.
+   Do not create test accounts with invented mailboxes.
+6. Record migration results, release revision and test outcomes here and in the
+   implementation/QA reports. If the migration is unavailable, the tracker must
+   show its setup state; do not describe it as live or fully verified. Do not
+   delete populated tables as a rollback: retain student records and use a
+   reviewed corrective migration or hide the unavailable interface.
+
+The tracker needs no new API key, AI service, storage bucket, document upload or
+notification provider. See
+`docs/SCHOLARSHIP_TRACKER_IMPLEMENTATION_2026-10-28.md` for scope, local evidence
+and the student-validation plan.
 
 ## 1. Release gates — do these BEFORE setting the Vercel env vars
 
@@ -75,9 +131,9 @@ the same device/browser that asked for it (PKCE) — fine for testing, not for t
 The moment accounts are live on the web, the Play app "allows account creation". In Play
 Console → App content, BEFORE the web env flips:
 1. **Data safety** — re-declare: Personal info → E-mail address, Name (display name), User IDs;
-   App activity → other user-generated content (saved pages, and — once migrations 0003–0006
-   run — everything entered into the four tools: planner entries, budgets, comparisons, test
-   scores). Decide deliberately whether the Cost & Funding Planner's amounts belong under
+   App activity → other user-generated content (saved pages, and — once the applicable
+   migrations 0003–0008 run — tool records: planner entries, budgets, comparisons, test
+   scores, scholarship entries and checklists). Decide deliberately whether the Cost & Funding Planner's amounts belong under
    Financial info → Other financial info as well; the declaration must match what `/privacy`
    says the account stores. Purposes: App functionality, Account management. Collected,
    encrypted in transit, not shared, user can request deletion.

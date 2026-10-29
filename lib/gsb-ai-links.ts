@@ -9,7 +9,9 @@ import type { RegionSlug } from '@/lib/regions';
  * Never emit `?q=`.
  */
 export function gsbAiHref(opts: { q?: string; region?: RegionSlug | string } = {}): string {
-  if (opts.q && opts.q.trim()) return `/ask#q=${encodeURIComponent(opts.q.trim())}`;
-  if (opts.region) return `/ask#region=${encodeURIComponent(String(opts.region))}`;
-  return '/ask';
+  const parts = [
+    opts.q?.trim() ? `q=${encodeURIComponent(opts.q.trim())}` : '',
+    opts.region ? `region=${encodeURIComponent(String(opts.region))}` : '',
+  ].filter(Boolean);
+  return parts.length ? `/ask#${parts.join('&')}` : '/ask';
 }

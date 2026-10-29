@@ -9,6 +9,11 @@ import type { RegionSlug } from '@/lib/regions';
  */
 export const REGION_HINT_KEY = 'region';
 
+export const PROFILE_TOOL_LABELS = {
+  planner: 'Add to planner',
+  compare: 'Add to compare',
+} as const;
+
 /** `/tools`, carrying the page's destination when it has one (the index hands it on to the tool opened next). */
 export const toolsIndexHref = (region?: RegionSlug | null): string => (region ? `/tools#${REGION_HINT_KEY}=${region}` : '/tools');
 

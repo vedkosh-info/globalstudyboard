@@ -8,6 +8,7 @@ import { isAuthConfigured } from '@/lib/supabase/config';
 import type { RegionSlug } from '@/lib/regions';
 import { toolHref } from '@/lib/tools';
 import ToolLink from '@/components/tools/ToolLink';
+import { PROFILE_TOOL_LABELS } from '@/lib/tool-hint';
 
 /**
  * "Add to planner" on a university profile — adds the university to the
@@ -171,10 +172,10 @@ export default function AddToPlannerButton({
           type="button"
           onClick={() => void onClick()}
           aria-busy={busy || undefined}
-          aria-label={`Add ${name} to your application planner`}
+          aria-label={`${PROFILE_TOOL_LABELS.planner}: ${name}`}
           className={`${PILL} border-forest-300 bg-white text-forest-700 hover:border-forest-400 hover:bg-forest-50 ${busy ? 'cursor-wait' : ''}`}
         >
-          <ClipboardPlus className="h-3.5 w-3.5" aria-hidden="true" /> Add to planner
+          <ClipboardPlus className="h-3.5 w-3.5" aria-hidden="true" /> {PROFILE_TOOL_LABELS.planner}
         </button>
       )}
       <span role="status" aria-live="polite" className="text-xs text-stone-600">

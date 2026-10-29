@@ -44,9 +44,9 @@ function FooterCol({
 }) {
   return (
     <div>
-      <h3 className="text-cream-50/80 font-semibold text-xs mb-4 uppercase tracking-[0.16em]">
+      <h2 className="text-cream-50/80 font-semibold text-xs mb-4 uppercase tracking-[0.16em]">
         {heading}
-      </h3>
+      </h2>
       <ul className="space-y-0.5 list-none p-0 m-0">
         {links.map((link) => (
           <li key={`${link.href}-${link.label}`}>

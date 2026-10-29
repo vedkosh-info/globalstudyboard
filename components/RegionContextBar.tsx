@@ -5,6 +5,7 @@ import AudienceToggle from '@/components/AudienceToggle';
 import GetAppButton from '@/components/GetAppButton';
 import AccountControl from '@/components/auth/AccountControl';
 import ToolsEntranceLink from '@/components/ToolsEntranceLink';
+import { CHROME_UI } from '@/lib/chrome-ui';
 
 /**
  * The slim strip under the header. It carries the site-wide controls that do NOT
@@ -54,7 +55,7 @@ export default function RegionContextBar() {
   return (
     // relative z-[35]: the account popover inside must stay UNDER the pinned
     // header (z-40) when the page scrolls, and above the pinned RegionRail (z-30).
-    <div data-gsb-context-bar className="relative z-[35] border-b border-forest-100 bg-forest-50/60">
+    <div role="region" aria-label={CHROME_UI.studentControls} data-gsb-context-bar className="relative z-[35] border-b border-forest-100 bg-forest-50/60">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-1.5">
         <div className="flex min-w-0 items-center gap-2">
           {/* Hidden on the narrowest phones only; the toggle keeps its own group

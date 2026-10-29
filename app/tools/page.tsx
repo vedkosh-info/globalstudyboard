@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Award, CalendarCheck2, ClipboardList, Coins, Columns3, Lock, ShieldCheck, type LucideIcon } from 'lucide-react';
+import { ArrowRight, Award, CalendarCheck2, ClipboardList, Coins, Columns3, GraduationCap, Lock, ShieldCheck, type LucideIcon } from 'lucide-react';
 import { TOOLS, TOOLS_INDEX_DESCRIPTION_MAX, toolsIndexDescription } from '@/lib/tools';
 import { pageMetadata } from '@/lib/seo';
 import { SITE_REVIEWED } from '@/lib/site-meta';
@@ -26,7 +26,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 /** One icon per tool (the registry stays pure data). */
-const TOOL_ICON: Record<string, LucideIcon> = { 'application-planner': ClipboardList, 'cost-planner': Coins, 'compare-universities': Columns3, 'test-score-tracker': Award };
+const TOOL_ICON: Record<string, LucideIcon> = { 'application-planner': ClipboardList, 'cost-planner': Coins, 'compare-universities': Columns3, 'test-score-tracker': Award, 'scholarship-tracker': GraduationCap };
 
 const HOW = [
   {

@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import { useEffect, useId, useRef, type KeyboardEvent } from 'react';
 import { X } from 'lucide-react';
-import { lockBodyScroll, unlockBodyScroll } from '@/lib/scroll-lock';
+import { lockBackground } from '@/lib/dialog-a11y';
 import type { SignInRequest, SignInVerdict } from '@/lib/auth-events';
 import { emailDeliversCode } from '@/lib/supabase/config';
 
@@ -34,14 +34,6 @@ const LoginForm = dynamic(() => import('@/components/auth/LoginForm'), {
 const FOCUSABLE =
   'a[href], button:not([disabled]), input, select, textarea, summary, [tabindex]:not([tabindex="-1"])';
 
-/**
- * Everything that must go inert while the dialog is open. `header`/`main`/`footer`
- * are the page; the context bar sits BETWEEN header and main so a three-selector
- * sweep misses it; the notification panel is portaled to the body; the
- * quick-actions dock is a top-level sibling of the dialog.
- */
-const BACKGROUND = ['header', 'main', 'footer', '[data-gsb-context-bar]', '[data-gsb-notifications]', '.gsb-dock'];
-
 export default function SignInSheet({
   request,
   opener,
@@ -68,12 +60,9 @@ export default function SignInSheet({
   // Scroll lock + inert background for the lifetime of the sheet; restore focus
   // on unmount unless a navigation closed it.
   useEffect(() => {
-    lockBodyScroll();
-    const background = BACKGROUND.flatMap((sel) => Array.from(document.querySelectorAll(sel)));
-    background.forEach((el) => el.setAttribute('inert', ''));
+    const unlock = lockBackground(panelRef.current);
     return () => {
-      background.forEach((el) => el.removeAttribute('inert'));
-      unlockBodyScroll();
+      unlock();
       if (closedByNavigation.current) {
         closedByNavigation.current = false;
         return;

@@ -41,7 +41,7 @@ export function consumeToolSessionEnded(): boolean {
 
 // ── Session-state messages ──────────────────────────────────────────────────
 // One wording everywhere a save can fail for a reason that is not the
-// student's input: the four tools, their reports and the page buttons (Save,
+// student's input: the tools, their reports and the page buttons (Save,
 // Add to planner, Add to compare). Kept here, SDK-free, so a page button can
 // still say it when the lazily loaded SDK chunk itself could not be fetched.
 // lib/tools-shared re-exports them for the tools.
@@ -77,16 +77,21 @@ export interface SignInRequest {
  * visitor who arrived from the USA hub and signed in through a redirect door
  * landed on the India view (review, CRIT2-2).
  *
- * ALLOW-LISTED, never passed through: only `#exam=<slug>`, `#region=<slug>`
- * or the two joined by `&` (either order, each at most once), every value in
+ * ALLOW-LISTED, never passed through: `#exam=<slug>`, `#award=<slug>` or
+ * `#entry=<uuid>` (an existing scholarship record),
+ * optionally joined to `#region=<slug>` by `&` (either order, each once),
+ * or `#region=<slug>` alone. An award key preserves a scholarship prefill
+ * through sign-in. Every value is in
  * the catalogue's slug shape (lowercase words joined by single hyphens). Any
  * other fragment is dropped, so no arbitrary text is carried into `next` or
  * back onto the page. The tools still check each slug against their own list
  * (the tracker's catalogue, REGION_SLUGS) before using it.
  */
 const FRAGMENT_SLUG = '[a-z0-9]+(?:-[a-z0-9]+)*';
+const FRAGMENT_UUID = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}';
+const RESUMABLE_ITEM = `(?:(?:exam|award)=${FRAGMENT_SLUG}|entry=${FRAGMENT_UUID})`;
 const RESUMABLE_FRAGMENT = new RegExp(
-  `^#(?:exam=${FRAGMENT_SLUG}(?:&region=${FRAGMENT_SLUG})?|region=${FRAGMENT_SLUG}(?:&exam=${FRAGMENT_SLUG})?)$`,
+  `^#(?:${RESUMABLE_ITEM}(?:&region=${FRAGMENT_SLUG})?|region=${FRAGMENT_SLUG}(?:&${RESUMABLE_ITEM})?)$`,
 );
 export function resumableFragment(hash: string): string {
   return hash.length <= 120 && RESUMABLE_FRAGMENT.test(hash) ? hash : '';

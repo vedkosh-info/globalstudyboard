@@ -6,7 +6,7 @@ import { X, Smartphone, Check } from 'lucide-react';
 import { useRegion } from '@/components/RegionProvider';
 import { OPEN_TESTER_INVITE_EVENT } from '@/lib/tester-invite';
 import { FEEDBACK_RETURN, FEEDBACK_RETURN_SCOPE } from '@/lib/feedback';
-import { lockBodyScroll, unlockBodyScroll } from '@/lib/scroll-lock';
+import { lockBackground } from '@/lib/dialog-a11y';
 
 /**
  * Android beta-tester sign-up.
@@ -34,15 +34,6 @@ const EMAIL_RE = /^[^\s@]{1,64}@[^\s@.]+(\.[^\s@.]+)+$/;
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
-
-/**
- * Everything that must go inert while the dialog is open. `header`/`main`/`footer`
- * are the page; the context bar sits BETWEEN header and main so a three-selector
- * sweep misses it; the notification panel is portaled to the body; the
- * quick-actions dock is a top-level sibling of the dialog and would otherwise
- * stay tabbable underneath it.
- */
-const BACKGROUND = ['header', 'main', 'footer', '[data-gsb-context-bar]', '[data-gsb-notifications]', '.gsb-dock'];
 
 type Status = 'idle' | 'submitting' | 'done' | 'error';
 
@@ -108,25 +99,12 @@ export default function TesterInviteModal() {
     });
   }, [pathname]);
 
-  // Lock body scroll while the dialog is open. Not `body.style.overflow =
-  // 'hidden'`: that idiom is inert on this site (html has a non-visible overflow-x, so
-  // body's overflow never reaches the viewport — measured Sept 2026), see
-  // lib/scroll-lock.ts.
+  // Shared fixed-body lock/inert treatment; restore focus only after it is lifted.
   useEffect(() => {
     if (!open) return;
-    lockBodyScroll();
-    return () => unlockBodyScroll();
-  }, [open]);
-
-  // Make the background inert on open; lift it and restore focus on close.
-  useEffect(() => {
-    if (!open) return;
-    const background = BACKGROUND.flatMap((sel) =>
-      Array.from(document.querySelectorAll(sel)),
-    );
-    background.forEach((el) => el.setAttribute('inert', ''));
+    const unlock = lockBackground(panelRef.current);
     return () => {
-      background.forEach((el) => el.removeAttribute('inert'));
+      unlock();
       if (closedByNavigation.current) {
         closedByNavigation.current = false;
         return;

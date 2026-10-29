@@ -27,7 +27,7 @@
 import type { RegionSlug } from '@/lib/regions';
 import { NON_AFFILIATION_NOTICE, SITE_DISCLAIMER } from '@/lib/site-meta';
 
-export type ToolSlug = 'application-planner' | 'cost-planner' | 'compare-universities' | 'test-score-tracker';
+export type ToolSlug = 'application-planner' | 'cost-planner' | 'compare-universities' | 'test-score-tracker' | 'scholarship-tracker';
 
 // ── Paper ───────────────────────────────────────────────────────────────────
 

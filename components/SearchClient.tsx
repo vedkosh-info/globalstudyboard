@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import {
   Search,
   Sparkles,
@@ -12,18 +12,22 @@ import {
   BookOpen,
   ArrowRight,
   X,
+  Loader2,
 } from 'lucide-react';
 
-import type { ContentType, ContentUnit } from '@/lib/cmi';
+import type { ContentType } from '@/lib/cmi';
 import { useRegion } from '@/components/RegionProvider';
-import { getRegionBySlug } from '@/lib/regions';
+import { DEFAULT_REGION, getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import RegionFlag from '@/components/RegionFlag';
 import { gsbAiHref } from '@/lib/gsb-ai-links';
+import { isSearchCatalogue, type SearchEntry } from '@/lib/search-types';
+import { SEARCH_UI } from '@/lib/search-ui';
+import { searchHref } from '@/lib/search-links';
 
 /** A search hit — the unit plus the best URL to open (deep-linked to a section
  *  when the query matched a specific section heading). */
 interface Hit {
-  unit: ContentUnit;
+  unit: SearchEntry;
   href: string;
 }
 
@@ -46,6 +50,11 @@ const TYPE_ORDER: ContentType[] = ['college', 'exam', 'guide', 'region'];
 
 /** Cap each group so a broad query can't render thousands of cards. */
 const MAX_PER_GROUP = 30;
+const catalogueCache = new Map<RegionSlug, SearchEntry[]>();
+
+type IndexState =
+  | { region: RegionSlug; status: 'loading' | 'error' }
+  | { region: RegionSlug; status: 'ready'; items: SearchEntry[] };
 
 /**
  * Live search fires once the query is MORE THAN 5 letters (product requirement);
@@ -62,19 +71,56 @@ function TypeIcon({ type, className }: { type: ContentType; className?: string }
   return <Globe2 className={cls} aria-hidden="true" />;
 }
 
-export default function SearchClient({ index }: { index: ContentUnit[] }) {
-  const router = useRouter();
+export default function SearchClient() {
   const searchParams = useSearchParams();
-  const { effectiveRegion } = useRegion();
+  const { region: chosenRegion, ready: regionReady, setPageRegion } = useRegion();
+  const hint = getRegionBySlug(searchParams.get('region') ?? '')?.slug ?? null;
+  // Resolve the URL hint immediately, rather than fetching India's index while
+  // the page-destination effect catches up. The student's remembered choice wins.
+  const searchRegion = chosenRegion ?? hint ?? DEFAULT_REGION;
 
   const initial = searchParams.get('q') ?? '';
   const [query, setQuery] = useState(initial);
   // True once a real query exists (on arrival or explicit submit) — lets short
   // acronyms resolve even though live typing waits for > 5 letters.
   const [forced, setForced] = useState(initial.trim().length >= 2);
+  const [indexState, setIndexState] = useState<IndexState>({ region: searchRegion, status: 'loading' });
+  const [retry, setRetry] = useState(0);
+  const [visiblePerGroup, setVisiblePerGroup] = useState(MAX_PER_GROUP);
   const inputRef = useRef<HTMLInputElement>(null);
+  const lastWrittenQuery = useRef(initial.trim());
 
-  const region = getRegionBySlug(effectiveRegion);
+  const region = regionReady ? getRegionBySlug(searchRegion) : undefined;
+  const indexReady = regionReady && indexState.region === searchRegion && indexState.status === 'ready';
+
+  useEffect(() => {
+    setPageRegion(hint);
+    return () => setPageRegion(null);
+  }, [hint, setPageRegion]);
+
+  useEffect(() => {
+    if (!regionReady) return;
+    const cached = catalogueCache.get(searchRegion);
+    if (cached) {
+      setIndexState({ region: searchRegion, status: 'ready', items: cached });
+      return;
+    }
+    const controller = new AbortController();
+    setIndexState({ region: searchRegion, status: 'loading' });
+    fetch(`/search/catalogue/${searchRegion}`, { signal: controller.signal, credentials: 'omit', referrerPolicy: 'no-referrer' })
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Search request failed');
+        const data: unknown = await response.json();
+        if (!isSearchCatalogue(data, searchRegion)) throw new Error('Invalid search response');
+        if (controller.signal.aborted) return;
+        catalogueCache.set(searchRegion, data.items);
+        setIndexState({ region: searchRegion, status: 'ready', items: data.items });
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setIndexState({ region: searchRegion, status: 'error' });
+      });
+    return () => controller.abort();
+  }, [searchRegion, regionReady, retry]);
 
   // Focus the field on mount and place the caret at the end so a visitor who was
   // mid-typing in the header box can keep going without a break.
@@ -86,17 +132,31 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
     el.setSelectionRange(len, len);
   }, []);
 
-  // Keep the URL shareable + back-button-friendly as the query changes, without
-  // spamming history (replace, debounced).
+  // Honour Back/Forward and links into /search while this component stays mounted.
+  const urlQuery = searchParams.get('q') ?? '';
+  useEffect(() => {
+    if (urlQuery === lastWrittenQuery.current) return;
+    lastWrittenQuery.current = urlQuery;
+    setQuery(urlQuery);
+    setForced(urlQuery.trim().length >= 2);
+  }, [urlQuery]);
+
+  // Native history integrates with Next's useSearchParams without requesting a
+  // new server payload for every pause in typing. Search stays local once loaded.
   useEffect(() => {
     const q = query.trim();
     const handle = setTimeout(() => {
-      const target = q ? `/search?q=${encodeURIComponent(q)}` : '/search';
-      const current = `/search${searchParams.get('q') ? `?q=${encodeURIComponent(searchParams.get('q')!)}` : ''}`;
-      if (target !== current) router.replace(target, { scroll: false });
+      const target = searchHref(q, hint);
+      const current = `${window.location.pathname}${window.location.search}`;
+      if (target !== current) {
+        lastWrittenQuery.current = q;
+        window.history.replaceState(null, '', target);
+      }
     }, 300);
     return () => clearTimeout(handle);
-  }, [query, router, searchParams]);
+  }, [query, hint]);
+
+  useEffect(() => setVisiblePerGroup(MAX_PER_GROUP), [query, searchRegion]);
 
   const q = query.trim().toLowerCase();
   const showResults = forced || q.length > AUTO_MIN;
@@ -106,15 +166,13 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
   // A hit matches page-level (title/lede/tags/FAQs/key-facts) OR at section level
   // (a section heading contains every term) — the latter deep-links to that
   // section's #anchor so the reader lands exactly where the answer is.
-  const grouped = useMemo(() => {
+  const matchedGroups = useMemo(() => {
+    if (!indexReady || indexState.status !== 'ready') return [] as { type: ContentType; items: Hit[] }[];
     if (q.length < 2) return [] as { type: ContentType; items: Hit[] }[];
     const terms = q.split(/\s+/);
-    const inRegion = (u: ContentUnit) =>
-      u.region === effectiveRegion || u.region === 'global' || u.region === null;
 
     const hits: Hit[] = [];
-    for (const u of index) {
-      if (!inRegion(u)) continue;
+    for (const u of indexState.items) {
       const pageMatch = terms.every((t) => u.keywords.includes(t));
 
       // Section-level: the first section whose heading contains every term. The
@@ -135,13 +193,15 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
 
     return TYPE_ORDER.map((type) => ({
       type,
-      items: hits.filter((h) => h.unit.type === type).slice(0, MAX_PER_GROUP),
+      items: hits.filter((h) => h.unit.type === type),
     })).filter((g) => g.items.length > 0);
-  }, [q, effectiveRegion, index]);
+  }, [q, indexReady, indexState]);
 
-  const totalCount = grouped.reduce((n, g) => n + g.items.length, 0);
+  const totalCount = matchedGroups.reduce((n, group) => n + group.items.length, 0);
+  const grouped = matchedGroups.map((group) => ({ ...group, items: group.items.slice(0, visiblePerGroup) }));
+  const visibleCount = grouped.reduce((n, group) => n + group.items.length, 0);
 
-  const askHref = q ? gsbAiHref({ q: query.trim() }) : '/ask';
+  const askHref = gsbAiHref({ q: query.trim(), region: searchRegion });
 
   function submit() {
     if (query.trim()) setForced(true);
@@ -149,7 +209,7 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
   }
 
   return (
-    <div>
+    <div className="min-h-[calc(100svh-16rem)]">
       {/* The page's <h1> is rendered by app/search/page.tsx outside the Suspense
           boundary; this header carries only the destination-aware lede. */}
       <header className="mb-6">
@@ -206,6 +266,7 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
         )}
         <button
           type="submit"
+          aria-label={SEARCH_UI.submit}
           className="flex items-center gap-2 bg-forest-700 px-5 text-sm font-semibold text-cream-50 transition-colors hover:bg-forest-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cream-50/70"
         >
           <Search className="h-4 w-4 sm:hidden" aria-hidden="true" />
@@ -222,8 +283,25 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
         </p>
       )}
 
-      <div className="mt-8" aria-live="polite">
-        {!showResults ? (
+      {/* Keep the fallback link below the initial viewport while a real query
+          loads. Otherwise that visible card jumps away when results arrive. */}
+      <div className={showResults ? 'mt-8 min-h-[calc(100svh-24rem)]' : 'mt-8'} aria-live="polite">
+        {!indexReady ? (
+          indexState.region === searchRegion && indexState.status === 'error' ? (
+            <div className="rounded-2xl border border-stone-200 bg-white px-5 py-6 text-center">
+              <p className="text-stone-700">{SEARCH_UI.failed}</p>
+              <button type="button" onClick={() => setRetry((value) => value + 1)} className="rounded-full bg-forest-700 px-5 py-2.5 font-semibold text-cream-50 hover:bg-forest-800">
+                {SEARCH_UI.retry}
+              </button>
+            </div>
+          ) : (
+            <div role="status" className="rounded-2xl border border-stone-200 bg-white px-5 py-6 text-center">
+              <Loader2 className="mx-auto mb-3 h-5 w-5 motion-safe:animate-spin text-forest-600" aria-hidden="true" />
+              <p className="mb-1 font-semibold text-stone-700">{SEARCH_UI.loading}</p>
+              <p className="m-0 text-sm text-stone-600">{SEARCH_UI.loadingNote}</p>
+            </div>
+          )
+        ) : !showResults ? (
           <p className="rounded-2xl border border-dashed border-stone-300 bg-cream-50 px-5 py-8 text-center text-sm text-stone-500">
             Type more than five letters to search — or press Enter for a shorter query like “SAT”.
           </p>
@@ -239,8 +317,8 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
                   <h2 className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
                     <TypeIcon type={g.type} className="text-stone-400" />
                     {GROUP_HEADING[g.type]}
-                    <span className="font-normal normal-case tracking-normal text-stone-400">
-                      ({g.items.length})
+                    <span className="font-normal normal-case tracking-normal text-stone-600">
+                      ({matchedGroups.find((group) => group.type === g.type)?.items.length ?? 0})
                     </span>
                   </h2>
                   <ul className="m-0 grid list-none grid-cols-1 gap-2 p-0 sm:grid-cols-2">
@@ -248,16 +326,17 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
                       <li key={`${u.type}-${u.slug}`} className="m-0">
                         <Link
                           href={href}
+                          prefetch={false}
                           className="flex h-full items-start gap-3 rounded-xl border border-stone-200 bg-white px-4 py-3 no-underline transition-colors hover:border-forest-300 hover:bg-forest-50"
                         >
                           <TypeIcon type={u.type} className="mt-0.5" />
                           <span className="min-w-0 flex-1">
                             <span className="block font-semibold text-stone-800">{u.title}</span>
-                            <span className="mt-0.5 block line-clamp-2 text-xs text-stone-500">
+                            <span className="mt-0.5 block line-clamp-2 text-sm leading-relaxed text-stone-600">
                               {u.subtitle}
                             </span>
                           </span>
-                          <span className="shrink-0 rounded-full bg-stone-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-stone-500">
+                          <span className="shrink-0 rounded-full bg-stone-100 px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-stone-600">
                             {TYPE_LABEL[u.type]}
                           </span>
                         </Link>
@@ -267,6 +346,14 @@ export default function SearchClient({ index }: { index: ContentUnit[] }) {
                 </section>
               ))}
             </div>
+            {visibleCount < totalCount && (
+              <div className="mt-6 text-center">
+                <p className="mb-3 text-sm text-stone-600">{SEARCH_UI.shown(visibleCount, totalCount)}</p>
+                <button type="button" onClick={() => setVisiblePerGroup((value) => value + MAX_PER_GROUP)} className="rounded-full border border-stone-300 bg-white px-5 py-2.5 font-semibold text-forest-700 hover:border-forest-400 hover:bg-forest-50">
+                  {SEARCH_UI.showMore}
+                </button>
+              </div>
+            )}
           </>
         ) : (
           <div className="rounded-2xl border border-stone-200 bg-white px-5 py-8 text-center">

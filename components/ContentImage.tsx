@@ -37,6 +37,8 @@ interface Props {
   asset: ImageAsset | null;
   /** hero = full width (nominally 1400w, 16:9); card = grid thumb (nominally 560w). */
   variant?: 'hero' | 'card';
+  /** Wider media does not widen the readable prose column. Feature is home-only. */
+  layout?: 'contained' | 'guide' | 'profile' | 'section' | 'feature';
   /** True for the page's LCP image only. */
   priority?: boolean;
   /**
@@ -52,13 +54,22 @@ interface Props {
 }
 
 const SIZES = {
-  hero: '(min-width: 1024px) 768px, (min-width: 640px) 90vw, 100vw',
+  hero: '(min-width: 928px) 896px, calc(100vw - 2rem)',
   card: '(min-width: 1024px) 360px, (min-width: 640px) 45vw, 100vw',
+} as const;
+
+const LAYOUT = {
+  contained: { classes: '', sizes: SIZES.hero },
+  guide: { classes: 'xl:-mx-24 xl:w-[calc(100%+12rem)]', sizes: '(min-width: 1280px) 960px, (min-width: 800px) 768px, calc(100vw - 2rem)' },
+  profile: { classes: 'xl:-mx-24 xl:w-[calc(100%+12rem)]', sizes: '(min-width: 1280px) 1088px, (min-width: 928px) 896px, calc(100vw - 2rem)' },
+  section: { classes: 'max-w-6xl', sizes: '(min-width: 1184px) 1152px, calc(100vw - 2rem)' },
+  feature: { classes: '-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full', sizes: '(min-width: 1280px) 567px, (min-width: 1024px) calc((100vw - 9.125rem) / 2), (min-width: 640px) calc(100vw - 6.125rem), calc(100vw - 2.125rem)' },
 } as const;
 
 export default function ContentImage({
   asset,
   variant = 'hero',
+  layout = 'contained',
   priority = false,
   representative = false,
   sizes: sizesOverride,
@@ -69,7 +80,8 @@ export default function ContentImage({
   const hero = variant === 'hero';
   const width = hero ? asset.width : asset.widthSm;
   const height = hero ? asset.height : asset.heightSm;
-  const sizes = sizesOverride ?? SIZES[variant];
+  const sizes = sizesOverride ?? (hero ? LAYOUT[layout].sizes : SIZES.card);
+  const feature = hero && layout === 'feature';
   // Width descriptors come from the registry's TRUE pixel sizes, never hard-coded:
   // a source that came back at 1024px (the known silently-ignored-imageSize bug) must
   // not be advertised to the browser as 1400w.
@@ -88,8 +100,8 @@ export default function ContentImage({
   const negation = representative ? 'not this institution' : 'not a photo';
 
   return (
-    <figure className={`relative m-0 ${className}`.trim()}>
-      <picture>
+    <figure className={`relative m-0 ${hero ? LAYOUT[layout].classes : ''} ${className}`.trim()}>
+      <picture className={feature ? 'block aspect-video overflow-hidden rounded-2xl lg:aspect-[4/3]' : undefined}>
         <source type="image/avif" srcSet={avif} sizes={sizes} />
         <source type="image/webp" srcSet={webp} sizes={sizes} />
         {/* Plain <img> on purpose: the asset is already optimised on disk, so next/image
@@ -102,7 +114,7 @@ export default function ContentImage({
           loading={priority ? 'eager' : 'lazy'}
           decoding={priority ? 'sync' : 'async'}
           fetchPriority={priority ? 'high' : 'auto'}
-          className={`w-full h-auto bg-cream-100 border border-stone-200 ${hero ? 'rounded-2xl' : 'rounded-xl'}`}
+          className={`block w-full bg-cream-100 border border-stone-200 ${feature ? 'h-full object-cover object-[40%_center]' : 'h-auto'} ${hero ? 'rounded-2xl' : 'rounded-xl'}`}
         />
       </picture>
       {/* Photographs have visible credits below the image. AI disclosure stays

@@ -168,6 +168,18 @@ const nextConfig = {
       // (robots.txt blocks only /gsb-ai?*) so this 301 is visible. Query
       // strings are preserved and then blocked as /ask?*.
       { source: '/gsb-ai', destination: '/ask', permanent: true },
+      // Withheld under the content constitution; preserve old links by sending
+      // readers to the existing general finance degree guide for this destination.
+      {
+        source: '/guides/islamic-finance-as-an-academic-specialisation-in-the-gulf',
+        destination: '/guides/finance-and-accounting-degrees-in-the-gulf',
+        permanent: true,
+      },
+      {
+        source: '/guides/vegetarian-jain-and-halal-food-for-students-in-asia',
+        destination: '/guides/student-life-in-southeast-asia-malaysia-thailand-philippines',
+        permanent: true,
+      },
       // Search Console's "Not found (404)" examples are stale social-card
       // URLs. The live pages point at /opengraph-image, which returns the
       // picture. These older paths do not. More specific track rules first.

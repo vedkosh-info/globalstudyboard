@@ -39,14 +39,14 @@ function ExamLink({ e, hidden }: { e: ExamCard; hidden: boolean }) {
       className={`bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col${hidden ? ' hidden' : ''}`}
     >
       <div className="flex items-center justify-between mb-2">
-        <span className="font-display text-xl font-bold text-ink group-hover:text-forest-700 transition-colors">
+        <h2 className="m-0 font-display text-xl font-bold text-ink group-hover:text-forest-700 transition-colors">
           {e.shortName}
-        </span>
+        </h2>
         <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
           {e.domain.replace('-', ' ')}
         </span>
       </div>
-      <p className="text-stone-600 text-sm leading-relaxed line-clamp-2 mb-3">{e.fullName}</p>
+      <p className="text-stone-600 text-base leading-relaxed line-clamp-3 mb-3">{e.fullName}</p>
       <div className="mt-auto pt-3 text-xs text-stone-500 flex flex-wrap items-center gap-x-3 gap-y-1">
         <span className="inline-flex items-center gap-1 font-medium text-stone-600">
           {e.region === 'global' ? (

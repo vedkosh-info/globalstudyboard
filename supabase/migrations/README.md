@@ -44,6 +44,41 @@ Every destination list (the tool tables, `profiles.preferred_region`, `saved_ite
 
 ## Rules every migration follows
 
+### Scholarship Tracker — migration 0008 (28 October 2026)
+
+`0008_scholarship_tracker.sql` adds `scholarship_entries`, `scholarship_tasks`,
+atomic retry-safe save functions and a duplicate-safe confirmed-funding transfer.
+**Applied to GSB production on 29 October 2026.** The authenticated SQL Editor
+returned both tables and all three RPCs; independent REST schema probes confirmed
+them. A live rollback-only test passed RLS/grants, save/checklist, retry/stale
+handling, account/password isolation and duplicate-safe funding. Synthetic data
+was rolled back. See the current dated update in `ACCOUNTS_SETUP.md`; older
+"not yet applied" table labels above are historical, not current observations.
+For another environment, apply after 0007 and run the footer verification
+queries. The client shows a setup state when the tables are unavailable.
+
+The tracker stores student-authored metadata and checklists, with no uploaded
+files. Limits are 100 scholarships, 20 items per scholarship and 1,000 items per
+account. Each table has passwordless own-row RLS, account deletion cascades,
+anonymous-write revocation and serialized cap guards. Null-subject authenticated
+requests are refused before ownership checks and counts. Saves use a client UUID;
+retries return the original creation, and existing-record edits can require the
+expected `updated_at` revision. The browser preserves newer input if a retry
+finds an earlier save, then deliberately applies it to that same record.
+
+The budget transfer accepts only records marked accepted or received. It checks
+the account, destination, currency, amount precision and existing budget limits
+in one transaction. A repeat cannot silently add another funding line or replace
+an existing one. Deleting a scholarship leaves any independently saved budget
+line in place; deleting that budget line clears the scholarship's link.
+
+Local regression: `node scripts/qa/scholarship-database.mjs` applies all eight
+migrations in PGlite (only the cron scheduler is stubbed). Its source documents
+the isolated test-runtime installation. This is not evidence of production
+deployment, actual OTP/OAuth delivery or concurrent live Postgres sessions.
+
+### Shared migration rules
+
 - RLS on every table; own-row policies only; **no DELETE policy on profiles**
   (deletion is the `auth.admin.deleteUser` cascade).
 - No trigger on `auth.users` — the app creates the profile row (`ensureProfile`).

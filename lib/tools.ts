@@ -23,6 +23,8 @@ export { REGION_HINT_KEY, toolsIndexHref } from '@/lib/tool-hint';
 export interface ToolDef {
   slug: string;
   name: string;
+  /** Short subject for the tools-index search description. */
+  indexLabel: string;
   /** One line under the name (cards, meta description). */
   tagline: string;
   /** Longer description for the tool page lede. */
@@ -37,6 +39,7 @@ export const TOOLS: ToolDef[] = [
   {
     slug: 'application-planner',
     name: 'Application Planner',
+    indexLabel: 'applications',
     tagline: 'Shortlist universities, then track every deadline, document and test date in one place.',
     description:
       'Build your own shortlist from our university profiles across nine destinations — or add any university — and keep each application moving: status, your deadlines, a document checklist, test dates and private notes, synced to your account on every device.',
@@ -52,6 +55,7 @@ export const TOOLS: ToolDef[] = [
   {
     slug: 'cost-planner',
     name: 'Cost & Funding Planner',
+    indexLabel: 'budgets',
     tagline: 'Total your own tuition, living and visa-related costs against your funding, in your destination’s currency.',
     description:
       'Build a budget for the destination you are looking at — tuition, living costs, health cover, visa fees, travel — next to the savings, family support, scholarships and loans you expect to fund it with. Every amount is one you enter; we supply the destination’s categories, with an official page or our guide linked on a line where we have one.',
@@ -67,6 +71,7 @@ export const TOOLS: ToolDef[] = [
   {
     slug: 'compare-universities',
     name: 'Compare Universities',
+    indexLabel: 'university comparisons',
     tagline: 'Put up to four universities side by side — our verified facts on top, your own criteria, weights and scores underneath.',
     description:
       'Choose up to four universities from our verified profiles for your destination (or add your own), read the facts side by side — rankings attributed to the bodies that published them, location, admission tests, application platform, levels, language, courses — then rate each one on criteria you name and weight. The tool shows your own weighted result with the arithmetic in full; it never ranks, scores or recommends a university itself.',
@@ -82,6 +87,7 @@ export const TOOLS: ToolDef[] = [
   {
     slug: 'test-score-tracker',
     name: 'Test Score Tracker',
+    indexLabel: 'test scores',
     // ≤ 121 characters: the tool page's meta description is this line plus
     // " Free, for all nine study destinations." within 160 (scripts/check-tools.ts).
     // "Any validity rule", not "how long each stays valid": for most tests the
@@ -95,6 +101,22 @@ export const TOOLS: ToolDef[] = [
       'Readiness for your shortlist: which tracked tests its profiles name still have no score',
       'Saved to your account, with a CSV download',
       'A printable report and one-tap PDF, built in your browser',
+    ],
+    access: 'account',
+  },
+  {
+    slug: 'scholarship-tracker',
+    name: 'Scholarship Tracker',
+    indexLabel: 'scholarships',
+    tagline: 'Save scholarships, track your next steps and decisions, and add confirmed funding to your budget.',
+    description:
+      'Start with a scholarship name or a programme from our small, sourced starting list. Keep your next steps, dates and application progress together, link a university application, and add funding you have accepted to your budget when you are ready. Your records follow your account across devices; every date and outcome is one you enter.',
+    features: [
+      'Start with just a name, or save a programme from the starting list',
+      'Your next steps, dates and application status together',
+      'Linked scholarship tasks appear in your Application Planner',
+      'Add confirmed funding to a budget after checking the amount and currency',
+      'Private notes, CSV and a PDF made in your browser',
     ],
     access: 'account',
   },
@@ -119,16 +141,15 @@ export const toolHref = (slug: string, region?: RegionSlug | null): string => to
 
 /**
  * The /tools index meta description, built from the registry so a new tool is
- * never left out. It leads with the tool names (the nine-destination list used
- * to fill the whole snippet) and must stay whole within 160 characters — the
- * fourth tool pushed an earlier wording over and cut it to "…tuned to your
- * study…". `scripts/check-tools.ts` fails the build if it no longer fits.
+ * never left out. Compact registry subjects keep all five tool areas visible
+ * within 160 characters. `scripts/check-tools.ts` refuses empty subjects and
+ * an over-length snippet when the registry grows.
  */
 export const TOOLS_INDEX_DESCRIPTION_MAX = 160;
 export const toolsIndexDescription = (): string =>
-  `Free tools for university applicants: ${TOOLS.slice(0, -1)
-    .map((t) => t.name)
-    .join(', ')} and ${TOOLS[TOOLS.length - 1].name} — tuned to your destination.`;
+  `Free tools for ${TOOLS.slice(0, -1)
+    .map((t) => t.indexLabel)
+    .join(', ')} and ${TOOLS[TOOLS.length - 1].indexLabel} across nine study destinations.`;
 
 /**
  * A link that opens the Test Score Tracker on one test. The prefill rides a

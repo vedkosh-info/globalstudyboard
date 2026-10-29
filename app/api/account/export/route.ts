@@ -22,7 +22,7 @@ export const runtime = 'nodejs';
 const PAGE = 1000;
 const isRateLimited = createRateLimiter(10, 10 * 60_000);
 
-/** The planner (0003), budget (0004), compare (0005) and test-score (0006) tables are created by owner-run migrations; until each runs, PostgREST answers "not in schema cache" / undefined_table. */
+/** Tool tables are created by owner-run migrations; until each runs, PostgREST answers "not in schema cache" / undefined_table. */
 function isMissingTable(error: unknown): boolean {
   const e = error as { code?: string; message?: string } | null;
   if (!e) return false;
@@ -74,7 +74,7 @@ export async function GET(request: NextRequest) {
 
   try {
     const service = getSupabaseServiceClient();
-    const [profile, savedItems, plannerApplications, plannerTasks, budgetPlans, budgetItems, compareSets, compareCriteria, compareEntries, compareScores, testScores, testScoreSections, moderation] = await Promise.all([
+    const [profile, savedItems, plannerApplications, plannerTasks, budgetPlans, budgetItems, compareSets, compareCriteria, compareEntries, compareScores, testScores, testScoreSections, scholarshipEntries, scholarshipTasks, moderation] = await Promise.all([
       supabase
         .from('profiles')
         .select('display_name, preferred_region, preferred_audience, consent_version, consent_tos_at, consent_privacy_at, created_at, updated_at')
@@ -156,6 +156,15 @@ export async function GET(request: NextRequest) {
         supabase.from('test_score_sections').select('id, score_id, label, value, position, created_at').eq('user_id', user.id).order('position', { ascending: true }).range(from, to),
         true,
       ),
+      // Scholarship Tracker (migration 0008): all destinations, including linked actions.
+      fetchAll<Record<string, unknown>>((from, to) =>
+        supabase.from('scholarship_entries').select('id, name, provider, official_url, guide_slug, cycle, region, application_id, status, notes, budget_item_id, created_at, updated_at').eq('user_id', user.id).order('created_at', { ascending: true }).range(from, to),
+        true,
+      ),
+      fetchAll<Record<string, unknown>>((from, to) =>
+        supabase.from('scholarship_tasks').select('id, scholarship_id, title, due_on, done, created_at, updated_at').eq('user_id', user.id).order('created_at', { ascending: true }).range(from, to),
+        true,
+      ),
       service
         ? service
             .from('admin_actions')
@@ -183,6 +192,7 @@ export async function GET(request: NextRequest) {
       cost_planner: { plans: budgetPlans, items: budgetItems },
       compare_universities: { sets: compareSets, criteria: compareCriteria, entries: compareEntries, scores: compareScores },
       test_score_tracker: { scores: testScores, sections: testScoreSections },
+      scholarship_tracker: { entries: scholarshipEntries, tasks: scholarshipTasks },
       moderation_actions: moderation,
       notes: [
         'This file contains every record GlobalStudyBoard stores about your account, including any moderation action taken on it and the note (if any) attached to that action while your account exists.',

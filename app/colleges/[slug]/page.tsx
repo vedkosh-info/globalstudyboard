@@ -220,6 +220,14 @@ export default async function CollegeDetailPage({ params }: Props) {
         </p>
       </header>
 
+      <ContentImage
+        asset={collegeImage({ slug: college.slug, region: college.region })}
+        variant="hero"
+        layout="profile"
+        priority
+        representative
+      />
+
       <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
         {college.descriptionEn}
       </p>
@@ -232,14 +240,7 @@ export default async function CollegeDetailPage({ params }: Props) {
         <AddToCompareButton slug={college.slug} name={college.nameEn} region={college.region} url={college.websiteUrl} />
       </div>
 
-      {/* An explicitly verified photo of this institution, or a labelled AI scene.
-          collegeImage never substitutes a photograph of a different university. */}
-      <ContentImage
-        asset={collegeImage({ slug: college.slug, region: college.region })}
-        variant="hero"
-        priority
-        representative
-      />
+
       {/* Long-form twin — the dedicated admissions guide, featured above the facts */}
       {primaryGuide && (
         <Link
