@@ -260,7 +260,7 @@ export default function ReportView({ doc, toolHref, includeNotes, onIncludeNotes
         id="report"
         aria-labelledby="report-title"
         aria-hidden={compact || undefined}
-        className={compact ? 'report-print-only' : 'rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-10'}
+        className={compact ? 'report-print-only hidden print:block' : 'rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-10'}
       >
         <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-stone-200 pb-3">
           <p className="m-0 font-display text-lg font-bold text-forest-800">GlobalStudyBoard</p>
@@ -275,7 +275,7 @@ export default function ReportView({ doc, toolHref, includeNotes, onIncludeNotes
           Generated <time dateTime={doc.generatedAt}>{formatGenerated(doc.generatedAt)}</time> · Destination: {doc.regionName}
           {doc.includesNotes ? ' · Includes your private notes' : ''}
         </p>
-        <p className="m-0 mt-1 max-w-3xl text-xs leading-relaxed text-stone-600">{PREPARED_BY}</p>
+        <p className="m-0 mt-1 max-w-3xl text-xs leading-relaxed text-stone-600">{doc.preparedBy ?? PREPARED_BY}</p>
 
         <div className="mt-8 space-y-8">
           {doc.sections.map((s, i) => (

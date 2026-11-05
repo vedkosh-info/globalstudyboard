@@ -77,7 +77,7 @@ export interface SignInRequest {
  * visitor who arrived from the USA hub and signed in through a redirect door
  * landed on the India view (review, CRIT2-2).
  *
- * ALLOW-LISTED, never passed through: `#exam=<slug>`, `#award=<slug>` or
+ * Allow-listed shapes: `#exam=<slug>`, `#award=<slug>`, `#programme=<slug>` or
  * `#entry=<uuid>` (an existing scholarship record),
  * optionally joined to `#region=<slug>` by `&` (either order, each once),
  * or `#region=<slug>` alone. An award key preserves a scholarship prefill
@@ -89,7 +89,7 @@ export interface SignInRequest {
  */
 const FRAGMENT_SLUG = '[a-z0-9]+(?:-[a-z0-9]+)*';
 const FRAGMENT_UUID = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}';
-const RESUMABLE_ITEM = `(?:(?:exam|award)=${FRAGMENT_SLUG}|entry=${FRAGMENT_UUID})`;
+const RESUMABLE_ITEM = `(?:(?:exam|award|programme)=${FRAGMENT_SLUG}|entry=${FRAGMENT_UUID})`;
 const RESUMABLE_FRAGMENT = new RegExp(
   `^#(?:${RESUMABLE_ITEM}(?:&region=${FRAGMENT_SLUG})?|region=${FRAGMENT_SLUG}(?:&${RESUMABLE_ITEM})?)$`,
 );

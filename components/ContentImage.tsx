@@ -63,7 +63,7 @@ const LAYOUT = {
   guide: { classes: 'xl:-mx-24 xl:w-[calc(100%+12rem)]', sizes: '(min-width: 1280px) 960px, (min-width: 800px) 768px, calc(100vw - 2rem)' },
   profile: { classes: 'xl:-mx-24 xl:w-[calc(100%+12rem)]', sizes: '(min-width: 1280px) 1088px, (min-width: 928px) 896px, calc(100vw - 2rem)' },
   section: { classes: 'max-w-6xl', sizes: '(min-width: 1184px) 1152px, calc(100vw - 2rem)' },
-  feature: { classes: '-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full', sizes: '(min-width: 1280px) 567px, (min-width: 1024px) calc((100vw - 9.125rem) / 2), (min-width: 640px) calc(100vw - 6.125rem), calc(100vw - 2.125rem)' },
+  feature: { classes: 'w-full', sizes: '(min-width: 1280px) 1248px, calc(100vw - 2rem)' },
 } as const;
 
 export default function ContentImage({
@@ -101,7 +101,7 @@ export default function ContentImage({
 
   return (
     <figure className={`relative m-0 ${hero ? LAYOUT[layout].classes : ''} ${className}`.trim()}>
-      <picture className={feature ? 'block aspect-video overflow-hidden rounded-2xl lg:aspect-[4/3]' : undefined}>
+      <picture className={feature ? 'block aspect-[4/3] overflow-hidden rounded-2xl sm:aspect-video lg:aspect-[2/1] lg:rounded-3xl' : undefined}>
         <source type="image/avif" srcSet={avif} sizes={sizes} />
         <source type="image/webp" srcSet={webp} sizes={sizes} />
         {/* Plain <img> on purpose: the asset is already optimised on disk, so next/image

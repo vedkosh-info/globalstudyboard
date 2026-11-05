@@ -13,9 +13,7 @@ import RegionContextBar from '@/components/RegionContextBar';
 import RegionAnnouncer from '@/components/RegionAnnouncer';
 import { AudienceProvider } from '@/components/AudienceProvider';
 import AudienceAnnouncer from '@/components/AudienceAnnouncer';
-import SiteSearch from '@/components/SiteSearch';
-import ToolQuickLinks from '@/components/ToolQuickLinks';
-import Breadcrumbs from '@/components/Breadcrumbs';
+import PageUtilities from '@/components/PageUtilities';
 import FabDock from '@/components/FabDock';
 import RecentPages from '@/components/RecentPages';
 import TesterInviteModal from '@/components/TesterInviteModal';
@@ -228,13 +226,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header topicsMenu={TOPICS_MENU} />
           <RegionContextBar />
           <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-7xl px-4 py-6 focus:outline-none md:py-8">
-            <div className="mb-6 space-y-3">
-              <div className="space-y-2">
-                <SiteSearch />
-                <ToolQuickLinks />
-              </div>
-              <Breadcrumbs />
-            </div>
+            <PageUtilities />
             {children}
           </main>
           <Footer examLabels={FOOTER_EXAM_LABELS} year={COPYRIGHT_YEAR} />

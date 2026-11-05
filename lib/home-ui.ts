@@ -1,8 +1,11 @@
 // Destination-neutral interface copy for the home page's server/client slots.
 export const HOME_UI = {
-  eyebrow: 'Your next study destination',
-  heading: 'Universities, exams & scholarships.',
-  headingAccent: 'Plan your next step.',
+  eyebrow: 'University admissions, worldwide',
+  heading: 'Find your place.',
+  headingAccent: 'Plan your future.',
+  mastheadDescription: 'Universities, entrance exams and scholarships — explore what comes next.',
+  panelHeading: 'Your next step, made clearer.',
+  shortcutsLabel: 'Explore your study options',
   destination: 'Exploring',
   introduction: 'Explore university profiles, admission guides and official sources for your chosen destination.',
   ask: 'Ask GSB',
@@ -17,6 +20,7 @@ export const HOME_UI = {
   whyHeading: 'One reference, every destination.',
   whyDescription: 'Start with where you want to study. Explore universities, exams, admissions, costs and scholarships across the United States, the UK and Ireland, Canada, Europe, Australia and New Zealand, East and Southeast Asia, the Middle East, Russia and the CIS, and India. Follow the official sources linked in our guides to check the details before you apply.',
   tools: 'Application tools',
+  toolsIntroduction: 'A little structure for your next big move.',
   regions: 'See all destinations',
   shortcuts: [
     { category: 'universities', label: 'Universities', description: 'Explore profiles and application routes.' },

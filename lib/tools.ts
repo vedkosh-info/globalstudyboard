@@ -13,6 +13,7 @@
  */
 
 import type { RegionSlug } from '@/lib/regions';
+import { resumableFragment } from '@/lib/auth-events';
 
 // The destination hand-off key (`#region=<slug>`) and the /tools index link live
 // in lib/tool-hint.ts, which carries no registry data, so the site chrome (header,
@@ -36,6 +37,20 @@ export interface ToolDef {
 }
 
 export const TOOLS: ToolDef[] = [
+  {
+    slug: 'application-check',
+    name: 'Application Check',
+    indexLabel: 'programme requirements',
+    tagline: 'Choose a programme to see what it requires. Check your courses, work experience or test scores against its published requirements where available.',
+    description:
+      'Check the requirements we have reviewed for a specific programme. See the university source for each one, decide what needs attention and save the steps you choose.',
+    features: [
+      'Start by choosing a programme for your destination',
+      'Compare your own answers with the published requirements',
+      'Add selected next steps to your Application Planner',
+    ],
+    access: 'account',
+  },
   {
     slug: 'application-planner',
     name: 'Application Planner',
@@ -139,9 +154,22 @@ export const TOOLS: ToolDef[] = [
  */
 export const toolHref = (slug: string, region?: RegionSlug | null): string => toolPageHref(slug, region);
 
+/** Only the public catalogue ID and destination ride through a redirect sign-in. */
+export function applicationCheckHref(programmeId: string | null, region: RegionSlug): string {
+  return programmeId
+    ? `/tools/application-check#programme=${encodeURIComponent(programmeId)}&${REGION_HINT_KEY}=${region}`
+    : toolPageHref('application-check', region);
+}
+
+export function applicationCheckProgrammeId(hash: string, region: RegionSlug): string | null {
+  const params = new URLSearchParams(resumableFragment(hash).slice(1));
+  const hint = params.get(REGION_HINT_KEY);
+  return hint && hint !== region ? null : params.get('programme');
+}
+
 /**
  * The /tools index meta description, built from the registry so a new tool is
- * never left out. Compact registry subjects keep all five tool areas visible
+ * never left out. Compact registry subjects keep all tool subjects visible
  * within 160 characters. `scripts/check-tools.ts` refuses empty subjects and
  * an over-length snippet when the registry grows.
  */

@@ -17,6 +17,9 @@ import LastUpdated from '@/components/LastUpdated';
 import SaveButton from '@/components/SaveButton';
 import AddToPlannerButton from '@/components/AddToPlannerButton';
 import AddToCompareButton from '@/components/AddToCompareButton';
+import ToolLink from '@/components/tools/ToolLink';
+import { applicationCheckHref } from '@/lib/tools';
+import { PROGRAMMES } from '@/lib/application-check-catalogue';
 import ContentImage from '@/components/ContentImage';
 import { collegeImage } from '@/lib/images';
 import AudienceGate from '@/components/AudienceGate';
@@ -128,6 +131,7 @@ export default async function CollegeDetailPage({ params }: Props) {
   const region = REGIONS.find((r) => r.slug === college.region);
   const place = `${college.city}${college.state ? `, ${college.state}` : ''}`;
   const typeLabel = TYPE_LABELS[college.type] ?? college.type;
+  const reviewedProgrammes = PROGRAMMES.filter((programme) => programme.collegeSlug === college.slug && programme.region === college.region);
 
   // Related — other universities in the same COUNTRY first (then the region), so
   // a Singapore page does not point at Japan just because both are one region.
@@ -238,6 +242,11 @@ export default async function CollegeDetailPage({ params }: Props) {
         <SaveButton kind="college" slug={college.slug} title={college.nameEn} region={college.region} />
         <AddToPlannerButton slug={college.slug} name={college.nameEn} region={college.region} url={college.websiteUrl} />
         <AddToCompareButton slug={college.slug} name={college.nameEn} region={college.region} url={college.websiteUrl} />
+        {reviewedProgrammes.map((programme) => (
+          <ToolLink key={programme.id} href={applicationCheckHref(programme.id, programme.region)} className="inline-flex min-h-11 max-w-full items-center gap-1.5 rounded-xl border border-forest-300 bg-white px-3 py-1 text-sm font-semibold text-forest-700 no-underline hover:bg-forest-50">
+            Check requirements for {programme.name} <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+          </ToolLink>
+        ))}
       </div>
 
 

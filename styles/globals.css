@@ -187,6 +187,11 @@ body {
   word-break: break-word;
 }
 
+/* The home canvas uses the lighter existing cream token for its editorial media. */
+body:has([data-gsb-home]) {
+  @apply bg-cream-50;
+}
+
 /* Full-height fixed panels (e.g. the recent-pages drawer). On iOS Safari plain
    100vh runs under the toolbar and clips the bottom; dvh tracks the visible
    viewport. The 100vh line is the fallback for browsers without dvh. */
@@ -442,6 +447,8 @@ hr {
 }
 @media print {
   html[data-report-print] body * { visibility: hidden; }
+  /* Remove the surrounding page from the print layout so it cannot add blank sheets. */
+  html[data-report-print] body :not(:has(#report), #report, #report *) { display: none !important; }
   html[data-report-print] #report,
   html[data-report-print] #report * { visibility: visible; }
   html[data-report-print] #report {

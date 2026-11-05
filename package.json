@@ -2,10 +2,10 @@
   "name": "globalstudyboard",
   "version": "0.1.0",
   "private": true,
-  "description": "GlobalStudyBoard — World college admission guide and query platform",
+  "description": "GlobalStudyBoard \u2014 World college admission guide and query platform",
   "scripts": {
     "dev": "next dev -p ${PORT:-5000}",
-    "prebuild": "tsx scripts/check-images.ts && tsx scripts/check-tools.ts",
+    "prebuild": "tsx scripts/check-images.ts && tsx scripts/check-tools.ts && tsx scripts/check-application-check.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -18,7 +18,8 @@
     "links:check": "tsx scripts/linkcheck.ts",
     "images:check": "tsx scripts/check-images.ts",
     "tools:check": "tsx scripts/check-tools.ts",
-    "scholarships:check": "tsx scripts/qa/scholarship-domain.spec.ts && tsx scripts/qa/tool-handoff.spec.ts && tsx scripts/scholarship-integration-qa.ts"
+    "scholarships:check": "tsx scripts/qa/scholarship-domain.spec.ts && tsx scripts/qa/tool-handoff.spec.ts && tsx scripts/scholarship-integration-qa.ts",
+    "applications:check": "tsx scripts/check-application-check.ts && tsx scripts/qa/application-check.spec.ts && tsx scripts/qa/application-check-planner.spec.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.79",

@@ -561,9 +561,8 @@ export default async function RegionHubPage({ params }: Props) {
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-stone-700">
             Each tool opens on the destination you have chosen in the header or, if you have not chosen one, on{' '}
-            {r.proseName}, and needs only a free account. The tools keep what you enter, so confirm your own dates and
-            figures on the official site. Where a tool adds something of ours — a validity rule, a university&rsquo;s
-            details, a cost line — it links the official page or our guide wherever we have one.
+            {r.proseName}. Use a free account to check a reviewed programme or keep track of your plans. Confirm
+            requirements, dates and costs on the official site for your intake.
           </p>
           <ul className="mt-5 grid list-none gap-4 p-0 m-0 sm:grid-cols-2 lg:grid-cols-3">
             {TOOLS.map((tool) => (
@@ -579,13 +578,13 @@ export default async function RegionHubPage({ params }: Props) {
                           .slice(0, 4)
                           .map((c) => c.label)
                           .join(' · ')} · and more. The official page or our guide is linked where we have one.`
-                      : tool.slug === 'scholarship-tracker'
-                        ? tool.tagline
                       : tool.slug === 'test-score-tracker'
                         ? `Record your test scores as received and see any validity rule each test body publishes. Then see which tests named by your shortlist in ${r.proseName} still have no score — for every test the tracker records.`
                         : tool.slug === 'compare-universities'
                         ? `Put up to four universities in ${r.proseName} side by side — our verified facts, then your own criteria, weights and scores.`
-                        : `Shortlist universities in ${r.proseName}, then track every deadline, document and test date in one place.`}
+                        : tool.slug === 'application-planner'
+                          ? `Shortlist universities in ${r.proseName}, then track every deadline, document and test date in one place.`
+                          : tool.tagline}
                   </span>
                   <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
                     Open the tool <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

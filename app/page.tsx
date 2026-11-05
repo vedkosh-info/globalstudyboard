@@ -15,6 +15,7 @@ import HomeRegionGrid from '@/components/HomeRegionGrid';
 import HomeDestinations from '@/components/HomeDestinations';
 import HomeSpotlight, { type ExamLite, type CollegeLite } from '@/components/HomeSpotlight';
 import { HOME_UI } from '@/lib/home-ui';
+import ToolQuickLinks from '@/components/ToolQuickLinks';
 
 /**
  * Home <title> leads with the query terms, brand last: the site has no brand
@@ -94,11 +95,10 @@ const HOME_UNIVERSITIES_BY_REGION: Record<RegionSlug, CollegeLite[]> = (() => {
   return out;
 })();
 
-/** Per-destination hero data (top university + the flagship guides behind `popularQueries`). */
+/** The flagship guides behind each destination's `popularQueries`. */
 const HOME_HERO_DATA: Record<RegionSlug, HomeHeroData> = (() => {
   const out = {} as Record<RegionSlug, HomeHeroData>;
   for (const r of REGIONS) {
-    const top = HOME_UNIVERSITIES_BY_REGION[r.slug][0];
     const popular = r.popularQueries
       .map((q) => {
         const g = GUIDES.find((x) => x.slug === q);
@@ -108,7 +108,6 @@ const HOME_HERO_DATA: Record<RegionSlug, HomeHeroData> = (() => {
       })
       .slice(0, 4);
     out[r.slug] = {
-      topUniversity: top ? { slug: top.slug, name: top.nameEn } : null,
       popular,
     };
   }
@@ -117,7 +116,7 @@ const HOME_HERO_DATA: Record<RegionSlug, HomeHeroData> = (() => {
 
 export default function HomePage() {
   return (
-    <div className="space-y-16 md:space-y-20">
+    <div className="space-y-14 sm:space-y-16 md:space-y-20">
 
       <div className="space-y-4">
         <HomeHero
@@ -131,8 +130,15 @@ export default function HomePage() {
             />
           }
         />
-        <LastUpdated date={SITE_REVIEWED} />
       </div>
+
+      <section aria-labelledby="home-tools-heading" className="border-y border-stone-200 py-6">
+        <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 id="home-tools-heading" className="m-0 font-display text-xl font-semibold text-ink">{HOME_UI.tools}</h2>
+          <p className="m-0 text-sm text-stone-600">{HOME_UI.toolsIntroduction}</p>
+        </div>
+        <ToolQuickLinks appearance="home" />
+      </section>
 
       <HomeRegionGrid />
 
@@ -176,6 +182,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <LastUpdated date={SITE_REVIEWED} />
 
     </div>
   );

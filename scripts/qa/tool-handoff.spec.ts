@@ -2,6 +2,8 @@
 import assert from 'node:assert/strict';
 import { carryHandOff, drainHandOff, handOffToTool, notePath, releaseHandOff, takeHandOff } from '../../components/tools/hand-off';
 import { resumableFragment } from '../../lib/auth-events';
+import { applicationCheckHref, applicationCheckProgrammeId } from '../../lib/tools';
+import { PROGRAMMES } from '../../lib/application-check-catalogue';
 
 const source = '/tools/application-planner';
 const target = '/tools/scholarship-tracker';
@@ -15,6 +17,34 @@ function check(label: string, body: () => void) {
 }
 
 try {
+  check('every reviewed programme profile hands the exact public programme and destination through sign-in', () => {
+    for (const programme of PROGRAMMES) {
+      const { pathname, hash } = new URL(applicationCheckHref(programme.id, programme.region), 'https://example.org');
+      assert.equal(pathname, '/tools/application-check');
+      assert.equal(resumableFragment(hash), hash);
+      handOffToTool(pathname, hash.slice(1));
+      carryHandOff(pathname, 'region=india');
+      assert.equal(takeHandOff(pathname), hash.slice(1));
+      assert.equal(applicationCheckProgrammeId(hash, programme.region), programme.id);
+      const other = programme.region === 'india' ? 'usa' : 'india';
+      assert.equal(applicationCheckProgrammeId(hash, other), null);
+      const cleared = new URL(applicationCheckHref(null, programme.region), 'https://example.org').hash;
+      assert.equal(cleared, `#region=${programme.region}`);
+      assert.equal(applicationCheckProgrammeId(cleared, programme.region), null);
+    }
+  });
+  check('the programme sign-in allowlist rejects duplicate, mixed, malformed and private fragment fields', () => {
+    const reversed = '#region=canada&programme=example-course';
+    assert.equal(resumableFragment(reversed), reversed);
+    assert.equal(applicationCheckProgrammeId(reversed, 'canada'), 'example-course');
+    for (const hash of [
+      '#programme=bad/slug', '#programme=abc&programme=xyz', '#programme=abc&region=canada&region=usa',
+      '#programme=abc&exam=ielts', '#programme=abc&score=7', '#programme=a%26b', '#programme=' + 'a'.repeat(121),
+    ]) {
+      assert.equal(resumableFragment(hash), '');
+      assert.equal(applicationCheckProgrammeId(hash, 'canada'), null);
+    }
+  });
   for (const key of ['entry=00000000-0000-4000-8000-000000000001', 'award=chevening-scholarship-guide', 'exam=sat']) {
     check(`gate cleanup preserves explicit ${key.split('=')[0]} and destination`, () => {
       const fragment = `${key}&region=usa`;

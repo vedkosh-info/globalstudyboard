@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMetadata({
   path: '/privacy',
 });
 
-const LAST_UPDATED = '30 September 2026';
+const LAST_UPDATED = '4 November 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -105,7 +105,13 @@ export default function PrivacyPage() {
             number or a photo.
           </li>
           <li>
-            <strong>Reports and PDFs</strong> — each tool can lay your own entries out as a printable
+            <strong>Application Check.</strong> Your answers stay in this page&rsquo;s memory while
+            you use the check. The check runs in your browser. Saving steps adds the selected
+            programme and tasks to your Application Planner. Those saved records are included in
+            your account download and deleted with your account.
+          </li>
+          <li>
+            <strong>Reports and PDFs</strong> — each tool can lay your entries or check results out as a printable
             report and save them as a PDF. Both are built in your own browser, from data your browser
             already holds; nothing is sent to us to make them, they never include your e-mail address,
             and your private notes go in only while you tick the box for that report.

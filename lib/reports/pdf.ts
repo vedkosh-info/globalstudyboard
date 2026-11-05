@@ -457,7 +457,7 @@ export async function renderReportPdf(doc: ReportDocument, opts: PdfOptions): Pr
   if (doc.subtitle) paragraph(doc.subtitle, 10, MUTED, 'normal', 3);
   paragraph(doc.intro, 9.5, INK, 'normal', 2);
   paragraph(`Generated ${formatGenerated(doc.generatedAt)} · Destination: ${doc.regionName}${doc.includesNotes ? ' · Includes the account holder’s private notes' : ''}`, 8, MUTED, 'normal', 1.5);
-  paragraph(PREPARED_BY, 8, MUTED, 'normal', 4);
+  paragraph(doc.preparedBy ?? PREPARED_BY, 8, MUTED, 'normal', 4);
 
   // ── Sections ──────────────────────────────────────────────────────────
   for (const s of doc.sections) {

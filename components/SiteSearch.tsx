@@ -27,7 +27,7 @@ import { searchHref } from '@/lib/search-links';
 /** Live navigation fires once the query is MORE THAN 5 letters. */
 const AUTO_MIN = 5;
 
-export default function SiteSearch() {
+export default function SiteSearch({ appearance = 'default' }: { appearance?: 'default' | 'home' }) {
   const router = useRouter();
   const pathname = usePathname();
   const { effectiveRegion } = useRegion();
@@ -100,7 +100,7 @@ export default function SiteSearch() {
       }}
       role="search"
       aria-busy={busy}
-      className="flex w-full items-stretch overflow-hidden rounded-2xl border border-stone-450 bg-white shadow-sm transition-shadow focus-within:border-forest-400 focus-within:shadow-md focus-within:ring-2 focus-within:ring-forest-500/25"
+      className={`flex w-full items-stretch overflow-hidden rounded-2xl border border-stone-450 bg-white shadow-sm transition-shadow focus-within:border-forest-400 focus-within:shadow-md focus-within:ring-2 focus-within:ring-forest-500/25 ${appearance === 'home' ? 'min-h-14' : ''}`}
     >
       <span
         className={`flex items-center pl-4 transition-colors ${

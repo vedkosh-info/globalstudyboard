@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Award, CalendarCheck2, ClipboardList, Coins, Columns3, GraduationCap, Lock, ShieldCheck, type LucideIcon } from 'lucide-react';
+import { ArrowRight, Award, CalendarCheck2, ListChecks, ClipboardList, Coins, Columns3, GraduationCap, Lock, ShieldCheck, type LucideIcon } from 'lucide-react';
 import { TOOLS, TOOLS_INDEX_DESCRIPTION_MAX, toolsIndexDescription } from '@/lib/tools';
 import { pageMetadata } from '@/lib/seo';
 import { SITE_REVIEWED } from '@/lib/site-meta';
@@ -26,7 +26,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 /** One icon per tool (the registry stays pure data). */
-const TOOL_ICON: Record<string, LucideIcon> = { 'application-planner': ClipboardList, 'cost-planner': Coins, 'compare-universities': Columns3, 'test-score-tracker': Award, 'scholarship-tracker': GraduationCap };
+const TOOL_ICON: Record<string, LucideIcon> = { 'application-check': ListChecks, 'application-planner': ClipboardList, 'cost-planner': Coins, 'compare-universities': Columns3, 'test-score-tracker': Award, 'scholarship-tracker': GraduationCap };
 
 const HOW = [
   {
@@ -37,12 +37,12 @@ const HOW = [
   {
     icon: ShieldCheck,
     title: 'Your data stays yours',
-    text: 'What you put into a tool is stored only for you, synced across your devices, included in your data download, and deleted with your account.',
+    text: 'Records you save belong to your account. You can download or delete them. Your answers in Application Check stay on the page while you use it.',
   },
   {
     icon: CalendarCheck2,
-    title: 'You keep the dates, the university keeps the truth',
-    text: 'Tools record what you enter; they never check it for you. Deadlines and requirements change every year, so confirm each one on the official site — a tool links it wherever it has one.',
+    title: 'Check the official requirements',
+    text: 'Application Check links each reviewed requirement to its university source. Confirm your intake, deadlines and any conditions with the university before applying.',
   },
 ];
 

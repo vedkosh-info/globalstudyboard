@@ -14,13 +14,10 @@
  * the visitor to accept (Terms of Use, Privacy Policy) — bump it whenever
  * either changes substantively, and /account will ask existing users to
  * re-accept. Never a future date: the database refuses one (migration 0002).
- * Last moved 2026-09-30: the Privacy Policy now says how long the sign-in
- * provider keeps a session record (until a connected sign-out, "Sign out
- * everywhere" or deletion — no fixed expiry). Before that, 2026-09-29: it
- * began covering the four account tools' data. Terms of Use unchanged since
- * 2026-09-18.
+ * The November 2026 privacy revision describes temporary Application Check
+ * answers and the steps a student chooses to save in their planner.
  */
-export const CONSENT_VERSION = '2026-09-30';
+export const CONSENT_VERSION = '2026-11-04';
 
 export const CONSENT_COOKIE = 'gsb_consent';
 const CONSENT_COOKIE_MAX_AGE = 15 * 60; // the redirect round-trip is seconds

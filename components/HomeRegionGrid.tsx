@@ -1,47 +1,33 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowUpRight, Check, MapPin } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 
-import { REGIONS_ALPHABETICAL, REGION_TAGLINES, type RegionSlug } from '@/lib/regions';
+import { REGIONS_ALPHABETICAL, type RegionSlug } from '@/lib/regions';
+import { HOME_SECTIONS_UI } from '@/lib/home-sections-ui';
 import { useRegion } from '@/components/RegionProvider';
 import RegionFlag from '@/components/RegionFlag';
 
-/**
- * The single destination browser on the Home page. Choosing a region tunes the
- * whole site to it and takes the student to that region's hub. Regions are
- * listed alphabetically (see REGIONS_ALPHABETICAL).
- *
- * Each card is a real <Link> to the region hub (it used to be a <button> with a
- * router.push — nine destinations with no crawlable href on the home page); the
- * tune-on-click behaviour is preserved in onClick.
- */
+/** Crawlable destination browsing, using the header's shared preference engine. */
 export default function HomeRegionGrid() {
   const { region, effectiveRegion, setRegion } = useRegion();
-
-  const choose = (slug: RegionSlug) => {
-    setRegion(slug);
-  };
+  const choose = (slug: RegionSlug) => setRegion(slug);
 
   return (
-    <section id="destinations" className="scroll-mt-2">
-      <div className="mb-7 flex items-end justify-between gap-4">
-        <div>
-          <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
-            <MapPin className="h-3.5 w-3.5 text-forest-700" />
-            {region ? 'Explore another destination' : 'Choose your destination'}
-          </p>
-          <h2 className="m-0 font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink">
-            {region ? 'Switch where you’re headed.' : 'Where do you want to study?'}
-          </h2>
-          <p className="mt-1.5 max-w-2xl text-sm text-stone-600">
-            Pick a destination and the whole site retunes to it — universities, entrance exams,
-            scholarships, costs and visas. You can change it anytime.
-          </p>
-        </div>
+    <section id="destinations" aria-labelledby="home-destinations-heading" className="scroll-mt-2">
+      <div className="mb-7 max-w-3xl sm:mb-9">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-forest-700">
+          {region ? HOME_SECTIONS_UI.destinationChosenEyebrow : HOME_SECTIONS_UI.destinationEyebrow}
+        </p>
+        <h2 id="home-destinations-heading" className="m-0 font-display text-3xl font-bold leading-tight tracking-editorial text-ink sm:text-4xl">
+          {region ? HOME_SECTIONS_UI.destinationChosenHeading : HOME_SECTIONS_UI.destinationHeading}
+        </h2>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-stone-600">
+          {HOME_SECTIONS_UI.destinationDescription}
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {REGIONS_ALPHABETICAL.map((r) => {
           const selected = r.slug === effectiveRegion;
           return (
@@ -50,28 +36,24 @@ export default function HomeRegionGrid() {
               href={`/regions/${r.slug}`}
               onClick={() => choose(r.slug)}
               aria-current={selected ? 'true' : undefined}
-              className={`group relative flex flex-col text-left rounded-2xl border p-5 no-underline transition-all hover:-translate-y-0.5 hover:shadow-md ${
+              className={`group flex min-h-24 items-center gap-4 rounded-2xl border px-5 py-5 text-left no-underline transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600 focus-visible:ring-offset-2 ${
                 selected
-                  ? 'border-forest-400 bg-forest-50 ring-1 ring-forest-300'
-                  : 'border-stone-200 bg-white hover:border-forest-300'
+                  ? 'border-forest-300 bg-forest-50'
+                  : 'border-stone-200 bg-white hover:border-forest-400 hover:bg-cream-50'
               }`}
             >
-              <div className="mb-2 flex items-center justify-between">
-                <RegionFlag slug={r.slug} className="h-7" />
-                {selected ? (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-forest-700 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-cream-50">
-                    <Check className="h-3 w-3" /> Tuned
+              <RegionFlag slug={r.slug} className="h-6 shrink-0" />
+              <div className="min-w-0 flex-1">
+                <h3 className="m-0 font-display text-xl font-semibold leading-snug text-ink group-hover:text-forest-700">
+                  {r.displayName}
+                </h3>
+                {selected && (
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-forest-700">
+                    <Check className="h-3 w-3" aria-hidden="true" />{HOME_SECTIONS_UI.selected}
                   </span>
-                ) : (
-                  <ArrowUpRight className="h-4 w-4 text-stone-300 transition-all group-hover:translate-x-0.5 group-hover:text-forest-600" />
                 )}
               </div>
-              <h3 className="m-0 font-display text-lg font-bold leading-snug text-ink group-hover:text-forest-700">
-                {r.displayName}
-              </h3>
-              <p className="mt-1 mb-0 text-sm leading-relaxed text-stone-600">
-                {REGION_TAGLINES[r.slug]}
-              </p>
+              <ArrowUpRight className="h-5 w-5 shrink-0 text-forest-700" aria-hidden="true" />
             </Link>
           );
         })}

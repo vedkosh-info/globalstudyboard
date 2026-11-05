@@ -874,6 +874,13 @@ owner's monetisation direction: a free account today, a paid tier later). Rules:
   it shows with the "confirm on the official site" nudge and a link to that site
   wherever one is known (our profile's official URL, the one the student added,
   or the test body's own page for a validity rule).
+- **Application Check (November 2026).** For this tool, GSB may show reviewed
+  requirements for the specific programme and scope stated on a Tier-1 source.
+  Display that source and its review date with the requirement. Comparisons may
+  describe only the stated criterion. Leave unknown conditions, admissions
+  decisions, equivalencies and exemptions for the university to resolve.
+  Answers stay in page memory. A student may add selected actions to the
+  Application Planner, whose normal privacy and reporting rules then apply.
 - **Privacy (§9) in the same change.** Each per-user table: cascades from
   `auth.users`, RLS own-row + passwordless guard, a per-user cap, included in the
   `/api/account/export` download, described on `/privacy` and `/delete-account`

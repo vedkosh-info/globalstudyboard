@@ -1,113 +1,101 @@
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Minus, Plus } from 'lucide-react';
 
 import { REGIONS_ALPHABETICAL } from '@/lib/regions';
 import { REGION_CATEGORIES, categoryLabel, regionCategoryPath } from '@/lib/region-nav';
 import { tracksForRegion, trackHref } from '@/lib/tracks';
 import { getGuideBySlug } from '@/lib/guides';
+import { HOME_SECTIONS_UI } from '@/lib/home-sections-ui';
 import RegionFlag from '@/components/RegionFlag';
 
 /**
- * Server-rendered directory of ALL nine destinations for the home page.
- *
- * The home page's other sections re-tune to the visitor's destination on the
- * client, which is right for a student — but a crawler has no cookie, so the
- * crawlable home page used to be an India page: its only in-content links were
- * four IITs, six Indian exams and the India hub, and the destination grid was
- * nine <button>s with no href. This block is destination-neutral, fully in the
- * server HTML, and hands every destination the same set of links: its hub, its
- * four section pages, its top tracks and two flagship guides. It also gives the
- * eight abroad hubs their only home-page links.
- *
- * Server component on purpose — it reads lib/tracks + lib/guides, which must
- * never reach the client bundle (see the client-bundle guard in CLAUDE.md).
- * It deliberately does NOT repeat each destination's tagline: the "Where do you
- * want to study?" grid above already carries it, so this block is the depth
- * (sections, tracks, guides) rather than a second copy of the same nine cards.
+ * A destination-neutral server directory. Native details keep the lower page
+ * quiet while every hub, category, track and flagship-guide link remains in
+ * the crawlable HTML. Each column flows independently when a group is opened.
+ * No catalogue or accordion code is added to the client bundle.
  */
 export default function HomeDestinations() {
+  const columnSize = Math.ceil(REGIONS_ALPHABETICAL.length / 3);
+  const columns = Array.from({ length: 3 }, (_, index) =>
+    REGIONS_ALPHABETICAL.slice(index * columnSize, (index + 1) * columnSize),
+  ).filter((column) => column.length > 0);
+
   return (
-    <section aria-labelledby="explore-destinations-heading">
-      <div className="mb-7">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
-          Explore by destination
+    <section aria-labelledby="explore-destinations-heading" className="border-t border-stone-200 pt-10 sm:pt-12">
+      <div className="mb-7 max-w-3xl sm:mb-9">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-forest-700">
+          {HOME_SECTIONS_UI.directoryEyebrow}
         </p>
-        <h2
-          id="explore-destinations-heading"
-          className="m-0 font-display text-3xl md:text-4xl font-bold tracking-editorial text-ink"
-        >
-          Nine study destinations, one standard.
+        <h2 id="explore-destinations-heading" className="m-0 font-display text-3xl font-bold leading-tight tracking-editorial text-ink sm:text-4xl">
+          {HOME_SECTIONS_UI.directoryHeading}
         </h2>
-        <p className="mt-1.5 max-w-2xl text-sm text-stone-600">
-          Universities, entrance exams, scholarships and official student-visa facts for each
-          destination — every page linked to its official source.
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-stone-600">
+          {HOME_SECTIONS_UI.directoryDescription}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {REGIONS_ALPHABETICAL.map((r) => {
-          const tracks = tracksForRegion(r.slug).slice(0, 4);
-          const flagship = r.popularQueries
-            .map((q) => getGuideBySlug(q))
-            .filter((g): g is NonNullable<typeof g> => Boolean(g))
-            .slice(0, 2);
-          return (
-            <article
-              key={r.slug}
-              className="rounded-2xl border border-stone-200 bg-white p-5 flex flex-col"
-            >
-              <div className="mb-2 flex items-center gap-2">
-                <RegionFlag slug={r.slug} className="h-5" />
-                <h3 className="m-0 font-display text-lg font-bold leading-snug text-ink">
-                  <Link href={`/regions/${r.slug}`} className="no-underline hover:text-forest-700">
-                    Study in {r.proseName}
-                  </Link>
-                </h3>
-              </div>
+      <div className="grid gap-x-8 lg:grid-cols-3">
+        {columns.map((column) => (
+          <div key={column[0].slug}>
+            {column.map((r) => {
+              const tracks = tracksForRegion(r.slug).slice(0, 4);
+              const flagship = r.popularQueries
+                .map((q) => getGuideBySlug(q))
+                .filter((g): g is NonNullable<typeof g> => Boolean(g))
+                .slice(0, 2);
+              return (
+                <details key={r.slug} className="group border-b border-stone-200">
+                  <summary className="flex min-h-20 cursor-pointer list-none items-center gap-3 py-5 focus-visible:rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600 focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
+                    <RegionFlag slug={r.slug} className="h-5 shrink-0" />
+                    <h3 className="m-0 flex-1 font-display text-xl font-semibold leading-snug text-ink">
+                      {r.displayName}
+                    </h3>
+                    <Plus className="h-4 w-4 shrink-0 text-forest-700 group-open:hidden" aria-hidden="true" />
+                    <Minus className="hidden h-4 w-4 shrink-0 text-forest-700 group-open:block" aria-hidden="true" />
+                  </summary>
 
-              <ul className="m-0 mb-3 flex flex-wrap gap-1.5 list-none p-0">
-                {REGION_CATEGORIES.map((cat) => (
-                  <li key={cat}>
-                    <Link
-                      href={regionCategoryPath(r.slug, cat)}
-                      className="inline-flex rounded-full border border-stone-200 bg-cream-50 px-2.5 py-1 text-xs font-semibold text-stone-700 no-underline hover:border-forest-300 hover:text-forest-700"
-                    >
-                      {categoryLabel(cat, r.slug)}
+                  <div className="pb-6">
+                    <Link href={`/regions/${r.slug}`} className="mb-4 inline-flex min-h-10 items-center gap-2 text-base font-semibold text-forest-800 no-underline hover:underline">
+                      {HOME_SECTIONS_UI.destinationOverview}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
-                  </li>
-                ))}
-              </ul>
-
-              {tracks.length > 0 && (
-                <ul className="m-0 mb-3 list-none p-0 space-y-1 text-sm">
-                  {tracks.map((t) => (
-                    <li key={t.slug}>
-                      <Link href={trackHref(t)} className="text-forest-700 no-underline hover:underline">
-                        {t.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              {flagship.length > 0 && (
-                <ul className="m-0 mt-auto list-none p-0 space-y-1 border-t border-stone-100 pt-3 text-sm">
-                  {flagship.map((g) => (
-                    <li key={g.slug}>
-                      <Link
-                        href={`/guides/${g.slug}`}
-                        className="inline-flex items-start gap-1 text-stone-700 no-underline hover:text-forest-700"
-                      >
-                        <ArrowUpRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-stone-400" aria-hidden="true" />
-                        <span>{g.titleEn}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </article>
-          );
-        })}
+                    <ul className="m-0 mb-5 flex list-none flex-wrap gap-2 p-0">
+                      {REGION_CATEGORIES.map((cat) => (
+                        <li key={cat}>
+                          <Link href={regionCategoryPath(r.slug, cat)} className="inline-flex min-h-10 items-center rounded-full border border-stone-200 bg-white px-3 text-sm font-medium text-stone-700 no-underline transition-colors hover:border-forest-400 hover:text-forest-800">
+                            {categoryLabel(cat, r.slug)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                    {tracks.length > 0 && (
+                      <ul className="m-0 mb-5 list-none space-y-3 p-0 text-base leading-relaxed">
+                        {tracks.map((t) => (
+                          <li key={t.slug}>
+                            <Link href={trackHref(t)} className="text-forest-800 no-underline underline-offset-4 hover:underline">
+                              {t.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {flagship.length > 0 && (
+                      <ul className="m-0 list-none space-y-3 border-t border-stone-200 p-0 pt-4 text-base leading-relaxed">
+                        {flagship.map((g) => (
+                          <li key={g.slug}>
+                            <Link href={`/guides/${g.slug}`} className="flex items-start gap-2 text-stone-700 no-underline underline-offset-4 hover:text-forest-800 hover:underline">
+                              <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-forest-700" aria-hidden="true" />
+                              <span>{g.titleEn}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </details>
+              );
+            })}
+          </div>
+        ))}
       </div>
     </section>
   );

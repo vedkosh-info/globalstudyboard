@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react';
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { Award, Bookmark, ChevronDown, ClipboardList, Coins, Columns3, GraduationCap, LogIn, LogOut, UserRound } from 'lucide-react';
+import { Award, Bookmark, ChevronDown, ClipboardList, Coins, Columns3, GraduationCap, ListChecks, LogIn, LogOut, UserRound } from 'lucide-react';
 import SignInButton from '@/components/auth/SignInButton';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { announceAuthChanged } from '@/lib/auth-events';
@@ -286,6 +286,9 @@ export default function AccountControl() {
           <Link href="/account?tab=saved" data-account-option className={OPTION} onClick={() => setOpen(false)}>
             <Bookmark className="h-4 w-4 text-forest-700" aria-hidden="true" /> Saved pages
           </Link>
+          <ToolLink href={toolPageHref('application-check', pageRegion)} data-account-option className={OPTION} onClick={() => setOpen(false)}>
+            <ListChecks className="h-4 w-4 text-forest-700" aria-hidden="true" /> Application check
+          </ToolLink>
           <ToolLink href={toolPageHref('application-planner', pageRegion)} data-account-option className={OPTION} onClick={() => setOpen(false)}>
             <ClipboardList className="h-4 w-4 text-forest-700" aria-hidden="true" /> Application planner
           </ToolLink>

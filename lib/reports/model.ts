@@ -27,7 +27,7 @@
 import type { RegionSlug } from '@/lib/regions';
 import { NON_AFFILIATION_NOTICE, SITE_DISCLAIMER } from '@/lib/site-meta';
 
-export type ToolSlug = 'application-planner' | 'cost-planner' | 'compare-universities' | 'test-score-tracker' | 'scholarship-tracker';
+export type ToolSlug = 'application-planner' | 'cost-planner' | 'compare-universities' | 'test-score-tracker' | 'scholarship-tracker' | 'application-check';
 
 // ── Paper ───────────────────────────────────────────────────────────────────
 
@@ -110,6 +110,8 @@ export interface ReportDocument {
   sections: ReportSection[];
   /** Every official page the report cites, de-duplicated by URL (dedupeLinks / mergeSubjectLinks). */
   sources: ReportLink[];
+  /** Override for a report combining reviewed programme evidence and temporary answers. */
+  preparedBy?: string;
   includesNotes: boolean;
   /** Filename stem — never a name, an e-mail or an identifier. */
   fileStem: string;
