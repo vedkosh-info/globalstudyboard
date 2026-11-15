@@ -214,6 +214,9 @@ export function compareCsv(set: CompareSet, entries: CompareEntry[], criteria: C
   const head = ['', ...entries.map((e) => e.name)];
   const factRow = (label: string, f: (x: CompareFacts | undefined) => string, missing = '') =>
     [label, ...entries.map((e) => (e.college_slug ? (facts.has(e.college_slug) ? f(facts.get(e.college_slug)) : missing) : 'Added by you — no verified facts'))];
+  const anySpecializations = entries.some((e) =>
+    e.college_slug ? (facts.get(e.college_slug)?.specializations.length ?? 0) > 0 : false,
+  );
   const rows: Array<Array<string | number | null>> = [
     [`Comparison: ${set.label}`, ...entries.map(() => '')],
     ...(set.notes ? [[`Notes: ${set.notes}`, ...entries.map(() => '')]] : []),
@@ -224,8 +227,9 @@ export function compareCsv(set: CompareSet, entries: CompareEntry[], criteria: C
     factRow('Admission tests', (x) => x?.admissionTests.join('; ') ?? ''),
     factRow('Application platform', (x) => x?.applicationPlatform ?? ''),
     factRow('Programme levels', (x) => x?.levels.join('; ') ?? ''),
-    factRow('Language', (x) => (x ? (x.englishTaught ? 'English-taught' : 'Local language') : '')),
+    factRow('Language', (x) => x?.language ?? ''),
     factRow('Established', (x) => (x ? String(x.established) : '')),
+    ...(anySpecializations ? [factRow('Fields', (x) => x?.specializations.join('; ') ?? '')] : []),
     // A student-added university has no facts, but its own link is still theirs to keep.
     ['Official site', ...entries.map((e) => (e.college_slug ? facts.get(e.college_slug)?.url ?? e.official_url ?? '' : e.official_url ?? ''))],
     ['Your criteria (weight)', ...entries.map(() => '')],

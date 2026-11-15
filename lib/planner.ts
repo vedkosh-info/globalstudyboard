@@ -192,6 +192,14 @@ export interface CollegeOption {
   courses?: string[];
 }
 
+/** A reviewed Application Check for one university. Identity only — no requirements. */
+export interface PlannerCheckLink {
+  region: RegionSlug;
+  collegeSlug: string;
+  id: string;
+  name: string;
+}
+
 export interface ExamOption {
   slug: string;
   shortName: string;

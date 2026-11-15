@@ -1,6 +1,7 @@
 import { COLLEGES, COLLEGE_COUNTRY_INFO } from '@/lib/colleges';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
-import type { CollegeOption, ExamOption } from '@/lib/planner';
+import { PROGRAMMES } from '@/lib/application-check-catalogue';
+import type { CollegeOption, ExamOption, PlannerCheckLink } from '@/lib/planner';
 import { REGION_COUNTRY_NAME } from '@/lib/study-country';
 
 /**
@@ -10,7 +11,7 @@ import { REGION_COUNTRY_NAME } from '@/lib/study-country';
  * chunk on mount, so the ~20 KB of picker data leaves the page payload that
  * every crawler and signed-out visitor receives (independent review, 22 Sep 2026).
  */
-export function plannerCatalogue(): { colleges: CollegeOption[]; exams: ExamOption[] } {
+export function plannerCatalogue(): { colleges: CollegeOption[]; exams: ExamOption[]; checks: PlannerCheckLink[] } {
   const colleges: CollegeOption[] = COLLEGES.map((c) => ({
     slug: c.slug,
     name: c.nameEn,
@@ -28,5 +29,11 @@ export function plannerCatalogue(): { colleges: CollegeOption[]; exams: ExamOpti
     ...(e.regions?.length ? { regions: e.regions } : {}),
     url: e.websiteUrl ?? null,
   })).sort((a, b) => a.shortName.localeCompare(b.shortName));
-  return { colleges, exams };
+  const checks: PlannerCheckLink[] = PROGRAMMES.map((programme) => ({
+    region: programme.region,
+    collegeSlug: programme.collegeSlug,
+    id: programme.id,
+    name: programme.name,
+  }));
+  return { colleges, exams, checks };
 }

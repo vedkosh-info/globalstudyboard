@@ -2,11 +2,12 @@
  * Human labels for college enums and the attributed-ranking rows — shared by
  * the university profile page and the Compare Universities tool so both render
  * a type, a programme level and a ranking identically (same body name, same
- * official link). Pure data + one helper; no catalogue import, so it is safe
+ * official link). Pure data + helpers; no catalogue import, so it is safe
  * for server pages and for the tool's compact projection alike.
  */
 
 import type { College, CollegeType, ProgramLevel } from '@/lib/colleges';
+import { CATEGORY_LABELS, CATEGORY_ROW_LABELS } from '@/lib/college-taxonomy';
 
 export const TYPE_LABELS: Record<CollegeType, string> = {
   'research-university': 'Research university',
@@ -31,6 +32,25 @@ export const LEVEL_LABELS: Record<ProgramLevel, string> = {
   phd: 'PhD',
   professional: 'Professional',
 };
+
+/**
+ * Visible category or legacy type label for the profile eyebrow and Compare.
+ * When `category` is set, returns the lowercase category label ("public research
+ * university", "specialist school") so a specialist stored as compatibility
+ * `research-university` still shows "specialist school", never "Research university".
+ */
+export function categoryLabel(college: Pick<College, 'category' | 'type'>): string {
+  if (college.category) return CATEGORY_LABELS[college.category];
+  return TYPE_LABELS[college.type] ?? college.type;
+}
+
+/**
+ * Sentence-case category or legacy type label for directory rows and at-a-glance values.
+ */
+export function categoryRowLabel(college: Pick<College, 'category' | 'type'>): string {
+  if (college.category) return CATEGORY_ROW_LABELS[college.category];
+  return TYPE_LABELS[college.type] ?? college.type;
+}
 
 export interface AttributedRanking {
   /** The issuing body, named exactly as on the profile page. */

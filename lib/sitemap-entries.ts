@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { REGIONS, REGION_SLUGS, matchesRegion, type RegionSlug } from '@/lib/regions';
 import { ENTRANCE_EXAMS, examModified } from '@/lib/admission-guides';
-import { COLLEGES } from '@/lib/colleges';
+import { COLLEGES, collegeModified } from '@/lib/colleges';
 import { GUIDES, guideModified } from '@/lib/guides';
 import { TOPICS } from '@/lib/topics';
 import { guidesForTopic } from '@/lib/topic-guides';
@@ -26,7 +26,7 @@ import { TOOLS } from '@/lib/tools';
 //     SITE_LASTMOD, whichever is later (the page changes when either does);
 //   • listings and static pages — SITE_LASTMOD, bumped on every deploy that
 //     changes them (see lib/site-meta.ts). A college with its own lastVerified
-//     uses that day when it is later.
+//     or contentUpdated uses collegeModified() when it is later.
 // Google ignores <priority> and <changefreq>; they are not emitted.
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -108,10 +108,13 @@ export function sitemapEntries(id: SitemapId): MetadataRoute.Sitemap {
       });
 
     case 'colleges':
-      return COLLEGES.map((c) => ({
-        url: `${BASE}/colleges/${c.slug}`,
-        lastModified: c.lastVerified && c.lastVerified > SITE_LASTMOD ? c.lastVerified : SITE_LASTMOD,
-      }));
+      return COLLEGES.map((c) => {
+        const mod = collegeModified(c);
+        return {
+          url: `${BASE}/colleges/${c.slug}`,
+          lastModified: mod && mod > SITE_LASTMOD ? mod : SITE_LASTMOD,
+        };
+      });
 
     case 'exams':
       return ENTRANCE_EXAMS.map((e) => ({

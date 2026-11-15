@@ -6,7 +6,6 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import Header from '@/components/Header';
-import type { TopicsMenuData } from '@/components/TopicsMenu';
 import Footer from '@/components/Footer';
 import { RegionProvider } from '@/components/RegionProvider';
 import RegionContextBar from '@/components/RegionContextBar';
@@ -22,7 +21,6 @@ import SignInHost from '@/components/auth/SignInHost';
 import FeedbackHost from '@/components/FeedbackHost';
 import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
-import { tracksForRegion, trackHref, isMultiHubTrack, topicsForTrack } from '@/lib/tracks';
 import { ADSENSE_CLIENT_ID } from '@/lib/adsense';
 import AdsLoader from '@/components/AdsLoader';
 import { CONTACT_EMAIL, ORG_LOGO, SITE_DESCRIPTION } from '@/lib/site-meta';
@@ -179,29 +177,6 @@ const FOOTER_EXAM_LABELS: Record<string, string> = (() => {
 })();
 
 /**
- * Compact per-region track projection for the desktop "Topics" mega-menu,
- * computed once at build time so the region-aware header can render its menu
- * without shipping the full `lib/tracks` + `lib/topics` catalogue (≈0.35 MB) to
- * the browser on every page. Mirrors FOOTER_EXAM_LABELS above.
- */
-const TOPICS_MENU: TopicsMenuData = (() => {
-  const out: TopicsMenuData = {};
-  for (const region of REGIONS) {
-    out[region.slug] = tracksForRegion(region.slug).map((t) => ({
-      label: t.label,
-      href: trackHref(t),
-      preview: isMultiHubTrack(t)
-        ? topicsForTrack(t)
-            .slice(0, 3)
-            .map((h) => h.label)
-            .join(' · ')
-        : null,
-    }));
-  }
-  return out;
-})();
-
-/**
  * Copyright year computed once at build time so the prerendered static HTML and
  * the client agree (avoids a year-boundary hydration mismatch from a client-side
  * new Date()).
@@ -223,7 +198,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RegionProvider>
           <AudienceProvider>
           <AuthProvider>
-          <Header topicsMenu={TOPICS_MENU} />
+          {/* The Topics menu fetches its tracks on intent (lib/topics-menu.ts) —
+              never pass catalogue data through the layout: it lands in every
+              page's HTML + RSC payload. */}
+          <Header />
           <RegionContextBar />
           <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-7xl px-4 py-6 focus:outline-none md:py-8">
             <PageUtilities />

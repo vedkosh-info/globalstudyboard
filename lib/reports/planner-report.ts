@@ -113,7 +113,7 @@ export function buildPlannerReport(input: PlannerReportInput): ReportDocument {
   sections.push({
     kind: 'table',
     heading: 'Deadlines and checklist',
-    intro: 'Every item and every date below is one you entered, listed soonest first.',
+    intro: 'Your checklist includes steps you wrote or chose to save. Items with dates you entered appear first, starting with the earliest.',
     columns: [
       { label: 'Due', weight: 1.5 },
       { label: 'University', weight: 1.7 },
@@ -184,6 +184,7 @@ export function buildPlannerReport(input: PlannerReportInput): ReportDocument {
     region: input.region,
     regionName,
     generatedAt: now.toISOString(),
+    preparedBy: 'Prepared in your browser from the applications, steps and dates you saved. Confirm deadlines and requirements with the university before applying.',
     intro: `The universities you shortlisted for ${prose}, with the status, deadlines, documents and test dates you recorded in the Application Planner.`,
     sections,
     sources,

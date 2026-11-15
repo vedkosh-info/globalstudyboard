@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
-import Link from 'next/link';
+import IntentLink from '@/components/IntentLink';
 
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { useListingRegion } from '@/components/useListingRegion';
@@ -34,7 +34,7 @@ function examRegionLabel(region: RegionSlug | 'global'): { flag: string; name: s
 function ExamLink({ e, hidden }: { e: ExamCard; hidden: boolean }) {
   const region = examRegionLabel(e.region);
   return (
-    <Link
+    <IntentLink
       href={`/exams/${e.slug}`}
       className={`bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col${hidden ? ' hidden' : ''}`}
     >
@@ -59,7 +59,7 @@ function ExamLink({ e, hidden }: { e: ExamCard; hidden: boolean }) {
         <span>· {e.frequency.split('(')[0].trim()}</span>
         {e.fee ? <span>· {e.fee}</span> : e.feeOnPage && <span>· Fees on the exam page</span>}
       </div>
-    </Link>
+    </IntentLink>
   );
 }
 

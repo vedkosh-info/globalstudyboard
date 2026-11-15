@@ -1,11 +1,29 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowUpRight, MapPin, CalendarDays, GraduationCap, Globe2 } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
-import { COLLEGES, COLLEGE_COUNTRY_INFO, getCollegeBySlug } from '@/lib/colleges';
-import { TYPE_LABELS, LEVEL_LABELS, RANKING_NUDGE, collegeRankings } from '@/lib/college-labels';
+import {
+  COLLEGES,
+  COLLEGE_COUNTRY_INFO,
+  collegeModified,
+  getCollegeBySlug,
+  type College,
+} from '@/lib/colleges';
+import {
+  CONTROL_LABELS,
+  SPECIALIZATION_LABELS,
+  SYSTEM_LABELS,
+  collegeIdentityLine,
+} from '@/lib/college-taxonomy';
+import {
+  LEVEL_LABELS,
+  RANKING_NUDGE,
+  categoryLabel,
+  collegeRankings,
+} from '@/lib/college-labels';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
+import { PROGRAMME_FEES } from '@/lib/programme-fees';
 import { REGIONS } from '@/lib/regions';
 import { rankGuidesForCollege } from '@/lib/related-guides';
 import ContentActions from '@/components/ContentActions';
@@ -30,11 +48,19 @@ import { SITE_REVIEWED, SITE_LASTMOD, metaDescription, formatReviewed } from '@/
 import { pageMetadata, ogImageFor } from '@/lib/seo';
 import { gsbAiHref } from '@/lib/gsb-ai-links';
 
+export const dynamicParams = false;
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+const APPLY_AUDIENCE_LABELS: Record<'undergraduate' | 'postgraduate' | 'all', string> = {
+  undergraduate: 'Undergraduate',
+  postgraduate: 'Postgraduate',
+  all: 'All applicants',
+};
 
 /**
  * True when a recorded admission-test name says more than the covered exam it
@@ -74,9 +100,10 @@ export function generateStaticParams() {
  * everywhere and 118 identical "— Admissions, Courses & Overview" titles told
  * them nothing. When a dedicated "How to get into X" guide exists it owns the
  * "how to apply" intent, so the profile cedes it and leads with the profile facts.
+ * When `category` is set, `courses` is `[]`, so `"Courses"` is omitted.
  */
 function collegeTitle(
-  college: { nameEn: string; country: keyof typeof COLLEGE_COUNTRY_INFO },
+  college: Pick<College, 'nameEn' | 'country' | 'category'>,
   hasGuide: boolean,
   hasRanking: boolean,
 ): string {
@@ -85,6 +112,12 @@ function collegeTitle(
   // Institute of Science and Technology)"); the SERP title keeps the short form.
   const name = college.nameEn.length > 40 ? college.nameEn.replace(/\s*\([^)]*\)/g, '').trim() : college.nameEn;
   const scope = country && !name.includes(country) ? ` (${country})` : '';
+  if (college.category) {
+    if (!hasGuide) return `${name}${scope}: Admissions & How to Apply`;
+    return hasRanking
+      ? `${name}${scope}: Rankings & Admission Tests`
+      : `${name}${scope}: Admission Tests & How to Apply`;
+  }
   if (!hasGuide) return `${name}${scope}: Admissions, Courses & How to Apply`;
   // "Rankings" only when the page actually renders a ranking block.
   return hasRanking
@@ -104,22 +137,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const place = `${college.city}${college.state ? `, ${college.state}` : ''}`;
   const hasGuide = rankGuidesForCollege(college).some((r) => r.dedicated);
+  const summary = college.category ? collegeIdentityLine(college) : college.descriptionEn;
+  const fieldKeywords = (college.specializations ?? [])
+    .slice(0, 4)
+    .map((s) => SPECIALIZATION_LABELS[s]);
 
   return pageMetadata({
     title: collegeTitle(college, hasGuide, hasAnyRanking(college)),
-    description: `${college.nameEn}, ${place}: admission requirements, courses, the entrance tests it accepts and how international students apply. ${college.descriptionEn}`,
+    description: college.category
+      ? metaDescription(summary, 300)
+      : `${college.nameEn}, ${place}: admission requirements, courses, the entrance tests it accepts and how international students apply. ${summary}`,
     path: `/colleges/${college.slug}`,
     type: 'article',
     image: ogImageFor(college.region),
     keywords: [
       `${college.nameEn} admissions`,
-      `${college.nameEn} courses`,
+      ...(college.category ? [] : [`${college.nameEn} courses`]),
       `${college.nameEn} application`,
       `how to apply to ${college.nameEn}`,
       `${college.nameEn} ${place}`,
+      ...fieldKeywords,
       ...college.courses.slice(0, 4),
     ],
-    modifiedTime: college.lastVerified ?? SITE_LASTMOD,
+    modifiedTime: collegeModified(college) ?? SITE_LASTMOD,
   });
 }
 
@@ -130,8 +170,15 @@ export default async function CollegeDetailPage({ params }: Props) {
 
   const region = REGIONS.find((r) => r.slug === college.region);
   const place = `${college.city}${college.state ? `, ${college.state}` : ''}`;
-  const typeLabel = TYPE_LABELS[college.type] ?? college.type;
-  const reviewedProgrammes = PROGRAMMES.filter((programme) => programme.collegeSlug === college.slug && programme.region === college.region);
+  const typeLabel = categoryLabel(college);
+  const systemLabel = college.system ? SYSTEM_LABELS[college.system] : null;
+  const controlLabel = college.control ? CONTROL_LABELS[college.control] : null;
+  const summary = college.category ? collegeIdentityLine(college) : college.descriptionEn;
+  const specializations = college.specializations ?? [];
+  const reviewedProgrammes = PROGRAMMES.filter(
+    (programme) => programme.collegeSlug === college.slug && programme.region === college.region,
+  );
+  const programmeFees = PROGRAMME_FEES.filter((fee) => fee.collegeSlug === college.slug);
 
   // Related — other universities in the same COUNTRY first (then the region), so
   // a Singapore page does not point at Japan just because both are one region.
@@ -156,6 +203,7 @@ export default async function CollegeDetailPage({ params }: Props) {
 
   const pageUrl = `https://www.globalstudyboard.com/colleges/${college.slug}`;
   const countryInfo = COLLEGE_COUNTRY_INFO[college.country];
+  const modified = collegeModified(college) ?? SITE_REVIEWED;
 
   // NOTE: no FAQPage JSON-LD here. Google requires the marked-up Q&A to be
   // VISIBLE on the page, and this template renders no FAQ section; FAQ rich
@@ -164,12 +212,21 @@ export default async function CollegeDetailPage({ params }: Props) {
   // Attributed to the issuing body — the same rows the Compare tool renders.
   const rankings = collegeRankings(college);
 
+  let websiteHost = college.websiteUrl ?? '';
+  if (college.websiteUrl) {
+    try {
+      websiteHost = new URL(college.websiteUrl).hostname.replace(/^www\./, '');
+    } catch {
+      websiteHost = college.websiteUrl;
+    }
+  }
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollegeOrUniversity',
     '@id': pageUrl,
     name: college.nameEn,
-    description: metaDescription(college.descriptionEn, 300),
+    description: metaDescription(summary, 300),
     url: college.websiteUrl,
     foundingDate: String(college.established),
     // No `image` here: schema.org reads it as "an image of the item", and the
@@ -186,6 +243,7 @@ export default async function CollegeDetailPage({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto space-y-10">
+      {/* 1. Breadcrumbs */}
       <BreadcrumbsView crumbs={breadcrumbsFor(`/colleges/${college.slug}`)} />
       <PageRegion slug={college.region} />
       <script
@@ -193,6 +251,7 @@ export default async function CollegeDetailPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+      {/* 2. Header */}
       <header>
         <Link
           href="/colleges"
@@ -214,6 +273,14 @@ export default async function CollegeDetailPage({ params }: Props) {
           <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
             {typeLabel}
           </span>
+          {systemLabel && (
+            <>
+              <span className="text-stone-300">·</span>
+              <span className="rounded-full bg-stone-100 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-stone-700">
+                {systemLabel}
+              </span>
+            </>
+          )}
         </div>
         <h1 className="font-display text-4xl md:text-6xl font-bold tracking-editorial leading-[1.05] text-ink mb-3">
           {college.nameEn}
@@ -224,6 +291,7 @@ export default async function CollegeDetailPage({ params }: Props) {
         </p>
       </header>
 
+      {/* 3. Representative hero image */}
       <ContentImage
         asset={collegeImage({ slug: college.slug, region: college.region })}
         variant="hero"
@@ -232,12 +300,14 @@ export default async function CollegeDetailPage({ params }: Props) {
         representative
       />
 
+      {/* 4. Identity sentence */}
       <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
-        {college.descriptionEn}
+        {summary}
       </p>
 
+      {/* 5. Actions bar */}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <LastUpdated date={college.lastVerified ?? SITE_REVIEWED} />
+        <LastUpdated date={modified} />
         {/* Shortlist — renders nothing until accounts are configured. */}
         <SaveButton kind="college" slug={college.slug} title={college.nameEn} region={college.region} />
         <AddToPlannerButton slug={college.slug} name={college.nameEn} region={college.region} url={college.websiteUrl} />
@@ -249,8 +319,7 @@ export default async function CollegeDetailPage({ params }: Props) {
         ))}
       </div>
 
-
-      {/* Long-form twin — the dedicated admissions guide, featured above the facts */}
+      {/* 6. Primary admissions guide banner */}
       {primaryGuide && (
         <Link
           href={`/guides/${primaryGuide.slug}`}
@@ -271,74 +340,195 @@ export default async function CollegeDetailPage({ params }: Props) {
         </Link>
       )}
 
-      {/* Facts grid */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <FactCard icon={<MapPin className="w-5 h-5" />} label="Location" value={place} />
-        <FactCard icon={<CalendarDays className="w-5 h-5" />} label="Established" value={String(college.established)} />
-        {college.programLevels.length > 0 && (
-          <FactCard
-            icon={<GraduationCap className="w-5 h-5" />}
-            label="Degree levels"
-            value={college.programLevels.map((l) => LEVEL_LABELS[l] ?? l).join(', ')}
-          />
-        )}
-        <FactCard
-          icon={<Globe2 className="w-5 h-5" />}
-          label="Instruction"
-          value={college.englishTaught ? 'English-taught' : 'Local language'}
-        />
-      </section>
-
-      {/* Rankings — attributed to the issuing body, with a verify nudge */}
-      {rankings.length > 0 && (
-        <section className="bg-cream-50 border border-stone-200 rounded-2xl p-6">
-          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-4">
-            Rankings
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {rankings.map((r) => (
-              <div key={r.body}>
-                <p className="font-display text-3xl font-bold text-forest-700 m-0">#{r.rank}</p>
+      {/* 7. At-a-glance <dl> */}
+      <section aria-label="At a glance" className="rounded-2xl border border-stone-200 bg-white p-6">
+        <dl className="m-0 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+              Location
+            </dt>
+            <dd className="m-0 text-sm font-medium text-stone-800">{place}</dd>
+          </div>
+          <div>
+            <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+              Category
+            </dt>
+            <dd className="m-0 text-sm font-medium text-stone-800">{typeLabel}</dd>
+          </div>
+          {controlLabel && (
+            <div>
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+                Control
+              </dt>
+              <dd className="m-0 text-sm font-medium text-stone-800">{controlLabel}</dd>
+            </div>
+          )}
+          {systemLabel && (
+            <div>
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+                System
+              </dt>
+              <dd className="m-0 text-sm font-medium text-stone-800">{systemLabel}</dd>
+            </div>
+          )}
+          <div>
+            <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+              Established
+            </dt>
+            <dd className="m-0 text-sm font-medium text-stone-800">{college.established}</dd>
+          </div>
+          {college.programLevels.length > 0 && (
+            <div>
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+                Degree levels
+              </dt>
+              <dd className="m-0 text-sm font-medium text-stone-800">
+                {college.programLevels.map((l) => LEVEL_LABELS[l] ?? l).join(', ')}
+              </dd>
+            </div>
+          )}
+          <div>
+            <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+              Instruction
+            </dt>
+            <dd className="m-0 text-sm font-medium text-stone-800">
+              {college.instructionNote ? (
+                <>
+                  {college.instructionNote.text}{' '}
+                  <a
+                    href={college.instructionNote.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-normal text-forest-700 underline underline-offset-2 hover:text-forest-800"
+                  >
+                    Source
+                  </a>
+                </>
+              ) : college.englishTaught ? (
+                'English-taught'
+              ) : (
+                'Local language'
+              )}
+            </dd>
+          </div>
+          {college.websiteUrl && (
+            <div>
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+                Website
+              </dt>
+              <dd className="m-0 text-sm font-medium text-stone-800">
                 <a
-                  href={r.url}
+                  href={college.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-stone-600 text-sm hover:text-forest-700"
+                  className="text-forest-700 underline underline-offset-2 hover:text-forest-800"
                 >
-                  {r.body}
+                  {websiteHost}
                 </a>
-              </div>
+              </dd>
+            </div>
+          )}
+        </dl>
+      </section>
+
+      {/* 8. How it is organised */}
+      {college.organisation && college.organisation.length > 0 && (
+        <section>
+          <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-4">
+            How it is organised
+          </h2>
+          <ul className="m-0 grid list-none grid-cols-1 gap-x-8 p-0 sm:grid-cols-2">
+            {college.organisation.map((unit) => (
+              <li
+                key={unit.name}
+                className="m-0 flex items-baseline justify-between gap-3 border-b border-stone-200 py-2.5 text-sm"
+              >
+                <a
+                  href={unit.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-ink underline decoration-stone-300 underline-offset-2 hover:text-forest-700"
+                >
+                  {unit.name}
+                </a>
+                <span className="shrink-0 text-xs text-stone-500">
+                  {SPECIALIZATION_LABELS[unit.specialization]}
+                </span>
+              </li>
             ))}
-          </div>
-          <p className="text-stone-500 text-xs leading-relaxed mt-4 mb-0">
-            {RANKING_NUDGE}
-          </p>
+          </ul>
         </section>
       )}
 
-      {/* Application platform */}
-      {college.applicationPlatform && (
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white border border-stone-200 rounded-2xl p-5">
-            <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-2">
-              How to apply
-            </p>
-            <p className="text-stone-800 text-base m-0">{college.applicationPlatform}</p>
-          </div>
-          {region && (
+      {/* 9. Fields */}
+      {specializations.length > 0 && (
+        <section aria-label="Academic fields" className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 mr-1">
+            Fields
+          </span>
+          {specializations.map((spec) => (
+            <Link
+              key={spec}
+              href={`/colleges#field=${spec}`}
+              className="rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-700 no-underline hover:border-forest-300 hover:text-forest-700"
+            >
+              {SPECIALIZATION_LABELS[spec]}
+            </Link>
+          ))}
+        </section>
+      )}
+
+      {/* 10. How to apply */}
+      {college.applyLines && college.applyLines.length > 0 ? (
+        <section className="rounded-2xl border border-stone-200 bg-white p-6">
+          <h2 className="font-display text-2xl font-bold tracking-editorial text-ink mb-4">
+            How to apply
+          </h2>
+          <dl className="m-0 space-y-3">
+            {college.applyLines.map((line) => (
+              <div key={`${line.audience}-${line.sourceUrl}`} className="grid grid-cols-1 gap-1 sm:grid-cols-[9rem_1fr] sm:gap-4">
+                <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
+                  {APPLY_AUDIENCE_LABELS[line.audience]}
+                </dt>
+                <dd className="m-0 text-sm text-stone-800">
+                  {line.text}{' '}
+                  <a
+                    href={line.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-medium text-forest-700 underline underline-offset-2 hover:text-forest-800"
+                  >
+                    Official page
+                  </a>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      ) : (
+        college.applicationPlatform && (
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white border border-stone-200 rounded-2xl p-5">
               <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-2">
-                Region
+                How to apply
               </p>
-              <Link
-                href={`/regions/${region.slug}`}
-                className="text-forest-700 text-base font-medium no-underline hover:text-forest-800"
-              >
-                <RegionFlag slug={region.slug} className="mr-1.5 h-4" />{region.displayName} →
-              </Link>
+              <p className="text-stone-800 text-base m-0">{college.applicationPlatform}</p>
             </div>
-          )}
-        </section>
+            {region && (
+              <div className="bg-white border border-stone-200 rounded-2xl p-5">
+                <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-2">
+                  Region
+                </p>
+                <Link
+                  href={`/regions/${region.slug}`}
+                  className="text-forest-700 text-base font-medium no-underline hover:text-forest-800"
+                >
+                  <RegionFlag slug={region.slug} className="mr-1.5 h-4" />{region.displayName} →
+                </Link>
+              </div>
+            )}
+          </section>
+        )
       )}
 
       {/* How to apply — domestic vs international (India pilot) */}
@@ -377,7 +567,7 @@ export default async function CollegeDetailPage({ params }: Props) {
         </section>
       )}
 
-      {/* Admission tests — with the official facts we hold for each covered test */}
+      {/* 11. Admission tests — with the official facts we hold for each covered test */}
       {admissionTests.length > 0 && (
         <section>
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-4">
@@ -430,7 +620,66 @@ export default async function CollegeDetailPage({ params }: Props) {
         </section>
       )}
 
-      {/* Applying to this destination — the region's official facts, with sources */}
+      {/* 12. Rankings — attributed to the issuing body, with a verify nudge */}
+      {rankings.length > 0 && (
+        <section className="bg-cream-50 border border-stone-200 rounded-2xl p-6">
+          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-4">
+            Rankings
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {rankings.map((r) => (
+              <div key={r.body}>
+                <p className="font-display text-3xl font-bold text-forest-700 m-0">#{r.rank}</p>
+                <a
+                  href={r.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-stone-600 text-sm hover:text-forest-700"
+                >
+                  {r.body}
+                </a>
+              </div>
+            ))}
+          </div>
+          <p className="text-stone-500 text-xs leading-relaxed mt-4 mb-0">
+            {RANKING_NUDGE}
+          </p>
+        </section>
+      )}
+
+      {/* 13. Reviewed programme fee */}
+      {programmeFees.length > 0 && (
+        <section className="rounded-2xl border border-stone-200 bg-white p-6">
+          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3">
+            Reviewed programme fee
+          </p>
+          <div className="space-y-4">
+            {programmeFees.map((fee) => (
+              <div key={`${fee.university}-${fee.programme}-${fee.year}`} className="text-sm text-stone-800">
+                <p className="m-0 font-semibold text-ink">
+                  {fee.programme} ({fee.year}): {fee.currency} {fee.amount.toLocaleString('en-US')}{' '}
+                  <span className="font-normal text-stone-600">
+                    ({fee.period === 'year' ? 'per year' : fee.period} · {fee.appliesTo})
+                  </span>
+                </p>
+                <p className="m-0 mt-1 text-xs leading-relaxed text-stone-600">{fee.note}</p>
+                <p className="m-0 mt-1 text-xs text-stone-500">
+                  <a
+                    href={fee.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-forest-700 underline underline-offset-2 hover:text-forest-800"
+                  >
+                    {fee.sourceLabel}
+                  </a>
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 14. Applying to this destination — the region's official facts, with sources */}
       {region && (
         <section className="bg-cream-50 border border-stone-200 rounded-2xl p-6">
           <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3">
@@ -471,8 +720,8 @@ export default async function CollegeDetailPage({ params }: Props) {
         </section>
       )}
 
-      {/* Courses */}
-      {college.courses.length > 0 && (
+      {/* 15. Legacy courses — only when category is not set */}
+      {!college.category && college.courses.length > 0 && (
         <section>
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-4">
             Popular fields of study
@@ -490,7 +739,30 @@ export default async function CollegeDetailPage({ params }: Props) {
         </section>
       )}
 
-      {/* Official link + source caption */}
+      {/* 16. Verified against & Official link + freshness disclosure */}
+      {college.sources && college.sources.length > 0 && (
+        <section aria-label="Verified against" className="rounded-2xl border border-stone-200 bg-white p-5">
+          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-3">
+            Verified against
+          </p>
+          <ul className="m-0 list-none space-y-1.5 p-0 text-xs text-stone-600">
+            {college.sources.map((src) => (
+              <li key={src.url} className="m-0">
+                <a
+                  href={src.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-forest-700 underline underline-offset-2 hover:text-forest-800"
+                >
+                  {src.label}
+                </a>{' '}
+                · read {formatReviewed(src.readOn).display}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {college.websiteUrl && (
         <div className="space-y-2">
           <a
@@ -501,6 +773,13 @@ export default async function CollegeDetailPage({ params }: Props) {
           >
             Visit official website <ArrowUpRight className="w-4 h-4" />
           </a>
+          {college.contentUpdated &&
+            college.lastVerified &&
+            college.contentUpdated !== college.lastVerified && (
+              <p className="text-stone-600 text-xs leading-relaxed m-0">
+                Last verified against official sources on {formatReviewed(college.lastVerified).display} · Copy or layout updated on {formatReviewed(college.contentUpdated).display}.
+              </p>
+            )}
           <p className="text-stone-500 text-xs leading-relaxed max-w-xl">
             Source: {college.nameEn} official website. Details here are for guidance only — tuition,
             deadlines, rankings and eligibility change every academic year, so confirm on the official
@@ -509,10 +788,9 @@ export default async function CollegeDetailPage({ params }: Props) {
         </div>
       )}
 
-      {/* Like / Share / Print */}
+      {/* 17. Like / Share / Print, Sibling colleges, Related guides, Ask GSB CTA, RegionExplore, PageQuickLinks */}
       <ContentActions title={college.nameEn} />
 
-      {/* Related / Next steps */}
       {(siblingColleges.length > 0 || region) && (
         <section>
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-4">
@@ -547,7 +825,6 @@ export default async function CollegeDetailPage({ params }: Props) {
         </section>
       )}
 
-      {/* Admissions guides */}
       {relatedGuides.length > 0 && (
         <section>
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-5">
@@ -575,7 +852,6 @@ export default async function CollegeDetailPage({ params }: Props) {
         </section>
       )}
 
-      {/* CTA */}
       <section className="on-dark bg-forest-700 text-cream-50 rounded-3xl px-6 sm:px-10 py-8">
         <h2 className="font-display text-2xl font-bold tracking-editorial mb-2">
           Thinking about {college.nameEn}?
@@ -593,20 +869,7 @@ export default async function CollegeDetailPage({ params }: Props) {
 
       <RegionExplore region={college.region} />
 
-      {/* Quick links — popular topics & guides */}
       <PageQuickLinks currentPath={`/colleges/${college.slug}`} region={college.region} />
-    </div>
-  );
-}
-
-function FactCard({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
-  return (
-    <div className="bg-white border border-stone-200 rounded-xl p-4">
-      <div className="text-forest-700 mb-2">{icon}</div>
-      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
-        {label}
-      </p>
-      <p className="text-stone-800 text-sm font-medium leading-snug m-0">{value}</p>
     </div>
   );
 }

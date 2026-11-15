@@ -10,6 +10,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { COLLEGES } from './colleges';
+import {
+  BANNED_COLLEGE_PROSE_RE,
+  CATEGORY_LABELS,
+  COLLEGE_CATEGORIES,
+  SPECIALIZATION_LABELS,
+  SYSTEM_LABELS,
+  deriveSpecializations,
+} from './college-taxonomy';
 import { ENTRANCE_EXAMS } from './admission-guides';
 import { GUIDES } from './guides';
 import { REGIONS, type RegionSlug } from './regions';
@@ -69,6 +77,10 @@ export function buildContentIndex(): ContentUnit[] {
       c.state ?? '',
       regionName(c.region),
       c.country,
+      c.category ? CATEGORY_LABELS[c.category] : '',
+      c.system ? `${c.system} ${SYSTEM_LABELS[c.system]}` : '',
+      ...(c.organisation ?? []).map((u) => u.name),
+      ...(c.specializations ?? []).map((s) => SPECIALIZATION_LABELS[s]),
       ...c.courses,
       ...c.admissionExams,
     ]
@@ -144,8 +156,8 @@ export interface CmiReport {
 const norm = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 
 /**
- * Why a `contentUpdated` stamp (guide or exam) is unusable, or null if it is a
- * real day that has already begun. Date.parse cannot tell: V8 rolls an
+ * Why a `contentUpdated` stamp (guide, exam, or college) is unusable, or null if
+ * it is a real day that has already begun. Date.parse cannot tell: V8 rolls an
  * impossible day over ('2026-09-31' → 1 October) instead of returning NaN, so
  * the string must survive a round trip. A future stamp would print a "Last
  * updated" date that has not happened (§5). "Today" is taken at UTC+14, the
@@ -173,19 +185,41 @@ export function validateContent(): CmiReport {
   const collegeSlugs = new Map<string, number>();
   const collegeIds = new Map<string, number>();
   const collegeEntities = new Map<string, string>();
+  const collegeNameCountry = new Map<string, { slug: string; city: string }>();
+  const collegeWebsites = new Map<string, string>();
+  const validCategories = new Set<string>(COLLEGE_CATEGORIES);
   for (const c of COLLEGES) {
     collegeSlugs.set(c.slug, (collegeSlugs.get(c.slug) ?? 0) + 1);
     collegeIds.set(c.id, (collegeIds.get(c.id) ?? 0) + 1);
 
-    const entityKey = `${norm(c.nameEn)}|${c.region}|${c.type}`;
+    const entityKey = `${norm(c.nameEn)}|${c.country}|${norm(c.city)}`;
     if (collegeEntities.has(entityKey)) {
       errors.push(
-        `Duplicate college entity: "${c.nameEn}" (${c.region}/${c.type}) — slugs "${collegeEntities.get(
+        `Duplicate college entity: "${c.nameEn}" (${c.country}/${c.city}) — slugs "${collegeEntities.get(
           entityKey,
         )}" and "${c.slug}". One canonical unit only.`,
       );
     } else {
       collegeEntities.set(entityKey, c.slug);
+    }
+
+    const nameCountryKey = `${norm(c.nameEn)}|${c.country}`;
+    const prevNameCountry = collegeNameCountry.get(nameCountryKey);
+    if (prevNameCountry && norm(prevNameCountry.city) !== norm(c.city)) {
+      warnings.push(
+        `Colleges "${prevNameCountry.slug}" (${prevNameCountry.city}) and "${c.slug}" (${c.city}) share normalized name and country (${c.country}).`,
+      );
+    } else if (!prevNameCountry) {
+      collegeNameCountry.set(nameCountryKey, { slug: c.slug, city: c.city });
+    }
+
+    if (c.websiteUrl) {
+      const prevWeb = collegeWebsites.get(c.websiteUrl);
+      if (prevWeb && prevWeb !== c.slug) {
+        warnings.push(`Colleges "${prevWeb}" and "${c.slug}" share identical websiteUrl "${c.websiteUrl}".`);
+      } else {
+        collegeWebsites.set(c.websiteUrl, c.slug);
+      }
     }
 
     if (!c.slug) errors.push(`College "${c.nameEn}" is missing a slug.`);
@@ -198,6 +232,44 @@ export function validateContent(): CmiReport {
       if (!REGION_SLUGS.has(rs)) {
         errors.push(`College "${c.nameEn}" lists unknown region "${rs}" in regions[].`);
       }
+    }
+    if (c.contentUpdated !== undefined) {
+      const problem = contentUpdatedProblem(c.contentUpdated);
+      if (problem) errors.push(`College "${c.slug}": contentUpdated (${c.contentUpdated}) ${problem}.`);
+      else if (!c.lastVerified) {
+        errors.push(`College "${c.slug}" has contentUpdated but no lastVerified — verify it and stamp lastVerified instead.`);
+      } else if (c.contentUpdated <= eOrCVerified(c.lastVerified)) {
+        errors.push(`College "${c.slug}": contentUpdated (${c.contentUpdated}) is not after lastVerified (${c.lastVerified}) — drop it.`);
+      }
+    }
+    if (c.category !== undefined) {
+      if (!validCategories.has(c.category)) {
+        errors.push(`College "${c.slug}" has unknown category "${c.category}".`);
+      }
+      if (!c.lastVerified) {
+        errors.push(`College "${c.slug}" has category "${c.category}" but no lastVerified — a categorized profile requires a full source read.`);
+      }
+      if (BANNED_COLLEGE_PROSE_RE.test(c.descriptionEn)) {
+        errors.push(`College "${c.slug}" descriptionEn contains a banned editorial token.`);
+      }
+    }
+    if (c.instructionNote && BANNED_COLLEGE_PROSE_RE.test(c.instructionNote.text)) {
+      errors.push(`College "${c.slug}" instructionNote.text contains a banned editorial token.`);
+    }
+    for (const line of c.applyLines ?? []) {
+      if (BANNED_COLLEGE_PROSE_RE.test(line.text)) {
+        errors.push(`College "${c.slug}" applyLines[].text contains a banned editorial token.`);
+      }
+    }
+    const expectedSpecs = deriveSpecializations(c.organisation);
+    const actualSpecs = c.specializations ?? [];
+    if (
+      actualSpecs.length !== expectedSpecs.length ||
+      actualSpecs.some((s, i) => s !== expectedSpecs[i])
+    ) {
+      errors.push(
+        `College "${c.slug}" specializations (${actualSpecs.join(', ')}) does not match deriveSpecializations(organisation) (${expectedSpecs.join(', ')}).`,
+      );
     }
     if (c.admissionExams.length === 0) {
       warnings.push(`College "${c.nameEn}" lists no admissionExams.`);
@@ -432,6 +504,10 @@ export function validateContent(): CmiReport {
       total: CONTENT_INDEX.length,
     },
   };
+}
+
+function eOrCVerified(d: string): string {
+  return d;
 }
 
 // ─────────────────────────────── Breadcrumbs ────────────────────────────────

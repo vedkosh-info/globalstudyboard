@@ -109,7 +109,8 @@ alter table public.test_scores add constraint test_scores_exam_slug_check check 
     'ap-eapcet', 'ts-eamcet', 'keam', 'gujcet', 'bitsat', 'viteee', 'comedk-uget',
     'ssc-chsl', 'ssc-mts', 'ibps-po', 'ibps-clerk', 'sbi-po', 'rbi-grade-b',
     'ssc-cgl', 'cds', 'afcat', 'capf-ac', 'ctet', 'ugc-net', 'csir-net', 'cuet-pg',
-    'neet-pg', 'nata', 'iit-jam', 'nchm-jee', 'ipmat'
+    'neet-pg', 'nata', 'iit-jam', 'nchm-jee', 'ipmat',
+    'jlpt', 'topik', 'eju', 'hsk', 'lnat', 'gamsat', 'hpat', 'emsat'
   ));
 
 alter table public.test_scores enable row level security;

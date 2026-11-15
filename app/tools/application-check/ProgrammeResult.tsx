@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowLeft, Check, ClipboardPlus } from 'lucide-react';
 import ReportView from '@/components/tools/ReportView';
 import ToolLink from '@/components/tools/ToolLink';
-import { evaluateCheck, evidenceCurrent, nextActions, type BandInput, type CheckAnswer, type CheckProgramme } from '@/lib/application-check';
+import { evaluateCheck, evidenceCurrent, nextActions, publishedWays, type BandInput, type CheckAnswer, type CheckProgramme } from '@/lib/application-check';
 import { saveCheckActions } from '@/lib/application-check-planner';
 import { defaultPaperFor, dedupeLinks, type Paper, type ReportDocument } from '@/lib/reports/model';
 import { getRegionBySlug } from '@/lib/regions';
@@ -24,6 +24,8 @@ export default function ProgrammeResult({ programme, userId, onChange }: { progr
   const [day, setDay] = useState(today);
   const [excluded, setExcluded] = useState<string[]>([]);
   const [saved, setSaved] = useState<string[]>([]);
+  const [chosenWays, setChosenWays] = useState<string[]>([]);
+  const [savedWays, setSavedWays] = useState<string[]>([]);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
   const [saveFailed, setSaveFailed] = useState(false);
@@ -48,6 +50,8 @@ export default function ProgrammeResult({ programme, userId, onChange }: { progr
   const orderedFindings = [...findings].sort((a, b) => Number(interactive(b.rule.kind)) - Number(interactive(a.rule.kind)));
   const next = useMemo(() => nextActions(findings), [findings]);
   const selected = next.filter(({ rule }) => !excluded.includes(rule.id) && !saved.includes(rule.id));
+  const ways = useMemo(() => publishedWays(programme), [programme]);
+  const waySelection = chosenWays.filter((key) => !savedWays.includes(key) && ways.some((entry) => entry.key === key));
   const report = useMemo<ReportDocument>(() => ({
     tool: 'application-check',
     toolName: 'Application Check',
@@ -73,23 +77,35 @@ export default function ProgrammeResult({ programme, userId, onChange }: { progr
       { kind: 'text', heading: 'Suggested next steps', paragraphs:
         next.length ? next.map(({ rule }) => rule.action) : ['Review the full application instructions for your intake with the university.'],
       },
+      ...(ways.length ? [{
+        kind: 'table' as const,
+        heading: 'Ways the official pages describe',
+        intro: 'These are published descriptions, not approvals. The university still confirms your course, grade or test. Fees and durations are omitted where the page does not state them.',
+        columns: [{ label: 'Route' }, { label: 'What the page says' }],
+        rows: ways.map(({ way }) => [way.title, { text: way.detail, url: way.sourceUrl }]),
+      }] : []),
     ],
-    sources: dedupeLinks(programme.rules.map((rule) => ({ label: rule.title, url: rule.sourceUrl }))),
+    sources: dedupeLinks([
+      ...programme.rules.map((rule) => ({ label: rule.title, url: rule.sourceUrl })),
+      ...ways.map(({ way }) => ({ label: way.title, url: way.sourceUrl })),
+    ]),
     includesNotes: false,
     fileStem: 'globalstudyboard-application-check',
-  }), [programme, findings, next]);
+  }), [programme, findings, next, ways]);
 
   async function save() {
-    if (busy.current || !selected.length || !evidenceCurrent(programme)) return;
+    if (busy.current || (!selected.length && !waySelection.length) || !evidenceCurrent(programme)) return;
     busy.current = true;
     setSaving(true);
     setMessage('');
     setSaveFailed(false);
     const rules = selected.map(({ rule }) => rule);
+    const keys = waySelection;
     try {
-      await saveCheckActions(programme, rules, userId);
+      await saveCheckActions(programme, rules, userId, keys);
       if (mounted.current) {
         setSaved((previous) => [...new Set([...previous, ...rules.map((rule) => rule.id)])]);
+        setSavedWays((previous) => [...new Set([...previous, ...keys])]);
         setMessage('Your selected steps are in the Application Planner.');
       }
     } catch (error) {
@@ -130,14 +146,15 @@ export default function ProgrammeResult({ programme, userId, onChange }: { progr
             bands={bands} setBands={setBands}
             quantity={quantities[finding.rule.id] ?? ''} setQuantity={(value) => setQuantities((previous) => ({ ...previous, [finding.rule.id]: value }))}
             courses={courses[finding.rule.id] ?? []} setCourses={(value) => setCourses((previous) => ({ ...previous, [finding.rule.id]: value }))}
+            chosenWays={chosenWays} savedWays={savedWays} onToggleWay={(key) => setChosenWays((previous) => previous.includes(key) ? previous.filter((item) => item !== key) : [...previous, key])}
           />)}
         </div>
       </section>
       <section className="rounded-2xl border border-forest-200 bg-forest-50 p-5 sm:p-6" aria-labelledby="check-next">
         <h3 id="check-next" className="m-0 font-display text-2xl font-bold tracking-editorial text-ink">Your next steps</h3>
         <p className="mb-0 mt-2 text-base leading-relaxed text-stone-700">Choose the steps you want to keep in your planner.</p>
-        {next.length ? <>
-          <ul className="m-0 mt-4 list-none space-y-3 p-0">
+        {(next.length || ways.length) ? <>
+          {next.length > 0 && <ul className="m-0 mt-4 list-none space-y-3 p-0">
             {next.map(({ rule }) => {
               const added = saved.includes(rule.id);
               return <li key={rule.id} className="rounded-xl border border-forest-200 bg-white p-3">
@@ -151,12 +168,13 @@ export default function ProgrammeResult({ programme, userId, onChange }: { progr
                 <p className="m-0 mt-1 pl-7 text-sm"><OfficialSource url={rule.sourceUrl} label="Read the official instructions" /></p>
               </li>;
             })}
-          </ul>
+          </ul>}
+          {ways.length > 0 && <p className="mb-0 mt-3 text-sm leading-relaxed text-stone-700">Route steps you tick under a requirement are included with the steps above. The university still confirms each one.</p>}
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <button type="button" className={PRIMARY} disabled={saving || !selected.length} aria-busy={saving} onClick={() => void save()}>
+            <button type="button" className={PRIMARY} disabled={saving || (!selected.length && !waySelection.length)} aria-busy={saving} onClick={() => void save()}>
               <ClipboardPlus size={18} aria-hidden="true" />{saving ? 'Adding steps…' : 'Add selected steps to planner'}
             </button>
-            {saved.length > 0 && <ToolLink href={toolHref('application-planner', programme.region)} className={LINK + ' min-h-11 py-2.5 text-sm font-semibold'}>Open planner</ToolLink>}
+            {(saved.length > 0 || savedWays.length > 0 || saveFailed) && <ToolLink href={toolHref('application-planner', programme.region)} className={LINK + ' min-h-11 py-2.5 text-sm font-semibold'}>Open planner</ToolLink>}
           </div>
           <p className="mb-0 mt-3 text-sm text-stone-600">You can add your own dates in the planner.</p>
           {message && <p role={saveFailed ? 'alert' : 'status'} className="mb-0 mt-2 text-sm font-medium text-forest-900">{message}</p>}

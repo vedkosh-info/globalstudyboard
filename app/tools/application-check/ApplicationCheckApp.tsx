@@ -110,6 +110,7 @@ function ProgrammePicker({ programmes, region, userId }: { programmes: CheckProg
   const hash = useSyncExternalStore(subscribeToFragment, currentFragment, () => '');
   const programmeId = applicationCheckProgrammeId(hash, region);
   const chosen = programmes.find((entry) => entry.region === region && entry.id === programmeId);
+  const linkedElsewhere = programmes.find((entry) => entry.region !== region && entry.id === applicationCheckProgrammeId(hash, entry.region));
   const search = useRef<HTMLInputElement>(null);
   const restoreFocus = useRef(false);
   useEffect(() => {
@@ -131,6 +132,10 @@ function ProgrammePicker({ programmes, region, userId }: { programmes: CheckProg
       <p className="m-0 text-sm font-semibold text-forest-700">{getRegionBySlug(region)?.displayName}</p>
       <h2 className="mb-0 mt-1 font-display text-2xl font-bold tracking-editorial text-ink">Choose a programme</h2>
       <p className="mb-0 mt-2 max-w-prose text-base leading-relaxed text-stone-700">Start with a programme we have reviewed for this destination.</p>
+      {linkedElsewhere && <p role="status" className="mb-0 mt-4 rounded-xl bg-cream-50 p-4 text-base leading-relaxed text-stone-700">
+        Your link is for {linkedElsewhere.name} at {linkedElsewhere.university}.
+        {' '}To open it, change your destination to {getRegionBySlug(linkedElsewhere.region)?.displayName} in the header.
+      </p>}
       <div className="mt-4 space-y-2">
         {matches.map((entry) => (
           <button key={entry.id} type="button" onClick={() => selectProgramme(entry.id)} className="flex min-h-16 w-full items-center justify-between gap-4 rounded-xl border border-forest-300 bg-forest-50 px-4 py-3 text-left text-forest-900 hover:bg-forest-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-2">

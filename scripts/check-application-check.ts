@@ -53,6 +53,21 @@ for (const programme of PROGRAMMES) {
       assert.equal(new Set(rule.courses.options).size, rule.courses.options.length);
       for (const group of rule.courses.groups) assert.ok(group.length && group.every(option => rule.courses!.options.includes(option)));
     }
+    if (rule.ways) {
+      const wayIds = new Set<string>();
+      assert.ok(rule.ways.length > 0, 'An empty route list should be omitted');
+      for (const way of rule.ways) {
+        assert.ok(!wayIds.has(way.id) && !rules.has(way.id), 'A route id must be unique and must not reuse a rule id');
+        wayIds.add(way.id);
+        assert.match(way.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+        assert.ok(way.title && way.detail && way.action.length > 0 && way.action.length <= 160);
+        officialUrl(way.sourceUrl);
+        assert.match(way.checked, /^\d{4}-\d{2}-\d{2}$/);
+        assert.equal(new Date(way.checked).toISOString().slice(0, 10), way.checked);
+        assert.ok(way.checked >= programme.reviewed, 'A route cannot be dated before the requirement review');
+        assert.ok(!/\b(guarantee|guaranteed|enough for the visa|tuition is)\b/i.test(way.detail + way.action));
+      }
+    }
   }
 }
 assert.deepEqual([...destinations].sort(), [...REGION_SLUGS].sort(), 'Every destination has reviewed pilot coverage');

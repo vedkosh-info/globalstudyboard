@@ -7,6 +7,7 @@ import { test } from 'node:test';
 import ts from 'typescript';
 import * as domain from '../../lib/application-check';
 import type { CheckProgramme, CheckRule } from '../../lib/application-check';
+import type { ApplicationStatus } from '../../lib/planner';
 
 interface Row { id: string; [key: string]: unknown }
 interface Result { data: Row[]; status: number; error: { message: string; code?: string } | null }
@@ -14,14 +15,23 @@ const programme: CheckProgramme = {
   id: 'synthetic-programme', collegeSlug: 'synthetic-university', university: 'Synthetic University',
   name: 'Example MSc', region: 'canada', officialUrl: 'https://example.edu/msc',
   scope: 'Synthetic programme', intake: 'September 2027', reviewed: new Date().toISOString().slice(0, 10),
-  rules: ['statement', 'references'].map((id) => ({ id, kind: 'prepare', title: id, detail: id,
+  rules: ['statement', 'references'].map((id) => ({ id, kind: 'prepare' as const, title: id, detail: id,
     action: `Prepare ${id}`, sourceUrl: 'https://example.edu/msc' })),
 };
+programme.rules[0].ways = [{
+  id: 'distance-course', title: 'Distance course', detail: 'A published category. The university confirms the course.',
+  sourceUrl: 'https://example.edu/msc', checked: programme.reviewed,
+  action: 'Confirm the distance course with the university',
+}];
+function plannerRecord(id: string, status: ApplicationStatus): Row {
+  return { id, status, user_id: 'user-one', region: programme.region,
+    college_slug: programme.collegeSlug, program: programme.name, intake: programme.intake };
+}
 const code = ts.transpileModule(readFileSync('lib/application-check-planner.ts', 'utf8'), {
   compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
 }).outputText;
 
-type Save = (programme: CheckProgramme, rules: CheckRule[], expectedUserId?: string) => Promise<void>;
+type Save = (programme: CheckProgramme, rules: CheckRule[], expectedUserId?: string, wayKeys?: string[]) => Promise<void>;
 function harness() {
   const tables: Record<string, Row[]> = { planner_applications: [], planner_tasks: [] };
   let sessionUser = 'user-one';
@@ -110,6 +120,16 @@ test('student edits and completed tasks survive repeat transfers', async () => {
   assert.equal(h.tables.planner_tasks[0].done, true);
 });
 
+test('a published route is saved from the catalogue wording, and an unknown route is refused', async () => {
+  const h = harness();
+  await h.save(programme, [], undefined, ['statement/distance-course']);
+  assert.equal(h.tables.planner_tasks.length, 1);
+  assert.equal(h.tables.planner_tasks[0].title, 'Confirm the distance course with the university');
+  const writes = h.writes();
+  await assert.rejects(h.save(programme, [], undefined, ['statement/missing']), /Choose at least/);
+  assert.equal(h.writes(), writes);
+});
+
 test('only source actions can be transferred, even when caller-supplied action text differs', async () => {
   const h = harness();
   await h.save(programme, [{ ...programme.rules[0], action: 'Changed by caller' }]);
@@ -127,14 +147,40 @@ test('an application moved to a named intake requires review before adding more 
 
 test('a reused application closed after the first transfer does not split later steps into a new application', async () => {
   const h = harness();
-  h.tables.planner_applications.push({ id: 'student-application', user_id: 'user-one', region: programme.region,
-    college_slug: programme.collegeSlug, program: programme.name, intake: programme.intake, status: 'researching' });
+  h.tables.planner_applications.push(plannerRecord('student-application', 'researching'));
   await h.save(programme, [programme.rules[0]]);
   h.tables.planner_applications[0].status = 'closed';
+  h.tables.planner_applications.push(plannerRecord('another-application', 'preparing'));
+  const writesBeforeRetry = h.writes();
   await assert.rejects(h.save(programme, [programme.rules[1]]), /review|changed/i);
-  assert.equal(h.tables.planner_applications.length, 1);
+  assert.equal(h.writes(), writesBeforeRetry);
+  assert.equal(h.tables.planner_tasks.length, 1);
 });
 
+test('post-submission steps reuse the sole active application even when a closed record also matches', async () => {
+  const h = harness();
+  h.tables.planner_applications.push(plannerRecord('old-application', 'closed'), plannerRecord('submitted', 'applied'));
+  await h.save(programme, [programme.rules[0]]);
+  assert.equal(h.tables.planner_applications.length, 2);
+  assert.equal(h.tables.planner_tasks[0].application_id, 'submitted');
+  assert.equal(h.tables.planner_applications[1].status, 'applied');
+});
+
+test('a first transfer leaves applications with recorded outcomes untouched', async () => {
+  for (const status of ['offer', 'accepted', 'closed'] as const) {
+    const h = harness();
+    h.tables.planner_applications.push(plannerRecord('existing', status));
+    await assert.rejects(h.save(programme, [programme.rules[0]]), /already records an outcome/i);
+    assert.equal(h.writes(), 0);
+  }
+});
+
+test('two matching active applications require the student to choose in the planner', async () => {
+  const h = harness();
+  h.tables.planner_applications.push(plannerRecord('first', 'preparing'), plannerRecord('second', 'applied'));
+  await assert.rejects(h.save(programme, [programme.rules[0]]), /multiple active applications/i);
+  assert.equal(h.writes(), 0);
+});
 
 test('a task moved to another application is surfaced for review without overwriting it', async () => {
   const h = harness();

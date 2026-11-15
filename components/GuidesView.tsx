@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
-import Link from 'next/link';
+import IntentLink from '@/components/IntentLink';
 import { ArrowUpRight } from 'lucide-react';
 
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
@@ -25,7 +25,7 @@ export interface GuideCard {
 function GuideLink({ g, hidden }: { g: GuideCard; hidden: boolean }) {
   const meta = getRegionBySlug(g.region);
   return (
-    <Link
+    <IntentLink
       href={`/guides/${g.slug}`}
       className={`bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group flex flex-col${hidden ? ' hidden' : ''}`}
     >
@@ -48,7 +48,7 @@ function GuideLink({ g, hidden }: { g: GuideCard; hidden: boolean }) {
       <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
         Read guide <ArrowUpRight className="w-4 h-4" />
       </span>
-    </Link>
+    </IntentLink>
   );
 }
 

@@ -83,7 +83,12 @@ function collect(): Map<string, string> {
     for (const c of [...b.costs, ...b.funding]) add(c.source?.url, `cost-planner:${slug}`);
     for (const s of b.fundsRule.sources) add(s.url, `cost-planner:${slug}`);
   }
-  for (const c of COLLEGES) for (const r of collegeRankings(c)) add(r.url, `ranking:${c.slug}`);
+  for (const c of COLLEGES) {
+    for (const r of collegeRankings(c)) add(r.url, `ranking:${c.slug}`);
+    for (const u of c.organisation ?? []) add(u.sourceUrl, `college:${c.slug}`);
+    if (c.instructionNote) add(c.instructionNote.sourceUrl, `college:${c.slug}`);
+    for (const a of c.applyLines ?? []) add(a.sourceUrl, `college:${c.slug}`);
+  }
   return out;
 }
 

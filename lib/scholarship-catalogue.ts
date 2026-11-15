@@ -84,6 +84,38 @@ const REVIEWED_AWARDS: ReadonlyArray<Omit<ScholarshipOption, 'guideTitle'>> = [
     officialUrl: 'https://foreign.fulbrightonline.org/about/foreign-student-program',
     sourceReviewed: '2026-10-28',
   },
+  {
+    slug: 'holland-scholarship-and-netherlands-funding-guide',
+    name: 'NL Scholarship',
+    provider: 'Study in NL',
+    region: 'europe',
+    officialUrl: 'https://www.studyinnl.org/finances/nl-scholarship',
+    sourceReviewed: '2026-11-06',
+  },
+  {
+    slug: 'deutschlandstipendium-and-germany-scholarships',
+    name: 'Deutschlandstipendium',
+    provider: 'Deutschlandstipendium — BMFTR',
+    region: 'europe',
+    officialUrl: 'https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/english_node.html',
+    sourceReviewed: '2026-11-06',
+  },
+  {
+    slug: 'erasmus-mundus-scholarships-guide',
+    name: 'Erasmus Mundus Joint Masters',
+    provider: 'European Commission — Erasmus+',
+    region: 'europe',
+    officialUrl: 'https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters',
+    sourceReviewed: '2026-11-06',
+  },
+  {
+    slug: 'swedish-institute-and-nordic-scholarships-guide',
+    name: 'Swedish Institute Scholarships',
+    provider: 'Swedish Institute',
+    region: 'europe',
+    officialUrl: 'https://si.se/en/apply/scholarships/',
+    sourceReviewed: '2026-11-06',
+  },
 ];
 
 export function scholarshipCatalogue(): ScholarshipCatalogue {

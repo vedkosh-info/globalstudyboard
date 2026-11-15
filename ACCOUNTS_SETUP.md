@@ -164,11 +164,16 @@ To switch accounts OFF again in an emergency: `npx vercel env rm NEXT_PUBLIC_SUP
 `NEXT_PUBLIC_*` values are inlined at build time — **redeploy** after setting them. The CSP
 gains `https://xrfcxocqqshfilseojau.supabase.co` in `connect-src` automatically at build.
 
-Optional but recommended: Vercel → Project → Settings → Functions → **Function Region → Mumbai
-(bom1)**, so the sign-in / export / delete handlers run next to the Mumbai database (lower
-latency; the default is Washington, D.C.). `/privacy` already discloses Vercel as the host and
-the United States as a possible processing location, so this is a performance choice, not a
-compliance one.
+Function regions (changed November 2026 — do NOT re-pin the whole project to Mumbai): only the
+five routes that talk to the Mumbai database from Vercel run in **Mumbai (bom1)**, pinned per
+route in `vercel.json` `functions` (`app/auth/callback`, `app/api/account/**`,
+`app/api/admin/**`). The project default is **Washington, D.C. (iad1)**. The default region is
+also where Vercel keeps the ISR cache that serves every prerendered page, and Fast Origin
+Transfer is billed at that region's rate: $0.25/GB in bom1 against $0.06/GB in iad1. Pinning
+the whole project to bom1 (30 Sep → Nov 2026) roughly doubled GSB's bill with no gain, because
+planner/tracker/compare saves go browser → Supabase directly and never touch a Vercel function.
+`/privacy` already discloses Vercel as the host and the United States as a possible processing
+location, so this is a cost/performance choice, not a compliance one.
 
 Auth audit rows are NOT written to `auth.audit_log_entries` on this project (verified 0 rows on
 19 Sep 2026 after a full day of sign-ins and deletions — the provider keeps them in its own log

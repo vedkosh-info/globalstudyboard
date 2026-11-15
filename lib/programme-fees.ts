@@ -5,6 +5,8 @@
  * budget currency matches, and it never converts.
  */
 export interface ProgrammeFee {
+  /** Optional profile slug when the fee should also render on `/colleges/[slug]`. */
+  collegeSlug?: string;
   /** Exactly as the country is named in lib/regions.ts. */
   country: string;
   university: string;

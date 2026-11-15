@@ -2,7 +2,7 @@
 
 import { useId, useRef, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
-import type { BandInput, CheckAnswer, CheckStatus, Finding } from '@/lib/application-check';
+import { wayKey, type BandInput, type CheckAnswer, type CheckStatus, type Finding } from '@/lib/application-check';
 import { loadSavedIelts, type SavedIelts } from '@/lib/application-check-scores';
 import { formatReviewed } from '@/lib/site-meta';
 import { INPUT, LABEL, LINK, SECONDARY } from '../scholarship-tracker/styles';
@@ -95,9 +95,12 @@ interface Props {
   setQuantity: (value: string) => void;
   courses: string[];
   setCourses: (value: string[]) => void;
+  chosenWays: string[];
+  savedWays: string[];
+  onToggleWay: (key: string) => void;
 }
 
-export default function ReviewRule({ finding, reviewed, userId, answer, setAnswer, bands, setBands, quantity, setQuantity, courses, setCourses }: Props) {
+export default function ReviewRule({ finding, reviewed, userId, answer, setAnswer, bands, setBands, quantity, setQuantity, courses, setCourses, chosenWays, savedWays, onToggleWay }: Props) {
   const { rule, status } = finding;
   return <article className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-5" aria-labelledby={'rule-' + rule.id}>
     <div className="flex flex-wrap items-center justify-between gap-2">
@@ -128,6 +131,32 @@ export default function ReviewRule({ finding, reviewed, userId, answer, setAnswe
         </label>)}
       </div>
     </fieldset>}
+    {rule.ways && rule.ways.length > 0 && <div className="mt-4 rounded-xl bg-cream-50 p-4">
+      <h5 className="m-0 text-base font-semibold text-ink">Ways the official page describes</h5>
+      <p className="mb-0 mt-1 max-w-prose text-sm leading-relaxed text-stone-700">
+        Each line is what that page says. A category match is not approval of your course, grade or test. The university still confirms your record. Known fees and durations are left out unless the page states them.
+      </p>
+      <ul className="m-0 mt-3 list-none space-y-3 p-0">
+        {rule.ways.map((way) => {
+          const key = wayKey(rule.id, way.id);
+          const savedWay = savedWays.includes(key);
+          return <li key={way.id} className="rounded-xl border border-stone-200 bg-white p-3">
+            <p className="m-0 text-base font-semibold text-ink">{way.title}</p>
+            <p className="mb-0 mt-1 max-w-prose text-sm leading-relaxed text-stone-800">{way.detail}</p>
+            <p className="mb-0 mt-2 text-sm leading-relaxed text-stone-700">
+              <OfficialSource url={way.sourceUrl} label={'Official page for ' + way.title.toLowerCase()} />
+              <span className="block sm:ml-2 sm:inline">Checked <time dateTime={way.checked}>{formatReviewed(way.checked).display}</time></span>
+            </p>
+            <label className="mt-2 flex min-h-11 cursor-pointer items-start gap-3 text-sm font-medium leading-relaxed text-ink">
+              {savedWay ? <span className="mt-0.5 text-forest-700">In your planner</span> : <input
+                type="checkbox" className="mt-1 h-4 w-4 shrink-0 accent-forest-700" checked={chosenWays.includes(key)}
+                onChange={() => onToggleWay(key)} />}
+              <span>{savedWay ? way.action : 'Add this step: ' + way.action}</span>
+            </label>
+          </li>;
+        })}
+      </ul>
+    </div>}
     <p className="mb-0 mt-2 text-sm leading-relaxed text-stone-700" aria-live="polite">{finding.message}</p>
   </article>;
 }

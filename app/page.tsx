@@ -73,10 +73,9 @@ const HOME_EXAMS_BY_SLUG: Record<string, ExamLite> = (() => {
 })();
 
 /**
- * The four top-ranked universities per destination, projected to the handful of
- * fields the spotlight cards render. Computed on the server so the 118-record
- * college catalogue (with every description) no longer ships in the home page's
- * client chunk.
+ * Four universities per destination, projected to the handful of fields the
+ * spotlight cards render. Computed on the server so the full college catalogue
+ * (with every description) no longer ships in the home page's client chunk.
  */
 const HOME_UNIVERSITIES_BY_REGION: Record<RegionSlug, CollegeLite[]> = (() => {
   const out = {} as Record<RegionSlug, CollegeLite[]>;

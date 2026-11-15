@@ -31,6 +31,7 @@ import { pageMetadata, ogImageFor, absoluteImageUrl, EDITORIAL_TEAM_LD, PUBLISHE
 import { gsbAiHref } from '@/lib/gsb-ai-links';
 import { scholarshipForGuide } from '@/lib/scholarship-catalogue';
 import TrackScholarshipLink from '@/components/TrackScholarshipLink';
+import IntentLink from '@/components/IntentLink';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -392,7 +393,7 @@ export default async function GuideDetailPage({ params }: Props) {
           {relatedGuides.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
               {relatedGuides.map((g) => (
-                <Link
+                <IntentLink
                   key={g.slug}
                   href={`/guides/${g.slug}`}
                   className="bg-white border border-stone-200 rounded-xl p-4 no-underline hover:border-forest-300 transition-colors group"
@@ -400,7 +401,7 @@ export default async function GuideDetailPage({ params }: Props) {
                   <p className="font-medium text-stone-800 text-sm group-hover:text-forest-700 m-0">
                     {g.titleEn}
                   </p>
-                </Link>
+                </IntentLink>
               ))}
             </div>
           )}
@@ -408,22 +409,22 @@ export default async function GuideDetailPage({ params }: Props) {
           {(relatedExams.length > 0 || relatedColleges.length > 0) && (
             <div className="flex flex-wrap gap-2 mb-4">
               {relatedExams.map((e) => (
-                <Link
+                <IntentLink
                   key={e.slug}
                   href={`/exams/${e.slug}`}
                   className="text-sm font-medium bg-forest-50 text-forest-800 border border-forest-200 px-3 py-1.5 rounded-full no-underline hover:bg-forest-100 transition-colors"
                 >
                   {e.shortName}
-                </Link>
+                </IntentLink>
               ))}
               {relatedColleges.map((c) => (
-                <Link
+                <IntentLink
                   key={c.slug}
                   href={`/colleges/${c.slug}`}
                   className="text-sm font-medium bg-cream-100 text-stone-800 border border-stone-200 px-3 py-1.5 rounded-full no-underline hover:border-forest-300 transition-colors"
                 >
                   {c.nameEn}
-                </Link>
+                </IntentLink>
               ))}
             </div>
           )}
@@ -431,24 +432,24 @@ export default async function GuideDetailPage({ params }: Props) {
           {topics.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-4">
               {topics.map((t) => (
-                <Link
+                <IntentLink
                   key={t.slug}
                   href={`/topics/${t.slug}`}
                   className="text-sm font-medium bg-forest-50 text-forest-800 border border-forest-200 px-3 py-1.5 rounded-full no-underline hover:bg-forest-100 transition-colors"
                 >
                   {t.label}
-                </Link>
+                </IntentLink>
               ))}
             </div>
           )}
 
           {region && (
-            <Link
+            <IntentLink
               href={`/regions/${region.slug}`}
               className="inline-flex items-center gap-1 text-forest-700 font-medium no-underline hover:text-forest-800"
             >
               Explore studying in {region.displayName} →
-            </Link>
+            </IntentLink>
           )}
         </section>
       )}
@@ -464,16 +465,16 @@ export default async function GuideDetailPage({ params }: Props) {
               More in {primaryHub.label}
             </h2>
             <span className="text-sm text-stone-500">
-              <Link href={`/topics/${primaryHub.slug}`} className="text-forest-700 underline underline-offset-2">
+              <IntentLink href={`/topics/${primaryHub.slug}`} className="text-forest-700 underline underline-offset-2">
                 All {hubGuides.length} guides
-              </Link>
+              </IntentLink>
               {hubTrack && (
                 <>
                   {' '}
                   ·{' '}
-                  <Link href={trackHref(hubTrack)} className="text-forest-700 underline underline-offset-2">
+                  <IntentLink href={trackHref(hubTrack)} className="text-forest-700 underline underline-offset-2">
                     {hubTrack.label} track
-                  </Link>
+                  </IntentLink>
                 </>
               )}
             </span>
@@ -482,7 +483,7 @@ export default async function GuideDetailPage({ params }: Props) {
           {(prevInHub || nextInHub) && (
             <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {prevInHub && (
-                <Link
+                <IntentLink
                   href={`/guides/${prevInHub.slug}`}
                   rel="prev"
                   className="bg-white border border-stone-200 rounded-xl p-4 no-underline hover:border-forest-300 transition-colors group"
@@ -493,10 +494,10 @@ export default async function GuideDetailPage({ params }: Props) {
                   <span className="font-medium text-stone-800 text-sm group-hover:text-forest-700">
                     {prevInHub.titleEn}
                   </span>
-                </Link>
+                </IntentLink>
               )}
               {nextInHub && (
-                <Link
+                <IntentLink
                   href={`/guides/${nextInHub.slug}`}
                   rel="next"
                   className="bg-white border border-stone-200 rounded-xl p-4 no-underline hover:border-forest-300 transition-colors group sm:text-right"
@@ -507,7 +508,7 @@ export default async function GuideDetailPage({ params }: Props) {
                   <span className="font-medium text-stone-800 text-sm group-hover:text-forest-700">
                     {nextInHub.titleEn}
                   </span>
-                </Link>
+                </IntentLink>
               )}
             </div>
           )}
@@ -516,12 +517,12 @@ export default async function GuideDetailPage({ params }: Props) {
             <ul className="m-0 list-none p-0 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
               {hubSiblings.map((g) => (
                 <li key={g.slug}>
-                  <Link
+                  <IntentLink
                     href={`/guides/${g.slug}`}
                     className="text-sm text-stone-700 no-underline hover:text-forest-700"
                   >
                     {g.titleEn}
-                  </Link>
+                  </IntentLink>
                 </li>
               ))}
             </ul>

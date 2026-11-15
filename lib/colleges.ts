@@ -1,4 +1,20 @@
 import type { RegionSlug } from './regions';
+import {
+  deriveSpecializations,
+  type CollegeCategory,
+  type CollegeControl,
+  type CollegeSystem,
+  type Specialization,
+} from './college-taxonomy';
+import { USA_BATCH } from './colleges/batches/usa';
+import { INDIA_BATCH } from './colleges/batches/india';
+
+export type {
+  CollegeCategory,
+  CollegeControl,
+  CollegeSystem,
+  Specialization,
+} from './college-taxonomy';
 
 export type CollegeType =
   | 'research-university'
@@ -118,6 +134,31 @@ export const COLLEGE_COUNTRY_INFO: Record<CollegeCountry, { label: string; iso: 
   india: { label: 'India', iso: 'IN' },
 };
 
+export interface CollegeOrganisationUnit {
+  /** Official name, as the university’s site prints it. Not a translation we invented. */
+  name: string;
+  specialization: Specialization;
+  /** Specific faculty/school page, or the organisation page that lists this unit. https. */
+  sourceUrl: string;
+  /** Optional ISO date when this unit page was read if different from sources[]. */
+  readOn?: string;
+}
+
+export interface CollegeApplyLine {
+  audience: 'undergraduate' | 'postgraduate' | 'all';
+  text: string;
+  sourceUrl: string;
+  readOn?: string;
+}
+
+export interface CollegeSource {
+  url: string;
+  /** What this page is: "About", "Faculties", "Undergraduate admission". */
+  label: string;
+  /** ISO date that page was read. */
+  readOn: string;
+}
+
 export interface College {
   id: string;
   slug: string;
@@ -162,9 +203,49 @@ export interface College {
    * deadline that was not on those pages.
    */
   lastVerified?: string;
+  category?: CollegeCategory;
+  system?: CollegeSystem;
+  /** Only for institute / liberal-arts / specialist. See taxonomy notes. */
+  control?: CollegeControl;
+  /**
+   * Official academic units. The only input to specializations.
+   * Omit the whole array rather than store an empty one.
+   */
+  organisation?: CollegeOrganisationUnit[];
+  /**
+   * Derived at the module boundary by deriveSpecializations().
+   * Authors do not hand-maintain a second list.
+   * Absent on legacy records. Never computed from `courses`.
+   */
+  specializations?: Specialization[];
+  /**
+   * One sourced clause when instruction is not "all English" or "not English".
+   * Omit rather than reuse descriptionEn.
+   */
+  instructionNote?: { text: string; sourceUrl: string; readOn?: string };
+  /**
+   * Undergraduate and postgraduate routes, each one short line, only when
+   * the admissions page states them. No dates here.
+   */
+  applyLines?: CollegeApplyLine[];
+  sources?: CollegeSource[];
+  /** Same meaning as Guide.contentUpdated / EntranceExam.contentUpdated. */
+  contentUpdated?: string;
 }
 
-export const COLLEGES: College[] = [
+export function withDerived(c: College): College {
+  if (!c.organisation?.length) return c;
+  return { ...c, specializations: deriveSpecializations(c.organisation) };
+}
+
+export function collegeModified(c: Pick<College, 'lastVerified' | 'contentUpdated'>): string | undefined {
+  if (c.contentUpdated && c.lastVerified && c.contentUpdated > c.lastVerified) {
+    return c.contentUpdated;
+  }
+  return c.lastVerified;
+}
+
+const LEGACY_COLLEGES: College[] = [
 /* ==EASTASIA_COLLEGES_START== */
   {"id":"ntu-sg","slug":"nanyang-technological-university","nameEn":"Nanyang Technological University","type":"research-university","region":"east-southeast-asia","country":"singapore","city":"Singapore","established":1991,"ranking":{"qs":12},"admissionExams":["SAT / ACT / A-Levels / IB Diploma (undergraduate entry qualifications)","TOEFL / IELTS (English proficiency)","GRE / GMAT (selected graduate programmes)"],"applicationPlatform":"Direct via university","programLevels":["bachelors","masters","phd"],"englishTaught":true,"websiteUrl":"https://www.ntu.edu.sg","descriptionEn":"Nanyang Technological University (NTU Singapore) is a public research university based in Singapore, with its main campus in the western part of the island. It offers programmes across engineering, business, science, humanities, art, design and media, and medicine, and teaches primarily in English. International students apply directly to the university, which considers a range of school-leaving qualifications alongside English-proficiency evidence.","courses":["Engineering (Electrical, Mechanical, Civil, Aerospace, Chemical)","Computer Science, Data Science & Artificial Intelligence","Business and Accountancy","Materials Science & Engineering","Communication & Media Studies","Medicine (Lee Kong Chian School of Medicine)"]},
   {"id":"nus","slug":"national-university-of-singapore","nameEn":"National University of Singapore","type":"research-university","region":"east-southeast-asia","country":"singapore","city":"Singapore","established":1905,"ranking":{"qs":8},"admissionExams":["SAT / ACT","A-Levels / IB Diploma (or equivalent national qualification)","TOEFL / IELTS (English proficiency)"],"applicationPlatform":"Direct via university (NUS online application portal)","programLevels":["bachelors","masters","phd"],"englishTaught":true,"websiteUrl":"https://www.nus.edu.sg","descriptionEn":"The National University of Singapore (NUS) is a comprehensive public research university in Singapore, with institutional origins tracing back to a medical school founded in 1905. It offers a broad range of undergraduate, graduate and doctoral programmes across disciplines such as engineering, computing, medicine, business, law and the sciences, with English as the medium of instruction. Its main campus is at Kent Ridge in Singapore.","courses":["Computer Science & Computing","Engineering","Medicine","Business Administration","Law","Life Sciences"]},
@@ -2423,6 +2504,12 @@ export const COLLEGES: College[] = [
     courses: ['Medicine (MB BCh BAO)', 'Graduate Entry Medicine', 'Pharmacy', 'Physiotherapy', 'Dentistry (BDS)', 'Advanced Therapeutic Technologies'],
   },
 ];
+
+export const COLLEGES: College[] = [
+  ...LEGACY_COLLEGES,
+  ...USA_BATCH,
+  ...INDIA_BATCH,
+].map(withDerived);
 
 /** Lookup helpers */
 export const COLLEGES_BY_TYPE = (type: CollegeType) =>

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import IntentLink from '@/components/IntentLink';
 
 import { DEFAULT_REGION, getRegionBySlug, matchesRegion, type RegionSlug } from '@/lib/regions';
 import { tracksForRegion, trackHref, topicsForTrack } from '@/lib/tracks';
@@ -32,6 +32,8 @@ const MAX_GUIDES = 8;
  * tracks are the page's own destination's, and the guides come from the page's
  * own hubs (falling back to the destination's flagship guides). Server component
  * on purpose: lib/tracks and lib/guides must never reach the client bundle.
+ * Links use IntentLink (prefetch on hover/focus/touch, not on scroll) — these
+ * ~17 long-tail targets sit on ~2,900 pages; see components/IntentLink.tsx.
  */
 export default function PageQuickLinks({ currentPath, region, hubSlugs = [] }: PageQuickLinksProps) {
   const regionSlug: RegionSlug = region && region !== 'global' ? region : DEFAULT_REGION;
@@ -79,13 +81,13 @@ export default function PageQuickLinks({ currentPath, region, hubSlugs = [] }: P
           </p>
           <div className="flex flex-wrap gap-2">
             {tracks.map((t) => (
-              <Link
+              <IntentLink
                 key={t.slug}
                 href={t.href}
                 className="whitespace-nowrap rounded-full border border-forest-200 bg-white px-3.5 py-1.5 text-sm font-semibold text-forest-900 no-underline transition-colors hover:border-forest-400"
               >
                 {t.label}
-              </Link>
+              </IntentLink>
             ))}
           </div>
         </section>
@@ -100,22 +102,22 @@ export default function PageQuickLinks({ currentPath, region, hubSlugs = [] }: P
             <p className="m-0 text-xs font-bold uppercase tracking-[0.12em] text-amber-900">
               Popular guides
             </p>
-            <Link
+            <IntentLink
               href={`/regions/${regionSlug}/guides`}
               className="whitespace-nowrap text-xs font-bold text-forest-900 no-underline hover:underline"
             >
               View all →
-            </Link>
+            </IntentLink>
           </div>
           <div className="flex flex-wrap gap-2">
             {guides.map((g) => (
-              <Link
+              <IntentLink
                 key={g.slug}
                 href={`/guides/${g.slug}`}
                 className="rounded-full border border-amber-200 bg-white px-3.5 py-1.5 text-sm font-semibold text-amber-900 no-underline transition-colors hover:border-amber-400"
               >
                 {g.title}
-              </Link>
+              </IntentLink>
             ))}
           </div>
         </section>

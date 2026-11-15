@@ -1,5 +1,6 @@
 import { COLLEGES, COLLEGE_COUNTRY_INFO } from '@/lib/colleges';
-import { TYPE_LABELS, LEVEL_LABELS, collegeRankings, type AttributedRanking } from '@/lib/college-labels';
+import { SPECIALIZATION_LABELS } from '@/lib/college-taxonomy';
+import { LEVEL_LABELS, categoryLabel, collegeRankings, type AttributedRanking } from '@/lib/college-labels';
 import type { RegionSlug } from '@/lib/regions';
 import { REGION_COUNTRY_NAME } from '@/lib/study-country';
 
@@ -27,7 +28,10 @@ export interface CompareFacts {
   admissionTests: string[];
   applicationPlatform: string | null;
   levels: string[];
-  englishTaught: boolean;
+  /** Ready-worded instruction line (`instructionNote.text`, else "English-taught" / "Local language"). */
+  language: string;
+  /** Specialization labels derived from `organisation` (`[]` on legacy records). */
+  specializations: string[];
   url: string | null;
   courses: string[];
 }
@@ -40,12 +44,13 @@ export function compareCatalogue(): CompareFacts[] {
     country: REGION_COUNTRY_NAME[c.country],
     place: [c.city, c.state, COLLEGE_COUNTRY_INFO[c.country].label].filter(Boolean).join(', '),
     established: c.established,
-    type: TYPE_LABELS[c.type] ?? c.type,
+    type: categoryLabel(c),
     rankings: collegeRankings(c),
     admissionTests: c.admissionExams,
     applicationPlatform: c.applicationPlatform ?? null,
     levels: c.programLevels.map((l) => LEVEL_LABELS[l] ?? l),
-    englishTaught: c.englishTaught,
+    language: c.instructionNote?.text ?? (c.englishTaught ? 'English-taught' : 'Local language'),
+    specializations: (c.specializations ?? []).map((s) => SPECIALIZATION_LABELS[s]),
     url: c.websiteUrl ?? null,
     courses: c.courses,
   })).sort((a, b) => a.name.localeCompare(b.name));

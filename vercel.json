@@ -1,4 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "regions": ["bom1"]
+  "regions": ["iad1"],
+  "functions": {
+    "app/auth/callback/route.ts": { "regions": ["bom1"] },
+    "app/api/account/**/route.ts": { "regions": ["bom1"] },
+    "app/api/admin/**/route.ts": { "regions": ["bom1"] }
+  }
 }

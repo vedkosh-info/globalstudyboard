@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import IntentLink from '@/components/IntentLink';
 import { ArrowUpRight } from 'lucide-react';
 
 import type { RegionSlug } from '@/lib/regions';
@@ -86,14 +86,14 @@ export default function TopicsIndex({ sections }: { sections: RegionSection[] })
                 <section key={track.slug} aria-label={track.label}>
                   <div className="section-rule mb-5">
                     <h3 className="m-0 font-sans text-[length:inherit] font-semibold leading-[inherit] tracking-[inherit] text-inherit">
-                      <Link href={track.href} className="no-underline hover:text-forest-700">
+                      <IntentLink href={track.href} className="no-underline hover:text-forest-700">
                         {track.label}
-                      </Link>
+                      </IntentLink>
                     </h3>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {track.cards.map((t) => (
-                      <Link
+                      <IntentLink
                         key={t.slug}
                         href={`/topics/${t.slug}`}
                         className="bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 transition-colors group/card flex flex-col"
@@ -105,7 +105,7 @@ export default function TopicsIndex({ sections }: { sections: RegionSection[] })
                         <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-forest-700">
                           {t.count} guide{t.count === 1 ? '' : 's'} <ArrowUpRight className="w-4 h-4" />
                         </span>
-                      </Link>
+                      </IntentLink>
                     ))}
                   </div>
                 </section>

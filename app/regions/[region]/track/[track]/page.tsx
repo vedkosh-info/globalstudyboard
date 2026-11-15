@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import IntentLink from '@/components/IntentLink';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight, Clock } from 'lucide-react';
 
@@ -144,14 +145,14 @@ export default async function TrackPage({ params }: Props) {
           {siblings.map((s) => {
             const active = s.slug === t.slug;
             return (
-              <Link
+              <IntentLink
                 key={s.slug}
                 href={trackHref(s)}
                 aria-current={active ? 'page' : undefined}
                 className={active ? activeChip : chip}
               >
                 {s.label}
-              </Link>
+              </IntentLink>
             );
           })}
         </nav>
@@ -164,7 +165,7 @@ export default async function TrackPage({ params }: Props) {
         {/* Topic-hub cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {hubs.map(({ hub, count }) => (
-            <Link
+            <IntentLink
               key={hub.slug}
               href={`/topics/${hub.slug}`}
               className="group flex flex-col rounded-2xl border border-stone-200 bg-white p-5 no-underline transition-colors hover:border-forest-300"
@@ -180,7 +181,7 @@ export default async function TrackPage({ params }: Props) {
                 {count} guide{count === 1 ? '' : 's'}
                 <ArrowUpRight className="ml-0.5 h-4 w-4" />
               </span>
-            </Link>
+            </IntentLink>
           ))}
         </div>
 

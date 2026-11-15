@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import IntentLink from '@/components/IntentLink';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight, Calendar, Clock, FileText, Award } from 'lucide-react';
 
@@ -504,7 +505,7 @@ export default async function ExamDetailPage({ params }: Props) {
             {acceptingColleges.map((c) => {
               const collegeRegion = REGIONS.find((r) => r.slug === c.region);
               return (
-                <Link
+                <IntentLink
                   key={c.id}
                   href={`/colleges/${c.slug}`}
                   className="bg-white border border-stone-200 rounded-xl p-4 no-underline hover:border-forest-300 transition-colors group"
@@ -518,7 +519,7 @@ export default async function ExamDetailPage({ params }: Props) {
                   <p className="font-medium text-stone-800 text-sm group-hover:text-forest-700 m-0">
                     {c.nameEn}
                   </p>
-                </Link>
+                </IntentLink>
               );
             })}
           </div>
@@ -537,13 +538,13 @@ export default async function ExamDetailPage({ params }: Props) {
           {relatedExams.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-4">
               {relatedExams.map((e) => (
-                <Link
+                <IntentLink
                   key={e.slug}
                   href={`/exams/${e.slug}`}
                   className="text-sm font-medium bg-forest-50 text-forest-800 border border-forest-200 px-3 py-1.5 rounded-full no-underline hover:bg-forest-100 transition-colors"
                 >
                   {e.shortName}
-                </Link>
+                </IntentLink>
               ))}
             </div>
           )}
@@ -566,7 +567,7 @@ export default async function ExamDetailPage({ params }: Props) {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {relatedGuides.map((g) => (
-              <Link
+              <IntentLink
                 key={g.slug}
                 href={`/guides/${g.slug}`}
                 className="group bg-white border border-stone-200 rounded-2xl p-5 no-underline hover:border-forest-300 hover:bg-cream-50 transition-colors"
@@ -580,7 +581,7 @@ export default async function ExamDetailPage({ params }: Props) {
                 <p className="text-stone-500 text-sm mt-2 mb-0 line-clamp-2">
                   {g.descriptionEn}
                 </p>
-              </Link>
+              </IntentLink>
             ))}
           </div>
         </section>

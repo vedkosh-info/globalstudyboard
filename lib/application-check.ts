@@ -1,5 +1,17 @@
 import type { RegionSlug } from './regions';
 
+/** A route the official page states for this requirement. It is not an offer,
+ * an equivalence decision, or a price. The university still confirms the case. */
+export interface PublishedWay {
+  id: string;
+  title: string;
+  detail: string;
+  sourceUrl: string;
+  /** Date this sentence was read on sourceUrl. */
+  checked: string;
+  action: string;
+}
+
 export interface CheckRule {
   id: string;
   title: string;
@@ -12,6 +24,18 @@ export interface CheckRule {
   courses?: { options: string[]; groups: string[][] };
   /** Only an explicitly published IELTS Academic route; alternative routes stay unresolved. */
   ielts?: { overall: number; eachBand?: number };
+  /** Other ways the same official page describes. Absent when the page states none. */
+  ways?: PublishedWay[];
+}
+
+export function wayKey(ruleId: string, wayId: string): string {
+  return `${ruleId}/${wayId}`;
+}
+
+export function publishedWays(programme: CheckProgramme): { ruleId: string; way: PublishedWay; key: string }[] {
+  return programme.rules.flatMap((rule) => (rule.ways ?? []).map((way) => ({
+    ruleId: rule.id, way, key: wayKey(rule.id, way.id),
+  })));
 }
 
 export interface CheckProgramme {

@@ -2,11 +2,11 @@ import Link from 'next/link';
 import MobileMenu from '@/components/MobileMenu';
 import RegionSwitcher from '@/components/RegionSwitcher';
 import RegionNav from '@/components/RegionNav';
-import TopicsMenu, { type TopicsMenuData } from '@/components/TopicsMenu';
+import TopicsMenu from '@/components/TopicsMenu';
 import ToolsEntranceLink from '@/components/ToolsEntranceLink';
 import NotificationCenter from '@/components/notifications/NotificationCenter';
 
-export default function Header({ topicsMenu }: { topicsMenu: TopicsMenuData }) {
+export default function Header() {
   // Pinned (sticky) only on viewports at least 30rem tall — every phone held
   // upright, every laptop. On a landscape phone or at 400% zoom (320x256) a
   // pinned 81px header would take a third of the screen, so there it scrolls
@@ -47,7 +47,7 @@ export default function Header({ topicsMenu }: { topicsMenu: TopicsMenuData }) {
             {/* Desktop nav */}
             <nav className="hidden lg:flex shrink-0 items-center gap-0.5 xl:gap-1">
               <RegionNav />
-              <TopicsMenu menu={topicsMenu} />
+              <TopicsMenu />
               {/* The tools index — a permanent entrance beside the content sections
                   (owner directive, 30 Sep 2026). Measured at 1024px with the longest
                   destination name: the nav links went from px-2.5 to px-2 below xl to

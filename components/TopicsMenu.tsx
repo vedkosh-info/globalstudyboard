@@ -6,30 +6,72 @@ import { ChevronDown } from 'lucide-react';
 
 import { getRegionBySlug } from '@/lib/regions';
 import { useRegion } from '@/components/RegionProvider';
+import { TOPICS_MENU_URL, isTopicsMenuData, type TopicsMenuData } from '@/lib/topics-menu-types';
 
-/** One track entry in the mega-menu — a compact, server-computed projection. */
-export interface MenuTrack {
-  label: string;
-  href: string;
-  preview: string | null;
+/**
+ * One fetch per page session, shared by every mount. A failed fetch clears
+ * itself so the next open retries.
+ */
+let menuPromise: Promise<TopicsMenuData> | null = null;
+function loadMenu(): Promise<TopicsMenuData> {
+  if (!menuPromise) {
+    menuPromise = fetch(TOPICS_MENU_URL, { credentials: 'omit', referrerPolicy: 'no-referrer' })
+      .then(async (res) => {
+        if (!res.ok) throw new Error('Topics menu request failed');
+        const data: unknown = await res.json();
+        if (!isTopicsMenuData(data)) throw new Error('Invalid topics menu');
+        return data;
+      })
+      .catch((err: unknown) => {
+        menuPromise = null;
+        throw err;
+      });
+  }
+  return menuPromise;
 }
-/** Per-region track projection, keyed by region slug. Built once at build time. */
-export type TopicsMenuData = Record<string, MenuTrack[]>;
 
 /**
  * Desktop "Topics" mega-menu — the region-first Track spine. Shows ONLY the
  * effective destination's tracks (India's domestic tracks, or an abroad region's
  * journey tracks), so India-domestic hubs no longer leak into other regions.
  *
- * The tracks are passed in as a compact `menu` projection (labels + hrefs +
- * preview strings) computed server-side in the root layout — mirroring the
- * FOOTER_EXAM_LABELS pattern — so the full `lib/tracks` + `lib/topics` catalogue
- * (≈0.35 MB) NEVER ships to the browser on every page.
+ * The tracks are a compact projection (labels + hrefs + preview strings) built
+ * server-side by `lib/topics-menu.ts`, so the full `lib/tracks` + `lib/topics`
+ * catalogue (≈0.35 MB) never ships to the browser. Since November 2026 it is
+ * fetched from a static, CDN-cached JSON file on INTENT (pointer over / focus on
+ * the button) instead of riding in every page's HTML + RSC payload as a prop —
+ * ~13.6 KB raw per page of origin transfer for a menu whose links are never in
+ * the server HTML anyway (they render only when open). "Browse all topics"
+ * stays available while loading and if the fetch fails.
  */
-export default function TopicsMenu({ menu }: { menu: TopicsMenuData }) {
+export default function TopicsMenu() {
   const [open, setOpen] = useState(false);
+  const [menu, setMenu] = useState<TopicsMenuData | null>(null);
+  const [failed, setFailed] = useState(false);
   const { effectiveRegion } = useRegion();
   const ref = useRef<HTMLDivElement>(null);
+
+  // Warm the fetch on intent; the open effect below reads the same promise.
+  const prime = () => {
+    if (!menu) loadMenu().catch(() => undefined);
+  };
+
+  // Opening always (re)tries, so a transient failure recovers on the next open.
+  useEffect(() => {
+    if (!open || menu) return;
+    let live = true;
+    setFailed(false);
+    loadMenu()
+      .then((data) => {
+        if (live) setMenu(data);
+      })
+      .catch(() => {
+        if (live) setFailed(true);
+      });
+    return () => {
+      live = false;
+    };
+  }, [open, menu]);
 
   useEffect(() => {
     if (!open) return;
@@ -47,7 +89,7 @@ export default function TopicsMenu({ menu }: { menu: TopicsMenuData }) {
     };
   }, [open]);
 
-  const tracks = menu[effectiveRegion] ?? [];
+  const tracks = menu?.[effectiveRegion] ?? [];
   const regionName = getRegionBySlug(effectiveRegion)?.displayName ?? '';
 
   return (
@@ -55,6 +97,8 @@ export default function TopicsMenu({ menu }: { menu: TopicsMenuData }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        onPointerEnter={prime}
+        onFocus={prime}
         aria-expanded={open}
         className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-stone-700 hover:text-forest-700 px-2 xl:px-3 py-2 rounded-md hover:bg-forest-50 transition-colors"
       >
@@ -70,6 +114,12 @@ export default function TopicsMenu({ menu }: { menu: TopicsMenuData }) {
           <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-3 m-0">
             Explore {regionName} by track
           </p>
+          {!menu && (
+            <p className="m-0 text-sm text-stone-600" role="status" aria-live="polite">
+              {failed ? 'Could not load the tracks. Browse all topics below.' : 'Loading tracks…'}
+            </p>
+          )}
+          {menu && (
           <ul className="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
             {tracks.map((t) => (
               <li key={t.href}>
@@ -88,6 +138,7 @@ export default function TopicsMenu({ menu }: { menu: TopicsMenuData }) {
               </li>
             ))}
           </ul>
+          )}
           <div className="border-t border-stone-200 pt-3 mt-3">
             <Link
               href="/topics"

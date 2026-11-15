@@ -1288,7 +1288,6 @@ function NewSetForm({
 }
 
 // ── One comparison ───────────────────────────────────────────────────────────
-const FACT_ROWS = 10;
 
 function SetView({
   set,
@@ -1661,42 +1660,12 @@ function SetView({
 
 // ── Fact rows ────────────────────────────────────────────────────────────────
 function FactRows({ ordered, facts, factsDown }: { ordered: CompareEntry[]; facts: Map<string, CompareFacts> | null; factsDown: boolean }) {
-  const cell = (e: CompareEntry, render: (f: CompareFacts) => React.ReactNode, rowIndex: number) => {
-    const f = e.college_slug ? facts?.get(e.college_slug) : undefined;
-    if (f) {
-      return (
-        <td key={e.id} className={TD}>
-          {render(f)}
-        </td>
-      );
-    }
-    // No facts to show: ONE cell down the whole facts block, saying why — never
-    // blanks beside filled cells (a blank reads as a failed lookup), never the
-    // same words ten times over. A typed-in university has none; a profile no
-    // longer in the catalogue is "not found"; a failed fetch is a failure, not a
-    // missing profile.
-    if (rowIndex !== 0) return null;
-    const loading = Boolean(e.college_slug) && !facts && !factsDown;
-    const why = !e.college_slug
-      ? 'Added by you — we hold no verified facts for this one; only your own scores below apply.'
-      : facts
-        ? `${PROFILE_NOT_FOUND}.`
-        : factsDown
-          ? 'The facts for this university could not be loaded.'
-          : 'Loading the facts…';
-    return (
-      <td key={e.id} rowSpan={FACT_ROWS} className={`${TD} bg-stone-50 text-stone-600`}>
-        {why}
-        {!loading && e.official_url && (
-          <span className="mt-2 block">
-            <a href={e.official_url} target="_blank" rel="noopener noreferrer" className={LINK}>
-              Official site <ExternalLink className="h-3 w-3" aria-hidden="true" />
-            </a>
-          </span>
-        )}
-      </td>
-    );
-  };
+  const resolvedFacts = ordered
+    .map((e) => (e.college_slug ? facts?.get(e.college_slug) : undefined))
+    .filter((f): f is CompareFacts => Boolean(f));
+  const anySpecializations = resolvedFacts.some((f) => f.specializations.length > 0);
+  const anyCourses = resolvedFacts.some((f) => f.courses.length > 0);
+
   const rows: Array<{ label: React.ReactNode; render: (f: CompareFacts) => React.ReactNode }> = [
     {
       label: (
@@ -1723,35 +1692,58 @@ function FactRows({ ordered, facts, factsDown }: { ordered: CompareEntry[]; fact
     },
     { label: 'Location', render: (f) => f.place },
     { label: 'Type', render: (f) => f.type },
+    ...(anySpecializations
+      ? [
+          {
+            label: 'Fields',
+            render: (f: CompareFacts) =>
+              f.specializations.length ? (
+                f.specializations.join(', ')
+              ) : (
+                <span className="text-stone-500">Not stated on the profile</span>
+              ),
+          },
+        ]
+      : []),
     {
       label: 'Admission tests accepted',
-      render: (f) => (
-        <ul className="m-0 list-disc space-y-0.5 pl-4">
-          {f.admissionTests.map((t) => (
-            <li key={t}>{t}</li>
-          ))}
-        </ul>
-      ),
+      render: (f) =>
+        f.admissionTests.length ? (
+          <ul className="m-0 list-disc space-y-0.5 pl-4">
+            {f.admissionTests.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+        ) : (
+          <span className="text-stone-500">Not stated on the profile</span>
+        ),
     },
     { label: 'Application platform', render: (f) => f.applicationPlatform ?? <span className="text-stone-500">Not stated on the profile</span> },
     { label: 'Programme levels', render: (f) => f.levels.join(', ') },
-    { label: 'Language of instruction', render: (f) => (f.englishTaught ? 'English-taught' : 'Local language') },
+    { label: 'Language of instruction', render: (f) => f.language },
     { label: 'Established', render: (f) => String(f.established) },
-    {
-      label: 'Courses',
-      render: (f) => (
-        <details>
-          <summary className="cursor-pointer text-forest-700">
-            {f.courses.length} course area{f.courses.length === 1 ? '' : 's'}
-          </summary>
-          <ul className="m-0 mt-1 list-disc space-y-0.5 pl-4">
-            {f.courses.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
-          </ul>
-        </details>
-      ),
-    },
+    ...(anyCourses
+      ? [
+          {
+            label: 'Courses',
+            render: (f: CompareFacts) =>
+              f.courses.length ? (
+                <details>
+                  <summary className="cursor-pointer text-forest-700">
+                    {f.courses.length} course area{f.courses.length === 1 ? '' : 's'}
+                  </summary>
+                  <ul className="m-0 mt-1 list-disc space-y-0.5 pl-4">
+                    {f.courses.map((c) => (
+                      <li key={c}>{c}</li>
+                    ))}
+                  </ul>
+                </details>
+              ) : (
+                <span className="text-stone-500">—</span>
+              ),
+          },
+        ]
+      : []),
     {
       label: 'Links',
       render: (f) => (
@@ -1766,6 +1758,39 @@ function FactRows({ ordered, facts, factsDown }: { ordered: CompareEntry[]; fact
       ),
     },
   ];
+
+  const cell = (e: CompareEntry, render: (f: CompareFacts) => React.ReactNode, rowIndex: number) => {
+    const f = e.college_slug ? facts?.get(e.college_slug) : undefined;
+    if (f) {
+      return (
+        <td key={e.id} className={TD}>
+          {render(f)}
+        </td>
+      );
+    }
+    if (rowIndex !== 0) return null;
+    const loading = Boolean(e.college_slug) && !facts && !factsDown;
+    const why = !e.college_slug
+      ? 'Added by you — we hold no verified facts for this one; only your own scores below apply.'
+      : facts
+        ? `${PROFILE_NOT_FOUND}.`
+        : factsDown
+          ? 'The facts for this university could not be loaded.'
+          : 'Loading the facts…';
+    return (
+      <td key={e.id} rowSpan={rows.length} className={`${TD} bg-stone-50 text-stone-600`}>
+        {why}
+        {!loading && e.official_url && (
+          <span className="mt-2 block">
+            <a href={e.official_url} target="_blank" rel="noopener noreferrer" className={LINK}>
+              Official site <ExternalLink className="h-3 w-3" aria-hidden="true" />
+            </a>
+          </span>
+        )}
+      </td>
+    );
+  };
+
   return (
     <>
       {rows.map((row, i) => (

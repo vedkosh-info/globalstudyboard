@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight, Clock } from 'lucide-react';
 
-import { getRegionBySlug, matchesRegion, REGION_SLUGS, type RegionSlug } from '@/lib/regions';
+import { getRegionBySlug, matchesRegion, resolveDisplayRegions, REGION_SLUGS, type RegionSlug } from '@/lib/regions';
 import {
   REGION_CATEGORIES,
   isRegionCategory,
@@ -12,13 +12,21 @@ import {
   regionCategoryPath,
   type RegionCategory,
 } from '@/lib/region-nav';
-import { COLLEGES, type College } from '@/lib/colleges';
-import { qsChip } from '@/lib/college-labels';
+import { COLLEGES } from '@/lib/colleges';
+import {
+  CATEGORY_ROW_LABELS,
+  COLLEGE_CATEGORIES,
+  SPECIALIZATIONS,
+  SPECIALIZATION_LABELS,
+  categoryForFilter,
+} from '@/lib/college-taxonomy';
 import { ENTRANCE_EXAMS, type EntranceExam } from '@/lib/admission-guides';
 import { GUIDES, type Guide } from '@/lib/guides';
 import { topicsForGuide } from '@/lib/topic-guides';
 import { tracksForRegion, trackForTopic, trackHref } from '@/lib/tracks';
 import { itemListLd } from '@/lib/structured-data';
+import CollegeDirectoryFilter, { type CollegeFilterRow } from '@/components/CollegeDirectoryFilter';
+import CollegeDirectoryRow from '@/components/CollegeDirectoryRow';
 import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
@@ -31,6 +39,16 @@ import { gsbAiHref } from '@/lib/gsb-ai-links';
 import { DIRECTORY_UI } from '@/lib/directory-ui';
 
 const BASE = 'https://www.globalstudyboard.com';
+
+const CATEGORY_OPTIONS = COLLEGE_CATEGORIES.map((value) => ({
+  value,
+  label: CATEGORY_ROW_LABELS[value],
+}));
+
+const FIELD_OPTIONS = SPECIALIZATIONS.map((value) => ({
+  value,
+  label: SPECIALIZATION_LABELS[value],
+}));
 
 interface Props {
   params: Promise<{ region: string; category: string }>;
@@ -106,9 +124,19 @@ export default async function RegionCategoryPage({ params }: Props) {
 
   const universities =
     category === 'universities'
-      ? [...COLLEGES.filter((c) => matchesRegion(slug, c.region, c.regions))].sort(
-          (a, b) => (a.ranking?.qs ?? 9999) - (b.ranking?.qs ?? 9999),
+      ? [...COLLEGES.filter((c) => matchesRegion(slug, c.region, c.regions))].sort((a, b) =>
+          a.nameEn.localeCompare(b.nameEn),
         )
+      : [];
+  const universityFilterRows: CollegeFilterRow[] =
+    category === 'universities'
+      ? universities.map((c) => ({
+          slug: c.slug,
+          region: c.region,
+          regions: resolveDisplayRegions(c.region, c.regions),
+          category: categoryForFilter(c),
+          specializations: c.specializations ?? [],
+        }))
       : [];
   const exams =
     category === 'exams' ? ENTRANCE_EXAMS.filter((e) => matchesRegion(slug, e.region, e.regions)) : [];
@@ -239,17 +267,34 @@ export default async function RegionCategoryPage({ params }: Props) {
           })}
         </nav>
 
-        <p className="text-sm text-stone-500">
-          {count} {noun} for {r.proseName}.
-        </p>
+        {category !== 'universities' && (
+          <p className="text-sm text-stone-500">
+            {count} {noun} for {r.proseName}.
+          </p>
+        )}
 
         {/* Universities */}
-        {category === 'universities' && (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {universities.map((c) => (
-              <UniCard key={c.id} c={c} />
-            ))}
-          </div>
+        {category === 'universities' && count > 0 && (
+          <CollegeDirectoryFilter
+            rows={universityFilterRows}
+            scope="region"
+            pageRegion={slug}
+            categoryOptions={CATEGORY_OPTIONS}
+            fieldOptions={FIELD_OPTIONS}
+          >
+            <section
+              id={`universities-${slug}`}
+              data-region-section={slug}
+              aria-label={`${label} in ${r.displayName}`}
+              className="rounded-2xl border border-stone-200 bg-white px-5 py-4 sm:px-6"
+            >
+              <ul className="m-0 list-none p-0">
+                {universities.map((c) => (
+                  <CollegeDirectoryRow key={c.slug} c={c} showTests />
+                ))}
+              </ul>
+            </section>
+          </CollegeDirectoryFilter>
         )}
 
         {/* Exams */}
@@ -348,46 +393,6 @@ export default async function RegionCategoryPage({ params }: Props) {
         </section>
       </div>
     </div>
-  );
-}
-
-function UniCard({ c }: { c: College }) {
-  return (
-    <article className="flex flex-col rounded-2xl border border-stone-200 bg-white p-5">
-      <div className="mb-2 flex items-start justify-between gap-3">
-        <h2 className="m-0 font-display text-lg font-bold leading-snug text-ink">
-          <Link
-            href={`/colleges/${c.slug}`}
-            className="text-ink no-underline transition-colors hover:text-forest-700"
-          >
-            {c.nameEn}
-          </Link>
-        </h2>
-        {qsChip(c.ranking) && (
-          <span className="mt-1 shrink-0 text-[11px] font-semibold text-stone-500">{qsChip(c.ranking)}</span>
-        )}
-      </div>
-      <p className="mb-3 inline-flex items-center gap-1.5 text-xs text-stone-500">
-        {/* See HomeSpotlight: the region flag beside a city named the wrong
-            country for every multi-country region. */}
-        {(getRegionBySlug(c.region)?.countries.length ?? 0) === 1 && (
-          <RegionFlag slug={c.region} className="h-3" />
-        )}
-        {c.city}
-        {c.state ? `, ${c.state}` : ''} · Est. {c.established}
-      </p>
-      <p className="mb-4 line-clamp-3 text-base leading-relaxed text-stone-700">{c.descriptionEn}</p>
-      <div className="mt-auto flex flex-wrap gap-1.5 border-t border-stone-100 pt-3">
-        {c.admissionExams.slice(0, 3).map((e) => (
-          <span
-            key={e}
-            className="rounded-full bg-stone-100 px-2 py-0.5 text-[10px] font-medium text-stone-700"
-          >
-            {e}
-          </span>
-        ))}
-      </div>
-    </article>
   );
 }
 

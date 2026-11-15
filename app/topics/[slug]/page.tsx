@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import IntentLink from '@/components/IntentLink';
 import { notFound } from 'next/navigation';
 
 import { TOPICS, getTopicBySlug } from '@/lib/topics';
@@ -184,7 +185,7 @@ export default async function TopicHubPage({ params }: Props) {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {relatedExams.map((e) => (
-              <Link
+              <IntentLink
                 key={e.slug}
                 href={`/exams/${e.slug}`}
                 className="group bg-white border border-stone-200 rounded-2xl p-4 no-underline hover:border-forest-300 transition-colors"
@@ -195,7 +196,7 @@ export default async function TopicHubPage({ params }: Props) {
                 <p className="text-stone-600 text-xs m-0 mt-1">
                   {e.conductingBody} · {e.frequency}
                 </p>
-              </Link>
+              </IntentLink>
             ))}
           </div>
         </section>
@@ -209,17 +210,17 @@ export default async function TopicHubPage({ params }: Props) {
           <ol className="m-0 list-none p-0 space-y-3">
             {outline.map((g) => (
               <li key={g.slug}>
-                <Link href={`/guides/${g.slug}`} className="font-medium text-ink no-underline hover:text-forest-700">
+                <IntentLink href={`/guides/${g.slug}`} className="font-medium text-ink no-underline hover:text-forest-700">
                   {g.title}
-                </Link>
+                </IntentLink>
                 {g.sections.length > 0 && (
                   <span className="block text-sm text-stone-600">
                     {g.sections.map((sec, i) => (
                       <span key={sec.anchor}>
                         {i > 0 ? ' · ' : ''}
-                        <Link href={`/guides/${g.slug}#${sec.anchor}`} className="text-stone-600 no-underline hover:text-forest-700">
+                        <IntentLink href={`/guides/${g.slug}#${sec.anchor}`} className="text-stone-600 no-underline hover:text-forest-700">
                           {sec.heading}
-                        </Link>
+                        </IntentLink>
                       </span>
                     ))}
                   </span>

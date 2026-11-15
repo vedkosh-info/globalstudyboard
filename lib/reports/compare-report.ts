@@ -69,6 +69,8 @@ export function buildCompareReport(input: CompareReportInput): ReportDocument {
     ],
   });
 
+  const anySpecializations = entries.some((e) => (factOf(e)?.specializations.length ?? 0) > 0);
+
   sections.push({
     kind: 'table',
     heading: 'Verified facts — as published on each profile',
@@ -89,8 +91,11 @@ export function buildCompareReport(input: CompareReportInput): ReportDocument {
       factRow('Admission tests', (x) => (x.admissionTests.length ? x.admissionTests.join(', ') : DASH)),
       factRow('Application platform', (x) => x.applicationPlatform ?? DASH),
       factRow('Programme levels', (x) => (x.levels.length ? x.levels.join(', ') : DASH)),
-      factRow('Language of instruction', (x) => (x.englishTaught ? 'English-taught' : 'Local language')),
+      factRow('Language of instruction', (x) => x.language),
       factRow('Established', (x) => String(x.established)),
+      ...(anySpecializations
+        ? [factRow('Fields', (x) => (x.specializations.length ? x.specializations.join(', ') : cell(DASH, { muted: true })))]
+        : []),
       [
         cell('Official site', { strong: true }),
         ...entries.map((e) => {

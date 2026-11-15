@@ -109,7 +109,14 @@ public/           → Static assets
 
 ### Sixth tool — Application Check (November 2026)
 - `/tools/application-check` presents reviewed requirements for a specific programme and scope. `lib/application-check.ts` holds the check model. Each source-backed comparison concerns only its stated criterion. The student's answers stay in page memory.
-- `saveCheckActions()` transfers only selected programme actions to the existing Application Planner. It uses caller-bound RLS, stable IDs and insert-only writes, including on retry. The planner handles export, deletion and reporting for those records.
+- `saveCheckActions()` transfers only selected programme actions to the existing Application Planner. It uses caller-bound RLS, stable IDs and insert-only writes, including on retry. A published way to meet a requirement can be selected with those actions. The planner handles export, deletion and reporting for those records. A planner university opens Compare in one step, and opens Application Check when that university has a reviewed programme.
+
+## Hosting cost guardrails (BINDING — November 2026)
+- **Every prerendered page is served from Vercel's ISR cache.** Each CDN miss bills an ISR read (per 8 KB) plus Fast Origin Transfer of the page's **uncompressed** bytes. A guide is ~190 KB of HTML and its `.rsc` is ~90 KB. Origin bytes, not function CPU, are GSB's bill: 97% of usage in the Oct–Nov 2026 cycle.
+- **Regions:** `vercel.json` sets the project default to `iad1` ($0.06/GB origin transfer). It pins only the DB-touching routes (`app/auth/callback`, `app/api/account/**`, `app/api/admin/**`) to `bom1`, next to Supabase. Never set the project-wide `regions` back to `bom1` ($0.25/GB): the ISR cache follows the default region. A new server route that queries Supabase gets its own `bom1` entry in `vercel.json` `functions`. Tool saves go browser → Supabase and need nothing.
+- **Prefetch:** dense lists of long-tail links (related guides, hub siblings, popular guides/topics, listing cards) use `components/IntentLink.tsx`, which prefetches on hover, focus or touch. A default `<Link>` prefetches the target's full RSC payload as soon as it scrolls into view. Keep plain `<Link>` for the few hot chrome destinations.
+- **No catalogue data through the root layout.** A layout prop is serialised into the HTML and RSC payload of all ~3,400 pages. Serve it as a static JSON route and fetch on intent, as `TopicsMenu` does via `app/search/catalogue/topics-menu/route.ts`.
+- Check usage with `npx vercel@latest billing usage --group-by project` (and `--group-by region`).
 
 ## Project Account & Communications (BINDING — owner directive, September 2026)
 - **Every GlobalStudyBoard communication, integration and third-party setup uses the project's own account: `contact@globalstudyboard.com`** (= `CONTACT_EMAIL` in `lib/site-meta.ts`). Google Sheets / Apps Script deployments, Drive folders, mail recipients, Play/AdSense/Search Console contacts, any new service — all under this account, never a personal address and never a VedKosh/TasteYatra one.

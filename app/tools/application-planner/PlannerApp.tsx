@@ -2,7 +2,10 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEvent } from 'react';
 import Link from 'next/link';
-import { CalendarDays, Check, ChevronDown, Download, ExternalLink, Plus, RotateCw, Search, Trash2, X } from 'lucide-react';
+import { CalendarDays, Check, ChevronDown, ClipboardList, Download, ExternalLink, Plus, RotateCw, Search, Trash2, X } from 'lucide-react';
+import AddToCompareButton from '@/components/AddToCompareButton';
+import ToolLink from '@/components/tools/ToolLink';
+import { applicationCheckHref } from '@/lib/tools';
 import ReportView from '@/components/tools/ReportView';
 import ScholarshipPlannerSteps from '@/components/tools/ScholarshipPlannerSteps';
 import { saveBlob } from '@/lib/download-file';
@@ -39,6 +42,7 @@ import {
   todayIso,
   type ApplicationStatus,
   type CollegeOption,
+  type PlannerCheckLink,
   type ExamOption,
   type PlannerApplication,
   type PlannerTask,
@@ -228,7 +232,7 @@ const CATALOGUE_URL = '/tools/application-planner/catalogue';
 /** A list that has not arrived by then is treated as failed (and can be retried), never as an endless "Loading…". */
 const CATALOGUE_TIMEOUT_MS = 12_000;
 
-type PlannerCatalogue = { colleges: CollegeOption[]; exams: ExamOption[] };
+type PlannerCatalogue = { colleges: CollegeOption[]; exams: ExamOption[]; checks?: PlannerCheckLink[] };
 type CatalogueState = 'loading' | 'ready' | 'error';
 
 /**
@@ -964,6 +968,7 @@ export default function PlannerApp() {
                 <li key={app.id}>
                   <ApplicationCard
                     app={app}
+                    checks={catalogue?.checks ?? []}
                     tasks={tasksByApp.get(app.id) ?? []}
                     expanded={expanded.has(app.id)}
                     onToggleExpand={() => toggleExpanded(app.id)}
@@ -988,7 +993,7 @@ export default function PlannerApp() {
         {/* Timeline — this destination's dates, plus the test dates (which belong to none). Sticky beside
             the list on wide screens, and never taller than the window: a sticky column that is taller keeps
             its lower part — the test-date form — out of reach until the end of the page, so it scrolls itself. */}
-        <aside className="space-y-4 lg:sticky lg:top-24 lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto" aria-labelledby="planner-upcoming-heading">
+        <section className="space-y-4 lg:sticky lg:top-24 lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto" aria-labelledby="planner-upcoming-heading">
           <div className={CARD}>
             <h2
               id="planner-upcoming-heading"
@@ -1052,7 +1057,7 @@ export default function PlannerApp() {
               return why;
             }}
           />
-        </aside>
+        </section>
       </div>
 
       {(regionApps.length > 0 || scope.general.length > 0) && (
@@ -1470,6 +1475,7 @@ function AddApplicationPanel({
 // ── Application card ─────────────────────────────────────────────────────────
 function ApplicationCard({
   app,
+  checks,
   tasks,
   expanded,
   onToggleExpand,
@@ -1483,6 +1489,7 @@ function ApplicationCard({
   headingRef,
 }: {
   app: PlannerApplication;
+  checks: PlannerCheckLink[];
   tasks: PlannerTask[];
   expanded: boolean;
   onToggleExpand: () => void;
@@ -1596,6 +1603,16 @@ function ApplicationCard({
               </span>
             )}
           </div>
+          {app.college_slug && <div className="mt-3 flex flex-wrap items-center gap-2">
+            <AddToCompareButton slug={app.college_slug} name={app.name} region={app.region} url={app.official_url} />
+            {checks.filter((programme) => programme.region === app.region && programme.collegeSlug === app.college_slug).map((programme) => (
+              <ToolLink key={programme.id} href={applicationCheckHref(programme.id, app.region)} className="inline-flex h-8 items-center gap-1.5 rounded-full border border-forest-300 bg-white px-3 text-xs font-semibold text-forest-800 hover:bg-forest-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-1">
+                <ClipboardList className="h-3.5 w-3.5" aria-hidden="true" />
+                Check {programme.name}
+                {app.program && app.program !== programme.name && <span className="sr-only">. This check covers {programme.name}, not {app.program}.</span>}
+              </ToolLink>
+            ))}
+          </div>}
         </div>
         <div className="flex shrink-0 flex-wrap items-center gap-2">
           <label className="text-sm">
