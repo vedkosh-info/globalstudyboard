@@ -9,6 +9,7 @@ import RegionFlag from '@/components/RegionFlag';
 import GetAppButton from '@/components/GetAppButton';
 import FeedbackButton from '@/components/FeedbackButton';
 import ToolLink from '@/components/tools/ToolLink';
+import AnalyticsPreferencesButton from '@/components/analytics/AnalyticsPreferencesButton';
 import { toolsIndexHref } from '@/lib/tool-hint';
 
 const REGION_LINKS = REGIONS_ALPHABETICAL.map((r) => ({
@@ -251,6 +252,7 @@ export default function Footer({
                 {link.label}
               </Link>
             ))}
+            <AnalyticsPreferencesButton className="min-h-11 border-0 bg-transparent px-0 text-cream-50/80 text-xs underline underline-offset-4 hover:text-cream-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream-50" />
           </nav>
         </div>
       </div>

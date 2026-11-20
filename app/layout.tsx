@@ -23,6 +23,7 @@ import { REGIONS } from '@/lib/regions';
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { ADSENSE_CLIENT_ID } from '@/lib/adsense';
 import AdsLoader from '@/components/AdsLoader';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import { CONTACT_EMAIL, ORG_LOGO, SITE_DESCRIPTION } from '@/lib/site-meta';
 import { ROOT_OG_IMAGE, SITE_NAME, SITE_URL } from '@/lib/seo';
 
@@ -224,7 +225,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             it is a client component (no ads on the account surfaces) and lazyOnload. */}
         <AdsLoader />
         <Analytics />
-        <SpeedInsights />
+        <GoogleAnalytics />
+        {/* Sampled at 50% on purpose (18 Nov 2026): the team's free Speed Insights
+            allowance is 10,000 data points per billing cycle, shared by every project,
+            and GSB alone had used 75% of it by 14 Nov with traffic still growing.
+            At 100% Vercel PAUSES collection for the rest of the cycle, so the score
+            would go blank instead of merely noisier. Raise it only with Speed
+            Insights Plus. Does not affect rendering, SEO or Web Analytics. */}
+        <SpeedInsights sampleRate={0.5} />
       </body>
     </html>
   );

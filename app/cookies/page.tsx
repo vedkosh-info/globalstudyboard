@@ -3,6 +3,9 @@ import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 import TableScroller from '@/components/tools/TableScroller';
+import AnalyticsPreferencesButton from '@/components/analytics/AnalyticsPreferencesButton';
+import { ANALYTICS_POLICY } from '@/lib/analytics-policy';
+import { GA_MEASUREMENT_ID } from '@/lib/analytics';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Cookie Policy',
@@ -11,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
   path: '/cookies',
 });
 
-const LAST_UPDATED = '25 October 2026';
+const LAST_UPDATED = '19 November 2026';
 
 function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
@@ -55,7 +58,7 @@ function Section({ id, title, children }: { id?: string; title: string; children
  * whichever button reads a stale or unreadable note removes it. The pending
  * bullet matches takeSignInPending, which removes the marker on any read.
  */
-const COOKIE_TYPES: { name: string; purpose: string | string[]; consent: string }[] = [
+const COOKIE_TYPES: { name: string; purpose: string | string[]; consent: string; enabled?: boolean }[] = [
   {
     name: 'Strictly necessary',
     purpose: [
@@ -65,6 +68,7 @@ const COOKIE_TYPES: { name: string; purpose: string | string[]; consent: string 
       'The \u201cRecent pages\u201d drawer keeps a short list of the pages you opened (address, title and when you opened them) in local storage on this device only \u2014 never the sign-in, account or admin pages \u2014 which you can clear from the drawer itself.',
       'If you mark a guide, university or exam page as \u201cHelpful\u201d, that mark \u2014 the page\u2019s address, no identifier \u2014 is kept in local storage on this device until you press the button again or clear your browser data. It is never sent to us.',
       'The notification bell remembers which notices you have read or dismissed, in local storage on this device (gsb-notifications-v1). Each entry is a notice id and the time you read or dismissed it \u2014 no account id, and nothing in it is sent to us. A visitor sees each notice again the next day. A signed-in student sees the site note and the Android early-access note again after seven days, and does not see the account note. Entries older than 90 days are removed. Clearing your browser data shows the current notices again.',
+      ...(GA_MEASUREMENT_ID ? ['When you make an analytics choice, this browser remembers the choice, its version and its expiry for up to 180 days in local storage (gsb_analytics_consent). This entry contains no identifier and is separate from sign-in consent.'] : []),
     ],
     consent: 'Always on',
   },
@@ -81,10 +85,13 @@ const COOKIE_TYPES: { name: string; purpose: string | string[]; consent: string 
     consent: 'Always on once you sign in',
   },
   {
-    name: 'Analytics',
-    purpose:
-      'Privacy-respecting, aggregate measurement (Vercel Analytics and Speed Insights) that tells us which pages are useful and how the site performs. We do not use it to identify you.',
-    consent: 'Non-essential',
+    name: 'Google Analytics',
+    enabled: Boolean(GA_MEASUREMENT_ID),
+    purpose: [
+      'If you allow Google Analytics, it can write first-party cookies (gsb_ga and gsb_ga_…) to distinguish visits and measure which public pages are used. These cookies can last up to 180 days.',
+      'Turning off analytics stops collection on this browser and removes the Google Analytics cookies this site can access.',
+    ],
+    consent: 'Optional, opt-in (18+)',
   },
   {
     name: 'Advertising',
@@ -136,7 +143,7 @@ export default function CookiesPage() {
               </tr>
             </thead>
             <tbody>
-              {COOKIE_TYPES.map((c) => (
+              {COOKIE_TYPES.filter((c) => c.enabled !== false).map((c) => (
                 <tr key={c.name} className="border-b border-stone-100 align-top">
                   <td className="py-3 pr-4 font-semibold text-ink md:whitespace-nowrap">{c.name}</td>
                   <td className="py-3 pr-4 text-stone-700">
@@ -175,6 +182,12 @@ export default function CookiesPage() {
       </Section>
 
       <Section title="How to control cookies">
+        {GA_MEASUREMENT_ID ? (
+          <>
+            <p>{ANALYTICS_POLICY.choices}</p>
+            <AnalyticsPreferencesButton className="min-h-11 rounded-xl border border-forest-700 bg-white px-4 py-2 text-base font-semibold text-forest-800 hover:bg-forest-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-700" />
+          </>
+        ) : <p>{ANALYTICS_POLICY.disabled}</p>}
         <ul className="list-disc pl-5 space-y-2">
           <li>
             <strong>Your browser</strong> — you can block or delete cookies in your browser settings.

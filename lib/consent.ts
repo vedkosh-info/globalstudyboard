@@ -1,3 +1,5 @@
+import { GA_MEASUREMENT_ID } from './analytics';
+
 /**
  * Consent record plumbing — isomorphic, no Supabase import.
  *
@@ -14,10 +16,11 @@
  * the visitor to accept (Terms of Use, Privacy Policy) — bump it whenever
  * either changes substantively, and /account will ask existing users to
  * re-accept. Never a future date: the database refuses one (migration 0002).
- * The November 2026 privacy revision describes temporary Application Check
- * answers and the steps a student chooses to save in their planner.
+ * The 19 November 2026 privacy revision describes optional, adult-only Google
+ * Analytics when enabled. This revision takes effect for accounts when the
+ * integration is enabled. Analytics consent is a separate choice.
  */
-export const CONSENT_VERSION = '2026-11-04';
+export const CONSENT_VERSION = GA_MEASUREMENT_ID ? '2026-11-19' : '2026-11-04';
 
 export const CONSENT_COOKIE = 'gsb_consent';
 const CONSENT_COOKIE_MAX_AGE = 15 * 60; // the redirect round-trip is seconds

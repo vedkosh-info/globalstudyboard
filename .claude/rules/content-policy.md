@@ -250,9 +250,11 @@ analytics, the GSB-AI feature, and any future form or integration.
   students); collect **no** personal data from children and keep content safe.
   **Accounts are 18+** (self-attested at sign-in; matches the Play Console
   target-audience declaration and keeps India DPDP §9 parental consent out of
-  scope). Under-18 visitors read every page without an account; the account is
-  the only feature that collects personal data, and its consent step is the
-  only age check we can perform. See §17.
+  scope). Under-18 visitors can read every public page without an account or
+  analytics. Optional Google Analytics, when enabled, requires a separate adult
+  opt-in before loading its tag. Its pseudonymous cookie identifiers are never
+  linked to a GSB account or used to measure private activity. See §17 for
+  account consent.
 - **India DPDP Act** — applies to our India audience; same minimization rules.
 - When in doubt, apply the **strictest** applicable standard.
 

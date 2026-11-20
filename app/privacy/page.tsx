@@ -3,6 +3,8 @@ import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { CONTACT_EMAIL } from '@/lib/site-meta';
 import { SCHOLARSHIP_ACCOUNT_COPY } from '@/lib/scholarship-options';
+import { ANALYTICS_POLICY } from '@/lib/analytics-policy';
+import { GA_MEASUREMENT_ID } from '@/lib/analytics';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Privacy Policy',
@@ -11,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
   path: '/privacy',
 });
 
-const LAST_UPDATED = '4 November 2026';
+const LAST_UPDATED = '19 November 2026';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -50,9 +52,9 @@ export default function PrivacyPage() {
             Ask GSB, your message is processed to answer you.
           </li>
           <li>
-            <strong>Automatically collected usage data</strong> — standard analytics such as pages
-            viewed, approximate region, device and browser type, used in aggregate to understand
-            what&rsquo;s useful.
+            <strong>Usage and performance data</strong> — measurements that help us understand
+            which pages are useful and how the site performs.
+            {GA_MEASUREMENT_ID && ' Optional Google Analytics starts only after an adult visitor allows it.'}
           </li>
           <li>
             <strong>Your account, only if you choose to create one</strong> — an optional, free
@@ -320,9 +322,31 @@ export default function PrivacyPage() {
 
       <Section title="Cookies, analytics &amp; advertising">
         <p>
-          We use privacy-respecting analytics (Vercel Analytics and Speed Insights) to measure
-          traffic and performance in aggregate.
+          When enabled, Vercel Web Analytics and Speed Insights measure traffic and performance
+          in aggregate.
         </p>
+        {GA_MEASUREMENT_ID ? (
+          <>
+            <p>{ANALYTICS_POLICY.summary}</p>
+            <p>{ANALYTICS_POLICY.data}</p>
+            <p>{ANALYTICS_POLICY.limits}</p>
+            <p>{ANALYTICS_POLICY.advertising}</p>
+            <p>{ANALYTICS_POLICY.choices}</p>
+            <p>{ANALYTICS_POLICY.transfers}</p>
+            <p>
+              Read Google&rsquo;s{' '}
+              <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener noreferrer" className="text-forest-700 hover:text-forest-800 underline">
+                Analytics data safeguards
+              </a>{' '}
+              and{' '}
+              <a href="https://support.google.com/analytics/answer/7667196" target="_blank" rel="noopener noreferrer" className="text-forest-700 hover:text-forest-800 underline">
+                data retention information
+              </a>
+              . We set user and event data retention to two months. Standard aggregated reports are
+              outside these retention settings.
+            </p>
+          </>
+        ) : <p>{ANALYTICS_POLICY.disabled}</p>}
         <p>
           We also display advertising through <strong>Google AdSense</strong>. Third-party vendors,
           including Google, use cookies to serve ads based on a user&rsquo;s prior visits to this and
@@ -360,10 +384,8 @@ export default function PrivacyPage() {
           . You can also control or disable cookies in your browser settings.
         </p>
         <p>
-          Cookie-consent requirements vary by region — for example, the EEA and the UK require
-          consent for non-essential cookies. You can accept or refuse non-essential cookies using
-          your browser settings and the opt-outs above. For a fuller breakdown of the cookies we use
-          and how to manage them, see our{' '}
+          You can also block or delete cookies in your browser. For a fuller
+          breakdown of the cookies we use and how to manage them, see our{' '}
           <Link href="/cookies" className="text-forest-700 hover:text-forest-800 underline">
             Cookie Policy
           </Link>
@@ -409,7 +431,9 @@ export default function PrivacyPage() {
           read without giving us any personal details. Because the laws that protect younger
           people differ by country (for example, India&rsquo;s DPDP Act treats anyone under 18 as a
           child), <strong>accounts are for people aged 18 or over</strong>: you confirm this when
-          you sign in for the first time. We do not knowingly create accounts for, or collect
+          you sign in for the first time.
+          {GA_MEASUREMENT_ID && ' Choosing to allow optional Google Analytics also confirms that you are 18 or over.'}
+          {' '}We do not knowingly create accounts for, or collect
           personal information from, anyone under 18; if you believe we hold such information,
           contact us and we will delete it.
         </p>
@@ -418,7 +442,8 @@ export default function PrivacyPage() {
       <Section title="Your rights &amp; choices">
         <p>
           You can browse without providing personal details and control or disable cookies through
-          your browser. If you have an account, you can download, correct or delete your own data
+          your browser.
+          If you have an account, you can download, correct or delete your own data
           yourself at any time from{' '}
           <Link href="/account" className="text-forest-700 hover:text-forest-800 underline">
             Your account
