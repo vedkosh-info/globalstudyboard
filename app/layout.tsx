@@ -109,8 +109,13 @@ export const metadata: Metadata = {
     'max-snippet': -1,
     'max-video-preview': -1,
   },
-  // Google AdSense site-ownership verification (server-rendered meta tag).
-  other: { 'google-adsense-account': ADSENSE_CLIENT_ID },
+  // Google AdSense and Yandex Webmaster ownership tags. The Yandex code is
+  // public. An env value overrides it so a later console rotation does not
+  // require a code edit, and the fallback still verifies if the env is unset.
+  other: {
+    'google-adsense-account': ADSENSE_CLIENT_ID,
+    'yandex-verification': process.env.NEXT_PUBLIC_YANDEX_SITE_VERIFICATION || '4738b5d2174496bc',
+  },
 };
 
 /**
