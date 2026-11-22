@@ -37,6 +37,11 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// generateStaticParams lists every valid URL (the lookup below is an exact match
+// on the same list), so any other path is served as a static 404 instead of
+// being rendered on demand.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return GUIDES.map((g) => ({ slug: g.slug }));
 }

@@ -5,6 +5,10 @@ export const alt = OG_ALT;
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 
+// generateStaticParams lists every region, so any other path is served as a
+// static 404 instead of being rendered on demand.
+export const dynamicParams = false;
+
 // One statically-generated per-region social card (8 destinations) — SSG-safe.
 export function generateStaticParams() {
   return REGION_SLUGS.map((region) => ({ region }));
