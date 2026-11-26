@@ -18,12 +18,13 @@
  *       * `descriptionEn` other than `collegeIdentityLine(c)`,
  *       * a `qs` or `the` ranking number without `qsYear` / `theYear`,
  *       * fewer than two `sources` entries, or every source URL is only an apex/front page,
- *       * `lastVerified` not equal to the latest `readOn` among `sources`, `organisation`,
- *         `instructionNote`, and `applyLines`,
+ *       * latest source read is inconsistent with `lastVerified` and any later partial edit date,
  *       * banned editorial tokens in `descriptionEn`, `instructionNote.text`, or `applyLines[].text`.
  */
 
 import { COLLEGES } from '../lib/colleges';
+import { GUIDES } from '../lib/guides';
+import { DEDICATED_COLLEGE_GUIDE } from '../lib/college-guides';
 import {
   BANNED_COLLEGE_PROSE_RE,
   COLLEGE_CATEGORIES,
@@ -160,7 +161,19 @@ for (const c of COLLEGES) {
     }
   }
 
+  const applySlot = new Set<string>();
   for (const [i, a] of (c.applyLines ?? []).entries()) {
+    if (a.audience !== 'domestic' && a.audience !== 'international') {
+      problems.push(`${where}: applyLines[${i}].audience must be domestic or international`);
+    }
+    const slot = `${a.audience}:${a.level ?? 'all'}`;
+    if (applySlot.has(slot)) {
+      problems.push(`${where}: applyLines has two lines for ${slot}. Use one line, or split undergraduate and postgraduate.`);
+    }
+    applySlot.add(slot);
+    if (a.level !== undefined && a.level !== 'undergraduate' && a.level !== 'postgraduate' && a.level !== 'all') {
+      problems.push(`${where}: applyLines[${i}].level is invalid`);
+    }
     if (!a.text.trim()) problems.push(`${where}: applyLines[${i}].text is empty`);
     checkHttpsUrl(`${where}/applyLines[${i}]`, a.sourceUrl);
     if (BANNED_COLLEGE_PROSE_RE.test(a.text)) {
@@ -258,11 +271,29 @@ for (const c of COLLEGES) {
       problems.push(`${where}: categorized record has no readOn dates`);
     } else {
       const latestReadOn = [...readDates].sort().pop()!;
-      if (c.lastVerified !== latestReadOn) {
+      if (c.contentUpdated && c.lastVerified && (latestReadOn < c.lastVerified || latestReadOn > c.contentUpdated)) {
+        problems.push(`${where}: latest readOn (${latestReadOn}) must be between lastVerified and contentUpdated`);
+      } else if (!c.contentUpdated && c.lastVerified !== latestReadOn) {
         problems.push(
           `${where}: lastVerified (${c.lastVerified ?? 'unset'}) does not equal latest readOn (${latestReadOn})`,
         );
       }
+    }
+  }
+}
+
+// Each featured "Full admissions guide" must be a real guide about a real college,
+// and the guide must list that college (lib/college-guides.ts).
+{
+  const collegeSlugs = new Set(COLLEGES.map((c) => c.slug));
+  const guideBySlug = new Map(GUIDES.map((g) => [g.slug, g]));
+  for (const [collegeSlug, guideSlug] of Object.entries(DEDICATED_COLLEGE_GUIDE)) {
+    const where = `college-guides ${collegeSlug}`;
+    const guide = guideBySlug.get(guideSlug);
+    if (!collegeSlugs.has(collegeSlug)) problems.push(`${where}: no college with this slug`);
+    if (!guide) problems.push(`${where}: no guide '${guideSlug}'`);
+    else if (!guide.relatedCollegeSlugs.includes(collegeSlug)) {
+      problems.push(`${where}: guide '${guideSlug}' does not list this college in relatedCollegeSlugs`);
     }
   }
 }

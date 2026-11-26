@@ -14,7 +14,7 @@
 
 import { getRegionBySlug } from '@/lib/regions';
 import { RANKING_NUDGE } from '@/lib/college-labels';
-import { PROFILE_NOT_FOUND, entryResult, topPick, type CompareCriterion, type CompareEntry, type CompareScore, type CompareSet } from '@/lib/compare';
+import { PROFILE_NOT_FOUND, entryResult, foundingMilestone, topPick, type CompareCriterion, type CompareEntry, type CompareScore, type CompareSet } from '@/lib/compare';
 import type { CompareFacts } from '@/lib/compare-catalogue';
 import { DASH, cell, dedupeLinks, fileSlug, hostOf, type Cell, type ReportColumn, type ReportDocument, type ReportLink, type ReportSection } from '@/lib/reports/model';
 
@@ -91,8 +91,8 @@ export function buildCompareReport(input: CompareReportInput): ReportDocument {
       factRow('Admission tests', (x) => (x.admissionTests.length ? x.admissionTests.join(', ') : DASH)),
       factRow('Application platform', (x) => x.applicationPlatform ?? DASH),
       factRow('Programme levels', (x) => (x.levels.length ? x.levels.join(', ') : DASH)),
-      factRow('Language of instruction', (x) => x.language),
-      factRow('Established', (x) => String(x.established)),
+      factRow('Language of instruction', (x) => x.language ?? DASH),
+      factRow('Founding milestone', (x) => foundingMilestone(x) ?? DASH),
       ...(anySpecializations
         ? [factRow('Fields', (x) => (x.specializations.length ? x.specializations.join(', ') : cell(DASH, { muted: true })))]
         : []),

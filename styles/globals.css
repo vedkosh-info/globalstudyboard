@@ -493,12 +493,12 @@ hr {
   background: var(--color-border);
 }
 
-/* /sources lists ~1,800 external links; one utility keeps that markup small. */
-.gsb-src {
+/* /sources styles links at the list level to keep the archive markup small. */
+.gsb-src a {
   color: #14532D;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.gsb-src:hover {
+.gsb-src a:hover {
   color: #0F3F23;
 }

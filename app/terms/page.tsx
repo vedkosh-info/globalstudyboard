@@ -40,7 +40,10 @@ export default function TermsPage() {
       <Section title="About the service">
         <p>
           GlobalStudyBoard is an independent, informational guide to universities, entrance exams and
-          scholarships worldwide. We are not a university, examination body, or paid admissions agent,
+          scholarships worldwide.
+        </p>
+        <p>
+          We are not a university, examination body, or paid admissions agent,
           and we are not affiliated with the institutions we describe.
         </p>
       </Section>
@@ -49,7 +52,10 @@ export default function TermsPage() {
         <p>
           We work hard to keep information accurate and to cite official sources, but admission rules,
           fees, deadlines, rankings and eligibility change frequently and may contain errors or
-          omissions. Information on this site is provided <strong>&ldquo;as is&rdquo; for general
+          omissions.
+        </p>
+        <p>
+          Information on this site is provided <strong>&ldquo;as is&rdquo; for general
           guidance only</strong> and is not professional, legal, financial or immigration advice.
         </p>
         <p>
@@ -121,7 +127,10 @@ export default function TermsPage() {
 
       <Section title="Intellectual property">
         <p>
-          The GlobalStudyBoard name, design and original written content are ours. Names, trademarks
+          The GlobalStudyBoard name, design and original written content are ours.
+        </p>
+        <p>
+          Names, trademarks
           and logos of exams, universities and organisations belong to their respective owners and
           are used here for identification and reference only — their use does not imply any
           affiliation with or endorsement by those owners.
@@ -151,7 +160,10 @@ export default function TermsPage() {
         <p>
           These terms are governed by the laws of India, without regard to conflict-of-law
           principles. Any dispute relating to these terms or your use of the site is subject to the
-          jurisdiction of the courts of India. If any provision of these terms is found to be
+          jurisdiction of the courts of India.
+        </p>
+        <p>
+          If any provision of these terms is found to be
           unenforceable, the remaining provisions continue in full effect.
         </p>
       </Section>
@@ -159,7 +171,10 @@ export default function TermsPage() {
       <Section title="Changes &amp; contact">
         <p>
           We may update these terms; the date above reflects the latest version. Continued use after
-          changes means you accept the updated terms. Questions? Use the{' '}
+          changes means you accept the updated terms.
+        </p>
+        <p>
+          Questions? Use the{' '}
           <Link href="/contact" className="text-forest-700 hover:text-forest-800 underline">
             contact page
           </Link>

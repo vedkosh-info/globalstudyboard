@@ -60,7 +60,10 @@ export default function ScholarshipsIndexPage() {
         </h1>
         <p className="text-stone-700 text-lg leading-relaxed">
           Scholarships and fellowships can cut the cost of a degree — from government portals to
-          university and foundation awards. Each programme sets its own eligibility, documents and
+          university and foundation awards.
+        </p>
+        <p className="text-stone-700 text-lg leading-relaxed mt-3">
+          Each programme sets its own eligibility, documents and
           deadlines, and these change every cycle. We point you to the official programme and link
           its official source; always confirm the current details there before you apply.
         </p>
@@ -73,7 +76,10 @@ export default function ScholarshipsIndexPage() {
         <p className="m-0 text-sm leading-relaxed text-stone-700">
           <span className="font-semibold text-ink">Apply through official channels only.</span>{' '}
           Legitimate scholarships never charge a fee to &ldquo;guarantee&rdquo; selection or ask you
-          to pay an agent for a result. No one can promise you an award — selection rests with the
+          to pay an agent for a result.
+        </p>
+        <p className="mt-2 mb-0 text-sm leading-relaxed text-stone-700">
+          No one can promise you an award — selection rests with the
           awarding body. Verify every requirement and deadline on the programme&rsquo;s official site.
         </p>
       </div>

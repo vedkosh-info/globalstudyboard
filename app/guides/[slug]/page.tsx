@@ -32,6 +32,7 @@ import { gsbAiHref } from '@/lib/gsb-ai-links';
 import { scholarshipForGuide } from '@/lib/scholarship-catalogue';
 import TrackScholarshipLink from '@/components/TrackScholarshipLink';
 import IntentLink from '@/components/IntentLink';
+import Prose from '@/components/Prose';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -65,10 +66,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-/** Split prose into paragraphs on blank lines. */
-function paragraphs(body: string): string[] {
-  return body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
-}
 
 export default async function GuideDetailPage({ params }: Props) {
   const { slug } = await params;
@@ -302,11 +299,7 @@ export default async function GuideDetailPage({ params }: Props) {
               <h2 className="font-display text-2xl md:text-3xl font-bold tracking-editorial text-ink mb-3">
                 {section.headingEn}
               </h2>
-              {paragraphs(section.bodyEn).map((p, j) => (
-                <p key={j} className="text-stone-800 text-base leading-relaxed mb-3">
-                  {p}
-                </p>
-              ))}
+              <Prose text={section.bodyEn} className="text-stone-800 text-base leading-relaxed mb-3" />
               {section.bullets && section.bullets.length > 0 && (
                 <ul className="list-disc pl-5 space-y-1.5 text-stone-800 text-base leading-relaxed">
                   {section.bullets.map((b, k) => (
@@ -333,7 +326,9 @@ export default async function GuideDetailPage({ params }: Props) {
                   className="bg-cream-50 border border-stone-200 rounded-2xl p-5 scroll-mt-2"
                 >
                   <h3 className="font-semibold text-ink text-base mb-2 m-0">{f.questionEn}</h3>
-                  <p className="text-stone-700 text-base leading-relaxed m-0">{f.answerEn}</p>
+                  <div className="flex flex-col gap-2">
+                    <Prose text={f.answerEn} className="text-stone-700 text-base leading-relaxed m-0" />
+                  </div>
                 </div>
               </AudienceGate>
             ))}
@@ -347,28 +342,27 @@ export default async function GuideDetailPage({ params }: Props) {
           Official sources
         </p>
         <p className="text-stone-700 text-sm leading-relaxed m-0">
-          This guide explains the process and is for guidance only. Eligibility, dates, fees and
-          rules change every year — always confirm the current details on the official site before
-          you act.
+          This guide is for guidance only. Eligibility, dates, fees and rules change every year, so
+          confirm them on the official site before you act.
         </p>
         {guide.sources.length > 0 && (
-          <p className="text-stone-600 text-sm leading-relaxed m-0">
-            Verified against:{' '}
-            {guide.sources.map((s, i) => (
-              <span key={s.url}>
-                {i > 0 && '; '}
-                <a
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-forest-700 underline"
-                >
-                  {s.label}
-                </a>
-              </span>
-            ))}
-            .
-          </p>
+          <div className="text-stone-600 text-sm leading-relaxed">
+            <p className="m-0">Verified against:</p>
+            <ul className="m-0 mt-1 list-disc space-y-1 pl-5">
+              {guide.sources.map((s) => (
+                <li key={s.url}>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-forest-700 underline"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
         <p className="text-stone-500 text-xs leading-relaxed m-0">
           Last verified: {formatReviewed(guide.lastVerified).display}.

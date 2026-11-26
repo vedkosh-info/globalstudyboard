@@ -24,6 +24,7 @@ import { breadcrumbsFor } from '@/lib/cmi';
 import { SITE_REVIEWED, SITE_LASTMOD, formatReviewed } from '@/lib/site-meta';
 import { pageMetadata, ogImageFor, absoluteImageUrl, CYCLE_SHORT, EDITORIAL_TEAM_LD, PUBLISHER_LD } from '@/lib/seo';
 import { gsbAiHref } from '@/lib/gsb-ai-links';
+import Prose from '@/components/Prose';
 
 /**
  * `mode` is the delivery MEDIUM (see EntranceExam.mode): a bare "Online" read as
@@ -366,9 +367,13 @@ export default async function ExamDetailPage({ params }: Props) {
         priority
       />
 
-      <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
-        {exam.descriptionEn}
-      </p>
+      <div className="flex flex-col gap-3">
+        <Prose
+          text={exam.descriptionEn}
+          firstClassName="editorial-lede text-stone-800 text-lg leading-relaxed m-0"
+          className="text-stone-800 text-base leading-relaxed m-0"
+        />
+      </div>
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <LastUpdated date={modified ?? SITE_REVIEWED} />

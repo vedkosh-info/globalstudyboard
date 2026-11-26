@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import type { College } from '@/lib/colleges';
-import { SPECIALIZATION_LABELS } from '@/lib/college-taxonomy';
+import { categoryForFilter, SPECIALIZATION_LABELS } from '@/lib/college-taxonomy';
 import { categoryRowLabel, qsChip } from '@/lib/college-labels';
+import IntentLink from '@/components/IntentLink';
 
 export default function CollegeDirectoryRow({
   c,
@@ -19,19 +19,22 @@ export default function CollegeDirectoryRow({
     <li
       id={`college-${c.slug}`}
       data-slug={c.slug}
+      data-category={categoryForFilter(c) ?? undefined}
+      data-fields={specs.length > 0 ? specs.join(' ') : undefined}
       className="m-0 border-b border-stone-200 py-4 last:border-b-0"
     >
       <div className="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
         <div className="min-w-0">
-          <Link
+          <IntentLink
             href={`/colleges/${c.slug}`}
             className="text-base font-semibold leading-snug text-ink no-underline transition-colors hover:text-forest-700"
           >
             {c.nameEn}
-          </Link>
+          </IntentLink>
           <span className="mt-0.5 block text-sm text-stone-600 sm:mt-0 sm:ml-2.5 sm:inline">
             {c.city}
-            {c.state ? `, ${c.state}` : ''} · Est. {c.established}
+            {c.state ? `, ${c.state}` : ''}
+            {c.established !== undefined ? ` · ${c.establishmentLabel ?? 'Est.'} ${c.established}` : ''}
           </span>
         </div>
         <div className="flex shrink-0 flex-wrap items-center gap-1.5">

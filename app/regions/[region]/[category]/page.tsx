@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight, Clock } from 'lucide-react';
 
-import { getRegionBySlug, matchesRegion, resolveDisplayRegions, REGION_SLUGS, type RegionSlug } from '@/lib/regions';
+import { getRegionBySlug, matchesRegion, REGION_SLUGS, type RegionSlug } from '@/lib/regions';
 import {
   REGION_CATEGORIES,
   isRegionCategory,
@@ -13,20 +13,16 @@ import {
   type RegionCategory,
 } from '@/lib/region-nav';
 import { COLLEGES } from '@/lib/colleges';
-import {
-  CATEGORY_ROW_LABELS,
-  COLLEGE_CATEGORIES,
-  SPECIALIZATIONS,
-  SPECIALIZATION_LABELS,
-  categoryForFilter,
-} from '@/lib/college-taxonomy';
 import { ENTRANCE_EXAMS, type EntranceExam } from '@/lib/admission-guides';
 import { GUIDES, type Guide } from '@/lib/guides';
 import { topicsForGuide } from '@/lib/topic-guides';
 import { tracksForRegion, trackForTopic, trackHref } from '@/lib/tracks';
 import { itemListLd } from '@/lib/structured-data';
-import CollegeDirectoryFilter, { type CollegeFilterRow } from '@/components/CollegeDirectoryFilter';
-import CollegeDirectoryRow from '@/components/CollegeDirectoryRow';
+import CollegeDirectoryFilter from '@/components/CollegeDirectoryFilter';
+import IntentLink from '@/components/IntentLink';
+import PlaceDirectory, { PlaceChips, type PlaceGroup } from '@/components/PlaceDirectory';
+import { placeHref, placeKind, placeRoots } from '@/lib/college-places';
+import { USA_CENSUS_REGIONS } from '@/lib/place-registry';
 import RegionRail from '@/components/RegionRail';
 import PageRegion from '@/components/PageRegion';
 import RegionFlag from '@/components/RegionFlag';
@@ -39,16 +35,6 @@ import { gsbAiHref } from '@/lib/gsb-ai-links';
 import { DIRECTORY_UI } from '@/lib/directory-ui';
 
 const BASE = 'https://www.globalstudyboard.com';
-
-const CATEGORY_OPTIONS = COLLEGE_CATEGORIES.map((value) => ({
-  value,
-  label: CATEGORY_ROW_LABELS[value],
-}));
-
-const FIELD_OPTIONS = SPECIALIZATIONS.map((value) => ({
-  value,
-  label: SPECIALIZATION_LABELS[value],
-}));
 
 interface Props {
   params: Promise<{ region: string; category: string }>;
@@ -133,16 +119,30 @@ export default async function RegionCategoryPage({ params }: Props) {
           a.nameEn.localeCompare(b.nameEn),
         )
       : [];
-  const universityFilterRows: CollegeFilterRow[] =
-    category === 'universities'
-      ? universities.map((c) => ({
-          slug: c.slug,
-          region: c.region,
-          regions: resolveDisplayRegions(c.region, c.regions),
-          category: categoryForFilter(c),
-          specializations: c.specializations ?? [],
-        }))
-      : [];
+  // Rows grouped by the first place level: countries for a multi-country
+  // destination, states for a one-country one. A college listed here from
+  // another destination (`regions[]`) sits in a trailing group.
+  const placeRootsHere = category === 'universities' ? placeRoots(slug) : [];
+  const placedSlugs = new Set(placeRootsHere.flatMap((p) => p.colleges.map((c) => c.slug)));
+  const unplaced = universities.filter((c) => !placedSlugs.has(c.slug));
+  const universityGroups: PlaceGroup[] = [
+    ...placeRootsHere.map((p) => ({
+      key: p.segments.join('-'),
+      heading: p.label,
+      href: p.published ? placeHref(p) : undefined,
+      colleges: p.colleges,
+    })),
+    ...(unplaced.length > 0
+      ? [{ key: 'more', heading: `Also listed for ${r.proseName}`, colleges: unplaced }]
+      : []),
+  ];
+  const placeChips = placeRootsHere
+    .filter((p) => p.published || slug === 'usa')
+    .map((p) => {
+      const key = p.segments.join('-');
+      return { key, label: p.name, href: p.published ? placeHref(p) : `#place-${key}`, count: p.colleges.length };
+    });
+
   const exams =
     category === 'exams' ? ENTRANCE_EXAMS.filter((e) => matchesRegion(slug, e.region, e.regions)) : [];
   const guides =
@@ -280,25 +280,35 @@ export default async function RegionCategoryPage({ params }: Props) {
 
         {/* Universities */}
         {category === 'universities' && count > 0 && (
-          <CollegeDirectoryFilter
-            rows={universityFilterRows}
-            scope="region"
-            pageRegion={slug}
-            categoryOptions={CATEGORY_OPTIONS}
-            fieldOptions={FIELD_OPTIONS}
-          >
-            <section
-              id={`universities-${slug}`}
-              data-region-section={slug}
-              aria-label={`${label} in ${r.displayName}`}
-              className="rounded-2xl border border-stone-200 bg-white px-5 py-4 sm:px-6"
-            >
-              <ul className="m-0 list-none p-0">
-                {universities.map((c) => (
-                  <CollegeDirectoryRow key={c.slug} c={c} showTests />
+          slug === 'usa' ? (
+            <details className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-5">
+              <summary className="cursor-pointer text-base font-semibold text-ink">Browse states and D.C.</summary>
+              <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                {USA_CENSUS_REGIONS.map(({ label: censusRegion, subdivisions }) => (
+                  <PlaceChips
+                    key={censusRegion}
+                    title={censusRegion}
+                    places={placeChips.filter((place) => subdivisions.includes(place.key))}
+                  />
                 ))}
-              </ul>
-            </section>
+              </div>
+              <a
+                href="https://www.census.gov/data/data-tools/survey-explorer/geo.html"
+                className="mt-4 inline-block text-sm text-forest-700 underline underline-offset-2"
+              >
+                U.S. Census regions
+              </a>
+            </details>
+          ) : (
+            <PlaceChips title={`Browse by ${placeKind(placeRootsHere).one}`} places={placeChips} />
+          )
+        )}
+
+        {category === 'universities' && count > 0 && (
+          <CollegeDirectoryFilter key={slug} totalCount={universities.length}>
+            <div id={`universities-${slug}`}>
+              <PlaceDirectory groups={universityGroups} label={`${label} in ${r.displayName}`} />
+            </div>
           </CollegeDirectoryFilter>
         )}
 
@@ -338,9 +348,9 @@ export default async function RegionCategoryPage({ params }: Props) {
                 <ul className="m-0 grid list-none grid-cols-1 gap-x-8 p-0 lg:grid-cols-2">
                   {grp.items.map((g) => (
                     <li key={g.slug} className="m-0 border-b border-stone-200">
-                      <Link href={`/guides/${g.slug}`} className="block py-4 text-base font-medium leading-relaxed text-ink no-underline transition-colors hover:text-forest-700">
+                      <IntentLink href={`/guides/${g.slug}`} className="block py-4 text-base font-medium leading-relaxed text-ink no-underline transition-colors hover:text-forest-700">
                         {g.titleEn}
-                      </Link>
+                      </IntentLink>
                     </li>
                   ))}
                 </ul>

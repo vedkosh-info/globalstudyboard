@@ -30,6 +30,7 @@ import {
   compareCsv,
   defaultSetLabel,
   entryResult,
+  foundingMilestone,
   isScale,
   mostRecentSet,
   sortByScore,
@@ -1720,8 +1721,8 @@ function FactRows({ ordered, facts, factsDown }: { ordered: CompareEntry[]; fact
     },
     { label: 'Application platform', render: (f) => f.applicationPlatform ?? <span className="text-stone-500">Not stated on the profile</span> },
     { label: 'Programme levels', render: (f) => f.levels.join(', ') },
-    { label: 'Language of instruction', render: (f) => f.language },
-    { label: 'Established', render: (f) => String(f.established) },
+    { label: 'Language of instruction', render: (f) => f.language ?? '—' },
+    { label: 'Founding milestone', render: (f) => foundingMilestone(f) ?? '—' },
     ...(anyCourses
       ? [
           {

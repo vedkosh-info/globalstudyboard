@@ -40,10 +40,10 @@ export default function robots(): MetadataRoute.Robots {
         // crawlable; only their ?q= variants are excluded to save crawl budget.
         // /gsb-ai with no query stays allowed so Google can see the 301 to /ask.
         // /auth (the sign-in callback, no HTML) and /admin (owner console) are
-        // blocked outright. /account and /login are NOT listed here on purpose:
+        // blocked outright. /account, /login and the base /search stay crawlable:
         // they carry `noindex`, and a robots-blocked URL can never have its
         // noindex read — leaving them crawlable is what keeps them out of the index.
-        disallow: ['/api/', '/auth/', '/admin', '/gsb-ai?*', '/ask?*', '/search', '/search?*'],
+        disallow: ['/api/', '/auth/', '/admin', '/gsb-ai?*', '/ask?*', '/search?*'],
       },
       { userAgent: BULK_AND_TRAINING_CRAWLERS, disallow: '/' },
       { userAgent: META_AI_SEARCH_CRAWLER, disallow: '/' },

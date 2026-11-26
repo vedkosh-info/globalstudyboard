@@ -5,12 +5,13 @@
   "description": "GlobalStudyBoard — World college admission guide and query platform",
   "scripts": {
     "dev": "next dev -p ${PORT:-5000}",
-    "prebuild": "tsx scripts/check-images.ts && tsx scripts/check-tools.ts && tsx scripts/check-application-check.ts && tsx scripts/check-colleges.ts",
+    "prebuild": "tsx scripts/check-images.ts && tsx scripts/check-tools.ts && tsx scripts/check-application-check.ts && tsx scripts/check-colleges.ts && tsx scripts/check-places.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "colleges:check": "tsx scripts/check-colleges.ts",
+    "places:check": "tsx scripts/check-places.ts",
     "cmi:validate": "tsx scripts/cmi.ts",
     "cmi:build": "tsx scripts/cmi.ts --build",
     "dup:check": "tsx scripts/dupcheck.ts",
@@ -18,6 +19,7 @@
     "find-home": "tsx scripts/find-home.ts",
     "links:check": "tsx scripts/linkcheck.ts",
     "images:check": "tsx scripts/check-images.ts",
+    "seo:check": "tsx scripts/check-seo-titles.ts",
     "tools:check": "tsx scripts/check-tools.ts",
     "scholarships:check": "tsx scripts/qa/scholarship-domain.spec.ts && tsx scripts/qa/tool-handoff.spec.ts && tsx scripts/scholarship-integration-qa.ts",
     "applications:check": "tsx scripts/check-application-check.ts && tsx scripts/qa/application-check.spec.ts && tsx scripts/qa/application-check-planner.spec.ts"

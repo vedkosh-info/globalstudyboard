@@ -33,6 +33,7 @@ import { SITE_REVIEWED } from '@/lib/site-meta';
 import { TOOLS, toolHref } from '@/lib/tools';
 import ToolLink from '@/components/tools/ToolLink';
 import { DESTINATION_BUDGETS } from '@/lib/cost-planner';
+import Prose from '@/components/Prose';
 
 interface Props {
   params: Promise<{ region: string }>;
@@ -182,9 +183,13 @@ export default async function RegionHubPage({ params }: Props) {
         <ContentImage asset={regionImage(r.slug)} variant="hero" layout="section" priority className="my-6" />
 
           <div className="max-w-4xl">
-          <p className="editorial-lede text-stone-700 text-lg leading-relaxed">
-            {r.educationSystemSummary}
-          </p>
+          <div className="flex flex-col gap-3">
+            <Prose
+              text={r.educationSystemSummary}
+              firstClassName="editorial-lede text-stone-700 text-lg leading-relaxed m-0"
+              className="text-stone-700 text-base leading-relaxed m-0"
+            />
+          </div>
           {/*
             The places this destination actually covers, named in full. The
             eyebrow above says "N countries & territories" — the neutral phrasing
@@ -291,12 +296,13 @@ export default async function RegionHubPage({ params }: Props) {
                 Home student of {r.proseName}?
               </p>
               <p className="m-0 text-sm leading-relaxed text-stone-700">
-                GlobalStudyBoard is built for international students applying to {r.proseName}. If you
-                are a citizen or resident, you usually apply as a domestic student — tuition is typically
-                lower, you may qualify for home-student finance, and you do not need a student visa. We
-                don&rsquo;t cover the domestic home-student route in depth; for fees, funding and the
-                home-student application process, use the official {r.displayName} government and
-                university sources
+                This site is written for international students applying to {r.proseName}. Citizens and
+                residents usually apply as domestic students: tuition is often lower and no student visa
+                is needed.
+              </p>
+              <p className="m-0 mt-2 text-sm leading-relaxed text-stone-700">
+                For home-student fees, funding and applications, use the official {r.displayName}{' '}
+                government and university sources
                 {r.primaryApplicationPlatform
                   ? ` (for example ${r.primaryApplicationPlatform.split('/')[0].split('(')[0].trim()})`
                   : ''}
@@ -373,7 +379,8 @@ export default async function RegionHubPage({ params }: Props) {
                     )}
                   </div>
                   <p className="text-stone-500 text-xs mb-3">
-                    {c.city}{c.state ? `, ${c.state}` : ''} · Est. {c.established}
+                    {c.city}{c.state ? `, ${c.state}` : ''}
+                    {c.established !== undefined ? ` · Est. ${c.established}` : ''}
                   </p>
                   <p className="text-stone-700 text-sm leading-relaxed mb-4 line-clamp-3">
                     {c.descriptionEn}
@@ -511,7 +518,9 @@ export default async function RegionHubPage({ params }: Props) {
                       +
                     </span>
                   </summary>
-                  <p className="m-0 mt-3 text-base leading-relaxed text-stone-700">{f.a}</p>
+                  <div className="mt-3 flex flex-col gap-2">
+                    <Prose text={f.a} className="m-0 text-base leading-relaxed text-stone-700" />
+                  </div>
                 </details>
               </AudienceGate>
             ))}
@@ -565,9 +574,8 @@ export default async function RegionHubPage({ params }: Props) {
             Plan your studies in {r.proseName}
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-stone-700">
-            Each tool opens on the destination you have chosen in the header or, if you have not chosen one, on{' '}
-            {r.proseName}. Use a free account to check a reviewed programme or keep track of your plans. Confirm
-            requirements, dates and costs on the official site for your intake.
+            Each tool opens on {r.proseName} unless you pick another destination in the header. Use a free
+            account to keep your plans, and confirm requirements, dates and costs on the official site.
           </p>
           <ul className="mt-5 grid list-none gap-4 p-0 m-0 sm:grid-cols-2 lg:grid-cols-3">
             {TOOLS.map((tool) => (

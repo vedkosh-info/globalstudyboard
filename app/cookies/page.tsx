@@ -124,7 +124,10 @@ export default function CookiesPage() {
       <Section title="What cookies are">
         <p>
           Cookies are small text files a website stores on your device to make it work, remember your
-          preferences, and understand how it is used. Similar technologies (such as local storage)
+          preferences, and understand how it is used.
+        </p>
+        <p>
+          Similar technologies (such as local storage)
           are covered by this policy too. We keep our use of them to the minimum needed to run and
           improve the site.
         </p>
@@ -169,13 +172,19 @@ export default function CookiesPage() {
         <p>
           We display advertising through <strong>Google AdSense</strong>. Google and its partners may
           use cookies to serve and, where permitted, personalise ads based on your visits to this and
-          other sites. We do not sell your personal information for money; some privacy laws (such as
+          other sites.
+        </p>
+        <p>
+          We do not sell your personal information for money; some privacy laws (such as
           California&rsquo;s CCPA/CPRA) treat the use of advertising cookies for personalised ads as a
           &ldquo;sale&rdquo; or &ldquo;share&rdquo;, which you can limit using the choices below.
         </p>
         <p>
           Cookie-consent requirements vary by region — for example, visitors in the EEA and the UK
-          must be able to consent to non-essential cookies before they are used. Where such a choice
+          must be able to consent to non-essential cookies before they are used.
+        </p>
+        <p>
+          Where such a choice
           applies, you can accept or decline non-essential cookies and change your decision at any
           time.
         </p>
@@ -244,6 +253,8 @@ export default function CookiesPage() {
       <Section title="Changes &amp; contact">
         <p>
           We may update this policy as the site evolves; the date above reflects the latest revision.
+        </p>
+        <p>
           Questions about cookies? Email us at{' '}
           <a
             href={`mailto:${CONTACT_EMAIL}`}

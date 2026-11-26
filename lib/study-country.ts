@@ -44,6 +44,7 @@ export const REGION_COUNTRY_NAME: Record<CollegeCountry, string | null> = {
   oman: 'Oman',
   bahrain: 'Bahrain',
   kuwait: 'Kuwait',
+  jordan: null,
   israel: null,
   singapore: 'Singapore',
   'hong-kong': 'Hong Kong',

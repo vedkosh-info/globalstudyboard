@@ -1,4 +1,4 @@
-import { COLLEGES, COLLEGE_COUNTRY_INFO } from '@/lib/colleges';
+import { COLLEGES, COLLEGE_COUNTRY_INFO, type College } from '@/lib/colleges';
 import { SPECIALIZATION_LABELS } from '@/lib/college-taxonomy';
 import { LEVEL_LABELS, categoryLabel, collegeRankings, type AttributedRanking } from '@/lib/college-labels';
 import type { RegionSlug } from '@/lib/regions';
@@ -22,14 +22,15 @@ export interface CompareFacts {
   country: string | null;
   /** "City, State, Country" / "City, Country". */
   place: string;
-  established: number;
+  established: number | null;
+  establishmentLabel?: College['establishmentLabel'];
   type: string;
   rankings: AttributedRanking[];
   admissionTests: string[];
   applicationPlatform: string | null;
   levels: string[];
   /** Ready-worded instruction line (`instructionNote.text`, else "English-taught" / "Local language"). */
-  language: string;
+  language: string | null;
   /** Specialization labels derived from `organisation` (`[]` on legacy records). */
   specializations: string[];
   url: string | null;
@@ -43,13 +44,16 @@ export function compareCatalogue(): CompareFacts[] {
     region: c.region,
     country: REGION_COUNTRY_NAME[c.country],
     place: [c.city, c.state, COLLEGE_COUNTRY_INFO[c.country].label].filter(Boolean).join(', '),
-    established: c.established,
+    established: c.established ?? null,
+    establishmentLabel: c.establishmentLabel,
     type: categoryLabel(c),
     rankings: collegeRankings(c),
     admissionTests: c.admissionExams,
     applicationPlatform: c.applicationPlatform ?? null,
     levels: c.programLevels.map((l) => LEVEL_LABELS[l] ?? l),
-    language: c.instructionNote?.text ?? (c.englishTaught ? 'English-taught' : 'Local language'),
+    language: c.instructionNote?.text ?? (
+      c.englishTaught === undefined ? null : c.englishTaught ? 'English-taught' : 'Local language'
+    ),
     specializations: (c.specializations ?? []).map((s) => SPECIALIZATION_LABELS[s]),
     url: c.websiteUrl ?? null,
     courses: c.courses,

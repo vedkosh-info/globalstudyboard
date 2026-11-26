@@ -5675,7 +5675,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P5: Guide[] = [
       "duolingo-english-test"
     ],
     "relatedCollegeSlugs": [
-      "university-of-the-philippines"
+      "mapua-university",
+      "university-of-the-philippines",
+      "silliman-university"
     ],
     "relatedGuideSlugs": [
       "far-eastern-university-feu-admission-guide",
@@ -5700,6 +5702,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P5: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-15",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "mapua university admission",
       "mapua university international students",
@@ -5941,7 +5944,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P5: Guide[] = [
       "duolingo-english-test"
     ],
     "relatedCollegeSlugs": [
-      "university-of-the-philippines"
+      "silliman-university",
+      "university-of-the-philippines",
+      "mapua-university"
     ],
     "relatedGuideSlugs": [
       "university-of-san-carlos-admission-guide",
@@ -5967,7 +5972,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P5: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-15",
-    "contentUpdated": "2026-09-29",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "silliman university admission",
       "silliman university international students",
@@ -27171,7 +27176,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P4: Guide[] = [
       "duolingo-english-test"
     ],
     "relatedCollegeSlugs": [
-      "chulalongkorn-university"
+      "chiang-mai-university",
+      "chulalongkorn-university",
+      "mahidol-university"
     ],
     "relatedGuideSlugs": [
       "international-programs-and-universities-in-thailand",
@@ -27194,6 +27201,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P4: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-13",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Chiang Mai University admission",
       "CMU international programs",
@@ -33220,8 +33228,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "ielts"
     ],
     "relatedCollegeSlugs": [
-      "university-of-tokyo",
-      "kyoto-university"
+      "waseda-university",
+      "keio-university",
+      "university-of-tokyo"
     ],
     "relatedGuideSlugs": [
       "keio-university-admission-guide",
@@ -33244,6 +33253,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Waseda University admission",
       "SILS Waseda",
@@ -33353,8 +33363,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "act"
     ],
     "relatedCollegeSlugs": [
-      "university-of-tokyo",
-      "kyoto-university"
+      "keio-university",
+      "waseda-university",
+      "university-of-tokyo"
     ],
     "relatedGuideSlugs": [
       "waseda-university-admission-guide",
@@ -33377,6 +33388,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Keio University admission",
       "PEARL Keio",
@@ -33485,9 +33497,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "gre"
     ],
     "relatedCollegeSlugs": [
+      "institute-of-science-tokyo",
       "university-of-tokyo",
       "kyoto-university",
-      "osaka-university"
+      "tohoku-university"
     ],
     "relatedGuideSlugs": [
       "research-student-and-graduate-study-route-in-japan",
@@ -33510,6 +33523,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Institute of Science Tokyo admission",
       "Science Tokyo",
@@ -33618,6 +33632,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "ielts"
     ],
     "relatedCollegeSlugs": [
+      "tohoku-university",
       "university-of-tokyo",
       "kyoto-university",
       "osaka-university"
@@ -33643,6 +33658,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Tohoku University admission",
       "FGL Tohoku",
@@ -33751,6 +33767,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "ielts"
     ],
     "relatedCollegeSlugs": [
+      "nagoya-university",
       "university-of-tokyo",
       "kyoto-university",
       "osaka-university"
@@ -33776,6 +33793,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Nagoya University admission",
       "G30 Nagoya",
@@ -34028,9 +34046,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "duolingo-english-test"
     ],
     "relatedCollegeSlugs": [
+      "hokkaido-university",
+      "kyushu-university",
       "university-of-tokyo",
-      "kyoto-university",
-      "osaka-university"
+      "kyoto-university"
     ],
     "relatedGuideSlugs": [
       "study-in-japan-in-english-sgu-and-g30-programs",
@@ -34053,6 +34072,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Hokkaido University admission",
       "Kyushu University admission",
@@ -36916,8 +36936,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "sat"
     ],
     "relatedCollegeSlugs": [
-      "national-university-of-singapore",
-      "nanyang-technological-university"
+      "singapore-university-of-technology-and-design",
+      "nanyang-technological-university",
+      "national-university-of-singapore"
     ],
     "relatedGuideSlugs": [
       "national-university-of-singapore-admission-guide",
@@ -36948,6 +36969,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "SUTD admission",
       "singapore university of technology and design",
@@ -39636,8 +39658,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "ielts"
     ],
     "relatedCollegeSlugs": [
-      "seoul-national-university",
-      "kaist"
+      "korea-university",
+      "yonsei-university",
+      "seoul-national-university"
     ],
     "relatedGuideSlugs": [
       "korea-university-vs-yonsei-university-how-to-choose",
@@ -39672,6 +39695,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Korea University admission",
       "Korea University international students",
@@ -39802,8 +39826,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "ielts"
     ],
     "relatedCollegeSlugs": [
-      "seoul-national-university",
-      "kaist"
+      "yonsei-university",
+      "korea-university",
+      "seoul-national-university"
     ],
     "relatedGuideSlugs": [
       "korea-university-vs-yonsei-university-how-to-choose",
@@ -39834,6 +39859,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Yonsei University admission",
       "Underwood International College",
@@ -39959,6 +39985,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "ielts"
     ],
     "relatedCollegeSlugs": [
+      "postech",
       "kaist",
       "seoul-national-university"
     ],
@@ -39983,7 +40010,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
-    "contentUpdated": "2026-09-30",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "POSTECH admission",
       "POSTECH international students",
@@ -40105,8 +40132,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "ielts"
     ],
     "relatedCollegeSlugs": [
+      "sungkyunkwan-university",
       "seoul-national-university",
-      "kaist"
+      "yonsei-university",
+      "korea-university"
     ],
     "relatedGuideSlugs": [
       "hanyang-university-admission-guide",
@@ -40133,6 +40162,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Sungkyunkwan University admission",
       "SKKU international students",
@@ -40597,8 +40627,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "ielts"
     ],
     "relatedCollegeSlugs": [
-      "seoul-national-university",
-      "kaist"
+      "korea-university",
+      "yonsei-university",
+      "seoul-national-university"
     ],
     "relatedGuideSlugs": [
       "korea-university-admission-guide",
@@ -40625,6 +40656,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Korea University vs Yonsei",
       "Yonsei vs Korea University",
@@ -42486,8 +42518,11 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "act"
     ],
     "relatedCollegeSlugs": [
+      "chinese-university-of-hong-kong",
       "university-of-hong-kong",
-      "hong-kong-university-of-science-and-technology"
+      "hong-kong-university-of-science-and-technology",
+      "hong-kong-polytechnic-university",
+      "hong-kong-baptist-university"
     ],
     "relatedGuideSlugs": [
       "non-jupas-application-route-for-hong-kong-universities-explained",
@@ -42510,6 +42545,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "cuhk admission",
       "chinese university of hong kong international students",
@@ -42738,8 +42774,11 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "act"
     ],
     "relatedCollegeSlugs": [
+      "hong-kong-polytechnic-university",
       "university-of-hong-kong",
-      "hong-kong-university-of-science-and-technology"
+      "hong-kong-university-of-science-and-technology",
+      "chinese-university-of-hong-kong",
+      "hong-kong-baptist-university"
     ],
     "relatedGuideSlugs": [
       "non-jupas-application-route-for-hong-kong-universities-explained",
@@ -42762,6 +42801,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "polyu admission",
       "hong kong polytechnic university international students",
@@ -42857,8 +42897,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "act"
     ],
     "relatedCollegeSlugs": [
+      "hong-kong-baptist-university",
       "university-of-hong-kong",
-      "hong-kong-university-of-science-and-technology"
+      "chinese-university-of-hong-kong",
+      "hong-kong-polytechnic-university"
     ],
     "relatedGuideSlugs": [
       "non-jupas-application-route-for-hong-kong-universities-explained",
@@ -42885,6 +42927,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "hkbu admission",
       "hong kong baptist university international students",
@@ -43376,7 +43419,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "ielts"
     ],
     "relatedCollegeSlugs": [
-      "national-taiwan-university"
+      "national-cheng-kung-university",
+      "national-taiwan-university",
+      "national-tsing-hua-university",
+      "national-yang-ming-chiao-tung-university"
     ],
     "relatedGuideSlugs": [
       "taiwan-university-admission-for-international-students",
@@ -43399,7 +43445,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
-    "contentUpdated": "2026-09-30",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "ncku admission",
       "national cheng kung university international students",
@@ -43516,7 +43562,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "gre"
     ],
     "relatedCollegeSlugs": [
-      "national-taiwan-university"
+      "national-tsing-hua-university",
+      "national-taiwan-university",
+      "national-yang-ming-chiao-tung-university",
+      "national-cheng-kung-university"
     ],
     "relatedGuideSlugs": [
       "national-yang-ming-chiao-tung-university-admission-guide",
@@ -43547,7 +43596,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
-    "contentUpdated": "2026-09-30",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "nthu admission",
       "national tsing hua university taiwan",
@@ -43658,7 +43707,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "gre"
     ],
     "relatedCollegeSlugs": [
-      "national-taiwan-university"
+      "national-yang-ming-chiao-tung-university",
+      "national-taiwan-university",
+      "national-tsing-hua-university",
+      "national-cheng-kung-university"
     ],
     "relatedGuideSlugs": [
       "national-tsing-hua-university-taiwan-admission-guide",
@@ -43681,6 +43733,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "nycu admission",
       "national yang ming chiao tung university",
@@ -44444,6 +44497,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "pte-academic"
     ],
     "relatedCollegeSlugs": [
+      "universiti-putra-malaysia",
+      "universiti-kebangsaan-malaysia",
+      "universiti-sains-malaysia",
       "universiti-malaya"
     ],
     "relatedGuideSlugs": [
@@ -44470,6 +44526,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "UPM admission",
       "UKM admission",
@@ -45416,7 +45473,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "pte-academic"
     ],
     "relatedCollegeSlugs": [
-      "chulalongkorn-university"
+      "mahidol-university",
+      "chulalongkorn-university",
+      "chiang-mai-university"
     ],
     "relatedGuideSlugs": [
       "chulalongkorn-university-admission-guide",
@@ -45445,7 +45504,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
-    "contentUpdated": "2026-09-29",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Mahidol University admission",
       "MUIC",
@@ -46475,6 +46534,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "toefl"
     ],
     "relatedCollegeSlugs": [
+      "zhejiang-university",
       "tsinghua-university",
       "peking-university"
     ],
@@ -46498,6 +46558,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Zhejiang University admission",
       "ZJU international students",
@@ -46597,8 +46658,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "gre"
     ],
     "relatedCollegeSlugs": [
+      "university-of-science-and-technology-of-china",
       "tsinghua-university",
-      "peking-university"
+      "peking-university",
+      "zhejiang-university"
     ],
     "relatedGuideSlugs": [
       "shanghai-jiao-tong-university-admission-for-international-students",
@@ -46620,6 +46683,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "USTC admission",
       "University of Science and Technology of China",
@@ -46723,8 +46787,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       "toefl"
     ],
     "relatedCollegeSlugs": [
+      "nanjing-university",
       "tsinghua-university",
-      "peking-university"
+      "peking-university",
+      "zhejiang-university"
     ],
     "relatedGuideSlugs": [
       "zhejiang-university-admission-for-international-students",
@@ -46750,6 +46816,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P3: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Nanjing University admission",
       "NJU international students",
@@ -53614,7 +53681,11 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       "toefl",
       "sat"
     ],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": [
+      "national-university-of-singapore",
+      "nanyang-technological-university",
+      "singapore-university-of-technology-and-design"
+    ],
     "relatedGuideSlugs": [
       "nanyang-technological-university-admission-guide",
       "national-university-of-singapore-vs-ntu-how-to-choose",
@@ -53640,6 +53711,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "NUS admission",
       "national university of singapore application",
@@ -53738,7 +53810,11 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       "toefl",
       "sat"
     ],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": [
+      "nanyang-technological-university",
+      "national-university-of-singapore",
+      "singapore-university-of-technology-and-design"
+    ],
     "relatedGuideSlugs": [
       "national-university-of-singapore-vs-ntu-how-to-choose",
       "national-university-of-singapore-admission-guide",
@@ -53764,6 +53840,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "NTU admission",
       "nanyang technological university application",
@@ -54501,7 +54578,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
     ],
     "relatedCollegeSlugs": [
       "university-of-hong-kong",
-      "hong-kong-university-of-science-and-technology"
+      "hong-kong-university-of-science-and-technology",
+      "chinese-university-of-hong-kong",
+      "hong-kong-polytechnic-university"
     ],
     "relatedGuideSlugs": [
       "how-to-study-in-hong-kong-from-india",
@@ -54523,6 +54602,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "University of Hong Kong admission",
       "HKU international students",
@@ -54635,7 +54715,9 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
     ],
     "relatedCollegeSlugs": [
       "hong-kong-university-of-science-and-technology",
-      "university-of-hong-kong"
+      "university-of-hong-kong",
+      "chinese-university-of-hong-kong",
+      "hong-kong-polytechnic-university"
     ],
     "relatedGuideSlugs": [
       "how-to-study-in-hong-kong-from-india",
@@ -54658,6 +54740,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "HKUST admission",
       "study in Hong Kong",
@@ -59687,7 +59770,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
     ],
     "relatedCollegeSlugs": [
       "seoul-national-university",
-      "kaist"
+      "yonsei-university",
+      "korea-university",
+      "kaist",
+      "postech"
     ],
     "relatedGuideSlugs": [
       "how-korean-university-admission-works",
@@ -59714,7 +59800,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
-    "contentUpdated": "2026-09-29",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "SKY universities Korea",
       "Seoul National University",
@@ -60746,7 +60832,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
     ],
     "relatedCollegeSlugs": [
       "university-of-hong-kong",
-      "hong-kong-university-of-science-and-technology"
+      "hong-kong-university-of-science-and-technology",
+      "chinese-university-of-hong-kong",
+      "hong-kong-polytechnic-university",
+      "hong-kong-baptist-university"
     ],
     "relatedGuideSlugs": [
       "how-to-study-in-hong-kong-from-india",
@@ -60773,6 +60862,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "hong kong university admission",
       "non-jupas route",
@@ -61657,7 +61747,10 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       "toefl"
     ],
     "relatedCollegeSlugs": [
-      "national-taiwan-university"
+      "national-taiwan-university",
+      "national-tsing-hua-university",
+      "national-yang-ming-chiao-tung-university",
+      "national-cheng-kung-university"
     ],
     "relatedGuideSlugs": [
       "how-to-study-in-taiwan-from-india",
@@ -61680,6 +61773,7 @@ const GUIDES_EAST_SOUTHEAST_ASIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-07-12",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "taiwan university admission",
       "international student admission taiwan",
@@ -65855,7 +65949,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["national-university-of-uzbekistan", "westminster-international-university-in-tashkent", "inha-university-in-tashkent", "turin-polytechnic-university-in-tashkent", "webster-university-in-tashkent", "tashkent-university-of-information-technologies"],
     "relatedGuideSlugs": [
       "kazakhstan-unt-and-direct-admission-routes-explained",
       "cis-admission-document-checklist-and-timelines-compared",
@@ -65873,6 +65967,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
+    "contentUpdated": "2026-11-25",
     "keywords": [
       "Uzbekistan admission",
       "study in Uzbekistan",
@@ -67518,7 +67613,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["nazarbayev-university"],
     "relatedGuideSlugs": [
       "al-farabi-kaznu-vs-nazarbayev-which-kazakh-university",
       "how-cis-universities-differ-in-academic-strengths",
@@ -67535,6 +67630,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Nazarbayev University",
       "study in Kazakhstan",
@@ -67631,7 +67727,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["al-farabi-kazakh-national-university", "nazarbayev-university"],
     "relatedGuideSlugs": [
       "nazarbayev-university-kazakhstan-in-depth",
       "how-cis-universities-differ-in-academic-strengths",
@@ -67648,6 +67744,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
+    "contentUpdated": "2026-11-25",
     "keywords": [
       "KazNU vs Nazarbayev University",
       "al-Farabi Kazakh National University",
@@ -67744,7 +67841,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["yerevan-state-medical-university"],
     "relatedGuideSlugs": [
       "how-cis-universities-differ-in-academic-strengths",
       "choosing-between-russia-and-cis-universities",
@@ -67769,6 +67866,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
+    "contentUpdated": "2026-11-23",
     "keywords": [
       "Yerevan State Medical University",
       "MBBS in Armenia",
@@ -67867,7 +67965,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["westminster-international-university-in-tashkent", "inha-university-in-tashkent", "turin-polytechnic-university-in-tashkent", "national-university-of-uzbekistan", "american-university-of-central-asia", "international-higher-school-of-medicine", "kyrgyz-turkish-manas-university", "kyrgyz-national-university"],
     "relatedGuideSlugs": [
       "how-cis-universities-differ-in-academic-strengths",
       "al-farabi-kaznu-vs-nazarbayev-which-kazakh-university",
@@ -67888,7 +67986,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
-    "contentUpdated": "2026-09-30",
+    "contentUpdated": "2026-11-25",
     "keywords": [
       "universities in Uzbekistan",
       "universities in Kyrgyzstan",
@@ -75566,7 +75664,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["lomonosov-moscow-state-university", "higher-school-of-economics", "rudn-university", "sechenov-university", "skoltech", "moscow-polytechnic-university"],
     "relatedGuideSlugs": [
       "student-guide-to-living-in-saint-petersburg",
       "student-life-in-kazan-and-regional-russian-cities",
@@ -75588,7 +75686,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
-    "contentUpdated": "2026-09-30",
+    "contentUpdated": "2026-11-25",
     "keywords": [
       "living in Moscow",
       "Moscow for international students",
@@ -75679,7 +75777,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["saint-petersburg-state-university", "itmo-university", "spbstu", "etu-leti", "north-western-state-medical-university"],
     "relatedGuideSlugs": [
       "student-guide-to-living-in-moscow",
       "student-life-in-kazan-and-regional-russian-cities",
@@ -75701,6 +75799,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
+    "contentUpdated": "2026-11-25",
     "keywords": [
       "living in Saint Petersburg",
       "Saint Petersburg students",
@@ -75791,7 +75890,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["kazan-federal-university", "tomsk-state-university", "tomsk-polytechnic-university", "siberian-state-medical-university", "samara-university", "privolzhsky-research-medical-university", "far-eastern-federal-university"],
     "relatedGuideSlugs": [
       "student-guide-to-living-in-moscow",
       "student-guide-to-living-in-saint-petersburg",
@@ -75809,7 +75908,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
-    "contentUpdated": "2026-09-30",
+    "contentUpdated": "2026-11-25",
     "keywords": [
       "student life Kazan",
       "regional Russian cities",
@@ -75905,7 +76004,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["al-farabi-kazakh-national-university", "kazakh-national-medical-university", "almaty-management-university", "westminster-international-university-in-tashkent", "inha-university-in-tashkent", "webster-university-in-tashkent"],
     "relatedGuideSlugs": [
       "student-guide-to-living-in-bishkek-and-yerevan",
       "application-process-for-cis-universities",
@@ -75927,6 +76026,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
+    "contentUpdated": "2026-11-25",
     "keywords": [
       "living in Almaty",
       "living in Tashkent",
@@ -76022,7 +76122,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "relatedExamSlugs": [],
-    "relatedCollegeSlugs": [],
+    "relatedCollegeSlugs": ["american-university-of-central-asia", "international-higher-school-of-medicine", "kyrgyz-turkish-manas-university", "american-university-of-armenia", "yerevan-state-university", "yerevan-state-medical-university"],
     "relatedGuideSlugs": [
       "student-guide-to-living-in-almaty-and-tashkent",
       "application-process-for-cis-universities",
@@ -76044,6 +76144,7 @@ const GUIDES_RUSSIA_P2: Guide[] = [
       }
     ],
     "lastVerified": "2026-06-24",
+    "contentUpdated": "2026-11-25",
     "keywords": [
       "living in Bishkek",
       "living in Yerevan",
@@ -78503,7 +78604,7 @@ const GUIDES_ME_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["united-arab-emirates-university", "zayed-university", "university-of-sharjah"],
   "relatedGuideSlugs": [
     "uae-national-vs-private-universities-explained",
     "choosing-a-uae-university-by-emirate-and-campus-setting",
@@ -78521,6 +78622,7 @@ const GUIDES_ME_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "uae university uaeu",
     "zayed university",
@@ -80212,7 +80314,7 @@ const GUIDES_ME_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-dubai", "heriot-watt-university-dubai", "university-of-birmingham-dubai", "curtin-university-dubai", "bits-pilani-dubai", "manipal-academy-of-higher-education-dubai", "amity-university-dubai", "sp-jain-school-of-global-management-dubai"],
   "relatedGuideSlugs": [
     "how-academic-free-zones-work-in-dubai",
     "dubai-knowledge-park-explained-for-students",
@@ -80234,6 +80336,7 @@ const GUIDES_ME_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "dubai international academic city",
     "diac universities for students",
@@ -80319,7 +80422,7 @@ const GUIDES_ME_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["middlesex-university-dubai", "murdoch-university-dubai"],
   "relatedGuideSlugs": [
     "dubai-international-academic-city-explained-for-students",
     "how-academic-free-zones-work-in-dubai",
@@ -80341,6 +80444,7 @@ const GUIDES_ME_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "dubai knowledge park",
     "dubai knowledge park for students",
@@ -89500,7 +89604,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-auckland", "university-of-otago", "university-of-canterbury", "university-of-waikato", "massey-university"],
   "relatedGuideSlugs": [
     "how-to-apply-to-new-zealand-universities",
     "conditional-vs-unconditional-offers-new-zealand-universities",
@@ -89517,6 +89621,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "direct application New Zealand universities",
     "no UCAS New Zealand",
@@ -89821,7 +89926,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-technology-sydney", "rmit-university", "curtin-university"],
   "relatedGuideSlugs": [
     "choosing-an-australian-university-by-subject-strength-not-overall-rank",
     "strong-non-go8-universities-in-australia-by-city",
@@ -89842,6 +89947,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "Australian Technology Network",
     "ATN universities",
@@ -90182,7 +90288,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-technology-sydney", "rmit-university", "curtin-university", "university-of-wollongong", "swinburne-university-of-technology", "flinders-university", "western-sydney-university", "murdoch-university", "bond-university", "university-of-canberra", "victoria-university"],
   "relatedGuideSlugs": [
     "australian-technology-network-atn-universities-guide",
     "choosing-an-australian-university-by-subject-strength-not-overall-rank",
@@ -90203,6 +90309,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "non-Go8 universities Australia",
     "Australian universities by city",
@@ -90311,7 +90418,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-auckland", "university-of-otago", "university-of-waikato", "massey-university"],
   "relatedGuideSlugs": [
     "how-university-ranking-systems-differ-australia-new-zealand",
     "choosing-an-australian-university-by-subject-strength-not-overall-rank",
@@ -90332,6 +90439,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "New Zealand universities list",
     "eight NZ universities",
@@ -90419,7 +90527,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-canterbury"],
   "relatedGuideSlugs": [
     "how-to-apply-to-new-zealand-universities",
     "choosing-among-new-zealands-eight-universities-by-strength",
@@ -90445,6 +90553,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "victoria university of wellington",
     "university of canterbury",
@@ -90533,7 +90642,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["massey-university"],
   "relatedGuideSlugs": [
     "choosing-among-new-zealands-eight-universities-by-strength",
     "victoria-university-of-wellington-and-canterbury-guide",
@@ -90559,6 +90668,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "massey university",
     "lincoln university new zealand",
@@ -90647,7 +90757,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-waikato"],
   "relatedGuideSlugs": [
     "choosing-among-new-zealands-eight-universities-by-strength",
     "victoria-university-of-wellington-and-canterbury-guide",
@@ -90669,6 +90779,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "aut auckland university of technology",
     "university of waikato",
@@ -90765,7 +90876,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-auckland", "university-of-otago", "university-of-canterbury", "university-of-waikato", "massey-university"],
   "relatedGuideSlugs": [
     "victoria-university-of-wellington-and-canterbury-guide",
     "massey-and-lincoln-universities-new-zealand-guide",
@@ -90791,6 +90902,7 @@ const GUIDES_ANZ_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "new zealand eight universities",
     "choose a new zealand university",
@@ -100241,7 +100353,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-amsterdam", "tu-delft", "utrecht-university", "erasmus-university-rotterdam", "eindhoven-university-of-technology", "university-of-groningen", "vrije-universiteit-amsterdam", "amsterdam-university-of-applied-sciences"],
   "relatedGuideSlugs": [
     "numerus-fixus-selection-procedure-netherlands",
     "matching-and-study-choice-check-netherlands",
@@ -100263,6 +100375,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "studielink application",
     "how to apply dutch universities",
@@ -100561,7 +100674,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-amsterdam","utrecht-university","erasmus-university-rotterdam","university-of-groningen"],
   "relatedGuideSlugs": [
     "wo-vs-hbo-dutch-universities-difference",
     "studielink-application-process-netherlands-explained",
@@ -100579,6 +100692,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "university college netherlands",
     "liberal arts netherlands",
@@ -101020,7 +101134,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-bologna","sapienza-university-of-rome"],
   "relatedGuideSlugs": [
     "universitaly-pre-enrolment-guide-for-international-students",
     "italian-university-admission-requirements-for-international-students",
@@ -101041,7 +101155,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
-  "contentUpdated": "2026-09-30",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "IMAT exam",
     "medicine in Italy in English",
@@ -101264,7 +101378,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-bologna","sapienza-university-of-rome","politecnico-di-milano","bocconi-university"],
   "relatedGuideSlugs": [
     "declaration-of-value-and-cimea-credential-recognition-italy",
     "imat-exam-guide-for-english-taught-medicine-in-italy",
@@ -101290,6 +101404,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "Italy university admission requirements",
     "international students Italy eligibility",
@@ -102541,7 +102656,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["tu-munich","rwth-aachen-university","karlsruhe-institute-of-technology","technical-university-of-berlin"],
   "relatedGuideSlugs": [
     "how-to-study-in-germany-complete-guide",
     "english-taught-engineering-masters-in-germany-explained",
@@ -102563,6 +102678,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "TU9 universities",
     "TU9 engineering",
@@ -102867,7 +102983,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["eth-zurich","tu-delft","epfl","eindhoven-university-of-technology"],
   "relatedGuideSlugs": [
     "apply-to-eth-zurich-international",
     "how-to-get-admission-in-tu-delft",
@@ -102889,6 +103005,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "ETH Zurich engineering admission",
     "TU Delft engineering application",
@@ -109589,7 +109706,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["hm-munich"],
   "relatedGuideSlugs": [
     "how-to-study-in-germany-complete-guide",
     "numerus-clausus-and-hochschulstart-germany-explained",
@@ -109611,6 +109728,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "Fachhochschule vs Universitaet",
     "University of Applied Sciences Germany",
@@ -109949,7 +110067,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["kth-royal-institute", "karolinska-institute", "uppsala-university", "stockholm-university", "lund-university"],
   "relatedGuideSlugs": [
     "how-to-study-in-sweden-complete-guide",
     "nordic-admissions-ranking-and-merit-selection-explained",
@@ -109971,6 +110089,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "universityadmissions.se",
     "apply to university in sweden",
@@ -110076,7 +110195,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-copenhagen","technical-university-of-denmark","aarhus-university"],
   "relatedGuideSlugs": [
     "norway-university-admission-and-application-portal-explained",
     "finland-university-application-portal-studyinfo-explained",
@@ -110098,6 +110217,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "study in denmark",
     "optagelse.dk",
@@ -110203,7 +110323,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-oslo", "norwegian-university-of-science-and-technology", "university-of-bergen", "norwegian-school-of-economics"],
   "relatedGuideSlugs": [
     "denmark-university-application-portal-and-admission-explained",
     "finland-university-application-portal-studyinfo-explained",
@@ -110225,6 +110345,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "study in norway",
     "samordna opptak",
@@ -110330,7 +110451,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-helsinki", "aalto-university", "tampere-university", "university-of-turku"],
   "relatedGuideSlugs": [
     "denmark-university-application-portal-and-admission-explained",
     "norway-university-admission-and-application-portal-explained",
@@ -110352,6 +110473,7 @@ const GUIDES_EUROPE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "study in finland",
     "studyinfo.fi",
@@ -111306,7 +111428,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-toronto","university-of-waterloo","mcmaster-university","queens-university","western-university","university-of-ottawa","york-university","toronto-metropolitan-university","carleton-university","university-of-guelph","wilfrid-laurier-university","university-of-windsor","trent-university","lakehead-university","laurentian-university","ocad-university"],
   "relatedGuideSlugs": [
     "ontario-university-program-choice-strategy",
     "ontario-supplementary-applications-and-assessments",
@@ -111331,6 +111453,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Ontario universities comparison",
     "University of Toronto vs Waterloo",
@@ -111964,7 +112087,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-alberta","university-of-calgary","university-of-lethbridge","mount-royal-university","macewan-university","southern-alberta-institute-of-technology","northern-alberta-institute-of-technology"],
   "relatedGuideSlugs": [
     "educationplannerbc-application-guide",
     "alberta-vs-calgary-university-strengths",
@@ -111986,6 +112109,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "ApplyAlberta",
     "University of Alberta application",
@@ -112242,7 +112366,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-british-columbia","simon-fraser-university","university-of-victoria"],
   "relatedGuideSlugs": [
     "educationplannerbc-application-guide",
     "western-canada-university-application-deadlines",
@@ -112268,6 +112392,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "UBC vs SFU vs UVic",
     "British Columbia universities",
@@ -112382,7 +112507,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-alberta","university-of-calgary"],
   "relatedGuideSlugs": [
     "applyalberta-application-guide",
     "ubc-sfu-uvic-which-bc-university",
@@ -112408,7 +112533,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
-  "contentUpdated": "2026-09-30",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "University of Alberta vs University of Calgary",
     "U of A vs U of C",
@@ -112720,7 +112845,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["mcgill-university","concordia-university","bishops-university","university-of-montreal","universite-laval","hec-montreal"],
   "relatedGuideSlugs": [
     "french-language-requirements-for-studying-in-quebec",
     "cegep-system-in-quebec-explained-for-international-students",
@@ -112746,6 +112871,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "English universities Quebec",
     "French universities Quebec",
@@ -113059,7 +113185,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["dalhousie-university","memorial-university-of-newfoundland","university-of-new-brunswick","saint-marys-university","acadia-university","university-of-prince-edward-island","mount-allison-university","mount-saint-vincent-university","cape-breton-university"],
   "relatedGuideSlugs": [
     "memorial-university-newfoundland-international-guide",
     "low-cost-canadian-universities-atlantic-prairies",
@@ -113085,6 +113211,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Atlantic Canada universities",
     "Dalhousie University",
@@ -113171,7 +113298,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-manitoba","university-of-saskatchewan","university-of-regina"],
   "relatedGuideSlugs": [
     "atlantic-canada-universities-guide",
     "low-cost-canadian-universities-atlantic-prairies",
@@ -113197,6 +113324,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Prairie universities Canada",
     "University of Manitoba",
@@ -113290,7 +113418,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["memorial-university-of-newfoundland","university-of-manitoba","university-of-saskatchewan","university-of-regina","university-of-new-brunswick","saint-marys-university","acadia-university","university-of-prince-edward-island","mount-allison-university","mount-saint-vincent-university","cape-breton-university"],
   "relatedGuideSlugs": [
     "atlantic-canada-universities-guide",
     "prairie-universities-canada-manitoba-saskatchewan",
@@ -113316,6 +113444,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "low cost Canadian universities",
     "affordable study Canada",
@@ -113408,7 +113537,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["memorial-university-of-newfoundland"],
   "relatedGuideSlugs": [
     "atlantic-canada-universities-guide",
     "low-cost-canadian-universities-atlantic-prairies",
@@ -113434,6 +113563,7 @@ const GUIDES_CANADA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Memorial University of Newfoundland",
     "MUN international students",
@@ -125322,7 +125452,16 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "university-of-oxford",
+    "university-of-cambridge",
+    "imperial-college-london",
+    "university-of-manchester",
+    "university-of-nottingham",
+    "university-of-southampton",
+    "university-of-exeter",
+    "university-of-york"
+  ],
   "relatedGuideSlugs": [
     "research-intensity-and-the-ref-for-uk-university-choice",
     "russell-group-vs-non-russell-group-universities-uk",
@@ -125344,6 +125483,7 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "choose university by subject",
     "russell group subject strength",
@@ -125567,7 +125707,15 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "university-of-manchester",
+    "university-of-leeds",
+    "university-of-sheffield",
+    "durham-university",
+    "newcastle-university",
+    "university-of-york",
+    "university-of-liverpool"
+  ],
   "relatedGuideSlugs": [
     "top-russell-group-universities-outside-london",
     "russell-group-universities-explained",
@@ -125589,6 +125737,7 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "northern russell group universities",
     "university of manchester",
@@ -125697,7 +125846,15 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "university-of-st-andrews",
+    "university-of-bath",
+    "lancaster-university",
+    "loughborough-university",
+    "university-of-strathclyde",
+    "university-of-manchester",
+    "university-of-warwick"
+  ],
   "relatedGuideSlugs": [
     "how-to-choose-a-russell-group-university-by-subject-strength",
     "research-intensity-and-the-ref-for-uk-university-choice",
@@ -125719,6 +125876,7 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "russell group vs non russell group",
     "does russell group matter",
@@ -126498,7 +126656,11 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "swansea-university",
+    "aberystwyth-university",
+    "bangor-university"
+  ],
   "relatedGuideSlugs": [
     "studying-in-northern-ireland-universities-guide",
     "how-uk-tuition-fees-and-funding-differ-by-nation",
@@ -126524,6 +126686,7 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "studying in wales",
     "universities in wales for international students",
@@ -132967,7 +133130,13 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "university-of-bath",
+    "loughborough-university",
+    "coventry-university",
+    "university-of-limerick",
+    "dublin-city-university"
+  ],
   "relatedGuideSlugs": [
     "uk-and-ireland-graduate-schemes-explained",
     "building-employability-skills-while-studying-in-the-uk-and-ireland",
@@ -132988,6 +133157,7 @@ const GUIDES_UKIE_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "placement year UK",
     "sandwich course",
@@ -135315,7 +135485,17 @@ const GUIDES_USA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "uc-berkeley",
+    "ucla",
+    "uc-san-diego",
+    "uc-irvine",
+    "uc-davis",
+    "uc-santa-barbara",
+    "uc-santa-cruz",
+    "uc-riverside",
+    "uc-merced"
+  ],
   "relatedGuideSlugs": [
     "how-us-college-admissions-work",
     "how-to-build-a-college-list",
@@ -135337,6 +135517,7 @@ const GUIDES_USA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+    "contentUpdated": "2026-11-25",
   "keywords": [
     "university of california system",
     "uc application",
@@ -135419,7 +135600,12 @@ const GUIDES_USA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "university-of-alaska-fairbanks",
+    "university-of-maine",
+    "university-of-missouri",
+    "university-of-tennessee-knoxville"
+  ],
   "relatedGuideSlugs": [
     "in-state-vs-out-of-state-admission-and-tuition",
     "public-vs-private-university-value-comparison",
@@ -135437,6 +135623,7 @@ const GUIDES_USA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "state flagship university",
     "what is a flagship university",
@@ -137996,7 +138183,14 @@ const GUIDES_USA_P2: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-pennsylvania",
+      "university-of-michigan-ann-arbor",
+      "new-york-university",
+      "uc-berkeley",
+      "university-of-texas-at-austin",
+      "indiana-university-bloomington"
+    ],
   "relatedGuideSlugs": [
     "economics-vs-business-major-which-to-choose",
     "accounting-major-guide-usa",
@@ -138014,6 +138208,7 @@ const GUIDES_USA_P2: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-24",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "undergraduate business school admission",
     "direct admit business",
@@ -156594,7 +156789,9 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "xlri-jamshedpur"
+  ],
   "relatedGuideSlugs": [
     "snap-exam-guide",
     "nmat-exam-guide",
@@ -156612,6 +156809,7 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-23",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "XAT exam",
     "XAT XLRI",
@@ -156696,7 +156894,9 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "symbiosis-international-pune"
+  ],
   "relatedGuideSlugs": [
     "xat-exam-guide",
     "nmat-exam-guide",
@@ -156714,6 +156914,7 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-23",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "SNAP exam",
     "SNAP test",
@@ -156798,7 +156999,9 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "nmims-mumbai"
+  ],
   "relatedGuideSlugs": [
     "xat-exam-guide",
     "snap-exam-guide",
@@ -156816,6 +157019,7 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-23",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "NMAT exam",
     "NMAT by GMAC",
@@ -157121,7 +157325,16 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "iit-bombay",
+    "iit-delhi",
+    "iit-guwahati",
+    "iit-hyderabad",
+    "iit-roorkee",
+    "iit-indore",
+    "iiitdm-jabalpur",
+    "iiit-delhi"
+  ],
   "relatedGuideSlugs": [
     "ceed-exam-guide",
     "nid-dat-exam-guide",
@@ -157139,6 +157352,7 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-23",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "UCEED",
     "UCEED exam guide",
@@ -157237,7 +157451,16 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "iit-bombay",
+    "iit-delhi",
+    "iit-guwahati",
+    "iit-hyderabad",
+    "iit-kanpur",
+    "iit-roorkee",
+    "iisc-bangalore",
+    "iiitdm-jabalpur"
+  ],
   "relatedGuideSlugs": [
     "uceed-exam-guide",
     "nid-dat-exam-guide",
@@ -157251,6 +157474,7 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-23",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "CEED",
     "CEED exam guide",
@@ -157345,7 +157569,9 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "nid-ahmedabad"
+  ],
   "relatedGuideSlugs": [
     "uceed-exam-guide",
     "ceed-exam-guide",
@@ -157359,7 +157585,7 @@ const GUIDES_BASE: Guide[] = [
     }
   ],
   "lastVerified": "2026-06-23",
-  "contentUpdated": "2026-09-29",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "NID DAT",
     "NID design aptitude test",
@@ -159200,13 +159426,23 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['jee-main', 'jee-advanced'],
-    relatedCollegeSlugs: ['iit-bombay', 'nit-trichy', 'iit-madras'],
+    relatedCollegeSlugs: [
+      'iit-bombay',
+      'nit-trichy',
+      'iit-madras',
+      'nit-surathkal',
+      'nit-rourkela',
+      'nit-calicut',
+      'mnnit-allahabad',
+      'mnit-jaipur',
+    ],
     relatedGuideSlugs: ['how-to-get-into-iit', 'josaa-counselling-process-explained', 'jee-main-vs-jee-advanced-difference'],
     sources: [
       { label: 'JEE Advanced — official site', url: 'https://jeeadv.ac.in' },
       { label: 'JoSAA — official site', url: 'https://josaa.nic.in' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['iit vs nit', 'iit or nit', 'difference between iit and nit', 'nit vs iit which is better'],
   },
   {
@@ -159276,12 +159512,25 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['jee-advanced', 'jee-main'],
-    relatedCollegeSlugs: ['iit-bombay', 'iit-delhi', 'iit-madras', 'iit-kanpur', 'iit-kharagpur'],
+    relatedCollegeSlugs: [
+      'iit-bombay',
+      'iit-delhi',
+      'iit-madras',
+      'iit-kanpur',
+      'iit-kharagpur',
+      'iit-roorkee',
+      'iit-guwahati',
+      'iit-hyderabad',
+      'iit-indore',
+      'iit-bhu-varanasi',
+      'iit-bhubaneswar',
+    ],
     relatedGuideSlugs: ['how-to-get-into-iit', 'iit-vs-nit-which-is-better', 'iit-branch-change-rules'],
     sources: [
       { label: 'JEE Advanced — participating institutes', url: 'https://jeeadv.ac.in' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['list of iits', 'all iits in india', 'how many iits', 'iit list with location', '23 iits'],
   },
   {
@@ -159398,13 +159647,22 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['jee-main', 'jee-advanced'],
-    relatedCollegeSlugs: ['iit-bombay', 'iit-madras'],
+    relatedCollegeSlugs: [
+      'iit-bombay',
+      'iit-madras',
+      'iiit-hyderabad',
+      'iiit-allahabad',
+      'iiit-delhi',
+      'iiit-bangalore',
+      'iiitdm-jabalpur',
+    ],
     relatedGuideSlugs: ['iit-vs-nit-which-is-better', 'how-to-get-into-iit', 'jee-main-vs-jee-advanced-difference'],
     sources: [
       { label: 'JEE Advanced — official site', url: 'https://jeeadv.ac.in' },
       { label: 'JoSAA — official site', url: 'https://josaa.nic.in' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['iit vs iiit', 'difference between iit and iiit', 'iiit vs iit', 'what is iiit'],
   },
 
@@ -159714,13 +159972,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['neet-ug'],
-    relatedCollegeSlugs: ['aiims-delhi'],
+    relatedCollegeSlugs: ['aiims-delhi', 'aiims-jodhpur', 'aiims-bhubaneswar', 'aiims-rishikesh', 'jipmer-puducherry'],
     relatedGuideSlugs: ['how-to-become-a-doctor-in-india', 'neet-counselling-process-mcc', 'neet-ug-eligibility-criteria'],
     sources: [
       { label: 'MCC — Medical Counselling Committee', url: 'https://mcc.nic.in' },
       { label: 'NTA — NEET official site', url: 'https://neet.nta.nic.in' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['aiims vs government medical college', 'aiims vs medical college', 'aiims neet', 'best medical college india'],
   },
 
@@ -159980,14 +160239,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'testas', 'gre'],
-    relatedCollegeSlugs: ['tu-munich', 'lmu-munich', 'heidelberg-university'],
+    relatedCollegeSlugs: ['tu-munich', 'lmu-munich', 'heidelberg-university', 'rwth-aachen-university', 'technical-university-of-berlin', 'free-university-of-berlin', 'karlsruhe-institute-of-technology', 'university-of-freiburg', 'university-of-bonn', 'charite-berlin', 'hm-munich'],
     relatedGuideSlugs: ['how-to-study-in-usa-from-india', 'how-to-study-in-uk-from-india', 'how-to-study-in-canada-from-india'],
     sources: [
       { label: 'Make it in Germany — official German government portal', url: 'https://www.make-it-in-germany.com/en/' },
       { label: 'DAAD — German Academic Exchange Service', url: 'https://www.daad.de/en/' },
     ],
     lastVerified: VERIFY,
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-26',
     keywords: ['study in germany from india', 'how to study in germany', 'germany student visa', 'german universities for indian students', 'free education germany'],
   },
   {
@@ -160228,13 +160487,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['cat', 'gmat'],
-    relatedCollegeSlugs: ['iim-ahmedabad', 'iim-bangalore'],
+    relatedCollegeSlugs: ['iim-ahmedabad', 'iim-bangalore', 'isb-hyderabad'],
     relatedGuideSlugs: ['cat-vs-gmat-which-to-take', 'cat-exam-eligibility-and-pattern', 'mba-after-engineering-worth-it'],
     sources: [
       { label: 'IIM CAT — official website', url: 'https://iimcat.ac.in' },
       { label: 'Indian School of Business (ISB) — official site', url: 'https://www.isb.edu' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['iim vs isb', 'iim or isb', 'isb vs iim which is better', 'iim isb comparison', 'mba india options'],
   },
   {
@@ -160415,12 +160675,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['clat', 'ailet'],
-    relatedCollegeSlugs: ['nlu-delhi'],
+    relatedCollegeSlugs: ['nlsiu-bengaluru', 'nalsar-hyderabad', 'nlu-delhi'],
     relatedGuideSlugs: ['clat-vs-ailet-difference', 'list-of-national-law-universities', 'how-to-become-a-lawyer-in-india'],
     sources: [
       { label: 'Consortium of National Law Universities — official CLAT site', url: 'https://consortiumofnlus.ac.in' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['clat eligibility', 'clat exam pattern', 'clat syllabus', 'how to prepare for clat', 'clat law entrance'],
   },
   {
@@ -160540,12 +160801,20 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['clat', 'ailet'],
-    relatedCollegeSlugs: ['nlu-delhi'],
+    relatedCollegeSlugs: [
+      'nlsiu-bengaluru',
+      'nalsar-hyderabad',
+      'nlu-delhi',
+      'wbnujs-kolkata',
+      'nlu-jodhpur',
+      'gnlu-gandhinagar',
+    ],
     relatedGuideSlugs: ['clat-eligibility-and-exam-pattern', 'clat-vs-ailet-difference', 'how-to-become-a-lawyer-in-india'],
     sources: [
       { label: 'Consortium of National Law Universities — official site', url: 'https://consortiumofnlus.ac.in' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['national law universities', 'list of nlus in india', 'nlu colleges', 'clat colleges', 'law universities india'],
   },
   {
@@ -160600,13 +160869,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['clat', 'ailet'],
-    relatedCollegeSlugs: ['nlu-delhi'],
+    relatedCollegeSlugs: ['nlsiu-bengaluru', 'nalsar-hyderabad', 'nlu-delhi'],
     relatedGuideSlugs: ['clat-eligibility-and-exam-pattern', 'list-of-national-law-universities', 'how-to-become-a-lawyer-in-india'],
     sources: [
       { label: 'Consortium of National Law Universities — official CLAT site', url: 'https://consortiumofnlus.ac.in' },
       { label: 'National Law University, Delhi — official site (AILET)', url: 'https://nludelhi.ac.in' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['clat vs ailet', 'ailet vs clat difference', 'ailet nlu delhi', 'law entrance exams india', 'clat ailet comparison'],
   },
   {
@@ -161294,13 +161564,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['jee-main'],
-    relatedCollegeSlugs: ['iit-bombay'],
+    relatedCollegeSlugs: ['iit-bombay', 'iisc-bangalore'],
     relatedGuideSlugs: ['courses-after-12th-pcm', 'career-options-after-12th-science', 'best-engineering-branches'],
     sources: [
       { label: 'NTA — JEE Main official site', url: 'https://jeemain.nta.nic.in' },
       { label: 'University Grants Commission (UGC) — official site', url: 'https://www.ugc.gov.in' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['btech vs bsc', 'bsc or btech', 'btech vs bsc which is better', 'difference between btech and bsc', 'should i do btech or bsc'],
   },
   // ─────────────────────── Set 9 — Tests for studying abroad ─────────────────
@@ -162277,12 +162548,20 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['cat'],
-    relatedCollegeSlugs: ['iim-ahmedabad', 'iim-bangalore'],
+    relatedCollegeSlugs: [
+      'iim-ahmedabad',
+      'iim-bangalore',
+      'iim-calcutta',
+      'iim-lucknow',
+      'iim-kozhikode',
+      'iim-indore',
+    ],
     relatedGuideSlugs: ['mba-specializations-explained', 'iim-vs-isb-which-is-better', 'cat-exam-eligibility-and-pattern'],
     sources: [
       { label: 'IIM CAT — official site (participating institutes)', url: 'https://iimcat.ac.in' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-22',
     keywords: ['iims in india', 'list of iims', 'top iims in india', 'iim colleges', 'iim mba admission'],
   },
   {
@@ -163260,14 +163539,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: [],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['nid-ahmedabad', 'nift-delhi'],
     relatedGuideSlugs: ['career-options-in-design-after-12th', 'career-options-after-12th-arts', 'career-options-after-12th-commerce'],
     sources: [
       { label: 'National Institute of Fashion Technology (NIFT) — official site', url: 'https://www.nift.ac.in' },
       { label: 'National Institute of Design (NID) — official site', url: 'https://www.nid.edu' },
     ],
     lastVerified: VERIFY,
-    contentUpdated: '2026-09-29',
+    contentUpdated: '2026-11-22',
     keywords: ['nift nid entrance', 'nift entrance exam', 'nid dat preparation', 'design entrance exams', 'how to prepare for nift nid'],
   },
   {
@@ -163930,14 +164209,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts'],
-    relatedCollegeSlugs: ['sorbonne-university', 'sciences-po'],
+    relatedCollegeSlugs: ['sorbonne-university', 'sciences-po', 'psl-university', 'universite-paris-cite', 'universite-paris-saclay'],
     relatedGuideSlugs: ['study-in-netherlands-from-india', 'study-in-germany-from-india', 'scholarships-for-indian-students-abroad'],
     sources: [
       { label: 'Campus France — official agency for international students', url: 'https://www.campusfrance.org' },
       { label: 'France-Visas — official French Government visa site', url: 'https://france-visas.gouv.fr' },
     ],
     lastVerified: VERIFY,
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-26',
     keywords: ['study in france from india', 'france student visa', 'how to study in france', 'campus france', 'study abroad france'],
   },
   {
@@ -163988,13 +164267,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts'],
-    relatedCollegeSlugs: ['tu-delft', 'university-of-amsterdam'],
+    relatedCollegeSlugs: ['tu-delft', 'university-of-amsterdam', 'utrecht-university', 'erasmus-university-rotterdam', 'eindhoven-university-of-technology', 'university-of-groningen', 'vrije-universiteit-amsterdam', 'amsterdam-university-of-applied-sciences'],
     relatedGuideSlugs: ['study-in-france-from-india', 'study-in-germany-from-india', 'scholarships-for-indian-students-abroad'],
     sources: [
       { label: 'Study in NL (Nuffic) — official site', url: 'https://www.studyinnl.org' },
       { label: 'IND — Dutch Immigration and Naturalisation Service (official)', url: 'https://ind.nl' },
     ],
     lastVerified: VERIFY,
+    contentUpdated: '2026-11-26',
     keywords: ['study in netherlands from india', 'netherlands student visa', 'how to study in netherlands', 'dutch universities for indian students', 'study abroad netherlands'],
   },
   {
@@ -165352,7 +165632,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['cuet-ug'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['university-of-delhi'],
     relatedGuideSlugs: ['universities-accepting-cuet-ug', 'cuet-ug-eligibility-and-exam-pattern', 'cuet-ug-syllabus-and-subjects', 'career-options-after-12th-arts', 'career-options-after-12th-commerce'],
     sources: [
       { label: 'University of Delhi — official site', url: 'https://www.du.ac.in' },
@@ -165360,6 +165640,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'NTA — CUET (UG) official site', url: 'https://cuet.nta.nic.in' },
     ],
     lastVerified: '2026-06-06',
+    contentUpdated: '2026-11-22',
     keywords: ['delhi university admission', 'du admission process', 'how to get into du', 'du csas', 'du cuet admission', 'du ug admission'],
     tags: ['cuet', 'courses-after-12th'],
   },
@@ -165432,12 +165713,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['mht-cet', 'jee-main'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['coep-pune', 'vjti-mumbai'],
     relatedGuideSlugs: ['kcet-exam-guide', 'wbjee-exam-guide', 'how-to-choose-engineering-college', 'jee-main-vs-jee-advanced-difference'],
     sources: [
       { label: 'State Common Entrance Test Cell, Maharashtra — official site', url: 'https://cetcell.mahacet.org' },
     ],
     lastVerified: '2026-06-06',
+    contentUpdated: '2026-11-22',
     keywords: ['mht cet', 'mht cet exam', 'mht cet pcm', 'maharashtra cet engineering', 'mht cet eligibility', 'mht cet syllabus'],
     tags: ['engineering-entrance-exams'],
   },
@@ -165508,12 +165790,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['kcet', 'jee-main'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['bmsce-bengaluru'],
     relatedGuideSlugs: ['mht-cet-exam-guide', 'wbjee-exam-guide', 'ap-eapcet-exam-guide', 'how-to-choose-engineering-college'],
     sources: [
       { label: 'Karnataka Examinations Authority (KEA) — official site', url: 'https://cetonline.karnataka.gov.in/kea' },
     ],
     lastVerified: '2026-06-06',
+    contentUpdated: '2026-11-22',
     keywords: ['kcet', 'kcet exam', 'karnataka cet', 'kcet engineering', 'kea kcet', 'kcet syllabus'],
     tags: ['engineering-entrance-exams'],
   },
@@ -165583,12 +165866,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['wbjee', 'jee-main'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['jadavpur-university'],
     relatedGuideSlugs: ['mht-cet-exam-guide', 'kcet-exam-guide', 'ts-eamcet-exam-guide', 'how-to-choose-engineering-college'],
     sources: [
       { label: 'West Bengal Joint Entrance Examinations Board (WBJEEB) — official site', url: 'https://wbjeeb.nic.in' },
     ],
     lastVerified: '2026-06-06',
+    contentUpdated: '2026-11-22',
     keywords: ['wbjee', 'wbjee exam', 'west bengal jee', 'wbjeeb', 'wbjee engineering', 'wbjee syllabus'],
     tags: ['engineering-entrance-exams'],
   },
@@ -165734,12 +166018,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ts-eamcet', 'jee-main'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['jntu-hyderabad'],
     relatedGuideSlugs: ['ap-eapcet-exam-guide', 'kcet-exam-guide', 'wbjee-exam-guide', 'how-to-choose-engineering-college'],
     sources: [
       { label: 'TG EAPCET — TGCHE official site', url: 'https://eapcet.tgche.ac.in' },
     ],
     lastVerified: '2026-06-06',
+    contentUpdated: '2026-11-22',
     keywords: ['ts eamcet', 'tg eapcet', 'telangana eamcet', 'ts eamcet engineering', 'tg eapcet syllabus', 'tsche eapcet'],
     tags: ['engineering-entrance-exams'],
   },
@@ -165811,12 +166096,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['keam', 'jee-main'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['cusat-kochi'],
     relatedGuideSlugs: ['gujcet-exam-guide', 'kcet-exam-guide', 'comedk-uget-exam-guide', 'how-to-choose-engineering-college'],
     sources: [
       { label: 'Commissioner for Entrance Examinations (CEE), Kerala — official site', url: 'https://cee.kerala.gov.in' },
     ],
     lastVerified: '2026-06-06',
+    contentUpdated: '2026-11-22',
     keywords: ['keam', 'keam exam', 'kerala engineering entrance', 'cee kerala', 'keam eligibility', 'keam syllabus'],
     tags: ['engineering-entrance-exams'],
   },
@@ -165886,14 +166172,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['gujcet', 'jee-main'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['daiict-gandhinagar'],
     relatedGuideSlugs: ['keam-exam-guide', 'mht-cet-exam-guide', 'wbjee-exam-guide', 'how-to-choose-engineering-college'],
     sources: [
       { label: 'Gujarat Secondary & Higher Secondary Education Board (GSEB) — official site', url: 'https://www.gseb.org' },
       { label: 'Admission Committee for Professional Courses (ACPC), Gujarat — official site', url: 'https://gujacpc.admissions.nic.in' },
     ],
     lastVerified: '2026-06-06',
-    contentUpdated: '2026-09-26',
+    contentUpdated: '2026-11-22',
     keywords: ['gujcet', 'gujcet exam', 'gujarat cet', 'gseb gujcet', 'gujcet engineering', 'acpc gujarat'],
     tags: ['engineering-entrance-exams'],
   },
@@ -165963,12 +166249,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['bitsat', 'jee-main'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['bits-pilani'],
     relatedGuideSlugs: ['viteee-exam-guide', 'comedk-uget-exam-guide', 'how-to-choose-engineering-college', 'jee-main-vs-jee-advanced-difference'],
     sources: [
       { label: 'BITS Pilani — official admission portal', url: 'https://admissions.bits-pilani.ac.in' },
     ],
     lastVerified: '2026-06-06',
+    contentUpdated: '2026-11-22',
     keywords: ['bitsat', 'bitsat exam', 'bits pilani admission', 'bitsat eligibility', 'bitsat pattern', 'bits goa hyderabad'],
     tags: ['engineering-entrance-exams'],
   },
@@ -166037,12 +166324,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['viteee', 'jee-main'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['vit-vellore'],
     relatedGuideSlugs: ['bitsat-exam-guide', 'comedk-uget-exam-guide', 'how-to-choose-engineering-college', 'mht-cet-exam-guide'],
     sources: [
       { label: 'VIT — VITEEE official site', url: 'https://viteee.vit.ac.in' },
     ],
     lastVerified: '2026-06-06',
+    contentUpdated: '2026-11-22',
     keywords: ['viteee', 'viteee exam', 'vit engineering entrance', 'vit admission', 'viteee eligibility', 'viteee pattern'],
     tags: ['engineering-entrance-exams'],
   },
@@ -166112,12 +166400,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['comedk-uget', 'jee-main'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['bmsce-bengaluru'],
     relatedGuideSlugs: ['kcet-exam-guide', 'bitsat-exam-guide', 'viteee-exam-guide', 'how-to-choose-engineering-college'],
     sources: [
       { label: 'COMEDK — official site', url: 'https://www.comedk.org' },
     ],
     lastVerified: '2026-06-06',
+    contentUpdated: '2026-11-22',
     keywords: ['comedk uget', 'comedk exam', 'comedk karnataka', 'comedk engineering', 'comedk uget eligibility', 'comedk vs kcet'],
     tags: ['engineering-entrance-exams'],
   },
@@ -176499,6 +176788,8 @@ const GUIDES_BASE: Guide[] = [
       'princeton-university',
       'brown-university',
       'dartmouth-college',
+      'amherst-college',
+      'pomona-college',
     ],
     relatedGuideSlugs: [
       'types-of-us-universities',
@@ -176518,6 +176809,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     lastVerified: '2026-06-09',
+    contentUpdated: '2026-11-24',
     keywords: [
       'liberal arts college explained',
       'liberal arts vs research university',
@@ -176701,6 +176993,10 @@ const GUIDES_BASE: Guide[] = [
       'northwestern-university',
       'duke-university',
       'new-york-university',
+      'university-of-north-carolina-at-chapel-hill',
+      'north-carolina-state-university',
+      'johns-hopkins-university',
+      'rice-university',
     ],
     relatedGuideSlugs: [
       'types-of-us-universities',
@@ -176720,6 +177016,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     lastVerified: '2026-06-09',
+    contentUpdated: '2026-11-24',
     keywords: [
       'how to choose a us college',
       'building a college list usa',
@@ -178748,6 +179045,10 @@ const GUIDES_BASE: Guide[] = [
       'university-of-pennsylvania',
       'cornell-university',
       'new-york-university',
+      'university-of-virginia',
+      'virginia-tech',
+      'george-mason-university',
+      'georgetown-university',
     ],
     relatedGuideSlugs: [
       'i-20-and-sevis-explained',
@@ -178761,6 +179062,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'EducationUSA — official US government study-abroad resource', url: 'https://educationusa.state.gov' },
     ],
     lastVerified: '2026-06-09',
+    contentUpdated: '2026-11-25',
     keywords: [
       'how to apply to US universities international student',
       'US university application process',
@@ -184401,13 +184703,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['mcgill-university', 'university-of-montreal'],
+    relatedCollegeSlugs: ['mcgill-university', 'university-of-montreal', 'universite-laval', 'hec-montreal', 'university-of-ottawa', 'laurentian-university'],
     relatedGuideSlugs: ['english-proficiency-requirements-canada', 'how-to-study-in-canada-from-india', 'ielts-for-canada-requirements'],
     sources: [
       { label: 'Government of Canada — Study in Canada', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html' },
       { label: 'Gouvernement du Québec — Studying in Québec', url: 'https://www.quebec.ca/en/education/study-quebec' },
     ],
     lastVerified: '2026-06-10',
+    contentUpdated: '2026-11-25',
     keywords: ['french language requirements canada', 'french for studying in quebec', 'tef tcf canada', 'french medium programs canada', 'do i need french for canada'],
     tags: ['canada-tests-grades'],
   },
@@ -186711,14 +187014,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'gre'],
-    relatedCollegeSlugs: ['university-of-toronto', 'mcgill-university', 'university-of-british-columbia', 'mcmaster-university'],
+    relatedCollegeSlugs: ['university-of-toronto', 'mcgill-university', 'university-of-british-columbia', 'university-of-waterloo', 'mcmaster-university', 'queens-university', 'university-of-alberta', 'university-of-montreal', 'western-university', 'university-of-ottawa', 'university-of-calgary', 'dalhousie-university', 'universite-laval', 'university-of-manitoba', 'university-of-saskatchewan'],
     relatedGuideSlugs: ['top-universities-in-canada', 'college-vs-university-in-canada', 'university-of-toronto-admission-guide'],
     sources: [
       { label: 'U15 Group of Canadian Research Universities (official)', url: 'https://u15.ca/' },
       { label: 'Government of Canada — Study in Canada', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html' },
     ],
     lastVerified: '2026-06-10',
-    contentUpdated: '2026-09-29',
+    contentUpdated: '2026-11-25',
     keywords: ['u15 universities canada', 'u15 group canada', 'research universities canada', 'list of u15 universities', 'canada research universities', 'u15 members'],
     tags: ['canada-universities'],
   },
@@ -186796,14 +187099,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'duolingo-english-test'],
-    relatedCollegeSlugs: ['university-of-toronto', 'university-of-waterloo'],
+    relatedCollegeSlugs: ['university-of-toronto', 'university-of-waterloo', 'seneca-polytechnic', 'george-brown-polytechnic', 'sheridan-college', 'conestoga-college', 'kwantlen-polytechnic-university', 'southern-alberta-institute-of-technology', 'northern-alberta-institute-of-technology'],
     relatedGuideSlugs: ['top-universities-in-canada', 'u15-universities-explained', 'canada-study-permit-guide'],
     sources: [
       { label: 'Government of Canada — Designated Learning Institutions list', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html' },
       { label: 'Government of Canada — Study in Canada', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html' },
     ],
     lastVerified: '2026-06-10',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-25',
     keywords: ['college vs university canada', 'difference college university canada', 'canada college diploma vs degree', 'canada applied college', 'college to university transfer canada', 'dli canada'],
     tags: ['canada-universities'],
   },
@@ -187324,13 +187627,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['seneca-polytechnic', 'george-brown-polytechnic', 'sheridan-college', 'conestoga-college', 'kwantlen-polytechnic-university', 'southern-alberta-institute-of-technology', 'northern-alberta-institute-of-technology'],
     relatedGuideSlugs: ['how-to-get-into-top-canadian-universities', 'choosing-between-canadian-provinces', 'how-to-study-in-canada-from-india', 'canada-study-permit-guide'],
     sources: [
       { label: 'Government of Canada — Designated learning institutions list', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html' },
       { label: 'Government of Canada — Study in Canada (IRCC)', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html' },
     ],
     lastVerified: '2026-06-10',
+    contentUpdated: '2026-11-25',
     keywords: ['community colleges in canada', 'canada college diploma vs degree', 'college vs university canada', 'canadian college pathways', 'dli canada international students', 'study at college in canada'],
     tags: ['canada-universities'],
   },
@@ -187648,7 +187952,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['gmat', 'gre', 'ielts', 'toefl'],
-    relatedCollegeSlugs: ['university-of-toronto', 'mcgill-university', 'queens-university'],
+    relatedCollegeSlugs: ['university-of-toronto', 'mcgill-university', 'queens-university', 'hec-montreal'],
     relatedGuideSlugs: ['co-op-education-in-canada-explained', 'data-science-and-ai-programs-canada', 'how-to-study-in-canada-from-india'],
     sources: [
       { label: 'GMAC — GMAT official site', url: 'https://www.mba.com/exams/gmat-exam' },
@@ -187656,6 +187960,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'IRCC — Work as a co-op student or intern', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/intern.html' },
     ],
     lastVerified: '2026-06-10',
+    contentUpdated: '2026-11-25',
     keywords: ['mba in canada', 'business degree canada', 'bcom bba canada', 'gmat for canada mba', 'study business canada', 'canada mba admission requirements'],
     tags: ['canada-majors-careers'],
   },
@@ -190222,7 +190527,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: ['university-of-toronto', 'university-of-waterloo', 'mcmaster-university', 'queens-university'],
+    relatedCollegeSlugs: ['university-of-toronto', 'university-of-waterloo', 'mcmaster-university', 'queens-university', 'western-university', 'university-of-ottawa', 'york-university', 'toronto-metropolitan-university', 'carleton-university', 'university-of-guelph', 'wilfrid-laurier-university', 'university-of-windsor', 'trent-university', 'lakehead-university', 'laurentian-university', 'ocad-university', 'seneca-polytechnic', 'george-brown-polytechnic', 'sheridan-college', 'conestoga-college'],
     relatedGuideSlugs: ['studying-in-british-columbia-guide', 'studying-in-quebec-guide', 'best-provinces-to-study-in-canada', 'how-to-study-in-canada-from-india', 'canada-study-permit-guide'],
     sources: [
       { label: 'Ontario Universities\' Application Centre (OUAC) — official', url: 'https://www.ouac.on.ca/' },
@@ -190230,6 +190535,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'IRCC — Study permit (Government of Canada)', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html' },
     ],
     lastVerified: '2026-06-10',
+    contentUpdated: '2026-11-25',
     keywords: ['studying in ontario', 'ontario universities', 'OUAC application', 'ontario colleges', 'OSAP student aid', 'study in ontario canada'],
     tags: ['canada-universities'],
   },
@@ -190307,7 +190613,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'duolingo-english-test'],
-    relatedCollegeSlugs: ['university-of-british-columbia'],
+    relatedCollegeSlugs: ['university-of-british-columbia', 'simon-fraser-university', 'university-of-victoria', 'thompson-rivers-university', 'university-of-northern-british-columbia', 'kwantlen-polytechnic-university'],
     relatedGuideSlugs: ['studying-in-ontario-guide', 'studying-in-quebec-guide', 'studying-in-alberta-guide', 'best-provinces-to-study-in-canada', 'how-to-study-in-canada-from-india'],
     sources: [
       { label: 'StudyInCanada / IRCC — Study permit (Government of Canada)', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html' },
@@ -190315,6 +190621,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'BC Transfer Guide — official', url: 'https://www.bctransferguide.ca/' },
     ],
     lastVerified: '2026-06-10',
+    contentUpdated: '2026-11-25',
     keywords: ['studying in british columbia', 'BC universities', 'study in vancouver', 'BC cost of living students', 'british columbia colleges', 'study in BC canada'],
     tags: ['canada-universities'],
   },
@@ -190393,7 +190700,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['mcgill-university', 'university-of-montreal'],
+    relatedCollegeSlugs: ['mcgill-university', 'university-of-montreal', 'concordia-university', 'universite-laval', 'hec-montreal', 'bishops-university'],
     relatedGuideSlugs: ['studying-in-ontario-guide', 'studying-in-british-columbia-guide', 'best-provinces-to-study-in-canada', 'canada-study-permit-guide', 'how-to-study-in-canada-from-india'],
     sources: [
       { label: 'Gouvernement du Québec — Required authorizations to study in Québec (CAQ + study permit)', url: 'https://www.quebec.ca/en/education/study-quebec/obtaining-authorizations/authorizations' },
@@ -190401,6 +190708,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Gouvernement du Québec — Studying in Quebec (official)', url: 'https://www.quebec.ca/en/education' },
     ],
     lastVerified: '2026-06-10',
+    contentUpdated: '2026-11-25',
     keywords: ['studying in quebec', 'CAQ quebec study', 'quebec acceptance certificate', 'study in montreal', 'french language quebec study', 'quebec universities CEGEP'],
     tags: ['canada-universities'],
   },
@@ -190478,7 +190786,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: ['university-of-alberta'],
+    relatedCollegeSlugs: ['university-of-alberta', 'university-of-calgary', 'university-of-lethbridge', 'mount-royal-university', 'macewan-university', 'southern-alberta-institute-of-technology', 'northern-alberta-institute-of-technology'],
     relatedGuideSlugs: ['studying-in-ontario-guide', 'studying-in-british-columbia-guide', 'studying-in-quebec-guide', 'best-provinces-to-study-in-canada', 'how-to-study-in-canada-from-india'],
     sources: [
       { label: 'Alberta.ca — Post-secondary education (Government of Alberta)', url: 'https://www.alberta.ca/post-secondary' },
@@ -190487,6 +190795,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'IRCC — Work while you study (Government of Canada)', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work.html' },
     ],
     lastVerified: '2026-06-10',
+    contentUpdated: '2026-11-25',
     keywords: ['studying in alberta', 'alberta universities', 'study in calgary', 'study in edmonton', 'alberta cost of living students', 'study in alberta canada'],
     tags: ['canada-universities'],
   },
@@ -192488,13 +192797,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: ['university-of-auckland'],
+    relatedCollegeSlugs: ['university-of-auckland', 'university-of-otago', 'university-of-canterbury', 'university-of-waikato', 'massey-university', 'ara-institute-of-canterbury', 'eastern-institute-of-technology', 'southern-institute-of-technology', 'nelson-marlborough-institute-of-technology', 'whitireia-and-weltec', 'manukau-institute-of-technology-and-unitec', 'wintec-waikato-institute-of-technology', 'toi-ohomai-institute-of-technology', 'open-polytechnic-of-new-zealand', 'ucol-universal-college-of-learning', 'northtec', 'witt-western-institute-of-technology-at-taranaki'],
     relatedGuideSlugs: ['how-to-study-in-new-zealand-complete-guide', 'entry-requirements-for-new-zealand-universities', 'application-documents-checklist-australia-and-new-zealand'],
     sources: [
       { label: 'Study with New Zealand — official government portal', url: 'https://www.studywithnewzealand.govt.nz' },
       { label: 'University of Auckland — Apply (international)', url: 'https://www.auckland.ac.nz/en/study/applications-and-admissions.html' },
     ],
     lastVerified: '2026-06-12',
+    contentUpdated: '2026-11-26',
     keywords: ['how to apply to new zealand universities', 'apply to university in new zealand', 'new zealand university application', 'offer of place new zealand', 'study in new zealand application process'],
     tags: ['anz-admissions'],
     keyFacts: [
@@ -193835,7 +194145,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['university-of-melbourne', 'university-of-sydney', 'unsw-sydney', 'australian-national-university', 'university-of-queensland', 'university-of-western-australia', 'university-of-adelaide'],
     relatedGuideSlugs: [
       'university-of-melbourne-admission-guide',
       'university-of-sydney-admission-guide',
@@ -193848,6 +194158,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Study Australia (Australian Government) — list of Australian universities', url: 'https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities' },
     ],
     lastVerified: '2026-06-12',
+    contentUpdated: '2026-11-22',
     keywords: [
       'group of eight universities',
       'go8 universities australia',
@@ -194428,7 +194739,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['university-of-queensland'],
     relatedGuideSlugs: ['monash-university-admission-guide', 'best-universities-in-australia-for-international-students', 'study-in-australia-from-india'],
     sources: [
       { label: 'UQ — Faculties, schools, institutes and centres', url: 'https://about.uq.edu.au/faculties-schools-institutes-centres' },
@@ -194438,6 +194749,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Australian Government — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
     ],
     lastVerified: '2026-07-02',
+    contentUpdated: '2026-11-22',
     keywords: ['university of queensland admission', 'uq entry requirements', 'university of queensland international students', 'how to apply to uq', 'uq english requirements'],
     tags: ['anz-universities'],
     keyFacts: [
@@ -194536,7 +194848,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['university-of-western-australia'],
     relatedGuideSlugs: ['university-of-adelaide-admission-guide', 'best-universities-in-australia-for-international-students', 'study-in-australia-from-india'],
     sources: [
       { label: 'UWA — About (Go8, schools, Perth)', url: 'https://www.uwa.edu.au/about' },
@@ -194546,6 +194858,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Australian Government — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
     ],
     lastVerified: '2026-07-02',
+    contentUpdated: '2026-11-22',
     keywords: ['university of western australia admission', 'uwa entry requirements', 'uwa international students', 'how to apply to uwa', 'uwa english requirements'],
     tags: ['anz-universities'],
     keyFacts: [
@@ -194644,7 +194957,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['university-of-adelaide'],
     relatedGuideSlugs: ['university-of-western-australia-admission-guide', 'best-universities-in-australia-for-international-students', 'study-in-australia-from-india'],
     sources: [
       { label: 'Adelaide University — About (Go8, colleges, campuses)', url: 'https://adelaide.edu.au/about/' },
@@ -194654,6 +194967,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Australian Government — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
     ],
     lastVerified: '2026-07-02',
+    contentUpdated: '2026-11-22',
     keywords: ['university of adelaide admission', 'university of adelaide entry requirements', 'university of adelaide international students', 'how to apply to university of adelaide', 'adelaide english requirements'],
     tags: ['anz-universities'],
     keyFacts: [
@@ -194838,13 +195152,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['university-of-auckland', 'university-of-otago', 'university-of-canterbury', 'university-of-waikato', 'massey-university'],
     relatedGuideSlugs: ['university-of-auckland-admission-guide', 'university-of-otago-admission-guide', 'study-in-new-zealand-from-india'],
     sources: [
       { label: 'Universities New Zealand — our universities', url: 'https://www.universitiesnz.ac.nz/universities' },
       { label: 'Study with New Zealand — official Government site', url: 'https://www.studywithnewzealand.govt.nz/en' },
     ],
     lastVerified: '2026-06-12',
+    contentUpdated: '2026-11-26',
     keywords: ['universities in new zealand', 'list of new zealand universities', 'how many universities in new zealand', 'best universities in new zealand', 'study in new zealand'],
     tags: ['anz-universities'],
     keyFacts: [
@@ -195172,13 +195487,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'pte-academic'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['university-of-wollongong', 'university-of-southern-queensland', 'charles-darwin-university', 'southern-cross-university', 'university-of-the-sunshine-coast', 'federation-university-australia', 'cquniversity-australia'],
     relatedGuideSlugs: ['how-to-choose-a-university-in-australia', 'study-in-australia-from-india', 'universities-in-new-zealand-complete-guide'],
     sources: [
       { label: 'Department of Home Affairs — Temporary Graduate visa (subclass 485)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485' },
       { label: 'Study Australia — Temporary Graduate visa guidance (official Government site)', url: 'https://www.studyaustralia.gov.au/en/plan-your-move/your-guide-to-visas/temporary-graduate-visa-subclass-485' },
     ],
     lastVerified: '2026-06-12',
+    contentUpdated: '2026-11-26',
     keywords: ['regional universities in australia', 'regional study australia', 'designated regional area australia', 'subclass 485 regional', 'study in regional australia'],
     tags: ['anz-universities'],
     keyFacts: [
@@ -196050,13 +196366,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['rmit-university', 'swinburne-university-of-technology', 'victoria-university', 'federation-university-australia', 'charles-darwin-university', 'cquniversity-australia', 'tafe-queensland', 'tafe-nsw', 'melbourne-polytechnic', 'tafe-sa'],
     relatedGuideSlugs: ['masters-degree-in-australia-guide', 'study-in-australia-from-india'],
     sources: [
       { label: 'Study Australia — official Government of Australia site', url: 'https://www.studyaustralia.gov.au' },
       { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
     ],
     lastVerified: '2026-06-12',
+    contentUpdated: '2026-11-26',
     keywords: ['vocational education and tafe in australia', 'tafe courses for international students', 'vet courses australia', 'tafe to university pathway australia'],
     tags: ['anz-courses-careers'],
     keyFacts: [
@@ -198942,7 +199259,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
-    relatedCollegeSlugs: ['university-of-melbourne'],
+    relatedCollegeSlugs: ['university-of-melbourne', 'rmit-university', 'swinburne-university-of-technology', 'victoria-university', 'melbourne-polytechnic'],
     relatedGuideSlugs: ['best-cities-to-study-in-australia', 'studying-in-sydney-student-guide', 'study-in-australia-from-india'],
     sources: [
       { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
@@ -198950,6 +199267,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Australian Government Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
     ],
     lastVerified: '2026-06-12',
+    contentUpdated: '2026-11-26',
     keywords: ['studying in melbourne', 'student life melbourne', 'cost of living melbourne students', 'universities in melbourne', 'study in melbourne australia'],
     tags: ['anz-student-life'],
     keyFacts: [
@@ -199027,7 +199345,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
-    relatedCollegeSlugs: ['university-of-sydney'],
+    relatedCollegeSlugs: ['university-of-sydney', 'unsw-sydney', 'university-of-technology-sydney', 'western-sydney-university', 'tafe-nsw'],
     relatedGuideSlugs: ['best-cities-to-study-in-australia', 'studying-in-melbourne-student-guide', 'study-in-australia-from-india'],
     sources: [
       { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
@@ -199035,7 +199353,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Australian Government Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
     ],
     lastVerified: '2026-06-12',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-26',
     keywords: ['studying in sydney', 'student life sydney', 'cost of living sydney students', 'universities in sydney', 'study in sydney australia'],
     tags: ['anz-student-life'],
     keyFacts: [
@@ -199113,13 +199431,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['university-of-queensland', 'tafe-queensland', 'endeavour-college-of-natural-health'],
     relatedGuideSlugs: ['best-cities-to-study-in-australia', 'studying-in-sydney-student-guide', 'studying-in-perth-student-guide', 'study-in-australia-from-india'],
     sources: [
       { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
       { label: 'Australian Government Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
     ],
     lastVerified: '2026-06-12',
+    contentUpdated: '2026-11-26',
     keywords: ['studying in brisbane', 'student life brisbane', 'cost of living brisbane students', 'universities in brisbane', 'study in brisbane australia'],
     tags: ['anz-student-life'],
     keyFacts: [
@@ -199197,14 +199516,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'pte-academic', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['university-of-western-australia', 'curtin-university', 'murdoch-university'],
     relatedGuideSlugs: ['best-cities-to-study-in-australia', 'studying-in-brisbane-student-guide', 'study-in-australia-from-india'],
     sources: [
       { label: 'Study Australia — official Australian Government site', url: 'https://www.studyaustralia.gov.au' },
       { label: 'Australian Government Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500' },
     ],
     lastVerified: '2026-06-12',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-22',
     keywords: ['studying in perth', 'student life perth', 'cost of living perth students', 'universities in perth', 'study in perth australia'],
     tags: ['anz-student-life'],
     keyFacts: [
@@ -199468,13 +199787,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts'],
-    relatedCollegeSlugs: ['university-of-auckland'],
+    relatedCollegeSlugs: ['university-of-auckland', 'manukau-institute-of-technology-and-unitec', 'media-design-school'],
     relatedGuideSlugs: ['student-accommodation-in-new-zealand-guide', 'student-life-in-new-zealand-guide', 'study-in-new-zealand-from-india'],
     sources: [
       { label: 'New Zealand Government — Study with New Zealand', url: 'https://www.studywithnewzealand.govt.nz/' },
       { label: 'Immigration New Zealand — Study (student visas)', url: 'https://www.immigration.govt.nz/study/' },
     ],
     lastVerified: '2026-06-12',
+    contentUpdated: '2026-11-26',
     keywords: ['studying in auckland', 'student life auckland', 'universities in auckland', 'cost of living auckland student', 'study in auckland international students'],
     tags: ['anz-student-life'],
     keyFacts: [
@@ -201570,7 +201890,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'testas'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['tu-munich', 'lmu-munich', 'heidelberg-university', 'rwth-aachen-university', 'technical-university-of-berlin', 'free-university-of-berlin', 'karlsruhe-institute-of-technology', 'university-of-freiburg', 'university-of-bonn', 'charite-berlin', 'hm-munich'],
     relatedGuideSlugs: ['uni-assist-application-guide', 'studienkolleg-do-i-need-it', 'study-in-germany-from-india', 'daad-scholarship-for-indians'],
     sources: [
       { label: 'Study in Germany (DAAD) — official portal', url: 'https://www.study-in-germany.de/en/' },
@@ -201578,6 +201898,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Make it in Germany — Federal Government portal', url: 'https://www.make-it-in-germany.com/en/' },
     ],
     lastVerified: '2026-06-13',
+    contentUpdated: '2026-11-26',
     keywords: ['how to study in germany', 'study in germany for international students', 'study in germany free tuition', 'aps certificate germany', 'study in germany requirements', 'german student visa'],
     tags: ['europe-admissions'],
     keyFacts: [
@@ -201806,14 +202127,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['sorbonne-university', 'sciences-po', 'psl-university', 'universite-paris-cite', 'universite-paris-saclay'],
     relatedGuideSlugs: ['campus-france-application-process', 'study-in-france-from-india', 'how-to-study-in-germany-complete-guide'],
     sources: [
       { label: 'Campus France — official site', url: 'https://www.campusfrance.org/en' },
       { label: 'France-Visas — official government portal', url: 'https://france-visas.gouv.fr/en/' },
     ],
     lastVerified: '2026-06-13',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-26',
     keywords: ['how to study in france', 'study in france for international students', 'campus france', 'etudes en france', 'study in france requirements', 'france student visa'],
     tags: ['europe-admissions'],
     keyFacts: [
@@ -201978,13 +202299,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['tu-delft', 'university-of-amsterdam', 'utrecht-university', 'erasmus-university-rotterdam', 'eindhoven-university-of-technology', 'university-of-groningen', 'vrije-universiteit-amsterdam', 'amsterdam-university-of-applied-sciences'],
     relatedGuideSlugs: ['study-in-netherlands-from-india', 'english-taught-bachelors-germany', 'how-to-study-in-sweden-complete-guide'],
     sources: [
       { label: 'Study in NL (Nuffic) — How to apply', url: 'https://www.studyinnl.org/plan-your-stay/how-to-apply' },
       { label: 'IND — Residence permit for study', url: 'https://ind.nl/en/residence-permits/study' },
     ],
     lastVerified: '2026-06-13',
+    contentUpdated: '2026-11-26',
     keywords: ['how to study in netherlands', 'studielink application', 'wo vs hbo netherlands', 'numerus fixus', 'study in netherlands for international students', 'netherlands student visa'],
     tags: ['europe-admissions'],
     keyFacts: [
@@ -202151,13 +202473,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['bocconi-university'],
+    relatedCollegeSlugs: ['university-of-bologna', 'sapienza-university-of-rome', 'politecnico-di-milano', 'bocconi-university', 'iulm-university', 'university-of-padua', 'politecnico-di-torino'],
     relatedGuideSlugs: ['how-to-study-in-spain-complete-guide', 'how-to-study-in-netherlands-complete-guide', 'how-to-study-in-sweden-complete-guide'],
     sources: [
       { label: 'Studiare in Italia (MUR) — international students', url: 'https://www.studiare-in-italia.it/studentistranieri/' },
       { label: 'Universitaly — official Ministry portal', url: 'https://www.universitaly.it' },
     ],
     lastVerified: '2026-06-13',
+    contentUpdated: '2026-11-26',
     keywords: ['how to study in italy', 'universitaly pre-enrolment', 'study medicine in italy in english', 'imat italy', 'italy student visa', 'study in italy for international students'],
     tags: ['europe-admissions'],
     keyFacts: [
@@ -202235,14 +202558,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['complutense-university-of-madrid'],
+    relatedCollegeSlugs: ['complutense-university-of-madrid', 'universidad-autonoma-de-madrid', 'universidad-carlos-iii-de-madrid', 'ie-university', 'universitat-autonoma-de-barcelona'],
     relatedGuideSlugs: ['how-to-study-in-italy-complete-guide', 'how-to-study-in-netherlands-complete-guide', 'how-to-study-in-sweden-complete-guide'],
     sources: [
       { label: 'Ministry of Science, Innovation and Universities (Spain) — Universities', url: 'https://www.ciencia.gob.es/Universidades.html' },
       { label: 'Ministry of Foreign Affairs (Spain) — visas', url: 'https://www.exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Servicios-consulares.aspx' },
     ],
     lastVerified: '2026-06-13',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-26',
     keywords: ['how to study in spain', 'homologacion spain', 'unedasiss', 'spain student visa', 'study in spain in english', 'study in spain for international students'],
     tags: ['europe-admissions'],
     keyFacts: [
@@ -202330,7 +202653,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['kth-royal-institute'],
+    relatedCollegeSlugs: ['kth-royal-institute', 'karolinska-institute', 'uppsala-university', 'stockholm-university', 'lund-university'],
     relatedGuideSlugs: ['how-to-study-in-netherlands-complete-guide', 'how-to-study-in-italy-complete-guide', 'how-to-study-in-spain-complete-guide'],
     sources: [
       { label: 'University Admissions in Sweden — official portal', url: 'https://www.universityadmissions.se' },
@@ -202338,6 +202661,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Swedish Institute (si.se) — scholarships', url: 'https://si.se/en/' },
     ],
     lastVerified: '2026-06-13',
+    contentUpdated: '2026-11-26',
     keywords: ['how to study in sweden', 'universityadmissions.se', 'study in sweden tuition', 'sweden scholarships for international students', 'sweden student residence permit', 'study in sweden for international students'],
     tags: ['europe-admissions'],
     keyFacts: [
@@ -209272,7 +209596,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['psl-university', 'charite-berlin', 'wu-vienna', 'vrije-universiteit-amsterdam', 'stockholm-university', 'ie-university', 'czech-technical-university-in-prague', 'sgh-warsaw-school-of-economics', 'ghent-university', 'universite-libre-de-bruxelles'],
     relatedGuideSlugs: ['why-study-in-europe-for-international-students', 'europe-vs-uk-vs-usa-for-international-students', 'how-to-study-in-the-nordic-countries'],
     sources: [
       { label: 'Study in Europe — official EU education portal', url: 'https://education.ec.europa.eu/study-in-europe' },
@@ -209280,6 +209604,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Study in Germany — official portal (DAAD)', url: 'https://www.study-in-germany.com/en/' },
     ],
     lastVerified: '2026-06-13',
+    contentUpdated: '2026-11-26',
     keywords: ['best cities to study in europe', 'best student cities europe', 'cheapest cities to study in europe', 'student cities in europe for international students', 'study in europe cost of living'],
     tags: ['europe-student-life'],
     keyFacts: [
@@ -209358,7 +209683,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['kth-royal-institute', 'uppsala-university', 'university-of-copenhagen', 'technical-university-of-denmark', 'university-of-oslo', 'norwegian-university-of-science-and-technology', 'university-of-helsinki', 'aalto-university', 'stockholm-university', 'lund-university', 'university-of-bergen', 'norwegian-school-of-economics', 'tampere-university', 'university-of-turku'],
     relatedGuideSlugs: ['why-study-in-europe-for-international-students', 'best-cities-to-study-in-europe', 'how-to-study-in-switzerland-from-india-complete-guide'],
     sources: [
       { label: 'Study in Denmark — official portal', url: 'https://studyindenmark.dk/' },
@@ -209366,7 +209691,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Study in Norway — official portal', url: 'https://www.studyinnorway.no/' },
     ],
     lastVerified: '2026-06-13',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-26',
     keywords: ['how to study in the nordic countries', 'study in denmark finland norway', 'study in scandinavia for free', 'nordic universities for international students', 'tuition fees in nordic countries'],
     tags: ['europe-student-life'],
     keyFacts: [
@@ -209440,14 +209765,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['eth-zurich'],
+    relatedCollegeSlugs: ['eth-zurich', 'epfl', 'university-of-zurich', 'university-of-geneva', 'university-of-basel'],
     relatedGuideSlugs: ['why-study-in-europe-for-international-students', 'how-to-study-in-the-nordic-countries', 'best-cities-to-study-in-europe'],
     sources: [
       { label: 'swissuniversities — official overview of Swiss universities', url: 'https://www.swissuniversities.ch/en' },
       { label: 'State Secretariat for Migration (SEM) — official Swiss immigration', url: 'https://www.sem.admin.ch/sem/en/home.html' },
     ],
     lastVerified: '2026-06-13',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-26',
     keywords: ['how to study in switzerland', 'study in switzerland from india', 'switzerland student visa', 'cost of studying in switzerland', 'universities in switzerland for international students'],
     tags: ['europe-student-life'],
     keyFacts: [
@@ -209787,7 +210112,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['sat', 'ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['nyu-abu-dhabi', 'khalifa-university', 'united-arab-emirates-university', 'zayed-university', 'university-of-sharjah', 'american-university-of-sharjah', 'abu-dhabi-university', 'sorbonne-university-abu-dhabi', 'american-university-in-dubai', 'higher-colleges-of-technology', 'ajman-university'],
     relatedGuideSlugs: [
       'how-to-study-in-the-gulf-complete-guide',
       'how-to-apply-to-universities-in-saudi-arabia',
@@ -209799,6 +210124,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'KHDA — Knowledge and Human Development Authority (Dubai)', url: 'https://www.khda.gov.ae/en' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'how to apply to universities in uae',
       'study in uae for international students',
@@ -209878,7 +210204,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'gre'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['kaust', 'king-fahd-university', 'king-saud-university', 'alfaisal-university', 'effat-university', 'al-yamamah-university', 'dar-al-hekma-university'],
     relatedGuideSlugs: [
       'how-to-study-in-the-gulf-complete-guide',
       'how-to-apply-to-universities-in-the-uae',
@@ -209889,6 +210215,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Saudi Arabia Ministry of Education', url: 'https://moe.gov.sa/en/Pages/default.aspx' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'how to apply to universities in saudi arabia',
       'study in saudi arabia for international students',
@@ -209968,7 +210295,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['sat', 'ielts', 'gre'],
-    relatedCollegeSlugs: ['qatar-university', 'hamad-bin-khalifa-university'],
+    relatedCollegeSlugs: ['qatar-university', 'hamad-bin-khalifa-university', 'carnegie-mellon-university-in-qatar', 'georgetown-university-in-qatar', 'northwestern-university-in-qatar', 'weill-cornell-medicine-qatar', 'university-of-doha-for-science-and-technology'],
     relatedGuideSlugs: [
       'how-to-study-in-the-gulf-complete-guide',
       'how-to-apply-to-universities-in-the-uae',
@@ -209980,6 +210307,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Hamad Bin Khalifa University — Admissions', url: 'https://www.hbku.edu.qa/en/admissions' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'how to apply to universities in qatar',
       'study in qatar for international students',
@@ -210583,7 +210911,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['sultan-qaboos-university'],
+    relatedCollegeSlugs: ['sultan-qaboos-university', 'sohar-university', 'dhofar-university', 'muscat-university', 'national-university-of-science-and-technology-oman', 'university-of-technology-and-applied-sciences'],
     relatedGuideSlugs: [
       'how-to-apply-to-universities-in-bahrain',
       'how-to-apply-to-universities-in-kuwait',
@@ -210594,6 +210922,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Sultan Qaboos University — official site', url: 'https://www.squ.edu.om' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'how to apply to universities in oman',
       'sultan qaboos university admission',
@@ -210683,7 +211012,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['university-of-bahrain'],
+    relatedCollegeSlugs: ['university-of-bahrain', 'rcsi-medical-university-of-bahrain', 'ahlia-university', 'bahrain-polytechnic', 'applied-science-university-bahrain'],
     relatedGuideSlugs: [
       'how-to-apply-to-universities-in-oman',
       'how-to-apply-to-universities-in-kuwait',
@@ -210694,6 +211023,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'University of Bahrain — official site', url: 'https://www.uob.edu.bh' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'how to apply to universities in bahrain',
       'university of bahrain admission',
@@ -210783,7 +211113,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['kuwait-university'],
+    relatedCollegeSlugs: ['kuwait-university', 'american-university-of-kuwait', 'american-university-of-the-middle-east', 'australian-university-kuwait', 'kuwait-college-of-science-and-technology'],
     relatedGuideSlugs: [
       'how-to-apply-to-universities-in-oman',
       'how-to-apply-to-universities-in-bahrain',
@@ -210794,6 +211124,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Ministry of Education (Kuwait)', url: 'https://www.moe.edu.kw' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'how to apply to universities in kuwait',
       'kuwait university admission',
@@ -211069,7 +211400,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'sat'],
-    relatedCollegeSlugs: ['nyu-abu-dhabi', 'khalifa-university', 'american-university-of-sharjah', 'mbzuai'],
+    relatedCollegeSlugs: ['nyu-abu-dhabi', 'khalifa-university', 'american-university-of-sharjah', 'mbzuai', 'united-arab-emirates-university', 'zayed-university', 'university-of-sharjah', 'abu-dhabi-university', 'sorbonne-university-abu-dhabi', 'american-university-in-dubai', 'university-of-dubai', 'canadian-university-dubai', 'rit-dubai', 'ajman-university'],
     relatedGuideSlugs: [
       'how-to-get-admission-in-nyu-abu-dhabi',
       'how-to-get-admission-in-khalifa-university',
@@ -211081,6 +211412,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'The Official Portal of the UAE Government — Higher education', url: 'https://u.ae/en/information-and-services/education/higher-education' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'top universities in uae for international students',
       'best universities in dubai abu dhabi',
@@ -212096,7 +212428,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'gre'],
-    relatedCollegeSlugs: ['kaust', 'king-fahd-university', 'king-saud-university'],
+    relatedCollegeSlugs: ['kaust', 'king-fahd-university', 'king-saud-university', 'alfaisal-university', 'effat-university', 'al-yamamah-university', 'dar-al-hekma-university'],
     relatedGuideSlugs: ['top-engineering-and-technology-universities-in-the-gulf', 'best-universities-in-qatar-for-international-students'],
     sources: [
       { label: 'Study in Saudi Arabia — Ministry of Education portal', url: 'https://studyinsaudi.sa/en' },
@@ -212104,6 +212436,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'KFUPM — official website', url: 'https://www.kfupm.edu.sa' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['best universities in saudi arabia', 'study in saudi arabia for international students', 'kaust fellowship', 'kfupm admission', 'universities in saudi arabia for international students'],
     tags: ['middle-east-universities'],
     keyFacts: [
@@ -212172,7 +212505,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'sat'],
-    relatedCollegeSlugs: ['qatar-university', 'hamad-bin-khalifa-university'],
+    relatedCollegeSlugs: ['qatar-university', 'hamad-bin-khalifa-university', 'carnegie-mellon-university-in-qatar', 'georgetown-university-in-qatar', 'northwestern-university-in-qatar', 'weill-cornell-medicine-qatar', 'university-of-doha-for-science-and-technology'],
     relatedGuideSlugs: ['best-universities-in-saudi-arabia-for-international-students', 'top-engineering-and-technology-universities-in-the-gulf'],
     sources: [
       { label: 'Qatar University — official website', url: 'https://www.qu.edu.qa' },
@@ -212180,6 +212513,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Qatar Foundation — Education City', url: 'https://www.qf.org.qa' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['best universities in qatar', 'study in qatar for international students', 'qatar university admission', 'education city qatar universities', 'hamad bin khalifa university'],
     tags: ['middle-east-universities'],
     keyFacts: [
@@ -212248,7 +212582,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['sultan-qaboos-university', 'university-of-bahrain', 'kuwait-university'],
+    relatedCollegeSlugs: ['sultan-qaboos-university', 'university-of-bahrain', 'kuwait-university', 'sohar-university', 'dhofar-university', 'muscat-university', 'national-university-of-science-and-technology-oman', 'university-of-technology-and-applied-sciences', 'rcsi-medical-university-of-bahrain', 'ahlia-university', 'bahrain-polytechnic', 'applied-science-university-bahrain', 'american-university-of-kuwait', 'american-university-of-the-middle-east', 'australian-university-kuwait', 'kuwait-college-of-science-and-technology'],
     relatedGuideSlugs: ['how-to-get-admission-in-sultan-qaboos-university', 'top-engineering-and-technology-universities-in-the-gulf'],
     sources: [
       { label: 'University of Bahrain — official website', url: 'https://www.uob.edu.bh' },
@@ -212256,6 +212590,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Ministry of Education (Bahrain)', url: 'https://moe.gov.bh/en/' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['universities in oman', 'university of bahrain admission', 'kuwait university', 'study in bahrain for international students', 'public universities in the gulf'],
     tags: ['middle-east-universities'],
     keyFacts: [
@@ -212400,7 +212735,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['sat', 'act', 'ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['nyu-abu-dhabi', 'sorbonne-university-abu-dhabi', 'rit-dubai', 'heriot-watt-university-dubai', 'university-of-birmingham-dubai', 'middlesex-university-dubai', 'murdoch-university-dubai', 'curtin-university-dubai', 'carnegie-mellon-university-in-qatar', 'georgetown-university-in-qatar', 'northwestern-university-in-qatar', 'weill-cornell-medicine-qatar'],
     relatedGuideSlugs: [
       'qatar-education-city-universities-guide',
       'are-branch-campus-degrees-recognized',
@@ -212412,6 +212747,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'KHDA — Dubai (higher education regulator, UAE)', url: 'https://www.khda.gov.ae' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'international branch campus gulf',
       'western branch campus uae qatar',
@@ -212489,7 +212825,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['sat', 'act', 'ielts', 'toefl'],
-    relatedCollegeSlugs: ['hamad-bin-khalifa-university', 'qatar-university'],
+    relatedCollegeSlugs: ['hamad-bin-khalifa-university', 'qatar-university', 'carnegie-mellon-university-in-qatar', 'georgetown-university-in-qatar', 'northwestern-university-in-qatar', 'weill-cornell-medicine-qatar'],
     relatedGuideSlugs: [
       'western-branch-campuses-in-the-gulf-explained',
       'are-branch-campus-degrees-recognized',
@@ -212501,7 +212837,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Hamad Bin Khalifa University (HBKU)', url: 'https://www.hbku.edu.qa' },
     ],
     lastVerified: '2026-06-14',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-25',
     keywords: [
       'qatar education city universities',
       'study in education city qatar',
@@ -212853,7 +213189,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['heriot-watt-university-dubai', 'university-of-birmingham-dubai', 'middlesex-university-dubai', 'rit-dubai', 'murdoch-university-dubai', 'curtin-university-dubai', 'bits-pilani-dubai', 'manipal-academy-of-higher-education-dubai', 'amity-university-dubai', 'sp-jain-school-of-global-management-dubai'],
     relatedGuideSlugs: [
       'indian-university-campuses-in-dubai',
       'uk-and-australian-university-campuses-in-the-uae',
@@ -212864,6 +213200,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'UAE Ministry of Education — official site', url: 'https://www.moe.gov.ae' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'branch campuses in dubai',
       'study in dubai for international students',
@@ -212959,7 +213296,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['bits-pilani-dubai', 'manipal-academy-of-higher-education-dubai', 'amity-university-dubai'],
     relatedGuideSlugs: [
       'branch-campuses-in-dubai-guide',
       'uk-and-australian-university-campuses-in-the-uae',
@@ -212970,6 +213307,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'KHDA — Knowledge and Human Development Authority (Dubai)', url: 'https://www.khda.gov.ae' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'indian university campuses in dubai',
       'bits pilani dubai admission',
@@ -213065,7 +213403,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['heriot-watt-university-dubai', 'university-of-birmingham-dubai', 'middlesex-university-dubai', 'murdoch-university-dubai', 'curtin-university-dubai'],
     relatedGuideSlugs: [
       'branch-campuses-in-dubai-guide',
       'indian-university-campuses-in-dubai',
@@ -213077,6 +213415,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'KHDA — Knowledge and Human Development Authority (Dubai)', url: 'https://www.khda.gov.ae' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'uk university campus in dubai',
       'australian university campus in uae',
@@ -215928,7 +216267,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['sultan-qaboos-university', 'qatar-university'],
+    relatedCollegeSlugs: ['sultan-qaboos-university', 'qatar-university', 'university-of-sharjah', 'gulf-medical-university', 'mohammed-bin-rashid-university-of-medicine-and-health-sciences', 'weill-cornell-medicine-qatar', 'rcsi-medical-university-of-bahrain', 'national-university-of-science-and-technology-oman'],
     relatedGuideSlugs: [
       'popular-courses-to-study-in-the-gulf',
       'engineering-and-petroleum-studies-in-the-gulf',
@@ -215940,6 +216279,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Qatar University — official website', url: 'https://www.qu.edu.qa/' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'study medicine in the gulf',
       'medical universities in uae',
@@ -219342,13 +219682,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['nazarbayev-university', 'al-farabi-kazakh-national-university'],
+    relatedCollegeSlugs: ['nazarbayev-university', 'al-farabi-kazakh-national-university', 'kazakh-national-medical-university', 'almaty-management-university', 'astana-medical-university', 'sdu-university'],
     relatedGuideSlugs: ['how-to-study-in-kyrgyzstan', 'how-to-study-in-uzbekistan', 'how-to-study-in-armenia', 'preparatory-faculty-and-foundation-year-russia-cis'],
     sources: [
       { label: 'Nazarbayev University — Admissions (official)', url: 'https://nu.edu.kz/admissions' },
       { label: 'Government of Kazakhstan — official portal (gov.kz)', url: 'https://www.gov.kz/?lang=en' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['study in kazakhstan', 'study in kazakhstan for indian students', 'nazarbayev university admission', 'universities in kazakhstan for international students', 'kazakhstan student visa'],
     tags: ['russia-cis-admissions'],
     keyFacts: [
@@ -219428,7 +219769,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'neet-ug'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['american-university-of-central-asia', 'international-higher-school-of-medicine', 'kyrgyz-turkish-manas-university', 'kyrgyz-national-university'],
     relatedGuideSlugs: ['how-to-study-in-kazakhstan', 'how-to-study-in-uzbekistan', 'how-to-study-in-armenia', 'preparatory-faculty-and-foundation-year-russia-cis'],
     sources: [
       { label: 'American University of Central Asia — Admissions (official)', url: 'https://www.auca.kg/en/admissions/' },
@@ -219436,6 +219777,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'NTA — NEET official site', url: 'https://neet.nta.nic.in' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['study in kyrgyzstan', 'study in kyrgyzstan for indian students', 'mbbs in kyrgyzstan', 'universities in kyrgyzstan for international students', 'kyrgyzstan student visa'],
     tags: ['russia-cis-admissions'],
     keyFacts: [
@@ -219510,13 +219852,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['national-university-of-uzbekistan', 'westminster-international-university-in-tashkent', 'inha-university-in-tashkent', 'turin-polytechnic-university-in-tashkent', 'webster-university-in-tashkent', 'samarkand-state-medical-university'],
     relatedGuideSlugs: ['how-to-study-in-kazakhstan', 'how-to-study-in-kyrgyzstan', 'how-to-study-in-armenia', 'preparatory-faculty-and-foundation-year-russia-cis'],
     sources: [
       { label: 'Government portal of the Republic of Uzbekistan (gov.uz)', url: 'https://gov.uz/en' },
     ],
     lastVerified: '2026-06-14',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-25',
     keywords: ['study in uzbekistan', 'study in uzbekistan for indian students', 'universities in uzbekistan for international students', 'uzbekistan student visa', 'english medium universities uzbekistan'],
     tags: ['russia-cis-admissions'],
     keyFacts: [
@@ -219595,7 +219937,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'neet-ug'],
-    relatedCollegeSlugs: ['yerevan-state-medical-university'],
+    relatedCollegeSlugs: ['american-university-of-armenia', 'yerevan-state-university', 'yerevan-state-medical-university', 'russian-armenian-university'],
     relatedGuideSlugs: ['how-to-study-in-kazakhstan', 'how-to-study-in-kyrgyzstan', 'how-to-study-in-uzbekistan', 'preparatory-faculty-and-foundation-year-russia-cis'],
     sources: [
       { label: 'Yerevan State Medical University — official', url: 'https://www.ysmu.am' },
@@ -219603,6 +219945,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'NTA — NEET official site', url: 'https://neet.nta.nic.in' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['study in armenia', 'study in armenia for indian students', 'mbbs in armenia', 'english medium universities in armenia', 'armenia student visa'],
     tags: ['russia-cis-admissions'],
     keyFacts: [
@@ -219762,7 +220105,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['lomonosov-moscow-state-university', 'moscow-institute-of-physics-and-technology', 'higher-school-of-economics', 'itmo-university', 'skoltech'],
+    relatedCollegeSlugs: ['lomonosov-moscow-state-university', 'higher-school-of-economics', 'saint-petersburg-state-university', 'itmo-university', 'skoltech', 'rudn-university', 'kazan-federal-university', 'spbstu', 'tomsk-state-university', 'moscow-institute-of-physics-and-technology'],
     relatedGuideSlugs: ['how-to-get-admission-in-lomonosov-moscow-state-university', 'how-to-get-admission-in-mipt', 'how-to-get-admission-in-hse-university', 'how-to-get-admission-in-itmo-university'],
     sources: [
       { label: 'Study in Russia — official government portal for international students', url: 'https://studyinrussia.ru/en/' },
@@ -219770,6 +220113,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Times Higher Education — World University Rankings', url: 'https://www.timeshighereducation.com/world-university-rankings' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['top universities in russia for international students', 'study in russia for indian students', 'best universities in russia', 'english taught programmes russia', 'study in russia', 'russian universities for foreign students'],
     tags: ['russia-cis-universities'],
     keyFacts: [
@@ -220248,13 +220592,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: [],
-    relatedCollegeSlugs: [
-      'moscow-institute-of-physics-and-technology',
-      'itmo-university',
-      'higher-school-of-economics',
-      'lomonosov-moscow-state-university',
-      'skoltech',
-    ],
+    relatedCollegeSlugs: ['moscow-institute-of-physics-and-technology', 'itmo-university', 'skoltech', 'spbstu', 'tomsk-polytechnic-university', 'etu-leti', 'samara-university', 'moscow-polytechnic-university', 'higher-school-of-economics'],
     relatedGuideSlugs: [
       'how-to-get-admission-in-skoltech',
       'english-taught-programs-in-russia',
@@ -220265,7 +220603,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'QS World University Rankings — official site', url: 'https://www.topuniversities.com/world-university-rankings' },
     ],
     lastVerified: '2026-06-14',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-25',
     keywords: [
       'best engineering universities in russia',
       'top technology universities russia',
@@ -220345,7 +220683,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['neet-ug'],
-    relatedCollegeSlugs: ['sechenov-university'],
+    relatedCollegeSlugs: ['sechenov-university', 'north-western-state-medical-university', 'siberian-state-medical-university', 'privolzhsky-research-medical-university', 'kazan-federal-university', 'rudn-university', 'far-eastern-federal-university'],
     relatedGuideSlugs: [
       'how-to-verify-a-university-is-officially-recognised-russia-cis',
       'english-taught-programs-in-russia',
@@ -220357,6 +220695,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'NEET (UG) — National Testing Agency official site', url: 'https://neet.nta.nic.in' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'mbbs in russia',
       'medical universities in russia for indian students',
@@ -220431,7 +220770,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['skoltech', 'higher-school-of-economics', 'itmo-university', 'rudn-university', 'kazan-federal-university', 'spbstu', 'sechenov-university', 'tomsk-state-university', 'etu-leti'],
     relatedGuideSlugs: [
       'how-to-get-admission-in-skoltech',
       'best-engineering-and-technology-universities-in-russia',
@@ -220442,6 +220781,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'IELTS — official site', url: 'https://www.ielts.org' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'english taught programs in russia',
       'study in russia in english',
@@ -220633,14 +220973,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl'],
-    relatedCollegeSlugs: ['nazarbayev-university', 'al-farabi-kazakh-national-university'],
+    relatedCollegeSlugs: ['nazarbayev-university', 'al-farabi-kazakh-national-university', 'kazakh-national-medical-university', 'almaty-management-university', 'astana-medical-university', 'semey-medical-university', 'sdu-university'],
     relatedGuideSlugs: ['choosing-between-russia-and-cis-universities', 'universities-in-kyrgyzstan-for-international-students', 'universities-in-uzbekistan-for-international-students'],
     sources: [
       { label: 'Nazarbayev University — official site', url: 'https://nu.edu.kz' },
       { label: 'Al-Farabi Kazakh National University — admissions for foreign applicants', url: 'https://welcome.kaznu.kz/en/welcome/foreign' },
     ],
     lastVerified: '2026-06-14',
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-25',
     keywords: ['study in kazakhstan for international students', 'top universities in kazakhstan', 'nazarbayev university admission', 'english medium universities kazakhstan', 'al-farabi kazakh national university'],
     tags: ['russia-cis-universities'],
     keyFacts: [
@@ -220713,12 +221053,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: [],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['american-university-of-central-asia', 'international-higher-school-of-medicine', 'kyrgyz-turkish-manas-university', 'kyrgyz-national-university'],
     relatedGuideSlugs: ['top-universities-in-kazakhstan-for-international-students', 'universities-in-uzbekistan-for-international-students', 'choosing-between-russia-and-cis-universities'],
     sources: [
       { label: 'Ministry of Education of the Kyrgyz Republic — official site', url: 'https://edu.gov.kg' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['study in kyrgyzstan for international students', 'universities in kyrgyzstan', 'study in bishkek', 'kyrgyzstan university admission for indian students', 'higher education in kyrgyzstan'],
     tags: ['russia-cis-universities'],
     keyFacts: [
@@ -220791,12 +221132,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: [],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['national-university-of-uzbekistan', 'westminster-international-university-in-tashkent', 'inha-university-in-tashkent', 'turin-polytechnic-university-in-tashkent', 'webster-university-in-tashkent', 'tashkent-university-of-information-technologies', 'samarkand-state-medical-university', 'bukhara-state-medical-institute'],
     relatedGuideSlugs: ['top-universities-in-kazakhstan-for-international-students', 'universities-in-kyrgyzstan-for-international-students', 'universities-in-armenia-for-international-students'],
     sources: [
       { label: 'Ministry of Higher Education, Science and Innovation of the Republic of Uzbekistan — official portal', url: 'https://gov.uz/en/edu' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['study in uzbekistan for international students', 'universities in uzbekistan', 'international branch campuses uzbekistan', 'study in tashkent', 'uzbekistan university admission'],
     tags: ['russia-cis-universities'],
     keyFacts: [
@@ -220869,13 +221211,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['neet-ug', 'ielts'],
-    relatedCollegeSlugs: ['yerevan-state-medical-university'],
+    relatedCollegeSlugs: ['american-university-of-armenia', 'yerevan-state-university', 'yerevan-state-medical-university', 'russian-armenian-university'],
     relatedGuideSlugs: ['universities-in-kyrgyzstan-for-international-students', 'top-universities-in-kazakhstan-for-international-students', 'choosing-between-russia-and-cis-universities'],
     sources: [
       { label: 'Yerevan State Medical University — official site', url: 'https://ysmu.am' },
       { label: 'National Medical Commission (India) — official site', url: 'https://www.nmc.org.in' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['study in armenia for international students', 'universities in armenia', 'yerevan state medical university', 'mbbs in armenia for indian students', 'study medicine in armenia'],
     tags: ['russia-cis-universities'],
     keyFacts: [
@@ -221027,7 +221370,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['neet-ug'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['sechenov-university', 'north-western-state-medical-university', 'siberian-state-medical-university', 'privolzhsky-research-medical-university', 'kazan-federal-university', 'rudn-university', 'far-eastern-federal-university'],
     relatedGuideSlugs: ['mbbs-abroad-eligibility-neet-and-nmc-rules', 'fmge-and-licensing-to-practise-in-india-after-mbbs-abroad', 'how-to-choose-a-medical-university-abroad', 'mbbs-in-russia-cis-vs-india-what-to-know'],
     sources: [
       { label: 'National Medical Commission (NMC) — official site', url: 'https://www.nmc.org.in' },
@@ -221035,6 +221378,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'National Board of Examinations in Medical Sciences (NBEMS)', url: 'https://natboard.edu.in' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['mbbs in russia for indian students', 'study mbbs in russia', 'neet for mbbs abroad', 'nmc guidelines mbbs abroad', 'fmge after mbbs russia'],
     tags: ['russia-cis-mbbs'],
     keyFacts: [
@@ -221414,7 +221758,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['neet-ug'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['kazakh-national-medical-university', 'astana-medical-university', 'semey-medical-university', 'al-farabi-kazakh-national-university'],
     relatedGuideSlugs: [
       'mbbs-abroad-application-process-for-indian-students',
       'mbbs-in-kyrgyzstan-for-indian-students',
@@ -221427,6 +221771,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'NBEMS — FMGE (Foreign Medical Graduate Examination)', url: 'https://natboard.edu.in' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'mbbs in kazakhstan for indian students',
       'mbbs abroad kazakhstan',
@@ -221508,7 +221853,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['neet-ug'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['international-higher-school-of-medicine'],
     relatedGuideSlugs: [
       'mbbs-abroad-application-process-for-indian-students',
       'mbbs-in-kazakhstan-for-indian-students',
@@ -221521,6 +221866,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'NBEMS — FMGE (Foreign Medical Graduate Examination)', url: 'https://natboard.edu.in' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'mbbs in kyrgyzstan for indian students',
       'mbbs abroad kyrgyzstan',
@@ -221602,7 +221948,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['neet-ug'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['samarkand-state-medical-university', 'bukhara-state-medical-institute'],
     relatedGuideSlugs: [
       'mbbs-abroad-application-process-for-indian-students',
       'mbbs-in-kazakhstan-for-indian-students',
@@ -221615,6 +221961,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'NBEMS — FMGE (Foreign Medical Graduate Examination)', url: 'https://natboard.edu.in' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: [
       'mbbs in uzbekistan for indian students',
       'mbbs abroad uzbekistan',
@@ -224168,7 +224515,7 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['neet-ug'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: ['sechenov-university', 'north-western-state-medical-university', 'siberian-state-medical-university', 'privolzhsky-research-medical-university', 'kazakh-national-medical-university', 'samarkand-state-medical-university', 'international-higher-school-of-medicine', 'yerevan-state-medical-university'],
     relatedGuideSlugs: ['popular-courses-to-study-in-russia-and-cis', 'engineering-and-technology-studies-in-russia', 'it-and-computer-science-studies-in-russia', 'business-and-economics-studies-in-russia-cis'],
     sources: [
       { label: 'National Medical Commission (NMC) — official site', url: 'https://www.nmc.org.in/' },
@@ -224176,6 +224523,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'National Board of Examinations in Medical Sciences (NBEMS) — official site', url: 'https://natboard.edu.in/' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['mbbs in russia', 'study medicine in russia for indian students', 'mbbs in cis countries', 'neet for mbbs abroad', 'fmge for foreign medical graduates'],
     tags: ['russia-cis-courses-careers', 'russia-cis-mbbs'],
     keyFacts: [
@@ -224250,13 +224598,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: [],
-    relatedCollegeSlugs: ['itmo-university'],
+    relatedCollegeSlugs: ['itmo-university', 'higher-school-of-economics', 'skoltech', 'spbstu', 'etu-leti', 'tomsk-state-university', 'moscow-polytechnic-university'],
     relatedGuideSlugs: ['popular-courses-to-study-in-russia-and-cis', 'engineering-and-technology-studies-in-russia', 'business-and-economics-studies-in-russia-cis', 'studying-medicine-in-russia-cis-overview'],
     sources: [
       { label: 'ITMO University — official site', url: 'https://en.itmo.ru/' },
       { label: 'Study in Russia — official portal (Ministry of Science and Higher Education)', url: 'https://studyinrussia.ru/en/' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-25',
     keywords: ['computer science in russia', 'it courses in russia for indian students', 'study computer science in russia', 'software engineering in russia', 'best it universities in russia'],
     tags: ['russia-cis-courses-careers'],
     keyFacts: [
@@ -227998,13 +228347,23 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['a-levels', 'international-baccalaureate'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: [
+      'trinity-college-dublin',
+      'university-college-dublin',
+      'university-college-cork',
+      'university-of-galway',
+      'dublin-city-university',
+      'university-of-limerick',
+      'technological-university-dublin',
+      'rcsi-university',
+    ],
     relatedGuideSlugs: ['study-in-ireland-from-india', 'uk-vs-ireland-for-international-students', 'how-to-apply-to-uk-and-ireland-as-a-postgraduate'],
     sources: [
       { label: 'CAO — official site', url: 'https://www.cao.ie' },
       { label: 'Education in Ireland — official', url: 'https://www.educationinireland.com' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-22',
     keywords: ['cao application ireland', 'cao points system', 'how to apply to irish universities', 'study in ireland undergraduate', 'cao application process', 'apply to university in ireland'],
     tags: ['uk-ireland-admissions'],
     keyFacts: [
@@ -228495,13 +228854,28 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: [],
-    relatedCollegeSlugs: ['imperial-college-london', 'university-college-london', 'kings-college-london', 'university-of-manchester', 'university-of-warwick', 'durham-university'],
+    relatedCollegeSlugs: [
+      'imperial-college-london',
+      'university-college-london',
+      'kings-college-london',
+      'queen-mary-university-of-london',
+      'university-of-manchester',
+      'university-of-warwick',
+      'durham-university',
+      'university-of-nottingham',
+      'university-of-southampton',
+      'newcastle-university',
+      'university-of-york',
+      'university-of-exeter',
+      'university-of-liverpool',
+    ],
     relatedGuideSlugs: ['top-universities-in-the-uk-for-international-students', 'how-to-get-into-oxford-or-cambridge', 'how-to-study-in-uk-from-india'],
     sources: [
       { label: 'Russell Group — official site', url: 'https://russellgroup.ac.uk' },
       { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-22',
     keywords: ['russell group universities', 'what is the russell group', 'russell group universities list', 'research intensive universities uk', 'russell group meaning'],
     tags: ['uk-ireland-universities'],
     keyFacts: [
@@ -229177,7 +229551,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic'],
-    relatedCollegeSlugs: ['imperial-college-london', 'university-college-london', 'london-school-of-economics', 'kings-college-london'],
+    relatedCollegeSlugs: [
+      'imperial-college-london',
+      'university-college-london',
+      'london-school-of-economics',
+      'kings-college-london',
+      'queen-mary-university-of-london',
+      'soas-university-of-london',
+    ],
     relatedGuideSlugs: ['how-to-study-in-uk-from-india', 'uk-student-visa-guide', 'how-to-get-admission-in-ucl'],
     sources: [
       { label: 'UK Government — Student visa', url: 'https://www.gov.uk/student-visa' },
@@ -229185,6 +229566,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'NHS — official site', url: 'https://www.nhs.uk' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-22',
     keywords: ['studying in london international students', 'cost of living london students', 'study in london uk', 'london student visa', 'universities in london for international students', 'student life in london'],
     tags: ['uk-ireland-universities', 'uk-ireland-student-life'],
     keyFacts: [
@@ -229346,7 +229728,13 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'a-levels', 'international-baccalaureate'],
-    relatedCollegeSlugs: ['university-of-edinburgh', 'university-of-st-andrews', 'university-of-glasgow'],
+    relatedCollegeSlugs: [
+      'university-of-edinburgh',
+      'university-of-st-andrews',
+      'university-of-glasgow',
+      'university-of-strathclyde',
+      'university-of-aberdeen',
+    ],
     relatedGuideSlugs: ['how-to-get-admission-in-university-of-edinburgh', 'top-russell-group-universities-outside-london', 'how-to-study-in-uk-from-india'],
     sources: [
       { label: 'University of Edinburgh — official site', url: 'https://www.ed.ac.uk' },
@@ -229355,6 +229743,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-22',
     keywords: ['study in scotland', 'scottish universities for international students', 'four year degree scotland', 'studying in scotland uk', 'edinburgh glasgow st andrews'],
     tags: ['uk-ireland-universities'],
     keyFacts: [
@@ -229441,7 +229830,22 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'a-levels', 'international-baccalaureate'],
-    relatedCollegeSlugs: ['university-of-manchester', 'university-of-warwick', 'university-of-bristol', 'university-of-glasgow', 'university-of-leeds', 'durham-university', 'university-of-birmingham', 'university-of-sheffield'],
+    relatedCollegeSlugs: [
+      'university-of-manchester',
+      'university-of-warwick',
+      'university-of-bristol',
+      'university-of-glasgow',
+      'university-of-leeds',
+      'durham-university',
+      'university-of-birmingham',
+      'university-of-sheffield',
+      'university-of-nottingham',
+      'university-of-southampton',
+      'newcastle-university',
+      'university-of-york',
+      'university-of-exeter',
+      'university-of-liverpool',
+    ],
     relatedGuideSlugs: ['studying-in-scotland-universities-and-four-year-degrees', 'how-to-get-admission-in-university-of-edinburgh', 'how-to-study-in-uk-from-india'],
     sources: [
       { label: 'University of Manchester — official site', url: 'https://www.manchester.ac.uk' },
@@ -229450,6 +229854,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'UCAS — undergraduate applications', url: 'https://www.ucas.com' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-22',
     keywords: ['russell group universities', 'top uk universities outside london', 'best universities uk international students', 'manchester warwick bristol durham', 'study in uk'],
     tags: ['uk-ireland-universities'],
     keyFacts: [
@@ -229531,7 +229936,16 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ielts', 'toefl', 'pte-academic', 'a-levels', 'international-baccalaureate'],
-    relatedCollegeSlugs: ['trinity-college-dublin', 'university-college-dublin', 'university-college-cork', 'university-of-galway', 'rcsi-university'],
+    relatedCollegeSlugs: [
+      'trinity-college-dublin',
+      'university-college-dublin',
+      'university-college-cork',
+      'university-of-galway',
+      'rcsi-university',
+      'dublin-city-university',
+      'university-of-limerick',
+      'technological-university-dublin',
+    ],
     relatedGuideSlugs: ['how-to-get-admission-in-trinity-college-dublin', 'study-in-ireland-from-india', 'top-russell-group-universities-outside-london'],
     sources: [
       { label: 'Education in Ireland — official site', url: 'https://www.educationinireland.com' },
@@ -229540,6 +229954,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Citizens Information — Ireland', url: 'https://www.citizensinformation.ie' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-22',
     keywords: ['top universities in ireland', 'study in ireland for international students', 'best universities ireland', 'trinity ucd ucc galway rcsi', 'cao application ireland'],
     tags: ['uk-ireland-universities'],
     keyFacts: [
@@ -229951,7 +230366,14 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: [],
-    relatedCollegeSlugs: ['rcsi-university', 'university-college-cork', 'trinity-college-dublin'],
+    relatedCollegeSlugs: [
+      'rcsi-university',
+      'university-college-cork',
+      'trinity-college-dublin',
+      'university-college-dublin',
+      'university-of-galway',
+      'university-of-limerick',
+    ],
     relatedGuideSlugs: ['graduate-entry-medicine-in-the-uk-and-ireland', 'how-to-study-medicine-in-the-uk', 'study-in-ireland-from-india'],
     sources: [
       { label: 'CAO — Central Applications Office (Ireland)', url: 'https://www.cao.ie' },
@@ -229959,6 +230381,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'Citizens Information — students and immigration', url: 'https://www.citizensinformation.ie' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-22',
     keywords: ['how to study medicine in ireland', 'hpat ireland medicine', 'cao medicine application', 'medicine in ireland for international students', 'rcsi medicine', 'irish medical schools'],
     tags: ['uk-ireland-medicine-competitive'],
     keyFacts: [
@@ -230033,7 +230456,16 @@ const GUIDES_BASE: Guide[] = [
       },
     ],
     relatedExamSlugs: ['ucat'],
-    relatedCollegeSlugs: [],
+    relatedCollegeSlugs: [
+      'university-of-warwick',
+      'queen-mary-university-of-london',
+      'university-of-southampton',
+      'university-of-nottingham',
+      'swansea-university',
+      'rcsi-university',
+      'university-college-cork',
+      'university-of-limerick',
+    ],
     relatedGuideSlugs: ['how-to-study-medicine-in-the-uk', 'how-to-study-medicine-in-ireland', 'ucat-exam-guide-for-uk-medicine'],
     sources: [
       { label: 'GAMSAT — official admissions test site', url: 'https://gamsat.acer.org' },
@@ -230042,6 +230474,7 @@ const GUIDES_BASE: Guide[] = [
       { label: 'CAO — Central Applications Office (Ireland)', url: 'https://www.cao.ie' },
     ],
     lastVerified: '2026-06-14',
+    contentUpdated: '2026-11-22',
     keywords: ['graduate entry medicine uk', 'graduate entry medicine ireland', 'gamsat medicine', 'gem programmes uk', 'studying medicine after a degree', 'accelerated medicine degree'],
     tags: ['uk-ireland-medicine-competitive'],
     keyFacts: [
@@ -237012,7 +237445,9 @@ const GUIDES_INDIA_P3: Guide[] = [
   "relatedExamSlugs": [
     "keam"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "cusat-kochi"
+  ],
   "relatedGuideSlugs": [
     "keam-exam-guide",
     "freeze-float-slide-counselling-explained",
@@ -237026,6 +237461,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "KEAM allotment process",
     "KEAM CAP",
@@ -237149,7 +237585,9 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "anna-university-chennai"
+  ],
   "relatedGuideSlugs": [
     "how-to-fill-choices-in-engineering-counselling",
     "seat-acceptance-reporting-and-withdrawal-explained",
@@ -237167,6 +237605,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "tnea counselling process",
     "tnea random number",
@@ -237296,7 +237735,10 @@ const GUIDES_INDIA_P3: Guide[] = [
   "relatedExamSlugs": [
     "mht-cet"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "coep-pune",
+    "vjti-mumbai"
+  ],
   "relatedGuideSlugs": [
     "mht-cet-exam-guide",
     "how-to-fill-choices-in-engineering-counselling",
@@ -237310,7 +237752,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
-  "contentUpdated": "2026-09-29",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "mht cet cap rounds",
     "mht cet seat allotment",
@@ -237470,7 +237912,9 @@ const GUIDES_INDIA_P3: Guide[] = [
   "relatedExamSlugs": [
     "kcet"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "bmsce-bengaluru"
+  ],
   "relatedGuideSlugs": [
     "kcet-exam-guide",
     "comedk-uget-counselling-process-explained",
@@ -237484,6 +237928,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     },
     ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "kea kcet counselling",
     "kea government quota",
@@ -237594,7 +238039,9 @@ const GUIDES_INDIA_P3: Guide[] = [
     "ap-eapcet",
     "ts-eamcet"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "jntu-hyderabad"
+  ],
   "relatedGuideSlugs": [
     "ap-eapcet-exam-guide",
     "ts-eamcet-exam-guide",
@@ -237612,6 +238059,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "eapcet web counselling",
     "ts eapcet counselling",
@@ -237771,7 +238219,9 @@ const GUIDES_INDIA_P3: Guide[] = [
   "relatedExamSlugs": [
     "comedk-uget"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "bmsce-bengaluru"
+  ],
   "relatedGuideSlugs": [
     "comedk-uget-exam-guide",
     "kea-kcet-counselling-process-explained",
@@ -237789,6 +238239,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "comedk uget counselling",
     "comedk consortium seats",
@@ -237896,7 +238347,9 @@ const GUIDES_INDIA_P3: Guide[] = [
   "relatedExamSlugs": [
     "wbjee"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "jadavpur-university"
+  ],
   "relatedGuideSlugs": [
     "wbjee-exam-guide",
     "how-to-fill-choices-in-engineering-counselling",
@@ -237914,6 +238367,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "wbjee counselling",
     "wbjeeb seat allotment",
@@ -238215,7 +238669,10 @@ const GUIDES_INDIA_P3: Guide[] = [
   "relatedExamSlugs": [
     "jee-main"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "iiit-delhi",
+    "nsut-delhi"
+  ],
   "relatedGuideSlugs": [
     "uptac-aktu-counselling-process-explained",
     "how-to-fill-choices-in-engineering-counselling",
@@ -238233,6 +238690,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "jac delhi counselling",
     "dtu nsut admission",
@@ -243880,7 +244338,11 @@ const GUIDES_INDIA_P3: Guide[] = [
     "iit-jam",
     "neet-ug"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "iiser-pune",
+    "iiser-kolkata",
+    "iiser-bhopal"
+  ],
   "relatedGuideSlugs": [
     "nest-exam-guide",
     "isi-admission-bstat-bmath-guide",
@@ -243902,6 +244364,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "iiser aptitude test",
     "iat exam guide",
@@ -244155,7 +244618,9 @@ const GUIDES_INDIA_P3: Guide[] = [
     "iit-jam",
     "cat"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "isi-kolkata"
+  ],
   "relatedGuideSlugs": [
     "cmi-entrance-exam-guide",
     "iiser-aptitude-test-iat-exam-guide",
@@ -244177,6 +244642,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "isi admission test",
     "b.stat b.math guide",
@@ -244296,7 +244762,9 @@ const GUIDES_INDIA_P3: Guide[] = [
   "relatedExamSlugs": [
     "iit-jam"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "cmi-chennai"
+  ],
   "relatedGuideSlugs": [
     "isi-admission-bstat-bmath-guide",
     "iiser-aptitude-test-iat-exam-guide",
@@ -244314,6 +244782,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "cmi entrance exam",
     "chennai mathematical institute admission",
@@ -244627,7 +245096,9 @@ const GUIDES_INDIA_P3: Guide[] = [
     "cat",
     "ipmat"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "nmims-mumbai"
+  ],
   "relatedGuideSlugs": [
     "symbiosis-entrance-test-set-ug-guide",
     "ipmat-and-integrated-bba-mba-guide",
@@ -244645,6 +245116,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "npat",
     "nmims npat",
@@ -244801,7 +245273,9 @@ const GUIDES_INDIA_P3: Guide[] = [
     "cat",
     "ipmat"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "symbiosis-international-pune"
+  ],
   "relatedGuideSlugs": [
     "npat-exam-guide-nmims",
     "christ-university-entrance-admission-guide",
@@ -244819,6 +245293,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "set exam",
     "symbiosis entrance test",
@@ -244976,7 +245451,9 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "christ-university-bengaluru"
+  ],
   "relatedGuideSlugs": [
     "npat-exam-guide-nmims",
     "symbiosis-entrance-test-set-ug-guide",
@@ -244994,6 +245471,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "christ university admission",
     "christ university entrance test",
@@ -245142,7 +245620,9 @@ const GUIDES_INDIA_P3: Guide[] = [
     "ugc-net",
     "csir-net"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "jawaharlal-nehru-university"
+  ],
   "relatedGuideSlugs": [
     "how-to-get-admission-in-delhi-university",
     "cuet-ug-eligibility-and-exam-pattern",
@@ -245168,6 +245648,7 @@ const GUIDES_INDIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-01",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "how to get admission in JNU",
     "JNU admission",
@@ -253826,7 +254307,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     "pte-academic",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["rmit-university"],
   "relatedGuideSlugs": [
     "australian-technology-network-atn-universities-guide",
     "deakin-university-admission-guide",
@@ -253852,6 +254333,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "RMIT admission",
     "RMIT international students",
@@ -254140,7 +254622,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     "pte-academic",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-technology-sydney"],
   "relatedGuideSlugs": [
     "australian-technology-network-atn-universities-guide",
     "uac-vtac-satac-qtac-application-centres-guide",
@@ -254166,6 +254648,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "UTS admission",
     "University of Technology Sydney international students",
@@ -254297,7 +254780,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     "pte-academic",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["curtin-university"],
   "relatedGuideSlugs": [
     "australian-technology-network-atn-universities-guide",
     "studying-in-perth-student-guide",
@@ -254323,6 +254806,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "Curtin University admission",
     "Curtin international students",
@@ -254758,7 +255242,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     "pte-academic",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-wollongong"],
   "relatedGuideSlugs": [
     "how-to-apply-to-australian-universities",
     "entry-requirements-for-australian-universities",
@@ -254784,6 +255268,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "university of wollongong admission",
     "uow international students",
@@ -254889,7 +255374,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-adelaide", "flinders-university", "torrens-university-australia", "tafe-sa"],
   "relatedGuideSlugs": [
     "best-cities-to-study-in-australia",
     "cost-of-living-in-australia-for-students",
@@ -254919,6 +255404,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "studying in adelaide",
     "study in adelaide international students",
@@ -255033,9 +255519,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     "ielts",
     "pte-academic"
   ],
-  "relatedCollegeSlugs": [
-    "australian-national-university"
-  ],
+  "relatedCollegeSlugs": ["australian-national-university", "university-of-canberra"],
   "relatedGuideSlugs": [
     "studying-in-sydney-student-guide",
     "best-cities-to-study-in-australia",
@@ -255061,6 +255545,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "studying in canberra",
     "study in canberra international students",
@@ -255200,7 +255685,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     "ielts",
     "pte-academic"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["whitireia-and-weltec", "massey-university", "open-polytechnic-of-new-zealand", "le-cordon-bleu-new-zealand"],
   "relatedGuideSlugs": [
     "studying-in-auckland-student-guide",
     "studying-in-christchurch-student-guide",
@@ -255226,6 +255711,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "studying in wellington",
     "study in wellington international students",
@@ -255338,7 +255824,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     "ielts",
     "pte-academic"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-canterbury", "ara-institute-of-canterbury"],
   "relatedGuideSlugs": [
     "studying-in-wellington-student-guide",
     "studying-in-auckland-student-guide",
@@ -255364,6 +255850,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "studying in christchurch",
     "study in christchurch international students",
@@ -258629,7 +259116,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     "pte-academic",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["le-cordon-bleu-new-zealand", "tafe-nsw", "tafe-queensland", "tafe-sa"],
   "relatedGuideSlugs": [
     "vocational-education-and-tafe-in-australia",
     "aqf-australian-qualifications-framework-explained",
@@ -258655,6 +259142,7 @@ const GUIDES_ANZ_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "hospitality courses Australia New Zealand",
     "tourism diploma TAFE",
@@ -262274,7 +262762,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     "toefl",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-windsor"],
   "relatedGuideSlugs": [
     "how-to-study-in-canada-from-india",
     "canada-study-permit-guide",
@@ -262304,6 +262792,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "University of Windsor admission",
     "UWindsor international application",
@@ -262443,7 +262932,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     "toefl",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["york-university"],
   "relatedGuideSlugs": [
     "ouac-101-vs-105-which-application-to-use",
     "automatic-entrance-scholarships-canadian-universities",
@@ -262473,6 +262962,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "York University admission",
     "York University OUAC application",
@@ -262789,7 +263279,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     "pte-academic",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["toronto-metropolitan-university"],
   "relatedGuideSlugs": [
     "ouac-101-vs-105-which-application-to-use",
     "comparing-major-ontario-universities",
@@ -262815,6 +263305,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Toronto Metropolitan University admission",
     "TMU international application",
@@ -262957,7 +263448,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     "pte-academic",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["simon-fraser-university"],
   "relatedGuideSlugs": [
     "educationplannerbc-application-guide",
     "ubc-sfu-uvic-which-bc-university",
@@ -262983,6 +263474,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Simon Fraser University admission",
     "SFU international application",
@@ -263126,9 +263618,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     "pte-academic",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [
-    "university-of-alberta"
-  ],
+  "relatedCollegeSlugs": ["university-of-calgary"],
   "relatedGuideSlugs": [
     "applyalberta-application-guide",
     "alberta-vs-calgary-university-strengths",
@@ -263154,7 +263644,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-29",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "University of Calgary admission",
     "UCalgary international application",
@@ -263462,11 +263952,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [
-    "university-of-toronto",
-    "mcmaster-university",
-    "queens-university"
-  ],
+  "relatedCollegeSlugs": ["university-of-toronto","mcmaster-university","queens-university","western-university","university-of-ottawa","toronto-metropolitan-university"],
   "relatedGuideSlugs": [
     "study-medicine-in-canada",
     "casper-situational-judgement-test-for-canada",
@@ -263488,6 +263974,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "OMSAS",
     "Ontario Medical School Application Service",
@@ -263834,10 +264321,7 @@ const GUIDES_CANADA_P3: Guide[] = [
   "relatedExamSlugs": [
     "lsat"
   ],
-  "relatedCollegeSlugs": [
-    "university-of-toronto",
-    "queens-university"
-  ],
+  "relatedCollegeSlugs": ["university-of-toronto","queens-university","western-university","university-of-ottawa","york-university","toronto-metropolitan-university","university-of-windsor","lakehead-university"],
   "relatedGuideSlugs": [
     "study-law-in-canada",
     "nca-assessment-for-internationally-trained-lawyers-canada",
@@ -263859,6 +264343,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "OLSAS",
     "Ontario Law School Application Service",
@@ -264022,11 +264507,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [
-    "university-of-toronto",
-    "mcmaster-university",
-    "queens-university"
-  ],
+  "relatedCollegeSlugs": ["university-of-toronto","mcmaster-university","queens-university","western-university","university-of-ottawa"],
   "relatedGuideSlugs": [
     "casper-situational-judgement-test-for-canada",
     "health-and-nursing-programs-in-canada",
@@ -264048,6 +264529,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "ORPAS",
     "Ontario Rehabilitation Sciences Programs Application Service",
@@ -265635,7 +266117,8 @@ const GUIDES_CANADA_P3: Guide[] = [
     "university-of-british-columbia",
     "university-of-toronto",
     "mcgill-university",
-    "university-of-waterloo"
+    "university-of-waterloo",
+    "laurentian-university"
   ],
   "relatedGuideSlugs": [
     "portfolios-and-auditions-for-canadian-programs",
@@ -265662,6 +266145,7 @@ const GUIDES_CANADA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "study architecture in Canada",
     "CACB accredited M.Arch",
@@ -268697,7 +269181,11 @@ const GUIDES_UKIE_P3: Guide[] = [
     "toefl",
     "pte-academic"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "university-of-southampton",
+    "university-of-nottingham",
+    "university-of-bristol"
+  ],
   "relatedGuideSlugs": [
     "how-to-study-in-uk-from-india",
     "ucas-application-process-explained",
@@ -268728,6 +269216,7 @@ const GUIDES_UKIE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-15",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "University of Southampton admission",
     "Southampton international students apply",
@@ -268881,7 +269370,11 @@ const GUIDES_UKIE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "queen-mary-university-of-london",
+    "kings-college-london",
+    "university-college-london"
+  ],
   "relatedGuideSlugs": [
     "how-to-study-in-uk-from-india",
     "ucas-application-process-explained",
@@ -268908,6 +269401,7 @@ const GUIDES_UKIE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "Queen Mary University of London admission",
     "QMUL UCAS code Q50",
@@ -269055,7 +269549,11 @@ const GUIDES_UKIE_P3: Guide[] = [
     "toefl",
     "pte-academic"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "university-of-nottingham",
+    "university-of-birmingham",
+    "university-of-warwick"
+  ],
   "relatedGuideSlugs": [
     "how-to-study-in-uk-from-india",
     "ucas-application-process-explained",
@@ -269086,6 +269584,7 @@ const GUIDES_UKIE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-15",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "University of Nottingham admission",
     "Nottingham UCAS code N84",
@@ -269241,7 +269740,11 @@ const GUIDES_UKIE_P3: Guide[] = [
     "pte-academic",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "coventry-university",
+    "university-of-warwick",
+    "university-of-birmingham"
+  ],
   "relatedGuideSlugs": [
     "how-to-study-in-uk-from-india",
     "uk-student-visa-guide",
@@ -269271,7 +269774,7 @@ const GUIDES_UKIE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-29",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "coventry university admission",
     "coventry university international students",
@@ -269423,6 +269926,7 @@ const GUIDES_UKIE_P3: Guide[] = [
     "toefl"
   ],
   "relatedCollegeSlugs": [
+    "university-of-strathclyde",
     "university-of-glasgow",
     "university-of-edinburgh"
   ],
@@ -269455,7 +269959,7 @@ const GUIDES_UKIE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-29",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "strathclyde university admission",
     "university of strathclyde international students",
@@ -269580,8 +270084,10 @@ const GUIDES_UKIE_P3: Guide[] = [
     "toefl"
   ],
   "relatedCollegeSlugs": [
+    "dublin-city-university",
     "university-college-dublin",
-    "trinity-college-dublin"
+    "trinity-college-dublin",
+    "technological-university-dublin"
   ],
   "relatedGuideSlugs": [
     "study-in-ireland-from-india",
@@ -269612,7 +270118,7 @@ const GUIDES_UKIE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-29",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "dublin city university admission",
     "dcu international students",
@@ -269764,8 +270270,10 @@ const GUIDES_UKIE_P3: Guide[] = [
     "toefl"
   ],
   "relatedCollegeSlugs": [
+    "university-of-limerick",
     "university-college-dublin",
-    "university-of-galway"
+    "university-of-galway",
+    "university-college-cork"
   ],
   "relatedGuideSlugs": [
     "study-in-ireland-from-india",
@@ -269800,7 +270308,7 @@ const GUIDES_UKIE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-29",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "university of limerick admission",
     "ul cooperative education",
@@ -269954,8 +270462,10 @@ const GUIDES_UKIE_P3: Guide[] = [
     "toefl"
   ],
   "relatedCollegeSlugs": [
+    "university-of-aberdeen",
     "university-of-edinburgh",
-    "university-of-glasgow"
+    "university-of-glasgow",
+    "university-of-st-andrews"
   ],
   "relatedGuideSlugs": [
     "studying-in-scotland-universities-and-four-year-degrees",
@@ -269986,7 +270496,7 @@ const GUIDES_UKIE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-29",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "university of aberdeen admission",
     "aberdeen international students",
@@ -275174,7 +275684,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["medical-university-of-warsaw", "semmelweis-university", "university-of-debrecen", "carol-davila-university-of-medicine-and-pharmacy", "medical-university-of-sofia", "batumi-shota-rustaveli-state-university"],
   "relatedGuideSlugs": [
     "mbbs-in-georgia-for-indian-students",
     "mbbs-in-poland-for-indian-students",
@@ -275200,7 +275710,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-26",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "mbbs in europe for indian students",
     "neet mbbs europe",
@@ -275336,7 +275846,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["tbilisi-state-university", "ilia-state-university", "batumi-shota-rustaveli-state-university"],
   "relatedGuideSlugs": [
     "mbbs-in-europe-for-indian-students-neet-and-nmc-rules",
     "mbbs-in-europe-without-neet-what-to-know",
@@ -275361,7 +275871,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-26",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "mbbs in georgia for indian students",
     "study mbbs georgia",
@@ -275503,7 +276013,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["jagiellonian-university", "university-of-warsaw", "medical-university-of-warsaw"],
   "relatedGuideSlugs": [
     "mbbs-in-europe-for-indian-students-neet-and-nmc-rules",
     "mbbs-in-hungary-for-indian-students",
@@ -275529,7 +276039,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-26",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "mbbs in poland for indian students",
     "poland medical university entrance exam",
@@ -275671,7 +276181,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["semmelweis-university", "university-of-debrecen", "university-of-szeged"],
   "relatedGuideSlugs": [
     "mbbs-in-europe-for-indian-students-neet-and-nmc-rules",
     "mbbs-in-poland-for-indian-students",
@@ -275697,7 +276207,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-26",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "mbbs in hungary for indian students",
     "hungary medical entrance exam",
@@ -276196,7 +276706,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["carol-davila-university-of-medicine-and-pharmacy", "iuliu-hatieganu-university-of-medicine-and-pharmacy", "medical-university-of-sofia", "medical-university-of-plovdiv"],
   "relatedGuideSlugs": [
     "mbbs-in-europe-for-indian-students-neet-and-nmc-rules",
     "european-mbbs-recognition-in-india-nmc-neet-fmge-next",
@@ -276222,7 +276732,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-26",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "MBBS in Romania for Indian students",
     "MBBS in Bulgaria",
@@ -277514,9 +278024,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [
-    "bocconi-university"
-  ],
+  "relatedCollegeSlugs": ["politecnico-di-milano","bocconi-university","university-of-bologna","sapienza-university-of-rome"],
   "relatedGuideSlugs": [
     "universitaly-pre-enrolment-guide-for-international-students",
     "how-to-study-in-italy-complete-guide",
@@ -277538,6 +278046,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "Politecnico di Milano admission",
     "how to get into PoliMi",
@@ -277696,7 +278205,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["rwth-aachen-university","tu-munich","karlsruhe-institute-of-technology","technical-university-of-berlin"],
   "relatedGuideSlugs": [
     "uni-assist-application-guide",
     "aps-certificate-germany-guide-for-indian-students",
@@ -277718,6 +278227,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "RWTH Aachen admission",
     "RWTH Aachen application",
@@ -277872,7 +278382,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["tu-wien","university-of-vienna"],
   "relatedGuideSlugs": [
     "how-to-study-in-austria-complete-guide",
     "ects-credit-system-explained-for-international-students",
@@ -277894,6 +278404,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "TU Wien admission",
     "Vienna University of Technology application",
@@ -278050,7 +278561,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "gmat",
     "gre"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["erasmus-university-rotterdam","university-of-amsterdam","utrecht-university","university-of-groningen"],
   "relatedGuideSlugs": [
     "studielink-application-process-netherlands-explained",
     "numerus-fixus-selection-procedure-netherlands",
@@ -278072,6 +278583,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "Erasmus University Rotterdam admission",
     "EUR application",
@@ -278226,7 +278738,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-bologna","sapienza-university-of-rome","politecnico-di-milano","bocconi-university"],
   "relatedGuideSlugs": [
     "universitaly-pre-enrolment-guide-for-international-students",
     "declaration-of-value-and-cimea-credential-recognition-italy",
@@ -278248,6 +278760,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-22",
   "keywords": [
     "University of Bologna admission",
     "UniBo application",
@@ -279120,7 +279633,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-warsaw", "jagiellonian-university", "medical-university-of-warsaw", "sgh-warsaw-school-of-economics", "agh-university-of-krakow"],
   "relatedGuideSlugs": [
     "how-to-study-in-europe-complete-guide-for-international-students",
     "poland-student-visa-guide",
@@ -279142,7 +279655,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-30",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "how to study in poland",
     "study in poland for international students",
@@ -279282,7 +279795,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["eotvos-lorand-university", "semmelweis-university", "corvinus-university-of-budapest", "university-of-debrecen", "university-of-szeged"],
   "relatedGuideSlugs": [
     "how-to-study-in-europe-complete-guide-for-international-students",
     "stipendium-hungaricum-scholarship-guide",
@@ -279300,6 +279813,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "how to study in hungary",
     "study in hungary for international students",
@@ -279429,7 +279943,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["charles-university", "czech-technical-university-in-prague", "prague-university-of-economics-and-business", "masaryk-university"],
   "relatedGuideSlugs": [
     "how-to-study-in-europe-complete-guide-for-international-students",
     "free-tuition-universities-europe",
@@ -279447,6 +279961,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "how to study in czech republic",
     "study in czechia for international students",
@@ -279576,7 +280091,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-lisbon", "university-of-porto", "university-of-coimbra"],
   "relatedGuideSlugs": [
     "how-to-study-in-europe-complete-guide-for-international-students",
     "how-to-study-in-spain-complete-guide",
@@ -279594,7 +280109,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-30",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "how to study in portugal",
     "study in portugal for international students",
@@ -279720,7 +280235,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     "toefl",
     "testas"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-vienna", "tu-wien", "wu-vienna", "medical-university-of-vienna", "university-of-graz", "university-of-innsbruck"],
   "relatedGuideSlugs": [
     "how-to-study-in-europe-complete-guide-for-international-students",
     "austrian-government-and-oead-scholarships-guide",
@@ -279738,6 +280253,7 @@ const GUIDES_EUROPE_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-26",
   "keywords": [
     "how to study in austria",
     "study in austria for international students",
@@ -283727,7 +284243,7 @@ const GUIDES_ME_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["bits-pilani-dubai"],
   "relatedGuideSlugs": [
     "indian-university-campuses-in-dubai",
     "how-to-get-admission-in-manipal-dubai",
@@ -283749,6 +284265,7 @@ const GUIDES_ME_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "BITS Pilani Dubai admission",
     "BITS Dubai eligibility",
@@ -283891,7 +284408,7 @@ const GUIDES_ME_P3: Guide[] = [
     "toefl",
     "nata"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["manipal-academy-of-higher-education-dubai"],
   "relatedGuideSlugs": [
     "indian-university-campuses-in-dubai",
     "how-to-get-admission-in-bits-pilani-dubai",
@@ -283913,6 +284430,7 @@ const GUIDES_ME_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Manipal University Dubai admission",
     "MAHE Dubai eligibility",
@@ -284061,7 +284579,7 @@ const GUIDES_ME_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["heriot-watt-university-dubai"],
   "relatedGuideSlugs": [
     "uk-and-australian-university-campuses-in-the-uae",
     "branch-campuses-in-dubai-guide",
@@ -284083,6 +284601,7 @@ const GUIDES_ME_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Heriot-Watt University Dubai admission",
     "Heriot-Watt Dubai entry requirements",
@@ -284229,7 +284748,7 @@ const GUIDES_ME_P3: Guide[] = [
     "toefl",
     "pte-academic"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["university-of-birmingham-dubai"],
   "relatedGuideSlugs": [
     "uk-and-australian-university-campuses-in-the-uae",
     "how-to-get-admission-in-heriot-watt-dubai",
@@ -284251,6 +284770,7 @@ const GUIDES_ME_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "University of Birmingham Dubai admission",
     "Birmingham Dubai apply portal",
@@ -284561,9 +285081,7 @@ const GUIDES_ME_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [
-    "american-university-of-sharjah"
-  ],
+  "relatedCollegeSlugs": ["university-of-sharjah"],
   "relatedGuideSlugs": [
     "uae-national-vs-private-universities-explained",
     "emsat-emirates-standardized-test-explained",
@@ -284581,7 +285099,7 @@ const GUIDES_ME_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-26",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "University of Sharjah admission",
     "University of Sharjah entry requirements",
@@ -284727,7 +285245,7 @@ const GUIDES_ME_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["amity-university-dubai"],
   "relatedGuideSlugs": [
     "indian-university-campuses-in-dubai",
     "how-to-get-admission-in-bits-pilani-dubai",
@@ -284745,6 +285263,7 @@ const GUIDES_ME_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Amity University Dubai admission",
     "Amity Dubai entry requirements",
@@ -284887,7 +285406,7 @@ const GUIDES_ME_P3: Guide[] = [
     "toefl",
     "pte-academic"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["middlesex-university-dubai"],
   "relatedGuideSlugs": [
     "branch-campuses-in-dubai-guide",
     "how-to-get-admission-in-heriot-watt-dubai",
@@ -284913,7 +285432,7 @@ const GUIDES_ME_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-29",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "middlesex university dubai admission",
     "how to apply middlesex dubai",
@@ -285049,7 +285568,7 @@ const GUIDES_ME_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["ajman-university"],
   "relatedGuideSlugs": [
     "affordable-universities-in-the-uae-beyond-the-top-ranked",
     "how-to-apply-to-universities-in-the-uae",
@@ -285075,6 +285594,7 @@ const GUIDES_ME_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "ajman university admission",
     "how to apply ajman university",
@@ -288213,10 +288733,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
   "relatedExamSlugs": [
     "neet-ug"
   ],
-  "relatedCollegeSlugs": [
-    "sechenov-university",
-    "yerevan-state-medical-university"
-  ],
+  "relatedCollegeSlugs": ["sechenov-university", "north-western-state-medical-university", "siberian-state-medical-university", "privolzhsky-research-medical-university", "kazakh-national-medical-university", "astana-medical-university", "samarkand-state-medical-university", "international-higher-school-of-medicine", "yerevan-state-medical-university"],
   "relatedGuideSlugs": [
     "mbbs-abroad-eligibility-neet-and-nmc-rules",
     "next-replacing-fmge-what-mbbs-abroad-students-should-know",
@@ -288246,7 +288763,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-30",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "russia mbbs recognition india",
     "cis mbbs nmc",
@@ -288862,7 +289379,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": ["rudn-university"],
   "relatedGuideSlugs": [
     "how-to-study-in-russia-complete-guide",
     "rossotrudnichestvo-admission-portal-explained-russia",
@@ -288888,6 +289405,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "RUDN University admission",
     "Peoples' Friendship University of Russia",
@@ -289014,9 +289532,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [
-    "sechenov-university"
-  ],
+  "relatedCollegeSlugs": ["kazan-federal-university"],
   "relatedGuideSlugs": [
     "mbbs-in-russia-for-indian-students",
     "mbbs-abroad-eligibility-neet-and-nmc-rules",
@@ -289050,6 +289566,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Kazan Federal University admission",
     "KFU MBBS for Indian students",
@@ -289175,9 +289692,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
     "ielts",
     "toefl"
   ],
-  "relatedCollegeSlugs": [
-    "lomonosov-moscow-state-university"
-  ],
+  "relatedCollegeSlugs": ["saint-petersburg-state-university"],
   "relatedGuideSlugs": [
     "how-to-get-admission-in-lomonosov-moscow-state-university",
     "english-taught-programs-in-russia",
@@ -289199,7 +289714,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
-  "contentUpdated": "2026-09-30",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "Saint Petersburg State University admission",
     "SPbU international students",
@@ -289629,10 +290144,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [
-    "moscow-institute-of-physics-and-technology",
-    "skoltech"
-  ],
+  "relatedCollegeSlugs": ["samara-university", "moscow-institute-of-physics-and-technology", "skoltech", "spbstu"],
   "relatedGuideSlugs": [
     "russian-universities-for-engineering-and-it-by-field",
     "best-engineering-and-technology-universities-in-russia",
@@ -289654,6 +290166,7 @@ const GUIDES_RUSSIA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-03",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "aerospace engineering Russia",
     "aviation engineering CIS",
@@ -298060,7 +298573,11 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-texas-at-dallas",
+      "university-of-texas-at-austin",
+      "texas-a-and-m-university"
+    ],
   "relatedGuideSlugs": [
     "applytexas-and-texas-automatic-admission-explained",
     "how-to-get-into-ut-austin",
@@ -298099,6 +298616,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "Purdue University admission: the Common App, admission by declared major, the First-Year Engineering program at West Lafayette, deadlines, and how to change majors through CODO.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into Purdue",
     "Purdue admission requirements",
@@ -298236,7 +298754,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "purdue-university",
+      "university-of-illinois-urbana-champaign",
+      "indiana-university-bloomington",
+      "georgia-tech"
+    ],
   "relatedGuideSlugs": [
     "direct-admit-and-selective-major-admission-explained",
     "how-to-get-into-uiuc",
@@ -298275,6 +298798,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "Arizona State University admission: the ASU or Common App application and MyASU portal, ASU's assured-admission benchmarks, competency courses and deficiency rules, direct admission to your major, and rolling review.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into ASU",
     "Arizona State University admission requirements",
@@ -298412,7 +298936,11 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "arizona-state-university",
+      "purdue-university",
+      "university-of-texas-at-dallas"
+    ],
   "relatedGuideSlugs": [
     "direct-admit-and-selective-major-admission-explained",
     "how-to-get-into-purdue-university",
@@ -298451,6 +298979,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "UIUC admission: applying directly to a major and college, why Grainger Engineering (especially Computer Science) is far more selective, first-choice-only majors, and second-choice strategy.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into UIUC",
     "University of Illinois admission requirements",
@@ -298588,7 +299117,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-illinois-urbana-champaign",
+      "purdue-university",
+      "university-of-michigan-ann-arbor",
+      "georgia-tech"
+    ],
   "relatedGuideSlugs": [
     "direct-admit-and-selective-major-admission-explained",
     "how-to-get-into-purdue-university",
@@ -298623,6 +299157,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "UT Austin admission: the ApplyTexas application, the Texas top-6% automatic-admission law, reinstated required testing, holistic major-specific review, and McCombs/Cockrell rules.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into UT Austin",
     "UT Austin admission requirements",
@@ -298760,7 +299295,11 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-texas-at-austin",
+      "texas-a-and-m-university",
+      "university-of-texas-at-dallas"
+    ],
   "relatedGuideSlugs": [
     "applytexas-and-texas-automatic-admission-explained",
     "how-to-get-into-ut-dallas",
@@ -298799,7 +299338,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to the University of Michigan Ann Arbor: Common App, choosing a school or college (LSA, Engineering, Ross first-year BBA and Preferred Admission), supplemental essays, and holistic review.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
-  "contentUpdated": "2026-09-30",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into university of michigan",
     "university of michigan admissions",
@@ -299144,7 +299683,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-washington",
+      "uc-berkeley",
+      "ucla",
+      "uc-san-diego"
+    ],
   "relatedGuideSlugs": [
     "direct-admit-and-selective-major-admission-explained",
     "computer-science-major-guide-usa",
@@ -299161,6 +299705,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to Stony Brook University: the SUNY Application or Common App, holistic review, restricted majors like engineering and business, honors tracks, and international requirements.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into stony brook university",
     "stony brook admissions",
@@ -299321,7 +299866,11 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "stony-brook-university",
+      "university-at-buffalo",
+      "rutgers-university"
+    ],
   "relatedGuideSlugs": [
     "suny-system-and-application-explained",
     "how-to-get-into-university-at-buffalo",
@@ -299338,6 +299887,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to the University at Buffalo (SUNY): the ApplySUNY, Common App, or Coalition application, holistic review, indicating your major, and affordable-value international admission.",
   "readMinutes": 8,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into university at buffalo",
     "university at buffalo admissions",
@@ -299494,7 +300044,11 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-at-buffalo",
+      "stony-brook-university",
+      "penn-state-university"
+    ],
   "relatedGuideSlugs": [
     "suny-system-and-application-explained",
     "how-to-get-into-stony-brook-university",
@@ -299511,6 +300065,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to Texas A&M and Texas public universities: the ApplyTexas application, the top 10% automatic-admission law, holistic review, and the engineering Entry to a Major (ETAM) process.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into texas am university",
     "applytexas application",
@@ -299671,7 +300226,11 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "texas-a-and-m-university",
+      "university-of-texas-at-austin",
+      "university-of-texas-at-dallas"
+    ],
   "relatedGuideSlugs": [
     "applytexas-and-texas-automatic-admission-explained",
     "how-to-get-into-ut-austin",
@@ -299688,6 +300247,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "Applying to NYU: choosing your campus and school on the Common App, Tisch artistic reviews, Stern and Tandon math requirements, NYU's test-optional (flexible) testing policy, and ED vs RD.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into NYU",
     "NYU admissions",
@@ -300013,7 +300573,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "pte-academic"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-southern-california",
+      "ucla",
+      "uc-berkeley",
+      "stanford-university"
+    ],
   "relatedGuideSlugs": [
     "how-to-get-into-nyu",
     "film-and-media-arts-majors-admission-usa",
@@ -300052,6 +300617,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to Northeastern: the Common App or Coalition App, the co-op experiential model, first-year entry pathways like N.U.in and the London/NYC/Oakland Scholars programs, and what international applicants should know.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into Northeastern University",
     "Northeastern admissions",
@@ -300191,7 +300757,11 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "northeastern-university",
+      "boston-university",
+      "new-york-university"
+    ],
   "relatedGuideSlugs": [
     "how-to-get-into-boston-university",
     "co-op-programs-explained",
@@ -300230,6 +300800,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to Boston University: the Common App plus the BU Supplement and choosing a specific school, College of Fine Arts auditions and portfolios, Kilachand Honors, accelerated combined-degree programs, and ED I/II vs Regular Decision.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into Boston University",
     "BU admissions",
@@ -300368,7 +300939,11 @@ const GUIDES_USA_P3: Guide[] = [
     "toefl",
     "ielts"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "boston-university",
+      "northeastern-university",
+      "new-york-university"
+    ],
   "relatedGuideSlugs": [
     "how-to-get-into-nyu",
     "how-to-get-into-northeastern-university",
@@ -300407,6 +300982,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to Stevens Institute of Technology: the Common App or Coalition App, ED I/II, the five-year Co-op program, Accelerated Master's and Pinnacle Scholars, and what its large Indian graduate pipeline should know.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into Stevens Institute of Technology",
     "Stevens admissions",
@@ -300546,7 +301122,11 @@ const GUIDES_USA_P3: Guide[] = [
     "toefl",
     "ielts"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "stevens-institute-of-technology",
+      "new-jersey-institute-of-technology",
+      "rutgers-university"
+    ],
   "relatedGuideSlugs": [
     "how-to-get-into-njit",
     "how-to-get-into-top-engineering-schools-usa",
@@ -300686,6 +301266,7 @@ const GUIDES_USA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "UC Transfer Admission Guarantee",
     "UC TAG explained",
@@ -301429,7 +302010,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "penn-state-university",
+      "ohio-state-university",
+      "rutgers-university",
+      "university-of-maryland-college-park"
+    ],
   "relatedGuideSlugs": [
     "how-to-get-into-rutgers-university",
     "state-flagship-universities-explained",
@@ -301464,6 +302050,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to Rutgers: school-based admission (School of Arts and Sciences, Engineering, Business), the STARS self-reported record, multi-campus structure, Early Action vs Regular Decision, and holistic review.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into Rutgers",
     "Rutgers admissions",
@@ -301584,7 +302171,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "rutgers-university",
+      "new-jersey-institute-of-technology",
+      "stevens-institute-of-technology",
+      "penn-state-university"
+    ],
   "relatedGuideSlugs": [
     "how-to-get-into-penn-state",
     "how-to-get-into-stevens-institute-of-technology",
@@ -301619,6 +302211,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to UMD College Park: Common App vs StandOut Admissions Network, the two-stage review, holistic review factors, and Limited Enrollment Programs (LEPs) with direct admission to majors like Computer Science.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into University of Maryland",
     "UMD College Park admissions",
@@ -301739,7 +302332,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-maryland-college-park",
+      "penn-state-university",
+      "rutgers-university",
+      "purdue-university"
+    ],
   "relatedGuideSlugs": [
     "direct-admit-and-selective-major-admission-explained",
     "how-to-get-into-penn-state",
@@ -301774,6 +302372,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to apply to SJSU in the heart of Silicon Valley: the Cal State Apply system, CSU eligibility, impaction and impacted majors, the alternate major, local vs non-local applicants, and international/F-1 steps.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into San Jose State",
     "SJSU admissions",
@@ -301895,7 +302494,12 @@ const GUIDES_USA_P3: Guide[] = [
     "sat",
     "act"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "san-jose-state-university",
+      "uc-berkeley",
+      "uc-san-diego",
+      "uc-irvine"
+    ],
   "relatedGuideSlugs": [
     "california-state-university-system-and-cal-state-apply",
     "how-to-get-into-a-uc-campus",
@@ -301930,6 +302534,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How to get into a UC campus such as UC San Diego, UC Irvine, UC Davis, or UC Santa Barbara: one UC application for many campuses, the A-G courses, personal insight questions, comprehensive review, and major impaction.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-25",
   "keywords": [
     "how to get into a UC campus",
     "UC San Diego admissions",
@@ -302050,8 +302655,15 @@ const GUIDES_USA_P3: Guide[] = [
     "pte-academic"
   ],
   "relatedCollegeSlugs": [
+    "uc-san-diego",
+    "uc-irvine",
     "uc-berkeley",
-    "ucla"
+    "ucla",
+    "uc-davis",
+    "uc-santa-barbara",
+    "uc-santa-cruz",
+    "uc-riverside",
+    "uc-merced"
   ],
   "relatedGuideSlugs": [
     "university-of-california-system-and-application-guide",
@@ -302087,6 +302699,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How the 2+2 model works: two years at a community college, then two at a university — plus dual-admission and guaranteed-transfer programs like UC TAG that lock in a seat from day one.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "2+2 transfer program",
     "community college to university",
@@ -302922,7 +303535,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "ohio-state-university",
+      "penn-state-university",
+      "purdue-university",
+      "university-of-wisconsin-madison"
+    ],
   "relatedGuideSlugs": [
     "state-flagship-universities-explained",
     "honors-colleges-at-public-universities-guide",
@@ -302953,6 +303571,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "UW-Madison admission explained: Common App or the Universities of Wisconsin Application, the 'why UW / why your major' writing, and direct-entry majors in Engineering and Business. A process guide for international students.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "uw madison admission",
     "how to get into wisconsin madison",
@@ -303084,7 +303703,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-wisconsin-madison",
+      "university-of-illinois-urbana-champaign",
+      "university-of-michigan-ann-arbor",
+      "ohio-state-university"
+    ],
   "relatedGuideSlugs": [
     "direct-admit-and-selective-major-admission-explained",
     "how-to-get-into-ohio-state-university",
@@ -303115,6 +303739,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "UMN Twin Cities admission explained: its short three-item application (no essays or recommendation letters), how you are admitted to a ranked freshman-admitting college, and CSE direct entry. A process guide for international students.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-24",
   "keywords": [
     "university of minnesota admission",
     "how to get into umn twin cities",
@@ -303246,7 +303871,9 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "university-of-minnesota-twin-cities",
+  ],
   "relatedGuideSlugs": [
     "direct-admit-and-selective-major-admission-explained",
     "how-to-get-into-university-of-wisconsin-madison",
@@ -303408,7 +304035,11 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-florida",
+      "georgia-tech",
+      "university-of-texas-at-austin"
+    ],
   "relatedGuideSlugs": [
     "florida-state-university-system-and-bright-futures",
     "state-flagship-universities-explained",
@@ -303439,6 +304070,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "IU Bloomington admission explained: the Apply IU or Common App route, the distinctive direct-admit model for the Kelley School of Business (via the KPI) and the Luddy School (CS, data science, informatics), and how to apply. A process guide for international students.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "indiana university bloomington admission",
     "how to get into iu bloomington",
@@ -303570,7 +304202,12 @@ const GUIDES_USA_P3: Guide[] = [
     "ielts",
     "duolingo-english-test"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "indiana-university-bloomington",
+      "purdue-university",
+      "ohio-state-university",
+      "university-of-wisconsin-madison"
+    ],
   "relatedGuideSlugs": [
     "direct-admit-and-selective-major-admission-explained",
     "how-to-get-into-undergraduate-business-school-usa",
@@ -303601,6 +304238,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "NJIT admission: the Common App for first-year students, its test-optional policy and Honors College exceptions, design portfolios, accelerated BS/MD-type programs, and the international-applicant route.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "how to get into NJIT",
     "New Jersey Institute of Technology admission",
@@ -303779,7 +304417,11 @@ const GUIDES_USA_P3: Guide[] = [
     "duolingo-english-test",
     "pte-academic"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "new-jersey-institute-of-technology",
+      "stevens-institute-of-technology",
+      "rutgers-university"
+    ],
   "relatedGuideSlugs": [
     "how-to-get-into-stevens-institute-of-technology",
     "how-to-get-into-rutgers-university",
@@ -303822,6 +304464,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How U.S. state systems guarantee community-college transfers a place at a public university — Florida 2+2, Virginia GAAs, SUNY Transfer Paths, Texas Direct, and UC TAG explained.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "guaranteed transfer admission",
     "transfer pathway programs",
@@ -304167,6 +304810,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How the California State University system and its Cal State Apply portal work: the a-g pattern, GPA eligibility, test-free admission, impacted majors and the Multi-Factor Admission Score.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+  "contentUpdated": "2026-11-25",
   "keywords": [
     "California State University",
     "Cal State Apply",
@@ -304180,7 +304824,7 @@ const GUIDES_USA_P3: Guide[] = [
   "keyFacts": [
     {
       "label": "System",
-      "value": "The California State University — a public system of universities (a Cal Poly / Cal Maritime integration takes effect Fall 2026; confirm the current campus count on calstate.edu)",
+      "value": "The California State University is a public university system. Check the official CSU campus list before applying.",
       "audience": "common"
     },
     {
@@ -304214,7 +304858,7 @@ const GUIDES_USA_P3: Guide[] = [
       "id": "what-is-the-csu",
       "headingEn": "What the CSU system is (and how it differs from UC)",
       "audience": "common",
-      "bodyEn": "The California State University (CSU) is one of the two public four-year university systems in California, alongside the University of California (UC). It is a large, access-oriented system of campuses spread across the state, offering thousands of undergraduate and graduate programs with a strong focus on teaching, applied fields and workforce-ready degrees.\n\nThe CSU is a separate system from the UC, with its own admission rules, its own application portal and its own eligibility standards. Applying to a CSU campus does not put you in the UC pool, and vice versa — they are entirely different applications.\n\nOne structural change to note: a planned integration of Cal Poly and Cal Maritime takes effect in Fall 2026, which changes the exact number of standalone campuses. Because system structure and campus lists can change, confirm the current campuses and programs on the official CSU site."
+      "bodyEn": "The California State University (CSU) is one of the two public four-year university systems in California, alongside the University of California (UC). It is a large, access-oriented system of campuses spread across the state, offering thousands of undergraduate and graduate programs with a strong focus on teaching, applied fields and workforce-ready degrees.\n\nThe CSU is a separate system from the UC, with its own admission rules, its own application portal and its own eligibility standards. Applying to a CSU campus does not put you in the UC pool, and vice versa — they are entirely different applications.\n\nCal Poly and Cal Maritime began operating as one institution in July 2025. Cal Poly’s student services integration took effect in fall 2026. When comparing the San Luis Obispo and Solano campuses, check which campus offers your intended programme."
     },
     {
       "id": "cal-state-apply",
@@ -304292,7 +304936,15 @@ const GUIDES_USA_P3: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "san-jose-state-university",
+    "san-diego-state-university",
+    "cal-state-long-beach",
+    "cal-poly-san-luis-obispo",
+    "uc-berkeley",
+    "ucla",
+    "uc-san-diego"
+  ],
   "relatedGuideSlugs": [
     "university-of-california-system-and-application-guide",
     "how-to-establish-state-residency-for-tuition",
@@ -304303,6 +304955,10 @@ const GUIDES_USA_P3: Guide[] = [
     {
       "label": "Cal State Apply — official CSU application portal",
       "url": "https://www.calstate.edu/apply"
+    },
+    {
+      "label": "Cal Poly — San Luis Obispo and Solano campus integration",
+      "url": "https://www.calpoly.edu/news/semesters-solano-campus-and-start-times-heres-whats-new-cal-poly"
     },
     {
       "label": "CSU — Freshman Admission Requirements (a-g, GPA)",
@@ -304327,6 +304983,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How the State University of New York system and its application work: campus types (university centers, colleges, tech and community colleges), the SUNY Application vs Common App, fees and residency tuition.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "SUNY system",
     "SUNY Application",
@@ -304458,7 +305115,10 @@ const GUIDES_USA_P3: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "stony-brook-university",
+      "university-at-buffalo"
+    ],
   "relatedGuideSlugs": [
     "cuny-system-and-application-explained",
     "how-to-get-into-stony-brook-university",
@@ -304493,6 +305153,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "How ApplyTexas and Texas's automatic-admission law work: the statewide top-10% rule, UT Austin's capped percentage, what auto-admission does and doesn't guarantee about your major.",
   "readMinutes": 10,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "ApplyTexas",
     "Texas automatic admission",
@@ -304618,7 +305279,11 @@ const GUIDES_USA_P3: Guide[] = [
     }
   ],
   "relatedExamSlugs": [],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+      "university-of-texas-at-austin",
+      "texas-a-and-m-university",
+      "university-of-texas-at-dallas"
+    ],
   "relatedGuideSlugs": [
     "how-to-get-into-ut-austin",
     "how-to-get-into-ut-dallas",
@@ -304653,6 +305318,7 @@ const GUIDES_USA_P3: Guide[] = [
   "descriptionEn": "A procedural guide to establishing U.S. state residency for in-state tuition: the 12-month presence rule, domicile and intent tests, the evidence needed, and why F-1 students usually can't qualify.",
   "readMinutes": 9,
   "lastVerified": "2026-07-07",
+    "contentUpdated": "2026-11-23",
   "keywords": [
     "state residency for tuition",
     "in-state tuition residency",
@@ -305055,7 +305721,9 @@ const GUIDES_USA_P3: Guide[] = [
     "sat",
     "act"
   ],
-  "relatedCollegeSlugs": [],
+  "relatedCollegeSlugs": [
+    "city-college-of-new-york",
+  ],
   "relatedGuideSlugs": [
     "suny-system-and-application-explained",
     "how-to-establish-state-residency-for-tuition",
@@ -305085,7 +305753,7 @@ const GUIDES_USA_P3: Guide[] = [
     }
   ],
   "lastVerified": "2026-07-07",
-  "contentUpdated": "2026-09-30",
+  "contentUpdated": "2026-11-24",
   "keywords": [
     "CUNY application",
     "CUNY vs SUNY",

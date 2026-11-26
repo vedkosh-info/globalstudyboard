@@ -97,7 +97,40 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       "The digital SAT is College Board's undergraduate admission test and is accepted by most U.S. colleges; each college sets its own testing policy, and many are test-optional, so check the college's admissions website. It is taken on a laptop or tablet in College Board's Bluebook app, at a test centre or at school with a proctor. The test is adaptive: each section (Reading and Writing, Math) has two modules, and the second module is more or less difficult depending on performance on the first. College Board states no fixed expiry, but cautions that scores sent five or more years after the test date may be less valid predictors; scores can be superscored across attempts where a college allows it.",
     // umich and georgia-tech checked on their own testing pages on 29 Sep 2026 (U-M considers
     // SAT or ACT scores if submitted; Georgia Tech requires one of them) — the same list as the ACT record.
-    collegesAccepting: ['mit', 'harvard', 'stanford', 'caltech', 'princeton', 'yale', 'columbia', 'upenn', 'uchicago', 'cornell', 'brown', 'dartmouth', 'umich', 'georgia-tech', 'cmu', 'northwestern', 'duke', 'nyu', 'nyu-abu-dhabi'],
+    collegesAccepting: [
+      'mit',
+      'harvard',
+      'stanford',
+      'caltech',
+      'princeton',
+      'yale',
+      'columbia',
+      'upenn',
+      'uchicago',
+      'cornell',
+      'brown',
+      'dartmouth',
+      'umich',
+      'georgia-tech',
+      'cmu',
+      'northwestern',
+      'duke',
+      'nyu',
+      'nyu-abu-dhabi',
+      'purdue-university',
+      'university-of-texas-at-austin',
+      'university-of-florida',
+      'university-of-minnesota-twin-cities',
+      'university-of-north-carolina-at-chapel-hill',
+      'north-carolina-state-university',
+      'johns-hopkins-university',
+      'rice-university',
+      'amherst-college',
+      'pomona-college',
+      'university-of-virginia',
+      'virginia-tech',
+      'george-mason-university',
+    ],
     sources: [
       { label: 'College Board — SAT test fees', url: 'https://satsuite.collegeboard.org/sat/registration/fees-refunds/test-fees' },
       { label: 'College Board — SAT international fees', url: 'https://satsuite.collegeboard.org/sat/registration/international-testing/fees' },
@@ -113,6 +146,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'College Board Blog — what is an SAT superscore? (test-optional colleges)', url: 'https://blog.collegeboard.org/what-is-an-sat-superscore' },
     ],
     lastVerified: '2026-09-29',
+    contentUpdated: '2026-11-25',
   },
   {
     id: 'act',
@@ -149,7 +183,40 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     // Duke and NYU (all campuses, incl. Abu Dhabi) accept it where scores are submitted
     // (cmu.edu/admission/admission/standardized-testing, admissions.northwestern.edu/faqs/
     // standardized-testing-policy, admissions.duke.edu/what-we-look-for, and the NYU sources below).
-    collegesAccepting: ['mit', 'harvard', 'stanford', 'caltech', 'princeton', 'yale', 'columbia', 'upenn', 'uchicago', 'cornell', 'brown', 'dartmouth', 'umich', 'georgia-tech', 'cmu', 'northwestern', 'duke', 'nyu', 'nyu-abu-dhabi'],
+    collegesAccepting: [
+      'mit',
+      'harvard',
+      'stanford',
+      'caltech',
+      'princeton',
+      'yale',
+      'columbia',
+      'upenn',
+      'uchicago',
+      'cornell',
+      'brown',
+      'dartmouth',
+      'umich',
+      'georgia-tech',
+      'cmu',
+      'northwestern',
+      'duke',
+      'nyu',
+      'nyu-abu-dhabi',
+      'purdue-university',
+      'university-of-texas-at-austin',
+      'university-of-florida',
+      'university-of-minnesota-twin-cities',
+      'university-of-north-carolina-at-chapel-hill',
+      'north-carolina-state-university',
+      'johns-hopkins-university',
+      'rice-university',
+      'amherst-college',
+      'pomona-college',
+      'university-of-virginia',
+      'virginia-tech',
+      'george-mason-university',
+    ],
     sources: [
       { label: 'ACT — Current ACT fees and services (U.S.)', url: 'https://www.act.org/content/act/en/products-and-services/the-act/registration/fees.html' },
       { label: 'ACT — Current ACT fees (non-U.S.)', url: 'https://global.act.org/content/global/en/products-and-services/the-act-non-us/registration/fees.html' },
@@ -167,6 +234,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'NYU Abu Dhabi — entry requirements (follows NYU’s testing policy for all campuses)', url: 'https://nyuad.nyu.edu/en/apply/undergraduate/apply/entry-requirements.html' },
     ],
     lastVerified: '2026-09-29',
+    contentUpdated: '2026-11-25',
   },
   {
     id: 'ap',
@@ -474,11 +542,39 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '£70 for tests taken in the UK / £115 outside the UK (2026 test cycle; set by test location, not nationality); the UCAT Bursary waives the fee for eligible UK candidates',
     descriptionEn:
       'The UCAT is required for relevant medicine and dentistry courses at the 50 UK universities and medical schools on the UCAT Consortium list for 2027 entry; some applicant groups have alternative requirements. A few partner universities abroad also use it, such as NUS and NTU in Singapore and Thammasat in Thailand, while Australian and New Zealand consortium universities accept only the separate UCAT ANZ. It is computer-based and taken at Pearson VUE test centres in the UK and 130+ countries, with online proctoring only for approved candidates. Four sections test verbal reasoning, decision making, quantitative reasoning, and situational judgement (Abstract Reasoning was removed from 2025). For UK entry, results are valid only for the next UCAS admissions cycle (entry the year after the test, or deferred entry a year later); partner universities abroad set their own rules.',
-    // Every catalogue unit on the UCAT universities page (29 Sep 2026): 14 UK
-    // universities plus the NUS and NTU medical schools. Not 'queens' — that is
+    // Every catalogue unit on the UCAT universities page (updated 22 Nov 2026):
+    // 25 UK universities plus the NUS and NTU medical schools. Not 'queens' — that is
     // Queen's University in Canada, not Queen's University Belfast. u-melbourne is
     // on neither the UCAT nor the UCAT ANZ list; unsw uses UCAT ANZ, a separate test.
-    collegesAccepting: ['kings-college-london', 'manchester', 'edinburgh', 'oxford', 'cambridge', 'imperial', 'ucl', 'warwick', 'st-andrews', 'bristol', 'glasgow', 'leeds', 'birmingham', 'sheffield', 'nus', 'ntu-sg'],
+    collegesAccepting: [
+      'kings-college-london',
+      'manchester',
+      'edinburgh',
+      'oxford',
+      'cambridge',
+      'imperial',
+      'ucl',
+      'warwick',
+      'st-andrews',
+      'bristol',
+      'glasgow',
+      'leeds',
+      'birmingham',
+      'sheffield',
+      'university-of-aberdeen',
+      'bangor-university',
+      'university-of-exeter',
+      'university-of-york',
+      'lancaster-university',
+      'university-of-liverpool',
+      'newcastle-university',
+      'university-of-nottingham',
+      'queen-mary-university-of-london',
+      'university-of-southampton',
+      'swansea-university',
+      'nus',
+      'ntu-sg',
+    ],
     sources: [
       { label: 'UCAT Consortium — Test Format & Scoring', url: 'https://www.ucat.ac.uk/about-ucat/test-format-and-scoring/' },
       { label: 'UCAT Consortium — FAQs (fees)', url: 'https://www.ucat.ac.uk/faqs/' },
@@ -492,6 +588,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'UCAT ANZ Consortium — universities', url: 'https://www.ucat.edu.au/about-ucat-anz/universities/' },
     ],
     lastVerified: '2026-09-29',
+    contentUpdated: '2026-11-22',
   },
 
   // ─────────────────────────── Europe ───────────────────────────
@@ -596,7 +693,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'IELTS Academic and General Training: set by country and centre, e.g. USA USD 325–330 from 1 Oct 2026 (USD 285 before), India INR 19,000 and most Australian centres AUD 490 (2026), UK GBP 235 (Bristol); IELTS for UKVI is priced separately (e.g. India INR 19,250)',
     descriptionEn:
       'IELTS Academic is accepted for university admission in the UK, Australia, Canada, New Zealand, the USA and Europe; each university sets its own English-language requirement and minimum band score, so check its official admissions page. At a test centre it is taken on computer — the paper-based test is being withdrawn from mid-2026, with timing varying by market — and some countries offer a handwritten Writing on Paper option. In some countries IELTS Academic can also be taken as IELTS Online, at home with remote proctoring; each university decides whether to accept an online result, and IELTS Online is not accepted for immigration purposes. The IELTS partners recommend that institutions accept a result for a maximum of two years.',
-    collegesAccepting: ['oxford', 'cambridge', 'imperial', 'u-toronto', 'mcgill', 'u-melbourne', 'eth-zurich', 'tu-delft', 'uc-berkeley', 'ucla'],
+    collegesAccepting: ['oxford', 'cambridge', 'imperial', 'u-toronto', 'mcgill', 'u-melbourne', 'eth-zurich', 'tu-delft', 'uc-berkeley', 'ucla', 'uc-davis', 'uc-santa-barbara', 'uc-santa-cruz', 'uc-riverside', 'uc-merced', 'san-diego-state-university', 'cal-state-long-beach', 'cal-poly-san-luis-obispo'],
     sources: [
       { label: 'IELTS — Academic test format', url: 'https://ielts.org/take-a-test/test-types/ielts-academic-test' },
       { label: 'IELTS — verifying IELTS results (validity period)', url: 'https://ielts.org/organisations/ielts-for-organisations/verifying-ielts-results' },
@@ -621,7 +718,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     lastVerified: '2026-09-29',
     // uc-berkeley and ucla added to collegesAccepting on 30 Sep 2026 from the UC
     // Admissions source above; the rest of the record was not re-checked (§5).
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-25',
   },
   {
     id: 'toefl',
@@ -640,7 +737,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'US$170–US$475 by test location (e.g. USA US$270, UK US$260, Canada US$249, India US$173), as listed on ets.org in September 2026, during the 2026–27 testing year; local taxes may be added in some locations',
     descriptionEn:
       'ETS says TOEFL iBT scores are accepted by more than 13,500 universities and other institutions in over 160 countries, including every university in the United States, Canada, the UK, Australia, New Zealand and Ireland. It is taken on computer at a test centre or as the TOEFL iBT Home Edition — the same test at home with a live human proctor; check availability for your location on ets.org. Each university sets its own score requirement: ETS notes that a school which asked for 100 on the old 0–120 scale may now ask for 5 on the 1–6 scale, and one that asked for 80 may ask for 4. Scores are valid for two years from the test date.',
-    collegesAccepting: ['mit', 'harvard', 'stanford', 'u-toronto', 'mcgill', 'oxford', 'eth-zurich', 'uc-berkeley', 'ucla'],
+    collegesAccepting: ['mit', 'harvard', 'stanford', 'u-toronto', 'mcgill', 'oxford', 'eth-zurich', 'uc-berkeley', 'ucla', 'uc-davis', 'uc-santa-barbara', 'uc-santa-cruz', 'uc-riverside', 'uc-merced', 'san-diego-state-university', 'cal-state-long-beach', 'cal-poly-san-luis-obispo'],
     sources: [
       { label: 'ETS — TOEFL iBT test content', url: 'https://www.ets.org/toefl/test-takers/ibt/about/content.html' },
       { label: 'ETS — TOEFL iBT score scale update (Jan 2026)', url: 'https://www.ets.org/toefl/institutions/ibt/score-scale-update.html' },
@@ -654,7 +751,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     lastVerified: '2026-09-29',
     // uc-berkeley and ucla added to collegesAccepting on 30 Sep 2026 from the UC
     // Admissions source above; the rest of the record was not re-checked (§5).
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-25',
   },
   {
     id: 'duolingo',
@@ -681,7 +778,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     // for undergraduate admission only — the description says so; cmu's graduate CS
     // programmes treat it as supplementary. uc-berkeley and ucla: UC Admissions'
     // first-year (undergraduate) English-proficiency page lists it (30 Sep 2026).
-    collegesAccepting: ['nyu', 'cmu', 'georgia-tech', 'u-toronto', 'ubc', 'uc-berkeley', 'ucla'],
+    collegesAccepting: ['nyu', 'cmu', 'georgia-tech', 'u-toronto', 'ubc', 'uc-berkeley', 'ucla', 'uc-davis', 'uc-santa-barbara', 'uc-santa-cruz', 'uc-riverside', 'uc-merced', 'san-diego-state-university', 'cal-state-long-beach', 'cal-poly-san-luis-obispo'],
     sources: [
       { label: 'Duolingo English Test — Understand scoring', url: 'https://englishtest.duolingo.com/scores' },
       { label: 'Duolingo English Test — Test takers', url: 'https://englishtest.duolingo.com/test_takers' },
@@ -703,7 +800,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     lastVerified: '2026-09-29',
     // uc-berkeley and ucla added to collegesAccepting on 30 Sep 2026 from the UC
     // Admissions source above; the rest of the record was not re-checked (§5).
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-25',
   },
   {
     id: 'pte',
@@ -757,13 +854,30 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'JEE (Main) 2026, per session, one paper, centres in India: ₹1,000 (General, male); ₹900 (Gen-EWS/OBC-NCL, male); ₹800 (female, General/Gen-EWS/OBC-NCL); ₹500 (SC, ST, PwD/PwBD, third gender). Centres outside India: ₹5,000 (General, male). Processing charges and GST are extra',
     descriptionEn:
       'JEE (Main) is the NTA\'s entrance test for undergraduate engineering at the NITs, IIITs, other centrally funded technical institutions and institutions in participating states (Paper 1, B.E./B.Tech.); Paper 2 is for B.Arch. and B.Planning. It is also the eligibility test for JEE (Advanced), the route to the IITs. It runs in two sessions a year, and the better of a candidate\'s two total NTA scores counts for the rank. Paper 1 is a three-hour computer-based test in Physics, Chemistry and Mathematics — 75 questions for 300 marks — offered in 13 languages at centres in India and abroad; seats are then allocated through JoSAA and CSAB.',
-    collegesAccepting: ['nit-trichy'],
+    collegesAccepting: [
+      'nit-trichy',
+      'nit-surathkal',
+      'nit-rourkela',
+      'nit-calicut',
+      'mnnit-allahabad',
+      'mnit-jaipur',
+      'iiit-hyderabad',
+      'iiit-allahabad',
+      'iiit-delhi',
+      'iiit-bangalore',
+      'iiitdm-jabalpur',
+      'nsut-delhi',
+      'coep-pune',
+      'daiict-gandhinagar',
+      'jamia-millia-islamia',
+    ],
     sources: [
       // Per-cycle document: the JEE (Main) 2027 bulletin replaces it — re-check dates, fee, eligibility and the admission criteria then.
       { label: 'NTA — JEE (Main) official portal', url: 'https://jeemain.nta.nic.in/' },
       { label: 'NTA — JEE (Main) 2026 Information Bulletin (dates at a glance, fee table, §2.4 pattern, §2.5 duration, §3 eligibility, §5.8.1 NIT+ admission criteria) (PDF)', url: 'https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/11/202511021649722475.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'jee-advanced',
@@ -788,7 +902,20 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'JEE (Advanced) 2026, centres in India: ₹3,200 for Indian nationals and OCI/PIO (I) candidates (₹1,600 for female, SC, ST and PwD candidates); foreign nationals USD 100 if residing in a SAARC country, USD 200 otherwise. Centres outside India: USD 200–300. Bank and gateway charges are extra',
     descriptionEn:
       'JEE (Advanced) is the entrance exam for undergraduate programmes at the 23 IITs, with seats allocated through JoSAA. Indian candidates must first rank among the top 2,50,000 in JEE (Main); foreign nationals register directly and compete for supernumerary seats, up to 10% of each programme’s seats. It is a computer-based test of two compulsory three-hour papers, each with Physics, Chemistry and Mathematics sections.',
-    collegesAccepting: ['iit-bombay', 'iit-delhi', 'iit-madras', 'iit-kanpur', 'iit-kharagpur'],
+    collegesAccepting: [
+      'iit-bombay',
+      'iit-delhi',
+      'iit-madras',
+      'iit-kanpur',
+      'iit-kharagpur',
+      'iisc-bangalore',
+      'iit-roorkee',
+      'iit-guwahati',
+      'iit-hyderabad',
+      'iit-indore',
+      'iit-bhu-varanasi',
+      'iit-bhubaneswar',
+    ],
     sources: [
       { label: 'JEE Advanced — official site (organising IIT)', url: 'https://jeeadv.ac.in/' },
       // Per-cycle document: the 2027 brochure replaces it — re-check the fee, eligibility and schedule then.
@@ -797,6 +924,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'JEE (Advanced) 2026 — Paper 2 (section maximum marks) (PDF)', url: 'https://jeeadv.ac.in/documents/p2_english.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'neet-ug',
@@ -815,7 +943,17 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'NEET (UG) 2026: ₹1,700 (General); ₹1,600 (General-EWS/OBC-NCL); ₹1,000 (SC, ST, PwBD/PwD, third gender) for centres in India; ₹9,500 for centres outside India. Processing charges and GST are extra',
     descriptionEn:
       'NEET (UG) is the single uniform entrance test, required by law, for admission to MBBS, BDS, BAMS, BUMS, BSMS and BHMS courses at all medical institutions in India, including AIIMS and JIPMER; its results are also used for B.Sc. (Hons) Nursing and for veterinary (BVSc & AH) seats under the VCI\'s 15% quota. Indian citizens and OCI cardholders who intend to study undergraduate medicine or dentistry abroad must also qualify in it. It is a three-hour pen-and-paper test in a single shift: 180 multiple-choice questions (Physics 45, Chemistry 45, Biology 90) for 720 marks, in 13 languages. The NTA publishes ranks; the MCC counsels for MBBS and BDS seats in the All India quota, AIIMS, JIPMER and central and deemed universities, AACCC for the AYUSH All India quota, and state authorities for state-quota seats.',
-    collegesAccepting: ['aiims-delhi'],
+    collegesAccepting: [
+      'aiims-delhi',
+      'aiims-jodhpur',
+      'aiims-bhubaneswar',
+      'aiims-rishikesh',
+      'banaras-hindu-university',
+      'jipmer-puducherry',
+      'jamia-millia-islamia',
+      'aligarh-muslim-university',
+      'manipal-academy-of-higher-education',
+    ],
     sources: [
       // Per-cycle documents: the NEET (UG) 2027 bulletin replaces them — re-check fee, dates, eligibility and percentiles then.
       { label: 'NTA — NEET (UG) official portal', url: 'https://neet.nta.nic.in/' },
@@ -824,6 +962,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'NTA — press release, 16 July 2026: NEET (UG) 2026 result, examination held on 21 June 2026 (PDF)', url: 'https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716477215762.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'cat',
@@ -848,7 +987,15 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹2,700 (₹1,350 for SC, ST and PwBD candidates) — CAT 2026; paid once, whatever the number of institutes',
     descriptionEn:
       'CAT is the admission test for the management programmes of the 22 Indian Institutes of Management (IIMs). Non-IIM institutions registered for CAT may also use its scores. It has three sections, 40 minutes each: Verbal Ability and Reading Comprehension, Data Interpretation and Logical Reasoning, and Quantitative Ability. It is computer-based and taken at test centres in about 170 cities. Each IIM sets its own cut-offs and selection process, which can also weigh academic record and work experience.',
-    collegesAccepting: ['iim-ahmedabad', 'iim-bangalore'],
+    collegesAccepting: [
+      'iim-ahmedabad',
+      'iim-bangalore',
+      'iim-calcutta',
+      'iim-lucknow',
+      'iim-kozhikode',
+      'iim-indore',
+      'tiss-mumbai',
+    ],
     sources: [
       { label: 'IIM CAT — official site (CAT 2026 dates; FAQs: fee, computer-based test, sections, marking)', url: 'https://iimcat.ac.in/' },
       // Per-cycle documents: the CAT 2027 bulletin replaces them — re-check the fee, eligibility and dates then.
@@ -856,6 +1003,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'IIMs — CAT 2026 press release (IIM Indore conducting; 120 minutes, 40 per section) (PDF)', url: 'https://cdn.digialm.com/per/g06/pub/32842/EForms/image/CAT2026/CAT_2026_Press_Release_26-07-2026.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'clat',
@@ -874,7 +1022,14 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'CLAT 2027: ₹4,000 for General and OBC candidates; ₹3,500 for SC, ST, BPL and PwD candidates. Bank charges are extra; the fee is non-refundable',
     descriptionEn:
       'CLAT is the Consortium of National Law Universities\' admission test for the five-year integrated LL.B. and the LL.M. programmes at its participating universities — 26 NLUs for CLAT 2027. It is a two-hour pen-and-paper test of 120 one-mark multiple-choice questions, with 0.25 marks deducted for a wrong answer; the UG paper covers English Language, Current Affairs including General Knowledge, Legal Reasoning, Logical Reasoning and Quantitative Techniques. Indian nationals, NRIs and OCI/PIO cardholders can sit it; foreign nationals cannot and apply to each NLU directly. NLU Delhi is not a participating university — it admits through its own test, AILET.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'nlsiu-bengaluru',
+      'nalsar-hyderabad',
+      'wbnujs-kolkata',
+      'nlu-jodhpur',
+      'gnlu-gandhinagar',
+      'nmims-mumbai',
+    ],
     sources: [
       // Per-cycle pages: the Consortium rebuilds under a new /clat-YYYY/ path each year and deletes old trees — repoint them for CLAT 2028.
       { label: 'Consortium of NLUs — official site (members; CLAT 2027 notices)', url: 'https://consortiumofnlus.ac.in/' },
@@ -888,6 +1043,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'CLAT 2027 — FAQs (programmes covered)', url: 'https://consortiumofnlus.ac.in/clat-2027/FAQs.html' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'ailet',
@@ -937,7 +1093,45 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'GATE 2027, per test paper: ₹2,000 for all other candidates, including foreign nationals (₹2,500 in the extended period); ₹1,000 for female, SC, ST and PwD candidates (₹1,500 in the extended period). Two papers cost twice as much; bank charges are extra',
     descriptionEn:
       'GATE tests undergraduate-level subjects in Engineering, Technology, Architecture, Science, Commerce, Arts and Humanities across 30 test papers. Qualified candidates can seek admission, with possible financial assistance, to master\'s and direct doctoral programmes in Engineering, Technology and Architecture and to doctoral programmes at institutions supported by the Ministry of Education; some institutions also use GATE scores for admission without that assistance, and several public sector undertakings — BHEL, NTPC and ONGC among them — have used them for recruitment. Admission and hiring follow each institution\'s and employer\'s own criteria. It is a three-hour computer-based test held only at centres in India (GATE 2027 has no international centres), and a score is valid for three years from the date the results are announced.',
-    collegesAccepting: ['iit-bombay', 'iit-delhi', 'iit-madras', 'iit-kanpur', 'iit-kharagpur', 'nit-trichy'],
+    collegesAccepting: [
+      'iit-bombay',
+      'iit-delhi',
+      'iit-madras',
+      'iit-kanpur',
+      'iit-kharagpur',
+      'nit-trichy',
+      'iisc-bangalore',
+      'iit-roorkee',
+      'iit-guwahati',
+      'iit-hyderabad',
+      'iit-indore',
+      'iit-bhu-varanasi',
+      'nit-surathkal',
+      'nit-rourkela',
+      'nit-calicut',
+      'mnnit-allahabad',
+      'mnit-jaipur',
+      'iiser-pune',
+      'iiser-kolkata',
+      'bits-pilani',
+      'iiit-allahabad',
+      'iiit-delhi',
+      'iiit-bangalore',
+      'iiitdm-jabalpur',
+      'nsut-delhi',
+      'isi-kolkata',
+      'cmi-chennai',
+      'jadavpur-university',
+      'anna-university-chennai',
+      'coep-pune',
+      'vjti-mumbai',
+      'bmsce-bengaluru',
+      'jntu-hyderabad',
+      'cusat-kochi',
+      'daiict-gandhinagar',
+      'iiser-bhopal',
+      'iit-bhubaneswar',
+    ],
     sources: [
       // Per-cycle: the organising IIT and its site change each cycle — re-check the site, brochure, fee and dates for GATE 2028.
       { label: 'GATE 2027 — official site (organising institute: IIT Madras)', url: 'https://gate2027.iitm.ac.in/' },
@@ -947,6 +1141,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'GATE 2027 — important dates', url: 'https://gate2027.iitm.ac.in/important_dates' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'cuet-ug',
@@ -967,7 +1162,15 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹1,000 for up to three subjects plus ₹400 for each additional subject (General/UR, CUET (UG) 2026); ₹900 + ₹375 (OBC-NCL/EWS); ₹800 + ₹350 (SC/ST/PwD/PwBD/third gender); ₹4,500 + ₹1,800 at centres outside India. Bank processing charges and GST are extra.',
     descriptionEn:
       'CUET (UG) is a computer-based entrance test conducted by the National Testing Agency (NTA) for admission to undergraduate programmes at India\'s central universities and at participating state, deemed-to-be and private universities. For CUET (UG) 2026 a candidate could choose up to five of 37 subjects — 13 languages, 23 domain subjects and a General Aptitude Test. Domain subjects follow the NCERT syllabus, and question papers were offered in 13 languages at centres in India and in 15 cities abroad. NTA runs the test and publishes scores; each university sets its own programme eligibility and subject requirements and draws up its own merit list. The NTA score is valid for admission in that academic year only. Subjects, pattern, fees and dates are set afresh in each year\'s information bulletin.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'university-of-delhi',
+      'jawaharlal-nehru-university',
+      'banaras-hindu-university',
+      'university-of-hyderabad',
+      'tiss-mumbai',
+      'jamia-millia-islamia',
+      'aligarh-muslim-university',
+    ],
     sources: [
       // Per-cycle documents: the CUET (UG) 2027 bulletin replaces them — re-check the fee, pattern and dates then.
       { label: 'NTA — CUET (UG) official site', url: 'https://cuet.nta.nic.in' },
@@ -975,6 +1178,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'NTA — press release on the conduct of CUET (UG) 2026 (7 June 2026)', url: 'https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260608323708178.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'mht-cet',
@@ -994,7 +1198,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹1,300 per group for one attempt (General/Open, Outside Maharashtra State and J&K migrant candidates) or ₹1,000 (Maharashtra reserved categories, PwD, orphan and transgender candidates); ₹2,600 / ₹2,000 for both attempts (MHT-CET 2026; payment service charges extra)',
     descriptionEn:
       'MHT-CET is the computer-based common entrance test conducted by Maharashtra\'s State Common Entrance Test Cell for first-year admission to engineering and technology, pharmacy (B.Pharm and Pharm.D), planning and agriculture-education degree courses in the state. Candidates take the PCM group (Physics, Chemistry, Mathematics), the PCB group (Physics, Chemistry, Biology) or both, with questions in English, Marathi or Urdu. Engineering admission generally needs the PCM group; a PCB score qualifies only for a short list of courses such as agricultural engineering and biotechnology. Questions follow Maharashtra SCERT syllabi, with about 20% weightage for Class 11 and 80% for Class 12. There is no negative marking, and results are published as percentiles. In 2026 each group could be taken twice, and the better total percentile was used in the 2026–27 admission process. Seats are allotted through the CET Cell\'s Centralised Admission Process (CAP). Pattern, dates and fees are set in each year\'s information brochure.',
-    collegesAccepting: [],
+    collegesAccepting: ['coep-pune', 'vjti-mumbai'],
     sources: [
       // Per-cycle documents: re-check them against the MHT-CET 2027 brochures (the two-attempt system may change).
       { label: 'State Common Entrance Test Cell, Maharashtra — official site', url: 'https://cetcell.mahacet.org' },
@@ -1006,6 +1210,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'State CET Cell — CAP information brochure, UG and PG technical courses 2026-27', url: 'https://cappublicdocs2026.blob.core.windows.net/documents/PublicPages/Information_Brochure_UG_PG_2026_27_dt_2_7_2026_DHG_1_Display.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'kcet',
@@ -1024,13 +1229,14 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     websiteUrl: 'https://cetonline.karnataka.gov.in/kea',
     descriptionEn:
       'KCET (the Karnataka Common Entrance Test, listed by KEA as UGCET) is conducted by the Karnataka Examinations Authority (KEA) to determine eligibility and merit for government-quota seats in first-year engineering and technology, farm science (agriculture and allied), veterinary science, B.Sc. Nursing, naturopathy & yoga, B.Pharm and Pharm.D courses at government, university, aided and private institutions in Karnataka. It is a pen-and-paper (OMR) test of four 60-mark papers — Physics, Chemistry, Mathematics and Biology — held over two days, with no negative marking and questions based on Karnataka\'s first- and second-year PUC syllabi. The engineering rank gives equal weight to CET and Class 12 marks in Physics, Chemistry and Mathematics. Architecture seats use NATA scores and medical, dental and AYUSH seats use NEET (UG), but those applicants also register with KEA for its online counselling, through which seats are allotted. Pattern, dates and fees are set in KEA\'s information bulletin each year.',
-    collegesAccepting: [],
+    collegesAccepting: ['bmsce-bengaluru'],
     sources: [
       // Per-cycle document: the CET-2027 bulletin replaces it. The bulletin states no application-fee amount, so no fee is given.
       { label: 'Karnataka Examinations Authority (KEA) — official site', url: 'https://cetonline.karnataka.gov.in/kea/' },
       { label: 'KEA — CET-2026 E-Information Bulletin-1 (English, 16 Jan 2026)', url: 'https://cetonline.karnataka.gov.in/keawebentry456/ugcet2026/information_bulletin_1_ugcet_2026_17012026english.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'wbjee',
@@ -1050,7 +1256,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹500 (General, male), ₹400 (General, female), ₹300 (General, third gender); ₹400 / ₹300 / ₹200 for SC, ST, OBC-A, OBC-B, EWS, PwD and TFW candidates (male / female / third gender). WBJEE-2026; no bank service charges.',
     descriptionEn:
       'WBJEE is the West Bengal state entrance test conducted annually by the West Bengal Joint Entrance Examinations Board (WBJEEB) for admission to undergraduate engineering and technology, pharmacy and architecture courses at universities and institutes in West Bengal. It is a pen-and-paper (OMR) test of two papers — Paper I (Mathematics) and Paper II (Physics and Chemistry) — with multiple-choice questions in three categories, some with negative marking. Candidates who take both papers receive a General Merit Rank, used for engineering, technology and architecture (and pharmacy at Jadavpur University), and a Pharmacy Merit Rank; candidates who take only Paper II are ranked for pharmacy only. Seats are allotted through WBJEEB\'s online counselling. Pattern, fees and dates are set in each year\'s information bulletin.',
-    collegesAccepting: [],
+    collegesAccepting: ['jadavpur-university'],
     sources: [
       // Per-cycle documents: the WBJEE-2027 bulletin replaces them.
       { label: 'West Bengal Joint Entrance Examinations Board (WBJEEB) — official site', url: 'https://wbjeeb.nic.in' },
@@ -1059,6 +1265,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'WBJEEB — Common Online Decentralised Counselling notification 2026 (1 Sep 2026)', url: 'https://cdnbbsr.s3waas.gov.in/s3d2a27e83d429f0dcae6b937cf440aeb1/uploads/2026/09/202609011701958807.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'ap-eapcet',
@@ -1107,7 +1314,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹900 per stream (₹500 for SC/ST and PH candidates); ₹1,800 to sit both the Engineering and the Agriculture & Pharmacy streams (₹1,000 for SC/ST and PH candidates) — TG EAPCET 2026 registration fee; late fees apply after the normal deadline',
     descriptionEn:
       'TS EAMCET — renamed TG EAPCET from 2024 — is the Telangana state entrance test conducted once a year by Jawaharlal Nehru Technological University Hyderabad (JNTUH) on behalf of the Telangana Council of Higher Education (TGCHE) for admission to undergraduate engineering, agriculture and pharmacy courses in Telangana (including B.Tech, B.Pharm, Pharm-D and B.Sc. Nursing). It is a computer-based test held in several sessions, on a syllabus in line with the Telangana Board of Intermediate Education syllabus. Questions are shown bilingually (English with Telugu, or English with Urdu), and marks are normalised across sessions. Seats are allotted through separate online counselling linked from the official site. MBBS and BDS are not among the courses it covers, and B.Arch applicants are directed to NATA. Pattern, marking and dates are set in the official notification and instruction booklet each year.',
-    collegesAccepting: [],
+    collegesAccepting: ['jntu-hyderabad'],
     sources: [
       // Per-cycle documents (Doc2026): re-check them for TG EAPCET 2027.
       { label: 'TG EAPCET — official site (TGCHE / JNTUH)', url: 'https://eapcet.tgche.ac.in' },
@@ -1118,6 +1325,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'TG EAPCET — admission and counselling links', url: 'https://eapcet.tgche.ac.in/TGEAPCET/Admission.aspx' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'keam',
@@ -1137,13 +1345,14 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹925 for Engineering (₹400 for SC candidates; no fee for ST candidates) — KEAM 2026 prospectus, clause 7.2; other streams are listed separately in the same clause, and choosing the UAE exam centre adds ₹16,000',
     descriptionEn:
       'KEAM is the Kerala state admission process for professional undergraduate courses, run by the Commissioner for Entrance Examinations (CEE), Government of Kerala. The Engineering entrance, and a separate Pharmacy entrance for B.Pharm, are computer-based tests held in several sessions and set at the standard of the higher secondary examination. Engineering ranks give equal weight to the normalised entrance score and to normalised Class 12 marks in Mathematics, Physics and Chemistry. Seats are allotted through the Centralised Allotment Process (CAP). Architecture ranks give equal weight to NATA and qualifying-examination marks, and medical and allied courses (such as MBBS, BDS, AYUSH, agriculture and veterinary) use NEET-UG ranks. Pattern, marking and dates are set in the prospectus each year.',
-    collegesAccepting: [],
+    collegesAccepting: ['cusat-kochi'],
     sources: [
       // Per-cycle document: the KEAM 2027 prospectus replaces it.
       { label: 'Commissioner for Entrance Examinations (CEE), Kerala — official site', url: 'https://cee.kerala.gov.in' },
       { label: 'KEAM 2026 prospectus (CEE Kerala)', url: 'https://cee.kerala.gov.in/keam2026/pdf/Prospectus.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'gujcet',
@@ -1163,7 +1372,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹350 — GUJCET 2026 examination fee, as stated in the GSEB information booklet',
     descriptionEn:
       'GUJCET (Gujarat Common Entrance Test) is conducted by the Gujarat Secondary and Higher Secondary Education Board (GSEB) for admission to degree engineering and degree/diploma pharmacy courses in Gujarat. It is an offline, OMR-based multiple-choice test with a combined Physics and Chemistry paper plus a Mathematics and/or Biology paper. It follows the NCERT-based syllabus GSEB adopts for Class 12 Science, and papers are offered in Gujarati, Hindi and English. The Admission Committee for Professional Courses (ACPC), Gujarat, prepares the merit list from Class 12 theory percentile in Physics, Chemistry and Mathematics/Biology together with the GUJCET percentile, with weightages set in its admission rules; ACPC also publishes a separate JEE Main (All India) seat matrix. Pattern, marking and dates are set by GSEB each year.',
-    collegesAccepting: [],
+    collegesAccepting: ['daiict-gandhinagar'],
     sources: [
       // Per-cycle document: the GUJCET 2027 booklet replaces it.
       { label: 'Gujarat Secondary & Higher Secondary Education Board (GSEB) — official site', url: 'https://www.gseb.org' },
@@ -1172,6 +1381,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'Admission Committee for Professional Courses (ACPC), Gujarat — BE/B.Tech admissions', url: 'https://gujacpc.admissions.nic.in/be-b-tech/' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'bitsat',
@@ -1191,7 +1401,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'Indian and Nepal centres: ₹3,600 for one session (₹3,100 for female and transgender candidates) or ₹5,600 for both sessions (₹4,600); Dubai centre: ₹7,250 for one session or ₹9,250 for both — BITSAT 2026 brochure',
     descriptionEn:
       'BITSAT is the computer-based admission test BITS Pilani, a deemed-to-be university, conducts for its integrated first-degree programmes — B.E., B.Pharm. and M.Sc. — at the Pilani, K K Birla Goa and Hyderabad campuses. BITS states it is the only route into these programmes and that there is no management quota. The test is in English only and covers Physics, Chemistry, English proficiency, logical reasoning, and Mathematics (or Biology for B.Pharm., B.E. Environmental & Sustainability Engg. and M.Sc. Biological Sciences). The syllabus is published in the brochure, which refers candidates to NCERT textbooks. It is held in two sessions and the higher score counts; the admission merit list uses the BITSAT scores of candidates who meet the Class 12 marks rule. admissions.bits-pilani.ac.in is the official BITS Pilani admission portal. Pattern and dates are set in the brochure each year.',
-    collegesAccepting: [],
+    collegesAccepting: ['bits-pilani'],
     sources: [
       // Per-cycle document: the BITSAT 2027 brochure replaces it.
       { label: 'BITS Pilani — official admission portal', url: 'https://admissions.bits-pilani.ac.in' },
@@ -1199,6 +1409,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'BITSAT 2026 brochure (BITS Pilani)', url: 'https://admissions.bits-pilani.ac.in/FD/downloads/BITSAT-2026_Brochure.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'viteee',
@@ -1218,13 +1429,14 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹1,350 application cost (VITEEE 2026, non-refundable); for test centres abroad, the equivalent of USD 90 in INR',
     descriptionEn:
       'VITEEE is the computer-based entrance test Vellore Institute of Technology (VIT) conducts for admission to its B.Tech programmes at VIT Vellore and VIT Chennai (a deemed-to-be university) and at VIT-AP and VIT Bhopal (state private universities), with test centres in India and abroad. The test is in English only and covers Mathematics or Biology, Physics, Chemistry, aptitude and English, on a subject syllabus VIT publishes. Selection is by VITEEE rank through VIT\'s online counselling, where candidates choose a campus and programme. VIT states that Class 12, JEE Main and SAT scores are not considered for B.Tech admission, and that there is no management quota. Pattern and dates are set in the prospectus each year.',
-    collegesAccepting: [],
+    collegesAccepting: ['vit-vellore'],
     sources: [
       // Per-cycle document: the VITEEE 2027 prospectus replaces it.
       { label: 'VITEEE — official site (VIT)', url: 'https://viteee.vit.ac.in' },
       { label: 'VITEEE 2026 prospectus (VIT)', url: 'https://vit.ac.in/files/VITEEE/VITEEE_Prospectus.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'comedk-uget',
@@ -1244,7 +1456,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹1,950 for COMEDK UGET 2026 (₹3,200 if also taking Uni-GAUGE E 2026, held as one combined exam), plus transaction/internet-handling charges; non-refundable. COMEDK lists no category-wise reduction.',
     descriptionEn:
       'COMEDK UGET is the entrance test that COMEDK (the Consortium of Medical, Engineering and Dental Colleges of Karnataka) conducts for first-year B.E./B.Tech admission to the unaided private engineering colleges of KUPECA (the Karnataka Unaided Private Engineering Colleges Association) that take part in its process — around 150 colleges, per the 2026 brochure. It is open to eligible candidates from across India. The computer-based test is in English only. It has 180 multiple-choice questions — 60 each in Physics, Chemistry and Mathematics — based on the CBSE Class 11 and 12 syllabus, with no negative marking. The test may run in several sessions, so ranks use percentile scores normalised across sessions. Seats are allotted through COMEDK\'s centralised single-window counselling. Despite the consortium\'s name, medical and dental admission is through NEET, and B.Arch seats in COMEDK counselling use NATA or JEE scores. A UGET score counts only for that year\'s admissions.',
-    collegesAccepting: [],
+    collegesAccepting: ['bmsce-bengaluru'],
     sources: [
       // Per-cycle documents: the UGET 2027 brochure replaces them — re-check the date, fee, eligibility and pattern then.
       { label: 'COMEDK — official site', url: 'https://www.comedk.org' },
@@ -1252,6 +1464,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'COMEDK UGET 2026 Information Brochure, notified 3 Feb 2026 (§2 about COMEDK, §3 eligibility, §7 scope and score validity, §12 fee, §16 test pattern, §18.2 normalisation) (PDF)', url: 'https://www.comedk.org/uploads/Information-brochure-2026-version-1.0.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'ssc-chsl',
@@ -1584,7 +1797,15 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'UGC-NET June 2026: ₹1,150 General/Unreserved; ₹600 Gen-EWS/OBC-NCL; ₹325 SC/ST/PwD/PwBD/third gender; bank or gateway processing charges and GST extra',
     descriptionEn:
       'UGC-NET is conducted by NTA for the University Grants Commission in Computer-Based Test (CBT) mode across a broad range of subjects. It determines eligibility in three categories: award of Junior Research Fellowship (JRF) with appointment as Assistant Professor and PhD admission; appointment as Assistant Professor and PhD admission; and PhD admission only. Paper 1 assesses teaching and research aptitude — reasoning, reading comprehension, divergent thinking and general awareness; Paper 2 is based on the subject the candidate chooses. For PhD admission under categories 2 and 3, NET marks carry 70% weight and the university\'s interview 30%, and they count for one year from the result; JRF-qualified candidates are admitted to a PhD through an interview. NTA publishes subject- and category-wise cut-off marks with each result.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'jawaharlal-nehru-university',
+      'university-of-hyderabad',
+      'iiser-pune',
+      'iiser-kolkata',
+      'isi-kolkata',
+      'cmi-chennai',
+      'iiser-bhopal',
+    ],
     sources: [
       // Per-cycle document: the December 2026 bulletin replaces it.
       { label: 'UGC-NET — official portal (NTA)', url: 'https://ugcnet.nta.nic.in' },
@@ -1592,6 +1813,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'NTA — press release: declaration of UGC-NET June 2026 results (28 Aug 2026)', url: 'https://cdnbbsr.s3waas.gov.in/s301eee509ee2f68dc6014898c309e86bf/uploads/2026/08/20260828605740344.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'csir-net',
@@ -1611,7 +1833,13 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'Joint CSIR-UGC NET June 2026: ₹1,150 General; ₹600 Gen-EWS/OBC-NCL; ₹325 SC/ST/PwD/PwBD/third gender; bank or payment-gateway service charges extra',
     descriptionEn:
       'Joint CSIR-UGC NET is conducted by NTA for the Council of Scientific and Industrial Research in Computer-Based Test (CBT) mode in five subjects: Chemical Sciences; Earth, Atmospheric, Ocean and Planetary Sciences; Life Sciences; Mathematical Sciences; and Physical Sciences. Results fall into three categories: JRF with eligibility for Assistant Professor and PhD admission; eligibility for Assistant Professor and PhD admission; and eligibility for PhD admission only. Each paper has three parts: Part A (general aptitude, common to all subjects), Part B (subject-related conventional multiple-choice questions) and Part C (higher-value analytical questions that apply scientific concepts). For PhD admission under categories 2 and 3, NET marks carry 70% weight and the university\'s interview 30%, and they count for one year from the result; the Assistant Professor certificate has no end date.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'iiser-pune',
+      'iiser-kolkata',
+      'isi-kolkata',
+      'cmi-chennai',
+      'iiser-bhopal',
+    ],
     sources: [
       // Per-cycle document: the December 2026 bulletin replaces it.
       { label: 'Joint CSIR-UGC NET — official portal (NTA)', url: 'https://csirnet.nta.nic.in' },
@@ -1621,6 +1849,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'NTA — press release: scores of Joint CSIR-UGC NET June 2026 (29 Aug 2026)', url: 'https://cdnbbsr.s3waas.gov.in/s3efdf562ce2fb0ad460fd8e9d33e57f57/uploads/2026/08/20260829458652006.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
 // Set 10 — no new exam records. This file is intentionally empty.
 // Set 11 creates no new exam records.
@@ -1647,7 +1876,14 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'CUET (PG) 2026, for up to two test papers: ₹1,400 General; ₹1,200 Gen-EWS/OBC-NCL; ₹1,100 SC/ST/third gender; ₹1,000 PwD/PwBD (each additional paper ₹700 General, ₹600 other categories); ₹7,000 for test centres outside India (₹3,500 per additional paper); bank or gateway charges and GST extra',
     descriptionEn:
       'CUET (PG) is a computer-based entrance test conducted by NTA for admission to postgraduate programmes at central universities and other participating universities and institutions. Candidates choose up to four test papers mapped to the programmes they are applying for. NTA\'s role ends with the result: each participating university prepares its own merit list and runs its own counselling, applying its own eligibility, reservation and other criteria. The CUET (PG) 2026 score is valid for admission to the 2026–27 academic year only.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'university-of-delhi',
+      'jawaharlal-nehru-university',
+      'banaras-hindu-university',
+      'university-of-hyderabad',
+      'tiss-mumbai',
+      'jamia-millia-islamia',
+    ],
     sources: [
       // Per-cycle document: the CUET (PG) 2027 bulletin (expected around December 2026) replaces it.
       { label: 'NTA — CUET (PG) official portal', url: 'https://exams.nta.nic.in/cuet-pg/' },
@@ -1656,6 +1892,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'NTA — clarification on rescheduled CUET (PG) 2026 papers (Annexure lists total marks 300)', url: 'https://cdnbbsr.s3waas.gov.in/s388a839f2f6f1427879fc33ee4acf4f66/uploads/2026/06/202606141399769113.pdf' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'neet-pg',
@@ -1674,7 +1911,10 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹3,500 for General, OBC and EWS candidates; ₹2,500 for SC, ST and PwBD candidates (NEET-PG 2026; payment-gateway charges extra)',
     descriptionEn:
       'NEET-PG is the single eligibility-cum-entrance examination for admission to MD, MS and PG Diploma courses in India, prescribed under the National Medical Commission Act, 2019. It covers All India 50% quota seats, state quota seats, private medical colleges and deemed universities, Armed Forces Medical Services institutions, and post-MBBS DNB and NBEMS Diploma courses. AIIMS New Delhi and the other AIIMS, PGIMER Chandigarh, JIPMER Puducherry, NIMHANS Bengaluru and the Sree Chitra Tirunal Institute for Medical Sciences and Technology, Trivandrum are not covered by its centralised MD/MS admissions. NEET-PG 2026 was a computer-based test of 180 multiple-choice questions in English, in five timed sections of 36 questions (42 minutes each); a correct answer earns 4 marks and a wrong one loses 1. The NEET-PG 2026 result counts for the 2026–27 admission session only.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'aligarh-muslim-university',
+      'manipal-academy-of-higher-education',
+    ],
     sources: [
       // Per-cycle document: the NEET-PG 2027 bulletin replaces it (NBEMS hosts it on Google Drive, linked from its own NEET-PG page).
       { label: 'NBEMS — NEET-PG (overview, bulletin, application, results)', url: 'https://natboard.edu.in/viewnbeexam?exam=neetpg' },
@@ -1682,6 +1922,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'NBEMS — NEET-PG results (NEET-PG 2026 result, total score out of 720)', url: 'https://natboard.edu.in/parinam/neetpg/index' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'nata',
@@ -1700,7 +1941,11 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '₹1,750 per test for General and OBC (NCL) candidates; ₹1,250 for SC, ST, EWS and PwD; ₹1,000 for transgender candidates; ₹15,000 for a test outside India (NATA 2026, non-refundable)',
     descriptionEn:
       'NATA (National Aptitude Test in Architecture) is the Council of Architecture\'s aptitude test for admission to the five-year B.Arch. degree in India, held since 2006. CoA regulations require B.Arch. applicants to qualify an aptitude test in architecture — NATA or the NTA\'s JEE — and the admissions themselves are made by state, UT and institutional admission authorities. NATA 2026 had two parts: Part A, an offline drawing and composition test (three questions, 80 marks), and Part B, a computer-based adaptive test (42 multiple-choice and 8 no-choice questions, 120 marks) covering visual reasoning, logical derivation, general knowledge of architecture and design, language interpretation, design sensitivity and numerical ability. The test is set in English and Hindi, and a NATA 2026 score is valid for the 2026–27 academic session.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'nsut-delhi',
+      'anna-university-chennai',
+      'jamia-millia-islamia',
+    ],
     sources: [
       // Per-cycle documents: brochure V2.0 (10 Apr 2026) is the current NATA 2026 brochure — re-check them for NATA 2027.
       { label: 'Council of Architecture — NATA official site', url: 'https://www.nata.in/' },
@@ -1709,6 +1954,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'NATA 2026 — schedule of dates', url: 'https://www.nata.in/schedule.html' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'iit-jam',
@@ -1727,7 +1973,29 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'JAM 2027: ₹2,000 for one test paper or ₹2,700 for two; ₹1,000 or ₹1,350 for female, SC, ST and PwD candidates (non-refundable; bank or payment-gateway charges extra)',
     descriptionEn:
       'JAM is the computer-based entrance test for postgraduate science programmes at the IITs: M.Sc., M.Sc. (Tech.), MS (Research), M.Sc.–M.Tech. dual degree, Joint M.Sc.–Ph.D., M.Sc.–Ph.D. dual degree and Integrated Ph.D. It has seven test papers — Biotechnology, Chemistry, Economics, Geology, Mathematics, Mathematical Statistics and Physics — and a candidate may take one or two. The organising institute coordinates admission to the IITs on the basis of All India Rank in each paper; result-sharing institutes such as IISc, the NITs, IIEST Shibpur and IISER Pune and Bhopal also use JAM scores, and candidates apply to them directly or through the Centralized Counselling for M.Sc./M.Sc. (Tech) Admission (CCMN). JAM 2027 test centres are in India only.',
-    collegesAccepting: ['iit-bombay', 'iit-delhi', 'iit-madras', 'iit-kanpur', 'iit-kharagpur', 'nit-trichy'],
+    collegesAccepting: [
+      'iit-bombay',
+      'iit-delhi',
+      'iit-madras',
+      'iit-kanpur',
+      'iit-kharagpur',
+      'nit-trichy',
+      'iisc-bangalore',
+      'iit-roorkee',
+      'iit-guwahati',
+      'iit-hyderabad',
+      'iit-indore',
+      'iit-bhu-varanasi',
+      'nit-surathkal',
+      'nit-rourkela',
+      'nit-calicut',
+      'mnnit-allahabad',
+      'mnit-jaipur',
+      'iiser-pune',
+      'iiser-kolkata',
+      'iiser-bhopal',
+      'iit-bhubaneswar',
+    ],
     sources: [
       // Per-cycle: the organising IIT and its site change each cycle — re-check the site, brochure, fee and pattern for JAM 2028.
       { label: 'JAM 2027 official website (IIT Kharagpur, organising institute)', url: 'https://jam.iitkgp.ac.in/' },
@@ -1742,6 +2010,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
       { label: 'NIT Tiruchirappalli — M.Sc. admission (CCMN, JAM score)', url: 'https://www.nitt.edu/home/admissions/msc/' },
     ],
     lastVerified: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'nchm-jee',
@@ -1788,7 +2057,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     eligibility: 'IIM Indore (2026–31 batch): born on or after 1 August 2006 (1 August 2001 for SC, ST and PwD candidates), Class XII or equivalent passed in 2024 or 2025 or appearing in 2026, and Class X passed. IIM Rohtak (2026–31 batch): at least 60% (55% for SC, ST and DAP candidates) in Class X and in Class XII or equivalent, and no older than 20 (25 for SC and ST) on 30 June 2026; candidates finishing Class XII by June 2026 may apply.',
     websiteUrl: 'https://iimidr.ac.in/programmes/academic-programmes/five-year-integrated-programme-in-management-ipm/ipm-admissions-details/',
     costUsd: 'IPM AT 2026 application fee — IIM Indore: ₹4,130 (₹2,065 for SC, ST and PwD candidates), inclusive of 18% GST; IIM Rohtak: ₹4,937',
-    collegesAccepting: [],
+    collegesAccepting: ['iim-indore', 'nalsar-hyderabad'],
     sources: [
       // Per-cycle documents (2026–31 batch): re-check both institutes' 2027 notifications.
       { label: 'IIM Indore — IPM admissions (IPM AT 2026 announcements; institutions using the score)', url: 'https://iimidr.ac.in/programmes/academic-programmes/five-year-integrated-programme-in-management-ipm/ipm-admissions-details/' },
@@ -1803,7 +2072,7 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     // Re-verified on 30 Sep 2026 against both institutes' 2026–31 documents except the delivery
     // mode (IIM Indore's official pages do not say whether its IPM AT is computer-based),
     // so lastVerified stays (Content Policy §5).
-    contentUpdated: '2026-09-30',
+    contentUpdated: '2026-11-22',
   },
 
   // Abroad tests the guides already name. Each record is the test body's own page,
@@ -1824,11 +2093,12 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     websiteUrl: 'https://www.jlpt.jp/e/',
     descriptionEn:
       'The Japanese-Language Proficiency Test (JLPT) is run by the Japan Foundation and Japan Educational Exchanges and Services. It is a multiple-choice test, scored by computer, with no speaking or writing section. It is sat on a mark sheet at a test site, including outside Japan, not as an at-home test. Levels run from N5 to N1. The official FAQ says the certificate does not expire, including results of the old test through 2009. A company or school may still set its own time limit.',
-    collegesAccepting: [],
+    collegesAccepting: ['tohoku-university', 'waseda-university', 'hokkaido-university'],
     sources: [
       { label: 'JLPT — FAQ (sittings, eligibility, scoring, certificate expiry)', url: 'https://www.jlpt.jp/e/faq/' },
     ],
     lastVerified: '2026-11-06',
+    contentUpdated: '2026-11-23',
   },
   {
     id: 'topik',
@@ -1846,11 +2116,12 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     websiteUrl: 'https://www.niied.go.kr/web/NIIED/contents/niiedEng/eng_topikOverview',
     descriptionEn:
       'TOPIK is NIIED’s Korean-language test. The English overview describes a paper test and an internet-based test at beginner level (TOPIK I) and from intermediate to advanced (TOPIK II), plus a separate speaking test. NIIED lists the results for admission and graduation at universities in Korea, for employment, for visa qualifications the page names, for the Global Korea Scholarship, and as substitute credit for Korean majors at universities outside Korea. The overview we read does not state how long a result remains usable. Each university confirms the level it asks for.',
-    collegesAccepting: [],
+    collegesAccepting: ['snu', 'yonsei-university', 'korea-university', 'sungkyunkwan-university'],
     sources: [
       { label: 'NIIED — Test of Proficiency in Korean (TOPIK), English overview', url: 'https://www.niied.go.kr/web/NIIED/contents/niiedEng/eng_topikOverview' },
     ],
     lastVerified: '2026-11-06',
+    contentUpdated: '2026-11-23',
   },
   {
     id: 'eju',
@@ -1871,13 +2142,25 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     websiteUrl: 'https://www.jasso.go.jp/en/ryugaku/eju/index.html',
     descriptionEn:
       'The Examination for Japanese University Admission for International Students (EJU) is JASSO’s test for international students applying to undergraduate study in Japan. JASSO’s overview says it is offered in Japanese or English, except Japanese as a Foreign Language, which is in Japanese only. Scores are scaled so that sessions with different questions can be compared. A university names which sessions it will consider. An applicant who has sat more than once may submit the highest score among those sessions. The score page says scores are valid for two years. JASSO also publishes a list of schools that consider EJU before arrival. Each school states its own subjects. The pages we read describe an examination sitting and do not describe an at-home option.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'u-tokyo',
+      'kyoto-u',
+      'osaka-u',
+      'tohoku-university',
+      'nagoya-university',
+      'waseda-university',
+      'keio-university',
+      'institute-of-science-tokyo',
+      'kyushu-university',
+      'hokkaido-university',
+    ],
     sources: [
       { label: 'JASSO — EJU score (two-year validity and which session to submit)', url: 'https://www.jasso.go.jp/en/ryugaku/eju/about/score/index.html' },
       { label: 'JASSO — EJU examination subjects (lengths and score ranges)', url: 'https://www.jasso.go.jp/en/ryugaku/eju/examinee/procedure/subject.html' },
       { label: 'JASSO — what is EJU? (June and November; Japanese or English)', url: 'https://www.jasso.go.jp/en/ryugaku/eju/about/about_a/about_eju.html' },
     ],
     lastVerified: '2026-11-06',
+    contentUpdated: '2026-11-23',
   },
   {
     id: 'hsk',
@@ -1895,11 +2178,18 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     websiteUrl: 'https://www.chinesetest.cn/HSK/',
     descriptionEn:
       'HSK is the Chinese proficiency test organised by CTI. The about page says universities in China use the scores when they admit students, decide graduation and award scholarships, and that employers use the scores as well. It describes a newer structure of three stages and nine levels, and it lists paper-based testing, internet-based testing at a centre, and internet-based testing at home. The about page we read does not state how long a score report remains usable, a fee, or one total mark. Ask CTI or the university that asks for the result.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'peking',
+      'tsinghua',
+      'zhejiang-university',
+      'university-of-science-and-technology-of-china',
+      'nanjing-university',
+    ],
     sources: [
       { label: 'Chinese Testing International — HSK about page', url: 'https://www.chinesetest.cn/HSK/' },
     ],
     lastVerified: '2026-11-06',
+    contentUpdated: '2026-11-23',
   },
   {
     id: 'lnat',
@@ -1917,13 +2207,25 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     websiteUrl: 'https://lnat.ac.uk/what-is-lnat/',
     descriptionEn:
       'The LNAT is a computer-based test used by universities for undergraduate law admissions. The LNAT Consortium manages the content. Pearson VUE administers the test. Section A is 42 multiple-choice questions and produces the LNAT score out of 42. Section B is one essay, which is not part of that score. The results page states no expiry and no fixed weight: each university uses the score and the essay in its own admissions system. There is no fixed pass mark on the pages we read.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'bristol',
+      'cambridge',
+      'durham',
+      'glasgow',
+      'kings-college-london',
+      'lse',
+      'oxford',
+      'soas-university-of-london',
+      'ucl',
+    ],
     sources: [
       { label: 'LNAT — what the test is', url: 'https://lnat.ac.uk/what-is-lnat/' },
+      { label: 'LNAT — Do I need to sit the test? (participating UK universities)', url: 'https://lnat.ac.uk/what-is-lnat/do-i-need-to-sit-the-test/' },
       { label: 'LNAT — test format (timing and the two sections)', url: 'https://lnat.ac.uk/what-is-lnat/test-format/' },
       { label: 'LNAT — results (no fixed weight; when scores are released)', url: 'https://lnat.ac.uk/what-is-lnat/results/' },
     ],
     lastVerified: '2026-11-06',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'gamsat',
@@ -1943,12 +2245,22 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: 'AUD $568 including GST in Australia, €378 in Ireland, and £296 in the UK, as listed on the GAMSAT home page in November 2026. Paid in full by credit card. Not converted between currencies.',
     descriptionEn:
       'GAMSAT is ACER’s computer-based test for applicants to graduate-entry medicine and allied-health courses. Sittings are remote-proctored and at a test centre. The Written Communication section is two essays by remote proctoring. Universities set their own cut-offs and may set a minimum on a section. The results page says a result can be used for up to four consecutive years in Australia and two consecutive years in the UK and Ireland. It says Ulster University states four years. The Statement of Results is online.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'anu',
+      'flinders-university',
+      'u-melbourne',
+      'university-of-queensland',
+      'u-sydney',
+      'university-of-western-australia',
+      'university-of-wollongong',
+    ],
     sources: [
       { label: 'ACER — GAMSAT home (computer-based delivery, sections, fees, eligibility)', url: 'https://gamsat.acer.org/' },
       { label: 'ACER — GAMSAT results (score formula and currency by country)', url: 'https://gamsat.acer.org/results' },
+      { label: 'ACER — GAMSAT university admission (Australia)', url: 'https://gamsat.acer.org/university-admission' },
     ],
     lastVerified: '2026-11-06',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'hpat',
@@ -1967,12 +2279,20 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     costUsd: '€167 standard registration for HPAT-Ireland 2027, as listed by ACER. Written English €24. Late fee €78. The home page also lists other charges. Not converted to another currency.',
     descriptionEn:
       'HPAT-Ireland is ACER’s online test for undergraduate medicine at the Irish universities the home page names, including University College Dublin, and for two University of Limerick master’s courses when the Written English add-on is required. It is taken remotely. The 2027 information booklet says results can be used only for a course beginning in the same year: a 2027 result for a 2027 course, not for 2028. The booklet also says results are valid for one year. ACER sends results to the CAO. Each university decides how it uses the score.',
-    collegesAccepting: ['university-college-dublin'],
+    collegesAccepting: [
+      'galway',
+      'rcsi',
+      'trinity-college-dublin',
+      'ucc',
+      'university-college-dublin',
+      'university-of-limerick',
+    ],
     sources: [
       { label: 'ACER — HPAT-Ireland home (2027 dates, fee, remote delivery, courses)', url: 'https://hpat-ireland.acer.org/' },
       { label: 'ACER — HPAT-Ireland 2027 information booklet (currency of results and scoring)', url: 'https://hpat-ireland.acer.org/files/HPAT-Ireland-Information-Booklet.pdf' },
     ],
     lastVerified: '2026-11-06',
+    contentUpdated: '2026-11-22',
   },
   {
     id: 'emsat',
@@ -1990,11 +2310,19 @@ export const ENTRANCE_EXAMS: EntranceExam[] = [
     websiteUrl: 'https://emsat.moe.gov.ae/emsat/emsat_about.aspx',
     descriptionEn:
       'EmSAT is the UAE Ministry of Education’s standardised electronic test. The about page says it measures student skills against national standards and is applied across educational stages. The page we read does not state that the test is required for university admission, how long a result remains usable, or a single score scale. A university that asks for an EmSAT result states its own rule. Confirm the current requirement on the Ministry page before you rely on it.',
-    collegesAccepting: [],
+    collegesAccepting: [
+      'khalifa',
+      'aus',
+      'american-university-in-dubai',
+      'amity-university-dubai',
+      'rit-dubai',
+      'mohammed-bin-rashid-university-of-medicine-and-health-sciences',
+    ],
     sources: [
       { label: 'UAE Ministry of Education — EmSAT about page', url: 'https://emsat.moe.gov.ae/emsat/emsat_about.aspx' },
     ],
     lastVerified: '2026-11-06',
+    contentUpdated: '2026-11-25',
   },
 ];
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getRegionBySlug, type RegionSlug } from '@/lib/regions';
 import { ADMISSIONS_CYCLE, ORG_LOGO, metaDescription } from '@/lib/site-meta';
+import { SEARCH_TITLE_OVERRIDES } from '@/lib/seo-title-overrides';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared SEO metadata helpers — the ONE place that knows how a page's <title>,
@@ -17,6 +18,10 @@ import { ADMISSIONS_CYCLE, ORG_LOGO, metaDescription } from '@/lib/site-meta';
 
 export const SITE_URL = 'https://www.globalstudyboard.com';
 export const SITE_NAME = 'GlobalStudyBoard';
+export const HOME_SEARCH_TITLE = 'University Admissions, Entrance Exams & Study Abroad';
+export const SEARCH_TITLE_LIMIT = 70;
+const TITLE_SUFFIX = ` · ${SITE_NAME}`;
+export const TITLE_TEMPLATE = `%s${TITLE_SUFFIX}`;
 
 /**
  * Raw titles longer than this drop the " · GlobalStudyBoard" template suffix
@@ -24,7 +29,7 @@ export const SITE_NAME = 'GlobalStudyBoard';
  * ~60-character title width — not the brand. Never shorten a title by removing
  * its destination word.
  */
-export const TITLE_SUFFIX_BUDGET = 52;
+export const TITLE_SUFFIX_BUDGET = SEARCH_TITLE_LIMIT - TITLE_SUFFIX.length;
 
 /** Short admissions-cycle tag for titles backed by a reviewed date: "2026–2027" → "2026–27". */
 export const CYCLE_SHORT = ADMISSIONS_CYCLE.replace(/^(\d{4})[–-]\d{2}(\d{2})$/, '$1–$2');
@@ -101,7 +106,38 @@ export function ogImageFor(region: RegionSlug | 'global' | null | undefined): Og
  * query-bearing title stays visible instead of being cut to make room for
  * " · GlobalStudyBoard".
  */
-export function seoTitle(title: string): Metadata['title'] {
+export function seoTitle(title: string, path = ''): Metadata['title'] {
+  const override = SEARCH_TITLE_OVERRIDES[path];
+  if (override) return { absolute: override };
+
+  if (title.length > SEARCH_TITLE_LIMIT) {
+    // Keep the full university identity and destination. The editable page
+    // title and description already spell out the profile's other sections.
+    if (path.startsWith('/colleges/')) {
+      // Every tail collegeTitle() in app/colleges/[slug]/page.tsx can produce.
+      const name = title.replace(
+        /: (?:Rankings, Courses & Admission Tests|Admissions, Courses & How to Apply|Courses, Admission Tests & How to Apply|Admissions & How to Apply|Rankings & Admission Tests|Admission Tests & How to Apply)$/,
+        '',
+      );
+      if (name !== title) {
+        const withAdmissions = `${name}: Admissions`;
+        return { absolute: withAdmissions.length <= SEARCH_TITLE_LIMIT ? withAdmissions : name };
+      }
+    }
+
+    if (path.startsWith('/exams/')) {
+      const exam = /^(.+) Exam (.+?): Pattern, Eligibility(, Fees)? & How to Prepare in (.+)$/.exec(title);
+      if (exam) {
+        const [, name, cycle, fees, region] = exam;
+        const detailed = `${name} ${cycle}: Pattern, Eligibility${fees ? ' & Fees' : ''} (${region})`;
+        return {
+          absolute: detailed.length <= SEARCH_TITLE_LIMIT
+            ? detailed
+            : `${name} ${cycle}: Pattern & Eligibility (${region})`,
+        };
+      }
+    }
+  }
   return title.length > TITLE_SUFFIX_BUDGET ? { absolute: title } : title;
 }
 
@@ -116,6 +152,8 @@ export function alternatesFor(path: string): NonNullable<Metadata['alternates']>
 export interface PageMetadataInput {
   /** Raw, query-bearing title (no brand). */
   title: string;
+  /** Explicit search title when the social preview uses a different title. */
+  searchTitle?: string;
   /** Description text — always passed through metaDescription() (word-boundary cut). */
   description: string;
   /** Site-relative path ("/guides/foo"). Never a query string. */
@@ -143,7 +181,7 @@ export function pageMetadata(input: PageMetadataInput): Metadata {
   const description = metaDescription(input.description, input.descriptionMax ?? 155);
   const type = input.type ?? 'website';
   return {
-    title: seoTitle(input.title),
+    title: seoTitle(input.searchTitle ?? input.title, input.path),
     description,
     ...(input.keywords ? { keywords: input.keywords } : {}),
     alternates: alternatesFor(input.path),

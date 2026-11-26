@@ -64,7 +64,7 @@ export const SITE_REVIEWED = '2026-09';
  * `contentUpdated` when their content changed without a full re-check
  * (`guideModified()` / `examModified()`).
  */
-export const SITE_LASTMOD = '2026-11-20';
+export const SITE_LASTMOD = '2026-11-26';
 
 /**
  * The publisher logo for Organization / Article structured data. Google's

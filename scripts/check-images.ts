@@ -181,12 +181,12 @@ const GENERIC = new Set([
   'school', 'faculty', 'academy', 'the', 'of', 'and', 'for', 'de', 'di', 'du', 'des', 'la', 'le',
   'van', 'im', 'in', 'first', 'general', 'public', 'open', 'modern', 'autonomous', 'deemed',
   'central', 'federal', 'royal', 'imperial', 'city', 'national', 'state', 'international',
-  'new', 'south', 'north', 'east', 'west', 'saint', 'st', 'higher', 'education', 'campus', 'research',
+  'new', 'south', 'north', 'east', 'west', 'saint', 'st', 'higher', 'education', 'learning', 'campus', 'research',
   // English function words inside an official name ("named after"), not the institution
   'named', 'after',
   // subject / field words — these appear in honest archetype alts ("a physics optics bench")
   'technology', 'technological', 'science', 'sciences', 'medical', 'medicine', 'management',
-  'engineering', 'business', 'law', 'arts', 'art', 'design', 'music', 'commerce', 'economics',
+  'engineering', 'business', 'law', 'arts', 'art', 'design', 'media', 'music', 'commerce', 'economics',
   'physics', 'chemistry', 'biology', 'social', 'applied', 'technical', 'computer', 'information',
   'health', 'nursing', 'dental', 'pharmacy', 'agriculture', 'veterinary', 'polytechnic', 'women',
   // demonyms + COUNTRY names are region descriptors, not institution identifiers
@@ -195,6 +195,8 @@ const GENERIC = new Set([
   'japan', 'korea', 'canada', 'australia', 'ireland', 'france', 'germany', 'russia', 'malaysia',
   'thailand', 'philippines', 'taiwan', 'qatar', 'oman', 'bahrain', 'kuwait', 'saudi', 'arabia',
   'emirates', 'zealand', 'kingdom', 'states',
+  // A long table and a business case room are generic. “Beach” and “Reserve” still identify the schools.
+  'long', 'case',
 ]);
 const tokens = new Set<string>();
 for (const c of COLLEGES) {

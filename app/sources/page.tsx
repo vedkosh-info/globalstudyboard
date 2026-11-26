@@ -8,12 +8,15 @@ import { COLLEGES } from '@/lib/colleges';
 import { EXAM_VALIDITY } from '@/lib/test-validity';
 import { DESTINATION_BUDGETS } from '@/lib/cost-planner';
 import { collegeRankings } from '@/lib/college-labels';
+import { PROGRAMMES } from '@/lib/application-check-catalogue';
+import { PROGRAMME_FEES } from '@/lib/programme-fees';
+import { REGION_COUNTRY_NAME } from '@/lib/study-country';
 import { REGIONS, type RegionSlug } from '@/lib/regions';
 import LastUpdated from '@/components/LastUpdated';
 import { SITE_REVIEWED } from '@/lib/site-meta';
 
 /**
- * The complete, generated index of every official source this site cites.
+ * A generated index of the official websites cited in our content catalogues.
  *
  * This page exists for a specific, concrete reason. Google Play rejected the
  * Android app under the Misleading Claims policy ("Insufficient Sources
@@ -26,9 +29,8 @@ import { SITE_REVIEWED } from '@/lib/site-meta';
  *
  * A hand-written list could not satisfy that: the corpus cites ~1,600 distinct
  * official hosts, ~360 of them government. So this page is DERIVED from the
- * content itself at build time — it cannot drift out of date, and it is complete
- * by construction. If a guide starts citing a new ministry tomorrow, it appears
- * here automatically.
+ * content catalogues at build time. If a guide starts citing a new ministry
+ * tomorrow, it appears here automatically.
  *
  * Server component on purpose: it reads the whole guide corpus, which must never
  * reach the browser bundle (see the layout-chunk regression this repo has had).
@@ -37,7 +39,7 @@ import { SITE_REVIEWED } from '@/lib/site-meta';
 export const metadata: Metadata = pageMetadata({
   title: 'Official sources we cite',
   description:
-    'The complete list of official government, university and examination-board sources cited across GlobalStudyBoard, grouped by study destination. GlobalStudyBoard is an independent publisher and is not a government service.',
+    'Browse official government, university and examination-board websites cited by GlobalStudyBoard, grouped by study destination.',
   path: '/sources',
 });
 
@@ -67,7 +69,6 @@ const STATUTORY_BODIES = new Set([
   'indiannursingcouncil.org',
   'aicte-india.org',
   'ncte.gov.in',
-  'aiu.ac.in',
 ]);
 
 const GOVERNMENT_HOST = (host: string) =>
@@ -122,8 +123,27 @@ function collect(): { byRegion: Map<RegionSlug, Entry[]>; exams: Entry[]; totals
   for (const college of COLLEGES) {
     const bucket = bucketFor(college.region as RegionSlug);
     if (college.websiteUrl) add(bucket, `${college.nameEn} — official website`, college.websiteUrl);
+    for (const s of college.sources ?? []) add(bucket, s.label, s.url);
+    for (const unit of college.organisation ?? []) add(bucket, unit.name, unit.sourceUrl);
+    for (const line of college.applyLines ?? []) add(bucket, college.nameEn, line.sourceUrl);
+    if (college.instructionNote) add(bucket, college.nameEn, college.instructionNote.sourceUrl);
     // The ranking bodies a profile attributes its rankings to (QS, THE, NIRF…).
     for (const r of collegeRankings(college)) add(bucket, `${r.body} — rankings`, r.url);
+  }
+
+  for (const programme of PROGRAMMES) {
+    const bucket = bucketFor(programme.region);
+    add(bucket, programme.name, programme.officialUrl);
+    for (const rule of programme.rules) {
+      add(bucket, rule.title, rule.sourceUrl);
+      for (const way of rule.ways ?? []) add(bucket, way.title, way.sourceUrl);
+    }
+  }
+  for (const fee of PROGRAMME_FEES) {
+    const college = COLLEGES.find((c) => c.slug === fee.collegeSlug || (
+      c.nameEn === fee.university && REGION_COUNTRY_NAME[c.country] === fee.country
+    ));
+    if (college) add(bucketFor(college.region), fee.sourceLabel, fee.sourceUrl);
   }
 
   // Each destination page's own official sources (visa, application platform —
@@ -206,10 +226,10 @@ function SourceList({ entries }: { entries: Entry[] }) {
 
 function Hosts({ entries }: { entries: Entry[] }) {
   return (
-    <ul className="mt-2 grid gap-x-6 gap-y-1 list-none p-0 m-0 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="gsb-src mt-2 grid gap-x-6 gap-y-1 list-none p-0 m-0 text-sm leading-relaxed break-words sm:grid-cols-2 lg:grid-cols-3">
       {entries.map((e) => (
-        <li key={e.host} className="text-sm leading-relaxed break-words">
-          <a href={e.url} target="_blank" rel="noopener noreferrer" className="gsb-src">
+        <li key={e.host}>
+          <a href={e.url} target="_blank" rel="noopener noreferrer">
             {e.host}
           </a>
         </li>
@@ -230,11 +250,12 @@ export default function SourcesPage() {
         </h1>
         <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
           Our guides, exam pages and university profiles name the official source behind their facts and link to it on
-          the page itself, and each destination page links the official sources for the visa and work rules it states.
-          This page indexes all of those sources, and the official pages our tools link to —{' '}
+          the page itself. Each destination page links the official sources for the visa and work rules it states.
+        </p>
+        <p className="editorial-lede mt-3 text-stone-800 text-lg leading-relaxed">
+          This index groups sources by website so you can browse them by destination. It lists{' '}
           <strong>{totals.hosts.toLocaleString()}</strong> official websites, of which{' '}
-          <strong>{totals.gov.toLocaleString()}</strong> are government bodies, regulators or statutory authorities. It is
-          generated from those pages and tools each time the site is built, so it lists every source they cite.
+          <strong>{totals.gov.toLocaleString()}</strong> are government bodies, regulators or statutory authorities.
         </p>
       </header>
 
@@ -260,8 +281,10 @@ export default function SourcesPage() {
           <p className="m-0">
             We link to official sources so you can read them yourself. We do not reproduce them as
             an official record, and we cannot process, submit, track or influence any visa,
-            admission or scholarship application. Rules and fees change — always confirm on the
-            official website before you act.
+            admission or scholarship application.
+          </p>
+          <p className="m-0">
+            Rules and fees change — always confirm on the official website before you act.
           </p>
         </div>
       </section>

@@ -203,6 +203,11 @@ export function defaultSetLabel(regionName: string, existing: Pick<CompareSet, '
 /** A profiled university whose fact sheet is not in the loaded catalogue — the same words in the tool, the CSV and the report. */
 export const PROFILE_NOT_FOUND = 'Profile not found — check the university’s official site';
 
+export function foundingMilestone(facts?: CompareFacts): string | undefined {
+  if (facts?.established == null) return undefined;
+  return `${facts.establishmentLabel ?? 'Established'} ${facts.established}`;
+}
+
 /**
  * The CSV of one comparison. `facts` must be the LOADED catalogue (the tool
  * keeps Download CSV unavailable until it is): a profiled university missing
@@ -228,7 +233,7 @@ export function compareCsv(set: CompareSet, entries: CompareEntry[], criteria: C
     factRow('Application platform', (x) => x?.applicationPlatform ?? ''),
     factRow('Programme levels', (x) => x?.levels.join('; ') ?? ''),
     factRow('Language', (x) => x?.language ?? ''),
-    factRow('Established', (x) => (x ? String(x.established) : '')),
+    factRow('Founding milestone', (x) => foundingMilestone(x) ?? ''),
     ...(anySpecializations ? [factRow('Fields', (x) => x?.specializations.join('; ') ?? '')] : []),
     // A student-added university has no facts, but its own link is still theirs to keep.
     ['Official site', ...entries.map((e) => (e.college_slug ? facts.get(e.college_slug)?.url ?? e.official_url ?? '' : e.official_url ?? ''))],

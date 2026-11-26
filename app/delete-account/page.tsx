@@ -75,6 +75,8 @@ export default function DeleteAccountPage() {
             {CONTACT_EMAIL}
           </a>{' '}
           <strong>from the address the account is registered to</strong> with the subject “Delete my account”.
+        </p>
+        <p>
           We verify the request against that address and delete the account, normally within 7 days. We may
           ask you to confirm from the same mailbox once.
         </p>

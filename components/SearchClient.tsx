@@ -35,6 +35,7 @@ const TYPE_LABEL: Record<ContentType, string> = {
   college: 'University',
   exam: 'Exam',
   region: 'Destination',
+  place: 'University directory',
   guide: 'Guide',
 };
 
@@ -43,10 +44,11 @@ const GROUP_HEADING: Record<ContentType, string> = {
   exam: 'Exams',
   guide: 'Guides',
   region: 'Destinations',
+  place: 'University directories',
 };
 
 /** Order the result groups appear in on the page. */
-const TYPE_ORDER: ContentType[] = ['college', 'exam', 'guide', 'region'];
+const TYPE_ORDER: ContentType[] = ['college', 'place', 'exam', 'guide', 'region'];
 
 /** Cap each group so a broad query can't render thousands of cards. */
 const MAX_PER_GROUP = 30;
@@ -113,8 +115,9 @@ export default function SearchClient() {
         const data: unknown = await response.json();
         if (!isSearchCatalogue(data, searchRegion)) throw new Error('Invalid search response');
         if (controller.signal.aborted) return;
-        catalogueCache.set(searchRegion, data.items);
-        setIndexState({ region: searchRegion, status: 'ready', items: data.items });
+        const items = [...data.items, ...(data.places ?? [])];
+        catalogueCache.set(searchRegion, items);
+        setIndexState({ region: searchRegion, status: 'ready', items });
       })
       .catch(() => {
         if (!controller.signal.aborted) setIndexState({ region: searchRegion, status: 'error' });

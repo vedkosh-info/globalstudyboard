@@ -25,9 +25,10 @@ import { TOPICS, TOPIC_SLUGS, getTopicBySlug } from './topics';
 import { guidesForTopic } from './topic-guides';
 import { isRegionCategory, categoryLabel, regionCategoryPath, REGION_CATEGORIES } from './region-nav';
 import { tracksForRegion, getTrack } from './tracks';
+import { collegePlaceTrail, getPlace, placeHref, publishedPlaces, publishedTrail } from './college-places';
 import { sectionAnchors, RESERVED_GUIDE_ANCHORS } from './section-anchors';
 
-export type ContentType = 'college' | 'exam' | 'region' | 'guide';
+export type ContentType = 'college' | 'exam' | 'region' | 'guide' | 'place';
 
 /** A single indexed content unit — the atom search/breadcrumbs/sitemap consume. */
 export interface ContentUnit {
@@ -112,6 +113,17 @@ export function buildContentIndex(): ContentUnit[] {
       .toLowerCase(),
   }));
 
+  const places: ContentUnit[] = publishedPlaces().map((place) => ({
+    type: 'place',
+    slug: [place.region, ...place.segments].join('/'),
+    title: `Colleges and universities in ${place.prose}`,
+    subtitle: `${place.colleges.length} institution profiles · ${regionName(place.region)}`,
+    url: placeHref(place),
+    region: place.region,
+    keywords: [place.label, ...publishedTrail(place).map((node) => node.name), regionName(place.region), 'colleges universities admissions directory']
+      .join(' ').toLowerCase(),
+  }));
+
   const guides: ContentUnit[] = GUIDES.map((g) => ({
     type: 'guide',
     slug: g.slug,
@@ -139,7 +151,7 @@ export function buildContentIndex(): ContentUnit[] {
     })(),
   }));
 
-  return [...regions, ...exams, ...guides, ...colleges];
+  return [...regions, ...places, ...exams, ...guides, ...colleges];
 }
 
 /** Precomputed registry — content is static, so this is built once per process. */
@@ -150,7 +162,7 @@ export const CONTENT_INDEX: ContentUnit[] = buildContentIndex();
 export interface CmiReport {
   errors: string[];
   warnings: string[];
-  counts: { colleges: number; exams: number; regions: number; guides: number; topics: number; tracks: number; total: number };
+  counts: { colleges: number; exams: number; regions: number; places: number; guides: number; topics: number; tracks: number; total: number };
 }
 
 const norm = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -498,6 +510,7 @@ export function validateContent(): CmiReport {
       colleges: COLLEGES.length,
       exams: ENTRANCE_EXAMS.length,
       regions: REGIONS.length,
+      places: publishedPlaces().length,
       guides: GUIDES.length,
       topics: TOPICS.length,
       tracks: trackCount,
@@ -570,6 +583,8 @@ export function breadcrumbsFor(barePath: string): Crumb[] {
           label: categoryLabel('universities', college.region),
           href: regionCategoryPath(college.region, 'universities'),
         },
+        // Published place pages that contain it: Karnataka › Bengaluru.
+        ...collegePlaceTrail(college).map((p) => ({ label: p.name, href: placeHref(p) })),
         { label: college.nameEn },
       ];
     }
@@ -634,6 +649,20 @@ export function breadcrumbsFor(barePath: string): Crumb[] {
             home,
             { label: region.displayName, href: `/regions/${region.slug}` },
             { label: track.title },
+          ];
+        }
+      }
+      // Place page → Home › {Region} › Universities › {Country} › {State} › {City}
+      if (sub === 'universities' && segments.length > 3) {
+        const place = getPlace(region.slug, segments.slice(3));
+        if (place) {
+          const trail = publishedTrail(place);
+          return [
+            home,
+            { label: region.displayName, href: `/regions/${region.slug}` },
+            { label: categoryLabel('universities', region.slug), href: regionCategoryPath(region.slug, 'universities') },
+            ...trail.slice(0, -1).map((p) => ({ label: p.name, href: placeHref(p) })),
+            { label: place.name },
           ];
         }
       }

@@ -607,7 +607,7 @@ No HTTP API for college data. College pages stay static. Existing JSON routes pi
 - A record with `category` has a `qs` or `the` number and no edition year.
 - `organisation[].sourceUrl`, `instructionNote.sourceUrl`, `applyLines[].sourceUrl`, `sources[].url`, or `websiteUrl` is not https.
 - A record with `category` has fewer than two `sources` entries, or every source URL is only an apex. `websiteUrl` may be an apex. A faculty URL with a path lives on `organisation`, not duplicated into `sources`.
-- `lastVerified` on a categorized record is not equal to the latest `readOn` among `sources`, `organisation`, `instructionNote`, and `applyLines`.
+- The latest `readOn` among `sources`, `organisation`, `instructionNote`, and `applyLines` differs from `lastVerified` on a categorized record with no `contentUpdated`. For a partial edit, the latest `readOn` must be between `lastVerified` and `contentUpdated`, inclusive.
 - `specializations` disagrees with `deriveSpecializations(organisation)`, or is set while `organisation` is empty.
 - `system` is set and `category` is missing. Unmigrated `type: 'iit'` does not need `system`; the row label stays `TYPE_LABELS`.
 - Banned tokens in `descriptionEn` (when `category` is set), `instructionNote.text`, and `applyLines[].text`.

@@ -18,6 +18,7 @@ export const TYPE_LABELS: Record<CollegeType, string> = {
   'law-school': 'Law school',
   'public-university': 'Public university',
   'private-university': 'Private university',
+  'community-college': 'Community college',
   iit: 'Indian Institute of Technology (IIT)',
   nit: 'National Institute of Technology (NIT)',
   iim: 'Indian Institute of Management (IIM)',
@@ -27,9 +28,11 @@ export const TYPE_LABELS: Record<CollegeType, string> = {
 };
 
 export const LEVEL_LABELS: Record<ProgramLevel, string> = {
+  associate: 'Associate',
   bachelors: "Bachelor's",
   masters: "Master's",
   phd: 'PhD',
+  'research-doctorate': 'Research doctorate',
   professional: 'Professional',
 };
 
@@ -39,7 +42,8 @@ export const LEVEL_LABELS: Record<ProgramLevel, string> = {
  * university", "specialist school") so a specialist stored as compatibility
  * `research-university` still shows "specialist school", never "Research university".
  */
-export function categoryLabel(college: Pick<College, 'category' | 'type'>): string {
+export function categoryLabel(college: Pick<College, 'category' | 'institutionLabel' | 'type'>): string {
+  if (college.institutionLabel) return college.institutionLabel;
   if (college.category) return CATEGORY_LABELS[college.category];
   return TYPE_LABELS[college.type] ?? college.type;
 }
@@ -47,7 +51,10 @@ export function categoryLabel(college: Pick<College, 'category' | 'type'>): stri
 /**
  * Sentence-case category or legacy type label for directory rows and at-a-glance values.
  */
-export function categoryRowLabel(college: Pick<College, 'category' | 'type'>): string {
+export function categoryRowLabel(college: Pick<College, 'category' | 'institutionLabel' | 'type'>): string {
+  if (college.institutionLabel) {
+    return college.institutionLabel.charAt(0).toUpperCase() + college.institutionLabel.slice(1);
+  }
   if (college.category) return CATEGORY_ROW_LABELS[college.category];
   return TYPE_LABELS[college.type] ?? college.type;
 }

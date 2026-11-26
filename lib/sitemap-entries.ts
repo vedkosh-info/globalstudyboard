@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { REGIONS, REGION_SLUGS, matchesRegion, type RegionSlug } from '@/lib/regions';
 import { ENTRANCE_EXAMS, examModified } from '@/lib/admission-guides';
 import { COLLEGES, collegeModified } from '@/lib/colleges';
+import { placeHref, publishedPlaces } from '@/lib/college-places';
 import { GUIDES, guideModified } from '@/lib/guides';
 import { TOPICS } from '@/lib/topics';
 import { guidesForTopic } from '@/lib/topic-guides';
@@ -98,6 +99,16 @@ export function sitemapEntries(id: SitemapId): MetadataRoute.Sitemap {
             url: `${BASE}${regionCategoryPath(r.slug, cat)}`,
             lastModified: newest,
           })),
+          // University place pages (country › state › city), only those published.
+          ...publishedPlaces()
+            .filter((p) => p.region === r.slug)
+            .map((p) => ({
+              url: `${BASE}${placeHref(p)}`,
+              lastModified: p.colleges.reduce((acc, c) => {
+                const mod = collegeModified(c);
+                return mod ? later(acc, mod) : acc;
+              }, SITE_LASTMOD),
+            })),
           ...multiHubTracks()
             .filter((t) => t.region === r.slug)
             .map((t) => ({

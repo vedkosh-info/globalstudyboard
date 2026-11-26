@@ -25,7 +25,7 @@ const PRINCIPLES = [
   {
     icon: <BookOpenCheck className="w-5 h-5" />,
     title: 'Official sources only',
-    body: 'Exam formats, fees, deadlines and eligibility are taken from the conducting body or university itself — College Board, ETS, UCAS, IIT/JEE authorities, and each university\u2019s admissions office. Every exam page links straight to its official website so you can check the primary source yourself.',
+    body: 'Exam formats, fees, deadlines and eligibility come from the conducting body or university itself: College Board, ETS, UCAS, IIT/JEE authorities, and each university\u2019s admissions office. Every exam page links to its official website.',
   },
   {
     icon: <RefreshCw className="w-5 h-5" />,
@@ -56,9 +56,11 @@ export default function AboutPage() {
         </h1>
         <p className="editorial-lede text-stone-800 text-lg leading-relaxed">
           GlobalStudyBoard is an independent guide to universities, entrance exams and scholarships
-          worldwide. We built it with one goal: to pull the scattered, hard-to-compare facts of
-          global admissions into one clear place — and make every claim checkable against its
-          official source.
+          worldwide.
+        </p>
+        <p className="editorial-lede text-stone-800 text-lg leading-relaxed mt-3">
+          We pull the scattered, hard-to-compare facts of global admissions into one clear place,
+          and make every claim checkable against its official source.
         </p>
         <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
@@ -72,10 +74,15 @@ export default function AboutPage() {
           Who runs GlobalStudyBoard — and how to check us
         </h2>
         <p className="text-stone-700 leading-relaxed m-0">
-          GlobalStudyBoard is written and maintained by an independent editorial team and is not
-          affiliated with any government, university, examination board or admissions agent. Trust
-          is earned, not assumed, so we build for verification first: every page names the official
-          source behind its facts, every guide shows when it was last verified, and our{' '}
+          GlobalStudyBoard is written and maintained by an independent editorial team. It is not
+          affiliated with any government, university, examination board or admissions agent.
+        </p>
+        <p className="text-stone-700 leading-relaxed mt-3 mb-0">
+          We build for verification first. Every page names the official source behind its facts,
+          and every guide shows when it was last verified.
+        </p>
+        <p className="text-stone-700 leading-relaxed mt-3 mb-0">
+          Our{' '}
           <Link href="/editorial-policy" className="text-forest-700 underline underline-offset-2">
             editorial policy
           </Link>{' '}
@@ -84,7 +91,10 @@ export default function AboutPage() {
           <Link href="/sources" className="text-forest-700 underline underline-offset-2">
             official sources we cite
           </Link>{' '}
-          is public. Use us to orient and compare; confirm the final details on the official website
+          is public.
+        </p>
+        <p className="text-stone-700 leading-relaxed mt-3 mb-0">
+          Use us to orient and compare, then confirm the final details on the official website
           before you act on them (see our{' '}
           <Link href="/disclaimer" className="text-forest-700 underline underline-offset-2">
             disclaimer
@@ -119,10 +129,12 @@ export default function AboutPage() {
             </h2>
             <p className="text-stone-700 leading-relaxed m-0">
               We are not an official examination body, a university, or a paid admissions agent.
-              Nothing here is legal, financial or immigration advice. Fees, deadlines, rankings and
-              eligibility change every academic year — always confirm the current details on the
-              official university, the examination website, or the official representative of that
-              country before applying.
+              Nothing here is legal, financial or immigration advice.
+            </p>
+            <p className="text-stone-700 leading-relaxed mt-3 mb-0">
+              Fees, deadlines, rankings and eligibility change every academic year. Always confirm
+              the current details on the official university, the examination website, or the
+              official representative of that country before applying.
             </p>
           </div>
         </div>

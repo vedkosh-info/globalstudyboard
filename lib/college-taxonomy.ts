@@ -8,10 +8,13 @@
 
 import type { College, CollegeCountry, CollegeType } from '@/lib/colleges';
 
-/** What kind of institution this is. Five values, all nine regions. */
+/** What kind of institution this is, across all nine regions. */
 export type CollegeCategory =
   | 'public-research-university'
   | 'private-research-university'
+  | 'public-university'
+  | 'private-university'
+  | 'community-college'
   | 'institute-of-technology'
   | 'liberal-arts-college'
   | 'specialist-school';
@@ -19,15 +22,21 @@ export type CollegeCategory =
 export const COLLEGE_CATEGORIES: readonly CollegeCategory[] = [
   'public-research-university',
   'private-research-university',
+  'public-university',
+  'private-university',
   'institute-of-technology',
   'liberal-arts-college',
   'specialist-school',
+  'community-college',
 ] as const;
 
 /** Lowercase noun phrases with no article, used in the identity line and eyebrows. */
 export const CATEGORY_LABELS: Record<CollegeCategory, string> = {
   'public-research-university': 'public research university',
   'private-research-university': 'private research university',
+  'public-university': 'public university',
+  'private-university': 'private university',
+  'community-college': 'community college',
   'institute-of-technology': 'institute of technology',
   'liberal-arts-college': 'liberal arts college',
   'specialist-school': 'specialist school',
@@ -37,6 +46,9 @@ export const CATEGORY_LABELS: Record<CollegeCategory, string> = {
 export const CATEGORY_ROW_LABELS: Record<CollegeCategory, string> = {
   'public-research-university': 'Public research university',
   'private-research-university': 'Private research university',
+  'public-university': 'Public university',
+  'private-university': 'Private university',
+  'community-college': 'Community college',
   'institute-of-technology': 'Institute of technology',
   'liberal-arts-college': 'Liberal arts college',
   'specialist-school': 'Specialist school',
@@ -171,6 +183,7 @@ export const COLLEGE_COUNTRY_INFO: Record<CollegeCountry, { label: string; iso: 
   oman: { label: 'Oman', iso: 'OM' },
   bahrain: { label: 'Bahrain', iso: 'BH' },
   kuwait: { label: 'Kuwait', iso: 'KW' },
+  jordan: { label: 'Jordan', iso: 'JO' },
   israel: { label: 'Israel', iso: 'IL' },
   singapore: { label: 'Singapore', iso: 'SG' },
   'hong-kong': { label: 'Hong Kong', iso: 'HK' },
@@ -210,11 +223,13 @@ export function identityPlace(c: Pick<College, 'city' | 'state' | 'country'>): s
  * Generated one-sentence identity line for a categorized college record.
  */
 export function collegeIdentityLine(
-  c: Pick<College, 'nameEn' | 'category' | 'city' | 'state' | 'country' | 'established'>,
+  c: Pick<College, 'nameEn' | 'category' | 'institutionLabel' | 'city' | 'state' | 'country' | 'established' | 'establishmentLabel'>,
 ): string {
-  const kind = CATEGORY_LABELS[c.category!];
+  const kind = c.institutionLabel ?? CATEGORY_LABELS[c.category!];
   const article = /^[aeiou]/i.test(kind) ? 'an' : 'a';
-  return `${c.nameEn} is ${article} ${kind} in ${identityPlace(c)}, established in ${c.established}.`;
+  const milestone = c.establishmentLabel?.toLowerCase() ?? 'established';
+  const date = c.established === undefined ? '' : `, ${milestone} in ${c.established}`;
+  return `${c.nameEn} is ${article} ${kind} in ${identityPlace(c)}${date}.`;
 }
 
 /**
@@ -252,9 +267,13 @@ export function legacyTypeFor(
 ): CollegeType {
   switch (c.category) {
     case 'public-research-university':
+    case 'public-university':
       return 'public-university';
     case 'private-research-university':
+    case 'private-university':
       return 'private-university';
+    case 'community-college':
+      return 'community-college';
     case 'institute-of-technology':
       if (c.system === 'iit' || c.system === 'nit' || c.system === 'iisc') return c.system;
       return 'institute-of-technology';

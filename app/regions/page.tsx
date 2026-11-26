@@ -8,6 +8,7 @@ import { COLLEGES } from '@/lib/colleges';
 import LastUpdated from '@/components/LastUpdated';
 import RegionFlag from '@/components/RegionFlag';
 import { SITE_REVIEWED } from '@/lib/site-meta';
+import { firstParagraph } from '@/lib/readable';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Study Destinations: USA, UK, Canada, Europe, Australia, Asia, the Gulf, Russia & India',
@@ -70,7 +71,7 @@ export default function RegionsIndexPage() {
                 <ArrowUpRight className="w-5 h-5 text-stone-400 group-hover:text-forest-700 transition-colors shrink-0 mt-1" />
               </div>
               <p className="text-stone-600 text-sm leading-relaxed mb-4 line-clamp-3">
-                {r.educationSystemSummary}
+                {firstParagraph(r.educationSystemSummary)}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-stone-500">
                 <span><strong className="text-stone-700 font-semibold">{universityCount}</strong> universities</span>

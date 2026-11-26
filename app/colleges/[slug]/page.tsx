@@ -25,6 +25,7 @@ import {
 import { ENTRANCE_EXAMS } from '@/lib/admission-guides';
 import { PROGRAMME_FEES } from '@/lib/programme-fees';
 import { REGIONS } from '@/lib/regions';
+import { regionCategoryPath } from '@/lib/region-nav';
 import { rankGuidesForCollege } from '@/lib/related-guides';
 import ContentActions from '@/components/ContentActions';
 import PageQuickLinks from '@/components/PageQuickLinks';
@@ -40,7 +41,6 @@ import { applicationCheckHref } from '@/lib/tools';
 import { PROGRAMMES } from '@/lib/application-check-catalogue';
 import ContentImage from '@/components/ContentImage';
 import { collegeImage } from '@/lib/images';
-import AudienceGate from '@/components/AudienceGate';
 import BreadcrumbsView from '@/components/BreadcrumbsView';
 import { defaultAudienceFor } from '@/lib/audience';
 import { breadcrumbsFor } from '@/lib/cmi';
@@ -56,11 +56,16 @@ interface Props {
 
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-const APPLY_AUDIENCE_LABELS: Record<'undergraduate' | 'postgraduate' | 'all', string> = {
+const APPLY_STATUS_LABELS = {
+  domestic: 'Domestic · home students of this destination',
+  international: 'International · students from another country',
+} as const;
+
+const APPLY_LEVEL_LABELS = {
   undergraduate: 'Undergraduate',
   postgraduate: 'Postgraduate',
-  all: 'All applicants',
-};
+  all: 'All levels',
+} as const;
 
 /**
  * True when a recorded admission-test name says more than the covered exam it
@@ -200,6 +205,8 @@ export default async function CollegeDetailPage({ params }: Props) {
   // the page can state conducting body / frequency / official site instead of a
   // bare chip — unique, Tier-1 data already in the catalogue.
   const admissionTests = college.admissionExams.map((name) => ({ name, exam: findExam(name) }));
+  const testingSources = college.sources?.filter((source) => source.section === 'admission-tests') ?? [];
+  const planningSources = college.sources?.filter((source) => source.section === 'admission-planning') ?? [];
 
   const pageUrl = `https://www.globalstudyboard.com/colleges/${college.slug}`;
   const countryInfo = COLLEGE_COUNTRY_INFO[college.country];
@@ -228,13 +235,13 @@ export default async function CollegeDetailPage({ params }: Props) {
     name: college.nameEn,
     description: metaDescription(summary, 300),
     url: college.websiteUrl,
-    foundingDate: String(college.established),
+    foundingDate: college.establishmentLabel ? undefined : college.established?.toString(),
     // No `image` here: schema.org reads it as "an image of the item", and the
     // only images we have are a destination card and a representative archetype —
     // neither depicts this university. The card stays on the page's OpenGraph.
     address: {
       '@type': 'PostalAddress',
-      addressLocality: college.city,
+      addressLocality: college.postalCity ?? college.city,
       ...(college.state ? { addressRegion: college.state } : {}),
       ...(countryInfo ? { addressCountry: countryInfo.iso } : {}),
     },
@@ -371,12 +378,14 @@ export default async function CollegeDetailPage({ params }: Props) {
               <dd className="m-0 text-sm font-medium text-stone-800">{systemLabel}</dd>
             </div>
           )}
-          <div>
-            <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
-              Established
-            </dt>
-            <dd className="m-0 text-sm font-medium text-stone-800">{college.established}</dd>
-          </div>
+          {(college.established !== undefined) && (
+            <div>
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+                {college.establishmentLabel ?? 'Established'}
+              </dt>
+              <dd className="m-0 text-sm font-medium text-stone-800">{college.established}</dd>
+            </div>
+          )}
           {college.programLevels.length > 0 && (
             <div>
               <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
@@ -387,30 +396,32 @@ export default async function CollegeDetailPage({ params }: Props) {
               </dd>
             </div>
           )}
-          <div>
-            <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
-              Instruction
-            </dt>
-            <dd className="m-0 text-sm font-medium text-stone-800">
-              {college.instructionNote ? (
-                <>
-                  {college.instructionNote.text}{' '}
-                  <a
-                    href={college.instructionNote.sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-normal text-forest-700 underline underline-offset-2 hover:text-forest-800"
-                  >
-                    Source
-                  </a>
-                </>
-              ) : college.englishTaught ? (
-                'English-taught'
-              ) : (
-                'Local language'
-              )}
-            </dd>
-          </div>
+          {(college.instructionNote || college.englishTaught !== undefined) && (
+            <div>
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
+                Instruction
+              </dt>
+              <dd className="m-0 text-sm font-medium text-stone-800">
+                {college.instructionNote ? (
+                  <>
+                    {college.instructionNote.text}{' '}
+                    <a
+                      href={college.instructionNote.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-normal text-forest-700 underline underline-offset-2 hover:text-forest-800"
+                    >
+                      Source
+                    </a>
+                  </>
+                ) : college.englishTaught ? (
+                  'English-taught'
+                ) : (
+                  'Local language'
+                )}
+              </dd>
+            </div>
+          )}
           {college.websiteUrl && (
             <div>
               <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500 mb-1">
@@ -469,7 +480,8 @@ export default async function CollegeDetailPage({ params }: Props) {
           {specializations.map((spec) => (
             <Link
               key={spec}
-              href={`/colleges#field=${spec}`}
+              href={`${regionCategoryPath(college.region, 'universities')}#field=${spec}`}
+              prefetch={false}
               className="rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-700 no-underline hover:border-forest-300 hover:text-forest-700"
             >
               {SPECIALIZATION_LABELS[spec]}
@@ -478,94 +490,87 @@ export default async function CollegeDetailPage({ params }: Props) {
         </section>
       )}
 
-      {/* 10. How to apply */}
-      {college.applyLines && college.applyLines.length > 0 ? (
-        <section className="rounded-2xl border border-stone-200 bg-white p-6">
-          <h2 className="font-display text-2xl font-bold tracking-editorial text-ink mb-4">
-            How to apply
-          </h2>
-          <dl className="m-0 space-y-3">
-            {college.applyLines.map((line) => (
-              <div key={`${line.audience}-${line.sourceUrl}`} className="grid grid-cols-1 gap-1 sm:grid-cols-[9rem_1fr] sm:gap-4">
-                <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
-                  {APPLY_AUDIENCE_LABELS[line.audience]}
-                </dt>
-                <dd className="m-0 text-sm text-stone-800">
-                  {line.text}{' '}
-                  <a
-                    href={line.sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-medium text-forest-700 underline underline-offset-2 hover:text-forest-800"
-                  >
-                    Official page
+      {/* 10. How to apply — both applicant statuses, on every college, never hidden. */}
+      <section className="rounded-2xl border border-stone-200 bg-white p-6">
+        <h2 className="font-display text-2xl font-bold tracking-editorial text-ink mb-2">
+          How to apply
+        </h2>
+        <p className="m-0 mb-5 text-sm leading-relaxed text-stone-600">
+          Check the university’s applicant definitions before choosing a route.
+        </p>
+        <div className="space-y-5">
+          {(defaultAudienceFor(college.region) === 'domestic'
+            ? (['domestic', 'international'] as const)
+            : (['international', 'domestic'] as const)
+          ).map((status) => {
+              const lines = (college.applyLines ?? []).filter((line) => line.audience === status);
+              return (
+                <div key={status}>
+                  <h3 className="m-0 mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-forest-700">
+                    {APPLY_STATUS_LABELS[status]}
+                  </h3>
+                  {lines.length > 0 ? (
+                    <ul className="m-0 list-none space-y-2 p-0">
+                      {lines.map((line, index) => (
+                        <li key={`${status}-${line.level ?? 'all'}-${index}`} className="text-sm leading-relaxed text-stone-800">
+                          {line.level ? (
+                            <span className="mr-2 font-medium text-stone-500">{APPLY_LEVEL_LABELS[line.level]}</span>
+                          ) : null}
+                          {line.text}{' '}
+                          <a
+                            href={line.sourceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-medium text-forest-700 underline underline-offset-2 hover:text-forest-800"
+                          >
+                            Official page
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="m-0 text-sm leading-relaxed text-stone-700">Not stated on this profile.</p>
+                  )}
+                </div>
+              );
+            })}
+        </div>
+        {(college.applyLines ?? []).filter((line) => line.audience === 'domestic').length === 0
+          || (college.applyLines ?? []).filter((line) => line.audience === 'international').length === 0
+          ? college.websiteUrl && (
+          <p className="m-0 mt-5 text-sm leading-relaxed text-stone-700">
+            <a
+              href={college.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-forest-700 underline underline-offset-2 hover:text-forest-800"
+            >
+              Check the official site
+            </a>
+            {' '}for a route this profile does not state yet.
+          </p>
+        ) : null}
+        {college.applicationPlatform && !(college.applyLines && college.applyLines.length > 0) ? (
+          <p className="m-0 mt-5 border-t border-stone-200 pt-4 text-sm leading-relaxed text-stone-600">
+            This profile has not split that note by applicant. It records: {college.applicationPlatform}. Confirm which applicants it covers on the official site.
+          </p>
+        ) : null}
+        {planningSources.length > 0 && (
+          <div className="mt-5 border-t border-stone-200 pt-4">
+            <h3 className="m-0 text-sm font-semibold text-ink">Plan your application</h3>
+            <ul className="mb-0 mt-2 space-y-1 pl-5 text-sm leading-relaxed">
+              {planningSources.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-forest-700 underline underline-offset-2 hover:text-forest-800">
+                    {source.label}
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-      ) : (
-        college.applicationPlatform && (
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white border border-stone-200 rounded-2xl p-5">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-2">
-                How to apply
-              </p>
-              <p className="text-stone-800 text-base m-0">{college.applicationPlatform}</p>
-            </div>
-            {region && (
-              <div className="bg-white border border-stone-200 rounded-2xl p-5">
-                <p className="text-xs font-semibold tracking-[0.22em] uppercase text-stone-500 mb-2">
-                  Region
-                </p>
-                <Link
-                  href={`/regions/${region.slug}`}
-                  className="text-forest-700 text-base font-medium no-underline hover:text-forest-800"
-                >
-                  <RegionFlag slug={region.slug} className="mr-1.5 h-4" />{region.displayName} →
-                </Link>
-              </div>
-            )}
-          </section>
-        )
-      )}
-
-      {/* How to apply — domestic vs international (India pilot) */}
-      {college.region === 'india' && (
-        <section className="grid grid-cols-1 gap-4">
-          <AudienceGate audience="domestic" pageDefault={defaultAudienceFor(college.region)}>
-            <div className="bg-white border border-stone-200 rounded-2xl p-5">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-forest-700 mb-2">
-                Domestic applicants · Indian citizens
-              </p>
-              <p className="text-stone-700 text-base leading-relaxed m-0">
-                Apply through the entrance tests this institution accepts
-                {college.admissionExams.length > 0 ? ` (${college.admissionExams.join(', ')})` : ''} and
-                the relevant centralised or institute-level counselling — for many engineering institutes
-                that is JoSAA or CSAB. Confirm the current route, eligibility, category provisions and
-                fees on the official website.
-              </p>
-            </div>
-          </AudienceGate>
-          <AudienceGate audience="international" pageDefault={defaultAudienceFor(college.region)}>
-            <div className="bg-white border border-stone-200 rounded-2xl p-5">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-forest-700 mb-2">
-                International applicants · foreign nationals, NRI / OCI
-              </p>
-              <p className="text-stone-700 text-base leading-relaxed m-0">
-                Foreign nationals, PIO/OCI and NRI applicants usually apply through a separate
-                foreign-national, NRI or supernumerary channel that varies by institute — for some
-                centrally funded technical institutes this is the DASA (Direct Admission of Students
-                Abroad) scheme, while others run their own international-admissions office — with
-                different eligibility, seats and fees, and a student visa to study in India. The exact
-                route changes each year; verify it on the official institute and Government of India
-                sources before applying.
-              </p>
-            </div>
-          </AudienceGate>
-        </section>
-      )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
 
       {/* 11. Admission tests — with the official facts we hold for each covered test */}
       {admissionTests.length > 0 && (
@@ -591,9 +596,10 @@ export default async function CollegeDetailPage({ params }: Props) {
                       {name}
                     </p>
                   )}
-                  <p className="text-stone-600 text-sm m-0 mt-1">
-                    {exam.conductingBody} · {exam.frequency}
-                  </p>
+                  <p className="text-stone-600 text-sm m-0 mt-1">{exam.conductingBody}</p>
+                  {/* The schedule can run to several sentences; the card links to the
+                      exam page, which has it in full. */}
+                  <p className="text-stone-600 text-sm m-0 mt-1 line-clamp-2">{exam.frequency}</p>
                 </Link>
               ) : (
                 <span
@@ -605,18 +611,34 @@ export default async function CollegeDetailPage({ params }: Props) {
               ),
             )}
           </div>
-          <p className="mt-3 text-sm leading-relaxed text-stone-600">
-            Requirements change from one intake to the next — confirm the current ones on{' '}
-            {college.websiteUrl ? (
-              <a href={college.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-forest-700 underline underline-offset-2 hover:text-forest-800">
-                {college.nameEn}&rsquo;s official site
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            ) : (
-              <>{college.nameEn}&rsquo;s official site</>
-            )}{' '}
-            before you apply.
-          </p>
+          {testingSources.length > 0 ? (
+            <div className="mt-3 text-sm leading-relaxed text-stone-600">
+              <p className="m-0">Check the university’s official testing instructions for your intake.</p>
+              <ul className="mt-1 space-y-1 pl-5">
+                {testingSources.map((source) => (
+                  <li key={source.url}>
+                    <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-forest-700 underline underline-offset-2 hover:text-forest-800">
+                      {source.label}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <p className="mt-3 text-sm leading-relaxed text-stone-600">
+              Requirements change from one intake to the next — confirm the current ones on{' '}
+              {college.websiteUrl ? (
+                <a href={college.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-forest-700 underline underline-offset-2 hover:text-forest-800">
+                  {college.nameEn}&rsquo;s official site
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              ) : (
+                <>{college.nameEn}&rsquo;s official site</>
+              )}{' '}
+              before you apply.
+            </p>
+          )}
         </section>
       )}
 
@@ -781,9 +803,8 @@ export default async function CollegeDetailPage({ params }: Props) {
               </p>
             )}
           <p className="text-stone-500 text-xs leading-relaxed max-w-xl">
-            Source: {college.nameEn} official website. Details here are for guidance only — tuition,
-            deadlines, rankings and eligibility change every academic year, so confirm on the official
-            university site before applying.
+            Source: {college.nameEn} official website. Fees, deadlines, rankings and eligibility change
+            every year, so confirm them on the university&apos;s site before applying.
           </p>
         </div>
       )}

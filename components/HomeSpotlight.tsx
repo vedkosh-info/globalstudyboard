@@ -24,7 +24,7 @@ export interface CollegeLite {
   nameEn: string;
   city: string;
   state?: string;
-  established: number;
+  established?: number;
 }
 
 /** Profiles, tests and the next step follow the one shared destination choice. */
@@ -94,7 +94,7 @@ export default function HomeSpotlight({ examsBySlug, universitiesByRegion }: {
                   <h3 className="m-0 font-display text-2xl font-semibold leading-snug text-ink group-hover:text-forest-800">{exam.shortName}</h3>
                   <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-forest-700" aria-hidden="true" />
                 </div>
-                <p className="m-0 mb-4 text-base leading-relaxed text-stone-600">{exam.descriptionEn}</p>
+                <p className="m-0 mb-4 line-clamp-3 text-base leading-relaxed text-stone-600">{exam.descriptionEn}</p>
                 <span className="mt-auto text-xs font-semibold uppercase tracking-wide text-stone-600">{exam.domain.replaceAll('-', ' ')}</span>
               </Link>
             ))}

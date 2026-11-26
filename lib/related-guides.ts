@@ -2,6 +2,7 @@ import { GUIDES, type Guide } from '@/lib/guides';
 import type { EntranceExam } from '@/lib/admission-guides';
 import type { College } from '@/lib/colleges';
 import { REGIONS, matchesRegion } from '@/lib/regions';
+import { DEDICATED_COLLEGE_GUIDE } from '@/lib/college-guides';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Relevance-ranked "related guides" for exam and college pages.
@@ -14,23 +15,6 @@ import { REGIONS, matchesRegion } from '@/lib/regions';
 // module scores by how specifically a guide is ABOUT the unit. Server-only
 // (imports the full guide catalogue).
 // ─────────────────────────────────────────────────────────────────────────────
-
-const STOPWORDS = new Set([
-  'the', 'of', 'and', 'at', 'in', 'for', 'university', 'college', 'institute', 'school',
-  'technology', 'national', 'state', 'de', 'la', 'del', 'di', 'universität', 'universidad',
-  // Generic words in Indian institution names ("Indian Institute of Management
-  // Ahmedabad" → "ahmedabad"), otherwise every "…-in-indian-admissions" guide matches.
-  'indian', 'india', 'management', 'science', 'sciences', 'medical', 'engineering', 'all',
-]);
-
-/** Lower-cased, slug-safe tokens of a name, stopwords removed ("Harvard University" → ["harvard"]). */
-function nameTokens(name: string): string[] {
-  return name
-    .toLowerCase()
-    .replace(/[()&,.'’-]/g, ' ')
-    .split(/\s+/)
-    .filter((t) => t.length > 2 && !STOPWORDS.has(t));
-}
 
 /**
  * Lower-cased words of a string, space-padded, so a `includes(' x ')` test is a
@@ -175,40 +159,31 @@ export function primaryGuideForExam(exam: EntranceExam, ranked: RankedGuide[] = 
 }
 
 /**
- * Guides ranked for a college page. "How to get into X" / "X admission guide"
- * pages come first (they are the long-form twin of the profile card), then
- * guides that reference the college, then same-region admissions guides.
+ * Guides ranked for a college page. The college's own long-form guide (listed
+ * explicitly in DEDICATED_COLLEGE_GUIDE) comes first, then guides that list the
+ * college in `relatedCollegeSlugs` or name it in full in their slug, with
+ * admissions and same-destination guides ranked higher.
+ *
+ * Name tokens are NOT used to pick guides any more. Too many institution names
+ * are place names: 'columbia' matched "Studying in British Columbia",
+ * 'california' (Caltech) the Cal State Apply guide, 'singapore' (NUS) the
+ * Singapore Institute of Technology guide, and 'london' (UCL) Queen Mary's.
  */
 export function rankGuidesForCollege(college: College): RankedGuide[] {
-  // Identity = the college's own slug segments minus generic words: 'aiims-delhi'
-  // → ['aiims', 'delhi'], 'harvard-university' → ['harvard']. A guide is
-  // "dedicated" only when EVERY identity token appears in its slug — "Delhi
-  // University" must not be presented as the guide for AIIMS Delhi.
-  const identity = college.slug.split('-').filter((t) => t.length > 1 && !STOPWORDS.has(t));
-  const tokens = Array.from(new Set([...identity, ...nameTokens(college.nameEn)]));
+  const dedicatedSlug = DEDICATED_COLLEGE_GUIDE[college.slug];
+  const fullName = college.nameEn.replace(/\s*\([^)]*\)/g, '').replace(/^the /i, '').replace(/&/g, 'and');
   const candidates = GUIDES.filter(
     (g) =>
+      g.slug === dedicatedSlug ||
       g.relatedCollegeSlugs.includes(college.slug) ||
-      tokens.some((t) => g.slug.split('-').includes(t)) ||
-      hasWords(g.slug, college.slug),
+      hasWords(g.slug, college.slug) ||
+      hasWords(g.slug, fullName),
   );
   const ranked = candidates.map((g) => {
-    // Whole words, singular or plural ("IIT" ↔ "IITs") — never a substring:
-    // "tu" (TU Munich, TU Delft) is inside every "study" and "students".
-    const text = words(`${g.slug} ${g.titleEn}`);
-    const slugParts = g.slug.split('-');
-    let score = 0;
-    let dedicated = false;
-    const identityHits = identity.filter((t) => slugParts.includes(t)).length;
-    const nameHits = tokens.filter((t) => text.includes(words(t)) || text.includes(words(`${t}s`))).length;
-    if (hasWords(g.slug, college.slug) || (identity.length > 0 && identityHits === identity.length)) {
-      score += 100;
-      dedicated = true;
-      if (g.slug.startsWith('how-to-get-into-') || g.slug.includes('-admission')) score += 50;
-    } else if (nameHits > 0) {
-      score += 15 * nameHits;
-    }
+    const dedicated = g.slug === dedicatedSlug;
+    let score = dedicated ? 200 : 0;
     if (g.relatedCollegeSlugs.includes(college.slug)) score += 40;
+    if (!dedicated && (hasWords(g.slug, college.slug) || hasWords(g.slug, fullName))) score += 30;
     if (g.category === 'admissions') score += 10;
     if (matchesRegion(college.region, g.region, g.regions)) score += 10;
     score += Math.max(0, 6 - g.relatedCollegeSlugs.length);

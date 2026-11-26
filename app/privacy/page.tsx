@@ -77,7 +77,10 @@ export default function PrivacyPage() {
         <p>
           You never need an account to read GlobalStudyBoard. If you create one, it is
           passwordless: you sign in with a one-time code or link that we e-mail you or, where we
-          offer it, with your Google account. Here is exactly what an account involves.
+          offer it, with your Google account.
+        </p>
+        <p>
+          Here is exactly what an account involves.
         </p>
         <ul className="list-disc pl-5 space-y-2">
           <li>
@@ -237,7 +240,10 @@ export default function PrivacyPage() {
       <Section title="Android beta-tester sign-up">
         <p>
           The GlobalStudyBoard Android app is in a closed beta on Google Play. Google Play can only
-          send an invitation to a specific Google account, so if you use the &ldquo;Get the Android
+          send an invitation to a specific Google account.
+        </p>
+        <p>
+          So if you use the &ldquo;Get the Android
           app&rdquo; button we ask for one thing: the email address of that account.
         </p>
         <ul className="list-disc pl-5 space-y-2">
@@ -265,7 +271,10 @@ export default function PrivacyPage() {
         </ul>
         <p>
           Adding you as a tester also means Google receives that email address as part of running
-          Google Play; Google&rsquo;s own privacy policy governs what it does with it.
+          Google Play.
+        </p>
+        <p>
+          Google&rsquo;s own privacy policy governs what it does with it.
         </p>
       </Section>
 
@@ -342,7 +351,10 @@ export default function PrivacyPage() {
               <a href="https://support.google.com/analytics/answer/7667196" target="_blank" rel="noopener noreferrer" className="text-forest-700 hover:text-forest-800 underline">
                 data retention information
               </a>
-              . We set user and event data retention to two months. Standard aggregated reports are
+              .
+            </p>
+            <p>
+              We set user and event data retention to two months. Standard aggregated reports are
               outside these retention settings.
             </p>
           </>
@@ -350,7 +362,10 @@ export default function PrivacyPage() {
         <p>
           We also display advertising through <strong>Google AdSense</strong>. Third-party vendors,
           including Google, use cookies to serve ads based on a user&rsquo;s prior visits to this and
-          other websites. Google&rsquo;s use of advertising cookies enables it and its partners to
+          other websites.
+        </p>
+        <p>
+          Google&rsquo;s use of advertising cookies enables it and its partners to
           show ads based on your visits to this site and/or other sites on the internet.
         </p>
         <p>
@@ -381,10 +396,16 @@ export default function PrivacyPage() {
           >
             aboutads.info
           </a>
-          . You can also control or disable cookies in your browser settings.
+          .
         </p>
         <p>
-          You can also block or delete cookies in your browser. For a fuller
+          You can also control or disable cookies in your browser settings.
+        </p>
+        <p>
+          You can also block or delete cookies in your browser.
+        </p>
+        <p>
+          For a fuller
           breakdown of the cookies we use and how to manage them, see our{' '}
           <Link href="/cookies" className="text-forest-700 hover:text-forest-800 underline">
             Cookie Policy
@@ -408,7 +429,10 @@ export default function PrivacyPage() {
           <li>To show advertising that helps keep the site free.</li>
         </ul>
         <p>
-          We do not sell your personal information for money. Some privacy laws (such as
+          We do not sell your personal information for money.
+        </p>
+        <p>
+          Some privacy laws (such as
           California&rsquo;s CCPA/CPRA) treat the use of advertising cookies for personalised ads as a
           &ldquo;sale&rdquo; or &ldquo;share&rdquo; — you can limit this through the choices in our{' '}
           <Link href="/cookies" className="text-forest-700 hover:text-forest-800 underline">
@@ -433,7 +457,9 @@ export default function PrivacyPage() {
           child), <strong>accounts are for people aged 18 or over</strong>: you confirm this when
           you sign in for the first time.
           {GA_MEASUREMENT_ID && ' Choosing to allow optional Google Analytics also confirms that you are 18 or over.'}
-          {' '}We do not knowingly create accounts for, or collect
+        </p>
+        <p>
+          We do not knowingly create accounts for, or collect
           personal information from, anyone under 18; if you believe we hold such information,
           contact us and we will delete it.
         </p>
@@ -443,15 +469,26 @@ export default function PrivacyPage() {
         <p>
           You can browse without providing personal details and control or disable cookies through
           your browser.
+        </p>
+        <p>
           If you have an account, you can download, correct or delete your own data
           yourself at any time from{' '}
           <Link href="/account" className="text-forest-700 hover:text-forest-800 underline">
             Your account
           </Link>
-          . For any other information you have sent us (for example, an email), you can ask us to
+          .
+        </p>
+        <p>
+          For any other information you have sent us (for example, an email), you can ask us to
           confirm what we hold, correct it, or delete it — just contact us using the details below
-          and we&rsquo;ll respond within a reasonable time. We may need to verify your identity,
-          and we may keep information where the law requires. Depending on where you live,
+          and we&rsquo;ll respond within a reasonable time.
+        </p>
+        <p>
+          We may need to verify your identity,
+          and we may keep information where the law requires.
+        </p>
+        <p>
+          Depending on where you live,
           data-protection laws such as the GDPR (UK/EU), CCPA (California) and India&rsquo;s DPDP Act
           may give you additional rights; wherever practical, we extend the same choices to all our
           users.
@@ -462,6 +499,8 @@ export default function PrivacyPage() {
         <p>
           GlobalStudyBoard is an independent educational guide, operated from India, and is the
           party responsible for (the data controller of) the information described in this policy.
+        </p>
+        <p>
           For any privacy question, or to exercise a data right, email us at{' '}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
@@ -473,7 +512,10 @@ export default function PrivacyPage() {
           <Link href="/contact" className="text-forest-700 hover:text-forest-800 underline">
             contact page
           </Link>
-          . We may update this policy as the site evolves; the date above reflects the latest
+          .
+        </p>
+        <p>
+          We may update this policy as the site evolves; the date above reflects the latest
           revision.
         </p>
       </Section>

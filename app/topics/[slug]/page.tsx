@@ -23,6 +23,7 @@ import { trackForTopic, trackHref } from '@/lib/tracks';
 import { sectionAnchors, RESERVED_GUIDE_ANCHORS } from '@/lib/section-anchors';
 import { defaultAudienceFor, isAudienceVisible } from '@/lib/audience';
 import { gsbAiHref } from '@/lib/gsb-ai-links';
+import Prose from '@/components/Prose';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -59,9 +60,6 @@ const CATEGORY_ORDER: GuideCategory[] = [
   'scholarships',
 ];
 
-function paragraphs(body: string): string[] {
-  return body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
-}
 
 export default async function TopicHubPage({ params }: Props) {
   const { slug } = await params;
@@ -169,11 +167,7 @@ export default async function TopicHubPage({ params }: Props) {
         <p className="editorial-lede text-stone-800 text-lg leading-relaxed">{topic.description}</p>
         {topic.intro && (
           <div className="mt-4 space-y-3">
-            {paragraphs(topic.intro).map((p, i) => (
-              <p key={i} className="text-stone-700 text-base leading-relaxed m-0">
-                {p}
-              </p>
-            ))}
+            <Prose text={topic.intro} className="text-stone-700 text-base leading-relaxed m-0" />
           </div>
         )}
         <LastUpdated date={SITE_REVIEWED} className="mt-4" />

@@ -13,6 +13,17 @@ export const metadata: Metadata = pageMetadata({
 
 const LAST_UPDATED = IMAGE_COPY.policyUpdated;
 
+/** Splits a long paragraph at sentence boundaries only (wording unchanged). */
+function splitSentences(text: string): string[] {
+  const out: string[] = [];
+  for (const sentence of text.split(/(?<=[.!?])\s+/)) {
+    const last = out[out.length - 1];
+    if (last && last.length + sentence.length < 200) out[out.length - 1] = `${last} ${sentence}`;
+    else out.push(sentence);
+  }
+  return out;
+}
+
 function Section({ id, legacyId, title, children }: { id?: string; legacyId?: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="space-y-3 scroll-mt-2">
@@ -61,9 +72,12 @@ export default function DisclaimerPage() {
       <Section title="Accuracy &amp; sources">
         <p>
           We aim to base our content on official sources and to link to them so you can verify the
-          primary information yourself. Even so, we cannot guarantee that every detail is current,
-          complete or error-free at the moment you read it. Where information conflicts, the official
-          source always takes precedence over this site.
+          primary information yourself.
+        </p>
+        <p>
+          Even so, we cannot guarantee that every detail is current, complete or error-free at the
+          moment you read it. Where information conflicts, the official source always takes
+          precedence over this site.
         </p>
       </Section>
 
@@ -76,7 +90,9 @@ export default function DisclaimerPage() {
       </Section>
 
       <Section id={IMAGE_COPY.policyAnchor} legacyId="ai-generated-images" title={IMAGE_COPY.policyTitle}>
-        {IMAGE_COPY.policyParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        {IMAGE_COPY.policyParagraphs
+          .flatMap(splitSentences)
+          .map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       </Section>
 
       <Section title="Ask GSB">

@@ -14,7 +14,7 @@ export interface CollegeCard {
   nameEn: string;
   city: string;
   state?: string;
-  established: number;
+  established?: number;
   descriptionEn: string;
   /** Primary home region. */
   region: RegionSlug;
@@ -40,7 +40,8 @@ function CollegeLink({ c, hidden }: { c: CollegeCard; hidden: boolean }) {
       </h2>
       <p className="text-stone-500 text-xs mb-3">
         {c.city}
-        {c.state ? `, ${c.state}` : ''} · Est. {c.established}
+        {c.state ? `, ${c.state}` : ''}
+        {c.established !== undefined ? ` · Est. ${c.established}` : ''}
       </p>
       <p className="text-stone-600 text-base leading-relaxed line-clamp-3 mt-auto">{c.descriptionEn}</p>
     </Link>

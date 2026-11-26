@@ -21,26 +21,52 @@ export const metadata: Metadata = pageMetadata({
  * the process cannot back. Linked as `publishingPrinciples` from the site's
  * Organization structured data and from the byline on every guide.
  */
-const STEPS = [
+/** Groups sentences into short paragraphs (about 240 characters at most). */
+function toParagraphs(text: string | string[]): string[] {
+  if (Array.isArray(text)) return text;
+  const out: string[] = [];
+  for (const sentence of text.split(/(?<=[.!?])\s+/)) {
+    const last = out[out.length - 1];
+    if (last && last.length + sentence.length < 200) out[out.length - 1] = `${last} ${sentence}`;
+    else out.push(sentence);
+  }
+  return out;
+}
+
+const STEPS: { icon: React.ReactNode; title: string; body: string | string[] }[] = [
   {
     icon: <Search className="h-5 w-5" />,
     title: '1. Official sources only',
-    body: 'Every hard fact — a fee, deadline, exam pattern, eligibility rule or visa requirement — is taken from the body that owns it: the university, the examination board, or the government department. Rankings are quoted only with the name of the organisation that published them. Forums, agents’ sites and social media are never used as sources.',
+    body: [
+      'Every hard fact is taken from the body that owns it: the university, the examination board, or the government department. This covers fees, deadlines, exam patterns, eligibility rules and visa requirements.',
+      'Rankings are quoted only with the name of the organisation that published them. Forums, agents’ sites and social media are never used as sources.',
+    ],
   },
   {
     icon: <ShieldCheck className="h-5 w-5" />,
     title: '2. A separate verification pass',
-    body: 'No page is published on the strength of the pass that wrote it. Each unit goes through an independent second review that re-checks its hard facts — fees, deadlines, eligibility, exam patterns, visa rules, rankings and official links — against the official source and applies our content rules to the guides and answers: no invented numbers, no guarantees, no legal, financial, medical or immigration advice, no political or religious content. Anything that fails is fixed and re-checked before it ships.',
+    body: [
+      'No page is published on the strength of the pass that wrote it. Each unit goes through an independent second review.',
+      'That review re-checks its hard facts against the official source: fees, deadlines, eligibility, exam patterns, visa rules, rankings and official links.',
+      'It also applies our content rules to the guides and answers: no invented numbers, no guarantees, no legal, financial, medical or immigration advice, no political or religious content.',
+      'Anything that fails is fixed and re-checked before it ships.',
+    ],
   },
   {
     icon: <Link2 className="h-5 w-5" />,
     title: '3. Sources you can click, and that still work',
-    body: 'The official sources behind a page are listed on it. We run an automated link check across the whole site so that a source which has moved or been retired is replaced with the current official page rather than left to rot. The complete index is on our Sources page.',
+    body: [
+      'The official sources behind a page are listed on it.',
+      'We run an automated link check across the whole site, so a source that has moved or been retired is replaced with the current official page. The complete index is on our Sources page.',
+    ],
   },
   {
     icon: <RefreshCw className="h-5 w-5" />,
     title: '4. Dated, never back-dated',
-    body: `Every guide shows the date it was last verified; listing and reference pages show when the catalogue was last broadly reviewed. Those dates are only moved when a review actually happened. Content currently targets the ${ADMISSIONS_CYCLE} admissions cycle.`,
+    body: [
+      'Every guide shows the date it was last verified. Listing and reference pages show when the catalogue was last broadly reviewed.',
+      `Those dates are only moved when a review actually happened. Content currently targets the ${ADMISSIONS_CYCLE} admissions cycle.`,
+    ],
   },
   {
     icon: <Sparkles className="h-5 w-5" />,
@@ -50,7 +76,10 @@ const STEPS = [
   {
     icon: <MailWarning className="h-5 w-5" />,
     title: '6. Corrections',
-    body: `If you find a detail that no longer matches the official source, tell us at ${CONTACT_EMAIL}. Reported errors are re-checked against the primary source and corrected or removed; material corrections are recorded in our audit log.`,
+    body: [
+      `If you find a detail that no longer matches the official source, tell us at ${CONTACT_EMAIL}.`,
+      'Reported errors are re-checked against the primary source and corrected or removed. Material corrections are recorded in our audit log.',
+    ],
   },
 ];
 
@@ -67,8 +96,11 @@ export default function EditorialPolicyPage() {
         <p className="editorial-lede text-lg leading-relaxed text-stone-800">
           GlobalStudyBoard is written and maintained by an independent editorial team. We are not
           affiliated with any government, university, examination board or admissions agent, and we
-          do not sell admissions. This page sets out the process every page on the site goes through
-          before, and after, it is published.
+          do not sell admissions.
+        </p>
+        <p className="editorial-lede mt-3 text-lg leading-relaxed text-stone-800">
+          This page sets out the process every page on the site goes through before, and after, it
+          is published.
         </p>
         <LastUpdated date={SITE_REVIEWED} className="mt-5" />
       </header>
@@ -79,7 +111,13 @@ export default function EditorialPolicyPage() {
             <div key={s.title} className="rounded-2xl border border-stone-200 bg-white p-5">
               <div className="mb-3 text-forest-700">{s.icon}</div>
               <h2 className="mb-2 text-base font-semibold text-ink">{s.title}</h2>
-              <p className="m-0 text-sm leading-relaxed text-stone-700">{s.body}</p>
+              <div className="space-y-2 text-sm leading-relaxed text-stone-700">
+                {toParagraphs(s.body).map((para) => (
+                  <p key={para} className="m-0">
+                    {para}
+                  </p>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -91,9 +129,12 @@ export default function EditorialPolicyPage() {
         </h2>
         <p className="m-0 leading-relaxed text-stone-700">
           We are an educational guide. Nothing on the site is legal, financial, medical or
-          immigration advice, and fees, deadlines, rankings and eligibility change every academic
-          year — always confirm the current details on the official university or examination
-          website before you act on them. See our{' '}
+          immigration advice.
+        </p>
+        <p className="mb-0 mt-3 leading-relaxed text-stone-700">
+          Fees, deadlines, rankings and eligibility change every academic year. Always confirm the
+          current details on the official university or examination website before you act on them.
+          See our{' '}
           <Link href="/disclaimer" className="text-forest-700 underline underline-offset-2">
             disclaimer
           </Link>

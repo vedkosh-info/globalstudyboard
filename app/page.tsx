@@ -6,7 +6,7 @@ import { COLLEGES } from '@/lib/colleges';
 import { GUIDES } from '@/lib/guides';
 import { REGIONS, matchesRegion, type RegionSlug } from '@/lib/regions';
 import { SITE_DESCRIPTION, SITE_REVIEWED } from '@/lib/site-meta';
-import { pageMetadata } from '@/lib/seo';
+import { HOME_SEARCH_TITLE, pageMetadata } from '@/lib/seo';
 import HomeHero, { type HomeHeroData } from '@/components/HomeHero';
 import LastUpdated from '@/components/LastUpdated';
 import ContentImage from '@/components/ContentImage';
@@ -16,17 +16,15 @@ import HomeDestinations from '@/components/HomeDestinations';
 import HomeSpotlight, { type ExamLite, type CollegeLite } from '@/components/HomeSpotlight';
 import { HOME_UI } from '@/lib/home-ui';
 import ToolQuickLinks from '@/components/ToolQuickLinks';
+import { firstParagraph } from '@/lib/readable';
 
 /**
- * Home <title> leads with the query terms, brand last: the site has no brand
- * demand yet (0 backlinks, every top query is long-tail), so the first ~60
- * characters of its most-linked URL must carry query terms, not the name. It is
- * audience-neutral on purpose — the catalogue serves domestic students (India's
- * 400+ guides, home students elsewhere) as well as international ones.
+ * The concise search title covers all three core topics and serves domestic
+ * and international readers across destinations.
  */
-export const metadata: Metadata = {
-  ...pageMetadata({
+export const metadata: Metadata = pageMetadata({
     title: 'University Admissions, Entrance Exams & Study Abroad Guide',
+    searchTitle: HOME_SEARCH_TITLE,
     description: SITE_DESCRIPTION,
     path: '',
     keywords: [
@@ -42,11 +40,7 @@ export const metadata: Metadata = {
       'study in Australia',
       'study in Asia',
     ],
-  }),
-  title: {
-    absolute: 'University Admissions, Entrance Exams & Study Abroad Guide | GlobalStudyBoard',
-  },
-};
+});
 
 /**
  * Compact per-exam summaries for every test referenced by a region's
@@ -63,7 +57,7 @@ const HOME_EXAMS_BY_SLUG: Record<string, ExamLite> = (() => {
       map[slug] = {
         slug: e.slug,
         shortName: e.shortName,
-        descriptionEn: e.descriptionEn,
+        descriptionEn: firstParagraph(e.descriptionEn),
         domain: e.domain,
         frequency: e.frequency,
       };
@@ -156,9 +150,13 @@ export default function HomePage() {
           <h2 className="font-display text-3xl md:text-4xl font-bold tracking-editorial leading-tight mb-5">
             {HOME_UI.whyHeading}
           </h2>
-          <p className="text-cream-50/85 text-base md:text-lg leading-relaxed mb-6">
-            {HOME_UI.whyDescription}
-          </p>
+          <div className="mb-6 space-y-3 text-cream-50/85 text-base md:text-lg leading-relaxed">
+            {HOME_UI.whyDescription.split(/(?<=\.)\s+/).map((sentence) => (
+              <p key={sentence} className="m-0">
+                {sentence}
+              </p>
+            ))}
+          </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/ask"

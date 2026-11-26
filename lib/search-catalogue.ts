@@ -17,5 +17,11 @@ export function searchCatalogue(region: RegionSlug): SearchCatalogue {
     type, slug, title, subtitle, url, keywords,
     ...(sections?.length ? { sections } : {}),
   }));
-  return { region, items };
+  // Keep place entries separate so clients loaded before the directory release
+  // can still read the original result types from the same endpoint.
+  return {
+    region,
+    items: items.filter((item) => item.type !== 'place'),
+    places: items.filter((item) => item.type === 'place'),
+  };
 }
